@@ -4,8 +4,8 @@ SUBDIRS = src po
 
 EXTRA_DIST = \
 	autogen.sh \
-	gfpw.glade \
-	gfpw.gladep
+	pcb-fpw.glade \
+	pcb-fpw.gladep
 
 install-data-local:
 	@$(NORMAL_INSTALL)

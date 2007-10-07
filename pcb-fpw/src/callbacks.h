@@ -93,13 +93,11 @@ on_vertical_courtyard_entry_changed    (GtkEditable     *editable,
                                         gpointer         user_data);
 
 void
-on_silkscreen_line_thickness_entry_changed
-                                        (GtkEditable     *editable,
+on_silkscreen_line_width_entry_changed (GtkEditable     *editable,
                                         gpointer         user_data);
 
 void
-on_courtyard_line_thickness_entry_changed
-                                        (GtkEditable     *editable,
+on_courtyard_line_width_entry_changed  (GtkEditable     *editable,
                                         gpointer         user_data);
 
 void
@@ -163,7 +161,7 @@ on_close_button_clicked                (GtkButton       *button,
                                         gpointer         user_data);
 
 void
-on_ok_button_clicked                   (GtkButton       *button,
+on_save_button_clicked                 (GtkButton       *button,
                                         gpointer         user_data);
 
 void

@@ -4,7 +4,7 @@
  * DO NOT compile it as part of your application.
  */
 
-gchar *s = N_("gFootprintWizard");
+gchar *s = N_("pcb Footprint Wizard");
 gchar *s = N_("Name");
 gchar *s = N_("Type");
 gchar *s = N_("SIP");
@@ -49,8 +49,8 @@ gchar *s = N_("Vert. silkscreen (R1)");
 gchar *s = N_("Hor. silkscreen (R2)");
 gchar *s = N_("Vert. courtyard (V1)");
 gchar *s = N_("Hor. courtyard (V2)");
-gchar *s = N_("Thickness");
-gchar *s = N_("Thickness");
+gchar *s = N_("Line width");
+gchar *s = N_("Line width");
 gchar *s = N_("Silkscreen/Courtyard");
 gchar *s = N_("Inner-inner (G1)");
 gchar *s = N_("Center-center (C1)");
@@ -61,9 +61,10 @@ gchar *s = N_("Center-center (C2)");
 gchar *s = N_("Outer-outer (Z2)");
 gchar *s = N_("Distance between left and right columns");
 gchar *s = N_("Dimensions/Preview");
-gchar *s = N_("GFootprintWizard");
+gchar *s = N_("preview");
+gchar *s = N_("pcb-gfpw");
 gchar *s = N_("(C) 2007 Bert Timmerman.");
-gchar *s = N_("gFootprintWizard generates footprint files for pcb.\n"
+gchar *s = N_("pcb Footprint Wizard generates footprint files for pcb.\n"
               "");
 gchar *s = N_("GPL v2");
 gchar *s = N_("translator-credits");
