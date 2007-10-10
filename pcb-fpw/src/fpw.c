@@ -148,6 +148,7 @@ main
         if (strcmp (footprint_units, "mm")) multiplier = (1000 / 25.4) * 100;
         /* Pass control to libfpw */
         write_footprint ();
+        /* If we get here, control is passed back from libfpw */
         fprintf (stderr, "Footprint %s is written successful.", footprint_name);
 }
 
