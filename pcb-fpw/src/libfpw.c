@@ -1,10 +1,11 @@
 /*!
  * \file libfpw.c
  * \author Copyright (C) 2007 by Bert Timmerman <bert.timmerman@xs4all.nl>
- * \brief libfpw contains functions for fpw (FootPrintWizard) which is a
- * program for the creation of footprint files used by the pcb layout
- * application (see http://pcb.sourgeforge.net) for the placement of parts in
- * a pcb layout.
+ * \brief libfpw contains functions for fpw (FootPrintWizard).
+ *
+ * fpw (FootPrintWizard) is a program for the creation of footprint files
+ * used by the pcb layout application (see http://pcb.sourgeforge.net) for
+ * the placement of parts in a pcb layout.
  */
 
 
@@ -44,7 +45,25 @@
 #define UPPER_RIGHT 8
 
 /* Thin lines on silkscreen are not printed in the real world */
-#define THIN_DRAW 1
+#define THIN_DRAW 1 /*!< Draw with thin lines. */
+
+/* Object flag values */
+#define PIN 0x0001 /*!< If set, this object is a pin.\n */
+                   /*!< This flag is for internal use only. */
+#define VIA 0x0002 /*!< Likewise, for vias. */
+#define HOLE 0x0008 /*!< For pins and vias, this flag means that the pin or via is a hole without a copper annulus. */
+#define PININPOLY 0x0010 /*!< For pins and pads, this flag is used internally to indicate that the pin or pad overlaps a polygon on some layer. */
+#define SHOWNAME 0x0020 /*!< For elements, when set the names of pins are shown. */
+#define ONSOLDER 0x0080 /*!< For elements and pads, indicates that they are on the solder side. */
+#define SQUARE 0x0100 /*!< For pins and pads, indicates a square (vs round) pin/pad. */
+#define WARN 0x0200 /*!< For pins, vias, and pads, set to indicate a warning. */
+#define OCTAGON 0x0800 /*!< Draw pins and vias as octagons. */
+#define LOCK 0x2000 /*!< Set for locked objects. */
+#define EDGE2 0x4000 /*!< For pads, indicates that the second point is closer to the edge.\n */
+                     /*!< For pins, indicates that the pin is closer to a horizontal edge and thus pinout text should be vertical. */
+#define MARKER 0x8000 /*!< Marker used internally to avoid revisiting an object. */
+#define NOPASTE 0x10000 /*!< For pads, set to prevent a solderpaste stencil opening for the pad.\n */
+                        /*!< Primarily used for pads used as fiducials. */
 
 gchar *footprint_filename = NULL; /*!< filename of footprint file */
 gchar *footprint_name = NULL; /*!< name of footprint */
@@ -84,46 +103,44 @@ gdouble d_pad; /*!< diameter of pin pad. */
 
 
 /*!
- * \brief Write a rectangular courtyard for any given footprint.
+ * \brief Write a rectangular pad for any given footprint.
  *
- * Function description:
- * Write a rectangular courtyard for any given footprint.
- * If courtyard_line_width is 0.0 no courtyard is drawn.
- * If courtyard_line_width is < 0.0 a courtyard with a linewidth of 1/100 of
- * a mil is drawn (#define THIN_DRAW 1).
+ * Write a rectangular pad for any given footprint.
  */
 int
 write_rectangular_pad
 (
         FILE *fp, /*!< file pointer */
         gint pad_number, /*!< pad number */
-        gdouble x0,
-        gdouble y0,
-        gdouble x1,
-        gdouble y1,
-        gdouble width,
-        gdouble clearance,
-        gdouble solder_mask_clearance,
-        gint flags
+        gchar pad_name, /*!< pad name */
+        gdouble x0, /*!< x0 coordinate */
+        gdouble y0, /*!< y0-coordinate */
+        gdouble x1, /*!< x1 coordinate */
+        gdouble y1, /*!< y1-coordinate */
+        gdouble width, /*!< width of the pad */
+        gdouble clearance, /*!< clearance */
+        gdouble solder_mask_clearance, /*!< solder mask clearance */
+        gint flags /*!< flags */
 )
 {
-                        fprintf (fp,
-                                "\tPad[%d %d %d %d %d %d %d \"\" \"1\" 0x00000100]\n",
-                                (int) x0, /* x0 coordinate */
-                                (int) y0, /* y0-coordinate */
-                                (int) x1, /* x1 coordinate */
-                                (int) y1, /* y1-coordinate */
-                                (int) width, /* width of the pad */
-                                (int) clearance, /* clearance */
-                                (int) solder_mask_clearance /* solder mask clearance */
-                                );
+        fprintf (fp,
+                "\tPad[%d %d %d %d %d %d %d \"%s\" \"%d\" 0x00000100]\n",
+                (int) x0,
+                (int) y0,
+                (int) x1,
+                (int) y1,
+                (int) width,
+                (int) clearance,
+                (int) solder_mask_clearance,
+                pad_name,
+                pad_number
+                );
 }
 
 
 /*!
  * \brief Write a rectangular courtyard for any given footprint.
  *
- * Function description:
  * Write a rectangular courtyard for any given footprint.
  * If courtyard_line_width is 0.0 no courtyard is drawn.
  * If courtyard_line_width is < 0.0 a courtyard with a linewidth of 1/100 of
@@ -140,7 +157,7 @@ write_rectangular_courtyard
         gdouble courtyard_line_width /*!< courtyard line width */
 )
 {
-        /* If courtyard_line_width is 0.0 no courtyard is drawn */
+        /* If courtyard_line_width is 0.0 do not draw a courtyard */
         if (courtyard_line_width == 0.0)
         {
                 return;
@@ -193,8 +210,6 @@ write_rectangular_courtyard
  * \brief Write a basic SMT footprint with two pads for a resistor or
  * capacitor.
  *
- * Function description:
- *
  */
 int
 write_smt_footprint ()
@@ -233,7 +248,7 @@ write_smt_footprint ()
                         );
                 /* Write encapsulated element entities */
                 fprintf (fp, "(\n");
-                if (x > y) /* write pads parallel to x-axis */
+                if (x > y) /* Write pads parallel to x-axis */
                 {
                         fprintf (stdout, "Pads are drawn parallel on X-axis.\n");
                         /* Pad #1 */
@@ -283,6 +298,11 @@ write_smt_footprint ()
                 }
                 courtyard_line_width = multiplier * courtyard_line_width;
                 write_rectangular_courtyard (fp, xmin, ymin, xmax, ymax, courtyard_line_width);
+                /* Attributes in the form "Attribute("name" "value")" */
+                fprintf (fp, "\tAttribute(\"author\" \"Bert Timmerman\")\n",
+                fprintf (fp, "\tAttribute(\"dist-license\" \"GPL\")\n",
+                fprintf (fp, "\tAttribute(\"use-license\" \"unlimited\")\n",
+                fprintf (fp, "\tAttribute(\"xxx\" \"yyy\")\n",
                 fprintf (fp, "\n");
                 fprintf (fp, ")\n");
         }
@@ -292,8 +312,6 @@ write_smt_footprint ()
 
 /*!
  * \brief Write a footprint based on the global variables.
- *
- * Function description:
  *
  */
 int
