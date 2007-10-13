@@ -49,9 +49,9 @@ static void
 print_usage ()
 {
         fprintf (stderr, "\nfpw usage:\n");
-        fprintf (stderr, "fpw -h                             : prints this help message and exits.\n");
-        fprintf (stderr, "fpw -V                             : prints the version and exits.\n");
-        fprintf (stderr, "fpw -f fpw_filename -o footprint_name  : prints the version and exits.\n\n");
+        fprintf (stderr, "fpw -h   : prints this help message and exits.\n");
+        fprintf (stderr, "fpw -V   : prints the version and exits.\n");
+        fprintf (stderr, "fpw -f fpw_filename -o footprint_name   : prints the version and exits.\n\n");
         exit (0);
 }
 
