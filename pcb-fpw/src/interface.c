@@ -77,6 +77,7 @@ create_pcb_gfpw (void)
   GtkWidget *pad_solder_mask_clearance_entry;
   GtkWidget *number_of_columns_entry;
   GtkWidget *thermal_solder_mask_clearance_entry;
+  GtkWidget *thermal_nopaste_checkbutton;
   GtkWidget *pins_pads_label;
   GtkWidget *silkscreen_courtyard_frame;
   GtkWidget *pads_pins_alignment;
@@ -458,11 +459,11 @@ create_pcb_gfpw (void)
                     (GtkAttachOptions) (GTK_FILL), 10, 0);
   gtk_combo_box_append_text (GTK_COMBO_BOX (pad_shape_combobox_entry), _("round pad"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (pad_shape_combobox_entry), _("rectangular pad"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (pad_shape_combobox_entry), _("rectangular pad, rounded corners"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (pad_shape_combobox_entry), _("octagonal pad"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (pad_shape_combobox_entry), _("rectangular pin"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (pad_shape_combobox_entry), _("rectangular pin, rounded corners"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (pad_shape_combobox_entry), _("round pin"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (pad_shape_combobox_entry), _("round pin, elongated"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (pad_shape_combobox_entry), _("octagonal pin"));
 
   number_1_position_combobox_entry = gtk_combo_box_entry_new_text ();
   gtk_widget_set_name (number_1_position_combobox_entry, "number_1_position_combobox_entry");
@@ -500,6 +501,13 @@ create_pcb_gfpw (void)
                     (GtkAttachOptions) (0), 10, 0);
   gtk_widget_set_size_request (thermal_solder_mask_clearance_entry, 100, -1);
   gtk_entry_set_invisible_char (GTK_ENTRY (thermal_solder_mask_clearance_entry), 8226);
+
+  thermal_nopaste_checkbutton = gtk_check_button_new_with_mnemonic (_("No paste"));
+  gtk_widget_set_name (thermal_nopaste_checkbutton, "thermal_nopaste_checkbutton");
+  gtk_widget_show (thermal_nopaste_checkbutton);
+  gtk_table_attach (GTK_TABLE (number_table), thermal_nopaste_checkbutton, 1, 2, 4, 5,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
 
   pins_pads_label = gtk_label_new (_("Pins/Pads"));
   gtk_widget_set_name (pins_pads_label, "pins_pads_label");
@@ -904,6 +912,9 @@ create_pcb_gfpw (void)
   g_signal_connect ((gpointer) thermal_solder_mask_clearance_entry, "changed",
                     G_CALLBACK (on_thermal_solder_mask_clearance_entry_changed),
                     NULL);
+  g_signal_connect ((gpointer) thermal_nopaste_checkbutton, "toggled",
+                    G_CALLBACK (on_thermal_nopaste_checkbutton_toggled),
+                    NULL);
   g_signal_connect ((gpointer) vertical_silkscreen_entry, "changed",
                     G_CALLBACK (on_vertical_silkscreen_entry_changed),
                     NULL);
@@ -1016,6 +1027,7 @@ create_pcb_gfpw (void)
   GLADE_HOOKUP_OBJECT (pcb_gfpw, pad_solder_mask_clearance_entry, "pad_solder_mask_clearance_entry");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, number_of_columns_entry, "number_of_columns_entry");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_solder_mask_clearance_entry, "thermal_solder_mask_clearance_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_nopaste_checkbutton, "thermal_nopaste_checkbutton");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, pins_pads_label, "pins_pads_label");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, silkscreen_courtyard_frame, "silkscreen_courtyard_frame");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, pads_pins_alignment, "pads_pins_alignment");
