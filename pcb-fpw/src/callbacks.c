@@ -1,7 +1,7 @@
 /*!
  * \file callbacks.c
  * \author Copyright (C) 2007 by Bert Timmerman <bert.timmerman@xs4all.nl>
- * \brief Callback functions for the gFootprintWizard.
+ * \brief Callback functions for the pcb footprintwizard.
  */
 
 
@@ -666,11 +666,26 @@ on_preview_button_clicked              (GtkButton       *button,
 }
 
 
+/*!
+ * \brief The "Save" button is clicked, write the footprint to file.
+ *
+ * The "Save" button is clicked, make preparations to write the footprint to
+ * file.
+ * - write the global variables to a footprintwizard file, with a .fpw
+ * suffix, for debugging and other purposes.
+ * - invoke the write_footprint() function to write the actual footprint
+ * file.
+ * When this wizard becomes really quit popular, we can write a function to
+ * read from these files as to allow for editing or any other purpose you can
+ * think of.
+ */
 void
 on_save_button_clicked                 (GtkButton       *button,
                                         gpointer         user_data)
 {
-
+        write_footprintwizard_file ();
+        write_footprint ();
+        fprintf (stderr, "Footprint %s is written successful.", footprint_name);
 }
 
 
@@ -748,6 +763,21 @@ on_thermal_length_entry_changed        (GtkEditable     *editable,
 
         X_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         thermal_x = g_ascii_strtod (X_string, &leftovers);
+}
+
+
+/*!
+ * \brief The thermal pad checkbutton is clicked,
+ * get active state and store in the thermal_nopaste variable.
+ *
+ * The thermal pad checkbutton is clicked.
+ * - store the state of the checkbutton in the thermal_nopaste variable (global).
+ */
+void
+on_thermal_nopaste_checkbutton_toggled (GtkToggleButton *togglebutton,
+                                        gpointer         user_data)
+{
+        thermal_nopaste = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
 }
 
 
