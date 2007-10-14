@@ -1,3 +1,10 @@
+/*!
+ * \file callbacks.h
+ * \author Copyright (C) 2007 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \brief Callback functions header file for the pcb footprintwizard.
+ */
+
+
 #include <gtk/gtk.h>
 
 
@@ -166,4 +173,8 @@ on_save_button_clicked                 (GtkButton       *button,
 
 void
 on_preview_button_clicked              (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_thermal_nopaste_checkbutton_toggled (GtkToggleButton *togglebutton,
                                         gpointer         user_data);
