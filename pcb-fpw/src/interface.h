@@ -4,3 +4,4 @@
 
 GtkWidget* create_pcb_gfpw (void);
 GtkWidget* create_about_dialog (void);
+GtkWidget* create_pcb_gfpw_with_tabs (void);
