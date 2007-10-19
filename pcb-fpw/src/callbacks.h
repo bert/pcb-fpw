@@ -178,3 +178,11 @@ on_preview_button_clicked              (GtkButton       *button,
 void
 on_thermal_nopaste_checkbutton_toggled (GtkToggleButton *togglebutton,
                                         gpointer         user_data);
+
+void
+on_refresh_button_clicked              (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_pcb_gfpw_destroy                    (GtkObject       *object,
+                                        gpointer         user_data);
