@@ -346,7 +346,6 @@ void
 on_close_button_clicked                (GtkButton       *button,
                                         gpointer         user_data)
 {
-        /* Do we really want to quit ? */
         gtk_main_quit();
 }
 
@@ -411,18 +410,6 @@ on_footprint_units_entry_changed       (GtkComboBox     *combobox,
                                         gpointer         user_data)
 {
         footprint_units = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
-}
-
-
-/*!
- * \brief The top-right "X" is clicked, close the application.
- *
- */
-void
-on_gFootprintWizard_destroy            (GtkObject       *object,
-                                        gpointer         user_data)
-{
-        gtk_main_quit();
 }
 
 
@@ -616,6 +603,18 @@ on_pad_solder_mask_clearance_entry_changed
 
 
 /*!
+ * \brief The top-right "X" is clicked, close the application.
+ *
+ */
+void
+on_pcb_gfpw_destroy                    (GtkObject       *object,
+                                        gpointer         user_data)
+{
+        gtk_main_quit();
+}
+
+
+/*!
  * \brief The width of the pads (Y) entry is changed, store in y.
  *
  * The width of the pads (Y) entry is changed.
@@ -655,16 +654,16 @@ on_pin_drill_diameter_entry_changed    (GtkEditable     *editable,
 
 
 /*!
- * \brief The "Preview" button is clicked, create a pixmap of the footprint
- * and reload the preview image.
+ * \brief The "Refresh" button is clicked, create a pixmap of the footprint
+ * and/or reload the preview image.
  *
  */
 void
-on_preview_button_clicked              (GtkButton       *button,
+on_refresh_button_clicked              (GtkButton       *button,
                                         gpointer         user_data)
 {
-}
 
+}
 
 /*!
  * \brief The "Save" button is clicked, write the footprint to file.
@@ -683,6 +682,42 @@ void
 on_save_button_clicked                 (GtkButton       *button,
                                         gpointer         user_data)
 {
+        /* Determine a filename for the footprintwizard file */
+        fpw_filename = g_strdup (footprint_name);
+        if (g_str_has_suffix (fpw_filename, fp_suffix))
+        {
+                /* Filename has the .fp suffix already,
+                 * only add a "w" here, else we would end up with a filename
+                 * like "footprint_name.fp.fpw" */
+                fpw_filename = g_strconcat (fpw_filename, "w", NULL);
+        }
+        else
+        {
+                if (g_str_has_suffix (fpw_filename, fpw_suffix))
+                {
+                        /* Filename has the .fpw suffix,
+                         * do nothing here */
+                }
+                else
+                {
+                        /* Filename has no (.fpw) suffix,
+                         * add a .fpw suffix */
+                        fpw_filename = g_strconcat (fpw_filename, ".fpw", NULL);
+                }
+        }
+        /* Determine a filename for the actual footprint file */
+        footprint_filename = g_strdup (footprint_name);
+        if (g_str_has_suffix (footprint_filename, fp_suffix))
+        {
+                /* Footprintname has the .fp suffix,
+                 * do nothing here */
+        }
+        else
+        {
+                /* Filename has no .fp suffix,
+                 * add a .fp suffix */
+                footprint_filename = g_strconcat (footprint_filename, ".fp", NULL);
+        }
         write_footprintwizard_file ();
         write_footprint ();
         fprintf (stderr, "Footprint %s is written successful.", footprint_name);
