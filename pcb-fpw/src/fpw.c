@@ -36,6 +36,9 @@ print_version ()
 {
         fprintf (stderr, "\n%s version %s\n", program_name, FPW_VERSION);
         fprintf (stderr, "(C) 2007 by Bert Timmerman.\n\n");
+        fprintf (stderr, "This is free software; see the source for copying conditions.\n");
+        fprintf (stderr, "There is NO warranty; not even for MERCHANTABILITY\n");
+        fprintf (stderr, "or FITNESS FOR A PARTICULAR PURPOSE.\n\n");
         exit (EXIT_SUCCESS);
 }
 
@@ -49,10 +52,9 @@ print_version ()
 static void
 print_usage ()
 {
-        fprintf (stderr, "\n%s usage:", program_name);
-        fprintf (stderr, "\n----------\n");
+        fprintf (stderr, "\n%s usage:\n", program_name);
         fprintf (stderr, "%s -h   : prints this help message and exits.\n\n", program_name);
-        fprintf (stderr, "%s -V   : prints the version and exits.\n\n", program_name);
+        fprintf (stderr, "%s -V   : prints the version information and exits.\n\n", program_name);
         fprintf (stderr, "%s -f fpw_filename -o footprint_name   : reads the template file specified after -f and\n", program_name);
         fprintf (stderr, "                                          writes a footprint to the file specified after -o.\n\n");
         exit (EXIT_SUCCESS);

@@ -38,6 +38,8 @@ enum packages
         SIP, /*!< Single Inline Package. */
         SO, /*!< Small Outline package. */
         TO, /*!< Transistor Outline package. */
+        TO92, /*!< Transistor Outline package. */
+        TO220, /*!< Transistor Outline package. */
         NUMBER_OF_PACKAGES /*!< Number of package types. */
 };
 
@@ -98,6 +100,7 @@ gdouble multiplier; /*!< multiplier to convert to mils/100. */
 gdouble package_body_length;
 gdouble package_body_width;
 gdouble package_height;
+gboolean package_is_radial;
 gchar *footprint_author;
 gchar *footprint_dist_license;
 gchar *footprint_use_license;
@@ -608,6 +611,52 @@ write_footprint_smt ()
 
 
 /*!
+ * \brief Write a TO92 footprint for a transistor package.
+ */
+int
+write_footprint_smt ()
+{
+        FILE *fp;
+        gdouble xmax;
+        gdouble xmin;
+        gdouble ymax;
+        gdouble ymin;
+
+        if (fp = g_fopen (footprint_filename, "w"))
+        {
+                /* Determine extreme (courtyard) dimensions */
+                xmax = multiplier * (package_body_length);
+                if (multiplier * (v1 / 2) > xmax) xmax = multiplier * (v1 / 2);
+                xmin = multiplier * ((-package_body_length);
+                if (multiplier * (-v1 / 2) < xmin) xmin = multiplier * (-v1 / 2);
+                ymax = multiplier * (y / 2 + solder_mask_clearance);
+                if (multiplier * (v2 / 2) > ymax) ymax = multiplier * (v2 / 2);
+                ymin = multiplier * ((-y / 2) - solder_mask_clearance);
+                if (multiplier * (-v2 / 2) < ymin) ymin = multiplier * (-v2 / 2);
+                /* Write header to file */
+                fprintf (fp, "Element[0x00000000 \"%s\" \"?\" \"\" %d %d 0 0 0 100 0x00000000]\n",
+                        footprint_name,
+                        (int) (xmin + multiplier * 20),
+                        (int) (ymax + multiplier * 20)
+                        );
+                /* Write encapsulated element entities */
+                fprintf (fp, "(\n");
+
+                /* Write attributes */
+                write_attributes(fp);
+                fprintf (fp, "\n");
+                fprintf (fp, ")\n");
+        }
+        else
+        {
+                fprintf (stderr, "Error: could not open footprint file %s.\n", footprint_filename);
+        }
+        close (fp);
+        return (EXIT_SUCCESS);
+}
+
+
+/*!
  * \brief Write a footprintwizard file based on the current global variables.
  *
  */
@@ -702,6 +751,7 @@ write_footprint()
         if (strcmp (footprint_type, "RESC")) package_type = RESC;
         if (strcmp (footprint_type, "SIP")) package_type = SIP;
         if (strcmp (footprint_type, "SO")) package_type = SO;
+        if (strcmp (footprint_type, "TO92")) package_type = SO;
         /* Depending on the package type write that type of footprint file */
         switch (package_type)
         {
