@@ -1069,7 +1069,7 @@ mm</property>
 		      </child>
 
 		      <child>
-			<widget class="GtkComboBoxEntry" id="number_1_position_combobox_entry">
+			<widget class="GtkComboBoxEntry" id="number_1_position_entry">
 			  <property name="visible">True</property>
 			  <property name="items" translatable="yes">top row, left-most pin
 top row, center pin
@@ -1078,7 +1078,7 @@ bottom row, left-most pin
 			  <property name="add_tearoffs">False</property>
 			  <property name="has_frame">True</property>
 			  <property name="focus_on_click">True</property>
-			  <signal name="changed" handler="on_number_1_position_combobox_entry_changed" last_modification_time="Mon, 24 Sep 2007 20:35:24 GMT"/>
+			  <signal name="changed" handler="on_number_1_position_entry_changed" last_modification_time="Sun, 21 Oct 2007 08:01:25 GMT"/>
 			</widget>
 			<packing>
 			  <property name="left_attach">1</property>
@@ -1141,7 +1141,7 @@ bottom row, left-most pin
 		      </child>
 
 		      <child>
-			<widget class="GtkComboBoxEntry" id="pad_shape_combobox_entry">
+			<widget class="GtkComboBoxEntry" id="pad_shape_entry">
 			  <property name="visible">True</property>
 			  <property name="items" translatable="yes">round pad
 rectangular pad
@@ -1153,7 +1153,7 @@ octagonal pin</property>
 			  <property name="add_tearoffs">False</property>
 			  <property name="has_frame">True</property>
 			  <property name="focus_on_click">True</property>
-			  <signal name="changed" handler="on_pad_shape_combobox_entry_changed" last_modification_time="Mon, 01 Oct 2007 19:07:46 GMT"/>
+			  <signal name="changed" handler="on_pad_shape_entry_changed" last_modification_time="Sun, 21 Oct 2007 08:01:51 GMT"/>
 			</widget>
 			<packing>
 			  <property name="left_attach">5</property>
@@ -2240,7 +2240,7 @@ octagonal pin</property>
 	  <property name="spacing">0</property>
 
 	  <child>
-	    <widget class="GtkNotebook" id="notebook1">
+	    <widget class="GtkNotebook" id="notebook">
 	      <property name="border_width">10</property>
 	      <property name="visible">True</property>
 	      <property name="can_focus">True</property>
@@ -2345,7 +2345,7 @@ octagonal pin</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkEntry" id="entry15">
+				<widget class="GtkEntry" id="footprint_author_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Type your name here</property>
 				  <property name="can_focus">True</property>
@@ -2356,6 +2356,7 @@ octagonal pin</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_footprint_author_entry_changed" last_modification_time="Fri, 19 Oct 2007 17:05:46 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -2367,7 +2368,7 @@ octagonal pin</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkEntry" id="entry16">
+				<widget class="GtkEntry" id="footprint_dist_license_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">License under which you distribute the file</property>
 				  <property name="can_focus">True</property>
@@ -2378,6 +2379,7 @@ octagonal pin</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_footprint_dist_license_entry_changed" last_modification_time="Fri, 19 Oct 2007 17:07:32 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -2389,7 +2391,7 @@ octagonal pin</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkEntry" id="entry17">
+				<widget class="GtkEntry" id="footprint_use_license_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Allowable usage</property>
 				  <property name="can_focus">True</property>
@@ -2400,6 +2402,7 @@ octagonal pin</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_footprint_use_license_entry_changed" last_modification_time="Fri, 19 Oct 2007 17:07:52 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -2467,7 +2470,7 @@ octagonal pin</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkComboBoxEntry" id="comboboxentry5">
+				<widget class="GtkComboBoxEntry" id="footprint_status_entry">
 				  <property name="visible">True</property>
 				  <property name="items" translatable="yes">Experimental
 Private
@@ -2476,6 +2479,7 @@ Confirmed by peers</property>
 				  <property name="add_tearoffs">False</property>
 				  <property name="has_frame">True</property>
 				  <property name="focus_on_click">True</property>
+				  <signal name="changed" handler="on_footprint_status_entry_changed" last_modification_time="Fri, 19 Oct 2007 17:07:07 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -2546,7 +2550,7 @@ Confirmed by peers</property>
 			  <child>
 			    <widget class="GtkTable" id="table19">
 			      <property name="visible">True</property>
-			      <property name="n_rows">7</property>
+			      <property name="n_rows">8</property>
 			      <property name="n_columns">2</property>
 			      <property name="homogeneous">False</property>
 			      <property name="row_spacing">0</property>
@@ -2581,9 +2585,9 @@ Confirmed by peers</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkEntry" id="entry3">
+				<widget class="GtkEntry" id="footprint_name_entry">
 				  <property name="visible">True</property>
-				  <property name="tooltip" translatable="yes">Put the name of the footprint here, no suffix please</property>
+				  <property name="tooltip" translatable="yes">Type the name of the footprint here, no suffix please</property>
 				  <property name="can_focus">True</property>
 				  <property name="editable">True</property>
 				  <property name="visibility">True</property>
@@ -2592,6 +2596,7 @@ Confirmed by peers</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_footprint_name_entry_changed" last_modification_time="Fri, 19 Oct 2007 08:45:17 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -2659,7 +2664,7 @@ Confirmed by peers</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkComboBoxEntry" id="comboboxentry1">
+				<widget class="GtkComboBoxEntry" id="footprint_type_entry">
 				  <property name="visible">True</property>
 				  <property name="items" translatable="yes">BGA
 CAPC
@@ -2670,10 +2675,13 @@ INDC
 INDM
 RESC
 RESM
+TO92
+TO220
 </property>
 				  <property name="add_tearoffs">False</property>
 				  <property name="has_frame">True</property>
 				  <property name="focus_on_click">True</property>
+				  <signal name="changed" handler="on_footprint_type_entry_changed" last_modification_time="Fri, 19 Oct 2007 08:47:19 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -2686,7 +2694,7 @@ RESM
 			      </child>
 
 			      <child>
-				<widget class="GtkComboBoxEntry" id="comboboxentry2">
+				<widget class="GtkComboBoxEntry" id="footprint_type_entry">
 				  <property name="visible">True</property>
 				  <property name="items" translatable="yes">mil
 mil/100
@@ -2694,6 +2702,7 @@ mm</property>
 				  <property name="add_tearoffs">False</property>
 				  <property name="has_frame">True</property>
 				  <property name="focus_on_click">True</property>
+				  <signal name="changed" handler="on_footprint_type_entry_changed" last_modification_time="Fri, 19 Oct 2007 08:47:12 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -2706,56 +2715,24 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkLabel" id="label29">
+				<widget class="GtkCheckButton" id="package_is_radial_checkbutton">
 				  <property name="visible">True</property>
-				  <property name="label" translatable="yes">Body length (X)</property>
-				  <property name="use_underline">False</property>
-				  <property name="use_markup">False</property>
-				  <property name="justify">GTK_JUSTIFY_LEFT</property>
-				  <property name="wrap">False</property>
-				  <property name="selectable">False</property>
-				  <property name="xalign">0</property>
-				  <property name="yalign">0.5</property>
-				  <property name="xpad">0</property>
-				  <property name="ypad">0</property>
-				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
-				  <property name="width_chars">-1</property>
-				  <property name="single_line_mode">False</property>
-				  <property name="angle">0</property>
+				  <property name="tooltip" translatable="yes">Check for a radial package</property>
+				  <property name="can_focus">True</property>
+				  <property name="label" translatable="yes">Radial package </property>
+				  <property name="use_underline">True</property>
+				  <property name="relief">GTK_RELIEF_NORMAL</property>
+				  <property name="focus_on_click">True</property>
+				  <property name="active">False</property>
+				  <property name="inconsistent">False</property>
+				  <property name="draw_indicator">True</property>
+				  <signal name="toggled" handler="on_package_is_radial_checkbutton_toggled" last_modification_time="Fri, 19 Oct 2007 17:11:26 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">0</property>
 				  <property name="right_attach">1</property>
-				  <property name="top_attach">3</property>
-				  <property name="bottom_attach">4</property>
-				  <property name="x_options">fill</property>
-				  <property name="y_options"></property>
-				</packing>
-			      </child>
-
-			      <child>
-				<widget class="GtkLabel" id="label30">
-				  <property name="visible">True</property>
-				  <property name="label" translatable="yes">Body width (Y)</property>
-				  <property name="use_underline">False</property>
-				  <property name="use_markup">False</property>
-				  <property name="justify">GTK_JUSTIFY_LEFT</property>
-				  <property name="wrap">False</property>
-				  <property name="selectable">False</property>
-				  <property name="xalign">0</property>
-				  <property name="yalign">0.5</property>
-				  <property name="xpad">0</property>
-				  <property name="ypad">0</property>
-				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
-				  <property name="width_chars">-1</property>
-				  <property name="single_line_mode">False</property>
-				  <property name="angle">0</property>
-				</widget>
-				<packing>
-				  <property name="left_attach">0</property>
-				  <property name="right_attach">1</property>
-				  <property name="top_attach">4</property>
-				  <property name="bottom_attach">5</property>
+				  <property name="top_attach">7</property>
+				  <property name="bottom_attach">8</property>
 				  <property name="x_options">fill</property>
 				  <property name="y_options"></property>
 				</packing>
@@ -2782,6 +2759,34 @@ mm</property>
 				<packing>
 				  <property name="left_attach">0</property>
 				  <property name="right_attach">1</property>
+				  <property name="top_attach">6</property>
+				  <property name="bottom_attach">7</property>
+				  <property name="x_options">fill</property>
+				  <property name="y_options"></property>
+				</packing>
+			      </child>
+
+			      <child>
+				<widget class="GtkLabel" id="label30">
+				  <property name="visible">True</property>
+				  <property name="label" translatable="yes">Body width (Y)</property>
+				  <property name="use_underline">False</property>
+				  <property name="use_markup">False</property>
+				  <property name="justify">GTK_JUSTIFY_LEFT</property>
+				  <property name="wrap">False</property>
+				  <property name="selectable">False</property>
+				  <property name="xalign">0</property>
+				  <property name="yalign">0.5</property>
+				  <property name="xpad">0</property>
+				  <property name="ypad">0</property>
+				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+				  <property name="width_chars">-1</property>
+				  <property name="single_line_mode">False</property>
+				  <property name="angle">0</property>
+				</widget>
+				<packing>
+				  <property name="left_attach">0</property>
+				  <property name="right_attach">1</property>
 				  <property name="top_attach">5</property>
 				  <property name="bottom_attach">6</property>
 				  <property name="x_options">fill</property>
@@ -2790,9 +2795,134 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkEntry" id="entry18">
+				<widget class="GtkLabel" id="label29">
 				  <property name="visible">True</property>
-				  <property name="tooltip" translatable="yes">Length dimension of package body</property>
+				  <property name="label" translatable="yes">Body length (X)</property>
+				  <property name="use_underline">False</property>
+				  <property name="use_markup">False</property>
+				  <property name="justify">GTK_JUSTIFY_LEFT</property>
+				  <property name="wrap">False</property>
+				  <property name="selectable">False</property>
+				  <property name="xalign">0</property>
+				  <property name="yalign">0.5</property>
+				  <property name="xpad">0</property>
+				  <property name="ypad">0</property>
+				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+				  <property name="width_chars">-1</property>
+				  <property name="single_line_mode">False</property>
+				  <property name="angle">0</property>
+				</widget>
+				<packing>
+				  <property name="left_attach">0</property>
+				  <property name="right_attach">1</property>
+				  <property name="top_attach">4</property>
+				  <property name="bottom_attach">5</property>
+				  <property name="x_options">fill</property>
+				  <property name="y_options"></property>
+				</packing>
+			      </child>
+
+			      <child>
+				<widget class="GtkEntry" id="package_body_height_entry">
+				  <property name="visible">True</property>
+				  <property name="tooltip" translatable="yes">Type the height dimension of the package body here</property>
+				  <property name="can_focus">True</property>
+				  <property name="editable">True</property>
+				  <property name="visibility">True</property>
+				  <property name="max_length">0</property>
+				  <property name="text" translatable="yes"></property>
+				  <property name="has_frame">True</property>
+				  <property name="invisible_char">•</property>
+				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_package_body_height_entry_changed" last_modification_time="Fri, 19 Oct 2007 08:50:42 GMT"/>
+				</widget>
+				<packing>
+				  <property name="left_attach">1</property>
+				  <property name="right_attach">2</property>
+				  <property name="top_attach">6</property>
+				  <property name="bottom_attach">7</property>
+				  <property name="y_options"></property>
+				</packing>
+			      </child>
+
+			      <child>
+				<widget class="GtkEntry" id="package_body_width_entry">
+				  <property name="visible">True</property>
+				  <property name="tooltip" translatable="yes">Type the width dimension of the package body here</property>
+				  <property name="can_focus">True</property>
+				  <property name="editable">True</property>
+				  <property name="visibility">True</property>
+				  <property name="max_length">0</property>
+				  <property name="text" translatable="yes"></property>
+				  <property name="has_frame">True</property>
+				  <property name="invisible_char">•</property>
+				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_package_body_width_entry_changed" last_modification_time="Fri, 19 Oct 2007 08:50:01 GMT"/>
+				</widget>
+				<packing>
+				  <property name="left_attach">1</property>
+				  <property name="right_attach">2</property>
+				  <property name="top_attach">5</property>
+				  <property name="bottom_attach">6</property>
+				  <property name="y_options"></property>
+				</packing>
+			      </child>
+
+			      <child>
+				<widget class="GtkEntry" id="package_body_length_entry">
+				  <property name="visible">True</property>
+				  <property name="tooltip" translatable="yes">Type the length dimension of the package body here</property>
+				  <property name="can_focus">True</property>
+				  <property name="editable">True</property>
+				  <property name="visibility">True</property>
+				  <property name="max_length">0</property>
+				  <property name="text" translatable="yes"></property>
+				  <property name="has_frame">True</property>
+				  <property name="invisible_char">•</property>
+				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_package_body_length_entry_changed" last_modification_time="Fri, 19 Oct 2007 08:49:33 GMT"/>
+				</widget>
+				<packing>
+				  <property name="left_attach">1</property>
+				  <property name="right_attach">2</property>
+				  <property name="top_attach">4</property>
+				  <property name="bottom_attach">5</property>
+				  <property name="y_options"></property>
+				</packing>
+			      </child>
+
+			      <child>
+				<widget class="GtkLabel" id="label54">
+				  <property name="visible">True</property>
+				  <property name="label" translatable="yes">Value</property>
+				  <property name="use_underline">False</property>
+				  <property name="use_markup">False</property>
+				  <property name="justify">GTK_JUSTIFY_LEFT</property>
+				  <property name="wrap">False</property>
+				  <property name="selectable">False</property>
+				  <property name="xalign">0</property>
+				  <property name="yalign">0.5</property>
+				  <property name="xpad">0</property>
+				  <property name="ypad">0</property>
+				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+				  <property name="width_chars">-1</property>
+				  <property name="single_line_mode">False</property>
+				  <property name="angle">0</property>
+				</widget>
+				<packing>
+				  <property name="left_attach">0</property>
+				  <property name="right_attach">1</property>
+				  <property name="top_attach">3</property>
+				  <property name="bottom_attach">4</property>
+				  <property name="x_options">fill</property>
+				  <property name="y_options"></property>
+				</packing>
+			      </child>
+
+			      <child>
+				<widget class="GtkEntry" id="footprint_value_entry">
+				  <property name="visible">True</property>
+				  <property name="tooltip" translatable="yes">Type the value of the package here</property>
 				  <property name="can_focus">True</property>
 				  <property name="editable">True</property>
 				  <property name="visibility">True</property>
@@ -2807,73 +2937,6 @@ mm</property>
 				  <property name="right_attach">2</property>
 				  <property name="top_attach">3</property>
 				  <property name="bottom_attach">4</property>
-				  <property name="y_options"></property>
-				</packing>
-			      </child>
-
-			      <child>
-				<widget class="GtkEntry" id="entry19">
-				  <property name="visible">True</property>
-				  <property name="tooltip" translatable="yes">Width dimension of package body</property>
-				  <property name="can_focus">True</property>
-				  <property name="editable">True</property>
-				  <property name="visibility">True</property>
-				  <property name="max_length">0</property>
-				  <property name="text" translatable="yes"></property>
-				  <property name="has_frame">True</property>
-				  <property name="invisible_char">•</property>
-				  <property name="activates_default">False</property>
-				</widget>
-				<packing>
-				  <property name="left_attach">1</property>
-				  <property name="right_attach">2</property>
-				  <property name="top_attach">4</property>
-				  <property name="bottom_attach">5</property>
-				  <property name="y_options"></property>
-				</packing>
-			      </child>
-
-			      <child>
-				<widget class="GtkEntry" id="entry20">
-				  <property name="visible">True</property>
-				  <property name="tooltip" translatable="yes">Height dimension of package body</property>
-				  <property name="can_focus">True</property>
-				  <property name="editable">True</property>
-				  <property name="visibility">True</property>
-				  <property name="max_length">0</property>
-				  <property name="text" translatable="yes"></property>
-				  <property name="has_frame">True</property>
-				  <property name="invisible_char">•</property>
-				  <property name="activates_default">False</property>
-				</widget>
-				<packing>
-				  <property name="left_attach">1</property>
-				  <property name="right_attach">2</property>
-				  <property name="top_attach">5</property>
-				  <property name="bottom_attach">6</property>
-				  <property name="y_options"></property>
-				</packing>
-			      </child>
-
-			      <child>
-				<widget class="GtkCheckButton" id="checkbutton10">
-				  <property name="visible">True</property>
-				  <property name="tooltip" translatable="yes">Check for a radial package</property>
-				  <property name="can_focus">True</property>
-				  <property name="label" translatable="yes">Radial package </property>
-				  <property name="use_underline">True</property>
-				  <property name="relief">GTK_RELIEF_NORMAL</property>
-				  <property name="focus_on_click">True</property>
-				  <property name="active">False</property>
-				  <property name="inconsistent">False</property>
-				  <property name="draw_indicator">True</property>
-				</widget>
-				<packing>
-				  <property name="left_attach">0</property>
-				  <property name="right_attach">1</property>
-				  <property name="top_attach">6</property>
-				  <property name="bottom_attach">7</property>
-				  <property name="x_options">fill</property>
 				  <property name="y_options"></property>
 				</packing>
 			      </child>
@@ -2924,7 +2987,7 @@ mm</property>
 	      <child>
 		<widget class="GtkLabel" id="label4">
 		  <property name="visible">True</property>
-		  <property name="label" translatable="yes">Package</property>
+		  <property name="label" translatable="yes">Footprint</property>
 		  <property name="use_underline">False</property>
 		  <property name="use_markup">False</property>
 		  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -3039,7 +3102,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkEntry" id="entry21">
+				<widget class="GtkEntry" id="pad_length_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Length of pads or diameter of pins</property>
 				  <property name="can_focus">True</property>
@@ -3050,6 +3113,7 @@ mm</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_pad_length_entry_changed" last_modification_time="Fri, 19 Oct 2007 17:44:07 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -3061,7 +3125,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkEntry" id="entry22">
+				<widget class="GtkEntry" id="pad_width_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Width of pads</property>
 				  <property name="can_focus">True</property>
@@ -3072,6 +3136,7 @@ mm</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_pad_width_entry_changed" last_modification_time="Fri, 19 Oct 2007 17:44:24 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -3204,7 +3269,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkEntry" id="entry11">
+				<widget class="GtkEntry" id="pad_clearance_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Clearance with polygons</property>
 				  <property name="can_focus">True</property>
@@ -3215,6 +3280,7 @@ mm</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_pad_clearance_entry_changed" last_modification_time="Sun, 21 Oct 2007 12:39:41 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -3226,7 +3292,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkEntry" id="entry12">
+				<widget class="GtkEntry" id="pad_solder_mask_clearance_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Clearance with solder mask</property>
 				  <property name="can_focus">True</property>
@@ -3237,6 +3303,7 @@ mm</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_pad_solder_mask_clearance_entry_changed" last_modification_time="Sun, 21 Oct 2007 12:39:49 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -3313,7 +3380,7 @@ mm</property>
 			      <property name="column_spacing">0</property>
 
 			      <child>
-				<widget class="GtkEntry" id="entry10">
+				<widget class="GtkEntry" id="pad_diameter_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Diameter of drill hole for pins</property>
 				  <property name="can_focus">True</property>
@@ -3324,6 +3391,7 @@ mm</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_pad_diameter_entry_changed" last_modification_time="Sun, 21 Oct 2007 07:57:46 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -3363,7 +3431,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkEntry" id="entry30">
+				<widget class="GtkEntry" id="pin_drill_diameter_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Diameter of drill hole for pins</property>
 				  <property name="can_focus">True</property>
@@ -3374,6 +3442,7 @@ mm</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_pin_drill_diameter_entry_changed" last_modification_time="Sun, 21 Oct 2007 07:57:53 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -3674,7 +3743,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkEntry" id="entry4">
+				<widget class="GtkEntry" id="number_total_pins_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Total number of pins and pads</property>
 				  <property name="can_focus">True</property>
@@ -3685,6 +3754,7 @@ mm</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_number_total_pins_entry_changed" last_modification_time="Fri, 19 Oct 2007 17:27:28 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -3696,7 +3766,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkEntry" id="entry5">
+				<widget class="GtkEntry" id="number_of_rows_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Number of rows</property>
 				  <property name="can_focus">True</property>
@@ -3707,6 +3777,7 @@ mm</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_number_of_rows_entry_changed" last_modification_time="Fri, 19 Oct 2007 17:29:11 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -3718,7 +3789,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkEntry" id="entry6">
+				<widget class="GtkEntry" id="number_of_columns_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Number of columns</property>
 				  <property name="can_focus">True</property>
@@ -3729,6 +3800,7 @@ mm</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_number_of_columns_entry_changed" last_modification_time="Fri, 19 Oct 2007 17:29:34 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -3740,7 +3812,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkEntry" id="entry7">
+				<widget class="GtkEntry" id="E2_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Vertical pin/pad pitch</property>
 				  <property name="can_focus">True</property>
@@ -3751,6 +3823,7 @@ mm</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_E2_entry_changed" last_modification_time="Fri, 19 Oct 2007 17:45:42 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -3762,7 +3835,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkEntry" id="entry8">
+				<widget class="GtkEntry" id="E1_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Horizontal pin/pad pitch</property>
 				  <property name="can_focus">True</property>
@@ -3773,6 +3846,7 @@ mm</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_E1_entry_changed" last_modification_time="Fri, 19 Oct 2007 17:45:53 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -3784,11 +3858,12 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkComboBoxEntry" id="comboboxentry3">
+				<widget class="GtkComboBoxEntry" id="pad_shape_entry">
 				  <property name="visible">True</property>
 				  <property name="add_tearoffs">False</property>
 				  <property name="has_frame">True</property>
 				  <property name="focus_on_click">True</property>
+				  <signal name="changed" handler="on_pad_shape_entry_changed" last_modification_time="Sun, 21 Oct 2007 07:55:12 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -3801,11 +3876,12 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkComboBoxEntry" id="comboboxentry4">
+				<widget class="GtkComboBoxEntry" id="number_1_position_entry">
 				  <property name="visible">True</property>
 				  <property name="add_tearoffs">False</property>
 				  <property name="has_frame">True</property>
 				  <property name="focus_on_click">True</property>
+				  <signal name="changed" handler="on_number_1_position_entry_changed" last_modification_time="Sun, 21 Oct 2007 07:56:31 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -3922,7 +3998,7 @@ mm</property>
 			      <property name="column_spacing">0</property>
 
 			      <child>
-				<widget class="GtkCheckButton" id="checkbutton3">
+				<widget class="GtkCheckButton" id="thermal_checkbutton">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Check for a thermal pad</property>
 				  <property name="can_focus">True</property>
@@ -3933,6 +4009,7 @@ mm</property>
 				  <property name="active">False</property>
 				  <property name="inconsistent">False</property>
 				  <property name="draw_indicator">True</property>
+				  <signal name="toggled" handler="on_thermal_checkbutton_toggled" last_modification_time="Sun, 21 Oct 2007 12:42:22 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">0</property>
@@ -4001,7 +4078,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkEntry" id="entry23">
+				<widget class="GtkEntry" id="thermal_width_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Width of thermal pad</property>
 				  <property name="can_focus">True</property>
@@ -4012,6 +4089,7 @@ mm</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_thermal_width_entry_changed" last_modification_time="Sun, 21 Oct 2007 12:47:34 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -4023,7 +4101,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkEntry" id="entry14">
+				<widget class="GtkEntry" id="thermal_length_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Length of thermal pad</property>
 				  <property name="can_focus">True</property>
@@ -4034,6 +4112,7 @@ mm</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_thermal_length_entry_changed" last_modification_time="Sun, 21 Oct 2007 12:47:04 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -4045,7 +4124,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkCheckButton" id="checkbutton4">
+				<widget class="GtkCheckButton" id="thermal_nopaste_checkbutton">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Check for no paste on pad</property>
 				  <property name="can_focus">True</property>
@@ -4056,7 +4135,7 @@ mm</property>
 				  <property name="active">False</property>
 				  <property name="inconsistent">False</property>
 				  <property name="draw_indicator">True</property>
-				  <signal name="toggled" handler="on_thermal_nopaste_checkbutton_toggled" last_modification_time="Sat, 13 Oct 2007 09:04:29 GMT"/>
+				  <signal name="toggled" handler="on_thermal_nopaste_checkbutton_toggled" last_modification_time="Sun, 21 Oct 2007 12:43:03 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -4173,7 +4252,7 @@ mm</property>
 			      <property name="column_spacing">0</property>
 
 			      <child>
-				<widget class="GtkCheckButton" id="checkbutton7">
+				<widget class="GtkCheckButton" id="courtyard_checkbutton">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Check to draw a courtyard (keepout)</property>
 				  <property name="can_focus">True</property>
@@ -4184,6 +4263,7 @@ mm</property>
 				  <property name="active">False</property>
 				  <property name="inconsistent">False</property>
 				  <property name="draw_indicator">True</property>
+				  <signal name="toggled" handler="on_courtyard_checkbutton_toggled" last_modification_time="Sun, 21 Oct 2007 12:55:12 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">0</property>
@@ -4252,7 +4332,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkEntry" id="entry28">
+				<widget class="GtkEntry" id="horizontal_courtyard_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Length of courtyard</property>
 				  <property name="can_focus">True</property>
@@ -4263,6 +4343,7 @@ mm</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_horizontal_courtyard_entry_changed" last_modification_time="Sun, 21 Oct 2007 12:55:57 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -4274,7 +4355,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkEntry" id="entry26">
+				<widget class="GtkEntry" id="vertical_courtyard_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Width of courtyard</property>
 				  <property name="can_focus">True</property>
@@ -4285,6 +4366,7 @@ mm</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_vertical_courtyard_entry_changed" last_modification_time="Sun, 21 Oct 2007 12:56:21 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -4324,7 +4406,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkEntry" id="entry29">
+				<widget class="GtkEntry" id="courtyard_line_width_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Line width for courtyard</property>
 				  <property name="can_focus">True</property>
@@ -4335,6 +4417,7 @@ mm</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_courtyard_line_width_entry_changed" last_modification_time="Sun, 21 Oct 2007 12:56:47 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -4439,7 +4522,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkEntry" id="entry27">
+				<widget class="GtkEntry" id="silkscreen_line_width_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Line width for silkscreen</property>
 				  <property name="can_focus">True</property>
@@ -4450,6 +4533,7 @@ mm</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_silkscreen_line_width_entry_changed" last_modification_time="Sun, 21 Oct 2007 12:50:49 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -4461,7 +4545,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkCheckButton" id="checkbutton6">
+				<widget class="GtkCheckButton" id="package_outline_checkbutton">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Check to draw package outline</property>
 				  <property name="can_focus">True</property>
@@ -4472,6 +4556,7 @@ mm</property>
 				  <property name="active">False</property>
 				  <property name="inconsistent">False</property>
 				  <property name="draw_indicator">True</property>
+				  <signal name="toggled" handler="on_package_outline_checkbutton_toggled" last_modification_time="Sun, 21 Oct 2007 12:48:24 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">0</property>
@@ -4484,7 +4569,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkCheckButton" id="checkbutton8">
+				<widget class="GtkCheckButton" id="indicate_1_checkbutton">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Check to draw indicator for pin/pad #1</property>
 				  <property name="can_focus">True</property>
@@ -4495,6 +4580,7 @@ mm</property>
 				  <property name="active">False</property>
 				  <property name="inconsistent">False</property>
 				  <property name="draw_indicator">True</property>
+				  <signal name="toggled" handler="on_indicate_1_checkbutton_toggled" last_modification_time="Sun, 21 Oct 2007 12:49:53 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -4657,7 +4743,7 @@ mm</property>
 	  <property name="spacing">0</property>
 
 	  <child>
-	    <widget class="GtkButton" id="button1">
+	    <widget class="GtkButton" id="close_button">
 	      <property name="visible">True</property>
 	      <property name="tooltip" translatable="yes">Click Close button to exit</property>
 	      <property name="can_default">True</property>
@@ -4666,32 +4752,48 @@ mm</property>
 	      <property name="use_stock">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
 	      <property name="focus_on_click">True</property>
+	      <signal name="clicked" handler="on_close_button_clicked" last_modification_time="Fri, 19 Oct 2007 17:19:35 GMT"/>
 	    </widget>
 	  </child>
 
 	  <child>
-	    <widget class="GtkButton" id="button2">
+	    <widget class="GtkButton" id="clear_button">
 	      <property name="visible">True</property>
 	      <property name="tooltip" translatable="yes">Click Save button to write footprint file</property>
+	      <property name="can_default">True</property>
+	      <property name="can_focus">True</property>
+	      <property name="label">gtk-clear</property>
+	      <property name="use_stock">True</property>
+	      <property name="relief">GTK_RELIEF_NORMAL</property>
+	      <property name="focus_on_click">True</property>
+	      <signal name="clicked" handler="on_clear_button_clicked" last_modification_time="Fri, 19 Oct 2007 17:18:41 GMT"/>
+	    </widget>
+	  </child>
+
+	  <child>
+	    <widget class="GtkButton" id="save_button">
+	      <property name="visible">True</property>
+	      <property name="tooltip" translatable="yes">Click Refresh button to update the Preview</property>
 	      <property name="can_default">True</property>
 	      <property name="can_focus">True</property>
 	      <property name="label">gtk-save</property>
 	      <property name="use_stock">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
 	      <property name="focus_on_click">True</property>
+	      <signal name="clicked" handler="on_save_button_clicked" last_modification_time="Fri, 19 Oct 2007 17:19:19 GMT"/>
 	    </widget>
 	  </child>
 
 	  <child>
-	    <widget class="GtkButton" id="button3">
+	    <widget class="GtkButton" id="refresh_button">
 	      <property name="visible">True</property>
-	      <property name="tooltip" translatable="yes">Click Refresh button to update the Preview</property>
 	      <property name="can_default">True</property>
 	      <property name="can_focus">True</property>
 	      <property name="label">gtk-refresh</property>
 	      <property name="use_stock">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
 	      <property name="focus_on_click">True</property>
+	      <signal name="clicked" handler="on_refresh_button_clicked" last_modification_time="Fri, 19 Oct 2007 17:18:59 GMT"/>
 	    </widget>
 	  </child>
 	</widget>
