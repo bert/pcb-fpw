@@ -27,1114 +27,6 @@
   g_object_set_data (G_OBJECT (component), name, widget)
 
 GtkWidget*
-create_pcb_gfpw (void)
-{
-  GtkWidget *pcb_gfpw;
-  GdkPixbuf *pcb_gfpw_icon_pixbuf;
-  GtkWidget *vbox1;
-  GtkWidget *footprint_frame;
-  GtkWidget *footprint_alignment;
-  GtkWidget *footprint_hbox;
-  GtkWidget *footprint_name_label;
-  GtkWidget *footprint_name_entry;
-  GtkWidget *footprint_type_label;
-  GtkWidget *footprint_type_entry;
-  GtkWidget *footprint_units_label;
-  GtkWidget *footprint_units_entry;
-  GtkWidget *footprint_label;
-  GtkWidget *vbox2;
-  GtkWidget *pins_pads_frame;
-  GtkWidget *number_alignment;
-  GtkWidget *number_table;
-  GtkWidget *number_total_pins_label;
-  GtkWidget *pad_length_label;
-  GtkWidget *pad_length_entry;
-  GtkWidget *number_total_pins_entry;
-  GtkWidget *pad_width_label;
-  GtkWidget *pad_vertical_spacing_label;
-  GtkWidget *pad_horizontal_spacing_label;
-  GtkWidget *E1_entry;
-  GtkWidget *number_of_rows_label;
-  GtkWidget *number_of_columns_label;
-  GtkWidget *pad_solder_mask_clearance_label;
-  GtkWidget *pin_drill_diameter_label;
-  GtkWidget *pad_diameter_label;
-  GtkWidget *pad_diameter_entry;
-  GtkWidget *number_of_rows_entry;
-  GtkWidget *pin_drill_diameter_entry;
-  GtkWidget *pad_width_entry;
-  GtkWidget *E2_entry;
-  GtkWidget *pad_solder_mask_clearance_entry;
-  GtkWidget *number_of_columns_entry;
-  GtkWidget *thermal_pad_solder_mask_clearance_label;
-  GtkWidget *thermal_solder_mask_clearance_entry;
-  GtkWidget *thermal_clearance_label;
-  GtkWidget *thermal_clearance_entry;
-  GtkWidget *thermal_pad_length_label;
-  GtkWidget *thermal_length_entry;
-  GtkWidget *thermal_pad_width_label;
-  GtkWidget *thermal_width_entry;
-  GtkWidget *thermal_checkbutton;
-  GtkWidget *thermal_nopaste_checkbutton;
-  GtkWidget *number_1_position_label;
-  GtkWidget *number_1_position_entry;
-  GtkWidget *pin1_square_checkbutton;
-  GtkWidget *pad_shape_label;
-  GtkWidget *pad_shape_entry;
-  GtkWidget *clearance_label;
-  GtkWidget *clearance_entry;
-  GtkWidget *pins_pads_label;
-  GtkWidget *silkscreen_courtyard_frame;
-  GtkWidget *pads_pins_alignment;
-  GtkWidget *pads_pins_table;
-  GtkWidget *vertical_silkscreen_label;
-  GtkWidget *horizontal_silkscreen_label;
-  GtkWidget *vertical_courtyard_label;
-  GtkWidget *horizontal_courtyard_label;
-  GtkWidget *silkscreen_line_width_label;
-  GtkWidget *courtyard_line_width_label;
-  GtkWidget *vertical_silkscreen_entry;
-  GtkWidget *vertical_courtyard_entry;
-  GtkWidget *silkscreen_line_width_entry;
-  GtkWidget *courtyard_line_width_entry;
-  GtkWidget *horizontal_silkscreen_entry;
-  GtkWidget *horizontal_courtyard_entry;
-  GtkWidget *silkscreen_courtyard_label;
-  GtkWidget *hbox1;
-  GtkWidget *distances_vbox;
-  GtkWidget *frame2;
-  GtkWidget *alignment2;
-  GtkWidget *table2;
-  GtkWidget *G1_radiobutton;
-  GSList *G1_radiobutton_group = NULL;
-  GtkWidget *C1_radiobutton;
-  GtkWidget *Z1_radiobutton;
-  GtkWidget *Z1_entry;
-  GtkWidget *C1_entry;
-  GtkWidget *G1_entry;
-  GtkWidget *distance_between_top_and_bottom_row_label;
-  GtkWidget *frame1;
-  GtkWidget *alignment1;
-  GtkWidget *table1;
-  GtkWidget *G2_radiobutton;
-  GSList *G2_radiobutton_group = NULL;
-  GtkWidget *C2_radiobutton;
-  GtkWidget *Z2_radiobutton;
-  GtkWidget *G2_entry;
-  GtkWidget *C2_entry;
-  GtkWidget *Z2_entry;
-  GtkWidget *distance_between_left_and_right_column_label;
-  GtkWidget *dimensions_frame;
-  GtkWidget *dimensions_alignment;
-  GtkWidget *dimensions_image;
-  GtkWidget *preview_label;
-  GtkWidget *hbuttonbox1;
-  GtkWidget *close_button;
-  GtkWidget *save_button;
-  GtkWidget *refresh_button;
-
-  pcb_gfpw = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-  gtk_widget_set_name (pcb_gfpw, "pcb_gfpw");
-  gtk_window_set_title (GTK_WINDOW (pcb_gfpw), _("pcb FootPrint Wizard"));
-  pcb_gfpw_icon_pixbuf = create_pixbuf ("gFootprintWizard.xpm");
-  if (pcb_gfpw_icon_pixbuf)
-    {
-      gtk_window_set_icon (GTK_WINDOW (pcb_gfpw), pcb_gfpw_icon_pixbuf);
-      gdk_pixbuf_unref (pcb_gfpw_icon_pixbuf);
-    }
-
-  vbox1 = gtk_vbox_new (FALSE, 0);
-  gtk_widget_set_name (vbox1, "vbox1");
-  gtk_widget_show (vbox1);
-  gtk_container_add (GTK_CONTAINER (pcb_gfpw), vbox1);
-  gtk_container_set_border_width (GTK_CONTAINER (vbox1), 5);
-
-  footprint_frame = gtk_frame_new (NULL);
-  gtk_widget_set_name (footprint_frame, "footprint_frame");
-  gtk_widget_show (footprint_frame);
-  gtk_box_pack_start (GTK_BOX (vbox1), footprint_frame, FALSE, FALSE, 10);
-  gtk_frame_set_shadow_type (GTK_FRAME (footprint_frame), GTK_SHADOW_OUT);
-
-  footprint_alignment = gtk_alignment_new (0.5, 0.5, 1, 1);
-  gtk_widget_set_name (footprint_alignment, "footprint_alignment");
-  gtk_widget_show (footprint_alignment);
-  gtk_container_add (GTK_CONTAINER (footprint_frame), footprint_alignment);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (footprint_alignment), 0, 0, 5, 0);
-
-  footprint_hbox = gtk_hbox_new (FALSE, 0);
-  gtk_widget_set_name (footprint_hbox, "footprint_hbox");
-  gtk_widget_show (footprint_hbox);
-  gtk_container_add (GTK_CONTAINER (footprint_alignment), footprint_hbox);
-  gtk_container_set_border_width (GTK_CONTAINER (footprint_hbox), 5);
-
-  footprint_name_label = gtk_label_new (_("Name"));
-  gtk_widget_set_name (footprint_name_label, "footprint_name_label");
-  gtk_widget_show (footprint_name_label);
-  gtk_box_pack_start (GTK_BOX (footprint_hbox), footprint_name_label, FALSE, FALSE, 0);
-
-  footprint_name_entry = gtk_entry_new ();
-  gtk_widget_set_name (footprint_name_entry, "footprint_name_entry");
-  gtk_widget_show (footprint_name_entry);
-  gtk_box_pack_start (GTK_BOX (footprint_hbox), footprint_name_entry, FALSE, FALSE, 10);
-  gtk_entry_set_invisible_char (GTK_ENTRY (footprint_name_entry), 8226);
-  gtk_entry_set_width_chars (GTK_ENTRY (footprint_name_entry), 40);
-
-  footprint_type_label = gtk_label_new (_("Type"));
-  gtk_widget_set_name (footprint_type_label, "footprint_type_label");
-  gtk_widget_show (footprint_type_label);
-  gtk_box_pack_start (GTK_BOX (footprint_hbox), footprint_type_label, FALSE, FALSE, 10);
-
-  footprint_type_entry = gtk_combo_box_entry_new_text ();
-  gtk_widget_set_name (footprint_type_entry, "footprint_type_entry");
-  gtk_widget_show (footprint_type_entry);
-  gtk_box_pack_start (GTK_BOX (footprint_hbox), footprint_type_entry, FALSE, TRUE, 5);
-  gtk_widget_set_size_request (footprint_type_entry, 100, -1);
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("BGA"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CAPC"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("DIP"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("PGA"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("PLCC"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("RESC"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("SIP"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("SO"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("QFN"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("QFP"));
-
-  footprint_units_label = gtk_label_new (_("Units"));
-  gtk_widget_set_name (footprint_units_label, "footprint_units_label");
-  gtk_widget_show (footprint_units_label);
-  gtk_box_pack_start (GTK_BOX (footprint_hbox), footprint_units_label, FALSE, FALSE, 5);
-
-  footprint_units_entry = gtk_combo_box_entry_new_text ();
-  gtk_widget_set_name (footprint_units_entry, "footprint_units_entry");
-  gtk_widget_show (footprint_units_entry);
-  gtk_box_pack_start (GTK_BOX (footprint_hbox), footprint_units_entry, FALSE, FALSE, 10);
-  gtk_widget_set_size_request (footprint_units_entry, 100, -1);
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_units_entry), _("mil"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_units_entry), _("mil/100"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_units_entry), _("mm"));
-
-  footprint_label = gtk_label_new (_("Footprint"));
-  gtk_widget_set_name (footprint_label, "footprint_label");
-  gtk_widget_show (footprint_label);
-  gtk_frame_set_label_widget (GTK_FRAME (footprint_frame), footprint_label);
-  gtk_label_set_use_markup (GTK_LABEL (footprint_label), TRUE);
-
-  vbox2 = gtk_vbox_new (FALSE, 0);
-  gtk_widget_set_name (vbox2, "vbox2");
-  gtk_widget_show (vbox2);
-  gtk_box_pack_start (GTK_BOX (vbox1), vbox2, TRUE, TRUE, 0);
-
-  pins_pads_frame = gtk_frame_new (NULL);
-  gtk_widget_set_name (pins_pads_frame, "pins_pads_frame");
-  gtk_widget_show (pins_pads_frame);
-  gtk_box_pack_start (GTK_BOX (vbox2), pins_pads_frame, TRUE, TRUE, 10);
-  gtk_frame_set_shadow_type (GTK_FRAME (pins_pads_frame), GTK_SHADOW_OUT);
-
-  number_alignment = gtk_alignment_new (0.5, 0.5, 1, 1);
-  gtk_widget_set_name (number_alignment, "number_alignment");
-  gtk_widget_show (number_alignment);
-  gtk_container_add (GTK_CONTAINER (pins_pads_frame), number_alignment);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (number_alignment), 0, 0, 5, 0);
-
-  number_table = gtk_table_new (8, 6, FALSE);
-  gtk_widget_set_name (number_table, "number_table");
-  gtk_widget_show (number_table);
-  gtk_container_add (GTK_CONTAINER (number_alignment), number_table);
-  gtk_container_set_border_width (GTK_CONTAINER (number_table), 5);
-
-  number_total_pins_label = gtk_label_new (_("Total (N)"));
-  gtk_widget_set_name (number_total_pins_label, "number_total_pins_label");
-  gtk_widget_show (number_total_pins_label);
-  gtk_table_attach (GTK_TABLE (number_table), number_total_pins_label, 0, 1, 0, 1,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (number_total_pins_label), 0, 0.5);
-
-  pad_length_label = gtk_label_new (_("Length (X)"));
-  gtk_widget_set_name (pad_length_label, "pad_length_label");
-  gtk_widget_show (pad_length_label);
-  gtk_table_attach (GTK_TABLE (number_table), pad_length_label, 0, 1, 2, 3,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (pad_length_label), 0, 0.5);
-
-  pad_length_entry = gtk_entry_new ();
-  gtk_widget_set_name (pad_length_entry, "pad_length_entry");
-  gtk_widget_show (pad_length_entry);
-  gtk_table_attach (GTK_TABLE (number_table), pad_length_entry, 1, 2, 2, 3,
-                    (GtkAttachOptions) (0),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_widget_set_size_request (pad_length_entry, 100, -1);
-  gtk_entry_set_invisible_char (GTK_ENTRY (pad_length_entry), 8226);
-
-  number_total_pins_entry = gtk_entry_new ();
-  gtk_widget_set_name (number_total_pins_entry, "number_total_pins_entry");
-  gtk_widget_show (number_total_pins_entry);
-  gtk_table_attach (GTK_TABLE (number_table), number_total_pins_entry, 1, 2, 0, 1,
-                    (GtkAttachOptions) (0),
-                    (GtkAttachOptions) (0), 10, 0);
-  gtk_widget_set_size_request (number_total_pins_entry, 100, -1);
-  gtk_entry_set_invisible_char (GTK_ENTRY (number_total_pins_entry), 8226);
-
-  pad_width_label = gtk_label_new (_("Width (Y)"));
-  gtk_widget_set_name (pad_width_label, "pad_width_label");
-  gtk_widget_show (pad_width_label);
-  gtk_table_attach (GTK_TABLE (number_table), pad_width_label, 2, 3, 2, 3,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (pad_width_label), 0, 0.5);
-
-  pad_vertical_spacing_label = gtk_label_new (_("Vert. spacing (E1)"));
-  gtk_widget_set_name (pad_vertical_spacing_label, "pad_vertical_spacing_label");
-  gtk_widget_show (pad_vertical_spacing_label);
-  gtk_table_attach (GTK_TABLE (number_table), pad_vertical_spacing_label, 0, 1, 3, 4,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (pad_vertical_spacing_label), 0, 0.5);
-
-  pad_horizontal_spacing_label = gtk_label_new (_("Hor. spacing (E2)"));
-  gtk_widget_set_name (pad_horizontal_spacing_label, "pad_horizontal_spacing_label");
-  gtk_widget_show (pad_horizontal_spacing_label);
-  gtk_table_attach (GTK_TABLE (number_table), pad_horizontal_spacing_label, 2, 3, 3, 4,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (pad_horizontal_spacing_label), 0, 0.5);
-
-  E1_entry = gtk_entry_new ();
-  gtk_widget_set_name (E1_entry, "E1_entry");
-  gtk_widget_show (E1_entry);
-  gtk_table_attach (GTK_TABLE (number_table), E1_entry, 1, 2, 3, 4,
-                    (GtkAttachOptions) (0),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_widget_set_size_request (E1_entry, 100, -1);
-  gtk_entry_set_invisible_char (GTK_ENTRY (E1_entry), 8226);
-
-  number_of_rows_label = gtk_label_new (_("Number of rows"));
-  gtk_widget_set_name (number_of_rows_label, "number_of_rows_label");
-  gtk_widget_show (number_of_rows_label);
-  gtk_table_attach (GTK_TABLE (number_table), number_of_rows_label, 2, 3, 0, 1,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (number_of_rows_label), 0, 0.5);
-
-  number_of_columns_label = gtk_label_new (_("Number of columns"));
-  gtk_widget_set_name (number_of_columns_label, "number_of_columns_label");
-  gtk_widget_show (number_of_columns_label);
-  gtk_table_attach (GTK_TABLE (number_table), number_of_columns_label, 4, 5, 0, 1,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (number_of_columns_label), 0, 0.5);
-
-  pad_solder_mask_clearance_label = gtk_label_new (_("Solder Mask Clearance"));
-  gtk_widget_set_name (pad_solder_mask_clearance_label, "pad_solder_mask_clearance_label");
-  gtk_widget_show (pad_solder_mask_clearance_label);
-  gtk_table_attach (GTK_TABLE (number_table), pad_solder_mask_clearance_label, 4, 5, 1, 2,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (pad_solder_mask_clearance_label), 0, 0.5);
-
-  pin_drill_diameter_label = gtk_label_new (_("Drill diameter (d)"));
-  gtk_widget_set_name (pin_drill_diameter_label, "pin_drill_diameter_label");
-  gtk_widget_show (pin_drill_diameter_label);
-  gtk_table_attach (GTK_TABLE (number_table), pin_drill_diameter_label, 2, 3, 1, 2,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (pin_drill_diameter_label), 0, 0.5);
-
-  pad_diameter_label = gtk_label_new (_("Pad diameter (D)"));
-  gtk_widget_set_name (pad_diameter_label, "pad_diameter_label");
-  gtk_widget_show (pad_diameter_label);
-  gtk_table_attach (GTK_TABLE (number_table), pad_diameter_label, 0, 1, 1, 2,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (pad_diameter_label), 0, 0.5);
-
-  pad_diameter_entry = gtk_entry_new ();
-  gtk_widget_set_name (pad_diameter_entry, "pad_diameter_entry");
-  gtk_widget_show (pad_diameter_entry);
-  gtk_table_attach (GTK_TABLE (number_table), pad_diameter_entry, 1, 2, 1, 2,
-                    (GtkAttachOptions) (0),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_widget_set_size_request (pad_diameter_entry, 100, -1);
-  gtk_entry_set_invisible_char (GTK_ENTRY (pad_diameter_entry), 8226);
-
-  number_of_rows_entry = gtk_entry_new ();
-  gtk_widget_set_name (number_of_rows_entry, "number_of_rows_entry");
-  gtk_widget_show (number_of_rows_entry);
-  gtk_table_attach (GTK_TABLE (number_table), number_of_rows_entry, 3, 4, 0, 1,
-                    (GtkAttachOptions) (0),
-                    (GtkAttachOptions) (0), 10, 0);
-  gtk_widget_set_size_request (number_of_rows_entry, 100, -1);
-  gtk_entry_set_invisible_char (GTK_ENTRY (number_of_rows_entry), 8226);
-
-  pin_drill_diameter_entry = gtk_entry_new ();
-  gtk_widget_set_name (pin_drill_diameter_entry, "pin_drill_diameter_entry");
-  gtk_widget_show (pin_drill_diameter_entry);
-  gtk_table_attach (GTK_TABLE (number_table), pin_drill_diameter_entry, 3, 4, 1, 2,
-                    (GtkAttachOptions) (0),
-                    (GtkAttachOptions) (0), 10, 0);
-  gtk_widget_set_size_request (pin_drill_diameter_entry, 100, -1);
-  gtk_entry_set_invisible_char (GTK_ENTRY (pin_drill_diameter_entry), 8226);
-
-  pad_width_entry = gtk_entry_new ();
-  gtk_widget_set_name (pad_width_entry, "pad_width_entry");
-  gtk_widget_show (pad_width_entry);
-  gtk_table_attach (GTK_TABLE (number_table), pad_width_entry, 3, 4, 2, 3,
-                    (GtkAttachOptions) (0),
-                    (GtkAttachOptions) (0), 10, 0);
-  gtk_widget_set_size_request (pad_width_entry, 100, -1);
-  gtk_entry_set_invisible_char (GTK_ENTRY (pad_width_entry), 8226);
-
-  E2_entry = gtk_entry_new ();
-  gtk_widget_set_name (E2_entry, "E2_entry");
-  gtk_widget_show (E2_entry);
-  gtk_table_attach (GTK_TABLE (number_table), E2_entry, 3, 4, 3, 4,
-                    (GtkAttachOptions) (0),
-                    (GtkAttachOptions) (0), 10, 0);
-  gtk_widget_set_size_request (E2_entry, 100, -1);
-  gtk_entry_set_invisible_char (GTK_ENTRY (E2_entry), 8226);
-
-  pad_solder_mask_clearance_entry = gtk_entry_new ();
-  gtk_widget_set_name (pad_solder_mask_clearance_entry, "pad_solder_mask_clearance_entry");
-  gtk_widget_show (pad_solder_mask_clearance_entry);
-  gtk_table_attach (GTK_TABLE (number_table), pad_solder_mask_clearance_entry, 5, 6, 1, 2,
-                    (GtkAttachOptions) (0),
-                    (GtkAttachOptions) (0), 10, 0);
-  gtk_widget_set_size_request (pad_solder_mask_clearance_entry, 100, -1);
-  gtk_entry_set_invisible_char (GTK_ENTRY (pad_solder_mask_clearance_entry), 8226);
-
-  number_of_columns_entry = gtk_entry_new ();
-  gtk_widget_set_name (number_of_columns_entry, "number_of_columns_entry");
-  gtk_widget_show (number_of_columns_entry);
-  gtk_table_attach (GTK_TABLE (number_table), number_of_columns_entry, 5, 6, 0, 1,
-                    (GtkAttachOptions) (0),
-                    (GtkAttachOptions) (0), 10, 0);
-  gtk_widget_set_size_request (number_of_columns_entry, 100, -1);
-  gtk_entry_set_invisible_char (GTK_ENTRY (number_of_columns_entry), 8226);
-
-  thermal_pad_solder_mask_clearance_label = gtk_label_new (_("Solder Mask Clearance"));
-  gtk_widget_set_name (thermal_pad_solder_mask_clearance_label, "thermal_pad_solder_mask_clearance_label");
-  gtk_widget_show (thermal_pad_solder_mask_clearance_label);
-  gtk_table_attach (GTK_TABLE (number_table), thermal_pad_solder_mask_clearance_label, 0, 1, 7, 8,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (thermal_pad_solder_mask_clearance_label), 0, 0.5);
-
-  thermal_solder_mask_clearance_entry = gtk_entry_new ();
-  gtk_widget_set_name (thermal_solder_mask_clearance_entry, "thermal_solder_mask_clearance_entry");
-  gtk_widget_show (thermal_solder_mask_clearance_entry);
-  gtk_table_attach (GTK_TABLE (number_table), thermal_solder_mask_clearance_entry, 1, 2, 7, 8,
-                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_widget_set_size_request (thermal_solder_mask_clearance_entry, 100, -1);
-  gtk_entry_set_invisible_char (GTK_ENTRY (thermal_solder_mask_clearance_entry), 8226);
-
-  thermal_clearance_label = gtk_label_new (_("Clearance"));
-  gtk_widget_set_name (thermal_clearance_label, "thermal_clearance_label");
-  gtk_widget_show (thermal_clearance_label);
-  gtk_table_attach (GTK_TABLE (number_table), thermal_clearance_label, 2, 3, 7, 8,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (thermal_clearance_label), 0, 0.5);
-
-  thermal_clearance_entry = gtk_entry_new ();
-  gtk_widget_set_name (thermal_clearance_entry, "thermal_clearance_entry");
-  gtk_widget_show (thermal_clearance_entry);
-  gtk_table_attach (GTK_TABLE (number_table), thermal_clearance_entry, 3, 4, 7, 8,
-                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_widget_set_size_request (thermal_clearance_entry, 100, -1);
-  gtk_entry_set_invisible_char (GTK_ENTRY (thermal_clearance_entry), 8226);
-
-  thermal_pad_length_label = gtk_label_new (_("Length (X2)"));
-  gtk_widget_set_name (thermal_pad_length_label, "thermal_pad_length_label");
-  gtk_widget_show (thermal_pad_length_label);
-  gtk_table_attach (GTK_TABLE (number_table), thermal_pad_length_label, 0, 1, 6, 7,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (thermal_pad_length_label), 0, 0.5);
-
-  thermal_length_entry = gtk_entry_new ();
-  gtk_widget_set_name (thermal_length_entry, "thermal_length_entry");
-  gtk_widget_show (thermal_length_entry);
-  gtk_table_attach (GTK_TABLE (number_table), thermal_length_entry, 1, 2, 6, 7,
-                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_widget_set_size_request (thermal_length_entry, 100, -1);
-  gtk_entry_set_invisible_char (GTK_ENTRY (thermal_length_entry), 8226);
-
-  thermal_pad_width_label = gtk_label_new (_("Width (Y2)"));
-  gtk_widget_set_name (thermal_pad_width_label, "thermal_pad_width_label");
-  gtk_widget_show (thermal_pad_width_label);
-  gtk_table_attach (GTK_TABLE (number_table), thermal_pad_width_label, 2, 3, 6, 7,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (thermal_pad_width_label), 0, 0.5);
-
-  thermal_width_entry = gtk_entry_new ();
-  gtk_widget_set_name (thermal_width_entry, "thermal_width_entry");
-  gtk_widget_show (thermal_width_entry);
-  gtk_table_attach (GTK_TABLE (number_table), thermal_width_entry, 3, 4, 6, 7,
-                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_widget_set_size_request (thermal_width_entry, 100, -1);
-  gtk_entry_set_invisible_char (GTK_ENTRY (thermal_width_entry), 8226);
-
-  thermal_checkbutton = gtk_check_button_new_with_mnemonic (_("Thermal pad"));
-  gtk_widget_set_name (thermal_checkbutton, "thermal_checkbutton");
-  gtk_widget_show (thermal_checkbutton);
-  gtk_table_attach (GTK_TABLE (number_table), thermal_checkbutton, 0, 1, 5, 6,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-
-  thermal_nopaste_checkbutton = gtk_check_button_new_with_mnemonic (_("No paste"));
-  gtk_widget_set_name (thermal_nopaste_checkbutton, "thermal_nopaste_checkbutton");
-  gtk_widget_show (thermal_nopaste_checkbutton);
-  gtk_table_attach (GTK_TABLE (number_table), thermal_nopaste_checkbutton, 1, 2, 5, 6,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-
-  number_1_position_label = gtk_label_new (_("Pin/Pad #1 position"));
-  gtk_widget_set_name (number_1_position_label, "number_1_position_label");
-  gtk_widget_show (number_1_position_label);
-  gtk_table_attach (GTK_TABLE (number_table), number_1_position_label, 0, 1, 4, 5,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (number_1_position_label), 0, 0.5);
-
-  number_1_position_entry = gtk_combo_box_entry_new_text ();
-  gtk_widget_set_name (number_1_position_entry, "number_1_position_entry");
-  gtk_widget_show (number_1_position_entry);
-  gtk_table_attach (GTK_TABLE (number_table), number_1_position_entry, 1, 2, 4, 5,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (GTK_FILL), 0, 0);
-  gtk_combo_box_append_text (GTK_COMBO_BOX (number_1_position_entry), _("top row, left-most pin"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (number_1_position_entry), _("top row, center pin"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (number_1_position_entry), _("bottom row, left-most pin"));
-
-  pin1_square_checkbutton = gtk_check_button_new_with_mnemonic (_("Pin #1 square"));
-  gtk_widget_set_name (pin1_square_checkbutton, "pin1_square_checkbutton");
-  gtk_widget_show (pin1_square_checkbutton);
-  gtk_table_attach (GTK_TABLE (number_table), pin1_square_checkbutton, 2, 3, 4, 5,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-
-  pad_shape_label = gtk_label_new (_("Shape"));
-  gtk_widget_set_name (pad_shape_label, "pad_shape_label");
-  gtk_widget_show (pad_shape_label);
-  gtk_table_attach (GTK_TABLE (number_table), pad_shape_label, 4, 5, 3, 4,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (pad_shape_label), 0, 0.5);
-
-  pad_shape_entry = gtk_combo_box_entry_new_text ();
-  gtk_widget_set_name (pad_shape_entry, "pad_shape_entry");
-  gtk_widget_show (pad_shape_entry);
-  gtk_table_attach (GTK_TABLE (number_table), pad_shape_entry, 5, 6, 3, 4,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (GTK_FILL), 0, 0);
-  gtk_combo_box_append_text (GTK_COMBO_BOX (pad_shape_entry), _("round pad"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (pad_shape_entry), _("rectangular pad"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (pad_shape_entry), _("octagonal pad"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (pad_shape_entry), _("rectangular pin"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (pad_shape_entry), _("round pin"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (pad_shape_entry), _("round pin, elongated"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (pad_shape_entry), _("octagonal pin"));
-
-  clearance_label = gtk_label_new (_("Clearance"));
-  gtk_widget_set_name (clearance_label, "clearance_label");
-  gtk_widget_show (clearance_label);
-  gtk_table_attach (GTK_TABLE (number_table), clearance_label, 4, 5, 2, 3,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (clearance_label), 0, 0.5);
-
-  clearance_entry = gtk_entry_new ();
-  gtk_widget_set_name (clearance_entry, "clearance_entry");
-  gtk_widget_show (clearance_entry);
-  gtk_table_attach (GTK_TABLE (number_table), clearance_entry, 5, 6, 2, 3,
-                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_widget_set_size_request (clearance_entry, 100, -1);
-  gtk_entry_set_invisible_char (GTK_ENTRY (clearance_entry), 8226);
-
-  pins_pads_label = gtk_label_new (_("Pins/Pads"));
-  gtk_widget_set_name (pins_pads_label, "pins_pads_label");
-  gtk_widget_show (pins_pads_label);
-  gtk_frame_set_label_widget (GTK_FRAME (pins_pads_frame), pins_pads_label);
-  gtk_label_set_use_markup (GTK_LABEL (pins_pads_label), TRUE);
-
-  silkscreen_courtyard_frame = gtk_frame_new (NULL);
-  gtk_widget_set_name (silkscreen_courtyard_frame, "silkscreen_courtyard_frame");
-  gtk_widget_show (silkscreen_courtyard_frame);
-  gtk_box_pack_start (GTK_BOX (vbox2), silkscreen_courtyard_frame, TRUE, TRUE, 10);
-  gtk_frame_set_shadow_type (GTK_FRAME (silkscreen_courtyard_frame), GTK_SHADOW_OUT);
-
-  pads_pins_alignment = gtk_alignment_new (0.5, 0.5, 1, 1);
-  gtk_widget_set_name (pads_pins_alignment, "pads_pins_alignment");
-  gtk_widget_show (pads_pins_alignment);
-  gtk_container_add (GTK_CONTAINER (silkscreen_courtyard_frame), pads_pins_alignment);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (pads_pins_alignment), 0, 0, 5, 0);
-
-  pads_pins_table = gtk_table_new (2, 6, FALSE);
-  gtk_widget_set_name (pads_pins_table, "pads_pins_table");
-  gtk_widget_show (pads_pins_table);
-  gtk_container_add (GTK_CONTAINER (pads_pins_alignment), pads_pins_table);
-  gtk_container_set_border_width (GTK_CONTAINER (pads_pins_table), 5);
-  gtk_table_set_row_spacings (GTK_TABLE (pads_pins_table), 5);
-
-  vertical_silkscreen_label = gtk_label_new (_("Vert. silkscreen (R1)"));
-  gtk_widget_set_name (vertical_silkscreen_label, "vertical_silkscreen_label");
-  gtk_widget_show (vertical_silkscreen_label);
-  gtk_table_attach (GTK_TABLE (pads_pins_table), vertical_silkscreen_label, 0, 1, 0, 1,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (vertical_silkscreen_label), 0, 0.5);
-
-  horizontal_silkscreen_label = gtk_label_new (_("Hor. silkscreen (R2)"));
-  gtk_widget_set_name (horizontal_silkscreen_label, "horizontal_silkscreen_label");
-  gtk_widget_show (horizontal_silkscreen_label);
-  gtk_table_attach (GTK_TABLE (pads_pins_table), horizontal_silkscreen_label, 2, 3, 0, 1,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (horizontal_silkscreen_label), 0, 0.5);
-
-  vertical_courtyard_label = gtk_label_new (_("Vert. courtyard (V1)"));
-  gtk_widget_set_name (vertical_courtyard_label, "vertical_courtyard_label");
-  gtk_widget_show (vertical_courtyard_label);
-  gtk_table_attach (GTK_TABLE (pads_pins_table), vertical_courtyard_label, 0, 1, 1, 2,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (vertical_courtyard_label), 0, 0.5);
-
-  horizontal_courtyard_label = gtk_label_new (_("Hor. courtyard (V2)"));
-  gtk_widget_set_name (horizontal_courtyard_label, "horizontal_courtyard_label");
-  gtk_widget_show (horizontal_courtyard_label);
-  gtk_table_attach (GTK_TABLE (pads_pins_table), horizontal_courtyard_label, 2, 3, 1, 2,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (horizontal_courtyard_label), 0, 0.5);
-
-  silkscreen_line_width_label = gtk_label_new (_("Line width"));
-  gtk_widget_set_name (silkscreen_line_width_label, "silkscreen_line_width_label");
-  gtk_widget_show (silkscreen_line_width_label);
-  gtk_table_attach (GTK_TABLE (pads_pins_table), silkscreen_line_width_label, 4, 5, 0, 1,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (silkscreen_line_width_label), 0, 0.5);
-
-  courtyard_line_width_label = gtk_label_new (_("Line width"));
-  gtk_widget_set_name (courtyard_line_width_label, "courtyard_line_width_label");
-  gtk_widget_show (courtyard_line_width_label);
-  gtk_table_attach (GTK_TABLE (pads_pins_table), courtyard_line_width_label, 4, 5, 1, 2,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (courtyard_line_width_label), 0, 0.5);
-
-  vertical_silkscreen_entry = gtk_entry_new ();
-  gtk_widget_set_name (vertical_silkscreen_entry, "vertical_silkscreen_entry");
-  gtk_widget_show (vertical_silkscreen_entry);
-  gtk_table_attach (GTK_TABLE (pads_pins_table), vertical_silkscreen_entry, 1, 2, 0, 1,
-                    (GtkAttachOptions) (0),
-                    (GtkAttachOptions) (0), 10, 0);
-  gtk_widget_set_size_request (vertical_silkscreen_entry, 100, -1);
-  gtk_entry_set_invisible_char (GTK_ENTRY (vertical_silkscreen_entry), 8226);
-
-  vertical_courtyard_entry = gtk_entry_new ();
-  gtk_widget_set_name (vertical_courtyard_entry, "vertical_courtyard_entry");
-  gtk_widget_show (vertical_courtyard_entry);
-  gtk_table_attach (GTK_TABLE (pads_pins_table), vertical_courtyard_entry, 1, 2, 1, 2,
-                    (GtkAttachOptions) (0),
-                    (GtkAttachOptions) (0), 10, 0);
-  gtk_widget_set_size_request (vertical_courtyard_entry, 100, -1);
-  gtk_entry_set_invisible_char (GTK_ENTRY (vertical_courtyard_entry), 8226);
-
-  silkscreen_line_width_entry = gtk_entry_new ();
-  gtk_widget_set_name (silkscreen_line_width_entry, "silkscreen_line_width_entry");
-  gtk_widget_show (silkscreen_line_width_entry);
-  gtk_table_attach (GTK_TABLE (pads_pins_table), silkscreen_line_width_entry, 5, 6, 0, 1,
-                    (GtkAttachOptions) (0),
-                    (GtkAttachOptions) (0), 10, 0);
-  gtk_widget_set_size_request (silkscreen_line_width_entry, 100, -1);
-  gtk_entry_set_invisible_char (GTK_ENTRY (silkscreen_line_width_entry), 8226);
-
-  courtyard_line_width_entry = gtk_entry_new ();
-  gtk_widget_set_name (courtyard_line_width_entry, "courtyard_line_width_entry");
-  gtk_widget_show (courtyard_line_width_entry);
-  gtk_table_attach (GTK_TABLE (pads_pins_table), courtyard_line_width_entry, 5, 6, 1, 2,
-                    (GtkAttachOptions) (0),
-                    (GtkAttachOptions) (0), 10, 0);
-  gtk_widget_set_size_request (courtyard_line_width_entry, 100, -1);
-  gtk_entry_set_invisible_char (GTK_ENTRY (courtyard_line_width_entry), 8226);
-
-  horizontal_silkscreen_entry = gtk_entry_new ();
-  gtk_widget_set_name (horizontal_silkscreen_entry, "horizontal_silkscreen_entry");
-  gtk_widget_show (horizontal_silkscreen_entry);
-  gtk_table_attach (GTK_TABLE (pads_pins_table), horizontal_silkscreen_entry, 3, 4, 0, 1,
-                    (GtkAttachOptions) (0),
-                    (GtkAttachOptions) (0), 10, 0);
-  gtk_widget_set_size_request (horizontal_silkscreen_entry, 100, -1);
-  gtk_entry_set_invisible_char (GTK_ENTRY (horizontal_silkscreen_entry), 8226);
-
-  horizontal_courtyard_entry = gtk_entry_new ();
-  gtk_widget_set_name (horizontal_courtyard_entry, "horizontal_courtyard_entry");
-  gtk_widget_show (horizontal_courtyard_entry);
-  gtk_table_attach (GTK_TABLE (pads_pins_table), horizontal_courtyard_entry, 3, 4, 1, 2,
-                    (GtkAttachOptions) (0),
-                    (GtkAttachOptions) (0), 10, 0);
-  gtk_widget_set_size_request (horizontal_courtyard_entry, 100, -1);
-  gtk_entry_set_invisible_char (GTK_ENTRY (horizontal_courtyard_entry), 8226);
-
-  silkscreen_courtyard_label = gtk_label_new (_("Silkscreen/Courtyard"));
-  gtk_widget_set_name (silkscreen_courtyard_label, "silkscreen_courtyard_label");
-  gtk_widget_show (silkscreen_courtyard_label);
-  gtk_frame_set_label_widget (GTK_FRAME (silkscreen_courtyard_frame), silkscreen_courtyard_label);
-  gtk_label_set_use_markup (GTK_LABEL (silkscreen_courtyard_label), TRUE);
-
-  hbox1 = gtk_hbox_new (FALSE, 0);
-  gtk_widget_set_name (hbox1, "hbox1");
-  gtk_widget_show (hbox1);
-  gtk_box_pack_start (GTK_BOX (vbox2), hbox1, FALSE, FALSE, 10);
-
-  distances_vbox = gtk_vbox_new (FALSE, 0);
-  gtk_widget_set_name (distances_vbox, "distances_vbox");
-  gtk_widget_show (distances_vbox);
-  gtk_box_pack_start (GTK_BOX (hbox1), distances_vbox, TRUE, TRUE, 0);
-
-  frame2 = gtk_frame_new (NULL);
-  gtk_widget_set_name (frame2, "frame2");
-  gtk_widget_show (frame2);
-  gtk_box_pack_start (GTK_BOX (distances_vbox), frame2, TRUE, TRUE, 0);
-  gtk_frame_set_shadow_type (GTK_FRAME (frame2), GTK_SHADOW_OUT);
-
-  alignment2 = gtk_alignment_new (0.5, 0.5, 1, 1);
-  gtk_widget_set_name (alignment2, "alignment2");
-  gtk_widget_show (alignment2);
-  gtk_container_add (GTK_CONTAINER (frame2), alignment2);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (alignment2), 0, 0, 5, 0);
-
-  table2 = gtk_table_new (3, 2, TRUE);
-  gtk_widget_set_name (table2, "table2");
-  gtk_widget_show (table2);
-  gtk_container_add (GTK_CONTAINER (alignment2), table2);
-  gtk_container_set_border_width (GTK_CONTAINER (table2), 5);
-
-  G1_radiobutton = gtk_radio_button_new_with_mnemonic (NULL, _("Inner-inner (G1)"));
-  gtk_widget_set_name (G1_radiobutton, "G1_radiobutton");
-  gtk_widget_show (G1_radiobutton);
-  gtk_table_attach (GTK_TABLE (table2), G1_radiobutton, 0, 1, 0, 1,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_radio_button_set_group (GTK_RADIO_BUTTON (G1_radiobutton), G1_radiobutton_group);
-  G1_radiobutton_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (G1_radiobutton));
-
-  C1_radiobutton = gtk_radio_button_new_with_mnemonic (NULL, _("Center-center (C1)"));
-  gtk_widget_set_name (C1_radiobutton, "C1_radiobutton");
-  gtk_widget_show (C1_radiobutton);
-  gtk_table_attach (GTK_TABLE (table2), C1_radiobutton, 0, 1, 1, 2,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_radio_button_set_group (GTK_RADIO_BUTTON (C1_radiobutton), G1_radiobutton_group);
-  G1_radiobutton_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (C1_radiobutton));
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (C1_radiobutton), TRUE);
-
-  Z1_radiobutton = gtk_radio_button_new_with_mnemonic (NULL, _("Outer-outer (Z1)"));
-  gtk_widget_set_name (Z1_radiobutton, "Z1_radiobutton");
-  gtk_widget_show (Z1_radiobutton);
-  gtk_table_attach (GTK_TABLE (table2), Z1_radiobutton, 0, 1, 2, 3,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_radio_button_set_group (GTK_RADIO_BUTTON (Z1_radiobutton), G1_radiobutton_group);
-  G1_radiobutton_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (Z1_radiobutton));
-
-  Z1_entry = gtk_entry_new ();
-  gtk_widget_set_name (Z1_entry, "Z1_entry");
-  gtk_widget_show (Z1_entry);
-  gtk_table_attach (GTK_TABLE (table2), Z1_entry, 1, 2, 2, 3,
-                    (GtkAttachOptions) (GTK_EXPAND),
-                    (GtkAttachOptions) (0), 10, 0);
-  gtk_entry_set_invisible_char (GTK_ENTRY (Z1_entry), 8226);
-
-  C1_entry = gtk_entry_new ();
-  gtk_widget_set_name (C1_entry, "C1_entry");
-  gtk_widget_show (C1_entry);
-  gtk_table_attach (GTK_TABLE (table2), C1_entry, 1, 2, 1, 2,
-                    (GtkAttachOptions) (GTK_EXPAND),
-                    (GtkAttachOptions) (0), 10, 0);
-  gtk_entry_set_invisible_char (GTK_ENTRY (C1_entry), 8226);
-
-  G1_entry = gtk_entry_new ();
-  gtk_widget_set_name (G1_entry, "G1_entry");
-  gtk_widget_show (G1_entry);
-  gtk_table_attach (GTK_TABLE (table2), G1_entry, 1, 2, 0, 1,
-                    (GtkAttachOptions) (GTK_EXPAND),
-                    (GtkAttachOptions) (0), 10, 0);
-  gtk_entry_set_invisible_char (GTK_ENTRY (G1_entry), 8226);
-
-  distance_between_top_and_bottom_row_label = gtk_label_new (_("Distance between top and bottom rows"));
-  gtk_widget_set_name (distance_between_top_and_bottom_row_label, "distance_between_top_and_bottom_row_label");
-  gtk_widget_show (distance_between_top_and_bottom_row_label);
-  gtk_frame_set_label_widget (GTK_FRAME (frame2), distance_between_top_and_bottom_row_label);
-  gtk_label_set_use_markup (GTK_LABEL (distance_between_top_and_bottom_row_label), TRUE);
-
-  frame1 = gtk_frame_new (NULL);
-  gtk_widget_set_name (frame1, "frame1");
-  gtk_widget_show (frame1);
-  gtk_box_pack_start (GTK_BOX (distances_vbox), frame1, TRUE, TRUE, 5);
-  gtk_frame_set_shadow_type (GTK_FRAME (frame1), GTK_SHADOW_OUT);
-
-  alignment1 = gtk_alignment_new (0.5, 0.5, 1, 1);
-  gtk_widget_set_name (alignment1, "alignment1");
-  gtk_widget_show (alignment1);
-  gtk_container_add (GTK_CONTAINER (frame1), alignment1);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (alignment1), 0, 0, 5, 0);
-
-  table1 = gtk_table_new (3, 2, TRUE);
-  gtk_widget_set_name (table1, "table1");
-  gtk_widget_show (table1);
-  gtk_container_add (GTK_CONTAINER (alignment1), table1);
-  gtk_container_set_border_width (GTK_CONTAINER (table1), 5);
-
-  G2_radiobutton = gtk_radio_button_new_with_mnemonic (NULL, _("Inner-inner (G2)"));
-  gtk_widget_set_name (G2_radiobutton, "G2_radiobutton");
-  gtk_widget_show (G2_radiobutton);
-  gtk_table_attach (GTK_TABLE (table1), G2_radiobutton, 0, 1, 0, 1,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_radio_button_set_group (GTK_RADIO_BUTTON (G2_radiobutton), G2_radiobutton_group);
-  G2_radiobutton_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (G2_radiobutton));
-
-  C2_radiobutton = gtk_radio_button_new_with_mnemonic (NULL, _("Center-center (C2)"));
-  gtk_widget_set_name (C2_radiobutton, "C2_radiobutton");
-  gtk_widget_show (C2_radiobutton);
-  gtk_table_attach (GTK_TABLE (table1), C2_radiobutton, 0, 1, 1, 2,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_radio_button_set_group (GTK_RADIO_BUTTON (C2_radiobutton), G2_radiobutton_group);
-  G2_radiobutton_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (C2_radiobutton));
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (C2_radiobutton), TRUE);
-
-  Z2_radiobutton = gtk_radio_button_new_with_mnemonic (NULL, _("Outer-outer (Z2)"));
-  gtk_widget_set_name (Z2_radiobutton, "Z2_radiobutton");
-  gtk_widget_show (Z2_radiobutton);
-  gtk_table_attach (GTK_TABLE (table1), Z2_radiobutton, 0, 1, 2, 3,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_radio_button_set_group (GTK_RADIO_BUTTON (Z2_radiobutton), G2_radiobutton_group);
-  G2_radiobutton_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (Z2_radiobutton));
-
-  G2_entry = gtk_entry_new ();
-  gtk_widget_set_name (G2_entry, "G2_entry");
-  gtk_widget_show (G2_entry);
-  gtk_table_attach (GTK_TABLE (table1), G2_entry, 1, 2, 0, 1,
-                    (GtkAttachOptions) (GTK_EXPAND),
-                    (GtkAttachOptions) (0), 10, 0);
-  gtk_entry_set_invisible_char (GTK_ENTRY (G2_entry), 8226);
-
-  C2_entry = gtk_entry_new ();
-  gtk_widget_set_name (C2_entry, "C2_entry");
-  gtk_widget_show (C2_entry);
-  gtk_table_attach (GTK_TABLE (table1), C2_entry, 1, 2, 1, 2,
-                    (GtkAttachOptions) (GTK_EXPAND),
-                    (GtkAttachOptions) (0), 10, 0);
-  gtk_entry_set_invisible_char (GTK_ENTRY (C2_entry), 8226);
-
-  Z2_entry = gtk_entry_new ();
-  gtk_widget_set_name (Z2_entry, "Z2_entry");
-  gtk_widget_show (Z2_entry);
-  gtk_table_attach (GTK_TABLE (table1), Z2_entry, 1, 2, 2, 3,
-                    (GtkAttachOptions) (GTK_EXPAND | GTK_SHRINK),
-                    (GtkAttachOptions) (0), 10, 0);
-  gtk_entry_set_invisible_char (GTK_ENTRY (Z2_entry), 8226);
-
-  distance_between_left_and_right_column_label = gtk_label_new (_("Distance between left and right columns"));
-  gtk_widget_set_name (distance_between_left_and_right_column_label, "distance_between_left_and_right_column_label");
-  gtk_widget_show (distance_between_left_and_right_column_label);
-  gtk_frame_set_label_widget (GTK_FRAME (frame1), distance_between_left_and_right_column_label);
-  gtk_label_set_use_markup (GTK_LABEL (distance_between_left_and_right_column_label), TRUE);
-
-  dimensions_frame = gtk_frame_new (NULL);
-  gtk_widget_set_name (dimensions_frame, "dimensions_frame");
-  gtk_widget_show (dimensions_frame);
-  gtk_box_pack_start (GTK_BOX (hbox1), dimensions_frame, TRUE, TRUE, 5);
-  gtk_frame_set_shadow_type (GTK_FRAME (dimensions_frame), GTK_SHADOW_OUT);
-
-  dimensions_alignment = gtk_alignment_new (0.5, 0.5, 1, 1);
-  gtk_widget_set_name (dimensions_alignment, "dimensions_alignment");
-  gtk_widget_show (dimensions_alignment);
-  gtk_container_add (GTK_CONTAINER (dimensions_frame), dimensions_alignment);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (dimensions_alignment), 0, 0, 12, 0);
-
-  dimensions_image = create_pixmap (pcb_gfpw, "splash_wiz.xpm");
-  gtk_widget_set_name (dimensions_image, "dimensions_image");
-  gtk_widget_show (dimensions_image);
-  gtk_container_add (GTK_CONTAINER (dimensions_alignment), dimensions_image);
-  gtk_widget_set_size_request (dimensions_image, 320, 240);
-
-  preview_label = gtk_label_new (_("Preview"));
-  gtk_widget_set_name (preview_label, "preview_label");
-  gtk_widget_show (preview_label);
-  gtk_frame_set_label_widget (GTK_FRAME (dimensions_frame), preview_label);
-  gtk_label_set_use_markup (GTK_LABEL (preview_label), TRUE);
-
-  hbuttonbox1 = gtk_hbutton_box_new ();
-  gtk_widget_set_name (hbuttonbox1, "hbuttonbox1");
-  gtk_widget_show (hbuttonbox1);
-  gtk_box_pack_start (GTK_BOX (vbox1), hbuttonbox1, TRUE, TRUE, 5);
-  gtk_button_box_set_layout (GTK_BUTTON_BOX (hbuttonbox1), GTK_BUTTONBOX_SPREAD);
-
-  close_button = gtk_button_new_from_stock ("gtk-close");
-  gtk_widget_set_name (close_button, "close_button");
-  gtk_widget_show (close_button);
-  gtk_container_add (GTK_CONTAINER (hbuttonbox1), close_button);
-  GTK_WIDGET_SET_FLAGS (close_button, GTK_CAN_DEFAULT);
-
-  save_button = gtk_button_new_from_stock ("gtk-save");
-  gtk_widget_set_name (save_button, "save_button");
-  gtk_widget_show (save_button);
-  gtk_container_add (GTK_CONTAINER (hbuttonbox1), save_button);
-  GTK_WIDGET_SET_FLAGS (save_button, GTK_CAN_DEFAULT);
-
-  refresh_button = gtk_button_new_from_stock ("gtk-refresh");
-  gtk_widget_set_name (refresh_button, "refresh_button");
-  gtk_widget_show (refresh_button);
-  gtk_container_add (GTK_CONTAINER (hbuttonbox1), refresh_button);
-  GTK_WIDGET_SET_FLAGS (refresh_button, GTK_CAN_DEFAULT);
-
-  g_signal_connect ((gpointer) pcb_gfpw, "destroy",
-                    G_CALLBACK (on_pcb_gfpw_destroy),
-                    NULL);
-  g_signal_connect ((gpointer) footprint_name_entry, "changed",
-                    G_CALLBACK (on_footprint_name_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) footprint_type_entry, "changed",
-                    G_CALLBACK (on_footprint_type_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) footprint_units_entry, "changed",
-                    G_CALLBACK (on_footprint_units_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) pad_length_entry, "changed",
-                    G_CALLBACK (on_pad_length_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) number_total_pins_entry, "changed",
-                    G_CALLBACK (on_number_total_pins_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) E1_entry, "changed",
-                    G_CALLBACK (on_E1_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) pad_diameter_entry, "changed",
-                    G_CALLBACK (on_pad_diameter_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) number_of_rows_entry, "changed",
-                    G_CALLBACK (on_number_of_rows_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) pin_drill_diameter_entry, "changed",
-                    G_CALLBACK (on_pin_drill_diameter_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) pad_width_entry, "changed",
-                    G_CALLBACK (on_pad_width_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) E2_entry, "changed",
-                    G_CALLBACK (on_E2_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) pad_solder_mask_clearance_entry, "changed",
-                    G_CALLBACK (on_pad_solder_mask_clearance_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) number_of_columns_entry, "changed",
-                    G_CALLBACK (on_number_of_columns_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) thermal_solder_mask_clearance_entry, "changed",
-                    G_CALLBACK (on_thermal_solder_mask_clearance_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) thermal_length_entry, "changed",
-                    G_CALLBACK (on_thermal_length_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) thermal_width_entry, "changed",
-                    G_CALLBACK (on_thermal_width_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) thermal_checkbutton, "toggled",
-                    G_CALLBACK (on_thermal_checkbutton_toggled),
-                    NULL);
-  g_signal_connect ((gpointer) thermal_nopaste_checkbutton, "toggled",
-                    G_CALLBACK (on_thermal_nopaste_checkbutton_toggled),
-                    NULL);
-  g_signal_connect ((gpointer) number_1_position_entry, "changed",
-                    G_CALLBACK (on_number_1_position_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) pad_shape_entry, "changed",
-                    G_CALLBACK (on_pad_shape_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) vertical_silkscreen_entry, "changed",
-                    G_CALLBACK (on_vertical_silkscreen_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) vertical_courtyard_entry, "changed",
-                    G_CALLBACK (on_vertical_courtyard_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) silkscreen_line_width_entry, "changed",
-                    G_CALLBACK (on_silkscreen_line_width_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) courtyard_line_width_entry, "changed",
-                    G_CALLBACK (on_courtyard_line_width_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) horizontal_silkscreen_entry, "changed",
-                    G_CALLBACK (on_horizontal_silkscreen_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) horizontal_courtyard_entry, "changed",
-                    G_CALLBACK (on_horizontal_courtyard_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) G1_radiobutton, "toggled",
-                    G_CALLBACK (on_G1_radiobutton_toggled),
-                    NULL);
-  g_signal_connect ((gpointer) C1_radiobutton, "toggled",
-                    G_CALLBACK (on_C1_radiobutton_toggled),
-                    NULL);
-  g_signal_connect ((gpointer) Z1_radiobutton, "toggled",
-                    G_CALLBACK (on_Z1_radiobutton_toggled),
-                    NULL);
-  g_signal_connect ((gpointer) Z1_entry, "changed",
-                    G_CALLBACK (on_Z1_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) C1_entry, "changed",
-                    G_CALLBACK (on_C1_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) G1_entry, "changed",
-                    G_CALLBACK (on_G1_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) G2_radiobutton, "toggled",
-                    G_CALLBACK (on_G2_radiobutton_toggled),
-                    NULL);
-  g_signal_connect ((gpointer) C2_radiobutton, "toggled",
-                    G_CALLBACK (on_C2_radiobutton_toggled),
-                    NULL);
-  g_signal_connect ((gpointer) Z2_radiobutton, "toggled",
-                    G_CALLBACK (on_Z2_radiobutton_toggled),
-                    NULL);
-  g_signal_connect ((gpointer) G2_entry, "changed",
-                    G_CALLBACK (on_G2_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) C2_entry, "changed",
-                    G_CALLBACK (on_C2_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) Z2_entry, "changed",
-                    G_CALLBACK (on_Z2_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) close_button, "clicked",
-                    G_CALLBACK (on_close_button_clicked),
-                    NULL);
-  g_signal_connect ((gpointer) save_button, "clicked",
-                    G_CALLBACK (on_save_button_clicked),
-                    NULL);
-  g_signal_connect ((gpointer) refresh_button, "clicked",
-                    G_CALLBACK (on_refresh_button_clicked),
-                    NULL);
-
-  /* Store pointers to all widgets, for use by lookup_widget(). */
-  GLADE_HOOKUP_OBJECT_NO_REF (pcb_gfpw, pcb_gfpw, "pcb_gfpw");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, vbox1, "vbox1");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_frame, "footprint_frame");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_alignment, "footprint_alignment");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_hbox, "footprint_hbox");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_name_label, "footprint_name_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_name_entry, "footprint_name_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_type_label, "footprint_type_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_type_entry, "footprint_type_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_units_label, "footprint_units_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_units_entry, "footprint_units_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_label, "footprint_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, vbox2, "vbox2");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, pins_pads_frame, "pins_pads_frame");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, number_alignment, "number_alignment");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, number_table, "number_table");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, number_total_pins_label, "number_total_pins_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, pad_length_label, "pad_length_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, pad_length_entry, "pad_length_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, number_total_pins_entry, "number_total_pins_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, pad_width_label, "pad_width_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, pad_vertical_spacing_label, "pad_vertical_spacing_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, pad_horizontal_spacing_label, "pad_horizontal_spacing_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, E1_entry, "E1_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, number_of_rows_label, "number_of_rows_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, number_of_columns_label, "number_of_columns_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, pad_solder_mask_clearance_label, "pad_solder_mask_clearance_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, pin_drill_diameter_label, "pin_drill_diameter_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, pad_diameter_label, "pad_diameter_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, pad_diameter_entry, "pad_diameter_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, number_of_rows_entry, "number_of_rows_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, pin_drill_diameter_entry, "pin_drill_diameter_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, pad_width_entry, "pad_width_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, E2_entry, "E2_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, pad_solder_mask_clearance_entry, "pad_solder_mask_clearance_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, number_of_columns_entry, "number_of_columns_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_pad_solder_mask_clearance_label, "thermal_pad_solder_mask_clearance_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_solder_mask_clearance_entry, "thermal_solder_mask_clearance_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_clearance_label, "thermal_clearance_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_clearance_entry, "thermal_clearance_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_pad_length_label, "thermal_pad_length_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_length_entry, "thermal_length_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_pad_width_label, "thermal_pad_width_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_width_entry, "thermal_width_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_checkbutton, "thermal_checkbutton");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_nopaste_checkbutton, "thermal_nopaste_checkbutton");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, number_1_position_label, "number_1_position_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, number_1_position_entry, "number_1_position_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, pin1_square_checkbutton, "pin1_square_checkbutton");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, pad_shape_label, "pad_shape_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, pad_shape_entry, "pad_shape_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, clearance_label, "clearance_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, clearance_entry, "clearance_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, pins_pads_label, "pins_pads_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, silkscreen_courtyard_frame, "silkscreen_courtyard_frame");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, pads_pins_alignment, "pads_pins_alignment");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, pads_pins_table, "pads_pins_table");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, vertical_silkscreen_label, "vertical_silkscreen_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, horizontal_silkscreen_label, "horizontal_silkscreen_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, vertical_courtyard_label, "vertical_courtyard_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, horizontal_courtyard_label, "horizontal_courtyard_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, silkscreen_line_width_label, "silkscreen_line_width_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_line_width_label, "courtyard_line_width_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, vertical_silkscreen_entry, "vertical_silkscreen_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, vertical_courtyard_entry, "vertical_courtyard_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, silkscreen_line_width_entry, "silkscreen_line_width_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_line_width_entry, "courtyard_line_width_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, horizontal_silkscreen_entry, "horizontal_silkscreen_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, horizontal_courtyard_entry, "horizontal_courtyard_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, silkscreen_courtyard_label, "silkscreen_courtyard_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, hbox1, "hbox1");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, distances_vbox, "distances_vbox");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, frame2, "frame2");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, alignment2, "alignment2");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, table2, "table2");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, G1_radiobutton, "G1_radiobutton");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, C1_radiobutton, "C1_radiobutton");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, Z1_radiobutton, "Z1_radiobutton");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, Z1_entry, "Z1_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, C1_entry, "C1_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, G1_entry, "G1_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, distance_between_top_and_bottom_row_label, "distance_between_top_and_bottom_row_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, frame1, "frame1");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, alignment1, "alignment1");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, table1, "table1");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, G2_radiobutton, "G2_radiobutton");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, C2_radiobutton, "C2_radiobutton");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, Z2_radiobutton, "Z2_radiobutton");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, G2_entry, "G2_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, C2_entry, "C2_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, Z2_entry, "Z2_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, distance_between_left_and_right_column_label, "distance_between_left_and_right_column_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, dimensions_frame, "dimensions_frame");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, dimensions_alignment, "dimensions_alignment");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, dimensions_image, "dimensions_image");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, preview_label, "preview_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, hbuttonbox1, "hbuttonbox1");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, close_button, "close_button");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, save_button, "save_button");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, refresh_button, "refresh_button");
-
-  return pcb_gfpw;
-}
-
-GtkWidget*
 create_about_dialog (void)
 {
   GtkWidget *about_dialog;
@@ -1165,10 +57,10 @@ create_about_dialog (void)
 }
 
 GtkWidget*
-create_pcb_gfpw_with_tabs (void)
+create_pcb_gfpw (void)
 {
-  GtkWidget *pcb_gfpw_with_tabs;
-  GdkPixbuf *pcb_gfpw_with_tabs_icon_pixbuf;
+  GtkWidget *pcb_gfpw;
+  GdkPixbuf *pcb_gfpw_icon_pixbuf;
   GtkWidget *vbox3;
   GtkWidget *hbox2;
   GtkWidget *notebook;
@@ -1295,21 +187,21 @@ create_pcb_gfpw_with_tabs (void)
 
   tooltips = gtk_tooltips_new ();
 
-  pcb_gfpw_with_tabs = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-  gtk_widget_set_name (pcb_gfpw_with_tabs, "pcb_gfpw_with_tabs");
-  gtk_tooltips_set_tip (tooltips, pcb_gfpw_with_tabs, _("FootPrintWizard for pcb footprints"), NULL);
-  gtk_window_set_title (GTK_WINDOW (pcb_gfpw_with_tabs), _("pcb FootPrintWizard"));
-  pcb_gfpw_with_tabs_icon_pixbuf = create_pixbuf ("gFootprintWizard.xpm");
-  if (pcb_gfpw_with_tabs_icon_pixbuf)
+  pcb_gfpw = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+  gtk_widget_set_name (pcb_gfpw, "pcb_gfpw");
+  gtk_tooltips_set_tip (tooltips, pcb_gfpw, _("FootPrintWizard for pcb footprints"), NULL);
+  gtk_window_set_title (GTK_WINDOW (pcb_gfpw), _("pcb FootPrintWizard"));
+  pcb_gfpw_icon_pixbuf = create_pixbuf ("gFootprintWizard.xpm");
+  if (pcb_gfpw_icon_pixbuf)
     {
-      gtk_window_set_icon (GTK_WINDOW (pcb_gfpw_with_tabs), pcb_gfpw_with_tabs_icon_pixbuf);
-      gdk_pixbuf_unref (pcb_gfpw_with_tabs_icon_pixbuf);
+      gtk_window_set_icon (GTK_WINDOW (pcb_gfpw), pcb_gfpw_icon_pixbuf);
+      gdk_pixbuf_unref (pcb_gfpw_icon_pixbuf);
     }
 
   vbox3 = gtk_vbox_new (FALSE, 0);
   gtk_widget_set_name (vbox3, "vbox3");
   gtk_widget_show (vbox3);
-  gtk_container_add (GTK_CONTAINER (pcb_gfpw_with_tabs), vbox3);
+  gtk_container_add (GTK_CONTAINER (pcb_gfpw), vbox3);
 
   hbox2 = gtk_hbox_new (FALSE, 0);
   gtk_widget_set_name (hbox2, "hbox2");
@@ -2180,7 +1072,7 @@ create_pcb_gfpw_with_tabs (void)
   gtk_container_add (GTK_CONTAINER (frame3), alignment3);
   gtk_alignment_set_padding (GTK_ALIGNMENT (alignment3), 0, 0, 12, 0);
 
-  image1 = create_pixmap (pcb_gfpw_with_tabs, "splash_wiz.xpm");
+  image1 = create_pixmap (pcb_gfpw, "splash_wiz.xpm");
   gtk_widget_set_name (image1, "image1");
   gtk_widget_show (image1);
   gtk_container_add (GTK_CONTAINER (alignment3), image1);
@@ -2344,131 +1236,131 @@ create_pcb_gfpw_with_tabs (void)
                     NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
-  GLADE_HOOKUP_OBJECT_NO_REF (pcb_gfpw_with_tabs, pcb_gfpw_with_tabs, "pcb_gfpw_with_tabs");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, vbox3, "vbox3");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, hbox2, "hbox2");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, notebook, "notebook");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, table4, "table4");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, frame15, "frame15");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, alignment15, "alignment15");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, table18, "table18");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label25, "label25");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label26, "label26");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, footprint_author_entry, "footprint_author_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, footprint_dist_license_entry, "footprint_dist_license_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, footprint_use_license_entry, "footprint_use_license_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label27, "label27");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label28, "label28");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, footprint_status_entry, "footprint_status_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label51, "label51");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, frame16, "frame16");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, alignment16, "alignment16");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, table19, "table19");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label7, "label7");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, footprint_name_entry, "footprint_name_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label8, "label8");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label9, "label9");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, footprint_type_entry, "footprint_type_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, footprint_type_entry, "footprint_type_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, package_is_radial_checkbutton, "package_is_radial_checkbutton");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label31, "label31");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label30, "label30");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label29, "label29");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, package_body_height_entry, "package_body_height_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, package_body_width_entry, "package_body_width_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, package_body_length_entry, "package_body_length_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label54, "label54");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, footprint_value_entry, "footprint_value_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label52, "label52");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label4, "label4");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, table5, "table5");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, frame11, "frame11");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, alignment11, "alignment11");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, table14, "table14");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label32, "label32");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label33, "label33");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, pad_length_entry, "pad_length_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, pad_width_entry, "pad_width_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label46, "label46");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, frame6, "frame6");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, alignment6, "alignment6");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, table11, "table11");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label17, "label17");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label18, "label18");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, pad_clearance_entry, "pad_clearance_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, pad_solder_mask_clearance_entry, "pad_solder_mask_clearance_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label42, "label42");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, frame10, "frame10");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, alignment10, "alignment10");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, table13, "table13");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, pad_diameter_entry, "pad_diameter_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label16, "label16");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, pin_drill_diameter_entry, "pin_drill_diameter_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label53, "label53");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label45, "label45");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, frame9, "frame9");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, alignment9, "alignment9");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, table12, "table12");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label10, "label10");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label11, "label11");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label12, "label12");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label13, "label13");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label14, "label14");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label19, "label19");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label20, "label20");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, number_total_pins_entry, "number_total_pins_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, number_of_rows_entry, "number_of_rows_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, number_of_columns_entry, "number_of_columns_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, E2_entry, "E2_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, E1_entry, "E1_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, pad_shape_entry, "pad_shape_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, number_1_position_entry, "number_1_position_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label44, "label44");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label5, "label5");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, table6, "table6");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, frame12, "frame12");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, alignment12, "alignment12");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, table15, "table15");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, thermal_checkbutton, "thermal_checkbutton");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label24, "label24");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label34, "label34");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, thermal_width_entry, "thermal_width_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, thermal_length_entry, "thermal_length_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, thermal_nopaste_checkbutton, "thermal_nopaste_checkbutton");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label47, "label47");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label6, "label6");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, table8, "table8");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, frame14, "frame14");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, alignment14, "alignment14");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, table17, "table17");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, courtyard_checkbutton, "courtyard_checkbutton");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label37, "label37");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label39, "label39");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, horizontal_courtyard_entry, "horizontal_courtyard_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, vertical_courtyard_entry, "vertical_courtyard_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label50, "label50");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, courtyard_line_width_entry, "courtyard_line_width_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label49, "label49");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, frame13, "frame13");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, alignment13, "alignment13");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, table16, "table16");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label38, "label38");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, silkscreen_line_width_entry, "silkscreen_line_width_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, package_outline_checkbutton, "package_outline_checkbutton");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, indicate_1_checkbutton, "indicate_1_checkbutton");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label48, "label48");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label21, "label21");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, frame3, "frame3");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, alignment3, "alignment3");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, image1, "image1");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, label3, "label3");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, hbuttonbox2, "hbuttonbox2");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, close_button, "close_button");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, clear_button, "clear_button");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, save_button, "save_button");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw_with_tabs, refresh_button, "refresh_button");
-  GLADE_HOOKUP_OBJECT_NO_REF (pcb_gfpw_with_tabs, tooltips, "tooltips");
+  GLADE_HOOKUP_OBJECT_NO_REF (pcb_gfpw, pcb_gfpw, "pcb_gfpw");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, vbox3, "vbox3");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, hbox2, "hbox2");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, notebook, "notebook");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, table4, "table4");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, frame15, "frame15");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, alignment15, "alignment15");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, table18, "table18");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label25, "label25");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label26, "label26");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_author_entry, "footprint_author_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_dist_license_entry, "footprint_dist_license_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_use_license_entry, "footprint_use_license_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label27, "label27");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label28, "label28");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_status_entry, "footprint_status_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label51, "label51");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, frame16, "frame16");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, alignment16, "alignment16");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, table19, "table19");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label7, "label7");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_name_entry, "footprint_name_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label8, "label8");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label9, "label9");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_type_entry, "footprint_type_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_type_entry, "footprint_type_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, package_is_radial_checkbutton, "package_is_radial_checkbutton");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label31, "label31");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label30, "label30");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label29, "label29");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, package_body_height_entry, "package_body_height_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, package_body_width_entry, "package_body_width_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, package_body_length_entry, "package_body_length_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label54, "label54");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_value_entry, "footprint_value_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label52, "label52");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label4, "label4");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, table5, "table5");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, frame11, "frame11");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, alignment11, "alignment11");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, table14, "table14");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label32, "label32");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label33, "label33");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, pad_length_entry, "pad_length_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, pad_width_entry, "pad_width_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label46, "label46");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, frame6, "frame6");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, alignment6, "alignment6");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, table11, "table11");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label17, "label17");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label18, "label18");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, pad_clearance_entry, "pad_clearance_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, pad_solder_mask_clearance_entry, "pad_solder_mask_clearance_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label42, "label42");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, frame10, "frame10");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, alignment10, "alignment10");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, table13, "table13");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, pad_diameter_entry, "pad_diameter_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label16, "label16");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, pin_drill_diameter_entry, "pin_drill_diameter_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label53, "label53");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label45, "label45");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, frame9, "frame9");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, alignment9, "alignment9");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, table12, "table12");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label10, "label10");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label11, "label11");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label12, "label12");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label13, "label13");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label14, "label14");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label19, "label19");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label20, "label20");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, number_total_pins_entry, "number_total_pins_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, number_of_rows_entry, "number_of_rows_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, number_of_columns_entry, "number_of_columns_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, E2_entry, "E2_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, E1_entry, "E1_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, pad_shape_entry, "pad_shape_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, number_1_position_entry, "number_1_position_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label44, "label44");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label5, "label5");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, table6, "table6");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, frame12, "frame12");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, alignment12, "alignment12");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, table15, "table15");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_checkbutton, "thermal_checkbutton");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label24, "label24");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label34, "label34");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_width_entry, "thermal_width_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_length_entry, "thermal_length_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_nopaste_checkbutton, "thermal_nopaste_checkbutton");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label47, "label47");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label6, "label6");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, table8, "table8");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, frame14, "frame14");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, alignment14, "alignment14");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, table17, "table17");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_checkbutton, "courtyard_checkbutton");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label37, "label37");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label39, "label39");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, horizontal_courtyard_entry, "horizontal_courtyard_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, vertical_courtyard_entry, "vertical_courtyard_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label50, "label50");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_line_width_entry, "courtyard_line_width_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label49, "label49");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, frame13, "frame13");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, alignment13, "alignment13");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, table16, "table16");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label38, "label38");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, silkscreen_line_width_entry, "silkscreen_line_width_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, package_outline_checkbutton, "package_outline_checkbutton");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, indicate_1_checkbutton, "indicate_1_checkbutton");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label48, "label48");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label21, "label21");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, frame3, "frame3");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, alignment3, "alignment3");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, image1, "image1");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label3, "label3");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, hbuttonbox2, "hbuttonbox2");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, close_button, "close_button");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, clear_button, "clear_button");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, save_button, "save_button");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, refresh_button, "refresh_button");
+  GLADE_HOOKUP_OBJECT_NO_REF (pcb_gfpw, tooltips, "tooltips");
 
-  return pcb_gfpw_with_tabs;
+  return pcb_gfpw;
 }
 
