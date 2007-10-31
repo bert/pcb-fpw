@@ -6,7 +6,7 @@
 
 gchar *s = N_("pcb-gfpw");
 gchar *s = N_("(C) 2007 Bert Timmerman.");
-gchar *s = N_("pcb Footprint Wizard generates footprint files for pcb.\n"
+gchar *s = N_("The pcb FootPrintWizard generates footprint files for pcb (see http://pcb.sourceforge.net).\n"
               "");
 gchar *s = N_("GPL v2");
 gchar *s = N_("translator-credits");
@@ -61,8 +61,8 @@ gchar *s = N_("Pad width (Y)");
 gchar *s = N_("Length of pads or diameter of pins");
 gchar *s = N_("Width of pads");
 gchar *s = N_("<b>Pads</b>");
-gchar *s = N_("Polygon clearance");
-gchar *s = N_("Solder mask clearance ");
+gchar *s = N_("Pad clearance");
+gchar *s = N_("Pad solder mask clearance ");
 gchar *s = N_("Clearance with polygons");
 gchar *s = N_("Clearance with solder mask");
 gchar *s = N_("<b>Clearances</b>");
@@ -113,6 +113,7 @@ gchar *s = N_("Pin/Pad #1 indicator ");
 gchar *s = N_("<b>Silkscreen</b>");
 gchar *s = N_("Silkscreen");
 gchar *s = N_("<b>Preview</b>");
-gchar *s = N_("Click Close button to exit");
-gchar *s = N_("Click Save button to write footprint file");
-gchar *s = N_("Click Refresh button to update the Preview");
+gchar *s = N_("Click the Close button to exit");
+gchar *s = N_("Click the Clear button to reset the entries to the default");
+gchar *s = N_("Click the Save button to write the footprint file");
+gchar *s = N_("Click the Refresh button to refresh the preview widget");

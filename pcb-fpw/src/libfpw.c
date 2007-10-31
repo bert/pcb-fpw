@@ -1,11 +1,15 @@
 /*!
  * \file libfpw.c
- * \author Copyright (C) 2007 by Bert Timmerman <bert.timmerman@xs4all.nl>
- * \brief libfpw contains functions for fpw (FootPrintWizard).
+ * \brief libfpw contains helper functions for both fpw (CLI) and
+ * pcb-gfpw (GUI) versions of the pcb FootPrintWizard.
  *
  * fpw (FootPrintWizard) is a program for the creation of footprint files
- * used by the pcb layout application (see http://pcb.sourgeforge.net) for
- * the placement of parts in a pcb layout.
+ * to be used by the pcb layout application (see http://pcb.sourgeforge.net)
+ * for the placement of parts in a pcb layout.\n\n
+ * The functions in libfpw are called by the CLI version of the
+ * FootPrintWizard (fpw) as well as the GUI version (pcb-gfpw).\n
+ *
+ * \author Copyright (C) 2007 by Bert Timmerman <bert.timmerman@xs4all.nl>
  */
 
 
@@ -88,56 +92,83 @@ typedef enum locations location_t;
 #define NOPASTE 0x10000 /*!< For pads, set to prevent a solderpaste stencil opening for the pad.\n */
                         /*!< Primarily used for pads used as fiducials. */
 
-gchar *fpw_filename; /*!< filename of footprintwizard file */
-gchar *fpw_suffix = "fpw";
-gchar *footprint_filename = NULL; /*!< filename of footprint file */
-gchar *fp_suffix = "fp";
-gchar *footprint_name = NULL; /*!< name of footprint */
-gchar *footprint_type = NULL; /*!< type of footprint */
-package_t package_type; /*!< type of package */
-gchar *footprint_units = NULL; /*!< units for footprint dimensions */
-gdouble multiplier; /*!< multiplier to convert to mils/100. */
-gdouble package_body_length;
-gdouble package_body_width;
-gdouble package_height;
-gboolean package_is_radial;
-gchar *footprint_author;
-gchar *footprint_dist_license;
-gchar *footprint_use_license;
-gchar *footprint_status;
-gchar *n1_pos = NULL; /*!< position of number 1 pin. */
-location_t pin1_location; /*!< location of number 1 pin. */
-gint n; /*!< number of pads/pins. */
-gint n_col; /*!< number of columns. */
-gint n_row; /*!< number of rows. */
-gdouble c1; /*!< top to bottom pads center-center distance. */
-gdouble e1; /*!< width spacing of pads/pins (pitch in Y-direction). */
-gdouble g1; /*!< top to bottom pads inner-inner distance. */
-gdouble z1; /*!< top to bottom pads outer-outer distance. */
-gdouble c2; /*!< left to right pads center-center distance. */
-gdouble e2; /*!< length spacing of pads/pins (pitchin X-direction). */
-gdouble g2; /*!< left to right pads inner-inner distance. */
-gdouble z2; /*!< left to right pads outer-outer distance. */
-gdouble x; /*!< length of pad. */
-gdouble y; /*!< width of pad. */
-gdouble d_hole; /*!< diameter of pin hole. */
-gdouble d_pad; /*!< diameter of pin pad (annulus). */
-gchar *pad_shape = NULL; /*!< shape of pads/pins. */
-gint pin_pad_type; /*!< type of pads/pins. */
-gchar *pin_pad_flags = NULL; /*!< flags of pads/pins. */
-gdouble solder_mask_clearance; /*!< solder mask clearance of pin/pad. */
-gdouble silkscreen_line_width; /*!< silkscreen line width */
-gdouble r1; /*!< silkscreen width (Y-direction) */
-gdouble r2; /*!< silkscreen length (X-direction) */
-gdouble v1; /*!< courtyard width (Y-direction) */
-gdouble v2; /*!< courtyard length (X-direction) */
-gdouble courtyard_line_width; /*!< courtyard line width */
-gboolean thermal; /*!< has thermal pad */
-gboolean thermal_nopaste; /*!< thermal pad has no paste */
-gdouble thermal_x; /*!< length of thermal pad. */
-gdouble thermal_y; /*!< width of thermal pad. */
-gdouble thermal_solder_mask_clearance; /*!< solder mask clearance of thermal pad. */
-gchar *dummy = NULL;
+gchar *fpw_filename; /*!< Filename of footprintwizard file. */
+gchar *fpw_suffix = "fpw"; /*!< Suffix of footprintwizard file. */
+gchar *footprint_filename = NULL; /*!< Filename of footprint file. */
+gchar *fp_suffix = "fp"; /*!< Suffix of footprint file. */
+gchar *footprint_name = NULL; /*!< Name of the footprint. */
+gchar *footprint_type = NULL; /*!< Type of the footprint. */
+package_t package_type; /*!< Type of the package. */
+gchar *footprint_units = NULL; /*!< Units for the footprint dimensions. */
+gdouble multiplier; /*!< Multiplier to convert to mils/100. */
+gchar *footprint_value; /*!< Value of the package. */
+
+gdouble package_body_length; /*!< Length dimension of the package body. */
+gdouble package_body_width; /*!< Width dimension of the package body. */
+gdouble package_body_height; /*!< Height dimension of the package body. */
+gboolean package_is_radial; /*!< Package has a radial body. */
+
+gchar *footprint_author; /*!< Author of the footprint. */
+gchar *footprint_dist_license; /*!< Distribution license of the footprint. */
+gchar *footprint_use_license; /*!< Usage license of the footprint. */
+gchar *footprint_status; /*!< Status of the footprint. */
+
+gint n; /*!< Number of pads/pins. */
+gint n_col; /*!< Number of columns. */
+gint n_row; /*!< Number of rows. */
+gchar *n1_pos = NULL; /*!< Position of number 1 pin. */
+location_t pin1_location; /*!< Location of number 1 pin. */
+gdouble pitch_x; /*!< Pitch in X-direction. */
+gdouble pitch_y; /*!< Pitch in Y-direction. */
+gdouble x; /*!< Length of pad. */
+gdouble y; /*!< Width of pad. */
+gdouble pin_hole_diameter; /*!< Diameter of pin hole. */
+gdouble pad_diameter; /*!< Diameter of pin pad (annulus). */
+gchar *pad_shape = NULL; /*!< Shape of pads/pins. */
+gint pin_pad_type; /*!< Type of pads/pins. */
+gchar *pin_pad_flags = NULL; /*!< Flags of pads/pins. */
+gdouble solder_mask_clearance; /*!< Solder mask clearance of a pin/pad. */
+gdouble pad_clearance; /*!< Clearance of a pin/pad. */
+
+gboolean package_outline; /*!< Draw the package body outline on the silkscreen. */
+gboolean silkscreen_indicate_1; /*!< Indicate the position of number 1 */
+        /*!< pin/pad on the silkscreen. */
+gdouble silkscreen_length; /*!< Silkscreen length (X-direction). */
+gdouble silkscreen_width; /*!< Silkscreen width (Y-direction). */
+gdouble r1; /*!< Silkscreen width (Y-direction). */
+gdouble r2; /*!< Silkscreen length (X-direction). */
+gdouble silkscreen_line_width; /*!< Silkscreen line width. */
+
+gboolean courtyard; /*!< Draw courtyard. */
+gdouble courtyard_length; /*!< Courtyard length (X-direction). */
+gdouble courtyard_width; /*!< Courtyard width (Y-direction). */
+gdouble v1; /*!< Courtyard width (Y-direction). */
+gdouble v2; /*!< Courtyard length (X-direction). */
+gdouble courtyard_line_width; /*!< Courtyard line width. */
+
+gboolean thermal; /*!< Draw thermal pad. */
+gboolean thermal_nopaste; /*!< Thermal pad has no paste. */
+gdouble thermal_x; /*!< Length of thermal pad. */
+gdouble thermal_y; /*!< Width of thermal pad. */
+gdouble thermal_solder_mask_clearance; /*!< Solder mask clearance of thermal pad. */
+
+gchar *dummy = NULL; /*!< Every now and then the village-idot is needed ;-) */
+
+/*!
+ * \attention Now follow some obsolete variables for goals input (heel and
+ * toe) of pads.\n
+ * These variables maybe added when and if another tab is added for the
+ * creation of footprints based on heel and toe information for pads.\n
+ * This can be considered being an expert-mode. */
+gdouble c1; /*!< Top to bottom pads center-center distance. */
+gdouble e1; /*!< Pitch in Y-direction. */
+gdouble g1; /*!< Top to bottom pads inner-inner distance. */
+gdouble z1; /*!< Top to bottom pads outer-outer distance. */
+gdouble c2; /*!< Left to right pads center-center distance. */
+gdouble e2; /*!< Pitch in X-direction. */
+gdouble g2; /*!< Left to right pads inner-inner distance. */
+gdouble z2; /*!< Left to right pads outer-outer distance. */
+
 
 
 /*!
@@ -157,7 +188,61 @@ write_attributes
         fprintf (fp, "\tAttribute(\"status\" \"%s\")\n", footprint_status);
         fprintf (fp, "\tAttribute(\"package body length\" \"%d\")\n", package_body_length);
         fprintf (fp, "\tAttribute(\"package body width\" \"%d\")\n", package_body_width);
-        fprintf (fp, "\tAttribute(\"package height\" \"%d\")\n", package_height);
+        fprintf (fp, "\tAttribute(\"package height\" \"%d\")\n", package_body_height);
+}
+
+
+/*!
+ * \brief Write an element arc.
+ *
+ */
+int
+write_element_arc
+(
+        FILE *fp, /*!< file pointer */
+        gdouble x,
+        gdouble y,
+        gdouble width,
+        gdouble height,
+        gdouble start_angle,
+        gdouble delta_angle,
+        gdouble line_width
+)
+{
+        fprintf
+        (
+                fp,
+                "\tElementArc[%d %d %d %d %d %d %d]\n",
+                (int) x,
+                (int) y,
+                (int) width,
+                (int) height,
+                (int) start_angle,
+                (int) delta_angle,
+                (int) line_width
+        );
+}
+
+
+/*!
+ * \brief Write an element header based on the global variables.
+ *
+ */
+int
+write_element_header
+(
+        FILE *fp, /*!< file pointer */
+        gdouble x_text, /*!< X-coordinate of text */
+        gdouble y_text /*!< y-coordinate of text */
+)
+{
+        /* Write header to file */
+        fprintf (fp, "Element[\"\" \"%s\" \"?\" \"%s\" 0 0 %d %d 0 100 \"\"]\n",
+                footprint_name,
+                footprint_value,
+                (int) (x_text * multiplier),
+                (int) (y_text * multiplier)
+                );
 }
 
 
@@ -183,8 +268,8 @@ read_footprintwizard_file()
                 fscanf (fp, "%d\n", n_row);
                 fscanf (fp, "%f\n", x);
                 fscanf (fp, "%f\n", y);
-                fscanf (fp, "%f\n", d_pad);
-                fscanf (fp, "%f\n", d_hole);
+                fscanf (fp, "%f\n", pad_diameter);
+                fscanf (fp, "%f\n", pin_hole_diameter);
                 fscanf (fp, "%f\n", c1);
                 fscanf (fp, "%f\n", g1);
                 fscanf (fp, "%f\n", z1);
@@ -204,8 +289,8 @@ read_footprintwizard_file()
                 fscanf (fp, "%f\n", thermal_x);
                 fscanf (fp, "%f\n", thermal_y);
                 fscanf (fp, "%f\n", thermal_solder_mask_clearance);
+                close (fp);
         }
-        close (fp);
 }
 
 
@@ -367,31 +452,32 @@ write_footprint_dip ()
         gdouble xmin;
         gdouble ymax;
         gdouble ymin;
+        gdouble x_text;
+        gdouble y_text;
         gint pin_number;
         gint i;
 
         if (fp = g_fopen (footprint_filename, "w"))
         {
-                /* Determine extreme (courtyard) dimensions */
-                xmax = multiplier * (e2 / 2 + d_pad / 2 + solder_mask_clearance);
+                /* Determine (extreme) courtyard dimensions */
+                xmax = multiplier * (e2 / 2 + pad_diameter / 2 + solder_mask_clearance);
                 if (multiplier * (v1 / 2) > xmax) xmax = multiplier * (v1 / 2);
-                xmin = multiplier * ((-e2 / 2) - (d_pad / 2) - solder_mask_clearance);
+                xmin = multiplier * ((-e2 / 2) - (pad_diameter / 2) - solder_mask_clearance);
                 if (multiplier * (-v1 / 2) < xmin) xmin = multiplier * (-v1 / 2);
-                ymax = multiplier * ((n / 4) * e1 + (d_pad / 2) + solder_mask_clearance);
+                ymax = multiplier * ((n / 4) * e1 + (pad_diameter / 2) + solder_mask_clearance);
                 if (multiplier * (v2 / 2) > ymax) ymax = multiplier * (v2 / 2);
-                ymin = multiplier * ((-n / 4) * e1 - (d_pad / 2) - solder_mask_clearance);
+                ymin = multiplier * ((-n / 4) * e1 - (pad_diameter / 2) - solder_mask_clearance);
                 if (multiplier * (-v2 / 2) < ymin) ymin = multiplier * (-v2 / 2);
-                /* Write header to file */
-                fprintf (fp, "Element[0x00000000 \"%s\" \"?\" \"\" %d %d 0 0 0 100 0x00000000]\n",
-                        footprint_name,
-                        (int) (xmin + multiplier * 20),
-                        (int) (ymax + multiplier * 20)
-                        );
+                /* Write element header to file */
+                x_text = 0.0 ;
+                y_text = (ymin / 2) - 150.0;
+                write_element_header (fp, x_text, y_text);
                 /* Write encapsulated element entities */
                 fprintf (fp, "(\n");
                 pin_number = 1;
-                for (i = 0; i < (n_row - 1); i++)
+                for (i = 0; i > (n_row - 1); i++)
                 {
+                        pin_number = 1 + i;
                         write_pin
                         (
                                 fp,
@@ -399,13 +485,13 @@ write_footprint_dip ()
                                 "", /* pin name */
                                 multiplier * - e2 / 2, /* x0 coordinate */
                                 multiplier * ((-n_row / 2 + i) * e1), /* y0-coordinate */
-                                multiplier * d_pad, /* width of the annulus ring (pad) */
-                                multiplier * solder_mask_clearance, /* clearance */
+                                multiplier * pad_diameter, /* width of the annulus ring (pad) */
+                                multiplier * pad_clearance, /* clearance */
                                 multiplier * solder_mask_clearance, /* solder mask clearance */
-                                multiplier * d_hole, /* pin drill diameter */
+                                multiplier * pin_hole_diameter, /* pin drill diameter */
                                 pin_pad_flags /* flags */
                         );
-                        pin_number++;
+                        pin_number = (n_row * n_col) - i;
                         write_pin
                         (
                                 fp,
@@ -413,35 +499,42 @@ write_footprint_dip ()
                                 "", /* pin name */
                                 multiplier * e2 / 2, /* x0 coordinate */
                                 multiplier * ((-n_row / 2 + i) * e1), /* y0-coordinate */
-                                multiplier * d_pad, /* width of the annulus ring (pad) */
-                                multiplier * solder_mask_clearance, /* clearance */
+                                multiplier * pad_diameter, /* width of the annulus ring (pad) */
+                                multiplier * pad_clearance, /* clearance */
                                 multiplier * solder_mask_clearance, /* solder mask clearance */
-                                multiplier * d_hole, /* pin drill diameter */
+                                multiplier * pin_hole_diameter, /* pin drill diameter */
                                 pin_pad_flags /* flags */
                         );
                         pin_number++;
                 }
                 /* Write a package body on the silkscreen */
-                write_rectangle
-                (
-                        fp,
-                        multiplier * (((-e2 + d_pad + silkscreen_line_width) / 2) + solder_mask_clearance) ,
-                        multiplier * ymin,
-                        multiplier * (((e2 - d_pad - silkscreen_line_width) / 2) - solder_mask_clearance) ,
-                        multiplier * ymax,
-                        multiplier * silkscreen_line_width
-                );
+                if (package_outline)
+                {
+                        write_rectangle
+                        (
+                                fp,
+                                multiplier * (((-e2 + pad_diameter + silkscreen_line_width) / 2) + solder_mask_clearance) ,
+                                multiplier * ymin,
+                                multiplier * (((e2 - pad_diameter - silkscreen_line_width) / 2) - solder_mask_clearance) ,
+                                multiplier * ymax,
+                                multiplier * silkscreen_line_width
+                        );
+                }
                 /* Write a pin #1 marker */
-                fprintf
-                (
-                        fp,
-                        "\tElementArc[%d %d %d %d %d]\n",
-                        (int) multiplier * (xmin / 4),
-                        (int) multiplier * ymin,
-                        (int) multiplier * (xmax / 4),
-                        (int) multiplier * ymin,
-                        (int) multiplier * courtyard_line_width
-                );
+                if (silkscreen_indicate_1)
+                {
+                        write_element_arc
+                        (
+                                fp,
+                                multiplier * (xmin / 4),
+                                multiplier * ymin,
+                                multiplier * (xmax / 4),
+                                multiplier * ymin,
+                                0,
+                                180,
+                                multiplier * courtyard_line_width
+                        );
+                }
                 /* Write a courtyard */
                 write_rectangle
                 (
@@ -459,7 +552,8 @@ write_footprint_dip ()
         }
         else
         {
-                fprintf (stderr, "Error: could not open footprint file %s.\n", footprint_filename);
+                fprintf (stderr, "Error: could not open file for DIP footprint: %s.\n", footprint_filename);
+                return (EXIT_FAILURE);
         }
         close (fp);
         return (EXIT_SUCCESS);
@@ -477,10 +571,12 @@ write_footprint_smt ()
         gdouble xmin;
         gdouble ymax;
         gdouble ymin;
+        gdouble x_text;
+        gdouble y_text;
 
         if (fp = g_fopen (footprint_filename, "w"))
         {
-                /* Determine extreme (courtyard) dimensions */
+                /* Determine (extreme) courtyard dimensions */
                 xmax = multiplier * (e2 / 2 + x / 2 + solder_mask_clearance);
                 if (multiplier * (v1 / 2) > xmax) xmax = multiplier * (v1 / 2);
                 xmin = multiplier * ((-e2 / 2) - (x / 2) - solder_mask_clearance);
@@ -489,12 +585,10 @@ write_footprint_smt ()
                 if (multiplier * (v2 / 2) > ymax) ymax = multiplier * (v2 / 2);
                 ymin = multiplier * ((-y / 2) - solder_mask_clearance);
                 if (multiplier * (-v2 / 2) < ymin) ymin = multiplier * (-v2 / 2);
-                /* Write header to file */
-                fprintf (fp, "Element[0x00000000 \"%s\" \"?\" \"\" %d %d 0 0 0 100 0x00000000]\n",
-                        footprint_name,
-                        (int) (xmin + multiplier * 20),
-                        (int) (ymax + multiplier * 20)
-                        );
+                /* Write element header to file */
+                x_text = 0.0 ;
+                y_text = (ymin / 2) - 150.0;
+                write_element_header (fp, x_text, y_text);
                 /* Write encapsulated element entities */
                 fprintf (fp, "(\n");
                 if (x > y) /* Write pads parallel to x-axis */
@@ -603,7 +697,8 @@ write_footprint_smt ()
         }
         else
         {
-                fprintf (stderr, "Error: could not open footprint file %s.\n", footprint_filename);
+                fprintf (stderr, "Error: could not open file for SMT footprint: %s.\n", footprint_filename);
+                return (EXIT_FAILURE);
         }
         close (fp);
         return (EXIT_SUCCESS);
@@ -614,42 +709,46 @@ write_footprint_smt ()
  * \brief Write a TO92 footprint for a transistor package.
  */
 int
-write_footprint_smt ()
+write_footprint_to92 ()
 {
         FILE *fp;
         gdouble xmax;
         gdouble xmin;
         gdouble ymax;
         gdouble ymin;
+        gdouble x_text;
+        gdouble y_text;
 
         if (fp = g_fopen (footprint_filename, "w"))
         {
-                /* Determine extreme (courtyard) dimensions */
+                /* Determine (extreme) courtyard dimensions */
                 xmax = multiplier * (package_body_length);
                 if (multiplier * (v1 / 2) > xmax) xmax = multiplier * (v1 / 2);
-                xmin = multiplier * ((-package_body_length);
+                xmin = multiplier * (-package_body_length);
                 if (multiplier * (-v1 / 2) < xmin) xmin = multiplier * (-v1 / 2);
-                ymax = multiplier * (y / 2 + solder_mask_clearance);
+                ymax = multiplier * (package_body_width);
                 if (multiplier * (v2 / 2) > ymax) ymax = multiplier * (v2 / 2);
-                ymin = multiplier * ((-y / 2) - solder_mask_clearance);
+                ymin = multiplier * (-package_body_width);
                 if (multiplier * (-v2 / 2) < ymin) ymin = multiplier * (-v2 / 2);
-                /* Write header to file */
-                fprintf (fp, "Element[0x00000000 \"%s\" \"?\" \"\" %d %d 0 0 0 100 0x00000000]\n",
-                        footprint_name,
-                        (int) (xmin + multiplier * 20),
-                        (int) (ymax + multiplier * 20)
-                        );
+                /* Write element header to file */
+                x_text = 0.0 ;
+                y_text = (ymin / 2) - 150.0 ;
+                write_element_header (fp, x_text, y_text);
                 /* Write encapsulated element entities */
                 fprintf (fp, "(\n");
-
+                /* Write package body on silkscreen */
+                if (courtyard)
+                {
+                }
                 /* Write attributes */
-                write_attributes(fp);
+                write_attributes (fp);
                 fprintf (fp, "\n");
                 fprintf (fp, ")\n");
         }
         else
         {
-                fprintf (stderr, "Error: could not open footprint file %s.\n", footprint_filename);
+                fprintf (stderr, "Error: could not open file for TO92 footprint: %s.\n", footprint_filename);
+                return (EXIT_FAILURE);
         }
         close (fp);
         return (EXIT_SUCCESS);
@@ -678,8 +777,8 @@ write_footprintwizard_file()
         fprintf (fp, "%d\n", n_row);
         fprintf (fp, "%f\n", x);
         fprintf (fp, "%f\n", y);
-        fprintf (fp, "%f\n", d_pad);
-        fprintf (fp, "%f\n", d_hole);
+        fprintf (fp, "%f\n", pad_diameter);
+        fprintf (fp, "%f\n", pin_hole_diameter);
         fprintf (fp, "%f\n", c1);
         fprintf (fp, "%f\n", g1);
         fprintf (fp, "%f\n", z1);

@@ -5,10 +5,10 @@ INCLUDES = \
 	-DPACKAGE_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
 	@PACKAGE_CFLAGS@
 
-bin_PROGRAMS = pcb-fpw \
+bin_PROGRAMS = pcb-gfpw \
         fpw
 
-pcb_fpw_SOURCES = \
+pcb_gfpw_SOURCES = \
 	main.c \
 	support.c support.h \
 	interface.c interface.h \
@@ -17,7 +17,7 @@ pcb_fpw_SOURCES = \
 fpw_SOURCES = \
         fpw.c
 
-pcb_fpw_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
+pcb_gfpw_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
 
 fpw_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
 

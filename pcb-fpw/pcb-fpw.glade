@@ -8,7 +8,7 @@
   <property name="destroy_with_parent">False</property>
   <property name="name" translatable="yes">pcb-gfpw</property>
   <property name="copyright" translatable="yes">(C) 2007 Bert Timmerman.</property>
-  <property name="comments" translatable="yes">pcb Footprint Wizard generates footprint files for pcb.
+  <property name="comments" translatable="yes">The pcb FootPrintWizard generates footprint files for pcb (see http://pcb.sourceforge.net).
 </property>
   <property name="license" translatable="yes">GPL v2</property>
   <property name="wrap_license">False</property>
@@ -503,7 +503,7 @@ TO220
 			      </child>
 
 			      <child>
-				<widget class="GtkComboBoxEntry" id="footprint_type_entry">
+				<widget class="GtkComboBoxEntry" id="footprint_units_entry">
 				  <property name="visible">True</property>
 				  <property name="items" translatable="yes">mil
 mil/100
@@ -511,7 +511,7 @@ mm</property>
 				  <property name="add_tearoffs">False</property>
 				  <property name="has_frame">True</property>
 				  <property name="focus_on_click">True</property>
-				  <signal name="changed" handler="on_footprint_type_entry_changed" last_modification_time="Fri, 19 Oct 2007 08:47:12 GMT"/>
+				  <signal name="changed" handler="on_footprint_units_entry_changed" last_modification_time="Sun, 21 Oct 2007 19:08:41 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -740,6 +740,7 @@ mm</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_footprint_value_entry_changed" last_modification_time="Sun, 21 Oct 2007 19:21:48 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -1024,7 +1025,7 @@ mm</property>
 			      <child>
 				<widget class="GtkLabel" id="label17">
 				  <property name="visible">True</property>
-				  <property name="label" translatable="yes">Polygon clearance</property>
+				  <property name="label" translatable="yes">Pad clearance</property>
 				  <property name="use_underline">False</property>
 				  <property name="use_markup">False</property>
 				  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -1052,7 +1053,7 @@ mm</property>
 			      <child>
 				<widget class="GtkLabel" id="label18">
 				  <property name="visible">True</property>
-				  <property name="label" translatable="yes">Solder mask clearance </property>
+				  <property name="label" translatable="yes">Pad solder mask clearance </property>
 				  <property name="use_underline">False</property>
 				  <property name="use_markup">False</property>
 				  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -1621,7 +1622,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkEntry" id="E2_entry">
+				<widget class="GtkEntry" id="pitch_x_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Vertical pin/pad pitch</property>
 				  <property name="can_focus">True</property>
@@ -1632,7 +1633,7 @@ mm</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
-				  <signal name="changed" handler="on_E2_entry_changed" last_modification_time="Fri, 19 Oct 2007 17:45:42 GMT"/>
+				  <signal name="changed" handler="on_pitch_x_entry_changed" last_modification_time="Tue, 30 Oct 2007 06:55:27 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -1644,7 +1645,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkEntry" id="E1_entry">
+				<widget class="GtkEntry" id="pitch_y_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Horizontal pin/pad pitch</property>
 				  <property name="can_focus">True</property>
@@ -1655,7 +1656,7 @@ mm</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
-				  <signal name="changed" handler="on_E1_entry_changed" last_modification_time="Fri, 19 Oct 2007 17:45:53 GMT"/>
+				  <signal name="changed" handler="on_pitch_y_entry_changed" last_modification_time="Tue, 30 Oct 2007 06:55:48 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -2141,7 +2142,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkEntry" id="horizontal_courtyard_entry">
+				<widget class="GtkEntry" id="courtyard_length_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Length of courtyard</property>
 				  <property name="can_focus">True</property>
@@ -2152,7 +2153,7 @@ mm</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
-				  <signal name="changed" handler="on_horizontal_courtyard_entry_changed" last_modification_time="Sun, 21 Oct 2007 12:55:57 GMT"/>
+				  <signal name="changed" handler="on_courtyard_length_entry_changed" last_modification_time="Sun, 28 Oct 2007 07:01:07 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -2164,7 +2165,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkEntry" id="vertical_courtyard_entry">
+				<widget class="GtkEntry" id="courtyard_width_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Width of courtyard</property>
 				  <property name="can_focus">True</property>
@@ -2175,7 +2176,7 @@ mm</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
-				  <signal name="changed" handler="on_vertical_courtyard_entry_changed" last_modification_time="Sun, 21 Oct 2007 12:56:21 GMT"/>
+				  <signal name="changed" handler="on_courtyard_width_entry_changed" last_modification_time="Sun, 28 Oct 2007 07:00:26 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -2554,7 +2555,7 @@ mm</property>
 	  <child>
 	    <widget class="GtkButton" id="close_button">
 	      <property name="visible">True</property>
-	      <property name="tooltip" translatable="yes">Click Close button to exit</property>
+	      <property name="tooltip" translatable="yes">Click the Close button to exit</property>
 	      <property name="can_default">True</property>
 	      <property name="can_focus">True</property>
 	      <property name="label">gtk-close</property>
@@ -2568,7 +2569,7 @@ mm</property>
 	  <child>
 	    <widget class="GtkButton" id="clear_button">
 	      <property name="visible">True</property>
-	      <property name="tooltip" translatable="yes">Click Save button to write footprint file</property>
+	      <property name="tooltip" translatable="yes">Click the Clear button to reset the entries to the default</property>
 	      <property name="can_default">True</property>
 	      <property name="can_focus">True</property>
 	      <property name="label">gtk-clear</property>
@@ -2582,7 +2583,7 @@ mm</property>
 	  <child>
 	    <widget class="GtkButton" id="save_button">
 	      <property name="visible">True</property>
-	      <property name="tooltip" translatable="yes">Click Refresh button to update the Preview</property>
+	      <property name="tooltip" translatable="yes">Click the Save button to write the footprint file</property>
 	      <property name="can_default">True</property>
 	      <property name="can_focus">True</property>
 	      <property name="label">gtk-save</property>
@@ -2596,6 +2597,7 @@ mm</property>
 	  <child>
 	    <widget class="GtkButton" id="refresh_button">
 	      <property name="visible">True</property>
+	      <property name="tooltip" translatable="yes">Click the Refresh button to refresh the preview widget</property>
 	      <property name="can_default">True</property>
 	      <property name="can_focus">True</property>
 	      <property name="label">gtk-refresh</property>

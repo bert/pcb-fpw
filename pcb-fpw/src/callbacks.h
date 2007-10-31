@@ -353,3 +353,27 @@ on_vertical_courtyard_entry_changed    (GtkEditable     *editable,
 void
 on_courtyard_line_width_entry_changed  (GtkEditable     *editable,
                                         gpointer         user_data);
+
+void
+on_footprint_units_entry_changed       (GtkComboBox     *combobox,
+                                        gpointer         user_data);
+
+void
+on_footprint_value_entry_changed       (GtkEditable     *editable,
+                                        gpointer         user_data);
+
+void
+on_courtyard_length_entry_changed      (GtkEditable     *editable,
+                                        gpointer         user_data);
+
+void
+on_courtyard_width_entry_changed       (GtkEditable     *editable,
+                                        gpointer         user_data);
+
+void
+on_pitch_x_entry_changed               (GtkEditable     *editable,
+                                        gpointer         user_data);
+
+void
+on_pitch_y_entry_changed               (GtkEditable     *editable,
+                                        gpointer         user_data);

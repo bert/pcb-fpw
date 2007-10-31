@@ -1,7 +1,12 @@
 /*!
  * \file callbacks.c
+ * \brief Callback functions for the pcb footprintwizard (pcb-gfpw).
+ *
+ * fpw (FootPrintWizard) is a program for the creation of footprint files
+ * to be used by the pcb layout application (see http://pcb.sourgeforge.net)
+ * for the placement of parts in a pcb layout.\n\n
+ *
  * \author Copyright (C) 2007 by Bert Timmerman <bert.timmerman@xs4all.nl>
- * \brief Callback functions for the pcb footprintwizard.
  */
 
 
@@ -19,12 +24,11 @@
 
 
 /*!
- * \brief The top to bottom pads/pins center-center distance (C1) entry is
- * changed, store in c1.
+ * \brief The "top to bottom pads/pins center-center distance (C1)" entry is
+ * changed.
  *
- * The top to bottom pads/pins center-center distance (C1) entry is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the c1 variable (global).
+ * - convert to a double and store in the \c c1 variable (global).
  */
 void
 on_C1_entry_changed                    (GtkEditable     *editable,
@@ -39,14 +43,12 @@ on_C1_entry_changed                    (GtkEditable     *editable,
 
 
 /*!
- * \brief The top to bottom pads/pins center-center distance (C1) radiobutton
- * is clicked, set inner-inner (G1) and outer-outer (Z1) entries to
- * insensitive.
+ * \brief The "top to bottom pads/pins center-center distance (C1)"
+ * radiobutton is toggled.
  *
- * The top to bottom pads/pins center-center distance (C1) radiobutton
- * is clicked.
- * - set center-center (C1) entry to sensitive.
- * - set the inner-inner (G1) and outer-outer (Z1) entries to insensitive.
+ * - set the "center-center (C1)" entry to sensitive.
+ * - set the "inner-inner (G1)" entry to insensitive.
+ * - set the "outer-outer (Z1)" entries to insensitive.
  */
 void
 on_C1_radiobutton_toggled              (GtkToggleButton *togglebutton,
@@ -66,12 +68,11 @@ on_C1_radiobutton_toggled              (GtkToggleButton *togglebutton,
 
 
 /*!
- * \brief The left to right pads/pins center-center distance (C2) entry is
- * changed, store in c2.
+ * \brief The "left to right pads/pins center-center distance (C2)" entry is
+ * changed.
  *
- * The left to right pads/pins center-center distance (C2) entry is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the c2 variable (global).
+ * - convert to a double and store in the \c c2 variable (global).
  */
 void
 on_C2_entry_changed                    (GtkEditable     *editable,
@@ -86,14 +87,12 @@ on_C2_entry_changed                    (GtkEditable     *editable,
 
 
 /*!
- * \brief The left to right pads/pins center-center distance (C2) radiobutton
- * is clicked, set inner-inner (G2) and outer-outer (Z2) entries to
- * insensitive.
+ * \brief The "left to right pads/pins center-center distance (C2)"
+ * radiobutton is toggled.
  *
- * The left to right pads/pins center-center distance (C2) radiobutton
- * is clicked.
- * - set center-center (C2) entry to sensitive.
- * - set inner-inner (G2) and outer-outer (Z2) entries to insensitive.
+ * - set the "center-center (C2)" entry to sensitive.
+ * - set the "inner-inner (G2)" entry to insensitive.
+ * - set the "outer-outer (Z2)" entries to insensitive.
  */
 void
 on_C2_radiobutton_toggled              (GtkToggleButton *togglebutton,
@@ -113,12 +112,10 @@ on_C2_radiobutton_toggled              (GtkToggleButton *togglebutton,
 
 
 /*!
- * \brief The vertical spacing of the pads/pins (E1) entry is changed,
- * store in e1.
+ * \brief The "vertical spacing of the pads/pins (E1)" entry is changed.
  *
- * The vertical spacing of the pads/pins (E1) entry is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the e1 variable (global).
+ * - convert to a double and store in the \c e1 variable (global).
  */
 void
 on_E1_entry_changed                    (GtkEditable     *editable,
@@ -133,12 +130,10 @@ on_E1_entry_changed                    (GtkEditable     *editable,
 
 
 /*!
- * \brief The horizontal spacing of the pads/pins (E2) entry is changed,
- * store in e2.
+ * \brief The "horizontal spacing of the pads/pins (E2)" entry is changed.
  *
- * The horizontal spacing of the pads/pins (E2) entry is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the e2 variable (global).
+ * - convert to a double and store in the \c e2 variable (global).
  */
 void
 on_E2_entry_changed                    (GtkEditable     *editable,
@@ -153,12 +148,11 @@ on_E2_entry_changed                    (GtkEditable     *editable,
 
 
 /*!
- * \brief The top to bottom pads/pins inner-inner distance (G1) entry is
- * changed, store in g1.
+ * \brief The "top to bottom pads/pins inner-inner distance (G1)" entry is
+ * changed.
  *
- * The top to bottom pads/pins inner-inner distance (G1) entry is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the g1 variable (global).
+ * - convert to a double and store in the \c g1 variable (global).
  */
 void
 on_G1_entry_changed                    (GtkEditable     *editable,
@@ -173,14 +167,12 @@ on_G1_entry_changed                    (GtkEditable     *editable,
 
 
 /*!
- * \brief The top to bottom pads/pins inner-inner distance (G1) radiobutton
- * is clicked, set center-center (C1) and outer-outer (Z1) entries to
- * insensitive.
+ * \brief The "top to bottom pads/pins inner-inner distance (G1)" radiobutton
+ * is toggled.
  *
- * The top to bottom pads/pins inner-inner distance (G1) radiobutton
- * is clicked.
- * - set inner-inner (G1) entry to sensitive.
- * - set the center-center (C1) and outer-outer (Z1) entries to insensitive.
+ * - set the "inner-inner (G1)" entry to sensitive.
+ * - set the "center-center (C1)" entry to insensitive.
+ * - set the "outer-outer (Z1)" entry to insensitive.
  */
 void
 on_G1_radiobutton_toggled              (GtkToggleButton *togglebutton,
@@ -200,12 +192,11 @@ on_G1_radiobutton_toggled              (GtkToggleButton *togglebutton,
 
 
 /*!
- * \brief The left to right pads/pins inner-inner distance (G2) entry is
- * changed, store in g2.
+ * \brief The "left to right pads/pins inner-inner distance (G2)" entry is
+ * changed.
  *
- * The left to right pads/pins inner-inner distance (G2) entry is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the g2 variable (global).
+ * - convert to a double and store in the \c g2 variable (global).
  */
 void
 on_G2_entry_changed                    (GtkEditable     *editable,
@@ -220,14 +211,12 @@ on_G2_entry_changed                    (GtkEditable     *editable,
 
 
 /*!
- * \brief The left to right pads/pins inner-inner distance (G2) radiobutton
- * is clicked, set center-center (C2) and outer-outer (Z2) entries to
- * insensitive.
+ * \brief The "left to right pads/pins inner-inner distance (G2)" radiobutton
+ * is toggled.
  *
- * The left to right pads/pins inner-inner distance (G2) radiobutton
- * is clicked.
- * - set inner-inner (G2) entry to sensitive.
- * - set center-centr (C2) and outer-outer (Z2) entries to insensitive.
+ * - set the "inner-inner (G2)" entry to sensitive.
+ * - set the "center-center (C2)" entry to insensitive.
+ * - set the "outer-outer (Z2)" entry to insensitive.
  */
 void
 on_G2_radiobutton_toggled              (GtkToggleButton *togglebutton,
@@ -247,12 +236,11 @@ on_G2_radiobutton_toggled              (GtkToggleButton *togglebutton,
 
 
 /*!
- * \brief The top to bottom pads/pins outer-outer distance (Z1) entry is
- * changed, store in z1.
+ * \brief The "top to bottom pads/pins outer-outer distance (Z1)" entry is
+ * changed.
  *
- * The top to bottom pads/pins outer-outer distance (Z1) entry is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the z1 variable (global).
+ * - convert to a double and store in the \c z1 variable (global).
  */
 void
 on_Z1_entry_changed                    (GtkEditable     *editable,
@@ -267,14 +255,12 @@ on_Z1_entry_changed                    (GtkEditable     *editable,
 
 
 /*!
- * \brief The top to bottom pads/pins outer-outer (Z1) radiobutton
- * is clicked, set center-center (C1) and inner-inner distance (G1) entries to
- * insensitive.
+ * \brief The "top to bottom pads/pins outer-outer (Z1)" radiobutton
+ * is toggled.
  *
- * The top to bottom pads/pins outer-outer (Z1) radiobutton
- * is clicked.
- * - set the outer-outer (Z1) entry to sensitive.
- * - set the center-center (C1) and inner-inner (G1) entries to insensitive.
+ * - set the "outer-outer (Z1)" entry to sensitive.
+ * - set the "center-center (C1)" entry to insensitive.
+ * - set the "inner-inner (G1)" entry to insensitive.
  */
 void
 on_Z1_radiobutton_toggled              (GtkToggleButton *togglebutton,
@@ -294,12 +280,11 @@ on_Z1_radiobutton_toggled              (GtkToggleButton *togglebutton,
 
 
 /*!
- * \brief The left to right pads/pins outer-outer distance (Z2) entry is
- * changed, store in z2.
+ * \brief The "left to right pads/pins outer-outer distance (Z2)" entry is
+ * changed.
  *
- * The left to right pads/pins outer-outer distance (Z2) entry is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the z2 variable (global).
+ * - convert to a double and store in the \c z2 variable (global).
  */
 void
 on_Z2_entry_changed                    (GtkEditable     *editable,
@@ -314,13 +299,12 @@ on_Z2_entry_changed                    (GtkEditable     *editable,
 
 
 /*!
- * \brief The left to right pads/pins outer-outer (Z2) radiobutton
- * is clicked, set center-center (C2) and inner-inner distance (G2) entries to
- * insensitive.
+ * \brief The "left to right pads/pins outer-outer (Z2)" radiobutton
+ * is toggled.
  *
- * The left to right pads/pins outer-outer (Z2) radiobutton is clicked.
- * - set center-center (C2) and inner-inner distance (G2) entries to
- * insensitive.
+ * - set the "outer-outer (Z2)" entry to sensitive.
+ * - set the "center-center (C2)" entry to insensitive.
+ * - set the "inner-inner distance (G2)" entry to insensitive.
  */
 void
 on_Z2_radiobutton_toggled              (GtkToggleButton *togglebutton,
@@ -339,6 +323,13 @@ on_Z2_radiobutton_toggled              (GtkToggleButton *togglebutton,
 }
 
 
+/*!
+ * \brief The "Clear" button is clicked.
+ *
+ * \todo Code me !
+ *
+ * - clear all entry fields and set all togglebuttons to the initial state.
+ */
 void
 on_clear_button_clicked                (GtkButton       *button,
                                         gpointer         user_data)
@@ -348,7 +339,9 @@ on_clear_button_clicked                (GtkButton       *button,
 
 
 /*!
- * \brief The "Close" button is clicked, close the application.
+ * \brief The "Close" button is clicked.
+ *
+ * - close the application.
  */
 void
 on_close_button_clicked                (GtkButton       *button,
@@ -358,21 +351,44 @@ on_close_button_clicked                (GtkButton       *button,
 }
 
 
+/*!
+ * \brief The "courtyard" checkbutton is toggled.
+ *
+ * - get active state.
+ * - store in the \c courtyard variable (global).
+ */
 void
 on_courtyard_checkbutton_toggled       (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
-
+        courtyard = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
 }
 
 
 /*!
- * \brief The line width entry of the courtyard is changed,
- * store in courtyard_line_thickness.
+ * \brief The "length of the courtyard (X)" entry is changed.
  *
- * The line width entry of the courtyard is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the courtyard_line_thickness variable
+ * - convert to a double and store in the \c courtyard_length variable
+ * (global).
+ */
+void
+on_courtyard_length_entry_changed      (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+        gchar *courtyard_length_string = NULL;
+        gchar *leftovers;
+
+        courtyard_length_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        courtyard_length = g_ascii_strtod (courtyard_length_string, &leftovers);
+}
+
+
+/*!
+ * \brief The "courtyard line width" entry is changed.
+ *
+ * - get the chars from the entry.
+ * - convert to a double and store in the \c courtyard_line_width variable
  * (global).
  */
 void
@@ -387,28 +403,56 @@ on_courtyard_line_width_entry_changed  (GtkEditable     *editable,
 }
 
 
+/*!
+ * \brief The "width of the courtyard (Y)" entry is changed.
+ *
+ * - get the chars from the entry.
+ * - convert to a double and store in the \c courtyard_width variable
+ * (global).
+ */
+void
+on_courtyard_width_entry_changed       (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+        gchar *courtyard_width_string = NULL;
+        gchar *leftovers;
+
+        courtyard_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        courtyard_width = g_ascii_strtod (courtyard_width_string, &leftovers);
+}
+
+
+/*!
+ * \brief The "footprint author name" entry is changed.
+ *
+ * - store in the \c footprint_author variable (global).
+ */
 void
 on_footprint_author_entry_changed      (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-
+        footprint_author = gtk_entry_get_text (GTK_EDITABLE (editable));
 }
 
 
+/*!
+ * \brief The "footprint distribution license" entry is changed.
+ *
+ * - store in the \c footprint_dist_license variable (global).
+ */
 void
 on_footprint_dist_license_entry_changed
                                         (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-
+        footprint_dist_license = gtk_entry_get_text (GTK_EDITABLE (editable));
 }
 
 
 /*!
- * \brief The footprint name entry is changed, store in footprint_name.
+ * \brief The "footprint name" entry is changed.
  *
- * The footprint name entry is changed.
- * - store in the footprint_name variable (global).
+ * - store in the \c footprint_name variable (global).
  */
 void
 on_footprint_name_entry_changed        (GtkEditable     *editable,
@@ -418,19 +462,23 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
 }
 
 
+/*!
+ * \brief The "footprint status" entry is changed.
+ *
+ * - store in the \c footprint_status variable (global).
+ */
 void
 on_footprint_status_entry_changed      (GtkComboBox     *combobox,
                                         gpointer         user_data)
 {
-
+        footprint_status = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
 }
 
 
 /*!
- * \brief The footprint type entry is changed, store in footprint_type.
+ * \brief The "footprint type" entry is changed.
  *
- * The footprint type entry is changed.
- * - store in the footprint_type variable (global).
+ * - store in the \c footprint_type variable (global).
  */
 void
 on_footprint_type_entry_changed        (GtkComboBox     *combobox,
@@ -441,10 +489,9 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
 
 
 /*!
- * \brief The footprint units entry is changed, store in footprint_units.
+ * \brief The "footprint units" entry is changed.
  *
- * The footprint units entry is changed.
- * - store in the footprint_units variable (global).
+ * - store in the \c footprint_units variable (global).
  */
 void
 on_footprint_units_entry_changed       (GtkComboBox     *combobox,
@@ -454,49 +501,51 @@ on_footprint_units_entry_changed       (GtkComboBox     *combobox,
 }
 
 
+/*!
+ * \brief The "footprint usage license" entry is changed.
+ *
+ * - store in the \c footprint_dist_license variable (global).
+ */
 void
 on_footprint_use_license_entry_changed (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-
+        footprint_use_license = gtk_entry_get_text (GTK_EDITABLE (editable));
 }
 
 
 /*!
- * \brief The horizontal courtyard dimension (V1) entry is changed, store in
- * v1.
+ * \brief The "footprint value" entry is changed.
  *
- * The horizontal courtyard dimension (V1) entry is changed, .
- * - get the chars from the entry.
- * - convert to a double and store in the v1 variable (global).
+ * - store in the \c footprint_value variable (global).
  */
 void
-on_horizontal_courtyard_entry_changed  (GtkEditable     *editable,
+on_footprint_value_entry_changed       (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *V1_string = NULL;
-        gchar *leftovers;
-
-        V1_string = gtk_entry_get_text (GTK_EDITABLE (editable));
-        v1 = g_ascii_strtod (V1_string, &leftovers);
+        footprint_value = gtk_entry_get_text (GTK_EDITABLE (editable));
 }
 
 
+/*!
+ * \brief The "indicate pin/pad number 1" checkbutton is toggled.
+ *
+ * - store the state of the checkbutton in the \c silkscreen_indicate_1
+ * variable (global).
+ */
 void
 on_indicate_1_checkbutton_toggled      (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
-
+        silkscreen_indicate_1 = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
 }
 
 
 /*!
- * \brief The horizontal silkscreen dimension (R2) entry is changed, store in
- * r2.
+ * \brief The "horizontal silkscreen dimension (R2)" entry is changed.
  *
- * The horizontal silkscreen dimension (R2) entry is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the r2 variable (global).
+ * - convert to a double and store in the \c r2 variable (global).
  */
 void
 on_horizontal_silkscreen_entry_changed (GtkEditable     *editable,
@@ -511,10 +560,9 @@ on_horizontal_silkscreen_entry_changed (GtkEditable     *editable,
 
 
 /*!
- * \brief The position of number 1 pad/pin entry is changed, store in n1_pos.
+ * \brief The "position of number 1 pad/pin" entry is changed.
  *
- * The position of number 1 pad/pin entry is changed.
- * - store in the n1_pos variable (global).
+ * - store in the \c n1_pos variable (global).
  */
 void
 on_number_1_position_entry_changed
@@ -526,12 +574,10 @@ on_number_1_position_entry_changed
 
 
 /*!
- * \brief The number of columns (n_col) entry is changed,
- * store in n_col.
+ * \brief The "number of columns" entry is changed.
  *
- * The number of columns (n_col) entry is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the n_col variable (global).
+ * - convert to a double and store in the \c n_col variable (global).
  */
 void
 on_number_of_columns_entry_changed     (GtkEditable     *editable,
@@ -546,12 +592,10 @@ on_number_of_columns_entry_changed     (GtkEditable     *editable,
 
 
 /*!
- * \brief The number of rows (n_row) entry is changed,
- * store in n_row.
+ * \brief The "number of rows" entry is changed.
  *
- * The number of rows (n_row) entry is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the n_row variable (global).
+ * - convert to a double and store in the \c n_row variable (global).
  */
 void
 on_number_of_rows_entry_changed        (GtkEditable     *editable,
@@ -566,12 +610,10 @@ on_number_of_rows_entry_changed        (GtkEditable     *editable,
 
 
 /*!
- * \brief The number of pads/pins (N) entry is changed,
- * store in n.
+ * \brief The "number of pads/pins" entry is changed.
  *
- * The number of pads/pins (N) entry is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the n variable (global).
+ * - convert to a double and store in the \c n variable (global).
  */
 void
 on_number_total_pins_entry_changed     (GtkEditable     *editable,
@@ -585,81 +627,134 @@ on_number_total_pins_entry_changed     (GtkEditable     *editable,
 }
 
 
+/*!
+ * \brief The "package body height" entry is changed.
+ *
+ * - get the chars from the entry.
+ * - convert to a double and store in the \c package_body_height variable
+ * (global).
+ */
 void
 on_package_body_height_entry_changed   (GtkEditable     *editable,
                                         gpointer         user_data)
 {
+        gchar *package_body_height_string = NULL;
+        gchar *leftovers;
 
+        package_body_height_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        package_body_height = g_ascii_strtod (package_body_height_string, &leftovers);
 }
 
 
+/*!
+ * \brief The "package body length" entry is changed.
+ *
+ * - get the chars from the entry.
+ * - convert to a double and store in the \c package_body_length variable
+ * (global).
+ */
 void
 on_package_body_length_entry_changed   (GtkEditable     *editable,
                                         gpointer         user_data)
 {
+        gchar *package_body_length_string = NULL;
+        gchar *leftovers;
 
+        package_body_length_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        package_body_length = g_ascii_strtod (package_body_length_string, &leftovers);
 }
 
 
+/*!
+ * \brief The "package body width" entry is changed.
+ *
+ * - get the chars from the entry.
+ * - convert to a double and store in the \c package_body_width variable
+ * (global).
+ */
 void
 on_package_body_width_entry_changed    (GtkEditable     *editable,
                                         gpointer         user_data)
 {
+        gchar *package_body_width_string = NULL;
+        gchar *leftovers;
 
+        package_body_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        package_body_width = g_ascii_strtod (package_body_width_string, &leftovers);
 }
 
 
+/*!
+ * \brief The "package is radial" checkbutton is toggled.
+ *
+ * - store the state of the checkbutton in the \c package_is_radial
+ * variable (global).
+ */
 void
 on_package_is_radial_checkbutton_toggled
                                         (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
-
-}
-
-
-void
-on_package_outline_checkbutton_toggled (GtkToggleButton *togglebutton,
-                                        gpointer         user_data)
-{
-
-}
-
-
-void
-on_pad_clearance_entry_changed         (GtkEditable     *editable,
-                                        gpointer         user_data)
-{
-
+        package_is_radial = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
 }
 
 
 /*!
- * \brief The diameter of the pad (D) entry is changed,
- * store in d_pad.
+ * \brief The "package outline" checkbutton is toggled.
  *
- * The diameter of the pad (D) entry is changed.
+ * - store the state of the checkbutton in the \c package_outline
+ * variable (global).
+ */
+void
+on_package_outline_checkbutton_toggled (GtkToggleButton *togglebutton,
+                                        gpointer         user_data)
+{
+        package_outline = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
+}
+
+
+/*!
+ * \brief The "pad clearance" entry is changed.
+ *
  * - get the chars from the entry.
- * - convert to a double and store in the d_pad variable (global).
+ * - convert to a double and store in the \c pad_clearance variable
+ * (global).
+ */
+void
+on_pad_clearance_entry_changed         (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+        gchar *pad_clearance_string = NULL;
+        gchar *leftovers;
+
+        pad_clearance_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        pad_clearance = g_ascii_strtod (pad_clearance_string, &leftovers);
+}
+
+
+/*!
+ * \brief The "diameter of the pad (D)" entry is changed.
+ *
+ * - get the chars from the entry.
+ * - convert to a double and store in the \c d_pad variable (global).
  */
 void
 on_pad_diameter_entry_changed          (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *D_string = NULL;
+        gchar *pad_diameter_string = NULL;
         gchar *leftovers;
 
-        D_string = gtk_entry_get_text (GTK_EDITABLE (editable));
-        d_pad = g_ascii_strtod (D_string, &leftovers);
+        pad_diameter_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        pad_diameter = g_ascii_strtod (pad_diameter_string, &leftovers);
 }
 
 
 /*!
- * \brief The length of the pads (X) entry is changed, store in x.
+ * \brief The "length of the pads (X)" entry is changed.
  *
- * The length of the pads (X) entry is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the x variable (global).
+ * - convert to a double and store in the \c x variable (global).
  */
 void
 on_pad_length_entry_changed            (GtkEditable     *editable,
@@ -674,10 +769,9 @@ on_pad_length_entry_changed            (GtkEditable     *editable,
 
 
 /*!
- * \brief The shape of pads entry is changed, store in pad_shape.
+ * \brief The "shape of pads" entry is changed.
  *
- * The shape of pads entry is changed.
- * - store in the pad_shape variable (global).
+ * - store in the \c pad_shape variable (global).
  */
 void
 on_pad_shape_entry_changed    (GtkComboBox     *combobox,
@@ -688,12 +782,11 @@ on_pad_shape_entry_changed    (GtkComboBox     *combobox,
 
 
 /*!
- * \brief The solder mask clearance of the pads (SMC) entry is changed,
- * store in SMC.
+ * \brief The "pad solder mask clearance" entry is changed.
  *
- * The solder mask clearance of the pads (SMC) entry is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the SMC variable (global).
+ * - convert to a double and store in the \c solder_mask_clearance variable
+ * (global).
  */
 void
 on_pad_solder_mask_clearance_entry_changed
@@ -709,7 +802,9 @@ on_pad_solder_mask_clearance_entry_changed
 
 
 /*!
- * \brief The top-right "X" is clicked, close the application.
+ * \brief The top-right "X" is clicked.
+ *
+ * - close the application.
  *
  */
 void
@@ -721,11 +816,10 @@ on_pcb_gfpw_destroy                    (GtkObject       *object,
 
 
 /*!
- * \brief The width of the pads (Y) entry is changed, store in y.
+ * \brief The "width of the pads (Y)" entry is changed.
  *
- * The width of the pads (Y) entry is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the y variable (global).
+ * - convert to a double and store in the \c y variable (global).
  */
 void
 on_pad_width_entry_changed             (GtkEditable     *editable,
@@ -740,29 +834,65 @@ on_pad_width_entry_changed             (GtkEditable     *editable,
 
 
 /*!
- * \brief The diameter of the drill holes (d) entry is changed,
- * store in d_hole.
+ * \brief The "diameter of the drill holes (d)" entry is changed.
  *
- * The diameter of the drill holes (d) entry is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the d_hole variable (global).
+ * - convert to a double and store in the \c d_hole variable (global).
  */
 void
 on_pin_drill_diameter_entry_changed    (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *d_string = NULL;
+        gchar *pin_hole_diameter_string = NULL;
         gchar *leftovers;
 
-        d_string = gtk_entry_get_text (GTK_EDITABLE (editable));
-        d_hole = g_ascii_strtod (d_string, &leftovers);
+        pin_hole_diameter_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        pin_hole_diameter = g_ascii_strtod (pin_hole_diameter_string, &leftovers);
 }
 
 
 /*!
- * \brief The "Refresh" button is clicked, create a pixmap of the footprint
- * and/or reload the preview image.
+ * \brief The "Pitch (X)" entry is changed.
  *
+ * - get the chars from the entry.
+ * - convert to a double and store in the \c e2 variable (global).
+ */
+void
+on_pitch_x_entry_changed               (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+        gchar *pitch_x_string = NULL;
+        gchar *leftovers;
+
+        pitch_x_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        pitch_x = g_ascii_strtod (pitch_x_string, &leftovers);
+}
+
+
+/*!
+ * \brief The "Pitch (y)" entry is changed.
+ *
+ * - get the chars from the entry.
+ * - convert to a double and store in the \c e1 variable (global).
+ */
+void
+on_pitch_y_entry_changed               (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+        gchar *pitch_y_string = NULL;
+        gchar *leftovers;
+
+        pitch_y_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        pitch_y = g_ascii_strtod (pitch_y_string, &leftovers);
+}
+
+/*!
+ * \brief The "Refresh" button is clicked.
+ *
+ * - create a pixmap of the footprint.
+ * - reload the preview image.
+ *
+ * \todo Code me !
  */
 void
 on_refresh_button_clicked              (GtkButton       *button,
@@ -772,17 +902,19 @@ on_refresh_button_clicked              (GtkButton       *button,
 }
 
 /*!
- * \brief The "Save" button is clicked, write the footprint to file.
+ * \brief The "Save" button is clicked.
  *
- * The "Save" button is clicked, make preparations to write the footprint to
- * file.
- * - write the global variables to a footprintwizard file, with a .fpw
- * suffix, for debugging and other purposes.
+ * - determine the name of the footprintwizard filename.
+ * - determine the name of the footprint filename.
+ * - invoke the write_footprintwizard_file() to write the global variables to
+ * the footprintwizard file, with a .fpw suffix, for debugging and other
+ * (future) purposes.
  * - invoke the write_footprint() function to write the actual footprint
- * file.
- * When this wizard becomes really quit popular, we can write a function to
- * read from these files as to allow for editing or any other purpose you can
- * think of.
+ * file.\n
+ *
+ * \todo When this wizard becomes really quit popular, we can write a function to
+ * read from these files as to allow for editing or any other (futuristic)
+ * purpose you can think of.
  */
 void
 on_save_button_clicked                 (GtkButton       *button,
@@ -831,13 +963,11 @@ on_save_button_clicked                 (GtkButton       *button,
 
 
 /*!
- * \brief The line width entry of the silkscreen is changed,
- * store in silkscreen_line_thickness.
+ * \brief The "silkscreen line width" entry is changed.
  *
- * The line width entry of the silkscreen is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the silkscreen_line_thickness variable
- * (global).
+ * - convert to a double and store in the \c silkscreen_line_thickness
+ * variable (global).
  */
 void
 on_silkscreen_line_width_entry_changed (GtkEditable     *editable,
@@ -852,12 +982,11 @@ on_silkscreen_line_width_entry_changed (GtkEditable     *editable,
 
 
 /*!
- * \brief The thermal pad checkbutton is clicked,
- * get active state and store in the thermal variable.
+ * \brief The "thermal pad" checkbutton is toggled.
  *
- * The thermal pad checkbutton is clicked.
- * - store the state of the checkbutton in the thermal variable (global).
- * - if there is no thermal pad set the length and width entries to insensitive.
+ * - store the state of the checkbutton in the \c thermal variable (global).
+ * - if there is no thermal pad set the length and width entries to
+ * insensitive.
  * - if there is a thermal pad set the length and with entries to sensitive.
  */
 void
@@ -888,12 +1017,10 @@ on_thermal_checkbutton_toggled         (GtkToggleButton *togglebutton,
 
 
 /*!
- * \brief The length entry of the thermal pad is changed,
- * store in thermal_x.
+ * \brief The "thermal pad length" entry is changed.
  *
- * The length entry of the thermal pad is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the thermal_x variable (global).
+ * - convert to a double and store in the \c thermal_x variable (global).
  */
 void
 on_thermal_length_entry_changed        (GtkEditable     *editable,
@@ -908,11 +1035,10 @@ on_thermal_length_entry_changed        (GtkEditable     *editable,
 
 
 /*!
- * \brief The thermal pad checkbutton is clicked,
- * get active state and store in the thermal_nopaste variable.
+ * \brief The "thermal pad no paste" checkbutton is clicked.
  *
- * The thermal pad checkbutton is clicked.
- * - store the state of the checkbutton in the thermal_nopaste variable (global).
+ * - store the state of the checkbutton in the \c thermal_nopaste variable
+ * (global).
  */
 void
 on_thermal_nopaste_checkbutton_toggled (GtkToggleButton *togglebutton,
@@ -923,13 +1049,11 @@ on_thermal_nopaste_checkbutton_toggled (GtkToggleButton *togglebutton,
 
 
 /*!
- * \brief The solder mask clearance entry of the thermal pad is changed,
- * store in thermal_solder_mask_clearance.
+ * \brief The "thermal pad solder mask clearance" entry is changed.
  *
- * The solder mask clearance entry of the thermal pad is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the thermal_solder_clearance variable
- * (global).
+ * - convert to a double and store in the \c thermal_solder_clearance
+ * variable (global).
  */
 void
 on_thermal_solder_mask_clearance_entry_changed
@@ -945,12 +1069,10 @@ on_thermal_solder_mask_clearance_entry_changed
 
 
 /*!
- * \brief The width entry of the thermal pad is changed,
- * store in thermal_y.
+ * \brief The "thermal pad width" entry is changed.
  *
- * The width entry of the thermal pad is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the thermal_y variable (global).
+ * - convert to a double and store in the \c thermal_y variable (global).
  */
 void
 on_thermal_width_entry_changed         (GtkEditable     *editable,
@@ -965,42 +1087,19 @@ on_thermal_width_entry_changed         (GtkEditable     *editable,
 
 
 /*!
- * \brief The vertical courtyard dimension (V1) entry is changed, store in
- * v1.
- *
- * The vertical courtyard dimension (V1) entry is changed.
+ * \brief The "vertical silkscreen dimension (R1)" entry is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the v1 variable (global).
- */
-void
-on_vertical_courtyard_entry_changed    (GtkEditable     *editable,
-                                        gpointer         user_data)
-{
-        gchar *v1_string = NULL;
-        gchar *leftovers;
-
-        v1_string = gtk_entry_get_text (GTK_EDITABLE (editable));
-        v1 = g_ascii_strtod (v1_string, &leftovers);
-}
-
-
-/*!
- * \brief The vertical silkscreen dimension (R1) entry is changed, store in
- * r1.
- *
- * The vertical silkscreen dimension (R1) entry is changed.
- * - get the chars from the entry.
- * - convert to a double and store in the r1 variable (global).
+ * - convert to a double and store in the \c r1 variable (global).
  */
 void
 on_vertical_silkscreen_entry_changed   (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *r1_string = NULL;
+        gchar *silkscreen_length_string = NULL;
         gchar *leftovers;
 
-        r1_string = gtk_entry_get_text (GTK_EDITABLE (editable));
-        r1 = g_ascii_strtod (r1_string, &leftovers);
+        silkscreen_length_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        silkscreen_length = g_ascii_strtod (silkscreen_length_string, &leftovers);
 }
 
 /* EOF */

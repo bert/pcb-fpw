@@ -47,9 +47,10 @@ main (int argc, char *argv[])
         /* Now create the main dialog. */
         pcb_gfpw = create_pcb_gfpw ();
 
-        /* Set the initial state of the entrys adjacent to the radiobuttons in
+#if 0
+        /* Set the initial state of the entries adjacent to the radiobuttons in
          * the main dialog, these are for entering the C1, C2, G1, G2, Z1 and
-         * Z2 variables.
+         * Z2 variables (center, heel, toe).
          */
         GtkWidget *C1_entry = NULL;
         GtkWidget *C2_entry = NULL;
@@ -87,6 +88,7 @@ main (int argc, char *argv[])
         gtk_widget_set_sensitive (thermal_length_entry, FALSE);
         gtk_widget_set_sensitive (thermal_width_entry, FALSE);
         gtk_widget_set_sensitive (thermal_solder_mask_clearance_entry, FALSE);
+#endif
 
         /* Now show the main dialog. */
         gtk_widget_show (pcb_gfpw);
