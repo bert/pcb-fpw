@@ -2,8 +2,8 @@
 <!DOCTYPE glade-project SYSTEM "http://glade.gnome.org/glade-project-2.0.dtd">
 
 <glade-project>
-  <name>pcb-fpw</name>
-  <program_name>pcb-fpw</program_name>
+  <name>pcb-gfpw</name>
+  <program_name>pcb-gfpw</program_name>
   <gnome_support>FALSE</gnome_support>
   <use_widget_names>TRUE</use_widget_names>
   <output_translatable_strings>TRUE</output_translatable_strings>

@@ -21,7 +21,7 @@
 <widget class="GtkWindow" id="pcb-gfpw">
   <property name="visible">True</property>
   <property name="tooltip" translatable="yes">FootPrintWizard for pcb footprints</property>
-  <property name="title" translatable="yes">pcb FootPrintWizard</property>
+  <property name="title" translatable="yes">pcb-gfpw FootPrintWizard</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>
   <property name="modal">False</property>

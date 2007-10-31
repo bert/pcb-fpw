@@ -190,7 +190,7 @@ create_pcb_gfpw (void)
   pcb_gfpw = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_widget_set_name (pcb_gfpw, "pcb_gfpw");
   gtk_tooltips_set_tip (tooltips, pcb_gfpw, _("FootPrintWizard for pcb footprints"), NULL);
-  gtk_window_set_title (GTK_WINDOW (pcb_gfpw), _("pcb FootPrintWizard"));
+  gtk_window_set_title (GTK_WINDOW (pcb_gfpw), _("pcb-gfpw FootPrintWizard"));
   pcb_gfpw_icon_pixbuf = create_pixbuf ("gFootprintWizard.xpm");
   if (pcb_gfpw_icon_pixbuf)
     {
