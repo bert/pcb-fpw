@@ -754,17 +754,17 @@ on_pad_diameter_entry_changed          (GtkEditable     *editable,
  * \brief The "length of the pads (X)" entry is changed.
  *
  * - get the chars from the entry.
- * - convert to a double and store in the \c x variable (global).
+ * - convert to a double and store in the \c pad_length variable (global).
  */
 void
 on_pad_length_entry_changed            (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *X_string = NULL;
+        gchar *pad_length_string = NULL;
         gchar *leftovers;
 
-        X_string = gtk_entry_get_text (GTK_EDITABLE (editable));
-        x = g_ascii_strtod (X_string, &leftovers);
+        pad_length_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        pad_length = g_ascii_strtod (pad_length_string, &leftovers);
 }
 
 
@@ -819,17 +819,17 @@ on_pcb_gfpw_destroy                    (GtkObject       *object,
  * \brief The "width of the pads (Y)" entry is changed.
  *
  * - get the chars from the entry.
- * - convert to a double and store in the \c y variable (global).
+ * - convert to a double and store in the \c pad_with variable (global).
  */
 void
 on_pad_width_entry_changed             (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *Y_string = NULL;
+        gchar *pad_width_string = NULL;
         gchar *leftovers;
 
-        Y_string = gtk_entry_get_text (GTK_EDITABLE (editable));
-        y = g_ascii_strtod (Y_string, &leftovers);
+        pad_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        pad_width = g_ascii_strtod (pad_width_string, &leftovers);
 }
 
 

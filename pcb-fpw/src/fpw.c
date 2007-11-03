@@ -108,7 +108,7 @@ main
         if (strcmp (footprint_units, "mils")) multiplier = 100.0;
         if (strcmp (footprint_units, "mils/100")) multiplier = 1.0;
         if (strcmp (footprint_units, "mm")) multiplier = (1000 / 25.4) * 100;
-        /* If the footprint_filename contains a valid name that exists, use it */
+        /* If the footprint_filename contains a valid footprintname, use it */
         if (g_str_has_suffix (footprint_name, suffix))
         {
                 /* Footprintname has a .fp suffix, do nothing */
