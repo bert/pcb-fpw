@@ -377,3 +377,8 @@ on_pitch_x_entry_changed               (GtkEditable     *editable,
 void
 on_pitch_y_entry_changed               (GtkEditable     *editable,
                                         gpointer         user_data);
+
+void
+on_thermal_solder_mask_clearance_entry_changed
+                                        (GtkEditable     *editable,
+                                        gpointer         user_data);

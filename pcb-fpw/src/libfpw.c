@@ -120,8 +120,6 @@ gchar *n1_pos = NULL; /*!< Position of number 1 pin. */
 location_t pin1_location; /*!< Location of number 1 pin. */
 gdouble pitch_x; /*!< Pitch in X-direction. */
 gdouble pitch_y; /*!< Pitch in Y-direction. */
-gdouble x; /*!< Length of pad. */
-gdouble y; /*!< Width of pad. */
 gdouble pin_hole_diameter; /*!< Diameter of pin hole. */
 gdouble pad_diameter; /*!< Outer diameter of pin pad (annulus). */
 gdouble pad_length; /*!< Length of pad (parallel to Element X-axis). */
@@ -137,18 +135,14 @@ gboolean silkscreen_indicate_1; /*!< Indicate the position of number 1 */
         /*!< pin/pad on the silkscreen. */
 gdouble silkscreen_length; /*!< Silkscreen length (X-direction). */
 gdouble silkscreen_width; /*!< Silkscreen width (Y-direction). */
-gdouble r1; /*!< \bug \var r1 Silkscreen width (Y-direction) is considered to be obsolete. */
-gdouble r2; /*!< \bug \var r2 Silkscreen length (X-direction) is considered to be obsolete. */
 gdouble silkscreen_line_width; /*!< Silkscreen line width. */
 
 gboolean courtyard; /*!< Draw courtyard. */
 gdouble courtyard_length; /*!< Courtyard length (X-direction). */
 gdouble courtyard_width; /*!< Courtyard width (Y-direction). */
-gdouble v1; /*!< \bug \var v1 Courtyard width (Y-direction) is considered to be obsolete. */
-gdouble v2; /*!< \bug \var v2 Courtyard length (X-direction) is considered to be obsolete. */
 gdouble courtyard_line_width; /*!< Courtyard line width. */
 
-gboolean thermal; /*!< Draw thermal pad. */
+gboolean thermal; /*!< Draw thermal pad(s). */
 gboolean thermal_nopaste; /*!< Thermal pad has no paste. */
 gdouble thermal_x; /*!< Length of thermal pad. */
 gdouble thermal_y; /*!< Width of thermal pad. */
@@ -156,18 +150,15 @@ gdouble thermal_solder_mask_clearance; /*!< Solder mask clearance of thermal pad
 
 gchar *dummy = NULL; /*!< Every now and then the village-idot is needed ;-) */
 
-/*!
- * \attention Now follow some obsolete variables for goals input (heel and
- * toe) of pads.\n
+/*
+ * Now follow some obsolete variables for goals input (heel and toe) of pads.
  * These variables maybe added when and if another tab is added for the
- * creation of footprints based on heel and toe information for pads.\n
- * This can be considered being an expert-mode. */
+ * creation of footprints based on heel and toe information for pads.
+ * This can be considered being part of an (futuristic) expert-mode. */
 gdouble c1; /*!< Top to bottom pads center-center distance. */
-gdouble e1; /*!< Pitch in Y-direction. */
 gdouble g1; /*!< Top to bottom pads inner-inner distance. */
 gdouble z1; /*!< Top to bottom pads outer-outer distance. */
 gdouble c2; /*!< Left to right pads center-center distance. */
-gdouble e2; /*!< Pitch in X-direction. */
 gdouble g2; /*!< Left to right pads inner-inner distance. */
 gdouble z2; /*!< Left to right pads outer-outer distance. */
 
@@ -197,17 +188,9 @@ read_footprintwizard_file()
                 fscanf (fp, "%f\n", pad_width);
                 fscanf (fp, "%f\n", pad_diameter);
                 fscanf (fp, "%f\n", pin_hole_diameter);
-                fscanf (fp, "%f\n", c1);
-                fscanf (fp, "%f\n", g1);
-                fscanf (fp, "%f\n", z1);
-                fscanf (fp, "%f\n", c2);
-                fscanf (fp, "%f\n", g2);
-                fscanf (fp, "%f\n", z2);
-                fscanf (fp, "%f\n", e1);
-                fscanf (fp, "%f\n", e2);
+                fscanf (fp, "%f\n", pitch_x);
+                fscanf (fp, "%f\n", pitch_y);
                 fscanf (fp, "%f\n", solder_mask_clearance);
-                fscanf (fp, "%f\n", r1);
-                fscanf (fp, "%f\n", r2);
                 fscanf (fp, "%f\n", silkscreen_line_width);
                 fscanf (fp, "%f\n", courtyard_length);
                 fscanf (fp, "%f\n", courtyard_width);
@@ -655,7 +638,7 @@ write_footprint_smt ()
                 y_text = (ymin / 2) - 150.0;
                 write_element_header (fp, x_text, y_text);
                 /* Write encapsulated element entities to file*/
-                if (x > y) /* Write pads parallel to x-axis */
+                if (pad_length > pad_width) /* Write pads parallel to x-axis */
                 {
                         fprintf (stderr, "Pads are drawn parallel on X-axis.\n");
                         /* Pad #1 */
@@ -915,21 +898,13 @@ write_footprintwizard_file()
         fprintf (fp, "%d\n", n);
         fprintf (fp, "%d\n", n_col);
         fprintf (fp, "%d\n", n_row);
-        fprintf (fp, "%f\n", x);
-        fprintf (fp, "%f\n", y);
+        fprintf (fp, "%f\n", pad_length);
+        fprintf (fp, "%f\n", pad_width);
         fprintf (fp, "%f\n", pad_diameter);
         fprintf (fp, "%f\n", pin_hole_diameter);
-        fprintf (fp, "%f\n", c1);
-        fprintf (fp, "%f\n", g1);
-        fprintf (fp, "%f\n", z1);
-        fprintf (fp, "%f\n", c2);
-        fprintf (fp, "%f\n", g2);
-        fprintf (fp, "%f\n", z2);
-        fprintf (fp, "%f\n", e1);
-        fprintf (fp, "%f\n", e2);
+        fprintf (fp, "%f\n", pitch_x);
+        fprintf (fp, "%f\n", pitch_y);
         fprintf (fp, "%f\n", solder_mask_clearance);
-        fprintf (fp, "%f\n", r1);
-        fprintf (fp, "%f\n", r2);
         fprintf (fp, "%f\n", silkscreen_line_width);
         fprintf (fp, "%f\n", courtyard_length);
         fprintf (fp, "%f\n", courtyard_width);

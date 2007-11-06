@@ -71,6 +71,7 @@ main (int argc, char *argv[])
         gtk_widget_set_sensitive (G2_entry, FALSE);
         gtk_widget_set_sensitive (Z1_entry, FALSE);
         gtk_widget_set_sensitive (Z2_entry, FALSE);
+#endif
 
         /* Set the state of the check button for the thermal pad to false,
          * and set the length, width and solder mask entries for the thermal
@@ -88,7 +89,6 @@ main (int argc, char *argv[])
         gtk_widget_set_sensitive (thermal_length_entry, FALSE);
         gtk_widget_set_sensitive (thermal_width_entry, FALSE);
         gtk_widget_set_sensitive (thermal_solder_mask_clearance_entry, FALSE);
-#endif
 
         /* Now show the main dialog. */
         gtk_widget_show (pcb_gfpw);

@@ -151,6 +151,8 @@ create_pcb_gfpw (void)
   GtkWidget *thermal_width_entry;
   GtkWidget *thermal_length_entry;
   GtkWidget *thermal_nopaste_checkbutton;
+  GtkWidget *label55;
+  GtkWidget *thermal_solder_mask_clearance_entry;
   GtkWidget *label47;
   GtkWidget *label6;
   GtkWidget *table8;
@@ -838,7 +840,7 @@ create_pcb_gfpw (void)
   gtk_container_add (GTK_CONTAINER (frame12), alignment12);
   gtk_alignment_set_padding (GTK_ALIGNMENT (alignment12), 0, 0, 12, 0);
 
-  table15 = gtk_table_new (3, 2, FALSE);
+  table15 = gtk_table_new (4, 2, FALSE);
   gtk_widget_set_name (table15, "table15");
   gtk_widget_show (table15);
   gtk_container_add (GTK_CONTAINER (alignment12), table15);
@@ -892,6 +894,22 @@ create_pcb_gfpw (void)
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
   gtk_tooltips_set_tip (tooltips, thermal_nopaste_checkbutton, _("Check for no paste on pad"), NULL);
+
+  label55 = gtk_label_new (_("Solder mask clearance "));
+  gtk_widget_set_name (label55, "label55");
+  gtk_widget_show (label55);
+  gtk_table_attach (GTK_TABLE (table15), label55, 0, 1, 3, 4,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_misc_set_alignment (GTK_MISC (label55), 0, 0.5);
+
+  thermal_solder_mask_clearance_entry = gtk_entry_new ();
+  gtk_widget_set_name (thermal_solder_mask_clearance_entry, "thermal_solder_mask_clearance_entry");
+  gtk_widget_show (thermal_solder_mask_clearance_entry);
+  gtk_table_attach (GTK_TABLE (table15), thermal_solder_mask_clearance_entry, 1, 2, 3, 4,
+                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_entry_set_invisible_char (GTK_ENTRY (thermal_solder_mask_clearance_entry), 8226);
 
   label47 = gtk_label_new (_("<b>Thermal pad</b>"));
   gtk_widget_set_name (label47, "label47");
@@ -1205,6 +1223,9 @@ create_pcb_gfpw (void)
   g_signal_connect ((gpointer) thermal_nopaste_checkbutton, "toggled",
                     G_CALLBACK (on_thermal_nopaste_checkbutton_toggled),
                     NULL);
+  g_signal_connect ((gpointer) thermal_solder_mask_clearance_entry, "changed",
+                    G_CALLBACK (on_thermal_solder_mask_clearance_entry_changed),
+                    NULL);
   g_signal_connect ((gpointer) courtyard_checkbutton, "toggled",
                     G_CALLBACK (on_courtyard_checkbutton_toggled),
                     NULL);
@@ -1331,6 +1352,8 @@ create_pcb_gfpw (void)
   GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_width_entry, "thermal_width_entry");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_length_entry, "thermal_length_entry");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_nopaste_checkbutton, "thermal_nopaste_checkbutton");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label55, "label55");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_solder_mask_clearance_entry, "thermal_solder_mask_clearance_entry");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, label47, "label47");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, label6, "label6");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, table8, "table8");
