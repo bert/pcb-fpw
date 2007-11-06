@@ -93,6 +93,7 @@ gchar *s = N_("Width of thermal pad");
 gchar *s = N_("Length of thermal pad");
 gchar *s = N_("Check for no paste on pad");
 gchar *s = N_("No paste on pad");
+gchar *s = N_("Solder mask clearance ");
 gchar *s = N_("<b>Thermal pad</b>");
 gchar *s = N_("Thermal pad");
 gchar *s = N_("Check to draw a courtyard (keepout)");
