@@ -22,4 +22,4 @@ pcb-fpw/doc/latex
 pcb-fpw/po/Makefile.in.in
 pcb-fpw/po/POTFILES
 pcb-fpw/src/fpw
-pcb-fpw/src/pcb-fpw
+pcb-fpw/src/pcb-gfpw
