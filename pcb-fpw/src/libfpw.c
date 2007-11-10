@@ -126,6 +126,7 @@ gdouble pad_length; /*!< Length of pad (parallel to Element X-axis). */
 gdouble pad_width; /*!< Width of pad (perpendicular to Element X-axis). */
 gchar *pad_shape = NULL; /*!< Shape of pads/pins. */
 gint pin_pad_type; /*!< Type of pads/pins. */
+gboolean pin1_square; /*!< Pin #1 is square. */
 gchar *pin_pad_flags = NULL; /*!< Flags of pins/pads. */
 gdouble solder_mask_clearance; /*!< Solder mask clearance of a pin/pad. */
 gdouble pad_clearance; /*!< Clearance of a pin/pad. */
@@ -222,6 +223,8 @@ write_attributes
         fprintf (fp, "\tAttribute(\"package body length\" \"%d\")\n", package_body_length);
         fprintf (fp, "\tAttribute(\"package body width\" \"%d\")\n", package_body_width);
         fprintf (fp, "\tAttribute(\"package height\" \"%d\")\n", package_body_height);
+        fprintf (fp, "\n");
+        fprintf (fp, ")\n");
 }
 
 
@@ -392,18 +395,18 @@ write_pin
  * \brief Write a rectangle for any given footprint.
  *
  * Write a rectangle for any given footprint.
- * If line_width is 0.0 no courtyard is drawn.
- * If line_width is < 0.0 a courtyard with a linewidth of 1/100 of
+ * If line_width is 0.0 no rectangle is drawn.
+ * If line_width is < 0.0 a rectangle with a linewidth of 1/100 of
  * a mil is drawn (#define THIN_DRAW 1).
  */
 int
 write_rectangle
 (
         FILE *fp, /*!< file pointer */
-        gdouble xmin, /*!< minimum x-coordinate of courtyard */
-        gdouble ymin, /*!< minimum y-coordinate of courtyard */
-        gdouble xmax, /*!< maximum x-coordinate of courtyard */
-        gdouble ymax, /*!< maximum y-coordinate of courtyard */
+        gdouble xmin, /*!< minimum x-coordinate of rectangle. */
+        gdouble ymin, /*!< minimum y-coordinate of rectangle. */
+        gdouble xmax, /*!< maximum x-coordinate of rectangle. */
+        gdouble ymax, /*!< maximum y-coordinate of rectangle. */
         gdouble line_width /*!< courtyard line width */
 )
 {
@@ -419,7 +422,7 @@ write_rectangle
         {
                 line_width = THIN_DRAW;
         }
-        /* Print courtyard ends (perpendicular to x-axis) */
+        /* Print rectangle ends (perpendicular to x-axis) */
         fprintf
         (
                 fp,
@@ -440,7 +443,7 @@ write_rectangle
                 (int) ymax,
                 (int) line_width
         );
-        /* Print courtyard sides (parallel with x-axis) */
+        /* Print rectangle sides (parallel with x-axis) */
         fprintf
         (
                 fp,
@@ -524,7 +527,8 @@ write_footprint_dip ()
                                 multiplier * pad_clearance, /* clearance */
                                 multiplier * solder_mask_clearance, /* solder mask clearance */
                                 multiplier * pin_hole_diameter, /* pin drill diameter */
-                                pin_pad_flags /* flags */
+                                /* Write pin #1 with a square pad if checked */
+                                (pin1_square && (pin_number == 1)) ? "square" : pin_pad_flags /* flags */
                         );
                         pin_number = (n_row * n_col) - i;
                         write_pin
@@ -582,21 +586,19 @@ write_footprint_dip ()
                 );
                 /* Write attributes to file*/
                 write_attributes (fp);
-                fprintf (fp, "\n");
-                fprintf (fp, ")\n");
+                close (fp);
         }
         else
         {
                 fprintf (stderr, "Error: could not open file for DIP footprint: %s.\n", footprint_filename);
                 return (EXIT_FAILURE);
         }
-        close (fp);
         return (EXIT_SUCCESS);
 }
 
 
 /*!
- * \brief Write a SMT footprint with two pads for a chip resistor package.
+ * \brief Write a SMT footprint with two pads for a chip package.
  */
 int
 write_footprint_smt ()
@@ -654,7 +656,8 @@ write_footprint_smt ()
                                 multiplier * pad_width, /* width of the pad */
                                 multiplier * pad_clearance, /* clearance */
                                 multiplier * (pad_width + (2 * solder_mask_clearance)), /* solder mask clearance */
-                                pin_pad_flags /* flags */
+                                /* Write pin #1 with a square pad if checked */
+                                (pin1_square) ? "square" : pin_pad_flags /* flags */
                         );
                         /* Pad #2 */
                         write_pad
@@ -688,7 +691,8 @@ write_footprint_smt ()
                                 multiplier * pad_length, /* width of the pad */
                                 multiplier * pad_clearance, /* clearance */
                                 multiplier * (pad_length + (2 * solder_mask_clearance)), /* solder mask clearance */
-                                pin_pad_flags /* flags */
+                                /* Write pin #1 with a square pad if checked */
+                                (pin1_square) ? "square" : pin_pad_flags /* flags */
                         );
                         /* Pad #2 */
                         write_pad
@@ -709,51 +713,213 @@ write_footprint_smt ()
                 /* Write a package body on the silkscreen to file */
                 if (package_outline)
                 {
-                        fprintf
+                        write_element_line
                         (
                                 fp,
-                                "\tElementLine[%d %d %d %d %d]\n",
-                                (int) (((-pitch_x + pad_length + silkscreen_line_width) / 2) + solder_mask_clearance),
-                                (int) pad_width,
-                                (int) (((pitch_x - pad_length - silkscreen_line_width) / 2) - solder_mask_clearance),
-                                (int) pad_width,
-                                (int) silkscreen_line_width
+                                multiplier * (((-pitch_x + pad_length) / 2) + solder_mask_clearance + silkscreen_line_width),
+                                multiplier * (package_body_width / 2),
+                                multiplier * (((pitch_x - pad_length) / 2) - solder_mask_clearance - silkscreen_line_width),
+                                multiplier * (package_body_width / 2),
+                                multiplier * silkscreen_line_width
                         );
-                        fprintf
+                        write_element_line
                         (
                                 fp,
-                                "\tElementLine[%d %d %d %d %d]\n",
-                                (int) (((-pitch_x + pad_length + silkscreen_line_width) / 2) + solder_mask_clearance),
-                                (int) -pad_width,
-                                (int) (((pitch_x - pad_length - silkscreen_line_width) / 2) - solder_mask_clearance),
-                                (int) -pad_width,
-                                (int) silkscreen_line_width
+                                multiplier * (((-pitch_x + pad_length) / 2) + solder_mask_clearance + silkscreen_line_width),
+                                multiplier * (-package_body_width / 2),
+                                multiplier * (((pitch_x - pad_length) / 2) - solder_mask_clearance - silkscreen_line_width),
+                                multiplier * (-package_body_width / 2),
+                                multiplier * silkscreen_line_width
                         );
                 }
                 /* Write a pin #1 marker */
                 if (silkscreen_indicate_1)
                 {
-                        /* package has no pin/pad indications */
+                        /* package has no pin/pad #1 indications */
                 }
                 /* Write a courtyard to file*/
                 if (courtyard)
                 {
-                        write_element_arc
+                        write_rectangle
                         (
                                 fp,
-                                0.0,
-                                0.0,
-                                multiplier * xmax,
-                                multiplier * ymax,
-                                0.0,
-                                360.0,
+                                multiplier * (-courtyard_length / 2),
+                                multiplier * (-courtyard_width / 2),
+                                multiplier * (courtyard_length / 2),
+                                multiplier * (courtyard_width / 2),
                                 multiplier * courtyard_line_width
                         );
                 }
                 /* Write attributes to file */
                 write_attributes (fp);
-                fprintf (fp, "\n");
-                fprintf (fp, ")\n");
+                close (fp);
+        }
+        else
+        {
+                fprintf (stderr, "Error: could not open file for SMT footprint: %s.\n", footprint_filename);
+                return (EXIT_FAILURE);
+        }
+        close (fp);
+        return (EXIT_SUCCESS);
+}
+
+
+/*!
+ * \brief Write a SMT footprint with two pads for a molded chip package.
+ */
+int
+write_footprint_smt_molded ()
+{
+        FILE *fp;
+        gdouble xmax;
+        gdouble xmin;
+        gdouble ymax;
+        gdouble ymin;
+        gdouble x_text;
+        gdouble y_text;
+
+        if (fp = g_fopen (footprint_filename, "w"))
+        {
+                /* Determine (extreme) courtyard dimensions */
+                xmin = multiplier * ((-pitch_x / 2) - (pad_length / 2) - solder_mask_clearance);
+                xmax = multiplier * (pitch_x / 2 + pad_length / 2 + solder_mask_clearance);
+                ymin = multiplier * ((-pad_width / 2) - solder_mask_clearance);
+                ymax = multiplier * (pad_width / 2 + solder_mask_clearance);
+                /* If the user input is using more real-estate then use it */
+                if (multiplier * (-courtyard_length / 2) < xmin)
+                {
+                        xmin = multiplier * (-courtyard_length / 2);
+                }
+                if (multiplier * (courtyard_length / 2) > xmax)
+                {
+                        xmax = multiplier * (courtyard_length / 2);
+                }
+                if (multiplier * (-courtyard_width / 2) < ymin)
+                {
+                        ymin = multiplier * (-courtyard_width / 2);
+                }
+                if (multiplier * (courtyard_width / 2) > ymax)
+                {
+                        ymax = multiplier * (courtyard_width / 2);
+                }
+                /* Write element header to file */
+                x_text = 0.0 ;
+                y_text = (ymin / 2) - 150.0;
+                write_element_header (fp, x_text, y_text);
+                /* Write encapsulated element entities to file*/
+                if (pad_length > pad_width) /* Write pads parallel to x-axis */
+                {
+                        fprintf (stderr, "Pads are drawn parallel on X-axis.\n");
+                        /* Pad #1 */
+                        write_pad
+                        (
+                                fp, /* file pointer */
+                                1, /* pad number */
+                                "", /* pad name */
+                                multiplier * -1 * (pitch_x + pad_length - pad_width) / 2, /* x0 coordinate */
+                                0, /* y0-coordinate */
+                                multiplier * (-pitch_x + pad_length - pad_width) / 2, /* x1 coordinate */
+                                0, /* y1-coordinate */
+                                multiplier * pad_width, /* width of the pad */
+                                multiplier * pad_clearance, /* clearance */
+                                multiplier * (pad_width + (2 * solder_mask_clearance)), /* solder mask clearance */
+                                /* Write pin #1 with a square pad if checked */
+                                (pin1_square) ? "square" : pin_pad_flags /* flags */
+                        );
+                        /* Pad #2 */
+                        write_pad
+                        (
+                                fp, /* file pointer */
+                                2, /* pad number */
+                                "", /* pad name */
+                                multiplier * -1 * (-pitch_x + pad_length - pad_width) / 2, /* x0 coordinate */
+                                0, /* y0-coordinate */
+                                multiplier * (pitch_x + pad_length - pad_width) / 2, /* x1 coordinate */
+                                0, /* y1-coordinate */
+                                multiplier * pad_width, /* width of the pad */
+                                multiplier * pad_clearance, /* clearance */
+                                multiplier * (pad_width + (2 * solder_mask_clearance)), /* solder mask clearance */
+                                pin_pad_flags /* flags */
+                        );
+                }
+                else /* write pads perpendiclar to x-axis */
+                {
+                        fprintf (stderr, "Pads are drawn perpendicular to X-axis.\n");
+                        /* Pad #1 */
+                        write_pad
+                        (
+                                fp, /* file pointer */
+                                1, /* pad number */
+                                "", /* pad name */
+                                multiplier * (-pitch_x / 2), /* x0-coordinate */
+                                multiplier * (pad_width - pad_length) / 2, /* y0-coordinate */
+                                multiplier * (-pitch_x / 2), /* x0-coordinate */
+                                multiplier * (-pad_width + pad_length) / 2, /* y1-coordinate */
+                                multiplier * pad_length, /* width of the pad */
+                                multiplier * pad_clearance, /* clearance */
+                                multiplier * (pad_length + (2 * solder_mask_clearance)), /* solder mask clearance */
+                                /* Write pin #1 with a square pad if checked */
+                                (pin1_square) ? "square" : pin_pad_flags /* flags */
+                        );
+                        /* Pad #2 */
+                        write_pad
+                        (
+                                fp, /* file pointer */
+                                1, /* pad number */
+                                "", /* pad name */
+                                multiplier * (pitch_x / 2), /* x1-coordinate */
+                                multiplier * (pad_width - pad_length) / 2, /* y0-coordinate */
+                                multiplier * (pitch_x / 2), /* x1-coordinate */
+                                multiplier * (-pad_width + pad_length) / 2, /* y1-coordinate */
+                                multiplier * pad_length, /* width of the pad */
+                                multiplier * pad_clearance, /* clearance */
+                                multiplier * (pad_length + (2 * solder_mask_clearance)), /* solder mask clearance */
+                                pin_pad_flags /* flags */
+                        );
+                }
+                /* Write a package body on the silkscreen to file */
+                if (package_outline)
+                {
+                        write_element_line
+                        (
+                                fp,
+                                multiplier * (((-pitch_x + pad_length + silkscreen_line_width) / 2) + solder_mask_clearance),
+                                multiplier * ((package_body_width + silkscreen_line_width) / 2),
+                                multiplier * (((pitch_x - pad_length - silkscreen_line_width) / 2) - solder_mask_clearance),
+                                multiplier * ((package_body_width + silkscreen_line_width) / 2),
+                                multiplier * silkscreen_line_width
+                        );
+                        write_element_line
+                        (
+                                fp,
+                                multiplier * (((-pitch_x + pad_length + silkscreen_line_width) / 2) + solder_mask_clearance),
+                                multiplier * ((-package_body_width - silkscreen_line_width) / 2),
+                                multiplier * (((pitch_x - pad_length - silkscreen_line_width) / 2) - solder_mask_clearance),
+                                multiplier * ((-package_body_width - silkscreen_line_width) / 2),
+                                multiplier * silkscreen_line_width
+                        );
+                }
+                /* Write a pin #1 marker */
+                if (silkscreen_indicate_1)
+                {
+                        write_element_arc
+                        (
+                                fp,
+                                multiplier * (((-pitch_x - pad_length) / 2) - solder_mask_clearance - 4 * silkscreen_line_width) ,
+                                0.0,
+                                multiplier * 2 * silkscreen_line_width,
+                                multiplier * 2 * silkscreen_line_width,
+                                0.0,
+                                360.0,
+                                multiplier * silkscreen_line_width
+                        );
+                }
+                /* Write a courtyard to file*/
+                if (courtyard)
+                {
+                }
+                /* Write attributes to file */
+                write_attributes (fp);
                 close (fp);
         }
         else
@@ -812,15 +978,16 @@ write_footprint_to92 ()
                 write_pin
                 (
                         fp,
-                        3, /* pin number */
+                        1, /* pin number */
                         "", /* pin name */
-                        5000.0, /* x0 coordinate */
+                        -5000.0, /* x0 coordinate */
                         0.0, /* y0-coordinate */
                         multiplier * pad_diameter, /* width of the annulus ring (pad) */
                         multiplier * pad_clearance, /* clearance */
                         multiplier * solder_mask_clearance, /* solder mask clearance */
                         multiplier * pin_hole_diameter, /* pin drill diameter */
-                        pin_pad_flags /* flags */
+                        /* Write pin #1 with a square pad */
+                        (pin1_square) ? "square" : pin_pad_flags /* flags */
                 );
                 write_pin
                 (
@@ -835,17 +1002,12 @@ write_footprint_to92 ()
                         multiplier * pin_hole_diameter, /* pin drill diameter */
                         pin_pad_flags /* flags */
                 );
-                /* Write a pin #1 marker */
-                if (silkscreen_indicate_1)
-                {
-                        pin_pad_flags = g_strdup ("square");
-                }
                 write_pin
                 (
                         fp,
-                        1, /* pin number */
+                        3, /* pin number */
                         "", /* pin name */
-                        -5000.0, /* x0 coordinate */
+                        5000.0, /* x0 coordinate */
                         0.0, /* y0-coordinate */
                         multiplier * pad_diameter, /* width of the annulus ring (pad) */
                         multiplier * pad_clearance, /* clearance */
@@ -853,6 +1015,11 @@ write_footprint_to92 ()
                         multiplier * pin_hole_diameter, /* pin drill diameter */
                         pin_pad_flags /* flags */
                 );
+                /* Write a pin #1 marker to file */
+                if (silkscreen_indicate_1)
+                {
+                        /*! \todo Write a pin #1 marker ! */
+                }
                 /* Write package body on silkscreen */
                 if (package_outline)
                 {
@@ -865,9 +1032,7 @@ write_footprint_to92 ()
                 }
                 /* Write attributes */
                 write_attributes (fp);
-                fprintf (fp, "\n");
-                fprintf (fp, ")\n");
-        close (fp);
+                close (fp);
         }
         else
         {
@@ -947,6 +1112,10 @@ write_footprint()
                 g_strconcat (pin_pad_flags, "octagon", NULL);
         }
         if (strcmp (pad_shape, "round pin, elongated"))
+        {
+                g_strconcat (pin_pad_flags, "", NULL);
+        }
+        if (strcmp (pad_shape, "rounded pad, elongated"))
         {
                 g_strconcat (pin_pad_flags, "", NULL);
         }

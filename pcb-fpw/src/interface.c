@@ -121,6 +121,7 @@ create_pcb_gfpw (void)
   GtkWidget *label16;
   GtkWidget *pin_drill_diameter_entry;
   GtkWidget *label53;
+  GtkWidget *pin_square_checkbutton;
   GtkWidget *label45;
   GtkWidget *frame9;
   GtkWidget *alignment9;
@@ -628,7 +629,7 @@ create_pcb_gfpw (void)
   gtk_container_add (GTK_CONTAINER (frame10), alignment10);
   gtk_alignment_set_padding (GTK_ALIGNMENT (alignment10), 0, 0, 12, 0);
 
-  table13 = gtk_table_new (2, 2, FALSE);
+  table13 = gtk_table_new (3, 2, FALSE);
   gtk_widget_set_name (table13, "table13");
   gtk_widget_show (table13);
   gtk_container_add (GTK_CONTAINER (alignment10), table13);
@@ -666,6 +667,14 @@ create_pcb_gfpw (void)
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
   gtk_misc_set_alignment (GTK_MISC (label53), 0, 0.5);
+
+  pin_square_checkbutton = gtk_check_button_new_with_mnemonic (_("Pin #1 square "));
+  gtk_widget_set_name (pin_square_checkbutton, "pin_square_checkbutton");
+  gtk_widget_show (pin_square_checkbutton);
+  gtk_table_attach (GTK_TABLE (table13), pin_square_checkbutton, 0, 1, 2, 3,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_tooltips_set_tip (tooltips, pin_square_checkbutton, _("Check to draw indicator for pin/pad #1"), NULL);
 
   label45 = gtk_label_new (_("<b>Pins</b>"));
   gtk_widget_set_name (label45, "label45");
@@ -806,6 +815,15 @@ create_pcb_gfpw (void)
   gtk_table_attach (GTK_TABLE (table12), number_1_position_entry, 1, 2, 6, 7,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (GTK_FILL), 0, 0);
+  gtk_combo_box_append_text (GTK_COMBO_BOX (number_1_position_entry), _("Upper left"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (number_1_position_entry), _("Middle left"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (number_1_position_entry), _("Lower left"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (number_1_position_entry), _("Upper middle"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (number_1_position_entry), _("Middle middle"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (number_1_position_entry), _("Lower middle"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (number_1_position_entry), _("Upper right"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (number_1_position_entry), _("Middle right"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (number_1_position_entry), _("Lower right"));
 
   label44 = gtk_label_new (_("<b>Common</b>"));
   gtk_widget_set_name (label44, "label44");
@@ -1028,7 +1046,7 @@ create_pcb_gfpw (void)
   gtk_container_add (GTK_CONTAINER (frame13), alignment13);
   gtk_alignment_set_padding (GTK_ALIGNMENT (alignment13), 0, 0, 12, 0);
 
-  table16 = gtk_table_new (2, 2, FALSE);
+  table16 = gtk_table_new (3, 2, FALSE);
   gtk_widget_set_name (table16, "table16");
   gtk_widget_show (table16);
   gtk_container_add (GTK_CONTAINER (alignment13), table16);
@@ -1061,7 +1079,7 @@ create_pcb_gfpw (void)
   indicate_1_checkbutton = gtk_check_button_new_with_mnemonic (_("Pin/Pad #1 indicator "));
   gtk_widget_set_name (indicate_1_checkbutton, "indicate_1_checkbutton");
   gtk_widget_show (indicate_1_checkbutton);
-  gtk_table_attach (GTK_TABLE (table16), indicate_1_checkbutton, 1, 2, 0, 1,
+  gtk_table_attach (GTK_TABLE (table16), indicate_1_checkbutton, 0, 1, 2, 3,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
   gtk_tooltips_set_tip (tooltips, indicate_1_checkbutton, _("Check to draw indicator for pin/pad #1"), NULL);
@@ -1189,6 +1207,9 @@ create_pcb_gfpw (void)
                     NULL);
   g_signal_connect ((gpointer) pin_drill_diameter_entry, "changed",
                     G_CALLBACK (on_pin_drill_diameter_entry_changed),
+                    NULL);
+  g_signal_connect ((gpointer) pin_square_checkbutton, "toggled",
+                    G_CALLBACK (on_pin_square_checkbutton_toggled),
                     NULL);
   g_signal_connect ((gpointer) number_total_pins_entry, "changed",
                     G_CALLBACK (on_number_total_pins_entry_changed),
@@ -1322,6 +1343,7 @@ create_pcb_gfpw (void)
   GLADE_HOOKUP_OBJECT (pcb_gfpw, label16, "label16");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, pin_drill_diameter_entry, "pin_drill_diameter_entry");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, label53, "label53");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, pin_square_checkbutton, "pin_square_checkbutton");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, label45, "label45");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, frame9, "frame9");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, alignment9, "alignment9");

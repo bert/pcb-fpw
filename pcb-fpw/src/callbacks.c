@@ -665,14 +665,32 @@ on_package_is_radial_checkbutton_toggled
 /*!
  * \brief The "package outline" checkbutton is toggled.
  *
- * - store the state of the checkbutton in the \c package_outline
- * variable (global).
+ * - save the state of the checkbutton in the \c package_outline
+ *   variable (global).
+ * - if the "package outline" checkbutton is not "checked", set the linewidth
+ *   entry to insensitive.
+ * - if the "package outline" checkbutton is "checked", set the line width
+ *   entry to sensitive.
  */
 void
 on_package_outline_checkbutton_toggled (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
+        GtkWidget *silkscreen_line_width_entry = NULL;
+
+        /* Save the state of checkbutton in global variable */
         package_outline = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
+        /* Set entities to (in)sensitive according to the state of the
+         * checkbutton variable */
+        silkscreen_line_width_entry = lookup_widget (GTK_BUTTON (togglebutton), "silkscreen_line_width_entry");
+        if (package_outline == FALSE)
+        {
+                gtk_widget_set_sensitive (silkscreen_line_width_entry, FALSE);
+        }
+        else
+        {
+                gtk_widget_set_sensitive (silkscreen_line_width_entry, TRUE);
+        }
 }
 
 
@@ -815,6 +833,19 @@ on_pin_drill_diameter_entry_changed    (GtkEditable     *editable,
 
 
 /*!
+ * \brief The "pin #1 square" checkbutton is toggled.
+ *
+ * - save the state of the checkbutton in the \c pin1_square variable (global).
+ */
+void
+on_pin_square_checkbutton_toggled      (GtkToggleButton *togglebutton,
+                                        gpointer         user_data)
+{
+        /* Save the state of checkbutton in global variable */
+        pin1_square = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
+}
+
+/*!
  * \brief The "Pitch (X)" entry is changed.
  *
  * - get the chars from the entry.
@@ -947,10 +978,10 @@ on_silkscreen_line_width_entry_changed (GtkEditable     *editable,
 /*!
  * \brief The "thermal pad" checkbutton is toggled.
  *
- * - store the state of the checkbutton in the \c thermal variable (global).
+ * - save the state of the checkbutton in the \c thermal variable (global).
  * - if the "thermal pad" checkbutton is not "checked", set the length and
  *   width entries to insensitive.
- * - if the "thermal pad" checkbutton is "checked", set the length and with
+ * - if the "thermal pad" checkbutton is "checked", set the length and width
  *   entries to sensitive.
  */
 void
@@ -961,10 +992,10 @@ on_thermal_checkbutton_toggled         (GtkToggleButton *togglebutton,
         GtkWidget *thermal_width_entry = NULL;
         GtkWidget *thermal_solder_mask_clearance_entry = NULL;
 
-        /* Save state of checkbutton in global variable */
+        /* Save the state of checkbutton in global variable */
         thermal = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
 
-        /* Set enties to (in)sensitive according to the state of the
+        /* Set entities to (in)sensitive according to the state of the
          * checkbutton variable */
         thermal_length_entry = lookup_widget (GTK_BUTTON (togglebutton), "thermal_length_entry");
         thermal_width_entry = lookup_widget (GTK_BUTTON (togglebutton), "thermal_width_entry");

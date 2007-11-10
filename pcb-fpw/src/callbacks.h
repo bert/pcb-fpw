@@ -382,3 +382,7 @@ void
 on_thermal_solder_mask_clearance_entry_changed
                                         (GtkEditable     *editable,
                                         gpointer         user_data);
+
+void
+on_pin_square_checkbutton_toggled      (GtkToggleButton *togglebutton,
+                                        gpointer         user_data);

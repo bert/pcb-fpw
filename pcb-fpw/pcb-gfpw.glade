@@ -1183,7 +1183,7 @@ mm</property>
 			  <child>
 			    <widget class="GtkTable" id="table13">
 			      <property name="visible">True</property>
-			      <property name="n_rows">2</property>
+			      <property name="n_rows">3</property>
 			      <property name="n_columns">2</property>
 			      <property name="homogeneous">False</property>
 			      <property name="row_spacing">0</property>
@@ -1286,6 +1286,30 @@ mm</property>
 				  <property name="right_attach">1</property>
 				  <property name="top_attach">0</property>
 				  <property name="bottom_attach">1</property>
+				  <property name="x_options">fill</property>
+				  <property name="y_options"></property>
+				</packing>
+			      </child>
+
+			      <child>
+				<widget class="GtkCheckButton" id="pin_square_checkbutton">
+				  <property name="visible">True</property>
+				  <property name="tooltip" translatable="yes">Check to draw indicator for pin/pad #1</property>
+				  <property name="can_focus">True</property>
+				  <property name="label" translatable="yes">Pin #1 square </property>
+				  <property name="use_underline">True</property>
+				  <property name="relief">GTK_RELIEF_NORMAL</property>
+				  <property name="focus_on_click">True</property>
+				  <property name="active">False</property>
+				  <property name="inconsistent">False</property>
+				  <property name="draw_indicator">True</property>
+				  <signal name="toggled" handler="on_pin_square_checkbutton_toggled" last_modification_time="Wed, 07 Nov 2007 06:48:22 GMT"/>
+				</widget>
+				<packing>
+				  <property name="left_attach">0</property>
+				  <property name="right_attach">1</property>
+				  <property name="top_attach">2</property>
+				  <property name="bottom_attach">3</property>
 				  <property name="x_options">fill</property>
 				  <property name="y_options"></property>
 				</packing>
@@ -1688,6 +1712,15 @@ mm</property>
 			      <child>
 				<widget class="GtkComboBoxEntry" id="number_1_position_entry">
 				  <property name="visible">True</property>
+				  <property name="items" translatable="yes">Upper left
+Middle left
+Lower left
+Upper middle
+Middle middle
+Lower middle
+Upper right
+Middle right
+Lower right</property>
 				  <property name="add_tearoffs">False</property>
 				  <property name="has_frame">True</property>
 				  <property name="focus_on_click">True</property>
@@ -2347,7 +2380,7 @@ mm</property>
 			  <child>
 			    <widget class="GtkTable" id="table16">
 			      <property name="visible">True</property>
-			      <property name="n_rows">2</property>
+			      <property name="n_rows">3</property>
 			      <property name="n_columns">2</property>
 			      <property name="homogeneous">False</property>
 			      <property name="row_spacing">0</property>
@@ -2443,10 +2476,10 @@ mm</property>
 				  <signal name="toggled" handler="on_indicate_1_checkbutton_toggled" last_modification_time="Sun, 21 Oct 2007 12:49:53 GMT"/>
 				</widget>
 				<packing>
-				  <property name="left_attach">1</property>
-				  <property name="right_attach">2</property>
-				  <property name="top_attach">0</property>
-				  <property name="bottom_attach">1</property>
+				  <property name="left_attach">0</property>
+				  <property name="right_attach">1</property>
+				  <property name="top_attach">2</property>
+				  <property name="bottom_attach">3</property>
 				  <property name="x_options">fill</property>
 				  <property name="y_options"></property>
 				</packing>
