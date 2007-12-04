@@ -1,10 +1,13 @@
 /*!
  * \file main.c
+ * \version 0.0.2
  * \author Copyright (C) 2007 by Bert Timmerman <bert.timmerman@xs4all.nl>
- * \brief gFootprintWizard is a program for the creation of footprint files
- * used by the pcb layout application (see http://pcb.sourgeforge.net) for
- * the placement of parts in a pcb layout.
+ * \brief Main program for the pcb footprintwizard (pcb-gfpw).
  *
+ * pcb-gfpw (GtkFootPrintWizard) is a program for the creation of footprint
+ * files to be used by the pcb layout application
+ * (see http://pcb.sourgeforge.net) for the placement of parts in a pcb
+ * layout.\n
  */
 
 
@@ -47,10 +50,10 @@ main (int argc, char *argv[])
         /* Now create the main dialog. */
         pcb_gfpw = create_pcb_gfpw ();
 
-#if 0
         /* Set the initial state of the entries adjacent to the radiobuttons in
-         * the main dialog, these are for entering the C1, C2, G1, G2, Z1 and
-         * Z2 variables (center, heel, toe).
+         * the notebook tab  "Heel & Toe goals".
+         * These entries are for entering the C1, C2, G1, G2, Z1 and Z2
+         * variables.
          */
         GtkWidget *C1_entry = NULL;
         GtkWidget *C2_entry = NULL;
@@ -71,7 +74,6 @@ main (int argc, char *argv[])
         gtk_widget_set_sensitive (G2_entry, FALSE);
         gtk_widget_set_sensitive (Z1_entry, FALSE);
         gtk_widget_set_sensitive (Z2_entry, FALSE);
-#endif
 
         /* Set the state of the check button for the thermal pad to false,
          * and set the length, width and solder mask entries for the thermal
