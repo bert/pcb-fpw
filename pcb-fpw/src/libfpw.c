@@ -1,5 +1,7 @@
 /*!
  * \file libfpw.c
+ * \version 0.0.2
+ * \author Copyright (C) 2007 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief libfpw contains helper functions for both fpw (CLI) and
  * pcb-gfpw (GUI) versions of the pcb FootPrintWizard.
  *
@@ -8,8 +10,6 @@
  * for the placement of parts in a pcb layout.\n\n
  * The functions in libfpw are called by the CLI version of the
  * FootPrintWizard (fpw) as well as the GUI version (pcb-gfpw).\n
- *
- * \author Copyright (C) 2007 by Bert Timmerman <bert.timmerman@xs4all.nl>
  */
 
 
@@ -142,6 +142,8 @@ gboolean courtyard; /*!< Draw courtyard. */
 gdouble courtyard_length; /*!< Courtyard length (X-direction). */
 gdouble courtyard_width; /*!< Courtyard width (Y-direction). */
 gdouble courtyard_line_width; /*!< Courtyard line width. */
+gdouble courtyard_clearance_with_package; /*!< Courtyard clearance with
+*  package outline */
 
 gboolean thermal; /*!< Draw thermal pad(s). */
 gboolean thermal_nopaste; /*!< Thermal pad has no paste. */
@@ -156,12 +158,12 @@ gchar *dummy = NULL; /*!< Every now and then the village-idot is needed ;-) */
  * These variables maybe added when and if another tab is added for the
  * creation of footprints based on heel and toe information for pads.
  * This can be considered being part of an (futuristic) expert-mode. */
-gdouble c1; /*!< Top to bottom pads center-center distance. */
-gdouble g1; /*!< Top to bottom pads inner-inner distance. */
-gdouble z1; /*!< Top to bottom pads outer-outer distance. */
-gdouble c2; /*!< Left to right pads center-center distance. */
-gdouble g2; /*!< Left to right pads inner-inner distance. */
-gdouble z2; /*!< Left to right pads outer-outer distance. */
+gdouble c1; /*!< \todo Top to bottom pads center-center distance. */
+gdouble g1; /*!< \todo Top to bottom pads inner-inner distance. */
+gdouble z1; /*!< \todo Top to bottom pads outer-outer distance. */
+gdouble c2; /*!< \todo Left to right pads center-center distance. */
+gdouble g2; /*!< \todo Left to right pads inner-inner distance. */
+gdouble z2; /*!< \todo Left to right pads outer-outer distance. */
 
 
 
@@ -231,6 +233,8 @@ write_attributes
 /*!
  * \brief Write an element arc.
  *
+ * This function is here to avoid the exhaustive changes of boiler plate code
+ * when the file format of pcb footprint changes.
  */
 int
 write_element_arc
@@ -287,6 +291,8 @@ write_element_header
 /*!
  * \brief Write an element line.
  *
+ * This function is here to avoid the exhaustive changes of boiler plate code
+ * when the file format of pcb footprint changes.
  */
 int
 write_element_line
@@ -323,7 +329,8 @@ write_element_line
 /*!
  * \brief Write a pad for any given footprint.
  *
- * Write a pad for any given footprint.
+ * This function is here to avoid the exhaustive changes of boiler plate code
+ * when the file format of pcb footprint changes.
  */
 int
 write_pad
@@ -360,7 +367,8 @@ write_pad
 /*!
  * \brief Write a pin for any given footprint.
  *
- * Write a pin for any given footprint.
+ * This function is here to avoid the exhaustive changes of boiler plate code
+ * when the file format of pcb footprint changes.
  */
 int
 write_pin
@@ -546,7 +554,7 @@ write_footprint_dip ()
                         );
                         pin_number++;
                 }
-                /* Write a package body on the silkscreen to file*/
+                /* Write a package body on the silkscreen to file */
                 if (package_outline)
                 {
                         write_rectangle
