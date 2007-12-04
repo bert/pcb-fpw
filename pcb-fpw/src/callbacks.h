@@ -386,3 +386,56 @@ on_thermal_solder_mask_clearance_entry_changed
 void
 on_pin_square_checkbutton_toggled      (GtkToggleButton *togglebutton,
                                         gpointer         user_data);
+
+void
+on_courtyard_clearance_with_package_entry_changed
+                                        (GtkEditable     *editable,
+                                        gpointer         user_data);
+
+void
+on_C1_entry_changed                    (GtkEditable     *editable,
+                                        gpointer         user_data);
+
+void
+on_Z1_entry_changed                    (GtkEditable     *editable,
+                                        gpointer         user_data);
+
+void
+on_G1_radiobutton_toggled              (GtkToggleButton *togglebutton,
+                                        gpointer         user_data);
+
+void
+on_C1_radiobutton_toggled              (GtkToggleButton *togglebutton,
+                                        gpointer         user_data);
+
+void
+on_Z1_radiobutton_toggled              (GtkToggleButton *togglebutton,
+                                        gpointer         user_data);
+
+void
+on_G1_entry_changed                    (GtkEditable     *editable,
+                                        gpointer         user_data);
+
+void
+on_G2_entry_changed                    (GtkEditable     *editable,
+                                        gpointer         user_data);
+
+void
+on_C2_entry_changed                    (GtkEditable     *editable,
+                                        gpointer         user_data);
+
+void
+on_Z2_entry_changed                    (GtkEditable     *editable,
+                                        gpointer         user_data);
+
+void
+on_G2_radiobutton_toggled              (GtkToggleButton *togglebutton,
+                                        gpointer         user_data);
+
+void
+on_C2_radiobutton_toggled              (GtkToggleButton *togglebutton,
+                                        gpointer         user_data);
+
+void
+on_Z2_radiobutton_toggled              (GtkToggleButton *togglebutton,
+                                        gpointer         user_data);

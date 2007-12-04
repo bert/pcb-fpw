@@ -1,12 +1,13 @@
 /*!
  * \file callbacks.c
+ * \version 0.0.2
+ * \author Copyright (C) 2007 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief Callback functions for the pcb footprintwizard (pcb-gfpw).
  *
- * fpw (FootPrintWizard) is a program for the creation of footprint files
- * to be used by the pcb layout application (see http://pcb.sourgeforge.net)
- * for the placement of parts in a pcb layout.\n\n
- *
- * \author Copyright (C) 2007 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * pcb-gfpw (GtkFootPrintWizard) is a program for the creation of footprint
+ * files to be used by the pcb layout application
+ * (see http://pcb.sourgeforge.net) for the placement of parts in a pcb
+ * layout.\n
  */
 
 
@@ -24,12 +25,11 @@
 
 
 /*!
- * \brief The top to bottom pads/pins center-center distance (C1) entry is
- * changed, store in c1.
+ * \brief The "top to bottom pads/pins center-center distance (C1)" entry is
+ * changed.
  *
- * The top to bottom pads/pins center-center distance (C1) entry is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the c1 variable (global).
+ * - convert to a double and store in the \c c1 variable (global).
  */
 void
 on_C1_entry_changed                    (GtkEditable     *editable,
@@ -44,14 +44,12 @@ on_C1_entry_changed                    (GtkEditable     *editable,
 
 
 /*!
- * \brief The top to bottom pads/pins center-center distance (C1) radiobutton
- * is clicked, set inner-inner (G1) and outer-outer (Z1) entries to
- * insensitive.
+ * \brief The "top to bottom pads/pins center-center distance (C1)"
+ * radiobutton is clicked.
  *
- * The top to bottom pads/pins center-center distance (C1) radiobutton
- * is clicked.
- * - set center-center (C1) entry to sensitive.
- * - set the inner-inner (G1) and outer-outer (Z1) entries to insensitive.
+ * - set the "center-center distance (C1)" entry to sensitive.
+ * - set the "inner-inner distance (G1)" entry to insensitive.
+ * - set the "outer-outer distance (Z1)" entry to insensitive.
  */
 void
 on_C1_radiobutton_toggled              (GtkToggleButton *togglebutton,
@@ -71,12 +69,11 @@ on_C1_radiobutton_toggled              (GtkToggleButton *togglebutton,
 
 
 /*!
- * \brief The left to right pads/pins center-center distance (C2) entry is
- * changed, store in c2.
+ * \brief The "left to right pads/pins center-center distance (C2)" entry is
+ * changed.
  *
- * The left to right pads/pins center-center distance (C2) entry is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the c2 variable (global).
+ * - convert to a double and store in the \c c2 variable (global).
  */
 void
 on_C2_entry_changed                    (GtkEditable     *editable,
@@ -91,14 +88,12 @@ on_C2_entry_changed                    (GtkEditable     *editable,
 
 
 /*!
- * \brief The left to right pads/pins center-center distance (C2) radiobutton
- * is clicked, set inner-inner (G2) and outer-outer (Z2) entries to
- * insensitive.
+ * \brief The "left to right pads/pins center-center distance (C2)"
+ * radiobutton is clicked.
  *
- * The left to right pads/pins center-center distance (C2) radiobutton
- * is clicked.
- * - set center-center (C2) entry to sensitive.
- * - set inner-inner (G2) and outer-outer (Z2) entries to insensitive.
+ * - set the "center-center distance (C2)" entry to sensitive.
+ * - set the "inner-inner distance (G2)" entry to insensitive.
+ * - set the "outer-outer distance (Z2)" entry to insensitive.
  */
 void
 on_C2_radiobutton_toggled              (GtkToggleButton *togglebutton,
@@ -119,11 +114,10 @@ on_C2_radiobutton_toggled              (GtkToggleButton *togglebutton,
 
 /*!
  * \brief The top to bottom pads/pins inner-inner distance (G1) entry is
- * changed, store in g1.
+ * changed.
  *
- * The top to bottom pads/pins inner-inner distance (G1) entry is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the g1 variable (global).
+ * - convert to a double and store in the \c g1 variable (global).
  */
 void
 on_G1_entry_changed                    (GtkEditable     *editable,
@@ -139,13 +133,11 @@ on_G1_entry_changed                    (GtkEditable     *editable,
 
 /*!
  * \brief The top to bottom pads/pins inner-inner distance (G1) radiobutton
- * is clicked, set center-center (C1) and outer-outer (Z1) entries to
- * insensitive.
- *
- * The top to bottom pads/pins inner-inner distance (G1) radiobutton
  * is clicked.
- * - set inner-inner (G1) entry to sensitive.
- * - set the center-center (C1) and outer-outer (Z1) entries to insensitive.
+ *
+ * - set the inner-inner (G1) entry to sensitive.
+ * - set the center-center (C1) entry to insensitive.
+ * - set the outer-outer (Z1) entry to insensitive.
  */
 void
 on_G1_radiobutton_toggled              (GtkToggleButton *togglebutton,
@@ -166,11 +158,10 @@ on_G1_radiobutton_toggled              (GtkToggleButton *togglebutton,
 
 /*!
  * \brief The left to right pads/pins inner-inner distance (G2) entry is
- * changed, store in g2.
+ * changed.
  *
- * The left to right pads/pins inner-inner distance (G2) entry is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the g2 variable (global).
+ * - convert to a double and store in the \c g2 variable (global).
  */
 void
 on_G2_entry_changed                    (GtkEditable     *editable,
@@ -186,13 +177,11 @@ on_G2_entry_changed                    (GtkEditable     *editable,
 
 /*!
  * \brief The left to right pads/pins inner-inner distance (G2) radiobutton
- * is clicked, set center-center (C2) and outer-outer (Z2) entries to
- * insensitive.
- *
- * The left to right pads/pins inner-inner distance (G2) radiobutton
  * is clicked.
- * - set inner-inner (G2) entry to sensitive.
- * - set center-centr (C2) and outer-outer (Z2) entries to insensitive.
+ *
+ * - set the inner-inner (G2) entry to sensitive.
+ * - set the center-centr (C2) entry to insensitive.
+ * - set the outer-outer (Z2) entry to insensitive.
  */
 void
 on_G2_radiobutton_toggled              (GtkToggleButton *togglebutton,
@@ -213,11 +202,10 @@ on_G2_radiobutton_toggled              (GtkToggleButton *togglebutton,
 
 /*!
  * \brief The top to bottom pads/pins outer-outer distance (Z1) entry is
- * changed, store in z1.
+ * changed.
  *
- * The top to bottom pads/pins outer-outer distance (Z1) entry is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the z1 variable (global).
+ * - convert to a double and store in the \c z1 variable (global).
  */
 void
 on_Z1_entry_changed                    (GtkEditable     *editable,
@@ -233,13 +221,11 @@ on_Z1_entry_changed                    (GtkEditable     *editable,
 
 /*!
  * \brief The top to bottom pads/pins outer-outer (Z1) radiobutton
- * is clicked, set center-center (C1) and inner-inner distance (G1) entries to
- * insensitive.
- *
- * The top to bottom pads/pins outer-outer (Z1) radiobutton
  * is clicked.
+ *
  * - set the outer-outer (Z1) entry to sensitive.
- * - set the center-center (C1) and inner-inner (G1) entries to insensitive.
+ * - set the center-center (C1) entry to insensitive.
+ * - set the inner-inner (G1) entry to insensitive.
  */
 void
 on_Z1_radiobutton_toggled              (GtkToggleButton *togglebutton,
@@ -260,11 +246,10 @@ on_Z1_radiobutton_toggled              (GtkToggleButton *togglebutton,
 
 /*!
  * \brief The left to right pads/pins outer-outer distance (Z2) entry is
- * changed, store in z2.
+ * changed.
  *
- * The left to right pads/pins outer-outer distance (Z2) entry is changed.
  * - get the chars from the entry.
- * - convert to a double and store in the z2 variable (global).
+ * - convert to a double and store in the \c z2 variable (global).
  */
 void
 on_Z2_entry_changed                    (GtkEditable     *editable,
@@ -280,12 +265,11 @@ on_Z2_entry_changed                    (GtkEditable     *editable,
 
 /*!
  * \brief The left to right pads/pins outer-outer (Z2) radiobutton
- * is clicked, set center-center (C2) and inner-inner distance (G2) entries to
- * insensitive.
+ * is clicked.
  *
- * The left to right pads/pins outer-outer (Z2) radiobutton is clicked.
- * - set center-center (C2) and inner-inner distance (G2) entries to
- * insensitive.
+ * - set the "outer-outer distance (Z2)" entry to sensitive.
+ * - set the "center-center distance (C2)" entry to insensitive.
+ * - set the "inner-inner distance (G2)" entry to insensitive.
  */
 void
 on_Z2_radiobutton_toggled              (GtkToggleButton *togglebutton,
@@ -347,11 +331,31 @@ on_courtyard_checkbutton_toggled       (GtkToggleButton *togglebutton,
 
 
 /*!
+ * \brief The "courtyard clearance with package" entry is changed.
+ *
+ * - get the chars from the entry.
+ * - convert to a double and store in the \c courtyard_clearance_with_package
+ *   variable (global).
+ */
+void
+on_courtyard_clearance_with_package_entry_changed
+                                        (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+        gchar *courtyard_clearance_with_package_string = NULL;
+        gchar *leftovers;
+
+        courtyard_clearance_with_package_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        courtyard_clearance_with_package = g_ascii_strtod (courtyard_clearance_with_package_string, &leftovers);
+}
+
+
+/*!
  * \brief The "length of the courtyard (X)" entry is changed.
  *
  * - get the chars from the entry.
  * - convert to a double and store in the \c courtyard_length variable
- * (global).
+ *   (global).
  */
 void
 on_courtyard_length_entry_changed      (GtkEditable     *editable,
@@ -389,7 +393,7 @@ on_courtyard_line_width_entry_changed  (GtkEditable     *editable,
  *
  * - get the chars from the entry.
  * - convert to a double and store in the \c courtyard_width variable
- * (global).
+ *   (global).
  */
 void
 on_courtyard_width_entry_changed       (GtkEditable     *editable,
@@ -512,7 +516,7 @@ on_footprint_value_entry_changed       (GtkEditable     *editable,
  * \brief The "indicate pin/pad number 1" checkbutton is toggled.
  *
  * - store the state of the checkbutton in the \c silkscreen_indicate_1
- * variable (global).
+ *   variable (global).
  */
 void
 on_indicate_1_checkbutton_toggled      (GtkToggleButton *togglebutton,
@@ -595,7 +599,7 @@ on_number_total_pins_entry_changed     (GtkEditable     *editable,
  *
  * - get the chars from the entry.
  * - convert to a double and store in the \c package_body_height variable
- * (global).
+ *   (global).
  */
 void
 on_package_body_height_entry_changed   (GtkEditable     *editable,
@@ -614,7 +618,7 @@ on_package_body_height_entry_changed   (GtkEditable     *editable,
  *
  * - get the chars from the entry.
  * - convert to a double and store in the \c package_body_length variable
- * (global).
+ *   (global).
  */
 void
 on_package_body_length_entry_changed   (GtkEditable     *editable,
@@ -633,7 +637,7 @@ on_package_body_length_entry_changed   (GtkEditable     *editable,
  *
  * - get the chars from the entry.
  * - convert to a double and store in the \c package_body_width variable
- * (global).
+ *   (global).
  */
 void
 on_package_body_width_entry_changed    (GtkEditable     *editable,
@@ -651,7 +655,7 @@ on_package_body_width_entry_changed    (GtkEditable     *editable,
  * \brief The "package is radial" checkbutton is toggled.
  *
  * - store the state of the checkbutton in the \c package_is_radial
- * variable (global).
+ *   variable (global).
  */
 void
 on_package_is_radial_checkbutton_toggled
@@ -699,7 +703,7 @@ on_package_outline_checkbutton_toggled (GtkToggleButton *togglebutton,
  *
  * - get the chars from the entry.
  * - convert to a double and store in the \c pad_clearance variable
- * (global).
+ *   (global).
  */
 void
 on_pad_clearance_entry_changed         (GtkEditable     *editable,
@@ -767,7 +771,7 @@ on_pad_shape_entry_changed    (GtkComboBox     *combobox,
  *
  * - get the chars from the entry.
  * - convert to a double and store in the \c solder_mask_clearance variable
- * (global).
+ *   (global).
  */
 void
 on_pad_solder_mask_clearance_entry_changed
@@ -901,10 +905,10 @@ on_refresh_button_clicked              (GtkButton       *button,
  * - determine the name of the footprintwizard filename.
  * - determine the name of the footprint filename.
  * - invoke the write_footprintwizard_file() to write the global variables to
- * the footprintwizard file, with a .fpw suffix, for debugging and other
- * (future) purposes.
+ *   the footprintwizard file, with a .fpw suffix, for debugging and other
+ *   (future) purposes.
  * - invoke the write_footprint() function to write the actual footprint
- * file.\n
+ *   file.\n
  *
  * \todo When this wizard becomes really quit popular, we can write a function to
  * read from these files as to allow for editing or any other (futuristic)
@@ -961,7 +965,7 @@ on_save_button_clicked                 (GtkButton       *button,
  *
  * - get the chars from the entry.
  * - convert to a double and store in the \c silkscreen_line_thickness
- * variable (global).
+ *   variable (global).
  */
 void
 on_silkscreen_line_width_entry_changed (GtkEditable     *editable,
@@ -1037,7 +1041,7 @@ on_thermal_length_entry_changed        (GtkEditable     *editable,
  * \brief The "thermal pad no paste" checkbutton is clicked.
  *
  * - store the state of the checkbutton in the \c thermal_nopaste variable
- * (global).
+ *   (global).
  */
 void
 on_thermal_nopaste_checkbutton_toggled (GtkToggleButton *togglebutton,
@@ -1052,7 +1056,7 @@ on_thermal_nopaste_checkbutton_toggled (GtkToggleButton *togglebutton,
  *
  * - get the chars from the entry.
  * - convert to a double and store in the \c thermal_solder_clearance
- * variable (global).
+ *   variable (global).
  */
 void
 on_thermal_solder_mask_clearance_entry_changed
