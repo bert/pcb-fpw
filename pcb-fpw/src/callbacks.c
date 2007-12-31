@@ -326,7 +326,24 @@ void
 on_courtyard_checkbutton_toggled       (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
+        GtkWidget *courtyard_line_width_entry = NULL;
+        GtkWidget *courtyard_length_entry = NULL;
+        GtkWidget *courtyard_width_entry = NULL;
+        GtkWidget *courtyard_clearance_with_package_entry = NULL;
+
+        /* Save the state of checkbutton in a global variable */
         courtyard = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
+        /* Look up widgets */
+        courtyard_line_width_entry = lookup_widget (GTK_BUTTON (togglebutton), "courtyard_line_width_entry");
+        courtyard_length_entry = lookup_widget (GTK_BUTTON (togglebutton), "courtyard_length_entry");
+        courtyard_width_entry = lookup_widget (GTK_BUTTON (togglebutton), "courtyard_width_entry");
+        courtyard_clearance_with_package_entry = lookup_widget (GTK_BUTTON (togglebutton), "courtyard_clearance_with_package_entry");
+        /* Set entities to (in)sensitive according to the state of the
+         * checkbutton variable */
+        gtk_widget_set_sensitive (courtyard_line_width_entry, courtyard);
+        gtk_widget_set_sensitive (courtyard_length_entry, courtyard);
+        gtk_widget_set_sensitive (courtyard_width_entry, courtyard);
+        gtk_widget_set_sensitive (courtyard_clearance_with_package_entry, courtyard);
 }
 
 
@@ -684,17 +701,11 @@ on_package_outline_checkbutton_toggled (GtkToggleButton *togglebutton,
 
         /* Save the state of checkbutton in global variable */
         package_outline = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
+        /* Look up widgets */
+        silkscreen_line_width_entry = lookup_widget (GTK_BUTTON (togglebutton), "silkscreen_line_width_entry");
         /* Set entities to (in)sensitive according to the state of the
          * checkbutton variable */
-        silkscreen_line_width_entry = lookup_widget (GTK_BUTTON (togglebutton), "silkscreen_line_width_entry");
-        if (package_outline == FALSE)
-        {
-                gtk_widget_set_sensitive (silkscreen_line_width_entry, FALSE);
-        }
-        else
-        {
-                gtk_widget_set_sensitive (silkscreen_line_width_entry, TRUE);
-        }
+        gtk_widget_set_sensitive (silkscreen_line_width_entry, package_outline);
 }
 
 
@@ -987,35 +998,36 @@ on_silkscreen_line_width_entry_changed (GtkEditable     *editable,
  *   width entries to insensitive.
  * - if the "thermal pad" checkbutton is "checked", set the length and width
  *   entries to sensitive.
+ * - if the "thermal pad" checkbutton is "checked", set the no paste
+ *   checkbutton to sensitive and active (on).
  */
 void
 on_thermal_checkbutton_toggled         (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
         GtkWidget *thermal_length_entry = NULL;
+        GtkToggleButton *thermal_nopaste_checkbutton = NULL;
         GtkWidget *thermal_width_entry = NULL;
         GtkWidget *thermal_solder_mask_clearance_entry = NULL;
 
-        /* Save the state of checkbutton in global variable */
+        /* Save the state of checkbutton in a global variable */
         thermal = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
-
-        /* Set entities to (in)sensitive according to the state of the
-         * checkbutton variable */
+        /* Look up widgets */
+        thermal_nopaste_checkbutton = lookup_widget (GTK_BUTTON (togglebutton), "thermal_nopaste_checkbutton");
         thermal_length_entry = lookup_widget (GTK_BUTTON (togglebutton), "thermal_length_entry");
         thermal_width_entry = lookup_widget (GTK_BUTTON (togglebutton), "thermal_width_entry");
         thermal_solder_mask_clearance_entry = lookup_widget (GTK_BUTTON (togglebutton), "thermal_solder_mask_clearance_entry");
-        if (thermal == FALSE)
-        {
-                gtk_widget_set_sensitive (thermal_length_entry, FALSE);
-                gtk_widget_set_sensitive (thermal_width_entry, FALSE);
-                gtk_widget_set_sensitive (thermal_solder_mask_clearance_entry, FALSE);
-        }
-        else
-        {
-                gtk_widget_set_sensitive (thermal_length_entry, TRUE);
-                gtk_widget_set_sensitive (thermal_width_entry, TRUE);
-                gtk_widget_set_sensitive (thermal_solder_mask_clearance_entry, TRUE);
-        }
+        /* Set entities to (in)sensitive according to the state of the
+         * checkbutton variable */
+        gtk_widget_set_sensitive (thermal_nopaste_checkbutton, thermal);
+        gtk_widget_set_sensitive (thermal_length_entry, thermal);
+        gtk_widget_set_sensitive (thermal_width_entry, thermal);
+        gtk_widget_set_sensitive (thermal_solder_mask_clearance_entry, thermal);
+        /* We want no paste on a thermal pad as a default, so when the user
+         * checks the thermal checkbutton (on), the user has to turn off
+         * paste if desired while leaving the thermal checkbutton checked
+         * (on) */
+        gtk_toggle_button_set_active (thermal_nopaste_checkbutton, thermal);
 }
 
 
