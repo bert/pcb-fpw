@@ -202,7 +202,7 @@ read_footprintwizard_file()
                 fscanf (fp, "%f\n", thermal_x);
                 fscanf (fp, "%f\n", thermal_y);
                 fscanf (fp, "%f\n", thermal_solder_mask_clearance);
-                close (fp);
+                fclose (fp);
         }
 }
 
@@ -515,11 +515,11 @@ write_footprint_dip ()
                 {
                         ymax = multiplier * (courtyard_width / 2);
                 }
-                /* Write element header to file */
+                /* Write element header */
                 x_text = 0.0 ;
                 y_text = (ymin / 2) - 150.0;
                 write_element_header (fp, x_text, y_text);
-                /* Write encapsulated element entities to file */
+                /* Write encapsulated element entities */
                 pin_number = 1;
                 for (i = 0; i > (n_row - 1); i++)
                 {
@@ -538,6 +538,24 @@ write_footprint_dip ()
                                 /* Write pin #1 with a square pad if checked */
                                 (pin1_square && (pin_number == 1)) ? "square" : pin_pad_flags /* flags */
                         );
+                        if (pad_shape == "rounded pad, elongated")
+                        {
+                                write_pad
+                                (
+                                        fp, /* file pointer */
+                                        pin_number, /* pad number = pin_number*/
+                                        "", /* pad name */
+                                        multiplier * (-pitch_x + pad_length - pad_width) / 2, /* x0 coordinate */
+                                        multiplier * ((-n_row / 2 + i) * pitch_y), /* y0-coordinate */
+                                        multiplier * (-pitch_x - pad_length + pad_width) / 2, /* x1 coordinate */
+                                        multiplier * ((-n_row / 2 + i) * pitch_y), /* y0-coordinate */
+                                        multiplier * pad_width, /* width of the pad */
+                                        multiplier * pad_clearance, /* clearance */
+                                        multiplier * (pad_width + (2 * solder_mask_clearance)), /* solder mask clearance */
+                                        /* Write pad #1 with a square pad if checked */
+                                        (pin1_square && (pin_number == 1)) ? "square" : pin_pad_flags /* flags */
+                                );
+                        }
                         pin_number = (n_row * n_col) - i;
                         write_pin
                         (
@@ -552,9 +570,27 @@ write_footprint_dip ()
                                 multiplier * pin_hole_diameter, /* pin drill diameter */
                                 pin_pad_flags /* flags */
                         );
+                        if (pad_shape == "rounded pad, elongated")
+                        {
+                                write_pad
+                                (
+                                        fp, /* file pointer */
+                                        pin_number, /* pad number = pin_number*/
+                                        "", /* pad name */
+                                        multiplier * (pitch_x - pad_length + pad_width) / 2, /* x0 coordinate */
+                                        multiplier * ((-n_row / 2 + i) * pitch_y), /* y0-coordinate */
+                                        multiplier * (pitch_x + pad_length - pad_width) / 2, /* x1 coordinate */
+                                        multiplier * ((-n_row / 2 + i) * pitch_y), /* y0-coordinate */
+                                        multiplier * pad_width, /* width of the pad */
+                                        multiplier * pad_clearance, /* clearance */
+                                        multiplier * (pad_width + (2 * solder_mask_clearance)), /* solder mask clearance */
+                                        /* Write pad #1 with a square pad if checked */
+                                        (pin1_square && (pin_number == 1)) ? "square" : pin_pad_flags /* flags */
+                                );
+                        }
                         pin_number++;
                 }
-                /* Write a package body on the silkscreen to file */
+                /* Write a package body on the silkscreen */
                 if (package_outline)
                 {
                         write_rectangle
@@ -567,7 +603,7 @@ write_footprint_dip ()
                                 multiplier * silkscreen_line_width
                         );
                 }
-                /* Write a pin #1 marker to file*/
+                /* Write a pin #1 marker */
                 if (silkscreen_indicate_1)
                 {
                         write_element_arc
@@ -582,7 +618,7 @@ write_footprint_dip ()
                                 multiplier * courtyard_line_width
                         );
                 }
-                /* Write a courtyard to file*/
+                /* Write a courtyard */
                 write_rectangle
                 (
                         fp,
@@ -592,9 +628,9 @@ write_footprint_dip ()
                         multiplier * ymax,
                         multiplier * courtyard_line_width
                 );
-                /* Write attributes to file*/
+                /* Write attributes */
                 write_attributes (fp);
-                close (fp);
+                fclose (fp);
         }
         else
         {
@@ -643,11 +679,11 @@ write_footprint_smt ()
                 {
                         ymax = multiplier * (courtyard_width / 2);
                 }
-                /* Write element header to file */
+                /* Write element header */
                 x_text = 0.0 ;
                 y_text = (ymin / 2) - 150.0;
                 write_element_header (fp, x_text, y_text);
-                /* Write encapsulated element entities to file*/
+                /* Write encapsulated element entities */
                 if (pad_length > pad_width) /* Write pads parallel to x-axis */
                 {
                         fprintf (stderr, "Pads are drawn parallel on X-axis.\n");
@@ -718,7 +754,7 @@ write_footprint_smt ()
                                 pin_pad_flags /* flags */
                         );
                 }
-                /* Write a package body on the silkscreen to file */
+                /* Write a package body on the silkscreen */
                 if (package_outline)
                 {
                         write_element_line
@@ -745,7 +781,7 @@ write_footprint_smt ()
                 {
                         /* package has no pin/pad #1 indications */
                 }
-                /* Write a courtyard to file*/
+                /* Write a courtyard */
                 if (courtyard)
                 {
                         write_rectangle
@@ -758,16 +794,15 @@ write_footprint_smt ()
                                 multiplier * courtyard_line_width
                         );
                 }
-                /* Write attributes to file */
+                /* Write attributes */
                 write_attributes (fp);
-                close (fp);
+                fclose (fp);
         }
         else
         {
                 fprintf (stderr, "Error: could not open file for SMT footprint: %s.\n", footprint_filename);
                 return (EXIT_FAILURE);
         }
-        close (fp);
         return (EXIT_SUCCESS);
 }
 
@@ -810,7 +845,7 @@ write_footprint_smt_molded ()
                 {
                         ymax = multiplier * (courtyard_width / 2);
                 }
-                /* Write element header to file */
+                /* Write element header */
                 x_text = 0.0 ;
                 y_text = (ymin / 2) - 150.0;
                 write_element_header (fp, x_text, y_text);
@@ -885,7 +920,7 @@ write_footprint_smt_molded ()
                                 pin_pad_flags /* flags */
                         );
                 }
-                /* Write a package body on the silkscreen to file */
+                /* Write a package body on the silkscreen */
                 if (package_outline)
                 {
                         write_element_line
@@ -922,20 +957,19 @@ write_footprint_smt_molded ()
                                 multiplier * silkscreen_line_width
                         );
                 }
-                /* Write a courtyard to file*/
+                /* Write a courtyard */
                 if (courtyard)
                 {
                 }
-                /* Write attributes to file */
+                /* Write attributes */
                 write_attributes (fp);
-                close (fp);
+                fclose (fp);
         }
         else
         {
                 fprintf (stderr, "Error: could not open file for SMT footprint: %s.\n", footprint_filename);
                 return (EXIT_FAILURE);
         }
-        close (fp);
         return (EXIT_SUCCESS);
 }
 
@@ -978,7 +1012,7 @@ write_footprint_to92 ()
                 {
                         ymax = multiplier * (courtyard_width / 2);
                 }
-                /* Write element header to file */
+                /* Write element header */
                 x_text = 0.0 ;
                 y_text = (ymin / 2) - 150.0 ;
                 write_element_header (fp, x_text, y_text);
@@ -1023,7 +1057,7 @@ write_footprint_to92 ()
                         multiplier * pin_hole_diameter, /* pin drill diameter */
                         pin_pad_flags /* flags */
                 );
-                /* Write a pin #1 marker to file */
+                /* Write a pin #1 marker */
                 if (silkscreen_indicate_1)
                 {
                         /*! \todo Write a pin #1 marker ! */
@@ -1040,7 +1074,7 @@ write_footprint_to92 ()
                 }
                 /* Write attributes */
                 write_attributes (fp);
-                close (fp);
+                fclose (fp);
         }
         else
         {
@@ -1091,13 +1125,16 @@ write_footprintwizard_file()
         {
                 fprintf (stderr, "Error: could not open footprintwizard file %s.\n", fpw_filename);
         }
-        close (fp);
+        fclose (fp);
 }
 
 
 /*!
  * \brief Write a footprint based on the global variables.
  *
+ * This function does not write the footprints.\n
+ * It is a dispatcher for helper functions who <b>actually</b> do write the
+ * footprint to file.
  */
 int
 write_footprint()
