@@ -120,7 +120,7 @@ gchar *n1_pos = NULL; /*!< Position of number 1 pin. */
 location_t pin1_location; /*!< Location of number 1 pin. */
 gdouble pitch_x; /*!< Pitch in X-direction. */
 gdouble pitch_y; /*!< Pitch in Y-direction. */
-gdouble pin_hole_diameter; /*!< Diameter of pin hole. */
+gdouble pin_drill_diameter; /*!< Diameter of pin hole. */
 gdouble pad_diameter; /*!< Outer diameter of pin pad (annulus). */
 gdouble pad_length; /*!< Length of pad (parallel to Element X-axis). */
 gdouble pad_width; /*!< Width of pad (perpendicular to Element X-axis). */
@@ -190,7 +190,7 @@ read_footprintwizard_file()
                 fscanf (fp, "%f\n", pad_length);
                 fscanf (fp, "%f\n", pad_width);
                 fscanf (fp, "%f\n", pad_diameter);
-                fscanf (fp, "%f\n", pin_hole_diameter);
+                fscanf (fp, "%f\n", pin_drill_diameter);
                 fscanf (fp, "%f\n", pitch_x);
                 fscanf (fp, "%f\n", pitch_y);
                 fscanf (fp, "%f\n", solder_mask_clearance);
@@ -534,7 +534,7 @@ write_footprint_dip ()
                                 multiplier * pad_diameter, /* width of the annulus ring (pad) */
                                 multiplier * pad_clearance, /* clearance */
                                 multiplier * solder_mask_clearance, /* solder mask clearance */
-                                multiplier * pin_hole_diameter, /* pin drill diameter */
+                                multiplier * pin_drill_diameter, /* pin drill diameter */
                                 /* Write pin #1 with a square pad if checked */
                                 (pin1_square && (pin_number == 1)) ? "square" : pin_pad_flags /* flags */
                         );
@@ -567,7 +567,7 @@ write_footprint_dip ()
                                 multiplier * pad_diameter, /* width of the annulus ring (pad) */
                                 multiplier * pad_clearance, /* clearance */
                                 multiplier * solder_mask_clearance, /* solder mask clearance */
-                                multiplier * pin_hole_diameter, /* pin drill diameter */
+                                multiplier * pin_drill_diameter, /* pin drill diameter */
                                 pin_pad_flags /* flags */
                         );
                         if (pad_shape == "rounded pad, elongated")
@@ -1027,7 +1027,7 @@ write_footprint_to92 ()
                         multiplier * pad_diameter, /* width of the annulus ring (pad) */
                         multiplier * pad_clearance, /* clearance */
                         multiplier * solder_mask_clearance, /* solder mask clearance */
-                        multiplier * pin_hole_diameter, /* pin drill diameter */
+                        multiplier * pin_drill_diameter, /* pin drill diameter */
                         /* Write pin #1 with a square pad */
                         (pin1_square) ? "square" : pin_pad_flags /* flags */
                 );
@@ -1041,7 +1041,7 @@ write_footprint_to92 ()
                         multiplier * pad_diameter, /* width of the annulus ring (pad) */
                         multiplier * pad_clearance, /* clearance */
                         multiplier * solder_mask_clearance, /* solder mask clearance */
-                        multiplier * pin_hole_diameter, /* pin drill diameter */
+                        multiplier * pin_drill_diameter, /* pin drill diameter */
                         pin_pad_flags /* flags */
                 );
                 write_pin
@@ -1054,7 +1054,7 @@ write_footprint_to92 ()
                         multiplier * pad_diameter, /* width of the annulus ring (pad) */
                         multiplier * pad_clearance, /* clearance */
                         multiplier * solder_mask_clearance, /* solder mask clearance */
-                        multiplier * pin_hole_diameter, /* pin drill diameter */
+                        multiplier * pin_drill_diameter, /* pin drill diameter */
                         pin_pad_flags /* flags */
                 );
                 /* Write a pin #1 marker */
@@ -1108,7 +1108,7 @@ write_footprintwizard_file()
         fprintf (fp, "%f\n", pad_length);
         fprintf (fp, "%f\n", pad_width);
         fprintf (fp, "%f\n", pad_diameter);
-        fprintf (fp, "%f\n", pin_hole_diameter);
+        fprintf (fp, "%f\n", pin_drill_diameter);
         fprintf (fp, "%f\n", pitch_x);
         fprintf (fp, "%f\n", pitch_y);
         fprintf (fp, "%f\n", solder_mask_clearance);
