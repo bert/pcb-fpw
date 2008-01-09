@@ -291,14 +291,106 @@ on_Z2_radiobutton_toggled              (GtkToggleButton *togglebutton,
 /*!
  * \brief The "Clear" button is clicked.
  *
- * \todo Code me !
+ * - clear all entries or set entries which have a default values to that
+ *   value,
+ * - set all togglebuttons to the initial state.
  *
- * - clear all entry fields and set all togglebuttons to the initial state.
+ * \todo Combobox entries to be stripped of characters with something like
+ * gtk_combo_box_remove_text ().
+ *
  */
 void
 on_clear_button_clicked                (GtkButton       *button,
                                         gpointer         user_data)
 {
+        /* Widgets on tab 1 */
+        GtkWidget *footprint_name_entry = NULL;
+        GtkWidget *footprint_type_entry = NULL;
+        GtkWidget *footprint_units_entry = NULL;
+        GtkWidget *footprint_value_entry = NULL;
+        GtkWidget *package_body_length_entry = NULL;
+        GtkWidget *package_body_width_entry = NULL;
+        GtkWidget *package_body_height_entry = NULL;
+        GtkWidget *package_is_radial_checkbutton = NULL;
+        GtkWidget *footprint_author_entry = NULL;
+        GtkWidget *footprint_dist_license_entry = NULL;
+        GtkWidget *footprint_use_license_entry = NULL;
+        GtkWidget *footprint_status_entry = NULL;
+        /* Look up widgets on tab 1 */
+        footprint_name_entry = lookup_widget (GTK_BUTTON (button), "footprint_name_entry");
+        footprint_type_entry = lookup_widget (GTK_BUTTON (button), "footprint_type_entry");
+        footprint_units_entry = lookup_widget (GTK_BUTTON (button), "footprint_units_entry");
+        footprint_value_entry = lookup_widget (GTK_BUTTON (button), "footprint_value_entry");
+        package_body_length_entry = lookup_widget (GTK_BUTTON (button), "package_body_length_entry");
+        package_body_width_entry = lookup_widget (GTK_BUTTON (button), "package_body_width_entry");
+        package_body_height_entry = lookup_widget (GTK_BUTTON (button), "package_body_height_entry");
+        package_is_radial_checkbutton = lookup_widget (GTK_BUTTON (button), "package_is_radial_checkbutton");
+        footprint_author_entry = lookup_widget (GTK_BUTTON (button), "footprint_author_entry");
+        footprint_dist_license_entry = lookup_widget (GTK_BUTTON (button), "footprint_dist_license_entry");
+        footprint_use_license_entry = lookup_widget (GTK_BUTTON (button), "footprint_use_license_entry");
+        footprint_status_entry = lookup_widget (GTK_BUTTON (button), "footprint_status_entry");
+        /* Clear entries on tab 1, remove characters */
+        gtk_entry_set_text (GTK_WIDGET (footprint_name_entry), "");
+//gtk_combo_box_remove_text (GTK_WIDGET (footprint_type_entry), 0);
+//gtk_combo_box_remove_text (GTK_WIDGET (footprint_units_entry), 0);
+        gtk_entry_set_text (GTK_WIDGET (footprint_value_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (package_body_length_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (package_body_width_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (package_body_height_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (footprint_author_entry), "");
+//gtk_combo_box_remove_text (GTK_WIDGET (footprint_status_entry), 0);
+        /* Set entries on tab 1, which have a default value, to that value */
+        gtk_entry_set_text (GTK_WIDGET (footprint_dist_license_entry), "GPL");
+        gtk_entry_set_text (GTK_WIDGET (footprint_use_license_entry), "unlimited");
+        /* Set checkbuttons on tab 1 to initial state */
+        gtk_toggle_button_set_active (package_is_radial_checkbutton, FALSE);
+        /* Widgets on tab 2 */
+        GtkWidget *number_total_pins_entry = NULL;
+        GtkWidget *number_of_rows_entry = NULL;
+        GtkWidget *number_of_columns_entry = NULL;
+        GtkWidget *pitch_x_entry = NULL;
+        GtkWidget *pitch_y_entry = NULL;
+        GtkWidget *pad_shape_entry = NULL;
+        GtkWidget *number_1_position_entry = NULL;
+        GtkWidget *pad_diameter_entry = NULL;
+        GtkWidget *pin_drill_diameter_entry = NULL;
+        GtkWidget *pin1_square_checkbutton = NULL;
+        GtkWidget *pad_length_entry = NULL;
+        GtkWidget *pad_width_entry = NULL;
+        GtkWidget *pad_clearance_entry = NULL;
+        GtkWidget *pad_solder_mask_clearance_entry = NULL;
+        /* Look up widgets on tab 2 */
+        number_total_pins_entry = lookup_widget (GTK_BUTTON (button), "number_total_pins_entry");
+        number_of_rows_entry = lookup_widget (GTK_BUTTON (button), "number_of_rows_entry");
+        number_of_columns_entry = lookup_widget (GTK_BUTTON (button), "number_of_columns_entry");
+        pitch_x_entry = lookup_widget (GTK_BUTTON (button), "pitch_x_entry");
+        pitch_y_entry = lookup_widget (GTK_BUTTON (button), "pitch_y_entry");
+        pad_shape_entry = lookup_widget (GTK_BUTTON (button), "pad_shape_entry");
+        number_1_position_entry = lookup_widget (GTK_BUTTON (button), "number_1_postion_entry");
+        pad_diameter_entry = lookup_widget (GTK_BUTTON (button), "pad_diameter_entry");
+        pin_drill_diameter_entry = lookup_widget (GTK_BUTTON (button), "pin_drill_diameter_entry");
+        pin1_square_checkbutton = lookup_widget (GTK_BUTTON (button), "pin_square_checkbutton");
+        pad_length_entry = lookup_widget (GTK_BUTTON (button), "pad_length_entry");
+        pad_width_entry = lookup_widget (GTK_BUTTON (button), "pad_width_entry");
+        pad_clearance_entry = lookup_widget (GTK_BUTTON (button), "pad_clearance_entry");
+        pad_solder_mask_clearance_entry = lookup_widget (GTK_BUTTON (button), "pad_solder_mask_clearance_entry");
+        /* Clear entries on tab 2, remove characters */
+        gtk_entry_set_text (GTK_WIDGET (number_total_pins_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (number_of_rows_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (number_of_columns_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (pitch_x_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (pitch_y_entry), "");
+//gtk_combo_box_remove_text (GTK_WIDGET (pad_shape_entry), 0);
+//gtk_combo_box_remove_text (GTK_WIDGET (number_1_position_entry), 0);
+        gtk_entry_set_text (GTK_WIDGET (pad_diameter_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (pin_drill_diameter_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (pad_length_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (pad_width_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (pad_clearance_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (pad_solder_mask_clearance_entry), "");
+/* Set entries on tab 2, which have a default value, to that value */
+        /* Set checkbuttons on tab 2 to initial state */
+        gtk_toggle_button_set_active (pin1_square_checkbutton, FALSE);
 
 }
 
@@ -553,7 +645,7 @@ on_number_1_position_entry_changed
                                         (GtkComboBox     *combobox,
                                         gpointer         user_data)
 {
-        n1_pos = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
+        pin_1_position = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
 }
 
 
@@ -567,11 +659,11 @@ void
 on_number_of_columns_entry_changed     (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *n_col_string = NULL;
+        gchar *number_of_columns_string = NULL;
         gchar *leftovers;
 
-        n_col_string = gtk_entry_get_text (GTK_EDITABLE (editable));
-        n_col = (int) g_ascii_strtod (n_col_string, &leftovers);
+        number_of_columns_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        number_of_columns = (int) g_ascii_strtod (number_of_columns_string, &leftovers);
 }
 
 
@@ -585,11 +677,11 @@ void
 on_number_of_rows_entry_changed        (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *n_row_string = NULL;
+        gchar *number_of_rows_string = NULL;
         gchar *leftovers;
 
-        n_row_string = gtk_entry_get_text (GTK_EDITABLE (editable));
-        n_row = (int) g_ascii_strtod (n_row_string, &leftovers);
+        number_of_rows_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        number_of_rows = (int) g_ascii_strtod (number_of_rows_string, &leftovers);
 }
 
 
@@ -603,11 +695,11 @@ void
 on_number_total_pins_entry_changed     (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *N_string = NULL;
+        gchar *number_of_pins_string = NULL;
         gchar *leftovers;
 
-        N_string = gtk_entry_get_text (GTK_EDITABLE (editable));
-        n = (int) g_ascii_strtod (N_string, &leftovers);
+        number_of_pins_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        number_of_pins = (int) g_ascii_strtod (number_of_pins_string, &leftovers);
 }
 
 
@@ -789,11 +881,11 @@ on_pad_solder_mask_clearance_entry_changed
                                         (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *SMC_string = NULL;
+        gchar *pad_SMC_string = NULL;
         gchar *leftovers;
 
-        SMC_string = gtk_entry_get_text (GTK_EDITABLE (editable));
-        solder_mask_clearance = g_ascii_strtod (SMC_string, &leftovers);
+        pad_SMC_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        pad_solder_mask_clearance = g_ascii_strtod (pad_SMC_string, &leftovers);
 }
 
 
@@ -833,17 +925,18 @@ on_pad_width_entry_changed             (GtkEditable     *editable,
  * \brief The "diameter of the drill holes (d)" entry is changed.
  *
  * - get the chars from the entry.
- * - convert to a double and store in the \c d_hole variable (global).
+ * - convert to a double and store in the \c pin_drill_diameter
+ *   variable (global).
  */
 void
 on_pin_drill_diameter_entry_changed    (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *pin_hole_diameter_string = NULL;
+        gchar *pin_drill_diameter_string = NULL;
         gchar *leftovers;
 
-        pin_hole_diameter_string = gtk_entry_get_text (GTK_EDITABLE (editable));
-        pin_hole_diameter = g_ascii_strtod (pin_hole_diameter_string, &leftovers);
+        pin_drill_diameter_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        pin_drill_diameter = g_ascii_strtod (pin_drill_diameter_string, &leftovers);
 }
 
 
