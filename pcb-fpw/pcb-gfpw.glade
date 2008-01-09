@@ -71,14 +71,14 @@
 		  <property name="column_spacing">0</property>
 
 		  <child>
-		    <widget class="GtkFrame" id="frame15">
+		    <widget class="GtkFrame" id="author_frame">
 		      <property name="visible">True</property>
 		      <property name="label_xalign">0</property>
 		      <property name="label_yalign">0.5</property>
 		      <property name="shadow_type">GTK_SHADOW_OUT</property>
 
 		      <child>
-			<widget class="GtkAlignment" id="alignment15">
+			<widget class="GtkAlignment" id="author_frame_alignment">
 			  <property name="visible">True</property>
 			  <property name="xalign">0.5</property>
 			  <property name="yalign">0.5</property>
@@ -90,7 +90,7 @@
 			  <property name="right_padding">0</property>
 
 			  <child>
-			    <widget class="GtkTable" id="table18">
+			    <widget class="GtkTable" id="author_table">
 			      <property name="visible">True</property>
 			      <property name="n_rows">4</property>
 			      <property name="n_columns">2</property>
@@ -283,9 +283,9 @@
 				<widget class="GtkComboBoxEntry" id="footprint_status_entry">
 				  <property name="visible">True</property>
 				  <property name="items" translatable="yes">Experimental
-Private
-Public released
-Confirmed by peers</property>
+Private (not published)
+Public (released)
+Confirmed by peers (stable)</property>
 				  <property name="add_tearoffs">False</property>
 				  <property name="has_frame">True</property>
 				  <property name="focus_on_click">True</property>
@@ -306,7 +306,7 @@ Confirmed by peers</property>
 		      </child>
 
 		      <child>
-			<widget class="GtkLabel" id="label51">
+			<widget class="GtkLabel" id="author_frame_label">
 			  <property name="visible">True</property>
 			  <property name="label" translatable="yes">&lt;b&gt;Author&lt;/b&gt;</property>
 			  <property name="use_underline">False</property>
@@ -339,14 +339,14 @@ Confirmed by peers</property>
 		  </child>
 
 		  <child>
-		    <widget class="GtkFrame" id="frame16">
+		    <widget class="GtkFrame" id="footprint_frame">
 		      <property name="visible">True</property>
 		      <property name="label_xalign">0</property>
 		      <property name="label_yalign">0.5</property>
 		      <property name="shadow_type">GTK_SHADOW_OUT</property>
 
 		      <child>
-			<widget class="GtkAlignment" id="alignment16">
+			<widget class="GtkAlignment" id="footprint_frame_alignment">
 			  <property name="visible">True</property>
 			  <property name="xalign">0.5</property>
 			  <property name="yalign">0.5</property>
@@ -358,7 +358,7 @@ Confirmed by peers</property>
 			  <property name="right_padding">0</property>
 
 			  <child>
-			    <widget class="GtkTable" id="table19">
+			    <widget class="GtkTable" id="footprint_table">
 			      <property name="visible">True</property>
 			      <property name="n_rows">8</property>
 			      <property name="n_columns">2</property>
@@ -367,7 +367,7 @@ Confirmed by peers</property>
 			      <property name="column_spacing">0</property>
 
 			      <child>
-				<widget class="GtkLabel" id="label7">
+				<widget class="GtkLabel" id="footprint_name_label">
 				  <property name="visible">True</property>
 				  <property name="label" translatable="yes">Name</property>
 				  <property name="use_underline">False</property>
@@ -418,7 +418,7 @@ Confirmed by peers</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkLabel" id="label8">
+				<widget class="GtkLabel" id="footprint_type_label">
 				  <property name="visible">True</property>
 				  <property name="label" translatable="yes">Type</property>
 				  <property name="use_underline">False</property>
@@ -446,7 +446,7 @@ Confirmed by peers</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkLabel" id="label9">
+				<widget class="GtkLabel" id="footprint_units_label">
 				  <property name="visible">True</property>
 				  <property name="label" translatable="yes">Units</property>
 				  <property name="use_underline">False</property>
@@ -549,7 +549,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkLabel" id="label31">
+				<widget class="GtkLabel" id="package_body_height_label">
 				  <property name="visible">True</property>
 				  <property name="label" translatable="yes">Body height (Z) </property>
 				  <property name="use_underline">False</property>
@@ -577,7 +577,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkLabel" id="label30">
+				<widget class="GtkLabel" id="pacakge_body_width_label">
 				  <property name="visible">True</property>
 				  <property name="label" translatable="yes">Body width (Y)</property>
 				  <property name="use_underline">False</property>
@@ -605,7 +605,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkLabel" id="label29">
+				<widget class="GtkLabel" id="package_body_length_label">
 				  <property name="visible">True</property>
 				  <property name="label" translatable="yes">Body length (X)</property>
 				  <property name="use_underline">False</property>
@@ -702,7 +702,7 @@ mm</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkLabel" id="label54">
+				<widget class="GtkLabel" id="footprint_value_label">
 				  <property name="visible">True</property>
 				  <property name="label" translatable="yes">Value</property>
 				  <property name="use_underline">False</property>
@@ -757,7 +757,7 @@ mm</property>
 		      </child>
 
 		      <child>
-			<widget class="GtkLabel" id="label52">
+			<widget class="GtkLabel" id="footprint_frame_label">
 			  <property name="visible">True</property>
 			  <property name="label" translatable="yes">&lt;b&gt;Footprint&lt;/b&gt;</property>
 			  <property name="use_underline">False</property>
