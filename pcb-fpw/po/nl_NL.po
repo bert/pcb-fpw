@@ -1,0 +1,567 @@
+# FootPrintWizard for pcb.
+# Copyright (C) 2007, 2008, Bert Timmerman.
+# This file is distributed under the same license as the PACKAGE package.
+# Bert Timmerman <bert.timmerman@xs4all.nl>, 2007, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pcb-fpw\n"
+"Report-Msgid-Bugs-To: bert.timmerman@xs4all.nl\n"
+"POT-Creation-Date: 2008-01-15 21:19+0100\n"
+"PO-Revision-Date: 2008-01-15 21:38+0100\n"
+"Last-Translator: Bert Timmerman <bert.timmerman@xs4all.nl>\n"
+"Language-Team: DUTCH LANGUAGE TEAM <bert.timmerman@xs4all.nl>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Dutch\n"
+"X-Poedit-Country: NETHERLANDS\n"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: src/interface.c:38
+msgid "translator-credits"
+msgstr "Bert Timmerman"
+
+#: src/interface.c:44
+msgid "pcb-gfpw"
+msgstr "pcb-gfpw"
+
+#: src/interface.c:45
+msgid "(C) 2007 Bert Timmerman."
+msgstr "(C) 2007 Bert Timmerman."
+
+#: src/interface.c:46
+msgid "The pcb FootPrintWizard generates footprint files for pcb (see http://pcb.sourceforge.net).\n"
+msgstr "De pcb FootPrintWizard genereerd element bestanden voor pcb (zie http://pcb.sourceforge.net).\n"
+
+#: src/interface.c:47
+#: src/interface.c:308
+msgid "GPL"
+msgstr "GPL"
+
+#: src/interface.c:224
+msgid "FootPrintWizard for pcb footprints"
+msgstr "FootPrintWizard voor pcb elementen"
+
+#: src/interface.c:225
+msgid "pcb-gfpw FootPrintWizard"
+msgstr "pcb-gfpw FootPrintWizard"
+
+#: src/interface.c:276
+msgid "Author"
+msgstr "Auteur"
+
+#: src/interface.c:284
+msgid "Distribution license "
+msgstr "Distributie licentie"
+
+#: src/interface.c:298
+msgid "Type your name here"
+msgstr "Tik je naam hier in"
+
+#: src/interface.c:307
+msgid "License under which you distribute the file"
+msgstr "Licentie waaronder het bestand gedistribueerd wordt"
+
+#: src/interface.c:317
+msgid "Allowable usage"
+msgstr "Toegestaan gebruik"
+
+#: src/interface.c:318
+msgid "unlimited"
+msgstr "onbeperkt"
+
+#: src/interface.c:321
+msgid "Use license"
+msgstr "Gebruik licentie"
+
+#: src/interface.c:329
+msgid "Status"
+msgstr "Status"
+
+#: src/interface.c:344
+msgid "Experimental"
+msgstr "Experimenteel"
+
+#: src/interface.c:345
+msgid "Private (not published)"
+msgstr "Prive (niet gepubliceerd)"
+
+#: src/interface.c:346
+msgid "Public (released)"
+msgstr "Publiek (vrijgegeven)"
+
+#: src/interface.c:347
+msgid "Confirmed by peers (stable)"
+msgstr "Bevestigd door vakgenoten (stabiel)"
+
+#: src/interface.c:349
+msgid "<b>Author</b>"
+msgstr "<b>Auteur</b>"
+
+#: src/interface.c:374
+msgid "Name"
+msgstr "Naam"
+
+#: src/interface.c:388
+msgid "Type the name of the footprint here, no suffix please"
+msgstr "Type de naam van het element hier, geen achtervoegsel graag"
+
+#: src/interface.c:391
+msgid "Type"
+msgstr "Type"
+
+#: src/interface.c:399
+msgid "Units"
+msgstr "Eenheden"
+
+#: src/interface.c:414
+msgid "BGA"
+msgstr "BGA"
+
+#: src/interface.c:415
+msgid "CAPC"
+msgstr "CAPC"
+
+#: src/interface.c:416
+msgid "CAPM"
+msgstr "CAPM"
+
+#: src/interface.c:417
+msgid "CAPMP"
+msgstr "CAPMP"
+
+#: src/interface.c:418
+msgid "DIOM"
+msgstr "DIOM"
+
+#: src/interface.c:419
+msgid "INDC"
+msgstr "INDC"
+
+#: src/interface.c:420
+msgid "INDM"
+msgstr "INDM"
+
+#: src/interface.c:421
+msgid "RESC"
+msgstr "RESC"
+
+#: src/interface.c:422
+msgid "RESM"
+msgstr "RESM"
+
+#: src/interface.c:423
+msgid "TO92"
+msgstr "TO92"
+
+#: src/interface.c:424
+msgid "TO220"
+msgstr "TO220"
+
+#: src/interface.c:433
+msgid "mil"
+msgstr "mil"
+
+#: src/interface.c:434
+msgid "mil/100"
+msgstr "mil/100"
+
+#: src/interface.c:435
+msgid "mm"
+msgstr "mm"
+
+#: src/interface.c:437
+msgid "Radial package "
+msgstr "Radiale behuizing"
+
+#: src/interface.c:443
+msgid "Check for a radial package"
+msgstr "Vink voor radiale behuizing"
+
+#: src/interface.c:445
+msgid "Body height (Z) "
+msgstr "Behuizing hoogte (Z)"
+
+#: src/interface.c:453
+msgid "Body width (Y)"
+msgstr "Behuizing breedte (Y)"
+
+#: src/interface.c:461
+msgid "Body length (X)"
+msgstr "Behuizing lengte (X)"
+
+#: src/interface.c:475
+msgid "Type the height dimension of the package body here"
+msgstr ""
+
+#: src/interface.c:484
+msgid "Type the width dimension of the package body here"
+msgstr ""
+
+#: src/interface.c:493
+msgid "Type the length dimension of the package body here"
+msgstr ""
+
+#: src/interface.c:496
+msgid "Value"
+msgstr "Waarde"
+
+#: src/interface.c:510
+msgid "Type the value of the package here"
+msgstr "Type de waarde voor de behuizing hier"
+
+#: src/interface.c:513
+msgid "<b>Footprint</b>"
+msgstr "<b>Element</b>"
+
+#: src/interface.c:519
+msgid "Footprint"
+msgstr "Element"
+
+#: src/interface.c:551
+msgid "Pad length (X) "
+msgstr ""
+
+#: src/interface.c:559
+#: src/interface.c:921
+msgid "Pad width (Y)"
+msgstr ""
+
+#: src/interface.c:573
+msgid "Length of pads or diameter of pins"
+msgstr ""
+
+#: src/interface.c:582
+msgid "Width of pads"
+msgstr ""
+
+#: src/interface.c:585
+msgid "<b>Pads</b>"
+msgstr ""
+
+#: src/interface.c:610
+msgid "Pad clearance"
+msgstr ""
+
+#: src/interface.c:618
+#: src/interface.c:955
+msgid "Pad solder mask clearance "
+msgstr ""
+
+#: src/interface.c:632
+#: src/interface.c:986
+msgid "Clearance distance with polygons"
+msgstr ""
+
+#: src/interface.c:641
+#: src/interface.c:977
+msgid "Clearance distance with solder mask"
+msgstr ""
+
+#: src/interface.c:644
+msgid "<b>Clearances</b>"
+msgstr ""
+
+#: src/interface.c:675
+#: src/interface.c:692
+msgid "Diameter of drill hole for pins"
+msgstr ""
+
+#: src/interface.c:678
+msgid "Pin drill diameter (d) "
+msgstr ""
+
+#: src/interface.c:695
+msgid "Pad diameter (D) "
+msgstr ""
+
+#: src/interface.c:703
+msgid "Pin #1 square "
+msgstr ""
+
+#: src/interface.c:709
+#: src/interface.c:1158
+msgid "Check to draw indicator for pin/pad #1"
+msgstr ""
+
+#: src/interface.c:711
+msgid "<b>Pins</b>"
+msgstr ""
+
+#: src/interface.c:736
+msgid "Total pins and pads "
+msgstr ""
+
+#: src/interface.c:744
+msgid "Rows"
+msgstr ""
+
+#: src/interface.c:752
+msgid "Columns"
+msgstr ""
+
+#: src/interface.c:760
+msgid "Pitch (X)"
+msgstr ""
+
+#: src/interface.c:768
+msgid "Pitch (Y)"
+msgstr ""
+
+#: src/interface.c:776
+msgid "Shape"
+msgstr ""
+
+#: src/interface.c:784
+msgid "Pin/pad #1 position "
+msgstr ""
+
+#: src/interface.c:798
+msgid "Total number of pins and pads"
+msgstr ""
+
+#: src/interface.c:807
+msgid "Number of rows"
+msgstr ""
+
+#: src/interface.c:816
+msgid "Number of columns"
+msgstr ""
+
+#: src/interface.c:825
+msgid "Vertical pin/pad pitch"
+msgstr ""
+
+#: src/interface.c:834
+msgid "Horizontal pin/pad pitch"
+msgstr ""
+
+#: src/interface.c:844
+msgid "circular pad"
+msgstr ""
+
+#: src/interface.c:845
+msgid "rectangular pad"
+msgstr ""
+
+#: src/interface.c:846
+msgid "octagonal pad"
+msgstr ""
+
+#: src/interface.c:847
+msgid "rounded pad, elongated"
+msgstr ""
+
+#: src/interface.c:856
+msgid "Upper left"
+msgstr ""
+
+#: src/interface.c:857
+msgid "Middle left"
+msgstr ""
+
+#: src/interface.c:858
+msgid "Lower left"
+msgstr ""
+
+#: src/interface.c:859
+msgid "Upper middle"
+msgstr ""
+
+#: src/interface.c:860
+msgid "Middle middle"
+msgstr ""
+
+#: src/interface.c:861
+msgid "Lower middle"
+msgstr ""
+
+#: src/interface.c:862
+msgid "Upper right"
+msgstr ""
+
+#: src/interface.c:863
+msgid "Middle right"
+msgstr ""
+
+#: src/interface.c:864
+msgid "Lower right"
+msgstr ""
+
+#: src/interface.c:865
+msgid " "
+msgstr ""
+
+#: src/interface.c:867
+msgid "<b>Common</b>"
+msgstr ""
+
+#: src/interface.c:873
+msgid "Pins/Pads"
+msgstr ""
+
+#: src/interface.c:905
+#: src/interface.c:995
+msgid "Thermal pad"
+msgstr ""
+
+#: src/interface.c:911
+msgid "Check for a thermal pad"
+msgstr ""
+
+#: src/interface.c:913
+msgid "Pad length (X)"
+msgstr ""
+
+#: src/interface.c:935
+msgid "Width of thermal pad"
+msgstr ""
+
+#: src/interface.c:944
+msgid "Length of thermal pad"
+msgstr ""
+
+#: src/interface.c:947
+msgid "No paste on pad"
+msgstr ""
+
+#: src/interface.c:953
+msgid "Check for no paste on pad"
+msgstr ""
+
+#: src/interface.c:963
+msgid "Pad Clearance "
+msgstr ""
+
+#: src/interface.c:989
+msgid "<b>Thermal pad</b>"
+msgstr ""
+
+#: src/interface.c:1027
+msgid "Print courtyard "
+msgstr ""
+
+#: src/interface.c:1033
+msgid "Check to draw a courtyard (keepout)"
+msgstr ""
+
+#: src/interface.c:1035
+msgid "Width (Y)"
+msgstr ""
+
+#: src/interface.c:1043
+msgid "Length or diameter (X) "
+msgstr ""
+
+#: src/interface.c:1057
+msgid "Length of courtyard"
+msgstr ""
+
+#: src/interface.c:1066
+msgid "Width of courtyard"
+msgstr ""
+
+#: src/interface.c:1069
+#: src/interface.c:1127
+msgid "Line width"
+msgstr ""
+
+#: src/interface.c:1083
+msgid "Line width for courtyard"
+msgstr ""
+
+#: src/interface.c:1086
+msgid "Clearance with package "
+msgstr ""
+
+#: src/interface.c:1102
+msgid "<b>Courtyard</b>"
+msgstr ""
+
+#: src/interface.c:1141
+msgid "Line width for silkscreen"
+msgstr ""
+
+#: src/interface.c:1144
+msgid "Print package outline "
+msgstr ""
+
+#: src/interface.c:1150
+msgid "Check to draw package outline"
+msgstr ""
+
+#: src/interface.c:1152
+msgid "Pin/Pad #1 indicator "
+msgstr ""
+
+#: src/interface.c:1160
+msgid "<b>Silkscreen</b>"
+msgstr ""
+
+#: src/interface.c:1166
+msgid "Silkscreen"
+msgstr ""
+
+#: src/interface.c:1209
+msgid "Inner-Inner (G1)"
+msgstr ""
+
+#: src/interface.c:1218
+msgid "Center-Center (C1)"
+msgstr ""
+
+#: src/interface.c:1228
+msgid "Outer-Outer (Z1)"
+msgstr ""
+
+#: src/interface.c:1245
+msgid "<b>Top to Bottom</b>"
+msgstr ""
+
+#: src/interface.c:1292
+msgid "Inner-Inner (G2)"
+msgstr ""
+
+#: src/interface.c:1301
+msgid "Center-Center (C2)"
+msgstr ""
+
+#: src/interface.c:1311
+msgid "Outer-Outer (Z2)"
+msgstr ""
+
+#: src/interface.c:1320
+msgid "<b>Left to Right</b>"
+msgstr ""
+
+#: src/interface.c:1326
+msgid "Heel & Toe goals"
+msgstr ""
+
+#: src/interface.c:1349
+msgid "<b>Preview</b>"
+msgstr ""
+
+#: src/interface.c:1367
+msgid "Click the Close button to exit"
+msgstr ""
+
+#: src/interface.c:1374
+msgid "Click the Clear button to reset the entries to the default"
+msgstr ""
+
+#: src/interface.c:1381
+msgid "Click the Save button to write the footprint file"
+msgstr ""
+
+#: src/interface.c:1388
+msgid "Click the Refresh button to refresh the preview widget"
+msgstr ""
+
+#: src/support.c:90
+#: src/support.c:114
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr ""
+
