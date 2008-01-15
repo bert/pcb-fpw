@@ -1,0 +1,9 @@
+*~
+*.bak
+Makefile
+Makefile.in
+POTFILES
+pcb-fpw.pot
+.deps
+.gitignore~
+
