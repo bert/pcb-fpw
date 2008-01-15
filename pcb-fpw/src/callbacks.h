@@ -439,3 +439,22 @@ on_C2_radiobutton_toggled              (GtkToggleButton *togglebutton,
 void
 on_Z2_radiobutton_toggled              (GtkToggleButton *togglebutton,
                                         gpointer         user_data);
+
+void
+on_thermal_solder_mask_clearance_entry_changed
+                                        (GtkEditable     *editable,
+                                        gpointer         user_data);
+
+void
+on_thermal_clearance_entry_changed     (GtkEditable     *editable,
+                                        gpointer         user_data);
+
+void
+on_silkscreen_indicate_1_checkbutton_toggled
+                                        (GtkToggleButton *togglebutton,
+                                        gpointer         user_data);
+
+void
+on_silkscreen_package_outline_checkbutton_toggled
+                                        (GtkToggleButton *togglebutton,
+                                        gpointer         user_data);
