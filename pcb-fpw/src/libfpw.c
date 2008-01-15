@@ -185,7 +185,7 @@ gdouble pad_solder_mask_clearance;
 gdouble pad_clearance;
         /*!< Clearance of a pin/pad. */
 
-gboolean package_outline;
+gboolean silkscreen_package_outline;
         /*!< Draw the package body outline on the silkscreen. */
 gboolean silkscreen_indicate_1;
         /*!< Indicate the position of number 1 */
@@ -211,9 +211,9 @@ gboolean thermal;
         /*!< Draw thermal pad(s). */
 gboolean thermal_nopaste;
         /*!< Thermal pad has no paste. */
-gdouble thermal_x;
+gdouble thermal_length;
         /*!< Length of thermal pad. */
-gdouble thermal_y;
+gdouble thermal_width;
         /*!< Width of thermal pad. */
 gdouble thermal_solder_mask_clearance;
         /*!< Solder mask clearance of thermal pad. */
@@ -268,8 +268,8 @@ read_footprintwizard_file()
                 fscanf (fp, "%f\n", courtyard_width);
                 fscanf (fp, "%f\n", courtyard_line_width);
                 fscanf (fp, "%d\n", thermal);
-                fscanf (fp, "%f\n", thermal_x);
-                fscanf (fp, "%f\n", thermal_y);
+                fscanf (fp, "%f\n", thermal_length);
+                fscanf (fp, "%f\n", thermal_width);
                 fscanf (fp, "%f\n", thermal_solder_mask_clearance);
                 fclose (fp);
         }
@@ -660,7 +660,7 @@ write_footprint_dip ()
                         pin_number++;
                 }
                 /* Write a package body on the silkscreen */
-                if (package_outline)
+                if (silkscreen_package_outline)
                 {
                         write_rectangle
                         (
@@ -824,7 +824,7 @@ write_footprint_smt ()
                         );
                 }
                 /* Write a package body on the silkscreen */
-                if (package_outline)
+                if (silkscreen_package_outline)
                 {
                         write_element_line
                         (
@@ -990,7 +990,7 @@ write_footprint_smt_molded ()
                         );
                 }
                 /* Write a package body on the silkscreen */
-                if (package_outline)
+                if (silkscreen_package_outline)
                 {
                         write_element_line
                         (
@@ -1132,7 +1132,7 @@ write_footprint_to92 ()
                         /*! \todo Write a pin #1 marker ! */
                 }
                 /* Write package body on silkscreen */
-                if (package_outline)
+                if (silkscreen_package_outline)
                 {
                         fprintf (fp, "\tElementLine[-8600 -6000 8600 -6000 1000]");
                         fprintf (fp, "\tElementArc[0 0 10500 10500 -35 250 1000]");
@@ -1191,8 +1191,8 @@ write_footprintwizard_file()
         fprintf (fp, "%f\n", courtyard_width);
         fprintf (fp, "%f\n", courtyard_line_width);
         fprintf (fp, "%d\n", thermal);
-        fprintf (fp, "%f\n", thermal_x);
-        fprintf (fp, "%f\n", thermal_y);
+        fprintf (fp, "%f\n", thermal_length);
+        fprintf (fp, "%f\n", thermal_width);
         fprintf (fp, "%f\n", thermal_solder_mask_clearance);
         fprintf (fp, "%f\n", c1);
         fprintf (fp, "%f\n", g1);
@@ -1219,26 +1219,21 @@ write_footprintwizard_file()
 int
 write_footprint()
 {
-        /* Determine the pad shape type */
-        if (strcmp (pad_shape, "rectangular pad"))
+        /* Determine the pad shape type, default is a circular pad */
+        if (strcmp (pad_shape, ""))
         {
-                g_strconcat (pin_pad_flags, "square", NULL);
+                /* No pad shape given */
+                fprintf (stderr, "Warning: could not determine pad shape.\n");
+                fprintf (stderr, "Please try again.\n");
+                return (EXIT_FAILURE);
         }
-        if (strcmp (pad_shape, "rectangular pin"))
+        if (strcmp (pad_shape, "rectangular pad"))
         {
                 g_strconcat (pin_pad_flags, "square", NULL);
         }
         if (strcmp (pad_shape, "octagonal pad"))
         {
                 g_strconcat (pin_pad_flags, "octagon", NULL);
-        }
-        if (strcmp (pad_shape, "octagonal pin"))
-        {
-                g_strconcat (pin_pad_flags, "octagon", NULL);
-        }
-        if (strcmp (pad_shape, "round pin, elongated"))
-        {
-                g_strconcat (pin_pad_flags, "", NULL);
         }
         if (strcmp (pad_shape, "rounded pad, elongated"))
         {
