@@ -154,7 +154,9 @@ create_pcb_gfpw (void)
   GtkWidget *thermal_length_entry;
   GtkWidget *thermal_nopaste_checkbutton;
   GtkWidget *label55;
+  GtkWidget *label59;
   GtkWidget *thermal_solder_mask_clearance_entry;
+  GtkWidget *thermal_clearance_entry;
   GtkWidget *label47;
   GtkWidget *label6;
   GtkWidget *table8;
@@ -176,8 +178,8 @@ create_pcb_gfpw (void)
   GtkWidget *table16;
   GtkWidget *label38;
   GtkWidget *silkscreen_line_width_entry;
-  GtkWidget *package_outline_checkbutton;
-  GtkWidget *indicate_1_checkbutton;
+  GtkWidget *silkscreen_package_outline_checkbutton;
+  GtkWidget *silkscreen_indicate_1_checkbutton;
   GtkWidget *label48;
   GtkWidget *label21;
   GtkWidget *vbox4;
@@ -338,6 +340,7 @@ create_pcb_gfpw (void)
   gtk_table_attach (GTK_TABLE (author_table), footprint_status_entry, 1, 2, 3, 4,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (GTK_FILL), 0, 0);
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_status_entry), "");
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_status_entry), _("Experimental"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_status_entry), _("Private (not published)"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_status_entry), _("Public (released)"));
@@ -407,6 +410,7 @@ create_pcb_gfpw (void)
   gtk_table_attach (GTK_TABLE (footprint_table), footprint_type_entry, 1, 2, 1, 2,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (GTK_FILL), 0, 0);
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), "");
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("BGA"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CAPC"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CAPM"));
@@ -425,6 +429,7 @@ create_pcb_gfpw (void)
   gtk_table_attach (GTK_TABLE (footprint_table), footprint_units_entry, 1, 2, 2, 3,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (GTK_FILL), 0, 0);
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_units_entry), "");
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_units_entry), _("mil"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_units_entry), _("mil/100"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_units_entry), _("mm"));
@@ -624,7 +629,7 @@ create_pcb_gfpw (void)
   gtk_table_attach (GTK_TABLE (table11), pad_clearance_entry, 1, 2, 0, 1,
                     (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, pad_clearance_entry, _("Clearance with polygons"), NULL);
+  gtk_tooltips_set_tip (tooltips, pad_clearance_entry, _("Clearance distance with polygons"), NULL);
   gtk_entry_set_invisible_char (GTK_ENTRY (pad_clearance_entry), 8226);
 
   pad_solder_mask_clearance_entry = gtk_entry_new ();
@@ -633,7 +638,7 @@ create_pcb_gfpw (void)
   gtk_table_attach (GTK_TABLE (table11), pad_solder_mask_clearance_entry, 1, 2, 1, 2,
                     (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, pad_solder_mask_clearance_entry, _("Clearance with solder mask"), NULL);
+  gtk_tooltips_set_tip (tooltips, pad_solder_mask_clearance_entry, _("Clearance distance with solder mask"), NULL);
   gtk_entry_set_invisible_char (GTK_ENTRY (pad_solder_mask_clearance_entry), 8226);
 
   label42 = gtk_label_new (_("<b>Clearances</b>"));
@@ -835,6 +840,11 @@ create_pcb_gfpw (void)
   gtk_table_attach (GTK_TABLE (table12), pad_shape_entry, 1, 2, 5, 6,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (GTK_FILL), 0, 0);
+  gtk_combo_box_append_text (GTK_COMBO_BOX (pad_shape_entry), "");
+  gtk_combo_box_append_text (GTK_COMBO_BOX (pad_shape_entry), _("circular pad"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (pad_shape_entry), _("rectangular pad"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (pad_shape_entry), _("octagonal pad"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (pad_shape_entry), _("rounded pad, elongated"));
 
   number_1_position_entry = gtk_combo_box_entry_new_text ();
   gtk_widget_set_name (number_1_position_entry, "number_1_position_entry");
@@ -842,6 +852,7 @@ create_pcb_gfpw (void)
   gtk_table_attach (GTK_TABLE (table12), number_1_position_entry, 1, 2, 6, 7,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (GTK_FILL), 0, 0);
+  gtk_combo_box_append_text (GTK_COMBO_BOX (number_1_position_entry), "");
   gtk_combo_box_append_text (GTK_COMBO_BOX (number_1_position_entry), _("Upper left"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (number_1_position_entry), _("Middle left"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (number_1_position_entry), _("Lower left"));
@@ -851,6 +862,7 @@ create_pcb_gfpw (void)
   gtk_combo_box_append_text (GTK_COMBO_BOX (number_1_position_entry), _("Upper right"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (number_1_position_entry), _("Middle right"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (number_1_position_entry), _("Lower right"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (number_1_position_entry), _(" "));
 
   label44 = gtk_label_new (_("<b>Common</b>"));
   gtk_widget_set_name (label44, "label44");
@@ -885,7 +897,7 @@ create_pcb_gfpw (void)
   gtk_container_add (GTK_CONTAINER (frame12), alignment12);
   gtk_alignment_set_padding (GTK_ALIGNMENT (alignment12), 0, 0, 12, 0);
 
-  table15 = gtk_table_new (4, 2, FALSE);
+  table15 = gtk_table_new (5, 2, FALSE);
   gtk_widget_set_name (table15, "table15");
   gtk_widget_show (table15);
   gtk_container_add (GTK_CONTAINER (alignment12), table15);
@@ -940,21 +952,39 @@ create_pcb_gfpw (void)
                     (GtkAttachOptions) (0), 0, 0);
   gtk_tooltips_set_tip (tooltips, thermal_nopaste_checkbutton, _("Check for no paste on pad"), NULL);
 
-  label55 = gtk_label_new (_("Solder mask clearance "));
+  label55 = gtk_label_new (_("Pad solder mask clearance "));
   gtk_widget_set_name (label55, "label55");
   gtk_widget_show (label55);
-  gtk_table_attach (GTK_TABLE (table15), label55, 0, 1, 3, 4,
+  gtk_table_attach (GTK_TABLE (table15), label55, 0, 1, 4, 5,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
   gtk_misc_set_alignment (GTK_MISC (label55), 0, 0.5);
 
+  label59 = gtk_label_new (_("Pad Clearance "));
+  gtk_widget_set_name (label59, "label59");
+  gtk_widget_show (label59);
+  gtk_table_attach (GTK_TABLE (table15), label59, 0, 1, 3, 4,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_misc_set_alignment (GTK_MISC (label59), 0, 0.5);
+
   thermal_solder_mask_clearance_entry = gtk_entry_new ();
   gtk_widget_set_name (thermal_solder_mask_clearance_entry, "thermal_solder_mask_clearance_entry");
   gtk_widget_show (thermal_solder_mask_clearance_entry);
-  gtk_table_attach (GTK_TABLE (table15), thermal_solder_mask_clearance_entry, 1, 2, 3, 4,
+  gtk_table_attach (GTK_TABLE (table15), thermal_solder_mask_clearance_entry, 1, 2, 4, 5,
                     (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
+  gtk_tooltips_set_tip (tooltips, thermal_solder_mask_clearance_entry, _("Clearance distance with solder mask"), NULL);
   gtk_entry_set_invisible_char (GTK_ENTRY (thermal_solder_mask_clearance_entry), 8226);
+
+  thermal_clearance_entry = gtk_entry_new ();
+  gtk_widget_set_name (thermal_clearance_entry, "thermal_clearance_entry");
+  gtk_widget_show (thermal_clearance_entry);
+  gtk_table_attach (GTK_TABLE (table15), thermal_clearance_entry, 1, 2, 3, 4,
+                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_tooltips_set_tip (tooltips, thermal_clearance_entry, _("Clearance distance with polygons"), NULL);
+  gtk_entry_set_invisible_char (GTK_ENTRY (thermal_clearance_entry), 8226);
 
   label47 = gtk_label_new (_("<b>Thermal pad</b>"));
   gtk_widget_set_name (label47, "label47");
@@ -1111,21 +1141,21 @@ create_pcb_gfpw (void)
   gtk_tooltips_set_tip (tooltips, silkscreen_line_width_entry, _("Line width for silkscreen"), NULL);
   gtk_entry_set_invisible_char (GTK_ENTRY (silkscreen_line_width_entry), 8226);
 
-  package_outline_checkbutton = gtk_check_button_new_with_mnemonic (_("Print package outline "));
-  gtk_widget_set_name (package_outline_checkbutton, "package_outline_checkbutton");
-  gtk_widget_show (package_outline_checkbutton);
-  gtk_table_attach (GTK_TABLE (table16), package_outline_checkbutton, 0, 1, 0, 1,
+  silkscreen_package_outline_checkbutton = gtk_check_button_new_with_mnemonic (_("Print package outline "));
+  gtk_widget_set_name (silkscreen_package_outline_checkbutton, "silkscreen_package_outline_checkbutton");
+  gtk_widget_show (silkscreen_package_outline_checkbutton);
+  gtk_table_attach (GTK_TABLE (table16), silkscreen_package_outline_checkbutton, 0, 1, 0, 1,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, package_outline_checkbutton, _("Check to draw package outline"), NULL);
+  gtk_tooltips_set_tip (tooltips, silkscreen_package_outline_checkbutton, _("Check to draw package outline"), NULL);
 
-  indicate_1_checkbutton = gtk_check_button_new_with_mnemonic (_("Pin/Pad #1 indicator "));
-  gtk_widget_set_name (indicate_1_checkbutton, "indicate_1_checkbutton");
-  gtk_widget_show (indicate_1_checkbutton);
-  gtk_table_attach (GTK_TABLE (table16), indicate_1_checkbutton, 0, 1, 2, 3,
+  silkscreen_indicate_1_checkbutton = gtk_check_button_new_with_mnemonic (_("Pin/Pad #1 indicator "));
+  gtk_widget_set_name (silkscreen_indicate_1_checkbutton, "silkscreen_indicate_1_checkbutton");
+  gtk_widget_show (silkscreen_indicate_1_checkbutton);
+  gtk_table_attach (GTK_TABLE (table16), silkscreen_indicate_1_checkbutton, 0, 1, 2, 3,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, indicate_1_checkbutton, _("Check to draw indicator for pin/pad #1"), NULL);
+  gtk_tooltips_set_tip (tooltips, silkscreen_indicate_1_checkbutton, _("Check to draw indicator for pin/pad #1"), NULL);
 
   label48 = gtk_label_new (_("<b>Silkscreen</b>"));
   gtk_widget_set_name (label48, "label48");
@@ -1450,6 +1480,9 @@ create_pcb_gfpw (void)
   g_signal_connect ((gpointer) thermal_solder_mask_clearance_entry, "changed",
                     G_CALLBACK (on_thermal_solder_mask_clearance_entry_changed),
                     NULL);
+  g_signal_connect ((gpointer) thermal_clearance_entry, "changed",
+                    G_CALLBACK (on_thermal_clearance_entry_changed),
+                    NULL);
   g_signal_connect ((gpointer) courtyard_checkbutton, "toggled",
                     G_CALLBACK (on_courtyard_checkbutton_toggled),
                     NULL);
@@ -1468,11 +1501,11 @@ create_pcb_gfpw (void)
   g_signal_connect ((gpointer) silkscreen_line_width_entry, "changed",
                     G_CALLBACK (on_silkscreen_line_width_entry_changed),
                     NULL);
-  g_signal_connect ((gpointer) package_outline_checkbutton, "toggled",
-                    G_CALLBACK (on_package_outline_checkbutton_toggled),
+  g_signal_connect ((gpointer) silkscreen_package_outline_checkbutton, "toggled",
+                    G_CALLBACK (on_silkscreen_package_outline_checkbutton_toggled),
                     NULL);
-  g_signal_connect ((gpointer) indicate_1_checkbutton, "toggled",
-                    G_CALLBACK (on_indicate_1_checkbutton_toggled),
+  g_signal_connect ((gpointer) silkscreen_indicate_1_checkbutton, "toggled",
+                    G_CALLBACK (on_silkscreen_indicate_1_checkbutton_toggled),
                     NULL);
   g_signal_connect ((gpointer) C1_entry, "changed",
                     G_CALLBACK (on_C1_entry_changed),
@@ -1617,7 +1650,9 @@ create_pcb_gfpw (void)
   GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_length_entry, "thermal_length_entry");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_nopaste_checkbutton, "thermal_nopaste_checkbutton");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, label55, "label55");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label59, "label59");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_solder_mask_clearance_entry, "thermal_solder_mask_clearance_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_clearance_entry, "thermal_clearance_entry");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, label47, "label47");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, label6, "label6");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, table8, "table8");
@@ -1639,8 +1674,8 @@ create_pcb_gfpw (void)
   GLADE_HOOKUP_OBJECT (pcb_gfpw, table16, "table16");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, label38, "label38");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, silkscreen_line_width_entry, "silkscreen_line_width_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, package_outline_checkbutton, "package_outline_checkbutton");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, indicate_1_checkbutton, "indicate_1_checkbutton");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, silkscreen_package_outline_checkbutton, "silkscreen_package_outline_checkbutton");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, silkscreen_indicate_1_checkbutton, "silkscreen_indicate_1_checkbutton");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, label48, "label48");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, label21, "label21");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, vbox4, "vbox4");
