@@ -282,7 +282,8 @@
 			      <child>
 				<widget class="GtkComboBoxEntry" id="footprint_status_entry">
 				  <property name="visible">True</property>
-				  <property name="items" translatable="yes">Experimental
+				  <property name="items" translatable="yes">
+Experimental
 Private (not published)
 Public (released)
 Confirmed by peers (stable)</property>
@@ -476,7 +477,8 @@ Confirmed by peers (stable)</property>
 			      <child>
 				<widget class="GtkComboBoxEntry" id="footprint_type_entry">
 				  <property name="visible">True</property>
-				  <property name="items" translatable="yes">BGA
+				  <property name="items" translatable="yes">
+BGA
 CAPC
 CAPM
 CAPMP
@@ -506,7 +508,8 @@ TO220
 			      <child>
 				<widget class="GtkComboBoxEntry" id="footprint_units_entry">
 				  <property name="visible">True</property>
-				  <property name="items" translatable="yes">mil
+				  <property name="items" translatable="yes">
+mil
 mil/100
 mm</property>
 				  <property name="add_tearoffs">False</property>
@@ -1082,7 +1085,7 @@ mm</property>
 			      <child>
 				<widget class="GtkEntry" id="pad_clearance_entry">
 				  <property name="visible">True</property>
-				  <property name="tooltip" translatable="yes">Clearance with polygons</property>
+				  <property name="tooltip" translatable="yes">Clearance distance with polygons</property>
 				  <property name="can_focus">True</property>
 				  <property name="editable">True</property>
 				  <property name="visibility">True</property>
@@ -1105,7 +1108,7 @@ mm</property>
 			      <child>
 				<widget class="GtkEntry" id="pad_solder_mask_clearance_entry">
 				  <property name="visible">True</property>
-				  <property name="tooltip" translatable="yes">Clearance with solder mask</property>
+				  <property name="tooltip" translatable="yes">Clearance distance with solder mask</property>
 				  <property name="can_focus">True</property>
 				  <property name="editable">True</property>
 				  <property name="visibility">True</property>
@@ -1695,6 +1698,12 @@ mm</property>
 			      <child>
 				<widget class="GtkComboBoxEntry" id="pad_shape_entry">
 				  <property name="visible">True</property>
+				  <property name="items" translatable="yes">
+circular pad
+rectangular pad
+octagonal pad
+rounded pad, elongated
+</property>
 				  <property name="add_tearoffs">False</property>
 				  <property name="has_frame">True</property>
 				  <property name="focus_on_click">True</property>
@@ -1713,7 +1722,8 @@ mm</property>
 			      <child>
 				<widget class="GtkComboBoxEntry" id="number_1_position_entry">
 				  <property name="visible">True</property>
-				  <property name="items" translatable="yes">Upper left
+				  <property name="items" translatable="yes">
+Upper left
 Middle left
 Lower left
 Upper middle
@@ -1721,7 +1731,8 @@ Middle middle
 Lower middle
 Upper right
 Middle right
-Lower right</property>
+Lower right
+ </property>
 				  <property name="add_tearoffs">False</property>
 				  <property name="has_frame">True</property>
 				  <property name="focus_on_click">True</property>
@@ -1835,7 +1846,7 @@ Lower right</property>
 			  <child>
 			    <widget class="GtkTable" id="table15">
 			      <property name="visible">True</property>
-			      <property name="n_rows">4</property>
+			      <property name="n_rows">5</property>
 			      <property name="n_columns">2</property>
 			      <property name="homogeneous">False</property>
 			      <property name="row_spacing">0</property>
@@ -1994,7 +2005,35 @@ Lower right</property>
 			      <child>
 				<widget class="GtkLabel" id="label55">
 				  <property name="visible">True</property>
-				  <property name="label" translatable="yes">Solder mask clearance </property>
+				  <property name="label" translatable="yes">Pad solder mask clearance </property>
+				  <property name="use_underline">False</property>
+				  <property name="use_markup">False</property>
+				  <property name="justify">GTK_JUSTIFY_LEFT</property>
+				  <property name="wrap">False</property>
+				  <property name="selectable">False</property>
+				  <property name="xalign">0</property>
+				  <property name="yalign">0.5</property>
+				  <property name="xpad">0</property>
+				  <property name="ypad">0</property>
+				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+				  <property name="width_chars">-1</property>
+				  <property name="single_line_mode">False</property>
+				  <property name="angle">0</property>
+				</widget>
+				<packing>
+				  <property name="left_attach">0</property>
+				  <property name="right_attach">1</property>
+				  <property name="top_attach">4</property>
+				  <property name="bottom_attach">5</property>
+				  <property name="x_options">fill</property>
+				  <property name="y_options"></property>
+				</packing>
+			      </child>
+
+			      <child>
+				<widget class="GtkLabel" id="label59">
+				  <property name="visible">True</property>
+				  <property name="label" translatable="yes">Pad Clearance </property>
 				  <property name="use_underline">False</property>
 				  <property name="use_markup">False</property>
 				  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -2022,6 +2061,7 @@ Lower right</property>
 			      <child>
 				<widget class="GtkEntry" id="thermal_solder_mask_clearance_entry">
 				  <property name="visible">True</property>
+				  <property name="tooltip" translatable="yes">Clearance distance with solder mask</property>
 				  <property name="can_focus">True</property>
 				  <property name="editable">True</property>
 				  <property name="visibility">True</property>
@@ -2030,7 +2070,30 @@ Lower right</property>
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
-				  <signal name="changed" handler="on_thermal_solder_mask_clearance_entry_changed" last_modification_time="Mon, 05 Nov 2007 06:52:19 GMT"/>
+				  <signal name="changed" handler="on_thermal_solder_mask_clearance_entry_changed" last_modification_time="Wed, 09 Jan 2008 21:38:36 GMT"/>
+				</widget>
+				<packing>
+				  <property name="left_attach">1</property>
+				  <property name="right_attach">2</property>
+				  <property name="top_attach">4</property>
+				  <property name="bottom_attach">5</property>
+				  <property name="y_options"></property>
+				</packing>
+			      </child>
+
+			      <child>
+				<widget class="GtkEntry" id="thermal_clearance_entry">
+				  <property name="visible">True</property>
+				  <property name="tooltip" translatable="yes">Clearance distance with polygons</property>
+				  <property name="can_focus">True</property>
+				  <property name="editable">True</property>
+				  <property name="visibility">True</property>
+				  <property name="max_length">0</property>
+				  <property name="text" translatable="yes"></property>
+				  <property name="has_frame">True</property>
+				  <property name="invisible_char">•</property>
+				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_thermal_clearance_entry_changed" last_modification_time="Wed, 09 Jan 2008 21:38:26 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
@@ -2489,7 +2552,7 @@ Lower right</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkCheckButton" id="package_outline_checkbutton">
+				<widget class="GtkCheckButton" id="silkscreen_package_outline_checkbutton">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Check to draw package outline</property>
 				  <property name="can_focus">True</property>
@@ -2500,7 +2563,7 @@ Lower right</property>
 				  <property name="active">False</property>
 				  <property name="inconsistent">False</property>
 				  <property name="draw_indicator">True</property>
-				  <signal name="toggled" handler="on_package_outline_checkbutton_toggled" last_modification_time="Sun, 21 Oct 2007 12:48:24 GMT"/>
+				  <signal name="toggled" handler="on_silkscreen_package_outline_checkbutton_toggled" last_modification_time="Fri, 11 Jan 2008 08:38:31 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">0</property>
@@ -2513,7 +2576,7 @@ Lower right</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkCheckButton" id="indicate_1_checkbutton">
+				<widget class="GtkCheckButton" id="silkscreen_indicate_1_checkbutton">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Check to draw indicator for pin/pad #1</property>
 				  <property name="can_focus">True</property>
@@ -2524,7 +2587,7 @@ Lower right</property>
 				  <property name="active">False</property>
 				  <property name="inconsistent">False</property>
 				  <property name="draw_indicator">True</property>
-				  <signal name="toggled" handler="on_indicate_1_checkbutton_toggled" last_modification_time="Sun, 21 Oct 2007 12:49:53 GMT"/>
+				  <signal name="toggled" handler="on_silkscreen_indicate_1_checkbutton_toggled" last_modification_time="Fri, 11 Jan 2008 08:30:39 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">0</property>
