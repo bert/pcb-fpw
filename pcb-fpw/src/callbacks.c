@@ -303,7 +303,7 @@ void
 on_clear_button_clicked                (GtkButton       *button,
                                         gpointer         user_data)
 {
-        /* Widgets on tab 1 */
+        /* Widgets on tab 1 "Footprint" */
         GtkWidget *footprint_name_entry = NULL;
         GtkWidget *footprint_type_entry = NULL;
         GtkWidget *footprint_units_entry = NULL;
@@ -316,35 +316,46 @@ on_clear_button_clicked                (GtkButton       *button,
         GtkWidget *footprint_dist_license_entry = NULL;
         GtkWidget *footprint_use_license_entry = NULL;
         GtkWidget *footprint_status_entry = NULL;
-        /* Look up widgets on tab 1 */
-        footprint_name_entry = lookup_widget (GTK_BUTTON (button), "footprint_name_entry");
-        footprint_type_entry = lookup_widget (GTK_BUTTON (button), "footprint_type_entry");
-        footprint_units_entry = lookup_widget (GTK_BUTTON (button), "footprint_units_entry");
-        footprint_value_entry = lookup_widget (GTK_BUTTON (button), "footprint_value_entry");
-        package_body_length_entry = lookup_widget (GTK_BUTTON (button), "package_body_length_entry");
-        package_body_width_entry = lookup_widget (GTK_BUTTON (button), "package_body_width_entry");
-        package_body_height_entry = lookup_widget (GTK_BUTTON (button), "package_body_height_entry");
-        package_is_radial_checkbutton = lookup_widget (GTK_BUTTON (button), "package_is_radial_checkbutton");
-        footprint_author_entry = lookup_widget (GTK_BUTTON (button), "footprint_author_entry");
-        footprint_dist_license_entry = lookup_widget (GTK_BUTTON (button), "footprint_dist_license_entry");
-        footprint_use_license_entry = lookup_widget (GTK_BUTTON (button), "footprint_use_license_entry");
-        footprint_status_entry = lookup_widget (GTK_BUTTON (button), "footprint_status_entry");
-        /* Clear entries on tab 1, remove characters */
+        /* Look up widgets on tab 1 "Footprint" */
+        footprint_name_entry = lookup_widget (GTK_BUTTON (button),
+                "footprint_name_entry");
+        footprint_type_entry = lookup_widget (GTK_BUTTON (button),
+                "footprint_type_entry");
+        footprint_units_entry = lookup_widget (GTK_BUTTON (button),
+                "footprint_units_entry");
+        footprint_value_entry = lookup_widget (GTK_BUTTON (button),
+                "footprint_value_entry");
+        package_body_length_entry = lookup_widget (GTK_BUTTON (button),
+                "package_body_length_entry");
+        package_body_width_entry = lookup_widget (GTK_BUTTON (button),
+                "package_body_width_entry");
+        package_body_height_entry = lookup_widget (GTK_BUTTON (button),
+                "package_body_height_entry");
+        package_is_radial_checkbutton = lookup_widget (GTK_BUTTON (button),
+                "package_is_radial_checkbutton");
+        footprint_author_entry = lookup_widget (GTK_BUTTON (button),
+                "footprint_author_entry");
+        footprint_dist_license_entry = lookup_widget (GTK_BUTTON (button),
+                "footprint_dist_license_entry");
+        footprint_use_license_entry = lookup_widget (GTK_BUTTON (button),
+                "footprint_use_license_entry");
+        footprint_status_entry = lookup_widget (GTK_BUTTON (button),
+                "footprint_status_entry");
+        /* Clear entries (remove characters) on tab 1"Footprint" */
         gtk_entry_set_text (GTK_WIDGET (footprint_name_entry), "");
-//gtk_combo_box_remove_text (GTK_WIDGET (footprint_type_entry), 0);
-//gtk_combo_box_remove_text (GTK_WIDGET (footprint_units_entry), 0);
+        gtk_combo_box_set_active (GTK_WIDGET (footprint_type_entry), 0);
+        gtk_combo_box_set_active (GTK_WIDGET (footprint_units_entry), 0);
         gtk_entry_set_text (GTK_WIDGET (footprint_value_entry), "");
         gtk_entry_set_text (GTK_WIDGET (package_body_length_entry), "");
         gtk_entry_set_text (GTK_WIDGET (package_body_width_entry), "");
         gtk_entry_set_text (GTK_WIDGET (package_body_height_entry), "");
         gtk_entry_set_text (GTK_WIDGET (footprint_author_entry), "");
-//gtk_combo_box_remove_text (GTK_WIDGET (footprint_status_entry), 0);
-        /* Set entries on tab 1, which have a default value, to that value */
-        gtk_entry_set_text (GTK_WIDGET (footprint_dist_license_entry), "GPL");
-        gtk_entry_set_text (GTK_WIDGET (footprint_use_license_entry), "unlimited");
-        /* Set checkbuttons on tab 1 to initial state */
+        gtk_combo_box_set_active (GTK_WIDGET (footprint_status_entry), 0);
+        gtk_entry_set_text (GTK_WIDGET (footprint_dist_license_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (footprint_use_license_entry), "");
+        /* Set checkbuttons to their initial state on tab 1 "Footprint" */
         gtk_toggle_button_set_active (package_is_radial_checkbutton, FALSE);
-        /* Widgets on tab 2 */
+        /* Widgets on tab 2 "Pins/Pads" */
         GtkWidget *number_total_pins_entry = NULL;
         GtkWidget *number_of_rows_entry = NULL;
         GtkWidget *number_of_columns_entry = NULL;
@@ -359,38 +370,154 @@ on_clear_button_clicked                (GtkButton       *button,
         GtkWidget *pad_width_entry = NULL;
         GtkWidget *pad_clearance_entry = NULL;
         GtkWidget *pad_solder_mask_clearance_entry = NULL;
-        /* Look up widgets on tab 2 */
-        number_total_pins_entry = lookup_widget (GTK_BUTTON (button), "number_total_pins_entry");
-        number_of_rows_entry = lookup_widget (GTK_BUTTON (button), "number_of_rows_entry");
-        number_of_columns_entry = lookup_widget (GTK_BUTTON (button), "number_of_columns_entry");
+        /* Look up widgets on tab 2 "Pins/Pads"*/
+        number_total_pins_entry = lookup_widget (GTK_BUTTON (button),
+                "number_total_pins_entry");
+        number_of_rows_entry = lookup_widget (GTK_BUTTON (button),
+                "number_of_rows_entry");
+        number_of_columns_entry = lookup_widget (GTK_BUTTON (button),
+                "number_of_columns_entry");
         pitch_x_entry = lookup_widget (GTK_BUTTON (button), "pitch_x_entry");
         pitch_y_entry = lookup_widget (GTK_BUTTON (button), "pitch_y_entry");
-        pad_shape_entry = lookup_widget (GTK_BUTTON (button), "pad_shape_entry");
-        number_1_position_entry = lookup_widget (GTK_BUTTON (button), "number_1_postion_entry");
-        pad_diameter_entry = lookup_widget (GTK_BUTTON (button), "pad_diameter_entry");
-        pin_drill_diameter_entry = lookup_widget (GTK_BUTTON (button), "pin_drill_diameter_entry");
-        pin1_square_checkbutton = lookup_widget (GTK_BUTTON (button), "pin_square_checkbutton");
-        pad_length_entry = lookup_widget (GTK_BUTTON (button), "pad_length_entry");
-        pad_width_entry = lookup_widget (GTK_BUTTON (button), "pad_width_entry");
-        pad_clearance_entry = lookup_widget (GTK_BUTTON (button), "pad_clearance_entry");
-        pad_solder_mask_clearance_entry = lookup_widget (GTK_BUTTON (button), "pad_solder_mask_clearance_entry");
-        /* Clear entries on tab 2, remove characters */
+        pad_shape_entry = lookup_widget (GTK_BUTTON (button),
+                "pad_shape_entry");
+        number_1_position_entry = lookup_widget (GTK_BUTTON (button),
+                "number_1_position_entry");
+        pad_diameter_entry = lookup_widget (GTK_BUTTON (button),
+                "pad_diameter_entry");
+        pin_drill_diameter_entry = lookup_widget (GTK_BUTTON (button),
+                "pin_drill_diameter_entry");
+        pin1_square_checkbutton = lookup_widget (GTK_BUTTON (button),
+                "pin_square_checkbutton");
+        pad_length_entry = lookup_widget (GTK_BUTTON (button),
+                "pad_length_entry");
+        pad_width_entry = lookup_widget (GTK_BUTTON (button),
+                "pad_width_entry");
+        pad_clearance_entry = lookup_widget (GTK_BUTTON (button),
+                "pad_clearance_entry");
+        pad_solder_mask_clearance_entry = lookup_widget (GTK_BUTTON (button),
+                "pad_solder_mask_clearance_entry");
+        /* Clear entries (remove characters) on tab 2 "Pins/Pads" */
         gtk_entry_set_text (GTK_WIDGET (number_total_pins_entry), "");
         gtk_entry_set_text (GTK_WIDGET (number_of_rows_entry), "");
         gtk_entry_set_text (GTK_WIDGET (number_of_columns_entry), "");
         gtk_entry_set_text (GTK_WIDGET (pitch_x_entry), "");
         gtk_entry_set_text (GTK_WIDGET (pitch_y_entry), "");
-//gtk_combo_box_remove_text (GTK_WIDGET (pad_shape_entry), 0);
-//gtk_combo_box_remove_text (GTK_WIDGET (number_1_position_entry), 0);
+        gtk_combo_box_set_active (GTK_WIDGET (pad_shape_entry), 0);
+        gtk_combo_box_set_active (GTK_WIDGET (number_1_position_entry), 0);
         gtk_entry_set_text (GTK_WIDGET (pad_diameter_entry), "");
         gtk_entry_set_text (GTK_WIDGET (pin_drill_diameter_entry), "");
         gtk_entry_set_text (GTK_WIDGET (pad_length_entry), "");
         gtk_entry_set_text (GTK_WIDGET (pad_width_entry), "");
         gtk_entry_set_text (GTK_WIDGET (pad_clearance_entry), "");
         gtk_entry_set_text (GTK_WIDGET (pad_solder_mask_clearance_entry), "");
-/* Set entries on tab 2, which have a default value, to that value */
-        /* Set checkbuttons on tab 2 to initial state */
+        /* Set any checkbuttons to their initial state on tab 2 "Pins/Pads" */
         gtk_toggle_button_set_active (pin1_square_checkbutton, FALSE);
+        /* Widgets on tab 3 "Thermal Pad" */
+        GtkWidget *thermal_checkbutton = NULL;
+        GtkWidget *thermal_nopaste_checkbutton = NULL;
+        GtkWidget *thermal_length_entry = NULL;
+        GtkWidget *thermal_width_entry = NULL;
+        GtkWidget *thermal_clearance_entry = NULL;
+        GtkWidget *thermal_solder_mask_clearance_entry = NULL;
+        /* Look up widgets on tab 3 "Thermal Pad" */
+        thermal_checkbutton = lookup_widget (GTK_BUTTON (button),
+                "thermal_checkbutton");
+        thermal_nopaste_checkbutton = lookup_widget (GTK_BUTTON (button),
+                "thermal_nopaste_checkbutton");
+        thermal_length_entry = lookup_widget (GTK_BUTTON (button),
+                "thermal_length_entry");
+        thermal_width_entry = lookup_widget (GTK_BUTTON (button),
+                "thermal_width_entry");
+        thermal_clearance_entry = lookup_widget (GTK_BUTTON (button),
+                "thermal_clearance_entry");
+        thermal_solder_mask_clearance_entry = lookup_widget (GTK_BUTTON (button),
+                "thermal_solder_mask_clearance_entry");
+        /* Clear entries (remove characters) on tab 3 "Thermal Pad" */
+        gtk_entry_set_text (GTK_WIDGET (thermal_length_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (thermal_width_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (thermal_clearance_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (thermal_solder_mask_clearance_entry), "");
+        /* Set any entries, which have a default value, to that value on
+         * tab 3 "thermal Pads" */
+        /* Set any checkbuttons to their initial state on tab 3 "Thermal Pad" */
+        gtk_toggle_button_set_active (thermal_checkbutton, FALSE);
+        gtk_toggle_button_set_active (thermal_nopaste_checkbutton, FALSE);
+        gtk_widget_set_sensitive (thermal_length_entry, FALSE);
+        gtk_widget_set_sensitive (thermal_width_entry, FALSE);
+        gtk_widget_set_sensitive (thermal_clearance_entry, FALSE);
+        gtk_widget_set_sensitive (thermal_solder_mask_clearance_entry, FALSE);
+        /* Widgets on tab 4 "Silkscreen" */
+        GtkWidget *silkscreen_package_outline_checkbutton = NULL;
+        GtkWidget *silkscreen_line_width_entry = NULL;
+        GtkWidget *silkscreen_indicate_1_checkbutton = NULL;
+        GtkWidget *courtyard_checkbutton = NULL;
+        GtkWidget *courtyard_length_entry = NULL;
+        GtkWidget *courtyard_width_entry = NULL;
+        GtkWidget *courtyard_line_width_entry = NULL;
+        GtkWidget *courtyard_clearance_with_package_entry = NULL;
+        /* Look up widgets on tab 4 "Silkscreen" */
+        silkscreen_package_outline_checkbutton = lookup_widget (GTK_BUTTON (button),
+                "silkscreen_package_outline_checkbutton");
+        silkscreen_line_width_entry = lookup_widget (GTK_BUTTON (button),
+                "silkscreen_line_width_entry");
+        silkscreen_indicate_1_checkbutton = lookup_widget (GTK_BUTTON (button),
+                "silkscreen_indicate_1_checkbutton");
+        courtyard_checkbutton = lookup_widget (GTK_BUTTON (button),
+                "courtyard_checkbutton");
+        courtyard_length_entry = lookup_widget (GTK_BUTTON (button),
+                "courtyard_length_entry");
+        courtyard_width_entry = lookup_widget (GTK_BUTTON (button),
+                "courtyard_width_entry");
+        courtyard_line_width_entry = lookup_widget (GTK_BUTTON (button),
+                "courtyard_line_width_entry");
+        courtyard_clearance_with_package_entry = lookup_widget (GTK_BUTTON (button),
+                "courtyard_clearance_with_package_entry");
+        /* Clear entries (remove characters) on tab 4 "Silkscreen" */
+        gtk_entry_set_text (GTK_WIDGET (silkscreen_line_width_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (courtyard_length_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (courtyard_width_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (courtyard_line_width_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (courtyard_clearance_with_package_entry), "");
+        /* Set any checkbuttons to their initial state on tab 4 "Silkscreen" */
+        gtk_toggle_button_set_active (silkscreen_package_outline_checkbutton, FALSE);
+        gtk_toggle_button_set_active (silkscreen_indicate_1_checkbutton, FALSE);
+        gtk_toggle_button_set_active (courtyard_checkbutton, FALSE);
+        /* Widgets on tab 5 "Silkscreen" */
+        GtkWidget *C1_entry = NULL;
+        GtkWidget *C2_entry = NULL;
+        GtkWidget *G1_entry = NULL;
+        GtkWidget *G2_entry = NULL;
+        GtkWidget *Z1_entry = NULL;
+        GtkWidget *Z2_entry = NULL;
+        GtkWidget * C1_radiobutton;
+        GtkWidget * C2_radiobutton;
+        /* Look up widgets on tab 5 "Heel & Toe Goals" */
+        C1_entry = lookup_widget (GTK_BUTTON (button), "C1_entry");
+        C2_entry = lookup_widget (GTK_BUTTON (button), "C2_entry");
+        G1_entry = lookup_widget (GTK_BUTTON (button), "G1_entry");
+        G2_entry = lookup_widget (GTK_BUTTON (button), "G2_entry");
+        Z1_entry = lookup_widget (GTK_BUTTON (button), "Z1_entry");
+        Z2_entry = lookup_widget (GTK_BUTTON (button), "Z2_entry");
+        C1_radiobutton = lookup_widget (GTK_BUTTON (button), "C1_radiobutton");
+        C2_radiobutton = lookup_widget (GTK_BUTTON (button), "C2_radiobutton");
+        /* Clear entries (remove characters) on tab 5 "Heel & Toe Goals" */
+        gtk_entry_set_text (GTK_WIDGET (C1_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (C2_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (G1_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (G2_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (Z1_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (Z2_entry), "");
+        /* Set any entries to their initial state on tab 5 "Heel & Toe Goals" */
+        gtk_widget_set_sensitive (C1_entry, TRUE);
+        gtk_widget_set_sensitive (C2_entry, TRUE);
+        gtk_widget_set_sensitive (G1_entry, FALSE);
+        gtk_widget_set_sensitive (G2_entry, FALSE);
+        gtk_widget_set_sensitive (Z1_entry, FALSE);
+        gtk_widget_set_sensitive (Z2_entry, FALSE);
+        /* Set any checkbuttons to their initial state on tab 5 "Heel & Toe Goals" */
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (C1_radiobutton), TRUE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (C2_radiobutton), TRUE);
 
 }
 
@@ -622,20 +749,6 @@ on_footprint_value_entry_changed       (GtkEditable     *editable,
 
 
 /*!
- * \brief The "indicate pin/pad number 1" checkbutton is toggled.
- *
- * - store the state of the checkbutton in the \c silkscreen_indicate_1
- *   variable (global).
- */
-void
-on_indicate_1_checkbutton_toggled      (GtkToggleButton *togglebutton,
-                                        gpointer         user_data)
-{
-        silkscreen_indicate_1 = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
-}
-
-
-/*!
  * \brief The "position of number 1 pad/pin" entry is changed.
  *
  * - store in the \c n1_pos variable (global).
@@ -772,32 +885,6 @@ on_package_is_radial_checkbutton_toggled
                                         gpointer         user_data)
 {
         package_is_radial = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
-}
-
-
-/*!
- * \brief The "package outline" checkbutton is toggled.
- *
- * - save the state of the checkbutton in the \c package_outline
- *   variable (global).
- * - if the "package outline" checkbutton is not "checked", set the linewidth
- *   entry to insensitive.
- * - if the "package outline" checkbutton is "checked", set the line width
- *   entry to sensitive.
- */
-void
-on_package_outline_checkbutton_toggled (GtkToggleButton *togglebutton,
-                                        gpointer         user_data)
-{
-        GtkWidget *silkscreen_line_width_entry = NULL;
-
-        /* Save the state of checkbutton in global variable */
-        package_outline = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
-        /* Look up widgets */
-        silkscreen_line_width_entry = lookup_widget (GTK_BUTTON (togglebutton), "silkscreen_line_width_entry");
-        /* Set entities to (in)sensitive according to the state of the
-         * checkbutton variable */
-        gtk_widget_set_sensitive (silkscreen_line_width_entry, package_outline);
 }
 
 
@@ -1065,6 +1152,21 @@ on_save_button_clicked                 (GtkButton       *button,
 
 
 /*!
+ * \brief The "indicate pin/pad number 1" checkbutton is toggled.
+ *
+ * - store the state of the checkbutton in the \c silkscreen_indicate_1
+ *   variable (global).
+ */
+void
+on_silkscreen_indicate_1_checkbutton_toggled
+                                        (GtkToggleButton *togglebutton,
+                                        gpointer         user_data)
+{
+        silkscreen_indicate_1 = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
+}
+
+
+/*!
  * \brief The "silkscreen line width" entry is changed.
  *
  * - get the chars from the entry.
@@ -1080,6 +1182,33 @@ on_silkscreen_line_width_entry_changed (GtkEditable     *editable,
 
         silkscreen_line_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         silkscreen_line_width = g_ascii_strtod (silkscreen_line_width_string, &leftovers);
+}
+
+
+/*!
+ * \brief The "package outline" checkbutton is toggled.
+ *
+ * - save the state of the checkbutton in the \c silkscreen_package_outline
+ *   variable (global).
+ * - if the "package outline" checkbutton is not "checked", set the linewidth
+ *   entry to insensitive.
+ * - if the "package outline" checkbutton is "checked", set the line width
+ *   entry to sensitive.
+ */
+void
+on_silkscreen_package_outline_checkbutton_toggled
+                                        (GtkToggleButton *togglebutton,
+                                        gpointer         user_data)
+{
+        GtkWidget *silkscreen_line_width_entry = NULL;
+
+        /* Save the state of checkbutton in global variable */
+        silkscreen_package_outline = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
+        /* Look up widgets */
+        silkscreen_line_width_entry = lookup_widget (GTK_BUTTON (togglebutton), "silkscreen_line_width_entry");
+        /* Set entities to (in)sensitive according to the state of the
+         * checkbutton variable */
+        gtk_widget_set_sensitive (silkscreen_line_width_entry, silkscreen_package_outline);
 }
 
 
@@ -1101,20 +1230,28 @@ on_thermal_checkbutton_toggled         (GtkToggleButton *togglebutton,
         GtkWidget *thermal_length_entry = NULL;
         GtkToggleButton *thermal_nopaste_checkbutton = NULL;
         GtkWidget *thermal_width_entry = NULL;
+        GtkWidget *thermal_clearance_entry = NULL;
         GtkWidget *thermal_solder_mask_clearance_entry = NULL;
 
         /* Save the state of checkbutton in a global variable */
         thermal = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
         /* Look up widgets */
-        thermal_nopaste_checkbutton = lookup_widget (GTK_BUTTON (togglebutton), "thermal_nopaste_checkbutton");
-        thermal_length_entry = lookup_widget (GTK_BUTTON (togglebutton), "thermal_length_entry");
-        thermal_width_entry = lookup_widget (GTK_BUTTON (togglebutton), "thermal_width_entry");
-        thermal_solder_mask_clearance_entry = lookup_widget (GTK_BUTTON (togglebutton), "thermal_solder_mask_clearance_entry");
+        thermal_nopaste_checkbutton = lookup_widget (GTK_BUTTON (togglebutton),
+                "thermal_nopaste_checkbutton");
+        thermal_length_entry = lookup_widget (GTK_BUTTON (togglebutton),
+                "thermal_length_entry");
+        thermal_width_entry = lookup_widget (GTK_BUTTON (togglebutton),
+                "thermal_width_entry");
+        thermal_clearance_entry = lookup_widget (GTK_BUTTON (togglebutton),
+                "thermal_clearance_entry");
+        thermal_solder_mask_clearance_entry = lookup_widget (GTK_BUTTON (togglebutton),
+                "thermal_solder_mask_clearance_entry");
         /* Set entities to (in)sensitive according to the state of the
          * checkbutton variable */
         gtk_widget_set_sensitive (thermal_nopaste_checkbutton, thermal);
         gtk_widget_set_sensitive (thermal_length_entry, thermal);
         gtk_widget_set_sensitive (thermal_width_entry, thermal);
+        gtk_widget_set_sensitive (thermal_clearance_entry, thermal);
         gtk_widget_set_sensitive (thermal_solder_mask_clearance_entry, thermal);
         /* We want no paste on a thermal pad as a default, so when the user
          * checks the thermal checkbutton (on), the user has to turn off
@@ -1125,20 +1262,39 @@ on_thermal_checkbutton_toggled         (GtkToggleButton *togglebutton,
 
 
 /*!
+ * \brief The "thermal pad clearance" entry is changed.
+ *
+ * - get the chars from the entry.
+ * - convert to a double and store in the \c thermal_clearance
+ *   variable (global).
+ */
+void
+on_thermal_clearance_entry_changed     (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+        gchar *thermal_clearance_string = NULL;
+        gchar *leftovers;
+
+        thermal_clearance_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        thermal_clearance = g_ascii_strtod (thermal_clearance_string, &leftovers);
+}
+
+
+/*!
  * \brief The "thermal pad length" entry is changed.
  *
  * - get the chars from the entry.
- * - convert to a double and store in the \c thermal_x variable (global).
+ * - convert to a double and store in the \c thermal_length variable (global).
  */
 void
 on_thermal_length_entry_changed        (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *X_string = NULL;
+        gchar *thermal_length_string = NULL;
         gchar *leftovers;
 
-        X_string = gtk_entry_get_text (GTK_EDITABLE (editable));
-        thermal_x = g_ascii_strtod (X_string, &leftovers);
+        thermal_length_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        thermal_length = g_ascii_strtod (thermal_length_string, &leftovers);
 }
 
 
@@ -1180,17 +1336,17 @@ on_thermal_solder_mask_clearance_entry_changed
  * \brief The "thermal pad width" entry is changed.
  *
  * - get the chars from the entry.
- * - convert to a double and store in the \c thermal_y variable (global).
+ * - convert to a double and store in the \c thermal_width variable (global).
  */
 void
 on_thermal_width_entry_changed         (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *Y_string = NULL;
+        gchar *thermal_width_string = NULL;
         gchar *leftovers;
 
-        Y_string = gtk_entry_get_text (GTK_EDITABLE (editable));
-        thermal_y = g_ascii_strtod (Y_string, &leftovers);
+        thermal_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        thermal_width = g_ascii_strtod (thermal_width_string, &leftovers);
 }
 
 /* EOF */
