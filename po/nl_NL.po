@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcb-fpw\n"
 "Report-Msgid-Bugs-To: bert.timmerman@xs4all.nl\n"
 "POT-Creation-Date: 2008-01-15 21:19+0100\n"
-"PO-Revision-Date: 2008-01-15 21:38+0100\n"
+"PO-Revision-Date: 2008-01-27 23:19+0100\n"
 "Last-Translator: Bert Timmerman <bert.timmerman@xs4all.nl>\n"
 "Language-Team: DUTCH LANGUAGE TEAM <bert.timmerman@xs4all.nl>\n"
 "MIME-Version: 1.0\n"
@@ -193,15 +193,15 @@ msgstr "Behuizing lengte (X)"
 
 #: src/interface.c:475
 msgid "Type the height dimension of the package body here"
-msgstr ""
+msgstr "Type de hoogtemaat van de behuizing hier in"
 
 #: src/interface.c:484
 msgid "Type the width dimension of the package body here"
-msgstr ""
+msgstr "Type de breedtemaat van de behuizing hier in"
 
 #: src/interface.c:493
 msgid "Type the length dimension of the package body here"
-msgstr ""
+msgstr "Type de lengtemaat van de behuizing hier in"
 
 #: src/interface.c:496
 msgid "Value"
@@ -221,347 +221,347 @@ msgstr "Element"
 
 #: src/interface.c:551
 msgid "Pad length (X) "
-msgstr ""
+msgstr "Pad lengte (X)"
 
 #: src/interface.c:559
 #: src/interface.c:921
 msgid "Pad width (Y)"
-msgstr ""
+msgstr "Pad breedte (Y)"
 
 #: src/interface.c:573
 msgid "Length of pads or diameter of pins"
-msgstr ""
+msgstr "Lngte van pads of diameter van oins"
 
 #: src/interface.c:582
 msgid "Width of pads"
-msgstr ""
+msgstr "Breedte van pads"
 
 #: src/interface.c:585
 msgid "<b>Pads</b>"
-msgstr ""
+msgstr "<b>Pads</b>"
 
 #: src/interface.c:610
 msgid "Pad clearance"
-msgstr ""
+msgstr "Pad vrijloop"
 
 #: src/interface.c:618
 #: src/interface.c:955
 msgid "Pad solder mask clearance "
-msgstr ""
+msgstr "Pad soldeer masker vrijloop"
 
 #: src/interface.c:632
 #: src/interface.c:986
 msgid "Clearance distance with polygons"
-msgstr ""
+msgstr "Vrijloop afstand met polygonen"
 
 #: src/interface.c:641
 #: src/interface.c:977
 msgid "Clearance distance with solder mask"
-msgstr ""
+msgstr "Vrijloopafstand met soldeermasker"
 
 #: src/interface.c:644
 msgid "<b>Clearances</b>"
-msgstr ""
+msgstr "<b>Vrijlopen</b>"
 
 #: src/interface.c:675
 #: src/interface.c:692
 msgid "Diameter of drill hole for pins"
-msgstr ""
+msgstr "Diameter van boorgaten voor pennen"
 
 #: src/interface.c:678
 msgid "Pin drill diameter (d) "
-msgstr ""
+msgstr "Pen boordiameter (d)"
 
 #: src/interface.c:695
 msgid "Pad diameter (D) "
-msgstr ""
+msgstr "Pad diameter (D)"
 
 #: src/interface.c:703
 msgid "Pin #1 square "
-msgstr ""
+msgstr "Pen nummer 1 vierkant"
 
 #: src/interface.c:709
 #: src/interface.c:1158
 msgid "Check to draw indicator for pin/pad #1"
-msgstr ""
+msgstr "Markeer om een indicator voor pen/pad #1 te tekenen"
 
 #: src/interface.c:711
 msgid "<b>Pins</b>"
-msgstr ""
+msgstr "<b>Pennen</b>"
 
 #: src/interface.c:736
 msgid "Total pins and pads "
-msgstr ""
+msgstr "Totaal van pennen en pads"
 
 #: src/interface.c:744
 msgid "Rows"
-msgstr ""
+msgstr "Rijen"
 
 #: src/interface.c:752
 msgid "Columns"
-msgstr ""
+msgstr "Kolommen"
 
 #: src/interface.c:760
 msgid "Pitch (X)"
-msgstr ""
+msgstr "Steek (X)"
 
 #: src/interface.c:768
 msgid "Pitch (Y)"
-msgstr ""
+msgstr "Steek (Y)"
 
 #: src/interface.c:776
 msgid "Shape"
-msgstr ""
+msgstr "Vorm"
 
 #: src/interface.c:784
 msgid "Pin/pad #1 position "
-msgstr ""
+msgstr "Pen/pad #1 positie"
 
 #: src/interface.c:798
 msgid "Total number of pins and pads"
-msgstr ""
+msgstr "Totaal aantal van pennen en pads"
 
 #: src/interface.c:807
 msgid "Number of rows"
-msgstr ""
+msgstr "Aantal rijen"
 
 #: src/interface.c:816
 msgid "Number of columns"
-msgstr ""
+msgstr "Aantal kolommen"
 
 #: src/interface.c:825
 msgid "Vertical pin/pad pitch"
-msgstr ""
+msgstr "Verticale pen/pad steek"
 
 #: src/interface.c:834
 msgid "Horizontal pin/pad pitch"
-msgstr ""
+msgstr "Horizontale pen/pad steek"
 
 #: src/interface.c:844
 msgid "circular pad"
-msgstr ""
+msgstr "rond pad"
 
 #: src/interface.c:845
 msgid "rectangular pad"
-msgstr ""
+msgstr "rechthoekig pad"
 
 #: src/interface.c:846
 msgid "octagonal pad"
-msgstr ""
+msgstr "achthoekig pad"
 
 #: src/interface.c:847
 msgid "rounded pad, elongated"
-msgstr ""
+msgstr "afgerond pad, langwerpig"
 
 #: src/interface.c:856
 msgid "Upper left"
-msgstr ""
+msgstr "Boven links"
 
 #: src/interface.c:857
 msgid "Middle left"
-msgstr ""
+msgstr "Midden links"
 
 #: src/interface.c:858
 msgid "Lower left"
-msgstr ""
+msgstr "Onder links"
 
 #: src/interface.c:859
 msgid "Upper middle"
-msgstr ""
+msgstr "Boven midden"
 
 #: src/interface.c:860
 msgid "Middle middle"
-msgstr ""
+msgstr "Midden midden"
 
 #: src/interface.c:861
 msgid "Lower middle"
-msgstr ""
+msgstr "Onder midden"
 
 #: src/interface.c:862
 msgid "Upper right"
-msgstr ""
+msgstr "Boven rechts"
 
 #: src/interface.c:863
 msgid "Middle right"
-msgstr ""
+msgstr "Midden rechts"
 
 #: src/interface.c:864
 msgid "Lower right"
-msgstr ""
+msgstr "Onder rechts"
 
 #: src/interface.c:865
 msgid " "
-msgstr ""
+msgstr " "
 
 #: src/interface.c:867
 msgid "<b>Common</b>"
-msgstr ""
+msgstr "<b>Algemeen</b>"
 
 #: src/interface.c:873
 msgid "Pins/Pads"
-msgstr ""
+msgstr "Pennen/Pads"
 
 #: src/interface.c:905
 #: src/interface.c:995
 msgid "Thermal pad"
-msgstr ""
+msgstr "Thermisch pad"
 
 #: src/interface.c:911
 msgid "Check for a thermal pad"
-msgstr ""
+msgstr "Markeer voor een thermisch pad"
 
 #: src/interface.c:913
 msgid "Pad length (X)"
-msgstr ""
+msgstr "Pad lengte (X)"
 
 #: src/interface.c:935
 msgid "Width of thermal pad"
-msgstr ""
+msgstr "Breedte van het thermische pad"
 
 #: src/interface.c:944
 msgid "Length of thermal pad"
-msgstr ""
+msgstr "Lengte van het thermische pad"
 
 #: src/interface.c:947
 msgid "No paste on pad"
-msgstr ""
+msgstr "Geen pasta on pad"
 
 #: src/interface.c:953
 msgid "Check for no paste on pad"
-msgstr ""
+msgstr "Markeer voor geen pasta op pad"
 
 #: src/interface.c:963
 msgid "Pad Clearance "
-msgstr ""
+msgstr "Pad vrijloop"
 
 #: src/interface.c:989
 msgid "<b>Thermal pad</b>"
-msgstr ""
+msgstr "<b>Thermisch pad</b>"
 
 #: src/interface.c:1027
 msgid "Print courtyard "
-msgstr ""
+msgstr "Druk de omheining af"
 
 #: src/interface.c:1033
 msgid "Check to draw a courtyard (keepout)"
-msgstr ""
+msgstr "Markeer om een omheining (afscherming) te tekenen"
 
 #: src/interface.c:1035
 msgid "Width (Y)"
-msgstr ""
+msgstr "Breedte (Y)"
 
 #: src/interface.c:1043
 msgid "Length or diameter (X) "
-msgstr ""
+msgstr "Lengte of Diameter (X)"
 
 #: src/interface.c:1057
 msgid "Length of courtyard"
-msgstr ""
+msgstr "Lengte van de omheining"
 
 #: src/interface.c:1066
 msgid "Width of courtyard"
-msgstr ""
+msgstr "Breedte van de omheining"
 
 #: src/interface.c:1069
 #: src/interface.c:1127
 msgid "Line width"
-msgstr ""
+msgstr "Lijndikte"
 
 #: src/interface.c:1083
 msgid "Line width for courtyard"
-msgstr ""
+msgstr "Lijndikte voor omheining"
 
 #: src/interface.c:1086
 msgid "Clearance with package "
-msgstr ""
+msgstr "Vrijloop met behuizing"
 
 #: src/interface.c:1102
 msgid "<b>Courtyard</b>"
-msgstr ""
+msgstr "<b>Omheining</b>"
 
 #: src/interface.c:1141
 msgid "Line width for silkscreen"
-msgstr ""
+msgstr "Lijndikte voor opdruk"
 
 #: src/interface.c:1144
 msgid "Print package outline "
-msgstr ""
+msgstr "Druk behuizing omtrek af"
 
 #: src/interface.c:1150
 msgid "Check to draw package outline"
-msgstr ""
+msgstr "Markeer om behuizing omtrek te tekenen"
 
 #: src/interface.c:1152
 msgid "Pin/Pad #1 indicator "
-msgstr ""
+msgstr "Pen/Pad #1 indicator"
 
 #: src/interface.c:1160
 msgid "<b>Silkscreen</b>"
-msgstr ""
+msgstr "<b>Opdruk</b>"
 
 #: src/interface.c:1166
 msgid "Silkscreen"
-msgstr ""
+msgstr "Opdruk"
 
 #: src/interface.c:1209
 msgid "Inner-Inner (G1)"
-msgstr ""
+msgstr "Binnen-Binnen (G1)"
 
 #: src/interface.c:1218
 msgid "Center-Center (C1)"
-msgstr ""
+msgstr "Hartlijn-Hartijn (C1)"
 
 #: src/interface.c:1228
 msgid "Outer-Outer (Z1)"
-msgstr ""
+msgstr "Buiten-Buiten (Z1)"
 
 #: src/interface.c:1245
 msgid "<b>Top to Bottom</b>"
-msgstr ""
+msgstr "<b>Boven naar Onder</b>"
 
 #: src/interface.c:1292
 msgid "Inner-Inner (G2)"
-msgstr ""
+msgstr "Binnen-Binnen (G2)"
 
 #: src/interface.c:1301
 msgid "Center-Center (C2)"
-msgstr ""
+msgstr "Hartlijn-Hartlijn (C2)"
 
 #: src/interface.c:1311
 msgid "Outer-Outer (Z2)"
-msgstr ""
+msgstr "Buiten-Buiten (Z2)"
 
 #: src/interface.c:1320
 msgid "<b>Left to Right</b>"
-msgstr ""
+msgstr "<b>Links naar Rechts</b>"
 
 #: src/interface.c:1326
 msgid "Heel & Toe goals"
-msgstr ""
+msgstr "Hiel & Teen doelen"
 
 #: src/interface.c:1349
 msgid "<b>Preview</b>"
-msgstr ""
+msgstr "<b>Voorvertoning</b>"
 
 #: src/interface.c:1367
 msgid "Click the Close button to exit"
-msgstr ""
+msgstr "Klik de Afsluiten knop om af te sluiten"
 
 #: src/interface.c:1374
 msgid "Click the Clear button to reset the entries to the default"
-msgstr ""
+msgstr "Klik op de Wissen knop om alle invoervakken op de beginwaarde te zetten"
 
 #: src/interface.c:1381
 msgid "Click the Save button to write the footprint file"
-msgstr ""
+msgstr "Klik op de Opslaan knop om het element op te slaan"
 
 #: src/interface.c:1388
 msgid "Click the Refresh button to refresh the preview widget"
-msgstr ""
+msgstr "Klik op de Ververs knop om de voorvertoning te verversen"
 
 #: src/support.c:90
 #: src/support.c:114
 #, c-format
 msgid "Couldn't find pixmap file: %s"
-msgstr ""
+msgstr "Kan pixmap bestand: %s niet vinden"
 
