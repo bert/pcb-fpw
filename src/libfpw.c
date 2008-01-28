@@ -244,6 +244,7 @@ int
 read_footprintwizard_file()
 {
         FILE *fp;
+
         /* Get global variables from footprintwizard file with .fpw suffix */
         if (fp = g_fopen (fpw_filename, "r"))
         {
@@ -251,26 +252,49 @@ read_footprintwizard_file()
                 fscanf (fp, "%s\n", dummy); /* do not (re)use this value ! */
                 fscanf (fp, "%s\n", footprint_type);
                 fscanf (fp, "%s\n", footprint_units);
-                fscanf (fp, "%s\n", pin_1_position);
-                fscanf (fp, "%s\n", pad_shape);
+                fscanf (fp, "%s\n", footprint_value);
+                fscanf (fp, "%f\n", package_body_length);
+                fscanf (fp, "%f\n", package_body_width);
+                fscanf (fp, "%f\n", package_body_height);
+                fscanf (fp, "%d\n", package_is_radial);
+                fscanf (fp, "%s\n", footprint_author);
+                fscanf (fp, "%s\n", footprint_dist_license);
+                fscanf (fp, "%s\n", footprint_use_license);
+                fscanf (fp, "%s\n", footprint_status);
                 fscanf (fp, "%d\n", number_of_pins);
                 fscanf (fp, "%d\n", number_of_columns);
                 fscanf (fp, "%d\n", number_of_rows);
+                fscanf (fp, "%f\n", pitch_x);
+                fscanf (fp, "%f\n", pitch_y);
+                fscanf (fp, "%s\n", pad_shape);
+                fscanf (fp, "%s\n", pin_1_position);
                 fscanf (fp, "%f\n", pad_length);
                 fscanf (fp, "%f\n", pad_width);
                 fscanf (fp, "%f\n", pad_diameter);
                 fscanf (fp, "%f\n", pin_drill_diameter);
-                fscanf (fp, "%f\n", pitch_x);
-                fscanf (fp, "%f\n", pitch_y);
+                fscanf (fp, "%d\n", pin1_square);
+                fscanf (fp, "%f\n", pad_clearance);
                 fscanf (fp, "%f\n", pad_solder_mask_clearance);
+                fscanf (fp, "%d\n", thermal);
+                fscanf (fp, "%d\n", thermal_nopaste);
+                fscanf (fp, "%f\n", thermal_length);
+                fscanf (fp, "%f\n", thermal_width);
+                fscanf (fp, "%f\n", thermal_clearance);
+                fscanf (fp, "%f\n", thermal_solder_mask_clearance);
+                fscanf (fp, "%d\n", silkscreen_package_outline);
+                fscanf (fp, "%d\n", silkscreen_indicate_1);
                 fscanf (fp, "%f\n", silkscreen_line_width);
+                fscanf (fp, "%d\n", courtyard);
                 fscanf (fp, "%f\n", courtyard_length);
                 fscanf (fp, "%f\n", courtyard_width);
                 fscanf (fp, "%f\n", courtyard_line_width);
-                fscanf (fp, "%d\n", thermal);
-                fscanf (fp, "%f\n", thermal_length);
-                fscanf (fp, "%f\n", thermal_width);
-                fscanf (fp, "%f\n", thermal_solder_mask_clearance);
+                fscanf (fp, "%f\n", courtyard_clearance_with_package);
+                fscanf (fp, "%f\n", c1);
+                fscanf (fp, "%f\n", g1);
+                fscanf (fp, "%f\n", z1);
+                fscanf (fp, "%f\n", c2);
+                fscanf (fp, "%f\n", g2);
+                fscanf (fp, "%f\n", z2);
                 fclose (fp);
         }
 }
