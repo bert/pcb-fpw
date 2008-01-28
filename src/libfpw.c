@@ -130,7 +130,7 @@ gchar *footprint_units = NULL;
 gdouble multiplier;
         /*!< Multiplier to convert to mils/100. */
 gchar *footprint_value;
-        /*!< Value of the package. */
+        /*!< Default value of the package. */
 
 gdouble package_body_length;
         /*!< Length dimension of the package body. */
@@ -1165,41 +1165,53 @@ write_footprintwizard_file()
 
         if (fp = g_fopen (fpw_filename, "w"))
         {
-        fprintf (fp, "%s\n", footprint_filename);
-        fprintf (fp, "%s\n", footprint_units);
-        fprintf (fp, "%s\n", footprint_author);
-        fprintf (fp, "%s\n", footprint_dist_license);
-        fprintf (fp, "%s\n", footprint_units);
-        fprintf (fp, "%s\n", footprint_status);
-        fprintf (fp, "%s\n", footprint_name);
-        fprintf (fp, "%s\n", footprint_type);
-        fprintf (fp, "%d\n", number_of_pins);
-        fprintf (fp, "%d\n", number_of_columns);
-        fprintf (fp, "%d\n", number_of_rows);
-        fprintf (fp, "%s\n", pad_shape);
-        fprintf (fp, "%s\n", pin_1_position);
-        fprintf (fp, "%f\n", pitch_x);
-        fprintf (fp, "%f\n", pitch_y);
-        fprintf (fp, "%f\n", pad_length);
-        fprintf (fp, "%f\n", pad_width);
-        fprintf (fp, "%f\n", pad_diameter);
-        fprintf (fp, "%f\n", pin_drill_diameter);
-        fprintf (fp, "%f\n", pad_clearance);
-        fprintf (fp, "%f\n", pad_solder_mask_clearance);
-        fprintf (fp, "%f\n", silkscreen_line_width);
-        fprintf (fp, "%f\n", courtyard_length);
-        fprintf (fp, "%f\n", courtyard_width);
-        fprintf (fp, "%f\n", courtyard_line_width);
-        fprintf (fp, "%d\n", thermal);
-        fprintf (fp, "%f\n", thermal_length);
-        fprintf (fp, "%f\n", thermal_width);
-        fprintf (fp, "%f\n", thermal_solder_mask_clearance);
-        fprintf (fp, "%f\n", c1);
-        fprintf (fp, "%f\n", g1);
-        fprintf (fp, "%f\n", z1);
-        fprintf (fp, "%f\n", c2);
-        fprintf (fp, "%f\n", g2);
-        fprintf (fp, "%f\n", z2);
+                fprintf (fp, "%s\n", footprint_filename);
+                fprintf (fp, "%s\n", footprint_name);
+                fprintf (fp, "%s\n", footprint_type);
+                fprintf (fp, "%s\n", footprint_units);
+                fprintf (fp, "%s\n", footprint_value);
+                fprintf (fp, "%f\n", package_body_length);
+                fprintf (fp, "%f\n", package_body_width);
+                fprintf (fp, "%f\n", package_body_height);
+                fprintf (fp, "%d\n", package_is_radial);
+                fprintf (fp, "%s\n", footprint_author);
+                fprintf (fp, "%s\n", footprint_dist_license);
+                fprintf (fp, "%s\n", footprint_use_license);
+                fprintf (fp, "%s\n", footprint_status);
+                fprintf (fp, "%d\n", number_of_pins);
+                fprintf (fp, "%d\n", number_of_columns);
+                fprintf (fp, "%d\n", number_of_rows);
+                fprintf (fp, "%f\n", pitch_x);
+                fprintf (fp, "%f\n", pitch_y);
+                fprintf (fp, "%s\n", pad_shape);
+                fprintf (fp, "%s\n", pin_1_position);
+                fprintf (fp, "%f\n", pad_diameter);
+                fprintf (fp, "%f\n", pin_drill_diameter);
+                fprintf (fp, "%f\n", pin1_square);
+                fprintf (fp, "%f\n", pad_length);
+                fprintf (fp, "%f\n", pad_width);
+                fprintf (fp, "%f\n", pad_clearance);
+                fprintf (fp, "%f\n", pad_solder_mask_clearance);
+                fprintf (fp, "%d\n", thermal);
+                fprintf (fp, "%d\n", thermal_nopaste);
+                fprintf (fp, "%f\n", thermal_length);
+                fprintf (fp, "%f\n", thermal_width);
+                fprintf (fp, "%f\n", thermal_clearance);
+                fprintf (fp, "%f\n", thermal_solder_mask_clearance);
+                fprintf (fp, "%f\n", silkscreen_package_outline);
+                fprintf (fp, "%f\n", silkscreen_indicate_1);
+                fprintf (fp, "%f\n", silkscreen_line_width);
+                fprintf (fp, "%f\n", courtyard);
+                fprintf (fp, "%f\n", courtyard_length);
+                fprintf (fp, "%f\n", courtyard_width);
+                fprintf (fp, "%f\n", courtyard_line_width);
+                fprintf (fp, "%f\n", courtyard_clearance_with_package);
+                fprintf (fp, "%f\n", c1);
+                fprintf (fp, "%f\n", g1);
+                fprintf (fp, "%f\n", z1);
+                fprintf (fp, "%f\n", c2);
+                fprintf (fp, "%f\n", g2);
+                fprintf (fp, "%f\n", z2);
         }
         else
         {
