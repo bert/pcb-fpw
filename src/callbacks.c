@@ -725,7 +725,7 @@ on_footprint_units_entry_changed       (GtkComboBox     *combobox,
 /*!
  * \brief The "footprint usage license" entry is changed.
  *
- * - store in the \c footprint_dist_license variable (global).
+ * - store in the \c footprint_use_license variable (global).
  */
 void
 on_footprint_use_license_entry_changed (GtkEditable     *editable,
@@ -1146,8 +1146,9 @@ on_save_button_clicked                 (GtkButton       *button,
                 footprint_filename = g_strconcat (footprint_filename, ".fp", NULL);
         }
         write_footprintwizard_file ();
+        fprintf (stderr, "Footprintwizardfile %s is written successful.\n", fpw_filename);
         write_footprint ();
-        fprintf (stderr, "Footprint %s is written successful.", footprint_name);
+        fprintf (stderr, "Footprint %s is written successful.\n", footprint_name);
 }
 
 
