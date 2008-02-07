@@ -315,9 +315,10 @@ write_attributes
         fprintf (fp, "\tAttribute(\"dist-license\" \"%s\")\n", footprint_dist_license);
         fprintf (fp, "\tAttribute(\"use-license\" \"%s\")\n", footprint_use_license);
         fprintf (fp, "\tAttribute(\"status\" \"%s\")\n", footprint_status);
-        fprintf (fp, "\tAttribute(\"package body length\" \"%d\")\n", package_body_length);
-        fprintf (fp, "\tAttribute(\"package body width\" \"%d\")\n", package_body_width);
-        fprintf (fp, "\tAttribute(\"package height\" \"%d\")\n", package_body_height);
+        fprintf (fp, "\tAttribute(\"package body length\" \"%f\")\n", package_body_length);
+        fprintf (fp, "\tAttribute(\"package body width\" \"%f\")\n", package_body_width);
+        fprintf (fp, "\tAttribute(\"package height\" \"%f\")\n", package_body_height);
+        fprintf (fp, "\tAttribute(\"package is radial\" \"%d\")\n", package_is_radial);
         fprintf (fp, "\n");
         fprintf (fp, ")\n");
 }
