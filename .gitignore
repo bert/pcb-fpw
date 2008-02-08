@@ -12,6 +12,7 @@ depcomp
 install-sh
 missing
 mkinstalldirs
+screenshots
 stamp-h1
 *.o
 *~
