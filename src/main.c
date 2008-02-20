@@ -1,11 +1,10 @@
 /*!
  * \file main.c
- * \version 0.0.2
- * \author Copyright (C) 2007 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007, 2008 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief Main program for the pcb footprintwizard (pcb-gfpw).
  *
  * pcb-gfpw (GtkFootPrintWizard) is a program for the creation of footprint
- * files to be used by the pcb layout application
+ * files to be used by with the pcb layout application
  * (see http://pcb.sourgeforge.net) for the placement of parts in a pcb
  * layout.\n
  */
