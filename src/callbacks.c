@@ -1145,9 +1145,7 @@ on_save_button_clicked                 (GtkButton       *button,
                 footprint_filename = g_strconcat (footprint_filename, ".fp", NULL);
         }
         write_footprintwizard_file ();
-        fprintf (stderr, "Footprintwizardfile %s is written successful.\n", fpw_filename);
         write_footprint ();
-        fprintf (stderr, "Footprint %s is written successful.\n", footprint_name);
 }
 
 
