@@ -29,6 +29,7 @@ enum packages
         CAPM, /*!< Capacitor, Molded, Non-polarized package. */
         CAPMP, /*!< Capacitor, Molded, Polarized package. */
         DIOM, /*!< Diode, Molded package. */
+        DIL, /*!< Dual Inline Package. */
         DIP, /*!< Dual Inline Package. */
         DO, /*!< Diode Outline package. */
         INDC, /*!< Inductor, Chip pacakge. */
@@ -38,6 +39,7 @@ enum packages
         QFP, /*!< Quad Flat Package. */
         RES, /*!< Resistor TH technology package. */
         RESC, /*!< Resistor, Chip package. */
+        SIL, /*!< Single Inline Package. */
         SIP, /*!< Single Inline Package. */
         SO, /*!< Small Outline package. */
         TO, /*!< Transistor Outline package. */
@@ -588,7 +590,13 @@ write_footprint_dip ()
         fp = fopen (footprint_filename, "w");
         if (!fp)
         {
-                fprintf (stderr, "ERROR: could not open file for DIP footprint: %s.\n", footprint_filename);
+                fprintf
+                (
+                        stderr,
+                        "ERROR: could not open file for %s footprint: %s.\n",
+                        footprint_type,
+                        footprint_filename
+                );
                 return (EXIT_FAILURE);
         }
         /* Determine (extreme) courtyard dimensions */
@@ -598,21 +606,13 @@ write_footprint_dip ()
         ymax = multiplier * ((number_of_pins / 4) * pitch_y + (pad_diameter / 2) + pad_solder_mask_clearance);
         /* If the user input is using more real-estate then use it */
         if (multiplier * (-courtyard_length / 2) < xmin)
-        {
                 xmin = multiplier * (-courtyard_length / 2);
-        }
         if (multiplier * (courtyard_length / 2) > xmax)
-        {
                 xmax = multiplier * (courtyard_length / 2);
-        }
         if (multiplier * (-courtyard_width / 2) < ymin)
-        {
                 ymin = multiplier * (-courtyard_width / 2);
-        }
         if (multiplier * (courtyard_width / 2) > ymax)
-        {
                 ymax = multiplier * (courtyard_width / 2);
-        }
         /* Write element header
          * Guess for a place where to put the refdes text */
         x_text = 0.0 ;
@@ -636,7 +636,7 @@ write_footprint_dip ()
                         /* Write pin #1 with a square pad if checked */
                         (pin1_square && (pin_number == 1)) ? "square" : pin_pad_flags /* flags */
                 );
-                if (pad_shape == "rounded pad, elongated")
+                if (!strcmp (pad_shape, "rounded pad, elongated"))
                 {
                         write_pad
                         (
@@ -666,7 +666,7 @@ write_footprint_dip ()
                         multiplier * pin_drill_diameter, /* pin drill diameter */
                         pin_pad_flags /* flags */
                 );
-                if (pad_shape == "rounded pad, elongated")
+                if (!strcmp (pad_shape, "rounded pad, elongated"))
                 {
                         write_pad
                         (
@@ -717,19 +717,28 @@ write_footprint_dip ()
                 );
         }
         /* Write a courtyard */
-        write_rectangle
-        (
-                multiplier * xmin,
-                multiplier * ymin,
-                multiplier * xmax,
-                multiplier * ymax,
-                multiplier * courtyard_line_width
-        );
+        if (courtyard)
+        {
+                write_rectangle
+                (
+                        multiplier * xmin,
+                        multiplier * ymin,
+                        multiplier * xmax,
+                        multiplier * ymax,
+                        multiplier * courtyard_line_width
+                );
+        }
         /* Write attributes */
         write_attributes ();
         fclose (fp);
         fp = NULL;
-        fprintf (stderr, "SUCCESS: wrote a footprint file for a DIP package: %s.\n", footprint_filename);
+        fprintf
+        (
+                stderr,
+                "SUCCESS: wrote a footprint file for a %s package: %s.\n",
+                footprint_type,
+                footprint_filename
+        );
 }
 
 
@@ -749,7 +758,13 @@ write_footprint_smt ()
         fp = fopen (footprint_filename, "w");
         if (!fp)
         {
-                fprintf (stderr, "Error: could not open file for SMT footprint: %s.\n", footprint_filename);
+                fprintf
+                (
+                        stderr,
+                        "Error: could not open file for %s footprint: %s.\n",
+                        footprint_type,
+                        footprint_filename
+                );
                 return (EXIT_FAILURE);
         }
         /* Determine (extreme) courtyard dimensions */
@@ -759,21 +774,13 @@ write_footprint_smt ()
         ymax = multiplier * (pad_width / 2 + pad_solder_mask_clearance);
         /* If the user input is using more real-estate then use it */
         if (multiplier * (-courtyard_length / 2) < xmin)
-        {
                 xmin = multiplier * (-courtyard_length / 2);
-        }
         if (multiplier * (courtyard_length / 2) > xmax)
-        {
                 xmax = multiplier * (courtyard_length / 2);
-        }
         if (multiplier * (-courtyard_width / 2) < ymin)
-        {
                 ymin = multiplier * (-courtyard_width / 2);
-        }
         if (multiplier * (courtyard_width / 2) > ymax)
-        {
                 ymax = multiplier * (courtyard_width / 2);
-        }
         /* Write element header
          * Guess for a place where to put the refdes text */
         x_text = 0.0 ;
@@ -886,7 +893,13 @@ write_footprint_smt ()
         /* Write attributes */
         write_attributes ();
         fclose (fp);
-        fprintf (stderr, "SUCCESS: wrote a footprint file for a SMT package: %s.\n", footprint_filename);
+        fprintf
+        (
+                stderr,
+                "SUCCESS: wrote a footprint file for a %s package: %s.\n",
+                footprint_type,
+                footprint_filename
+        );
 }
 
 
@@ -905,7 +918,13 @@ write_footprint_smt_molded ()
 
         fp = fopen (footprint_filename, "w");
         {
-                fprintf (stderr, "Error: could not open file for SMT footprint: %s.\n", footprint_filename);
+                fprintf
+                (
+                        stderr,
+                        "Error: could not open file for %s footprint: %s.\n",
+                        footprint_type,
+                        footprint_filename
+                );
                 return (EXIT_FAILURE);
         }
         /* Determine (extreme) courtyard dimensions */
@@ -915,21 +934,13 @@ write_footprint_smt_molded ()
         ymax = multiplier * (pad_width / 2 + pad_solder_mask_clearance);
         /* If the user input is using more real-estate then use it */
         if (multiplier * (-courtyard_length / 2) < xmin)
-        {
                 xmin = multiplier * (-courtyard_length / 2);
-        }
         if (multiplier * (courtyard_length / 2) > xmax)
-        {
                 xmax = multiplier * (courtyard_length / 2);
-        }
         if (multiplier * (-courtyard_width / 2) < ymin)
-        {
                 ymin = multiplier * (-courtyard_width / 2);
-        }
         if (multiplier * (courtyard_width / 2) > ymax)
-        {
                 ymax = multiplier * (courtyard_width / 2);
-        }
         /* Write element header
          * Guess for a place where to put the refdes text */
         x_text = 0.0 ;
@@ -1072,21 +1083,13 @@ write_footprint_to92 ()
         ymin = multiplier * (-package_body_width / 2);
         /* If the user input is using more real-estate then use it */
         if (multiplier * (-courtyard_length / 2) < xmin)
-        {
                 xmin = multiplier * (-courtyard_length / 2);
-        }
         if (multiplier * (courtyard_length / 2) > xmax)
-        {
                 xmax = multiplier * (courtyard_length / 2);
-        }
         if (multiplier * (-courtyard_width / 2) < ymin)
-        {
                 ymin = multiplier * (-courtyard_width / 2);
-        }
         if (multiplier * (courtyard_width / 2) > ymax)
-        {
                 ymax = multiplier * (courtyard_width / 2);
-        }
         /* Write element header
          * Guess for a place where to put the refdes text */
         x_text = 0.0 ;
@@ -1231,76 +1234,102 @@ int
 write_footprint()
 {
         /* Determine the pad shape type, default is a circular pad */
-        if (strcmp (pad_shape, "circular pad"))
-        {
+        if (!strcmp (pad_shape, "circular pad"))
                 g_strconcat (pin_pad_flags, "", NULL);
-        }
-        if (strcmp (pad_shape, "rectangular pad"))
-        {
+        if (!strcmp (pad_shape, "rectangular pad"))
                 g_strconcat (pin_pad_flags, "square", NULL);
-        }
-        if (strcmp (pad_shape, "octagonal pad"))
-        {
+        if (!strcmp (pad_shape, "octagonal pad"))
                 g_strconcat (pin_pad_flags, "octagon", NULL);
-        }
-        if (strcmp (pad_shape, "rounded pad, elongated"))
-        {
+        if (!strcmp (pad_shape, "rounded pad, elongated"))
                 g_strconcat (pin_pad_flags, "", NULL);
-        }
-        /* Determine the units type */
-        if (strcmp (footprint_units, "mil")) multiplier = 100.0;
-        if (strcmp (footprint_units, "mil/100")) multiplier = 1.0;
-        if (strcmp (footprint_units, "mm")) multiplier = (1000 / 25.4) * 100;
+        /* Determine the multiplier based upon the units type */
+        if (!strcmp (footprint_units, "mil"))
+                multiplier = 100.0;
+        if (!strcmp (footprint_units, "mil/100"))
+                multiplier = 1.0;
+        if (!strcmp (footprint_units, "mm"))
+                multiplier = (1000 / 25.4) * 100;
         /* Determine the package type */
-        if (strcmp (footprint_type, "BGA")) package_type = BGA;
-        if (strcmp (footprint_type, "CAPC")) package_type = CAPC;
-        if (strcmp (footprint_type, "DIL")) package_type = DIP;
-        if (strcmp (footprint_type, "DIP")) package_type = DIP;
-        if (strcmp (footprint_type, "INDC")) package_type = INDC;
-        if (strcmp (footprint_type, "PGA")) package_type = PGA;
-        if (strcmp (footprint_type, "QFN")) package_type = QFN;
-        if (strcmp (footprint_type, "QFP")) package_type = QFP;
-        if (strcmp (footprint_type, "RESC")) package_type = RESC;
-        if (strcmp (footprint_type, "SIL")) package_type = SIP;
-        if (strcmp (footprint_type, "SIP")) package_type = SIP;
-        if (strcmp (footprint_type, "SO")) package_type = SO;
-        if (strcmp (footprint_type, "TO92")) package_type = TO92;
-        /* Depending on the package type write that type of footprint file */
-        switch (package_type)
+        if (!strcmp (footprint_type, "BGA"))
         {
-                case BGA:
-                case CAPC:
-                {
-                        write_footprint_smt ();
-                }
-                case DIP:
-                {
-                        write_footprint_dip ();
-                }
-                case DO:
-                case INDC:
-                {
-                        write_footprint_smt ();
-                }
-                case PGA:
-                case PLCC:
-                case QFN:
-                case QFP:
-                case RESC:
-                {
-                        write_footprint_smt ();
-                }
-                case SIP:
-                case SO:
-                case TO92:
-                {
-                        write_footprint_to92 ();
-                }
-                default:
-                {
-                        fprintf (stdout, "ERROR: wrong or non-existent footprint type entered.\n");
-                }
+                package_type = BGA;
+                fprintf (stdout, "WARNING: footprint type BGA not yet implemented.\n");
+                return (EXIT_SUCCESS);
         }
+        if (!strcmp (footprint_type, "CAPC"))
+        {
+                package_type = CAPC;
+                write_footprint_smt ();
+                return (EXIT_SUCCESS);
+        }
+        if (!strcmp (footprint_type, "DIL"))
+        {
+                package_type = DIL;
+                write_footprint_dip ();
+                return (EXIT_SUCCESS);
+        }
+        if (!strcmp (footprint_type, "DIP"))
+        {
+                package_type = DIP;
+                write_footprint_dip ();
+                return (EXIT_SUCCESS);
+        }
+        if (!strcmp (footprint_type, "INDC"))
+        {
+                package_type = INDC;
+                write_footprint_smt ();
+                return (EXIT_SUCCESS);
+        }
+        if (!strcmp (footprint_type, "PGA"))
+        {
+                package_type = PGA;
+                fprintf (stdout, "WARNING: footprint type PGA not yet implemented.\n");
+                return (EXIT_SUCCESS);
+        }
+        if (!strcmp (footprint_type, "QFN"))
+        {
+                package_type = QFN;
+                fprintf (stdout, "WARNING: footprint type QFN not yet implemented.\n");
+                return (EXIT_SUCCESS);
+        }
+        if (!strcmp (footprint_type, "QFP"))
+        {
+                package_type = QFP;
+                fprintf (stdout, "WARNING: footprint type QFP not yet implemented.\n");
+                return (EXIT_SUCCESS);
+        }
+        if (!strcmp (footprint_type, "RESC"))
+        {
+                package_type = RESC;
+                write_footprint_smt ();
+                return (EXIT_SUCCESS);
+        }
+        if (!strcmp (footprint_type, "SIL"))
+        {
+                package_type = SIP;
+                fprintf (stdout, "WARNING: footprint type SIL not yet implemented.\n");
+                return (EXIT_SUCCESS);
+        }
+        if (!strcmp (footprint_type, "SIP"))
+        {
+                package_type = SIP;
+                fprintf (stdout, "WARNING: footprint type SIP not yet implemented.\n");
+                return (EXIT_SUCCESS);
+        }
+        if (!strcmp (footprint_type, "SO"))
+        {
+                package_type = SO;
+                fprintf (stdout, "WARNING: footprint type SO not yet implemented.\n");
+                return (EXIT_SUCCESS);
+        }
+        if (!strcmp (footprint_type, "TO92"))
+        {
+                package_type = TO92;
+                write_footprint_to92 ();
+                return (EXIT_SUCCESS);
+        }
+        fprintf (stdout, "ERROR: unknown or not yet implemented footprint type entered.\n");
+        return (EXIT_FAILURE);
 }
 
 /* EOF */
