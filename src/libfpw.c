@@ -157,7 +157,7 @@ gint number_of_columns;
         /*!< Number of columns. */
 gint number_of_rows;
         /*!< Number of rows. */
-gchar *pin_1_position = NULL;
+gchar *pin_1_position;
         /*!< Position of number 1 pin. */
 location_t pin1_location;
         /*!< Location of number 1 pin. */
@@ -173,13 +173,13 @@ gdouble pad_length;
         /*!< Length of pad (parallel to Element X-axis). */
 gdouble pad_width;
         /*!< Width of pad (perpendicular to Element X-axis). */
-gchar *pad_shape = NULL;
+gchar *pad_shape;
         /*!< Shape of pads/pins. */
 gint pin_pad_type;
         /*!< Type of pads/pins. */
 gboolean pin1_square;
         /*!< Pin #1 is square. */
-gchar *pin_pad_flags = NULL;
+gchar *pin_pad_flags;
         /*!< Flags of pins/pads. */
 gdouble pad_solder_mask_clearance;
         /*!< Solder mask clearance of a pin/pad. */
@@ -435,30 +435,30 @@ write_element_line
 int
 write_pad
 (
-        gint pad_number, /*!< pad number */
-        gchar *pad_name, /*!< pad name */
-        gdouble x0, /*!< x0 coordinate */
-        gdouble y0, /*!< y0-coordinate */
-        gdouble x1, /*!< x1 coordinate */
-        gdouble y1, /*!< y1-coordinate */
-        gdouble width, /*!< width of the pad */
-        gdouble clearance, /*!< clearance */
-        gdouble pad_solder_mask_clearance, /*!< solder mask clearance */
-        gchar *flags /*!< flags */
+        gint _pad_number, /*!< pad number */
+        gchar *_pad_name, /*!< pad name */
+        gdouble _x0, /*!< x0 coordinate */
+        gdouble _y0, /*!< y0-coordinate */
+        gdouble _x1, /*!< x1 coordinate */
+        gdouble _y1, /*!< y1-coordinate */
+        gdouble _width, /*!< width of the pad */
+        gdouble _clearance, /*!< clearance */
+        gdouble _pad_solder_mask_clearance, /*!< solder mask clearance */
+        gchar *_flags /*!< flags */
 )
 {
         fprintf (fp,
                 "\tPad[%d %d %d %d %d %d %d \"%s\" \"%d\" \"%s\"]\n",
-                (int) x0,
-                (int) y0,
-                (int) x1,
-                (int) y1,
-                (int) width,
-                (int) clearance,
-                (int) pad_solder_mask_clearance,
-                pad_name,
-                pad_number,
-                flags
+                (int) _x0,
+                (int) _y0,
+                (int) _x1,
+                (int) _y1,
+                (int) _width,
+                (int) _clearance,
+                (int) _pad_solder_mask_clearance,
+                _pad_name,
+                _pad_number,
+                _flags
                 );
 }
 
@@ -472,28 +472,28 @@ write_pad
 int
 write_pin
 (
-        gint pin_number, /*!< pin number */
-        gchar *pin_name, /*!< pin name */
-        gdouble x0, /*!< x0 coordinate */
-        gdouble y0, /*!< y0-coordinate */
-        gdouble width, /*!< width of the annulus ring (pad) */
-        gdouble clearance, /*!< clearance */
-        gdouble pad_solder_mask_clearance, /*!< solder mask clearance */
-        gdouble drill, /*!< pin drill diameter */
-        gchar *flags /*!< flags */
+        gint _pin_number, /*!< pin number */
+        gchar *_pin_name, /*!< pin name */
+        gdouble _x0, /*!< x0 coordinate */
+        gdouble _y0, /*!< y0-coordinate */
+        gdouble _width, /*!< width of the annulus ring (pad) */
+        gdouble _clearance, /*!< clearance */
+        gdouble _pad_solder_mask_clearance, /*!< solder mask clearance */
+        gdouble _drill, /*!< pin drill diameter */
+        gchar *_flags /*!< flags */
 )
 {
         fprintf (fp,
-                "\tPad[%d %d %d %d %d %d %d \"%s\" \"%d\" \"%s\"]\n",
-                (int) x0,
-                (int) y0,
-                (int) width,
-                (int) clearance,
-                (int) pad_solder_mask_clearance,
-                (int) drill,
-                pin_name,
-                pin_number,
-                flags
+                "\tPin[%d %d %d %d %d %d \"%s\" \"%d\" \"%s\"]\n",
+                (int) _x0,
+                (int) _y0,
+                (int) _width,
+                (int) _clearance,
+                (int) _pad_solder_mask_clearance,
+                (int) _drill,
+                _pin_name,
+                _pin_number,
+                _flags
                 );
 }
 
@@ -585,6 +585,7 @@ write_footprint_dip ()
         gdouble x_text;
         gdouble y_text;
         gint pin_number;
+        gchar *pin_pad_name = g_strdup ("");
         gint i;
 
         fp = fopen (footprint_filename, "w");
@@ -618,30 +619,32 @@ write_footprint_dip ()
         x_text = 0.0 ;
         y_text = (ymin / 2) - 150.0;
         write_element_header (x_text, y_text);
-        /* Write encapsulated element entities */
-        pin_number = 1;
-        for (i = 0; i > (number_of_rows - 1); i++)
+        /* Write pin and/or pad entities */
+        for (i = 0; i < (number_of_rows - 1); i++)
         {
                 pin_number = 1 + i;
+                if (pin1_square && (pin_number == 1))
+                        pin_pad_flags = g_strdup ("square");
+                else
+                        pin_pad_flags = g_strdup ("");
                 write_pin
                 (
                         pin_number, /* pin number */
-                        "", /* pin name */
+                        pin_pad_name, /* pin name */
                         multiplier * - pitch_x / 2, /* x0 coordinate */
                         multiplier * ((-number_of_rows / 2 + i) * pitch_y), /* y0-coordinate */
                         multiplier * pad_diameter, /* width of the annulus ring (pad) */
                         multiplier * pad_clearance, /* clearance */
                         multiplier * pad_solder_mask_clearance, /* solder mask clearance */
                         multiplier * pin_drill_diameter, /* pin drill diameter */
-                        /* Write pin #1 with a square pad if checked */
-                        (pin1_square && (pin_number == 1)) ? "square" : pin_pad_flags /* flags */
+                        pin_pad_flags /* flags */
                 );
                 if (!strcmp (pad_shape, "rounded pad, elongated"))
                 {
                         write_pad
                         (
-                                pin_number, /* pad number = pin_number*/
-                                "", /* pad name */
+                                pin_number, /* pad number = pin_number */
+                                pin_pad_name, /* pad name */
                                 multiplier * (-pitch_x + pad_length - pad_width) / 2, /* x0 coordinate */
                                 multiplier * ((-number_of_rows / 2 + i) * pitch_y), /* y0-coordinate */
                                 multiplier * (-pitch_x - pad_length + pad_width) / 2, /* x1 coordinate */
@@ -649,15 +652,18 @@ write_footprint_dip ()
                                 multiplier * pad_width, /* width of the pad */
                                 multiplier * pad_clearance, /* clearance */
                                 multiplier * (pad_width + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
-                                /* Write pad #1 with a square pad if checked */
-                                (pin1_square && (pin_number == 1)) ? "square" : pin_pad_flags /* flags */
+                                pin_pad_flags /* flags */
                         );
                 }
                 pin_number = (number_of_rows * number_of_columns) - i;
+                if (pin1_square && (pin_number == 1))
+                        pin_pad_flags = g_strdup ("square");
+                else
+                        pin_pad_flags = g_strdup ("");
                 write_pin
                 (
                         pin_number, /* pin number */
-                        "", /* pin name */
+                        pin_pad_name, /* pin name */
                         multiplier * pitch_x / 2, /* x0 coordinate */
                         multiplier * ((-number_of_rows / 2 + i) * pitch_y), /* y0-coordinate */
                         multiplier * pad_diameter, /* width of the annulus ring (pad) */
@@ -671,7 +677,7 @@ write_footprint_dip ()
                         write_pad
                         (
                                 pin_number, /* pad number = pin_number*/
-                                "", /* pad name */
+                                pin_pad_name, /* pad name */
                                 multiplier * (pitch_x - pad_length + pad_width) / 2, /* x0 coordinate */
                                 multiplier * ((-number_of_rows / 2 + i) * pitch_y), /* y0-coordinate */
                                 multiplier * (pitch_x + pad_length - pad_width) / 2, /* x1 coordinate */
@@ -679,16 +685,9 @@ write_footprint_dip ()
                                 multiplier * pad_width, /* width of the pad */
                                 multiplier * pad_clearance, /* clearance */
                                 multiplier * (pad_width + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
-                                /* Write pad #1 with a square pad if checked. */
-                                /*!
-                                 * \todo Add an error message here ?
-                                 * There can probably never be a pin #1 on this side
-                                 * of the package since it is supposed to be
-                                 * the opposit side (column).\n */
-                                (pin1_square && (pin_number == 1)) ? "square" : pin_pad_flags /* flags */
+                                pin_pad_flags /* flags */
                         );
                 }
-                pin_number++;
         }
         /* Write a package body on the silkscreen */
         if (silkscreen_package_outline)
@@ -786,7 +785,7 @@ write_footprint_smt ()
         x_text = 0.0 ;
         y_text = (ymin / 2) - 150.0;
         write_element_header (x_text, y_text);
-        /* Write encapsulated element entities */
+        /* Write pin and/or pad entities */
         if (pad_length > pad_width) /* Write pads parallel to x-axis */
         {
                 fprintf (stderr, "Pads are drawn parallel on X-axis.\n");
@@ -1095,7 +1094,7 @@ write_footprint_to92 ()
         x_text = 0.0 ;
         y_text = (ymin / 2) - 150.0 ;
         write_element_header (x_text, y_text);
-        /* Write encapsulated element entities */
+        /* Write pin and/or pad entities */
         write_pin
         (
                 1, /* pin number */
