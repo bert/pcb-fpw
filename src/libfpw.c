@@ -19,7 +19,7 @@
 #include <gtk/gtk.h>
 #include <stdlib.h>
 
-#define FPW_VERSION "0.0.1"
+#define FPW_VERSION "0.0.3"
 
 /* Some through hole package types */
 enum packages
