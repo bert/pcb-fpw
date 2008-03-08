@@ -162,9 +162,13 @@ gchar *pin_1_position;
 location_t pin1_location;
         /*!< Location of number 1 pin. */
 gdouble pitch_x;
-        /*!< Pitch in X-direction. */
+        /*!< Pitch in the X-direction. */
 gdouble pitch_y;
-        /*!< Pitch in Y-direction. */
+        /*!< Pitch in the Y-direction. */
+gint count_x;
+        /*!< Number of pin/pads in the X-direction. */
+gint count_y;
+        /*!< Number of pin/pads in the Y-direction. */
 gdouble pin_drill_diameter;
         /*!< Diameter of pin hole. */
 gdouble pad_diameter;
