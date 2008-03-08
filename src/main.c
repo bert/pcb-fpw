@@ -7,6 +7,20 @@
  * files to be used by with the pcb layout application
  * (see http://pcb.sourgeforge.net) for the placement of parts in a pcb
  * layout.\n
+ *
+ * \todo Add the preview widget.
+ *
+ * \todo Add a menubar ?
+ *
+ * \todo Add a statusbar.
+ *
+ * \todo Add the footprintwizard filename to the window title.
+ *
+ * \todo Add the name "Unsaved footprintwizard file" to the title if the fpw
+ * file has not been saved.
+ *
+ * \todo Add an asterisk (*) to the window title if any entry has been
+ * changed by the user and no intermediate save has occurred.
  */
 
 #ifdef HAVE_CONFIG_H
