@@ -535,6 +535,42 @@ on_close_button_clicked                (GtkButton       *button,
 
 
 /*!
+ * \brief The "Count X-direction" entry is changed.
+ *
+ * - get the chars from the entry.
+ * - convert to an integer and store in the \c count_x variable (global).
+ */
+void
+on_count_x_entry_changed               (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+        gchar *count_x_string = NULL;
+        gchar *leftovers;
+
+        count_x_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        count_x = (int) g_ascii_strtod (count_x_string, &leftovers);
+}
+
+
+/*!
+ * \brief The "Count Y-direction" entry is changed.
+ *
+ * - get the chars from the entry.
+ * - convert to an integer and store in the \c count_y variable (global).
+ */
+void
+on_count_y_entry_changed               (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+        gchar *count_y_string = NULL;
+        gchar *leftovers;
+
+        count_y_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        count_y = (int) g_ascii_strtod (count_y_string, &leftovers);
+}
+
+
+/*!
  * \brief The "courtyard" checkbutton is toggled.
  *
  * - get active state.
@@ -639,6 +675,103 @@ on_courtyard_width_entry_changed       (GtkEditable     *editable,
 
         courtyard_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         courtyard_width = g_ascii_strtod (courtyard_width_string, &leftovers);
+}
+
+
+/*!
+ * \brief The file chooser dialog "close" signal is emitted.
+ *
+ * - lookup the dialog widget.
+ * - destroy the file chooser widget.
+ */
+void
+on_filechooser_dialog_close            (GtkDialog       *dialog,
+                                        gpointer         user_data)
+{
+        GtkWidget *filechooser_dialog = NULL;
+
+        filechooser_dialog = lookup_widget (GTK_DIALOG (dialog),
+                "filechooser_dialog");
+        gtk_widget_destroy (filechooser_dialog);
+}
+
+
+
+/*!
+ * \brief The file chooser dialog "current folder changed" signal is emitted.
+ *
+ * \todo - store the (new) current directory name in \c temp_dir.
+ */
+void
+on_filechooser_dialog_current_folder_changed
+                                        (GtkFileChooser  *filechooser,
+                                        gpointer         user_data)
+{
+
+}
+
+
+/*!
+ * \brief The file chooser dialog "Cancel" button is clicked.
+ *
+ * - lookup the dialog widget.
+ * - destroy the file chooser widget.
+ * \todo - maybe restore the preview widget ?
+ */
+void
+on_filechooser_dialog_cancel_button_clicked
+                                        (GtkButton       *button,
+                                        gpointer         user_data)
+{
+        GtkWidget *filechooser_dialog = NULL;
+
+        filechooser_dialog = lookup_widget (GTK_BUTTON (button),
+                "filechooser_dialog");
+        gtk_widget_destroy (filechooser_dialog);
+}
+
+
+void
+on_filechooser_dialog_file_activated   (GtkFileChooser  *filechooser,
+                                        gpointer         user_data)
+{
+
+}
+
+
+/*!
+ * \brief The file chooser dialog "Open" button is clicked.
+ *
+ * \todo store the selected filename in \c fpw_filename.
+ * \todo read the (new) current directory name from \c temp_dir and store in
+ * \c work_dir.
+ * \todo read new global values from the selected footprintwizard file.
+ * \todo update the entry widgets to reflect the changes.
+ */
+void
+on_filechooser_dialog_open_button_clicked
+                                        (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+/*!
+ * \brief The file chooser dialog "selection changed" signal is emitted.
+ *
+ * \todo - store the selected filename in \c temp_fpw_filename.
+ * \todo - read the values from the selected footprintwizard file in a
+ * temporary set of variables \c temp_*.
+ * \todo - generate a new preview image.
+ * \todo - upodate the preview widget.
+ */
+void
+on_filechooser_dialog_selection_changed
+                                        (GtkFileChooser  *filechooser,
+                                        gpointer         user_data)
+{
+
 }
 
 
@@ -812,6 +945,22 @@ on_number_total_pins_entry_changed     (GtkEditable     *editable,
 
         number_of_pins_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         number_of_pins = (int) g_ascii_strtod (number_of_pins_string, &leftovers);
+}
+
+
+/*!
+ * \brief The "Open" button is clicked.
+ *
+ * - open a file selector widget to let the user select a .fpw file.
+ */
+void
+on_open_button_clicked                 (GtkButton       *button,
+                                        gpointer         user_data)
+{
+        GtkWidget *filechooser_dialog = NULL;
+
+        filechooser_dialog = create_filechooser_dialog ();
+        gtk_widget_show (filechooser_dialog);
 }
 
 
@@ -1040,10 +1189,10 @@ on_pin_square_checkbutton_toggled      (GtkToggleButton *togglebutton,
 }
 
 /*!
- * \brief The "Pitch (X)" entry is changed.
+ * \brief The "Pitch X-direction" entry is changed.
  *
  * - get the chars from the entry.
- * - convert to a double and store in the \c e2 variable (global).
+ * - convert to a double and store in the \c pitch_x variable (global).
  */
 void
 on_pitch_x_entry_changed               (GtkEditable     *editable,
@@ -1058,10 +1207,10 @@ on_pitch_x_entry_changed               (GtkEditable     *editable,
 
 
 /*!
- * \brief The "Pitch (y)" entry is changed.
+ * \brief The "Pitch Y-direction" entry is changed.
  *
  * - get the chars from the entry.
- * - convert to a double and store in the \c e1 variable (global).
+ * - convert to a double and store in the \c pitch_y variable (global).
  */
 void
 on_pitch_y_entry_changed               (GtkEditable     *editable,
@@ -1077,10 +1226,9 @@ on_pitch_y_entry_changed               (GtkEditable     *editable,
 /*!
  * \brief The "Refresh" button is clicked.
  *
- * - create a pixmap of the footprint.
- * - reload the preview image.
- *
- * \todo Code me !
+ * \todo - create a pixmap of the footprint based on the values in the entry
+ * widgets.
+ * \todo - (re)load the preview image.
  */
 void
 on_refresh_button_clicked              (GtkButton       *button,
@@ -1108,6 +1256,22 @@ void
 on_save_button_clicked                 (GtkButton       *button,
                                         gpointer         user_data)
 {
+        /* Check for a null pointer in footprint_name for this will cause a
+         * segmentation fault or undefined behaviour.
+         */
+        if (!footprint_name)
+        {
+                fprintf (stderr, "ERROR: footprint_name not initialised (null pointer).\n");
+                return (EXIT_FAILURE);
+        }
+        /* Check for an empty footprint_name string for this will cause a
+         * segmentation fault or undefined behaviour.
+         */
+        if (!strcmp (footprint_name, ""))
+        {
+                fprintf (stderr, "ERROR: footprint_name contains an empty string.\n");
+                return (EXIT_FAILURE);
+        }
         /* Determine a filename for the footprintwizard file */
         fpw_filename = g_strdup (footprint_name);
         if (g_str_has_suffix (fpw_filename, fp_suffix))

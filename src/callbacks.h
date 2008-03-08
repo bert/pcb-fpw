@@ -458,3 +458,71 @@ void
 on_silkscreen_package_outline_checkbutton_toggled
                                         (GtkToggleButton *togglebutton,
                                         gpointer         user_data);
+
+void
+on_count_x_entry_changed               (GtkEditable     *editable,
+                                        gpointer         user_data);
+
+void
+on_count_y_entry_changed               (GtkEditable     *editable,
+                                        gpointer         user_data);
+
+void
+on_open_button_clicked                 (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_save_button_clicked                 (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_refresh_button_clicked              (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_filechooser_dialog_selection_changed
+                                        (GtkFileChooser  *filechooser,
+                                        gpointer         user_data);
+
+void
+on_C1_entry_changed                    (GtkEditable     *editable,
+                                        gpointer         user_data);
+
+void
+on_Z1_entry_changed                    (GtkEditable     *editable,
+                                        gpointer         user_data);
+
+void
+on_G2_entry_changed                    (GtkEditable     *editable,
+                                        gpointer         user_data);
+
+void
+on_C2_entry_changed                    (GtkEditable     *editable,
+                                        gpointer         user_data);
+
+void
+on_Z2_entry_changed                    (GtkEditable     *editable,
+                                        gpointer         user_data);
+
+void
+on_filechooser_dialog_file_activated   (GtkFileChooser  *filechooser,
+                                        gpointer         user_data);
+
+void
+on_filechooser_dialog_close            (GtkDialog       *dialog,
+                                        gpointer         user_data);
+
+void
+on_filechooser_dialog_cancel_button_clicked
+                                        (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_filechooser_dialog_open_button_clicked
+                                        (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_filechooser_dialog_current_folder_changed
+                                        (GtkFileChooser  *filechooser,
+                                        gpointer         user_data);
