@@ -32,15 +32,12 @@ gchar *program_name = NULL;
 
 /*!
  * \brief Print the version of the footprintwizard to stderr.
- *
- * Function description:
- *
  */
 static void
 print_version ()
 {
         fprintf (stderr, "\n%s version %s\n", program_name, FPW_VERSION);
-        fprintf (stderr, "(C) 2007 by Bert Timmerman.\n\n");
+        fprintf (stderr, "(C) 2007, 2008 by Bert Timmerman.\n\n");
         fprintf (stderr, "This is free software; see the source for copying conditions.\n");
         fprintf (stderr, "There is NO warranty; not even for MERCHANTABILITY\n");
         fprintf (stderr, "or FITNESS FOR A PARTICULAR PURPOSE.\n\n");
@@ -50,9 +47,6 @@ print_version ()
 
 /*!
  * \brief Print the usage message for the footprintwizard to stderr.
- *
- * Function description:
- *
  */
 static void
 print_usage ()
@@ -68,9 +62,6 @@ print_usage ()
 
 /*!
  * \brief The CLI for the footprintwizard.
- *
- * Function description:
- *
  */
 int
 main
@@ -83,11 +74,15 @@ main
         gchar *fpw_filename = NULL;
         gchar *suffix = ".fp";
 
+        /* Today we feel like a CLI application ! */
+        gui = FALSE;
         /* Determine how we are called today */
         program_name = argv[0];
         /* Print usage message if asked for */
         if (argc > 1 && strcmp (argv[1], "-h") == 0)
+        {
                 print_usage ();
+        }
         /* Print version if asked for */
         if (argc > 1 && strcmp (argv[1], "-V") == 0)
                 print_version ();
