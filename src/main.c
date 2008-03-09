@@ -8,11 +8,13 @@
  * (see http://pcb.sourgeforge.net) for the placement of parts in a pcb
  * layout.\n
  *
+ * \todo When this wizard becomes really quit popular, we can write a function to
+ * read from the footprintwizard files as to allow for editing or any other
+ * (futuristic) purpose you can think of.
+ *
  * \todo Add the preview widget.
  *
- * \todo Add a menubar ?
- *
- * \todo Add a statusbar.
+ * \todo Add a menubar (in the future ?).
  *
  * \todo Add the footprintwizard filename to the window title.
  *
@@ -31,6 +33,7 @@
 
 #include "interface.h"
 #include "support.h"
+
 
 int
 main (int argc, char *argv[])
