@@ -21,7 +21,7 @@
 
 #define FPW_VERSION "0.0.4"
 
-/* Some through hole package types */
+/* Some package types conforming to IPC name space definitions */
 enum packages
 {
         BGA, /*!< Ball Gate Array package. */
@@ -45,7 +45,7 @@ enum packages
         TO, /*!< Transistor Outline package. */
         TO92, /*!< Transistor Outline package. */
         TO220, /*!< Transistor Outline package. */
-        NUMBER_OF_PACKAGES /*!< Number of package types. */
+        NUMBER_OF_PACKAGE_TYPES /*!< Number of package types. */
 };
 
 typedef enum packages package_t;
@@ -112,6 +112,10 @@ typedef enum locations location_t;
          * pad.\n
          * Primarily used for pads used as fiducials. */
 
+gint gui = TRUE;
+        /*! Graphical User Interface:\n
+         * for gfpw == TRUE (default) \n
+         * for fpw == FALSE (will override the default setting) */
 gchar *fpw_filename;
         /*!< Filename of footprintwizard file. */
 gchar *fpw_suffix = "fpw";
@@ -243,9 +247,9 @@ gchar *dummy = NULL;
 FILE *fp;
         /*!< Global file pointer for footprint file. */
 
+
 /*!
  * \brief Read a footprintwizard file into the global variables.
- *
  */
 int
 read_footprintwizard_file()
@@ -1256,7 +1260,7 @@ write_footprint()
         if (!strcmp (footprint_type, "BGA"))
         {
                 package_type = BGA;
-                fprintf (stdout, "WARNING: footprint type BGA not yet implemented.\n");
+                fprintf (stderr, "WARNING: footprint type BGA not yet implemented.\n");
                 return (EXIT_SUCCESS);
         }
         if (!strcmp (footprint_type, "CAPC"))
@@ -1286,19 +1290,19 @@ write_footprint()
         if (!strcmp (footprint_type, "PGA"))
         {
                 package_type = PGA;
-                fprintf (stdout, "WARNING: footprint type PGA not yet implemented.\n");
+                fprintf (stderr, "WARNING: footprint type PGA not yet implemented.\n");
                 return (EXIT_SUCCESS);
         }
         if (!strcmp (footprint_type, "QFN"))
         {
                 package_type = QFN;
-                fprintf (stdout, "WARNING: footprint type QFN not yet implemented.\n");
+                fprintf (stderr, "WARNING: footprint type QFN not yet implemented.\n");
                 return (EXIT_SUCCESS);
         }
         if (!strcmp (footprint_type, "QFP"))
         {
                 package_type = QFP;
-                fprintf (stdout, "WARNING: footprint type QFP not yet implemented.\n");
+                fprintf (stderr, "WARNING: footprint type QFP not yet implemented.\n");
                 return (EXIT_SUCCESS);
         }
         if (!strcmp (footprint_type, "RESC"))
@@ -1310,19 +1314,19 @@ write_footprint()
         if (!strcmp (footprint_type, "SIL"))
         {
                 package_type = SIP;
-                fprintf (stdout, "WARNING: footprint type SIL not yet implemented.\n");
+                fprintf (stderr, "WARNING: footprint type SIL not yet implemented.\n");
                 return (EXIT_SUCCESS);
         }
         if (!strcmp (footprint_type, "SIP"))
         {
                 package_type = SIP;
-                fprintf (stdout, "WARNING: footprint type SIP not yet implemented.\n");
+                fprintf (stderr, "WARNING: footprint type SIP not yet implemented.\n");
                 return (EXIT_SUCCESS);
         }
         if (!strcmp (footprint_type, "SO"))
         {
                 package_type = SO;
-                fprintf (stdout, "WARNING: footprint type SO not yet implemented.\n");
+                fprintf (stderr, "WARNING: footprint type SO not yet implemented.\n");
                 return (EXIT_SUCCESS);
         }
         if (!strcmp (footprint_type, "TO92"))
@@ -1331,7 +1335,7 @@ write_footprint()
                 write_footprint_to92 ();
                 return (EXIT_SUCCESS);
         }
-        fprintf (stdout, "ERROR: unknown or not yet implemented footprint type entered.\n");
+        fprintf (stderr, "ERROR: unknown or not yet implemented footprint type entered.\n");
         return (EXIT_FAILURE);
 }
 
