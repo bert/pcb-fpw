@@ -716,14 +716,47 @@ on_filechooser_dialog_close            (GtkDialog       *dialog,
 /*!
  * \brief The file chooser dialog "current folder changed" signal is emitted.
  *
- * \todo - store the (new) current directory name in \c temp_dir.
+ * - lookup the dialog widget.
+ * - get the current folder.
+ * - test the current folder for null pointer or empty string and if true,
+ *   please notify the user (in the statusbar).
+ * - store the (new) current folder name in \c temp_dir.
  */
 void
 on_filechooser_dialog_current_folder_changed
                                         (GtkFileChooser  *filechooser,
                                         gpointer         user_data)
 {
+        GtkWidget *filechooser_dialog = NULL;
+        gchar *current_folder = NULL;
 
+        filechooser_dialog = lookup_widget (GTK_FILE_CHOOSER (filechooser),
+                "filechooser_dialog");
+        current_folder = g_strdup (gtk_file_chooser_get_current_folder (filechooser_dialog));
+        /* Test if current folder is a null pointer.
+         * If so, please notify the user (in the statusbar). */
+        if (!current_folder)
+        {
+                gchar *message = NULL;
+                message = g_strdup_printf ("ERROR: current folder is not initialised  (null pointer).");
+                message_to_statusbar (filechooser, message);
+                return;
+        }
+        /* Test if current folder is an empty string pointer.
+         * If so, please notify the user (in the statusbar). */
+        if (!strcmp (current_folder, ""))
+        {
+                gchar *message = NULL;
+                message = g_strdup_printf ("ERROR: current folder contains an empty string.");
+                message_to_statusbar (filechooser, message);
+                return;
+        }
+        /* Test if current folder is a directory.
+         * If so, store in temp_dir. */
+        if (g_file_test (current_folder, G_FILE_TEST_IS_DIR))
+        {
+                temp_dir = g_strdup (current_folder);
+        }
 }
 
 
@@ -758,10 +791,16 @@ on_filechooser_dialog_file_activated   (GtkFileChooser  *filechooser,
 /*!
  * \brief The file chooser dialog "Open" button is clicked.
  *
- * \todo store the selected filename in \c fpw_filename.
- * \todo read the (new) current directory name from \c temp_dir and store in
- * \c work_dir.
- * \todo read new global values from the selected footprintwizard file.
+ * - lookup the dialog widget.
+ * - get the selected filename.
+ * - test the selected filename for null pointer or empty string and if true,
+ *   please notify the user (in the statusbar).
+ * - test if the selected filename is not a directory and if true,
+ *   please notify the user (in the statusbar), to select a file.
+ * - store the selected filename in \c fpw_filename.
+ * - read the (new) current directory name from \c temp_dir and\n
+ *   store in \c work_dir.
+ * - read new global values from the selected footprintwizard file.
  * \todo update the entry widgets to reflect the changes.
  */
 void
@@ -769,7 +808,48 @@ on_filechooser_dialog_open_button_clicked
                                         (GtkButton       *button,
                                         gpointer         user_data)
 {
+        GtkWidget *filechooser_dialog = NULL;
+        gchar *selected_filename = NULL;
 
+        filechooser_dialog = lookup_widget (GTK_BUTTON (button),
+                "filechooser_dialog");
+        selected_filename = g_strdup (gtk_file_chooser_get_filename (filechooser_dialog));
+        /* Test if selected filename is a null pointer.
+         * If so, please notify the user (in the statusbar). */
+        if (!selected_filename)
+        {
+                gchar *message = NULL;
+                message = g_strdup_printf ("ERROR: selected filename is not initialised  (null pointer).");
+                message_to_statusbar (button, message);
+                return;
+        }
+        /* Test if selected filename is a null pointer.
+         * If so, please notify the user (in the statusbar). */
+        if (!strcmp (selected_filename, ""))
+        {
+                gchar *message = NULL;
+                message = g_strdup_printf ("ERROR: selected filename contains an empty string.");
+                message_to_statusbar (button, message);
+                return;
+        }
+        /* Test if selected filename is a directory.
+         * If so, please notify the user (in the statusbar), to select a file
+         * instead. */
+        if (g_file_test (selected_filename, G_FILE_TEST_IS_DIR))
+        {
+                gchar *message = NULL;
+                message = g_strdup_printf ("ERROR: selected filename is a directory.");
+                message_to_statusbar (button, message);
+                return;
+        }
+        /* Store the (now validated) selected filename */
+        fpw_filename = g_strdup (selected_filename);
+        /* Update the working directory (test for null pointer) */
+        if (!temp_dir)
+                work_dir = g_strdup (temp_dir);
+        /* Read new global values from the selected footprintwizard file */
+        read_footprintwizard_file (fpw_filename);
+        /* Update the entry widgets to reflect the changes */
 }
 
 
