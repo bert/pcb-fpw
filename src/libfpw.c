@@ -281,6 +281,8 @@ read_footprintwizard_file()
         fscanf (fpw, "%d\n", number_of_rows);
         fscanf (fpw, "%f\n", pitch_x);
         fscanf (fpw, "%f\n", pitch_y);
+        fscanf (fpw, "%f\n", count_x);
+        fscanf (fpw, "%f\n", count_y);
         fscanf (fpw, "%s\n", pad_shape);
         fscanf (fpw, "%s\n", pin_1_position);
         fscanf (fpw, "%f\n", pad_length);
@@ -1196,6 +1198,8 @@ write_footprintwizard_file()
         fprintf (fpw, "%d\n", number_of_rows);
         fprintf (fpw, "%f\n", pitch_x);
         fprintf (fpw, "%f\n", pitch_y);
+        fprintf (fpw, "%f\n", count_x);
+        fprintf (fpw, "%f\n", count_y);
         fprintf (fpw, "%s\n", pad_shape);
         fprintf (fpw, "%s\n", pin_1_position);
         fprintf (fpw, "%f\n", pad_diameter);
