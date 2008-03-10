@@ -116,6 +116,12 @@ gint gui = TRUE;
         /*! Graphical User Interface:\n
          * for gfpw == TRUE (default) \n
          * for fpw == FALSE (will override the default setting) */
+FILE *fp;
+        /*!< Global file pointer for the footprint file. */
+gchar *temp_dir = NULL;
+        /*! Temporary directory from the GUI filechooser */
+gchar *work_dir = NULL;
+        /*! Working directory */
 gchar *fpw_filename;
         /*!< Filename of footprintwizard file. */
 gchar *fpw_suffix = "fpw";
@@ -244,8 +250,6 @@ gdouble z2;
 
 gchar *dummy = NULL;
         /*!< Every now and then the village-idot is needed ;-) */
-FILE *fp;
-        /*!< Global file pointer for footprint file. */
 
 
 /*!
