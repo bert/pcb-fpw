@@ -24,6 +24,22 @@
 
 
 /*!
+ * \brief Send a message to the statusbar.
+ */
+int
+message_to_statusbar (GtkWidget *widget, gchar *message)
+{
+        /* lookup the statusbar */
+        GtkStatusbar *statusbar;
+        guint context_id;
+        guint message_id;
+        statusbar = lookup_widget (GTK_WIDGET (widget), "statusbar");
+        context_id = gtk_statusbar_get_context_id (statusbar, message);
+        message_id = gtk_statusbar_push (statusbar, context_id, message);
+}
+
+
+/*!
  * \brief The "top to bottom pads/pins center-center distance (C1)" entry is
  * changed.
  *
@@ -1234,7 +1250,6 @@ void
 on_refresh_button_clicked              (GtkButton       *button,
                                         gpointer         user_data)
 {
-
 }
 
 /*!
@@ -1247,10 +1262,6 @@ on_refresh_button_clicked              (GtkButton       *button,
  *   (future) purposes.
  * - invoke the write_footprint() function to write the actual footprint
  *   file.\n
- *
- * \todo When this wizard becomes really quit popular, we can write a function to
- * read from these files as to allow for editing or any other (futuristic)
- * purpose you can think of.
  */
 void
 on_save_button_clicked                 (GtkButton       *button,
@@ -1261,22 +1272,26 @@ on_save_button_clicked                 (GtkButton       *button,
          */
         if (!footprint_name)
         {
-                fprintf (stderr, "ERROR: footprint_name not initialised (null pointer).\n");
-                return (EXIT_FAILURE);
+                gchar *message = NULL;
+                message = g_strdup_printf ("ERROR: footprint name not initialised (null pointer).");
+                message_to_statusbar (button, message);
+                return;
         }
         /* Check for an empty footprint_name string for this will cause a
          * segmentation fault or undefined behaviour.
          */
         if (!strcmp (footprint_name, ""))
         {
-                fprintf (stderr, "ERROR: footprint_name contains an empty string.\n");
-                return (EXIT_FAILURE);
+                gchar *message = NULL;
+                message = g_strdup_printf ("ERROR: footprint name contains an empty string.");
+                message_to_statusbar (button, message);
+                return;
         }
         /* Determine a filename for the footprintwizard file */
         fpw_filename = g_strdup (footprint_name);
         if (g_str_has_suffix (fpw_filename, fp_suffix))
         {
-                /* Filename has the .fp suffix already,
+                /* footprint_name had the .fp suffix already,
                  * only add a "w" here, else we would end up with a filename
                  * like "footprint_name.fp.fpw" */
                 fpw_filename = g_strconcat (fpw_filename, "w", NULL);
@@ -1285,13 +1300,14 @@ on_save_button_clicked                 (GtkButton       *button,
         {
                 if (g_str_has_suffix (fpw_filename, fpw_suffix))
                 {
-                        /* Filename has the .fpw suffix,
-                         * do nothing here */
+                        /* footprint_name had the .fpw suffix already,
+                         * we probably read from an existing footprintwizard
+                         * file or screwed up, so do nothing here */
                 }
                 else
                 {
-                        /* Filename has no (.fpw) suffix,
-                         * add a .fpw suffix */
+                        /* fpw_filename has no (.fpw) suffix yet,
+                         * so add a .fpw suffix */
                         fpw_filename = g_strconcat (fpw_filename, ".fpw", NULL);
                 }
         }
@@ -1299,13 +1315,13 @@ on_save_button_clicked                 (GtkButton       *button,
         footprint_filename = g_strdup (footprint_name);
         if (g_str_has_suffix (footprint_filename, fp_suffix))
         {
-                /* Footprintname has the .fp suffix,
-                 * do nothing here */
+                /* footprint_filename has the .fp suffix already,
+                 * so do nothing here */
         }
         else
         {
-                /* Filename has no .fp suffix,
-                 * add a .fp suffix */
+                /* footprint_filename has no .fp suffix,
+                 * so add a .fp suffix */
                 footprint_filename = g_strconcat (footprint_filename, ".fp", NULL);
         }
         write_footprintwizard_file ();
