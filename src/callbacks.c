@@ -780,14 +780,6 @@ on_filechooser_dialog_current_folder_changed
 }
 
 
-void
-on_filechooser_dialog_file_activated   (GtkFileChooser  *filechooser,
-                                        gpointer         user_data)
-{
-
-}
-
-
 /*!
  * \brief The file chooser dialog "Open" button is clicked.
  *
@@ -865,6 +857,20 @@ on_filechooser_dialog_open_button_clicked
 void
 on_filechooser_dialog_selection_changed
                                         (GtkFileChooser  *filechooser,
+                                        gpointer         user_data)
+{
+
+}
+
+
+/*!
+ * \brief The file chooser dialog "update preview" signal is emitted.
+ *
+ * \todo - generate a new preview image.
+ * \todo - upodate the preview widget.
+ */
+void
+on_filechooser_dialog_update_preview   (GtkFileChooser  *filechooser,
                                         gpointer         user_data)
 {
 
