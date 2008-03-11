@@ -961,6 +961,8 @@ on_footprint_status_entry_changed      (GtkComboBox     *combobox,
  * \brief The "footprint type" entry is changed.
  *
  * - store in the \c footprint_type variable (global).
+ * - test footprint name for a null pointer or an empty string and if so,
+ *   copy the footprint type into the footprint name entry.
  */
 void
 on_footprint_type_entry_changed        (GtkComboBox     *combobox,
@@ -968,7 +970,7 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
 {
         footprint_type = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
         /* Test footprint name for a null pointer or an empty string and
-         * if so,copy the footprint_type into the footprint name entry. */
+         * if so, copy the footprint type into the footprint name entry. */
         if (!footprint_name || (!strcmp (footprint_name, "")))
         {
                 footprint_name = g_strdup (footprint_type);
@@ -983,13 +985,14 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
  * \brief The "footprint units" entry is changed.
  *
  * - store in the \c footprint_units variable (global).
+ * - check for null pointer and empty string.
  */
 void
 on_footprint_units_entry_changed       (GtkComboBox     *combobox,
                                         gpointer         user_data)
 {
         footprint_units = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
-        /* Check for a null pointer in footprint_units for this might cause a
+        /* Check for a null pointer in footprint units for this might cause a
          * segmentation fault or undefined behaviour.
          */
         if (!footprint_units)
@@ -999,7 +1002,7 @@ on_footprint_units_entry_changed       (GtkComboBox     *combobox,
                 message_to_statusbar (combobox, message);
                 return;
         }
-        /* Check for an empty footprint_units string for this might cause a
+        /* Check for an empty footprint units string for this might cause a
          * segmentation fault or undefined behaviour.
          */
         else if (!strcmp (footprint_units, ""))
@@ -1404,6 +1407,7 @@ on_refresh_button_clicked              (GtkButton       *button,
 /*!
  * \brief The "Save" button is clicked.
  *
+ * - check for null pointer and empty string.
  * - determine the name of the footprintwizard filename.
  * - determine the name of the footprint filename.
  * - invoke the write_footprintwizard_file() to write the global variables to
