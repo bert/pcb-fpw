@@ -695,6 +695,26 @@ on_courtyard_width_entry_changed       (GtkEditable     *editable,
 
 
 /*!
+ * \brief The file chooser dialog "Cancel" button is clicked.
+ *
+ * - lookup the dialog widget.
+ * - destroy the file chooser widget.
+ * \todo - maybe restore the preview widget ?
+ */
+void
+on_filechooser_dialog_cancel_button_clicked
+                                        (GtkButton       *button,
+                                        gpointer         user_data)
+{
+        GtkWidget *filechooser_dialog = NULL;
+
+        filechooser_dialog = lookup_widget (GTK_BUTTON (button),
+                "filechooser_dialog");
+        gtk_widget_destroy (filechooser_dialog);
+}
+
+
+/*!
  * \brief The file chooser dialog "close" signal is emitted.
  *
  * - lookup the dialog widget.
@@ -757,26 +777,6 @@ on_filechooser_dialog_current_folder_changed
         {
                 temp_dir = g_strdup (current_folder);
         }
-}
-
-
-/*!
- * \brief The file chooser dialog "Cancel" button is clicked.
- *
- * - lookup the dialog widget.
- * - destroy the file chooser widget.
- * \todo - maybe restore the preview widget ?
- */
-void
-on_filechooser_dialog_cancel_button_clicked
-                                        (GtkButton       *button,
-                                        gpointer         user_data)
-{
-        GtkWidget *filechooser_dialog = NULL;
-
-        filechooser_dialog = lookup_widget (GTK_BUTTON (button),
-                "filechooser_dialog");
-        gtk_widget_destroy (filechooser_dialog);
 }
 
 
