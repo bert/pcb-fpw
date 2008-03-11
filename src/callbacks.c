@@ -1407,7 +1407,7 @@ void
 on_save_button_clicked                 (GtkButton       *button,
                                         gpointer         user_data)
 {
-        /* Check for a null pointer in footprint_name for this will cause a
+        /* Check for a null pointer in footprint_name for this might cause a
          * segmentation fault or undefined behaviour.
          */
         if (!footprint_name)
@@ -1417,7 +1417,7 @@ on_save_button_clicked                 (GtkButton       *button,
                 message_to_statusbar (button, message);
                 return;
         }
-        /* Check for an empty footprint_name string for this will cause a
+        /* Check for an empty footprint_name string for this might cause a
          * segmentation fault or undefined behaviour.
          */
         else if (!strcmp (footprint_name, ""))
