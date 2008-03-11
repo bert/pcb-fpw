@@ -914,6 +914,33 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         footprint_name = gtk_entry_get_text (GTK_EDITABLE (editable));
+        /* Check for a null pointer in footprint_name for this might cause a
+         * segmentation fault or undefined behaviour.
+         */
+        if (!footprint_name)
+        {
+                gchar *message = NULL;
+                message = g_strdup_printf ("ERROR: footprint name not initialised (null pointer).");
+                message_to_statusbar (editable, message);
+                return;
+        }
+        /* Check for an empty footprint_name string for this might cause a
+         * segmentation fault or undefined behaviour.
+         */
+        else if (!strcmp (footprint_name, ""))
+        {
+                gchar *message = NULL;
+                message = g_strdup_printf ("ERROR: footprint name contains an empty string.");
+                message_to_statusbar (editable, message);
+                return;
+        }
+        else
+        {
+                gchar *message = NULL;
+                message = g_strdup_printf ("");
+                message_to_statusbar (editable, message);
+                return;
+        }
 }
 
 
