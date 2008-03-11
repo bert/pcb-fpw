@@ -408,7 +408,7 @@ Public License instead of this License.
 		  <property name="n_rows">2</property>
 		  <property name="n_columns">1</property>
 		  <property name="homogeneous">False</property>
-		  <property name="row_spacing">0</property>
+		  <property name="row_spacing">10</property>
 		  <property name="column_spacing">0</property>
 
 		  <child>
@@ -416,7 +416,7 @@ Public License instead of this License.
 		      <property name="visible">True</property>
 		      <property name="label_xalign">0</property>
 		      <property name="label_yalign">0.5</property>
-		      <property name="shadow_type">GTK_SHADOW_OUT</property>
+		      <property name="shadow_type">GTK_SHADOW_NONE</property>
 
 		      <child>
 			<widget class="GtkAlignment" id="author_frame_alignment">
@@ -685,7 +685,7 @@ Confirmed by peers (stable)</property>
 		      <property name="visible">True</property>
 		      <property name="label_xalign">0</property>
 		      <property name="label_yalign">0.5</property>
-		      <property name="shadow_type">GTK_SHADOW_OUT</property>
+		      <property name="shadow_type">GTK_SHADOW_NONE</property>
 
 		      <child>
 			<widget class="GtkAlignment" id="footprint_frame_alignment">
@@ -707,85 +707,6 @@ Confirmed by peers (stable)</property>
 			      <property name="homogeneous">False</property>
 			      <property name="row_spacing">0</property>
 			      <property name="column_spacing">0</property>
-
-			      <child>
-				<widget class="GtkLabel" id="footprint_name_label">
-				  <property name="visible">True</property>
-				  <property name="label" translatable="yes">Name</property>
-				  <property name="use_underline">False</property>
-				  <property name="use_markup">False</property>
-				  <property name="justify">GTK_JUSTIFY_LEFT</property>
-				  <property name="wrap">False</property>
-				  <property name="selectable">False</property>
-				  <property name="xalign">0</property>
-				  <property name="yalign">0.5</property>
-				  <property name="xpad">0</property>
-				  <property name="ypad">0</property>
-				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
-				  <property name="width_chars">-1</property>
-				  <property name="single_line_mode">False</property>
-				  <property name="angle">0</property>
-				</widget>
-				<packing>
-				  <property name="left_attach">0</property>
-				  <property name="right_attach">1</property>
-				  <property name="top_attach">0</property>
-				  <property name="bottom_attach">1</property>
-				  <property name="x_options">fill</property>
-				  <property name="y_options"></property>
-				</packing>
-			      </child>
-
-			      <child>
-				<widget class="GtkEntry" id="footprint_name_entry">
-				  <property name="visible">True</property>
-				  <property name="tooltip" translatable="yes">Type the name of the footprint here, no suffix please</property>
-				  <property name="can_focus">True</property>
-				  <property name="editable">True</property>
-				  <property name="visibility">True</property>
-				  <property name="max_length">0</property>
-				  <property name="text" translatable="yes"></property>
-				  <property name="has_frame">True</property>
-				  <property name="invisible_char">•</property>
-				  <property name="activates_default">False</property>
-				  <signal name="changed" handler="on_footprint_name_entry_changed" last_modification_time="Fri, 19 Oct 2007 08:45:17 GMT"/>
-				</widget>
-				<packing>
-				  <property name="left_attach">1</property>
-				  <property name="right_attach">2</property>
-				  <property name="top_attach">0</property>
-				  <property name="bottom_attach">1</property>
-				  <property name="y_options"></property>
-				</packing>
-			      </child>
-
-			      <child>
-				<widget class="GtkLabel" id="footprint_type_label">
-				  <property name="visible">True</property>
-				  <property name="label" translatable="yes">Type</property>
-				  <property name="use_underline">False</property>
-				  <property name="use_markup">False</property>
-				  <property name="justify">GTK_JUSTIFY_LEFT</property>
-				  <property name="wrap">False</property>
-				  <property name="selectable">False</property>
-				  <property name="xalign">0</property>
-				  <property name="yalign">0.5</property>
-				  <property name="xpad">0</property>
-				  <property name="ypad">0</property>
-				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
-				  <property name="width_chars">-1</property>
-				  <property name="single_line_mode">False</property>
-				  <property name="angle">0</property>
-				</widget>
-				<packing>
-				  <property name="left_attach">0</property>
-				  <property name="right_attach">1</property>
-				  <property name="top_attach">1</property>
-				  <property name="bottom_attach">2</property>
-				  <property name="x_options">fill</property>
-				  <property name="y_options"></property>
-				</packing>
-			      </child>
 
 			      <child>
 				<widget class="GtkLabel" id="footprint_units_label">
@@ -812,39 +733,6 @@ Confirmed by peers (stable)</property>
 				  <property name="bottom_attach">3</property>
 				  <property name="x_options">fill</property>
 				  <property name="y_options"></property>
-				</packing>
-			      </child>
-
-			      <child>
-				<widget class="GtkComboBoxEntry" id="footprint_type_entry">
-				  <property name="visible">True</property>
-				  <property name="items" translatable="yes">
-BGA
-CAPC
-CAPM
-CAPMP
-DIL
-DIOM
-DIP
-INDC
-INDM
-RESC
-RESM
-TO92
-TO220
-</property>
-				  <property name="add_tearoffs">False</property>
-				  <property name="has_frame">True</property>
-				  <property name="focus_on_click">True</property>
-				  <signal name="changed" handler="on_footprint_type_entry_changed" last_modification_time="Fri, 19 Oct 2007 08:47:19 GMT"/>
-				</widget>
-				<packing>
-				  <property name="left_attach">1</property>
-				  <property name="right_attach">2</property>
-				  <property name="top_attach">1</property>
-				  <property name="bottom_attach">2</property>
-				  <property name="x_options">fill</property>
-				  <property name="y_options">fill</property>
 				</packing>
 			      </child>
 
@@ -1097,6 +985,118 @@ mm</property>
 				  <property name="y_options"></property>
 				</packing>
 			      </child>
+
+			      <child>
+				<widget class="GtkEntry" id="footprint_name_entry">
+				  <property name="visible">True</property>
+				  <property name="tooltip" translatable="yes">Type the name of the footprint here, no suffix please</property>
+				  <property name="can_focus">True</property>
+				  <property name="editable">True</property>
+				  <property name="visibility">True</property>
+				  <property name="max_length">0</property>
+				  <property name="text" translatable="yes"></property>
+				  <property name="has_frame">True</property>
+				  <property name="invisible_char">•</property>
+				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_footprint_name_entry_changed" last_modification_time="Fri, 19 Oct 2007 08:45:17 GMT"/>
+				</widget>
+				<packing>
+				  <property name="left_attach">1</property>
+				  <property name="right_attach">2</property>
+				  <property name="top_attach">1</property>
+				  <property name="bottom_attach">2</property>
+				  <property name="y_options"></property>
+				</packing>
+			      </child>
+
+			      <child>
+				<widget class="GtkComboBoxEntry" id="footprint_type_entry">
+				  <property name="visible">True</property>
+				  <property name="items" translatable="yes">
+BGA
+CAPC
+CAPM
+CAPMP
+DIL
+DIOM
+DIP
+INDC
+INDM
+RESC
+RESM
+TO92
+TO220
+</property>
+				  <property name="add_tearoffs">False</property>
+				  <property name="has_frame">True</property>
+				  <property name="focus_on_click">True</property>
+				  <signal name="changed" handler="on_footprint_type_entry_changed" last_modification_time="Fri, 19 Oct 2007 08:47:19 GMT"/>
+				</widget>
+				<packing>
+				  <property name="left_attach">1</property>
+				  <property name="right_attach">2</property>
+				  <property name="top_attach">0</property>
+				  <property name="bottom_attach">1</property>
+				  <property name="x_options">fill</property>
+				  <property name="y_options">fill</property>
+				</packing>
+			      </child>
+
+			      <child>
+				<widget class="GtkLabel" id="footprint_type_label">
+				  <property name="visible">True</property>
+				  <property name="label" translatable="yes">Type</property>
+				  <property name="use_underline">False</property>
+				  <property name="use_markup">False</property>
+				  <property name="justify">GTK_JUSTIFY_LEFT</property>
+				  <property name="wrap">False</property>
+				  <property name="selectable">False</property>
+				  <property name="xalign">0</property>
+				  <property name="yalign">0.5</property>
+				  <property name="xpad">0</property>
+				  <property name="ypad">0</property>
+				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+				  <property name="width_chars">-1</property>
+				  <property name="single_line_mode">False</property>
+				  <property name="angle">0</property>
+				</widget>
+				<packing>
+				  <property name="left_attach">0</property>
+				  <property name="right_attach">1</property>
+				  <property name="top_attach">0</property>
+				  <property name="bottom_attach">1</property>
+				  <property name="x_options">fill</property>
+				  <property name="y_options"></property>
+				</packing>
+			      </child>
+
+			      <child>
+				<widget class="GtkLabel" id="footprint_name_label">
+				  <property name="visible">True</property>
+				  <property name="label" translatable="yes">Name</property>
+				  <property name="use_underline">False</property>
+				  <property name="use_markup">False</property>
+				  <property name="justify">GTK_JUSTIFY_LEFT</property>
+				  <property name="wrap">False</property>
+				  <property name="selectable">False</property>
+				  <property name="xalign">0</property>
+				  <property name="yalign">0.5</property>
+				  <property name="xpad">0</property>
+				  <property name="ypad">0</property>
+				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+				  <property name="width_chars">-1</property>
+				  <property name="single_line_mode">False</property>
+				  <property name="angle">0</property>
+				</widget>
+				<packing>
+				  <property name="left_attach">0</property>
+				  <property name="right_attach">1</property>
+				  <property name="top_attach">1</property>
+				  <property name="bottom_attach">2</property>
+				  <property name="x_options">fill</property>
+				  <property name="y_options"></property>
+				</packing>
+			      </child>
 			    </widget>
 			  </child>
 			</widget>
@@ -1171,7 +1171,7 @@ mm</property>
 		  <property name="n_rows">3</property>
 		  <property name="n_columns">1</property>
 		  <property name="homogeneous">False</property>
-		  <property name="row_spacing">0</property>
+		  <property name="row_spacing">10</property>
 		  <property name="column_spacing">0</property>
 
 		  <child>
@@ -1179,7 +1179,7 @@ mm</property>
 		      <property name="visible">True</property>
 		      <property name="label_xalign">0</property>
 		      <property name="label_yalign">0.5</property>
-		      <property name="shadow_type">GTK_SHADOW_OUT</property>
+		      <property name="shadow_type">GTK_SHADOW_NONE</property>
 
 		      <child>
 			<widget class="GtkAlignment" id="pads_alignment">
@@ -1500,7 +1500,7 @@ rounded pad, elongated
 		      <property name="visible">True</property>
 		      <property name="label_xalign">0</property>
 		      <property name="label_yalign">0.5</property>
-		      <property name="shadow_type">GTK_SHADOW_OUT</property>
+		      <property name="shadow_type">GTK_SHADOW_NONE</property>
 
 		      <child>
 			<widget class="GtkAlignment" id="pins_alignment">
@@ -1692,7 +1692,7 @@ rounded pad, elongated
 		      <property name="visible">True</property>
 		      <property name="label_xalign">0</property>
 		      <property name="label_yalign">0.5</property>
-		      <property name="shadow_type">GTK_SHADOW_OUT</property>
+		      <property name="shadow_type">GTK_SHADOW_NONE</property>
 
 		      <child>
 			<widget class="GtkAlignment" id="pins_pads_pattern_alignment">
@@ -2210,7 +2210,7 @@ Lower right
 		      <property name="visible">True</property>
 		      <property name="label_xalign">0</property>
 		      <property name="label_yalign">0.5</property>
-		      <property name="shadow_type">GTK_SHADOW_OUT</property>
+		      <property name="shadow_type">GTK_SHADOW_NONE</property>
 
 		      <child>
 			<widget class="GtkAlignment" id="thermal_pad_alignment">
@@ -2558,7 +2558,7 @@ Lower right
 		  <property name="n_rows">2</property>
 		  <property name="n_columns">1</property>
 		  <property name="homogeneous">False</property>
-		  <property name="row_spacing">0</property>
+		  <property name="row_spacing">10</property>
 		  <property name="column_spacing">0</property>
 
 		  <child>
@@ -2566,7 +2566,7 @@ Lower right
 		      <property name="visible">True</property>
 		      <property name="label_xalign">0</property>
 		      <property name="label_yalign">0.5</property>
-		      <property name="shadow_type">GTK_SHADOW_OUT</property>
+		      <property name="shadow_type">GTK_SHADOW_NONE</property>
 
 		      <child>
 			<widget class="GtkAlignment" id="courtyard_alignment">
@@ -2859,7 +2859,7 @@ Lower right
 		      <property name="visible">True</property>
 		      <property name="label_xalign">0</property>
 		      <property name="label_yalign">0.5</property>
-		      <property name="shadow_type">GTK_SHADOW_OUT</property>
+		      <property name="shadow_type">GTK_SHADOW_NONE</property>
 
 		      <child>
 			<widget class="GtkAlignment" id="package_alignment">
@@ -3051,14 +3051,14 @@ Lower right
 		<widget class="GtkVBox" id="heel_and_toe_goals_vbox">
 		  <property name="visible">True</property>
 		  <property name="homogeneous">False</property>
-		  <property name="spacing">0</property>
+		  <property name="spacing">10</property>
 
 		  <child>
 		    <widget class="GtkFrame" id="top_to_bottom_frame">
 		      <property name="visible">True</property>
 		      <property name="label_xalign">0</property>
 		      <property name="label_yalign">0.5</property>
-		      <property name="shadow_type">GTK_SHADOW_OUT</property>
+		      <property name="shadow_type">GTK_SHADOW_NONE</property>
 
 		      <child>
 			<widget class="GtkAlignment" id="top_to_bottom_alignment">
@@ -3260,7 +3260,7 @@ Lower right
 		      <property name="visible">True</property>
 		      <property name="label_xalign">0</property>
 		      <property name="label_yalign">0.5</property>
-		      <property name="shadow_type">GTK_SHADOW_OUT</property>
+		      <property name="shadow_type">GTK_SHADOW_NONE</property>
 
 		      <child>
 			<widget class="GtkAlignment" id="left_to_right_alignment">
@@ -3499,7 +3499,7 @@ Lower right
 	      <property name="visible">True</property>
 	      <property name="label_xalign">0</property>
 	      <property name="label_yalign">0.5</property>
-	      <property name="shadow_type">GTK_SHADOW_OUT</property>
+	      <property name="shadow_type">GTK_SHADOW_NONE</property>
 
 	      <child>
 		<widget class="GtkAlignment" id="preview_alignment">
@@ -3684,9 +3684,9 @@ Lower right
   <property name="focus_on_map">True</property>
   <property name="urgency_hint">False</property>
   <signal name="selection_changed" handler="on_filechooser_dialog_selection_changed" last_modification_time="Sat, 08 Mar 2008 16:29:19 GMT"/>
-  <signal name="file_activated" handler="on_filechooser_dialog_file_activated" last_modification_time="Sat, 08 Mar 2008 17:31:22 GMT"/>
   <signal name="close" handler="on_filechooser_dialog_close" last_modification_time="Sat, 08 Mar 2008 17:31:33 GMT"/>
   <signal name="current_folder_changed" handler="on_filechooser_dialog_current_folder_changed" last_modification_time="Sat, 08 Mar 2008 19:26:17 GMT"/>
+  <signal name="update_preview" handler="on_filechooser_dialog_update_preview" last_modification_time="Tue, 11 Mar 2008 07:15:42 GMT"/>
 
   <child internal-child="vbox">
     <widget class="GtkVBox" id="filechooser_dialog-vbox">
