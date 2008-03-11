@@ -1119,15 +1119,21 @@ on_number_total_pins_entry_changed     (GtkEditable     *editable,
 /*!
  * \brief The "Open" button is clicked.
  *
- * - open a file selector widget to let the user select a .fpw file.
+ * - create a file chooser dialog.
+ * - create and set a file filter "*.fpw" and add to the file chooser.
+ * - show the file chooser widget to let the user select a .fpw file.
  */
 void
 on_open_button_clicked                 (GtkButton       *button,
                                         gpointer         user_data)
 {
         GtkWidget *filechooser_dialog = NULL;
+        GtkFileFilter * file_filter;
 
         filechooser_dialog = create_filechooser_dialog ();
+        file_filter = gtk_file_filter_new ();
+        gtk_file_filter_add_pattern (file_filter, "*.fpw");
+        gtk_file_chooser_add_filter (filechooser_dialog, file_filter);
         gtk_widget_show (filechooser_dialog);
 }
 
