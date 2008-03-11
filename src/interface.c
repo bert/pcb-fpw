@@ -81,11 +81,7 @@ create_pcb_gfpw (void)
   GtkWidget *footprint_frame;
   GtkWidget *footprint_frame_alignment;
   GtkWidget *footprint_table;
-  GtkWidget *footprint_name_label;
-  GtkWidget *footprint_name_entry;
-  GtkWidget *footprint_type_label;
   GtkWidget *footprint_units_label;
-  GtkWidget *footprint_type_entry;
   GtkWidget *footprint_units_entry;
   GtkWidget *package_is_radial_checkbutton;
   GtkWidget *package_body_height_label;
@@ -96,6 +92,10 @@ create_pcb_gfpw (void)
   GtkWidget *package_body_length_entry;
   GtkWidget *footprint_value_label;
   GtkWidget *footprint_value_entry;
+  GtkWidget *footprint_name_entry;
+  GtkWidget *footprint_type_entry;
+  GtkWidget *footprint_type_label;
+  GtkWidget *footprint_name_label;
   GtkWidget *footprint_frame_label;
   GtkWidget *footprint_tab_label;
   GtkWidget *pins_pads_table;
@@ -255,6 +255,7 @@ create_pcb_gfpw (void)
   gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebook), footprint_tab_table,
                                       FALSE, FALSE, GTK_PACK_START);
   gtk_container_set_border_width (GTK_CONTAINER (footprint_tab_table), 5);
+  gtk_table_set_row_spacings (GTK_TABLE (footprint_tab_table), 10);
 
   author_frame = gtk_frame_new (NULL);
   gtk_widget_set_name (author_frame, "author_frame");
@@ -262,7 +263,7 @@ create_pcb_gfpw (void)
   gtk_table_attach (GTK_TABLE (footprint_tab_table), author_frame, 0, 1, 1, 2,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_frame_set_shadow_type (GTK_FRAME (author_frame), GTK_SHADOW_OUT);
+  gtk_frame_set_shadow_type (GTK_FRAME (author_frame), GTK_SHADOW_NONE);
 
   author_frame_alignment = gtk_alignment_new (0.5, 0.5, 1, 1);
   gtk_widget_set_name (author_frame_alignment, "author_frame_alignment");
@@ -360,7 +361,7 @@ create_pcb_gfpw (void)
   gtk_table_attach (GTK_TABLE (footprint_tab_table), footprint_frame, 0, 1, 0, 1,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_frame_set_shadow_type (GTK_FRAME (footprint_frame), GTK_SHADOW_OUT);
+  gtk_frame_set_shadow_type (GTK_FRAME (footprint_frame), GTK_SHADOW_NONE);
 
   footprint_frame_alignment = gtk_alignment_new (0.5, 0.5, 1, 1);
   gtk_widget_set_name (footprint_frame_alignment, "footprint_frame_alignment");
@@ -373,31 +374,6 @@ create_pcb_gfpw (void)
   gtk_widget_show (footprint_table);
   gtk_container_add (GTK_CONTAINER (footprint_frame_alignment), footprint_table);
 
-  footprint_name_label = gtk_label_new (_("Name"));
-  gtk_widget_set_name (footprint_name_label, "footprint_name_label");
-  gtk_widget_show (footprint_name_label);
-  gtk_table_attach (GTK_TABLE (footprint_table), footprint_name_label, 0, 1, 0, 1,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (footprint_name_label), 0, 0.5);
-
-  footprint_name_entry = gtk_entry_new ();
-  gtk_widget_set_name (footprint_name_entry, "footprint_name_entry");
-  gtk_widget_show (footprint_name_entry);
-  gtk_table_attach (GTK_TABLE (footprint_table), footprint_name_entry, 1, 2, 0, 1,
-                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, footprint_name_entry, _("Type the name of the footprint here, no suffix please"), NULL);
-  gtk_entry_set_invisible_char (GTK_ENTRY (footprint_name_entry), 8226);
-
-  footprint_type_label = gtk_label_new (_("Type"));
-  gtk_widget_set_name (footprint_type_label, "footprint_type_label");
-  gtk_widget_show (footprint_type_label);
-  gtk_table_attach (GTK_TABLE (footprint_table), footprint_type_label, 0, 1, 1, 2,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (footprint_type_label), 0, 0.5);
-
   footprint_units_label = gtk_label_new (_("Units"));
   gtk_widget_set_name (footprint_units_label, "footprint_units_label");
   gtk_widget_show (footprint_units_label);
@@ -405,27 +381,6 @@ create_pcb_gfpw (void)
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
   gtk_misc_set_alignment (GTK_MISC (footprint_units_label), 0, 0.5);
-
-  footprint_type_entry = gtk_combo_box_entry_new_text ();
-  gtk_widget_set_name (footprint_type_entry, "footprint_type_entry");
-  gtk_widget_show (footprint_type_entry);
-  gtk_table_attach (GTK_TABLE (footprint_table), footprint_type_entry, 1, 2, 1, 2,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (GTK_FILL), 0, 0);
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), "");
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("BGA"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CAPC"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CAPM"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CAPMP"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("DIL"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("DIOM"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("DIP"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("INDC"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("INDM"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("RESC"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("RESM"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("TO92"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("TO220"));
 
   footprint_units_entry = gtk_combo_box_entry_new_text ();
   gtk_widget_set_name (footprint_units_entry, "footprint_units_entry");
@@ -514,6 +469,52 @@ create_pcb_gfpw (void)
   gtk_tooltips_set_tip (tooltips, footprint_value_entry, _("Type the value of the package here"), NULL);
   gtk_entry_set_invisible_char (GTK_ENTRY (footprint_value_entry), 8226);
 
+  footprint_name_entry = gtk_entry_new ();
+  gtk_widget_set_name (footprint_name_entry, "footprint_name_entry");
+  gtk_widget_show (footprint_name_entry);
+  gtk_table_attach (GTK_TABLE (footprint_table), footprint_name_entry, 1, 2, 1, 2,
+                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_tooltips_set_tip (tooltips, footprint_name_entry, _("Type the name of the footprint here, no suffix please"), NULL);
+  gtk_entry_set_invisible_char (GTK_ENTRY (footprint_name_entry), 8226);
+
+  footprint_type_entry = gtk_combo_box_entry_new_text ();
+  gtk_widget_set_name (footprint_type_entry, "footprint_type_entry");
+  gtk_widget_show (footprint_type_entry);
+  gtk_table_attach (GTK_TABLE (footprint_table), footprint_type_entry, 1, 2, 0, 1,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (GTK_FILL), 0, 0);
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), "");
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("BGA"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CAPC"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CAPM"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CAPMP"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("DIL"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("DIOM"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("DIP"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("INDC"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("INDM"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("RESC"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("RESM"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("TO92"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("TO220"));
+
+  footprint_type_label = gtk_label_new (_("Type"));
+  gtk_widget_set_name (footprint_type_label, "footprint_type_label");
+  gtk_widget_show (footprint_type_label);
+  gtk_table_attach (GTK_TABLE (footprint_table), footprint_type_label, 0, 1, 0, 1,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_misc_set_alignment (GTK_MISC (footprint_type_label), 0, 0.5);
+
+  footprint_name_label = gtk_label_new (_("Name"));
+  gtk_widget_set_name (footprint_name_label, "footprint_name_label");
+  gtk_widget_show (footprint_name_label);
+  gtk_table_attach (GTK_TABLE (footprint_table), footprint_name_label, 0, 1, 1, 2,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_misc_set_alignment (GTK_MISC (footprint_name_label), 0, 0.5);
+
   footprint_frame_label = gtk_label_new (_("<b>Footprint</b>"));
   gtk_widget_set_name (footprint_frame_label, "footprint_frame_label");
   gtk_widget_show (footprint_frame_label);
@@ -532,6 +533,7 @@ create_pcb_gfpw (void)
   gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebook), pins_pads_table,
                                       FALSE, FALSE, GTK_PACK_START);
   gtk_container_set_border_width (GTK_CONTAINER (pins_pads_table), 5);
+  gtk_table_set_row_spacings (GTK_TABLE (pins_pads_table), 10);
 
   pads_frame = gtk_frame_new (NULL);
   gtk_widget_set_name (pads_frame, "pads_frame");
@@ -539,7 +541,7 @@ create_pcb_gfpw (void)
   gtk_table_attach (GTK_TABLE (pins_pads_table), pads_frame, 0, 1, 2, 3,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_frame_set_shadow_type (GTK_FRAME (pads_frame), GTK_SHADOW_OUT);
+  gtk_frame_set_shadow_type (GTK_FRAME (pads_frame), GTK_SHADOW_NONE);
 
   pads_alignment = gtk_alignment_new (0.5, 0.5, 1, 1);
   gtk_widget_set_name (pads_alignment, "pads_alignment");
@@ -652,7 +654,7 @@ create_pcb_gfpw (void)
   gtk_table_attach (GTK_TABLE (pins_pads_table), pins_frame, 0, 1, 1, 2,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_frame_set_shadow_type (GTK_FRAME (pins_frame), GTK_SHADOW_OUT);
+  gtk_frame_set_shadow_type (GTK_FRAME (pins_frame), GTK_SHADOW_NONE);
 
   pins_alignment = gtk_alignment_new (0.5, 0.5, 1, 1);
   gtk_widget_set_name (pins_alignment, "pins_alignment");
@@ -720,7 +722,7 @@ create_pcb_gfpw (void)
   gtk_table_attach (GTK_TABLE (pins_pads_table), pins_pads_pattern_frame, 0, 1, 0, 1,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_frame_set_shadow_type (GTK_FRAME (pins_pads_pattern_frame), GTK_SHADOW_OUT);
+  gtk_frame_set_shadow_type (GTK_FRAME (pins_pads_pattern_frame), GTK_SHADOW_NONE);
 
   pins_pads_pattern_alignment = gtk_alignment_new (0.5, 0.5, 1, 1);
   gtk_widget_set_name (pins_pads_pattern_alignment, "pins_pads_pattern_alignment");
@@ -903,7 +905,7 @@ create_pcb_gfpw (void)
   gtk_table_attach (GTK_TABLE (thermal_table), thermal_pad_frame, 0, 1, 0, 1,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_frame_set_shadow_type (GTK_FRAME (thermal_pad_frame), GTK_SHADOW_OUT);
+  gtk_frame_set_shadow_type (GTK_FRAME (thermal_pad_frame), GTK_SHADOW_NONE);
 
   thermal_pad_alignment = gtk_alignment_new (0.5, 0.5, 1, 1);
   gtk_widget_set_name (thermal_pad_alignment, "thermal_pad_alignment");
@@ -1018,6 +1020,7 @@ create_pcb_gfpw (void)
   gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebook), silkscreen_table,
                                       FALSE, FALSE, GTK_PACK_START);
   gtk_container_set_border_width (GTK_CONTAINER (silkscreen_table), 5);
+  gtk_table_set_row_spacings (GTK_TABLE (silkscreen_table), 10);
 
   courtyard_frame = gtk_frame_new (NULL);
   gtk_widget_set_name (courtyard_frame, "courtyard_frame");
@@ -1025,7 +1028,7 @@ create_pcb_gfpw (void)
   gtk_table_attach (GTK_TABLE (silkscreen_table), courtyard_frame, 0, 1, 1, 2,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_frame_set_shadow_type (GTK_FRAME (courtyard_frame), GTK_SHADOW_OUT);
+  gtk_frame_set_shadow_type (GTK_FRAME (courtyard_frame), GTK_SHADOW_NONE);
 
   courtyard_alignment = gtk_alignment_new (0.5, 0.5, 1, 1);
   gtk_widget_set_name (courtyard_alignment, "courtyard_alignment");
@@ -1126,7 +1129,7 @@ create_pcb_gfpw (void)
   gtk_table_attach (GTK_TABLE (silkscreen_table), package_frame, 0, 1, 0, 1,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_frame_set_shadow_type (GTK_FRAME (package_frame), GTK_SHADOW_OUT);
+  gtk_frame_set_shadow_type (GTK_FRAME (package_frame), GTK_SHADOW_NONE);
 
   package_alignment = gtk_alignment_new (0.5, 0.5, 1, 1);
   gtk_widget_set_name (package_alignment, "package_alignment");
@@ -1183,7 +1186,7 @@ create_pcb_gfpw (void)
   gtk_widget_show (silkscreen_tab_label);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook), 3), silkscreen_tab_label);
 
-  heel_and_toe_goals_vbox = gtk_vbox_new (FALSE, 0);
+  heel_and_toe_goals_vbox = gtk_vbox_new (FALSE, 10);
   gtk_widget_set_name (heel_and_toe_goals_vbox, "heel_and_toe_goals_vbox");
   gtk_widget_show (heel_and_toe_goals_vbox);
   gtk_container_add (GTK_CONTAINER (notebook), heel_and_toe_goals_vbox);
@@ -1192,7 +1195,7 @@ create_pcb_gfpw (void)
   gtk_widget_set_name (top_to_bottom_frame, "top_to_bottom_frame");
   gtk_widget_show (top_to_bottom_frame);
   gtk_box_pack_start (GTK_BOX (heel_and_toe_goals_vbox), top_to_bottom_frame, FALSE, TRUE, 0);
-  gtk_frame_set_shadow_type (GTK_FRAME (top_to_bottom_frame), GTK_SHADOW_OUT);
+  gtk_frame_set_shadow_type (GTK_FRAME (top_to_bottom_frame), GTK_SHADOW_NONE);
 
   top_to_bottom_alignment = gtk_alignment_new (0.5, 0.5, 1, 1);
   gtk_widget_set_name (top_to_bottom_alignment, "top_to_bottom_alignment");
@@ -1270,7 +1273,7 @@ create_pcb_gfpw (void)
   gtk_widget_set_name (left_to_right_frame, "left_to_right_frame");
   gtk_widget_show (left_to_right_frame);
   gtk_box_pack_start (GTK_BOX (heel_and_toe_goals_vbox), left_to_right_frame, FALSE, TRUE, 0);
-  gtk_frame_set_shadow_type (GTK_FRAME (left_to_right_frame), GTK_SHADOW_OUT);
+  gtk_frame_set_shadow_type (GTK_FRAME (left_to_right_frame), GTK_SHADOW_NONE);
 
   left_to_right_alignment = gtk_alignment_new (0.5, 0.5, 1, 1);
   gtk_widget_set_name (left_to_right_alignment, "left_to_right_alignment");
@@ -1354,7 +1357,7 @@ create_pcb_gfpw (void)
   gtk_widget_show (preview_frame);
   gtk_box_pack_start (GTK_BOX (hbox), preview_frame, FALSE, FALSE, 0);
   gtk_container_set_border_width (GTK_CONTAINER (preview_frame), 10);
-  gtk_frame_set_shadow_type (GTK_FRAME (preview_frame), GTK_SHADOW_OUT);
+  gtk_frame_set_shadow_type (GTK_FRAME (preview_frame), GTK_SHADOW_NONE);
 
   preview_alignment = gtk_alignment_new (0.5, 0.5, 1, 1);
   gtk_widget_set_name (preview_alignment, "preview_alignment");
@@ -1432,12 +1435,6 @@ create_pcb_gfpw (void)
   g_signal_connect ((gpointer) footprint_status_entry, "changed",
                     G_CALLBACK (on_footprint_status_entry_changed),
                     NULL);
-  g_signal_connect ((gpointer) footprint_name_entry, "changed",
-                    G_CALLBACK (on_footprint_name_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) footprint_type_entry, "changed",
-                    G_CALLBACK (on_footprint_type_entry_changed),
-                    NULL);
   g_signal_connect ((gpointer) footprint_units_entry, "changed",
                     G_CALLBACK (on_footprint_units_entry_changed),
                     NULL);
@@ -1455,6 +1452,12 @@ create_pcb_gfpw (void)
                     NULL);
   g_signal_connect ((gpointer) footprint_value_entry, "changed",
                     G_CALLBACK (on_footprint_value_entry_changed),
+                    NULL);
+  g_signal_connect ((gpointer) footprint_name_entry, "changed",
+                    G_CALLBACK (on_footprint_name_entry_changed),
+                    NULL);
+  g_signal_connect ((gpointer) footprint_type_entry, "changed",
+                    G_CALLBACK (on_footprint_type_entry_changed),
                     NULL);
   g_signal_connect ((gpointer) pad_solder_mask_clearance_entry, "changed",
                     G_CALLBACK (on_pad_solder_mask_clearance_entry_changed),
@@ -1619,11 +1622,7 @@ create_pcb_gfpw (void)
   GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_frame, "footprint_frame");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_frame_alignment, "footprint_frame_alignment");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_table, "footprint_table");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_name_label, "footprint_name_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_name_entry, "footprint_name_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_type_label, "footprint_type_label");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_units_label, "footprint_units_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_type_entry, "footprint_type_entry");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_units_entry, "footprint_units_entry");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, package_is_radial_checkbutton, "package_is_radial_checkbutton");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, package_body_height_label, "package_body_height_label");
@@ -1634,6 +1633,10 @@ create_pcb_gfpw (void)
   GLADE_HOOKUP_OBJECT (pcb_gfpw, package_body_length_entry, "package_body_length_entry");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_value_label, "footprint_value_label");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_value_entry, "footprint_value_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_name_entry, "footprint_name_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_type_entry, "footprint_type_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_type_label, "footprint_type_label");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_name_label, "footprint_name_label");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_frame_label, "footprint_frame_label");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_tab_label, "footprint_tab_label");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, pins_pads_table, "pins_pads_table");
@@ -1802,14 +1805,14 @@ create_filechooser_dialog (void)
   g_signal_connect ((gpointer) filechooser_dialog, "selection_changed",
                     G_CALLBACK (on_filechooser_dialog_selection_changed),
                     NULL);
-  g_signal_connect ((gpointer) filechooser_dialog, "file_activated",
-                    G_CALLBACK (on_filechooser_dialog_file_activated),
-                    NULL);
   g_signal_connect ((gpointer) filechooser_dialog, "close",
                     G_CALLBACK (on_filechooser_dialog_close),
                     NULL);
   g_signal_connect ((gpointer) filechooser_dialog, "current_folder_changed",
                     G_CALLBACK (on_filechooser_dialog_current_folder_changed),
+                    NULL);
+  g_signal_connect ((gpointer) filechooser_dialog, "update_preview",
+                    G_CALLBACK (on_filechooser_dialog_update_preview),
                     NULL);
   g_signal_connect ((gpointer) filechooser_dialog_cancel_button, "clicked",
                     G_CALLBACK (on_filechooser_dialog_cancel_button_clicked),
