@@ -1393,10 +1393,17 @@ on_save_button_clicked                 (GtkButton       *button,
         /* Check for an empty footprint_name string for this will cause a
          * segmentation fault or undefined behaviour.
          */
-        if (!strcmp (footprint_name, ""))
+        else if (!strcmp (footprint_name, ""))
         {
                 gchar *message = NULL;
                 message = g_strdup_printf ("ERROR: footprint name contains an empty string.");
+                message_to_statusbar (button, message);
+                return;
+        }
+        else
+        {
+                gchar *message = NULL;
+                message = g_strdup_printf ("");
                 message_to_statusbar (button, message);
                 return;
         }
