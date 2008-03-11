@@ -1451,7 +1451,6 @@ on_save_button_clicked                 (GtkButton       *button,
                 gchar *message = NULL;
                 message = g_strdup_printf ("");
                 message_to_statusbar (button, message);
-                return;
         }
         /* Determine a filename for the footprintwizard file */
         fpw_filename = g_strdup (footprint_name);
