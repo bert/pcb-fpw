@@ -953,6 +953,33 @@ on_footprint_units_entry_changed       (GtkComboBox     *combobox,
                                         gpointer         user_data)
 {
         footprint_units = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
+        /* Check for a null pointer in footprint_units for this might cause a
+         * segmentation fault or undefined behaviour.
+         */
+        if (!footprint_units)
+        {
+                gchar *message = NULL;
+                message = g_strdup_printf ("ERROR: footprint units not initialised (null pointer).");
+                message_to_statusbar (combobox, message);
+                return;
+        }
+        /* Check for an empty footprint_units string for this might cause a
+         * segmentation fault or undefined behaviour.
+         */
+        else if (!strcmp (footprint_units, ""))
+        {
+                gchar *message = NULL;
+                message = g_strdup_printf ("ERROR: footprint units contains an empty string.");
+                message_to_statusbar (combobox, message);
+                return;
+        }
+        else
+        {
+                gchar *message = NULL;
+                message = g_strdup_printf ("");
+                message_to_statusbar (combobox, message);
+                return;
+        }
 }
 
 
