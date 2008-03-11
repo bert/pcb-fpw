@@ -967,6 +967,15 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                                         gpointer         user_data)
 {
         footprint_type = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
+        /* Test footprint name for a null pointer or an empty string and
+         * if so,copy the footprint_type into the footprint name entry. */
+        if (!footprint_name || (!strcmp (footprint_name, "")))
+        {
+                footprint_name = g_strdup (footprint_type);
+                GtkEntry *footprint_name_entry;
+                footprint_name_entry = lookup_widget (GTK_WIDGET (combobox), "footprint_name_entry");
+                gtk_entry_set_text (footprint_name_entry, footprint_name);
+        }
 }
 
 
