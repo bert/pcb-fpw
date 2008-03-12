@@ -960,24 +960,36 @@ on_footprint_status_entry_changed      (GtkComboBox     *combobox,
 /*!
  * \brief The "footprint type" entry is changed.
  *
- * - store in the \c footprint_type variable (global).
- * - test footprint name for a null pointer or an empty string and if so,
- *   copy the footprint type into the footprint name entry.
+ * - test if the footprint name is equal with the footprint type or has a
+ *   null pointer or is an empty string, if so copy the footprint type into
+ *   the footprint name entry.
+ * - store the new value in the \c footprint_type variable (global).
  */
 void
 on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                                         gpointer         user_data)
 {
-        footprint_type = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
-        /* Test footprint name for a null pointer or an empty string and
-         * if so, copy the footprint type into the footprint name entry. */
-        if (!footprint_name || (!strcmp (footprint_name, "")))
+        /* Test if the existing footprint name is equal to the footprint
+         * type or is empty or has a null pointer, if this is true the user
+         * did not add any characters to the footprint name yet (he/she
+         * probably made up his/her mind on the footprint type), so we can
+         * safely copy the new footprint type into the footprint name entry.
+         */
+        if
+                (
+                        !footprint_name ||
+                        (!strcmp (footprint_name, "")) ||
+                        (!strcmp (footprint_type, footprint_name))
+                )
         {
+                footprint_type = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
                 footprint_name = g_strdup (footprint_type);
                 GtkEntry *footprint_name_entry;
                 footprint_name_entry = lookup_widget (GTK_WIDGET (combobox), "footprint_name_entry");
                 gtk_entry_set_text (footprint_name_entry, footprint_name);
         }
+        else
+                footprint_type = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
 }
 
 
