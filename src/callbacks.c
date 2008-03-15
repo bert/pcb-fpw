@@ -1029,7 +1029,6 @@ on_footprint_units_entry_changed       (GtkComboBox     *combobox,
                 gchar *message = NULL;
                 message = g_strdup_printf ("");
                 message_to_statusbar (combobox, message);
-                return;
         }
         /* Determine the multiplier based upon the units type */
         if (!strcmp (footprint_units, "mil"))
@@ -1037,23 +1036,19 @@ on_footprint_units_entry_changed       (GtkComboBox     *combobox,
                 multiplier = 100.0;
                 return;
         }
-        else if (!strcmp (footprint_units, "mil/100"))
+        if (!strcmp (footprint_units, "mil/100"))
         {
                 multiplier = 1.0;
                 return;
         }
-        else if (!strcmp (footprint_units, "mm"))
+        if (!strcmp (footprint_units, "mm"))
         {
                 multiplier = (1000 / 25.4) * 100;
                 return;
         }
-        else
-        {
-                gchar *message = NULL;
-                message = g_strdup_printf ("ERROR: footprint units contains an unknown unit type.");
-                message_to_statusbar (combobox, message);
-                return;
-        }
+        gchar *message = NULL;
+        message = g_strdup_printf ("ERROR: footprint units contains an unknown units type.");
+        message_to_statusbar (combobox, message);
 }
 
 
