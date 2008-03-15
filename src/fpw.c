@@ -100,9 +100,13 @@ main
         }
         /* Read variables from the fpw file */
         read_footprintwizard_file();
-        if (strcmp (footprint_units, "mils")) multiplier = 100.0;
-        if (strcmp (footprint_units, "mils/100")) multiplier = 1.0;
-        if (strcmp (footprint_units, "mm")) multiplier = (1000 / 25.4) * 100;
+        /* Determine the multiplier based upon the units type */
+        if (strcmp (footprint_units, "mils"))
+                multiplier = 100.0;
+        if (strcmp (footprint_units, "mils/100"))
+                multiplier = 1.0;
+        if (strcmp (footprint_units, "mm"))
+                multiplier = (1000 / 25.4) * 100;
         /* If the footprint_filename contains a valid footprintname, use it */
         if (g_str_has_suffix (footprint_name, suffix))
         {
