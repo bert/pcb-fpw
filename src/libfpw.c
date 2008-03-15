@@ -1257,13 +1257,6 @@ write_footprint()
                 g_strconcat (pin_pad_flags, "octagon", NULL);
         if (!strcmp (pad_shape, "rounded pad, elongated"))
                 g_strconcat (pin_pad_flags, "", NULL);
-        /* Determine the multiplier based upon the units type */
-        if (!strcmp (footprint_units, "mil"))
-                multiplier = 100.0;
-        if (!strcmp (footprint_units, "mil/100"))
-                multiplier = 1.0;
-        if (!strcmp (footprint_units, "mm"))
-                multiplier = (1000 / 25.4) * 100;
         /* Determine the package type */
         if (!strcmp (footprint_type, "BGA"))
         {
