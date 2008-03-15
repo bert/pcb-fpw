@@ -40,25 +40,6 @@ main (int argc, char *argv[])
 {
         GtkWidget *pcb_gfpw;
         GtkWidget *about_dialog;
-        GtkToggleButton *thermal = NULL;
-        GtkToggleButton *thermal_nopaste_checkbutton = NULL;
-        GtkWidget *thermal_length_entry = NULL;
-        GtkWidget *thermal_width_entry = NULL;
-        GtkWidget *thermal_clearance_entry = NULL;
-        GtkWidget *thermal_solder_mask_clearance_entry = NULL;
-        GtkToggleButton *silkscreen_package_outline = NULL;
-        GtkWidget *silkscreen_line_width_entry = NULL;
-        GtkToggleButton *courtyard = NULL;
-        GtkWidget *courtyard_length_entry = NULL;
-        GtkWidget *courtyard_width_entry = NULL;
-        GtkWidget *courtyard_line_width_entry = NULL;
-        GtkWidget *courtyard_clearance_with_package_entry = NULL;
-        GtkWidget *C1_entry = NULL;
-        GtkWidget *C2_entry = NULL;
-        GtkWidget *G1_entry = NULL;
-        GtkWidget *G2_entry = NULL;
-        GtkWidget *Z1_entry = NULL;
-        GtkWidget *Z2_entry = NULL;
 
 #ifdef ENABLE_NLS
         bindtextdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
@@ -79,12 +60,27 @@ main (int argc, char *argv[])
         gtk_widget_show (about_dialog);
         /* Now create the main dialog. */
         pcb_gfpw = create_pcb_gfpw ();
+        /* Set the initial state of the total pins and pads entry to
+         * insensitive. The entry is to be used as a label for most packages
+         * as the total amount of pins and pads can be caluculated.
+         * However for some packages it might be needed to set a value here.
+         */
+        GtkWidget *number_total_pins_entry = NULL;
+        number_total_pins_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
+                "number_total_pins_entry");
+        gtk_widget_set_sensitive (number_total_pins_entry, FALSE);
         /* Set the initial state of the checkbutton for the thermal pad to false,
          * set the "length" entry for the thermal pad to insensitive,
          * set the "width" entry for the thermal pad to insensitive,
          * set the "clearance" entry for the thermal pad to insensitive,
          * and set the "solder mask clearance" entry for the thermal pad to insensitive.
          */
+        GtkToggleButton *thermal = NULL;
+        GtkToggleButton *thermal_nopaste_checkbutton = NULL;
+        GtkWidget *thermal_length_entry = NULL;
+        GtkWidget *thermal_width_entry = NULL;
+        GtkWidget *thermal_clearance_entry = NULL;
+        GtkWidget *thermal_solder_mask_clearance_entry = NULL;
         thermal = lookup_widget (GTK_WIDGET (pcb_gfpw),
                 "thermal_checkbutton");
         thermal_nopaste_checkbutton = lookup_widget (GTK_WIDGET (pcb_gfpw),
@@ -106,6 +102,8 @@ main (int argc, char *argv[])
         /* Set the initial state of the checkbutton for the silkscreen to true,
          * set the "linewidth" entry for the silkscreen to sensitive.
          */
+        GtkToggleButton *silkscreen_package_outline = NULL;
+        GtkWidget *silkscreen_line_width_entry = NULL;
         silkscreen_package_outline = lookup_widget (GTK_WIDGET (pcb_gfpw),
                 "silkscreen_package_outline_checkbutton");
         silkscreen_line_width_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
@@ -119,6 +117,11 @@ main (int argc, char *argv[])
          * and set the "clearance to package" entry for the courtyard to
          * insensitive.
          */
+        GtkToggleButton *courtyard = NULL;
+        GtkWidget *courtyard_length_entry = NULL;
+        GtkWidget *courtyard_width_entry = NULL;
+        GtkWidget *courtyard_line_width_entry = NULL;
+        GtkWidget *courtyard_clearance_with_package_entry = NULL;
         courtyard = lookup_widget (GTK_WIDGET (pcb_gfpw),
                 "courtyard_checkbutton");
         courtyard_length_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
@@ -139,6 +142,12 @@ main (int argc, char *argv[])
          * These entries are for entering the C1, C2, G1, G2, Z1 and Z2
          * variables.
          */
+        GtkWidget *C1_entry = NULL;
+        GtkWidget *C2_entry = NULL;
+        GtkWidget *G1_entry = NULL;
+        GtkWidget *G2_entry = NULL;
+        GtkWidget *Z1_entry = NULL;
+        GtkWidget *Z2_entry = NULL;
         C1_entry = lookup_widget (GTK_WIDGET (pcb_gfpw), "C1_entry");
         C2_entry = lookup_widget (GTK_WIDGET (pcb_gfpw), "C2_entry");
         G1_entry = lookup_widget (GTK_WIDGET (pcb_gfpw), "G1_entry");
