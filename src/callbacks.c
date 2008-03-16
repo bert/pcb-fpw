@@ -565,6 +565,12 @@ on_count_x_entry_changed               (GtkEditable     *editable,
 
         count_x_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         count_x = (int) g_ascii_strtod (count_x_string, &leftovers);
+        number_of_pins = (number_of_rows * count_x + number_of_columns * count_y) + thermal;
+        GtkWidget *number_total_pins_entry = NULL;
+        number_total_pins_entry = lookup_widget (GTK_WIDGET (editable),
+                "number_total_pins_entry");
+        gtk_entry_set_text (number_total_pins_entry,
+                g_strdup_printf ("%d", number_of_pins));
 }
 
 
@@ -583,6 +589,12 @@ on_count_y_entry_changed               (GtkEditable     *editable,
 
         count_y_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         count_y = (int) g_ascii_strtod (count_y_string, &leftovers);
+        number_of_pins = (number_of_rows * count_x + number_of_columns * count_y) + thermal;
+        GtkWidget *number_total_pins_entry = NULL;
+        number_total_pins_entry = lookup_widget (GTK_WIDGET (editable),
+                "number_total_pins_entry");
+        gtk_entry_set_text (number_total_pins_entry,
+                g_strdup_printf ("%d", number_of_pins));
 }
 
 
@@ -1107,6 +1119,12 @@ on_number_of_columns_entry_changed     (GtkEditable     *editable,
 
         number_of_columns_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         number_of_columns = (int) g_ascii_strtod (number_of_columns_string, &leftovers);
+        number_of_pins = (number_of_rows * count_x + number_of_columns * count_y) + thermal;
+        GtkWidget *number_total_pins_entry = NULL;
+        number_total_pins_entry = lookup_widget (GTK_WIDGET (editable),
+                "number_total_pins_entry");
+        gtk_entry_set_text (number_total_pins_entry,
+                g_strdup_printf ("%d", number_of_pins));
 }
 
 
@@ -1125,6 +1143,12 @@ on_number_of_rows_entry_changed        (GtkEditable     *editable,
 
         number_of_rows_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         number_of_rows = (int) g_ascii_strtod (number_of_rows_string, &leftovers);
+        number_of_pins = (number_of_rows * count_x + number_of_columns * count_y) + thermal;
+        GtkWidget *number_total_pins_entry = NULL;
+        number_total_pins_entry = lookup_widget (GTK_WIDGET (editable),
+                "number_total_pins_entry");
+        gtk_entry_set_text (number_total_pins_entry,
+                g_strdup_printf ("%d", number_of_pins));
 }
 
 
@@ -1631,6 +1655,12 @@ on_thermal_checkbutton_toggled         (GtkToggleButton *togglebutton,
          * paste if desired while leaving the thermal checkbutton checked
          * (on) */
         gtk_toggle_button_set_active (thermal_nopaste_checkbutton, thermal);
+        number_of_pins = (number_of_rows * count_x + number_of_columns * count_y) + thermal;
+        GtkWidget *number_total_pins_entry = NULL;
+        number_total_pins_entry = lookup_widget (GTK_WIDGET (togglebutton),
+                "number_total_pins_entry");
+        gtk_entry_set_text (number_total_pins_entry,
+                g_strdup_printf ("%d", number_of_pins));
 }
 
 
