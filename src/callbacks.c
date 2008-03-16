@@ -879,7 +879,7 @@ on_filechooser_dialog_selection_changed
  * \brief The file chooser dialog "update preview" signal is emitted.
  *
  * \todo - generate a new preview image.
- * \todo - upodate the preview widget.
+ * \todo - update the preview widget.
  */
 void
 on_filechooser_dialog_update_preview   (GtkFileChooser  *filechooser,
