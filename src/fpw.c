@@ -179,9 +179,80 @@ main
                 fprintf (stderr, "ERROR: pad shape contains an unknown pad shape type.\n");
                 exit (EXIT_FAILURE);
         }
+        /* Determine the package type */
+        if (!strcmp (footprint_type, "BGA"))
+        {
+                package_type = BGA;
+                fprintf (stderr, "ERROR: footprint type BGA not yet implemented.\n");
+                exit (EXIT_FAILURE);
+        }
+        else if (!strcmp (footprint_type, "CAPC"))
+        {
+                package_type = CAPC;
+        }
+        else if (!strcmp (footprint_type, "DIL"))
+        {
+                package_type = DIL;
+        }
+        else if (!strcmp (footprint_type, "DIP"))
+        {
+                package_type = DIP;
+        }
+        else if (!strcmp (footprint_type, "INDC"))
+        {
+                package_type = INDC;
+        }
+        else if (!strcmp (footprint_type, "PGA"))
+        {
+                package_type = PGA;
+                fprintf (stderr, "ERROR: footprint type PGA not yet implemented.\n");
+                exit (EXIT_FAILURE);
+        }
+        else if (!strcmp (footprint_type, "QFN"))
+        {
+                package_type = QFN;
+                fprintf (stderr, "ERROR: footprint type QFN not yet implemented.\n");
+                exit (EXIT_FAILURE);
+        }
+        else if (!strcmp (footprint_type, "QFP"))
+        {
+                package_type = QFP;
+                fprintf (stderr, "ERROR: footprint type QFP not yet implemented.\n");
+                exit (EXIT_FAILURE);
+        }
+        else if (!strcmp (footprint_type, "RESC"))
+        {
+                package_type = RESC;
+        }
+        else if (!strcmp (footprint_type, "SIL"))
+        {
+                package_type = SIP;
+                fprintf (stderr, "ERROR: footprint type SIL not yet implemented.\n");
+                exit (EXIT_FAILURE);
+        }
+        else if (!strcmp (footprint_type, "SIP"))
+        {
+                package_type = SIP;
+                fprintf (stderr, "ERROR: footprint type SIP not yet implemented.\n");
+                exit (EXIT_FAILURE);
+        }
+        else if (!strcmp (footprint_type, "SO"))
+        {
+                package_type = SO;
+                fprintf (stderr, "ERROR: footprint type SO not yet implemented.\n");
+                exit (EXIT_FAILURE);
+        }
+        else if (!strcmp (footprint_type, "TO92"))
+        {
+                package_type = TO92;
+        }
+        else
+        {
+                fprintf (stderr, "ERROR: unknown or not yet implemented footprint type entered.\n");
+                exit (EXIT_FAILURE);
+        }
         write_footprint ();
         fprintf (stderr, "Footprint %s is written successful.", footprint_name);
-        exit (EXIT_SUCCESS);
 }
 
 /* EOF */
