@@ -1248,15 +1248,6 @@ write_footprintwizard_file()
 int
 write_footprint()
 {
-        /* Determine the pad shape type, default is a circular pad */
-        if (!strcmp (pad_shape, "circular pad"))
-                g_strconcat (pin_pad_flags, "", NULL);
-        if (!strcmp (pad_shape, "rectangular pad"))
-                g_strconcat (pin_pad_flags, "square", NULL);
-        if (!strcmp (pad_shape, "octagonal pad"))
-                g_strconcat (pin_pad_flags, "octagon", NULL);
-        if (!strcmp (pad_shape, "rounded pad, elongated"))
-                g_strconcat (pin_pad_flags, "", NULL);
         /* Determine the package type */
         if (!strcmp (footprint_type, "BGA"))
         {
