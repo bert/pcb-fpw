@@ -1002,6 +1002,96 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         }
         else
                 footprint_type = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
+        /* Determine the package type */
+        if (!strcmp (footprint_type, "BGA"))
+        {
+                package_type = BGA;
+                gchar *message = NULL;
+                message = g_strdup_printf ("ERROR: footprint type BGA is not yet implemented.");
+                message_to_statusbar (combobox, message);
+                return;
+        }
+        else if (!strcmp (footprint_type, "CAPC"))
+        {
+                package_type = CAPC;
+                return;
+        }
+        else if (!strcmp (footprint_type, "DIL"))
+        {
+                package_type = DIL;
+                return;
+        }
+        else if (!strcmp (footprint_type, "DIP"))
+        {
+                package_type = DIP;
+                return;
+        }
+        else if (!strcmp (footprint_type, "INDC"))
+        {
+                package_type = INDC;
+                return;
+        }
+        else if (!strcmp (footprint_type, "PGA"))
+        {
+                package_type = PGA;
+                gchar *message = NULL;
+                message = g_strdup_printf ("ERROR: footprint type PGA is not yet implemented.");
+                message_to_statusbar (combobox, message);
+                return;
+        }
+        else if (!strcmp (footprint_type, "QFN"))
+        {
+                package_type = QFN;
+                gchar *message = NULL;
+                message = g_strdup_printf ("ERROR: footprint type QFN is not yet implemented.");
+                message_to_statusbar (combobox, message);
+                return;
+        }
+        else if (!strcmp (footprint_type, "QFP"))
+        {
+                package_type = QFP;
+                gchar *message = NULL;
+                message = g_strdup_printf ("ERROR: footprint type QFP is not yet implemented.");
+                message_to_statusbar (combobox, message);
+                return;
+        }
+        else if (!strcmp (footprint_type, "RESC"))
+        {
+                package_type = RESC;
+                return;
+        }
+        else if (!strcmp (footprint_type, "SIL"))
+        {
+                package_type = SIP;
+                gchar *message = NULL;
+                message = g_strdup_printf ("ERROR: footprint type SIL is not yet implemented.");
+                message_to_statusbar (combobox, message);
+                return;
+        }
+        else if (!strcmp (footprint_type, "SIP"))
+        {
+                package_type = SIP;
+                gchar *message = NULL;
+                message = g_strdup_printf ("ERROR: footprint type SIP is not yet implemented.");
+                message_to_statusbar (combobox, message);
+                return;
+        }
+        else if (!strcmp (footprint_type, "SO"))
+        {
+                package_type = SO;
+                gchar *message = NULL;
+                message = g_strdup_printf ("ERROR: footprint type SO is not yet implemented.");
+                message_to_statusbar (combobox, message);
+                return;
+        }
+        else if (!strcmp (footprint_type, "TO92"))
+        {
+                package_type = TO92;
+                return;
+        }
+        gchar *message = NULL;
+        message = g_strdup_printf ("ERROR: unknown or not yet implemented footprint type entered.");
+        message_to_statusbar (combobox, message);
 }
 
 
