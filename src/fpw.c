@@ -103,11 +103,32 @@ main
         /* Determine the multiplier based upon the units type */
         if (strcmp (footprint_units, "mils"))
                 multiplier = 100.0;
-        if (strcmp (footprint_units, "mils/100"))
+        else if (strcmp (footprint_units, "mils/100"))
                 multiplier = 1.0;
-        if (strcmp (footprint_units, "mm"))
+        else if (strcmp (footprint_units, "mm"))
                 multiplier = (1000 / 25.4) * 100;
-        /* If the footprint_filename contains a valid footprintname, use it */
+        else
+        {
+                fprintf (stderr, "ERROR: footprint units contains an unknown units type.\n");
+                exit (EXIT_FAILURE);
+        }
+        /* Check for a null pointer in footprint_name for this might cause a
+         * segmentation fault or undefined behaviour.
+         */
+        if (!footprint_name)
+        {
+                fprintf (stderr, "ERROR: footprint name contains a null pointer.\n");
+                exit (EXIT_FAILURE);
+        }
+        /* Check for an empty footprint_name string for this might cause a
+         * segmentation fault or undefined behaviour.
+         */
+        if (!strcmp (footprint_name, ""))
+        {
+                fprintf (stderr, "ERROR: footprint name contains an empty string.\n");
+                exit (EXIT_FAILURE);
+        }
+        /* If the footprint_filename contains a valid footprintname, use it. */
         if (g_str_has_suffix (footprint_name, suffix))
         {
                 /* Footprintname has a .fp suffix, do nothing */
