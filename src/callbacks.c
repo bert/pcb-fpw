@@ -1323,12 +1323,63 @@ on_pad_length_entry_changed            (GtkEditable     *editable,
  * \brief The "shape of pads" entry is changed.
  *
  * - store in the \c pad_shape variable (global).
+ * - check for null pointer and empty string.
  */
 void
 on_pad_shape_entry_changed    (GtkComboBox     *combobox,
-                                        gpointer         user_data)
+                               gpointer         user_data)
 {
         pad_shape = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
+        /* Check for a null pointer in pad shape for this might cause a
+         * segmentation fault or undefined behaviour.
+         */
+        if (!pad_shape)
+        {
+                gchar *message = NULL;
+                message = g_strdup_printf ("ERROR: pad shape not initialised (null pointer).");
+                message_to_statusbar (combobox, message);
+                return;
+        }
+        /* Check for an empty pad shape string for this might cause a
+         * segmentation fault or undefined behaviour.
+         */
+        else if (!strcmp (pad_shape, ""))
+        {
+                gchar *message = NULL;
+                message = g_strdup_printf ("ERROR: pad shape contains an empty string.");
+                message_to_statusbar (combobox, message);
+                return;
+        }
+        else
+        {
+                gchar *message = NULL;
+                message = g_strdup_printf ("");
+                message_to_statusbar (combobox, message);
+        }
+        /* Determine the pad shape type, default is a circular pad */
+        if (!strcmp (pad_shape, "circular pad"))
+        {
+                g_strconcat (pin_pad_flags, "", NULL);
+                return;
+        }
+        if (!strcmp (pad_shape, "rectangular pad"))
+        {
+                g_strconcat (pin_pad_flags, "square", NULL);
+                return;
+        }
+        if (!strcmp (pad_shape, "octagonal pad"))
+        {
+                g_strconcat (pin_pad_flags, "octagon", NULL);
+                return;
+        }
+        if (!strcmp (pad_shape, "rounded pad, elongated"))
+        {
+                g_strconcat (pin_pad_flags, "", NULL);
+                return;
+        }
+        gchar *message = NULL;
+        message = g_strdup_printf ("ERROR: pad shape contains an unknown units pad shape type.");
+        message_to_statusbar (combobox, message);
 }
 
 
