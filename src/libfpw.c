@@ -1248,87 +1248,40 @@ write_footprintwizard_file()
 int
 write_footprint()
 {
-        /* Determine the package type */
-        if (!strcmp (footprint_type, "BGA"))
+        /* Switch depending the package type */
+        switch (package_type)
         {
-                package_type = BGA;
-                fprintf (stderr, "WARNING: footprint type BGA not yet implemented.\n");
-                return (EXIT_SUCCESS);
+                case BGA :
+                        break;
+                case CAPC :
+                case INDC :
+                case RESC :
+                        write_footprint_smt ();
+                        break;
+                case DIL :
+                case DIP :
+                        write_footprint_dip ();
+                        break;
+                case PGA :
+                        break;
+                case QFN :
+                        break;
+                case QFP :
+                        break;
+                case SIL :
+                        break;
+                case SIP :
+                        break;
+                case SO :
+                        break;
+                case TO92 :
+                        write_footprint_to92 ();
+                        break;
+                default :
+                        fprintf (stderr, "ERROR: unknown or not yet implemented footprint type entered.\n");
+                        exit (EXIT_FAILURE);
+                        break;
         }
-        if (!strcmp (footprint_type, "CAPC"))
-        {
-                package_type = CAPC;
-                write_footprint_smt ();
-                return (EXIT_SUCCESS);
-        }
-        if (!strcmp (footprint_type, "DIL"))
-        {
-                package_type = DIL;
-                write_footprint_dip ();
-                return (EXIT_SUCCESS);
-        }
-        if (!strcmp (footprint_type, "DIP"))
-        {
-                package_type = DIP;
-                write_footprint_dip ();
-                return (EXIT_SUCCESS);
-        }
-        if (!strcmp (footprint_type, "INDC"))
-        {
-                package_type = INDC;
-                write_footprint_smt ();
-                return (EXIT_SUCCESS);
-        }
-        if (!strcmp (footprint_type, "PGA"))
-        {
-                package_type = PGA;
-                fprintf (stderr, "WARNING: footprint type PGA not yet implemented.\n");
-                return (EXIT_SUCCESS);
-        }
-        if (!strcmp (footprint_type, "QFN"))
-        {
-                package_type = QFN;
-                fprintf (stderr, "WARNING: footprint type QFN not yet implemented.\n");
-                return (EXIT_SUCCESS);
-        }
-        if (!strcmp (footprint_type, "QFP"))
-        {
-                package_type = QFP;
-                fprintf (stderr, "WARNING: footprint type QFP not yet implemented.\n");
-                return (EXIT_SUCCESS);
-        }
-        if (!strcmp (footprint_type, "RESC"))
-        {
-                package_type = RESC;
-                write_footprint_smt ();
-                return (EXIT_SUCCESS);
-        }
-        if (!strcmp (footprint_type, "SIL"))
-        {
-                package_type = SIP;
-                fprintf (stderr, "WARNING: footprint type SIL not yet implemented.\n");
-                return (EXIT_SUCCESS);
-        }
-        if (!strcmp (footprint_type, "SIP"))
-        {
-                package_type = SIP;
-                fprintf (stderr, "WARNING: footprint type SIP not yet implemented.\n");
-                return (EXIT_SUCCESS);
-        }
-        if (!strcmp (footprint_type, "SO"))
-        {
-                package_type = SO;
-                fprintf (stderr, "WARNING: footprint type SO not yet implemented.\n");
-                return (EXIT_SUCCESS);
-        }
-        if (!strcmp (footprint_type, "TO92"))
-        {
-                package_type = TO92;
-                write_footprint_to92 ();
-                return (EXIT_SUCCESS);
-        }
-        fprintf (stderr, "ERROR: unknown or not yet implemented footprint type entered.\n");
-        return (EXIT_FAILURE);
 }
 
 /* EOF */
