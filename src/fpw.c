@@ -100,29 +100,43 @@ main
         }
         /* Read variables from the fpw file */
         read_footprintwizard_file();
-        /* Determine the multiplier based upon the units type */
-        if (strcmp (footprint_units, "mils"))
-                multiplier = 100.0;
-        else if (strcmp (footprint_units, "mils/100"))
-                multiplier = 1.0;
-        else if (strcmp (footprint_units, "mm"))
-                multiplier = (1000 / 25.4) * 100;
-        else
+        /* Check for a null pointer in footprint_units for this might cause a
+         * segmentation fault or undefined behaviour. */
+        if (!footprint_units)
         {
-                fprintf (stderr, "ERROR: footprint units contains an unknown units type.\n");
+                fprintf (stderr, "ERROR: footprint units contains a null pointer.\n");
+                exit (EXIT_FAILURE);
+        }
+        /* Check for an empty footprint_units string for this might cause a
+         * segmentation fault or undefined behaviour. */
+        if (!strcmp (footprint_units, ""))
+        {
+                fprintf (stderr, "ERROR: footprint units contains an empty string.\n");
+                exit (EXIT_FAILURE);
+        }
+        /* Check for a null pointer in pad_shape for this might cause a
+         * segmentation fault or undefined behaviour. */
+        if (!pad_shape)
+        {
+                fprintf (stderr, "ERROR: pad shape contains a null pointer.\n");
+                exit (EXIT_FAILURE);
+        }
+        /* Check for an empty pad_shape string for this might cause a
+         * segmentation fault or undefined behaviour. */
+        if (!strcmp (pad_shape, ""))
+        {
+                fprintf (stderr, "ERROR: pad shape contains an empty string.\n");
                 exit (EXIT_FAILURE);
         }
         /* Check for a null pointer in footprint_name for this might cause a
-         * segmentation fault or undefined behaviour.
-         */
+         * segmentation fault or undefined behaviour. */
         if (!footprint_name)
         {
                 fprintf (stderr, "ERROR: footprint name contains a null pointer.\n");
                 exit (EXIT_FAILURE);
         }
         /* Check for an empty footprint_name string for this might cause a
-         * segmentation fault or undefined behaviour.
-         */
+         * segmentation fault or undefined behaviour. */
         if (!strcmp (footprint_name, ""))
         {
                 fprintf (stderr, "ERROR: footprint name contains an empty string.\n");
@@ -138,6 +152,32 @@ main
         {
                 /* Footprintname has no .fp suffix, add a .fp suffix */
                 footprint_filename = g_strconcat (footprint_name, ".fp", NULL);
+        }
+        /* Determine the multiplier based upon the units type */
+        if (strcmp (footprint_units, "mils"))
+                multiplier = 100.0;
+        else if (strcmp (footprint_units, "mils/100"))
+                multiplier = 1.0;
+        else if (strcmp (footprint_units, "mm"))
+                multiplier = (1000 / 25.4) * 100;
+        else
+        {
+                fprintf (stderr, "ERROR: footprint units contains an unknown units type.\n");
+                exit (EXIT_FAILURE);
+        }
+        /* Determine the pad shape type, default is a circular pad */
+        if (!strcmp (pad_shape, "circular pad"))
+                g_strconcat (pin_pad_flags, "", NULL);
+        else if (!strcmp (pad_shape, "rectangular pad"))
+                g_strconcat (pin_pad_flags, "square", NULL);
+        else if (!strcmp (pad_shape, "octagonal pad"))
+                g_strconcat (pin_pad_flags, "octagon", NULL);
+        else if (!strcmp (pad_shape, "rounded pad, elongated"))
+                g_strconcat (pin_pad_flags, "", NULL);
+        else
+        {
+                fprintf (stderr, "ERROR: pad shape contains an unknown pad shape type.\n");
+                exit (EXIT_FAILURE);
         }
         write_footprint ();
         fprintf (stderr, "Footprint %s is written successful.", footprint_name);
