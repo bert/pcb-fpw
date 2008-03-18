@@ -864,7 +864,7 @@ on_filechooser_dialog_open_button_clicked
  * \todo - read the values from the selected footprintwizard file in a
  * temporary set of variables \c temp_*.
  * \todo - generate a new preview image.
- * \todo - upodate the preview widget.
+ * \todo - update the preview widget.
  */
 void
 on_filechooser_dialog_selection_changed
