@@ -1608,14 +1608,18 @@ on_refresh_button_clicked              (GtkButton       *button,
 /*!
  * \brief The "Save" button is clicked.
  *
- * - check for null pointer and empty string.
- * - determine the name of the footprintwizard filename.
- * - determine the name of the footprint filename.
+ * - check for null pointer and empty string.\n
+ * - determine the name of the footprintwizard filename.\n
+ * - determine the name of the footprint filename.\n
  * - invoke the write_footprintwizard_file() to write the global variables to
  *   the footprintwizard file, with a .fpw suffix, for debugging and other
- *   (future) purposes.
+ *   (future) purposes.\n
+ * - if the footprint wizard file is written successfull change the title of
+ *   the main window with the latest filename.\n
  * - invoke the write_footprint() function to write the actual footprint
  *   file.\n
+ * - if the footprint file is written successfull reflect this in the
+ *   statusbar.\n
  */
 void
 on_save_button_clicked                 (GtkButton       *button,
@@ -1684,8 +1688,27 @@ on_save_button_clicked                 (GtkButton       *button,
                  * so add a .fp suffix */
                 footprint_filename = g_strconcat (footprint_filename, ".fp", NULL);
         }
-        write_footprintwizard_file ();
-        write_footprint ();
+        /* If the footprint wizard file is written successfull change the title of
+         * the main window with the latest filename */
+        if (write_footprintwizard_file ())
+        {
+                GtkWidget *main_window;
+                const gchar *main_window_title;
+                main_window_title = g_strconcat (_("pcb-gfpw FootPrint Wizard : "),
+                        fpw_filename, NULL);
+                main_window = lookup_widget (GTK_WIDGET (button), "pcb-gfpw");
+#if 0
+                gtk_window_set_title (GTK_WINDOW (main_window), main_window_title);
+#endif
+        }
+        /* If the footprint file is written successfull reflect this in the
+         * statusbar */
+        if (write_footprint ())
+        {
+                gchar *message = NULL;
+                message = g_strdup_printf ("Wrote footprint %s to file.", footprint_filename);
+                message_to_statusbar (button, message);
+        }
 }
 
 
