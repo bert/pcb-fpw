@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcb-fpw\n"
 "Report-Msgid-Bugs-To: bert.timmerman@xs4all.nl\n"
 "POT-Creation-Date: 2008-01-15 21:19+0100\n"
-"PO-Revision-Date: 2008-01-27 23:19+0100\n"
+"PO-Revision-Date: 2008-03-16 23:41+0100\n"
 "Last-Translator: Bert Timmerman <bert.timmerman@xs4all.nl>\n"
 "Language-Team: DUTCH LANGUAGE TEAM <bert.timmerman@xs4all.nl>\n"
 "MIME-Version: 1.0\n"
@@ -17,547 +17,951 @@ msgstr ""
 "X-Poedit-Language: Dutch\n"
 "X-Poedit-Country: NETHERLANDS\n"
 
-#. TRANSLATORS: Replace this string with your names, one name per line.
-#: src/interface.c:38
-msgid "translator-credits"
-msgstr "Bert Timmerman"
-
 #: src/interface.c:44
 msgid "pcb-gfpw"
 msgstr "pcb-gfpw"
 
 #: src/interface.c:45
-msgid "(C) 2007 Bert Timmerman."
-msgstr "(C) 2007 Bert Timmerman."
+msgid "(C) 2007, 2008 Bert Timmerman."
+msgstr "(C) 2007, 2008 Bert Timmerman."
 
 #: src/interface.c:46
-msgid "The pcb FootPrintWizard generates footprint files for pcb (see http://pcb.sourceforge.net).\n"
-msgstr "De pcb FootPrintWizard genereerd element bestanden voor pcb (zie http://pcb.sourceforge.net).\n"
+msgid ""
+"The pcb FootPrintWizard generates footprint files for pcb.\n"
+"(see http://pcb.sourceforge.net)\n"
+msgstr ""
+"De pcb FootPrintWizard genereerd element bestanden voor pcb.\n"
+"(zie http://pcb.sourceforge.net)\n"
 
 #: src/interface.c:47
-#: src/interface.c:308
-msgid "GPL"
-msgstr "GPL"
+msgid ""
+"\t\t    GNU GENERAL PUBLIC LICENSE\n"
+"\t\t       Version 2, June 1991\n"
+"\n"
+" Copyright (C) 1989, 1991 Free Software Foundation, Inc.\n"
+"     51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA\n"
+" Everyone is permitted to copy and distribute verbatim copies\n"
+" of this license document, but changing it is not allowed.\n"
+"\n"
+"\t\t\t    Preamble\n"
+"\n"
+"  The licenses for most software are designed to take away your\n"
+"freedom to share and change it.  By contrast, the GNU General Public\n"
+"License is intended to guarantee your freedom to share and change free\n"
+"software--to make sure the software is free for all its users.  This\n"
+"General Public License applies to most of the Free Software\n"
+"Foundation's software and to any other program whose authors commit to\n"
+"using it.  (Some other Free Software Foundation software is covered by\n"
+"the GNU Library General Public License instead.)  You can apply it to\n"
+"your programs, too.\n"
+"\n"
+"  When we speak of free software, we are referring to freedom, not\n"
+"price.  Our General Public Licenses are designed to make sure that you\n"
+"have the freedom to distribute copies of free software (and charge for\n"
+"this service if you wish), that you receive source code or can get it\n"
+"if you want it, that you can change the software or use pieces of it\n"
+"in new free programs; and that you know you can do these things.\n"
+"\n"
+"  To protect your rights, we need to make restrictions that forbid\n"
+"anyone to deny you these rights or to ask you to surrender the rights.\n"
+"These restrictions translate to certain responsibilities for you if you\n"
+"distribute copies of the software, or if you modify it.\n"
+"\n"
+"  For example, if you distribute copies of such a program, whether\n"
+"gratis or for a fee, you must give the recipients all the rights that\n"
+"you have.  You must make sure that they, too, receive or can get the\n"
+"source code.  And you must show them these terms so they know their\n"
+"rights.\n"
+"\n"
+"  We protect your rights with two steps: (1) copyright the software, and\n"
+"(2) offer you this license which gives you legal permission to copy,\n"
+"distribute and/or modify the software.\n"
+"\n"
+"  Also, for each author's protection and ours, we want to make certain\n"
+"that everyone understands that there is no warranty for this free\n"
+"software.  If the software is modified by someone else and passed on, we\n"
+"want its recipients to know that what they have is not the original, so\n"
+"that any problems introduced by others will not reflect on the original\n"
+"authors' reputations.\n"
+"\n"
+"  Finally, any free program is threatened constantly by software\n"
+"patents.  We wish to avoid the danger that redistributors of a free\n"
+"program will individually obtain patent licenses, in effect making the\n"
+"program proprietary.  To prevent this, we have made it clear that any\n"
+"patent must be licensed for everyone's free use or not licensed at all.\n"
+"\n"
+"  The precise terms and conditions for copying, distribution and\n"
+"modification follow.\n"
+"\n"
+"\t\t    GNU GENERAL PUBLIC LICENSE\n"
+"   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION\n"
+"\n"
+"  0. This License applies to any program or other work which contains\n"
+"a notice placed by the copyright holder saying it may be distributed\n"
+"under the terms of this General Public License.  The \"Program\", below,\n"
+"refers to any such program or work, and a \"work based on the Program\"\n"
+"means either the Program or any derivative work under copyright law:\n"
+"that is to say, a work containing the Program or a portion of it,\n"
+"either verbatim or with modifications and/or translated into another\n"
+"language.  (Hereinafter, translation is included without limitation in\n"
+"the term \"modification\".)  Each licensee is addressed as \"you\".\n"
+"\n"
+"Activities other than copying, distribution and modification are not\n"
+"covered by this License; they are outside its scope.  The act of\n"
+"running the Program is not restricted, and the output from the Program\n"
+"is covered only if its contents constitute a work based on the\n"
+"Program (independent of having been made by running the Program).\n"
+"Whether that is true depends on what the Program does.\n"
+"\n"
+"  1. You may copy and distribute verbatim copies of the Program's\n"
+"source code as you receive it, in any medium, provided that you\n"
+"conspicuously and appropriately publish on each copy an appropriate\n"
+"copyright notice and disclaimer of warranty; keep intact all the\n"
+"notices that refer to this License and to the absence of any warranty;\n"
+"and give any other recipients of the Program a copy of this License\n"
+"along with the Program.\n"
+"\n"
+"You may charge a fee for the physical act of transferring a copy, and\n"
+"you may at your option offer warranty protection in exchange for a fee.\n"
+"\n"
+"  2. You may modify your copy or copies of the Program or any portion\n"
+"of it, thus forming a work based on the Program, and copy and\n"
+"distribute such modifications or work under the terms of Section 1\n"
+"above, provided that you also meet all of these conditions:\n"
+"\n"
+"    a) You must cause the modified files to carry prominent notices\n"
+"    stating that you changed the files and the date of any change.\n"
+"\n"
+"    b) You must cause any work that you distribute or publish, that in\n"
+"    whole or in part contains or is derived from the Program or any\n"
+"    part thereof, to be licensed as a whole at no charge to all third\n"
+"    parties under the terms of this License.\n"
+"\n"
+"    c) If the modified program normally reads commands interactively\n"
+"    when run, you must cause it, when started running for such\n"
+"    interactive use in the most ordinary way, to print or display an\n"
+"    announcement including an appropriate copyright notice and a\n"
+"    notice that there is no warranty (or else, saying that you provide\n"
+"    a warranty) and that users may redistribute the program under\n"
+"    these conditions, and telling the user how to view a copy of this\n"
+"    License.  (Exception: if the Program itself is interactive but\n"
+"    does not normally print such an announcement, your work based on\n"
+"    the Program is not required to print an announcement.)\n"
+"\n"
+"These requirements apply to the modified work as a whole.  If\n"
+"identifiable sections of that work are not derived from the Program,\n"
+"and can be reasonably considered independent and separate works in\n"
+"themselves, then this License, and its terms, do not apply to those\n"
+"sections when you distribute them as separate works.  But when you\n"
+"distribute the same sections as part of a whole which is a work based\n"
+"on the Program, the distribution of the whole must be on the terms of\n"
+"this License, whose permissions for other licensees extend to the\n"
+"entire whole, and thus to each and every part regardless of who wrote it.\n"
+"\n"
+"Thus, it is not the intent of this section to claim rights or contest\n"
+"your rights to work written entirely by you; rather, the intent is to\n"
+"exercise the right to control the distribution of derivative or\n"
+"collective works based on the Program.\n"
+"\n"
+"In addition, mere aggregation of another work not based on the Program\n"
+"with the Program (or with a work based on the Program) on a volume of\n"
+"a storage or distribution medium does not bring the other work under\n"
+"the scope of this License.\n"
+"\n"
+"  3. You may copy and distribute the Program (or a work based on it,\n"
+"under Section 2) in object code or executable form under the terms of\n"
+"Sections 1 and 2 above provided that you also do one of the following:\n"
+"\n"
+"    a) Accompany it with the complete corresponding machine-readable\n"
+"    source code, which must be distributed under the terms of Sections\n"
+"    1 and 2 above on a medium customarily used for software interchange; or,\n"
+"\n"
+"    b) Accompany it with a written offer, valid for at least three\n"
+"    years, to give any third party, for a charge no more than your\n"
+"    cost of physically performing source distribution, a complete\n"
+"    machine-readable copy of the corresponding source code, to be\n"
+"    distributed under the terms of Sections 1 and 2 above on a medium\n"
+"    customarily used for software interchange; or,\n"
+"\n"
+"    c) Accompany it with the information you received as to the offer\n"
+"    to distribute corresponding source code.  (This alternative is\n"
+"    allowed only for noncommercial distribution and only if you\n"
+"    received the program in object code or executable form with such\n"
+"    an offer, in accord with Subsection b above.)\n"
+"\n"
+"The source code for a work means the preferred form of the work for\n"
+"making modifications to it.  For an executable work, complete source\n"
+"code means all the source code for all modules it contains, plus any\n"
+"associated interface definition files, plus the scripts used to\n"
+"control compilation and installation of the executable.  However, as a\n"
+"special exception, the source code distributed need not include\n"
+"anything that is normally distributed (in either source or binary\n"
+"form) with the major components (compiler, kernel, and so on) of the\n"
+"operating system on which the executable runs, unless that component\n"
+"itself accompanies the executable.\n"
+"\n"
+"If distribution of executable or object code is made by offering\n"
+"access to copy from a designated place, then offering equivalent\n"
+"access to copy the source code from the same place counts as\n"
+"distribution of the source code, even though third parties are not\n"
+"compelled to copy the source along with the object code.\n"
+"\n"
+"  4. You may not copy, modify, sublicense, or distribute the Program\n"
+"except as expressly provided under this License.  Any attempt\n"
+"otherwise to copy, modify, sublicense or distribute the Program is\n"
+"void, and will automatically terminate your rights under this License.\n"
+"However, parties who have received copies, or rights, from you under\n"
+"this License will not have their licenses terminated so long as such\n"
+"parties remain in full compliance.\n"
+"\n"
+"  5. You are not required to accept this License, since you have not\n"
+"signed it.  However, nothing else grants you permission to modify or\n"
+"distribute the Program or its derivative works.  These actions are\n"
+"prohibited by law if you do not accept this License.  Therefore, by\n"
+"modifying or distributing the Program (or any work based on the\n"
+"Program), you indicate your acceptance of this License to do so, and\n"
+"all its terms and conditions for copying, distributing or modifying\n"
+"the Program or works based on it.\n"
+"\n"
+"  6. Each time you redistribute the Program (or any work based on the\n"
+"Program), the recipient automatically receives a license from the\n"
+"original licensor to copy, distribute or modify the Program subject to\n"
+"these terms and conditions.  You may not impose any further\n"
+"restrictions on the recipients' exercise of the rights granted herein.\n"
+"You are not responsible for enforcing compliance by third parties to\n"
+"this License.\n"
+"\n"
+"  7. If, as a consequence of a court judgment or allegation of patent\n"
+"infringement or for any other reason (not limited to patent issues),\n"
+"conditions are imposed on you (whether by court order, agreement or\n"
+"otherwise) that contradict the conditions of this License, they do not\n"
+"excuse you from the conditions of this License.  If you cannot\n"
+"distribute so as to satisfy simultaneously your obligations under this\n"
+"License and any other pertinent obligations, then as a consequence you\n"
+"may not distribute the Program at all.  For example, if a patent\n"
+"license would not permit royalty-free redistribution of the Program by\n"
+"all those who receive copies directly or indirectly through you, then\n"
+"the only way you could satisfy both it and this License would be to\n"
+"refrain entirely from distribution of the Program.\n"
+"\n"
+"If any portion of this section is held invalid or unenforceable under\n"
+"any particular circumstance, the balance of the section is intended to\n"
+"apply and the section as a whole is intended to apply in other\n"
+"circumstances.\n"
+"\n"
+"It is not the purpose of this section to induce you to infringe any\n"
+"patents or other property right claims or to contest validity of any\n"
+"such claims; this section has the sole purpose of protecting the\n"
+"integrity of the free software distribution system, which is\n"
+"implemented by public license practices.  Many people have made\n"
+"generous contributions to the wide range of software distributed\n"
+"through that system in reliance on consistent application of that\n"
+"system; it is up to the author/donor to decide if he or she is willing\n"
+"to distribute software through any other system and a licensee cannot\n"
+"impose that choice.\n"
+"\n"
+"This section is intended to make thoroughly clear what is believed to\n"
+"be a consequence of the rest of this License.\n"
+"\n"
+"  8. If the distribution and/or use of the Program is restricted in\n"
+"certain countries either by patents or by copyrighted interfaces, the\n"
+"original copyright holder who places the Program under this License\n"
+"may add an explicit geographical distribution limitation excluding\n"
+"those countries, so that distribution is permitted only in or among\n"
+"countries not thus excluded.  In such case, this License incorporates\n"
+"the limitation as if written in the body of this License.\n"
+"\n"
+"  9. The Free Software Foundation may publish revised and/or new versions\n"
+"of the General Public License from time to time.  Such new versions will\n"
+"be similar in spirit to the present version, but may differ in detail to\n"
+"address new problems or concerns.\n"
+"\n"
+"Each version is given a distinguishing version number.  If the Program\n"
+"specifies a version number of this License which applies to it and \"any\n"
+"later version\", you have the option of following the terms and conditions\n"
+"either of that version or of any later version published by the Free\n"
+"Software Foundation.  If the Program does not specify a version number of\n"
+"this License, you may choose any version ever published by the Free Software\n"
+"Foundation.\n"
+"\n"
+"  10. If you wish to incorporate parts of the Program into other free\n"
+"programs whose distribution conditions are different, write to the author\n"
+"to ask for permission.  For software which is copyrighted by the Free\n"
+"Software Foundation, write to the Free Software Foundation; we sometimes\n"
+"make exceptions for this.  Our decision will be guided by the two goals\n"
+"of preserving the free status of all derivatives of our free software and\n"
+"of promoting the sharing and reuse of software generally.\n"
+"\n"
+"\t\t\t    NO WARRANTY\n"
+"\n"
+"  11. BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY\n"
+"FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN\n"
+"OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES\n"
+"PROVIDE THE PROGRAM \"AS IS\" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED\n"
+"OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF\n"
+"MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE ENTIRE RISK AS\n"
+"TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  SHOULD THE\n"
+"PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING,\n"
+"REPAIR OR CORRECTION.\n"
+"\n"
+"  12. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING\n"
+"WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR\n"
+"REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES,\n"
+"INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING\n"
+"OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED\n"
+"TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY\n"
+"YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER\n"
+"PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE\n"
+"POSSIBILITY OF SUCH DAMAGES.\n"
+"\n"
+"\t\t     END OF TERMS AND CONDITIONS\n"
+"\n"
+"\t    How to Apply These Terms to Your New Programs\n"
+"\n"
+"  If you develop a new program, and you want it to be of the greatest\n"
+"possible use to the public, the best way to achieve this is to make it\n"
+"free software which everyone can redistribute and change under these terms.\n"
+"\n"
+"  To do so, attach the following notices to the program.  It is safest\n"
+"to attach them to the start of each source file to most effectively\n"
+"convey the exclusion of warranty; and each file should have at least\n"
+"the \"copyright\" line and a pointer to where the full notice is found.\n"
+"\n"
+"    <one line to give the program's name and a brief idea of what it does.>\n"
+"    Copyright (C) <year>  <name of author>\n"
+"\n"
+"    This program is free software; you can redistribute it and/or modify\n"
+"    it under the terms of the GNU General Public License as published by\n"
+"    the Free Software Foundation; either version 2 of the License, or\n"
+"    (at your option) any later version.\n"
+"\n"
+"    This program is distributed in the hope that it will be useful,\n"
+"    but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+"    GNU General Public License for more details.\n"
+"\n"
+"    You should have received a copy of the GNU General Public License\n"
+"    along with this program; if not, write to the Free Software\n"
+"    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA\n"
+"\n"
+"\n"
+"Also add information on how to contact you by electronic and paper mail.\n"
+"\n"
+"If the program is interactive, make it output a short notice like this\n"
+"when it starts in an interactive mode:\n"
+"\n"
+"    Gnomovision version 69, Copyright (C) year  name of author\n"
+"    Gnomovision comes with ABSOLUTELY NO WARRANTY; for details type `show w'.\n"
+"    This is free software, and you are welcome to redistribute it\n"
+"    under certain conditions; type `show c' for details.\n"
+"\n"
+"The hypothetical commands `show w' and `show c' should show the appropriate\n"
+"parts of the General Public License.  Of course, the commands you use may\n"
+"be called something other than `show w' and `show c'; they could even be\n"
+"mouse-clicks or menu items--whatever suits your program.\n"
+"\n"
+"You should also get your employer (if you work as a programmer) or your\n"
+"school, if any, to sign a \"copyright disclaimer\" for the program, if\n"
+"necessary.  Here is a sample; alter the names:\n"
+"\n"
+"  Yoyodyne, Inc., hereby disclaims all copyright interest in the program\n"
+"  `Gnomovision' (which makes passes at compilers) written by James Hacker.\n"
+"\n"
+"  <signature of Ty Coon>, 1 April 1989\n"
+"  Ty Coon, President of Vice\n"
+"\n"
+"This General Public License does not permit incorporating your program into\n"
+"proprietary programs.  If your program is a subroutine library, you may\n"
+"consider it more useful to permit linking proprietary applications with the\n"
+"library.  If this is what you want to do, use the GNU Library General\n"
+"Public License instead of this License.\n"
+msgstr ""
 
-#: src/interface.c:224
+#: src/interface.c:226
 msgid "FootPrintWizard for pcb footprints"
 msgstr "FootPrintWizard voor pcb elementen"
 
-#: src/interface.c:225
-msgid "pcb-gfpw FootPrintWizard"
+#: src/interface.c:227
+msgid "pcb-gfpw FootPrint Wizard"
 msgstr "pcb-gfpw FootPrintWizard"
 
-#: src/interface.c:276
+#: src/interface.c:279
 msgid "Author"
 msgstr "Auteur"
 
-#: src/interface.c:284
+#: src/interface.c:287
 msgid "Distribution license "
 msgstr "Distributie licentie"
 
-#: src/interface.c:298
+#: src/interface.c:301
 msgid "Type your name here"
 msgstr "Tik je naam hier in"
 
-#: src/interface.c:307
+#: src/interface.c:310
 msgid "License under which you distribute the file"
 msgstr "Licentie waaronder het bestand gedistribueerd wordt"
 
-#: src/interface.c:317
+#: src/interface.c:311
+msgid "GPL"
+msgstr "GPL"
+
+#: src/interface.c:320
 msgid "Allowable usage"
 msgstr "Toegestaan gebruik"
 
-#: src/interface.c:318
+#: src/interface.c:321
 msgid "unlimited"
 msgstr "onbeperkt"
 
-#: src/interface.c:321
+#: src/interface.c:324
 msgid "Use license"
 msgstr "Gebruik licentie"
 
-#: src/interface.c:329
+#: src/interface.c:332
 msgid "Status"
 msgstr "Status"
 
-#: src/interface.c:344
+#: src/interface.c:347
 msgid "Experimental"
 msgstr "Experimenteel"
 
-#: src/interface.c:345
+#: src/interface.c:348
 msgid "Private (not published)"
 msgstr "Prive (niet gepubliceerd)"
 
-#: src/interface.c:346
+#: src/interface.c:349
 msgid "Public (released)"
 msgstr "Publiek (vrijgegeven)"
 
-#: src/interface.c:347
+#: src/interface.c:350
 msgid "Confirmed by peers (stable)"
 msgstr "Bevestigd door vakgenoten (stabiel)"
 
-#: src/interface.c:349
+#: src/interface.c:352
 msgid "<b>Author</b>"
 msgstr "<b>Auteur</b>"
 
-#: src/interface.c:374
-msgid "Name"
-msgstr "Naam"
-
-#: src/interface.c:388
-msgid "Type the name of the footprint here, no suffix please"
-msgstr "Type de naam van het element hier, geen achtervoegsel graag"
-
-#: src/interface.c:391
-msgid "Type"
-msgstr "Type"
-
-#: src/interface.c:399
+#: src/interface.c:377
 msgid "Units"
 msgstr "Eenheden"
 
-#: src/interface.c:414
-msgid "BGA"
-msgstr "BGA"
-
-#: src/interface.c:415
-msgid "CAPC"
-msgstr "CAPC"
-
-#: src/interface.c:416
-msgid "CAPM"
-msgstr "CAPM"
-
-#: src/interface.c:417
-msgid "CAPMP"
-msgstr "CAPMP"
-
-#: src/interface.c:418
-msgid "DIOM"
-msgstr "DIOM"
-
-#: src/interface.c:419
-msgid "INDC"
-msgstr "INDC"
-
-#: src/interface.c:420
-msgid "INDM"
-msgstr "INDM"
-
-#: src/interface.c:421
-msgid "RESC"
-msgstr "RESC"
-
-#: src/interface.c:422
-msgid "RESM"
-msgstr "RESM"
-
-#: src/interface.c:423
-msgid "TO92"
-msgstr "TO92"
-
-#: src/interface.c:424
-msgid "TO220"
-msgstr "TO220"
-
-#: src/interface.c:433
+#: src/interface.c:392
 msgid "mil"
 msgstr "mil"
 
-#: src/interface.c:434
+#: src/interface.c:393
 msgid "mil/100"
 msgstr "mil/100"
 
-#: src/interface.c:435
+#: src/interface.c:394
 msgid "mm"
 msgstr "mm"
 
-#: src/interface.c:437
+#: src/interface.c:396
 msgid "Radial package "
 msgstr "Radiale behuizing"
 
-#: src/interface.c:443
+#: src/interface.c:402
 msgid "Check for a radial package"
 msgstr "Vink voor radiale behuizing"
 
-#: src/interface.c:445
+#: src/interface.c:404
 msgid "Body height (Z) "
 msgstr "Behuizing hoogte (Z)"
 
-#: src/interface.c:453
+#: src/interface.c:412
 msgid "Body width (Y)"
 msgstr "Behuizing breedte (Y)"
 
-#: src/interface.c:461
+#: src/interface.c:420
 msgid "Body length (X)"
 msgstr "Behuizing lengte (X)"
 
-#: src/interface.c:475
+#: src/interface.c:434
 msgid "Type the height dimension of the package body here"
 msgstr "Type de hoogtemaat van de behuizing hier in"
 
-#: src/interface.c:484
+#: src/interface.c:443
 msgid "Type the width dimension of the package body here"
 msgstr "Type de breedtemaat van de behuizing hier in"
 
-#: src/interface.c:493
+#: src/interface.c:452
 msgid "Type the length dimension of the package body here"
 msgstr "Type de lengtemaat van de behuizing hier in"
 
-#: src/interface.c:496
+#: src/interface.c:455
 msgid "Value"
 msgstr "Waarde"
 
-#: src/interface.c:510
+#: src/interface.c:469
 msgid "Type the value of the package here"
 msgstr "Type de waarde voor de behuizing hier"
 
-#: src/interface.c:513
+#: src/interface.c:478
+msgid "Type the name of the footprint here, no suffix please"
+msgstr "Type de naam van het element hier, geen achtervoegsel graag"
+
+#: src/interface.c:488
+msgid "BGA"
+msgstr "BGA"
+
+#: src/interface.c:489
+msgid "CAPC"
+msgstr "CAPC"
+
+#: src/interface.c:490
+msgid "CAPM"
+msgstr "CAPM"
+
+#: src/interface.c:491
+msgid "CAPMP"
+msgstr "CAPMP"
+
+#: src/interface.c:492
+msgid "DIL"
+msgstr "DIL"
+
+#: src/interface.c:493
+msgid "DIOM"
+msgstr "DIOM"
+
+#: src/interface.c:494
+msgid "DIP"
+msgstr "DIP"
+
+#: src/interface.c:495
+msgid "INDC"
+msgstr "INDC"
+
+#: src/interface.c:496
+msgid "INDM"
+msgstr "INDM"
+
+#: src/interface.c:497
+msgid "RESC"
+msgstr "RESC"
+
+#: src/interface.c:498
+msgid "RESM"
+msgstr "RESM"
+
+#: src/interface.c:499
+msgid "TO92"
+msgstr "TO92"
+
+#: src/interface.c:500
+msgid "TO220"
+msgstr "TO220"
+
+#: src/interface.c:502
+msgid "Type"
+msgstr "Type"
+
+#: src/interface.c:510
+msgid "Name"
+msgstr "Naam"
+
+#: src/interface.c:518
 msgid "<b>Footprint</b>"
 msgstr "<b>Element</b>"
 
-#: src/interface.c:519
+#: src/interface.c:524
 msgid "Footprint"
 msgstr "Element"
 
-#: src/interface.c:551
-msgid "Pad length (X) "
-msgstr "Pad lengte (X)"
-
-#: src/interface.c:559
-#: src/interface.c:921
-msgid "Pad width (Y)"
-msgstr "Pad breedte (Y)"
-
-#: src/interface.c:573
-msgid "Length of pads or diameter of pins"
-msgstr "Lngte van pads of diameter van oins"
-
-#: src/interface.c:582
-msgid "Width of pads"
-msgstr "Breedte van pads"
-
-#: src/interface.c:585
-msgid "<b>Pads</b>"
-msgstr "<b>Pads</b>"
-
-#: src/interface.c:610
-msgid "Pad clearance"
-msgstr "Pad vrijloop"
-
-#: src/interface.c:618
-#: src/interface.c:955
+#: src/interface.c:557
+#: src/interface.c:971
 msgid "Pad solder mask clearance "
 msgstr "Pad soldeer masker vrijloop"
 
-#: src/interface.c:632
-#: src/interface.c:986
-msgid "Clearance distance with polygons"
-msgstr "Vrijloop afstand met polygonen"
-
-#: src/interface.c:641
-#: src/interface.c:977
+#: src/interface.c:571
+#: src/interface.c:993
 msgid "Clearance distance with solder mask"
 msgstr "Vrijloopafstand met soldeermasker"
 
-#: src/interface.c:644
-msgid "<b>Clearances</b>"
-msgstr "<b>Vrijlopen</b>"
+#: src/interface.c:574
+msgid "Pad clearance"
+msgstr "Pad vrijloop"
 
-#: src/interface.c:675
-#: src/interface.c:692
-msgid "Diameter of drill hole for pins"
-msgstr "Diameter van boorgaten voor pennen"
+#: src/interface.c:582
+#: src/interface.c:937
+msgid "Pad width (Y)"
+msgstr "Pad breedte (Y)"
 
-#: src/interface.c:678
-msgid "Pin drill diameter (d) "
-msgstr "Pen boordiameter (d)"
+#: src/interface.c:590
+msgid "Pad length (X) "
+msgstr "Pad lengte (X)"
 
-#: src/interface.c:695
-msgid "Pad diameter (D) "
-msgstr "Pad diameter (D)"
+#: src/interface.c:604
+#: src/interface.c:1002
+msgid "Clearance distance with polygons"
+msgstr "Vrijloop afstand met polygonen"
 
-#: src/interface.c:703
-msgid "Pin #1 square "
-msgstr "Pen nummer 1 vierkant"
+#: src/interface.c:613
+msgid "Width of pads"
+msgstr "Breedte van pads"
 
-#: src/interface.c:709
-#: src/interface.c:1158
-msgid "Check to draw indicator for pin/pad #1"
-msgstr "Markeer om een indicator voor pen/pad #1 te tekenen"
+#: src/interface.c:622
+msgid "Length of pads"
+msgstr "Lengte van pads"
 
-#: src/interface.c:711
-msgid "<b>Pins</b>"
-msgstr "<b>Pennen</b>"
+#: src/interface.c:625
+msgid "Pad shape"
+msgstr "Pad vorm"
 
-#: src/interface.c:736
-msgid "Total pins and pads "
-msgstr "Totaal van pennen en pads"
-
-#: src/interface.c:744
-msgid "Rows"
-msgstr "Rijen"
-
-#: src/interface.c:752
-msgid "Columns"
-msgstr "Kolommen"
-
-#: src/interface.c:760
-msgid "Pitch (X)"
-msgstr "Steek (X)"
-
-#: src/interface.c:768
-msgid "Pitch (Y)"
-msgstr "Steek (Y)"
-
-#: src/interface.c:776
-msgid "Shape"
-msgstr "Vorm"
-
-#: src/interface.c:784
-msgid "Pin/pad #1 position "
-msgstr "Pen/pad #1 positie"
-
-#: src/interface.c:798
-msgid "Total number of pins and pads"
-msgstr "Totaal aantal van pennen en pads"
-
-#: src/interface.c:807
-msgid "Number of rows"
-msgstr "Aantal rijen"
-
-#: src/interface.c:816
-msgid "Number of columns"
-msgstr "Aantal kolommen"
-
-#: src/interface.c:825
-msgid "Vertical pin/pad pitch"
-msgstr "Verticale pen/pad steek"
-
-#: src/interface.c:834
-msgid "Horizontal pin/pad pitch"
-msgstr "Horizontale pen/pad steek"
-
-#: src/interface.c:844
+#: src/interface.c:640
 msgid "circular pad"
 msgstr "rond pad"
 
-#: src/interface.c:845
+#: src/interface.c:641
 msgid "rectangular pad"
 msgstr "rechthoekig pad"
 
-#: src/interface.c:846
+#: src/interface.c:642
 msgid "octagonal pad"
 msgstr "achthoekig pad"
 
-#: src/interface.c:847
+#: src/interface.c:643
 msgid "rounded pad, elongated"
 msgstr "afgerond pad, langwerpig"
 
-#: src/interface.c:856
+#: src/interface.c:645
+msgid "<b>Pads</b>"
+msgstr "<b>Pads</b>"
+
+#: src/interface.c:676
+msgid "Diameter of pad for pins"
+msgstr "Diameter van pad voor pennen"
+
+#: src/interface.c:679
+msgid "Pin drill diameter (d) "
+msgstr "Pen boordiameter (d)"
+
+#: src/interface.c:687
+msgid "Pin pad diameter (D) "
+msgstr "Pin Pad diameter (D)"
+
+#: src/interface.c:695
+msgid "Pin #1 square "
+msgstr "Pen nummer 1 vierkant"
+
+#: src/interface.c:701
+msgid "Check to draw square pin #1"
+msgstr "Markeer om een pen/pad #1 vierkant te tekenen"
+
+#: src/interface.c:710
+msgid "Diameter of drill hole for pins"
+msgstr "Diameter van boorgaten voor pennen"
+
+#: src/interface.c:713
+msgid "<b>Pins</b>"
+msgstr "<b>Pennen</b>"
+
+#: src/interface.c:738
+msgid "Total pins and pads "
+msgstr "Totaal van pennen en pads"
+
+#: src/interface.c:746
+msgid "Rows"
+msgstr "Rijen"
+
+#: src/interface.c:754
+msgid "Columns"
+msgstr "Kolommen"
+
+#: src/interface.c:762
+msgid "Pitch X-direction"
+msgstr "Steek in de X-richting"
+
+#: src/interface.c:770
+msgid "Pitch Y-direction"
+msgstr "Steek in de Y-richting"
+
+#: src/interface.c:784
+msgid "Total number of pins and pads"
+msgstr "Totaal aantal van pennen en pads"
+
+#: src/interface.c:793
+msgid "Number of rows"
+msgstr "Aantal rijen"
+
+#: src/interface.c:802
+msgid "Number of columns"
+msgstr "Aantal kolommen"
+
+#: src/interface.c:811
+msgid "Horizontal pin/pad pitch"
+msgstr "Horizontale pen/pad steek"
+
+#: src/interface.c:820
+msgid "Vertical pin/pad pitch"
+msgstr "Verticale pen/pad steek"
+
+#: src/interface.c:823
+msgid "Count X-direction"
+msgstr "Aantal in de X-richting"
+
+#: src/interface.c:831
+msgid "Count Y-direction"
+msgstr "Aantal in de Y-richting"
+
+#: src/interface.c:845
+msgid "Number of horizontal pin/pads"
+msgstr "Aantal horizontale pennen/pads"
+
+#: src/interface.c:854
+msgid "Number of vertical pin/pads"
+msgstr "Aantal verticale pennen/pads"
+
+#: src/interface.c:857
+msgid "Pin/pad #1 position "
+msgstr "Pen/pad #1 positie"
+
+#: src/interface.c:872
 msgid "Upper left"
 msgstr "Boven links"
 
-#: src/interface.c:857
+#: src/interface.c:873
 msgid "Middle left"
 msgstr "Midden links"
 
-#: src/interface.c:858
+#: src/interface.c:874
 msgid "Lower left"
 msgstr "Onder links"
 
-#: src/interface.c:859
+#: src/interface.c:875
 msgid "Upper middle"
 msgstr "Boven midden"
 
-#: src/interface.c:860
+#: src/interface.c:876
 msgid "Middle middle"
 msgstr "Midden midden"
 
-#: src/interface.c:861
+#: src/interface.c:877
 msgid "Lower middle"
 msgstr "Onder midden"
 
-#: src/interface.c:862
+#: src/interface.c:878
 msgid "Upper right"
 msgstr "Boven rechts"
 
-#: src/interface.c:863
+#: src/interface.c:879
 msgid "Middle right"
 msgstr "Midden rechts"
 
-#: src/interface.c:864
+#: src/interface.c:880
 msgid "Lower right"
 msgstr "Onder rechts"
 
-#: src/interface.c:865
+#: src/interface.c:881
 msgid " "
 msgstr " "
 
-#: src/interface.c:867
-msgid "<b>Common</b>"
-msgstr "<b>Algemeen</b>"
+#: src/interface.c:883
+msgid "<b>Pattern</b>"
+msgstr "<b>Patroon</b>"
 
-#: src/interface.c:873
+#: src/interface.c:889
 msgid "Pins/Pads"
 msgstr "Pennen/Pads"
 
-#: src/interface.c:905
-#: src/interface.c:995
+#: src/interface.c:921
+#: src/interface.c:1011
 msgid "Thermal pad"
 msgstr "Thermisch pad"
 
-#: src/interface.c:911
+#: src/interface.c:927
 msgid "Check for a thermal pad"
 msgstr "Markeer voor een thermisch pad"
 
-#: src/interface.c:913
+#: src/interface.c:929
 msgid "Pad length (X)"
 msgstr "Pad lengte (X)"
 
-#: src/interface.c:935
+#: src/interface.c:951
 msgid "Width of thermal pad"
 msgstr "Breedte van het thermische pad"
 
-#: src/interface.c:944
+#: src/interface.c:960
 msgid "Length of thermal pad"
 msgstr "Lengte van het thermische pad"
 
-#: src/interface.c:947
+#: src/interface.c:963
 msgid "No paste on pad"
 msgstr "Geen pasta on pad"
 
-#: src/interface.c:953
+#: src/interface.c:969
 msgid "Check for no paste on pad"
 msgstr "Markeer voor geen pasta op pad"
 
-#: src/interface.c:963
+#: src/interface.c:979
 msgid "Pad Clearance "
 msgstr "Pad vrijloop"
 
-#: src/interface.c:989
+#: src/interface.c:1005
 msgid "<b>Thermal pad</b>"
 msgstr "<b>Thermisch pad</b>"
 
-#: src/interface.c:1027
+#: src/interface.c:1044
 msgid "Print courtyard "
 msgstr "Druk de omheining af"
 
-#: src/interface.c:1033
+#: src/interface.c:1050
 msgid "Check to draw a courtyard (keepout)"
 msgstr "Markeer om een omheining (afscherming) te tekenen"
 
-#: src/interface.c:1035
+#: src/interface.c:1052
 msgid "Width (Y)"
 msgstr "Breedte (Y)"
 
-#: src/interface.c:1043
+#: src/interface.c:1060
 msgid "Length or diameter (X) "
 msgstr "Lengte of Diameter (X)"
 
-#: src/interface.c:1057
+#: src/interface.c:1074
 msgid "Length of courtyard"
 msgstr "Lengte van de omheining"
 
-#: src/interface.c:1066
+#: src/interface.c:1083
 msgid "Width of courtyard"
 msgstr "Breedte van de omheining"
 
-#: src/interface.c:1069
-#: src/interface.c:1127
+#: src/interface.c:1086
+#: src/interface.c:1161
 msgid "Line width"
 msgstr "Lijndikte"
 
-#: src/interface.c:1083
+#: src/interface.c:1100
 msgid "Line width for courtyard"
 msgstr "Lijndikte voor omheining"
 
-#: src/interface.c:1086
+#: src/interface.c:1103
 msgid "Clearance with package "
 msgstr "Vrijloop met behuizing"
 
-#: src/interface.c:1102
+#: src/interface.c:1117
+msgid "Clearance distance with package"
+msgstr "Vrijloop afstand met behuizing"
+
+#: src/interface.c:1120
 msgid "<b>Courtyard</b>"
 msgstr "<b>Omheining</b>"
 
-#: src/interface.c:1141
-msgid "Line width for silkscreen"
-msgstr "Lijndikte voor opdruk"
-
-#: src/interface.c:1144
+#: src/interface.c:1145
 msgid "Print package outline "
 msgstr "Druk behuizing omtrek af"
 
-#: src/interface.c:1150
+#: src/interface.c:1151
 msgid "Check to draw package outline"
 msgstr "Markeer om behuizing omtrek te tekenen"
 
-#: src/interface.c:1152
+#: src/interface.c:1153
 msgid "Pin/Pad #1 indicator "
 msgstr "Pen/Pad #1 indicator"
 
-#: src/interface.c:1160
-msgid "<b>Silkscreen</b>"
-msgstr "<b>Opdruk</b>"
+#: src/interface.c:1159
+msgid "Check to draw indicator for pin/pad #1"
+msgstr "Markeer om een indicator voor pen/pad #1 te tekenen"
 
-#: src/interface.c:1166
+#: src/interface.c:1175
+msgid "Line width for silkscreen"
+msgstr "Lijndikte voor opdruk"
+
+#: src/interface.c:1178
+msgid "<b>Package</b>"
+msgstr "<b>Behuizing</b>"
+
+#: src/interface.c:1184
 msgid "Silkscreen"
 msgstr "Opdruk"
 
-#: src/interface.c:1209
+#: src/interface.c:1211
 msgid "Inner-Inner (G1)"
 msgstr "Binnen-Binnen (G1)"
 
-#: src/interface.c:1218
+#: src/interface.c:1220
 msgid "Center-Center (C1)"
 msgstr "Hartlijn-Hartijn (C1)"
 
-#: src/interface.c:1228
+#: src/interface.c:1230
 msgid "Outer-Outer (Z1)"
 msgstr "Buiten-Buiten (Z1)"
 
 #: src/interface.c:1245
+msgid "Top to bottom inner distance between pads"
+msgstr ""
+
+#: src/interface.c:1254
+msgid "Top to bottom center distance between pads"
+msgstr ""
+
+#: src/interface.c:1263
+msgid "Top to bottom outer distance between pads"
+msgstr ""
+
+#: src/interface.c:1266
 msgid "<b>Top to Bottom</b>"
 msgstr "<b>Boven naar Onder</b>"
 
-#: src/interface.c:1292
+#: src/interface.c:1289
 msgid "Inner-Inner (G2)"
 msgstr "Binnen-Binnen (G2)"
 
-#: src/interface.c:1301
+#: src/interface.c:1298
 msgid "Center-Center (C2)"
 msgstr "Hartlijn-Hartlijn (C2)"
 
-#: src/interface.c:1311
+#: src/interface.c:1308
 msgid "Outer-Outer (Z2)"
 msgstr "Buiten-Buiten (Z2)"
 
-#: src/interface.c:1320
+#: src/interface.c:1323
+msgid "Left to right inner distance between pads"
+msgstr ""
+
+#: src/interface.c:1332
+msgid "Left to right center distance between pads"
+msgstr ""
+
+#: src/interface.c:1341
+msgid "Left to right outer distance between pads"
+msgstr ""
+
+#: src/interface.c:1344
 msgid "<b>Left to Right</b>"
 msgstr "<b>Links naar Rechts</b>"
 
-#: src/interface.c:1326
+#: src/interface.c:1350
 msgid "Heel & Toe goals"
 msgstr "Hiel & Teen doelen"
 
-#: src/interface.c:1349
+#: src/interface.c:1373
 msgid "<b>Preview</b>"
 msgstr "<b>Voorvertoning</b>"
 
-#: src/interface.c:1367
+#: src/interface.c:1391
 msgid "Click the Close button to exit"
 msgstr "Klik de Afsluiten knop om af te sluiten"
 
-#: src/interface.c:1374
-msgid "Click the Clear button to reset the entries to the default"
-msgstr "Klik op de Wissen knop om alle invoervakken op de beginwaarde te zetten"
+#: src/interface.c:1398
+msgid "Click the Clear button to clear all entries"
+msgstr "Klik op de Wissen knop om alle invoervakken leeg te maken"
 
-#: src/interface.c:1381
+#: src/interface.c:1405
+msgid "Click the Open button to read an existing footprint file"
+msgstr "Klik op de Open knop om een element te laden"
+
+#: src/interface.c:1412
 msgid "Click the Save button to write the footprint file"
 msgstr "Klik op de Opslaan knop om het element op te slaan"
 
-#: src/interface.c:1388
-msgid "Click the Refresh button to refresh the preview widget"
+#: src/interface.c:1419
+msgid "Click on the refresh button to refresh the preview"
 msgstr "Klik op de Ververs knop om de voorvertoning te verversen"
+
+#: src/interface.c:1774
+msgid "pcb-gfpw: choose a .fpw file"
+msgstr "pcb-gfpw: kies een .fpw bestand"
 
 #: src/support.c:90
 #: src/support.c:114
