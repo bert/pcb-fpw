@@ -1,0 +1,1306 @@
+commit 7bed62a5825e616ba14b601154595a4b2a8678ba
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Mar 19 07:47:17 2008 +0100
+
+    Bumped the copyright to 2008.
+
+commit 1cc3b447070ff0db95b9e07de3aa64f5915673cc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Mar 19 07:45:59 2008 +0100
+
+    Updated the Dutch translation.
+
+commit 59e4e6dce0c3ca4dd6ebfe0d45a409885e09cc74
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Mar 19 07:42:15 2008 +0100
+
+    Added a statusbar message in on_save_button_clicked().
+    Added a title to main window after saving file.
+    
+    - if the footprint wizard file is written successfull
+      change the title of the main window with the latest
+      filename.
+    - if the footprint file is written successfull reflect
+      this in the statusbar.
+
+commit 04f3c8c50a34bcfa045cd56bb84cf02503421bc5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Mar 18 23:20:42 2008 +0100
+
+    Corrected a typo.
+
+commit 5f25d8d70d9c3b9f927da1948eff467575046b18
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 16 23:10:27 2008 +0100
+
+    Moved package type selection from write_footprint() to
+    on_footprint_type_entry_changed().
+
+commit 770c364aa513190cc2a70f07019850e547e0ceb0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 16 23:08:12 2008 +0100
+
+    Moved package selection from write_footprint()
+    to fpw.
+
+commit a5c5d36c58ffc199694b0675df2cd5742b904aa3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 16 23:06:26 2008 +0100
+
+    Rewrote write_footprint() from scratch.
+
+commit 01b70b07fb966ad4b32aba496b1ee9e03f7ad04f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 16 14:17:47 2008 +0100
+
+    Added testing for null pointer and empty string to
+    on_pad_shape_entry_changed.
+    Added determination of the pad shape type.
+
+commit 8347acea70e49152bac4c127241e5f3c1e53823c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 16 14:15:34 2008 +0100
+
+    Work in progress.
+    
+    - Moved the determination of the footprint units inside main()
+      to a more appropriate place after testing for null pointer
+      and empty string.
+    - Changed error messages slightly.
+    - Inserted testing for null pointer or empty string on pad shape
+      string.
+    - Changed some comments.
+    - added determination of the pad shape.
+
+commit 07e05d67bc3a2c4aef9b428ee352b626b59cf29c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 16 12:50:15 2008 +0100
+
+    Moved the determination of the pad shape from write_footprint() to
+    on_pad_shape_entry_changed().
+
+commit 59e60cd26ddfa3d01a6957f31d0421d79151aaad
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 16 11:21:19 2008 +0100
+
+    Corrected a typo.
+
+commit 645edcf75b543883a4451a042195008a0189df6d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 16 10:32:14 2008 +0100
+
+    Added testing for a valid footprint name.
+    Changed the order of testing for footprint units.
+
+commit 5df7a13b710bed54c998dfcd3d211dddf45bc28c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 16 08:13:05 2008 +0100
+
+    Added calculation for total number of pins/pads.
+    
+    When the number of columns/rows or the count in
+    the X/Y direction change or the thermal checkbox
+    is toggled, the total number of pins/pads is
+    calulated and set in the "total number of pins/pads"
+    entry.
+
+commit 33277760eb773d4123ee15f88ffcbefd4e6bde0a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 15 18:55:54 2008 +0100
+
+    Syntax on testing the footprint units now debugged.
+
+commit b5a74a94593317c7f2b1ee7c288e69a37d632d88
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 15 17:47:47 2008 +0100
+
+    Moved determination of the multiplier based upon the units type
+    from write_footprint() to on_footprint_units_entry_changed().
+    
+    Added message to statusbar if unknown units type is entered.
+
+commit 50a71d8fa0677d41e76b5ff4f571c9acd5fde3e2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 15 15:27:24 2008 +0100
+
+    Changed the syntax on testing the footprint units to be better
+    readable.
+
+commit 8b3f089e40f9927c1606d58d5170fe3a7704af84
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 15 15:22:47 2008 +0100
+
+    Set "number of total pins and pads" entry to insensitive
+    during startup.
+    
+    Set the initial state of the total pins and pads entry
+    to insensitive.
+    The entry is to be used as a label for most packages as
+    the total amount of pins and pads can be caluculated.
+    However for some packages it might be needed to set a
+    value here.
+
+commit a8d33256f5c9502481b3f86c298bb5a2ef2b8a97
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Mar 12 19:34:02 2008 +0100
+
+    Changed the copying on footprint type into the footprint name entry.
+    
+    Test if the existing footprint name is equal to the footprint
+    type or is empty or has a null pointer, if this is true the user
+    did not add any characters to the footprint name yet (he/she
+    probably made up his/her mind on the footprint type), so we can
+    safely copy the new footprint type into the footprint name entry.
+
+commit 096745fd9ac4f0dc47b6b85b2d9815ba1f2c6b56
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Mar 11 20:32:18 2008 +0100
+
+    In on_save_button_clicked() removed a return to get the fp and fpw written.
+
+commit eb660edfd6533676eb05b18eb355687fc3ea7522
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Mar 11 19:44:21 2008 +0100
+
+    Added a file filter to the file chooser
+    in on_open_button_clicked().
+
+commit 843f3fdfc7ec5ec5c06fdb3e323f4ec3bbaaeac9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Mar 11 19:24:38 2008 +0100
+
+    Minor changes to comments.
+
+commit 72001d464696b43e801cd2e3c3d11e84daa6e4a5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Mar 11 19:19:09 2008 +0100
+
+    In on_footprint_type_entry_changed(): Test the footprint name
+    for a null pointer or an empty string and if so, copy the
+    footprint type into the footprint name entry.
+
+commit 1d4797c05c32f8a649fef2d9f30f5cb43989ed45
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Mar 11 18:53:24 2008 +0100
+
+    Changes on comments in on_save_button_clicked().
+
+commit d304a5953e74c5e4496ab82f48a3d814dfba04e9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Mar 11 18:51:40 2008 +0100
+
+    Added error checking to on_footprint_name_entry_changed().
+
+commit 8b5e2e30c01be20a0f34a768c2e49ce0d0fcefa3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Mar 11 18:46:26 2008 +0100
+
+    Changes on error checking in on_save_button_clicked().
+
+commit 4c180623f3594ec059e94a85b5dad80c46817b9a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Mar 11 18:23:24 2008 +0100
+
+    Added error checking to on_footprint_units_entry_changed().
+
+commit 3f4e9fafb67e05803ac64fde185e196a40965887
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Mar 11 17:27:44 2008 +0100
+
+    Major cleanup.
+    
+    - removed obsolete forward declarations
+      (double/triple copies).
+    - removed white-space bloat.
+    - reordered function declarations by alphabetical order.
+
+commit e9c9a5eee74422d693d84148a4b542bf47543090
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Mar 11 16:06:36 2008 +0100
+
+    Removed obsolete "file activated" callback signal from
+    the file chooser.
+    Added "update preview" callback signal to the filechooser
+    for future use.
+
+commit 4c5f18e2752f0b0107f27d36adf3c9a62aae83c2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Mar 11 16:05:00 2008 +0100
+
+    Removed shadow outline from frames.
+    
+    - moved footprint type entry over footprint name entry.
+    - removed obsolete "file activated" callback signal from
+      the file chooser.
+    - added "update preview" callback signal to the filechooser
+      for future use.
+    - increased row spacing between frames from 0 to 10.
+
+commit 47f43e7459a60b1338dca0d0bacee58ab730d44c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Mar 11 16:03:15 2008 +0100
+
+    Moved footprint type entry over footprint name entry.
+
+commit 8d0d3cf10cfd04053a6a212e10731e33c789d9d6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Mar 11 15:12:04 2008 +0100
+
+    Removed shadow outline from frames.
+    
+    - changed footprint type entry over footprint name entry.
+    - removed obsolete "file activated" callback signal from
+      the file chooser.
+    - added "update preview" callback signal to the filechooser
+      for future use.
+    - increased row spacing between frames from 0 to 10.
+
+commit 6c3712145f75ab1fc233a0071ccc132ac5dc59c8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Mar 11 08:05:00 2008 +0100
+
+    Reordered functions of filechooser dialog in alphabettical order.
+
+commit cd16fde99c4ca657ac1acc164dea07eea76e02f6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Mar 10 23:00:05 2008 +0100
+
+    Added code to callback functions on_filechooser_dialog_current_folder_changed()
+    and on_filechooser_dialog_open_button_clicked.
+
+commit c9ce06e95f9877093b5563b7386f0d9d78c359a0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Mar 10 22:23:44 2008 +0100
+
+    Added temp_dir and work_dir variables.
+
+commit 633b9a7be1734053ca88af5312d0a82cf4bb3b5d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Mar 10 20:43:55 2008 +0100
+
+    Added Count X-direction and Count Y-direction
+    to the file format of the footprintwizard.
+    
+    - Added count_x to read_footprintwizard_file().
+    - Added count_y to read_footprintwizard_file().
+    - Added count_x to write_footprintwizard_file().
+    - Added count_y to write_footprintwizard_file().
+
+commit 6a9b77db4527b28d43386f7e73bd1487543fdce5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Mar 10 20:35:00 2008 +0100
+
+    Added a message_to_statusbar() function.
+    
+    - Added a message_to_statusbar() function.
+    - Moved a doxygen todo comment to main.c.
+    - Error messages in on_save_button_clicked() are
+      now pushed on the statusbar.
+    - Changed comments in on_save_button_clicked().
+
+commit f1a441daa724ee8b7df043d289aaba3be6434a28
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Mar 10 20:29:59 2008 +0100
+
+    Work in progress.
+    
+    - Changed comment for enum packages.
+    - In enum packages changed NUMBER_OF_PACKAGES
+      to NUMBER_OF_PACKAGE_TYPES.
+    - In function write_footprint() error messages are
+      now send to stderr (was stdout).
+
+commit d381795cc8c63a5fa614a8b1d61c1bb6ba295fc9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 9 10:06:46 2008 +0100
+
+    fpw now knows it's not a GUI.
+    
+    - Bumped the copyright notice to 2008.
+    - Added a variable for discriminating the UI.
+    - Cleaned up some obsolete doxygen comments.
+
+commit c0fa18412a2e5998f4c46fb2dfff5acbc07626c3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 9 10:02:47 2008 +0100
+
+    Changed doxygen todo comments.
+    
+    - Statusbar implemented.
+    - Menubar usability is to be discussed.
+    - Reading values from footprintwizard files should
+      be implemented.
+
+commit ebc9ce902b37cfc63b0dc3ee6e03961d81fddabd
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 8 23:57:22 2008 +0100
+
+    Changes in the GUI.
+    
+    - added on_count_x_entry_changed ().
+    - added on count_y_entry_changed ().
+    - added on_filechooser_dialog_close ().
+    - added on_filechooser_dialog_current_folder_changed ().
+    - added on_filechooser_dialog_cancel_button_clicked (),
+    - added on_filechooser_dialog_file_activated ().
+    - added on_filechooser_dialog_open_button_clicked ().
+    - added on_filechooser_dialog_selection_changed ().
+    - added on_open_button_clicked ().
+    - added null pointer checking in on_save_button_clicked ().
+    - added empty string checking in on_save_button_clicked ().
+
+commit 92523c37731f554f93028fb80e72b90eac243737
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 8 21:17:19 2008 +0100
+
+    Added count_x and count_y variables.
+
+commit 9dd44e2e1d4764cc40bea2958a2c3d8a8b1a10cb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 8 21:16:15 2008 +0100
+
+    Added doxygen todo comments.
+
+commit 0ed18ffc88613ad80c7d2cade081107f3a814064
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 8 21:14:19 2008 +0100
+
+    Changes in the GUI.
+    
+    - added an Open button.
+    - added a Count X-direction entry.
+    - added a Count Y-direction entry.
+    - changed some labels.
+    - added a file chooser dialog.
+
+commit 3e932b16c21fb9f6570477d6b8ae5420f915061f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 8 21:12:45 2008 +0100
+
+    Changes in the GUI.
+    
+    - added an Open button.
+    - added a Count X-direction entry.
+    - added a Count Y-direction entry.
+    - changed some labels.
+    - added a file chooser dialog.
+
+commit 7f7000645fbf8dfd5cb122dc12972b44e96984ae
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 8 21:10:07 2008 +0100
+
+    Changes in the GUI.
+
+commit 91621f6f167dd58033b5e47f8382d2c40c6848a6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Mar 6 20:36:40 2008 +0100
+
+    Bumped the version to 0.0.4
+
+commit 1d4592a7877c82fcdea352085b6811094d178b5b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Mar 6 20:11:01 2008 +0100
+
+    Corrected the version to 0.03
+
+commit 7edc1faab8ca0997d733cf5e7dd99de92e5cec10
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Mar 6 19:48:49 2008 +0100
+
+    Corrected the FPW_VERSION to 0.03
+
+commit 1cbfe66adec65b4b1c2fa0ab1d24caec051e7209
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Mar 6 19:42:36 2008 +0100
+
+    Work in progress.
+    
+    - Bug causing segmentation faults in write_pin() solved.
+    - Renamed internal parameters in write_pin().
+    - Renamed internal parameters in write_pad().
+    - Changed initialisation of gchar pin_pad_flags, pin_1_position
+      and pad_shape.
+    - Changed comments.
+    - Testing for square pins in write_footprint_dip() and setting
+      of pin_pad_flags accordingly.
+
+commit ea1535ef1b151a1e9b1718807441422ebfd50d37
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Mar 3 10:36:33 2008 +0100
+
+    Work in progress.
+    
+    - Added DIL and SIL types.
+    - Changed the case selector for if test selector statements
+      in write_footprint().
+    - Changed error messages code to be more readable
+      (multiple lines < 80 chars).
+    - Removed curly braces in if tests with only one line
+      following.
+
+commit 8bfb7013ca1616bfd4356fbb9c09dcb483d3ba96
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 1 16:05:17 2008 +0100
+
+    Changed the way files were opened form g_fopen() to fopen().
+
+commit a97a808c6208363028c625dc6bfeac3d5e27fcfd
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 29 18:48:17 2008 +0100
+
+    Work in progress.
+    
+    - Bumped the copyright notice to 2008.
+    - Removed the version tag for doxygen.
+    - Changed doxygen comments describing the use of the file.
+    - Added a global file pointer for the footprint file.
+    - Changed the vaiable name for the footprint wizard file pointer.
+    - Removed the footprint file pointer variable from functions call
+      passed variables since it became a global variable.
+    - Added messages to stderr to report files being written.
+    - Added DIL and SIL type.
+
+commit b962d0b3027c0328ed513b7182ac72213dc23fc0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 29 18:40:40 2008 +0100
+
+    Deleted two error messages to stderr.
+
+commit 4914a2ea25a43e0581711237cca702c261307de3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 20 23:10:09 2008 +0100
+
+    Added DIL and DIP package types.
+
+commit 674a87b3edd1855b7855376fe7c60f03be268873
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 20 23:08:49 2008 +0100
+
+    Bumped the copyright notice to 2008.
+
+commit 712f9f543ac827a68807bb764a09715f44d2b9b1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 20 22:14:12 2008 +0100
+
+    Bumped the coypright notice to 2008.
+    
+    Corrected a minor omission.
+
+commit ecfa0d0553887120578843549d6d18d5efd3a374
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 20 22:12:34 2008 +0100
+
+    Bumped the copyright notice to 2008.
+
+commit f72e00b1480443cfb231b91d80b396d07b60839f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 20 21:21:30 2008 +0100
+
+    Added DIL and DIP package types.
+
+commit 0f9bc09391f0f907624773dee2308ff4962a3aeb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 8 07:59:24 2008 +0100
+
+    Added screenshots.
+
+commit 03d5569c499496671aad8970acd07ed2378cbf06
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 7 21:21:24 2008 +0100
+
+    Added full GPL v2 license text to the about dialog.
+
+commit f5aecb714235d0ce63e19fc567f62de571dc26a6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 7 21:17:27 2008 +0100
+
+    Correction of printing float (was double).
+    Added "package is radial" flag.
+
+commit 29a91fa7c129a34beea8dbc1fe5274d0241412c4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 7 21:04:00 2008 +0100
+
+    Small corrections.
+
+commit 3401abff2b485be2a9ccb7c3306bbe556e662b92
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jan 28 22:56:29 2008 +0100
+
+    Corrections to read_footprintwizard_file().
+
+commit e40ee8e05ff928bac6c930a972e7199572c5f3b2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jan 28 07:54:07 2008 +0100
+
+    Corrections to write_footprintwizard_file().
+
+commit 5179c1f8eb034b5c7cae20d0dba11fc058e60657
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 27 23:27:16 2008 +0100
+
+    Renamed more widget names of labels.
+    
+    Renamed more widget names of labels.
+    Added the Dutch translator (myself) to the translators list.
+    Added a empty string to combobox entries just to be able
+    to clear the entry string when the "clear" button is pressed.
+
+commit 667340c929b43a4790f484350e9f64474d0803be
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 27 23:24:11 2008 +0100
+
+    Updated the copyright notice.
+    
+    Bumped the copyright notice into 2008.
+    Added the Dutch translator (myself) to the translator list.
+    Changed various translatable strings.
+
+commit a8758299e2df598c99af7f7e2a89d3eaa8dbf5c9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 27 23:20:26 2008 +0100
+
+    Updated the Dutch translation file.
+
+commit e2c83cf3565b5138d99fcb076255031d0de5fa9c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 27 21:52:16 2008 +0100
+
+    Renamed more widget names of labels.
+    
+    Renamed more widget names of labels.
+    Added a empty string to combobox entries just to be able
+    to clear the entry string when the "clear" button is pressed.
+    This appears as a dirty hack to me as
+    gtk_combo_box_entry_remove_text() should behave as advertised.
+
+commit 96c08ab8cec71c0c0950f7899523b09ef8dddffa
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jan 16 07:23:23 2008 +0100
+
+    Bumped version to 0.0.3
+
+commit 0ea1bd44939024521ea72f96a44a2e568d9a664c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 23:12:44 2008 +0100
+
+    Changed prefix
+
+commit 34d46305ce5883904e57c99c392c0b7ab6f37777
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 22:43:12 2008 +0100
+
+    Moved files 1 directory up.
+
+commit 05c17f184e0a027c29f2056606edae4186d0291e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 22:19:51 2008 +0100
+
+    Changed order and added .git
+
+commit 4771e9367443746f6a909a29277f9bc7fed68a9b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 22:02:06 2008 +0100
+
+    new file:   pcb-fpw/src/.gitignore
+
+commit a61b9770972e22258e927d279c3fd6cab273ca05
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 22:01:51 2008 +0100
+
+    new file:   pcb-fpw/po/.gitignore
+
+commit 1b70e7be2388b9d523f3d7585a30194650b8c2b8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 22:01:39 2008 +0100
+
+    new file:   pcb-fpw/doc/.gitignore
+
+commit bd042f83a4400dfc1af9e2a855b050f7b867d246
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 22:01:23 2008 +0100
+
+    new file:   pcb-fpw/.gitignore
+
+commit 42aedf057695c563af5aa133d3f954219888028a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 21:41:22 2008 +0100
+
+    Bumped to version 0.0.2.
+
+commit 738fbbca59adfa9a076e5aa3381d8c0e055319a6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 21:39:18 2008 +0100
+
+    new file:   pcb-fpw/po/nl_NL.po
+
+commit 3c083964618b1e8902fd229eaf7d2188de62d2bf
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 21:28:49 2008 +0100
+
+    new file:   pcb-fpw/po/LINGUAS
+
+commit 978a69846396c6e1599c874dc72fd1fa219be0e4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 21:11:53 2008 +0100
+
+    deleted:    .gitignore
+
+commit 061efc0264f0363a6bd1c9227b0e42ab58acdf3c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 21:10:32 2008 +0100
+
+    new file:   pcb-fpw/po/remove-potcdate.sin
+
+commit 70475db80f82908d168c5900e29de8b5540d813a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 21:10:15 2008 +0100
+
+    new file:   pcb-fpw/po/Rules-quot
+
+commit bb5850186211a7806ec94308195c009ee6c0918f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 21:10:03 2008 +0100
+
+    new file:   pcb-fpw/po/quot.sed
+
+commit fbed4fb10b633df015a8abe0827576fa18616e93
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 21:09:48 2008 +0100
+
+    new file:   pcb-fpw/po/POTFILES.skip
+
+commit 024b8cdd1391245c0a0802840ead4691b4b85926
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 21:09:26 2008 +0100
+
+    new file:   pcb-fpw/po/Makevars
+
+commit d13c266a91374ca7b2d59e90c528e4190a46c194
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 21:08:57 2008 +0100
+
+    new file:   pcb-fpw/po/insert-header.sin
+
+commit ae23b136c031957f265bc3c54f8a968434918c64
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 21:08:38 2008 +0100
+
+    new file:   pcb-fpw/po/en@quot.header
+
+commit c23af492173a1984e89e025ac47b4411b5af5e7b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 21:08:24 2008 +0100
+
+    new file:   pcb-fpw/po/en@boldquot.header
+
+commit e337c155b10387269bd7093612387f611cda902d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 21:08:06 2008 +0100
+
+    new file:   pcb-fpw/po/boldquot.sed
+
+commit a9662a713ccd0a273b7a28eb8538ad1eb3c23fa2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 20:58:16 2008 +0100
+
+    new file:   pcb-fpw/po/Makefile.in.in
+
+commit da4a5f5a5646d6ea931edab62f3fbfc2da4c3e76
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 18:58:04 2008 +0100
+
+    Truncated a lot of lines so they fit on a 80 char wide screen.
+
+commit dc2c154e4fc8870482f5c5d56711c331c716b9fe
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 18:56:17 2008 +0100
+
+    Changed variable names.
+
+commit 2c8ce34d3894e9cc57049d0c04799b76b6a0b1dc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 07:45:06 2008 +0100
+
+    More changes to the behaviour of the GUI.
+    
+    - added more code to on_clear_button_clicked(),
+      now all fields are cleared.
+    - truncated al lot of so it fits on a 80 char wide screen.
+    - on_indicate_1_checkbutton_toggled() renamed to
+      on_silkscreen_indicate_1_checkbutton_toggled().
+    - on_package_outline_checkbutton_toggled() renamed to
+      on_silkscreen_package_outline_checkbutton_toggled().
+    - coded on_thermal_clearance_entry_changed.
+    - added missing coded on various places to allow for
+      setting entries to (in)sensitive.
+    - renamed thermal_X and thermal_Y variable to
+      thermal_length and thermal_width.
+
+commit 25987569798678a2d856847bcb12261672058b21
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 07:18:40 2008 +0100
+
+    Of course Glade generated a new interface.c file to reflect the changes.
+
+commit f8b1298d3c7260da45a67b03f2e8e6d8f4a47aca
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 07:17:21 2008 +0100
+
+    Changed solder_mask_entry into pad_solder_mask_entry.
+    
+    - other changes to widgets names.
+    - added choices to combo boxes, every combo box starts
+      with an empty string (or just a single white space
+      to allow for the "clear" button to clear the combo box entry.
+
+commit f37263e85198a18ea110fcdb442d680c4d07ada4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 07:10:04 2008 +0100
+
+    Added more translatable strings and changed a few.
+
+commit 393697953b3b669ee46b457315bcd3be3ec5da60
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 15 07:08:41 2008 +0100
+
+    Glade added some forward declarations for added functions.
+
+commit 761c5cfd10a77c3008e026b0faa836b3626cbb22
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jan 14 22:39:29 2008 +0100
+
+    Removed po/POTFILES.in which was added by mistake.
+
+commit 0483af474d6aad0a08debc9494a72c65259e68fd
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jan 14 22:37:55 2008 +0100
+
+    Added libfpw.c and fpw.c
+
+commit 63acd6d1d9ead9db61e73375356f9e5ed211f895
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jan 11 09:58:21 2008 +0100
+
+    Added pcb-fpw/po/POTFILES.in
+
+commit 81233b7203a2125226fd182ecb760950ca6c02d0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jan 9 20:55:25 2008 +0100
+
+    Renamed widget names of labels and changed status keywords.
+    
+    Renamed the widget names of various lables and tables.
+    Changed the strings for keywords inside the footprint_status_entry.
+
+commit 0acbaeecfe78b0a15f66d54a01a1e4afc3e58ba2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jan 9 20:53:13 2008 +0100
+
+    Changed variable names and added code for tab 1 and 2 for on_clear_button_clicked().
+
+commit d3c5080dbb6c57f88de7a9b2bfa6c17bf4a5310e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jan 9 20:51:36 2008 +0100
+
+    Changed doxygen documentation and variable names.
+
+commit 6482184af4fee9f88a6c634c32423b72917d284d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jan 9 08:09:20 2008 +0100
+
+    Changed the strings for keywords inside the footprint_status_entry.
+
+commit c4126d6a9af51b5c9075d4c3819c5245fed76637
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jan 9 08:08:08 2008 +0100
+
+    Renamed widget names of labels and changed status keywords.
+    
+    Renamed the widget names of various lables and tables.
+    Changed the strings for keywords inside the footprint_status_entry.
+
+commit 7c7d26f0881b963d87e7bfaa489ad9a0f3c46741
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 5 23:27:52 2008 +0100
+
+    Changed pin_hole_diameter to pin_drill_diameter.
+
+commit ebaf71ed878a66c4222b92e571e65d372916d765
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Dec 31 10:42:10 2007 +0100
+
+    Various changes.
+    
+    - Added rouded, elongated pins to write_footprint_dip()
+    - Replaced close() with fclose()
+    - Changed and added comments.
+
+commit cc09d1e750630d7cf575ac575a0b3ec1dc01f4cf
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Dec 31 10:38:08 2007 +0100
+
+    Various additions and modifications.
+    
+    - Reordered variable declaration.
+    - Reorded and added to initial state for thermal tab widgets
+    - Added initial state for courtyard tab widgets
+    - Added and changed comments.
+
+commit 38ae9aa92f28a8cab07ced3a0d802bf8a4d5d095
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Dec 31 09:11:53 2007 +0100
+
+    Various additions and modifications.
+    
+    - Added functionality to on_courtyard_checkbutton_toggled().
+    - Replaced the check for silkscreen in on_package_outline_checkbutton_toggled()
+      and changed the setting on silkscreen_linewidth.
+    - Added functionality to on_thermal_checkbutton_toggled().
+    - Replaced the check for thermal in on_thermal_checkbutton_toggled().
+
+commit aec32ae3f69ac7dc90f7e7c6ace065ae7c5b5090
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 4 21:51:41 2007 +0100
+
+    Added and changed comments.
+
+commit 0f2aeb383c1381ca06a4e9f413984e50edeecd22
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 4 21:49:03 2007 +0100
+
+    Added heel and toe goals.
+
+commit 12c338e5669c3b946639dc6001c98de973cbedfe
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 4 21:46:43 2007 +0100
+
+    Of course, the interface changed as well ;-)
+
+commit 5486baf1845a14bb4e5246273f572c6fc2d25b67
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 4 21:36:17 2007 +0100
+
+    Added heel and toe goal entry functions.
+    
+    Added heel and toe callback functions in the header file.
+    Changed alot of comments.
+
+commit 34f1c88f99bf9f0968c62b1d49da06e857505981
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 4 21:33:29 2007 +0100
+
+    Added heel and toe goals notebook tab.
+    
+    Added heel and toe entries for outer-outer (toe),
+    inner-inner (heel) and center-center goals.
+    Both are for the X- and Y-direction.
+
+commit 15d117a2d29dcf9178fc2b80199fc7f17207c5ef
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 12 08:05:28 2007 +0100
+
+    Added a clearance with package entry for the courtyard.
+    
+    - added a clearance with package entry for the courtyard.
+    - corrected a typo in the "package height" label.
+    - changed GPL v2 license to GPL as to allow for any newer versions.
+
+commit 6166325c2a6bbc67e6bf854c5c787975031341e5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 12 08:00:32 2007 +0100
+
+    Added a clearance with package entry for the courtyard.
+    
+    - added a clearance with package entry for the courtyard.
+    - corrected a typo in the "package height" label.
+    - changed GPL v2 license to GPL as to allow for any newer versions.
+
+commit f8f2d76db46bc2417d628537744622d1c3d2e92b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 12 07:55:24 2007 +0100
+
+    Bumped version to 0.0.2
+
+commit be961a4d012e71436e7fe09e20cb60cace9e694e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 12 07:55:00 2007 +0100
+
+    Bumped version to 0.0.2
+
+commit b1f54327eec7a6f33a867246a4d36a0a969e89c8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 10 11:08:55 2007 +0100
+
+    modified:   .gitignore
+
+commit 7e9de038499f7d3ecbc4d32b0014dc4599852268
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 10 11:07:22 2007 +0100
+
+    modified:   pcb-fpw/pcb-gfpw.glade
+    modified:   pcb-fpw/src/callbacks.c
+    modified:   pcb-fpw/src/callbacks.h
+    modified:   pcb-fpw/src/interface.c
+    modified:   pcb-fpw/src/libfpw.c
+    modified:   pcb-fpw/translatable.strings
+
+commit d070ce27688cc9ee39a7983c41ed18d9a1df6afa
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 6 21:43:49 2007 +0100
+
+    modified:   pcb-fpw/src/callbacks.c
+    modified:   pcb-fpw/src/callbacks.h
+    modified:   pcb-fpw/src/interface.c
+    modified:   pcb-fpw/src/libfpw.c
+    modified:   pcb-fpw/src/main.c
+
+commit a4617df26f33fb58bd3bdf57559f0738efb8d929
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 6 21:42:45 2007 +0100
+
+    modified:   pcb-fpw/pcb-gfpw.glade
+    modified:   pcb-fpw/translatable.strings
+
+commit 83dc8a8dd4184eefbf68b18d9053ce0c2dbc2fee
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 3 07:54:23 2007 +0100
+
+    modified:   pcb-fpw/src/callbacks.c
+    modified:   pcb-fpw/src/fpw.c
+    modified:   pcb-fpw/src/libfpw.c
+
+commit 72a6c1f30f0d91121566074740d6e9d4432e412c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 3 07:52:41 2007 +0100
+
+    modified:   pcb-fpw/doc/fpw-dox-no-call-graphs.dox
+    - excluded config.h from documentation.
+    modified:   pcb-fpw/doc/fpw-dox-with-call-graphs.dox
+    - excluded config.h from documentation.
+
+commit c0beb238383a62670b5e2721bf6d6cada0b422f7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Oct 31 20:04:25 2007 +0100
+
+    modified:   pcb-fpw/pcb-gfpw.glade
+    modified:   pcb-fpw/pcb-gfpw.gladep
+    modified:   pcb-fpw/src/interface.c
+    modified:   pcb-fpw/translatable.strings
+
+commit a8fbee475f28114d17e95f7b213b7bfc851c86bc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Oct 31 20:03:21 2007 +0100
+
+    renamed:    pcb-fpw/pcb-fpw.glade -> pcb-fpw/pcb-gfpw.glade
+    renamed:    pcb-fpw/pcb-fpw.gladep -> pcb-fpw/pcb-gfpw.gladep
+
+commit a4c59299a626680cd72857ca3e0e55d4ef7ea11b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Oct 31 19:58:02 2007 +0100
+
+    modified:   pcb-fpw/pcb-fpw.glade
+    modified:   pcb-fpw/src/Makefile.am
+    modified:   pcb-fpw/src/callbacks.c
+    modified:   pcb-fpw/src/callbacks.h
+    modified:   pcb-fpw/src/fpw.c
+    modified:   pcb-fpw/src/interface.c
+    modified:   pcb-fpw/src/libfpw.c
+    modified:   pcb-fpw/src/main.c
+    modified:   pcb-fpw/translatable.strings
+
+commit 51a17c358b4769780457042d94442fd170949a5f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Oct 21 21:03:42 2007 +0200
+
+    modified:   pcb-fpw/pcb-fpw.glade
+    modified:   pcb-fpw/src/interface.c
+    modified:   pcb-fpw/src/interface.h
+    modified:   pcb-fpw/translatable.strings
+
+commit 02d31bd215e563e63aa343f4adab7a0e6598215b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Oct 21 20:59:52 2007 +0200
+
+    modified:   pcb-fpw/src/fpw.c
+    modified:   pcb-fpw/src/interface.c
+    modified:   pcb-fpw/src/libfpw.c
+    modified:   pcb-fpw/translatable.strings
+
+commit 09f18b4e9c6a299c2b9e46dc36ab0f1a0fdfdd66
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Oct 21 20:59:03 2007 +0200
+
+    modified:   pcb-fpw/pcb-fpw.glade
+    modified:   pcb-fpw/src/callbacks.c
+    modified:   pcb-fpw/src/callbacks.h
+
+commit 4d0bd63a559f41fce45af7879ab13409900fddda
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Oct 21 20:58:10 2007 +0200
+
+    modified:   .gitignore
+
+commit 96144a3b6531c84f27efab08431cefd9a804bf62
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 19 10:30:30 2007 +0200
+
+    modified:   pcb-fpw/translatable.strings
+
+commit f6604d3995ebc0ba471be6dd160a3aa1247240ff
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 19 10:30:16 2007 +0200
+
+    modified:   pcb-fpw/src/interface.h
+
+commit 4c8e905e73c27df4ffd5106e773f22c9d54440b0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 19 10:30:06 2007 +0200
+
+    modified:   pcb-fpw/src/interface.c
+
+commit 370c483ab25ea60f78f3edb7377bcc8b6de51344
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 19 10:29:44 2007 +0200
+
+    modified:   pcb-fpw/src/libfpw.c
+
+commit 40a352b72b6751eb538aac8db8f92e21d88f408a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 19 10:29:30 2007 +0200
+
+    modified:   pcb-fpw/src/fpw.c
+
+commit 818b4afe06258a31ebe72b565f4cd9d0e4b5465d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 19 10:29:12 2007 +0200
+
+    modified:   pcb-fpw/src/callbacks.h
+
+commit 0f8ec134bbaae5cd78df3a9e9c33f4bfd94b589c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 19 10:29:02 2007 +0200
+
+    modified:   pcb-fpw/src/callbacks.c
+
+commit 409f3e1938a9c640c5ad47b2e2243e050c1b63d6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 19 10:28:19 2007 +0200
+
+    modified:   pcb-fpw/pcb-fpw.glade
+
+commit 9c31f307229deefe99066c279280477901b216c2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 19 10:27:55 2007 +0200
+
+    modified:   .gitignore
+
+commit debad3ad4758bfc96687c4bfb847fb553818d64c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Oct 14 11:01:56 2007 +0200
+
+    modified:   pcb-fpw/src/libfpw.c
+
+commit bfef276ee48fe3ef1a8f16f3346e2f553dc2fa06
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Oct 14 11:01:34 2007 +0200
+
+    modified:   pcb-fpw/src/interface.c
+
+commit a95e4bd7d86b90819a00f398aabc18f38c720895
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Oct 14 11:01:07 2007 +0200
+
+    modified:   pcb-fpw/translatable.strings
+
+commit fdab4453d55c42902000675b0048804cc525430a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Oct 14 10:59:44 2007 +0200
+
+    modified:   pcb-fpw/src/callbacks.h
+
+commit f4f355f430036ea99d2c8a320650d91dec57f0cf
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Oct 14 10:59:35 2007 +0200
+
+    modified:   pcb-fpw/src/callbacks.c
+
+commit 542609972b26474ed9d9aba66cb64158077bf406
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Oct 13 21:03:05 2007 +0200
+
+    modified:   pcb-fpw/src/fpw.c
+    - removed whitespace from print_usage().
+
+commit 94bb79cfcd634272214bb51c3555f81ae47e67d8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Oct 13 21:01:47 2007 +0200
+
+    modified:   pcb-fpw/pcb-fpw.glade
+    - changed combo entries for pad shapes.
+    - added thermal no paste checkbutton.
+
+commit 0a762f746ff59f2cedd08851bd7e6c349d77888b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Oct 13 20:58:02 2007 +0200
+
+    modified:   pcb-fpw/doc/fpw-dox-with-call-graphs.dox
+
+commit 634d33b099f20a68e6d19914c78dcd9538a8f488
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Oct 13 20:57:49 2007 +0200
+
+    modified:   pcb-fpw/doc/fpw-dox-no-call-graphs.dox
+
+commit 582ec1a2c5da1395c2c32142abb11d7b8b90d210
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 12 22:19:31 2007 +0200
+
+    modified:   pcb-fpw/src/libfpw.c
+    - added pin/pad defines.
+
+commit 53f9562ed673095d26ec6c0f5c135808630181b1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 12 22:18:17 2007 +0200
+
+    new file:   pcb-fpw/doc/what-is-pcb-fpw.html
+
+commit 78560f1f7afbf8146480681d09cf9a031a49f494
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 12 22:17:05 2007 +0200
+
+    new file:   pcb-fpw/doc/pcb-logo-small.png
+
+commit 697249de60af2c5dd650f868d1f83e0940186e50
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 12 22:16:49 2007 +0200
+
+    new file:   pcb-fpw/doc/pcb-fpw-main.txt
+
+commit b9039c937f7143f6e3ad5f706d4a4f815cd819e2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 12 22:16:24 2007 +0200
+
+    new file:   pcb-fpw/doc/fpw-dox-with-call-graphs.dox
+
+commit 156d51043d8e08c84c02c1c5dbc031a89d0e5297
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 12 22:16:09 2007 +0200
+
+    new file:   pcb-fpw/doc/fpw-dox-no-call-graphs.dox
+
+commit 0309637e499cf26d854cc313c50d68e0d08626e2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Oct 10 22:11:34 2007 +0200
+
+    modified:   .gitignore
+    - added .deps to be ignored.
+
+commit e7d72918e809e1133960827ccced90762dbdedd8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Oct 10 22:05:22 2007 +0200
+
+    modified:   pcb-fpw/src/fpw.c
+    - added a comment.
+
+commit 37c5c3413311c81511929d910a35a30ee28b301b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Oct 10 22:00:11 2007 +0200
+
+    modified:   pcb-fpw/AUTHORS
+
+commit 19e44769fc2f72c3fd90675261c0cfcd3e5b4bad
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Oct 10 21:59:09 2007 +0200
+
+    new file:   pcb-fpw/INSTALL
+
+commit d892f82d3bd41ee9cdaebeb5ba1a34e7b0022437
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Oct 10 21:58:55 2007 +0200
+
+    new file:   pcb-fpw/COPYING
+
+commit df9bca37af6fed4013dca8633c4430e58c13daae
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Oct 10 21:56:32 2007 +0200
+
+    modified:   .gitignore
+
+commit d276b028ec98b055dca86b76d04605925f9ce5a1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Oct 10 21:56:15 2007 +0200
+
+    new file:   pcb-fpw/src/fpw.c
+
+commit 4a185e3f109b2c6c005669d510d06787f2f7bdd1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Oct 10 21:56:03 2007 +0200
+
+    new file:   pcb-fpw/src/libfpw.c
+
+commit d4bf036c3564e61f356df3abf7bce7fe78089d86
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Oct 10 21:44:36 2007 +0200
+
+    new file:   archive.sh
+
+commit 29bf47fa5bda3feabeda06139e0e5f7f4fd0187d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Oct 10 21:44:20 2007 +0200
+
+    new file:   .gitignore
+
+commit 5f9d7c1f1f2fab2cab2301ec0deaab91eddf0b3c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Oct 10 21:34:59 2007 +0200
+
+    modified:   pcb-fpw/src/Makefile.am
+
+commit 7b88aacfe76565478acf48f1f7b0618a483a0ce8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Oct 10 08:00:59 2007 +0200
+
+    modified:   pcb-fpw/src/main.c
+    - set initial states of widgets.
+
+commit 98f7a072a0437877c2c2bc5703333f785d36b347
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Oct 10 07:46:44 2007 +0200
+
+    modified:   pcb-fpw/src/callbacks.c
+    - coded callback functions.
+
+commit 459cf6dca5c4548125e1f474f4f63da5e4937fd9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Oct 7 22:21:26 2007 +0200
+
+    new file:   pcb-fpw/pcb-fpw.glade
+    new file:   pcb-fpw/pcb-fpw.gladep
+
+commit 30fdf65a2d192d388bcf49e86e8bae96e7ffc26b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Oct 7 22:19:35 2007 +0200
+
+    modified:   pcb-fpw/Makefile.am
+    modified:   pcb-fpw/src/callbacks.c
+    modified:   pcb-fpw/src/callbacks.h
+    modified:   pcb-fpw/src/interface.c
+    modified:   pcb-fpw/src/interface.h
+    modified:   pcb-fpw/src/main.c
+    modified:   pcb-fpw/translatable.strings
+
+commit d51f40910270a81236d6f32ff99ff42794cc871b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Oct 7 22:17:56 2007 +0200
+
+    deleted:    pcb-fpw/gfpw.glade
+    deleted:    pcb-fpw/gfpw.gladep
+    deleted:    pcb-fpw/pixmaps/PAD_QFN_RECT.xpm
+    deleted:    pcb-fpw/src/fpw.c
+
+commit 45edfb324e532e207ee6c7c0ff7656097acc45ec
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Oct 6 15:28:29 2007 +0200
+
+    Initial commit
