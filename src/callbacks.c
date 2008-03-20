@@ -1701,12 +1701,24 @@ on_save_button_clicked                 (GtkButton       *button,
                 gtk_window_set_title (GTK_WINDOW (main_window), main_window_title);
 #endif
         }
+        else
+        {
+                gchar *message = NULL;
+                message = g_strdup_printf ("ERROR: Unable to write footprintwizard file %s.", footprint_filename);
+                message_to_statusbar (button, message);
+        }
         /* If the footprint file is written successfull reflect this in the
          * statusbar */
         if (write_footprint ())
         {
                 gchar *message = NULL;
                 message = g_strdup_printf ("Wrote footprint %s to file.", footprint_filename);
+                message_to_statusbar (button, message);
+        }
+        else
+        {
+                gchar *message = NULL;
+                message = g_strdup_printf ("ERROR: Unable to write footprint %s to file.", footprint_filename);
                 message_to_statusbar (button, message);
         }
 }
