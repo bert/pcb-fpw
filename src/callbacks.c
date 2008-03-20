@@ -852,7 +852,18 @@ on_filechooser_dialog_open_button_clicked
         if (!temp_dir)
                 work_dir = g_strdup (temp_dir);
         /* Read new global values from the selected footprintwizard file */
-        read_footprintwizard_file (fpw_filename);
+        if (read_footprintwizard_file (fpw_filename))
+        {
+                gchar *message = NULL;
+                message = g_strdup_printf ("Read footprintwizard file %s.", fpw_filename);
+                message_to_statusbar (button, message);
+        }
+        else
+        {
+                gchar *message = NULL;
+                message = g_strdup_printf ("ERROR: Unable to read footprint wizard file %s.", fpw_filename);
+                message_to_statusbar (button, message);
+        }
         /* Update the entry widgets to reflect the changes */
 }
 
