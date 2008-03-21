@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcb-fpw\n"
 "Report-Msgid-Bugs-To: bert.timmerman@xs4all.nl\n"
 "POT-Creation-Date: 2008-01-15 21:19+0100\n"
-"PO-Revision-Date: 2008-03-16 23:41+0100\n"
+"PO-Revision-Date: 2008-03-21 07:39+0100\n"
 "Last-Translator: Bert Timmerman <bert.timmerman@xs4all.nl>\n"
 "Language-Team: DUTCH LANGUAGE TEAM <bert.timmerman@xs4all.nl>\n"
 "MIME-Version: 1.0\n"
@@ -962,6 +962,30 @@ msgstr "Klik op de Ververs knop om de voorvertoning te verversen"
 #: src/interface.c:1774
 msgid "pcb-gfpw: choose a .fpw file"
 msgstr "pcb-gfpw: kies een .fpw bestand"
+
+#: src/callbacks.c:1658
+#, c-format
+msgid "ERROR: footprint name not initialised (null pointer)."
+msgstr "FOUT: elementnaam niet ge-initialiseerd (null pointer)."
+
+#: src/callbacks.c:1668
+#, c-format
+msgid "ERROR: footprint name contains an empty string."
+msgstr "FOUT: elementnaam bevat een lege text,"
+
+#: src/callbacks.c:1719
+msgid "pcb-gfpw : "
+msgstr "pcb-gfpw :"
+
+#: src/callbacks.c:1733
+#, c-format
+msgid "Wrote footprint %s to file."
+msgstr "Element %s naar bestand geschreven."
+
+#: src/callbacks.c:1739
+#, c-format
+msgid "ERROR: Unable to write footprint %s to file."
+msgstr "FOUT: kan element %s niet naar een bestand schrijven."
 
 #: src/support.c:90
 #: src/support.c:114
