@@ -1,5 +1,6 @@
 *~
 *.bak
+*.mo
 Makefile
 Makefile.in
 POTFILES
