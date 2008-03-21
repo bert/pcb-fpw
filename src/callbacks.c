@@ -956,7 +956,7 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
         if (!footprint_name)
         {
                 gchar *message = NULL;
-                message = g_strdup_printf ("ERROR: footprint name not initialised (null pointer).");
+                message = g_strdup_printf (_("ERROR: footprint name not initialised (null pointer)."));
                 message_to_statusbar (editable, message);
                 return;
         }
@@ -966,7 +966,7 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
         else if (!strcmp (footprint_name, ""))
         {
                 gchar *message = NULL;
-                message = g_strdup_printf ("ERROR: footprint name contains an empty string.");
+                message = g_strdup_printf (_("ERROR: footprint name contains an empty string."));
                 message_to_statusbar (editable, message);
                 return;
         }
