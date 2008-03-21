@@ -783,7 +783,7 @@ on_filechooser_dialog_current_folder_changed
         if (!current_folder)
         {
                 gchar *message = NULL;
-                message = g_strdup_printf ("ERROR: current folder is not initialised  (null pointer).");
+                message = g_strdup_printf (_("ERROR: current folder is not initialised  (null pointer)."));
                 message_to_statusbar (filechooser, message);
                 return;
         }
@@ -792,7 +792,7 @@ on_filechooser_dialog_current_folder_changed
         if (!strcmp (current_folder, ""))
         {
                 gchar *message = NULL;
-                message = g_strdup_printf ("ERROR: current folder contains an empty string.");
+                message = g_strdup_printf (_("ERROR: current folder contains an empty string."));
                 message_to_statusbar (filechooser, message);
                 return;
         }
