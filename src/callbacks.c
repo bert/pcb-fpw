@@ -836,7 +836,7 @@ on_filechooser_dialog_open_button_clicked
         if (!selected_filename)
         {
                 gchar *message = NULL;
-                message = g_strdup_printf ("ERROR: selected filename is not initialised  (null pointer).");
+                message = g_strdup_printf (_("ERROR: selected filename is not initialised  (null pointer)."));
                 message_to_statusbar (button, message);
                 return;
         }
@@ -845,7 +845,7 @@ on_filechooser_dialog_open_button_clicked
         if (!strcmp (selected_filename, ""))
         {
                 gchar *message = NULL;
-                message = g_strdup_printf ("ERROR: selected filename contains an empty string.");
+                message = g_strdup_printf (_("ERROR: selected filename contains an empty string."));
                 message_to_statusbar (button, message);
                 return;
         }
@@ -855,7 +855,7 @@ on_filechooser_dialog_open_button_clicked
         if (g_file_test (selected_filename, G_FILE_TEST_IS_DIR))
         {
                 gchar *message = NULL;
-                message = g_strdup_printf ("ERROR: selected filename is a directory.");
+                message = g_strdup_printf (_("ERROR: selected filename is a directory."));
                 message_to_statusbar (button, message);
                 return;
         }
@@ -868,13 +868,13 @@ on_filechooser_dialog_open_button_clicked
         if (read_footprintwizard_file (fpw_filename))
         {
                 gchar *message = NULL;
-                message = g_strdup_printf ("Read footprintwizard file %s.", fpw_filename);
+                message = g_strdup_printf (_("Read footprintwizard file %s."), fpw_filename);
                 message_to_statusbar (button, message);
         }
         else
         {
                 gchar *message = NULL;
-                message = g_strdup_printf ("ERROR: Unable to read footprint wizard file %s.", fpw_filename);
+                message = g_strdup_printf (_("ERROR: Unable to read footprint wizard file %s."), fpw_filename);
                 message_to_statusbar (button, message);
         }
         /* Update the entry widgets to reflect the changes */
