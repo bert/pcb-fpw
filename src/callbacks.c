@@ -1136,7 +1136,7 @@ on_footprint_units_entry_changed       (GtkComboBox     *combobox,
         if (!footprint_units)
         {
                 gchar *message = NULL;
-                message = g_strdup_printf ("ERROR: footprint units not initialised (null pointer).");
+                message = g_strdup_printf (_("ERROR: footprint units not initialised (null pointer)."));
                 message_to_statusbar (combobox, message);
                 return;
         }
@@ -1146,7 +1146,7 @@ on_footprint_units_entry_changed       (GtkComboBox     *combobox,
         else if (!strcmp (footprint_units, ""))
         {
                 gchar *message = NULL;
-                message = g_strdup_printf ("ERROR: footprint units contains an empty string.");
+                message = g_strdup_printf (_("ERROR: footprint units contains an empty string."));
                 message_to_statusbar (combobox, message);
                 return;
         }
@@ -1173,7 +1173,7 @@ on_footprint_units_entry_changed       (GtkComboBox     *combobox,
                 return;
         }
         gchar *message = NULL;
-        message = g_strdup_printf ("ERROR: footprint units contains an unknown units type.");
+        message = g_strdup_printf (_("ERROR: footprint units contains an unknown units type."));
         message_to_statusbar (combobox, message);
 }
 
