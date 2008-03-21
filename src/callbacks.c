@@ -1031,7 +1031,7 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         {
                 package_type = BGA;
                 gchar *message = NULL;
-                message = g_strdup_printf ("ERROR: footprint type BGA is not yet implemented.");
+                message = g_strdup_printf (_("ERROR: footprint type BGA is not yet implemented."));
                 message_to_statusbar (combobox, message);
                 return;
         }
@@ -1059,7 +1059,7 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         {
                 package_type = PGA;
                 gchar *message = NULL;
-                message = g_strdup_printf ("ERROR: footprint type PGA is not yet implemented.");
+                message = g_strdup_printf (_("ERROR: footprint type PGA is not yet implemented."));
                 message_to_statusbar (combobox, message);
                 return;
         }
@@ -1067,7 +1067,7 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         {
                 package_type = QFN;
                 gchar *message = NULL;
-                message = g_strdup_printf ("ERROR: footprint type QFN is not yet implemented.");
+                message = g_strdup_printf (_("ERROR: footprint type QFN is not yet implemented."));
                 message_to_statusbar (combobox, message);
                 return;
         }
@@ -1075,7 +1075,7 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         {
                 package_type = QFP;
                 gchar *message = NULL;
-                message = g_strdup_printf ("ERROR: footprint type QFP is not yet implemented.");
+                message = g_strdup_printf (_("ERROR: footprint type QFP is not yet implemented."));
                 message_to_statusbar (combobox, message);
                 return;
         }
@@ -1088,7 +1088,7 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         {
                 package_type = SIP;
                 gchar *message = NULL;
-                message = g_strdup_printf ("ERROR: footprint type SIL is not yet implemented.");
+                message = g_strdup_printf (_("ERROR: footprint type SIL is not yet implemented."));
                 message_to_statusbar (combobox, message);
                 return;
         }
@@ -1096,7 +1096,7 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         {
                 package_type = SIP;
                 gchar *message = NULL;
-                message = g_strdup_printf ("ERROR: footprint type SIP is not yet implemented.");
+                message = g_strdup_printf (_("ERROR: footprint type SIP is not yet implemented."));
                 message_to_statusbar (combobox, message);
                 return;
         }
@@ -1104,7 +1104,7 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         {
                 package_type = SO;
                 gchar *message = NULL;
-                message = g_strdup_printf ("ERROR: footprint type SO is not yet implemented.");
+                message = g_strdup_printf (_("ERROR: footprint type SO is not yet implemented."));
                 message_to_statusbar (combobox, message);
                 return;
         }
@@ -1114,7 +1114,7 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                 return;
         }
         gchar *message = NULL;
-        message = g_strdup_printf ("ERROR: unknown or not yet implemented footprint type entered.");
+        message = g_strdup_printf (_("ERROR: unknown or not yet implemented footprint type entered."));
         message_to_statusbar (combobox, message);
 }
 
