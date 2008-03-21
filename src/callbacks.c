@@ -1707,10 +1707,8 @@ on_save_button_clicked                 (GtkButton       *button,
                 const gchar *main_window_title;
                 main_window_title = g_strconcat (_("pcb-gfpw FootPrint Wizard : "),
                         fpw_filename, NULL);
-                main_window = lookup_widget (GTK_WIDGET (button), "pcb-gfpw");
-#if 0
-                gtk_window_set_title (GTK_WINDOW (main_window), main_window_title);
-#endif
+                main_window = lookup_widget (GTK_WIDGET (button), "pcb_gfpw");
+                gtk_window_set_title (main_window, main_window_title);
         }
         else
         {
