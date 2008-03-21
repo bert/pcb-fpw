@@ -1492,7 +1492,7 @@ on_pad_shape_entry_changed    (GtkComboBox     *combobox,
                 return;
         }
         gchar *message = NULL;
-        message = g_strdup_printf (_("ERROR: pad shape contains an unknown units pad shape type."));
+        message = g_strdup_printf (_("ERROR: pad shape contains an unknown pad shape type."));
         message_to_statusbar (combobox, message);
 }
 
