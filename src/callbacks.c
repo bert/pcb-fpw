@@ -40,6 +40,19 @@ message_to_statusbar (GtkWidget *widget, gchar *message)
 
 
 /*!
+ * \brief Change the main window title.
+ */
+int
+change_main_window_title (GtkWidget *widget, gchar *main_window_title)
+{
+        /* lookup the window */
+        GtkWidget *main_window;
+        main_window = lookup_widget (GTK_WIDGET (widget), "pcb_gfpw");
+        gtk_window_set_title (main_window, main_window_title);
+}
+
+
+/*!
  * \brief The "top to bottom pads/pins center-center distance (C1)" entry is
  * changed.
  *
@@ -1642,7 +1655,7 @@ on_save_button_clicked                 (GtkButton       *button,
         if (!footprint_name)
         {
                 gchar *message = NULL;
-                message = g_strdup_printf ("ERROR: footprint name not initialised (null pointer).");
+                message = g_strdup_printf (_("ERROR: footprint name not initialised (null pointer)."));
                 message_to_statusbar (button, message);
                 return;
         }
@@ -1652,7 +1665,7 @@ on_save_button_clicked                 (GtkButton       *button,
         else if (!strcmp (footprint_name, ""))
         {
                 gchar *message = NULL;
-                message = g_strdup_printf ("ERROR: footprint name contains an empty string.");
+                message = g_strdup_printf (_("ERROR: footprint name contains an empty string."));
                 message_to_statusbar (button, message);
                 return;
         }
@@ -1703,12 +1716,8 @@ on_save_button_clicked                 (GtkButton       *button,
          * the main window with the latest filename */
         if (write_footprintwizard_file ())
         {
-                GtkWidget *main_window;
-                const gchar *main_window_title;
-                main_window_title = g_strconcat (_("pcb-gfpw FootPrint Wizard : "),
-                        fpw_filename, NULL);
-                main_window = lookup_widget (GTK_WIDGET (button), "pcb_gfpw");
-                gtk_window_set_title (main_window, main_window_title);
+                change_main_window_title (button, g_strconcat (_("pcb-gfpw : "),
+                        fpw_filename, NULL));
         }
         else
         {
@@ -1721,13 +1730,13 @@ on_save_button_clicked                 (GtkButton       *button,
         if (write_footprint ())
         {
                 gchar *message = NULL;
-                message = g_strdup_printf ("Wrote footprint %s to file.", footprint_filename);
+                message = g_strdup_printf (_("Wrote footprint %s to file."), footprint_filename);
                 message_to_statusbar (button, message);
         }
         else
         {
                 gchar *message = NULL;
-                message = g_strdup_printf ("ERROR: Unable to write footprint %s to file.", footprint_filename);
+                message = g_strdup_printf (_("ERROR: Unable to write footprint %s to file."), footprint_filename);
                 message_to_statusbar (button, message);
         }
 }
