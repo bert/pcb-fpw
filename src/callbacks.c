@@ -1450,7 +1450,7 @@ on_pad_shape_entry_changed    (GtkComboBox     *combobox,
         if (!pad_shape)
         {
                 gchar *message = NULL;
-                message = g_strdup_printf ("ERROR: pad shape not initialised (null pointer).");
+                message = g_strdup_printf (_("ERROR: pad shape not initialised (null pointer)."));
                 message_to_statusbar (combobox, message);
                 return;
         }
@@ -1460,7 +1460,7 @@ on_pad_shape_entry_changed    (GtkComboBox     *combobox,
         else if (!strcmp (pad_shape, ""))
         {
                 gchar *message = NULL;
-                message = g_strdup_printf ("ERROR: pad shape contains an empty string.");
+                message = g_strdup_printf (_("ERROR: pad shape contains an empty string."));
                 message_to_statusbar (combobox, message);
                 return;
         }
@@ -1492,7 +1492,7 @@ on_pad_shape_entry_changed    (GtkComboBox     *combobox,
                 return;
         }
         gchar *message = NULL;
-        message = g_strdup_printf ("ERROR: pad shape contains an unknown units pad shape type.");
+        message = g_strdup_printf (_("ERROR: pad shape contains an unknown units pad shape type."));
         message_to_statusbar (combobox, message);
 }
 
