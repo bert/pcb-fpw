@@ -1716,13 +1716,13 @@ on_save_button_clicked                 (GtkButton       *button,
          * the main window with the latest filename */
         if (write_footprintwizard_file ())
         {
-                change_main_window_title (button, g_strconcat (_("pcb-gfpw : "),
+                change_main_window_title (button, g_strconcat ("pcb-gfpw : ",
                         fpw_filename, NULL));
         }
         else
         {
                 gchar *message = NULL;
-                message = g_strdup_printf ("ERROR: Unable to write footprintwizard file %s.", footprint_filename);
+                message = g_strdup_printf (_("ERROR: Unable to write footprintwizard file %s."), footprint_filename);
                 message_to_statusbar (button, message);
         }
         /* If the footprint file is written successfull reflect this in the
