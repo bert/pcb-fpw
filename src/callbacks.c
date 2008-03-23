@@ -23,6 +23,10 @@
 #include "libfpw.c"
 
 
+gboolean main_window_title_has_asterisk = FALSE;
+/*!< Keep track whether the main window title has an asterisk between
+ * brackets or not. */
+
 /*!
  * \brief Change the main window title.
  */
@@ -44,15 +48,19 @@ change_main_window_title (GtkWidget *widget, gchar *main_window_title)
 int
 entry_has_changed (GtkWidget *widget)
 {
-        /* lookup the window */
-        GtkWidget *main_window;
-        main_window = lookup_widget (GTK_WIDGET (widget), "pcb_gfpw");
-        /* get the current title */
-        gchar *main_window_title = NULL;
-        main_window_title = gtk_window_get_title (main_window);
-        /* add an asterix between brackets [*] before the current window title */
-        change_main_window_title (main_window, g_strconcat ("[*] ",
-                main_window_title, NULL));
+        if (!main_window_title_has_asterisk)
+        {
+                /* lookup the window */
+                GtkWidget *main_window;
+                main_window = lookup_widget (GTK_WIDGET (widget), "pcb_gfpw");
+                /* get the current title */
+                gchar *main_window_title = NULL;
+                main_window_title = gtk_window_get_title (main_window);
+                /* add an asterix between brackets [*] before the current window title */
+                change_main_window_title (main_window, g_strconcat ("[*] ",
+                        main_window_title, NULL));
+                main_window_title_has_asterisk = TRUE;
+        }
 }
 
 
@@ -86,6 +94,7 @@ on_C1_entry_changed                    (GtkEditable     *editable,
         gchar *C1_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         C1_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         c1 = g_ascii_strtod (C1_string, &leftovers);
 }
@@ -130,6 +139,7 @@ on_C2_entry_changed                    (GtkEditable     *editable,
         gchar *C2_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         C2_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         c2 = g_ascii_strtod (C2_string, &leftovers);
 }
@@ -174,6 +184,7 @@ on_G1_entry_changed                    (GtkEditable     *editable,
         gchar *G1_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         G1_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         g1 = g_ascii_strtod (G1_string, &leftovers);
 }
@@ -218,6 +229,7 @@ on_G2_entry_changed                    (GtkEditable     *editable,
         gchar *G2_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         G2_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         g2 = g_ascii_strtod (G2_string, &leftovers);
 }
@@ -262,6 +274,7 @@ on_Z1_entry_changed                    (GtkEditable     *editable,
         gchar *Z1_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         Z1_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         z1 = g_ascii_strtod (Z1_string, &leftovers);
 }
@@ -306,6 +319,7 @@ on_Z2_entry_changed                    (GtkEditable     *editable,
         gchar *Z2_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         Z2_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         z2 = g_ascii_strtod (Z2_string, &leftovers);
 }
@@ -351,6 +365,7 @@ void
 on_clear_button_clicked                (GtkButton       *button,
                                         gpointer         user_data)
 {
+        entry_has_changed (button);
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *footprint_name_entry = NULL;
         GtkWidget *footprint_type_entry = NULL;
@@ -596,6 +611,7 @@ on_count_x_entry_changed               (GtkEditable     *editable,
         gchar *count_x_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         count_x_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         count_x = (int) g_ascii_strtod (count_x_string, &leftovers);
         number_of_pins = (number_of_rows * count_x + number_of_columns * count_y) + thermal;
@@ -620,6 +636,7 @@ on_count_y_entry_changed               (GtkEditable     *editable,
         gchar *count_y_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         count_y_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         count_y = (int) g_ascii_strtod (count_y_string, &leftovers);
         number_of_pins = (number_of_rows * count_x + number_of_columns * count_y) + thermal;
@@ -646,6 +663,7 @@ on_courtyard_checkbutton_toggled       (GtkToggleButton *togglebutton,
         GtkWidget *courtyard_width_entry = NULL;
         GtkWidget *courtyard_clearance_with_package_entry = NULL;
 
+        entry_has_changed (togglebutton);
         /* Save the state of checkbutton in a global variable */
         courtyard = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
         /* Look up widgets */
@@ -672,11 +690,12 @@ on_courtyard_checkbutton_toggled       (GtkToggleButton *togglebutton,
 void
 on_courtyard_clearance_with_package_entry_changed
                                         (GtkEditable     *editable,
-                                        gpointer         user_data)
+                                         gpointer         user_data)
 {
         gchar *courtyard_clearance_with_package_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         courtyard_clearance_with_package_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         courtyard_clearance_with_package = g_ascii_strtod (courtyard_clearance_with_package_string, &leftovers);
 }
@@ -696,6 +715,7 @@ on_courtyard_length_entry_changed      (GtkEditable     *editable,
         gchar *courtyard_length_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         courtyard_length_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         courtyard_length = g_ascii_strtod (courtyard_length_string, &leftovers);
 }
@@ -715,6 +735,7 @@ on_courtyard_line_width_entry_changed  (GtkEditable     *editable,
         gchar *courtyard_line_width_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         courtyard_line_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         courtyard_line_width = g_ascii_strtod (courtyard_line_width_string, &leftovers);
 }
@@ -734,6 +755,7 @@ on_courtyard_width_entry_changed       (GtkEditable     *editable,
         gchar *courtyard_width_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         courtyard_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         courtyard_width = g_ascii_strtod (courtyard_width_string, &leftovers);
 }
@@ -942,6 +964,7 @@ void
 on_footprint_author_entry_changed      (GtkEditable     *editable,
                                         gpointer         user_data)
 {
+        entry_has_changed (editable);
         footprint_author = gtk_entry_get_text (GTK_EDITABLE (editable));
 }
 
@@ -956,6 +979,7 @@ on_footprint_dist_license_entry_changed
                                         (GtkEditable     *editable,
                                         gpointer         user_data)
 {
+        entry_has_changed (editable);
         footprint_dist_license = gtk_entry_get_text (GTK_EDITABLE (editable));
 }
 
@@ -969,6 +993,7 @@ void
 on_footprint_name_entry_changed        (GtkEditable     *editable,
                                         gpointer         user_data)
 {
+        entry_has_changed (editable);
         footprint_name = gtk_entry_get_text (GTK_EDITABLE (editable));
         /* Check for a null pointer in footprint_name for this might cause a
          * segmentation fault or undefined behaviour.
@@ -1009,6 +1034,7 @@ void
 on_footprint_status_entry_changed      (GtkComboBox     *combobox,
                                         gpointer         user_data)
 {
+        entry_has_changed (combobox);
         footprint_status = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
 }
 
@@ -1025,6 +1051,7 @@ void
 on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                                         gpointer         user_data)
 {
+        entry_has_changed (combobox);
         /* Test if the existing footprint name is equal to the footprint
          * type or is empty or has a null pointer, if this is true the user
          * did not add any characters to the footprint name yet (he/she
@@ -1149,6 +1176,7 @@ void
 on_footprint_units_entry_changed       (GtkComboBox     *combobox,
                                         gpointer         user_data)
 {
+        entry_has_changed (combobox);
         footprint_units = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
         /* Check for a null pointer in footprint units for this might cause a
          * segmentation fault or undefined behaviour.
@@ -1207,6 +1235,7 @@ void
 on_footprint_use_license_entry_changed (GtkEditable     *editable,
                                         gpointer         user_data)
 {
+        entry_has_changed (editable);
         footprint_use_license = gtk_entry_get_text (GTK_EDITABLE (editable));
 }
 
@@ -1220,6 +1249,7 @@ void
 on_footprint_value_entry_changed       (GtkEditable     *editable,
                                         gpointer         user_data)
 {
+        entry_has_changed (editable);
         footprint_value = gtk_entry_get_text (GTK_EDITABLE (editable));
 }
 
@@ -1232,8 +1262,9 @@ on_footprint_value_entry_changed       (GtkEditable     *editable,
 void
 on_number_1_position_entry_changed
                                         (GtkComboBox     *combobox,
-                                        gpointer         user_data)
+                                         gpointer         user_data)
 {
+        entry_has_changed (combobox);
         pin_1_position = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
 }
 
@@ -1251,6 +1282,7 @@ on_number_of_columns_entry_changed     (GtkEditable     *editable,
         gchar *number_of_columns_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         number_of_columns_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         number_of_columns = (int) g_ascii_strtod (number_of_columns_string, &leftovers);
         number_of_pins = (number_of_rows * count_x + number_of_columns * count_y) + thermal;
@@ -1275,6 +1307,7 @@ on_number_of_rows_entry_changed        (GtkEditable     *editable,
         gchar *number_of_rows_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         number_of_rows_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         number_of_rows = (int) g_ascii_strtod (number_of_rows_string, &leftovers);
         number_of_pins = (number_of_rows * count_x + number_of_columns * count_y) + thermal;
@@ -1299,6 +1332,7 @@ on_number_total_pins_entry_changed     (GtkEditable     *editable,
         gchar *number_of_pins_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         number_of_pins_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         number_of_pins = (int) g_ascii_strtod (number_of_pins_string, &leftovers);
 }
@@ -1340,6 +1374,7 @@ on_package_body_height_entry_changed   (GtkEditable     *editable,
         gchar *package_body_height_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         package_body_height_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         package_body_height = g_ascii_strtod (package_body_height_string, &leftovers);
 }
@@ -1359,6 +1394,7 @@ on_package_body_length_entry_changed   (GtkEditable     *editable,
         gchar *package_body_length_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         package_body_length_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         package_body_length = g_ascii_strtod (package_body_length_string, &leftovers);
 }
@@ -1378,6 +1414,7 @@ on_package_body_width_entry_changed    (GtkEditable     *editable,
         gchar *package_body_width_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         package_body_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         package_body_width = g_ascii_strtod (package_body_width_string, &leftovers);
 }
@@ -1394,6 +1431,7 @@ on_package_is_radial_checkbutton_toggled
                                         (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
+        entry_has_changed (togglebutton);
         package_is_radial = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
 }
 
@@ -1412,6 +1450,7 @@ on_pad_clearance_entry_changed         (GtkEditable     *editable,
         gchar *pad_clearance_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         pad_clearance_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         pad_clearance = g_ascii_strtod (pad_clearance_string, &leftovers);
 }
@@ -1430,6 +1469,7 @@ on_pad_diameter_entry_changed          (GtkEditable     *editable,
         gchar *pad_diameter_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         pad_diameter_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         pad_diameter = g_ascii_strtod (pad_diameter_string, &leftovers);
 }
@@ -1448,6 +1488,7 @@ on_pad_length_entry_changed            (GtkEditable     *editable,
         gchar *pad_length_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         pad_length_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         pad_length = g_ascii_strtod (pad_length_string, &leftovers);
 }
@@ -1463,6 +1504,7 @@ void
 on_pad_shape_entry_changed    (GtkComboBox     *combobox,
                                gpointer         user_data)
 {
+        entry_has_changed (combobox);
         pad_shape = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
         /* Check for a null pointer in pad shape for this might cause a
          * segmentation fault or undefined behaviour.
@@ -1532,6 +1574,7 @@ on_pad_solder_mask_clearance_entry_changed
         gchar *pad_SMC_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         pad_SMC_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         pad_solder_mask_clearance = g_ascii_strtod (pad_SMC_string, &leftovers);
 }
@@ -1564,6 +1607,7 @@ on_pad_width_entry_changed             (GtkEditable     *editable,
         gchar *pad_width_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         pad_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         pad_width = g_ascii_strtod (pad_width_string, &leftovers);
 }
@@ -1583,6 +1627,7 @@ on_pin_drill_diameter_entry_changed    (GtkEditable     *editable,
         gchar *pin_drill_diameter_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         pin_drill_diameter_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         pin_drill_diameter = g_ascii_strtod (pin_drill_diameter_string, &leftovers);
 }
@@ -1597,6 +1642,7 @@ void
 on_pin_square_checkbutton_toggled      (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
+        entry_has_changed (togglebutton);
         /* Save the state of checkbutton in global variable */
         pin1_square = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
 }
@@ -1614,6 +1660,7 @@ on_pitch_x_entry_changed               (GtkEditable     *editable,
         gchar *pitch_x_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         pitch_x_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         pitch_x = g_ascii_strtod (pitch_x_string, &leftovers);
 }
@@ -1632,6 +1679,7 @@ on_pitch_y_entry_changed               (GtkEditable     *editable,
         gchar *pitch_y_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         pitch_y_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         pitch_y = g_ascii_strtod (pitch_y_string, &leftovers);
 }
@@ -1738,6 +1786,7 @@ on_save_button_clicked                 (GtkButton       *button,
         {
                 change_main_window_title (button, g_strconcat ("pcb-gfpw : ",
                         fpw_filename, NULL));
+                main_window_title_has_asterisk = FALSE;
         }
         else
         {
@@ -1773,6 +1822,7 @@ on_silkscreen_indicate_1_checkbutton_toggled
                                         (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
+        entry_has_changed (togglebutton);
         silkscreen_indicate_1 = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
 }
 
@@ -1791,6 +1841,7 @@ on_silkscreen_line_width_entry_changed (GtkEditable     *editable,
         gchar *silkscreen_line_width_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         silkscreen_line_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         silkscreen_line_width = g_ascii_strtod (silkscreen_line_width_string, &leftovers);
 }
@@ -1809,10 +1860,11 @@ on_silkscreen_line_width_entry_changed (GtkEditable     *editable,
 void
 on_silkscreen_package_outline_checkbutton_toggled
                                         (GtkToggleButton *togglebutton,
-                                        gpointer         user_data)
+                                         gpointer         user_data)
 {
         GtkWidget *silkscreen_line_width_entry = NULL;
 
+        entry_has_changed (togglebutton);
         /* Save the state of checkbutton in global variable */
         silkscreen_package_outline = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
         /* Look up widgets */
@@ -1844,6 +1896,7 @@ on_thermal_checkbutton_toggled         (GtkToggleButton *togglebutton,
         GtkWidget *thermal_clearance_entry = NULL;
         GtkWidget *thermal_solder_mask_clearance_entry = NULL;
 
+        entry_has_changed (togglebutton);
         /* Save the state of checkbutton in a global variable */
         thermal = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
         /* Look up widgets */
@@ -1892,6 +1945,7 @@ on_thermal_clearance_entry_changed     (GtkEditable     *editable,
         gchar *thermal_clearance_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         thermal_clearance_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         thermal_clearance = g_ascii_strtod (thermal_clearance_string, &leftovers);
 }
@@ -1910,6 +1964,7 @@ on_thermal_length_entry_changed        (GtkEditable     *editable,
         gchar *thermal_length_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         thermal_length_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         thermal_length = g_ascii_strtod (thermal_length_string, &leftovers);
 }
@@ -1925,6 +1980,7 @@ void
 on_thermal_nopaste_checkbutton_toggled (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
+        entry_has_changed (togglebutton);
         thermal_nopaste = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
 }
 
@@ -1939,11 +1995,12 @@ on_thermal_nopaste_checkbutton_toggled (GtkToggleButton *togglebutton,
 void
 on_thermal_solder_mask_clearance_entry_changed
                                         (GtkEditable     *editable,
-                                        gpointer         user_data)
+                                         gpointer         user_data)
 {
         gchar *SMC_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         SMC_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         thermal_solder_mask_clearance = g_ascii_strtod (SMC_string, &leftovers);
 }
@@ -1962,6 +2019,7 @@ on_thermal_width_entry_changed         (GtkEditable     *editable,
         gchar *thermal_width_string = NULL;
         gchar *leftovers;
 
+        entry_has_changed (editable);
         thermal_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         thermal_width = g_ascii_strtod (thermal_width_string, &leftovers);
 }
