@@ -27,6 +27,11 @@ gboolean main_window_title_has_asterisk = FALSE;
 /*!< Keep track whether the main window title has an asterisk between
  * brackets or not. */
 
+gboolean fpw_file_saved = FALSE;
+/*!< Keep track whether the FootPrintWizard file is saved, and thus has a
+ * valid filename */
+
+
 /*!
  * \brief Change the main window title.
  */
@@ -56,10 +61,24 @@ entry_has_changed (GtkWidget *widget)
                 /* get the current title */
                 gchar *main_window_title = NULL;
                 main_window_title = gtk_window_get_title (main_window);
-                /* add an asterix between brackets [*] before the current window title */
-                change_main_window_title (main_window, g_strconcat ("[*] ",
-                        main_window_title, NULL));
-                main_window_title_has_asterisk = TRUE;
+                if (!fpw_file_saved)
+                {
+                        /* fpw file has not been saved before */
+                        change_main_window_title (main_window,
+                                g_strconcat ("pcb-gfpw : Unsaved fpw file",
+                                NULL));
+                }
+                else
+                {
+                        /* fpw file has been saved before, assume the fpw
+                         * filename is already listed in the main window
+                         * title, add an asterix between brackets [*] before
+                         * the current window title */
+                        change_main_window_title (main_window,
+                                g_strconcat ("[*] ",
+                                main_window_title, NULL));
+                        main_window_title_has_asterisk = TRUE;
+                }
         }
 }
 
@@ -1787,6 +1806,7 @@ on_save_button_clicked                 (GtkButton       *button,
                 change_main_window_title (button, g_strconcat ("pcb-gfpw : ",
                         fpw_filename, NULL));
                 main_window_title_has_asterisk = FALSE;
+                fpw_file_saved = TRUE;
         }
         else
         {
