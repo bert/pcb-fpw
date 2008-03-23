@@ -24,6 +24,39 @@
 
 
 /*!
+ * \brief Change the main window title.
+ */
+int
+change_main_window_title (GtkWidget *widget, gchar *main_window_title)
+{
+        /* lookup the window */
+        GtkWidget *main_window;
+        main_window = lookup_widget (GTK_WIDGET (widget), "pcb_gfpw");
+        gtk_window_set_title (main_window, main_window_title);
+}
+
+
+/*!
+ * \brief The value in one of the entries in the GUI has changed.
+ *
+ * - add an asterix between brackets [*] before the current window title.
+ */
+int
+entry_has_changed (GtkWidget *widget)
+{
+        /* lookup the window */
+        GtkWidget *main_window;
+        main_window = lookup_widget (GTK_WIDGET (widget), "pcb_gfpw");
+        /* get the current title */
+        gchar *main_window_title = NULL;
+        main_window_title = gtk_window_get_title (main_window);
+        /* add an asterix between brackets [*] before the current window title */
+        change_main_window_title (main_window, g_strconcat ("[*] ",
+                main_window_title, NULL));
+}
+
+
+/*!
  * \brief Send a message to the statusbar.
  */
 int
@@ -36,19 +69,6 @@ message_to_statusbar (GtkWidget *widget, gchar *message)
         statusbar = lookup_widget (GTK_WIDGET (widget), "statusbar");
         context_id = gtk_statusbar_get_context_id (statusbar, message);
         message_id = gtk_statusbar_push (statusbar, context_id, message);
-}
-
-
-/*!
- * \brief Change the main window title.
- */
-int
-change_main_window_title (GtkWidget *widget, gchar *main_window_title)
-{
-        /* lookup the window */
-        GtkWidget *main_window;
-        main_window = lookup_widget (GTK_WIDGET (widget), "pcb_gfpw");
-        gtk_window_set_title (main_window, main_window_title);
 }
 
 
