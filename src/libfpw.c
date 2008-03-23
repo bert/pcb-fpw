@@ -626,8 +626,8 @@ write_footprint_dip ()
                 ymax = multiplier * (courtyard_width / 2);
         /* Write element header
          * Guess for a place where to put the refdes text */
-        x_text = 0.0 ; /* in mil/100 */
-        y_text = (ymin / 2) - 15000.0; /* in mil/100 */
+        x_text = 0.0 ; /* already in mil/100 */
+        y_text = (ymin / 2) - 15000.0; /* already in mil/100 */
         write_element_header (x_text, y_text);
         /* Write pin and/or pad entities */
         for (i = 0; i < (number_of_rows); i++)
@@ -705,9 +705,9 @@ write_footprint_dip ()
                 write_rectangle
                 (
                         multiplier * (((-pitch_x + pad_diameter + silkscreen_line_width) / 2) + pad_solder_mask_clearance) ,
-                        multiplier * ymin,
+                        ymin, /* already in mil/100 */
                         multiplier * (((pitch_x - pad_diameter - silkscreen_line_width) / 2) - pad_solder_mask_clearance) ,
-                        multiplier * ymax,
+                        ymax, /* already in mil/100 */
                         multiplier * silkscreen_line_width
                 );
         }
@@ -716,13 +716,13 @@ write_footprint_dip ()
         {
                 write_element_arc
                 (
-                        multiplier * (xmin / 4),
-                        multiplier * ymin,
-                        multiplier * (xmax / 4),
-                        multiplier * ymin,
+                        (xmin / 4), /* already in mil/100 */
+                        ymin, /* already in mil/100 */
+                        (xmax / 4), /* already in mil/100 */
+                        ymin, /* already in mil/100 */
                         0,
                         180,
-                        multiplier * courtyard_line_width
+                        multiplier * silkscreen_line_width
                 );
         }
         /* Write a courtyard */
@@ -730,10 +730,10 @@ write_footprint_dip ()
         {
                 write_rectangle
                 (
-                        multiplier * xmin,
-                        multiplier * ymin,
-                        multiplier * xmax,
-                        multiplier * ymax,
+                        xmin, /* already in mil/100 */
+                        ymin, /* already in mil/100 */
+                        xmax, /* already in mil/100 */
+                        ymax, /* already in mil/100 */
                         multiplier * courtyard_line_width
                 );
         }
