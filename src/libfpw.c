@@ -393,8 +393,8 @@ write_element_header
                 "Element[\"\" \"%s\" \"?\" \"%s\" 0 0 %d %d 0 100 \"\"]\n(\n",
                 footprint_name,
                 footprint_value,
-                (int) (x_text * multiplier),
-                (int) (y_text * multiplier)
+                (int) (x_text),
+                (int) (y_text)
         );
 }
 
@@ -630,7 +630,7 @@ write_footprint_dip ()
         y_text = (ymin / 2) - 150.0;
         write_element_header (x_text, y_text);
         /* Write pin and/or pad entities */
-        for (i = 0; i < (number_of_rows - 1); i++)
+        for (i = 0; i < (number_of_rows); i++)
         {
                 pin_number = 1 + i;
                 if (pin1_square && (pin_number == 1))
