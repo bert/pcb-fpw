@@ -446,6 +446,8 @@ on_clear_button_clicked                (GtkButton       *button,
         GtkWidget *number_of_columns_entry = NULL;
         GtkWidget *pitch_x_entry = NULL;
         GtkWidget *pitch_y_entry = NULL;
+        GtkWidget *count_x_entry = NULL;
+        GtkWidget *count_y_entry = NULL;
         GtkWidget *pad_shape_entry = NULL;
         GtkWidget *number_1_position_entry = NULL;
         GtkWidget *pad_diameter_entry = NULL;
@@ -464,6 +466,8 @@ on_clear_button_clicked                (GtkButton       *button,
                 "number_of_columns_entry");
         pitch_x_entry = lookup_widget (GTK_BUTTON (button), "pitch_x_entry");
         pitch_y_entry = lookup_widget (GTK_BUTTON (button), "pitch_y_entry");
+        count_x_entry = lookup_widget (GTK_BUTTON (button), "count_x_entry");
+        count_y_entry = lookup_widget (GTK_BUTTON (button), "count_y_entry");
         pad_shape_entry = lookup_widget (GTK_BUTTON (button),
                 "pad_shape_entry");
         number_1_position_entry = lookup_widget (GTK_BUTTON (button),
@@ -488,6 +492,8 @@ on_clear_button_clicked                (GtkButton       *button,
         gtk_entry_set_text (GTK_WIDGET (number_of_columns_entry), "");
         gtk_entry_set_text (GTK_WIDGET (pitch_x_entry), "");
         gtk_entry_set_text (GTK_WIDGET (pitch_y_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (count_x_entry), "");
+        gtk_entry_set_text (GTK_WIDGET (count_y_entry), "");
         gtk_combo_box_set_active (GTK_WIDGET (pad_shape_entry), 0);
         gtk_combo_box_set_active (GTK_WIDGET (number_1_position_entry), 0);
         gtk_entry_set_text (GTK_WIDGET (pad_diameter_entry), "");
