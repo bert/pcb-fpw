@@ -626,8 +626,8 @@ write_footprint_dip ()
                 ymax = multiplier * (courtyard_width / 2);
         /* Write element header
          * Guess for a place where to put the refdes text */
-        x_text = 0.0 ;
-        y_text = (ymin / 2) - 150.0;
+        x_text = 0.0 ; /* in mil/100 */
+        y_text = (ymin / 2) - 15000.0; /* in mil/100 */
         write_element_header (x_text, y_text);
         /* Write pin and/or pad entities */
         for (i = 0; i < (number_of_rows); i++)
