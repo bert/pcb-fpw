@@ -113,7 +113,7 @@ typedef enum locations location_t;
          * Primarily used for pads used as fiducials. */
 
 gint gui = TRUE;
-        /*! Graphical User Interface:\n
+        /*!< Graphical User Interface:\n
          * for gfpw == TRUE (default) \n
          * for fpw == FALSE (will override the default setting) */
 FILE *fp;
