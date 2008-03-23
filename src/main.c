@@ -15,9 +15,6 @@
  * \todo Add the preview widget.
  *
  * \todo Add a menubar (in the future ?).
- *
- * \todo Add the name "Unsaved footprintwizard file" to the title if the fpw
- * file has not been saved.
  */
 
 #ifdef HAVE_CONFIG_H
