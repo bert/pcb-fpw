@@ -16,13 +16,8 @@
  *
  * \todo Add a menubar (in the future ?).
  *
- * \todo Add the footprintwizard filename to the window title.
- *
  * \todo Add the name "Unsaved footprintwizard file" to the title if the fpw
  * file has not been saved.
- *
- * \todo Add an asterisk (*) to the window title if any entry has been
- * changed by the user and no intermediate save has occurred.
  */
 
 #ifdef HAVE_CONFIG_H
