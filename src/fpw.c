@@ -52,10 +52,14 @@ static void
 print_usage ()
 {
         fprintf (stderr, "\n%s usage:\n", program_name);
-        fprintf (stderr, "%s -h   : prints this help message and exits.\n\n", program_name);
-        fprintf (stderr, "%s -V   : prints the version information and exits.\n\n", program_name);
-        fprintf (stderr, "%s -f fpw_filename -o footprint_name   : reads the template file specified after -f and\n", program_name);
-        fprintf (stderr, "                                          writes a footprint to the file specified after -o.\n\n");
+        fprintf (stderr, "%s -h   : print this help message and exit.\n", program_name);
+        fprintf (stderr, "\n");
+        fprintf (stderr, "%s -V   : print the version information and exit.\n", program_name);
+        fprintf (stderr, "\n");
+        fprintf (stderr, "To write a footprint file use:\n");
+        fprintf (stderr, "\n");
+        fprintf (stderr, "\t%s -f fpw_filename -o footprint_name\n", program_name);
+        fprintf (stderr, "\n");
         exit (EXIT_SUCCESS);
 }
 
