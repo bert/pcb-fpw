@@ -210,3 +210,7 @@ void
 on_thermal_width_entry_changed (GtkEditable *editable, gpointer user_data);
 
 /* EOF */
+
+void
+on_footprint_refdes_entry_changed      (GtkEditable     *editable,
+                                        gpointer         user_data);

@@ -136,6 +136,8 @@ gchar *footprint_units = NULL;
         /*!< Units for the footprint dimensions. */
 gdouble multiplier;
         /*!< Multiplier to convert to mils/100. */
+gchar *footprint_refdes;
+        /*!< Default value of the refdes prefix. */
 gchar *footprint_value;
         /*!< Default value of the package. */
 
@@ -267,6 +269,7 @@ read_footprintwizard_file()
         fscanf (fpw, "%s\n", dummy); /* do not (re)use this value ! */
         fscanf (fpw, "%s\n", footprint_type);
         fscanf (fpw, "%s\n", footprint_units);
+        fscanf (fpw, "%s\n", footprint_refdes);
         fscanf (fpw, "%s\n", footprint_value);
         fscanf (fpw, "%f\n", package_body_length);
         fscanf (fpw, "%f\n", package_body_width);
@@ -390,8 +393,9 @@ write_element_header
         fprintf
         (
                 fp,
-                "Element[\"\" \"%s\" \"?\" \"%s\" 0 0 %d %d 0 100 \"\"]\n(\n",
+                "Element[\"\" \"%s\" \"%s?\" \"%s\" 0 0 %d %d 0 100 \"\"]\n(\n",
                 footprint_name,
+                footprint_refdes,
                 footprint_value,
                 (int) (x_text),
                 (int) (y_text)
@@ -1271,6 +1275,7 @@ write_footprintwizard_file()
         fprintf (fpw, "%s\n", footprint_name);
         fprintf (fpw, "%s\n", footprint_type);
         fprintf (fpw, "%s\n", footprint_units);
+        fprintf (fpw, "%s\n", footprint_refdes);
         fprintf (fpw, "%s\n", footprint_value);
         fprintf (fpw, "%f\n", package_body_length);
         fprintf (fpw, "%f\n", package_body_width);

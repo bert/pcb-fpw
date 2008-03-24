@@ -1054,6 +1054,19 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
 
 
 /*!
+ * \brief The "footprint refdes prefix" entry is changed.
+ *
+ * - store in the \c footprint_refdes variable (global).
+ */
+void
+on_footprint_refdes_entry_changed      (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+        entry_has_changed (editable);
+        footprint_refdes = gtk_entry_get_text (GTK_EDITABLE (editable));
+}
+
+/*!
  * \brief The "footprint status" entry is changed.
  *
  * - store in the \c footprint_status variable (global).
