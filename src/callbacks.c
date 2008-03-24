@@ -392,6 +392,7 @@ on_clear_button_clicked                (GtkButton       *button,
         GtkWidget *footprint_name_entry = NULL;
         GtkWidget *footprint_type_entry = NULL;
         GtkWidget *footprint_units_entry = NULL;
+        GtkWidget *footprint_refdes_entry = NULL;
         GtkWidget *footprint_value_entry = NULL;
         GtkWidget *package_body_length_entry = NULL;
         GtkWidget *package_body_width_entry = NULL;
@@ -408,6 +409,8 @@ on_clear_button_clicked                (GtkButton       *button,
                 "footprint_type_entry");
         footprint_units_entry = lookup_widget (GTK_BUTTON (button),
                 "footprint_units_entry");
+        footprint_refdes_entry = lookup_widget (GTK_BUTTON (button),
+                "footprint_refdes_entry");
         footprint_value_entry = lookup_widget (GTK_BUTTON (button),
                 "footprint_value_entry");
         package_body_length_entry = lookup_widget (GTK_BUTTON (button),
@@ -430,6 +433,7 @@ on_clear_button_clicked                (GtkButton       *button,
         gtk_entry_set_text (GTK_WIDGET (footprint_name_entry), "");
         gtk_combo_box_set_active (GTK_WIDGET (footprint_type_entry), 0);
         gtk_combo_box_set_active (GTK_WIDGET (footprint_units_entry), 0);
+        gtk_entry_set_text (GTK_WIDGET (footprint_refdes_entry), "");
         gtk_entry_set_text (GTK_WIDGET (footprint_value_entry), "");
         gtk_entry_set_text (GTK_WIDGET (package_body_length_entry), "");
         gtk_entry_set_text (GTK_WIDGET (package_body_width_entry), "");
