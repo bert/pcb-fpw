@@ -610,7 +610,8 @@ write_footprint_dip ()
                 );
                 return (EXIT_FAILURE);
         }
-        /* Determine (extreme) courtyard dimensions */
+        /* Determine (extreme) courtyard dimensions based on pin/pad
+         * properties */
         if (pad_diameter > pad_length)
         {
                 xmin = multiplier *
@@ -671,7 +672,17 @@ write_footprint_dip ()
                         pad_solder_mask_clearance
                 );
         }
-        /* If the user input is using more real-estate then use it */
+        /* Determine (extreme) courtyard dimensions based on package
+         * properties */
+        if (multiplier * ((-package_body_length - courtyard_clearance_with_package) / 2.0) < xmin)
+                xmin = multiplier * ((-package_body_length - courtyard_clearance_with_package) / 2.0);
+        if (multiplier * ((package_body_length + courtyard_clearance_with_package) / 2.0) > xmax)
+                xmax = multiplier * ((package_body_length + courtyard_clearance_with_package) / 2.0);
+        if (multiplier * ((-package_body_width - courtyard_clearance_with_package) / 2.0) < ymin)
+                ymin = multiplier * ((-package_body_width - courtyard_clearance_with_package) / 2.0);
+        if (multiplier * ((package_body_width + courtyard_clearance_with_package) / 2.0) > ymax)
+                ymax = multiplier * ((package_body_width + courtyard_clearance_with_package) / 2.0);
+        /* If the user input is using even more real-estate then use it */
         if (multiplier * (-courtyard_length / 2.0) < xmin)
                 xmin = multiplier * (-courtyard_length / 2.0);
         if (multiplier * (courtyard_length / 2.0) > xmax)
