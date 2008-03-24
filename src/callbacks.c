@@ -1128,6 +1128,11 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                 package_type = CAPC;
                 return;
         }
+        else if (!strcmp (footprint_type, "CAPM"))
+        {
+                package_type = CAPM;
+                return;
+        }
         else if (!strcmp (footprint_type, "DIL"))
         {
                 package_type = DIL;
@@ -1141,6 +1146,11 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         else if (!strcmp (footprint_type, "INDC"))
         {
                 package_type = INDC;
+                return;
+        }
+        else if (!strcmp (footprint_type, "INDM"))
+        {
+                package_type = INDM;
                 return;
         }
         else if (!strcmp (footprint_type, "PGA"))
@@ -1172,9 +1182,14 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                 package_type = RESC;
                 return;
         }
+        else if (!strcmp (footprint_type, "RESM"))
+        {
+                package_type = RESM;
+                return;
+        }
         else if (!strcmp (footprint_type, "SIL"))
         {
-                package_type = SIP;
+                package_type = SIL;
                 gchar *message = NULL;
                 message = g_strdup_printf (_("ERROR: footprint type SIL is not yet implemented."));
                 message_to_statusbar (combobox, message);

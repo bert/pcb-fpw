@@ -24,27 +24,29 @@
 /* Some package types conforming to IPC name space definitions */
 enum packages
 {
-        BGA, /*!< Ball Gate Array package. */
-        CAPC, /*!< Capacitor, Chip package. */
-        CAPM, /*!< Capacitor, Molded, Non-polarized package. */
-        CAPMP, /*!< Capacitor, Molded, Polarized package. */
-        DIOM, /*!< Diode, Molded package. */
-        DIL, /*!< Dual Inline Package. */
-        DIP, /*!< Dual Inline Package. */
-        DO, /*!< Diode Outline package. */
-        INDC, /*!< Inductor, Chip pacakge. */
-        PGA, /*!< Pin Gate Array package. */
-        PLCC, /*!< Plastic Leadless Chip Carrier package. */
-        QFN, /*!< Quad Flat No-leads package. */
-        QFP, /*!< Quad Flat Package. */
+        BGA, /*!< Ball gate array package. */
+        CAPC, /*!< Capacitor, chip package. */
+        CAPM, /*!< Capacitor, molded, non-polarized package. */
+        CAPMP, /*!< Capacitor, molded, polarized package. */
+        DIOM, /*!< Diode, molded package. */
+        DIL, /*!< Dual inline package. */
+        DIP, /*!< Dual inline package. */
+        DO, /*!< Diode outline package. */
+        INDC, /*!< Inductor, chip package. */
+        INDM, /*!< Inductor, molded package. */
+        PGA, /*!< Pin gate array package. */
+        PLCC, /*!< Plastic leadless chip carrier package. */
+        QFN, /*!< Quad flat no-leads package. */
+        QFP, /*!< Quad flat package. */
         RES, /*!< Resistor TH technology package. */
-        RESC, /*!< Resistor, Chip package. */
-        SIL, /*!< Single Inline Package. */
-        SIP, /*!< Single Inline Package. */
-        SO, /*!< Small Outline package. */
-        TO, /*!< Transistor Outline package. */
-        TO92, /*!< Transistor Outline package. */
-        TO220, /*!< Transistor Outline package. */
+        RESC, /*!< Resistor, chip package. */
+        RESM, /*!< Resistor, molded package. */
+        SIL, /*!< Single inline package. */
+        SIP, /*!< Single inline package. */
+        SO, /*!< Small outline package. */
+        TO, /*!< Transistor outline package. */
+        TO92, /*!< Transistor outline package. */
+        TO220, /*!< Transistor outline package. */
         NUMBER_OF_PACKAGE_TYPES /*!< Number of package types. */
 };
 
@@ -1342,19 +1344,32 @@ write_footprint()
                 case BGA :
                         break;
                 case CAPC :
-                case INDC :
-                case RESC :
                         write_footprint_smt ();
+                        break;
+                case CAPM :
+                        write_footprint_smt_molded ();
                         break;
                 case DIL :
                 case DIP :
                         write_footprint_dip ();
+                        break;
+                case INDC :
+                        write_footprint_smt ();
+                        break;
+                case INDM :
+                        write_footprint_smt_molded ();
                         break;
                 case PGA :
                         break;
                 case QFN :
                         break;
                 case QFP :
+                        break;
+                case RESC :
+                        write_footprint_smt ();
+                        break;
+                case RESM :
+                        write_footprint_smt_molded ();
                         break;
                 case SIL :
                         break;
