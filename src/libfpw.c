@@ -1350,6 +1350,9 @@ write_footprint()
                         write_footprint_smt_molded ();
                         break;
                 case DIL :
+                case DIOM :
+                        write_footprint_smt_molded ();
+                        break;
                 case DIP :
                         write_footprint_dip ();
                         break;
