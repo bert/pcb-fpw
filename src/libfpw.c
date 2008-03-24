@@ -851,25 +851,38 @@ write_footprint_smt ()
                 );
                 return (EXIT_FAILURE);
         }
-        /* Determine (extreme) courtyard dimensions */
-        xmin = multiplier * ((-pitch_x / 2) - (pad_length / 2) - pad_solder_mask_clearance);
-        xmax = multiplier * (pitch_x / 2 + pad_length / 2 + pad_solder_mask_clearance);
-        ymin = multiplier * ((-pad_width / 2) - pad_solder_mask_clearance);
-        ymax = multiplier * (pad_width / 2 + pad_solder_mask_clearance);
-        /* If the user input is using more real-estate then use it */
-        if (multiplier * (-courtyard_length / 2) < xmin)
-                xmin = multiplier * (-courtyard_length / 2);
-        if (multiplier * (courtyard_length / 2) > xmax)
-                xmax = multiplier * (courtyard_length / 2);
-        if (multiplier * (-courtyard_width / 2) < ymin)
-                ymin = multiplier * (-courtyard_width / 2);
-        if (multiplier * (courtyard_width / 2) > ymax)
-                ymax = multiplier * (courtyard_width / 2);
+        /* Determine (extreme) courtyard dimensions based on pin/pad
+         * properties */
+        xmin = multiplier * ((-pitch_x / 2.0) - (pad_length / 2.0) - pad_solder_mask_clearance);
+        xmax = multiplier * (pitch_x / 2.0 + pad_length / 2.0 + pad_solder_mask_clearance);
+        ymin = multiplier * ((-pad_width / 2.0) - pad_solder_mask_clearance);
+        ymax = multiplier * (pad_width / 2.0 + pad_solder_mask_clearance);
+        /* Determine (extreme) courtyard dimensions based on package
+         * properties */
+        if (multiplier * ((-package_body_length - courtyard_clearance_with_package) / 2.0) < xmin)
+                xmin = multiplier * ((-package_body_length - courtyard_clearance_with_package) / 2.0);
+        if (multiplier * ((package_body_length + courtyard_clearance_with_package) / 2.0) > xmax)
+                xmax = multiplier * ((package_body_length + courtyard_clearance_with_package) / 2.0);
+        if (multiplier * ((-package_body_width - courtyard_clearance_with_package) / 2.0) < ymin)
+                ymin = multiplier * ((-package_body_width - courtyard_clearance_with_package) / 2.0);
+        if (multiplier * ((package_body_width + courtyard_clearance_with_package) / 2.0) > ymax)
+                ymax = multiplier * ((package_body_width + courtyard_clearance_with_package) / 2.0);
+        /* If the user input is using even more real-estate then use it */
+        if (multiplier * (-courtyard_length / 2.0) < xmin)
+                xmin = multiplier * (-courtyard_length / 2.0);
+        if (multiplier * (courtyard_length / 2.0) > xmax)
+                xmax = multiplier * (courtyard_length / 2.0);
+        if (multiplier * (-courtyard_width / 2.0) < ymin)
+                ymin = multiplier * (-courtyard_width / 2.0);
+        if (multiplier * (courtyard_width / 2.0) > ymax)
+                ymax = multiplier * (courtyard_width / 2.0);
         /* Write element header
          * Guess for a place where to put the refdes text */
-        x_text = 0.0 ;
-        y_text = (ymin / 2) - 150.0;
+        x_text = 0.0 ; /* already in mil/100 */
+        y_text = (ymin - 10000.0); /* already in mil/100 */
         write_element_header (x_text, y_text);
+        if (!strcmp (pad_shape, "rectangular pad"))
+                pin_pad_flags = g_strdup ("square");
         /* Write pin and/or pad entities */
         if (pad_length > pad_width) /* Write pads parallel to x-axis */
         {
@@ -879,9 +892,9 @@ write_footprint_smt ()
                 (
                         1, /* pad number */
                         "", /* pad name */
-                        multiplier * -1 * (pitch_x + pad_length - pad_width) / 2, /* x0 coordinate */
+                        multiplier * ((-pitch_x - pad_length + pad_width) / 2.0), /* x0 coordinate */
                         0, /* y0-coordinate */
-                        multiplier * (-pitch_x + pad_length - pad_width) / 2, /* x1 coordinate */
+                        multiplier * ((-pitch_x + pad_length - pad_width) / 2.0), /* x1 coordinate */
                         0, /* y1-coordinate */
                         multiplier * pad_width, /* width of the pad */
                         multiplier * pad_clearance, /* clearance */
@@ -894,9 +907,9 @@ write_footprint_smt ()
                 (
                         2, /* pad number */
                         "", /* pad name */
-                        multiplier * -1 * (-pitch_x + pad_length - pad_width) / 2, /* x0 coordinate */
+                        multiplier * ((pitch_x - pad_length + pad_width) / 2.0), /* x0 coordinate */
                         0, /* y0-coordinate */
-                        multiplier * (pitch_x + pad_length - pad_width) / 2, /* x1 coordinate */
+                        multiplier * ((pitch_x + pad_length - pad_width) / 2.0), /* x1 coordinate */
                         0, /* y1-coordinate */
                         multiplier * pad_width, /* width of the pad */
                         multiplier * pad_clearance, /* clearance */
@@ -906,16 +919,15 @@ write_footprint_smt ()
         }
         else /* write pads perpendiclar to x-axis */
         {
-                fprintf (stderr, "Pads are drawn perpendicular to X-axis.\n");
                 /* Pad #1 */
                 write_pad
                 (
                         1, /* pad number */
                         "", /* pad name */
+                        multiplier * (-pitch_x / 2.0), /* x0-coordinate */
+                        multiplier * ((pad_width - pad_length) / 2.0), /* y0-coordinate */
                         multiplier * (-pitch_x / 2), /* x0-coordinate */
-                        multiplier * (pad_width - pad_length) / 2, /* y0-coordinate */
-                        multiplier * (-pitch_x / 2), /* x0-coordinate */
-                        multiplier * (-pad_width + pad_length) / 2, /* y1-coordinate */
+                        multiplier * ((-pad_width + pad_length) / 2.0), /* y1-coordinate */
                         multiplier * pad_length, /* width of the pad */
                         multiplier * pad_clearance, /* clearance */
                         multiplier * (pad_length + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
@@ -927,10 +939,10 @@ write_footprint_smt ()
                 (
                         2, /* pad number */
                         "", /* pad name */
-                        multiplier * (pitch_x / 2), /* x1-coordinate */
-                        multiplier * (pad_width - pad_length) / 2, /* y0-coordinate */
-                        multiplier * (pitch_x / 2), /* x1-coordinate */
-                        multiplier * (-pad_width + pad_length) / 2, /* y1-coordinate */
+                        multiplier * (pitch_x / 2.0), /* x1-coordinate */
+                        multiplier * ((pad_width - pad_length) / 2.0), /* y0-coordinate */
+                        multiplier * (pitch_x / 2.0), /* x1-coordinate */
+                        multiplier * ((-pad_width + pad_length) / 2.0), /* y1-coordinate */
                         multiplier * pad_length, /* width of the pad */
                         multiplier * pad_clearance, /* clearance */
                         multiplier * (pad_length + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
@@ -938,39 +950,39 @@ write_footprint_smt ()
                 );
         }
         /* Write a package body on the silkscreen */
-        if (silkscreen_package_outline)
+        if (silkscreen_package_outline && (package_body_width))
         {
                 write_element_line
                 (
-                        multiplier * (((-pitch_x + pad_length) / 2) + pad_solder_mask_clearance + silkscreen_line_width),
-                        multiplier * (package_body_width / 2),
-                        multiplier * (((pitch_x - pad_length) / 2) - pad_solder_mask_clearance - silkscreen_line_width),
-                        multiplier * (package_body_width / 2),
+                        multiplier * (((-pitch_x + pad_length) / 2.0) + pad_solder_mask_clearance + silkscreen_line_width),
+                        multiplier * (package_body_width / 2.0),
+                        multiplier * (((pitch_x - pad_length) / 2.0) - pad_solder_mask_clearance - silkscreen_line_width),
+                        multiplier * (package_body_width / 2.0),
                         multiplier * silkscreen_line_width
                 );
                 write_element_line
                 (
-                        multiplier * (((-pitch_x + pad_length) / 2) + pad_solder_mask_clearance + silkscreen_line_width),
-                        multiplier * (-package_body_width / 2),
-                        multiplier * (((pitch_x - pad_length) / 2) - pad_solder_mask_clearance - silkscreen_line_width),
-                        multiplier * (-package_body_width / 2),
+                        multiplier * (((-pitch_x + pad_length) / 2.0) + pad_solder_mask_clearance + silkscreen_line_width),
+                        multiplier * (-package_body_width / 2.0),
+                        multiplier * (((pitch_x - pad_length) / 2.0) - pad_solder_mask_clearance - silkscreen_line_width),
+                        multiplier * (-package_body_width / 2.0),
                         multiplier * silkscreen_line_width
                 );
         }
         /* Write a pin #1 marker */
         if (silkscreen_indicate_1)
         {
-                /* package has no pin/pad #1 indications */
+                /* package has no pin/pad #1 indication */
         }
         /* Write a courtyard */
         if (courtyard)
         {
                 write_rectangle
                 (
-                        multiplier * (-courtyard_length / 2),
-                        multiplier * (-courtyard_width / 2),
-                        multiplier * (courtyard_length / 2),
-                        multiplier * (courtyard_width / 2),
+                        xmin, /* already in mil/100 */
+                        ymin, /* already in mil/100 */
+                        xmax, /* already in mil/100 */
+                        ymax, /* already in mil/100 */
                         multiplier * courtyard_line_width
                 );
         }
