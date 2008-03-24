@@ -357,7 +357,7 @@ write_element_arc
                               * 0 = negative X-axis, 90 = positive Y-axis. */
         gdouble delta_angle, /*!< The angle of sweep in degrees.\n
                               * positive = CCW, negative = CW. */
-        gdouble line_width /*!< The width of the silk line which forms the arc. */
+        gdouble line_width /*!< The width of the line which forms the arc. */
 )
 {
         fprintf
@@ -611,23 +611,79 @@ write_footprint_dip ()
                 return (EXIT_FAILURE);
         }
         /* Determine (extreme) courtyard dimensions */
-        xmin = multiplier * ((-pitch_x / 2) - (pad_diameter / 2) - pad_solder_mask_clearance);
-        xmax = multiplier * (pitch_x / 2 + pad_diameter / 2 + pad_solder_mask_clearance);
-        ymin = multiplier * ((-number_of_pins / 4) * pitch_y - (pad_diameter / 2) - pad_solder_mask_clearance);
-        ymax = multiplier * ((number_of_pins / 4) * pitch_y + (pad_diameter / 2) + pad_solder_mask_clearance);
+        if (pad_diameter > pad_length)
+        {
+                xmin = multiplier *
+                (
+                        (-pitch_x / 2.0) -
+                        (pad_diameter / 2.0) -
+                        pad_solder_mask_clearance
+                );
+                xmax = multiplier *
+                (
+                        (pitch_x / 2.0) +
+                        (pad_diameter / 2.0) +
+                        pad_solder_mask_clearance
+                );
+        }
+        else
+        {
+                xmin = multiplier *
+                (
+                        (-pitch_x / 2.0) -
+                        (pad_length / 2.0) -
+                        pad_solder_mask_clearance
+                );
+                xmax = multiplier *
+                (
+                        (pitch_x / 2.0) +
+                        (pad_length / 2.0) +
+                        pad_solder_mask_clearance
+                );
+        }
+        if (pad_diameter > pad_width)
+        {
+                ymin = multiplier *
+                (
+                        ((((-number_of_rows - 1) / 2.0) + 1) * pitch_y) -
+                        (pad_diameter / 2.0) -
+                        pad_solder_mask_clearance
+                );
+                ymax = multiplier *
+                (
+                        (((number_of_rows - 1) / 2.0) * pitch_y) +
+                        (pad_diameter / 2.0) +
+                        pad_solder_mask_clearance
+                );
+        }
+        else
+        {
+                ymin = multiplier *
+                (
+                        ((((-number_of_rows - 1) / 2.0) + 1) * pitch_y) -
+                        (pad_width / 2.0) -
+                        pad_solder_mask_clearance
+                );
+                ymax = multiplier *
+                (
+                        (((number_of_rows - 1) / 2.0) * pitch_y) +
+                        (pad_width / 2.0) +
+                        pad_solder_mask_clearance
+                );
+        }
         /* If the user input is using more real-estate then use it */
-        if (multiplier * (-courtyard_length / 2) < xmin)
-                xmin = multiplier * (-courtyard_length / 2);
-        if (multiplier * (courtyard_length / 2) > xmax)
-                xmax = multiplier * (courtyard_length / 2);
-        if (multiplier * (-courtyard_width / 2) < ymin)
-                ymin = multiplier * (-courtyard_width / 2);
-        if (multiplier * (courtyard_width / 2) > ymax)
-                ymax = multiplier * (courtyard_width / 2);
+        if (multiplier * (-courtyard_length / 2.0) < xmin)
+                xmin = multiplier * (-courtyard_length / 2.0);
+        if (multiplier * (courtyard_length / 2.0) > xmax)
+                xmax = multiplier * (courtyard_length / 2.0);
+        if (multiplier * (-courtyard_width / 2.0) < ymin)
+                ymin = multiplier * (-courtyard_width / 2.0);
+        if (multiplier * (courtyard_width / 2.0) > ymax)
+                ymax = multiplier * (courtyard_width / 2.0);
         /* Write element header
          * Guess for a place where to put the refdes text */
         x_text = 0.0 ; /* already in mil/100 */
-        y_text = (ymin / 2) - 15000.0; /* already in mil/100 */
+        y_text = (ymin - 10000.0); /* already in mil/100 */
         write_element_header (x_text, y_text);
         /* Write pin and/or pad entities */
         for (i = 0; i < (number_of_rows); i++)
@@ -641,24 +697,28 @@ write_footprint_dip ()
                 (
                         pin_number, /* pin number */
                         pin_pad_name, /* pin name */
-                        multiplier * - pitch_x / 2, /* x0 coordinate */
-                        multiplier * ((-number_of_rows / 2 + i) * pitch_y), /* y0-coordinate */
+                        multiplier * - pitch_x / 2.0, /* x0 coordinate */
+                        multiplier * ((((-number_of_rows - 1) / 2.0) +1 + i) * pitch_y), /* y0-coordinate */
                         multiplier * pad_diameter, /* width of the annulus ring (pad) */
                         multiplier * pad_clearance, /* clearance */
-                        multiplier * pad_solder_mask_clearance, /* solder mask clearance */
+                        multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
                         multiplier * pin_drill_diameter, /* pin drill diameter */
                         pin_pad_flags /* flags */
                 );
                 if (!strcmp (pad_shape, "rounded pad, elongated"))
                 {
+                        if (!strcmp (pin_pad_flags, ""))
+                                pin_pad_flags = g_strconcat (pin_pad_flags, "onsolder", NULL);
+                        else
+                                pin_pad_flags = g_strconcat (pin_pad_flags, ",onsolder", NULL);
                         write_pad
                         (
                                 pin_number, /* pad number = pin_number */
                                 pin_pad_name, /* pad name */
-                                multiplier * (-pitch_x + pad_length - pad_width) / 2, /* x0 coordinate */
-                                multiplier * ((-number_of_rows / 2 + i) * pitch_y), /* y0-coordinate */
-                                multiplier * (-pitch_x - pad_length + pad_width) / 2, /* x1 coordinate */
-                                multiplier * ((-number_of_rows / 2 + i) * pitch_y), /* y0-coordinate */
+                                multiplier * (-pitch_x + pad_length - pad_width) / 2.0, /* x0 coordinate */
+                                multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
+                                multiplier * (-pitch_x - pad_length + pad_width) / 2.0, /* x1 coordinate */
+                                multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
                                 multiplier * pad_width, /* width of the pad */
                                 multiplier * pad_clearance, /* clearance */
                                 multiplier * (pad_width + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
@@ -674,24 +734,28 @@ write_footprint_dip ()
                 (
                         pin_number, /* pin number */
                         pin_pad_name, /* pin name */
-                        multiplier * pitch_x / 2, /* x0 coordinate */
-                        multiplier * ((-number_of_rows / 2 + i) * pitch_y), /* y0-coordinate */
+                        multiplier * pitch_x / 2.0, /* x0 coordinate */
+                        multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
                         multiplier * pad_diameter, /* width of the annulus ring (pad) */
                         multiplier * pad_clearance, /* clearance */
-                        multiplier * pad_solder_mask_clearance, /* solder mask clearance */
+                        multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
                         multiplier * pin_drill_diameter, /* pin drill diameter */
                         pin_pad_flags /* flags */
                 );
                 if (!strcmp (pad_shape, "rounded pad, elongated"))
                 {
+                        if (!strcmp (pin_pad_flags, ""))
+                                pin_pad_flags = g_strconcat (pin_pad_flags, "onsolder", NULL);
+                        else
+                                pin_pad_flags = g_strconcat (pin_pad_flags, ",onsolder", NULL);
                         write_pad
                         (
                                 pin_number, /* pad number = pin_number*/
                                 pin_pad_name, /* pad name */
-                                multiplier * (pitch_x - pad_length + pad_width) / 2, /* x0 coordinate */
-                                multiplier * ((-number_of_rows / 2 + i) * pitch_y), /* y0-coordinate */
-                                multiplier * (pitch_x + pad_length - pad_width) / 2, /* x1 coordinate */
-                                multiplier * ((-number_of_rows / 2 + i) * pitch_y), /* y0-coordinate */
+                                multiplier * (pitch_x - pad_length + pad_width) / 2.0, /* x0 coordinate */
+                                multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
+                                multiplier * (pitch_x + pad_length - pad_width) / 2.0, /* x1 coordinate */
+                                multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
                                 multiplier * pad_width, /* width of the pad */
                                 multiplier * pad_clearance, /* clearance */
                                 multiplier * (pad_width + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
@@ -716,10 +780,10 @@ write_footprint_dip ()
         {
                 write_element_arc
                 (
-                        (xmin / 4), /* already in mil/100 */
+                        (0.0), /* already in mil/100 */
                         ymin, /* already in mil/100 */
-                        (xmax / 4), /* already in mil/100 */
-                        ymin, /* already in mil/100 */
+                        multiplier * (pitch_x / 8),
+                        multiplier * (pitch_x / 8),
                         0,
                         180,
                         multiplier * silkscreen_line_width
