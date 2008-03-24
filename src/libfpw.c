@@ -349,28 +349,28 @@ write_attributes
 int
 write_element_arc
 (
-        gdouble x, /*!< X-coordinate of center. */
-        gdouble y, /*!< Y-coordinate of center. */
-        gdouble width, /*!< Width from center to edge. */
-        gdouble height, /*!< Height from center to edge. */
-        gdouble start_angle, /*!< The angle of the start of the arc in degrees.\n
+        gdouble _x, /*!< X-coordinate of center. */
+        gdouble _y, /*!< Y-coordinate of center. */
+        gdouble _width, /*!< Width from center to edge. */
+        gdouble _height, /*!< Height from center to edge. */
+        gdouble _start_angle, /*!< The angle of the start of the arc in degrees.\n
                               * 0 = negative X-axis, 90 = positive Y-axis. */
-        gdouble delta_angle, /*!< The angle of sweep in degrees.\n
+        gdouble _delta_angle, /*!< The angle of sweep in degrees.\n
                               * positive = CCW, negative = CW. */
-        gdouble line_width /*!< The width of the line which forms the arc. */
+        gdouble _line_width /*!< The width of the line which forms the arc. */
 )
 {
         fprintf
         (
                 fp,
                 "\tElementArc[%d %d %d %d %d %d %d]\n",
-                (int) x,
-                (int) y,
-                (int) width,
-                (int) height,
-                (int) start_angle,
-                (int) delta_angle,
-                (int) line_width
+                (int) _x,
+                (int) _y,
+                (int) _width,
+                (int) _height,
+                (int) _start_angle,
+                (int) _delta_angle,
+                (int) _line_width
         );
 }
 
