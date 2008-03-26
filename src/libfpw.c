@@ -21,19 +21,24 @@
 
 #define FPW_VERSION "0.0.4"
 
-/* Some package types conforming to IPC name space definitions */
+/*!
+ * \brief Some package types conforming to IPC name space definitions.
+ */
 enum packages
 {
         BGA, /*!< Ball gate array package. */
+        CAPAE, /*!< Capacitor, aluminium electrolytic package. */
         CAPC, /*!< Capacitor, chip package. */
         CAPM, /*!< Capacitor, molded, non-polarized package. */
         CAPMP, /*!< Capacitor, molded, polarized package. */
         DIOM, /*!< Diode, molded package. */
+        DIOMELF, /*!< Diode, MELF package. */
         DIL, /*!< Dual inline package. */
         DIP, /*!< Dual inline package. */
         DO, /*!< Diode outline package. */
         INDC, /*!< Inductor, chip package. */
         INDM, /*!< Inductor, molded package. */
+        INDP, /*!< Inductor, precision wire wound package. */
         PGA, /*!< Pin gate array package. */
         PLCC, /*!< Plastic leadless chip carrier package. */
         QFN, /*!< Quad flat no-leads package. */
@@ -41,6 +46,7 @@ enum packages
         RES, /*!< Resistor TH technology package. */
         RESC, /*!< Resistor, chip package. */
         RESM, /*!< Resistor, molded package. */
+        RESMELF, /*!< Resistor, MELF package. */
         SIL, /*!< Single inline package. */
         SIP, /*!< Single inline package. */
         SO, /*!< Small outline package. */
@@ -48,6 +54,18 @@ enum packages
         TO92, /*!< Transistor outline package. */
         TO220, /*!< Transistor outline package. */
         NUMBER_OF_PACKAGE_TYPES /*!< Number of package types. */
+};
+
+/*!
+ * \brief Set of valid letter combinations for row identifiers for BGA and
+ * PGA packages.
+ */
+char *row_letters[] =
+{
+        "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "P",
+        "R", "T", "U", "V", "X", "Y", "Z",
+        "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AJ", "AK", "AL",
+        "AM", "AN", "AP", "AR", "AT", "AU", "AV", "AW", "AX", "AY", "AZ"
 };
 
 typedef enum packages package_t;
@@ -703,7 +721,7 @@ write_footprint_dip ()
         y_text = (ymin - 10000.0); /* already in mil/100 */
         write_element_header (x_text, y_text);
         /* Write pin and/or pad entities */
-        for (i = 0; i < (number_of_rows); i++)
+        for (i = 0; (i < number_of_rows); i++)
         {
                 pin_number = 1 + i;
                 if (pin1_square && (pin_number == 1))
@@ -829,6 +847,175 @@ write_footprint_dip ()
                 footprint_type,
                 footprint_filename
         );
+}
+
+
+/*!
+ * \brief Write a TH footprint for a PGA package.
+ */
+int
+write_footprint_pga ()
+{
+        gdouble xmax;
+        gdouble xmin;
+        gdouble ymax;
+        gdouble ymin;
+        gdouble x_text;
+        gdouble y_text;
+        gdouble x;
+        gdouble y;
+        gint pin_number;
+        gchar *pin_pad_name = g_strdup ("");
+        gint i;
+        gint j;
+
+        fp = fopen (footprint_filename, "w");
+        if (!fp)
+        {
+                fprintf
+                (
+                        stderr,
+                        "ERROR: could not open file for %s footprint: %s.\n",
+                        footprint_type,
+                        footprint_filename
+                );
+                return (EXIT_FAILURE);
+        }
+        /* Determine (extreme) courtyard dimensions based on pin/pad
+         * properties */
+        xmin = multiplier *
+        (
+                ((-pitch_x * number_of_columns) / 2.0) -
+                (pad_diameter / 2.0) -
+                pad_solder_mask_clearance
+        );
+        xmax = multiplier *
+        (
+                ((pitch_x * number_of_columns) / 2.0) +
+                (pad_diameter / 2.0) +
+                pad_solder_mask_clearance
+        );
+        ymin = multiplier *
+        (
+                ((-pitch_y * number_of_rows) / 2.0) -
+                (pad_diameter / 2.0) -
+                pad_solder_mask_clearance
+        );
+        ymax = multiplier *
+        (
+                ((pitch_y * number_of_rows) / 2.0) +
+                (pad_diameter / 2.0) +
+                pad_solder_mask_clearance
+        );
+        /* Determine (extreme) courtyard dimensions based on package
+         * properties */
+        if (multiplier * ((-package_body_length - courtyard_clearance_with_package) / 2.0) < xmin)
+                xmin = multiplier * ((-package_body_length - courtyard_clearance_with_package) / 2.0);
+        if (multiplier * ((package_body_length + courtyard_clearance_with_package) / 2.0) > xmax)
+                xmax = multiplier * ((package_body_length + courtyard_clearance_with_package) / 2.0);
+        if (multiplier * ((-package_body_width - courtyard_clearance_with_package) / 2.0) < ymin)
+                ymin = multiplier * ((-package_body_width - courtyard_clearance_with_package) / 2.0);
+        if (multiplier * ((package_body_width + courtyard_clearance_with_package) / 2.0) > ymax)
+                ymax = multiplier * ((package_body_width + courtyard_clearance_with_package) / 2.0);
+        /* If the user input is using even more real-estate then use it */
+        if (multiplier * (-courtyard_length / 2.0) < xmin)
+                xmin = multiplier * (-courtyard_length / 2.0);
+        if (multiplier * (courtyard_length / 2.0) > xmax)
+                xmax = multiplier * (courtyard_length / 2.0);
+        if (multiplier * (-courtyard_width / 2.0) < ymin)
+                ymin = multiplier * (-courtyard_width / 2.0);
+        if (multiplier * (courtyard_width / 2.0) > ymax)
+                ymax = multiplier * (courtyard_width / 2.0);
+        /* Write element header
+         * Guess for a place where to put the refdes text */
+        x_text = 0.0 ; /* already in mil/100 */
+        y_text = (ymin - 10000.0); /* already in mil/100 */
+        write_element_header (x_text, y_text);
+        /* Write pin and/or pad entities */
+        /*! \todo Write pin/pad entities ! */
+        pin_number = 1;
+        for (i = 0; (i < number_of_rows); i++)
+        /* one row at a time [A .. ZZ ..] etc.
+         * where i is one or more letters of the alphabet,
+         * excluding "I", "O", "Q" ans "S" */
+        {
+                for (j = 0; (j < number_of_columns); j++)
+                /* all columns o a row [1 .. n]
+                 * where j is a member of the positive Natural numbers (N) */
+                {
+                        if (pin1_square && (pin_number == 1))
+                                pin_pad_flags = g_strdup ("square");
+                        else
+                                pin_pad_flags = g_strdup ("");
+                        pin_pad_name = g_strdup_printf ("%s%d", (row_letters[i]), (j + 1));
+                        write_pin
+                        (
+                                pin_number, /* pin number */
+                                pin_pad_name, /* pin name */
+                                multiplier * ((((- number_of_columns -1) / 2.0) + 1 + j) * pitch_x), /* x0 coordinate */
+                                multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
+                                multiplier * pad_diameter, /* width of the annulus ring (pad) */
+                                multiplier * pad_clearance, /* clearance */
+                                multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
+                                multiplier * pin_drill_diameter, /* pin drill diameter */
+                                pin_pad_flags /* flags */
+                        );
+                        pin_number++;
+                }
+        }
+        /* Write a pin #1 marker */
+        if (silkscreen_indicate_1)
+        {
+#if 0
+                while ((multiplier * x) > (multiplier * (-package_body_length/ 2.0)))
+                {
+                        write_element_line
+                        (
+                                multiplier * ((+ silkscreen_line_width),
+                                multiplier * (-package_body_width / 2.0),
+                                multiplier * (- silkscreen_line_width),
+                                multiplier * (-package_body_width / 2.0),
+                                multiplier * (silkscreen_line_width)
+                        );
+
+                }
+#endif
+        }
+        /* Write package body on silkscreen */
+        if (silkscreen_package_outline)
+        {
+                write_rectangle
+                (
+                        multiplier * (-package_body_length / 2.0),
+                        multiplier * (-package_body_width / 2.0),
+                        multiplier * (package_body_length / 2.0),
+                        multiplier * (package_body_width / 2.0),
+                        multiplier * silkscreen_line_width
+                );
+        }
+        /* Write a courtyard */
+        if (courtyard)
+        {
+                write_rectangle
+                (
+                        xmin, /* already in mil/100 */
+                        ymin, /* already in mil/100 */
+                        xmax, /* already in mil/100 */
+                        ymax, /* already in mil/100 */
+                        multiplier * courtyard_line_width
+                );
+        }
+        /* Write attributes */
+        write_attributes ();
+        fclose (fp);
+        fprintf
+        (
+                stderr,
+                "SUCCESS: wrote a footprint file for a %s package: %s.\n",
+                footprint_type,
+                footprint_filename
+        );
+        return (EXIT_SUCCESS);
 }
 
 
@@ -1855,6 +2042,89 @@ write_footprint_to92 ()
 
 
 /*!
+ * \brief Write a TH/SMT footprint for a ? package.
+ */
+int
+write_footprint_template ()
+{
+        gdouble xmax;
+        gdouble xmin;
+        gdouble ymax;
+        gdouble ymin;
+        gdouble x_text;
+        gdouble y_text;
+
+        fp = fopen (footprint_filename, "w");
+        if (!fp)
+        {
+                fprintf
+                (
+                        stderr,
+                        "ERROR: could not open file for %s footprint: %s.\n",
+                        footprint_type,
+                        footprint_filename
+                );
+                return (EXIT_FAILURE);
+        }
+        /* Determine (extreme) courtyard dimensions based on pin/pad
+         * properties */
+
+        /* Determine (extreme) courtyard dimensions based on package
+         * properties */
+        if (multiplier * ((-package_body_length - courtyard_clearance_with_package) / 2.0) < xmin)
+                xmin = multiplier * ((-package_body_length - courtyard_clearance_with_package) / 2.0);
+        if (multiplier * ((package_body_length + courtyard_clearance_with_package) / 2.0) > xmax)
+                xmax = multiplier * ((package_body_length + courtyard_clearance_with_package) / 2.0);
+        if (multiplier * ((-package_body_width - courtyard_clearance_with_package) / 2.0) < ymin)
+                ymin = multiplier * ((-package_body_width - courtyard_clearance_with_package) / 2.0);
+        if (multiplier * ((package_body_width + courtyard_clearance_with_package) / 2.0) > ymax)
+                ymax = multiplier * ((package_body_width + courtyard_clearance_with_package) / 2.0);
+        /* If the user input is using even more real-estate then use it */
+        if (multiplier * (-courtyard_length / 2.0) < xmin)
+                xmin = multiplier * (-courtyard_length / 2.0);
+        if (multiplier * (courtyard_length / 2.0) > xmax)
+                xmax = multiplier * (courtyard_length / 2.0);
+        if (multiplier * (-courtyard_width / 2.0) < ymin)
+                ymin = multiplier * (-courtyard_width / 2.0);
+        if (multiplier * (courtyard_width / 2.0) > ymax)
+                ymax = multiplier * (courtyard_width / 2.0);
+        /* Write element header
+         * Guess for a place where to put the refdes text */
+        x_text = 0.0 ; /* already in mil/100 */
+        y_text = (ymin - 10000.0); /* already in mil/100 */
+        write_element_header (x_text, y_text);
+        /* Write pin and/or pad entities */
+                /*! \todo Write a pin/pad entities ! */
+        /* Write a pin #1 marker */
+        if (silkscreen_indicate_1)
+        {
+                /*! \todo Write a pin #1 marker ! */
+        }
+        /* Write package body on silkscreen */
+        if (silkscreen_package_outline)
+        {
+                /*! \todo Write a package body ! */
+        }
+        /* Write a courtyard */
+        if (courtyard)
+        {
+                /*! \todo Write a courtyard ! */
+        }
+        /* Write attributes */
+        write_attributes ();
+        fclose (fp);
+        fprintf
+        (
+                stderr,
+                "SUCCESS: wrote a footprint file for a %s package: %s.\n",
+                footprint_type,
+                footprint_filename
+        );
+        return (EXIT_SUCCESS);
+}
+
+
+/*!
  * \brief Write a footprintwizard file based on the current global variables.
  *
  */
@@ -1943,10 +2213,16 @@ write_footprint()
                         write_footprint_smt ();
                         break;
                 case CAPM :
+                        write_footprint_smt_molded ();
+                        break;
+                case CAPMP :
                         write_footprint_smt_molded_cap ();
                         break;
                 case DIL :
                 case DIOM :
+                        write_footprint_smt_molded_diode ();
+                        break;
+                case DIOMELF :
                         write_footprint_smt_molded_diode ();
                         break;
                 case DIP :
@@ -1958,7 +2234,11 @@ write_footprint()
                 case INDM :
                         write_footprint_smt_molded ();
                         break;
+                case INDP :
+                        write_footprint_smt ();
+                        break;
                 case PGA :
+                        write_footprint_pga ();
                         break;
                 case QFN :
                         break;
@@ -1969,6 +2249,9 @@ write_footprint()
                         break;
                 case RESM :
                         write_footprint_smt_molded ();
+                        break;
+                case RESMELF :
+                        write_footprint_smt ();
                         break;
                 case SIL :
                         break;
