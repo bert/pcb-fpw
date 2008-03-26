@@ -412,16 +412,28 @@ create_pcb_gfpw (void)
                     (GtkAttachOptions) (GTK_FILL), 0, 0);
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), "");
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("BGA"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CAPAE"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CAPC"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CAPM"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CAPMP"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("DIL"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("DIOM"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("DIOMELF"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("DIP"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("INDC"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("INDM"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("INDP"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("PGA"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("PLCC"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("QFN"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("QFP"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("RES"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("RESC"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("RESM"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("RESMELF"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("SIL"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("SIP"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("SO"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("TO92"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("TO220"));
 

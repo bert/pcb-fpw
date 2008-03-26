@@ -786,16 +786,28 @@ mm</property>
 				  <property name="visible">True</property>
 				  <property name="items" translatable="yes">
 BGA
+CAPAE
 CAPC
 CAPM
 CAPMP
 DIL
 DIOM
+DIOMELF
 DIP
 INDC
 INDM
+INDP
+PGA
+PLCC
+QFN
+QFP
+RES
 RESC
 RESM
+RESMELF
+SIL
+SIP
+SO
 TO92
 TO220
 </property>
