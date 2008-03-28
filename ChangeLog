@@ -1,3 +1,301 @@
+commit ef7c4b4e5831fbb6e1ca03a976c9ff973ba9a00c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Mar 28 17:26:11 2008 +0100
+
+    Package type PGA is now implemented.
+
+commit 0740b8720d542bc74b02675516202ed2a0a2de7b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Mar 28 08:06:08 2008 +0100
+
+    Corrected the code for the drawing of the pin 1 indicator in write_footprint_pga().
+
+commit e3ab10db3fb4f689f924ae4b002749cf4dfd8de0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Mar 26 22:34:40 2008 +0100
+
+    Added code for writing a PGA footprint.
+    
+    Added write_footprint_template(), an empty skeleton template function.
+    Added  some package types to "enum packages".
+    Added code for a PGA footprint, code for pin #1 marker still needs to be added.
+
+commit a2cf65c0b1e4cb246b4ebb3cfbca0e18a90f61ea
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Mar 26 07:04:45 2008 +0100
+
+    Added some more package types to the "footprint type" combobox.
+
+commit 9568515ef2bb2cc26b9df85126bf430d5b367fd8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Mar 24 18:52:18 2008 +0100
+
+    Added write_footprint_smt_molded_diode().
+    
+    Changes to write_footprint_to92().
+
+commit 04b04b509faa7fb278a6703e9e2c70b6491bc2f7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Mar 24 16:43:36 2008 +0100
+
+    Added write_footprint_smt_molded_cap().
+    
+    Small changes to write_footprint_smt().
+    write_footprint_smt_molded() now produces a decent footprint.
+    write_footprint_smt_molded_cap() now produces a decent footprint.
+
+commit a5c6f70eb11f6bc096d6f110da1703030c7ec810
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Mar 24 15:28:26 2008 +0100
+
+    Added DIOM in write_footprint().
+
+commit 70a0dccd210bc3cb0a3886fa5f450afbb501e66d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Mar 24 15:20:46 2008 +0100
+
+    Clear refdes prefix entry when clear button is clicked.
+
+commit 45db51643562e3bd13c53ad1a3e4d5883348a82e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Mar 24 15:07:33 2008 +0100
+
+    Updated package types.
+
+commit 6a84eae4991851b033a3f8e4987166ff0937fc0f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Mar 24 14:29:38 2008 +0100
+
+    Implemented footprint refdes prefix.
+    
+    Switched colums and rows entries as these are now more
+    in sync with the rest of the entries in this table.
+    Refdes prefix is now included in the footprint header
+    and footprintwizard files.
+
+commit 5f6cf3406f306ec28a5cac47f58c94a4f981ed16
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Mar 24 14:03:54 2008 +0100
+
+    Debugged write_footprint_smt().
+    
+    write_footprint_smt() now produces a decent footprint.
+
+commit 176df7bcf180c4e632d04e812bd4a787dde929a3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Mar 24 11:59:51 2008 +0100
+
+    Determination of courtyard outline on package dimensions in write_footprint_dip().
+
+commit 058d57185604205278b67bd5ca831d119177b926
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Mar 24 11:17:47 2008 +0100
+
+    Prefixed private variable with an underscore.
+
+commit 08dbab2bd7b08d2c3a5139ec439104a5ad000fac
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Mar 24 11:14:30 2008 +0100
+
+    Debugged write_footprint_dip().
+    
+    write_footprint_dip() now produces a decent footprint.
+
+commit aabb6905f0ed1dd26c88b4f3ee3d3d37909c3e28
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 23 22:20:19 2008 +0100
+
+    Clearing count_x_entry en count_y entry in on_clear_button_clicked().
+
+commit ff34a87bdccdcae4f30911f30acbd3013f58b817
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 23 17:11:15 2008 +0100
+
+    Small changes.
+
+commit 4c49ea294d2fbc7161323d9123de6cb310ccd125
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 23 16:45:50 2008 +0100
+
+    Corrected some more miscalculations.
+
+commit c29d578c9cf8770501f6ccb588d6f8686ec367c8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 23 16:32:26 2008 +0100
+
+    Corrected offset now in mil/100.
+
+commit 8f9d5e2e6b13c804d198239b15d7bb030aef193a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 23 16:30:42 2008 +0100
+
+    Corrected some miscalculations.
+
+commit fc6342ea0dc2c49990ec10e65a9313c980d46b84
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 23 16:22:52 2008 +0100
+
+    Changed attribute value types in write_attributes().
+    
+    Changed package_body_length to be written as an integer.
+    Changed package_body_width to be written as an integer.
+    Changed package_body_height to be written as an integer.
+
+commit 3508da9fc85e03816e86878c8a8fedfaaac5e698
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 23 15:23:43 2008 +0100
+
+    Moved variable definitions.
+    
+    Moved temp_dir and work_dir variables from libfpw.c to
+    callbacks.c because they belong there.
+
+commit 4609a181d49ba339aaa930b7514f138da2797e9e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 23 15:21:20 2008 +0100
+
+    Changed the usage help message.
+
+commit 8f7913a22efc89f3a6088d1f158cc9c16b1c154f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 23 15:07:36 2008 +0100
+
+    Removed a \todo doxygen comments as it is implemented.
+
+commit fb24147c3bc31db7f95e8260eac79679e8cc75cd
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 23 15:06:27 2008 +0100
+
+    Add the text "Unsaved fpw file" to the title.
+
+commit 194a09b6e8dba156eb2d88c233f81994b21d07dc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 23 13:56:18 2008 +0100
+
+    Removed some \todo doxygen comments as they were implemented.
+
+commit d17d4125dcbb5fbf11f5709b1d9221b186c2c848
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 23 13:55:23 2008 +0100
+
+    Changes on entry_has_changed().
+    
+    Placement of one single asterisk now works as the user would
+    expect.
+    Implemented in every on_*_entry_changed() function.
+    Implemented in every significant on_*_toggled() function.
+
+commit 6557bad5da1a9b90f29d405af082bd52de0b3702
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 23 08:37:57 2008 +0100
+
+    Added entry_has_changed().
+    
+    Reordered change_main_window_title() and message_to_statusbar()
+    to prevent forward declarations and such.
+
+commit 1bb29e27f3d7fdb10eb3d6832c545ca1b9ec939e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 23 08:26:32 2008 +0100
+
+    Changed a doxygen comment.
+
+commit 7511a06b0f340d2daa0692a4ad62123bb4a71d9d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Mar 21 11:42:01 2008 +0100
+
+    Corrected a typo.
+
+commit bb5a045048cdcff9c929b8bddebf26ca833cfb8d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Mar 21 11:31:38 2008 +0100
+
+    Correction on window title.
+
+commit 94d1a053be05f62e709dfa649fa41e1ae960214c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Mar 21 11:29:22 2008 +0100
+
+    More error messages translated.
+
+commit 6bc6340d47a718fa62a2251d857a8881345c8289
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Mar 21 10:48:18 2008 +0100
+
+    And yet more translatable error messages.
+
+commit c782bee5a4b26a493adf79f6c6e4631c1d7bdab3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Mar 21 10:46:44 2008 +0100
+
+    Even more translatable error messages.
+
+commit 1c822e2cfa682a6a88c74a69989587e1439653a6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Mar 21 09:17:20 2008 +0100
+
+    Made more error messages translatable.
+
+commit 54a3ca173ffe1caa5ef84789524dd63f314004b8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Mar 21 09:16:02 2008 +0100
+
+    Made more error messages translatable.
+
+commit 74689a4a3141b15ede03cf46747f8fc151375068
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Mar 21 09:12:34 2008 +0100
+
+    Made more error messages translatable.
+
+commit 702f01911dce457665362571ea7eed988e1674b7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Mar 21 07:45:17 2008 +0100
+
+    Added change_main_window_title().
+    
+    Made error messages in on_save_button_clicked() translatable.
+
+commit a39bd48594308180bc77c061fea5686ae131d5ce
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Mar 21 07:43:42 2008 +0100
+
+    Ignore *.mo files.
+
+commit 3be0cfc66a8897737fcc00f931f61642e0313e37
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Mar 21 07:41:31 2008 +0100
+
+    Updated the Dutch translation.
+
+commit c2045402c8d709ce2a87cbd6c2777afaee3622d6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Mar 21 02:25:08 2008 +0100
+
+    Setting the filename in the titlebar now works.
+
+commit 5555fe33fa0f75861383c2eaad544628806d387a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Mar 20 23:56:25 2008 +0100
+
+    Expanded error message in on_filechooser_dialog_open_button_clicked()
+    
+    after reading a footprintwizard file.
+
+commit 2db27d0386225713f75442eb04c80110b0a0b1b9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Mar 20 23:36:17 2008 +0100
+
+    Expanded on error messages to statusbar in
+    
+    on_save_button_clicked().
+
+commit 8227f59e265a88e841d9cfe8c3b3648fd236facb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Mar 19 07:57:43 2008 +0100
+
+    Updated the Changelog file.
+
 commit 7bed62a5825e616ba14b601154595a4b2a8678ba
 Author: Bert Timmerman <bert.timmerman@xs4all.nl>
 Date:   Wed Mar 19 07:47:17 2008 +0100
