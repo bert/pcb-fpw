@@ -862,8 +862,7 @@ write_footprint_pga ()
         gdouble ymin;
         gdouble x_text;
         gdouble y_text;
-        gdouble x;
-        gdouble y;
+        gdouble dx;
         gint pin_number;
         gchar *pin_pad_name = g_strdup ("");
         gint i;
@@ -932,7 +931,6 @@ write_footprint_pga ()
         y_text = (ymin - 10000.0); /* already in mil/100 */
         write_element_header (x_text, y_text);
         /* Write pin and/or pad entities */
-        /*! \todo Write pin/pad entities ! */
         pin_number = 1;
         for (i = 0; (i < number_of_rows); i++)
         /* one row at a time [A .. ZZ ..] etc.
@@ -966,20 +964,17 @@ write_footprint_pga ()
         /* Write a pin #1 marker */
         if (silkscreen_indicate_1)
         {
-#if 0
-                while ((multiplier * x) > (multiplier * (-package_body_length/ 2.0)))
+                for (dx = 0.0; dx < (pitch_x / 2.0); dx = dx + silkscreen_line_width)
                 {
                         write_element_line
                         (
-                                multiplier * ((+ silkscreen_line_width),
-                                multiplier * (-package_body_width / 2.0),
-                                multiplier * (- silkscreen_line_width),
+                                multiplier * (-package_body_length / 2.0),
+                                multiplier * ((-package_body_width / 2.0) + dx),
+                                multiplier * ((-package_body_length / 2.0) + dx),
                                 multiplier * (-package_body_width / 2.0),
                                 multiplier * (silkscreen_line_width)
                         );
-
                 }
-#endif
         }
         /* Write package body on silkscreen */
         if (silkscreen_package_outline)
