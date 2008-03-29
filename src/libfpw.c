@@ -1959,17 +1959,20 @@ write_footprint_to92 ()
         }
         /* Determine (extreme) courtyard dimensions based on pin/pad
          * properties */
-
+        xmin = -10500 - (multiplier * courtyard_clearance_with_package); /* in mil/100 */
+        xmax = 10500 + (multiplier * courtyard_clearance_with_package); /* in mil/100 */
+        ymin = -8600 - (multiplier * courtyard_clearance_with_package); /* in mil/100 */
+        ymax = 10500 + (multiplier * courtyard_clearance_with_package); /* in mil/100 */
         /* Determine (extreme) courtyard dimensions based on package
          * properties */
-        if (multiplier * ((-package_body_length - courtyard_clearance_with_package) / 2.0) < xmin)
-                xmin = multiplier * ((-package_body_length - courtyard_clearance_with_package) / 2.0);
-        if (multiplier * ((package_body_length + courtyard_clearance_with_package) / 2.0) > xmax)
-                xmax = multiplier * ((package_body_length + courtyard_clearance_with_package) / 2.0);
-        if (multiplier * ((-package_body_width - courtyard_clearance_with_package) / 2.0) < ymin)
-                ymin = multiplier * ((-package_body_width - courtyard_clearance_with_package) / 2.0);
-        if (multiplier * ((package_body_width + courtyard_clearance_with_package) / 2.0) > ymax)
-                ymax = multiplier * ((package_body_width + courtyard_clearance_with_package) / 2.0);
+        if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
+                xmin = (multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package));
+        if ((multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package)) > xmax)
+                xmax = (multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package));
+        if ((multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package)) < ymin)
+                ymin = (multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package));
+        if ((multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package)) > ymax)
+                ymax = (multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package));
         /* If the user input is using even more real-estate then use it */
         if (multiplier * (-courtyard_length / 2.0) < xmin)
                 xmin = multiplier * (-courtyard_length / 2.0);
@@ -1985,6 +1988,10 @@ write_footprint_to92 ()
         y_text = (ymin - 10000.0); /* already in mil/100 */
         write_element_header (x_text, y_text);
         /* Write pin and/or pad entities */
+        if (!strcmp (pad_shape, "rectangular pad"))
+                pin_pad_flags = g_strdup ("square");
+        else
+                pin_pad_flags = g_strdup ("");
         write_pin
         (
                 1, /* pin number */
@@ -1993,10 +2000,10 @@ write_footprint_to92 ()
                 0.0, /* y0-coordinate */
                 multiplier * pad_diameter, /* width of the annulus ring (pad) */
                 multiplier * pad_clearance, /* clearance */
-                multiplier * pad_solder_mask_clearance, /* solder mask clearance */
+                multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
                 multiplier * pin_drill_diameter, /* pin drill diameter */
                 /* Write pin #1 with a square pad */
-                (pin1_square) ? "square" : pin_pad_flags /* flags */
+                (pin1_square) ? "square" : "" /* flags */
         );
         write_pin
         (
@@ -2006,7 +2013,7 @@ write_footprint_to92 ()
                 0.0, /* y0-coordinate */
                 multiplier * pad_diameter, /* width of the annulus ring (pad) */
                 multiplier * pad_clearance, /* clearance */
-                multiplier * pad_solder_mask_clearance, /* solder mask clearance */
+                multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
                 multiplier * pin_drill_diameter, /* pin drill diameter */
                 pin_pad_flags /* flags */
         );
@@ -2018,7 +2025,7 @@ write_footprint_to92 ()
                 0.0, /* y0-coordinate */
                 multiplier * pad_diameter, /* width of the annulus ring (pad) */
                 multiplier * pad_clearance, /* clearance */
-                multiplier * pad_solder_mask_clearance, /* solder mask clearance */
+                multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
                 multiplier * pin_drill_diameter, /* pin drill diameter */
                 pin_pad_flags /* flags */
         );
@@ -2026,8 +2033,8 @@ write_footprint_to92 ()
         if (silkscreen_package_outline)
         {
                 fprintf (fp, "# Write a package body on the silkscreen\n");
-                fprintf (fp, "\tElementLine[-8600 -6000 8600 -6000 1000]");
-                fprintf (fp, "\tElementArc[0 0 10500 10500 -35 250 1000]");
+                fprintf (fp, "\tElementLine[-8600 -6000 8600 -6000 1000]\n");
+                fprintf (fp, "\tElementArc[0 0 10500 10500 -35 250 1000]\n");
         }
         /* Write a pin #1 marker on the silkscreen */
         if (silkscreen_indicate_1)
@@ -2038,7 +2045,30 @@ write_footprint_to92 ()
         if (courtyard)
         {
                 fprintf (fp, "# Write a courtyard on the silkscreen\n");
-                /*! \todo Write a courtyard on the silkscreen ! */
+                if (package_is_radial)
+                {
+                        write_element_arc
+                        (
+                                0.0,
+                                0.0,
+                                xmax, /* already in mil/100 */
+                                ymax, /* already in mil/100 */
+                                0,
+                                360,
+                                multiplier * courtyard_line_width
+                        );
+                }
+                else
+                {
+                        write_rectangle
+                        (
+                                xmin, /* already in mil/100 */
+                                ymin, /* already in mil/100 */
+                                xmax, /* already in mil/100 */
+                                ymax, /* already in mil/100 */
+                                multiplier * courtyard_line_width
+                        );
+                }
         }
         /* Write attributes */
         write_attributes ();
