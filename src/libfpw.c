@@ -698,14 +698,14 @@ write_footprint_dip ()
         }
         /* Determine (extreme) courtyard dimensions based on package
          * properties */
-        if (multiplier * ((-package_body_length - courtyard_clearance_with_package) / 2.0) < xmin)
-                xmin = multiplier * ((-package_body_length - courtyard_clearance_with_package) / 2.0);
-        if (multiplier * ((package_body_length + courtyard_clearance_with_package) / 2.0) > xmax)
-                xmax = multiplier * ((package_body_length + courtyard_clearance_with_package) / 2.0);
-        if (multiplier * ((-package_body_width - courtyard_clearance_with_package) / 2.0) < ymin)
-                ymin = multiplier * ((-package_body_width - courtyard_clearance_with_package) / 2.0);
-        if (multiplier * ((package_body_width + courtyard_clearance_with_package) / 2.0) > ymax)
-                ymax = multiplier * ((package_body_width + courtyard_clearance_with_package) / 2.0);
+        if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
+                xmin = (multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package));
+        if ((multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package)) > xmax)
+                xmax = (multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package));
+        if ((multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package)) < ymin)
+                ymin = (multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package));
+        if ((multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package)) > ymax)
+                ymax = (multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package));
         /* If the user input is using even more real-estate then use it */
         if (multiplier * (-courtyard_length / 2.0) < xmin)
                 xmin = multiplier * (-courtyard_length / 2.0);
