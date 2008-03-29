@@ -801,6 +801,7 @@ write_footprint_dip ()
         /* Write a package body on the silkscreen */
         if (silkscreen_package_outline)
         {
+                fprintf (fp, "# Write a package body on the silkscreen\n");
                 write_rectangle
                 (
                         multiplier * (((-pitch_x + pad_diameter + silkscreen_line_width) / 2) + pad_solder_mask_clearance) ,
@@ -810,9 +811,10 @@ write_footprint_dip ()
                         multiplier * silkscreen_line_width
                 );
         }
-        /* Write a pin #1 marker */
+        /* Write a pin #1 marker on the silkscreen */
         if (silkscreen_indicate_1)
         {
+                fprintf (fp, "# Write a pin 1 marker on the silkscreen\n");
                 write_element_arc
                 (
                         (0.0), /* already in mil/100 */
@@ -824,9 +826,10 @@ write_footprint_dip ()
                         multiplier * silkscreen_line_width
                 );
         }
-        /* Write a courtyard */
+        /* Write a courtyard on the silkscreen */
         if (courtyard)
         {
+                fprintf (fp, "# Write a courtyard on the silkscreen\n");
                 write_rectangle
                 (
                         xmin, /* already in mil/100 */
@@ -961,9 +964,23 @@ write_footprint_pga ()
                         pin_number++;
                 }
         }
-        /* Write a pin #1 marker */
+        /* Write a package body on the silkscreen */
+        if (silkscreen_package_outline)
+        {
+                fprintf (fp, "# Write a package body on the silkscreen\n");
+                write_rectangle
+                (
+                        multiplier * (-package_body_length / 2.0),
+                        multiplier * (-package_body_width / 2.0),
+                        multiplier * (package_body_length / 2.0),
+                        multiplier * (package_body_width / 2.0),
+                        multiplier * silkscreen_line_width
+                );
+        }
+        /* Write a pin #1 marker on the silkscreen */
         if (silkscreen_indicate_1)
         {
+                fprintf (fp, "# Write a pin 1 marker on the silkscreen\n");
                 for (dx = 0.0; dx < (pitch_x / 2.0); dx = dx + silkscreen_line_width)
                 {
                         write_element_line
@@ -976,21 +993,10 @@ write_footprint_pga ()
                         );
                 }
         }
-        /* Write package body on silkscreen */
-        if (silkscreen_package_outline)
-        {
-                write_rectangle
-                (
-                        multiplier * (-package_body_length / 2.0),
-                        multiplier * (-package_body_width / 2.0),
-                        multiplier * (package_body_length / 2.0),
-                        multiplier * (package_body_width / 2.0),
-                        multiplier * silkscreen_line_width
-                );
-        }
-        /* Write a courtyard */
+        /* Write a courtyard on the silkscreen */
         if (courtyard)
         {
+                fprintf (fp, "# Write a courtyard on the silkscreen\n");
                 write_rectangle
                 (
                         xmin, /* already in mil/100 */
@@ -1139,6 +1145,7 @@ write_footprint_smt ()
         /* Write a package body on the silkscreen */
         if (silkscreen_package_outline && (package_body_width))
         {
+                fprintf (fp, "# Write a package body on the silkscreen\n");
                 write_element_line
                 (
                         multiplier * (((-pitch_x + pad_length) / 2.0) + pad_solder_mask_clearance + silkscreen_line_width),
@@ -1156,14 +1163,15 @@ write_footprint_smt ()
                         multiplier * silkscreen_line_width
                 );
         }
-        /* Write a pin #1 marker */
+        /* Write a pin #1 marker on the silkscreen */
         if (silkscreen_indicate_1)
         {
                 /* package has no pin/pad #1 indication */
         }
-        /* Write a courtyard */
+        /* Write a courtyard on the silkscreen */
         if (courtyard)
         {
+                fprintf (fp, "# Write a courtyard on the silkscreen\n");
                 write_rectangle
                 (
                         xmin, /* already in mil/100 */
@@ -1311,6 +1319,7 @@ write_footprint_smt_molded ()
         /* Write a package body on the silkscreen */
         if (silkscreen_package_outline && (package_body_width))
         {
+                fprintf (fp, "# Write a package body on the silkscreen\n");
                 if (pad_width >= package_body_width)
                 {
                         write_element_line
@@ -1384,14 +1393,15 @@ write_footprint_smt_molded ()
                         );
                 }
         }
-        /* Write a pin #1 marker */
+        /* Write a pin #1 marker on the silkscreen */
         if (silkscreen_indicate_1)
         {
                 /* package has no pin/pad #1 indication */
         }
-        /* Write a courtyard */
+        /* Write a courtyard on the silkscreen */
         if (courtyard)
         {
+                fprintf (fp, "# Write a courtyard on the silkscreen\n");
                 write_rectangle
                 (
                         xmin, /* already in mil/100 */
@@ -1539,6 +1549,7 @@ write_footprint_smt_molded_cap ()
         /* Write a package body on the silkscreen */
         if (silkscreen_package_outline && (package_body_width))
         {
+                fprintf (fp, "# Write a package body on the silkscreen\n");
                 if (pad_width >= package_body_width)
                 {
                         write_element_line
@@ -1612,9 +1623,10 @@ write_footprint_smt_molded_cap ()
                         );
                 }
         }
-        /* Write a pin #1 marker */
+        /* Write a pin #1 marker on the silkscreen */
         if (silkscreen_indicate_1)
         {
+                fprintf (fp, "# Write a pin 1 marker on the silkscreen\n");
                 if (pad_width >= package_body_width)
                 {
                         write_element_line
@@ -1640,9 +1652,10 @@ write_footprint_smt_molded_cap ()
                         );
                 }
         }
-        /* Write a courtyard */
+        /* Write a courtyard on the silkscreen */
         if (courtyard)
         {
+                fprintf (fp, "# Write a courtyard on the silkscreen\n");
                 write_rectangle
                 (
                         xmin, /* already in mil/100 */
@@ -1790,6 +1803,7 @@ write_footprint_smt_molded_diode ()
         /* Write a package body on the silkscreen */
         if (silkscreen_package_outline && (package_body_width))
         {
+                fprintf (fp, "# Write a package body on the silkscreen\n");
                 if (pad_width >= package_body_width)
                 {
                         write_element_line
@@ -1863,9 +1877,10 @@ write_footprint_smt_molded_diode ()
                         );
                 }
         }
-        /* Write a pin #1 marker */
+        /* Write a pin #1 marker on the silkscreen */
         if (silkscreen_indicate_1)
         {
+                fprintf (fp, "# Write a pin 1 marker on the silkscreen\n");
                 if (pad_width >= package_body_width)
                 {
                         write_element_line
@@ -1891,9 +1906,10 @@ write_footprint_smt_molded_diode ()
                         );
                 }
         }
-        /* Write a courtyard */
+        /* Write a courtyard on the silkscreen */
         if (courtyard)
         {
+                fprintf (fp, "# Write a courtyard on the silkscreen\n");
                 write_rectangle
                 (
                         xmin, /* already in mil/100 */
@@ -2006,21 +2022,23 @@ write_footprint_to92 ()
                 multiplier * pin_drill_diameter, /* pin drill diameter */
                 pin_pad_flags /* flags */
         );
-        /* Write a pin #1 marker */
-        if (silkscreen_indicate_1)
-        {
-                /*! \todo Write a pin #1 marker ! */
-        }
-        /* Write package body on silkscreen */
+        /* Write package body on the silkscreen */
         if (silkscreen_package_outline)
         {
+                fprintf (fp, "# Write a package body on the silkscreen\n");
                 fprintf (fp, "\tElementLine[-8600 -6000 8600 -6000 1000]");
                 fprintf (fp, "\tElementArc[0 0 10500 10500 -35 250 1000]");
         }
-        /* Write a courtyard */
+        /* Write a pin #1 marker on the silkscreen */
+        if (silkscreen_indicate_1)
+        {
+                /*! \todo Write a pin #1 marker on the silkscreen ! */
+        }
+        /* Write a courtyard on the silkscreen */
         if (courtyard)
         {
-                /*! \todo Write a courtyard ! */
+                fprintf (fp, "# Write a courtyard on the silkscreen\n");
+                /*! \todo Write a courtyard on the silkscreen ! */
         }
         /* Write attributes */
         write_attributes ();
@@ -2090,20 +2108,23 @@ write_footprint_template ()
         write_element_header (x_text, y_text);
         /* Write pin and/or pad entities */
                 /*! \todo Write a pin/pad entities ! */
-        /* Write a pin #1 marker */
-        if (silkscreen_indicate_1)
-        {
-                /*! \todo Write a pin #1 marker ! */
-        }
         /* Write package body on silkscreen */
         if (silkscreen_package_outline)
         {
-                /*! \todo Write a package body ! */
+                fprintf (fp, "# Write a package body on the silkscreen\n");
+                /*! \todo Write a package body on the silkscreen ! */
         }
-        /* Write a courtyard */
+        /* Write a pin #1 marker on the silkscreen */
+        if (silkscreen_indicate_1)
+        {
+                fprintf (fp, "# Write a pin 1 marker on the silkscreen\n");
+                /*! \todo Write a pin #1 marker ! on the silkscreen */
+        }
+        /* Write a courtyard on the silkscreen */
         if (courtyard)
         {
-                /*! \todo Write a courtyard ! */
+                fprintf (fp, "# Write a courtyard on the silkscreen\n");
+                /*! \todo Write a courtyard on the silkscreen ! */
         }
         /* Write attributes */
         write_attributes ();
