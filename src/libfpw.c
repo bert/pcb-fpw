@@ -62,10 +62,14 @@ enum packages
  */
 char *row_letters[] =
 {
-        "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "P",
-        "R", "T", "U", "V", "X", "Y", "Z",
+        "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L",
+        "M", "N", "P", "R", "T", "U", "V", "W", "X", "Y", "Z",
         "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AJ", "AK", "AL",
-        "AM", "AN", "AP", "AR", "AT", "AU", "AV", "AW", "AX", "AY", "AZ"
+        "AM", "AN", "AP", "AR", "AT", "AU", "AV", "AW", "AX", "AY", "AZ",
+        "BA", "BB", "BC", "BD", "BE", "BF", "BG", "BH", "BJ", "BK", "BL",
+        "BM", "BN", "BP", "BR", "BT", "BU", "BV", "BW", "BX", "BY", "BZ",
+        "CA", "CB", "CC", "CD", "CE", "CF", "CG", "CH", "CJ", "CK", "CL",
+        "CM", "CN", "CP", "CR", "CT", "CU", "CV", "CW", "CX", "CY", "CZ"
 };
 
 typedef enum packages package_t;
@@ -603,6 +607,174 @@ write_rectangle
                 (int) ymax,
                 (int) line_width
         );
+}
+
+
+/*!
+ * \brief Write a TH footprint for a BGA package.
+ */
+int
+write_footprint_bga ()
+{
+        gdouble xmax;
+        gdouble xmin;
+        gdouble ymax;
+        gdouble ymin;
+        gdouble x_text;
+        gdouble y_text;
+        gdouble dx;
+        gint pin_number;
+        gchar *pin_pad_name = g_strdup ("");
+        gint i;
+        gint j;
+
+        fp = fopen (footprint_filename, "w");
+        if (!fp)
+        {
+                fprintf
+                (
+                        stderr,
+                        "ERROR: could not open file for %s footprint: %s.\n",
+                        footprint_type,
+                        footprint_filename
+                );
+                return (EXIT_FAILURE);
+        }
+        /* Determine (extreme) courtyard dimensions based on pin/pad
+         * properties */
+        xmin = multiplier *
+        (
+                ((-pitch_x * number_of_columns) / 2.0) -
+                (pad_diameter / 2.0) -
+                pad_solder_mask_clearance
+        );
+        xmax = multiplier *
+        (
+                ((pitch_x * number_of_columns) / 2.0) +
+                (pad_diameter / 2.0) +
+                pad_solder_mask_clearance
+        );
+        ymin = multiplier *
+        (
+                ((-pitch_y * number_of_rows) / 2.0) -
+                (pad_diameter / 2.0) -
+                pad_solder_mask_clearance
+        );
+        ymax = multiplier *
+        (
+                ((pitch_y * number_of_rows) / 2.0) +
+                (pad_diameter / 2.0) +
+                pad_solder_mask_clearance
+        );
+        /* Determine (extreme) courtyard dimensions based on package
+         * properties */
+        if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
+                xmin = (multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package));
+        if ((multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package)) > xmax)
+                xmax = (multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package));
+        if ((multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package)) < ymin)
+                ymin = (multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package));
+        if ((multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package)) > ymax)
+                ymax = (multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package));
+        /* If the user input is using even more real-estate then use it */
+        if (multiplier * (-courtyard_length / 2.0) < xmin)
+                xmin = multiplier * (-courtyard_length / 2.0);
+        if (multiplier * (courtyard_length / 2.0) > xmax)
+                xmax = multiplier * (courtyard_length / 2.0);
+        if (multiplier * (-courtyard_width / 2.0) < ymin)
+                ymin = multiplier * (-courtyard_width / 2.0);
+        if (multiplier * (courtyard_width / 2.0) > ymax)
+                ymax = multiplier * (courtyard_width / 2.0);
+        /* Write element header
+         * Guess for a place where to put the refdes text */
+        x_text = 0.0 ; /* already in mil/100 */
+        y_text = (ymin - 10000.0); /* already in mil/100 */
+        write_element_header (x_text, y_text);
+        /* Write pin and/or pad entities */
+        pin_number = 1;
+        for (i = 0; (i < number_of_rows); i++)
+        /* one row at a time [A .. ZZ ..] etc.
+         * where i is one or more letters of the alphabet,
+         * excluding "I", "O", "Q" ans "S" */
+        {
+                for (j = 0; (j < number_of_columns); j++)
+                /* all columns o a row [1 .. n]
+                 * where j is a member of the positive Natural numbers (N) */
+                {
+                        if (pin1_square && (pin_number == 1))
+                                pin_pad_flags = g_strdup ("square");
+                        else
+                                pin_pad_flags = g_strdup ("");
+                        pin_pad_name = g_strdup_printf ("%s%d", (row_letters[i]), (j + 1));
+                        write_pad
+                        (
+                                pin_number, /* pin number */
+                                pin_pad_name, /* pin name */
+                                multiplier * ((((- number_of_columns -1) / 2.0) + 1 + j) * pitch_x), /* x0 coordinate */
+                                multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
+                                multiplier * ((((- number_of_columns -1) / 2.0) + 1 + j) * pitch_x), /* x1 coordinate */
+                                multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y1-coordinate */
+                                multiplier * pad_width, /* pad width */
+                                multiplier * pad_clearance, /* clearance */
+                                multiplier * (pad_width + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                                pin_pad_flags /* flags */
+                        );
+                        pin_number++;
+                }
+        }
+        /* Write a package body on the silkscreen */
+        if (silkscreen_package_outline)
+        {
+                fprintf (fp, "# Write a package body on the silkscreen\n");
+                write_rectangle
+                (
+                        multiplier * (-package_body_length / 2.0),
+                        multiplier * (-package_body_width / 2.0),
+                        multiplier * (package_body_length / 2.0),
+                        multiplier * (package_body_width / 2.0),
+                        multiplier * silkscreen_line_width
+                );
+        }
+        /* Write a pin #1 marker on the silkscreen */
+        if (silkscreen_indicate_1)
+        {
+                fprintf (fp, "# Write a pin 1 marker on the silkscreen\n");
+                for (dx = 0.0; dx < (pitch_x / 2.0); dx = dx + silkscreen_line_width)
+                {
+                        write_element_line
+                        (
+                                multiplier * (-package_body_length / 2.0),
+                                multiplier * ((-package_body_width / 2.0) + dx),
+                                multiplier * ((-package_body_length / 2.0) + dx),
+                                multiplier * (-package_body_width / 2.0),
+                                multiplier * (silkscreen_line_width)
+                        );
+                }
+        }
+        /* Write a courtyard on the silkscreen */
+        if (courtyard)
+        {
+                fprintf (fp, "# Write a courtyard on the silkscreen\n");
+                write_rectangle
+                (
+                        xmin, /* already in mil/100 */
+                        ymin, /* already in mil/100 */
+                        xmax, /* already in mil/100 */
+                        ymax, /* already in mil/100 */
+                        multiplier * courtyard_line_width
+                );
+        }
+        /* Write attributes */
+        write_attributes ();
+        fclose (fp);
+        fprintf
+        (
+                stderr,
+                "SUCCESS: wrote a footprint file for a %s package: %s.\n",
+                footprint_type,
+                footprint_filename
+        );
+        return (EXIT_SUCCESS);
 }
 
 
@@ -2254,6 +2426,7 @@ write_footprint()
         switch (package_type)
         {
                 case BGA :
+                        write_footprint_bga ();
                         break;
                 case CAPC :
                         write_footprint_smt ();
