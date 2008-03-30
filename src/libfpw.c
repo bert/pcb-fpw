@@ -62,14 +62,14 @@ enum packages
  */
 char *row_letters[] =
 {
-        "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L",
-        "M", "N", "P", "R", "T", "U", "V", "W", "X", "Y",
-        "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AJ", "AK", "AL",
-        "AM", "AN", "AP", "AR", "AT", "AU", "AV", "AW", "AX", "AY",
-        "BA", "BB", "BC", "BD", "BE", "BF", "BG", "BH", "BJ", "BK", "BL",
-        "BM", "BN", "BP", "BR", "BT", "BU", "BV", "BW", "BX", "BY",
-        "CA", "CB", "CC", "CD", "CE", "CF", "CG", "CH", "CJ", "CK", "CL",
-        "CM", "CN", "CP", "CR", "CT", "CU", "CV", "CW", "CX", "CY"
+        "A", "B", "C", "D", "E", "F", "G", "H", "J", "K",
+        "L","M", "N", "P", "R", "T", "U", "V", "W", "Y",
+        "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AJ", "AK",
+        "AL", "AM", "AN", "AP", "AR", "AT", "AU", "AV", "AW", "AY",
+        "BA", "BB", "BC", "BD", "BE", "BF", "BG", "BH", "BJ", "BK",
+        "BL", "BM", "BN", "BP", "BR", "BT", "BU", "BV", "BW", "BY",
+        "CA", "CB", "CC", "CD", "CE", "CF", "CG", "CH", "CJ", "CK",
+        "CL", "CM", "CN", "CP", "CR", "CT", "CU", "CV", "CW", "CY"
 };
 
 typedef enum packages package_t;
