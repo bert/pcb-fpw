@@ -802,20 +802,6 @@ write_footprint_bga ()
                         multiplier * courtyard_line_width
                 );
         }
-        /* Write attributes */
-        if (attributes_in_footprint)
-                write_attributes ();
-        fprintf (fp, "\n");
-        fprintf (fp, ")\n");
-        fclose (fp);
-        fprintf
-        (
-                stderr,
-                "SUCCESS: wrote a footprint file for a %s package: %s.\n",
-                footprint_type,
-                footprint_filename
-        );
-        return (EXIT_SUCCESS);
 }
 
 
@@ -1052,20 +1038,6 @@ write_footprint_dip ()
                         multiplier * courtyard_line_width
                 );
         }
-        /* Write attributes */
-        if (attributes_in_footprint)
-                write_attributes ();
-        fprintf (fp, "\n");
-        fprintf (fp, ")\n");
-        fclose (fp);
-        fp = NULL;
-        fprintf
-        (
-                stderr,
-                "SUCCESS: wrote a footprint file for a %s package: %s.\n",
-                footprint_type,
-                footprint_filename
-        );
 }
 
 
@@ -1235,7 +1207,6 @@ write_footprint_pga ()
                 footprint_type,
                 footprint_filename
         );
-        return (EXIT_SUCCESS);
 }
 
 
@@ -1400,19 +1371,6 @@ write_footprint_smt ()
                         multiplier * courtyard_line_width
                 );
         }
-        /* Write attributes */
-        if (attributes_in_footprint)
-                write_attributes ();
-        fprintf (fp, "\n");
-        fprintf (fp, ")\n");
-        fclose (fp);
-        fprintf
-        (
-                stderr,
-                "SUCCESS: wrote a footprint file for a %s package: %s.\n",
-                footprint_type,
-                footprint_filename
-        );
 }
 
 
@@ -1633,19 +1591,6 @@ write_footprint_smt_molded ()
                         multiplier * courtyard_line_width
                 );
         }
-        /* Write attributes */
-        if (attributes_in_footprint)
-                write_attributes ();
-        fprintf (fp, "\n");
-        fprintf (fp, ")\n");
-        fclose (fp);
-        fprintf
-        (
-                stderr,
-                "SUCCESS: wrote a footprint file for a %s package: %s.\n",
-                footprint_type,
-                footprint_filename
-        );
 }
 
 
@@ -1890,19 +1835,6 @@ write_footprint_smt_molded_cap ()
                         multiplier * courtyard_line_width
                 );
         }
-        /* Write attributes */
-        if (attributes_in_footprint)
-                write_attributes ();
-        fprintf (fp, "\n");
-        fprintf (fp, ")\n");
-        fclose (fp);
-        fprintf
-        (
-                stderr,
-                "SUCCESS: wrote a footprint file for a %s package: %s.\n",
-                footprint_type,
-                footprint_filename
-        );
 }
 
 
@@ -2147,19 +2079,6 @@ write_footprint_smt_molded_diode ()
                         multiplier * courtyard_line_width
                 );
         }
-        /* Write attributes */
-        if (attributes_in_footprint)
-                write_attributes ();
-        fprintf (fp, "\n");
-        fprintf (fp, ")\n");
-        fclose (fp);
-        fprintf
-        (
-                stderr,
-                "SUCCESS: wrote a footprint file for a %s package: %s.\n",
-                footprint_type,
-                footprint_filename
-        );
 }
 
 
@@ -2301,20 +2220,6 @@ write_footprint_to92 ()
                         );
                 }
         }
-        /* Write attributes */
-        if (attributes_in_footprint)
-                write_attributes ();
-        fprintf (fp, "\n");
-        fprintf (fp, ")\n");
-        fclose (fp);
-        fprintf
-        (
-                stderr,
-                "SUCCESS: wrote a footprint file for a %s package: %s.\n",
-                footprint_type,
-                footprint_filename
-        );
-        return (EXIT_SUCCESS);
 }
 
 
@@ -2390,20 +2295,6 @@ write_footprint_template ()
                 fprintf (fp, "# Write a courtyard on the silkscreen\n");
                 /*! \todo Write a courtyard on the silkscreen ! */
         }
-        /* Write attributes */
-        if (attributes_in_footprint)
-                write_attributes ();
-        fprintf (fp, "\n");
-        fprintf (fp, ")\n");
-        fclose (fp);
-        fprintf
-        (
-                stderr,
-                "SUCCESS: wrote a footprint file for a %s package: %s.\n",
-                footprint_type,
-                footprint_filename
-        );
-        return (EXIT_SUCCESS);
 }
 
 
@@ -2503,6 +2394,8 @@ write_footprint()
                         write_footprint_smt_molded_cap ();
                         break;
                 case DIL :
+                        return;
+                        break;
                 case DIOM :
                         write_footprint_smt_molded_diode ();
                         break;
@@ -2525,8 +2418,10 @@ write_footprint()
                         write_footprint_pga ();
                         break;
                 case QFN :
+                        return;
                         break;
                 case QFP :
+                        return;
                         break;
                 case RESC :
                         write_footprint_smt ();
@@ -2538,19 +2433,35 @@ write_footprint()
                         write_footprint_smt ();
                         break;
                 case SIL :
+                        return;
                         break;
                 case SIP :
+                        return;
                         break;
                 case SO :
+                        return;
                         break;
                 case TO92 :
                         write_footprint_to92 ();
                         break;
                 default :
                         fprintf (stderr, "ERROR: unknown or not yet implemented footprint type entered.\n");
-                        exit (EXIT_FAILURE);
+                        return (EXIT_FAILURE);
                         break;
         }
+        /* Write attributes */
+        if (attributes_in_footprint)
+                write_attributes ();
+        fprintf (fp, "\n");
+        fprintf (fp, ")\n");
+        fclose (fp);
+        fprintf
+        (
+                stderr,
+                "SUCCESS: wrote a footprint file for a %s package: %s.\n",
+                footprint_type,
+                footprint_filename
+        );
 }
 
 /* EOF */
