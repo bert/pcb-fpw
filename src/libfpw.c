@@ -182,6 +182,9 @@ gchar *footprint_use_license;
         /*!< Usage license of the footprint. */
 gchar *footprint_status;
         /*!< Status of the footprint. */
+gboolean attributes_in_footprint;
+        /*!< Include the global values based on the entry values of the GUI
+         * into the footprint file. */
 
 gint number_of_pins;
         /*!< Number of pads/pins. */
@@ -399,8 +402,6 @@ write_attributes
         fprintf (fp, "\tAttribute(\"c2\" \"%f\")\n", c2);
         fprintf (fp, "\tAttribute(\"g2\" \"%f\")\n", g2);
         fprintf (fp, "\tAttribute(\"z2\" \"%f\")\n", z2);
-        fprintf (fp, "\n");
-        fprintf (fp, ")\n");
 }
 
 
@@ -802,7 +803,10 @@ write_footprint_bga ()
                 );
         }
         /* Write attributes */
-        write_attributes ();
+        if (attributes_in_footprint)
+                write_attributes ();
+        fprintf (fp, "\n");
+        fprintf (fp, ")\n");
         fclose (fp);
         fprintf
         (
@@ -1049,7 +1053,10 @@ write_footprint_dip ()
                 );
         }
         /* Write attributes */
-        write_attributes ();
+        if (attributes_in_footprint)
+                write_attributes ();
+        fprintf (fp, "\n");
+        fprintf (fp, ")\n");
         fclose (fp);
         fp = NULL;
         fprintf
@@ -1216,7 +1223,10 @@ write_footprint_pga ()
                 );
         }
         /* Write attributes */
-        write_attributes ();
+        if (attributes_in_footprint)
+                write_attributes ();
+        fprintf (fp, "\n");
+        fprintf (fp, ")\n");
         fclose (fp);
         fprintf
         (
@@ -1391,7 +1401,10 @@ write_footprint_smt ()
                 );
         }
         /* Write attributes */
-        write_attributes ();
+        if (attributes_in_footprint)
+                write_attributes ();
+        fprintf (fp, "\n");
+        fprintf (fp, ")\n");
         fclose (fp);
         fprintf
         (
@@ -1621,7 +1634,10 @@ write_footprint_smt_molded ()
                 );
         }
         /* Write attributes */
-        write_attributes ();
+        if (attributes_in_footprint)
+                write_attributes ();
+        fprintf (fp, "\n");
+        fprintf (fp, ")\n");
         fclose (fp);
         fprintf
         (
@@ -1875,7 +1891,10 @@ write_footprint_smt_molded_cap ()
                 );
         }
         /* Write attributes */
-        write_attributes ();
+        if (attributes_in_footprint)
+                write_attributes ();
+        fprintf (fp, "\n");
+        fprintf (fp, ")\n");
         fclose (fp);
         fprintf
         (
@@ -2129,7 +2148,10 @@ write_footprint_smt_molded_diode ()
                 );
         }
         /* Write attributes */
-        write_attributes ();
+        if (attributes_in_footprint)
+                write_attributes ();
+        fprintf (fp, "\n");
+        fprintf (fp, ")\n");
         fclose (fp);
         fprintf
         (
@@ -2280,7 +2302,10 @@ write_footprint_to92 ()
                 }
         }
         /* Write attributes */
-        write_attributes ();
+        if (attributes_in_footprint)
+                write_attributes ();
+        fprintf (fp, "\n");
+        fprintf (fp, ")\n");
         fclose (fp);
         fprintf
         (
@@ -2366,7 +2391,10 @@ write_footprint_template ()
                 /*! \todo Write a courtyard on the silkscreen ! */
         }
         /* Write attributes */
-        write_attributes ();
+        if (attributes_in_footprint)
+                write_attributes ();
+        fprintf (fp, "\n");
+        fprintf (fp, ")\n");
         fclose (fp);
         fprintf
         (
