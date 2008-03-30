@@ -63,13 +63,13 @@ enum packages
 char *row_letters[] =
 {
         "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L",
-        "M", "N", "P", "R", "T", "U", "V", "W", "X", "Y", "Z",
+        "M", "N", "P", "R", "T", "U", "V", "W", "X", "Y",
         "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AJ", "AK", "AL",
-        "AM", "AN", "AP", "AR", "AT", "AU", "AV", "AW", "AX", "AY", "AZ",
+        "AM", "AN", "AP", "AR", "AT", "AU", "AV", "AW", "AX", "AY",
         "BA", "BB", "BC", "BD", "BE", "BF", "BG", "BH", "BJ", "BK", "BL",
-        "BM", "BN", "BP", "BR", "BT", "BU", "BV", "BW", "BX", "BY", "BZ",
+        "BM", "BN", "BP", "BR", "BT", "BU", "BV", "BW", "BX", "BY",
         "CA", "CB", "CC", "CD", "CE", "CF", "CG", "CH", "CJ", "CK", "CL",
-        "CM", "CN", "CP", "CR", "CT", "CU", "CV", "CW", "CX", "CY", "CZ"
+        "CM", "CN", "CP", "CR", "CT", "CU", "CV", "CW", "CX", "CY"
 };
 
 typedef enum packages package_t;
@@ -354,6 +354,7 @@ write_attributes
 )
 {
         /* Attributes in the form "Attribute("name" "value")" */
+        fprintf (fp, "# Write attributes\n");
         fprintf (fp, "\tAttribute(\"author\" \"%s\")\n", footprint_author);
         fprintf (fp, "\tAttribute(\"dist-license\" \"%s\")\n", footprint_dist_license);
         fprintf (fp, "\tAttribute(\"use-license\" \"%s\")\n", footprint_use_license);
