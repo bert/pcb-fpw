@@ -187,8 +187,6 @@ main
         if (!strcmp (footprint_type, "BGA"))
         {
                 package_type = BGA;
-                fprintf (stderr, "ERROR: footprint type BGA not yet implemented.\n");
-                exit (EXIT_FAILURE);
         }
         else if (!strcmp (footprint_type, "CAPC"))
         {
@@ -209,8 +207,6 @@ main
         else if (!strcmp (footprint_type, "PGA"))
         {
                 package_type = PGA;
-                fprintf (stderr, "ERROR: footprint type PGA not yet implemented.\n");
-                exit (EXIT_FAILURE);
         }
         else if (!strcmp (footprint_type, "QFN"))
         {
