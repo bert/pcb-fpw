@@ -1122,9 +1122,6 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         if (!strcmp (footprint_type, "BGA"))
         {
                 package_type = BGA;
-                gchar *message = NULL;
-                message = g_strdup_printf (_("ERROR: footprint type BGA is not yet implemented."));
-                message_to_statusbar (combobox, message);
                 return;
         }
         else if (!strcmp (footprint_type, "CAPC"))
