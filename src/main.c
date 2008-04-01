@@ -10,11 +10,19 @@
  *
  * \todo When this wizard becomes really quit popular, we can write a function to
  * read from the footprintwizard files as to allow for editing or any other
- * (futuristic) purpose you can think of.
+ * (futuristic) purpose you can think of.\n
+ * This needs debugging.
  *
  * \todo Add the preview widget.
  *
  * \todo Add a menubar (in the future ?).
+ *
+ * \todo GUI is now "static" and based on code generated with Glade.\n
+ * In the distant future it can become neccessary to have a "dynamic" GUI to
+ * be generated with libglade code.
+ *
+ * \todo Inserting of generated footprint into pcb by means of an Inter
+ * Process Communication protocol such as DBUS for instance.
  */
 
 #ifdef HAVE_CONFIG_H
