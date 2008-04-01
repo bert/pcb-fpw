@@ -1,0 +1,81 @@
+The pcb-fpw FootPrintWizard is what the name says it will be:
+a footprint wizard (a.k.a. footprint generator).
+
+pcb-fpw is not a footprint editor, therefor one can NOT load an existing 
+footprint file into pcb-fpw, make some changes and save it back to file, and 
+subsequent load the edited footprint file into pcb.
+
+
+Graphical User Interface (GUI).
+-------------------------------
+
+The main, interactive, modus of operating the software is probably with the 
+GUI application "pcb-gfpw".
+
+Basically it comes down the following:
+        - Startup the application,
+        - fill the needed entries,
+        - check the preview widget (when and if this is implemented),
+        - save the footprint file.
+
+Subsequent actions to load the footprint file into pcb are described in the 
+pcb, xgsch2pcb or gsch2pcb documentation.
+
+The layout of the program consists of five tabs with entry fields and a preview 
+drawing area (when and if implemented), and a button bar with five buttons on 
+the lower part of the window.
+
+As you start entering the footprint type by selecting from a specified list, 
+the program will guess for the prefix of the footprint as the first couple of 
+characters of the footprint name.
+
+The program will also try to guess which entries are needed for this footprint 
+type and "grey out" the enries, checkbuttons which it thinks are not needed.
+
+The first tab with entries is named "Footprint" and can be used for the input 
+of general information about the footprint.
+
+The second tab is named "Pins/Pads" and should be used for the input of  
+information about the number and pattern of pins and/or pads, the shape and 
+clearances.
+
+The third tab is named "Thermal pad" and can be used for an optional thermal 
+pad if the footprint type allows for such an option.
+
+The fourth tab is named "Silkscreen" and can be used for the input of an 
+optional silkscreen to be drawn, such as package outline, pin/pad #1 marker 
+and/or courtyard.
+
+The fifth and last tab is named "Heel & Toe goals".
+This will be a feature (to be added in the future) for the optional input of 
+heel and toe parameters as in creating SO, QFN or *QFP packages.
+
+The five buttons in the lower part will have the following functions:
+        - "Close" to exit the application.,
+        - "Clear" to empty all entry fields and reset all checkbuttons to the 
+          default setting,
+        - "Open" to choose and read an existing footprintwizard file,
+        - "Save" to write the current values in the entries to a 
+          footprintwizard file and to generate a footprint file,
+        - "Refresh" to refresh the preview area (when and if implemented).
+
+
+Command Line Interface (CLI).
+-----------------------------
+
+The "other" modus of non-interactive operation is from the command line 
+interface.
+
+This assumes for an existing footprintwizard file (or series of files when 
+batch processing).
+
+Footprintwizard files are to have a .fpw suffix.
+
+For more information type:
+
+fpw -h
+
+Have fun creating footprints  with pcb-fpw  ;-)
+
+
+/* End Of File /*
