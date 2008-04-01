@@ -57,8 +57,7 @@ main (int argc, char *argv[])
          * as the total amount of pins and pads can be caluculated.
          * However for some packages it might be needed to set a value here.
          */
-        GtkWidget *number_total_pins_entry = NULL;
-        number_total_pins_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
+        GtkWidget *number_total_pins_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
                 "number_total_pins_entry");
         gtk_widget_set_sensitive (number_total_pins_entry, FALSE);
         /* Set the initial state of the checkbutton for the thermal pad to false,
@@ -67,40 +66,33 @@ main (int argc, char *argv[])
          * set the "clearance" entry for the thermal pad to insensitive,
          * and set the "solder mask clearance" entry for the thermal pad to insensitive.
          */
-        GtkToggleButton *thermal = NULL;
-        GtkToggleButton *thermal_nopaste_checkbutton = NULL;
-        GtkWidget *thermal_length_entry = NULL;
-        GtkWidget *thermal_width_entry = NULL;
-        GtkWidget *thermal_clearance_entry = NULL;
-        GtkWidget *thermal_solder_mask_clearance_entry = NULL;
-        thermal = lookup_widget (GTK_WIDGET (pcb_gfpw),
+        GtkToggleButton *thermal = lookup_widget (GTK_WIDGET (pcb_gfpw),
                 "thermal_checkbutton");
-        thermal_nopaste_checkbutton = lookup_widget (GTK_WIDGET (pcb_gfpw),
-                "thermal_nopaste_checkbutton");
-        thermal_length_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
-                "thermal_length_entry");
-        thermal_width_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
-                "thermal_width_entry");
-        thermal_clearance_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
-                "thermal_clearance_entry");
-        thermal_solder_mask_clearance_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
-                "thermal_solder_mask_clearance_entry");
         gtk_toggle_button_set_active (thermal, FALSE);
+        GtkToggleButton *thermal_nopaste_checkbutton = lookup_widget (GTK_WIDGET (pcb_gfpw),
+                "thermal_nopaste_checkbutton");
         gtk_widget_set_sensitive (thermal_nopaste_checkbutton, FALSE);
+        GtkWidget *thermal_length_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
+                "thermal_length_entry");
         gtk_widget_set_sensitive (thermal_length_entry, FALSE);
+        GtkWidget *thermal_width_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
+                "thermal_width_entry");
         gtk_widget_set_sensitive (thermal_width_entry, FALSE);
+        GtkWidget *thermal_clearance_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
+                "thermal_clearance_entry");
         gtk_widget_set_sensitive (thermal_clearance_entry, FALSE);
+        GtkWidget *thermal_solder_mask_clearance_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
+                "thermal_solder_mask_clearance_entry");
         gtk_widget_set_sensitive (thermal_solder_mask_clearance_entry, FALSE);
         /* Set the initial state of the checkbutton for the silkscreen to true,
          * set the "linewidth" entry for the silkscreen to sensitive.
          */
         GtkToggleButton *silkscreen_package_outline = NULL;
-        GtkWidget *silkscreen_line_width_entry = NULL;
+        gtk_toggle_button_set_active (silkscreen_package_outline, TRUE);
         silkscreen_package_outline = lookup_widget (GTK_WIDGET (pcb_gfpw),
                 "silkscreen_package_outline_checkbutton");
-        silkscreen_line_width_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
+        GtkWidget *silkscreen_line_width_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
                 "silkscreen_line_width_entry");
-        gtk_toggle_button_set_active (silkscreen_package_outline, TRUE);
         gtk_widget_set_sensitive (silkscreen_line_width_entry, TRUE);
         /* Set the state of the check button for the courtyard to false,
          * set the "length" entry for the courtyard to insensitive,
@@ -109,48 +101,37 @@ main (int argc, char *argv[])
          * and set the "clearance to package" entry for the courtyard to
          * insensitive.
          */
-        GtkToggleButton *courtyard = NULL;
-        GtkWidget *courtyard_length_entry = NULL;
-        GtkWidget *courtyard_width_entry = NULL;
-        GtkWidget *courtyard_line_width_entry = NULL;
-        GtkWidget *courtyard_clearance_with_package_entry = NULL;
-        courtyard = lookup_widget (GTK_WIDGET (pcb_gfpw),
+        GtkToggleButton *courtyard = lookup_widget (GTK_WIDGET (pcb_gfpw),
                 "courtyard_checkbutton");
-        courtyard_length_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
-                "courtyard_length_entry");
-        courtyard_width_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
-                "courtyard_width_entry");
-        courtyard_line_width_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
-                "courtyard_line_width_entry");
-        courtyard_clearance_with_package_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
-                "courtyard_clearance_with_package_entry");
         gtk_toggle_button_set_active (courtyard, FALSE);
+        GtkWidget *courtyard_length_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
+                "courtyard_length_entry");
         gtk_widget_set_sensitive (courtyard_length_entry, FALSE);
+        GtkWidget *courtyard_width_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
+                "courtyard_width_entry");
         gtk_widget_set_sensitive (courtyard_width_entry, FALSE);
+        GtkWidget *courtyard_line_width_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
+                "courtyard_line_width_entry");
         gtk_widget_set_sensitive (courtyard_line_width_entry, FALSE);
+        GtkWidget *courtyard_clearance_with_package_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
+                "courtyard_clearance_with_package_entry");
         gtk_widget_set_sensitive (courtyard_clearance_with_package_entry, FALSE);
         /* Set the initial state of the entries adjacent to the radiobuttons in
          * the notebook tab  "Heel & Toe goals".
          * These entries are for entering the C1, C2, G1, G2, Z1 and Z2
          * variables.
          */
-        GtkWidget *C1_entry = NULL;
-        GtkWidget *C2_entry = NULL;
-        GtkWidget *G1_entry = NULL;
-        GtkWidget *G2_entry = NULL;
-        GtkWidget *Z1_entry = NULL;
-        GtkWidget *Z2_entry = NULL;
-        C1_entry = lookup_widget (GTK_WIDGET (pcb_gfpw), "C1_entry");
-        C2_entry = lookup_widget (GTK_WIDGET (pcb_gfpw), "C2_entry");
-        G1_entry = lookup_widget (GTK_WIDGET (pcb_gfpw), "G1_entry");
-        G2_entry = lookup_widget (GTK_WIDGET (pcb_gfpw), "G2_entry");
-        Z1_entry = lookup_widget (GTK_WIDGET (pcb_gfpw), "Z1_entry");
-        Z2_entry = lookup_widget (GTK_WIDGET (pcb_gfpw), "Z2_entry");
+        GtkWidget *C1_entry = lookup_widget (GTK_WIDGET (pcb_gfpw), "C1_entry");
         gtk_widget_set_sensitive (C1_entry, TRUE);
+        GtkWidget *C2_entry = lookup_widget (GTK_WIDGET (pcb_gfpw), "C2_entry");
         gtk_widget_set_sensitive (C2_entry, TRUE);
+        GtkWidget *G1_entry = lookup_widget (GTK_WIDGET (pcb_gfpw), "G1_entry");
         gtk_widget_set_sensitive (G1_entry, FALSE);
+        GtkWidget *G2_entry = lookup_widget (GTK_WIDGET (pcb_gfpw), "G2_entry");
         gtk_widget_set_sensitive (G2_entry, FALSE);
+        GtkWidget *Z1_entry = lookup_widget (GTK_WIDGET (pcb_gfpw), "Z1_entry");
         gtk_widget_set_sensitive (Z1_entry, FALSE);
+        GtkWidget *Z2_entry = lookup_widget (GTK_WIDGET (pcb_gfpw), "Z2_entry");
         gtk_widget_set_sensitive (Z2_entry, FALSE);
         /* Now show the main dialog. */
         gtk_widget_show (pcb_gfpw);
