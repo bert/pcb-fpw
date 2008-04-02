@@ -750,25 +750,20 @@ void
 on_courtyard_checkbutton_toggled       (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
-        GtkWidget *courtyard_line_width_entry = NULL;
-        GtkWidget *courtyard_length_entry = NULL;
-        GtkWidget *courtyard_width_entry = NULL;
-        GtkWidget *courtyard_clearance_with_package_entry = NULL;
-
-        entry_has_changed (togglebutton);
-        /* Save the state of checkbutton in a global variable */
         courtyard = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
-        /* Look up widgets */
-        courtyard_line_width_entry = lookup_widget (GTK_BUTTON (togglebutton), "courtyard_line_width_entry");
-        courtyard_length_entry = lookup_widget (GTK_BUTTON (togglebutton), "courtyard_length_entry");
-        courtyard_width_entry = lookup_widget (GTK_BUTTON (togglebutton), "courtyard_width_entry");
-        courtyard_clearance_with_package_entry = lookup_widget (GTK_BUTTON (togglebutton), "courtyard_clearance_with_package_entry");
-        /* Set entities to (in)sensitive according to the state of the
-         * checkbutton variable */
+        GtkWidget *courtyard_line_width_entry = lookup_widget (GTK_BUTTON (togglebutton),
+                "courtyard_line_width_entry");
         gtk_widget_set_sensitive (courtyard_line_width_entry, courtyard);
+        GtkWidget *courtyard_length_entry = lookup_widget (GTK_BUTTON (togglebutton),
+                "courtyard_length_entry");
         gtk_widget_set_sensitive (courtyard_length_entry, courtyard);
+        GtkWidget *courtyard_width_entry = lookup_widget (GTK_BUTTON (togglebutton),
+                "courtyard_width_entry");
         gtk_widget_set_sensitive (courtyard_width_entry, courtyard);
+        GtkWidget *courtyard_clearance_with_package_entry = lookup_widget (GTK_BUTTON (togglebutton),
+                "courtyard_clearance_with_package_entry");
         gtk_widget_set_sensitive (courtyard_clearance_with_package_entry, courtyard);
+        entry_has_changed (togglebutton);
 }
 
 
