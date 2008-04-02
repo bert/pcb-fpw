@@ -517,229 +517,168 @@ on_clear_button_clicked                (GtkButton       *button,
 {
         entry_has_changed (button);
         /* Widgets on tab 1 "Footprint" */
-        GtkWidget *footprint_name_entry = NULL;
-        GtkWidget *footprint_type_entry = NULL;
-        GtkWidget *footprint_units_entry = NULL;
-        GtkWidget *footprint_refdes_entry = NULL;
-        GtkWidget *footprint_value_entry = NULL;
-        GtkWidget *package_body_length_entry = NULL;
-        GtkWidget *package_body_width_entry = NULL;
-        GtkWidget *package_body_height_entry = NULL;
-        GtkWidget *package_is_radial_checkbutton = NULL;
-        GtkWidget *footprint_author_entry = NULL;
-        GtkWidget *footprint_dist_license_entry = NULL;
-        GtkWidget *footprint_use_license_entry = NULL;
-        GtkWidget *footprint_status_entry = NULL;
-        /* Look up widgets on tab 1 "Footprint" */
-        footprint_name_entry = lookup_widget (GTK_BUTTON (button),
-                "footprint_name_entry");
-        footprint_type_entry = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *footprint_type_entry = lookup_widget (GTK_BUTTON (button),
                 "footprint_type_entry");
-        footprint_units_entry = lookup_widget (GTK_BUTTON (button),
-                "footprint_units_entry");
-        footprint_refdes_entry = lookup_widget (GTK_BUTTON (button),
-                "footprint_refdes_entry");
-        footprint_value_entry = lookup_widget (GTK_BUTTON (button),
-                "footprint_value_entry");
-        package_body_length_entry = lookup_widget (GTK_BUTTON (button),
-                "package_body_length_entry");
-        package_body_width_entry = lookup_widget (GTK_BUTTON (button),
-                "package_body_width_entry");
-        package_body_height_entry = lookup_widget (GTK_BUTTON (button),
-                "package_body_height_entry");
-        package_is_radial_checkbutton = lookup_widget (GTK_BUTTON (button),
-                "package_is_radial_checkbutton");
-        footprint_author_entry = lookup_widget (GTK_BUTTON (button),
-                "footprint_author_entry");
-        footprint_dist_license_entry = lookup_widget (GTK_BUTTON (button),
-                "footprint_dist_license_entry");
-        footprint_use_license_entry = lookup_widget (GTK_BUTTON (button),
-                "footprint_use_license_entry");
-        footprint_status_entry = lookup_widget (GTK_BUTTON (button),
-                "footprint_status_entry");
-        /* Clear entries (remove characters) on tab 1"Footprint" */
-        gtk_entry_set_text (GTK_WIDGET (footprint_name_entry), "");
         gtk_combo_box_set_active (GTK_WIDGET (footprint_type_entry), 0);
+        GtkWidget *footprint_name_entry = lookup_widget (GTK_BUTTON (button),
+                "footprint_name_entry");
+        gtk_entry_set_text (GTK_WIDGET (footprint_name_entry), "");
+        GtkWidget *footprint_units_entry = lookup_widget (GTK_BUTTON (button),
+                "footprint_units_entry");
         gtk_combo_box_set_active (GTK_WIDGET (footprint_units_entry), 0);
+        GtkWidget *footprint_refdes_entry = lookup_widget (GTK_BUTTON (button),
+                "footprint_refdes_entry");
         gtk_entry_set_text (GTK_WIDGET (footprint_refdes_entry), "");
+        GtkWidget *footprint_value_entry = lookup_widget (GTK_BUTTON (button),
+                "footprint_value_entry");
         gtk_entry_set_text (GTK_WIDGET (footprint_value_entry), "");
+        GtkWidget *package_body_length_entry = lookup_widget (GTK_BUTTON (button),
+                "package_body_length_entry");
         gtk_entry_set_text (GTK_WIDGET (package_body_length_entry), "");
+        GtkWidget *package_body_width_entry = lookup_widget (GTK_BUTTON (button),
+                "package_body_width_entry");
         gtk_entry_set_text (GTK_WIDGET (package_body_width_entry), "");
+        GtkWidget *package_body_height_entry = lookup_widget (GTK_BUTTON (button),
+                "package_body_height_entry");
         gtk_entry_set_text (GTK_WIDGET (package_body_height_entry), "");
-        gtk_entry_set_text (GTK_WIDGET (footprint_author_entry), "");
-        gtk_combo_box_set_active (GTK_WIDGET (footprint_status_entry), 0);
-        gtk_entry_set_text (GTK_WIDGET (footprint_dist_license_entry), "");
-        gtk_entry_set_text (GTK_WIDGET (footprint_use_license_entry), "");
-        /* Set checkbuttons to their initial state on tab 1 "Footprint" */
+        GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_BUTTON (button),
+                "package_is_radial_checkbutton");
         gtk_toggle_button_set_active (package_is_radial_checkbutton, FALSE);
+        GtkWidget *footprint_author_entry = lookup_widget (GTK_BUTTON (button),
+                "footprint_author_entry");
+        gtk_entry_set_text (GTK_WIDGET (footprint_author_entry), "");
+        GtkWidget *footprint_dist_license_entry = lookup_widget (GTK_BUTTON (button),
+                "footprint_dist_license_entry");
+        gtk_entry_set_text (GTK_WIDGET (footprint_dist_license_entry), "");
+        GtkWidget *footprint_use_license_entry = lookup_widget (GTK_BUTTON (button),
+                "footprint_use_license_entry");
+        gtk_entry_set_text (GTK_WIDGET (footprint_use_license_entry), "");
+        GtkWidget *footprint_status_entry = lookup_widget (GTK_BUTTON (button),
+                "footprint_status_entry");
+        gtk_combo_box_set_active (GTK_WIDGET (footprint_status_entry), 0);
+
         /* Widgets on tab 2 "Pins/Pads" */
-        GtkWidget *number_total_pins_entry = NULL;
-        GtkWidget *number_of_rows_entry = NULL;
-        GtkWidget *number_of_columns_entry = NULL;
-        GtkWidget *pitch_x_entry = NULL;
-        GtkWidget *pitch_y_entry = NULL;
-        GtkWidget *count_x_entry = NULL;
-        GtkWidget *count_y_entry = NULL;
-        GtkWidget *pad_shape_entry = NULL;
-        GtkWidget *number_1_position_entry = NULL;
-        GtkWidget *pad_diameter_entry = NULL;
-        GtkWidget *pin_drill_diameter_entry = NULL;
-        GtkWidget *pin1_square_checkbutton = NULL;
-        GtkWidget *pad_length_entry = NULL;
-        GtkWidget *pad_width_entry = NULL;
-        GtkWidget *pad_clearance_entry = NULL;
-        GtkWidget *pad_solder_mask_clearance_entry = NULL;
-        /* Look up widgets on tab 2 "Pins/Pads"*/
-        number_total_pins_entry = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *number_total_pins_entry = lookup_widget (GTK_BUTTON (button),
                 "number_total_pins_entry");
-        number_of_rows_entry = lookup_widget (GTK_BUTTON (button),
-                "number_of_rows_entry");
-        number_of_columns_entry = lookup_widget (GTK_BUTTON (button),
-                "number_of_columns_entry");
-        pitch_x_entry = lookup_widget (GTK_BUTTON (button), "pitch_x_entry");
-        pitch_y_entry = lookup_widget (GTK_BUTTON (button), "pitch_y_entry");
-        count_x_entry = lookup_widget (GTK_BUTTON (button), "count_x_entry");
-        count_y_entry = lookup_widget (GTK_BUTTON (button), "count_y_entry");
-        pad_shape_entry = lookup_widget (GTK_BUTTON (button),
-                "pad_shape_entry");
-        number_1_position_entry = lookup_widget (GTK_BUTTON (button),
-                "number_1_position_entry");
-        pad_diameter_entry = lookup_widget (GTK_BUTTON (button),
-                "pad_diameter_entry");
-        pin_drill_diameter_entry = lookup_widget (GTK_BUTTON (button),
-                "pin_drill_diameter_entry");
-        pin1_square_checkbutton = lookup_widget (GTK_BUTTON (button),
-                "pin_square_checkbutton");
-        pad_length_entry = lookup_widget (GTK_BUTTON (button),
-                "pad_length_entry");
-        pad_width_entry = lookup_widget (GTK_BUTTON (button),
-                "pad_width_entry");
-        pad_clearance_entry = lookup_widget (GTK_BUTTON (button),
-                "pad_clearance_entry");
-        pad_solder_mask_clearance_entry = lookup_widget (GTK_BUTTON (button),
-                "pad_solder_mask_clearance_entry");
-        /* Clear entries (remove characters) on tab 2 "Pins/Pads" */
         gtk_entry_set_text (GTK_WIDGET (number_total_pins_entry), "");
+        GtkWidget *number_of_rows_entry = lookup_widget (GTK_BUTTON (button),
+                "number_of_rows_entry");
         gtk_entry_set_text (GTK_WIDGET (number_of_rows_entry), "");
+        GtkWidget *number_of_columns_entry = lookup_widget (GTK_BUTTON (button),
+                "number_of_columns_entry");
         gtk_entry_set_text (GTK_WIDGET (number_of_columns_entry), "");
+        GtkWidget *pitch_x_entry = lookup_widget (GTK_BUTTON (button),
+                "pitch_x_entry");
         gtk_entry_set_text (GTK_WIDGET (pitch_x_entry), "");
+        GtkWidget *pitch_y_entry = lookup_widget (GTK_BUTTON (button),
+                "pitch_y_entry");
         gtk_entry_set_text (GTK_WIDGET (pitch_y_entry), "");
+        GtkWidget *count_x_entry = lookup_widget (GTK_BUTTON (button),
+                "count_x_entry");
         gtk_entry_set_text (GTK_WIDGET (count_x_entry), "");
+        GtkWidget *count_y_entry = lookup_widget (GTK_BUTTON (button),
+                "count_y_entry");
         gtk_entry_set_text (GTK_WIDGET (count_y_entry), "");
+        GtkWidget *pad_shape_entry = lookup_widget (GTK_BUTTON (button),
+                "pad_shape_entry");
         gtk_combo_box_set_active (GTK_WIDGET (pad_shape_entry), 0);
+        GtkWidget *number_1_position_entry = lookup_widget (GTK_BUTTON (button),
+                "number_1_position_entry");
         gtk_combo_box_set_active (GTK_WIDGET (number_1_position_entry), 0);
+        GtkWidget *pad_diameter_entry = lookup_widget (GTK_BUTTON (button),
+                "pad_diameter_entry");
         gtk_entry_set_text (GTK_WIDGET (pad_diameter_entry), "");
+        GtkWidget *pin_drill_diameter_entry = lookup_widget (GTK_BUTTON (button),
+                "pin_drill_diameter_entry");
         gtk_entry_set_text (GTK_WIDGET (pin_drill_diameter_entry), "");
-        gtk_entry_set_text (GTK_WIDGET (pad_length_entry), "");
-        gtk_entry_set_text (GTK_WIDGET (pad_width_entry), "");
-        gtk_entry_set_text (GTK_WIDGET (pad_clearance_entry), "");
-        gtk_entry_set_text (GTK_WIDGET (pad_solder_mask_clearance_entry), "");
-        /* Set any checkbuttons to their initial state on tab 2 "Pins/Pads" */
+        GtkWidget *pin1_square_checkbutton = lookup_widget (GTK_BUTTON (button),
+                "pin_square_checkbutton");
         gtk_toggle_button_set_active (pin1_square_checkbutton, FALSE);
+        GtkWidget *pad_length_entry = lookup_widget (GTK_BUTTON (button),
+                "pad_length_entry");
+        gtk_entry_set_text (GTK_WIDGET (pad_length_entry), "");
+        GtkWidget *pad_width_entry = lookup_widget (GTK_BUTTON (button),
+                "pad_width_entry");
+        gtk_entry_set_text (GTK_WIDGET (pad_width_entry), "");
+        GtkWidget *pad_clearance_entry = lookup_widget (GTK_BUTTON (button),
+                "pad_clearance_entry");
+        gtk_entry_set_text (GTK_WIDGET (pad_clearance_entry), "");
+        GtkWidget *pad_solder_mask_clearance_entry = lookup_widget (GTK_BUTTON (button),
+                "pad_solder_mask_clearance_entry");
+        gtk_entry_set_text (GTK_WIDGET (pad_solder_mask_clearance_entry), "");
+
         /* Widgets on tab 3 "Thermal Pad" */
-        GtkWidget *thermal_checkbutton = NULL;
-        GtkWidget *thermal_nopaste_checkbutton = NULL;
-        GtkWidget *thermal_length_entry = NULL;
-        GtkWidget *thermal_width_entry = NULL;
-        GtkWidget *thermal_clearance_entry = NULL;
-        GtkWidget *thermal_solder_mask_clearance_entry = NULL;
-        /* Look up widgets on tab 3 "Thermal Pad" */
-        thermal_checkbutton = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *thermal_checkbutton = lookup_widget (GTK_BUTTON (button),
                 "thermal_checkbutton");
-        thermal_nopaste_checkbutton = lookup_widget (GTK_BUTTON (button),
-                "thermal_nopaste_checkbutton");
-        thermal_length_entry = lookup_widget (GTK_BUTTON (button),
-                "thermal_length_entry");
-        thermal_width_entry = lookup_widget (GTK_BUTTON (button),
-                "thermal_width_entry");
-        thermal_clearance_entry = lookup_widget (GTK_BUTTON (button),
-                "thermal_clearance_entry");
-        thermal_solder_mask_clearance_entry = lookup_widget (GTK_BUTTON (button),
-                "thermal_solder_mask_clearance_entry");
-        /* Clear entries (remove characters) on tab 3 "Thermal Pad" */
-        gtk_entry_set_text (GTK_WIDGET (thermal_length_entry), "");
-        gtk_entry_set_text (GTK_WIDGET (thermal_width_entry), "");
-        gtk_entry_set_text (GTK_WIDGET (thermal_clearance_entry), "");
-        gtk_entry_set_text (GTK_WIDGET (thermal_solder_mask_clearance_entry), "");
-        /* Set any entries, which have a default value, to that value on
-         * tab 3 "thermal Pads" */
-        /* Set any checkbuttons to their initial state on tab 3 "Thermal Pad" */
         gtk_toggle_button_set_active (thermal_checkbutton, FALSE);
+        GtkWidget *thermal_nopaste_checkbutton = lookup_widget (GTK_BUTTON (button),
+                "thermal_nopaste_checkbutton");
         gtk_toggle_button_set_active (thermal_nopaste_checkbutton, FALSE);
+        GtkWidget *thermal_length_entry = lookup_widget (GTK_BUTTON (button),
+                "thermal_length_entry");
+        gtk_entry_set_text (GTK_WIDGET (thermal_length_entry), "");
         gtk_widget_set_sensitive (thermal_length_entry, FALSE);
+        GtkWidget *thermal_width_entry = lookup_widget (GTK_BUTTON (button),
+                "thermal_width_entry");
+        gtk_entry_set_text (GTK_WIDGET (thermal_width_entry), "");
         gtk_widget_set_sensitive (thermal_width_entry, FALSE);
+        GtkWidget *thermal_clearance_entry = lookup_widget (GTK_BUTTON (button),
+                "thermal_clearance_entry");
+        gtk_entry_set_text (GTK_WIDGET (thermal_clearance_entry), "");
         gtk_widget_set_sensitive (thermal_clearance_entry, FALSE);
+        GtkWidget *thermal_solder_mask_clearance_entry = lookup_widget (GTK_BUTTON (button),
+                "thermal_solder_mask_clearance_entry");
+        gtk_entry_set_text (GTK_WIDGET (thermal_solder_mask_clearance_entry), "");
         gtk_widget_set_sensitive (thermal_solder_mask_clearance_entry, FALSE);
+
         /* Widgets on tab 4 "Silkscreen" */
-        GtkWidget *silkscreen_package_outline_checkbutton = NULL;
-        GtkWidget *silkscreen_line_width_entry = NULL;
-        GtkWidget *silkscreen_indicate_1_checkbutton = NULL;
-        GtkWidget *courtyard_checkbutton = NULL;
-        GtkWidget *courtyard_length_entry = NULL;
-        GtkWidget *courtyard_width_entry = NULL;
-        GtkWidget *courtyard_line_width_entry = NULL;
-        GtkWidget *courtyard_clearance_with_package_entry = NULL;
-        /* Look up widgets on tab 4 "Silkscreen" */
-        silkscreen_package_outline_checkbutton = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *silkscreen_package_outline_checkbutton = lookup_widget (GTK_BUTTON (button),
                 "silkscreen_package_outline_checkbutton");
-        silkscreen_line_width_entry = lookup_widget (GTK_BUTTON (button),
-                "silkscreen_line_width_entry");
-        silkscreen_indicate_1_checkbutton = lookup_widget (GTK_BUTTON (button),
-                "silkscreen_indicate_1_checkbutton");
-        courtyard_checkbutton = lookup_widget (GTK_BUTTON (button),
-                "courtyard_checkbutton");
-        courtyard_length_entry = lookup_widget (GTK_BUTTON (button),
-                "courtyard_length_entry");
-        courtyard_width_entry = lookup_widget (GTK_BUTTON (button),
-                "courtyard_width_entry");
-        courtyard_line_width_entry = lookup_widget (GTK_BUTTON (button),
-                "courtyard_line_width_entry");
-        courtyard_clearance_with_package_entry = lookup_widget (GTK_BUTTON (button),
-                "courtyard_clearance_with_package_entry");
-        /* Clear entries (remove characters) on tab 4 "Silkscreen" */
-        gtk_entry_set_text (GTK_WIDGET (silkscreen_line_width_entry), "");
-        gtk_entry_set_text (GTK_WIDGET (courtyard_length_entry), "");
-        gtk_entry_set_text (GTK_WIDGET (courtyard_width_entry), "");
-        gtk_entry_set_text (GTK_WIDGET (courtyard_line_width_entry), "");
-        gtk_entry_set_text (GTK_WIDGET (courtyard_clearance_with_package_entry), "");
-        /* Set any checkbuttons to their initial state on tab 4 "Silkscreen" */
         gtk_toggle_button_set_active (silkscreen_package_outline_checkbutton, FALSE);
+        GtkWidget *silkscreen_line_width_entry = lookup_widget (GTK_BUTTON (button),
+                "silkscreen_line_width_entry");
+        gtk_entry_set_text (GTK_WIDGET (silkscreen_line_width_entry), "");
+        GtkWidget *silkscreen_indicate_1_checkbutton = lookup_widget (GTK_BUTTON (button),
+                "silkscreen_indicate_1_checkbutton");
         gtk_toggle_button_set_active (silkscreen_indicate_1_checkbutton, FALSE);
+        GtkWidget *courtyard_checkbutton = lookup_widget (GTK_BUTTON (button),
+                "courtyard_checkbutton");
         gtk_toggle_button_set_active (courtyard_checkbutton, FALSE);
+        GtkWidget *courtyard_length_entry = lookup_widget (GTK_BUTTON (button),
+                "courtyard_length_entry");
+        gtk_entry_set_text (GTK_WIDGET (courtyard_length_entry), "");
+        GtkWidget *courtyard_width_entry = lookup_widget (GTK_BUTTON (button),
+                "courtyard_width_entry");
+        gtk_entry_set_text (GTK_WIDGET (courtyard_width_entry), "");
+        GtkWidget *courtyard_line_width_entry = lookup_widget (GTK_BUTTON (button),
+                "courtyard_line_width_entry");
+        gtk_entry_set_text (GTK_WIDGET (courtyard_line_width_entry), "");
+        GtkWidget *courtyard_clearance_with_package_entry = lookup_widget (GTK_BUTTON (button),
+                "courtyard_clearance_with_package_entry");
+        gtk_entry_set_text (GTK_WIDGET (courtyard_clearance_with_package_entry), "");
+
         /* Widgets on tab 5 "Silkscreen" */
-        GtkWidget *C1_entry = NULL;
-        GtkWidget *C2_entry = NULL;
-        GtkWidget *G1_entry = NULL;
-        GtkWidget *G2_entry = NULL;
-        GtkWidget *Z1_entry = NULL;
-        GtkWidget *Z2_entry = NULL;
-        GtkWidget * C1_radiobutton;
-        GtkWidget * C2_radiobutton;
-        /* Look up widgets on tab 5 "Heel & Toe Goals" */
-        C1_entry = lookup_widget (GTK_BUTTON (button), "C1_entry");
-        C2_entry = lookup_widget (GTK_BUTTON (button), "C2_entry");
-        G1_entry = lookup_widget (GTK_BUTTON (button), "G1_entry");
-        G2_entry = lookup_widget (GTK_BUTTON (button), "G2_entry");
-        Z1_entry = lookup_widget (GTK_BUTTON (button), "Z1_entry");
-        Z2_entry = lookup_widget (GTK_BUTTON (button), "Z2_entry");
-        C1_radiobutton = lookup_widget (GTK_BUTTON (button), "C1_radiobutton");
-        C2_radiobutton = lookup_widget (GTK_BUTTON (button), "C2_radiobutton");
-        /* Clear entries (remove characters) on tab 5 "Heel & Toe Goals" */
+        GtkWidget *C1_entry = lookup_widget (GTK_BUTTON (button), "C1_entry");
         gtk_entry_set_text (GTK_WIDGET (C1_entry), "");
-        gtk_entry_set_text (GTK_WIDGET (C2_entry), "");
-        gtk_entry_set_text (GTK_WIDGET (G1_entry), "");
-        gtk_entry_set_text (GTK_WIDGET (G2_entry), "");
-        gtk_entry_set_text (GTK_WIDGET (Z1_entry), "");
-        gtk_entry_set_text (GTK_WIDGET (Z2_entry), "");
-        /* Set any entries to their initial state on tab 5 "Heel & Toe Goals" */
         gtk_widget_set_sensitive (C1_entry, TRUE);
+        GtkWidget *C2_entry = lookup_widget (GTK_BUTTON (button), "C2_entry");
+        gtk_entry_set_text (GTK_WIDGET (C2_entry), "");
         gtk_widget_set_sensitive (C2_entry, TRUE);
+        GtkWidget *G1_entry = lookup_widget (GTK_BUTTON (button), "G1_entry");
+        gtk_entry_set_text (GTK_WIDGET (G1_entry), "");
         gtk_widget_set_sensitive (G1_entry, FALSE);
+        GtkWidget *G2_entry = lookup_widget (GTK_BUTTON (button), "G2_entry");
+        gtk_entry_set_text (GTK_WIDGET (G2_entry), "");
         gtk_widget_set_sensitive (G2_entry, FALSE);
+        GtkWidget *Z1_entry = lookup_widget (GTK_BUTTON (button), "Z1_entry");
+        gtk_entry_set_text (GTK_WIDGET (Z1_entry), "");
         gtk_widget_set_sensitive (Z1_entry, FALSE);
+        GtkWidget *Z2_entry = lookup_widget (GTK_BUTTON (button), "Z2_entry");
+        gtk_entry_set_text (GTK_WIDGET (Z2_entry), "");
         gtk_widget_set_sensitive (Z2_entry, FALSE);
-        /* Set any checkbuttons to their initial state on tab 5 "Heel & Toe Goals" */
+        GtkWidget * C1_radiobutton = lookup_widget (GTK_BUTTON (button), "C1_radiobutton");
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (C1_radiobutton), TRUE);
+        GtkWidget * C2_radiobutton = lookup_widget (GTK_BUTTON (button), "C2_radiobutton");
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (C2_radiobutton), TRUE);
 }
 
