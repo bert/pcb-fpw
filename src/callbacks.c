@@ -277,12 +277,10 @@ void
 on_C1_entry_changed                    (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *C1_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        C1_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *C1_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         c1 = g_ascii_strtod (C1_string, &leftovers);
+        entry_has_changed (editable);
 }
 
 
@@ -298,15 +296,11 @@ void
 on_C1_radiobutton_toggled              (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
-        GtkWidget *C1_entry = NULL;
-        GtkWidget *G1_entry = NULL;
-        GtkWidget *Z1_entry = NULL;
-
-        C1_entry = lookup_widget (GTK_WIDGET (togglebutton), "C1_entry");
-        G1_entry = lookup_widget (GTK_WIDGET (togglebutton), "G1_entry");
-        Z1_entry = lookup_widget (GTK_WIDGET (togglebutton), "Z1_entry");
+        GtkWidget *C1_entry = lookup_widget (GTK_WIDGET (togglebutton), "C1_entry");
         gtk_widget_set_sensitive (C1_entry, TRUE);
+        GtkWidget *G1_entry = lookup_widget (GTK_WIDGET (togglebutton), "G1_entry");
         gtk_widget_set_sensitive (G1_entry, FALSE);
+        GtkWidget *Z1_entry = lookup_widget (GTK_WIDGET (togglebutton), "Z1_entry");
         gtk_widget_set_sensitive (Z1_entry, FALSE);
 }
 
@@ -322,12 +316,10 @@ void
 on_C2_entry_changed                    (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *C2_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        C2_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *C2_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         c2 = g_ascii_strtod (C2_string, &leftovers);
+        entry_has_changed (editable);
 }
 
 
@@ -343,15 +335,11 @@ void
 on_C2_radiobutton_toggled              (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
-        GtkWidget *C2_entry = NULL;
-        GtkWidget *G2_entry = NULL;
-        GtkWidget *Z2_entry = NULL;
-
-        C2_entry = lookup_widget (GTK_WIDGET (togglebutton), "C2_entry");
-        G2_entry = lookup_widget (GTK_WIDGET (togglebutton), "G2_entry");
-        Z2_entry = lookup_widget (GTK_WIDGET (togglebutton), "Z2_entry");
+        GtkWidget *C2_entry = lookup_widget (GTK_WIDGET (togglebutton), "C2_entry");
         gtk_widget_set_sensitive (C2_entry, TRUE);
+        GtkWidget *G2_entry = lookup_widget (GTK_WIDGET (togglebutton), "G2_entry");
         gtk_widget_set_sensitive (G2_entry, FALSE);
+        GtkWidget *Z2_entry = lookup_widget (GTK_WIDGET (togglebutton), "Z2_entry");
         gtk_widget_set_sensitive (Z2_entry, FALSE);
 }
 
@@ -367,12 +355,10 @@ void
 on_G1_entry_changed                    (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *G1_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        G1_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *G1_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         g1 = g_ascii_strtod (G1_string, &leftovers);
+        entry_has_changed (editable);
 }
 
 
@@ -388,15 +374,11 @@ void
 on_G1_radiobutton_toggled              (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
-        GtkWidget *C1_entry = NULL;
-        GtkWidget *G1_entry = NULL;
-        GtkWidget *Z1_entry = NULL;
-
-        C1_entry = lookup_widget (GTK_WIDGET (togglebutton), "C1_entry");
-        G1_entry = lookup_widget (GTK_WIDGET (togglebutton), "G1_entry");
-        Z1_entry = lookup_widget (GTK_WIDGET (togglebutton), "Z1_entry");
+        GtkWidget *C1_entry = lookup_widget (GTK_WIDGET (togglebutton), "C1_entry");
         gtk_widget_set_sensitive (C1_entry, FALSE);
+        GtkWidget *G1_entry = lookup_widget (GTK_WIDGET (togglebutton), "G1_entry");
         gtk_widget_set_sensitive (G1_entry, TRUE);
+        GtkWidget *Z1_entry = lookup_widget (GTK_WIDGET (togglebutton), "Z1_entry");
         gtk_widget_set_sensitive (Z1_entry, FALSE);
 }
 
@@ -412,12 +394,10 @@ void
 on_G2_entry_changed                    (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *G2_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        G2_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *G2_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         g2 = g_ascii_strtod (G2_string, &leftovers);
+        entry_has_changed (editable);
 }
 
 
@@ -433,15 +413,11 @@ void
 on_G2_radiobutton_toggled              (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
-        GtkWidget *C2_entry = NULL;
-        GtkWidget *G2_entry = NULL;
-        GtkWidget *Z2_entry = NULL;
-
-        C2_entry = lookup_widget (GTK_WIDGET (togglebutton), "C2_entry");
-        G2_entry = lookup_widget (GTK_WIDGET (togglebutton), "G2_entry");
-        Z2_entry = lookup_widget (GTK_WIDGET (togglebutton), "Z2_entry");
+        GtkWidget *C2_entry = lookup_widget (GTK_WIDGET (togglebutton), "C2_entry");
         gtk_widget_set_sensitive (C2_entry, FALSE);
+        GtkWidget *G2_entry = lookup_widget (GTK_WIDGET (togglebutton), "G2_entry");
         gtk_widget_set_sensitive (G2_entry, TRUE);
+        GtkWidget *Z2_entry = lookup_widget (GTK_WIDGET (togglebutton), "Z2_entry");
         gtk_widget_set_sensitive (Z2_entry, FALSE);
 }
 
@@ -457,12 +433,10 @@ void
 on_Z1_entry_changed                    (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *Z1_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        Z1_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *Z1_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         z1 = g_ascii_strtod (Z1_string, &leftovers);
+        entry_has_changed (editable);
 }
 
 
@@ -478,15 +452,11 @@ void
 on_Z1_radiobutton_toggled              (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
-        GtkWidget *C1_entry = NULL;
-        GtkWidget *G1_entry = NULL;
-        GtkWidget *Z1_entry = NULL;
-
-        C1_entry = lookup_widget (GTK_WIDGET (togglebutton), "C1_entry");
-        G1_entry = lookup_widget (GTK_WIDGET (togglebutton), "G1_entry");
-        Z1_entry = lookup_widget (GTK_WIDGET (togglebutton), "Z1_entry");
+        GtkWidget *C1_entry = lookup_widget (GTK_WIDGET (togglebutton), "C1_entry");
         gtk_widget_set_sensitive (C1_entry, FALSE);
+        GtkWidget *G1_entry = lookup_widget (GTK_WIDGET (togglebutton), "G1_entry");
         gtk_widget_set_sensitive (G1_entry, FALSE);
+        GtkWidget *Z1_entry = lookup_widget (GTK_WIDGET (togglebutton), "Z1_entry");
         gtk_widget_set_sensitive (Z1_entry, TRUE);
 }
 
@@ -502,12 +472,10 @@ void
 on_Z2_entry_changed                    (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *Z2_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        Z2_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *Z2_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         z2 = g_ascii_strtod (Z2_string, &leftovers);
+        entry_has_changed (editable);
 }
 
 
@@ -523,15 +491,11 @@ void
 on_Z2_radiobutton_toggled              (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
-        GtkWidget *C2_entry = NULL;
-        GtkWidget *G2_entry = NULL;
-        GtkWidget *Z2_entry = NULL;
-
-        C2_entry = lookup_widget (GTK_WIDGET (togglebutton), "C2_entry");
-        G2_entry = lookup_widget (GTK_WIDGET (togglebutton), "G2_entry");
-        Z2_entry = lookup_widget (GTK_WIDGET (togglebutton), "Z2_entry");
+        GtkWidget *C2_entry = lookup_widget (GTK_WIDGET (togglebutton), "C2_entry");
         gtk_widget_set_sensitive (C2_entry, FALSE);
+        GtkWidget *G2_entry = lookup_widget (GTK_WIDGET (togglebutton), "G2_entry");
         gtk_widget_set_sensitive (G2_entry, FALSE);
+        GtkWidget *Z2_entry = lookup_widget (GTK_WIDGET (togglebutton), "Z2_entry");
         gtk_widget_set_sensitive (Z2_entry, TRUE);
 }
 
