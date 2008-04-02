@@ -30,7 +30,7 @@ the program will guess for the prefix of the footprint as the first couple of
 characters of the footprint name.
 
 The program will also try to guess which entries are needed for this footprint 
-type and "grey out" the enries, checkbuttons which it thinks are not needed.
+type and "grey out" the entries and checkbuttons which it thinks are not needed.
 
 The first tab with entries is named "Footprint" and can be used for the input 
 of general information about the footprint.
