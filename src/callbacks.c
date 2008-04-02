@@ -728,18 +728,15 @@ void
 on_count_y_entry_changed               (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *count_y_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        count_y_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *count_y_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         count_y = (int) g_ascii_strtod (count_y_string, &leftovers);
         number_of_pins = (number_of_rows * count_x + number_of_columns * count_y) + thermal;
-        GtkWidget *number_total_pins_entry = NULL;
-        number_total_pins_entry = lookup_widget (GTK_WIDGET (editable),
+        GtkWidget *number_total_pins_entry = lookup_widget (GTK_WIDGET (editable),
                 "number_total_pins_entry");
         gtk_entry_set_text (number_total_pins_entry,
                 g_strdup_printf ("%d", number_of_pins));
+        entry_has_changed (editable);
 }
 
 
