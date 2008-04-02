@@ -779,12 +779,10 @@ on_courtyard_clearance_with_package_entry_changed
                                         (GtkEditable     *editable,
                                          gpointer         user_data)
 {
-        gchar *courtyard_clearance_with_package_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        courtyard_clearance_with_package_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *courtyard_clearance_with_package_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         courtyard_clearance_with_package = g_ascii_strtod (courtyard_clearance_with_package_string, &leftovers);
+        entry_has_changed (editable);
 }
 
 
