@@ -815,12 +815,10 @@ void
 on_courtyard_line_width_entry_changed  (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *courtyard_line_width_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        courtyard_line_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *courtyard_line_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         courtyard_line_width = g_ascii_strtod (courtyard_line_width_string, &leftovers);
+        entry_has_changed (editable);
 }
 
 
