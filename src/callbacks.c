@@ -1026,8 +1026,8 @@ void
 on_footprint_author_entry_changed      (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        entry_has_changed (editable);
         footprint_author = gtk_entry_get_text (GTK_EDITABLE (editable));
+        entry_has_changed (editable);
 }
 
 
@@ -1041,8 +1041,8 @@ on_footprint_dist_license_entry_changed
                                         (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        entry_has_changed (editable);
         footprint_dist_license = gtk_entry_get_text (GTK_EDITABLE (editable));
+        entry_has_changed (editable);
 }
 
 
@@ -1055,15 +1055,14 @@ void
 on_footprint_name_entry_changed        (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        entry_has_changed (editable);
         footprint_name = gtk_entry_get_text (GTK_EDITABLE (editable));
+        entry_has_changed (editable);
         /* Check for a null pointer in footprint_name for this might cause a
          * segmentation fault or undefined behaviour.
          */
         if (!footprint_name)
         {
-                gchar *message = NULL;
-                message = g_strdup_printf (_("ERROR: footprint name not initialised (null pointer)."));
+                gchar *message = g_strdup_printf (_("ERROR: footprint name not initialised (null pointer)."));
                 message_to_statusbar (editable, message);
                 return;
         }
@@ -1072,15 +1071,13 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
          */
         else if (!strcmp (footprint_name, ""))
         {
-                gchar *message = NULL;
-                message = g_strdup_printf (_("ERROR: footprint name contains an empty string."));
+                gchar *message = g_strdup_printf (_("ERROR: footprint name contains an empty string."));
                 message_to_statusbar (editable, message);
                 return;
         }
         else
         {
-                gchar *message = NULL;
-                message = g_strdup_printf ("");
+                gchar *message = g_strdup_printf ("");
                 message_to_statusbar (editable, message);
                 return;
         }
