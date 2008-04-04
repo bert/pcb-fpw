@@ -852,9 +852,7 @@ on_filechooser_dialog_cancel_button_clicked
                                         (GtkButton       *button,
                                         gpointer         user_data)
 {
-        GtkWidget *filechooser_dialog = NULL;
-
-        filechooser_dialog = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *filechooser_dialog = lookup_widget (GTK_BUTTON (button),
                 "filechooser_dialog");
         gtk_widget_destroy (filechooser_dialog);
 }
@@ -870,9 +868,7 @@ void
 on_filechooser_dialog_close            (GtkDialog       *dialog,
                                         gpointer         user_data)
 {
-        GtkWidget *filechooser_dialog = NULL;
-
-        filechooser_dialog = lookup_widget (GTK_DIALOG (dialog),
+        GtkWidget *filechooser_dialog = lookup_widget (GTK_DIALOG (dialog),
                 "filechooser_dialog");
         gtk_widget_destroy (filechooser_dialog);
 }
