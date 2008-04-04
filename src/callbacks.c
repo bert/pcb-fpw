@@ -1372,18 +1372,15 @@ void
 on_number_of_rows_entry_changed        (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *number_of_rows_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        number_of_rows_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *number_of_rows_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         number_of_rows = (int) g_ascii_strtod (number_of_rows_string, &leftovers);
         number_of_pins = (number_of_rows * count_x + number_of_columns * count_y) + thermal;
-        GtkWidget *number_total_pins_entry = NULL;
-        number_total_pins_entry = lookup_widget (GTK_WIDGET (editable),
+        GtkWidget *number_total_pins_entry = lookup_widget (GTK_WIDGET (editable),
                 "number_total_pins_entry");
         gtk_entry_set_text (number_total_pins_entry,
                 g_strdup_printf ("%d", number_of_pins));
+        entry_has_changed (editable);
 }
 
 
@@ -1397,12 +1394,10 @@ void
 on_number_total_pins_entry_changed     (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *number_of_pins_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        number_of_pins_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *number_of_pins_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         number_of_pins = (int) g_ascii_strtod (number_of_pins_string, &leftovers);
+        entry_has_changed (editable);
 }
 
 
@@ -1417,11 +1412,8 @@ void
 on_open_button_clicked                 (GtkButton       *button,
                                         gpointer         user_data)
 {
-        GtkWidget *filechooser_dialog = NULL;
-        GtkFileFilter * file_filter;
-
-        filechooser_dialog = create_filechooser_dialog ();
-        file_filter = gtk_file_filter_new ();
+        GtkWidget *filechooser_dialog = create_filechooser_dialog ();
+        GtkFileFilter *file_filter = gtk_file_filter_new ();
         gtk_file_filter_add_pattern (file_filter, "*.fpw");
         gtk_file_chooser_add_filter (filechooser_dialog, file_filter);
         gtk_widget_show (filechooser_dialog);
