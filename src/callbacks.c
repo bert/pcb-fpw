@@ -1431,12 +1431,10 @@ void
 on_package_body_height_entry_changed   (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *package_body_height_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        package_body_height_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *package_body_height_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         package_body_height = g_ascii_strtod (package_body_height_string, &leftovers);
+        entry_has_changed (editable);
 }
 
 
@@ -1451,12 +1449,10 @@ void
 on_package_body_length_entry_changed   (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *package_body_length_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        package_body_length_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *package_body_length_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         package_body_length = g_ascii_strtod (package_body_length_string, &leftovers);
+        entry_has_changed (editable);
 }
 
 
@@ -1471,12 +1467,10 @@ void
 on_package_body_width_entry_changed    (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *package_body_width_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        package_body_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *package_body_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         package_body_width = g_ascii_strtod (package_body_width_string, &leftovers);
+        entry_has_changed (editable);
 }
 
 
@@ -1491,8 +1485,8 @@ on_package_is_radial_checkbutton_toggled
                                         (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
-        entry_has_changed (togglebutton);
         package_is_radial = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
+        entry_has_changed (togglebutton);
 }
 
 
