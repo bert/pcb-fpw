@@ -889,18 +889,14 @@ on_filechooser_dialog_current_folder_changed
                                         (GtkFileChooser  *filechooser,
                                         gpointer         user_data)
 {
-        GtkWidget *filechooser_dialog = NULL;
-        gchar *current_folder = NULL;
-
-        filechooser_dialog = lookup_widget (GTK_FILE_CHOOSER (filechooser),
+        GtkWidget *filechooser_dialog = lookup_widget (GTK_FILE_CHOOSER (filechooser),
                 "filechooser_dialog");
-        current_folder = g_strdup (gtk_file_chooser_get_current_folder (filechooser_dialog));
+        gchar *current_folder = g_strdup (gtk_file_chooser_get_current_folder (filechooser_dialog));
         /* Test if current folder is a null pointer.
          * If so, please notify the user (in the statusbar). */
         if (!current_folder)
         {
-                gchar *message = NULL;
-                message = g_strdup_printf (_("ERROR: current folder is not initialised  (null pointer)."));
+                gchar *message = g_strdup_printf (_("ERROR: current folder is not initialised  (null pointer)."));
                 message_to_statusbar (filechooser, message);
                 return;
         }
@@ -908,8 +904,7 @@ on_filechooser_dialog_current_folder_changed
          * If so, please notify the user (in the statusbar). */
         if (!strcmp (current_folder, ""))
         {
-                gchar *message = NULL;
-                message = g_strdup_printf (_("ERROR: current folder contains an empty string."));
+                gchar *message = g_strdup_printf (_("ERROR: current folder contains an empty string."));
                 message_to_statusbar (filechooser, message);
                 return;
         }
