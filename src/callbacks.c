@@ -1320,8 +1320,8 @@ void
 on_footprint_value_entry_changed       (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        entry_has_changed (editable);
         footprint_value = gtk_entry_get_text (GTK_EDITABLE (editable));
+        entry_has_changed (editable);
 }
 
 
@@ -1335,8 +1335,8 @@ on_number_1_position_entry_changed
                                         (GtkComboBox     *combobox,
                                          gpointer         user_data)
 {
-        entry_has_changed (combobox);
         pin_1_position = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
+        entry_has_changed (combobox);
 }
 
 
@@ -1350,18 +1350,15 @@ void
 on_number_of_columns_entry_changed     (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *number_of_columns_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        number_of_columns_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *number_of_columns_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         number_of_columns = (int) g_ascii_strtod (number_of_columns_string, &leftovers);
         number_of_pins = (number_of_rows * count_x + number_of_columns * count_y) + thermal;
-        GtkWidget *number_total_pins_entry = NULL;
-        number_total_pins_entry = lookup_widget (GTK_WIDGET (editable),
+        GtkWidget *number_total_pins_entry = lookup_widget (GTK_WIDGET (editable),
                 "number_total_pins_entry");
         gtk_entry_set_text (number_total_pins_entry,
                 g_strdup_printf ("%d", number_of_pins));
+        entry_has_changed (editable);
 }
 
 
