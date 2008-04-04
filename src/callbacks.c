@@ -937,18 +937,14 @@ on_filechooser_dialog_open_button_clicked
                                         (GtkButton       *button,
                                         gpointer         user_data)
 {
-        GtkWidget *filechooser_dialog = NULL;
-        gchar *selected_filename = NULL;
-
-        filechooser_dialog = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *filechooser_dialog = lookup_widget (GTK_BUTTON (button),
                 "filechooser_dialog");
-        selected_filename = g_strdup (gtk_file_chooser_get_filename (filechooser_dialog));
+        gchar *selected_filename = g_strdup (gtk_file_chooser_get_filename (filechooser_dialog));
         /* Test if selected filename is a null pointer.
          * If so, please notify the user (in the statusbar). */
         if (!selected_filename)
         {
-                gchar *message = NULL;
-                message = g_strdup_printf (_("ERROR: selected filename is not initialised  (null pointer)."));
+                gchar *message = g_strdup_printf (_("ERROR: selected filename is not initialised  (null pointer)."));
                 message_to_statusbar (button, message);
                 return;
         }
@@ -956,8 +952,7 @@ on_filechooser_dialog_open_button_clicked
          * If so, please notify the user (in the statusbar). */
         if (!strcmp (selected_filename, ""))
         {
-                gchar *message = NULL;
-                message = g_strdup_printf (_("ERROR: selected filename contains an empty string."));
+                gchar *message = g_strdup_printf (_("ERROR: selected filename contains an empty string."));
                 message_to_statusbar (button, message);
                 return;
         }
@@ -966,8 +961,7 @@ on_filechooser_dialog_open_button_clicked
          * instead. */
         if (g_file_test (selected_filename, G_FILE_TEST_IS_DIR))
         {
-                gchar *message = NULL;
-                message = g_strdup_printf (_("ERROR: selected filename is a directory."));
+                gchar *message = g_strdup_printf (_("ERROR: selected filename is a directory."));
                 message_to_statusbar (button, message);
                 return;
         }
@@ -979,14 +973,12 @@ on_filechooser_dialog_open_button_clicked
         /* Read new global values from the selected footprintwizard file */
         if (read_footprintwizard_file (fpw_filename))
         {
-                gchar *message = NULL;
-                message = g_strdup_printf (_("Read footprintwizard file %s."), fpw_filename);
+                gchar *message = g_strdup_printf (_("Read footprintwizard file %s."), fpw_filename);
                 message_to_statusbar (button, message);
         }
         else
         {
-                gchar *message = NULL;
-                message = g_strdup_printf (_("ERROR: Unable to read footprint wizard file %s."), fpw_filename);
+                gchar *message = g_strdup_printf (_("ERROR: Unable to read footprint wizard file %s."), fpw_filename);
                 message_to_statusbar (button, message);
         }
         /* Update the entry widgets to reflect the changes */
