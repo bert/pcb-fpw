@@ -1664,12 +1664,10 @@ void
 on_pin_drill_diameter_entry_changed    (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *pin_drill_diameter_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        pin_drill_diameter_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *pin_drill_diameter_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         pin_drill_diameter = g_ascii_strtod (pin_drill_diameter_string, &leftovers);
+        entry_has_changed (editable);
 }
 
 
@@ -1682,9 +1680,9 @@ void
 on_pin_square_checkbutton_toggled      (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
-        entry_has_changed (togglebutton);
         /* Save the state of checkbutton in global variable */
         pin1_square = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
+        entry_has_changed (togglebutton);
 }
 
 /*!
@@ -1697,12 +1695,10 @@ void
 on_pitch_x_entry_changed               (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *pitch_x_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        pitch_x_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *pitch_x_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         pitch_x = g_ascii_strtod (pitch_x_string, &leftovers);
+        entry_has_changed (editable);
 }
 
 
@@ -1716,12 +1712,10 @@ void
 on_pitch_y_entry_changed               (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *pitch_y_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        pitch_y_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *pitch_y_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         pitch_y = g_ascii_strtod (pitch_y_string, &leftovers);
+        entry_has_changed (editable);
 }
 
 /*!
