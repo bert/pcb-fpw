@@ -1623,6 +1623,23 @@ on_pad_solder_mask_clearance_entry_changed
 
 
 /*!
+ * \brief The "width of the pads (Y)" entry is changed.
+ *
+ * - get the chars from the entry.
+ * - convert to a double and store in the \c pad_with variable (global).
+ */
+void
+on_pad_width_entry_changed             (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+        gchar *leftovers;
+        gchar *pad_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        pad_width = g_ascii_strtod (pad_width_string, &leftovers);
+        entry_has_changed (editable);
+}
+
+
+/*!
  * \brief The top-right "X" is clicked.
  *
  * - close the application.
@@ -1633,25 +1650,6 @@ on_pcb_gfpw_destroy                    (GtkObject       *object,
                                         gpointer         user_data)
 {
         gtk_main_quit();
-}
-
-
-/*!
- * \brief The "width of the pads (Y)" entry is changed.
- *
- * - get the chars from the entry.
- * - convert to a double and store in the \c pad_with variable (global).
- */
-void
-on_pad_width_entry_changed             (GtkEditable     *editable,
-                                        gpointer         user_data)
-{
-        gchar *pad_width_string = NULL;
-        gchar *leftovers;
-
-        entry_has_changed (editable);
-        pad_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
-        pad_width = g_ascii_strtod (pad_width_string, &leftovers);
 }
 
 
