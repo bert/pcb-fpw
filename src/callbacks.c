@@ -1501,12 +1501,10 @@ void
 on_pad_clearance_entry_changed         (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *pad_clearance_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        pad_clearance_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *pad_clearance_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         pad_clearance = g_ascii_strtod (pad_clearance_string, &leftovers);
+        entry_has_changed (editable);
 }
 
 
@@ -1520,12 +1518,10 @@ void
 on_pad_diameter_entry_changed          (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *pad_diameter_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        pad_diameter_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *pad_diameter_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         pad_diameter = g_ascii_strtod (pad_diameter_string, &leftovers);
+        entry_has_changed (editable);
 }
 
 
@@ -1539,12 +1535,10 @@ void
 on_pad_length_entry_changed            (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *pad_length_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        pad_length_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *pad_length_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         pad_length = g_ascii_strtod (pad_length_string, &leftovers);
+        entry_has_changed (editable);
 }
 
 
@@ -1558,15 +1552,14 @@ void
 on_pad_shape_entry_changed    (GtkComboBox     *combobox,
                                gpointer         user_data)
 {
-        entry_has_changed (combobox);
         pad_shape = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
+        entry_has_changed (combobox);
         /* Check for a null pointer in pad shape for this might cause a
          * segmentation fault or undefined behaviour.
          */
         if (!pad_shape)
         {
-                gchar *message = NULL;
-                message = g_strdup_printf (_("ERROR: pad shape not initialised (null pointer)."));
+                gchar *message = g_strdup_printf (_("ERROR: pad shape not initialised (null pointer)."));
                 message_to_statusbar (combobox, message);
                 return;
         }
@@ -1575,15 +1568,13 @@ on_pad_shape_entry_changed    (GtkComboBox     *combobox,
          */
         else if (!strcmp (pad_shape, ""))
         {
-                gchar *message = NULL;
-                message = g_strdup_printf (_("ERROR: pad shape contains an empty string."));
+                gchar *message = g_strdup_printf (_("ERROR: pad shape contains an empty string."));
                 message_to_statusbar (combobox, message);
                 return;
         }
         else
         {
-                gchar *message = NULL;
-                message = g_strdup_printf ("");
+                gchar *message = g_strdup_printf ("");
                 message_to_statusbar (combobox, message);
         }
         /* Determine the pad shape type, default is a circular pad */
@@ -1607,8 +1598,7 @@ on_pad_shape_entry_changed    (GtkComboBox     *combobox,
                 g_strconcat (pin_pad_flags, "", NULL);
                 return;
         }
-        gchar *message = NULL;
-        message = g_strdup_printf (_("ERROR: pad shape contains an unknown pad shape type."));
+        gchar *message = g_strdup_printf (_("ERROR: pad shape contains an unknown pad shape type."));
         message_to_statusbar (combobox, message);
 }
 
@@ -1625,12 +1615,10 @@ on_pad_solder_mask_clearance_entry_changed
                                         (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *pad_SMC_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        pad_SMC_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *pad_SMC_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         pad_solder_mask_clearance = g_ascii_strtod (pad_SMC_string, &leftovers);
+        entry_has_changed (editable);
 }
 
 
