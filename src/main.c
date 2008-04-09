@@ -95,10 +95,9 @@ main (int argc, char *argv[])
         /* Set the initial state of the checkbutton for the silkscreen to true,
          * set the "linewidth" entry for the silkscreen to sensitive.
          */
-        GtkToggleButton *silkscreen_package_outline = NULL;
-        gtk_toggle_button_set_active (silkscreen_package_outline, TRUE);
-        silkscreen_package_outline = lookup_widget (GTK_WIDGET (pcb_gfpw),
+        GtkToggleButton *silkscreen_package_outline = lookup_widget (GTK_WIDGET (pcb_gfpw),
                 "silkscreen_package_outline_checkbutton");
+        gtk_toggle_button_set_active (silkscreen_package_outline, TRUE);
         GtkWidget *silkscreen_line_width_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
                 "silkscreen_line_width_entry");
         gtk_widget_set_sensitive (silkscreen_line_width_entry, TRUE);
