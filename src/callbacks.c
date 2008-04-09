@@ -1851,8 +1851,8 @@ on_silkscreen_indicate_1_checkbutton_toggled
                                         (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
-        entry_has_changed (togglebutton);
         silkscreen_indicate_1 = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
+        entry_has_changed (togglebutton);
 }
 
 
@@ -1867,12 +1867,10 @@ void
 on_silkscreen_line_width_entry_changed (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *silkscreen_line_width_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        silkscreen_line_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *silkscreen_line_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         silkscreen_line_width = g_ascii_strtod (silkscreen_line_width_string, &leftovers);
+        entry_has_changed (editable);
 }
 
 
@@ -1891,16 +1889,14 @@ on_silkscreen_package_outline_checkbutton_toggled
                                         (GtkToggleButton *togglebutton,
                                          gpointer         user_data)
 {
-        GtkWidget *silkscreen_line_width_entry = NULL;
-
-        entry_has_changed (togglebutton);
         /* Save the state of checkbutton in global variable */
         silkscreen_package_outline = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
         /* Look up widgets */
-        silkscreen_line_width_entry = lookup_widget (GTK_BUTTON (togglebutton), "silkscreen_line_width_entry");
+        GtkWidget *silkscreen_line_width_entry = lookup_widget (GTK_BUTTON (togglebutton), "silkscreen_line_width_entry");
         /* Set entities to (in)sensitive according to the state of the
          * checkbutton variable */
         gtk_widget_set_sensitive (silkscreen_line_width_entry, silkscreen_package_outline);
+        entry_has_changed (togglebutton);
 }
 
 
