@@ -1123,7 +1123,6 @@ void
 on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                                         gpointer         user_data)
 {
-        entry_has_changed (combobox);
         /* Test if the existing footprint name is equal to the footprint
          * type or is empty or has a null pointer, if this is true the user
          * did not add any characters to the footprint name yet (he/she
@@ -1145,6 +1144,7 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         }
         else
                 footprint_type = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
+        entry_has_changed (combobox);
         /* Determine the package type */
         if (!strcmp (footprint_type, "BGA"))
         {
