@@ -1756,8 +1756,7 @@ on_save_button_clicked                 (GtkButton       *button,
          */
         if (!footprint_name)
         {
-                gchar *message = NULL;
-                message = g_strdup_printf (_("ERROR: footprint name not initialised (null pointer)."));
+                gchar *message = g_strdup_printf (_("ERROR: footprint name not initialised (null pointer)."));
                 message_to_statusbar (button, message);
                 return;
         }
@@ -1766,15 +1765,13 @@ on_save_button_clicked                 (GtkButton       *button,
          */
         else if (!strcmp (footprint_name, ""))
         {
-                gchar *message = NULL;
-                message = g_strdup_printf (_("ERROR: footprint name contains an empty string."));
+                gchar *message = g_strdup_printf (_("ERROR: footprint name contains an empty string."));
                 message_to_statusbar (button, message);
                 return;
         }
         else
         {
-                gchar *message = NULL;
-                message = g_strdup_printf ("");
+                gchar *message = g_strdup_printf ("");
                 message_to_statusbar (button, message);
         }
         /* Determine a filename for the footprintwizard file */
@@ -1825,22 +1822,19 @@ on_save_button_clicked                 (GtkButton       *button,
         }
         else
         {
-                gchar *message = NULL;
-                message = g_strdup_printf (_("ERROR: Unable to write footprintwizard file %s."), footprint_filename);
+                gchar *message = g_strdup_printf (_("ERROR: Unable to write footprintwizard file %s."), footprint_filename);
                 message_to_statusbar (button, message);
         }
         /* If the footprint file is written successfull reflect this in the
          * statusbar */
         if (write_footprint ())
         {
-                gchar *message = NULL;
-                message = g_strdup_printf (_("Wrote footprint %s to file."), footprint_filename);
+                gchar *message = g_strdup_printf (_("Wrote footprint %s to file."), footprint_filename);
                 message_to_statusbar (button, message);
         }
         else
         {
-                gchar *message = NULL;
-                message = g_strdup_printf (_("ERROR: Unable to write footprint %s to file."), footprint_filename);
+                gchar *message = g_strdup_printf (_("ERROR: Unable to write footprint %s to file."), footprint_filename);
                 message_to_statusbar (button, message);
         }
 }
