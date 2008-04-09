@@ -1,3 +1,365 @@
+commit c9495a8ab6ab9cb3bbca58a0fda293a605062315
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 9 23:24:35 2008 +0200
+
+    Updated the Dutch translation.
+
+commit 942b6baf436596e3a0033660560b8397dbd21edf
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 9 21:46:54 2008 +0200
+
+    Relocated call to entry_has_changed() after the value actually got changed.
+
+commit 57d83e1d5d0009eec1e34dccecacaa55fa947059
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 9 21:39:05 2008 +0200
+
+    Code cleanup.
+    
+    - in on_thermal_checkbutton_toggled().
+    - in on_thermal_clearance_entry_changed().
+    - in on_thermal_length_entry_changed().
+    - in on_thermal_nopaste_checkbutton_toggled().
+    - in on_thermal_solder_mask_clearance_entry_changed().
+    - in on_thermal_width_entry_changed().
+
+commit b36fae5d89f1dad424b26357bb1ef12c1b47ab9d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 9 20:57:10 2008 +0200
+
+    Code cleanup.
+    
+    - in on_silkscreen_indicate_1_checkbutton_toggled().
+    - in on_silkscreen_line_width_entry_changed().
+    - in on_silkscreen_package_outline_checkbutton_toggled().
+
+commit 2f15e1aa6c30bf7f01c455a339539c1058ba1bfa
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 9 08:19:48 2008 +0200
+
+    Corrected a small bug.
+    
+    I seems that the togllebutton for the "silkscreen_package_outline"
+    was set before the widget was looked up.
+    This resulted in an assertion error.
+
+commit 7f4c10159f05b2c72853d87fc9283eb223c5a7b0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 9 08:11:32 2008 +0200
+
+    Code cleanup.
+    
+    - in on_save_button_clicked().
+
+commit 509766a3c3c853efe7a66781e54362ec961ec426
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 5 19:18:29 2008 +0200
+
+    Code cleanup.
+    
+    - in on_pin_drill_diameter_entry_changed().
+    - in on_pin_square_checkbutton_toggled().
+    - in on_pitch_x_entry_changed().
+    - in on_pitch_y_entry_changed().
+
+commit 0a4ddbee6148e036f898db885828a155d6649df4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 5 19:13:07 2008 +0200
+
+    relocated on_pad_width_entry_changed().
+
+commit 4ce02de4bd9a73cc364bcf2dcdf6ec69065c70d1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 5 07:56:53 2008 +0200
+
+    Code cleanup to prevent widgets with null pointers.
+    
+    - in on_pad_clearance_entry_changed().
+    - in on_pad_diameter_entry_changed().
+    - in on_pad_length_entry_changed().
+    - in on_pad_shape_entry_changed().
+    - in on_pad_solder_mask_clearance_entry_changed().
+
+commit de69ef139589cb71b1a1b7366e41daed970b83f0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Apr 4 21:39:48 2008 +0200
+
+    Code cleanup to prevent widgets with null pointers.
+    
+    - in on_package_body_height_entry_changed().
+    - in on_package_body_length_entry_changed().
+    - in on_package_body_width_entry_changed().
+    - in on_package_is_radial_checkbutton_toggled().
+
+commit 99d3fa6c5d21f1eb381107b05f1a3172b0ce5319
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Apr 4 21:24:11 2008 +0200
+
+    Code cleanup to prevent widgets with null pointers.
+    
+    - in on_number_of_rows_entry_changed().
+    - in on_number_total_pins_entry_changed().
+    - in on_open_button_clicked().
+
+commit b5215aea0b388127f76cf90a0aa3bf1da534ea54
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Apr 4 21:12:21 2008 +0200
+
+    Code cleanup to prevent widgets with null pointers.
+    
+    - in on_footprint_value_entry_changed().
+    - in on_number_1_position_entry_changed().
+    - in on_number_of_columns_entry_changed().
+
+commit 9fb7bfe84ff1096f72a9f0b9aba5a7a2e03a3773
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Apr 4 18:50:56 2008 +0200
+
+    Code cleanup to prevent widgets with null pointers.
+    
+    - in on_footprint_units_entry_changed().
+
+commit 5f32e6f981b5604dba63775c34376db8e3377b53
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Apr 4 18:48:40 2008 +0200
+
+    Code cleanup to prevent widgets with null pointers.
+    
+    - in on_footprint_status_entry_changed().
+    - in on_footprint_type_entry_changed().
+
+commit f8c985a079438e13b23c39f86a8934e148935a34
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Apr 4 07:49:04 2008 +0200
+
+    Code cleanup to prevent widgets with null pointers.
+    
+    - in on_footprint_author_entry_changed().
+    - in on_footprint_dist_license_entry_changed().
+    - in on_footprint_name_entry_changed().
+
+commit cab64e30b4dbc1a11a86bf7dfcba732acbceb5e2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Apr 4 07:35:04 2008 +0200
+
+    Code cleanup to prevent widgets with null pointers.
+    
+    - in on_filechooser_dialog_open_button_clicked().
+
+commit 4042e2fd80080255848f0570474801e71ef4a2e2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Apr 4 07:32:06 2008 +0200
+
+    Code cleanup to prevent widgets with null pointers.
+    
+    - on_filechooser_dialog_current_folder_changed().
+
+commit b812b9de7c7f3f94ef8eb81c860c109ecb210b04
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Apr 4 07:05:45 2008 +0200
+
+    Code cleanup to prevent widgets with null pointers.
+
+commit 301b5fc36eee54fe39585ec20bde46e16b0db10a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 3 20:49:45 2008 +0200
+
+    Code cleanup in on_courtyard_width_entry_changed() to prevent widgets with null pointers.
+
+commit f63ade4b15f7dd02c884a0d426c5f6413b32d853
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 3 20:47:17 2008 +0200
+
+    Code cleanup in on_courtyard_line_width_entry_changed() to prevent widgets with null pointers.
+
+commit 81bc5e412ed65bf6fbbe3a776346834a9fa38dd4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 3 20:44:12 2008 +0200
+
+    Code cleanup in on_courtyard_length_entry_changed() to prevent widgets with null pointers.
+
+commit 6d1269eeea15ffce90a2fb0c4f10473ef7d62e42
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 2 22:36:15 2008 +0200
+
+    Corrected a typo.
+
+commit a7b5cdafcefa8ca1fdd298dc8244b5414f251164
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 2 22:28:58 2008 +0200
+
+    Code cleanup in on_courtyard_clearance_with_package_entry_changed() to prevent widgets with null pointers.
+
+commit 73d376fd9986c5ed3eadbe0f290f233de5fc244e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 2 22:26:22 2008 +0200
+
+    Code cleanup in on_courtyard_checkbutton_toggled() to prevent widgets with null pointers.
+
+commit 77539b989c0514d8c640e9cc1915fe1734f857ee
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 2 22:22:03 2008 +0200
+
+    Code cleanup in on_count_y_entry_changed() to prevent widgets with null pointers.
+
+commit a4df9f4d7036f05bc8095159e17fd616dce1eca6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 2 22:20:23 2008 +0200
+
+    Code cleanup in on_count_x_entry_changed() to prevent widgets with null pointers.
+
+commit 7e4ed9554a92fa5d7fc3374dadb99d1c472ff8c7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 2 19:37:51 2008 +0200
+
+    Code cleanup in on_clear_button_clicked() to prevent widgets with null pointers.
+
+commit 0e38c5116914e2b750dd997d012efdcf82449860
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 2 07:43:03 2008 +0200
+
+    Code cleanup to prevent widgets with null pointers.
+
+commit 721dc58ec09a5eac2af5499c0e760340abca6290
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 1 22:12:48 2008 +0200
+
+    Added all_entries_to_default_sensitivity().
+    
+    Set all entries widgets to default sensitivity.
+
+commit 96da9adac525f6841dd7e5be203dd9f0f90525be
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 1 08:15:41 2008 +0200
+
+    Added README notes.
+
+commit ffc99e0d193945b9200b66801f63552d304b7c1e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 1 06:24:28 2008 +0200
+
+    Added some doxygen todo comments.
+
+commit fdf057fddb3f7bc069f775502855c64a4db8819b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 1 05:33:48 2008 +0200
+
+    Code cleanup to prevent widgets with null pointers.
+
+commit 5697b05668172efc570615e6a21c583014020204
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 30 22:38:21 2008 +0200
+
+    Footprint type BGA is now supported.
+
+commit 1266781f6b4554e97a36c56f620b1514d68ec8af
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 30 22:37:41 2008 +0200
+
+    Cleanup of boilerplate code and dangling bits.
+
+commit 4aeaf82fa1284dbf98468215dd63950cea613b90
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 30 22:14:13 2008 +0200
+
+    Letter combinations with "X" are not allowed in row_letters[].
+
+commit a177a0a3e99f70d446722e395da4a43593551302
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 30 22:07:25 2008 +0200
+
+    Made writing attributes configurable.
+
+commit 6b6bb2ac676f103cf6fe3905abaeceb5c340358a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 30 21:48:51 2008 +0200
+
+    Extended the number of attributes written to the footprint file.
+
+commit 9dadfb2293d6e85549e6a3be9b65fda22987d06e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 30 17:49:57 2008 +0200
+
+    Letter combinations with "Z" not allowed in row_letters[].
+    
+    Comment in write_attributes() output added.
+
+commit e47835b29d4f7e1013e43f88ea94c39898d04e2f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 30 16:59:55 2008 +0200
+
+    Footprint type BGA is now supported.
+    
+    Extended on row_letter[].
+
+commit cfeb9f31fa205129a352520471beaa7234e16e46
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 30 16:47:41 2008 +0200
+
+    Footprint types BGA and PGA are now supported.
+
+commit d0e6ccb869cfdeff582f0ba4a1fe746a3db63ffd
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 29 20:08:58 2008 +0100
+
+    Improved courtyard dimensioning in write_footprint_template().
+
+commit 70cdcc1d520fe6155a1a00b659ba348f15d546aa
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 29 20:07:05 2008 +0100
+
+    Improved courtyard dimensioning in write_footprint_smt_molded_diode().
+
+commit c4a19744f50fada07db2bcd0f606e98a388de8fb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 29 20:03:47 2008 +0100
+
+    Improved courtyard dimensioning in write_footprint_smt_molded().
+    
+    Improved courtyard dimensioning in write_footprint_smt_cap().
+
+commit b2ee905429108643b9770fbb972dc3665e3fb9d2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 29 19:55:06 2008 +0100
+
+    Improved courtyard dimensioning in write_footprint_smt().
+
+commit 150163d243f75d4215ea6198279703f0b385fa98
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 29 19:53:17 2008 +0100
+
+    Improved courtyard dimensioning in write_footprint_pga().
+
+commit 3cf5d3364ce0db60e24f58a09c15e45dfef14652
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 29 18:10:20 2008 +0100
+
+    Improved courtyard dimensioning in write_footprint_dip().
+
+commit f60cf24c21911fa7c8142226e14a8980ccadeafe
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 29 18:08:22 2008 +0100
+
+    Improved some buggy code from write_footprint_to92().
+
+commit 4f599faa854fe6f3d8dabd5cddb5b8358e3c992f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 29 14:34:23 2008 +0100
+
+    Changed the order of writing on the silkscreen in sync for all package types sofar.
+
+commit d2efd1c81014450c32cccbafcbac0828776b056c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Mar 28 19:02:50 2008 +0100
+
+    Bumped the version to 0.0.5
+
+commit a7b033d6bc23277c985827485cda58044d16ac66
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Mar 28 17:31:57 2008 +0100
+
+    Updated: git-log > ChangeLog
+
 commit ef7c4b4e5831fbb6e1ca03a976c9ff973ba9a00c
 Author: Bert Timmerman <bert.timmerman@xs4all.nl>
 Date:   Fri Mar 28 17:26:11 2008 +0100
