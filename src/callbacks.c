@@ -1915,25 +1915,19 @@ void
 on_thermal_checkbutton_toggled         (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
-        GtkWidget *thermal_length_entry = NULL;
-        GtkToggleButton *thermal_nopaste_checkbutton = NULL;
-        GtkWidget *thermal_width_entry = NULL;
-        GtkWidget *thermal_clearance_entry = NULL;
-        GtkWidget *thermal_solder_mask_clearance_entry = NULL;
-
-        entry_has_changed (togglebutton);
         /* Save the state of checkbutton in a global variable */
         thermal = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
+        entry_has_changed (togglebutton);
         /* Look up widgets */
-        thermal_nopaste_checkbutton = lookup_widget (GTK_BUTTON (togglebutton),
+        GtkToggleButton *thermal_nopaste_checkbutton = lookup_widget (GTK_BUTTON (togglebutton),
                 "thermal_nopaste_checkbutton");
-        thermal_length_entry = lookup_widget (GTK_BUTTON (togglebutton),
+        GtkWidget *thermal_length_entry = lookup_widget (GTK_BUTTON (togglebutton),
                 "thermal_length_entry");
-        thermal_width_entry = lookup_widget (GTK_BUTTON (togglebutton),
+        GtkWidget *thermal_width_entry = lookup_widget (GTK_BUTTON (togglebutton),
                 "thermal_width_entry");
-        thermal_clearance_entry = lookup_widget (GTK_BUTTON (togglebutton),
+        GtkWidget *thermal_clearance_entry = lookup_widget (GTK_BUTTON (togglebutton),
                 "thermal_clearance_entry");
-        thermal_solder_mask_clearance_entry = lookup_widget (GTK_BUTTON (togglebutton),
+        GtkWidget *thermal_solder_mask_clearance_entry = lookup_widget (GTK_BUTTON (togglebutton),
                 "thermal_solder_mask_clearance_entry");
         /* Set entities to (in)sensitive according to the state of the
          * checkbutton variable */
@@ -1948,8 +1942,7 @@ on_thermal_checkbutton_toggled         (GtkToggleButton *togglebutton,
          * (on) */
         gtk_toggle_button_set_active (thermal_nopaste_checkbutton, thermal);
         number_of_pins = (number_of_rows * count_x + number_of_columns * count_y) + thermal;
-        GtkWidget *number_total_pins_entry = NULL;
-        number_total_pins_entry = lookup_widget (GTK_WIDGET (togglebutton),
+        GtkWidget *number_total_pins_entry = lookup_widget (GTK_WIDGET (togglebutton),
                 "number_total_pins_entry");
         gtk_entry_set_text (number_total_pins_entry,
                 g_strdup_printf ("%d", number_of_pins));
@@ -1967,12 +1960,10 @@ void
 on_thermal_clearance_entry_changed     (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *thermal_clearance_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        thermal_clearance_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *thermal_clearance_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         thermal_clearance = g_ascii_strtod (thermal_clearance_string, &leftovers);
+        entry_has_changed (editable);
 }
 
 
@@ -1986,12 +1977,10 @@ void
 on_thermal_length_entry_changed        (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *thermal_length_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        thermal_length_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *thermal_length_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         thermal_length = g_ascii_strtod (thermal_length_string, &leftovers);
+        entry_has_changed (editable);
 }
 
 
@@ -2005,8 +1994,8 @@ void
 on_thermal_nopaste_checkbutton_toggled (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
-        entry_has_changed (togglebutton);
         thermal_nopaste = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
+        entry_has_changed (togglebutton);
 }
 
 
@@ -2022,12 +2011,10 @@ on_thermal_solder_mask_clearance_entry_changed
                                         (GtkEditable     *editable,
                                          gpointer         user_data)
 {
-        gchar *SMC_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        SMC_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *SMC_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         thermal_solder_mask_clearance = g_ascii_strtod (SMC_string, &leftovers);
+        entry_has_changed (editable);
 }
 
 
@@ -2041,12 +2028,10 @@ void
 on_thermal_width_entry_changed         (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        gchar *thermal_width_string = NULL;
         gchar *leftovers;
-
-        entry_has_changed (editable);
-        thermal_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        gchar *thermal_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
         thermal_width = g_ascii_strtod (thermal_width_string, &leftovers);
+        entry_has_changed (editable);
 }
 
 /* EOF */
