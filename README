@@ -12,7 +12,7 @@ Graphical User Interface (GUI).
 The main, interactive, modus of operating the software is probably with the 
 GUI application "pcb-gfpw".
 
-Basically it comes down the following:
+Basically it comes down to the following:
         - Startup the application,
         - fill the needed entries,
         - check the preview widget (when and if this is implemented),
@@ -47,8 +47,8 @@ optional silkscreen to be drawn, such as package outline, pin/pad #1 marker
 and/or courtyard.
 
 The fifth and last tab is named "Heel & Toe goals".
-This will be a feature (to be added in the future) for the optional input of 
-heel and toe parameters as in creating SO, QFN or *QFP packages.
+This tab is for the input of heel and toe parameters to allow for the creation
+of PLCC, SO, QFN or QFP packages.
 
 The five buttons in the lower part will have the following functions:
         - "Close" to exit the application.,
