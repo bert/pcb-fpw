@@ -296,6 +296,9 @@ void
 on_C1_radiobutton_toggled              (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
+        c1_state = gtk_toggle_button_get_active (togglebutton);
+        g1_state = !c1_state;
+        z1_state = !c1_state;
         GtkWidget *C1_entry = lookup_widget (GTK_WIDGET (togglebutton), "C1_entry");
         gtk_widget_set_sensitive (C1_entry, TRUE);
         GtkWidget *G1_entry = lookup_widget (GTK_WIDGET (togglebutton), "G1_entry");
@@ -335,6 +338,9 @@ void
 on_C2_radiobutton_toggled              (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
+        c2_state = gtk_toggle_button_get_active (togglebutton);
+        g2_state = !c2_state;
+        z2_state = !c2_state;
         GtkWidget *C2_entry = lookup_widget (GTK_WIDGET (togglebutton), "C2_entry");
         gtk_widget_set_sensitive (C2_entry, TRUE);
         GtkWidget *G2_entry = lookup_widget (GTK_WIDGET (togglebutton), "G2_entry");
@@ -374,6 +380,9 @@ void
 on_G1_radiobutton_toggled              (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
+        g1_state = gtk_toggle_button_get_active (togglebutton);
+        c1_state = !g1_state;
+        z1_state = !g1_state;
         GtkWidget *C1_entry = lookup_widget (GTK_WIDGET (togglebutton), "C1_entry");
         gtk_widget_set_sensitive (C1_entry, FALSE);
         GtkWidget *G1_entry = lookup_widget (GTK_WIDGET (togglebutton), "G1_entry");
@@ -413,6 +422,9 @@ void
 on_G2_radiobutton_toggled              (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
+        g2_state = gtk_toggle_button_get_active (togglebutton);
+        c2_state = !g2_state;
+        z2_state = !g2_state;
         GtkWidget *C2_entry = lookup_widget (GTK_WIDGET (togglebutton), "C2_entry");
         gtk_widget_set_sensitive (C2_entry, FALSE);
         GtkWidget *G2_entry = lookup_widget (GTK_WIDGET (togglebutton), "G2_entry");
@@ -452,6 +464,9 @@ void
 on_Z1_radiobutton_toggled              (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
+        z1_state = gtk_toggle_button_get_active (togglebutton);
+        c1_state = !z1_state;
+        g1_state = !z1_state;
         GtkWidget *C1_entry = lookup_widget (GTK_WIDGET (togglebutton), "C1_entry");
         gtk_widget_set_sensitive (C1_entry, FALSE);
         GtkWidget *G1_entry = lookup_widget (GTK_WIDGET (togglebutton), "G1_entry");
@@ -491,6 +506,9 @@ void
 on_Z2_radiobutton_toggled              (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
+        z2_state = gtk_toggle_button_get_active (togglebutton);
+        c2_state = !z2_state;
+        g2_state = !z2_state;
         GtkWidget *C2_entry = lookup_widget (GTK_WIDGET (togglebutton), "C2_entry");
         gtk_widget_set_sensitive (C2_entry, FALSE);
         GtkWidget *G2_entry = lookup_widget (GTK_WIDGET (togglebutton), "G2_entry");
@@ -1184,6 +1202,11 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         else if (!strcmp (footprint_type, "PGA"))
         {
                 package_type = PGA;
+                return;
+        }
+        else if (!strcmp (footprint_type, "PLCC"))
+        {
+                package_type = PLCC;
                 return;
         }
         else if (!strcmp (footprint_type, "QFN"))
