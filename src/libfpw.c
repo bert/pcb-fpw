@@ -1280,12 +1280,12 @@ write_footprint_plcc ()
         if (g2_state) /* inner-inner distance */
         {
                 xmin = multiplier * ((-g2 / 2.0) - pad_length - pad_solder_mask_clearance);
-                xmin = multiplier * ((g2 / 2.0) + pad_length + pad_solder_mask_clearance);
+                xmax = multiplier * ((g2 / 2.0) + pad_length + pad_solder_mask_clearance);
         }
         if (z2_state) /* outer-outer distance */
         {
                 xmin = multiplier * ((-z2 / 2.0) - pad_solder_mask_clearance);
-                xmin = multiplier * ((z2 / 2.0) + pad_solder_mask_clearance);
+                xmax = multiplier * ((z2 / 2.0) + pad_solder_mask_clearance);
         }
         /* Determine (extreme) courtyard dimensions based on package
          * properties */
@@ -1516,7 +1516,28 @@ write_footprint_plcc ()
         if (silkscreen_indicate_1)
         {
                 fprintf (fp, "# Write a pin 1 marker on the silkscreen\n");
-                /*! \todo Write a pin #1 marker ! on the silkscreen */
+                if (c1_state) /* center-center distance */
+                {
+                        y1 = ((-c1 + pad_length - pad_width) / 2.0);
+                }
+                if (g1_state) /* inner-inner distance */
+                {
+                        y1 = ((-g1 - pad_width) / 2.0);
+                }
+                if (z1_state) /* outer-outer distance */
+                {
+                        y1 = ((-z1 - pad_width) / 2.0) + pad_length;
+                }
+                write_element_arc
+                (
+                        0,
+                        multiplier * (y1 + pad_width + pad_solder_mask_clearance + (2 * silkscreen_line_width)),
+                        multiplier * 0.5 * silkscreen_line_width,
+                        multiplier * 0.5 * silkscreen_line_width,
+                        0,
+                        360,
+                        multiplier * silkscreen_line_width
+                );
         }
         /* Write a courtyard on the silkscreen */
         if (courtyard)
