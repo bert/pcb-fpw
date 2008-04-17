@@ -1262,27 +1262,27 @@ write_footprint_plcc ()
                 ymin = multiplier * (((-c1 - pad_length) / 2.0) - pad_solder_mask_clearance);
                 ymax = multiplier * (((c1 + pad_length) / 2.0) + pad_solder_mask_clearance);
         }
-        else if (g1_state) /* inner-inner distance */
+        if (g1_state) /* inner-inner distance */
         {
                 ymin = multiplier * ((-g1 / 2.0) - pad_length - pad_solder_mask_clearance);
                 ymax = multiplier * ((g1 / 2.0) + pad_length + pad_solder_mask_clearance);
         }
-        else if (z1_state) /* outer-outer distance */
+        if (z1_state) /* outer-outer distance */
         {
-                ymin = multiplier * ((-g1 / 2.0) - pad_length - pad_solder_mask_clearance);
-                ymax = multiplier * ((g1 / 2.0) + pad_length + pad_solder_mask_clearance);
+                ymin = multiplier * ((-z1 / 2.0) - pad_solder_mask_clearance);
+                ymax = multiplier * ((z1 / 2.0) + pad_solder_mask_clearance);
         }
         if (c2_state) /* center-center distance */
         {
                 xmin = multiplier * (((-c2 - pad_length) / 2.0) - pad_solder_mask_clearance);
                 xmax = multiplier * (((c2 + pad_length) / 2.0) + pad_solder_mask_clearance);
         }
-        else if (g2_state) /* inner-inner distance */
+        if (g2_state) /* inner-inner distance */
         {
                 xmin = multiplier * ((-g2 / 2.0) - pad_length - pad_solder_mask_clearance);
                 xmin = multiplier * ((g2 / 2.0) + pad_length + pad_solder_mask_clearance);
         }
-        else if (z2_state) /* outer-outer distance */
+        if (z2_state) /* outer-outer distance */
         {
                 xmin = multiplier * ((-z2 / 2.0) - pad_solder_mask_clearance);
                 xmin = multiplier * ((z2 / 2.0) + pad_solder_mask_clearance);
