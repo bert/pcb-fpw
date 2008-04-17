@@ -78,4 +78,11 @@ fpw -h
 Have fun creating footprints  with pcb-fpw  ;-)
 
 
-/* End Of File /*
+List of supported footprint types:
+
+BGA, CAPC, CAPM, CAPMP, DIOM, DIOMELF, DIP, INDC, INDM, INDP, PGA, RESC, RESM, 
+RESMELF and TO92.
+
+PLCC is still to be debugged.
+
+/* End Of File */
