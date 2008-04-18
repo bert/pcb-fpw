@@ -80,9 +80,7 @@ Have fun creating footprints  with pcb-fpw  ;-)
 
 List of supported footprint types:
 
-BGA, CAPC, CAPM, CAPMP, DIOM, DIOMELF, DIP, INDC, INDM, INDP, PGA, RESC, RESM, 
-RESMELF and TO92.
-
-PLCC is still to be debugged.
+BGA, CAPC, CAPM, CAPMP, DIOM, DIOMELF, DIP, INDC, INDM, INDP, PGA, PLCC, RESC, 
+RESM, RESMELF and TO92.
 
 /* End Of File */
