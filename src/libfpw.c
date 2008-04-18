@@ -1242,6 +1242,7 @@ write_footprint_plcc ()
         gdouble x1;
         gdouble y0;
         gdouble y1;
+        gdouble y_dot;
 
         fp = fopen (footprint_filename, "w");
         if (!fp)
@@ -1320,14 +1321,14 @@ write_footprint_plcc ()
                 y0 = ((-c1 - pad_length + pad_width) / 2.0);
                 y1 = ((-c1 + pad_length - pad_width) / 2.0);
         }
-        else if (g1_state) /* inner-inner distance */
+        if (g1_state) /* inner-inner distance */
         {
                 y0 = ((-g1 + pad_width) / 2.0) - pad_length;
                 y1 = ((-g1 - pad_width) / 2.0);
         }
-        else if (z1_state) /* outer-outer distance */
+        if (z1_state) /* outer-outer distance */
         {
-                y0 = ((-z1 - pad_width) / 2.0);
+                y0 = ((-z1 + pad_width) / 2.0);
                 y1 = ((-z1 - pad_width) / 2.0) + pad_length;
         }
         for (pin_number = 1;
@@ -1362,14 +1363,14 @@ write_footprint_plcc ()
                 x0 = ((-c2 - pad_length + pad_width) / 2.0);
                 x1 = ((-c2 + pad_length - pad_width) / 2.0);
         }
-        else if (g2_state) /* inner-inner distance */
+        if (g2_state) /* inner-inner distance */
         {
                 x0 = ((-g2 + pad_width) / 2.0) - pad_length;
                 x1 = ((-g2 - pad_width) / 2.0);
         }
-        else if (z2_state) /* outer-outer distance */
+        if (z2_state) /* outer-outer distance */
         {
-                x0 = ((-z2 - pad_width) / 2.0);
+                x0 = ((-z2 + pad_width) / 2.0);
                 x1 = ((-z2 - pad_width) / 2.0) + pad_length;
         }
         i = 1;
@@ -1400,12 +1401,12 @@ write_footprint_plcc ()
                 y0 = ((c1 - pad_length + pad_width) / 2.0);
                 y1 = ((c1 + pad_length - pad_width) / 2.0);
         }
-        else if (g1_state) /* inner-inner distance */
+        if (g1_state) /* inner-inner distance */
         {
                 y0 = ((g1 + pad_width) / 2.0);
                 y1 = ((g1 - pad_width) / 2.0) + pad_length;
         }
-        else if (z1_state) /* outer-outer distance */
+        if (z1_state) /* outer-outer distance */
         {
                 y0 = ((z1 + pad_width) / 2.0) - pad_length;
                 y1 = ((z1 - pad_width) / 2.0);
@@ -1438,15 +1439,15 @@ write_footprint_plcc ()
                 x0 = ((c2 - pad_length + pad_width) / 2.0);
                 x1 = ((c2 + pad_length - pad_width) / 2.0);
         }
-        else if (g2_state) /* inner-inner distance */
+        if (g2_state) /* inner-inner distance */
         {
                 x0 = ((g2 + pad_width) / 2.0);
                 x1 = ((g2 - pad_width) / 2.0) + pad_length;
         }
-        else if (z2_state) /* outer-outer distance */
+        if (z2_state) /* outer-outer distance */
         {
-                x0 = ((z2 - pad_width) / 2.0);
-                x1 = ((z2 - pad_width) / 2.0) + pad_length;
+                x0 = ((z2 + pad_width) / 2.0) - pad_length;
+                x1 = ((z2 - pad_width) / 2.0);
         }
         i = 1;
         for (pin_number = ((count_x / 2) + 2.5 + count_y + count_x);
@@ -1476,14 +1477,14 @@ write_footprint_plcc ()
                 y0 = ((-c1 - pad_length + pad_width) / 2.0);
                 y1 = ((-c1 + pad_length - pad_width) / 2.0);
         }
-        else if (g1_state) /* inner-inner distance */
+        if (g1_state) /* inner-inner distance */
         {
                 y0 = ((-g1 + pad_width) / 2.0) - pad_length;
                 y1 = ((-g1 - pad_width) / 2.0);
         }
-        else if (z1_state) /* outer-outer distance */
+        if (z1_state) /* outer-outer distance */
         {
-                y0 = ((-z1 - pad_width) / 2.0);
+                y0 = ((-z1 + pad_width) / 2.0);
                 y1 = ((-z1 - pad_width) / 2.0) + pad_length;
         }
         i = 1;
@@ -1510,7 +1511,66 @@ write_footprint_plcc ()
         if (silkscreen_package_outline)
         {
                 fprintf (fp, "# Write a package body on the silkscreen\n");
-                /*! \todo Write a package body on the silkscreen ! */
+                /* Upper right corner */
+                write_element_line
+                (
+                        multiplier * (package_body_length / 2.0),
+                        multiplier * (-package_body_width / 2.0),
+                        multiplier * (package_body_length / 2.0),
+                        multiplier * (-1 * ((((count_y - 1) * pitch_y) + pad_length) / 2.0) - pad_solder_mask_clearance),
+                        multiplier * silkscreen_line_width
+                );
+                write_element_line
+                (
+                        multiplier * (package_body_length / 2.0),
+                        multiplier * (-package_body_width / 2.0),
+                        multiplier * (((((count_x - 1) * pitch_x) + pad_length) / 2.0) + pad_solder_mask_clearance),
+                        multiplier * (-package_body_width / 2.0),
+                        multiplier * silkscreen_line_width
+                );
+                /* Lower right corner */
+                write_element_line
+                (
+                        multiplier * (package_body_length / 2.0),
+                        multiplier * (package_body_width / 2.0),
+                        multiplier * (package_body_length / 2.0),
+                        multiplier * (((((count_y - 1) * pitch_y) + pad_length) / 2.0) + pad_solder_mask_clearance),
+                        multiplier * silkscreen_line_width
+                );
+                write_element_line
+                (
+                        multiplier * (package_body_length / 2.0),
+                        multiplier * (package_body_width / 2.0),
+                        multiplier * (((((count_x - 1) * pitch_x) + pad_length) / 2.0) + pad_solder_mask_clearance),
+                        multiplier * (package_body_width / 2.0),
+                        multiplier * silkscreen_line_width
+                );
+                /* Lower left corner */
+                write_element_line
+                (
+                        multiplier * (-package_body_length / 2.0),
+                        multiplier * (package_body_width / 2.0),
+                        multiplier * (-package_body_length / 2.0),
+                        multiplier * (((((count_y - 1) * pitch_y) + pad_length) / 2.0) + pad_solder_mask_clearance),
+                        multiplier * silkscreen_line_width
+                );
+                write_element_line
+                (
+                        multiplier * (-package_body_length / 2.0),
+                        multiplier * (package_body_width / 2.0),
+                        multiplier * (-1 * ((((count_x - 1) * pitch_x) + pad_length) / 2.0) - pad_solder_mask_clearance),
+                        multiplier * (package_body_width / 2.0),
+                        multiplier * silkscreen_line_width
+                );
+                /* Upper left corner */
+                write_element_line
+                (
+                        multiplier * (-1 * ((((count_x - 1) * pitch_x) + pad_length) / 2.0) - pad_solder_mask_clearance),
+                        multiplier * (-package_body_width / 2.0),
+                        multiplier * (-package_body_length / 2.0),
+                        multiplier * (-1 * ((((count_y - 1) * pitch_y) + pad_length) / 2.0) - pad_solder_mask_clearance),
+                        multiplier * silkscreen_line_width
+                );
         }
         /* Write a pin #1 marker on the silkscreen */
         if (silkscreen_indicate_1)
@@ -1518,20 +1578,26 @@ write_footprint_plcc ()
                 fprintf (fp, "# Write a pin 1 marker on the silkscreen\n");
                 if (c1_state) /* center-center distance */
                 {
-                        y1 = ((-c1 + pad_length - pad_width) / 2.0);
+                        y_dot = ((-c1 + pad_length - pad_width) / 2.0) +
+                                pad_width + pad_solder_mask_clearance +
+                                (2 * silkscreen_line_width);
                 }
                 if (g1_state) /* inner-inner distance */
                 {
-                        y1 = ((-g1 - pad_width) / 2.0);
+                        y_dot = ((-g1 - pad_width) / 2.0) +
+                                pad_width + pad_solder_mask_clearance +
+                                (2 * silkscreen_line_width);
                 }
                 if (z1_state) /* outer-outer distance */
                 {
-                        y1 = ((-z1 - pad_width) / 2.0) + pad_length;
+                        y_dot = ((-z1 - pad_width) / 2.0) + pad_length +
+                                pad_width + pad_solder_mask_clearance +
+                                (2 * silkscreen_line_width);
                 }
                 write_element_arc
                 (
                         0,
-                        multiplier * (y1 + pad_width + pad_solder_mask_clearance + (2 * silkscreen_line_width)),
+                        multiplier * y_dot,
                         multiplier * 0.5 * silkscreen_line_width,
                         multiplier * 0.5 * silkscreen_line_width,
                         0,
