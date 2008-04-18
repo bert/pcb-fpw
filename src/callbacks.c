@@ -178,7 +178,7 @@ all_entries_to_default_sensitivity (GtkWidget *widget)
                 "courtyard_clearance_with_package_entry");
         gtk_widget_set_sensitive (courtyard_clearance_with_package_entry, FALSE);
 
-        /* Widgets on tab 5 "Silkscreen" */
+        /* Widgets on tab 5 "Heel & Toe goals" */
         GtkWidget *C1_entry = lookup_widget (GTK_WIDGET (widget), "C1_entry");
         gtk_widget_set_sensitive (C1_entry, TRUE);
         GtkWidget *C2_entry = lookup_widget (GTK_WIDGET (widget), "C2_entry");
@@ -675,7 +675,7 @@ on_clear_button_clicked                (GtkButton       *button,
                 "courtyard_clearance_with_package_entry");
         gtk_entry_set_text (GTK_WIDGET (courtyard_clearance_with_package_entry), "");
 
-        /* Widgets on tab 5 "Silkscreen" */
+        /* Widgets on tab 5 "Heel & Toe goals" */
         GtkWidget *C1_entry = lookup_widget (GTK_BUTTON (button), "C1_entry");
         gtk_entry_set_text (GTK_WIDGET (C1_entry), "");
         gtk_widget_set_sensitive (C1_entry, TRUE);
