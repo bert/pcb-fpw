@@ -179,24 +179,42 @@ all_entries_to_default_sensitivity (GtkWidget *widget)
         gtk_widget_set_sensitive (courtyard_clearance_with_package_entry, FALSE);
 
         /* Widgets on tab 5 "Heel & Toe goals" */
-        GtkWidget *C1_entry = lookup_widget (GTK_WIDGET (widget), "C1_entry");
+        GtkWidget *C1_entry = lookup_widget (GTK_WIDGET (widget),
+                "C1_entry");
         gtk_widget_set_sensitive (C1_entry, TRUE);
-        GtkWidget *C2_entry = lookup_widget (GTK_WIDGET (widget), "C2_entry");
+        GtkWidget *C2_entry = lookup_widget (GTK_WIDGET (widget),
+                "C2_entry");
         gtk_widget_set_sensitive (C2_entry, TRUE);
-        GtkWidget *G1_entry = lookup_widget (GTK_WIDGET (widget), "G1_entry");
+        GtkWidget *G1_entry = lookup_widget (GTK_WIDGET (widget),
+                "G1_entry");
         gtk_widget_set_sensitive (G1_entry, FALSE);
-        GtkWidget *G2_entry = lookup_widget (GTK_WIDGET (widget), "G2_entry");
+        GtkWidget *G2_entry = lookup_widget (GTK_WIDGET (widget),
+                "G2_entry");
         gtk_widget_set_sensitive (G2_entry, FALSE);
-        GtkWidget *Z1_entry = lookup_widget (GTK_WIDGET (widget), "Z1_entry");
+        GtkWidget *Z1_entry = lookup_widget (GTK_WIDGET (widget),
+                "Z1_entry");
         gtk_widget_set_sensitive (Z1_entry, FALSE);
-        GtkWidget *Z2_entry = lookup_widget (GTK_WIDGET (widget), "Z2_entry");
+        GtkWidget *Z2_entry = lookup_widget (GTK_WIDGET (widget),
+                "Z2_entry");
         gtk_widget_set_sensitive (Z2_entry, FALSE);
-        GtkWidget * C1_radiobutton = lookup_widget (GTK_WIDGET (widget),
+        GtkWidget *C1_radiobutton = lookup_widget (GTK_WIDGET (widget),
                 "C1_radiobutton");
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (C1_radiobutton), TRUE);
-        GtkWidget * C2_radiobutton = lookup_widget (GTK_WIDGET (widget),
+        GtkWidget *C2_radiobutton = lookup_widget (GTK_WIDGET (widget),
                 "C2_radiobutton");
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (C2_radiobutton), TRUE);
+        GtkWidget *G1_radiobutton = lookup_widget (GTK_WIDGET (widget),
+                "G1_radiobutton");
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (G1_radiobutton), FALSE);
+        GtkWidget *G2_radiobutton = lookup_widget (GTK_WIDGET (widget),
+                "G2_radiobutton");
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (G2_radiobutton), FALSE);
+        GtkWidget *Z1_radiobutton = lookup_widget (GTK_WIDGET (widget),
+                "Z1_radiobutton");
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (Z1_radiobutton), FALSE);
+        GtkWidget *Z2_radiobutton = lookup_widget (GTK_WIDGET (widget),
+                "Z2_radiobutton");
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (Z2_radiobutton), FALSE);
 }
 
 /*!
