@@ -567,6 +567,55 @@ gui_constraints_set_smt (GtkWidget *widget)
 
 
 /*!
+ * \brief Set GUI constraints for the TO92 package type.
+ */
+int
+gui_constraints_set_to92 (GtkWidget *widget)
+{
+        /* Widgets on tab 1 "Footprint" */
+        GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
+                "package_is_radial_checkbutton");
+        gtk_toggle_button_set_active (package_is_radial_checkbutton, TRUE);
+
+        /* Widgets on tab 2 "Pins/Pads" */
+        GtkWidget *number_of_columns_entry = lookup_widget (GTK_WIDGET (widget),
+                "number_of_columns_entry");
+        gtk_entry_set_text (GTK_WIDGET (number_of_columns_entry), "");
+        gtk_widget_set_sensitive (number_of_columns_entry, FALSE);
+        GtkWidget *number_of_rows_entry = lookup_widget (GTK_WIDGET (widget),
+                "number_of_rows_entry");
+        gtk_entry_set_text (GTK_WIDGET (number_of_rows_entry), "");
+        gtk_widget_set_sensitive (number_of_rows_entry, FALSE);
+        GtkWidget *pitch_x_entry = lookup_widget (GTK_WIDGET (widget),
+                "pitch_x_entry");
+        gtk_entry_set_text (GTK_WIDGET (pitch_x_entry), "");
+        gtk_widget_set_sensitive (pitch_x_entry, FALSE);
+        GtkWidget *pitch_y_entry = lookup_widget (GTK_WIDGET (widget),
+                "pitch_y_entry");
+        gtk_entry_set_text (GTK_WIDGET (pitch_y_entry), "");
+        gtk_widget_set_sensitive (pitch_y_entry, FALSE);
+        GtkWidget *count_x_entry = lookup_widget (GTK_WIDGET (widget),
+                "count_x_entry");
+        gtk_entry_set_text (GTK_WIDGET (count_x_entry), "");
+        gtk_widget_set_sensitive (count_x_entry, FALSE);
+        GtkWidget *count_y_entry = lookup_widget (GTK_WIDGET (widget),
+                "count_y_entry");
+        gtk_entry_set_text (GTK_WIDGET (count_y_entry), "");
+        gtk_widget_set_sensitive (count_y_entry, FALSE);
+        GtkWidget *number_1_position_entry = lookup_widget (GTK_WIDGET (widget),
+                "number_1_position_entry");
+        gtk_combo_box_set_active (GTK_WIDGET (number_1_position_entry), 1);
+        gtk_widget_set_sensitive (number_1_position_entry, FALSE);
+
+        /* Widgets on tab 3 "Thermal Pad" */
+        gui_constraints_disable_thermal_tab_widgets (widget);
+
+        /* Widgets on tab 5 "Heel & Toe goals" */
+        gui_constraints_disable_heel_and_toe_goals_tab_widgets (widget);
+}
+
+
+/*!
  * \brief Send a message to the statusbar.
  */
 int
@@ -1619,6 +1668,7 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         else if (!strcmp (footprint_type, "TO92"))
         {
                 all_entries_to_default_sensitivity (combobox);
+                gui_constraints_set_to92 (combobox);
                 package_type = TO92;
                 return;
         }
