@@ -815,7 +815,7 @@ on_clear_button_clicked                (GtkButton       *button,
         GtkWidget *Z1_radiobutton = lookup_widget (GTK_BUTTON (button),
                 "Z1_radiobutton");
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (Z1_radiobutton), FALSE);
-        GtkWidget *G2_radiobutton = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *Z2_radiobutton = lookup_widget (GTK_BUTTON (button),
                 "Z2_radiobutton");
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (Z2_radiobutton), FALSE);
 }
