@@ -477,6 +477,62 @@ gui_constraints_set_pga (GtkWidget *widget)
 
 
 /*!
+ * \brief Set GUI constraints for SMT package types.
+ *
+ * The following types are applicable:
+ * CAPC, CAPM, CAPMP, DIOM, DIOMELF, INDC, INDM, INDP, RESC, RESM and RESMELF.
+ */
+int
+gui_constraints_set_smt (GtkWidget *widget)
+{
+        /* Widgets on tab 1 "Footprint" */
+        GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
+                "package_is_radial_checkbutton");
+        gtk_toggle_button_set_active (package_is_radial_checkbutton, FALSE);
+        gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
+
+        /* Widgets on tab 2 "Pins/Pads" */
+        GtkWidget *number_of_columns_entry = lookup_widget (GTK_WIDGET (widget),
+                "number_of_columns_entry");
+        gtk_entry_set_text (GTK_WIDGET (number_of_columns_entry), "");
+        gtk_widget_set_sensitive (number_of_columns_entry, FALSE);
+        GtkWidget *number_of_rows_entry = lookup_widget (GTK_WIDGET (widget),
+                "number_of_rows_entry");
+        gtk_entry_set_text (GTK_WIDGET (number_of_rows_entry), "");
+        gtk_widget_set_sensitive (number_of_rows_entry, FALSE);
+        GtkWidget *pitch_y_entry = lookup_widget (GTK_WIDGET (widget),
+                "pitch_y_entry");
+        gtk_entry_set_text (GTK_WIDGET (pitch_y_entry), "");
+        gtk_widget_set_sensitive (pitch_y_entry, FALSE);
+        GtkWidget *count_x_entry = lookup_widget (GTK_WIDGET (widget),
+                "count_x_entry");
+        gtk_entry_set_text (GTK_WIDGET (count_x_entry), "");
+        gtk_widget_set_sensitive (count_x_entry, FALSE);
+        GtkWidget *count_y_entry = lookup_widget (GTK_WIDGET (widget),
+                "count_y_entry");
+        gtk_entry_set_text (GTK_WIDGET (count_y_entry), "");
+        gtk_widget_set_sensitive (count_y_entry, FALSE);
+        GtkWidget *number_1_position_entry = lookup_widget (GTK_WIDGET (widget),
+                "number_1_position_entry");
+        gtk_combo_box_set_active (GTK_WIDGET (number_1_position_entry), 1);
+        gtk_widget_set_sensitive (number_1_position_entry, FALSE);
+        GtkWidget *pin_drill_diameter_entry = lookup_widget (GTK_WIDGET (widget),
+                "pin_drill_diameter_entry");
+        gtk_entry_set_text (GTK_WIDGET (pin_drill_diameter_entry), "");
+        gtk_widget_set_sensitive (pin_drill_diameter_entry, FALSE);
+        GtkWidget *pad_shape_entry = lookup_widget (GTK_WIDGET (widget),
+                "pad_shape_entry");
+        gtk_combo_box_set_active (GTK_WIDGET (pad_shape_entry), 2);
+
+        /* Widgets on tab 3 "Thermal Pad" */
+        gui_constraints_disable_thermal_tab_widgets (widget);
+
+        /* Widgets on tab 5 "Heel & Toe goals" */
+        gui_constraints_disable_heel_and_toe_goals_tab_widgets (widget);
+}
+
+
+/*!
  * \brief Send a message to the statusbar.
  */
 int
@@ -1420,12 +1476,14 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         else if (!strcmp (footprint_type, "CAPC"))
         {
                 all_entries_to_default_sensitivity (combobox);
+                gui_constraints_set_smt (combobox);
                 package_type = CAPC;
                 return;
         }
         else if (!strcmp (footprint_type, "CAPM"))
         {
                 all_entries_to_default_sensitivity (combobox);
+                gui_constraints_set_smt (combobox);
                 package_type = CAPM;
                 return;
         }
@@ -1445,12 +1503,14 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         else if (!strcmp (footprint_type, "INDC"))
         {
                 all_entries_to_default_sensitivity (combobox);
+                gui_constraints_set_smt (combobox);
                 package_type = INDC;
                 return;
         }
         else if (!strcmp (footprint_type, "INDM"))
         {
                 all_entries_to_default_sensitivity (combobox);
+                gui_constraints_set_smt (combobox);
                 package_type = INDM;
                 return;
         }
@@ -1486,12 +1546,14 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         else if (!strcmp (footprint_type, "RESC"))
         {
                 all_entries_to_default_sensitivity (combobox);
+                gui_constraints_set_smt (combobox);
                 package_type = RESC;
                 return;
         }
         else if (!strcmp (footprint_type, "RESM"))
         {
                 all_entries_to_default_sensitivity (combobox);
+                gui_constraints_set_smt (combobox);
                 package_type = RESM;
                 return;
         }
