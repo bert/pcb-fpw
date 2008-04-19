@@ -85,7 +85,7 @@ all_entries_to_default_sensitivity (GtkWidget *widget)
         /* Widgets on tab 2 "Pins/Pads" */
         GtkWidget *number_total_pins_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_total_pins_entry");
-        gtk_widget_set_sensitive (number_total_pins_entry, TRUE);
+        gtk_widget_set_sensitive (number_total_pins_entry, FALSE);
         GtkWidget *number_of_rows_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_rows_entry");
         gtk_widget_set_sensitive (number_of_rows_entry, TRUE);
