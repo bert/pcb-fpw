@@ -269,54 +269,12 @@ entry_has_changed (GtkWidget *widget)
 
 
 /*!
- * \brief Set GUI constraints for the BGA package type.
+ * \brief Set GUI constraints: disable the entries in the
+ * "Heel and Toe goals" tab.
  */
 int
-gui_constraints_set_bga (GtkWidget *widget)
+gui_constraints_disable_heel_and_toe_goals_tab_widgets (GtkWidget *widget)
 {
-        /* Widgets on tab 1 "Footprint" */
-        GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
-                "package_is_radial_checkbutton");
-        gtk_toggle_button_set_active (package_is_radial_checkbutton, FALSE);
-        gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
-
-        /* Widgets on tab 2 "Pins/Pads" */
-        GtkWidget *count_x_entry = lookup_widget (GTK_WIDGET (widget),
-                "count_x_entry");
-        gtk_entry_set_text (GTK_WIDGET (count_x_entry), "");
-        gtk_widget_set_sensitive (count_x_entry, FALSE);
-        GtkWidget *count_y_entry = lookup_widget (GTK_WIDGET (widget),
-                "count_y_entry");
-        gtk_entry_set_text (GTK_WIDGET (count_y_entry), "");
-        gtk_widget_set_sensitive (count_y_entry, FALSE);
-        GtkWidget *number_1_position_entry = lookup_widget (GTK_WIDGET (widget),
-                "number_1_position_entry");
-        gtk_combo_box_set_active (GTK_WIDGET (number_1_position_entry), 1);
-        gtk_widget_set_sensitive (number_1_position_entry, FALSE);
-        GtkWidget *pad_shape_entry = lookup_widget (GTK_WIDGET (widget),
-                "pad_shape_entry");
-        gtk_combo_box_set_active (GTK_WIDGET (pad_shape_entry), 1);
-        gtk_widget_set_sensitive (pad_shape_entry, FALSE);
-        GtkWidget *pin_drill_diameter_entry = lookup_widget (GTK_WIDGET (widget),
-                "pin_drill_diameter_entry");
-        gtk_entry_set_text (GTK_WIDGET (pin_drill_diameter_entry), "");
-        gtk_widget_set_sensitive (pin_drill_diameter_entry, FALSE);
-        GtkWidget *pad_length_entry = lookup_widget (GTK_WIDGET (widget),
-                "pad_length_entry");
-        gtk_entry_set_text (GTK_WIDGET (pad_length_entry), "");
-        gtk_widget_set_sensitive (pad_length_entry, FALSE);
-        GtkWidget *pad_width_entry = lookup_widget (GTK_WIDGET (widget),
-                "pad_width_entry");
-        gtk_entry_set_text (GTK_WIDGET (pad_width_entry), "");
-        gtk_widget_set_sensitive (pad_width_entry, FALSE);
-
-        /* Widgets on tab 3 "Thermal Pad" */
-        GtkWidget *thermal_checkbutton = lookup_widget (GTK_WIDGET (widget),
-                "thermal_checkbutton");
-        gtk_toggle_button_set_active (thermal_checkbutton, FALSE);
-        gtk_widget_set_sensitive (thermal_checkbutton, FALSE);
-
-        /* Widgets on tab 5 "Heel & Toe goals" */
         GtkWidget *C1_entry = lookup_widget (GTK_WIDGET (widget),
                 "C1_entry");
         gtk_entry_set_text (GTK_WIDGET (C1_entry), "");
@@ -365,6 +323,70 @@ gui_constraints_set_bga (GtkWidget *widget)
                 "Z2_radiobutton");
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (Z2_radiobutton), FALSE);
         gtk_widget_set_sensitive (Z2_radiobutton, FALSE);
+}
+
+
+/*!
+ * \brief Set GUI constraints: disable the entries in the
+ * "Thermal Pad" tab.
+ */
+int
+gui_constraints_disable_thermal_tab_widgets (GtkWidget *widget)
+{
+        GtkWidget *thermal_checkbutton = lookup_widget (GTK_WIDGET (widget),
+                "thermal_checkbutton");
+        gtk_toggle_button_set_active (thermal_checkbutton, FALSE);
+        gtk_widget_set_sensitive (thermal_checkbutton, FALSE);
+}
+
+
+/*!
+ * \brief Set GUI constraints for the BGA package type.
+ */
+int
+gui_constraints_set_bga (GtkWidget *widget)
+{
+        /* Widgets on tab 1 "Footprint" */
+        GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
+                "package_is_radial_checkbutton");
+        gtk_toggle_button_set_active (package_is_radial_checkbutton, FALSE);
+        gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
+
+        /* Widgets on tab 2 "Pins/Pads" */
+        GtkWidget *count_x_entry = lookup_widget (GTK_WIDGET (widget),
+                "count_x_entry");
+        gtk_entry_set_text (GTK_WIDGET (count_x_entry), "");
+        gtk_widget_set_sensitive (count_x_entry, FALSE);
+        GtkWidget *count_y_entry = lookup_widget (GTK_WIDGET (widget),
+                "count_y_entry");
+        gtk_entry_set_text (GTK_WIDGET (count_y_entry), "");
+        gtk_widget_set_sensitive (count_y_entry, FALSE);
+        GtkWidget *number_1_position_entry = lookup_widget (GTK_WIDGET (widget),
+                "number_1_position_entry");
+        gtk_combo_box_set_active (GTK_WIDGET (number_1_position_entry), 1);
+        gtk_widget_set_sensitive (number_1_position_entry, FALSE);
+        GtkWidget *pad_shape_entry = lookup_widget (GTK_WIDGET (widget),
+                "pad_shape_entry");
+        gtk_combo_box_set_active (GTK_WIDGET (pad_shape_entry), 1);
+        gtk_widget_set_sensitive (pad_shape_entry, FALSE);
+        GtkWidget *pin_drill_diameter_entry = lookup_widget (GTK_WIDGET (widget),
+                "pin_drill_diameter_entry");
+        gtk_entry_set_text (GTK_WIDGET (pin_drill_diameter_entry), "");
+        gtk_widget_set_sensitive (pin_drill_diameter_entry, FALSE);
+        GtkWidget *pad_length_entry = lookup_widget (GTK_WIDGET (widget),
+                "pad_length_entry");
+        gtk_entry_set_text (GTK_WIDGET (pad_length_entry), "");
+        gtk_widget_set_sensitive (pad_length_entry, FALSE);
+        GtkWidget *pad_width_entry = lookup_widget (GTK_WIDGET (widget),
+                "pad_width_entry");
+        gtk_entry_set_text (GTK_WIDGET (pad_width_entry), "");
+        gtk_widget_set_sensitive (pad_width_entry, FALSE);
+
+        /* Widgets on tab 3 "Thermal Pad" */
+        gui_constraints_disable_thermal_tab_widgets (widget);
+
+        /* Widgets on tab 5 "Heel & Toe goals" */
+        gui_constraints_disable_heel_and_toe_goals_tab_widgets (widget);
 }
 
 
