@@ -251,6 +251,106 @@ entry_has_changed (GtkWidget *widget)
 
 
 /*!
+ * \brief Set GUI constraints for the BGA package type.
+ */
+int
+gui_constraints_set_bga (GtkWidget *widget)
+{
+        /* Widgets on tab 1 "Footprint" */
+        GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
+                "package_is_radial_checkbutton");
+        gtk_toggle_button_set_active (package_is_radial_checkbutton, FALSE);
+        gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
+
+        /* Widgets on tab 2 "Pins/Pads" */
+        GtkWidget *count_x_entry = lookup_widget (GTK_WIDGET (widget),
+                "count_x_entry");
+        gtk_entry_set_text (GTK_WIDGET (count_x_entry), "");
+        gtk_widget_set_sensitive (count_x_entry, FALSE);
+        GtkWidget *count_y_entry = lookup_widget (GTK_WIDGET (widget),
+                "count_y_entry");
+        gtk_entry_set_text (GTK_WIDGET (count_y_entry), "");
+        gtk_widget_set_sensitive (count_y_entry, FALSE);
+        GtkWidget *number_1_position_entry = lookup_widget (GTK_WIDGET (widget),
+                "number_1_position_entry");
+        gtk_combo_box_set_active (GTK_WIDGET (number_1_position_entry), 1);
+        gtk_widget_set_sensitive (number_1_position_entry, FALSE);
+        GtkWidget *pad_shape_entry = lookup_widget (GTK_WIDGET (widget),
+                "pad_shape_entry");
+        gtk_combo_box_set_active (GTK_WIDGET (pad_shape_entry), 1);
+        gtk_widget_set_sensitive (pad_shape_entry, FALSE);
+        GtkWidget *pin_drill_diameter_entry = lookup_widget (GTK_WIDGET (widget),
+                "pin_drill_diameter_entry");
+        gtk_entry_set_text (GTK_WIDGET (pin_drill_diameter_entry), "");
+        gtk_widget_set_sensitive (pin_drill_diameter_entry, FALSE);
+        GtkWidget *pad_length_entry = lookup_widget (GTK_WIDGET (widget),
+                "pad_length_entry");
+        gtk_entry_set_text (GTK_WIDGET (pad_length_entry), "");
+        gtk_widget_set_sensitive (pad_length_entry, FALSE);
+        GtkWidget *pad_width_entry = lookup_widget (GTK_WIDGET (widget),
+                "pad_width_entry");
+        gtk_entry_set_text (GTK_WIDGET (pad_width_entry), "");
+        gtk_widget_set_sensitive (pad_width_entry, FALSE);
+
+        /* Widgets on tab 3 "Thermal Pad" */
+        GtkWidget *thermal_checkbutton = lookup_widget (GTK_WIDGET (widget),
+                "thermal_checkbutton");
+        gtk_toggle_button_set_active (thermal_checkbutton, FALSE);
+        gtk_widget_set_sensitive (thermal_checkbutton, FALSE);
+
+        /* Widgets on tab 5 "Heel & Toe goals" */
+        GtkWidget *C1_entry = lookup_widget (GTK_WIDGET (widget),
+                "C1_entry");
+        gtk_entry_set_text (GTK_WIDGET (C1_entry), "");
+        gtk_widget_set_sensitive (C1_entry, FALSE);
+        GtkWidget *C2_entry = lookup_widget (GTK_WIDGET (widget),
+                "C2_entry");
+        gtk_entry_set_text (GTK_WIDGET (C2_entry), "");
+        gtk_widget_set_sensitive (C2_entry, FALSE);
+        GtkWidget *G1_entry = lookup_widget (GTK_WIDGET (widget),
+                "G1_entry");
+        gtk_entry_set_text (GTK_WIDGET (G1_entry), "");
+        gtk_widget_set_sensitive (G1_entry, FALSE);
+        GtkWidget *G2_entry = lookup_widget (GTK_WIDGET (widget),
+                "G2_entry");
+        gtk_entry_set_text (GTK_WIDGET (G2_entry), "");
+        gtk_widget_set_sensitive (G2_entry, FALSE);
+        GtkWidget *Z1_entry = lookup_widget (GTK_WIDGET (widget),
+                "Z1_entry");
+        gtk_entry_set_text (GTK_WIDGET (Z1_entry), "");
+        gtk_widget_set_sensitive (Z1_entry, FALSE);
+        GtkWidget *Z2_entry = lookup_widget (GTK_WIDGET (widget),
+                "Z2_entry");
+        gtk_entry_set_text (GTK_WIDGET (Z2_entry), "");
+        gtk_widget_set_sensitive (Z2_entry, FALSE);
+        GtkWidget * C1_radiobutton = lookup_widget (GTK_WIDGET (widget),
+                "C1_radiobutton");
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (C1_radiobutton), TRUE);
+        gtk_widget_set_sensitive (C1_radiobutton, FALSE);
+        GtkWidget * C2_radiobutton = lookup_widget (GTK_WIDGET (widget),
+                "C2_radiobutton");
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (C2_radiobutton), TRUE);
+        gtk_widget_set_sensitive (C2_radiobutton, FALSE);
+        GtkWidget * G1_radiobutton = lookup_widget (GTK_WIDGET (widget),
+                "G1_radiobutton");
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (G1_radiobutton), FALSE);
+        gtk_widget_set_sensitive (G1_radiobutton, FALSE);
+        GtkWidget * G2_radiobutton = lookup_widget (GTK_WIDGET (widget),
+                "G2_radiobutton");
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (G2_radiobutton), FALSE);
+        gtk_widget_set_sensitive (G2_radiobutton, FALSE);
+        GtkWidget * Z1_radiobutton = lookup_widget (GTK_WIDGET (widget),
+                "Z1_radiobutton");
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (Z1_radiobutton), FALSE);
+        gtk_widget_set_sensitive (Z1_radiobutton, FALSE);
+        GtkWidget * Z2_radiobutton = lookup_widget (GTK_WIDGET (widget),
+                "Z2_radiobutton");
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (Z2_radiobutton), FALSE);
+        gtk_widget_set_sensitive (Z2_radiobutton, FALSE);
+}
+
+
+/*!
  * \brief Send a message to the statusbar.
  */
 int
@@ -1166,51 +1266,62 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         /* Determine the package type */
         if (!strcmp (footprint_type, "BGA"))
         {
+                all_entries_to_default_sensitivity (combobox);
+                gui_constraints_set_bga (combobox);
                 package_type = BGA;
                 return;
         }
         else if (!strcmp (footprint_type, "CAPC"))
         {
+                all_entries_to_default_sensitivity (combobox);
                 package_type = CAPC;
                 return;
         }
         else if (!strcmp (footprint_type, "CAPM"))
         {
+                all_entries_to_default_sensitivity (combobox);
                 package_type = CAPM;
                 return;
         }
         else if (!strcmp (footprint_type, "DIL"))
         {
                 package_type = DIL;
+                all_entries_to_default_sensitivity (combobox);
                 return;
         }
         else if (!strcmp (footprint_type, "DIP"))
         {
+                all_entries_to_default_sensitivity (combobox);
                 package_type = DIP;
                 return;
         }
         else if (!strcmp (footprint_type, "INDC"))
         {
+                all_entries_to_default_sensitivity (combobox);
                 package_type = INDC;
                 return;
         }
         else if (!strcmp (footprint_type, "INDM"))
         {
+                all_entries_to_default_sensitivity (combobox);
                 package_type = INDM;
                 return;
         }
         else if (!strcmp (footprint_type, "PGA"))
         {
+                all_entries_to_default_sensitivity (combobox);
                 package_type = PGA;
                 return;
         }
         else if (!strcmp (footprint_type, "PLCC"))
         {
+                all_entries_to_default_sensitivity (combobox);
                 package_type = PLCC;
                 return;
         }
         else if (!strcmp (footprint_type, "QFN"))
         {
+                all_entries_to_default_sensitivity (combobox);
                 package_type = QFN;
                 gchar *message = g_strdup_printf (_("ERROR: footprint type QFN is not yet implemented."));
                 message_to_statusbar (combobox, message);
@@ -1218,6 +1329,7 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         }
         else if (!strcmp (footprint_type, "QFP"))
         {
+                all_entries_to_default_sensitivity (combobox);
                 package_type = QFP;
                 gchar *message = g_strdup_printf (_("ERROR: footprint type QFP is not yet implemented."));
                 message_to_statusbar (combobox, message);
@@ -1225,16 +1337,19 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         }
         else if (!strcmp (footprint_type, "RESC"))
         {
+                all_entries_to_default_sensitivity (combobox);
                 package_type = RESC;
                 return;
         }
         else if (!strcmp (footprint_type, "RESM"))
         {
+                all_entries_to_default_sensitivity (combobox);
                 package_type = RESM;
                 return;
         }
         else if (!strcmp (footprint_type, "SIL"))
         {
+                all_entries_to_default_sensitivity (combobox);
                 package_type = SIL;
                 gchar *message = g_strdup_printf (_("ERROR: footprint type SIL is not yet implemented."));
                 message_to_statusbar (combobox, message);
@@ -1242,6 +1357,7 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         }
         else if (!strcmp (footprint_type, "SIP"))
         {
+                all_entries_to_default_sensitivity (combobox);
                 package_type = SIP;
                 gchar *message = g_strdup_printf (_("ERROR: footprint type SIP is not yet implemented."));
                 message_to_statusbar (combobox, message);
@@ -1249,6 +1365,7 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         }
         else if (!strcmp (footprint_type, "SO"))
         {
+                all_entries_to_default_sensitivity (combobox);
                 package_type = SO;
                 gchar *message = g_strdup_printf (_("ERROR: footprint type SO is not yet implemented."));
                 message_to_statusbar (combobox, message);
@@ -1256,6 +1373,7 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         }
         else if (!strcmp (footprint_type, "TO92"))
         {
+                all_entries_to_default_sensitivity (combobox);
                 package_type = TO92;
                 return;
         }
