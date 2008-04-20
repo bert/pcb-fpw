@@ -632,6 +632,104 @@ message_to_statusbar (GtkWidget *widget, gchar *message)
 
 
 /*!
+ * \brief Update the value in the "number_total_pins" entry.
+ *
+ * This function is to be called on one of the following events:
+ * <ul>
+ * <li>Number of columns entry is changed: \c number_of_columns changes.
+ * <li>Number of rows entry is changed: \c number_of_rows changes.
+ * <li>Count of pin/pads (on a row) in the X-direction entry is changed: \c count_x changes.
+ * <li>Count of pin/pads (on a column) in the Y-direction entry is changed: \c count_y changes.
+ * <li>The thermal pad button is toggled: \c thermal changes.
+ * </ul>
+ */
+int
+number_of_pins_has_changed (GtkWidget *widget)
+{
+        /* Recalculate the total number of pins/pads depending on the package
+         * type */
+        switch (package_type)
+        {
+                case BGA :
+                        number_of_pins = number_of_columns * number_of_rows;
+                        break;
+                case CAPC :
+                        number_of_pins = 2;
+                        break;
+                case CAPM :
+                        number_of_pins = 2;
+                        break;
+                case CAPMP :
+                        number_of_pins = 2;
+                        break;
+                case DIL :
+                        number_of_pins = number_of_columns * number_of_rows;
+                        break;
+                case DIOM :
+                        number_of_pins = 2;
+                        break;
+                case DIOMELF :
+                        number_of_pins = 2;
+                        break;
+                case DIP :
+                        number_of_pins = number_of_columns * number_of_rows;
+                        break;
+                case INDC :
+                        number_of_pins = 2;
+                        break;
+                case INDM :
+                        number_of_pins = 2;
+                        break;
+                case INDP :
+                        number_of_pins = 2;
+                        break;
+                case PGA :
+                        number_of_pins = number_of_columns * number_of_rows;
+                        break;
+                case PLCC :
+                        number_of_pins = (number_of_columns * count_x +
+                                number_of_rows * count_y) + thermal;
+                        break;
+                case QFN :
+                        number_of_pins = (number_of_columns * count_x +
+                                number_of_rows * count_y) + thermal;
+                        break;
+                case QFP :
+                        number_of_pins = (number_of_columns * count_x +
+                                number_of_rows * count_y) + thermal;
+                        break;
+                case RESC :
+                        number_of_pins = 2;
+                        break;
+                case RESM :
+                        number_of_pins = 2;
+                        break;
+                case RESMELF :
+                        number_of_pins = 2;
+                        break;
+                case SIL :
+                        number_of_pins = count_x;
+                        break;
+                case SIP :
+                        number_of_pins = count_x;
+                        break;
+                case SO :
+                        break;
+                case TO92 :
+                        number_of_pins = 3;
+                        break;
+                default :
+                        break;
+        }
+        /* Update the "total number of pins/pads" entry */
+        GtkWidget *number_total_pins_entry = lookup_widget (GTK_WIDGET (widget),
+                "number_total_pins_entry");
+        gtk_entry_set_text (GTK_WIDGET (number_total_pins_entry),
+                g_strdup_printf ("%d", number_of_pins));
+}
+
+
+/*!
  * \brief The "top to bottom pads/pins center-center distance (C1)" entry is
  * changed.
  *
@@ -1118,6 +1216,7 @@ on_count_x_entry_changed               (GtkEditable     *editable,
         gtk_entry_set_text (number_total_pins_entry,
                 g_strdup_printf ("%d", number_of_pins));
         entry_has_changed (editable);
+        number_of_pins_has_changed (editable);
 }
 
 
@@ -1140,6 +1239,7 @@ on_count_y_entry_changed               (GtkEditable     *editable,
         gtk_entry_set_text (number_total_pins_entry,
                 g_strdup_printf ("%d", number_of_pins));
         entry_has_changed (editable);
+        number_of_pins_has_changed (editable);
 }
 
 
@@ -1795,6 +1895,7 @@ on_number_of_columns_entry_changed     (GtkEditable     *editable,
         gtk_entry_set_text (number_total_pins_entry,
                 g_strdup_printf ("%d", number_of_pins));
         entry_has_changed (editable);
+        number_of_pins_has_changed (editable);
 }
 
 
@@ -1817,6 +1918,7 @@ on_number_of_rows_entry_changed        (GtkEditable     *editable,
         gtk_entry_set_text (number_total_pins_entry,
                 g_strdup_printf ("%d", number_of_pins));
         entry_has_changed (editable);
+        number_of_pins_has_changed (editable);
 }
 
 
@@ -2354,6 +2456,7 @@ on_thermal_checkbutton_toggled         (GtkToggleButton *togglebutton,
         /* Save the state of checkbutton in a global variable */
         thermal = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
         entry_has_changed (togglebutton);
+        number_of_pins_has_changed (togglebutton);
         /* Look up widgets */
         GtkToggleButton *thermal_nopaste_checkbutton = lookup_widget (GTK_BUTTON (togglebutton),
                 "thermal_nopaste_checkbutton");
@@ -2377,11 +2480,6 @@ on_thermal_checkbutton_toggled         (GtkToggleButton *togglebutton,
          * paste if desired while leaving the thermal checkbutton checked
          * (on) */
         gtk_toggle_button_set_active (thermal_nopaste_checkbutton, thermal);
-        number_of_pins = (number_of_rows * count_x + number_of_columns * count_y) + thermal;
-        GtkWidget *number_total_pins_entry = lookup_widget (GTK_WIDGET (togglebutton),
-                "number_total_pins_entry");
-        gtk_entry_set_text (number_total_pins_entry,
-                g_strdup_printf ("%d", number_of_pins));
 }
 
 
