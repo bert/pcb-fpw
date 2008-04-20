@@ -398,10 +398,6 @@ gui_constraints_set_bga (GtkWidget *widget)
 
 /*!
  * \brief Set GUI constraints for the CON-DIL package type.
- *
- * The pin/pad numbering scheme of the CON-DIL package is:
- * 5 6 7 8
- * 1 2 3 4
  */
 int
 gui_constraints_set_con_dil (GtkWidget *widget)
