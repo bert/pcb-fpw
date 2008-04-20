@@ -409,6 +409,14 @@ gui_constraints_set_dip (GtkWidget *widget)
         gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
 
         /* Widgets on tab 2 "Pins/Pads" */
+        GtkWidget *number_of_columns_entry = lookup_widget (GTK_WIDGET (widget),
+                "number_of_columns_entry");
+        gtk_entry_set_text (GTK_WIDGET (number_of_columns_entry), "2");
+        gtk_widget_set_sensitive (number_of_columns_entry, FALSE);
+        GtkWidget *number_of_rows_entry = lookup_widget (GTK_WIDGET (widget),
+                "number_of_rows_entry");
+        gtk_entry_set_text (GTK_WIDGET (number_of_rows_entry), "");
+        gtk_widget_set_sensitive (number_of_rows_entry, FALSE);
         GtkWidget *count_x_entry = lookup_widget (GTK_WIDGET (widget),
                 "count_x_entry");
         gtk_entry_set_text (GTK_WIDGET (count_x_entry), "");
@@ -416,7 +424,7 @@ gui_constraints_set_dip (GtkWidget *widget)
         GtkWidget *count_y_entry = lookup_widget (GTK_WIDGET (widget),
                 "count_y_entry");
         gtk_entry_set_text (GTK_WIDGET (count_y_entry), "");
-        gtk_widget_set_sensitive (count_y_entry, FALSE);
+        gtk_widget_set_sensitive (count_y_entry, TRUE);
         GtkWidget *number_1_position_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_1_position_entry");
         gtk_combo_box_set_active (GTK_WIDGET (number_1_position_entry), 1);
@@ -672,7 +680,7 @@ number_of_pins_has_changed (GtkWidget *widget)
                         number_of_pins = 2;
                         break;
                 case DIP :
-                        number_of_pins = number_of_columns * number_of_rows;
+                        number_of_pins = number_of_columns * count_y;
                         break;
                 case INDC :
                         number_of_pins = 2;

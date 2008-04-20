@@ -882,13 +882,13 @@ write_footprint_dip ()
         {
                 ymin = multiplier *
                 (
-                        ((((-number_of_rows - 1) / 2.0) + 1) * pitch_y) -
+                        ((((-count_y - 1) / 2.0) + 1) * pitch_y) -
                         (pad_diameter / 2.0) -
                         pad_solder_mask_clearance
                 );
                 ymax = multiplier *
                 (
-                        (((number_of_rows - 1) / 2.0) * pitch_y) +
+                        (((count_y - 1) / 2.0) * pitch_y) +
                         (pad_diameter / 2.0) +
                         pad_solder_mask_clearance
                 );
@@ -897,13 +897,13 @@ write_footprint_dip ()
         {
                 ymin = multiplier *
                 (
-                        ((((-number_of_rows - 1) / 2.0) + 1) * pitch_y) -
+                        ((((-count_y - 1) / 2.0) + 1) * pitch_y) -
                         (pad_width / 2.0) -
                         pad_solder_mask_clearance
                 );
                 ymax = multiplier *
                 (
-                        (((number_of_rows - 1) / 2.0) * pitch_y) +
+                        (((count_y - 1) / 2.0) * pitch_y) +
                         (pad_width / 2.0) +
                         pad_solder_mask_clearance
                 );
@@ -933,7 +933,7 @@ write_footprint_dip ()
         y_text = (ymin - 10000.0); /* already in mil/100 */
         write_element_header (x_text, y_text);
         /* Write pin and/or pad entities */
-        for (i = 0; (i < number_of_rows); i++)
+        for (i = 0; (i < count_y); i++)
         {
                 pin_number = 1 + i;
                 if (pin1_square && (pin_number == 1))
@@ -945,7 +945,7 @@ write_footprint_dip ()
                         pin_number, /* pin number */
                         pin_pad_name, /* pin name */
                         multiplier * - pitch_x / 2.0, /* x0 coordinate */
-                        multiplier * ((((-number_of_rows - 1) / 2.0) +1 + i) * pitch_y), /* y0-coordinate */
+                        multiplier * ((((-count_y - 1) / 2.0) +1 + i) * pitch_y), /* y0-coordinate */
                         multiplier * pad_diameter, /* width of the annulus ring (pad) */
                         multiplier * pad_clearance, /* clearance */
                         multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
@@ -963,16 +963,16 @@ write_footprint_dip ()
                                 pin_number, /* pad number = pin_number */
                                 pin_pad_name, /* pad name */
                                 multiplier * (-pitch_x + pad_length - pad_width) / 2.0, /* x0 coordinate */
-                                multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
+                                multiplier * ((((-count_y - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
                                 multiplier * (-pitch_x - pad_length + pad_width) / 2.0, /* x1 coordinate */
-                                multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
+                                multiplier * ((((-count_y - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
                                 multiplier * pad_width, /* width of the pad */
                                 multiplier * pad_clearance, /* clearance */
                                 multiplier * (pad_width + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
                                 pin_pad_flags /* flags */
                         );
                 }
-                pin_number = (number_of_rows * number_of_columns) - i;
+                pin_number = (number_of_columns * count_y) - i;
                 if (pin1_square && (pin_number == 1))
                         pin_pad_flags = g_strdup ("square");
                 else
@@ -982,7 +982,7 @@ write_footprint_dip ()
                         pin_number, /* pin number */
                         pin_pad_name, /* pin name */
                         multiplier * pitch_x / 2.0, /* x0 coordinate */
-                        multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
+                        multiplier * ((((-count_y - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
                         multiplier * pad_diameter, /* width of the annulus ring (pad) */
                         multiplier * pad_clearance, /* clearance */
                         multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
@@ -1000,9 +1000,9 @@ write_footprint_dip ()
                                 pin_number, /* pad number = pin_number*/
                                 pin_pad_name, /* pad name */
                                 multiplier * (pitch_x - pad_length + pad_width) / 2.0, /* x0 coordinate */
-                                multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
+                                multiplier * ((((-count_y - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
                                 multiplier * (pitch_x + pad_length - pad_width) / 2.0, /* x1 coordinate */
-                                multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
+                                multiplier * ((((-count_y - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
                                 multiplier * pad_width, /* width of the pad */
                                 multiplier * pad_clearance, /* clearance */
                                 multiplier * (pad_width + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
