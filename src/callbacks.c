@@ -397,6 +397,94 @@ gui_constraints_set_bga (GtkWidget *widget)
 
 
 /*!
+ * \brief Set GUI constraints for the CON-DIL package type.
+ *
+ * The pin/pad numbering scheme of the CON-DIL package is:
+ * 5 6 7 8
+ * 1 2 3 4
+ */
+int
+gui_constraints_set_con_dil (GtkWidget *widget)
+{
+        /* Widgets on tab 1 "Footprint" */
+        GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
+                "package_is_radial_checkbutton");
+        gtk_toggle_button_set_active (package_is_radial_checkbutton, FALSE);
+        gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
+
+        /* Widgets on tab 2 "Pins/Pads" */
+        GtkWidget *number_of_columns_entry = lookup_widget (GTK_WIDGET (widget),
+                "number_of_columns_entry");
+        gtk_entry_set_text (GTK_WIDGET (number_of_columns_entry), "");
+        gtk_widget_set_sensitive (number_of_columns_entry, FALSE);
+        GtkWidget *number_of_rows_entry = lookup_widget (GTK_WIDGET (widget),
+                "number_of_rows_entry");
+        gtk_entry_set_text (GTK_WIDGET (number_of_rows_entry), "2");
+        gtk_widget_set_sensitive (number_of_rows_entry, FALSE);
+        GtkWidget *count_x_entry = lookup_widget (GTK_WIDGET (widget),
+                "count_x_entry");
+        gtk_entry_set_text (GTK_WIDGET (count_x_entry), "");
+        gtk_widget_set_sensitive (count_x_entry, TRUE);
+        GtkWidget *count_y_entry = lookup_widget (GTK_WIDGET (widget),
+                "count_y_entry");
+        gtk_entry_set_text (GTK_WIDGET (count_y_entry), "");
+        gtk_widget_set_sensitive (count_y_entry, FALSE);
+        GtkWidget *number_1_position_entry = lookup_widget (GTK_WIDGET (widget),
+                "number_1_position_entry");
+        gtk_combo_box_set_active (GTK_WIDGET (number_1_position_entry), 1);
+        gtk_widget_set_sensitive (number_1_position_entry, FALSE);
+
+        /* Widgets on tab 3 "Thermal Pad" */
+        gui_constraints_disable_thermal_tab_widgets (widget);
+
+        /* Widgets on tab 5 "Heel & Toe goals" */
+        gui_constraints_disable_heel_and_toe_goals_tab_widgets (widget);
+}
+
+
+/*!
+ * \brief Set GUI constraints for the CON-HDR package type.
+ */
+int
+gui_constraints_set_con_hdr (GtkWidget *widget)
+{
+        /* Widgets on tab 1 "Footprint" */
+        GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
+                "package_is_radial_checkbutton");
+        gtk_toggle_button_set_active (package_is_radial_checkbutton, FALSE);
+        gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
+
+        /* Widgets on tab 2 "Pins/Pads" */
+        GtkWidget *number_of_columns_entry = lookup_widget (GTK_WIDGET (widget),
+                "number_of_columns_entry");
+        gtk_entry_set_text (GTK_WIDGET (number_of_columns_entry), "");
+        gtk_widget_set_sensitive (number_of_columns_entry, FALSE);
+        GtkWidget *number_of_rows_entry = lookup_widget (GTK_WIDGET (widget),
+                "number_of_rows_entry");
+        gtk_entry_set_text (GTK_WIDGET (number_of_rows_entry), "");
+        gtk_widget_set_sensitive (number_of_rows_entry, TRUE);
+        GtkWidget *count_x_entry = lookup_widget (GTK_WIDGET (widget),
+                "count_x_entry");
+        gtk_entry_set_text (GTK_WIDGET (count_x_entry), "");
+        gtk_widget_set_sensitive (count_x_entry, TRUE);
+        GtkWidget *count_y_entry = lookup_widget (GTK_WIDGET (widget),
+                "count_y_entry");
+        gtk_entry_set_text (GTK_WIDGET (count_y_entry), "");
+        gtk_widget_set_sensitive (count_y_entry, FALSE);
+        GtkWidget *number_1_position_entry = lookup_widget (GTK_WIDGET (widget),
+                "number_1_position_entry");
+        gtk_combo_box_set_active (GTK_WIDGET (number_1_position_entry), 1);
+        gtk_widget_set_sensitive (number_1_position_entry, FALSE);
+
+        /* Widgets on tab 3 "Thermal Pad" */
+        gui_constraints_disable_thermal_tab_widgets (widget);
+
+        /* Widgets on tab 5 "Heel & Toe goals" */
+        gui_constraints_disable_heel_and_toe_goals_tab_widgets (widget);
+}
+
+
+/*!
  * \brief Set GUI constraints for the DIP package type.
  */
 int
@@ -669,6 +757,9 @@ number_of_pins_has_changed (GtkWidget *widget)
                         break;
                 case CAPMP :
                         number_of_pins = 2;
+                        break;
+                case CON-HDR :
+                        number_of_pins = number_of_rows * count_x;
                         break;
                 case DIL :
                         number_of_pins = number_of_columns * number_of_rows;
@@ -1676,6 +1767,18 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                 all_entries_to_default_sensitivity (combobox);
                 gui_constraints_set_smt (combobox);
                 package_type = CAPM;
+                return;
+        }
+        else if (!strcmp (footprint_type, "CON-DIL"))
+        {
+                package_type = CON-DIL;
+                all_entries_to_default_sensitivity (combobox);
+                return;
+        }
+        else if (!strcmp (footprint_type, "CON-HDR"))
+        {
+                package_type = CON-HDR;
+                all_entries_to_default_sensitivity (combobox);
                 return;
         }
         else if (!strcmp (footprint_type, "DIL"))
