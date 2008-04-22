@@ -31,9 +31,12 @@ enum packages
         CAPC, /*!< Capacitor, chip package. */
         CAPM, /*!< Capacitor, molded, non-polarized package. */
         CAPMP, /*!< Capacitor, molded, polarized package. */
+        CON_DIL, /*!< Connector package dual inline package numbering scheme. */
+        CON_DIP, /*!< Connector package with dual inline numbering scheme. */
+        CON_HDR, /*!< Connector package with header numbering scheme. */
+        DIL, /*!< Dual inline package. */
         DIOM, /*!< Diode, molded package. */
         DIOMELF, /*!< Diode, MELF package. */
-        DIL, /*!< Dual inline package. */
         DIP, /*!< Dual inline package. */
         DO, /*!< Diode outline package. */
         INDC, /*!< Inductor, chip package. */
@@ -965,7 +968,7 @@ write_footprint_dip ()
                                 multiplier * (-pitch_x + pad_length - pad_width) / 2.0, /* x0 coordinate */
                                 multiplier * ((((-count_y - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
                                 multiplier * (-pitch_x - pad_length + pad_width) / 2.0, /* x1 coordinate */
-                                multiplier * ((((-count_y - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
+                                multiplier * ((((-count_y - 1) / 2.0) + 1 + i) * pitch_y), /* y1-coordinate */
                                 multiplier * pad_width, /* width of the pad */
                                 multiplier * pad_clearance, /* clearance */
                                 multiplier * (pad_width + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
