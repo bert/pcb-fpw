@@ -754,7 +754,13 @@ number_of_pins_has_changed (GtkWidget *widget)
                 case CAPMP :
                         number_of_pins = 2;
                         break;
-                case CON-HDR :
+                case CON_DIL :
+                        number_of_pins = number_of_rows * count_x;
+                        break;
+                case CON_DIP :
+                        number_of_pins = number_of_rows * count_x;
+                        break;
+                case CON_HDR :
                         number_of_pins = number_of_rows * count_x;
                         break;
                 case DIL :
