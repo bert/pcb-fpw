@@ -1187,7 +1187,7 @@ write_footprint_dip ()
                 (
                         pin_number, /* pin number */
                         pin_pad_name, /* pin name */
-                        multiplier * - pitch_x / 2.0, /* x0 coordinate */
+                        multiplier * (-pitch_x / 2.0), /* x0 coordinate */
                         multiplier * ((((-count_y - 1) / 2.0) +1 + i) * pitch_y), /* y0-coordinate */
                         multiplier * pad_diameter, /* width of the annulus ring (pad) */
                         multiplier * pad_clearance, /* clearance */
