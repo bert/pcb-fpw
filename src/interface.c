@@ -416,8 +416,9 @@ create_pcb_gfpw (void)
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CAPC"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CAPM"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CAPMP"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CON-DIL"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CON-HDR"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CON_DIL"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CON_DIP"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CON_HDR"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("DIL"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("DIOM"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("DIOMELF"));
