@@ -1771,19 +1771,19 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                 package_type = CAPM;
                 return;
         }
-        else if (!strcmp (footprint_type, "CON-DIL"))
+        else if (!strcmp (footprint_type, "CON_DIL"))
         {
                 package_type = CON_DIL;
                 all_entries_to_default_sensitivity (combobox);
                 return;
         }
-        else if (!strcmp (footprint_type, "CON-DIP"))
+        else if (!strcmp (footprint_type, "CON_DIP"))
         {
                 package_type = CON_DIP;
                 all_entries_to_default_sensitivity (combobox);
                 return;
         }
-        else if (!strcmp (footprint_type, "CON-HDR"))
+        else if (!strcmp (footprint_type, "CON_HDR"))
         {
                 package_type = CON_HDR;
                 all_entries_to_default_sensitivity (combobox);
