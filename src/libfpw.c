@@ -824,8 +824,8 @@ write_footprint_bga ()
 /*!
  * \brief Write a CON-DIL pin through hole footprint.
  *
- * The pin/pad numbering scheme of the CON-DIP package is:
- * 5 6 7 8
+ * The pin/pad numbering scheme of the CON-DIP package is: \n
+ * 5 6 7 8 \n
  * 1 2 3 4
  */
 int
@@ -1028,8 +1028,8 @@ write_footprint_con_dil ()
 /*!
  * \brief Write a CON-DIP pin through hole footprint.
  *
- * The pin/pad numbering scheme of the CON-DIP package is:
- * 8 7 6 5
+ * The pin/pad numbering scheme of the CON-DIP package is: \n
+ * 8 7 6 5 \n
  * 1 2 3 4
  */
 int
