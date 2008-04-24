@@ -749,7 +749,7 @@ write_footprint_bga ()
         for (i = 0; (i < number_of_rows); i++)
         /* one row at a time [A .. ZZ ..] etc.
          * where i is one or more letters of the alphabet,
-         * excluding "I", "O", "Q" ans "S" */
+         * excluding "I", "O", "Q", "S" and "Z" */
         {
                 for (j = 0; (j < number_of_columns); j++)
                 /* all columns o a row [1 .. n]
@@ -1514,7 +1514,7 @@ write_footprint_pga ()
         for (i = 0; (i < number_of_rows); i++)
         /* one row at a time [A .. ZZ ..] etc.
          * where i is one or more letters of the alphabet,
-         * excluding "I", "O", "Q" ans "S" */
+         * excluding "I", "O", "Q", "S" and "Z" */
         {
                 for (j = 0; (j < number_of_columns); j++)
                 /* all columns o a row [1 .. n]
