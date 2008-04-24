@@ -322,6 +322,7 @@ read_footprintwizard_file()
         fscanf (fpw, "%s\n", footprint_dist_license);
         fscanf (fpw, "%s\n", footprint_use_license);
         fscanf (fpw, "%s\n", footprint_status);
+        fscanf (fpw, "%d\n", attributes_in_footprint);
         fscanf (fpw, "%d\n", number_of_pins);
         fscanf (fpw, "%d\n", number_of_columns);
         fscanf (fpw, "%d\n", number_of_rows);
@@ -378,6 +379,7 @@ write_attributes
         fprintf (fp, "\tAttribute(\"dist-license\" \"%s\")\n", footprint_dist_license);
         fprintf (fp, "\tAttribute(\"use-license\" \"%s\")\n", footprint_use_license);
         fprintf (fp, "\tAttribute(\"status\" \"%s\")\n", footprint_status);
+        fprintf (fp, "\tAttribute(\"attributes in footprint\" \"%d\")\n", attributes_in_footprint);
         fprintf (fp, "\tAttribute(\"package body length\" \"%d\")\n", (int) package_body_length);
         fprintf (fp, "\tAttribute(\"package body width\" \"%d\")\n", (int) package_body_width);
         fprintf (fp, "\tAttribute(\"package height\" \"%d\")\n", (int) package_body_height);
@@ -3256,6 +3258,7 @@ write_footprintwizard_file()
         fprintf (fpw, "%s\n", footprint_dist_license);
         fprintf (fpw, "%s\n", footprint_use_license);
         fprintf (fpw, "%s\n", footprint_status);
+        fprintf (fpw, "%d\n", attributes_in_footprint);
         fprintf (fpw, "%d\n", number_of_pins);
         fprintf (fpw, "%d\n", number_of_columns);
         fprintf (fpw, "%d\n", number_of_rows);
