@@ -1259,66 +1259,30 @@ write_footprint_dip ()
         }
         /* Determine (extreme) courtyard dimensions based on pin/pad
          * properties */
-        if (pad_diameter > pad_length)
-        {
-                xmin = multiplier *
+        xmin = multiplier *
                 (
                         (-pitch_x / 2.0) -
-                        (pad_diameter / 2.0) -
+                        (((pad_diameter > pad_length) ? pad_diameter : pad_length) / 2.0) -
                         pad_solder_mask_clearance
                 );
-                xmax = multiplier *
+        xmax = multiplier *
                 (
                         (pitch_x / 2.0) +
-                        (pad_diameter / 2.0) +
+                        (((pad_diameter > pad_length) ? pad_diameter : pad_length) / 2.0) +
                         pad_solder_mask_clearance
                 );
-        }
-        else
-        {
-                xmin = multiplier *
-                (
-                        (-pitch_x / 2.0) -
-                        (pad_length / 2.0) -
-                        pad_solder_mask_clearance
-                );
-                xmax = multiplier *
-                (
-                        (pitch_x / 2.0) +
-                        (pad_length / 2.0) +
-                        pad_solder_mask_clearance
-                );
-        }
-        if (pad_diameter > pad_width)
-        {
-                ymin = multiplier *
+        ymin = multiplier *
                 (
                         ((((-count_y - 1) / 2.0) + 1) * pitch_y) -
-                        (pad_diameter / 2.0) -
+                        (((pad_diameter > pad_width) ? pad_diameter : pad_width) / 2.0) -
                         pad_solder_mask_clearance
                 );
-                ymax = multiplier *
+        ymax = multiplier *
                 (
                         (((count_y - 1) / 2.0) * pitch_y) +
-                        (pad_diameter / 2.0) +
+                        (((pad_diameter > pad_width) ? pad_diameter : pad_width) / 2.0) +
                         pad_solder_mask_clearance
                 );
-        }
-        else
-        {
-                ymin = multiplier *
-                (
-                        ((((-count_y - 1) / 2.0) + 1) * pitch_y) -
-                        (pad_width / 2.0) -
-                        pad_solder_mask_clearance
-                );
-                ymax = multiplier *
-                (
-                        (((count_y - 1) / 2.0) * pitch_y) +
-                        (pad_width / 2.0) +
-                        pad_solder_mask_clearance
-                );
-        }
         /* Determine (extreme) courtyard dimensions based on package
          * properties */
         if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
