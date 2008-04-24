@@ -855,66 +855,30 @@ write_footprint_con_dil ()
         }
         /* Determine (extreme) courtyard dimensions based on pin/pad
          * properties */
-        if (pad_diameter > pad_length)
-        {
-                xmin = multiplier *
+        xmin = multiplier *
                 (
-                        (((-count_x + 1) / 2.0) * pitch_x) -
-                        (pad_diameter / 2.0) -
+                        (((-number_of_columns + 1) / 2.0) * pitch_x) -
+                        (((pad_diameter > pad_length) ? pad_diameter : pad_length) / 2.0) -
                         pad_solder_mask_clearance
                 );
-                xmax = multiplier *
+        xmax = multiplier *
                 (
-                        (((count_x - 1) / 2.0) * pitch_x) +
-                        (pad_diameter / 2.0) +
+                        (((number_of_columns - 1) / 2.0) * pitch_x) +
+                        (((pad_diameter > pad_length) ? pad_diameter : pad_length) / 2.0) +
                         pad_solder_mask_clearance
                 );
-        }
-        else
-        {
-                xmin = multiplier *
-                (
-                        (((-count_x + 1) / 2.0) * pitch_x) -
-                        (pad_length / 2.0) -
-                        pad_solder_mask_clearance
-                );
-                xmax = multiplier *
-                (
-                        (((count_x - 1) / 2.0) * pitch_x) +
-                        (pad_length / 2.0) +
-                        pad_solder_mask_clearance
-                );
-        }
-        if (pad_diameter > pad_width)
-        {
-                ymin = multiplier *
+        ymin = multiplier *
                 (
                         (-pitch_y / 2.0) -
-                        (pad_diameter / 2.0) -
+                        (((pad_diameter > pad_width) ? pad_diameter : pad_width) / 2.0) -
                         pad_solder_mask_clearance
                 );
-                ymax = multiplier *
+        ymax = multiplier *
                 (
                         (pitch_y / 2.0) +
-                        (pad_diameter / 2.0) +
+                        (((pad_diameter > pad_width) ? pad_diameter : pad_width) / 2.0) +
                         pad_solder_mask_clearance
                 );
-        }
-        else
-        {
-                ymin = multiplier *
-                (
-                        (-pitch_y / 2.0) -
-                        (pad_width / 2.0) -
-                        pad_solder_mask_clearance
-                );
-                ymax = multiplier *
-                (
-                        (pitch_y / 2.0) +
-                        (pad_width / 2.0) +
-                        pad_solder_mask_clearance
-                );
-        }
         /* Determine (extreme) courtyard dimensions based on package
          * properties */
         if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
@@ -940,7 +904,7 @@ write_footprint_con_dil ()
         y_text = (ymin - 10000.0); /* already in mil/100 */
         write_element_header (x_text, y_text);
         /* Write pin and/or pad entities */
-        for (i = 0; (i < count_x); i++)
+        for (i = 0; (i < number_of_columns); i++)
         {
                 pin_number = 1 + i;
                 if (pin1_square && (pin_number == 1))
@@ -951,7 +915,7 @@ write_footprint_con_dil ()
                 (
                         pin_number, /* pin number */
                         pin_pad_name, /* pin name */
-                        multiplier * ((((-count_x - 1) / 2.0) +1 + i) * pitch_x), /* x0-coordinate */
+                        multiplier * ((((-number_of_columns - 1) / 2.0) +1 + i) * pitch_x), /* x0-coordinate */
                         multiplier * (pitch_y / 2.0), /* y0 coordinate */
                         multiplier * pad_diameter, /* width of the annulus ring (pad) */
                         multiplier * pad_clearance, /* clearance */
@@ -969,9 +933,9 @@ write_footprint_con_dil ()
                         (
                                 pin_number, /* pad number = pin_number */
                                 pin_pad_name, /* pad name */
-                                multiplier * ((((-count_x - 1) / 2.0) + 1 + i) * pitch_x), /* x0-coordinate */
+                                multiplier * ((((-number_of_columns - 1) / 2.0) + 1 + i) * pitch_x), /* x0-coordinate */
                                 multiplier * ((pitch_y + pad_length - pad_width) / 2.0), /* y0 coordinate */
-                                multiplier * ((((-count_x - 1) / 2.0) + 1 + i) * pitch_x), /* x1-coordinate */
+                                multiplier * ((((-number_of_columns - 1) / 2.0) + 1 + i) * pitch_x), /* x1-coordinate */
                                 multiplier * ((pitch_y - pad_length + pad_width) / 2.0), /* y1 coordinate */
                                 multiplier * pad_length, /* width of the pad */
                                 multiplier * pad_clearance, /* clearance */
@@ -979,7 +943,7 @@ write_footprint_con_dil ()
                                 pin_pad_flags /* flags */
                         );
                 }
-                pin_number = count_x + 1 + i;
+                pin_number = number_of_columns + 1 + i;
                 if (pin1_square && (pin_number == 1))
                         pin_pad_flags = g_strdup ("square");
                 else
@@ -988,7 +952,7 @@ write_footprint_con_dil ()
                 (
                         pin_number, /* pin number */
                         pin_pad_name, /* pin name */
-                        multiplier * ((((-count_x - 1) / 2.0) + 1 + i) * pitch_x), /* x0-coordinate */
+                        multiplier * ((((-number_of_columns - 1) / 2.0) + 1 + i) * pitch_x), /* x0-coordinate */
                         multiplier * (-pitch_y / 2.0), /* y0 coordinate */
                         multiplier * pad_diameter, /* width of the annulus ring (pad) */
                         multiplier * pad_clearance, /* clearance */
@@ -1006,9 +970,9 @@ write_footprint_con_dil ()
                         (
                                 pin_number, /* pad number = pin_number*/
                                 pin_pad_name, /* pad name */
-                                multiplier * ((((-count_x - 1) / 2.0) + 1 + i) * pitch_x), /* x0-coordinate */
+                                multiplier * ((((-number_of_columns - 1) / 2.0) + 1 + i) * pitch_x), /* x0-coordinate */
                                 multiplier * ((-pitch_y - pad_length + pad_width) / 2.0), /* y0 coordinate */
-                                multiplier * ((((-count_x - 1) / 2.0) + 1 + i) * pitch_x), /* x1-coordinate */
+                                multiplier * ((((-number_of_columns - 1) / 2.0) + 1 + i) * pitch_x), /* x1-coordinate */
                                 multiplier * ((-pitch_y + pad_length - pad_width) / 2.0), /* y1 coordinate */
                                 multiplier * pad_length, /* width of the pad */
                                 multiplier * pad_clearance, /* clearance */
