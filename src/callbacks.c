@@ -412,7 +412,7 @@ gui_constraints_set_con_dil (GtkWidget *widget)
         GtkWidget *number_of_columns_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_columns_entry");
         gtk_entry_set_text (GTK_WIDGET (number_of_columns_entry), "");
-        gtk_widget_set_sensitive (number_of_columns_entry, FALSE);
+        gtk_widget_set_sensitive (number_of_columns_entry, TRUE);
         GtkWidget *number_of_rows_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_rows_entry");
         gtk_entry_set_text (GTK_WIDGET (number_of_rows_entry), "2");
@@ -420,14 +420,14 @@ gui_constraints_set_con_dil (GtkWidget *widget)
         GtkWidget *count_x_entry = lookup_widget (GTK_WIDGET (widget),
                 "count_x_entry");
         gtk_entry_set_text (GTK_WIDGET (count_x_entry), "");
-        gtk_widget_set_sensitive (count_x_entry, TRUE);
+        gtk_widget_set_sensitive (count_x_entry, FALSE);
         GtkWidget *count_y_entry = lookup_widget (GTK_WIDGET (widget),
                 "count_y_entry");
         gtk_entry_set_text (GTK_WIDGET (count_y_entry), "");
         gtk_widget_set_sensitive (count_y_entry, FALSE);
         GtkWidget *number_1_position_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_1_position_entry");
-        gtk_combo_box_set_active (GTK_WIDGET (number_1_position_entry), 1);
+        gtk_combo_box_set_active (GTK_WIDGET (number_1_position_entry), 3);
         gtk_widget_set_sensitive (number_1_position_entry, FALSE);
 
         /* Widgets on tab 3 "Thermal Pad" */
@@ -1773,8 +1773,9 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         }
         else if (!strcmp (footprint_type, "CON_DIL"))
         {
-                package_type = CON_DIL;
                 all_entries_to_default_sensitivity (combobox);
+                gui_constraints_set_con_dil (combobox);
+                package_type = CON_DIL;
                 return;
         }
         else if (!strcmp (footprint_type, "CON_DIP"))
