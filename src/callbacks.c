@@ -2422,9 +2422,31 @@ on_pitch_y_entry_changed               (GtkEditable     *editable,
 /*!
  * \brief The "Refresh" button is clicked.
  *
- * \todo - create a pixmap of the footprint based on the values in the entry
+ * - create a pixmap of the footprint based on the values in the entry
  * widgets.
- * \todo - (re)load the preview image.
+ *
+ * \todo - create and (re)load the preview image.
+ *
+ * There are several ways to create a preview image of the footprint based on
+ * the values entered in the entries:\n
+ * <ol>
+ * <li>Copy the method as in the pcb pinout preview.\n
+ * Advantage: proven functionality in pcb.\n
+ * Disadvantage: this means including a lot of code from pcb.\n
+ * <li>Invoke pcb to create a picture, and subsequent load that picture into
+ * the preview drawing area.\n
+ * Advantage: proven functionality in pcb.\n
+ * Disadvantage: this will make the user wait, and this will eventually
+ * become a showstopper.\n
+ * <li>Change pcb-fpw into a plug-in.\n
+ * Advantage: all pcb functionality is at hand.\n
+ * Disadvantage: the gtk approach will not work on the lesstif GUI.\n
+ * <li>Make an inbuilt renderer for drawing footprints inside pcb-fpw.\n
+ * Advantage: a renderer would keep pcb-fpw independant of whatever GUI is
+ * used in pcb itself, actually pcb-fpw itself would have to draw on a
+ * canvas, regardless if pcb is installed/available or not.\n
+ * Disadvantage: a lot of code to duplicate, modify and maintain.\n
+ * </ol>
  */
 void
 on_refresh_button_clicked              (GtkButton       *button,
