@@ -1125,6 +1125,20 @@ on_Z2_radiobutton_toggled              (GtkToggleButton *togglebutton,
 
 
 /*!
+ * \brief The "add attributes to footprint" checkbutton is toggled.
+ *
+ * - get active state.
+ * - store in the \c attributes_in_footprint variable (global).
+ */
+void
+on_add_attribs_checkbutton_toggled     (GtkToggleButton *togglebutton,
+                                        gpointer         user_data)
+{
+        attributes_in_footprint = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
+}
+
+
+/*!
  * \brief The "Clear" button is clicked.
  *
  * - clear all entries or set entries which have a default values to that

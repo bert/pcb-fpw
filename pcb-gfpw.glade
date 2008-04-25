@@ -364,7 +364,7 @@ Confirmed by peers (stable)</property>
 			  <child>
 			    <widget class="GtkTable" id="footprint_table">
 			      <property name="visible">True</property>
-			      <property name="n_rows">9</property>
+			      <property name="n_rows">10</property>
 			      <property name="n_columns">2</property>
 			      <property name="homogeneous">False</property>
 			      <property name="row_spacing">0</property>
@@ -542,30 +542,6 @@ TO220
 				  <property name="right_attach">1</property>
 				  <property name="top_attach">1</property>
 				  <property name="bottom_attach">2</property>
-				  <property name="x_options">fill</property>
-				  <property name="y_options"></property>
-				</packing>
-			      </child>
-
-			      <child>
-				<widget class="GtkCheckButton" id="package_is_radial_checkbutton">
-				  <property name="visible">True</property>
-				  <property name="tooltip" translatable="yes">Check for a radial package</property>
-				  <property name="can_focus">True</property>
-				  <property name="label" translatable="yes">Radial package </property>
-				  <property name="use_underline">True</property>
-				  <property name="relief">GTK_RELIEF_NORMAL</property>
-				  <property name="focus_on_click">True</property>
-				  <property name="active">False</property>
-				  <property name="inconsistent">False</property>
-				  <property name="draw_indicator">True</property>
-				  <signal name="toggled" handler="on_package_is_radial_checkbutton_toggled" last_modification_time="Fri, 19 Oct 2007 17:11:26 GMT"/>
-				</widget>
-				<packing>
-				  <property name="left_attach">0</property>
-				  <property name="right_attach">1</property>
-				  <property name="top_attach">8</property>
-				  <property name="bottom_attach">9</property>
 				  <property name="x_options">fill</property>
 				  <property name="y_options"></property>
 				</packing>
@@ -822,6 +798,54 @@ TO220
 				  <property name="right_attach">2</property>
 				  <property name="top_attach">3</property>
 				  <property name="bottom_attach">4</property>
+				  <property name="y_options"></property>
+				</packing>
+			      </child>
+
+			      <child>
+				<widget class="GtkCheckButton" id="add_attribs_checkbutton">
+				  <property name="visible">True</property>
+				  <property name="tooltip" translatable="yes">Check to add attributes to the footprint.</property>
+				  <property name="can_focus">True</property>
+				  <property name="label" translatable="yes">Add attributes to footprint</property>
+				  <property name="use_underline">True</property>
+				  <property name="relief">GTK_RELIEF_NORMAL</property>
+				  <property name="focus_on_click">True</property>
+				  <property name="active">False</property>
+				  <property name="inconsistent">False</property>
+				  <property name="draw_indicator">True</property>
+				  <signal name="toggled" handler="on_add_attribs_checkbutton_toggled" last_modification_time="Fri, 25 Apr 2008 19:15:26 GMT"/>
+				</widget>
+				<packing>
+				  <property name="left_attach">0</property>
+				  <property name="right_attach">2</property>
+				  <property name="top_attach">9</property>
+				  <property name="bottom_attach">10</property>
+				  <property name="x_options">fill</property>
+				  <property name="y_options"></property>
+				</packing>
+			      </child>
+
+			      <child>
+				<widget class="GtkCheckButton" id="package_is_radial_checkbutton">
+				  <property name="visible">True</property>
+				  <property name="tooltip" translatable="yes">Check for a radial package</property>
+				  <property name="can_focus">True</property>
+				  <property name="label" translatable="yes">Radial package </property>
+				  <property name="use_underline">True</property>
+				  <property name="relief">GTK_RELIEF_NORMAL</property>
+				  <property name="focus_on_click">True</property>
+				  <property name="active">False</property>
+				  <property name="inconsistent">False</property>
+				  <property name="draw_indicator">True</property>
+				  <signal name="toggled" handler="on_package_is_radial_checkbutton_toggled" last_modification_time="Fri, 19 Oct 2007 17:11:26 GMT"/>
+				</widget>
+				<packing>
+				  <property name="left_attach">0</property>
+				  <property name="right_attach">2</property>
+				  <property name="top_attach">8</property>
+				  <property name="bottom_attach">9</property>
+				  <property name="x_options">fill</property>
 				  <property name="y_options"></property>
 				</packing>
 			      </child>
