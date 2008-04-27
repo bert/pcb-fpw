@@ -101,7 +101,10 @@ draw_brush (GtkWidget *widget, gdouble x, gdouble y)
 int
 main (int argc, char** argv)
 {
+        gtk_init (&argc, &argv);
         GtkWindow  *window = NULL;
+        window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+        gtk_window_set_title (window, "pcb-fpw preview");
         /* we probably have to look up the existing widget/window here */
 
         /* Create a drawing area */
@@ -118,6 +121,9 @@ main (int argc, char** argv)
         gtk_widget_set_events (drawing_area,
                 GDK_EXPOSURE_MASK
                 | GDK_LEAVE_NOTIFY_MASK);
+        gtk_container_add (GTK_CONTAINER (window), drawing_area);
+        gtk_widget_show (window);
+        gtk_main ();
         return 0;
 }
 
