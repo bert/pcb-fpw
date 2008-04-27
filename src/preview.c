@@ -27,15 +27,17 @@
 #include <gtk/gtk.h>
 #include <glib.h>
 
-/* Backing pixmap for drawing area */
 GdkPixmap *pixmap = NULL;
+        /*!< Backing pixmap for drawing area */
 
 GtkDrawingArea *drawing_area = NULL;
-gint width = 100;
-gint height = 100;
+gint width = 200;
+gint height = 200;
 gint depth = -1;
 
-/* Create a new backing pixmap of the appropriate size */
+/*!
+ * \brief Create a new backing pixmap of the appropriate size
+ */
 static gboolean
 configure_event (GtkWidget *widget, GdkEventConfigure *event)
 {
@@ -55,8 +57,19 @@ configure_event (GtkWidget *widget, GdkEventConfigure *event)
         return TRUE;
 }
 
+/*!
+ * \brief Delete the window
+ */
+static gboolean
+delete_event (GtkWidget *widget, GdkEvent *event)
+{
+        gtk_main_quit ();
+}
 
-/* Redraw the screen from the backing pixmap */
+
+/*!
+ * \brief Redraw the screen from the backing pixmap
+ */
 static gboolean
 expose_event (GtkWidget *widget, GdkEventExpose *event)
 {
@@ -73,7 +86,9 @@ expose_event (GtkWidget *widget, GdkEventExpose *event)
 }
 
 
-/* Draw a white rectangle on the screen */
+/*!
+ * \brief Draw a white rectangle on the screen
+ */
 static void
 draw_brush (GtkWidget *widget, gdouble x, gdouble y)
 {
@@ -105,11 +120,17 @@ main (int argc, char** argv)
         GtkWindow  *window = NULL;
         window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
         gtk_window_set_title (window, "pcb-fpw preview");
-        /* we probably have to look up the existing widget/window here */
+        /* We probably have to look up the existing widget/window here */
 
+        /* Set signals for the window */
+        gtk_signal_connect (GTK_OBJECT (window),
+                "delete_event",
+                (GtkSignalFunc) delete_event,
+                NULL);
         /* Create a drawing area */
         drawing_area = gtk_drawing_area_new ();
         gtk_widget_set_size_request (drawing_area, width, height);
+        /* Set signals for the drawing area */
         gtk_signal_connect (GTK_OBJECT (drawing_area),
                 "expose_event",
                 (GtkSignalFunc) expose_event,
@@ -121,8 +142,11 @@ main (int argc, char** argv)
         gtk_widget_set_events (drawing_area,
                 GDK_EXPOSURE_MASK
                 | GDK_LEAVE_NOTIFY_MASK);
+        /* Add the drawing area to the window container */
         gtk_container_add (GTK_CONTAINER (window), drawing_area);
+        /* Show the window */
         gtk_widget_show (window);
+        /* Enter the GTK main loop */
         gtk_main ();
         return 0;
 }
