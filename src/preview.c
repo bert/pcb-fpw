@@ -35,6 +35,33 @@ gint width = 200;
 gint height = 200;
 gint depth = -1;
 
+
+/*!
+ * \brief Draw a white rectangle on the screen
+ */
+static void
+draw_brush (GtkWidget *widget, gdouble x, gdouble y)
+{
+        GdkRectangle update_rect;
+        update_rect.x = x - 5;
+        update_rect.y = y - 5;
+        update_rect.width = 10;
+        update_rect.height = 10;
+        gdk_draw_rectangle (pixmap,
+                widget->style->black_gc,
+                TRUE,
+                update_rect.x,
+                update_rect.y,
+                update_rect.width,
+                update_rect.height);
+        gtk_widget_queue_draw_area (widget,
+                update_rect.x,
+                update_rect.y,
+                update_rect.width,
+                update_rect.height);
+}
+
+
 /*!
  * \brief Create a new backing pixmap of the appropriate size
  */
@@ -56,6 +83,7 @@ configure_event (GtkWidget *widget, GdkEventConfigure *event)
                        widget->allocation.height);
         return TRUE;
 }
+
 
 /*!
  * \brief Delete the window
@@ -86,33 +114,6 @@ expose_event (GtkWidget *widget, GdkEventExpose *event)
 }
 
 
-/*!
- * \brief Draw a white rectangle on the screen
- */
-static void
-draw_brush (GtkWidget *widget, gdouble x, gdouble y)
-{
-        GdkRectangle update_rect;
-
-        update_rect.x = x - 5;
-        update_rect.y = y - 5;
-        update_rect.width = 10;
-        update_rect.height = 10;
-        gdk_draw_rectangle (pixmap,
-                widget->style->black_gc,
-                TRUE,
-                update_rect.x,
-                update_rect.y,
-                update_rect.width,
-                update_rect.height);
-        gtk_widget_queue_draw_area (widget,
-                update_rect.x,
-                update_rect.y,
-                update_rect.width,
-                update_rect.height);
-}
-
-
 int
 main (int argc, char** argv)
 {
@@ -120,8 +121,6 @@ main (int argc, char** argv)
         GtkWindow  *window = NULL;
         window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
         gtk_window_set_title (window, "pcb-fpw preview");
-        /* We probably have to look up the existing widget/window here */
-
         /* Set signals for the window */
         gtk_signal_connect (GTK_OBJECT (window),
                 "delete_event",
@@ -151,3 +150,4 @@ main (int argc, char** argv)
         return 0;
 }
 
+/* EOF */
