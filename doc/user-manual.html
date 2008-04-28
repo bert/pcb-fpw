@@ -1,0 +1,59 @@
+<html>
+<title>pcb-fpw User Manual</title>
+<body>
+<h1>pcb-fpw User Manual.</h1>
+During the  startup of the application an "About ..." dialog appears, shortly 
+followed by the main window.<br>
+The main window of the program consists of five tabs with entry fields and a 
+preview drawing area (when and if implemented), and a button bar with five 
+buttons on the lower part of the window.<br>
+<p>
+<img src="images/Screenshot-1.png">
+<p>
+The first tab with entries is named "Footprint" and can be used for the input 
+of general information about the footprint.<br>
+At the first entry named "Type" one can start entering the footprint type by 
+selecting from a list, the program will guess for the prefix of the footprint 
+as the first couple of characters of the footprint name.<br>
+The second entry named "Name" is the name the actual footprint file wil have.<br>
+The footprint name should be eneterd without the ".fp" suffix.<br>
+<br>
+The program will also try to guess which entries are needed for this footprint 
+type and "grey out" the entries and checkbuttons which it thinks are not needed.
+<p>
+<img src="images/Screenshot-2.png">
+<p>
+The second tab is named "Pins/Pads" and should be used for the input of  
+information about the number and pattern of pins and/or pads, the shape and 
+clearances.<br>
+<p>
+<img src="images/Screenshot-3.png">
+<p>
+The third tab is named "Thermal pad" and can be used for an optional thermal 
+pad if the footprint type allows for such an option.<br>
+<p>
+<img src="images/Screenshot-4.png">
+<p>
+The fourth tab is named "Silkscreen" and can be used for the input of an 
+optional silkscreen to be drawn, such as package outline, pin/pad #1 marker 
+and/or courtyard.<br>
+<p>
+<img src="images/Screenshot-5.png">
+<p>
+The fifth and last tab is named "Heel & Toe goals".
+This tab is for the input of heel and toe parameters to allow for the creation
+of PLCC, SO, QFN or QFP packages.<br>
+<p>
+The five buttons in the lower part will have the following functions:<br>
+<ul>
+<li>"Close" to exit the application.,<br>
+<li>"Clear" to empty all entry fields and reset all checkbuttons to the 
+default setting,<br>
+<li>        - "Open" to choose and read an existing footprintwizard file,<br>
+<li>        - "Save" to write the current values in the entries to a 
+footprintwizard file and to generate a footprint file,<br>
+<li>        - "Refresh" to refresh the preview area (when and if implemented).<br>
+</ul>
+<hr>
+</body>
+</html>
