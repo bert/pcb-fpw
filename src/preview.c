@@ -1,5 +1,3 @@
-
-
 /*!
  * \file preview.c
  * \author Copyright (C) 2008 by Bert Timmerman <bert.timmerman@xs4all.nl>
@@ -26,6 +24,7 @@
 #include <stdlib.h>
 #include <gtk/gtk.h>
 #include <glib.h>
+
 
 GdkPixmap *pixmap = NULL;
         /*!< Backing pixmap for drawing area */
