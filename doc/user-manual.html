@@ -29,7 +29,7 @@ The main window of the program consists of five tabs with entry fields and a
 preview drawing area (when and if implemented), and a button bar with five 
 buttons on the lower part of the window.<br>
 <p>
-<h2>The footprint tab:</h2>
+<h2>The "Footprint" tab:</h2>
 <p>
 <img src="images/Screenshot-1.png">
 <p>
@@ -137,11 +137,86 @@ and whatever other status you can think of.<br>
 <br>
 </ul>
 <p>
+<h2>The "Pins/Pads" tab:</h2>
+<p>
 <img src="images/Screenshot-2.png">
 <p>
-The second tab is named "Pins/Pads" and should be used for the input of  
+The second tab is named <b>"Pins/Pads"</b> and should be used for the input of  
 information about the number and pattern of pins and/or pads, the shape and 
 clearances.<br>
+On top is a group of entries for defining a <b>"Pattern"</b> of pins and/or 
+pads.<br>
+<ul>
+<li>The <b>"Total Pins and Pads"</b> entry is used for displaying the total 
+amount of pins and pads entered in other entries.<br>
+It is "greyed out" most of the time, and could have been a label widget as 
+well.<br>
+<br>
+<li>The <b>"Columns"</b> entry is used for entering the number of columns of 
+pins/pads in a footprint.<br>
+Example: the number of columns in a "PLCC" package is 2.<br>
+<br> 
+<li>The <b>"Rows"</b> entry is used for entering the number of rows of 
+pins/pads in a footprint.<br>
+Example: the number of rows in a "PLCC" package is 2.<br>
+<br> 
+<li>The <b>"Pitch X-direction"</b> entry is used for entering the pitch of the 
+pins/pads in the X-direction.<br>
+Example: the pitch in the X-direction (as in a row) for a "PLCC" package is 
+1.27 mm or 50 mil.<br>
+<br> 
+<li>The <b>"Pitch Y-direction"</b> entry is used for entering the pitch of the 
+pins/pads in the Y-direction.<br>
+Example: the pitch in the Y-direction (as in a column) for a "PGA" package is 
+2.54 mm or 100 mil.<br>
+<br> 
+<li>The <b>"Count X-direction"</b> entry is used for entering the number of  
+pins/pads on a row (the X-direction).<br>
+<br> 
+<li>The <b>"Count Y-direction"</b> entry is used for entering the number of 
+pins/pads on a column (the Y-direction).<br>
+<br> 
+<li>The <b>"Pin/pads #1 position"</b> entry is used for entering the location 
+of the #1 pin and/or pad of the package.<br>
+It contains pre-defined positions.<br>
+<br> 
+</ul>
+<p>
+The following group of entries <b>"Pins"</b> is used for the dimensions of 
+pins.<br>
+<ul>
+<li>The <b>"Pin pad diameter (D)"</b> entry is used for entering the outer 
+diameter of the annulus of the pin.<br>
+<br> 
+<li>The <b>"Pin drill diameter (d)"</b> entry is used for entering the inner 
+diameter of the annulus of the pin.<br>
+This is also known as the drill diameter.<br>
+<br> 
+<li>The <b>"Pin #1 square"</b> check button is used for selecting a round or a 
+square #1 pin.<br>
+<br> 
+</ul>
+<p>
+The last group of entries <b>"Pads"</b> is used for the dimensions of 
+pads.<br>
+<ul>
+<li>The <b>"Pad shape"</b> entry is used for selecting the shape of the 
+pad.<br>
+It contains pre-defined pad shapes.<br>
+<br> 
+<li>The <b>"Pad length (X)"</b> entry is used for entering the length of the 
+pad (in the X-direction).<br>
+<br> 
+<li>The <b>"Pad width (Y)"</b> entry is used for entering the width of the pad
+(in the Y-direction).<br>
+<br> 
+<li>The <b>"Pad clearance"</b> entry is used for entering the clearance between 
+the pad and other (conductive) copper traces or (polygon) surfaces.<br>
+<br> 
+<li>The <b>"Pad solder mask clearance"</b> entry is used for entering the 
+distance between the pad (copper) and the solder mask (solder resist).<br>
+<br> 
+</ul>
 <p>
 <img src="images/Screenshot-3.png">
 <p>
