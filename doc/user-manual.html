@@ -1,29 +1,141 @@
 <html>
-<title>pcb-fpw User Manual</title>
+<title>pcb-gfpw User Manual</title>
 <body>
-<h1>pcb-fpw User Manual.</h1>
+<h1>pcb-gfpw User Manual.</h1>
+<p>
+<h2>Intended usage:</h2>
+The pcb-fpw FootPrintWizard is what the name says it will be:
+a footprint wizard (a.k.a. footprint generator).<br>
+<br>
+pcb-fpw is not a footprint editor, therefor one can NOT load an existing 
+footprint file into pcb-fpw, make some changes and save it back to file, and 
+subsequent load the edited footprint file into pcb.<br>
+<p>
+The usage of pcb-fpw comes down to the following:<br>
+<ul>
+<li>Startup the application,
+<li>Fill the needed entries,
+<li>Check the preview widget (when and if this is implemented),
+<li>Save the footprint file.
+</ul>
+<p>
+<h2>Starting up:</h2>
 During the  startup of the application an "About ..." dialog appears, shortly 
 followed by the main window.<br>
+<p>
+<img src="images/Screenshot-about.png">
+<p>
 The main window of the program consists of five tabs with entry fields and a 
 preview drawing area (when and if implemented), and a button bar with five 
 buttons on the lower part of the window.<br>
 <p>
+<h2>The footprint tab:</h2>
+<p>
 <img src="images/Screenshot-1.png">
 <p>
-The first tab with entries is named "Footprint" and can be used for the input 
-of general information about the footprint.<br>
-At the entry named "Type" one can start entering the footprint type by 
-selecting from a list, the program will guess for the prefix of the footprint 
-as the first couple of characters of the footprint name.<br>
+The first tab with entries is named <b>"Footprint"</b> and can be used for the 
+input of general information about the footprint.<br>
+<ul>
+<li>At the entry named <b>"Type"</b> the footprint type is entered by 
+selecting a footprint type from a list, the program will guess for the prefix 
+of the footprint as the first couple of characters of the footprint name.<br>
 The pcb-fpw program will try to guess which entries are needed for this 
 footprint type and "grey out" the entries and checkbuttons which it thinks are 
 not needed.<br>
-The entry named "Name" will contain the name the actual footprint file wil 
-have.<br>
+<br>
+Note: the footprint types follow a "well known and standard" footprint 
+naming convention.<br>
+Disclaimer: only this part of the "well known and standard" naming convention 
+is used.<br>
+The actual data for creating footprints relies on vendor specific 
+datasheets (both method and content).<br>
+<br>
+<li>The entry named <b>"Name"</b> will contain the name that the actual 
+footprint file will get when the footprint is saved to disk.<br>
+Add characters here to complete the footprint name.<br>
+If the footprint name contains additional characters , changing the footprint 
+type will not update the prefix from the <b>"Type"</b> entry.<br>
 The footprint name should be entered without the ".fp" suffix.<br>
-From the entry named "Units" the units for the footprint dimensions can be 
-selected.<br>
+Note: this is a mandatory entry, leaving this entry empty or filled with a non 
+valid footprint name will <u>NOT</u> result in a footprint file when the 
+<b>"Save"</b> button is clicked.<br>
+<br>
+<li>In the entry named <b>"Units"</b> the units for the footprint dimensions 
+can be selected.<br>
 Currently only "mil/100", "mil" and "mm" are supported.<br>
+pcb-fpw will apply the chosen unit type for all dimensions entered in the 
+following entries.<br>
+Changing the units type will not change the following entries 
+automagickly, that is: if you switch the units type halfway the entries, you 
+will have to do the math yourself.<br>
+Note: this is a mandatory field, leaving this entry empty or filled with a non 
+valid unit type will <u>NOT</u> result in a footprint file when the 
+<b>"Save"</b> button is clicked.<br>
+<br>
+<li>The <b>"Refdes prefix"</b> entry can be used to add an optional reference 
+designator prefix to the footprint.<br>
+Note: the prefix must be entered without the question mark "?".<br>
+Example: "R" for a resistor.<br>
+<br>
+<li>The <b>"Value"</b> entry can be used to add an optional value to the 
+footprint.<br>
+Example: "100k" for the resistor mentioned above.<br>
+<br>
+<li>The <b>"Body length (X)"</b> entry is used for entering the length of the 
+package in the X-direction.<br>
+Note: this dimension is used for the silkscreen artwork when this is 
+checked on the fourth tab "Silkscreen".<br>
+<br>
+<li>The <b>"Body width (Y)"</b> entry is used for entering the width of the 
+package in the Y-direction.<br>
+Note: this dimension is used for the silkscreen artwork when this is 
+checked on the fourth tab "Silkscreen".<br>
+<br>
+<li>The <b>"Body heigth (Z)"</b> entry is used for entering the heigth of the 
+package in the Z-direction.<br>
+Note: this dimension is <u>NOT</u> used for the silkscreen artwork when this is 
+checked on the fourth tab "Silkscreen".<br>
+This dimension entry is here for future use of the height attribute of a 
+package.<br>
+<br>
+<li>The <b>"Radial package"</b> checkbutton can be used to indicate whether the 
+package has a circular outline as opposed to a rectangular outline.<br>
+Note: the default value for a package outline is a rectagular package for any 
+undefined package types entered in the <b>"Type"</b> entry and this checkbutton 
+not to be checked.<br>
+In all cases defined package types entered in the <b>"Type"</b> entry, pcb-fpw 
+follows the design rules for this package type.<br>
+<br>
+<li>The <b>"Add attributes to footprint"</b> checkbutton can be used to include
+all values in the entries, and the state of all check and toggle buttons as 
+attributes in the footprint file.<br>
+This is to allow for future reference, Design Rule Checking and whatever other 
+future purpose you can think of.<br>
+</ul>
+<br>
+Now follow some entries about the <b>"Author"</b> and licensing of the 
+footprint file.<br>
+<ul>
+<li>The <b>"Author"</b> entry can optionally contain your name and/or e-mail 
+address.<br>
+<br>
+<li>The <b>"Distribution license"</b> entry can be used to refer to the license under 
+which the footprint is released.<br>
+As pcb-fpw comes under the GPL this is a default value which can be changed as
+required.<br>
+<br>
+<li>The <b>"Use license"</b> entry can be used to specify the usage under which the 
+footprint may be used.<br>
+The default value is "unlimited" which can be changed, as required, to whatever 
+restrictions you want to impose on the usage.<br>
+Examples: "commercial", "non-commercial", "personal", ... <br>
+<br>
+<li>The <b>"Status"</b> entry can be used to specify the status of the footprint.<br>
+Predefined choices are: "Experimental", "Private (not published)", 
+"Public (released)", "Confirmed by peers (stable)", ... 
+and whatever other status you can think of.<br>
+<br>
+</ul>
 <p>
 <img src="images/Screenshot-2.png">
 <p>
@@ -50,13 +162,14 @@ of PLCC, SO, QFN or QFP packages.<br>
 <p>
 The five buttons in the lower part will have the following functions:<br>
 <ul>
-<li>"Close" to exit the application.,<br>
-<li>"Clear" to empty all entry fields and reset all checkbuttons to the 
+<li><b>"Close"</b>: to exit the application.,<br>
+<li><b>"Clear"</b>: to empty all entry fields and reset all checkbuttons to the 
 default setting,<br>
-<li>        - "Open" to choose and read an existing footprintwizard file,<br>
-<li>        - "Save" to write the current values in the entries to a 
+<li><b>"Open"</b>: to choose and read an existing footprintwizard file,<br>
+<li><b>"Save"</b>: to write the current values in the entries to a 
 footprintwizard file and to generate a footprint file,<br>
-<li>        - "Refresh" to refresh the preview area (when and if implemented).<br>
+<li><b>"Refresh"</b>: to refresh the preview area (when and if 
+implemented).<br>
 </ul>
 <hr>
 </body>
