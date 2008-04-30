@@ -3,15 +3,15 @@
 <body>
 <h1>pcb-gfpw User Manual.</h1>
 <p>
-<h2>Intended usage:</h2>
+<h2>Intended usage.</h2>
 The pcb-fpw FootPrintWizard is what the name says it will be:
 a footprint wizard (a.k.a. footprint generator).<br>
 <br>
 pcb-fpw is not a footprint editor, therefor one can NOT load an existing 
-footprint file into pcb-fpw, make some changes and save it back to file, and 
+footprint file into pcb-gfpw, make some changes and save it back to file, and 
 subsequent load the edited footprint file into pcb.<br>
 <p>
-The usage of pcb-fpw comes down to the following:<br>
+The usage of pcb-gfpw comes down to the following:<br>
 <ul>
 <li>Startup the application,
 <li>Fill the apropriate entries in:
@@ -29,7 +29,7 @@ by pressing the <b>"Refresh"</b> button,
 <hr>
 
 
-<h2>Starting up:</h2>
+<h2>Starting up.</h2>
 During the  startup of the application an <b>"About pcb-gfpw"</b> dialog appears, 
 shortly followed by the <b>"main window"</b>.<br>
 <p>
@@ -48,7 +48,7 @@ dialog.
 <hr>
 
 
-<h2>The "main window":</h2>
+<h2>The "main window".</h2>
 The main window of the program consists of five tabs with entry fields and a 
 preview drawing area (when and if implemented), and a button bar with five 
 buttons on the lower part of the window.<br>
@@ -59,7 +59,7 @@ the state of any checkbutton are changed and no saving has occurred.<br>
 <hr>
 
 
-<h2>The "Footprint" tab:</h2>
+<h2>The "Footprint" tab.</h2>
 <p>
 <img src="images/Screenshot-1.png">
 <p>
@@ -170,7 +170,7 @@ and whatever other status you can think of.<br>
 <hr>
 
 
-<h2>The "Pins/Pads" tab:</h2>
+<h2>The "Pins/Pads" tab.</h2>
 <p>
 <img src="images/Screenshot-2.png">
 <p>
@@ -253,7 +253,7 @@ distance between the pad (copper) and the solder mask (solder resist).<br>
 <hr>
 
 
-<h2>The "Thermal pad" tab:</h2>
+<h2>The "Thermal pad" tab.</h2>
 <p>
 <img src="images/Screenshot-3.png">
 <p>
@@ -281,11 +281,11 @@ resist).<br>
 <br> 
 </ul>
 <hr>
-<h2>The "Silkscreen" tab:</h2>
+<h2>The "Silkscreen" tab.</h2>
 <p>
 <img src="images/Screenshot-4.png">
 <p>
-The fourth tab is named "Silkscreen" and can be used for the input of an 
+The fourth tab is named <b>"Silkscreen"</b> and can be used for the input of an 
 optional silkscreen to be drawn, such as package outline, pin/pad #1 marker 
 and/or courtyard.<br>
 The first group of entries <b>"Package"</b> is used for the drawing of a 
@@ -302,19 +302,53 @@ thermal pad (in the Y-direction).<br>
 <br> 
 </ul>
 <hr>
-<h2>The "Heel & Toe goals" tab:</h2>
+<h2>The "Heel & Toe goals" tab.</h2>
 <p>
 <img src="images/Screenshot-5.png">
 <p>
-The fifth and last tab is named "Heel & Toe goals".
+The fifth and last tab is named <b>"Heel & Toe goals"</b>.<br>
+<br>
 This tab is for the input of heel and toe parameters to allow for the creation
 of PLCC, SO, QFN or QFP packages.<br>
+<br>
+The first group of entries <b>"Top to Bottom"</b> is used for entering the 
+distance between the top and bottom rows of pads.<br>
+<ul>
+<li>The <b>"Inner-Inner (G1)"</b> check button is used for activating the 
+"inner-inner" distance entry. This is also known as the "Heel to Heel" 
+distance.<br>
+<br> 
+<li>The <b>"Center-Center (C1)"</b> check button is used for activating the 
+"center-center" distance entry.<br>
+<br> 
+<li>The <b>"Outer-Outer (Z1)"</b> check button is used for activating the 
+"outer-outer" distance entry. This is also known as the "Toe to Toe" 
+distance.<br>
+<br> 
+</ul>
+The second group of entries <b>"Left to Right"</b> is used for entering the 
+distance between the left and right columns of pads.<br>
+<ul>
+<li>The <b>"Inner-Inner (G2)"</b> check button is used for activating the 
+"inner-inner" distance entry. This is also known as the "Heel to Heel" 
+distance.<br>
+<br> 
+<li>The <b>"Center-Center (C2)"</b> check button is used for activating the 
+"center-center" distance entry.<br>
+<br> 
+<li>The <b>"Outer-Outer (Z2)"</b> check button is used for activating the 
+"outer-outer" distance entry. This is also known as the "Toe to Toe" 
+distance.<br>
+<br> 
+</ul>
 <hr>
-<h2>The buttons:</h2>
+
+
+<h2>The buttons.</h2>
 <p>
 The five buttons in the lower part will have the following functions:<br>
 <ul>
-<li><b>"Close"</b>: to exit the application.,<br>
+<li><b>"Close"</b>: to exit the application,<br>
 <li><b>"Clear"</b>: to empty all entry fields and reset all checkbuttons to the 
 default setting,<br>
 <li><b>"Open"</b>: to choose and read an existing footprintwizard file,<br>
