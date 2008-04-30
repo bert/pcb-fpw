@@ -14,21 +14,51 @@ subsequent load the edited footprint file into pcb.<br>
 The usage of pcb-fpw comes down to the following:<br>
 <ul>
 <li>Startup the application,
-<li>Fill the needed entries,
-<li>Check the preview widget (when and if this is implemented),
-<li>Save the footprint file.
+<li>Fill the apropriate entries in:
+  <ul>
+  <li>The <b>"Footprint"</b> tab,
+  <li>The <b>"Pins/pads"</b> tab,
+  <li>The <b>"Thermal pad"</b> tab,
+  <li>The <b>"Silkscreen"</b> tab,
+  <li>The <b>"Heel & Toe goals"</b> tab,
+  </ul>
+<li>Check the footprint in the preview widget (when and if this is implemented)
+by pressing the <b>"Refresh"</b> button,
+<li>Save the footprint file by pressing the <b>"Save"</b> button.
 </ul>
-<p>
+<hr>
+
+
 <h2>Starting up:</h2>
-During the  startup of the application an "About ..." dialog appears, shortly 
-followed by the main window.<br>
+During the  startup of the application an <b>"About pcb-gfpw"</b> dialog appears, 
+shortly followed by the <b>"main window"</b>.<br>
 <p>
 <img src="images/Screenshot-about.png">
 <p>
+The <b>"About pcb-gfpw"</b> dialog contains the following buttons:<br>
+<ul>
+<li>The <b>"Credits"</b> button: clicking this button raises a popup dialog in 
+which the names of the authors or translators are given (select the tab of your 
+choice).
+<li>The <b>"License"</b> button: clicking this button raises a popup dialog in 
+which a message about the license is given.
+<li>The <b>"Close"</b> button: clicking this button closes the "About pcb-gfpw"
+dialog.
+</ul>
+<hr>
+
+
+<h2>The "main window":</h2>
 The main window of the program consists of five tabs with entry fields and a 
 preview drawing area (when and if implemented), and a button bar with five 
 buttons on the lower part of the window.<br>
-<p>
+The titlebar shows the name of a saved footprintwizard file or the text 
+"Unsaved fpw file" if no file has been saved.<br>
+An asterisk between brackets "[*]" is shown when the contents of any entry or 
+the state of any checkbutton are changed and no saving has occurred.<br>
+<hr>
+
+
 <h2>The "Footprint" tab:</h2>
 <p>
 <img src="images/Screenshot-1.png">
@@ -130,13 +160,16 @@ The default value is "unlimited" which can be changed, as required, to whatever
 restrictions you want to impose on the usage.<br>
 Examples: "commercial", "non-commercial", "personal", ... <br>
 <br>
-<li>The <b>"Status"</b> entry can be used to specify the status of the footprint.<br>
+<li>The <b>"Status"</b> entry can be used to specify the status of 
+the footprint.<br>
 Predefined choices are: "Experimental", "Private (not published)", 
 "Public (released)", "Confirmed by peers (stable)", ... 
 and whatever other status you can think of.<br>
 <br>
 </ul>
-<p>
+<hr>
+
+
 <h2>The "Pins/Pads" tab:</h2>
 <p>
 <img src="images/Screenshot-2.png">
@@ -144,7 +177,7 @@ and whatever other status you can think of.<br>
 The second tab is named <b>"Pins/Pads"</b> and should be used for the input of  
 information about the number and pattern of pins and/or pads, the shape and 
 clearances.<br>
-On top is a group of entries for defining a <b>"Pattern"</b> of pins and/or 
+The first group of entries is for defining a <b>"Pattern"</b> of pins and/or 
 pads.<br>
 <ul>
 <li>The <b>"Total Pins and Pads"</b> entry is used for displaying the total 
@@ -182,8 +215,8 @@ It contains pre-defined positions.<br>
 <br> 
 </ul>
 <p>
-The following group of entries <b>"Pins"</b> is used for the dimensions of 
-pins.<br>
+The second group of entries <b>"Pins"</b> is used for the dimensions of 
+pins (only).<br>
 <ul>
 <li>The <b>"Pin pad diameter (D)"</b> entry is used for entering the outer 
 diameter of the annulus of the pin.<br>
@@ -198,7 +231,7 @@ square #1 pin.<br>
 </ul>
 <p>
 The last group of entries <b>"Pads"</b> is used for the dimensions of 
-pads.<br>
+pads (only).<br>
 <ul>
 <li>The <b>"Pad shape"</b> entry is used for selecting the shape of the 
 pad.<br>
@@ -217,6 +250,10 @@ the pad and other (conductive) copper traces or (polygon) surfaces.<br>
 distance between the pad (copper) and the solder mask (solder resist).<br>
 <br> 
 </ul>
+<hr>
+
+
+<h2>The "Thermal pad" tab:</h2>
 <p>
 <img src="images/Screenshot-3.png">
 <p>
@@ -239,21 +276,41 @@ thermal pad (in the Y-direction).<br>
 the thermal pad and other (conductive) copper traces or (polygon) surfaces.<br>
 <br> 
 <li>The <b>"Pad solder mask clearance"</b> entry is used for entering the 
-distance between the thermal pad (copper) and the solder mask (solder resist).<br>
+distance between the thermal pad (copper) and the solder mask (solder 
+resist).<br>
 <br> 
 </ul>
+<hr>
+<h2>The "Silkscreen" tab:</h2>
 <p>
 <img src="images/Screenshot-4.png">
 <p>
 The fourth tab is named "Silkscreen" and can be used for the input of an 
 optional silkscreen to be drawn, such as package outline, pin/pad #1 marker 
 and/or courtyard.<br>
+The first group of entries <b>"Package"</b> is used for the drawing of a 
+artwork on the silkscreen.<br>
+<ul>
+<li>The <b>"Print package outline"</b> check button is used for selecting or 
+deselecting whether the footprint contains a package outline.<br>
+<br> 
+<li>The <b>"Pad #1 indicator"</b> check button is used for selecting or 
+deselecting whether the footprint contains a pin #1 indicator.<br>
+<br> 
+<li>The <b>"Line width"</b> entry is used for entering the width of the 
+thermal pad (in the Y-direction).<br>
+<br> 
+</ul>
+<hr>
+<h2>The "Heel & Toe goals" tab:</h2>
 <p>
 <img src="images/Screenshot-5.png">
 <p>
 The fifth and last tab is named "Heel & Toe goals".
 This tab is for the input of heel and toe parameters to allow for the creation
 of PLCC, SO, QFN or QFP packages.<br>
+<hr>
+<h2>The buttons:</h2>
 <p>
 The five buttons in the lower part will have the following functions:<br>
 <ul>
@@ -266,6 +323,8 @@ footprintwizard file and to generate a footprint file,<br>
 <li><b>"Refresh"</b>: to refresh the preview area (when and if 
 implemented).<br>
 </ul>
+<hr>
+Last update: April 30th, 2008 by Bert Timmerman.
 <hr>
 </body>
 </html>
