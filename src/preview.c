@@ -87,7 +87,7 @@ configure_event (GtkWidget *widget, GdkEventConfigure *event)
 /*!
  * \brief Delete the window
  */
-static gboolean
+void
 delete_event (GtkWidget *widget, GdkEvent *event)
 {
         gtk_main_quit ();
