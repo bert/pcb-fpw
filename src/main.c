@@ -13,7 +13,10 @@
  * (futuristic) purpose you can think of.\n
  * This needs debugging.
  *
- * \todo Add the preview widget.
+ * \todo Add the preview widget as a popup dialog.
+ *
+ * \todo Change the current preview into a dimensions view.\n
+ * Perhaps load a pre-cooked picture on a per footprint type basis ?.
  *
  * \todo Add a menubar (in the future ?).
  *
