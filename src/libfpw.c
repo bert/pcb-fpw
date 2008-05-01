@@ -1309,6 +1309,7 @@ write_footprint_dip ()
         gdouble y_text;
         gint pin_number;
         gchar *pin_pad_name = g_strdup ("");
+        gchar *pin_pad_flags;
         gint i;
 
         fp = fopen (footprint_filename, "w");
@@ -1318,7 +1319,7 @@ write_footprint_dip ()
                 (
                         stderr,
                         "ERROR: could not open file for %s footprint: %s.\n",
-                        footprint_type,
+                        current_fp.footprint_type,
                         footprint_filename
                 );
                 return (EXIT_FAILURE);
@@ -1327,57 +1328,57 @@ write_footprint_dip ()
          * properties */
         xmin = multiplier *
         (
-                (-pitch_x / 2.0) -
-                (((pad_diameter > pad_length) ? pad_diameter : pad_length) / 2.0) -
-                pad_solder_mask_clearance
+                (-current_fp.pitch_x / 2.0) -
+                (((current_fp.pad_diameter > current_fp.pad_length) ? current_fp.pad_diameter : current_fp.pad_length) / 2.0) -
+                current_fp.pad_solder_mask_clearance
         );
         xmax = multiplier *
         (
-                (pitch_x / 2.0) +
-                (((pad_diameter > pad_length) ? pad_diameter : pad_length) / 2.0) +
-                pad_solder_mask_clearance
+                (current_fp.pitch_x / 2.0) +
+                (((current_fp.pad_diameter > current_fp.pad_length) ? current_fp.pad_diameter : current_fp.pad_length) / 2.0) +
+                current_fp.pad_solder_mask_clearance
         );
         ymin = multiplier *
         (
-                ((((-count_y - 1) / 2.0) + 1) * pitch_y) -
-                (((pad_diameter > pad_width) ? pad_diameter : pad_width) / 2.0) -
-                pad_solder_mask_clearance
+                ((((-current_fp.count_y - 1) / 2.0) + 1) * current_fp.pitch_y) -
+                (((current_fp.pad_diameter > current_fp.pad_width) ? current_fp.pad_diameter : current_fp.pad_width) / 2.0) -
+                current_fp.pad_solder_mask_clearance
         );
         ymax = multiplier *
         (
-                (((count_y - 1) / 2.0) * pitch_y) +
-                (((pad_diameter > pad_width) ? pad_diameter : pad_width) / 2.0) +
-                pad_solder_mask_clearance
+                (((current_fp.count_y - 1) / 2.0) * current_fp.pitch_y) +
+                (((current_fp.pad_diameter > current_fp.pad_width) ? current_fp.pad_diameter : current_fp.pad_width) / 2.0) +
+                current_fp.pad_solder_mask_clearance
         );
         /* Determine (extreme) courtyard dimensions based on package
          * properties */
-        if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
-                xmin = (multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package));
-        if ((multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package)) > xmax)
-                xmax = (multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package));
-        if ((multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package)) < ymin)
-                ymin = (multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package));
-        if ((multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package)) > ymax)
-                ymax = (multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package));
+        if ((multiplier * ((-current_fp.package_body_length / 2.0) - current_fp.courtyard_clearance_with_package)) < xmin)
+                xmin = (multiplier * ((-current_fp.package_body_length / 2.0) - current_fp.courtyard_clearance_with_package));
+        if ((multiplier * ((current_fp.package_body_length / 2.0) + current_fp.courtyard_clearance_with_package)) > xmax)
+                xmax = (multiplier * ((current_fp.package_body_length / 2.0) + current_fp.courtyard_clearance_with_package));
+        if ((multiplier * ((-current_fp.package_body_width / 2.0) - current_fp.courtyard_clearance_with_package)) < ymin)
+                ymin = (multiplier * ((-current_fp.package_body_width / 2.0) - current_fp.courtyard_clearance_with_package));
+        if ((multiplier * ((current_fp.package_body_width / 2.0) + current_fp.courtyard_clearance_with_package)) > ymax)
+                ymax = (multiplier * ((current_fp.package_body_width / 2.0) + current_fp.courtyard_clearance_with_package));
         /* If the user input is using even more real-estate then use it */
-        if (multiplier * (-courtyard_length / 2.0) < xmin)
-                xmin = multiplier * (-courtyard_length / 2.0);
-        if (multiplier * (courtyard_length / 2.0) > xmax)
-                xmax = multiplier * (courtyard_length / 2.0);
-        if (multiplier * (-courtyard_width / 2.0) < ymin)
-                ymin = multiplier * (-courtyard_width / 2.0);
-        if (multiplier * (courtyard_width / 2.0) > ymax)
-                ymax = multiplier * (courtyard_width / 2.0);
+        if (multiplier * (-current_fp.courtyard_length / 2.0) < xmin)
+                xmin = multiplier * (-current_fp.courtyard_length / 2.0);
+        if (multiplier * (current_fp.courtyard_length / 2.0) > xmax)
+                xmax = multiplier * (current_fp.courtyard_length / 2.0);
+        if (multiplier * (-current_fp.courtyard_width / 2.0) < ymin)
+                ymin = multiplier * (-current_fp.courtyard_width / 2.0);
+        if (multiplier * (current_fp.courtyard_width / 2.0) > ymax)
+                ymax = multiplier * (current_fp.courtyard_width / 2.0);
         /* Write element header
          * Guess for a place where to put the refdes text */
         x_text = 0.0 ; /* already in mil/100 */
         y_text = (ymin - 10000.0); /* already in mil/100 */
         write_element_header (x_text, y_text);
         /* Write pin and/or pad entities */
-        for (i = 0; (i < count_y); i++)
+        for (i = 0; (i < current_fp.count_y); i++)
         {
                 pin_number = 1 + i;
-                if (pin1_square && (pin_number == 1))
+                if (current_fp.pin1_square && (pin_number == 1))
                         pin_pad_flags = g_strdup ("square");
                 else
                         pin_pad_flags = g_strdup ("");
@@ -1385,15 +1386,15 @@ write_footprint_dip ()
                 (
                         pin_number, /* pin number */
                         pin_pad_name, /* pin name */
-                        multiplier * (-pitch_x / 2.0), /* x0 coordinate */
-                        multiplier * ((((-count_y - 1) / 2.0) +1 + i) * pitch_y), /* y0-coordinate */
-                        multiplier * pad_diameter, /* width of the annulus ring (pad) */
-                        multiplier * pad_clearance, /* clearance */
-                        multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
-                        multiplier * pin_drill_diameter, /* pin drill diameter */
+                        multiplier * (-current_fp.pitch_x / 2.0), /* x0 coordinate */
+                        multiplier * ((((-current_fp.count_y - 1) / 2.0) +1 + i) * current_fp.pitch_y), /* y0-coordinate */
+                        multiplier * current_fp.pad_diameter, /* width of the annulus ring (pad) */
+                        multiplier * current_fp.pad_clearance, /* clearance */
+                        multiplier * (current_fp.pad_diameter + current_fp.pad_solder_mask_clearance), /* solder mask clearance */
+                        multiplier * current_fp.pin_drill_diameter, /* pin drill diameter */
                         pin_pad_flags /* flags */
                 );
-                if (!strcmp (pad_shape, "rounded pad, elongated"))
+                if (!strcmp (current_fp.pad_shape, "rounded pad, elongated"))
                 {
                         if (!strcmp (pin_pad_flags, ""))
                                 pin_pad_flags = g_strconcat (pin_pad_flags, "onsolder", NULL);
@@ -1403,18 +1404,18 @@ write_footprint_dip ()
                         (
                                 pin_number, /* pad number = pin_number */
                                 pin_pad_name, /* pad name */
-                                multiplier * (-pitch_x + pad_length - pad_width) / 2.0, /* x0 coordinate */
-                                multiplier * ((((-count_y - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
-                                multiplier * (-pitch_x - pad_length + pad_width) / 2.0, /* x1 coordinate */
-                                multiplier * ((((-count_y - 1) / 2.0) + 1 + i) * pitch_y), /* y1-coordinate */
-                                multiplier * pad_width, /* width of the pad */
-                                multiplier * pad_clearance, /* clearance */
-                                multiplier * (pad_width + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                                multiplier * (-current_fp.pitch_x + current_fp.pad_length - current_fp.pad_width) / 2.0, /* x0 coordinate */
+                                multiplier * ((((-current_fp.count_y - 1) / 2.0) + 1 + i) * current_fp.pitch_y), /* y0-coordinate */
+                                multiplier * (-current_fp.pitch_x - current_fp.pad_length + current_fp.pad_width) / 2.0, /* x1 coordinate */
+                                multiplier * ((((-current_fp.count_y - 1) / 2.0) + 1 + i) * current_fp.pitch_y), /* y1-coordinate */
+                                multiplier * current_fp.pad_width, /* width of the pad */
+                                multiplier * current_fp.pad_clearance, /* clearance */
+                                multiplier * (current_fp.pad_width + (2 * current_fp.pad_solder_mask_clearance)), /* solder mask clearance */
                                 pin_pad_flags /* flags */
                         );
                 }
-                pin_number = (number_of_columns * count_y) - i;
-                if (pin1_square && (pin_number == 1))
+                pin_number = (current_fp.number_of_columns * current_fp.count_y) - i;
+                if (current_fp.pin1_square && (pin_number == 1))
                         pin_pad_flags = g_strdup ("square");
                 else
                         pin_pad_flags = g_strdup ("");
@@ -1422,15 +1423,15 @@ write_footprint_dip ()
                 (
                         pin_number, /* pin number */
                         pin_pad_name, /* pin name */
-                        multiplier * pitch_x / 2.0, /* x0 coordinate */
-                        multiplier * ((((-count_y - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
-                        multiplier * pad_diameter, /* width of the annulus ring (pad) */
-                        multiplier * pad_clearance, /* clearance */
-                        multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
-                        multiplier * pin_drill_diameter, /* pin drill diameter */
+                        multiplier * current_fp.pitch_x / 2.0, /* x0 coordinate */
+                        multiplier * ((((-current_fp.count_y - 1) / 2.0) + 1 + i) * current_fp.pitch_y), /* y0-coordinate */
+                        multiplier * current_fp.pad_diameter, /* width of the annulus ring (pad) */
+                        multiplier * current_fp.pad_clearance, /* clearance */
+                        multiplier * (current_fp.pad_diameter + current_fp.pad_solder_mask_clearance), /* solder mask clearance */
+                        multiplier * current_fp.pin_drill_diameter, /* pin drill diameter */
                         pin_pad_flags /* flags */
                 );
-                if (!strcmp (pad_shape, "rounded pad, elongated"))
+                if (!strcmp (current_fp.pad_shape, "rounded pad, elongated"))
                 {
                         if (!strcmp (pin_pad_flags, ""))
                                 pin_pad_flags = g_strconcat (pin_pad_flags, "onsolder", NULL);
@@ -1440,47 +1441,47 @@ write_footprint_dip ()
                         (
                                 pin_number, /* pad number = pin_number*/
                                 pin_pad_name, /* pad name */
-                                multiplier * (pitch_x - pad_length + pad_width) / 2.0, /* x0 coordinate */
-                                multiplier * ((((-count_y - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
-                                multiplier * (pitch_x + pad_length - pad_width) / 2.0, /* x1 coordinate */
-                                multiplier * ((((-count_y - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
-                                multiplier * pad_width, /* width of the pad */
-                                multiplier * pad_clearance, /* clearance */
-                                multiplier * (pad_width + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                                multiplier * (current_fp.pitch_x - current_fp.pad_length + current_fp.pad_width) / 2.0, /* x0 coordinate */
+                                multiplier * ((((-current_fp.count_y - 1) / 2.0) + 1 + i) * current_fp.pitch_y), /* y0-coordinate */
+                                multiplier * (current_fp.pitch_x + current_fp.pad_length - current_fp.pad_width) / 2.0, /* x1 coordinate */
+                                multiplier * ((((-current_fp.count_y - 1) / 2.0) + 1 + i) * current_fp.pitch_y), /* y0-coordinate */
+                                multiplier * current_fp.pad_width, /* width of the pad */
+                                multiplier * current_fp.pad_clearance, /* clearance */
+                                multiplier * (current_fp.pad_width + (2 * current_fp.pad_solder_mask_clearance)), /* solder mask clearance */
                                 pin_pad_flags /* flags */
                         );
                 }
         }
         /* Write a package body on the silkscreen */
-        if (silkscreen_package_outline)
+        if (current_fp.silkscreen_package_outline)
         {
                 fprintf (fp, "# Write a package body on the silkscreen\n");
                 write_rectangle
                 (
-                        multiplier * (((-pitch_x + pad_diameter + silkscreen_line_width) / 2) + pad_solder_mask_clearance) ,
+                        multiplier * (((-current_fp.pitch_x + current_fp.pad_diameter + current_fp.silkscreen_line_width) / 2) + current_fp.pad_solder_mask_clearance) ,
                         ymin, /* already in mil/100 */
-                        multiplier * (((pitch_x - pad_diameter - silkscreen_line_width) / 2) - pad_solder_mask_clearance) ,
+                        multiplier * (((current_fp.pitch_x - current_fp.pad_diameter - current_fp.silkscreen_line_width) / 2) - current_fp.pad_solder_mask_clearance) ,
                         ymax, /* already in mil/100 */
-                        multiplier * silkscreen_line_width
+                        multiplier * current_fp.silkscreen_line_width
                 );
         }
         /* Write a pin #1 marker on the silkscreen */
-        if (silkscreen_indicate_1)
+        if (current_fp.silkscreen_indicate_1)
         {
                 fprintf (fp, "# Write a pin 1 marker on the silkscreen\n");
                 write_element_arc
                 (
                         (0.0), /* already in mil/100 */
                         ymin, /* already in mil/100 */
-                        multiplier * (pitch_x / 8),
-                        multiplier * (pitch_x / 8),
+                        multiplier * (current_fp.pitch_x / 8),
+                        multiplier * (current_fp.pitch_x / 8),
                         0,
                         180,
-                        multiplier * silkscreen_line_width
+                        multiplier * current_fp.silkscreen_line_width
                 );
         }
         /* Write a courtyard on the silkscreen */
-        if (courtyard)
+        if (current_fp.courtyard)
         {
                 fprintf (fp, "# Write a courtyard on the silkscreen\n");
                 write_rectangle
@@ -1489,11 +1490,11 @@ write_footprint_dip ()
                         ymin, /* already in mil/100 */
                         xmax, /* already in mil/100 */
                         ymax, /* already in mil/100 */
-                        multiplier * courtyard_line_width
+                        multiplier * current_fp.courtyard_line_width
                 );
         }
         /* Write attributes */
-        if (attributes_in_footprint)
+        if (current_fp.attributes_in_footprint)
                 write_attributes ();
         fprintf (fp, "\n");
         fprintf (fp, ")\n");
@@ -1502,7 +1503,7 @@ write_footprint_dip ()
         (
                 stderr,
                 "SUCCESS: wrote a footprint file for a %s package: %s.\n",
-                footprint_type,
+                current_fp.footprint_type,
                 footprint_filename
         );
 }
