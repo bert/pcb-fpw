@@ -160,6 +160,128 @@ typedef enum locations location_t;
          * pad.\n
          * Primarily used for pads used as fiducials. */
 
+/*! \struct foot_print
+ */
+typedef struct
+footprint
+{
+        gchar *footprint_name;
+                /*!< Name of the footprint. */
+        gchar *footprint_type;
+                /*!< Type of the footprint. */
+        package_t package_type;
+                /*!< Type of the package. */
+        gchar *footprint_units;
+                /*!< Units for the footprint dimensions. */
+        gdouble multiplier;
+                /*!< Multiplier to convert to mils/100. */
+        gchar *footprint_refdes;
+                /*!< Default value of the refdes prefix. */
+        gchar *footprint_value;
+                /*!< Default value of the package. */
+        gdouble package_body_length;
+                /*!< Length dimension of the package body. */
+        gdouble package_body_width;
+                /*!< Width dimension of the package body. */
+        gdouble package_body_height;
+                /*!< Height dimension of the package body. */
+        gboolean package_is_radial;
+                /*!< Package has a radial body. */
+        gchar *footprint_author;
+                /*!< Author of the footprint. */
+        gchar *footprint_dist_license;
+                /*!< Distribution license of the footprint. */
+        gchar *footprint_use_license;
+                /*!< Usage license of the footprint. */
+        gchar *footprint_status;
+                /*!< Status of the footprint. */
+        gboolean attributes_in_footprint;
+                /*!< Include these values into the footprint file. */
+        gint number_of_pins;
+                /*!< Number of pads/pins. */
+        gint number_of_columns;
+                /*!< Number of columns. */
+        gint number_of_rows;
+                /*!< Number of rows. */
+        gchar *pin_1_position;
+                /*!< Position of number 1 pin. */
+        location_t pin1_location;
+                /*!< Location of number 1 pin. */
+        gdouble pitch_x;
+                /*!< Pitch in the X-direction. */
+        gdouble pitch_y;
+                /*!< Pitch in the Y-direction. */
+        gint count_x;
+                /*!< Number of pin/pads in the X-direction. */
+        gint count_y;
+                /*!< Number of pin/pads in the Y-direction. */
+        gdouble pin_drill_diameter;
+                /*!< Diameter of pin hole. */
+        gdouble pad_diameter;
+                /*!< Outer diameter of pin pad (annulus). */
+        gdouble pad_length;
+                /*!< Length of pad (parallel to Element X-axis). */
+        gdouble pad_width;
+                /*!< Width of pad (perpendicular to Element X-axis). */
+        gchar *pad_shape;
+                /*!< Shape of pads/pins. */
+        gint pin_pad_type;
+                /*!< Type of pads/pins. */
+        gboolean pin1_square;
+                /*!< Pin #1 is square. */
+        gchar *pin_pad_flags;
+                /*!< Flags of pins/pads. */
+        gdouble pad_solder_mask_clearance;
+                /*!< Solder mask clearance of a pin/pad. */
+        gdouble pad_clearance;
+                /*!< Clearance of a pin/pad. */
+        gboolean silkscreen_package_outline;
+                /*!< Draw the package body outline on the silkscreen. */
+        gboolean silkscreen_indicate_1;
+                /*!< Indicate the position of number 1 */
+        gdouble silkscreen_length;
+                /*!< Silkscreen length (X-direction). */
+        gdouble silkscreen_width;
+                /*!< Silkscreen width (Y-direction). */
+        gdouble silkscreen_line_width;
+                /*!< Silkscreen line width. */
+        gboolean courtyard;
+                /*!< Draw courtyard. */
+        gdouble courtyard_length;
+                /*!< Courtyard length (X-direction). */
+        gdouble courtyard_width;
+                /*!< Courtyard width (Y-direction). */
+        gdouble courtyard_line_width;
+                /*!< Courtyard line width. */
+        gdouble courtyard_clearance_with_package;
+                /*!< Courtyard clearance with package outline */
+        gboolean thermal;
+                /*!< Draw thermal pad(s). */
+        gboolean thermal_nopaste;
+                /*!< Thermal pad has no paste. */
+        gdouble thermal_length;
+                /*!< Length of thermal pad. */
+        gdouble thermal_width;
+                /*!< Width of thermal pad. */
+        gdouble thermal_solder_mask_clearance;
+                /*!< Solder mask clearance of thermal pad. */
+        gdouble thermal_clearance;
+                /*!< Clearance of a thermal pad. */
+        gdouble c1;
+                /*!< Top to bottom pads center-center distance. */
+        gdouble g1;
+                /*!< Top to bottom pads inner-inner distance. */
+        gdouble z1;
+                /*!< Top to bottom pads outer-outer distance. */
+        gdouble c2;
+                /*!< Left to right pads center-center distance. */
+        gdouble g2;
+                /*!< Left to right pads inner-inner distance. */
+        gdouble z2;
+                /*!< Left to right pads outer-outer distance. */
+} FootPrint_t;
+
+
 gint gui = TRUE;
         /*!< Graphical User Interface:\n
          * for gfpw == TRUE (default) \n
