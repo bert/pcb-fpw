@@ -169,12 +169,8 @@ footprint
                 /*!< Name of the footprint. */
         gchar *footprint_type;
                 /*!< Type of the footprint. */
-        package_t package_type;
-                /*!< Type of the package. */
         gchar *footprint_units;
                 /*!< Units for the footprint dimensions. */
-        gdouble multiplier;
-                /*!< Multiplier to convert to mils/100. */
         gchar *footprint_refdes;
                 /*!< Default value of the refdes prefix. */
         gchar *footprint_value;
@@ -205,8 +201,6 @@ footprint
                 /*!< Number of rows. */
         gchar *pin_1_position;
                 /*!< Position of number 1 pin. */
-        location_t pin1_location;
-                /*!< Location of number 1 pin. */
         gdouble pitch_x;
                 /*!< Pitch in the X-direction. */
         gdouble pitch_y;
@@ -296,145 +290,30 @@ gchar *footprint_filename = NULL;
         /*!< Filename of footprint file. */
 gchar *fp_suffix = "fp";
         /*!< Suffix of footprint file. */
-gchar *footprint_name = NULL;
-        /*!< Name of the footprint. */
-gchar *footprint_type = NULL;
-        /*!< Type of the footprint. */
 package_t package_type;
         /*!< Type of the package. */
-gchar *footprint_units = NULL;
-        /*!< Units for the footprint dimensions. */
 gdouble multiplier;
         /*!< Multiplier to convert to mils/100. */
-gchar *footprint_refdes;
-        /*!< Default value of the refdes prefix. */
-gchar *footprint_value;
-        /*!< Default value of the package. */
-
-gdouble package_body_length;
-        /*!< Length dimension of the package body. */
-gdouble package_body_width;
-        /*!< Width dimension of the package body. */
-gdouble package_body_height;
-        /*!< Height dimension of the package body. */
-gboolean package_is_radial;
-        /*!< Package has a radial body. */
-
-gchar *footprint_author;
-        /*!< Author of the footprint. */
-gchar *footprint_dist_license;
-        /*!< Distribution license of the footprint. */
-gchar *footprint_use_license;
-        /*!< Usage license of the footprint. */
-gchar *footprint_status;
-        /*!< Status of the footprint. */
-gboolean attributes_in_footprint;
-        /*!< Include the global values based on the entry values of the GUI
-         * into the footprint file. */
-
-gint number_of_pins;
-        /*!< Number of pads/pins. */
-gint number_of_columns;
-        /*!< Number of columns. */
-gint number_of_rows;
-        /*!< Number of rows. */
-gchar *pin_1_position;
-        /*!< Position of number 1 pin. */
 location_t pin1_location;
         /*!< Location of number 1 pin. */
-gdouble pitch_x;
-        /*!< Pitch in the X-direction. */
-gdouble pitch_y;
-        /*!< Pitch in the Y-direction. */
-gint count_x;
-        /*!< Number of pin/pads in the X-direction. */
-gint count_y;
-        /*!< Number of pin/pads in the Y-direction. */
-gdouble pin_drill_diameter;
-        /*!< Diameter of pin hole. */
-gdouble pad_diameter;
-        /*!< Outer diameter of pin pad (annulus). */
-gdouble pad_length;
-        /*!< Length of pad (parallel to Element X-axis). */
-gdouble pad_width;
-        /*!< Width of pad (perpendicular to Element X-axis). */
-gchar *pad_shape;
-        /*!< Shape of pads/pins. */
-gint pin_pad_type;
-        /*!< Type of pads/pins. */
-gboolean pin1_square;
-        /*!< Pin #1 is square. */
-gchar *pin_pad_flags;
-        /*!< Flags of pins/pads. */
-gdouble pad_solder_mask_clearance;
-        /*!< Solder mask clearance of a pin/pad. */
-gdouble pad_clearance;
-        /*!< Clearance of a pin/pad. */
-
-gboolean silkscreen_package_outline;
-        /*!< Draw the package body outline on the silkscreen. */
-gboolean silkscreen_indicate_1;
-        /*!< Indicate the position of number 1 */
-gdouble silkscreen_length;
-        /*!< Silkscreen length (X-direction). */
-gdouble silkscreen_width;
-        /*!< Silkscreen width (Y-direction). */
-gdouble silkscreen_line_width;
-        /*!< Silkscreen line width. */
-
-gboolean courtyard;
-        /*!< Draw courtyard. */
-gdouble courtyard_length;
-        /*!< Courtyard length (X-direction). */
-gdouble courtyard_width;
-        /*!< Courtyard width (Y-direction). */
-gdouble courtyard_line_width;
-        /*!< Courtyard line width. */
-gdouble courtyard_clearance_with_package;
-        /*!< Courtyard clearance with package outline */
-
-gboolean thermal;
-        /*!< Draw thermal pad(s). */
-gboolean thermal_nopaste;
-        /*!< Thermal pad has no paste. */
-gdouble thermal_length;
-        /*!< Length of thermal pad. */
-gdouble thermal_width;
-        /*!< Width of thermal pad. */
-gdouble thermal_solder_mask_clearance;
-        /*!< Solder mask clearance of thermal pad. */
-gdouble thermal_clearance;
-        /*!< Clearance of a thermal pad. */
-
 gboolean c1_state = TRUE;
         /*!< State of the top to bottom center-center distance radiobutton. */
-gdouble c1;
-        /*!< Top to bottom pads center-center distance. */
 gboolean g1_state = FALSE;
         /*!< State of the top to bottom inner-inner distance radiobutton. */
-gdouble g1;
-        /*!< Top to bottom pads inner-inner distance. */
 gboolean z1_state = FALSE;
         /*!< State of the top to bottom outer-outer distance radiobutton. */
-gdouble z1;
-        /*!< Top to bottom pads outer-outer distance. */
-
 gboolean c2_state = TRUE;
         /*!< State of the left to right center-center distance radiobutton. */
-gdouble c2;
-        /*!< Left to right pads center-center distance. */
 gboolean g2_state = FALSE;
         /*!< State of the left to right inner-inner distance radiobutton. */
-gdouble g2;
-        /*!< Left to right pads inner-inner distance. */
 gboolean z2_state = FALSE;
         /*!< State of the left to right outer-outer distance radiobutton. */
-gdouble z2;
-        /*!< Left to right pads outer-outer distance. */
-
 gchar *dummy = NULL;
         /*!< Every now and then the village-idot is needed ;-) */
-
+FootPrint_t current_fp;
+        /*! Current footprint. */
+FootPrint_t preview_fp;
+        /*! Preview footprint. */
 
 /*!
  * \brief Read a footprintwizard file into the global variables.
@@ -453,55 +332,55 @@ read_footprintwizard_file()
         }
         fscanf (fpw, "%s\n", footprint_filename);
         fscanf (fpw, "%s\n", dummy); /* do not (re)use this value ! */
-        fscanf (fpw, "%s\n", footprint_type);
-        fscanf (fpw, "%s\n", footprint_units);
-        fscanf (fpw, "%s\n", footprint_refdes);
-        fscanf (fpw, "%s\n", footprint_value);
-        fscanf (fpw, "%f\n", package_body_length);
-        fscanf (fpw, "%f\n", package_body_width);
-        fscanf (fpw, "%f\n", package_body_height);
-        fscanf (fpw, "%d\n", package_is_radial);
-        fscanf (fpw, "%s\n", footprint_author);
-        fscanf (fpw, "%s\n", footprint_dist_license);
-        fscanf (fpw, "%s\n", footprint_use_license);
-        fscanf (fpw, "%s\n", footprint_status);
-        fscanf (fpw, "%d\n", attributes_in_footprint);
-        fscanf (fpw, "%d\n", number_of_pins);
-        fscanf (fpw, "%d\n", number_of_columns);
-        fscanf (fpw, "%d\n", number_of_rows);
-        fscanf (fpw, "%f\n", pitch_x);
-        fscanf (fpw, "%f\n", pitch_y);
-        fscanf (fpw, "%f\n", count_x);
-        fscanf (fpw, "%f\n", count_y);
-        fscanf (fpw, "%s\n", pad_shape);
-        fscanf (fpw, "%s\n", pin_1_position);
-        fscanf (fpw, "%f\n", pad_length);
-        fscanf (fpw, "%f\n", pad_width);
-        fscanf (fpw, "%f\n", pad_diameter);
-        fscanf (fpw, "%f\n", pin_drill_diameter);
-        fscanf (fpw, "%d\n", pin1_square);
-        fscanf (fpw, "%f\n", pad_clearance);
-        fscanf (fpw, "%f\n", pad_solder_mask_clearance);
-        fscanf (fpw, "%d\n", thermal);
-        fscanf (fpw, "%d\n", thermal_nopaste);
-        fscanf (fpw, "%f\n", thermal_length);
-        fscanf (fpw, "%f\n", thermal_width);
-        fscanf (fpw, "%f\n", thermal_clearance);
-        fscanf (fpw, "%f\n", thermal_solder_mask_clearance);
-        fscanf (fpw, "%d\n", silkscreen_package_outline);
-        fscanf (fpw, "%d\n", silkscreen_indicate_1);
-        fscanf (fpw, "%f\n", silkscreen_line_width);
-        fscanf (fpw, "%d\n", courtyard);
-        fscanf (fpw, "%f\n", courtyard_length);
-        fscanf (fpw, "%f\n", courtyard_width);
-        fscanf (fpw, "%f\n", courtyard_line_width);
-        fscanf (fpw, "%f\n", courtyard_clearance_with_package);
-        fscanf (fpw, "%f\n", c1);
-        fscanf (fpw, "%f\n", g1);
-        fscanf (fpw, "%f\n", z1);
-        fscanf (fpw, "%f\n", c2);
-        fscanf (fpw, "%f\n", g2);
-        fscanf (fpw, "%f\n", z2);
+        fscanf (fpw, "%s\n", current_fp.footprint_type);
+        fscanf (fpw, "%s\n", current_fp.footprint_units);
+        fscanf (fpw, "%s\n", current_fp.footprint_refdes);
+        fscanf (fpw, "%s\n", current_fp.footprint_value);
+        fscanf (fpw, "%f\n", current_fp.package_body_length);
+        fscanf (fpw, "%f\n", current_fp.package_body_width);
+        fscanf (fpw, "%f\n", current_fp.package_body_height);
+        fscanf (fpw, "%d\n", current_fp.package_is_radial);
+        fscanf (fpw, "%s\n", current_fp.footprint_author);
+        fscanf (fpw, "%s\n", current_fp.footprint_dist_license);
+        fscanf (fpw, "%s\n", current_fp.footprint_use_license);
+        fscanf (fpw, "%s\n", current_fp.footprint_status);
+        fscanf (fpw, "%d\n", current_fp.attributes_in_footprint);
+        fscanf (fpw, "%d\n", current_fp.number_of_pins);
+        fscanf (fpw, "%d\n", current_fp.number_of_columns);
+        fscanf (fpw, "%d\n", current_fp.number_of_rows);
+        fscanf (fpw, "%f\n", current_fp.pitch_x);
+        fscanf (fpw, "%f\n", current_fp.pitch_y);
+        fscanf (fpw, "%f\n", current_fp.count_x);
+        fscanf (fpw, "%f\n", current_fp.count_y);
+        fscanf (fpw, "%s\n", current_fp.pad_shape);
+        fscanf (fpw, "%s\n", current_fp.pin_1_position);
+        fscanf (fpw, "%f\n", current_fp.pad_length);
+        fscanf (fpw, "%f\n", current_fp.pad_width);
+        fscanf (fpw, "%f\n", current_fp.pad_diameter);
+        fscanf (fpw, "%f\n", current_fp.pin_drill_diameter);
+        fscanf (fpw, "%d\n", current_fp.pin1_square);
+        fscanf (fpw, "%f\n", current_fp.pad_clearance);
+        fscanf (fpw, "%f\n", current_fp.pad_solder_mask_clearance);
+        fscanf (fpw, "%d\n", current_fp.thermal);
+        fscanf (fpw, "%d\n", current_fp.thermal_nopaste);
+        fscanf (fpw, "%f\n", current_fp.thermal_length);
+        fscanf (fpw, "%f\n", current_fp.thermal_width);
+        fscanf (fpw, "%f\n", current_fp.thermal_clearance);
+        fscanf (fpw, "%f\n", current_fp.thermal_solder_mask_clearance);
+        fscanf (fpw, "%d\n", current_fp.silkscreen_package_outline);
+        fscanf (fpw, "%d\n", current_fp.silkscreen_indicate_1);
+        fscanf (fpw, "%f\n", current_fp.silkscreen_line_width);
+        fscanf (fpw, "%d\n", current_fp.courtyard);
+        fscanf (fpw, "%f\n", current_fp.courtyard_length);
+        fscanf (fpw, "%f\n", current_fp.courtyard_width);
+        fscanf (fpw, "%f\n", current_fp.courtyard_line_width);
+        fscanf (fpw, "%f\n", current_fp.courtyard_clearance_with_package);
+        fscanf (fpw, "%f\n", current_fp.c1);
+        fscanf (fpw, "%f\n", current_fp.g1);
+        fscanf (fpw, "%f\n", current_fp.z1);
+        fscanf (fpw, "%f\n", current_fp.c2);
+        fscanf (fpw, "%f\n", current_fp.g2);
+        fscanf (fpw, "%f\n", current_fp.z2);
         fclose (fpw);
         fprintf (stderr, "SUCCESS: read a footprint wizard file: %s.\n", fpw_filename);
 }
