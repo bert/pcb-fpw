@@ -496,9 +496,9 @@ write_element_header
         (
                 fp,
                 "Element[\"\" \"%s\" \"%s?\" \"%s\" 0 0 %d %d 0 100 \"\"]\n(\n",
-                footprint_name,
-                footprint_refdes,
-                footprint_value,
+                current_fp.footprint_name,
+                current_fp.footprint_refdes,
+                current_fp.footprint_value,
                 (int) (x_text),
                 (int) (y_text)
         );
