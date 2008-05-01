@@ -40,7 +40,7 @@
 #include <gtk/gtk.h>
 #include <stdlib.h>
 
-#define FPW_VERSION "0.0.6"
+#define FPW_VERSION "0.0.7b"
 
 /*!
  * \brief Some package types conforming to IPC name space definitions.
