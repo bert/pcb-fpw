@@ -10,6 +10,12 @@
  * The functions in libfpw are called by both the CLI version of the
  * FootPrintWizard (fpw) as well as the GUI version (pcb-gfpw).\n
  *
+ * \todo Collect all global variables for the footprint in a single struct.\n
+ * Switchings to another preview will be easier by just switching pointers.
+ *
+ * \todo Change all global variables to using a single struct of type
+ * footprint.
+ *
  * This program is free software; you can redistribute it and/or modify\n
  * it under the terms of the GNU General Public License as published by\n
  * the Free Software Foundation; either version 2 of the License, or\n
@@ -74,6 +80,8 @@ enum packages
         NUMBER_OF_PACKAGE_TYPES /*!< Number of package types. */
 };
 
+typedef enum packages package_t;
+
 /*!
  * \brief Set of valid letter combinations for row identifiers for BGA and
  * PGA packages.
@@ -89,8 +97,6 @@ char *row_letters[] =
         "CA", "CB", "CC", "CD", "CE", "CF", "CG", "CH", "CJ", "CK",
         "CL", "CM", "CN", "CP", "CR", "CT", "CU", "CV", "CW", "CY"
 };
-
-typedef enum packages package_t;
 
 /* Some locations for pin #1 orientation */
 /*   2 -- 5 -- 8  */
