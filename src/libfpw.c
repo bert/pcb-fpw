@@ -787,9 +787,9 @@ write_footprint_bga ()
                         (
                                 pin_number, /* pin number */
                                 pin_pad_name, /* pin name */
-                                multiplier * ((((- number_of_columns -1) / 2.0) + 1 + j) * pitch_x), /* x0 coordinate */
+                                multiplier * ((((-number_of_columns -1) / 2.0) + 1 + j) * pitch_x), /* x0 coordinate */
                                 multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
-                                multiplier * ((((- number_of_columns -1) / 2.0) + 1 + j) * pitch_x), /* x1 coordinate */
+                                multiplier * ((((-number_of_columns -1) / 2.0) + 1 + j) * pitch_x), /* x1 coordinate */
                                 multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y1-coordinate */
                                 multiplier * pad_width, /* pad width */
                                 multiplier * pad_clearance, /* clearance */
