@@ -1,3 +1,484 @@
+commit 1045961cdb731302508684f9a3abc1336fb15e48
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu May 1 08:23:09 2008 +0200
+
+    Added doxygen comments.
+    
+    Relocated typedef enum packages package_t.
+
+commit 4b7648f964c7b24ccb18fde919914da45fedaa7f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 30 18:02:49 2008 +0200
+
+    Changes in the doxygen todo list.
+
+commit 62cc6122058a41390ef6cc4f3c85d49895bffe60
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 30 16:58:09 2008 +0200
+
+    Changed the function type of delete_event from gboolean to void.
+
+commit 06da93908b78096d2b193b010992a8c1378edf09
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 30 16:39:27 2008 +0200
+
+    The User Manual is complete enough for now.
+
+commit 7c88d6174aa1b90580c72a14890ae5436b5d5508
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 30 14:11:49 2008 +0200
+
+    Added more text and formatting to the User Manual.
+
+commit a45bce1661565c2f4b529394d49a6adeadab298c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 29 23:16:55 2008 +0200
+
+    Corrected, something went wrong with the buttons.
+
+commit 98b704b447ee0cd6e96704581956f1b1e58727d7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 29 23:07:51 2008 +0200
+
+    More WIP on the User Manual (third tab of entries).
+
+commit 67d16e601eca9e6727dfca08a88488247c0f4c59
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 29 22:22:58 2008 +0200
+
+    Pruned the screenshots for the User Manual.
+
+commit 15f7477275f5b0f5fcc6dc5f8bffb879ab6c29e0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 29 21:36:49 2008 +0200
+
+    More WIP on the User Manual (second tab of entries).
+
+commit a98669ea92048f2f0441b046839ad677b016bedb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 29 07:37:26 2008 +0200
+
+    More WIP on the User Manual.
+
+commit 3a3e2860888ce2af99549d1af1fedf2742a056d0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Apr 28 23:33:09 2008 +0200
+
+    WIP on the User Manual.
+
+commit 15c4b00d89a0e65418668454c50c8933d28ff28b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Apr 28 23:03:13 2008 +0200
+
+    The modest start of an User Manual.
+
+commit b66d446eb38d0e6add79fd91662509ea1bdc37b4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Apr 28 22:46:19 2008 +0200
+
+    More cleanup.
+
+commit 2b62af7bf041b9794fb14a4c77db8387a958a45b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 27 22:21:05 2008 +0200
+
+    Cleanup.
+
+commit 0852692bbdf4a4b468c05ed35ae2c3c2abbbd291
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 27 14:00:09 2008 +0200
+
+    Delete signal and callback added to the preview so we can gracefully exit.
+
+commit 052b6ae922f365b52c72993f17c4999544e22de9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 27 13:14:51 2008 +0200
+
+    pcb-fpw preview now actually shows a window.
+
+commit 63d8af44e6610e86c5d4cd2ec531c20f56c85990
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 27 10:33:03 2008 +0200
+
+    preview.c now compiles :)
+
+commit 342f5f5aa492a83d1cd2afda2cba1ada3311f457
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 27 09:12:11 2008 +0200
+
+    Added GPL notice to source files.
+
+commit 30e13f83925b3efdbc475cecadae0373673acc1e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 27 07:56:48 2008 +0200
+
+    Just some rambling code for a preview widget.
+
+commit a25225b3f5b6061cd458de01bec36989de24b2b2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Apr 25 21:30:35 2008 +0200
+
+    Added a checkbutton to allow for adding attributes to the footprint.
+
+commit 63b7a2cb6b22ca692abb78fe355bb7c1bc7f2dc2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Apr 25 20:23:21 2008 +0200
+
+    Added doxygen comments to on_refresh_button_clicked().
+
+commit ff880c793ba1ff95da55f7fc386317cd106b05bc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 24 23:21:09 2008 +0200
+
+    Changed some indentation.
+
+commit b2d457947f2af2b1cc5bda5f3b4f1dfa91f075cf
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 24 22:54:44 2008 +0200
+
+    Added "attributes in footprint" attribute.
+
+commit 7713681dc3a5820ce2fe752acf17922fff440c93
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 24 22:47:40 2008 +0200
+
+    Changed location of attributes calls.
+
+commit d53c507bb51d78c686ea22b1b901a3ddc88b761f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 24 22:42:17 2008 +0200
+
+    Small corrections in comments.
+
+commit e75ec19ca9acd4ba5a07ce0c31ff7bbf9961a329
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 24 22:29:46 2008 +0200
+
+    Changed the determination of the courtyard in write_footprint_dip().
+
+commit 68d2326c188829d95197e34d581eb2895b420cd3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 24 22:21:16 2008 +0200
+
+    Added some line terminations in doxygen comments.
+
+commit 5ed4457eaf5fbbe8778c84252f96b5cf69410a2d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 24 21:48:16 2008 +0200
+
+    Using "number of rows" and "number of columns" for CON_DIP type package.
+
+commit 952e15f155f9b104b904e042e2eecc6fd4c3cf03
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 24 20:52:55 2008 +0200
+
+    Changed the determination of the courtyard in write_footprint_con_dip().
+
+commit edac4443a46f54580d64df5b255b13e3b8e1acf1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 24 20:47:34 2008 +0200
+
+    Using "number of rows" and "number of columns" for CON_DIL type package.
+
+commit dcf7e67ba8053606700419e69d38d6174bd682db
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 24 20:46:30 2008 +0200
+
+    Added gui_constraints_set_con_dip().
+
+commit 2dd81cf53960bb8031cdb11d367e782b88a1cda7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 24 20:35:28 2008 +0200
+
+    Using "number of rows" and "number of columns" for CON_DIL type package.
+
+commit 9e55121447b1c714e1550c5189fd742a1a427c74
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 23 23:28:51 2008 +0200
+
+    Everything in the proper order.
+
+commit 0c52544fd8f8ecb78a12d36b82a7fad9ae44a5b5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 23 23:25:24 2008 +0200
+
+    Added write_footprint_con_dil().
+    
+    Fixed a bug in write_footprint_con_dip().
+
+commit bb4fa1d2e6372a4d05c071a31f838ace6c885bd9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 23 21:28:05 2008 +0200
+
+    Changed the integral license text in the about dialog.
+    
+    License text was changed to "GNU GENERAL PUBLIC LICENSE Version 2,
+    June 1991, or any later version of the license."
+
+commit 6c87ae28ef712ebb5d0588539a8ec9be414325cc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 23 21:21:17 2008 +0200
+
+    Replaced the symlink with the original file content.
+
+commit 3dcbfc89c22fc35f88886486cefbe0f7be244205
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 23 21:16:32 2008 +0200
+
+    Replaced the symlink with the original file content.
+
+commit 9c3a1480d18b08896806e984c5c4c0713e55ce4c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 23 08:01:56 2008 +0200
+
+    Small corrections in on_footprint_type_entry_changed().
+
+commit 9c4ed9f6aaec6cfaeeb9c0d7a458e67624c9be74
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 23 08:00:23 2008 +0200
+
+    Added CON_DIP package type to "footprint type" combobox entry.
+
+commit 520baece2c2e2dc9c9c9aa9baf714cbf31cc9ba4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 23 07:56:21 2008 +0200
+
+    Small correction in write_footprint_dip().
+
+commit c3fb9c0f0ee99c23b2348a71813cc3105b37e517
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 22 22:36:58 2008 +0200
+
+    Added write_footprint_con_dip().
+
+commit 8d3a436a21e271967379e565d5169231c243a34f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 22 08:05:19 2008 +0200
+
+    Added CON_DIL, CON_DIP and CON_HDR type packages.
+
+commit 2fa49724aff040ba70a84400c2a8662d4f6c7a62
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 22 08:03:44 2008 +0200
+
+    Added CON_DIL, CON_DIP and CON_HDR type packages in number_of_pins_has_changed().
+
+commit 677203343273814ef6ca0619e65ba5af1410cf2d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Apr 21 01:02:35 2008 +0200
+
+    Small corrections, added CON_DIP type package in on_footprint_type_entry_changed().
+
+commit 4e3556078ca660522a647559eaaaf6962a8702f3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 20 19:42:26 2008 +0200
+
+    Minor correction.
+
+commit 8a3a823c7dd65dae6b6334b8b1b909b3cca4bd7a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 20 19:01:15 2008 +0200
+
+    Added CON-DIL and CON-HDR types in on_footprint_type_entry_changed() and number_of_pins_has_changed().
+    
+    - gui_constraints_set_con_dil()
+    - gui_constraints_set_con_hdr()
+
+commit ebea3348d76399c58d94df6e547197180b21aec0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 20 18:24:54 2008 +0200
+
+    Added CON-DIL and CON-HDR to footprint type combobox entry.
+
+commit 13a2017bf6867d137d187ee7bbb69c6ea94a4326
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 20 15:18:47 2008 +0200
+
+    A DIP package consists of 2 columns with "count_y" pins/pads.
+
+commit 4bf6b066c502f1572153b49afd2ddffe25052da8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 20 14:39:40 2008 +0200
+
+    Update the value in the "number_total_pins" entry.
+    
+    This function is to be called on one of the following events:
+    - Number of columns entry is changed: number_of_columns changes.
+    - Number of rows entry is changed: number_of_rows changes.
+    - Count of pin/pads (on a row) in the X-direction entry is changed: count_x changes.
+    - Count of pin/pads (on a column) in the Y-direction entry is changed: count_y changes.
+    - The thermal pad button is toggled: thermal changes.
+
+commit d06c12846280231811ef5f48d35113320b753b81
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 19 20:10:10 2008 +0200
+
+    Set "total number of pins/pads" to insensitive.
+
+commit 4431268e4cb44151913c8c752c28d727522fb70d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 19 20:08:51 2008 +0200
+
+    Set GUI constraints for the TO92 package type.
+
+commit 85ee272eb12c49401841336b0f9a28deb505b41f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 19 16:01:44 2008 +0200
+
+    Ignore footprint and footprintwizard files.
+
+commit fb9381857e176141967c9e0ce60fd65a9737a73b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 19 14:37:19 2008 +0200
+
+    Set GUI constraints for the PLCC package type.
+
+commit d52f43baee98369cbd0ca4ed84df258e2ac484ae
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 19 13:49:52 2008 +0200
+
+    Everything in the correct order.
+
+commit 787a9805fc5d301a7d5ed68cf0c451d2b167bfc5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 19 13:36:04 2008 +0200
+
+    Set GUI constraints for the SMT package type.
+    
+    Applies to the following types:
+    CAPC, CAPM, CAPMP, DIOM, DIOMELF, INDC, INDM, INDP,
+    RESC, RESM and RESMELF.
+
+commit 3d1720774f0e37b63b043e257337915c8b3ba21d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 19 10:23:57 2008 +0200
+
+    Set GUI constraints for the DIP package type.
+
+commit 51f2674d897fcb958f4ab1b729f7f1ca94915a64
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 19 10:11:07 2008 +0200
+
+    Set sensitivity for radiobuttons in "Heel & Toe goals" tab.
+
+commit 36628801559e8cfd922e6de20f6f4157a1bc070e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 19 10:06:14 2008 +0200
+
+    Set GUI constraints for the PGA package type.
+
+commit 8ac9e47f48c8e46b28d7939760b68ef13867fd9b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 19 09:47:15 2008 +0200
+
+    Avoid future code duplication in gui_constraints_set_*().
+
+commit 0a23deaed0ae1a7a76b65475b92df3578ed6caeb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 19 08:46:25 2008 +0200
+
+    Added forgotten radiobuttons in all_entries_to_default_sensitivity().
+
+commit c71a90c65298e59417b0849c1fcc0bf617505d61
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 19 08:37:27 2008 +0200
+
+    Corrected a minor typo.
+
+commit 8f36ac64e25bb6fe656977142e1f44475be9cc43
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 19 08:35:44 2008 +0200
+
+    Added forgotten radiobuttons in on_clear_button_clicked().
+
+commit 308a3c8adba100b78508d9b4d3b6f278459e981d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 19 08:32:28 2008 +0200
+
+    Set GUI constraints for the BGA package type.
+
+commit 5874abcb9ae2f5eb2267989b9f6da6870339defb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 19 01:08:26 2008 +0200
+
+    Corrected some typos in comments.
+
+commit 346340f177462d7ecb2c504c621cffe86cf1196a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Apr 18 23:33:32 2008 +0200
+
+    Added PLCC to the list of supported footprint types.
+
+commit b3fe584e5e5794a1367bc9ca4674fd92ecca511d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Apr 18 23:31:35 2008 +0200
+
+    Found the last bugs in write_footprint_plcc() I hope.
+    
+    Added package outline to the silkscreen layer.
+
+commit cd3eae40e9e85f08594d82c820abf8f1367fc9d4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 17 23:53:48 2008 +0200
+
+    Added a list of supported footprint types to the README file.
+
+commit a782ad3072cb5e3d1d46e3ee09e4e09154f8353b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 17 23:31:37 2008 +0200
+
+    Found some more bugs in write_footprint_plcc().
+    
+    Outer-Outer still needs to be debugged.
+
+commit 8c4c3ed8d20e66ddaf7bff4c42d94e5f2f3cb4e8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 17 06:44:57 2008 +0200
+
+    Found some bugs in write_footprint_plcc().
+
+commit 41fa2139ae55a1a8ffdcb2b6049aeb3b6e9422e5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 16 21:57:28 2008 +0200
+
+    Write a SMT footprint for a PLCC package.
+    
+    - added global variables for state for "heel & toe" togglebuttons.
+    - added write_footprint_plcc().
+      needs further debugging !
+
+commit bcb97c92d374f6067d144206e4e084eb6c0771b8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 16 21:34:04 2008 +0200
+
+    Renamed the Dutch translation file.
+
+commit eb5d9d4efff4120a403d0a1779bd2690ec451e23
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 16 21:05:33 2008 +0200
+
+    Setting state of "heel & toe" toggle buttons.
+    
+    Adding PLCC type to on_footprint_type_entry_changed().
+
+commit 5573d686a6dcc07328959467681f9eada4330d1f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Apr 11 07:50:10 2008 +0200
+
+    Changes in the text because the "Heel & Toe goals" tab is needed for PLCC package footprints.
+
+commit 891ccd06f3add3f7adce4a9a1017969b8de8ca02
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 10 20:50:25 2008 +0200
+
+    Bumped the version to 0.0.6.
+
+commit 9f9359a4a2d376b3f78ffc58e1c37a150bc632e1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 9 23:26:40 2008 +0200
+
+    Updated: git-log > ChangeLog
+
 commit c9495a8ab6ab9cb3bbca58a0fda293a605062315
 Author: Bert Timmerman <bert.timmerman@xs4all.nl>
 Date:   Wed Apr 9 23:24:35 2008 +0200
