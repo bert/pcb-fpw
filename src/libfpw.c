@@ -23,7 +23,7 @@
  * \n
  * This program is distributed in the hope that it will be useful,\n
  * but WITHOUT ANY WARRANTY; without even the implied warranty of\n
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n
  * See the GNU General Public License for more details.\n
  * \n
  * You should have received a copy of the GNU General Public License\n
