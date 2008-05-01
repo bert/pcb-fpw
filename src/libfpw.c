@@ -703,6 +703,7 @@ write_footprint_bga ()
         gdouble dx;
         gint pin_number;
         gchar *pin_pad_name = g_strdup ("");
+        gchar *pin_pad_flags;
         gint i;
         gint j;
 
@@ -713,7 +714,7 @@ write_footprint_bga ()
                 (
                         stderr,
                         "ERROR: could not open file for %s footprint: %s.\n",
-                        footprint_type,
+                        current_fp.footprint_type,
                         footprint_filename
                 );
                 return (EXIT_FAILURE);
@@ -722,47 +723,47 @@ write_footprint_bga ()
          * properties */
         xmin = multiplier *
         (
-                ((-pitch_x * number_of_columns) / 2.0) -
-                (pad_diameter / 2.0) -
-                pad_solder_mask_clearance
+                ((-current_fp.pitch_x * current_fp.number_of_columns) / 2.0) -
+                (current_fp.pad_diameter / 2.0) -
+                current_fp.pad_solder_mask_clearance
         );
         xmax = multiplier *
         (
-                ((pitch_x * number_of_columns) / 2.0) +
-                (pad_diameter / 2.0) +
-                pad_solder_mask_clearance
+                ((current_fp.pitch_x * current_fp.number_of_columns) / 2.0) +
+                (current_fp.pad_diameter / 2.0) +
+                current_fp.pad_solder_mask_clearance
         );
         ymin = multiplier *
         (
-                ((-pitch_y * number_of_rows) / 2.0) -
-                (pad_diameter / 2.0) -
-                pad_solder_mask_clearance
+                ((-current_fp.pitch_y * current_fp.number_of_rows) / 2.0) -
+                (current_fp.pad_diameter / 2.0) -
+                current_fp.pad_solder_mask_clearance
         );
         ymax = multiplier *
         (
-                ((pitch_y * number_of_rows) / 2.0) +
-                (pad_diameter / 2.0) +
-                pad_solder_mask_clearance
+                ((current_fp.pitch_y * current_fp.number_of_rows) / 2.0) +
+                (current_fp.pad_diameter / 2.0) +
+                current_fp.pad_solder_mask_clearance
         );
         /* Determine (extreme) courtyard dimensions based on package
          * properties */
-        if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
-                xmin = (multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package));
-        if ((multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package)) > xmax)
-                xmax = (multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package));
-        if ((multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package)) < ymin)
-                ymin = (multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package));
-        if ((multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package)) > ymax)
-                ymax = (multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package));
+        if ((multiplier * ((-current_fp.package_body_length / 2.0) - current_fp.courtyard_clearance_with_package)) < xmin)
+                xmin = (multiplier * ((-current_fp.package_body_length / 2.0) - current_fp.courtyard_clearance_with_package));
+        if ((multiplier * ((current_fp.package_body_length / 2.0) + current_fp.courtyard_clearance_with_package)) > xmax)
+                xmax = (multiplier * ((current_fp.package_body_length / 2.0) + current_fp.courtyard_clearance_with_package));
+        if ((multiplier * ((-current_fp.package_body_width / 2.0) - current_fp.courtyard_clearance_with_package)) < ymin)
+                ymin = (multiplier * ((-current_fp.package_body_width / 2.0) - current_fp.courtyard_clearance_with_package));
+        if ((multiplier * ((current_fp.package_body_width / 2.0) + current_fp.courtyard_clearance_with_package)) > ymax)
+                ymax = (multiplier * ((current_fp.package_body_width / 2.0) + current_fp.courtyard_clearance_with_package));
         /* If the user input is using even more real-estate then use it */
-        if (multiplier * (-courtyard_length / 2.0) < xmin)
-                xmin = multiplier * (-courtyard_length / 2.0);
-        if (multiplier * (courtyard_length / 2.0) > xmax)
-                xmax = multiplier * (courtyard_length / 2.0);
-        if (multiplier * (-courtyard_width / 2.0) < ymin)
-                ymin = multiplier * (-courtyard_width / 2.0);
-        if (multiplier * (courtyard_width / 2.0) > ymax)
-                ymax = multiplier * (courtyard_width / 2.0);
+        if (multiplier * (-current_fp.courtyard_length / 2.0) < xmin)
+                xmin = multiplier * (-current_fp.courtyard_length / 2.0);
+        if (multiplier * (current_fp.courtyard_length / 2.0) > xmax)
+                xmax = multiplier * (current_fp.courtyard_length / 2.0);
+        if (multiplier * (-current_fp.courtyard_width / 2.0) < ymin)
+                ymin = multiplier * (-current_fp.courtyard_width / 2.0);
+        if (multiplier * (current_fp.courtyard_width / 2.0) > ymax)
+                ymax = multiplier * (current_fp.courtyard_width / 2.0);
         /* Write element header
          * Guess for a place where to put the refdes text */
         x_text = 0.0 ; /* already in mil/100 */
@@ -770,16 +771,16 @@ write_footprint_bga ()
         write_element_header (x_text, y_text);
         /* Write pin and/or pad entities */
         pin_number = 1;
-        for (i = 0; (i < number_of_rows); i++)
+        for (i = 0; (i < current_fp.number_of_rows); i++)
         /* one row at a time [A .. ZZ ..] etc.
          * where i is one or more letters of the alphabet,
          * excluding "I", "O", "Q", "S" and "Z" */
         {
-                for (j = 0; (j < number_of_columns); j++)
+                for (j = 0; (j < current_fp.number_of_columns); j++)
                 /* all columns o a row [1 .. n]
                  * where j is a member of the positive Natural numbers (N) */
                 {
-                        if (pin1_square && (pin_number == 1))
+                        if (current_fp.pin1_square && (pin_number == 1))
                                 pin_pad_flags = g_strdup ("square");
                         else
                                 pin_pad_flags = g_strdup ("");
@@ -788,49 +789,49 @@ write_footprint_bga ()
                         (
                                 pin_number, /* pin number */
                                 pin_pad_name, /* pin name */
-                                multiplier * ((((- number_of_columns -1) / 2.0) + 1 + j) * pitch_x), /* x0 coordinate */
-                                multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
-                                multiplier * ((((- number_of_columns -1) / 2.0) + 1 + j) * pitch_x), /* x1 coordinate */
-                                multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y1-coordinate */
-                                multiplier * pad_width, /* pad width */
-                                multiplier * pad_clearance, /* clearance */
-                                multiplier * (pad_width + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                                multiplier * ((((-current_fp.number_of_columns -1) / 2.0) + 1 + j) * current_fp.pitch_x), /* x0 coordinate */
+                                multiplier * ((((-current_fp.number_of_rows - 1) / 2.0) + 1 + i) * current_fp.pitch_y), /* y0-coordinate */
+                                multiplier * ((((-current_fp.number_of_columns -1) / 2.0) + 1 + j) * current_fp.pitch_x), /* x1 coordinate */
+                                multiplier * ((((-current_fp.number_of_rows - 1) / 2.0) + 1 + i) * current_fp.pitch_y), /* y1-coordinate */
+                                multiplier * current_fp.pad_width, /* pad width */
+                                multiplier * current_fp.pad_clearance, /* clearance */
+                                multiplier * (current_fp.pad_width + (2 * current_fp.pad_solder_mask_clearance)), /* solder mask clearance */
                                 pin_pad_flags /* flags */
                         );
                         pin_number++;
                 }
         }
         /* Write a package body on the silkscreen */
-        if (silkscreen_package_outline)
+        if (current_fp.silkscreen_package_outline)
         {
                 fprintf (fp, "# Write a package body on the silkscreen\n");
                 write_rectangle
                 (
-                        multiplier * (-package_body_length / 2.0),
-                        multiplier * (-package_body_width / 2.0),
-                        multiplier * (package_body_length / 2.0),
-                        multiplier * (package_body_width / 2.0),
-                        multiplier * silkscreen_line_width
+                        multiplier * (-current_fp.package_body_length / 2.0),
+                        multiplier * (-current_fp.package_body_width / 2.0),
+                        multiplier * (current_fp.package_body_length / 2.0),
+                        multiplier * (current_fp.package_body_width / 2.0),
+                        multiplier * current_fp.silkscreen_line_width
                 );
         }
         /* Write a pin #1 marker on the silkscreen */
-        if (silkscreen_indicate_1)
+        if (current_fp.silkscreen_indicate_1)
         {
                 fprintf (fp, "# Write a pin 1 marker on the silkscreen\n");
-                for (dx = 0.0; dx < (pitch_x / 2.0); dx = dx + silkscreen_line_width)
+                for (dx = 0.0; dx < (current_fp.pitch_x / 2.0); dx = dx + current_fp.silkscreen_line_width)
                 {
                         write_element_line
                         (
-                                multiplier * (-package_body_length / 2.0),
-                                multiplier * ((-package_body_width / 2.0) + dx),
-                                multiplier * ((-package_body_length / 2.0) + dx),
-                                multiplier * (-package_body_width / 2.0),
-                                multiplier * (silkscreen_line_width)
+                                multiplier * (-current_fp.package_body_length / 2.0),
+                                multiplier * ((-current_fp.package_body_width / 2.0) + dx),
+                                multiplier * ((-current_fp.package_body_length / 2.0) + dx),
+                                multiplier * (-current_fp.package_body_width / 2.0),
+                                multiplier * (current_fp.silkscreen_line_width)
                         );
                 }
         }
         /* Write a courtyard on the silkscreen */
-        if (courtyard)
+        if (current_fp.courtyard)
         {
                 fprintf (fp, "# Write a courtyard on the silkscreen\n");
                 write_rectangle
@@ -839,11 +840,11 @@ write_footprint_bga ()
                         ymin, /* already in mil/100 */
                         xmax, /* already in mil/100 */
                         ymax, /* already in mil/100 */
-                        multiplier * courtyard_line_width
+                        multiplier * current_fp.courtyard_line_width
                 );
         }
         /* Write attributes */
-        if (attributes_in_footprint)
+        if (current_fp.attributes_in_footprint)
                 write_attributes ();
         fprintf (fp, "\n");
         fprintf (fp, ")\n");
@@ -852,7 +853,7 @@ write_footprint_bga ()
         (
                 stderr,
                 "SUCCESS: wrote a footprint file for a %s package: %s.\n",
-                footprint_type,
+                current_fp.footprint_type,
                 footprint_filename
         );
 }
