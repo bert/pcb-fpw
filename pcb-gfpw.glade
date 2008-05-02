@@ -3258,7 +3258,7 @@ Lower right
 	  </child>
 
 	  <child>
-	    <widget class="GtkFrame" id="preview_frame">
+	    <widget class="GtkFrame" id="dimensions_frame">
 	      <property name="border_width">10</property>
 	      <property name="visible">True</property>
 	      <property name="label_xalign">0</property>
@@ -3266,7 +3266,7 @@ Lower right
 	      <property name="shadow_type">GTK_SHADOW_NONE</property>
 
 	      <child>
-		<widget class="GtkAlignment" id="preview_alignment">
+		<widget class="GtkAlignment" id="dimensions_alignment">
 		  <property name="visible">True</property>
 		  <property name="xalign">0.5</property>
 		  <property name="yalign">0.5</property>
@@ -3278,7 +3278,7 @@ Lower right
 		  <property name="right_padding">0</property>
 
 		  <child>
-		    <widget class="GtkImage" id="preview_image">
+		    <widget class="GtkImage" id="dimensions_image">
 		      <property name="visible">True</property>
 		      <property name="pixbuf">splash_wiz.xpm</property>
 		      <property name="xalign">0.5</property>
@@ -3291,9 +3291,9 @@ Lower right
 	      </child>
 
 	      <child>
-		<widget class="GtkLabel" id="preview_label">
+		<widget class="GtkLabel" id="dimensions_label">
 		  <property name="visible">True</property>
-		  <property name="label" translatable="yes">&lt;b&gt;Preview&lt;/b&gt;</property>
+		  <property name="label" translatable="yes">&lt;b&gt;Dimensions&lt;/b&gt;</property>
 		  <property name="use_underline">False</property>
 		  <property name="use_markup">True</property>
 		  <property name="justify">GTK_JUSTIFY_LEFT</property>
