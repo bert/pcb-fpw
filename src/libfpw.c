@@ -1693,6 +1693,7 @@ write_footprint_plcc ()
         gdouble y_text;
         gint pin_number;
         gchar *pin_pad_name = g_strdup ("");
+        gchar *pin_pad_flags;
         gint i;
         gdouble x0;
         gdouble x1;
@@ -1707,7 +1708,7 @@ write_footprint_plcc ()
                 (
                         stderr,
                         "ERROR: could not open file for %s footprint: %s.\n",
-                        footprint_type,
+                        current_fp.footprint_type,
                         footprint_filename
                 );
                 return (EXIT_FAILURE);
@@ -1716,53 +1717,53 @@ write_footprint_plcc ()
          * properties */
         if (c1_state) /* center-center distance */
         {
-                ymin = multiplier * (((-c1 - pad_length) / 2.0) - pad_solder_mask_clearance);
-                ymax = multiplier * (((c1 + pad_length) / 2.0) + pad_solder_mask_clearance);
+                ymin = multiplier * (((-current_fp.c1 - current_fp.pad_length) / 2.0) - current_fp.pad_solder_mask_clearance);
+                ymax = multiplier * (((current_fp.c1 + current_fp.pad_length) / 2.0) + current_fp.pad_solder_mask_clearance);
         }
         if (g1_state) /* inner-inner distance */
         {
-                ymin = multiplier * ((-g1 / 2.0) - pad_length - pad_solder_mask_clearance);
-                ymax = multiplier * ((g1 / 2.0) + pad_length + pad_solder_mask_clearance);
+                ymin = multiplier * ((-current_fp.g1 / 2.0) - current_fp.pad_length - current_fp.pad_solder_mask_clearance);
+                ymax = multiplier * ((current_fp.g1 / 2.0) + current_fp.pad_length + current_fp.pad_solder_mask_clearance);
         }
         if (z1_state) /* outer-outer distance */
         {
-                ymin = multiplier * ((-z1 / 2.0) - pad_solder_mask_clearance);
-                ymax = multiplier * ((z1 / 2.0) + pad_solder_mask_clearance);
+                ymin = multiplier * ((-current_fp.z1 / 2.0) - current_fp.pad_solder_mask_clearance);
+                ymax = multiplier * ((current_fp.z1 / 2.0) + current_fp.pad_solder_mask_clearance);
         }
         if (c2_state) /* center-center distance */
         {
-                xmin = multiplier * (((-c2 - pad_length) / 2.0) - pad_solder_mask_clearance);
-                xmax = multiplier * (((c2 + pad_length) / 2.0) + pad_solder_mask_clearance);
+                xmin = multiplier * (((-current_fp.c2 - current_fp.pad_length) / 2.0) - current_fp.pad_solder_mask_clearance);
+                xmax = multiplier * (((current_fp.c2 + current_fp.pad_length) / 2.0) + current_fp.pad_solder_mask_clearance);
         }
         if (g2_state) /* inner-inner distance */
         {
-                xmin = multiplier * ((-g2 / 2.0) - pad_length - pad_solder_mask_clearance);
-                xmax = multiplier * ((g2 / 2.0) + pad_length + pad_solder_mask_clearance);
+                xmin = multiplier * ((-current_fp.g2 / 2.0) - current_fp.pad_length - current_fp.pad_solder_mask_clearance);
+                xmax = multiplier * ((current_fp.g2 / 2.0) + current_fp.pad_length + current_fp.pad_solder_mask_clearance);
         }
         if (z2_state) /* outer-outer distance */
         {
-                xmin = multiplier * ((-z2 / 2.0) - pad_solder_mask_clearance);
-                xmax = multiplier * ((z2 / 2.0) + pad_solder_mask_clearance);
+                xmin = multiplier * ((-current_fp.z2 / 2.0) - current_fp.pad_solder_mask_clearance);
+                xmax = multiplier * ((current_fp.z2 / 2.0) + current_fp.pad_solder_mask_clearance);
         }
         /* Determine (extreme) courtyard dimensions based on package
          * properties */
-        if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
-                xmin = (multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package));
-        if ((multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package)) > xmax)
-                xmax = (multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package));
-        if ((multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package)) < ymin)
-                ymin = (multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package));
-        if ((multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package)) > ymax)
-                ymax = (multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package));
+        if ((multiplier * ((-current_fp.package_body_length / 2.0) - current_fp.courtyard_clearance_with_package)) < xmin)
+                xmin = (multiplier * ((-current_fp.package_body_length / 2.0) - current_fp.courtyard_clearance_with_package));
+        if ((multiplier * ((current_fp.package_body_length / 2.0) + current_fp.courtyard_clearance_with_package)) > xmax)
+                xmax = (multiplier * ((current_fp.package_body_length / 2.0) + current_fp.courtyard_clearance_with_package));
+        if ((multiplier * ((-current_fp.package_body_width / 2.0) - current_fp.courtyard_clearance_with_package)) < ymin)
+                ymin = (multiplier * ((-current_fp.package_body_width / 2.0) - current_fp.courtyard_clearance_with_package));
+        if ((multiplier * ((current_fp.package_body_width / 2.0) + current_fp.courtyard_clearance_with_package)) > ymax)
+                ymax = (multiplier * ((current_fp.package_body_width / 2.0) + current_fp.courtyard_clearance_with_package));
         /* If the user input is using even more real-estate then use it */
-        if (multiplier * (-courtyard_length / 2.0) < xmin)
-                xmin = multiplier * (-courtyard_length / 2.0);
-        if (multiplier * (courtyard_length / 2.0) > xmax)
-                xmax = multiplier * (courtyard_length / 2.0);
-        if (multiplier * (-courtyard_width / 2.0) < ymin)
-                ymin = multiplier * (-courtyard_width / 2.0);
-        if (multiplier * (courtyard_width / 2.0) > ymax)
-                ymax = multiplier * (courtyard_width / 2.0);
+        if (multiplier * (-current_fp.courtyard_length / 2.0) < xmin)
+                xmin = multiplier * (-current_fp.courtyard_length / 2.0);
+        if (multiplier * (current_fp.courtyard_length / 2.0) > xmax)
+                xmax = multiplier * (current_fp.courtyard_length / 2.0);
+        if (multiplier * (-current_fp.courtyard_width / 2.0) < ymin)
+                ymin = multiplier * (-current_fp.courtyard_width / 2.0);
+        if (multiplier * (current_fp.courtyard_width / 2.0) > ymax)
+                ymax = multiplier * (current_fp.courtyard_width / 2.0);
         /* Write element header
          * Guess for a place where to put the refdes text */
         x_text = 0.0 ; /* already in mil/100 */
@@ -1774,26 +1775,26 @@ write_footprint_plcc ()
          * pads itself are drawn from top (x0,y0) to bottom (x1,y1) */
         if (c1_state) /* center-center distance */
         {
-                y0 = ((-c1 - pad_length + pad_width) / 2.0);
-                y1 = ((-c1 + pad_length - pad_width) / 2.0);
+                y0 = ((-current_fp.c1 - current_fp.pad_length + current_fp.pad_width) / 2.0);
+                y1 = ((-current_fp.c1 + current_fp.pad_length - current_fp.pad_width) / 2.0);
         }
         if (g1_state) /* inner-inner distance */
         {
-                y0 = ((-g1 + pad_width) / 2.0) - pad_length;
-                y1 = ((-g1 - pad_width) / 2.0);
+                y0 = ((-current_fp.g1 + current_fp.pad_width) / 2.0) - current_fp.pad_length;
+                y1 = ((-current_fp.g1 - current_fp.pad_width) / 2.0);
         }
         if (z1_state) /* outer-outer distance */
         {
-                y0 = ((-z1 + pad_width) / 2.0);
-                y1 = ((-z1 - pad_width) / 2.0) + pad_length;
+                y0 = ((-current_fp.z1 + current_fp.pad_width) / 2.0);
+                y1 = ((-current_fp.z1 - current_fp.pad_width) / 2.0) + current_fp.pad_length;
         }
         for (pin_number = 1;
-                pin_number < ((count_x / 2) + 1.5);
+                pin_number < ((current_fp.count_x / 2) + 1.5);
                 pin_number++)
         {
-                if (pin1_square && (pin_number == 1))
+                if (current_fp.pin1_square && (pin_number == 1))
                         pin_pad_flags = g_strdup ("square");
-                else if (!strcmp (pad_shape, "rectangular pad"))
+                else if (!strcmp (current_fp.pad_shape, "rectangular pad"))
                         pin_pad_flags = g_strdup ("square");
                 else
                         pin_pad_flags = g_strdup ("");
@@ -1801,13 +1802,13 @@ write_footprint_plcc ()
                 (
                         pin_number, /* pin number */
                         pin_pad_name, /* pin name */
-                        multiplier * ((-pin_number + 1) * pitch_x), /* x0 coordinate */
+                        multiplier * ((-pin_number + 1) * current_fp.pitch_x), /* x0 coordinate */
                         multiplier * y0, /* y0-coordinate */
-                        multiplier * ((-pin_number + 1) * pitch_x), /* x1 coordinate */
+                        multiplier * ((-pin_number + 1) * current_fp.pitch_x), /* x1 coordinate */
                         multiplier * y1, /* y1-coordinate */
-                        multiplier * pad_width, /* pad width */
-                        multiplier * pad_clearance, /* clearance */
-                        multiplier * (pad_width + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                        multiplier * current_fp.pad_width, /* pad width */
+                        multiplier * current_fp.pad_clearance, /* clearance */
+                        multiplier * (current_fp.pad_width + (2 * current_fp.pad_solder_mask_clearance)), /* solder mask clearance */
                         pin_pad_flags /* flags */
                 );
         }
@@ -1816,22 +1817,22 @@ write_footprint_plcc ()
          * pads itself are drawn from left (x0,y0) to right (x1,y1) */
         if (c2_state) /* center-center distance */
         {
-                x0 = ((-c2 - pad_length + pad_width) / 2.0);
-                x1 = ((-c2 + pad_length - pad_width) / 2.0);
+                x0 = ((-current_fp.c2 - current_fp.pad_length + current_fp.pad_width) / 2.0);
+                x1 = ((-current_fp.c2 + current_fp.pad_length - current_fp.pad_width) / 2.0);
         }
         if (g2_state) /* inner-inner distance */
         {
-                x0 = ((-g2 + pad_width) / 2.0) - pad_length;
-                x1 = ((-g2 - pad_width) / 2.0);
+                x0 = ((-current_fp.g2 + current_fp.pad_width) / 2.0) - current_fp.pad_length;
+                x1 = ((-current_fp.g2 - current_fp.pad_width) / 2.0);
         }
         if (z2_state) /* outer-outer distance */
         {
-                x0 = ((-z2 + pad_width) / 2.0);
-                x1 = ((-z2 - pad_width) / 2.0) + pad_length;
+                x0 = ((-current_fp.z2 + current_fp.pad_width) / 2.0);
+                x1 = ((-current_fp.z2 - current_fp.pad_width) / 2.0) + current_fp.pad_length;
         }
         i = 1;
-        for (pin_number = ((count_x / 2) + 2.5);
-                pin_number < ((count_x / 2) + 1.5 + count_y);
+        for (pin_number = ((current_fp.count_x / 2) + 2.5);
+                pin_number < ((current_fp.count_x / 2) + 1.5 + current_fp.count_y);
                 pin_number++)
         {
                 write_pad
@@ -1839,12 +1840,12 @@ write_footprint_plcc ()
                         pin_number, /* pin number */
                         pin_pad_name, /* pin name */
                         multiplier * x0, /* x0 coordinate */
-                        multiplier * ((-count_y / 2) - 1 + i) * pitch_y, /* y0-coordinate */
+                        multiplier * ((-current_fp.count_y / 2) - 1 + i) * current_fp.pitch_y, /* y0-coordinate */
                         multiplier * x1, /* x1 coordinate */
-                        multiplier * ((-count_y / 2) - 1 + i) * pitch_y, /* y1-coordinate */
-                        multiplier * pad_width, /* pad width */
-                        multiplier * pad_clearance, /* clearance */
-                        multiplier * (pad_width + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                        multiplier * ((-current_fp.count_y / 2) - 1 + i) * current_fp.pitch_y, /* y1-coordinate */
+                        multiplier * current_fp.pad_width, /* pad width */
+                        multiplier * current_fp.pad_clearance, /* clearance */
+                        multiplier * (current_fp.pad_width + (2 * current_fp.pad_solder_mask_clearance)), /* solder mask clearance */
                         pin_pad_flags /* flags */
                 );
                 i++;
@@ -1854,35 +1855,35 @@ write_footprint_plcc ()
          * pads itself are drawn from top (x0,y0) to bottom (x1,y1) */
         if (c1_state) /* center-center distance */
         {
-                y0 = ((c1 - pad_length + pad_width) / 2.0);
-                y1 = ((c1 + pad_length - pad_width) / 2.0);
+                y0 = ((current_fp.c1 - current_fp.pad_length + current_fp.pad_width) / 2.0);
+                y1 = ((current_fp.c1 + current_fp.pad_length - current_fp.pad_width) / 2.0);
         }
         if (g1_state) /* inner-inner distance */
         {
-                y0 = ((g1 + pad_width) / 2.0);
-                y1 = ((g1 - pad_width) / 2.0) + pad_length;
+                y0 = ((current_fp.g1 + current_fp.pad_width) / 2.0);
+                y1 = ((current_fp.g1 - current_fp.pad_width) / 2.0) + current_fp.pad_length;
         }
         if (z1_state) /* outer-outer distance */
         {
-                y0 = ((z1 + pad_width) / 2.0) - pad_length;
-                y1 = ((z1 - pad_width) / 2.0);
+                y0 = ((current_fp.z1 + current_fp.pad_width) / 2.0) - current_fp.pad_length;
+                y1 = ((current_fp.z1 - current_fp.pad_width) / 2.0);
         }
         i = 1;
-        for (pin_number = ((count_x / 2) + 2.5 + count_y);
-                pin_number < ((count_x / 2) + 1.5 + count_y + count_x);
+        for (pin_number = ((current_fp.count_x / 2) + 2.5 + current_fp.count_y);
+                pin_number < ((current_fp.count_x / 2) + 1.5 + current_fp.count_y + current_fp.count_x);
                 pin_number++)
         {
                 write_pad
                 (
                         pin_number, /* pin number */
                         pin_pad_name, /* pin name */
-                        multiplier * ((-count_x / 2) - 1 + i) * pitch_x, /* x0 coordinate */
+                        multiplier * ((-current_fp.count_x / 2) - 1 + i) * current_fp.pitch_x, /* x0 coordinate */
                         multiplier * y0, /* y0-coordinate */
-                        multiplier * ((-count_x / 2) - 1 + i) * pitch_x, /* x1 coordinate */
+                        multiplier * ((-current_fp.count_x / 2) - 1 + i) * current_fp.pitch_x, /* x1 coordinate */
                         multiplier * y1, /* y1-coordinate */
-                        multiplier * pad_width, /* pad width */
-                        multiplier * pad_clearance, /* clearance */
-                        multiplier * (pad_width + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                        multiplier * current_fp.pad_width, /* pad width */
+                        multiplier * current_fp.pad_clearance, /* clearance */
+                        multiplier * (current_fp.pad_width + (2 * current_fp.pad_solder_mask_clearance)), /* solder mask clearance */
                         pin_pad_flags /* flags */
                 );
                 i++;
@@ -1892,22 +1893,22 @@ write_footprint_plcc ()
          * pads itself are drawn from left (x0,y0) to right (x1,y1) */
         if (c2_state) /* center-center distance */
         {
-                x0 = ((c2 - pad_length + pad_width) / 2.0);
-                x1 = ((c2 + pad_length - pad_width) / 2.0);
+                x0 = ((current_fp.c2 - current_fp.pad_length + current_fp.pad_width) / 2.0);
+                x1 = ((current_fp.c2 + current_fp.pad_length - current_fp.pad_width) / 2.0);
         }
         if (g2_state) /* inner-inner distance */
         {
-                x0 = ((g2 + pad_width) / 2.0);
-                x1 = ((g2 - pad_width) / 2.0) + pad_length;
+                x0 = ((current_fp.g2 + current_fp.pad_width) / 2.0);
+                x1 = ((current_fp.g2 - current_fp.pad_width) / 2.0) + current_fp.pad_length;
         }
         if (z2_state) /* outer-outer distance */
         {
-                x0 = ((z2 + pad_width) / 2.0) - pad_length;
-                x1 = ((z2 - pad_width) / 2.0);
+                x0 = ((current_fp.z2 + current_fp.pad_width) / 2.0) - current_fp.pad_length;
+                x1 = ((current_fp.z2 - current_fp.pad_width) / 2.0);
         }
         i = 1;
-        for (pin_number = ((count_x / 2) + 2.5 + count_y + count_x);
-                pin_number < ((count_x / 2) + 1.5 + (2 * count_y) + count_x);
+        for (pin_number = ((current_fp.count_x / 2) + 2.5 + current_fp.count_y + current_fp.count_x);
+                pin_number < ((current_fp.count_x / 2) + 1.5 + (2 * current_fp.count_y) + current_fp.count_x);
                 pin_number++)
         {
                 write_pad
@@ -1915,12 +1916,12 @@ write_footprint_plcc ()
                         pin_number, /* pin number */
                         pin_pad_name, /* pin name */
                         multiplier * x0, /* x0 coordinate */
-                        multiplier * ((count_y / 2) + 1 - i) * pitch_y, /* y0-coordinate */
+                        multiplier * ((current_fp.count_y / 2) + 1 - i) * current_fp.pitch_y, /* y0-coordinate */
                         multiplier * x1, /* x1 coordinate */
-                        multiplier * ((count_y / 2) + 1 - i) * pitch_y, /* y1-coordinate */
-                        multiplier * pad_width, /* pad width */
-                        multiplier * pad_clearance, /* clearance */
-                        multiplier * (pad_width + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                        multiplier * ((current_fp.count_y / 2) + 1 - i) * current_fp.pitch_y, /* y1-coordinate */
+                        multiplier * current_fp.pad_width, /* pad width */
+                        multiplier * current_fp.pad_clearance, /* clearance */
+                        multiplier * (current_fp.pad_width + (2 * current_fp.pad_solder_mask_clearance)), /* solder mask clearance */
                         pin_pad_flags /* flags */
                 );
                 i++;
@@ -1930,139 +1931,139 @@ write_footprint_plcc ()
          * pads itself are drawn from top (x0,y0) to bottom (x1,y1) */
         if (c1_state) /* center-center distance */
         {
-                y0 = ((-c1 - pad_length + pad_width) / 2.0);
-                y1 = ((-c1 + pad_length - pad_width) / 2.0);
+                y0 = ((-current_fp.c1 - current_fp.pad_length + current_fp.pad_width) / 2.0);
+                y1 = ((-current_fp.c1 + current_fp.pad_length - current_fp.pad_width) / 2.0);
         }
         if (g1_state) /* inner-inner distance */
         {
-                y0 = ((-g1 + pad_width) / 2.0) - pad_length;
-                y1 = ((-g1 - pad_width) / 2.0);
+                y0 = ((-current_fp.g1 + current_fp.pad_width) / 2.0) - current_fp.pad_length;
+                y1 = ((-current_fp.g1 - current_fp.pad_width) / 2.0);
         }
         if (z1_state) /* outer-outer distance */
         {
-                y0 = ((-z1 + pad_width) / 2.0);
-                y1 = ((-z1 - pad_width) / 2.0) + pad_length;
+                y0 = ((-current_fp.z1 + current_fp.pad_width) / 2.0);
+                y1 = ((-current_fp.z1 - current_fp.pad_width) / 2.0) + current_fp.pad_length;
         }
         i = 1;
-        for (pin_number = ((count_x / 2) + 2.5 + (2 * count_y) + count_x);
-                pin_number < (2 * (count_y + count_x) + 1);
+        for (pin_number = ((current_fp.count_x / 2) + 2.5 + (2 * current_fp.count_y) + current_fp.count_x);
+                pin_number < (2 * (current_fp.count_y + current_fp.count_x) + 1);
                 pin_number++)
         {
                 write_pad
                 (
                         pin_number, /* pin number */
                         pin_pad_name, /* pin name */
-                        multiplier * ((count_x / 2) + 1 - i) * pitch_x, /* x0 coordinate */
+                        multiplier * ((current_fp.count_x / 2) + 1 - i) * current_fp.pitch_x, /* x0 coordinate */
                         multiplier * y0, /* y0-coordinate */
-                        multiplier * ((count_x / 2) + 1 - i) * pitch_x, /* x1 coordinate */
+                        multiplier * ((current_fp.count_x / 2) + 1 - i) * current_fp.pitch_x, /* x1 coordinate */
                         multiplier * y1, /* y1-coordinate */
-                        multiplier * pad_width, /* pad width */
-                        multiplier * pad_clearance, /* clearance */
-                        multiplier * (pad_width + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                        multiplier * current_fp.pad_width, /* pad width */
+                        multiplier * current_fp.pad_clearance, /* clearance */
+                        multiplier * (current_fp.pad_width + (2 * current_fp.pad_solder_mask_clearance)), /* solder mask clearance */
                         pin_pad_flags /* flags */
                 );
                 i++;
         }
         /* Write package body on silkscreen */
-        if (silkscreen_package_outline)
+        if (current_fp.silkscreen_package_outline)
         {
                 fprintf (fp, "# Write a package body on the silkscreen\n");
                 /* Upper right corner */
                 write_element_line
                 (
-                        multiplier * (package_body_length / 2.0),
-                        multiplier * (-package_body_width / 2.0),
-                        multiplier * (package_body_length / 2.0),
-                        multiplier * (-1 * ((((count_y - 1) * pitch_y) + pad_length) / 2.0) - pad_solder_mask_clearance),
-                        multiplier * silkscreen_line_width
+                        multiplier * (current_fp.package_body_length / 2.0),
+                        multiplier * (-current_fp.package_body_width / 2.0),
+                        multiplier * (current_fp.package_body_length / 2.0),
+                        multiplier * (-1 * ((((current_fp.count_y - 1) * current_fp.pitch_y) + current_fp.pad_length) / 2.0) - current_fp.pad_solder_mask_clearance),
+                        multiplier * current_fp.silkscreen_line_width
                 );
                 write_element_line
                 (
-                        multiplier * (package_body_length / 2.0),
-                        multiplier * (-package_body_width / 2.0),
-                        multiplier * (((((count_x - 1) * pitch_x) + pad_length) / 2.0) + pad_solder_mask_clearance),
-                        multiplier * (-package_body_width / 2.0),
-                        multiplier * silkscreen_line_width
+                        multiplier * (current_fp.package_body_length / 2.0),
+                        multiplier * (-current_fp.package_body_width / 2.0),
+                        multiplier * (((((current_fp.count_x - 1) * current_fp.pitch_x) + current_fp.pad_length) / 2.0) + current_fp.pad_solder_mask_clearance),
+                        multiplier * (-current_fp.package_body_width / 2.0),
+                        multiplier * current_fp.silkscreen_line_width
                 );
                 /* Lower right corner */
                 write_element_line
                 (
-                        multiplier * (package_body_length / 2.0),
-                        multiplier * (package_body_width / 2.0),
-                        multiplier * (package_body_length / 2.0),
-                        multiplier * (((((count_y - 1) * pitch_y) + pad_length) / 2.0) + pad_solder_mask_clearance),
-                        multiplier * silkscreen_line_width
+                        multiplier * (current_fp.package_body_length / 2.0),
+                        multiplier * (current_fp.package_body_width / 2.0),
+                        multiplier * (current_fp.package_body_length / 2.0),
+                        multiplier * (((((current_fp.count_y - 1) * current_fp.pitch_y) + current_fp.pad_length) / 2.0) + current_fp.pad_solder_mask_clearance),
+                        multiplier * current_fp.silkscreen_line_width
                 );
                 write_element_line
                 (
-                        multiplier * (package_body_length / 2.0),
-                        multiplier * (package_body_width / 2.0),
-                        multiplier * (((((count_x - 1) * pitch_x) + pad_length) / 2.0) + pad_solder_mask_clearance),
-                        multiplier * (package_body_width / 2.0),
-                        multiplier * silkscreen_line_width
+                        multiplier * (current_fp.package_body_length / 2.0),
+                        multiplier * (current_fp.package_body_width / 2.0),
+                        multiplier * (((((current_fp.count_x - 1) * current_fp.pitch_x) + current_fp.pad_length) / 2.0) + current_fp.pad_solder_mask_clearance),
+                        multiplier * (current_fp.package_body_width / 2.0),
+                        multiplier * current_fp.silkscreen_line_width
                 );
                 /* Lower left corner */
                 write_element_line
                 (
-                        multiplier * (-package_body_length / 2.0),
-                        multiplier * (package_body_width / 2.0),
-                        multiplier * (-package_body_length / 2.0),
-                        multiplier * (((((count_y - 1) * pitch_y) + pad_length) / 2.0) + pad_solder_mask_clearance),
-                        multiplier * silkscreen_line_width
+                        multiplier * (-current_fp.package_body_length / 2.0),
+                        multiplier * (current_fp.package_body_width / 2.0),
+                        multiplier * (-current_fp.package_body_length / 2.0),
+                        multiplier * (((((current_fp.count_y - 1) * current_fp.pitch_y) + current_fp.pad_length) / 2.0) + current_fp.pad_solder_mask_clearance),
+                        multiplier * current_fp.silkscreen_line_width
                 );
                 write_element_line
                 (
-                        multiplier * (-package_body_length / 2.0),
-                        multiplier * (package_body_width / 2.0),
-                        multiplier * (-1 * ((((count_x - 1) * pitch_x) + pad_length) / 2.0) - pad_solder_mask_clearance),
-                        multiplier * (package_body_width / 2.0),
-                        multiplier * silkscreen_line_width
+                        multiplier * (-current_fp.package_body_length / 2.0),
+                        multiplier * (current_fp.package_body_width / 2.0),
+                        multiplier * (-1 * ((((current_fp.count_x - 1) * current_fp.pitch_x) + current_fp.pad_length) / 2.0) - current_fp.pad_solder_mask_clearance),
+                        multiplier * (current_fp.package_body_width / 2.0),
+                        multiplier * current_fp.silkscreen_line_width
                 );
                 /* Upper left corner */
                 write_element_line
                 (
-                        multiplier * (-1 * ((((count_x - 1) * pitch_x) + pad_length) / 2.0) - pad_solder_mask_clearance),
-                        multiplier * (-package_body_width / 2.0),
-                        multiplier * (-package_body_length / 2.0),
-                        multiplier * (-1 * ((((count_y - 1) * pitch_y) + pad_length) / 2.0) - pad_solder_mask_clearance),
-                        multiplier * silkscreen_line_width
+                        multiplier * (-1 * ((((current_fp.count_x - 1) * current_fp.pitch_x) + current_fp.pad_length) / 2.0) - current_fp.pad_solder_mask_clearance),
+                        multiplier * (-current_fp.package_body_width / 2.0),
+                        multiplier * (-current_fp.package_body_length / 2.0),
+                        multiplier * (-1 * ((((current_fp.count_y - 1) * current_fp.pitch_y) + current_fp.pad_length) / 2.0) - current_fp.pad_solder_mask_clearance),
+                        multiplier * current_fp.silkscreen_line_width
                 );
         }
         /* Write a pin #1 marker on the silkscreen */
-        if (silkscreen_indicate_1)
+        if (current_fp.silkscreen_indicate_1)
         {
                 fprintf (fp, "# Write a pin 1 marker on the silkscreen\n");
                 if (c1_state) /* center-center distance */
                 {
-                        y_dot = ((-c1 + pad_length - pad_width) / 2.0) +
-                                pad_width + pad_solder_mask_clearance +
-                                (2 * silkscreen_line_width);
+                        y_dot = ((-current_fp.c1 + current_fp.pad_length - current_fp.pad_width) / 2.0) +
+                                current_fp.pad_width + current_fp.pad_solder_mask_clearance +
+                                (2 * current_fp.silkscreen_line_width);
                 }
                 if (g1_state) /* inner-inner distance */
                 {
-                        y_dot = ((-g1 - pad_width) / 2.0) +
-                                pad_width + pad_solder_mask_clearance +
-                                (2 * silkscreen_line_width);
+                        y_dot = ((-current_fp.g1 - current_fp.pad_width) / 2.0) +
+                                current_fp.pad_width + current_fp.pad_solder_mask_clearance +
+                                (2 * current_fp.silkscreen_line_width);
                 }
                 if (z1_state) /* outer-outer distance */
                 {
-                        y_dot = ((-z1 - pad_width) / 2.0) + pad_length +
-                                pad_width + pad_solder_mask_clearance +
-                                (2 * silkscreen_line_width);
+                        y_dot = ((-current_fp.z1 - current_fp.pad_width) / 2.0) + current_fp.pad_length +
+                                current_fp.pad_width + current_fp.pad_solder_mask_clearance +
+                                (2 * current_fp.silkscreen_line_width);
                 }
                 write_element_arc
                 (
                         0,
                         multiplier * y_dot,
-                        multiplier * 0.5 * silkscreen_line_width,
-                        multiplier * 0.5 * silkscreen_line_width,
+                        multiplier * 0.5 * current_fp.silkscreen_line_width,
+                        multiplier * 0.5 * current_fp.silkscreen_line_width,
                         0,
                         360,
-                        multiplier * silkscreen_line_width
+                        multiplier * current_fp.silkscreen_line_width
                 );
         }
         /* Write a courtyard on the silkscreen */
-        if (courtyard)
+        if (current_fp.courtyard)
         {
                 fprintf (fp, "# Write a courtyard on the silkscreen\n");
                 write_rectangle
@@ -2071,11 +2072,11 @@ write_footprint_plcc ()
                         ymin, /* already in mil/100 */
                         xmax, /* already in mil/100 */
                         ymax, /* already in mil/100 */
-                        multiplier * courtyard_line_width
+                        multiplier * current_fp.courtyard_line_width
                 );
         }
         /* Write attributes */
-        if (attributes_in_footprint)
+        if (current_fp.attributes_in_footprint)
                 write_attributes ();
         fprintf (fp, "\n");
         fprintf (fp, ")\n");
@@ -2084,7 +2085,7 @@ write_footprint_plcc ()
         (
                 stderr,
                 "SUCCESS: wrote a footprint file for a %s package: %s.\n",
-                footprint_type,
+                current_fp.footprint_type,
                 footprint_filename
         );
 }
