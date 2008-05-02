@@ -209,10 +209,10 @@ create_pcb_gfpw (void)
   GtkWidget *Z2_entry;
   GtkWidget *left_to_right_label;
   GtkWidget *heel_and_toe_goals_tab_label;
-  GtkWidget *preview_frame;
-  GtkWidget *preview_alignment;
-  GtkWidget *preview_image;
-  GtkWidget *preview_label;
+  GtkWidget *dimensions_frame;
+  GtkWidget *dimensions_alignment;
+  GtkWidget *dimensions_image;
+  GtkWidget *dimensions_label;
   GtkWidget *hbuttonbox;
   GtkWidget *close_button;
   GtkWidget *clear_button;
@@ -1395,29 +1395,29 @@ create_pcb_gfpw (void)
   gtk_widget_show (heel_and_toe_goals_tab_label);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook), 4), heel_and_toe_goals_tab_label);
 
-  preview_frame = gtk_frame_new (NULL);
-  gtk_widget_set_name (preview_frame, "preview_frame");
-  gtk_widget_show (preview_frame);
-  gtk_box_pack_start (GTK_BOX (hbox), preview_frame, FALSE, FALSE, 0);
-  gtk_container_set_border_width (GTK_CONTAINER (preview_frame), 10);
-  gtk_frame_set_shadow_type (GTK_FRAME (preview_frame), GTK_SHADOW_NONE);
+  dimensions_frame = gtk_frame_new (NULL);
+  gtk_widget_set_name (dimensions_frame, "dimensions_frame");
+  gtk_widget_show (dimensions_frame);
+  gtk_box_pack_start (GTK_BOX (hbox), dimensions_frame, FALSE, FALSE, 0);
+  gtk_container_set_border_width (GTK_CONTAINER (dimensions_frame), 10);
+  gtk_frame_set_shadow_type (GTK_FRAME (dimensions_frame), GTK_SHADOW_NONE);
 
-  preview_alignment = gtk_alignment_new (0.5, 0.5, 1, 1);
-  gtk_widget_set_name (preview_alignment, "preview_alignment");
-  gtk_widget_show (preview_alignment);
-  gtk_container_add (GTK_CONTAINER (preview_frame), preview_alignment);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (preview_alignment), 0, 0, 12, 0);
+  dimensions_alignment = gtk_alignment_new (0.5, 0.5, 1, 1);
+  gtk_widget_set_name (dimensions_alignment, "dimensions_alignment");
+  gtk_widget_show (dimensions_alignment);
+  gtk_container_add (GTK_CONTAINER (dimensions_frame), dimensions_alignment);
+  gtk_alignment_set_padding (GTK_ALIGNMENT (dimensions_alignment), 0, 0, 12, 0);
 
-  preview_image = create_pixmap (pcb_gfpw, "splash_wiz.xpm");
-  gtk_widget_set_name (preview_image, "preview_image");
-  gtk_widget_show (preview_image);
-  gtk_container_add (GTK_CONTAINER (preview_alignment), preview_image);
+  dimensions_image = create_pixmap (pcb_gfpw, "splash_wiz.xpm");
+  gtk_widget_set_name (dimensions_image, "dimensions_image");
+  gtk_widget_show (dimensions_image);
+  gtk_container_add (GTK_CONTAINER (dimensions_alignment), dimensions_image);
 
-  preview_label = gtk_label_new (_("<b>Preview</b>"));
-  gtk_widget_set_name (preview_label, "preview_label");
-  gtk_widget_show (preview_label);
-  gtk_frame_set_label_widget (GTK_FRAME (preview_frame), preview_label);
-  gtk_label_set_use_markup (GTK_LABEL (preview_label), TRUE);
+  dimensions_label = gtk_label_new (_("<b>Dimensions</b>"));
+  gtk_widget_set_name (dimensions_label, "dimensions_label");
+  gtk_widget_show (dimensions_label);
+  gtk_frame_set_label_widget (GTK_FRAME (dimensions_frame), dimensions_label);
+  gtk_label_set_use_markup (GTK_LABEL (dimensions_label), TRUE);
 
   hbuttonbox = gtk_hbutton_box_new ();
   gtk_widget_set_name (hbuttonbox, "hbuttonbox");
@@ -1797,10 +1797,10 @@ create_pcb_gfpw (void)
   GLADE_HOOKUP_OBJECT (pcb_gfpw, Z2_entry, "Z2_entry");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, left_to_right_label, "left_to_right_label");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, heel_and_toe_goals_tab_label, "heel_and_toe_goals_tab_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, preview_frame, "preview_frame");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, preview_alignment, "preview_alignment");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, preview_image, "preview_image");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, preview_label, "preview_label");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, dimensions_frame, "dimensions_frame");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, dimensions_alignment, "dimensions_alignment");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, dimensions_image, "dimensions_image");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, dimensions_label, "dimensions_label");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, hbuttonbox, "hbuttonbox");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, close_button, "close_button");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, clear_button, "clear_button");
