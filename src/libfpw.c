@@ -11,7 +11,7 @@
  * FootPrintWizard (fpw) as well as the GUI version (pcb-gfpw).\n
  *
  * \todo Collect all global variables for the footprint in a single struct.\n
- * Switchings to another preview will be easier by just switching pointers.
+ * Switching to another preview will be easier by just switching pointers.
  *
  * \todo Change all global variables to using a single struct of type
  * footprint.
