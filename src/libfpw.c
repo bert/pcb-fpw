@@ -3031,6 +3031,7 @@ write_footprint_to92 ()
         gdouble ymin;
         gdouble x_text;
         gdouble y_text;
+        gchar *pin_pad_flags;
 
         fp = fopen (footprint_filename, "w");
         if (!fp)
@@ -3039,43 +3040,43 @@ write_footprint_to92 ()
                 (
                         stderr,
                         "ERROR: could not open file for %s footprint: %s.\n",
-                        footprint_type,
+                        current_fp.footprint_type,
                         footprint_filename
                 );
                 return (EXIT_FAILURE);
         }
         /* Determine (extreme) courtyard dimensions based on pin/pad
          * properties */
-        xmin = -10500 - (multiplier * courtyard_clearance_with_package); /* in mil/100 */
-        xmax = 10500 + (multiplier * courtyard_clearance_with_package); /* in mil/100 */
-        ymin = -8600 - (multiplier * courtyard_clearance_with_package); /* in mil/100 */
-        ymax = 10500 + (multiplier * courtyard_clearance_with_package); /* in mil/100 */
+        xmin = -10500 - (multiplier * current_fp.courtyard_clearance_with_package); /* in mil/100 */
+        xmax = 10500 + (multiplier * current_fp.courtyard_clearance_with_package); /* in mil/100 */
+        ymin = -8600 - (multiplier * current_fp.courtyard_clearance_with_package); /* in mil/100 */
+        ymax = 10500 + (multiplier * current_fp.courtyard_clearance_with_package); /* in mil/100 */
         /* Determine (extreme) courtyard dimensions based on package
          * properties */
-        if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
-                xmin = (multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package));
-        if ((multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package)) > xmax)
-                xmax = (multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package));
-        if ((multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package)) < ymin)
-                ymin = (multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package));
-        if ((multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package)) > ymax)
-                ymax = (multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package));
+        if ((multiplier * ((-current_fp.package_body_length / 2.0) - current_fp.courtyard_clearance_with_package)) < xmin)
+                xmin = (multiplier * ((-current_fp.package_body_length / 2.0) - current_fp.courtyard_clearance_with_package));
+        if ((multiplier * ((current_fp.package_body_length / 2.0) + current_fp.courtyard_clearance_with_package)) > xmax)
+                xmax = (multiplier * ((current_fp.package_body_length / 2.0) + current_fp.courtyard_clearance_with_package));
+        if ((multiplier * ((-current_fp.package_body_width / 2.0) - current_fp.courtyard_clearance_with_package)) < ymin)
+                ymin = (multiplier * ((-current_fp.package_body_width / 2.0) - current_fp.courtyard_clearance_with_package));
+        if ((multiplier * ((current_fp.package_body_width / 2.0) + current_fp.courtyard_clearance_with_package)) > ymax)
+                ymax = (multiplier * ((current_fp.package_body_width / 2.0) + current_fp.courtyard_clearance_with_package));
         /* If the user input is using even more real-estate then use it */
-        if (multiplier * (-courtyard_length / 2.0) < xmin)
-                xmin = multiplier * (-courtyard_length / 2.0);
-        if (multiplier * (courtyard_length / 2.0) > xmax)
-                xmax = multiplier * (courtyard_length / 2.0);
-        if (multiplier * (-courtyard_width / 2.0) < ymin)
-                ymin = multiplier * (-courtyard_width / 2.0);
-        if (multiplier * (courtyard_width / 2.0) > ymax)
-                ymax = multiplier * (courtyard_width / 2.0);
+        if (multiplier * (-current_fp.courtyard_length / 2.0) < xmin)
+                xmin = multiplier * (-current_fp.courtyard_length / 2.0);
+        if (multiplier * (current_fp.courtyard_length / 2.0) > xmax)
+                xmax = multiplier * (current_fp.courtyard_length / 2.0);
+        if (multiplier * (-current_fp.courtyard_width / 2.0) < ymin)
+                ymin = multiplier * (-current_fp.courtyard_width / 2.0);
+        if (multiplier * (current_fp.courtyard_width / 2.0) > ymax)
+                ymax = multiplier * (current_fp.courtyard_width / 2.0);
         /* Write element header
          * Guess for a place where to put the refdes text */
         x_text = 0.0 ; /* already in mil/100 */
         y_text = (ymin - 10000.0); /* already in mil/100 */
         write_element_header (x_text, y_text);
         /* Write pin and/or pad entities */
-        if (!strcmp (pad_shape, "rectangular pad"))
+        if (!strcmp (current_fp.pad_shape, "rectangular pad"))
                 pin_pad_flags = g_strdup ("square");
         else
                 pin_pad_flags = g_strdup ("");
@@ -3085,12 +3086,12 @@ write_footprint_to92 ()
                 "", /* pin name */
                 -5000.0, /* x0 coordinate */
                 0.0, /* y0-coordinate */
-                multiplier * pad_diameter, /* width of the annulus ring (pad) */
-                multiplier * pad_clearance, /* clearance */
-                multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
-                multiplier * pin_drill_diameter, /* pin drill diameter */
+                multiplier * current_fp.pad_diameter, /* width of the annulus ring (pad) */
+                multiplier * current_fp.pad_clearance, /* clearance */
+                multiplier * (current_fp.pad_diameter + current_fp.pad_solder_mask_clearance), /* solder mask clearance */
+                multiplier * current_fp.pin_drill_diameter, /* pin drill diameter */
                 /* Write pin #1 with a square pad */
-                (pin1_square) ? "square" : "" /* flags */
+                (current_fp.pin1_square) ? "square" : "" /* flags */
         );
         write_pin
         (
@@ -3098,10 +3099,10 @@ write_footprint_to92 ()
                 "", /* pin name */
                 0.0, /* x0 coordinate */
                 0.0, /* y0-coordinate */
-                multiplier * pad_diameter, /* width of the annulus ring (pad) */
-                multiplier * pad_clearance, /* clearance */
-                multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
-                multiplier * pin_drill_diameter, /* pin drill diameter */
+                multiplier * current_fp.pad_diameter, /* width of the annulus ring (pad) */
+                multiplier * current_fp.pad_clearance, /* clearance */
+                multiplier * (current_fp.pad_diameter + current_fp.pad_solder_mask_clearance), /* solder mask clearance */
+                multiplier * current_fp.pin_drill_diameter, /* pin drill diameter */
                 pin_pad_flags /* flags */
         );
         write_pin
@@ -3110,29 +3111,29 @@ write_footprint_to92 ()
                 "", /* pin name */
                 5000.0, /* x0 coordinate */
                 0.0, /* y0-coordinate */
-                multiplier * pad_diameter, /* width of the annulus ring (pad) */
-                multiplier * pad_clearance, /* clearance */
-                multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
-                multiplier * pin_drill_diameter, /* pin drill diameter */
+                multiplier * current_fp.pad_diameter, /* width of the annulus ring (pad) */
+                multiplier * current_fp.pad_clearance, /* clearance */
+                multiplier * (current_fp.pad_diameter + current_fp.pad_solder_mask_clearance), /* solder mask clearance */
+                multiplier * current_fp.pin_drill_diameter, /* pin drill diameter */
                 pin_pad_flags /* flags */
         );
         /* Write package body on the silkscreen */
-        if (silkscreen_package_outline)
+        if (current_fp.silkscreen_package_outline)
         {
                 fprintf (fp, "# Write a package body on the silkscreen\n");
                 fprintf (fp, "\tElementLine[-8600 -6000 8600 -6000 1000]\n");
                 fprintf (fp, "\tElementArc[0 0 10500 10500 -35 250 1000]\n");
         }
         /* Write a pin #1 marker on the silkscreen */
-        if (silkscreen_indicate_1)
+        if (current_fp.silkscreen_indicate_1)
         {
                 /*! \todo Write a pin #1 marker on the silkscreen ! */
         }
         /* Write a courtyard on the silkscreen */
-        if (courtyard)
+        if (current_fp.courtyard)
         {
                 fprintf (fp, "# Write a courtyard on the silkscreen\n");
-                if (package_is_radial)
+                if (current_fp.package_is_radial)
                 {
                         write_element_arc
                         (
@@ -3142,7 +3143,7 @@ write_footprint_to92 ()
                                 ymax, /* already in mil/100 */
                                 0,
                                 360,
-                                multiplier * courtyard_line_width
+                                multiplier * current_fp.courtyard_line_width
                         );
                 }
                 else
@@ -3153,12 +3154,12 @@ write_footprint_to92 ()
                                 ymin, /* already in mil/100 */
                                 xmax, /* already in mil/100 */
                                 ymax, /* already in mil/100 */
-                                multiplier * courtyard_line_width
+                                multiplier * current_fp.courtyard_line_width
                         );
                 }
         }
         /* Write attributes */
-        if (attributes_in_footprint)
+        if (current_fp.attributes_in_footprint)
                 write_attributes ();
         fprintf (fp, "\n");
         fprintf (fp, ")\n");
@@ -3167,7 +3168,7 @@ write_footprint_to92 ()
         (
                 stderr,
                 "SUCCESS: wrote a footprint file for a %s package: %s.\n",
-                footprint_type,
+                current_fp.footprint_type,
                 footprint_filename
         );
 }
