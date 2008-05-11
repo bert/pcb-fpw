@@ -356,7 +356,7 @@ gui_constraints_disable_thermal_tab_widgets (GtkWidget *widget)
 {
         GtkWidget *thermal_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "thermal_checkbutton");
-        gtk_toggle_button_set_active (thermal_checkbutton, FALSE);
+        gtk_toggle_button_set_active ((void *) thermal_checkbutton, FALSE);
         gtk_widget_set_sensitive (thermal_checkbutton, FALSE);
 }
 
@@ -370,7 +370,7 @@ gui_constraints_set_bga (GtkWidget *widget)
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
-        gtk_toggle_button_set_active (package_is_radial_checkbutton, FALSE);
+        gtk_toggle_button_set_active ((void *) package_is_radial_checkbutton, FALSE);
         gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
 
         /* Widgets on tab 2 "Pins/Pads" */
@@ -420,7 +420,7 @@ gui_constraints_set_con_dil (GtkWidget *widget)
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
-        gtk_toggle_button_set_active (package_is_radial_checkbutton, FALSE);
+        gtk_toggle_button_set_active ((void *) package_is_radial_checkbutton, FALSE);
         gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
 
         /* Widgets on tab 2 "Pins/Pads" */
@@ -462,7 +462,7 @@ gui_constraints_set_con_dip (GtkWidget *widget)
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
-        gtk_toggle_button_set_active (package_is_radial_checkbutton, FALSE);
+        gtk_toggle_button_set_active ((void *) package_is_radial_checkbutton, FALSE);
         gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
 
         /* Widgets on tab 2 "Pins/Pads" */
@@ -504,7 +504,7 @@ gui_constraints_set_con_hdr (GtkWidget *widget)
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
-        gtk_toggle_button_set_active (package_is_radial_checkbutton, FALSE);
+        gtk_toggle_button_set_active ((void *) package_is_radial_checkbutton, FALSE);
         gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
 
         /* Widgets on tab 2 "Pins/Pads" */
@@ -546,7 +546,7 @@ gui_constraints_set_dip (GtkWidget *widget)
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
-        gtk_toggle_button_set_active (package_is_radial_checkbutton, FALSE);
+        gtk_toggle_button_set_active ((void *) package_is_radial_checkbutton, FALSE);
         gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
 
         /* Widgets on tab 2 "Pins/Pads" */
@@ -588,7 +588,7 @@ gui_constraints_set_pga (GtkWidget *widget)
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
-        gtk_toggle_button_set_active (package_is_radial_checkbutton, FALSE);
+        gtk_toggle_button_set_active ((void *) package_is_radial_checkbutton, FALSE);
         gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
 
         /* Widgets on tab 2 "Pins/Pads" */
@@ -634,7 +634,7 @@ gui_constraints_set_plcc (GtkWidget *widget)
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
-        gtk_toggle_button_set_active (package_is_radial_checkbutton, FALSE);
+        gtk_toggle_button_set_active ((void *) package_is_radial_checkbutton, FALSE);
         gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
 
         /* Widgets on tab 2 "Pins/Pads" */
@@ -671,7 +671,7 @@ gui_constraints_set_smt (GtkWidget *widget)
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
-        gtk_toggle_button_set_active (package_is_radial_checkbutton, FALSE);
+        gtk_toggle_button_set_active ((void *) package_is_radial_checkbutton, FALSE);
         gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
 
         /* Widgets on tab 2 "Pins/Pads" */
@@ -724,7 +724,7 @@ gui_constraints_set_to92 (GtkWidget *widget)
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
-        gtk_toggle_button_set_active (package_is_radial_checkbutton, TRUE);
+        gtk_toggle_button_set_active ((void *) package_is_radial_checkbutton, TRUE);
 
         /* Widgets on tab 2 "Pins/Pads" */
         GtkWidget *number_of_columns_entry = lookup_widget (GTK_WIDGET (widget),
@@ -1196,7 +1196,7 @@ on_clear_button_clicked                (GtkButton       *button,
         gtk_entry_set_text (GTK_WIDGET (package_body_height_entry), "");
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_BUTTON (button),
                 "package_is_radial_checkbutton");
-        gtk_toggle_button_set_active (package_is_radial_checkbutton, FALSE);
+        gtk_toggle_button_set_active ((void *) package_is_radial_checkbutton, FALSE);
         GtkWidget *footprint_author_entry = lookup_widget (GTK_BUTTON (button),
                 "footprint_author_entry");
         gtk_entry_set_text (GTK_WIDGET (footprint_author_entry), "");
@@ -1246,7 +1246,7 @@ on_clear_button_clicked                (GtkButton       *button,
         gtk_entry_set_text (GTK_WIDGET (pin_drill_diameter_entry), "");
         GtkWidget *pin1_square_checkbutton = lookup_widget (GTK_BUTTON (button),
                 "pin_square_checkbutton");
-        gtk_toggle_button_set_active (pin1_square_checkbutton, FALSE);
+        gtk_toggle_button_set_active ((void *) pin1_square_checkbutton, FALSE);
         GtkWidget *pad_length_entry = lookup_widget (GTK_BUTTON (button),
                 "pad_length_entry");
         gtk_entry_set_text (GTK_WIDGET (pad_length_entry), "");
@@ -1263,10 +1263,10 @@ on_clear_button_clicked                (GtkButton       *button,
         /* Widgets on tab 3 "Thermal Pad" */
         GtkWidget *thermal_checkbutton = lookup_widget (GTK_BUTTON (button),
                 "thermal_checkbutton");
-        gtk_toggle_button_set_active (thermal_checkbutton, FALSE);
+        gtk_toggle_button_set_active ((void *) thermal_checkbutton, FALSE);
         GtkWidget *thermal_nopaste_checkbutton = lookup_widget (GTK_BUTTON (button),
                 "thermal_nopaste_checkbutton");
-        gtk_toggle_button_set_active (thermal_nopaste_checkbutton, FALSE);
+        gtk_toggle_button_set_active ((void *) thermal_nopaste_checkbutton, FALSE);
         GtkWidget *thermal_length_entry = lookup_widget (GTK_BUTTON (button),
                 "thermal_length_entry");
         gtk_entry_set_text (GTK_WIDGET (thermal_length_entry), "");
@@ -1287,16 +1287,16 @@ on_clear_button_clicked                (GtkButton       *button,
         /* Widgets on tab 4 "Silkscreen" */
         GtkWidget *silkscreen_package_outline_checkbutton = lookup_widget (GTK_BUTTON (button),
                 "silkscreen_package_outline_checkbutton");
-        gtk_toggle_button_set_active (silkscreen_package_outline_checkbutton, FALSE);
+        gtk_toggle_button_set_active ((void *) silkscreen_package_outline_checkbutton, FALSE);
         GtkWidget *silkscreen_line_width_entry = lookup_widget (GTK_BUTTON (button),
                 "silkscreen_line_width_entry");
         gtk_entry_set_text (GTK_WIDGET (silkscreen_line_width_entry), "");
         GtkWidget *silkscreen_indicate_1_checkbutton = lookup_widget (GTK_BUTTON (button),
                 "silkscreen_indicate_1_checkbutton");
-        gtk_toggle_button_set_active (silkscreen_indicate_1_checkbutton, FALSE);
+        gtk_toggle_button_set_active ((void *) silkscreen_indicate_1_checkbutton, FALSE);
         GtkWidget *courtyard_checkbutton = lookup_widget (GTK_BUTTON (button),
                 "courtyard_checkbutton");
-        gtk_toggle_button_set_active (courtyard_checkbutton, FALSE);
+        gtk_toggle_button_set_active ((void *) courtyard_checkbutton, FALSE);
         GtkWidget *courtyard_length_entry = lookup_widget (GTK_BUTTON (button),
                 "courtyard_length_entry");
         gtk_entry_set_text (GTK_WIDGET (courtyard_length_entry), "");
@@ -2693,7 +2693,7 @@ on_thermal_checkbutton_toggled         (GtkToggleButton *togglebutton,
          * checks the thermal checkbutton (on), the user has to turn off
          * paste if desired while leaving the thermal checkbutton checked
          * (on) */
-        gtk_toggle_button_set_active (thermal_nopaste_checkbutton, thermal);
+        gtk_toggle_button_set_active ((void *) thermal_nopaste_checkbutton, thermal);
 }
 
 
