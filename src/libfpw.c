@@ -160,10 +160,10 @@ typedef enum locations location_t;
          * pad.\n
          * Primarily used for pads used as fiducials. */
 
-/*! \struct foot_print
+/*!
+ * \brief Struct containing all parameters to create and handle a footprint.
  */
 typedef struct
-footprintwizard
 {
         gchar *footprint_name;
                 /*!< Name of the footprint. */
