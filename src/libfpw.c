@@ -163,7 +163,7 @@ typedef enum locations location_t;
 /*! \struct foot_print
  */
 typedef struct
-footprint
+footprintwizard
 {
         gchar *footprint_name;
                 /*!< Name of the footprint. */
@@ -273,7 +273,7 @@ footprint
                 /*!< Left to right pads inner-inner distance. */
         gdouble z2;
                 /*!< Left to right pads outer-outer distance. */
-} FootPrint_t;
+} FootPrintWizard_t;
 
 
 gint gui = TRUE;
@@ -310,9 +310,9 @@ gboolean z2_state = FALSE;
         /*!< State of the left to right outer-outer distance radiobutton. */
 gchar *dummy = NULL;
         /*!< Every now and then the village-idot is needed ;-) */
-FootPrint_t current_fp;
+FootPrintWizard_t current_fp;
         /*! Current footprint. */
-FootPrint_t preview_fp;
+FootPrintWizard_t preview_fp;
         /*! Preview footprint. */
 
 /*!
