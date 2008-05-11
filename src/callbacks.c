@@ -83,7 +83,7 @@ all_entries_to_default_sensitivity (GtkWidget *widget)
         gtk_widget_set_sensitive (package_body_height_entry, TRUE);
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
-        gtk_toggle_button_set_active (package_is_radial_checkbutton, FALSE);
+        gtk_toggle_button_set_active (( void *) package_is_radial_checkbutton, FALSE);
         GtkWidget *footprint_author_entry = lookup_widget (GTK_WIDGET (widget),
                 "footprint_author_entry");
         gtk_widget_set_sensitive (footprint_author_entry, TRUE);
@@ -150,10 +150,10 @@ all_entries_to_default_sensitivity (GtkWidget *widget)
         /* Widgets on tab 3 "Thermal pad" */
         GtkWidget *thermal_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "thermal_checkbutton");
-        gtk_toggle_button_set_active (thermal_checkbutton, FALSE);
+        gtk_toggle_button_set_active ((void *) thermal_checkbutton, FALSE);
         GtkWidget *thermal_nopaste_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "thermal_nopaste_checkbutton");
-        gtk_toggle_button_set_active (thermal_nopaste_checkbutton, FALSE);
+        gtk_toggle_button_set_active ((void *) thermal_nopaste_checkbutton, FALSE);
         GtkWidget *thermal_length_entry = lookup_widget (GTK_WIDGET (widget),
                 "thermal_length_entry");
         gtk_widget_set_sensitive (thermal_length_entry, FALSE);
@@ -170,16 +170,16 @@ all_entries_to_default_sensitivity (GtkWidget *widget)
         /* Widgets on tab 4 "Silkscreen" */
         GtkWidget *silkscreen_package_outline_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "silkscreen_package_outline_checkbutton");
-        gtk_toggle_button_set_active (silkscreen_package_outline_checkbutton, FALSE);
+        gtk_toggle_button_set_active ((void *) silkscreen_package_outline_checkbutton, FALSE);
         GtkWidget *silkscreen_line_width_entry = lookup_widget (GTK_WIDGET (widget),
                 "silkscreen_line_width_entry");
         gtk_widget_set_sensitive (silkscreen_line_width_entry, FALSE);
         GtkWidget *silkscreen_indicate_1_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "silkscreen_indicate_1_checkbutton");
-        gtk_toggle_button_set_active (silkscreen_indicate_1_checkbutton, FALSE);
+        gtk_toggle_button_set_active ((void *) silkscreen_indicate_1_checkbutton, FALSE);
         GtkWidget *courtyard_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "courtyard_checkbutton");
-        gtk_toggle_button_set_active (courtyard_checkbutton, FALSE);
+        gtk_toggle_button_set_active ((void *) courtyard_checkbutton, FALSE);
         GtkWidget *courtyard_length_entry = lookup_widget (GTK_WIDGET (widget),
                 "courtyard_length_entry");
         gtk_widget_set_sensitive (courtyard_length_entry, FALSE);
@@ -247,7 +247,7 @@ change_main_window_title (GtkWidget *widget, gchar *main_window_title)
         /* lookup the window */
         GtkWidget *main_window;
         main_window = lookup_widget (GTK_WIDGET (widget), "pcb_gfpw");
-        gtk_window_set_title (main_window, main_window_title);
+        gtk_window_set_title ((void *) main_window, main_window_title);
 }
 
 
