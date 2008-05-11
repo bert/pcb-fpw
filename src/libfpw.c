@@ -3186,6 +3186,7 @@ write_footprint_template ()
         gdouble ymin;
         gdouble x_text;
         gdouble y_text;
+        gchar *pin_pad_flags;
 
         fp = fopen (footprint_filename, "w");
         if (!fp)
@@ -3194,7 +3195,7 @@ write_footprint_template ()
                 (
                         stderr,
                         "ERROR: could not open file for %s footprint: %s.\n",
-                        footprint_type,
+                        current_fp.footprint_type,
                         footprint_filename
                 );
                 return (EXIT_FAILURE);
@@ -3204,23 +3205,23 @@ write_footprint_template ()
 
         /* Determine (extreme) courtyard dimensions based on package
          * properties */
-        if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
-                xmin = (multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package));
-        if ((multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package)) > xmax)
-                xmax = (multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package));
-        if ((multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package)) < ymin)
-                ymin = (multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package));
-        if ((multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package)) > ymax)
-                ymax = (multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package));
+        if ((multiplier * ((-current_fp.package_body_length / 2.0) - current_fp.courtyard_clearance_with_package)) < xmin)
+                xmin = (multiplier * ((-current_fp.package_body_length / 2.0) - current_fp.courtyard_clearance_with_package));
+        if ((multiplier * ((current_fp.package_body_length / 2.0) + current_fp.courtyard_clearance_with_package)) > xmax)
+                xmax = (multiplier * ((current_fp.package_body_length / 2.0) + current_fp.courtyard_clearance_with_package));
+        if ((multiplier * ((-current_fp.package_body_width / 2.0) - current_fp.courtyard_clearance_with_package)) < ymin)
+                ymin = (multiplier * ((-current_fp.package_body_width / 2.0) - current_fp.courtyard_clearance_with_package));
+        if ((multiplier * ((current_fp.package_body_width / 2.0) + current_fp.courtyard_clearance_with_package)) > ymax)
+                ymax = (multiplier * ((current_fp.package_body_width / 2.0) + current_fp.courtyard_clearance_with_package));
         /* If the user input is using even more real-estate then use it */
-        if (multiplier * (-courtyard_length / 2.0) < xmin)
-                xmin = multiplier * (-courtyard_length / 2.0);
-        if (multiplier * (courtyard_length / 2.0) > xmax)
-                xmax = multiplier * (courtyard_length / 2.0);
-        if (multiplier * (-courtyard_width / 2.0) < ymin)
-                ymin = multiplier * (-courtyard_width / 2.0);
-        if (multiplier * (courtyard_width / 2.0) > ymax)
-                ymax = multiplier * (courtyard_width / 2.0);
+        if (multiplier * (-current_fp.courtyard_length / 2.0) < xmin)
+                xmin = multiplier * (-current_fp.courtyard_length / 2.0);
+        if (multiplier * (current_fp.courtyard_length / 2.0) > xmax)
+                xmax = multiplier * (current_fp.courtyard_length / 2.0);
+        if (multiplier * (-current_fp.courtyard_width / 2.0) < ymin)
+                ymin = multiplier * (-current_fp.courtyard_width / 2.0);
+        if (multiplier * (current_fp.courtyard_width / 2.0) > ymax)
+                ymax = multiplier * (current_fp.courtyard_width / 2.0);
         /* Write element header
          * Guess for a place where to put the refdes text */
         x_text = 0.0 ; /* already in mil/100 */
@@ -3229,25 +3230,25 @@ write_footprint_template ()
         /* Write pin and/or pad entities */
                 /*! \todo Write a pin/pad entities ! */
         /* Write package body on silkscreen */
-        if (silkscreen_package_outline)
+        if (current_fp.silkscreen_package_outline)
         {
                 fprintf (fp, "# Write a package body on the silkscreen\n");
                 /*! \todo Write a package body on the silkscreen ! */
         }
         /* Write a pin #1 marker on the silkscreen */
-        if (silkscreen_indicate_1)
+        if (current_fp.silkscreen_indicate_1)
         {
                 fprintf (fp, "# Write a pin 1 marker on the silkscreen\n");
                 /*! \todo Write a pin #1 marker ! on the silkscreen */
         }
         /* Write a courtyard on the silkscreen */
-        if (courtyard)
+        if (current_fp.courtyard)
         {
                 fprintf (fp, "# Write a courtyard on the silkscreen\n");
                 /*! \todo Write a courtyard on the silkscreen ! */
         }
         /* Write attributes */
-        if (attributes_in_footprint)
+        if (current_fp.attributes_in_footprint)
                 write_attributes ();
         fprintf (fp, "\n");
         fprintf (fp, ")\n");
@@ -3256,7 +3257,7 @@ write_footprint_template ()
         (
                 stderr,
                 "SUCCESS: wrote a footprint file for a %s package: %s.\n",
-                footprint_type,
+                current_fp.footprint_type,
                 footprint_filename
         );
 }
