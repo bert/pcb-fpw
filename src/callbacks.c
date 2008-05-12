@@ -83,7 +83,7 @@ all_entries_to_default_sensitivity (GtkWidget *widget)
         gtk_widget_set_sensitive (package_body_height_entry, TRUE);
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
-        gtk_toggle_button_set_active (( void *) package_is_radial_checkbutton, FALSE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (package_is_radial_checkbutton), FALSE);
         GtkWidget *footprint_author_entry = lookup_widget (GTK_WIDGET (widget),
                 "footprint_author_entry");
         gtk_widget_set_sensitive (footprint_author_entry, TRUE);
@@ -150,10 +150,10 @@ all_entries_to_default_sensitivity (GtkWidget *widget)
         /* Widgets on tab 3 "Thermal pad" */
         GtkWidget *thermal_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "thermal_checkbutton");
-        gtk_toggle_button_set_active ((void *) thermal_checkbutton, FALSE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (thermal_checkbutton), FALSE);
         GtkWidget *thermal_nopaste_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "thermal_nopaste_checkbutton");
-        gtk_toggle_button_set_active ((void *) thermal_nopaste_checkbutton, FALSE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (thermal_nopaste_checkbutton), FALSE);
         GtkWidget *thermal_length_entry = lookup_widget (GTK_WIDGET (widget),
                 "thermal_length_entry");
         gtk_widget_set_sensitive (thermal_length_entry, FALSE);
@@ -170,16 +170,16 @@ all_entries_to_default_sensitivity (GtkWidget *widget)
         /* Widgets on tab 4 "Silkscreen" */
         GtkWidget *silkscreen_package_outline_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "silkscreen_package_outline_checkbutton");
-        gtk_toggle_button_set_active ((void *) silkscreen_package_outline_checkbutton, FALSE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (silkscreen_package_outline_checkbutton), FALSE);
         GtkWidget *silkscreen_line_width_entry = lookup_widget (GTK_WIDGET (widget),
                 "silkscreen_line_width_entry");
         gtk_widget_set_sensitive (silkscreen_line_width_entry, FALSE);
         GtkWidget *silkscreen_indicate_1_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "silkscreen_indicate_1_checkbutton");
-        gtk_toggle_button_set_active ((void *) silkscreen_indicate_1_checkbutton, FALSE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (silkscreen_indicate_1_checkbutton), FALSE);
         GtkWidget *courtyard_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "courtyard_checkbutton");
-        gtk_toggle_button_set_active ((void *) courtyard_checkbutton, FALSE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (courtyard_checkbutton), FALSE);
         GtkWidget *courtyard_length_entry = lookup_widget (GTK_WIDGET (widget),
                 "courtyard_length_entry");
         gtk_widget_set_sensitive (courtyard_length_entry, FALSE);
@@ -247,7 +247,7 @@ change_main_window_title (GtkWidget *widget, gchar *main_window_title)
         /* lookup the window */
         GtkWidget *main_window;
         main_window = lookup_widget (GTK_WIDGET (widget), "pcb_gfpw");
-        gtk_window_set_title ((void *) main_window, main_window_title);
+        gtk_window_set_title (GTK_WINDOW (main_window), main_window_title);
 }
 
 
@@ -265,12 +265,11 @@ entry_has_changed (GtkWidget *widget)
                 GtkWidget *main_window;
                 main_window = lookup_widget (GTK_WIDGET (widget), "pcb_gfpw");
                 /* get the current title */
-                gchar *main_window_title = NULL;
-                main_window_title = gtk_window_get_title (main_window);
+                const gchar* main_window_title = gtk_window_get_title (GTK_WINDOW (main_window));
                 if (!fpw_file_saved)
                 {
                         /* fpw file has not been saved before */
-                        change_main_window_title (main_window,
+                        change_main_window_title (GTK_WIDGET (main_window),
                                 g_strconcat ("pcb-gfpw : Unsaved fpw file",
                                 NULL));
                 }
@@ -280,7 +279,7 @@ entry_has_changed (GtkWidget *widget)
                          * filename is already listed in the main window
                          * title, add an asterix between brackets [*] before
                          * the current window title */
-                        change_main_window_title (main_window,
+                        change_main_window_title (GTK_WIDGET (main_window),
                                 g_strconcat ("[*] ",
                                 main_window_title, NULL));
                         main_window_title_has_asterisk = TRUE;
@@ -298,27 +297,27 @@ gui_constraints_disable_heel_and_toe_goals_tab_widgets (GtkWidget *widget)
 {
         GtkWidget *C1_entry = lookup_widget (GTK_WIDGET (widget),
                 "C1_entry");
-        gtk_entry_set_text (GTK_WIDGET (C1_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (C1_entry), "");
         gtk_widget_set_sensitive (C1_entry, FALSE);
         GtkWidget *C2_entry = lookup_widget (GTK_WIDGET (widget),
                 "C2_entry");
-        gtk_entry_set_text (GTK_WIDGET (C2_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (C2_entry), "");
         gtk_widget_set_sensitive (C2_entry, FALSE);
         GtkWidget *G1_entry = lookup_widget (GTK_WIDGET (widget),
                 "G1_entry");
-        gtk_entry_set_text (GTK_WIDGET (G1_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (G1_entry), "");
         gtk_widget_set_sensitive (G1_entry, FALSE);
         GtkWidget *G2_entry = lookup_widget (GTK_WIDGET (widget),
                 "G2_entry");
-        gtk_entry_set_text (GTK_WIDGET (G2_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (G2_entry), "");
         gtk_widget_set_sensitive (G2_entry, FALSE);
         GtkWidget *Z1_entry = lookup_widget (GTK_WIDGET (widget),
                 "Z1_entry");
-        gtk_entry_set_text (GTK_WIDGET (Z1_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (Z1_entry), "");
         gtk_widget_set_sensitive (Z1_entry, FALSE);
         GtkWidget *Z2_entry = lookup_widget (GTK_WIDGET (widget),
                 "Z2_entry");
-        gtk_entry_set_text (GTK_WIDGET (Z2_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (Z2_entry), "");
         gtk_widget_set_sensitive (Z2_entry, FALSE);
         GtkWidget * C1_radiobutton = lookup_widget (GTK_WIDGET (widget),
                 "C1_radiobutton");
@@ -356,7 +355,7 @@ gui_constraints_disable_thermal_tab_widgets (GtkWidget *widget)
 {
         GtkWidget *thermal_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "thermal_checkbutton");
-        gtk_toggle_button_set_active ((void *) thermal_checkbutton, FALSE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (thermal_checkbutton), FALSE);
         gtk_widget_set_sensitive (thermal_checkbutton, FALSE);
 }
 
@@ -370,37 +369,37 @@ gui_constraints_set_bga (GtkWidget *widget)
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
-        gtk_toggle_button_set_active ((void *) package_is_radial_checkbutton, FALSE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (package_is_radial_checkbutton), FALSE);
         gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
 
         /* Widgets on tab 2 "Pins/Pads" */
         GtkWidget *count_x_entry = lookup_widget (GTK_WIDGET (widget),
                 "count_x_entry");
-        gtk_entry_set_text (GTK_WIDGET (count_x_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (count_x_entry), "");
         gtk_widget_set_sensitive (count_x_entry, FALSE);
         GtkWidget *count_y_entry = lookup_widget (GTK_WIDGET (widget),
                 "count_y_entry");
-        gtk_entry_set_text (GTK_WIDGET (count_y_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (count_y_entry), "");
         gtk_widget_set_sensitive (count_y_entry, FALSE);
         GtkWidget *number_1_position_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_1_position_entry");
-        gtk_combo_box_set_active (GTK_WIDGET (number_1_position_entry), 1);
+        gtk_combo_box_set_active (GTK_COMBO_BOX (number_1_position_entry), 1);
         gtk_widget_set_sensitive (number_1_position_entry, FALSE);
         GtkWidget *pin_drill_diameter_entry = lookup_widget (GTK_WIDGET (widget),
                 "pin_drill_diameter_entry");
-        gtk_entry_set_text (GTK_WIDGET (pin_drill_diameter_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (pin_drill_diameter_entry), "");
         gtk_widget_set_sensitive (pin_drill_diameter_entry, FALSE);
         GtkWidget *pad_shape_entry = lookup_widget (GTK_WIDGET (widget),
                 "pad_shape_entry");
-        gtk_combo_box_set_active (GTK_WIDGET (pad_shape_entry), 1);
+        gtk_combo_box_set_active (GTK_COMBO_BOX (pad_shape_entry), 1);
         gtk_widget_set_sensitive (pad_shape_entry, FALSE);
         GtkWidget *pad_length_entry = lookup_widget (GTK_WIDGET (widget),
                 "pad_length_entry");
-        gtk_entry_set_text (GTK_WIDGET (pad_length_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (pad_length_entry), "");
         gtk_widget_set_sensitive (pad_length_entry, FALSE);
         GtkWidget *pad_width_entry = lookup_widget (GTK_WIDGET (widget),
                 "pad_width_entry");
-        gtk_entry_set_text (GTK_WIDGET (pad_width_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (pad_width_entry), "");
         gtk_widget_set_sensitive (pad_width_entry, FALSE);
 
         /* Widgets on tab 3 "Thermal Pad" */
@@ -420,29 +419,29 @@ gui_constraints_set_con_dil (GtkWidget *widget)
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
-        gtk_toggle_button_set_active ((void *) package_is_radial_checkbutton, FALSE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (package_is_radial_checkbutton), FALSE);
         gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
 
         /* Widgets on tab 2 "Pins/Pads" */
         GtkWidget *number_of_columns_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_columns_entry");
-        gtk_entry_set_text (GTK_WIDGET (number_of_columns_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (number_of_columns_entry), "");
         gtk_widget_set_sensitive (number_of_columns_entry, TRUE);
         GtkWidget *number_of_rows_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_rows_entry");
-        gtk_entry_set_text (GTK_WIDGET (number_of_rows_entry), "2");
+        gtk_entry_set_text (GTK_ENTRY (number_of_rows_entry), "2");
         gtk_widget_set_sensitive (number_of_rows_entry, FALSE);
         GtkWidget *count_x_entry = lookup_widget (GTK_WIDGET (widget),
                 "count_x_entry");
-        gtk_entry_set_text (GTK_WIDGET (count_x_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (count_x_entry), "");
         gtk_widget_set_sensitive (count_x_entry, FALSE);
         GtkWidget *count_y_entry = lookup_widget (GTK_WIDGET (widget),
                 "count_y_entry");
-        gtk_entry_set_text (GTK_WIDGET (count_y_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (count_y_entry), "");
         gtk_widget_set_sensitive (count_y_entry, FALSE);
         GtkWidget *number_1_position_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_1_position_entry");
-        gtk_combo_box_set_active (GTK_WIDGET (number_1_position_entry), 3);
+        gtk_combo_box_set_active (GTK_COMBO_BOX (number_1_position_entry), 3);
         gtk_widget_set_sensitive (number_1_position_entry, FALSE);
 
         /* Widgets on tab 3 "Thermal Pad" */
@@ -462,29 +461,29 @@ gui_constraints_set_con_dip (GtkWidget *widget)
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
-        gtk_toggle_button_set_active ((void *) package_is_radial_checkbutton, FALSE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (package_is_radial_checkbutton), FALSE);
         gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
 
         /* Widgets on tab 2 "Pins/Pads" */
         GtkWidget *number_of_columns_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_columns_entry");
-        gtk_entry_set_text (GTK_WIDGET (number_of_columns_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (number_of_columns_entry), "");
         gtk_widget_set_sensitive (number_of_columns_entry, TRUE);
         GtkWidget *number_of_rows_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_rows_entry");
-        gtk_entry_set_text (GTK_WIDGET (number_of_rows_entry), "2");
+        gtk_entry_set_text (GTK_ENTRY (number_of_rows_entry), "2");
         gtk_widget_set_sensitive (number_of_rows_entry, FALSE);
         GtkWidget *count_x_entry = lookup_widget (GTK_WIDGET (widget),
                 "count_x_entry");
-        gtk_entry_set_text (GTK_WIDGET (count_x_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (count_x_entry), "");
         gtk_widget_set_sensitive (count_x_entry, FALSE);
         GtkWidget *count_y_entry = lookup_widget (GTK_WIDGET (widget),
                 "count_y_entry");
-        gtk_entry_set_text (GTK_WIDGET (count_y_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (count_y_entry), "");
         gtk_widget_set_sensitive (count_y_entry, FALSE);
         GtkWidget *number_1_position_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_1_position_entry");
-        gtk_combo_box_set_active (GTK_WIDGET (number_1_position_entry), 3);
+        gtk_combo_box_set_active (GTK_COMBO_BOX (number_1_position_entry), 3);
         gtk_widget_set_sensitive (number_1_position_entry, FALSE);
 
         /* Widgets on tab 3 "Thermal Pad" */
@@ -504,29 +503,29 @@ gui_constraints_set_con_hdr (GtkWidget *widget)
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
-        gtk_toggle_button_set_active ((void *) package_is_radial_checkbutton, FALSE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (package_is_radial_checkbutton), FALSE);
         gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
 
         /* Widgets on tab 2 "Pins/Pads" */
         GtkWidget *number_of_columns_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_columns_entry");
-        gtk_entry_set_text (GTK_WIDGET (number_of_columns_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (number_of_columns_entry), "");
         gtk_widget_set_sensitive (number_of_columns_entry, FALSE);
         GtkWidget *number_of_rows_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_rows_entry");
-        gtk_entry_set_text (GTK_WIDGET (number_of_rows_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (number_of_rows_entry), "");
         gtk_widget_set_sensitive (number_of_rows_entry, TRUE);
         GtkWidget *count_x_entry = lookup_widget (GTK_WIDGET (widget),
                 "count_x_entry");
-        gtk_entry_set_text (GTK_WIDGET (count_x_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (count_x_entry), "");
         gtk_widget_set_sensitive (count_x_entry, TRUE);
         GtkWidget *count_y_entry = lookup_widget (GTK_WIDGET (widget),
                 "count_y_entry");
-        gtk_entry_set_text (GTK_WIDGET (count_y_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (count_y_entry), "");
         gtk_widget_set_sensitive (count_y_entry, FALSE);
         GtkWidget *number_1_position_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_1_position_entry");
-        gtk_combo_box_set_active (GTK_WIDGET (number_1_position_entry), 1);
+        gtk_combo_box_set_active (GTK_COMBO_BOX (number_1_position_entry), 1);
         gtk_widget_set_sensitive (number_1_position_entry, FALSE);
 
         /* Widgets on tab 3 "Thermal Pad" */
@@ -546,29 +545,29 @@ gui_constraints_set_dip (GtkWidget *widget)
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
-        gtk_toggle_button_set_active ((void *) package_is_radial_checkbutton, FALSE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (package_is_radial_checkbutton), FALSE);
         gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
 
         /* Widgets on tab 2 "Pins/Pads" */
         GtkWidget *number_of_columns_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_columns_entry");
-        gtk_entry_set_text (GTK_WIDGET (number_of_columns_entry), "2");
+        gtk_entry_set_text (GTK_ENTRY (number_of_columns_entry), "2");
         gtk_widget_set_sensitive (number_of_columns_entry, FALSE);
         GtkWidget *number_of_rows_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_rows_entry");
-        gtk_entry_set_text (GTK_WIDGET (number_of_rows_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (number_of_rows_entry), "");
         gtk_widget_set_sensitive (number_of_rows_entry, FALSE);
         GtkWidget *count_x_entry = lookup_widget (GTK_WIDGET (widget),
                 "count_x_entry");
-        gtk_entry_set_text (GTK_WIDGET (count_x_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (count_x_entry), "");
         gtk_widget_set_sensitive (count_x_entry, FALSE);
         GtkWidget *count_y_entry = lookup_widget (GTK_WIDGET (widget),
                 "count_y_entry");
-        gtk_entry_set_text (GTK_WIDGET (count_y_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (count_y_entry), "");
         gtk_widget_set_sensitive (count_y_entry, TRUE);
         GtkWidget *number_1_position_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_1_position_entry");
-        gtk_combo_box_set_active (GTK_WIDGET (number_1_position_entry), 1);
+        gtk_combo_box_set_active (GTK_COMBO_BOX (number_1_position_entry), 1);
         gtk_widget_set_sensitive (number_1_position_entry, FALSE);
 
         /* Widgets on tab 3 "Thermal Pad" */
@@ -588,33 +587,33 @@ gui_constraints_set_pga (GtkWidget *widget)
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
-        gtk_toggle_button_set_active ((void *) package_is_radial_checkbutton, FALSE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (package_is_radial_checkbutton), FALSE);
         gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
 
         /* Widgets on tab 2 "Pins/Pads" */
         GtkWidget *count_x_entry = lookup_widget (GTK_WIDGET (widget),
                 "count_x_entry");
-        gtk_entry_set_text (GTK_WIDGET (count_x_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (count_x_entry), "");
         gtk_widget_set_sensitive (count_x_entry, FALSE);
         GtkWidget *count_y_entry = lookup_widget (GTK_WIDGET (widget),
                 "count_y_entry");
-        gtk_entry_set_text (GTK_WIDGET (count_y_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (count_y_entry), "");
         gtk_widget_set_sensitive (count_y_entry, FALSE);
         GtkWidget *number_1_position_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_1_position_entry");
-        gtk_combo_box_set_active (GTK_WIDGET (number_1_position_entry), 1);
+        gtk_combo_box_set_active (GTK_COMBO_BOX (number_1_position_entry), 1);
         gtk_widget_set_sensitive (number_1_position_entry, FALSE);
         GtkWidget *pad_shape_entry = lookup_widget (GTK_WIDGET (widget),
                 "pad_shape_entry");
-        gtk_combo_box_set_active (GTK_WIDGET (pad_shape_entry), 1);
+        gtk_combo_box_set_active (GTK_COMBO_BOX (pad_shape_entry), 1);
         gtk_widget_set_sensitive (pad_shape_entry, FALSE);
         GtkWidget *pad_length_entry = lookup_widget (GTK_WIDGET (widget),
                 "pad_length_entry");
-        gtk_entry_set_text (GTK_WIDGET (pad_length_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (pad_length_entry), "");
         gtk_widget_set_sensitive (pad_length_entry, FALSE);
         GtkWidget *pad_width_entry = lookup_widget (GTK_WIDGET (widget),
                 "pad_width_entry");
-        gtk_entry_set_text (GTK_WIDGET (pad_width_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (pad_width_entry), "");
         gtk_widget_set_sensitive (pad_width_entry, FALSE);
 
         /* Widgets on tab 3 "Thermal Pad" */
@@ -634,25 +633,25 @@ gui_constraints_set_plcc (GtkWidget *widget)
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
-        gtk_toggle_button_set_active ((void *) package_is_radial_checkbutton, FALSE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (package_is_radial_checkbutton), FALSE);
         gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
 
         /* Widgets on tab 2 "Pins/Pads" */
         GtkWidget *number_1_position_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_1_position_entry");
-        gtk_combo_box_set_active (GTK_WIDGET (number_1_position_entry), 4);
+        gtk_combo_box_set_active (GTK_COMBO_BOX (number_1_position_entry), 4);
         gtk_widget_set_sensitive (number_1_position_entry, FALSE);
         GtkWidget *pad_diameter_entry = lookup_widget (GTK_WIDGET (widget),
                 "pad_diameter_entry");
-        gtk_entry_set_text (GTK_WIDGET (pad_diameter_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (pad_diameter_entry), "");
         gtk_widget_set_sensitive (pad_diameter_entry, FALSE);
         GtkWidget *pin_drill_diameter_entry = lookup_widget (GTK_WIDGET (widget),
                 "pin_drill_diameter_entry");
-        gtk_entry_set_text (GTK_WIDGET (pin_drill_diameter_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (pin_drill_diameter_entry), "");
         gtk_widget_set_sensitive (pin_drill_diameter_entry, FALSE);
         GtkWidget *pad_shape_entry = lookup_widget (GTK_WIDGET (widget),
                 "pad_shape_entry");
-        gtk_combo_box_set_active (GTK_WIDGET (pad_shape_entry), 2);
+        gtk_combo_box_set_active (GTK_COMBO_BOX (pad_shape_entry), 2);
 
         /* Widgets on tab 3 "Thermal Pad" */
         gui_constraints_disable_thermal_tab_widgets (widget);
@@ -671,41 +670,41 @@ gui_constraints_set_smt (GtkWidget *widget)
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
-        gtk_toggle_button_set_active ((void *) package_is_radial_checkbutton, FALSE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (package_is_radial_checkbutton), FALSE);
         gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
 
         /* Widgets on tab 2 "Pins/Pads" */
         GtkWidget *number_of_columns_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_columns_entry");
-        gtk_entry_set_text (GTK_WIDGET (number_of_columns_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (number_of_columns_entry), "");
         gtk_widget_set_sensitive (number_of_columns_entry, FALSE);
         GtkWidget *number_of_rows_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_rows_entry");
-        gtk_entry_set_text (GTK_WIDGET (number_of_rows_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (number_of_rows_entry), "");
         gtk_widget_set_sensitive (number_of_rows_entry, FALSE);
         GtkWidget *pitch_y_entry = lookup_widget (GTK_WIDGET (widget),
                 "pitch_y_entry");
-        gtk_entry_set_text (GTK_WIDGET (pitch_y_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (pitch_y_entry), "");
         gtk_widget_set_sensitive (pitch_y_entry, FALSE);
         GtkWidget *count_x_entry = lookup_widget (GTK_WIDGET (widget),
                 "count_x_entry");
-        gtk_entry_set_text (GTK_WIDGET (count_x_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (count_x_entry), "");
         gtk_widget_set_sensitive (count_x_entry, FALSE);
         GtkWidget *count_y_entry = lookup_widget (GTK_WIDGET (widget),
                 "count_y_entry");
-        gtk_entry_set_text (GTK_WIDGET (count_y_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (count_y_entry), "");
         gtk_widget_set_sensitive (count_y_entry, FALSE);
         GtkWidget *number_1_position_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_1_position_entry");
-        gtk_combo_box_set_active (GTK_WIDGET (number_1_position_entry), 1);
+        gtk_combo_box_set_active (GTK_COMBO_BOX (number_1_position_entry), 1);
         gtk_widget_set_sensitive (number_1_position_entry, FALSE);
         GtkWidget *pin_drill_diameter_entry = lookup_widget (GTK_WIDGET (widget),
                 "pin_drill_diameter_entry");
-        gtk_entry_set_text (GTK_WIDGET (pin_drill_diameter_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (pin_drill_diameter_entry), "");
         gtk_widget_set_sensitive (pin_drill_diameter_entry, FALSE);
         GtkWidget *pad_shape_entry = lookup_widget (GTK_WIDGET (widget),
                 "pad_shape_entry");
-        gtk_combo_box_set_active (GTK_WIDGET (pad_shape_entry), 2);
+        gtk_combo_box_set_active (GTK_COMBO_BOX (pad_shape_entry), 2);
 
         /* Widgets on tab 3 "Thermal Pad" */
         gui_constraints_disable_thermal_tab_widgets (widget);
@@ -724,36 +723,36 @@ gui_constraints_set_to92 (GtkWidget *widget)
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
-        gtk_toggle_button_set_active ((void *) package_is_radial_checkbutton, TRUE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (package_is_radial_checkbutton), TRUE);
 
         /* Widgets on tab 2 "Pins/Pads" */
         GtkWidget *number_of_columns_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_columns_entry");
-        gtk_entry_set_text (GTK_WIDGET (number_of_columns_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (number_of_columns_entry), "");
         gtk_widget_set_sensitive (number_of_columns_entry, FALSE);
         GtkWidget *number_of_rows_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_rows_entry");
-        gtk_entry_set_text (GTK_WIDGET (number_of_rows_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (number_of_rows_entry), "");
         gtk_widget_set_sensitive (number_of_rows_entry, FALSE);
         GtkWidget *pitch_x_entry = lookup_widget (GTK_WIDGET (widget),
                 "pitch_x_entry");
-        gtk_entry_set_text (GTK_WIDGET (pitch_x_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (pitch_x_entry), "");
         gtk_widget_set_sensitive (pitch_x_entry, FALSE);
         GtkWidget *pitch_y_entry = lookup_widget (GTK_WIDGET (widget),
                 "pitch_y_entry");
-        gtk_entry_set_text (GTK_WIDGET (pitch_y_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (pitch_y_entry), "");
         gtk_widget_set_sensitive (pitch_y_entry, FALSE);
         GtkWidget *count_x_entry = lookup_widget (GTK_WIDGET (widget),
                 "count_x_entry");
-        gtk_entry_set_text (GTK_WIDGET (count_x_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (count_x_entry), "");
         gtk_widget_set_sensitive (count_x_entry, FALSE);
         GtkWidget *count_y_entry = lookup_widget (GTK_WIDGET (widget),
                 "count_y_entry");
-        gtk_entry_set_text (GTK_WIDGET (count_y_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (count_y_entry), "");
         gtk_widget_set_sensitive (count_y_entry, FALSE);
         GtkWidget *number_1_position_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_1_position_entry");
-        gtk_combo_box_set_active (GTK_WIDGET (number_1_position_entry), 1);
+        gtk_combo_box_set_active (GTK_COMBO_BOX (number_1_position_entry), 1);
         gtk_widget_set_sensitive (number_1_position_entry, FALSE);
 
         /* Widgets on tab 3 "Thermal Pad" */
@@ -771,10 +770,10 @@ int
 message_to_statusbar (GtkWidget *widget, gchar *message)
 {
         /* lookup the statusbar */
-        GtkStatusbar *statusbar;
+        GtkStatusbar *statusbar = GTK_STATUSBAR (lookup_widget (GTK_WIDGET (widget),
+                "statusbar"));
         guint context_id;
         guint message_id;
-        statusbar = lookup_widget (GTK_WIDGET (widget), "statusbar");
         context_id = gtk_statusbar_get_context_id (statusbar, message);
         message_id = gtk_statusbar_push (statusbar, context_id, message);
 }
@@ -882,7 +881,7 @@ number_of_pins_has_changed (GtkWidget *widget)
         /* Update the "total number of pins/pads" entry */
         GtkWidget *number_total_pins_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_total_pins_entry");
-        gtk_entry_set_text (GTK_WIDGET (number_total_pins_entry),
+        gtk_entry_set_text (GTK_ENTRY (number_total_pins_entry),
                 g_strdup_printf ("%d", number_of_pins));
 }
 
@@ -899,9 +898,11 @@ on_C1_entry_changed                    (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *C1_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *C1_entry = lookup_widget (GTK_WIDGET (editable),
+                "C1_entry");
+        const gchar* C1_string = gtk_entry_get_text (GTK_ENTRY (C1_entry));
         c1 = g_ascii_strtod (C1_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -941,9 +942,11 @@ on_C2_entry_changed                    (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *C2_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *C2_entry = lookup_widget (GTK_WIDGET (editable),
+                "C2_entry");
+        const gchar* C2_string = gtk_entry_get_text (GTK_ENTRY (C2_entry));
         c2 = g_ascii_strtod (C2_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -983,9 +986,11 @@ on_G1_entry_changed                    (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *G1_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *G1_entry = lookup_widget (GTK_WIDGET (editable),
+                "G1_entry");
+        const gchar* G1_string = gtk_entry_get_text (GTK_ENTRY (G1_entry));
         g1 = g_ascii_strtod (G1_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -1025,9 +1030,11 @@ on_G2_entry_changed                    (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *G2_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *G2_entry = lookup_widget (GTK_WIDGET (editable),
+                "G2_entry");
+        const gchar* G2_string = gtk_entry_get_text (GTK_ENTRY (G2_entry));
         g2 = g_ascii_strtod (G2_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -1067,9 +1074,11 @@ on_Z1_entry_changed                    (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *Z1_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *Z1_entry = lookup_widget (GTK_WIDGET (editable),
+                "Z1_entry");
+        const gchar* Z1_string = gtk_entry_get_text (GTK_ENTRY (Z1_entry));
         z1 = g_ascii_strtod (Z1_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -1109,9 +1118,11 @@ on_Z2_entry_changed                    (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *Z2_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *Z2_entry = lookup_widget (GTK_WIDGET (editable),
+                "Z2_entry");
+        const gchar* Z2_string = gtk_entry_get_text (GTK_ENTRY (Z2_entry));
         z2 = g_ascii_strtod (Z2_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -1168,189 +1179,189 @@ void
 on_clear_button_clicked                (GtkButton       *button,
                                         gpointer         user_data)
 {
-        entry_has_changed (button);
+        entry_has_changed (GTK_WIDGET (button));
         /* Widgets on tab 1 "Footprint" */
-        GtkWidget *footprint_type_entry = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *footprint_type_entry = lookup_widget (GTK_WIDGET (button),
                 "footprint_type_entry");
-        gtk_combo_box_set_active (GTK_WIDGET (footprint_type_entry), 0);
-        GtkWidget *footprint_name_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_combo_box_set_active (GTK_COMBO_BOX (footprint_type_entry), 0);
+        GtkWidget *footprint_name_entry = lookup_widget (GTK_WIDGET (button),
                 "footprint_name_entry");
-        gtk_entry_set_text (GTK_WIDGET (footprint_name_entry), "");
-        GtkWidget *footprint_units_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_entry_set_text (GTK_ENTRY (footprint_name_entry), "");
+        GtkWidget *footprint_units_entry = lookup_widget (GTK_WIDGET (button),
                 "footprint_units_entry");
-        gtk_combo_box_set_active (GTK_WIDGET (footprint_units_entry), 0);
-        GtkWidget *footprint_refdes_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_combo_box_set_active (GTK_COMBO_BOX (footprint_units_entry), 0);
+        GtkWidget *footprint_refdes_entry = lookup_widget (GTK_WIDGET (button),
                 "footprint_refdes_entry");
-        gtk_entry_set_text (GTK_WIDGET (footprint_refdes_entry), "");
-        GtkWidget *footprint_value_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_entry_set_text (GTK_ENTRY (footprint_refdes_entry), "");
+        GtkWidget *footprint_value_entry = lookup_widget (GTK_WIDGET (button),
                 "footprint_value_entry");
-        gtk_entry_set_text (GTK_WIDGET (footprint_value_entry), "");
-        GtkWidget *package_body_length_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_entry_set_text (GTK_ENTRY (footprint_value_entry), "");
+        GtkWidget *package_body_length_entry = lookup_widget (GTK_WIDGET (button),
                 "package_body_length_entry");
-        gtk_entry_set_text (GTK_WIDGET (package_body_length_entry), "");
-        GtkWidget *package_body_width_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_entry_set_text (GTK_ENTRY (package_body_length_entry), "");
+        GtkWidget *package_body_width_entry = lookup_widget (GTK_WIDGET (button),
                 "package_body_width_entry");
-        gtk_entry_set_text (GTK_WIDGET (package_body_width_entry), "");
-        GtkWidget *package_body_height_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_entry_set_text (GTK_ENTRY (package_body_width_entry), "");
+        GtkWidget *package_body_height_entry = lookup_widget (GTK_WIDGET (button),
                 "package_body_height_entry");
-        gtk_entry_set_text (GTK_WIDGET (package_body_height_entry), "");
-        GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_BUTTON (button),
+        gtk_entry_set_text (GTK_ENTRY (package_body_height_entry), "");
+        GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (button),
                 "package_is_radial_checkbutton");
-        gtk_toggle_button_set_active ((void *) package_is_radial_checkbutton, FALSE);
-        GtkWidget *footprint_author_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (package_is_radial_checkbutton), FALSE);
+        GtkWidget *footprint_author_entry = lookup_widget (GTK_WIDGET (button),
                 "footprint_author_entry");
-        gtk_entry_set_text (GTK_WIDGET (footprint_author_entry), "");
-        GtkWidget *footprint_dist_license_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_entry_set_text (GTK_ENTRY (footprint_author_entry), "");
+        GtkWidget *footprint_dist_license_entry = lookup_widget (GTK_WIDGET (button),
                 "footprint_dist_license_entry");
-        gtk_entry_set_text (GTK_WIDGET (footprint_dist_license_entry), "");
-        GtkWidget *footprint_use_license_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_entry_set_text (GTK_ENTRY (footprint_dist_license_entry), "");
+        GtkWidget *footprint_use_license_entry = lookup_widget (GTK_WIDGET (button),
                 "footprint_use_license_entry");
-        gtk_entry_set_text (GTK_WIDGET (footprint_use_license_entry), "");
-        GtkWidget *footprint_status_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_entry_set_text (GTK_ENTRY (footprint_use_license_entry), "");
+        GtkWidget *footprint_status_entry = lookup_widget (GTK_WIDGET (button),
                 "footprint_status_entry");
-        gtk_combo_box_set_active (GTK_WIDGET (footprint_status_entry), 0);
+        gtk_combo_box_set_active (GTK_COMBO_BOX (footprint_status_entry), 0);
 
         /* Widgets on tab 2 "Pins/Pads" */
-        GtkWidget *number_total_pins_entry = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *number_total_pins_entry = lookup_widget (GTK_WIDGET (button),
                 "number_total_pins_entry");
-        gtk_entry_set_text (GTK_WIDGET (number_total_pins_entry), "");
-        GtkWidget *number_of_rows_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_entry_set_text (GTK_ENTRY (number_total_pins_entry), "");
+        GtkWidget *number_of_rows_entry = lookup_widget (GTK_WIDGET (button),
                 "number_of_rows_entry");
-        gtk_entry_set_text (GTK_WIDGET (number_of_rows_entry), "");
-        GtkWidget *number_of_columns_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_entry_set_text (GTK_ENTRY (number_of_rows_entry), "");
+        GtkWidget *number_of_columns_entry = lookup_widget (GTK_WIDGET (button),
                 "number_of_columns_entry");
-        gtk_entry_set_text (GTK_WIDGET (number_of_columns_entry), "");
-        GtkWidget *pitch_x_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_entry_set_text (GTK_ENTRY (number_of_columns_entry), "");
+        GtkWidget *pitch_x_entry = lookup_widget (GTK_WIDGET (button),
                 "pitch_x_entry");
-        gtk_entry_set_text (GTK_WIDGET (pitch_x_entry), "");
-        GtkWidget *pitch_y_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_entry_set_text (GTK_ENTRY (pitch_x_entry), "");
+        GtkWidget *pitch_y_entry = lookup_widget (GTK_WIDGET (button),
                 "pitch_y_entry");
-        gtk_entry_set_text (GTK_WIDGET (pitch_y_entry), "");
-        GtkWidget *count_x_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_entry_set_text (GTK_ENTRY (pitch_y_entry), "");
+        GtkWidget *count_x_entry = lookup_widget (GTK_WIDGET (button),
                 "count_x_entry");
-        gtk_entry_set_text (GTK_WIDGET (count_x_entry), "");
-        GtkWidget *count_y_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_entry_set_text (GTK_ENTRY (count_x_entry), "");
+        GtkWidget *count_y_entry = lookup_widget (GTK_WIDGET (button),
                 "count_y_entry");
-        gtk_entry_set_text (GTK_WIDGET (count_y_entry), "");
-        GtkWidget *pad_shape_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_entry_set_text (GTK_ENTRY (count_y_entry), "");
+        GtkWidget *pad_shape_entry = lookup_widget (GTK_WIDGET (button),
                 "pad_shape_entry");
-        gtk_combo_box_set_active (GTK_WIDGET (pad_shape_entry), 0);
-        GtkWidget *number_1_position_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_combo_box_set_active (GTK_COMBO_BOX (pad_shape_entry), 0);
+        GtkWidget *number_1_position_entry = lookup_widget (GTK_WIDGET (button),
                 "number_1_position_entry");
-        gtk_combo_box_set_active (GTK_WIDGET (number_1_position_entry), 0);
-        GtkWidget *pad_diameter_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_combo_box_set_active (GTK_COMBO_BOX (number_1_position_entry), 0);
+        GtkWidget *pad_diameter_entry = lookup_widget (GTK_WIDGET (button),
                 "pad_diameter_entry");
-        gtk_entry_set_text (GTK_WIDGET (pad_diameter_entry), "");
-        GtkWidget *pin_drill_diameter_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_entry_set_text (GTK_ENTRY (pad_diameter_entry), "");
+        GtkWidget *pin_drill_diameter_entry = lookup_widget (GTK_WIDGET (button),
                 "pin_drill_diameter_entry");
-        gtk_entry_set_text (GTK_WIDGET (pin_drill_diameter_entry), "");
-        GtkWidget *pin1_square_checkbutton = lookup_widget (GTK_BUTTON (button),
+        gtk_entry_set_text (GTK_ENTRY (pin_drill_diameter_entry), "");
+        GtkWidget *pin1_square_checkbutton = lookup_widget (GTK_WIDGET (button),
                 "pin_square_checkbutton");
-        gtk_toggle_button_set_active ((void *) pin1_square_checkbutton, FALSE);
-        GtkWidget *pad_length_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (pin1_square_checkbutton), FALSE);
+        GtkWidget *pad_length_entry = lookup_widget (GTK_WIDGET (button),
                 "pad_length_entry");
-        gtk_entry_set_text (GTK_WIDGET (pad_length_entry), "");
-        GtkWidget *pad_width_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_entry_set_text (GTK_ENTRY (pad_length_entry), "");
+        GtkWidget *pad_width_entry = lookup_widget (GTK_WIDGET (button),
                 "pad_width_entry");
-        gtk_entry_set_text (GTK_WIDGET (pad_width_entry), "");
-        GtkWidget *pad_clearance_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_entry_set_text (GTK_ENTRY (pad_width_entry), "");
+        GtkWidget *pad_clearance_entry = lookup_widget (GTK_WIDGET (button),
                 "pad_clearance_entry");
-        gtk_entry_set_text (GTK_WIDGET (pad_clearance_entry), "");
-        GtkWidget *pad_solder_mask_clearance_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_entry_set_text (GTK_ENTRY (pad_clearance_entry), "");
+        GtkWidget *pad_solder_mask_clearance_entry = lookup_widget (GTK_WIDGET (button),
                 "pad_solder_mask_clearance_entry");
-        gtk_entry_set_text (GTK_WIDGET (pad_solder_mask_clearance_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (pad_solder_mask_clearance_entry), "");
 
         /* Widgets on tab 3 "Thermal Pad" */
-        GtkWidget *thermal_checkbutton = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *thermal_checkbutton = lookup_widget (GTK_WIDGET (button),
                 "thermal_checkbutton");
-        gtk_toggle_button_set_active ((void *) thermal_checkbutton, FALSE);
-        GtkWidget *thermal_nopaste_checkbutton = lookup_widget (GTK_BUTTON (button),
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (thermal_checkbutton), FALSE);
+        GtkWidget *thermal_nopaste_checkbutton = lookup_widget (GTK_WIDGET (button),
                 "thermal_nopaste_checkbutton");
-        gtk_toggle_button_set_active ((void *) thermal_nopaste_checkbutton, FALSE);
-        GtkWidget *thermal_length_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (thermal_nopaste_checkbutton), FALSE);
+        GtkWidget *thermal_length_entry = lookup_widget (GTK_WIDGET (button),
                 "thermal_length_entry");
-        gtk_entry_set_text (GTK_WIDGET (thermal_length_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (thermal_length_entry), "");
         gtk_widget_set_sensitive (thermal_length_entry, FALSE);
-        GtkWidget *thermal_width_entry = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *thermal_width_entry = lookup_widget (GTK_WIDGET (button),
                 "thermal_width_entry");
-        gtk_entry_set_text (GTK_WIDGET (thermal_width_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (thermal_width_entry), "");
         gtk_widget_set_sensitive (thermal_width_entry, FALSE);
-        GtkWidget *thermal_clearance_entry = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *thermal_clearance_entry = lookup_widget (GTK_WIDGET (button),
                 "thermal_clearance_entry");
-        gtk_entry_set_text (GTK_WIDGET (thermal_clearance_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (thermal_clearance_entry), "");
         gtk_widget_set_sensitive (thermal_clearance_entry, FALSE);
-        GtkWidget *thermal_solder_mask_clearance_entry = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *thermal_solder_mask_clearance_entry = lookup_widget (GTK_WIDGET (button),
                 "thermal_solder_mask_clearance_entry");
-        gtk_entry_set_text (GTK_WIDGET (thermal_solder_mask_clearance_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (thermal_solder_mask_clearance_entry), "");
         gtk_widget_set_sensitive (thermal_solder_mask_clearance_entry, FALSE);
 
         /* Widgets on tab 4 "Silkscreen" */
-        GtkWidget *silkscreen_package_outline_checkbutton = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *silkscreen_package_outline_checkbutton = lookup_widget (GTK_WIDGET (button),
                 "silkscreen_package_outline_checkbutton");
-        gtk_toggle_button_set_active ((void *) silkscreen_package_outline_checkbutton, FALSE);
-        GtkWidget *silkscreen_line_width_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (silkscreen_package_outline_checkbutton), FALSE);
+        GtkWidget *silkscreen_line_width_entry = lookup_widget (GTK_WIDGET (button),
                 "silkscreen_line_width_entry");
-        gtk_entry_set_text (GTK_WIDGET (silkscreen_line_width_entry), "");
-        GtkWidget *silkscreen_indicate_1_checkbutton = lookup_widget (GTK_BUTTON (button),
+        gtk_entry_set_text (GTK_ENTRY (silkscreen_line_width_entry), "");
+        GtkWidget *silkscreen_indicate_1_checkbutton = lookup_widget (GTK_WIDGET (button),
                 "silkscreen_indicate_1_checkbutton");
-        gtk_toggle_button_set_active ((void *) silkscreen_indicate_1_checkbutton, FALSE);
-        GtkWidget *courtyard_checkbutton = lookup_widget (GTK_BUTTON (button),
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (silkscreen_indicate_1_checkbutton), FALSE);
+        GtkWidget *courtyard_checkbutton = lookup_widget (GTK_WIDGET (button),
                 "courtyard_checkbutton");
-        gtk_toggle_button_set_active ((void *) courtyard_checkbutton, FALSE);
-        GtkWidget *courtyard_length_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (courtyard_checkbutton), FALSE);
+        GtkWidget *courtyard_length_entry = lookup_widget (GTK_WIDGET (button),
                 "courtyard_length_entry");
-        gtk_entry_set_text (GTK_WIDGET (courtyard_length_entry), "");
-        GtkWidget *courtyard_width_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_entry_set_text (GTK_ENTRY (courtyard_length_entry), "");
+        GtkWidget *courtyard_width_entry = lookup_widget (GTK_WIDGET (button),
                 "courtyard_width_entry");
-        gtk_entry_set_text (GTK_WIDGET (courtyard_width_entry), "");
-        GtkWidget *courtyard_line_width_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_entry_set_text (GTK_ENTRY (courtyard_width_entry), "");
+        GtkWidget *courtyard_line_width_entry = lookup_widget (GTK_WIDGET (button),
                 "courtyard_line_width_entry");
-        gtk_entry_set_text (GTK_WIDGET (courtyard_line_width_entry), "");
-        GtkWidget *courtyard_clearance_with_package_entry = lookup_widget (GTK_BUTTON (button),
+        gtk_entry_set_text (GTK_ENTRY (courtyard_line_width_entry), "");
+        GtkWidget *courtyard_clearance_with_package_entry = lookup_widget (GTK_WIDGET (button),
                 "courtyard_clearance_with_package_entry");
-        gtk_entry_set_text (GTK_WIDGET (courtyard_clearance_with_package_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (courtyard_clearance_with_package_entry), "");
 
         /* Widgets on tab 5 "Heel & Toe goals" */
-        GtkWidget *C1_entry = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *C1_entry = lookup_widget (GTK_WIDGET (button),
                 "C1_entry");
-        gtk_entry_set_text (GTK_WIDGET (C1_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (C1_entry), "");
         gtk_widget_set_sensitive (C1_entry, TRUE);
-        GtkWidget *C2_entry = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *C2_entry = lookup_widget (GTK_WIDGET (button),
                 "C2_entry");
-        gtk_entry_set_text (GTK_WIDGET (C2_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (C2_entry), "");
         gtk_widget_set_sensitive (C2_entry, TRUE);
-        GtkWidget *G1_entry = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *G1_entry = lookup_widget (GTK_WIDGET (button),
                 "G1_entry");
-        gtk_entry_set_text (GTK_WIDGET (G1_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (G1_entry), "");
         gtk_widget_set_sensitive (G1_entry, FALSE);
-        GtkWidget *G2_entry = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *G2_entry = lookup_widget (GTK_WIDGET (button),
                 "G2_entry");
-        gtk_entry_set_text (GTK_WIDGET (G2_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (G2_entry), "");
         gtk_widget_set_sensitive (G2_entry, FALSE);
-        GtkWidget *Z1_entry = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *Z1_entry = lookup_widget (GTK_WIDGET (button),
                 "Z1_entry");
-        gtk_entry_set_text (GTK_WIDGET (Z1_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (Z1_entry), "");
         gtk_widget_set_sensitive (Z1_entry, FALSE);
-        GtkWidget *Z2_entry = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *Z2_entry = lookup_widget (GTK_WIDGET (button),
                 "Z2_entry");
-        gtk_entry_set_text (GTK_WIDGET (Z2_entry), "");
+        gtk_entry_set_text (GTK_ENTRY (Z2_entry), "");
         gtk_widget_set_sensitive (Z2_entry, FALSE);
-        GtkWidget *C1_radiobutton = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *C1_radiobutton = lookup_widget (GTK_WIDGET (button),
                 "C1_radiobutton");
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (C1_radiobutton), TRUE);
-        GtkWidget *C2_radiobutton = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *C2_radiobutton = lookup_widget (GTK_WIDGET (button),
                 "C2_radiobutton");
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (C2_radiobutton), TRUE);
-        GtkWidget *G1_radiobutton = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *G1_radiobutton = lookup_widget (GTK_WIDGET (button),
                 "G1_radiobutton");
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (G1_radiobutton), FALSE);
-        GtkWidget *G2_radiobutton = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *G2_radiobutton = lookup_widget (GTK_WIDGET (button),
                 "G2_radiobutton");
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (G2_radiobutton), FALSE);
-        GtkWidget *Z1_radiobutton = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *Z1_radiobutton = lookup_widget (GTK_WIDGET (button),
                 "Z1_radiobutton");
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (Z1_radiobutton), FALSE);
-        GtkWidget *Z2_radiobutton = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *Z2_radiobutton = lookup_widget (GTK_WIDGET (button),
                 "Z2_radiobutton");
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (Z2_radiobutton), FALSE);
 }
@@ -1380,15 +1391,17 @@ on_count_x_entry_changed               (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *count_x_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *count_x_entry = lookup_widget (GTK_WIDGET (editable),
+                "count_x_entry");
+        const gchar* count_x_string = gtk_entry_get_text (GTK_ENTRY (count_x_entry));
         count_x = (int) g_ascii_strtod (count_x_string, &leftovers);
         number_of_pins = (number_of_rows * count_x + number_of_columns * count_y) + thermal;
         GtkWidget *number_total_pins_entry = lookup_widget (GTK_WIDGET (editable),
                 "number_total_pins_entry");
-        gtk_entry_set_text (number_total_pins_entry,
+        gtk_entry_set_text (GTK_ENTRY (number_total_pins_entry),
                 g_strdup_printf ("%d", number_of_pins));
-        entry_has_changed (editable);
-        number_of_pins_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
+        number_of_pins_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -1403,15 +1416,17 @@ on_count_y_entry_changed               (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *count_y_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *count_y_entry = lookup_widget (GTK_WIDGET (editable),
+                "count_y_entry");
+        const gchar* count_y_string = gtk_entry_get_text (GTK_ENTRY (count_y_entry));
         count_y = (int) g_ascii_strtod (count_y_string, &leftovers);
         number_of_pins = (number_of_rows * count_x + number_of_columns * count_y) + thermal;
         GtkWidget *number_total_pins_entry = lookup_widget (GTK_WIDGET (editable),
                 "number_total_pins_entry");
-        gtk_entry_set_text (number_total_pins_entry,
+        gtk_entry_set_text (GTK_ENTRY (number_total_pins_entry),
                 g_strdup_printf ("%d", number_of_pins));
-        entry_has_changed (editable);
-        number_of_pins_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
+        number_of_pins_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -1426,19 +1441,19 @@ on_courtyard_checkbutton_toggled       (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
         courtyard = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
-        GtkWidget *courtyard_line_width_entry = lookup_widget (GTK_BUTTON (togglebutton),
+        GtkWidget *courtyard_line_width_entry = lookup_widget (GTK_WIDGET (togglebutton),
                 "courtyard_line_width_entry");
         gtk_widget_set_sensitive (courtyard_line_width_entry, courtyard);
-        GtkWidget *courtyard_length_entry = lookup_widget (GTK_BUTTON (togglebutton),
+        GtkWidget *courtyard_length_entry = lookup_widget (GTK_WIDGET (togglebutton),
                 "courtyard_length_entry");
         gtk_widget_set_sensitive (courtyard_length_entry, courtyard);
-        GtkWidget *courtyard_width_entry = lookup_widget (GTK_BUTTON (togglebutton),
+        GtkWidget *courtyard_width_entry = lookup_widget (GTK_WIDGET (togglebutton),
                 "courtyard_width_entry");
         gtk_widget_set_sensitive (courtyard_width_entry, courtyard);
-        GtkWidget *courtyard_clearance_with_package_entry = lookup_widget (GTK_BUTTON (togglebutton),
+        GtkWidget *courtyard_clearance_with_package_entry = lookup_widget (GTK_WIDGET (togglebutton),
                 "courtyard_clearance_with_package_entry");
         gtk_widget_set_sensitive (courtyard_clearance_with_package_entry, courtyard);
-        entry_has_changed (togglebutton);
+        entry_has_changed (GTK_WIDGET (togglebutton));
 }
 
 
@@ -1455,9 +1470,11 @@ on_courtyard_clearance_with_package_entry_changed
                                          gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *courtyard_clearance_with_package_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *courtyard_clearance_with_package_entry = lookup_widget (GTK_WIDGET (editable),
+                "courtyard_clearance_with_package_entry");
+        const gchar* courtyard_clearance_with_package_string = gtk_entry_get_text (GTK_ENTRY (courtyard_clearance_with_package_entry));
         courtyard_clearance_with_package = g_ascii_strtod (courtyard_clearance_with_package_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -1473,9 +1490,11 @@ on_courtyard_length_entry_changed      (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *courtyard_length_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *courtyard_length_entry = lookup_widget (GTK_WIDGET (editable),
+                "courtyard_length_entry");
+        const gchar* courtyard_length_string = gtk_entry_get_text (GTK_ENTRY (courtyard_length_entry));
         courtyard_length = g_ascii_strtod (courtyard_length_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -1491,9 +1510,11 @@ on_courtyard_line_width_entry_changed  (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *courtyard_line_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *courtyard_line_width_entry = lookup_widget (GTK_WIDGET (editable),
+                "courtyard_line_width_entry");
+        const gchar* courtyard_line_width_string = gtk_entry_get_text (GTK_ENTRY (courtyard_line_width_entry));
         courtyard_line_width = g_ascii_strtod (courtyard_line_width_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -1509,9 +1530,11 @@ on_courtyard_width_entry_changed       (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *courtyard_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *courtyard_width_entry = lookup_widget (GTK_WIDGET (editable),
+                "courtyard_width_entry");
+        const gchar* courtyard_width_string = gtk_entry_get_text (GTK_ENTRY (courtyard_width_entry));
         courtyard_width = g_ascii_strtod (courtyard_width_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -1527,7 +1550,7 @@ on_filechooser_dialog_cancel_button_clicked
                                         (GtkButton       *button,
                                         gpointer         user_data)
 {
-        GtkWidget *filechooser_dialog = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *filechooser_dialog = lookup_widget (GTK_WIDGET (button),
                 "filechooser_dialog");
         gtk_widget_destroy (filechooser_dialog);
 }
@@ -1543,7 +1566,7 @@ void
 on_filechooser_dialog_close            (GtkDialog       *dialog,
                                         gpointer         user_data)
 {
-        GtkWidget *filechooser_dialog = lookup_widget (GTK_DIALOG (dialog),
+        GtkWidget *filechooser_dialog = lookup_widget (GTK_WIDGET (dialog),
                 "filechooser_dialog");
         gtk_widget_destroy (filechooser_dialog);
 }
@@ -1564,15 +1587,15 @@ on_filechooser_dialog_current_folder_changed
                                         (GtkFileChooser  *filechooser,
                                         gpointer         user_data)
 {
-        GtkWidget *filechooser_dialog = lookup_widget (GTK_FILE_CHOOSER (filechooser),
+        GtkWidget *filechooser_dialog = lookup_widget (GTK_WIDGET (filechooser),
                 "filechooser_dialog");
-        gchar *current_folder = g_strdup (gtk_file_chooser_get_current_folder (filechooser_dialog));
+        gchar *current_folder = g_strdup (gtk_file_chooser_get_current_folder (GTK_FILE_CHOOSER (filechooser_dialog)));
         /* Test if current folder is a null pointer.
          * If so, please notify the user (in the statusbar). */
         if (!current_folder)
         {
                 gchar *message = g_strdup_printf (_("ERROR: current folder is not initialised  (null pointer)."));
-                message_to_statusbar (filechooser, message);
+                message_to_statusbar (GTK_WIDGET (filechooser), message);
                 return;
         }
         /* Test if current folder is an empty string pointer.
@@ -1580,7 +1603,7 @@ on_filechooser_dialog_current_folder_changed
         if (!strcmp (current_folder, ""))
         {
                 gchar *message = g_strdup_printf (_("ERROR: current folder contains an empty string."));
-                message_to_statusbar (filechooser, message);
+                message_to_statusbar (GTK_WIDGET (filechooser), message);
                 return;
         }
         /* Test if current folder is a directory.
@@ -1612,15 +1635,15 @@ on_filechooser_dialog_open_button_clicked
                                         (GtkButton       *button,
                                         gpointer         user_data)
 {
-        GtkWidget *filechooser_dialog = lookup_widget (GTK_BUTTON (button),
+        GtkWidget *filechooser_dialog = lookup_widget (GTK_WIDGET (button),
                 "filechooser_dialog");
-        gchar *selected_filename = g_strdup (gtk_file_chooser_get_filename (filechooser_dialog));
+        gchar *selected_filename = g_strdup (gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (filechooser_dialog)));
         /* Test if selected filename is a null pointer.
          * If so, please notify the user (in the statusbar). */
         if (!selected_filename)
         {
                 gchar *message = g_strdup_printf (_("ERROR: selected filename is not initialised  (null pointer)."));
-                message_to_statusbar (button, message);
+                message_to_statusbar (GTK_WIDGET (button), message);
                 return;
         }
         /* Test if selected filename is a null pointer.
@@ -1628,7 +1651,7 @@ on_filechooser_dialog_open_button_clicked
         if (!strcmp (selected_filename, ""))
         {
                 gchar *message = g_strdup_printf (_("ERROR: selected filename contains an empty string."));
-                message_to_statusbar (button, message);
+                message_to_statusbar (GTK_WIDGET (button), message);
                 return;
         }
         /* Test if selected filename is a directory.
@@ -1637,7 +1660,7 @@ on_filechooser_dialog_open_button_clicked
         if (g_file_test (selected_filename, G_FILE_TEST_IS_DIR))
         {
                 gchar *message = g_strdup_printf (_("ERROR: selected filename is a directory."));
-                message_to_statusbar (button, message);
+                message_to_statusbar (GTK_WIDGET (button), message);
                 return;
         }
         /* Store the (now validated) selected filename */
@@ -1649,12 +1672,12 @@ on_filechooser_dialog_open_button_clicked
         if (read_footprintwizard_file (fpw_filename))
         {
                 gchar *message = g_strdup_printf (_("Read footprintwizard file %s."), fpw_filename);
-                message_to_statusbar (button, message);
+                message_to_statusbar (GTK_WIDGET (button), message);
         }
         else
         {
                 gchar *message = g_strdup_printf (_("ERROR: Unable to read footprint wizard file %s."), fpw_filename);
-                message_to_statusbar (button, message);
+                message_to_statusbar (GTK_WIDGET (button), message);
         }
         /* Update the entry widgets to reflect the changes */
 }
@@ -1701,8 +1724,10 @@ void
 on_footprint_author_entry_changed      (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        footprint_author = gtk_entry_get_text (GTK_EDITABLE (editable));
-        entry_has_changed (editable);
+        GtkWidget *footprint_author_entry = lookup_widget (GTK_WIDGET (editable),
+                "footprint_author_entry");
+        footprint_author = g_strdup (gtk_entry_get_text (GTK_ENTRY (footprint_author_entry)));
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -1716,8 +1741,10 @@ on_footprint_dist_license_entry_changed
                                         (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        footprint_dist_license = gtk_entry_get_text (GTK_EDITABLE (editable));
-        entry_has_changed (editable);
+        GtkWidget *footprint_dist_license_entry = lookup_widget (GTK_WIDGET (editable),
+                "footprint_dist_license_entry");
+        footprint_dist_license = g_strdup (gtk_entry_get_text (GTK_ENTRY (footprint_dist_license_entry)));
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -1730,15 +1757,17 @@ void
 on_footprint_name_entry_changed        (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        footprint_name = gtk_entry_get_text (GTK_EDITABLE (editable));
-        entry_has_changed (editable);
+        GtkWidget *footprint_name_entry = lookup_widget (GTK_WIDGET (editable),
+                "footprint_name_entry");
+        footprint_name = g_strdup (gtk_entry_get_text (GTK_ENTRY (footprint_name_entry)));
+        entry_has_changed (GTK_WIDGET (editable));
         /* Check for a null pointer in footprint_name for this might cause a
          * segmentation fault or undefined behaviour.
          */
         if (!footprint_name)
         {
                 gchar *message = g_strdup_printf (_("ERROR: footprint name not initialised (null pointer)."));
-                message_to_statusbar (editable, message);
+                message_to_statusbar (GTK_WIDGET (editable), message);
                 return;
         }
         /* Check for an empty footprint_name string for this might cause a
@@ -1747,13 +1776,13 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
         else if (!strcmp (footprint_name, ""))
         {
                 gchar *message = g_strdup_printf (_("ERROR: footprint name contains an empty string."));
-                message_to_statusbar (editable, message);
+                message_to_statusbar (GTK_WIDGET (editable), message);
                 return;
         }
         else
         {
                 gchar *message = g_strdup_printf ("");
-                message_to_statusbar (editable, message);
+                message_to_statusbar (GTK_WIDGET (editable), message);
                 return;
         }
 }
@@ -1768,8 +1797,10 @@ void
 on_footprint_refdes_entry_changed      (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        entry_has_changed (editable);
-        footprint_refdes = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *footprint_refdes_entry = lookup_widget (GTK_WIDGET (editable),
+                "footprint_refdes_entry");
+        footprint_refdes = g_strdup (gtk_entry_get_text (GTK_ENTRY (footprint_refdes_entry)));
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 /*!
@@ -1782,7 +1813,7 @@ on_footprint_status_entry_changed      (GtkComboBox     *combobox,
                                         gpointer         user_data)
 {
         footprint_status = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
-        entry_has_changed (combobox);
+        entry_has_changed (GTK_WIDGET (combobox));
 }
 
 
@@ -1813,159 +1844,159 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         {
                 footprint_type = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
                 footprint_name = g_strdup (footprint_type);
-                GtkEntry *footprint_name_entry = lookup_widget (GTK_WIDGET (combobox),
+                GtkWidget *footprint_name_entry = lookup_widget (GTK_WIDGET (combobox),
                         "footprint_name_entry");
-                gtk_entry_set_text (footprint_name_entry, footprint_name);
+                gtk_entry_set_text (GTK_ENTRY (footprint_name_entry), footprint_name);
         }
         else
                 footprint_type = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
-        entry_has_changed (combobox);
+        entry_has_changed (GTK_WIDGET (combobox));
         /* Determine the package type */
         if (!strcmp (footprint_type, "BGA"))
         {
-                all_entries_to_default_sensitivity (combobox);
-                gui_constraints_set_bga (combobox);
+                all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                gui_constraints_set_bga (GTK_WIDGET (combobox));
                 package_type = BGA;
                 return;
         }
         else if (!strcmp (footprint_type, "CAPC"))
         {
-                all_entries_to_default_sensitivity (combobox);
-                gui_constraints_set_smt (combobox);
+                all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                gui_constraints_set_smt (GTK_WIDGET (combobox));
                 package_type = CAPC;
                 return;
         }
         else if (!strcmp (footprint_type, "CAPM"))
         {
-                all_entries_to_default_sensitivity (combobox);
-                gui_constraints_set_smt (combobox);
+                all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                gui_constraints_set_smt (GTK_WIDGET (combobox));
                 package_type = CAPM;
                 return;
         }
         else if (!strcmp (footprint_type, "CON_DIL"))
         {
-                all_entries_to_default_sensitivity (combobox);
-                gui_constraints_set_con_dil (combobox);
+                all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                gui_constraints_set_con_dil (GTK_WIDGET (combobox));
                 package_type = CON_DIL;
                 return;
         }
         else if (!strcmp (footprint_type, "CON_DIP"))
         {
-                all_entries_to_default_sensitivity (combobox);
-                gui_constraints_set_con_dip (combobox);
+                all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                gui_constraints_set_con_dip (GTK_WIDGET (combobox));
                 package_type = CON_DIP;
                 return;
         }
         else if (!strcmp (footprint_type, "CON_HDR"))
         {
                 package_type = CON_HDR;
-                all_entries_to_default_sensitivity (combobox);
+                all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                 return;
         }
         else if (!strcmp (footprint_type, "DIL"))
         {
                 package_type = DIL;
-                all_entries_to_default_sensitivity (combobox);
+                all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                 return;
         }
         else if (!strcmp (footprint_type, "DIP"))
         {
-                all_entries_to_default_sensitivity (combobox);
-                gui_constraints_set_dip (combobox);
+                all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                gui_constraints_set_dip (GTK_WIDGET (combobox));
                 package_type = DIP;
                 return;
         }
         else if (!strcmp (footprint_type, "INDC"))
         {
-                all_entries_to_default_sensitivity (combobox);
-                gui_constraints_set_smt (combobox);
+                all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                gui_constraints_set_smt (GTK_WIDGET (combobox));
                 package_type = INDC;
                 return;
         }
         else if (!strcmp (footprint_type, "INDM"))
         {
-                all_entries_to_default_sensitivity (combobox);
-                gui_constraints_set_smt (combobox);
+                all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                gui_constraints_set_smt (GTK_WIDGET (combobox));
                 package_type = INDM;
                 return;
         }
         else if (!strcmp (footprint_type, "PGA"))
         {
-                all_entries_to_default_sensitivity (combobox);
-                gui_constraints_set_pga (combobox);
+                all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                gui_constraints_set_pga (GTK_WIDGET (combobox));
                 package_type = PGA;
                 return;
         }
         else if (!strcmp (footprint_type, "PLCC"))
         {
-                all_entries_to_default_sensitivity (combobox);
-                gui_constraints_set_plcc (combobox);
+                all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                gui_constraints_set_plcc (GTK_WIDGET (combobox));
                 package_type = PLCC;
                 return;
         }
         else if (!strcmp (footprint_type, "QFN"))
         {
-                all_entries_to_default_sensitivity (combobox);
+                all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                 package_type = QFN;
                 gchar *message = g_strdup_printf (_("ERROR: footprint type QFN is not yet implemented."));
-                message_to_statusbar (combobox, message);
+                message_to_statusbar (GTK_WIDGET (combobox), message);
                 return;
         }
         else if (!strcmp (footprint_type, "QFP"))
         {
-                all_entries_to_default_sensitivity (combobox);
+                all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                 package_type = QFP;
                 gchar *message = g_strdup_printf (_("ERROR: footprint type QFP is not yet implemented."));
-                message_to_statusbar (combobox, message);
+                message_to_statusbar (GTK_WIDGET (combobox), message);
                 return;
         }
         else if (!strcmp (footprint_type, "RESC"))
         {
-                all_entries_to_default_sensitivity (combobox);
-                gui_constraints_set_smt (combobox);
+                all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                gui_constraints_set_smt (GTK_WIDGET (combobox));
                 package_type = RESC;
                 return;
         }
         else if (!strcmp (footprint_type, "RESM"))
         {
-                all_entries_to_default_sensitivity (combobox);
-                gui_constraints_set_smt (combobox);
+                all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                gui_constraints_set_smt (GTK_WIDGET (combobox));
                 package_type = RESM;
                 return;
         }
         else if (!strcmp (footprint_type, "SIL"))
         {
-                all_entries_to_default_sensitivity (combobox);
+                all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                 package_type = SIL;
                 gchar *message = g_strdup_printf (_("ERROR: footprint type SIL is not yet implemented."));
-                message_to_statusbar (combobox, message);
+                message_to_statusbar (GTK_WIDGET (combobox), message);
                 return;
         }
         else if (!strcmp (footprint_type, "SIP"))
         {
-                all_entries_to_default_sensitivity (combobox);
+                all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                 package_type = SIP;
                 gchar *message = g_strdup_printf (_("ERROR: footprint type SIP is not yet implemented."));
-                message_to_statusbar (combobox, message);
+                message_to_statusbar (GTK_WIDGET (combobox), message);
                 return;
         }
         else if (!strcmp (footprint_type, "SO"))
         {
-                all_entries_to_default_sensitivity (combobox);
+                all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                 package_type = SO;
                 gchar *message = g_strdup_printf (_("ERROR: footprint type SO is not yet implemented."));
-                message_to_statusbar (combobox, message);
+                message_to_statusbar (GTK_WIDGET (combobox), message);
                 return;
         }
         else if (!strcmp (footprint_type, "TO92"))
         {
-                all_entries_to_default_sensitivity (combobox);
-                gui_constraints_set_to92 (combobox);
+                all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                gui_constraints_set_to92 (GTK_WIDGET (combobox));
                 package_type = TO92;
                 return;
         }
         gchar *message = g_strdup_printf (_("ERROR: unknown or not yet implemented footprint type entered."));
-        message_to_statusbar (combobox, message);
+        message_to_statusbar (GTK_WIDGET (combobox), message);
 }
 
 
@@ -1979,7 +2010,7 @@ void
 on_footprint_units_entry_changed       (GtkComboBox     *combobox,
                                         gpointer         user_data)
 {
-        entry_has_changed (combobox);
+        entry_has_changed (GTK_WIDGET (combobox));
         footprint_units = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
         /* Check for a null pointer in footprint units for this might cause a
          * segmentation fault or undefined behaviour.
@@ -1987,7 +2018,7 @@ on_footprint_units_entry_changed       (GtkComboBox     *combobox,
         if (!footprint_units)
         {
                 gchar *message = g_strdup_printf (_("ERROR: footprint units not initialised (null pointer)."));
-                message_to_statusbar (combobox, message);
+                message_to_statusbar (GTK_WIDGET (combobox), message);
                 return;
         }
         /* Check for an empty footprint units string for this might cause a
@@ -1996,13 +2027,13 @@ on_footprint_units_entry_changed       (GtkComboBox     *combobox,
         else if (!strcmp (footprint_units, ""))
         {
                 gchar *message = g_strdup_printf (_("ERROR: footprint units contains an empty string."));
-                message_to_statusbar (combobox, message);
+                message_to_statusbar (GTK_WIDGET (combobox), message);
                 return;
         }
         else
         {
                 gchar *message = g_strdup_printf ("");
-                message_to_statusbar (combobox, message);
+                message_to_statusbar (GTK_WIDGET (combobox), message);
         }
         /* Determine the multiplier based upon the units type */
         if (!strcmp (footprint_units, "mil"))
@@ -2021,7 +2052,7 @@ on_footprint_units_entry_changed       (GtkComboBox     *combobox,
                 return;
         }
         gchar *message = g_strdup_printf (_("ERROR: footprint units contains an unknown units type."));
-        message_to_statusbar (combobox, message);
+        message_to_statusbar (GTK_WIDGET (combobox), message);
 }
 
 
@@ -2034,8 +2065,10 @@ void
 on_footprint_use_license_entry_changed (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        entry_has_changed (editable);
-        footprint_use_license = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *footprint_use_license_entry = lookup_widget (GTK_WIDGET (editable),
+                "footprint_use_license_entry");
+        footprint_use_license = g_strdup (gtk_entry_get_text (GTK_ENTRY (footprint_use_license_entry)));
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -2048,8 +2081,10 @@ void
 on_footprint_value_entry_changed       (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        footprint_value = gtk_entry_get_text (GTK_EDITABLE (editable));
-        entry_has_changed (editable);
+        GtkWidget *footprint_value_entry = lookup_widget (GTK_WIDGET (editable),
+                "footprint_value_entry");
+        footprint_value = g_strdup (gtk_entry_get_text (GTK_ENTRY (footprint_value_entry)));
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -2064,7 +2099,7 @@ on_number_1_position_entry_changed
                                          gpointer         user_data)
 {
         pin_1_position = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
-        entry_has_changed (combobox);
+        entry_has_changed (GTK_WIDGET (combobox));
 }
 
 
@@ -2079,15 +2114,17 @@ on_number_of_columns_entry_changed     (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *number_of_columns_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *number_of_columns_entry = lookup_widget (GTK_WIDGET (editable),
+                "number_of_columns_entry");
+        const gchar* number_of_columns_string = gtk_entry_get_text (GTK_ENTRY (number_of_columns_entry));
         number_of_columns = (int) g_ascii_strtod (number_of_columns_string, &leftovers);
         number_of_pins = (number_of_rows * count_x + number_of_columns * count_y) + thermal;
         GtkWidget *number_total_pins_entry = lookup_widget (GTK_WIDGET (editable),
                 "number_total_pins_entry");
-        gtk_entry_set_text (number_total_pins_entry,
+        gtk_entry_set_text (GTK_ENTRY (number_total_pins_entry),
                 g_strdup_printf ("%d", number_of_pins));
-        entry_has_changed (editable);
-        number_of_pins_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
+        number_of_pins_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -2102,15 +2139,17 @@ on_number_of_rows_entry_changed        (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *number_of_rows_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *number_of_rows_entry = lookup_widget (GTK_WIDGET (editable),
+                "number_of_rows_entry");
+        const gchar* number_of_rows_string = gtk_entry_get_text (GTK_ENTRY (number_of_rows_entry));
         number_of_rows = (int) g_ascii_strtod (number_of_rows_string, &leftovers);
         number_of_pins = (number_of_rows * count_x + number_of_columns * count_y) + thermal;
         GtkWidget *number_total_pins_entry = lookup_widget (GTK_WIDGET (editable),
                 "number_total_pins_entry");
-        gtk_entry_set_text (number_total_pins_entry,
+        gtk_entry_set_text (GTK_ENTRY (number_total_pins_entry),
                 g_strdup_printf ("%d", number_of_pins));
-        entry_has_changed (editable);
-        number_of_pins_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
+        number_of_pins_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -2125,9 +2164,11 @@ on_number_total_pins_entry_changed     (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *number_of_pins_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *number_total_pins_entry = lookup_widget (GTK_WIDGET (editable),
+                "number_total_pins_entry");
+        const gchar* number_of_pins_string = gtk_entry_get_text (GTK_ENTRY (number_total_pins_entry));
         number_of_pins = (int) g_ascii_strtod (number_of_pins_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -2144,8 +2185,9 @@ on_open_button_clicked                 (GtkButton       *button,
 {
         GtkWidget *filechooser_dialog = create_filechooser_dialog ();
         GtkFileFilter *file_filter = gtk_file_filter_new ();
-        gtk_file_filter_add_pattern (file_filter, "*.fpw");
-        gtk_file_chooser_add_filter (filechooser_dialog, file_filter);
+        gtk_file_filter_add_pattern (GTK_FILE_FILTER (file_filter), "*.fpw");
+        gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (filechooser_dialog),
+                GTK_FILE_FILTER (file_filter));
         gtk_widget_show (filechooser_dialog);
 }
 
@@ -2162,9 +2204,11 @@ on_package_body_height_entry_changed   (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *package_body_height_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *package_body_height_entry = lookup_widget (GTK_WIDGET (editable),
+                "package_body_height_entry");
+        const gchar* package_body_height_string = gtk_entry_get_text (GTK_ENTRY (package_body_height_entry));
         package_body_height = g_ascii_strtod (package_body_height_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -2180,9 +2224,11 @@ on_package_body_length_entry_changed   (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *package_body_length_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *package_body_length_entry = lookup_widget (GTK_WIDGET (editable),
+                "package_body_length_entry");
+        const gchar* package_body_length_string = gtk_entry_get_text (GTK_ENTRY (package_body_length_entry));
         package_body_length = g_ascii_strtod (package_body_length_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -2198,9 +2244,11 @@ on_package_body_width_entry_changed    (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *package_body_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *package_body_width_entry = lookup_widget (GTK_WIDGET (editable),
+                "package_body_width_entry");
+        const gchar* package_body_width_string = gtk_entry_get_text (GTK_ENTRY (package_body_width_entry));
         package_body_width = g_ascii_strtod (package_body_width_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -2216,7 +2264,7 @@ on_package_is_radial_checkbutton_toggled
                                         gpointer         user_data)
 {
         package_is_radial = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
-        entry_has_changed (togglebutton);
+        entry_has_changed (GTK_WIDGET (togglebutton));
 }
 
 
@@ -2232,9 +2280,11 @@ on_pad_clearance_entry_changed         (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *pad_clearance_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *pad_clearance_entry = lookup_widget (GTK_WIDGET (editable),
+                "pad_clearance_entry");
+        const gchar* pad_clearance_string = gtk_entry_get_text (GTK_ENTRY (pad_clearance_entry));
         pad_clearance = g_ascii_strtod (pad_clearance_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -2249,9 +2299,11 @@ on_pad_diameter_entry_changed          (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *pad_diameter_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *pad_diameter_entry = lookup_widget (GTK_WIDGET (editable),
+                "pad_diameter_entry");
+        const gchar* pad_diameter_string = gtk_entry_get_text (GTK_ENTRY (pad_diameter_entry));
         pad_diameter = g_ascii_strtod (pad_diameter_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -2266,9 +2318,11 @@ on_pad_length_entry_changed            (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *pad_length_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *pad_length_entry = lookup_widget (GTK_WIDGET (editable),
+                "pad_length_entry");
+        const gchar* pad_length_string = gtk_entry_get_text (GTK_ENTRY (pad_length_entry));
         pad_length = g_ascii_strtod (pad_length_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -2283,14 +2337,14 @@ on_pad_shape_entry_changed    (GtkComboBox     *combobox,
                                gpointer         user_data)
 {
         pad_shape = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
-        entry_has_changed (combobox);
+        entry_has_changed (GTK_WIDGET (combobox));
         /* Check for a null pointer in pad shape for this might cause a
          * segmentation fault or undefined behaviour.
          */
         if (!pad_shape)
         {
                 gchar *message = g_strdup_printf (_("ERROR: pad shape not initialised (null pointer)."));
-                message_to_statusbar (combobox, message);
+                message_to_statusbar (GTK_WIDGET (combobox), message);
                 return;
         }
         /* Check for an empty pad shape string for this might cause a
@@ -2299,13 +2353,13 @@ on_pad_shape_entry_changed    (GtkComboBox     *combobox,
         else if (!strcmp (pad_shape, ""))
         {
                 gchar *message = g_strdup_printf (_("ERROR: pad shape contains an empty string."));
-                message_to_statusbar (combobox, message);
+                message_to_statusbar (GTK_WIDGET (combobox), message);
                 return;
         }
         else
         {
                 gchar *message = g_strdup_printf ("");
-                message_to_statusbar (combobox, message);
+                message_to_statusbar (GTK_WIDGET (combobox), message);
         }
         /* Determine the pad shape type, default is a circular pad */
         if (!strcmp (pad_shape, "circular pad"))
@@ -2329,7 +2383,7 @@ on_pad_shape_entry_changed    (GtkComboBox     *combobox,
                 return;
         }
         gchar *message = g_strdup_printf (_("ERROR: pad shape contains an unknown pad shape type."));
-        message_to_statusbar (combobox, message);
+        message_to_statusbar (GTK_WIDGET (combobox), message);
 }
 
 
@@ -2346,9 +2400,11 @@ on_pad_solder_mask_clearance_entry_changed
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *pad_SMC_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *pad_solder_mask_clearance_entry = lookup_widget (GTK_WIDGET (editable),
+                "pad_solder_mask_clearance_entry");
+        const gchar* pad_SMC_string = gtk_entry_get_text (GTK_ENTRY (pad_solder_mask_clearance_entry));
         pad_solder_mask_clearance = g_ascii_strtod (pad_SMC_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -2363,9 +2419,11 @@ on_pad_width_entry_changed             (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *pad_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *pad_width_entry = lookup_widget (GTK_WIDGET (editable),
+                "pad_width_entry");
+        const gchar* pad_width_string = gtk_entry_get_text (GTK_ENTRY (pad_width_entry));
         pad_width = g_ascii_strtod (pad_width_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -2395,9 +2453,11 @@ on_pin_drill_diameter_entry_changed    (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *pin_drill_diameter_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *pin_drill_diameter_entry = lookup_widget (GTK_WIDGET (editable),
+                "pin_drill_diameter_entry");
+        const gchar* pin_drill_diameter_string = gtk_entry_get_text (GTK_ENTRY (pin_drill_diameter_entry));
         pin_drill_diameter = g_ascii_strtod (pin_drill_diameter_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -2412,7 +2472,7 @@ on_pin_square_checkbutton_toggled      (GtkToggleButton *togglebutton,
 {
         /* Save the state of checkbutton in global variable */
         pin1_square = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
-        entry_has_changed (togglebutton);
+        entry_has_changed (GTK_WIDGET (togglebutton));
 }
 
 /*!
@@ -2426,9 +2486,11 @@ on_pitch_x_entry_changed               (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *pitch_x_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *pitch_x_entry = lookup_widget (GTK_WIDGET (editable),
+                "pitch_x_entry");
+        const gchar* pitch_x_string = gtk_entry_get_text (GTK_ENTRY (pitch_x_entry));
         pitch_x = g_ascii_strtod (pitch_x_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -2443,9 +2505,11 @@ on_pitch_y_entry_changed               (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *pitch_y_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *pitch_y_entry = lookup_widget (GTK_WIDGET (editable),
+                "pitch_y_entry");
+        const gchar* pitch_y_string = gtk_entry_get_text (GTK_ENTRY (pitch_y_entry));
         pitch_y = g_ascii_strtod (pitch_y_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 /*!
@@ -2509,7 +2573,7 @@ on_save_button_clicked                 (GtkButton       *button,
         if (!footprint_name)
         {
                 gchar *message = g_strdup_printf (_("ERROR: footprint name not initialised (null pointer)."));
-                message_to_statusbar (button, message);
+                message_to_statusbar (GTK_WIDGET (button), message);
                 return;
         }
         /* Check for an empty footprint_name string for this might cause a
@@ -2518,13 +2582,13 @@ on_save_button_clicked                 (GtkButton       *button,
         else if (!strcmp (footprint_name, ""))
         {
                 gchar *message = g_strdup_printf (_("ERROR: footprint name contains an empty string."));
-                message_to_statusbar (button, message);
+                message_to_statusbar (GTK_WIDGET (button), message);
                 return;
         }
         else
         {
                 gchar *message = g_strdup_printf ("");
-                message_to_statusbar (button, message);
+                message_to_statusbar (GTK_WIDGET (button), message);
         }
         /* Determine a filename for the footprintwizard file */
         fpw_filename = g_strdup (footprint_name);
@@ -2567,7 +2631,8 @@ on_save_button_clicked                 (GtkButton       *button,
          * the main window with the latest filename */
         if (write_footprintwizard_file ())
         {
-                change_main_window_title (button, g_strconcat ("pcb-gfpw : ",
+                change_main_window_title (GTK_WIDGET (button),
+                        g_strconcat ("pcb-gfpw : ",
                         fpw_filename, NULL));
                 main_window_title_has_asterisk = FALSE;
                 fpw_file_saved = TRUE;
@@ -2575,19 +2640,19 @@ on_save_button_clicked                 (GtkButton       *button,
         else
         {
                 gchar *message = g_strdup_printf (_("ERROR: Unable to write footprintwizard file %s."), footprint_filename);
-                message_to_statusbar (button, message);
+                message_to_statusbar (GTK_WIDGET (button), message);
         }
         /* If the footprint file is written successfull reflect this in the
          * statusbar */
         if (write_footprint ())
         {
                 gchar *message = g_strdup_printf (_("Wrote footprint %s to file."), footprint_filename);
-                message_to_statusbar (button, message);
+                message_to_statusbar (GTK_WIDGET (button), message);
         }
         else
         {
                 gchar *message = g_strdup_printf (_("ERROR: Unable to write footprint %s to file."), footprint_filename);
-                message_to_statusbar (button, message);
+                message_to_statusbar (GTK_WIDGET (button), message);
         }
 }
 
@@ -2604,7 +2669,7 @@ on_silkscreen_indicate_1_checkbutton_toggled
                                         gpointer         user_data)
 {
         silkscreen_indicate_1 = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
-        entry_has_changed (togglebutton);
+        entry_has_changed (GTK_WIDGET (togglebutton));
 }
 
 
@@ -2620,9 +2685,11 @@ on_silkscreen_line_width_entry_changed (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *silkscreen_line_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *silkscreen_line_width_entry = lookup_widget (GTK_WIDGET (editable),
+                "silkscreen_line_width_entry");
+        const gchar* silkscreen_line_width_string = gtk_entry_get_text (GTK_ENTRY (silkscreen_line_width_entry));
         silkscreen_line_width = g_ascii_strtod (silkscreen_line_width_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -2644,11 +2711,11 @@ on_silkscreen_package_outline_checkbutton_toggled
         /* Save the state of checkbutton in global variable */
         silkscreen_package_outline = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
         /* Look up widgets */
-        GtkWidget *silkscreen_line_width_entry = lookup_widget (GTK_BUTTON (togglebutton), "silkscreen_line_width_entry");
+        GtkWidget *silkscreen_line_width_entry = lookup_widget (GTK_WIDGET (togglebutton), "silkscreen_line_width_entry");
         /* Set entities to (in)sensitive according to the state of the
          * checkbutton variable */
         gtk_widget_set_sensitive (silkscreen_line_width_entry, silkscreen_package_outline);
-        entry_has_changed (togglebutton);
+        entry_has_changed (GTK_WIDGET (togglebutton));
 }
 
 
@@ -2669,18 +2736,18 @@ on_thermal_checkbutton_toggled         (GtkToggleButton *togglebutton,
 {
         /* Save the state of checkbutton in a global variable */
         thermal = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
-        entry_has_changed (togglebutton);
-        number_of_pins_has_changed (togglebutton);
+        entry_has_changed (GTK_WIDGET (togglebutton));
+        number_of_pins_has_changed (GTK_WIDGET (togglebutton));
         /* Look up widgets */
-        GtkToggleButton *thermal_nopaste_checkbutton = lookup_widget (GTK_BUTTON (togglebutton),
+        GtkWidget *thermal_nopaste_checkbutton = lookup_widget (GTK_WIDGET (togglebutton),
                 "thermal_nopaste_checkbutton");
-        GtkWidget *thermal_length_entry = lookup_widget (GTK_BUTTON (togglebutton),
+        GtkWidget *thermal_length_entry = lookup_widget (GTK_WIDGET (togglebutton),
                 "thermal_length_entry");
-        GtkWidget *thermal_width_entry = lookup_widget (GTK_BUTTON (togglebutton),
+        GtkWidget *thermal_width_entry = lookup_widget (GTK_WIDGET (togglebutton),
                 "thermal_width_entry");
-        GtkWidget *thermal_clearance_entry = lookup_widget (GTK_BUTTON (togglebutton),
+        GtkWidget *thermal_clearance_entry = lookup_widget (GTK_WIDGET (togglebutton),
                 "thermal_clearance_entry");
-        GtkWidget *thermal_solder_mask_clearance_entry = lookup_widget (GTK_BUTTON (togglebutton),
+        GtkWidget *thermal_solder_mask_clearance_entry = lookup_widget (GTK_WIDGET (togglebutton),
                 "thermal_solder_mask_clearance_entry");
         /* Set entities to (in)sensitive according to the state of the
          * checkbutton variable */
@@ -2709,9 +2776,11 @@ on_thermal_clearance_entry_changed     (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *thermal_clearance_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *thermal_clearance_entry = lookup_widget (GTK_WIDGET (editable),
+                "thermal_clearance_entry");
+        const gchar* thermal_clearance_string = gtk_entry_get_text (GTK_ENTRY (thermal_clearance_entry));
         thermal_clearance = g_ascii_strtod (thermal_clearance_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -2726,9 +2795,11 @@ on_thermal_length_entry_changed        (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *thermal_length_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *thermal_length_entry = lookup_widget (GTK_WIDGET (editable),
+                "thermal_length_entry");
+        const gchar* thermal_length_string = gtk_entry_get_text (GTK_ENTRY (thermal_length_entry));
         thermal_length = g_ascii_strtod (thermal_length_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -2743,7 +2814,7 @@ on_thermal_nopaste_checkbutton_toggled (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
         thermal_nopaste = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
-        entry_has_changed (togglebutton);
+        entry_has_changed (GTK_WIDGET (togglebutton));
 }
 
 
@@ -2760,9 +2831,11 @@ on_thermal_solder_mask_clearance_entry_changed
                                          gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *SMC_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *thermal_solder_mask_clearance_entry = lookup_widget (GTK_WIDGET (editable),
+                "thermal_solder_mask_clearance_entry");
+        const gchar* SMC_string = gtk_entry_get_text (GTK_ENTRY (thermal_solder_mask_clearance_entry));
         thermal_solder_mask_clearance = g_ascii_strtod (SMC_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 
@@ -2777,9 +2850,11 @@ on_thermal_width_entry_changed         (GtkEditable     *editable,
                                         gpointer         user_data)
 {
         gchar *leftovers;
-        gchar *thermal_width_string = gtk_entry_get_text (GTK_EDITABLE (editable));
+        GtkWidget *thermal_width_entry = lookup_widget (GTK_WIDGET (editable),
+                "thermal_width_entry");
+        const gchar* thermal_width_string = gtk_entry_get_text (GTK_ENTRY (thermal_width_entry));
         thermal_width = g_ascii_strtod (thermal_width_string, &leftovers);
-        entry_has_changed (editable);
+        entry_has_changed (GTK_WIDGET (editable));
 }
 
 /* EOF */
