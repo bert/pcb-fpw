@@ -90,7 +90,7 @@ main
 )
 {
         FILE *fp;
-        gchar *fpw_filename = NULL;
+        gchar *fpw_filename;
         gchar *suffix = ".fp";
 
         /* Today we feel like a CLI application ! */
@@ -118,7 +118,15 @@ main
                 exit (EXIT_FAILURE);
         }
         /* Read variables from the fpw file */
-        read_footprintwizard_file();
+        if (read_footprintwizard_file (fpw_filename))
+        {
+                fprintf (stderr, "SUCCESS: reading footprintwizard file %s.\n", fpw_filename);
+        }
+        else
+        {
+                fprintf (stderr, "ERROR: reading footprintwizard file %s.\n", fpw_filename);
+                exit (EXIT_FAILURE);
+              }
         /* Check for a null pointer in footprint_units for this might cause a
          * segmentation fault or undefined behaviour. */
         if (!footprint_units)

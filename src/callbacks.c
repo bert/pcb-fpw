@@ -1664,7 +1664,7 @@ on_filechooser_dialog_open_button_clicked
                 return;
         }
         /* Store the (now validated) selected filename */
-        fpw_filename = g_strdup (selected_filename);
+        gchar *fpw_filename = g_strdup (selected_filename);
         /* Update the working directory (test for null pointer) */
         if (!temp_dir)
                 work_dir = g_strdup (temp_dir);
@@ -2591,7 +2591,7 @@ on_save_button_clicked                 (GtkButton       *button,
                 message_to_statusbar (GTK_WIDGET (button), message);
         }
         /* Determine a filename for the footprintwizard file */
-        fpw_filename = g_strdup (footprint_name);
+        gchar fpw_filename = g_strdup (footprint_name);
         if (g_str_has_suffix (fpw_filename, fp_suffix))
         {
                 /* footprint_name had the .fp suffix already,
@@ -2629,7 +2629,7 @@ on_save_button_clicked                 (GtkButton       *button,
         }
         /* If the footprint wizard file is written successfull change the title of
          * the main window with the latest filename */
-        if (write_footprintwizard_file ())
+        if (write_footprintwizard_file (fpw_filename))
         {
                 change_main_window_title (GTK_WIDGET (button),
                         g_strconcat ("pcb-gfpw : ",

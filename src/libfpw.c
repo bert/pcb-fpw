@@ -164,7 +164,10 @@ typedef enum locations location_t;
  * \brief Struct containing all parameters to create and handle a footprint.
  */
 typedef struct
+FootPrintWizard_s
 {
+        gchar *footprint_filename;
+                /*!< Name of the footprint file. */
         gchar *footprint_name;
                 /*!< Name of the footprint. */
         gchar *footprint_type;
@@ -282,8 +285,6 @@ gint gui = TRUE;
          * for fpw == FALSE (will override the default setting) */
 FILE *fp;
         /*!< Global file pointer for the footprint file. */
-gchar *fpw_filename;
-        /*!< Filename of footprintwizard file. */
 gchar *fpw_suffix = "fpw";
         /*!< Suffix of footprintwizard file. */
 gchar *footprint_filename = NULL;
@@ -319,19 +320,17 @@ FootPrintWizard_t preview_fp;
  * \brief Read a footprintwizard file into the global variables.
  */
 int
-read_footprintwizard_file()
+read_footprintwizard_file (gchar *fpw_filename)
 {
-        FILE *fpw;
-
         /* Get global variables from footprintwizard file with .fpw suffix */
-        fpw = fopen (fpw_filename, "r");
+        FILE *fpw = fopen (fpw_filename, "r");
         if (!fpw)
         {
                 fprintf (stderr, "ERROR: could not open footprint wizard file: %s for reading.\n", fpw_filename);
                 return (EXIT_FAILURE);
         }
-        fscanf (fpw, "%s\n", footprint_filename);
-        fscanf (fpw, "%s\n", dummy); /* do not (re)use this value ! */
+        fscanf (fpw, "%s\n", current_fp.footprint_filename);
+        fscanf (fpw, "%s\n", current_fp.footprint_name);
         fscanf (fpw, "%s\n", current_fp.footprint_type);
         fscanf (fpw, "%s\n", current_fp.footprint_units);
         fscanf (fpw, "%s\n", current_fp.footprint_refdes);
@@ -3268,17 +3267,16 @@ write_footprint_template ()
  *
  */
 int
-write_footprintwizard_file()
+write_footprintwizard_file (gchar *fpw_filename)
 {
-        FILE *fpw;
-
-        fpw = fopen (fpw_filename, "w");
+        /* Write global variables to footprintwizard file with .fpw suffix */
+        FILE *fpw = fopen (fpw_filename, "w");
         if (!fpw)
         {
                 fprintf (stderr, "ERROR: could not open footprint wizard file: %s for writing.\n", fpw_filename);
                 return (EXIT_FAILURE);
         }
-        fprintf (fpw, "%s\n", footprint_filename);
+        fprintf (fpw, "%s\n", current_fp.footprint_filename);
         fprintf (fpw, "%s\n", current_fp.footprint_name);
         fprintf (fpw, "%s\n", current_fp.footprint_type);
         fprintf (fpw, "%s\n", current_fp.footprint_units);
