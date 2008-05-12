@@ -166,8 +166,6 @@ gint gui = TRUE;
          * for fpw == FALSE (will override the default setting) */
 FILE *fp;
         /*!< Global file pointer for the footprint file. */
-gchar *fpw_filename;
-        /*!< Filename of footprintwizard file. */
 gchar *fpw_suffix = "fpw";
         /*!< Suffix of footprintwizard file. */
 gchar *footprint_filename = NULL;
@@ -318,12 +316,10 @@ gchar *dummy = NULL;
  * \brief Read a footprintwizard file into the global variables.
  */
 int
-read_footprintwizard_file()
+read_footprintwizard_file (gchar *fpw_filename)
 {
-        FILE *fpw;
-
         /* Get global variables from footprintwizard file with .fpw suffix */
-        fpw = fopen (fpw_filename, "r");
+        FILE *fpw = fopen (fpw_filename, "r");
         if (!fpw)
         {
                 fprintf (stderr, "ERROR: could not open footprint wizard file: %s for reading.\n", fpw_filename);
@@ -3255,11 +3251,10 @@ write_footprint_template ()
  *
  */
 int
-write_footprintwizard_file()
+write_footprintwizard_file (gchar *fpw_filename)
 {
-        FILE *fpw;
-
-        fpw = fopen (fpw_filename, "w");
+        /* Write global variables to footprintwizard file with .fpw suffix */
+        FILE *fpw = fopen (fpw_filename, "w");
         if (!fpw)
         {
                 fprintf (stderr, "ERROR: could not open footprint wizard file: %s for writing.\n", fpw_filename);
