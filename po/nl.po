@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcb-fpw\n"
 "Report-Msgid-Bugs-To: bert.timmerman@xs4all.nl\n"
 "POT-Creation-Date: 2008-01-15 21:19+0100\n"
-"PO-Revision-Date: 2008-04-09 23:23+0100\n"
+"PO-Revision-Date: 2008-05-12 22:32+0100\n"
 "Last-Translator: Bert Timmerman <bert.timmerman@xs4all.nl>\n"
 "Language-Team: DUTCH LANGUAGE TEAM <bert.timmerman@xs4all.nl>\n"
 "MIME-Version: 1.0\n"
@@ -35,1382 +35,816 @@ msgstr ""
 
 #: src/interface.c:47
 msgid ""
-"\t\t    GNU GENERAL PUBLIC LICENSE\n"
-"\t\t       Version 2, June 1991\n"
+"This program is free software; you can redistribute it and/or modify\n"
+"it under the terms of the GNU General Public License as published by\n"
+"the Free Software Foundation; either version 2 of the License, or\n"
+"(at your option) any later version.\n"
 "\n"
-" Copyright (C) 1989, 1991 Free Software Foundation, Inc.\n"
-"     51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA\n"
-" Everyone is permitted to copy and distribute verbatim copies\n"
-" of this license document, but changing it is not allowed.\n"
+"This program is distributed in the hope that it will be useful,\n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
+"See the GNU General Public License for more details.\n"
 "\n"
-"\t\t\t    Preamble\n"
-"\n"
-"  The licenses for most software are designed to take away your\n"
-"freedom to share and change it.  By contrast, the GNU General Public\n"
-"License is intended to guarantee your freedom to share and change free\n"
-"software--to make sure the software is free for all its users.  This\n"
-"General Public License applies to most of the Free Software\n"
-"Foundation's software and to any other program whose authors commit to\n"
-"using it.  (Some other Free Software Foundation software is covered by\n"
-"the GNU Library General Public License instead.)  You can apply it to\n"
-"your programs, too.\n"
-"\n"
-"  When we speak of free software, we are referring to freedom, not\n"
-"price.  Our General Public Licenses are designed to make sure that you\n"
-"have the freedom to distribute copies of free software (and charge for\n"
-"this service if you wish), that you receive source code or can get it\n"
-"if you want it, that you can change the software or use pieces of it\n"
-"in new free programs; and that you know you can do these things.\n"
-"\n"
-"  To protect your rights, we need to make restrictions that forbid\n"
-"anyone to deny you these rights or to ask you to surrender the rights.\n"
-"These restrictions translate to certain responsibilities for you if you\n"
-"distribute copies of the software, or if you modify it.\n"
-"\n"
-"  For example, if you distribute copies of such a program, whether\n"
-"gratis or for a fee, you must give the recipients all the rights that\n"
-"you have.  You must make sure that they, too, receive or can get the\n"
-"source code.  And you must show them these terms so they know their\n"
-"rights.\n"
-"\n"
-"  We protect your rights with two steps: (1) copyright the software, and\n"
-"(2) offer you this license which gives you legal permission to copy,\n"
-"distribute and/or modify the software.\n"
-"\n"
-"  Also, for each author's protection and ours, we want to make certain\n"
-"that everyone understands that there is no warranty for this free\n"
-"software.  If the software is modified by someone else and passed on, we\n"
-"want its recipients to know that what they have is not the original, so\n"
-"that any problems introduced by others will not reflect on the original\n"
-"authors' reputations.\n"
-"\n"
-"  Finally, any free program is threatened constantly by software\n"
-"patents.  We wish to avoid the danger that redistributors of a free\n"
-"program will individually obtain patent licenses, in effect making the\n"
-"program proprietary.  To prevent this, we have made it clear that any\n"
-"patent must be licensed for everyone's free use or not licensed at all.\n"
-"\n"
-"  The precise terms and conditions for copying, distribution and\n"
-"modification follow.\n"
-"\n"
-"\t\t    GNU GENERAL PUBLIC LICENSE\n"
-"   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION\n"
-"\n"
-"  0. This License applies to any program or other work which contains\n"
-"a notice placed by the copyright holder saying it may be distributed\n"
-"under the terms of this General Public License.  The \"Program\", below,\n"
-"refers to any such program or work, and a \"work based on the Program\"\n"
-"means either the Program or any derivative work under copyright law:\n"
-"that is to say, a work containing the Program or a portion of it,\n"
-"either verbatim or with modifications and/or translated into another\n"
-"language.  (Hereinafter, translation is included without limitation in\n"
-"the term \"modification\".)  Each licensee is addressed as \"you\".\n"
-"\n"
-"Activities other than copying, distribution and modification are not\n"
-"covered by this License; they are outside its scope.  The act of\n"
-"running the Program is not restricted, and the output from the Program\n"
-"is covered only if its contents constitute a work based on the\n"
-"Program (independent of having been made by running the Program).\n"
-"Whether that is true depends on what the Program does.\n"
-"\n"
-"  1. You may copy and distribute verbatim copies of the Program's\n"
-"source code as you receive it, in any medium, provided that you\n"
-"conspicuously and appropriately publish on each copy an appropriate\n"
-"copyright notice and disclaimer of warranty; keep intact all the\n"
-"notices that refer to this License and to the absence of any warranty;\n"
-"and give any other recipients of the Program a copy of this License\n"
-"along with the Program.\n"
-"\n"
-"You may charge a fee for the physical act of transferring a copy, and\n"
-"you may at your option offer warranty protection in exchange for a fee.\n"
-"\n"
-"  2. You may modify your copy or copies of the Program or any portion\n"
-"of it, thus forming a work based on the Program, and copy and\n"
-"distribute such modifications or work under the terms of Section 1\n"
-"above, provided that you also meet all of these conditions:\n"
-"\n"
-"    a) You must cause the modified files to carry prominent notices\n"
-"    stating that you changed the files and the date of any change.\n"
-"\n"
-"    b) You must cause any work that you distribute or publish, that in\n"
-"    whole or in part contains or is derived from the Program or any\n"
-"    part thereof, to be licensed as a whole at no charge to all third\n"
-"    parties under the terms of this License.\n"
-"\n"
-"    c) If the modified program normally reads commands interactively\n"
-"    when run, you must cause it, when started running for such\n"
-"    interactive use in the most ordinary way, to print or display an\n"
-"    announcement including an appropriate copyright notice and a\n"
-"    notice that there is no warranty (or else, saying that you provide\n"
-"    a warranty) and that users may redistribute the program under\n"
-"    these conditions, and telling the user how to view a copy of this\n"
-"    License.  (Exception: if the Program itself is interactive but\n"
-"    does not normally print such an announcement, your work based on\n"
-"    the Program is not required to print an announcement.)\n"
-"\n"
-"These requirements apply to the modified work as a whole.  If\n"
-"identifiable sections of that work are not derived from the Program,\n"
-"and can be reasonably considered independent and separate works in\n"
-"themselves, then this License, and its terms, do not apply to those\n"
-"sections when you distribute them as separate works.  But when you\n"
-"distribute the same sections as part of a whole which is a work based\n"
-"on the Program, the distribution of the whole must be on the terms of\n"
-"this License, whose permissions for other licensees extend to the\n"
-"entire whole, and thus to each and every part regardless of who wrote it.\n"
-"\n"
-"Thus, it is not the intent of this section to claim rights or contest\n"
-"your rights to work written entirely by you; rather, the intent is to\n"
-"exercise the right to control the distribution of derivative or\n"
-"collective works based on the Program.\n"
-"\n"
-"In addition, mere aggregation of another work not based on the Program\n"
-"with the Program (or with a work based on the Program) on a volume of\n"
-"a storage or distribution medium does not bring the other work under\n"
-"the scope of this License.\n"
-"\n"
-"  3. You may copy and distribute the Program (or a work based on it,\n"
-"under Section 2) in object code or executable form under the terms of\n"
-"Sections 1 and 2 above provided that you also do one of the following:\n"
-"\n"
-"    a) Accompany it with the complete corresponding machine-readable\n"
-"    source code, which must be distributed under the terms of Sections\n"
-"    1 and 2 above on a medium customarily used for software interchange; or,\n"
-"\n"
-"    b) Accompany it with a written offer, valid for at least three\n"
-"    years, to give any third party, for a charge no more than your\n"
-"    cost of physically performing source distribution, a complete\n"
-"    machine-readable copy of the corresponding source code, to be\n"
-"    distributed under the terms of Sections 1 and 2 above on a medium\n"
-"    customarily used for software interchange; or,\n"
-"\n"
-"    c) Accompany it with the information you received as to the offer\n"
-"    to distribute corresponding source code.  (This alternative is\n"
-"    allowed only for noncommercial distribution and only if you\n"
-"    received the program in object code or executable form with such\n"
-"    an offer, in accord with Subsection b above.)\n"
-"\n"
-"The source code for a work means the preferred form of the work for\n"
-"making modifications to it.  For an executable work, complete source\n"
-"code means all the source code for all modules it contains, plus any\n"
-"associated interface definition files, plus the scripts used to\n"
-"control compilation and installation of the executable.  However, as a\n"
-"special exception, the source code distributed need not include\n"
-"anything that is normally distributed (in either source or binary\n"
-"form) with the major components (compiler, kernel, and so on) of the\n"
-"operating system on which the executable runs, unless that component\n"
-"itself accompanies the executable.\n"
-"\n"
-"If distribution of executable or object code is made by offering\n"
-"access to copy from a designated place, then offering equivalent\n"
-"access to copy the source code from the same place counts as\n"
-"distribution of the source code, even though third parties are not\n"
-"compelled to copy the source along with the object code.\n"
-"\n"
-"  4. You may not copy, modify, sublicense, or distribute the Program\n"
-"except as expressly provided under this License.  Any attempt\n"
-"otherwise to copy, modify, sublicense or distribute the Program is\n"
-"void, and will automatically terminate your rights under this License.\n"
-"However, parties who have received copies, or rights, from you under\n"
-"this License will not have their licenses terminated so long as such\n"
-"parties remain in full compliance.\n"
-"\n"
-"  5. You are not required to accept this License, since you have not\n"
-"signed it.  However, nothing else grants you permission to modify or\n"
-"distribute the Program or its derivative works.  These actions are\n"
-"prohibited by law if you do not accept this License.  Therefore, by\n"
-"modifying or distributing the Program (or any work based on the\n"
-"Program), you indicate your acceptance of this License to do so, and\n"
-"all its terms and conditions for copying, distributing or modifying\n"
-"the Program or works based on it.\n"
-"\n"
-"  6. Each time you redistribute the Program (or any work based on the\n"
-"Program), the recipient automatically receives a license from the\n"
-"original licensor to copy, distribute or modify the Program subject to\n"
-"these terms and conditions.  You may not impose any further\n"
-"restrictions on the recipients' exercise of the rights granted herein.\n"
-"You are not responsible for enforcing compliance by third parties to\n"
-"this License.\n"
-"\n"
-"  7. If, as a consequence of a court judgment or allegation of patent\n"
-"infringement or for any other reason (not limited to patent issues),\n"
-"conditions are imposed on you (whether by court order, agreement or\n"
-"otherwise) that contradict the conditions of this License, they do not\n"
-"excuse you from the conditions of this License.  If you cannot\n"
-"distribute so as to satisfy simultaneously your obligations under this\n"
-"License and any other pertinent obligations, then as a consequence you\n"
-"may not distribute the Program at all.  For example, if a patent\n"
-"license would not permit royalty-free redistribution of the Program by\n"
-"all those who receive copies directly or indirectly through you, then\n"
-"the only way you could satisfy both it and this License would be to\n"
-"refrain entirely from distribution of the Program.\n"
-"\n"
-"If any portion of this section is held invalid or unenforceable under\n"
-"any particular circumstance, the balance of the section is intended to\n"
-"apply and the section as a whole is intended to apply in other\n"
-"circumstances.\n"
-"\n"
-"It is not the purpose of this section to induce you to infringe any\n"
-"patents or other property right claims or to contest validity of any\n"
-"such claims; this section has the sole purpose of protecting the\n"
-"integrity of the free software distribution system, which is\n"
-"implemented by public license practices.  Many people have made\n"
-"generous contributions to the wide range of software distributed\n"
-"through that system in reliance on consistent application of that\n"
-"system; it is up to the author/donor to decide if he or she is willing\n"
-"to distribute software through any other system and a licensee cannot\n"
-"impose that choice.\n"
-"\n"
-"This section is intended to make thoroughly clear what is believed to\n"
-"be a consequence of the rest of this License.\n"
-"\n"
-"  8. If the distribution and/or use of the Program is restricted in\n"
-"certain countries either by patents or by copyrighted interfaces, the\n"
-"original copyright holder who places the Program under this License\n"
-"may add an explicit geographical distribution limitation excluding\n"
-"those countries, so that distribution is permitted only in or among\n"
-"countries not thus excluded.  In such case, this License incorporates\n"
-"the limitation as if written in the body of this License.\n"
-"\n"
-"  9. The Free Software Foundation may publish revised and/or new versions\n"
-"of the General Public License from time to time.  Such new versions will\n"
-"be similar in spirit to the present version, but may differ in detail to\n"
-"address new problems or concerns.\n"
-"\n"
-"Each version is given a distinguishing version number.  If the Program\n"
-"specifies a version number of this License which applies to it and \"any\n"
-"later version\", you have the option of following the terms and conditions\n"
-"either of that version or of any later version published by the Free\n"
-"Software Foundation.  If the Program does not specify a version number of\n"
-"this License, you may choose any version ever published by the Free Software\n"
-"Foundation.\n"
-"\n"
-"  10. If you wish to incorporate parts of the Program into other free\n"
-"programs whose distribution conditions are different, write to the author\n"
-"to ask for permission.  For software which is copyrighted by the Free\n"
-"Software Foundation, write to the Free Software Foundation; we sometimes\n"
-"make exceptions for this.  Our decision will be guided by the two goals\n"
-"of preserving the free status of all derivatives of our free software and\n"
-"of promoting the sharing and reuse of software generally.\n"
-"\n"
-"\t\t\t    NO WARRANTY\n"
-"\n"
-"  11. BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY\n"
-"FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN\n"
-"OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES\n"
-"PROVIDE THE PROGRAM \"AS IS\" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED\n"
-"OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF\n"
-"MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE ENTIRE RISK AS\n"
-"TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  SHOULD THE\n"
-"PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING,\n"
-"REPAIR OR CORRECTION.\n"
-"\n"
-"  12. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING\n"
-"WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR\n"
-"REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES,\n"
-"INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING\n"
-"OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED\n"
-"TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY\n"
-"YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER\n"
-"PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE\n"
-"POSSIBILITY OF SUCH DAMAGES.\n"
-"\n"
-"\t\t     END OF TERMS AND CONDITIONS\n"
-"\n"
-"\t    How to Apply These Terms to Your New Programs\n"
-"\n"
-"  If you develop a new program, and you want it to be of the greatest\n"
-"possible use to the public, the best way to achieve this is to make it\n"
-"free software which everyone can redistribute and change under these terms.\n"
-"\n"
-"  To do so, attach the following notices to the program.  It is safest\n"
-"to attach them to the start of each source file to most effectively\n"
-"convey the exclusion of warranty; and each file should have at least\n"
-"the \"copyright\" line and a pointer to where the full notice is found.\n"
-"\n"
-"    <one line to give the program's name and a brief idea of what it does.>\n"
-"    Copyright (C) <year>  <name of author>\n"
-"\n"
-"    This program is free software; you can redistribute it and/or modify\n"
-"    it under the terms of the GNU General Public License as published by\n"
-"    the Free Software Foundation; either version 2 of the License, or\n"
-"    (at your option) any later version.\n"
-"\n"
-"    This program is distributed in the hope that it will be useful,\n"
-"    but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-"    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
-"    GNU General Public License for more details.\n"
-"\n"
-"    You should have received a copy of the GNU General Public License\n"
-"    along with this program; if not, write to the Free Software\n"
-"    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA\n"
-"\n"
-"\n"
-"Also add information on how to contact you by electronic and paper mail.\n"
-"\n"
-"If the program is interactive, make it output a short notice like this\n"
-"when it starts in an interactive mode:\n"
-"\n"
-"    Gnomovision version 69, Copyright (C) year  name of author\n"
-"    Gnomovision comes with ABSOLUTELY NO WARRANTY; for details type `show w'.\n"
-"    This is free software, and you are welcome to redistribute it\n"
-"    under certain conditions; type `show c' for details.\n"
-"\n"
-"The hypothetical commands `show w' and `show c' should show the appropriate\n"
-"parts of the General Public License.  Of course, the commands you use may\n"
-"be called something other than `show w' and `show c'; they could even be\n"
-"mouse-clicks or menu items--whatever suits your program.\n"
-"\n"
-"You should also get your employer (if you work as a programmer) or your\n"
-"school, if any, to sign a \"copyright disclaimer\" for the program, if\n"
-"necessary.  Here is a sample; alter the names:\n"
-"\n"
-"  Yoyodyne, Inc., hereby disclaims all copyright interest in the program\n"
-"  `Gnomovision' (which makes passes at compilers) written by James Hacker.\n"
-"\n"
-"  <signature of Ty Coon>, 1 April 1989\n"
-"  Ty Coon, President of Vice\n"
-"\n"
-"This General Public License does not permit incorporating your program into\n"
-"proprietary programs.  If your program is a subroutine library, you may\n"
-"consider it more useful to permit linking proprietary applications with the\n"
-"library.  If this is what you want to do, use the GNU Library General\n"
-"Public License instead of this License."
+"You should have received a copy of the GNU General Public License\n"
+"along with this program; if not, write to:\n"
+"the Free Software Foundation, Inc.,\n"
+"51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n"
 msgstr ""
-"English disclaimer\n"
-"This is an unofficial translation of the GNU General\n"
-"Public License into Dutch. It was not published by the Free Software\n"
-"Foundation, and does not legally state the distribution terms for software\n"
-"that uses the GNU GPL--only the original English text of the GNU GPL does\n"
-"that. However, we hope that this translation will help Dutch speaker\n"
-"understand the GNU GPL better\n"
+"Dit programma is vrije programmatuur; het kan gedistribueerd worden en/of gewijzigd\n"
+"worden onder de voorwaarden van de GNU General Public License zoals gepubliceerd door\n"
+"de Free Software Foundation; ofwel versie 2 van de License, of\n"
+"(zoals je wilt) elke latere versie.\n"
 "\n"
-"Nederlandse waarschuwing\n"
-"Dit is een niet officiële vertaling van de GNU Algemene Publieke Licentie in\n"
-"het Nederlands. Deze licentie is niet gepubliceerd door de Free Software\n"
-"Foundation, de condities van software onder de GPL hieronder zijn niet\n"
-"rechtsgeldig. Enkel de originele Engelse tekst van de GNU GPL bevat geldige\n"
-"richtlijnen. Daarentegen hopen we dat deze vertaling de Nederlandstaligen\n"
-" helpt om de GNU GPL beter te begrijpen.\n"
+"Dit programma is verspreid in de hoop dat het zinvol is,\n"
+"maar ZONDER ELKE GARANTIE; zelfs zonder de geimpliceerde garantie van\n"
+"VERHANDELBAARHEID of GESCHIKTHEID VOOR EEN BEPAALD DOELEINDE.\n"
+"Zie de GNU General Public License voor meer details.\n"
 "\n"
-"Auteursrecht (C) 1989, 1991 Free Software Foundation, Inc.\n"
-"59 Temple Place, Suite 330, Boston, MA 02111-1307 USA\n"
-"Het is eenieder toegestaan om dit licentiedocument te kopiëren en er letterlijke\n"
-"kopieën van te verspreiden, er wijzigingen in maken is echter niet toegestaan.\n"
-"\n"
-"\t\t\t                                   Voorwoord\n"
-"\n"
-"De licenties van de meeste software zijn zo opgesteld om U het recht te\n"
-"ontnemen om die software te delen en te wijzigen. Hier tegenover staat de\n"
-"GNU Algemene Publieke Licentie, die bedoeld is om U de vrijheid te garanderen\n"
-"dat U de software kan delen en wijzigen -- om er zeker van te zijn dat de\n"
-"software vrij is voor alle gebruikers. Deze Algemene Publieke Licentie is van\n"
-"toepassing op het merendeel van de Free Software Foundation's software en van\n"
-"alle andere programma's waarvan de auteur ze plaatst onder deze licentie.\n"
-"(Sommige software van de Free Software Foundation is gedekt door de\n"
-"GNU Algemene Minder Publieke Licentie). U kan deze ook toepassen op uw eigen\n"
-"programma's. Wanneer we het hebben over vrije software, dan hebben we het\n"
-"over vrijheid, niet prijs. Onze Algemene Publieke Licentie laat u toe om\n"
-"kopieën te verspreiden vanvrije software (en dat U geld kan vragen voor deze\n"
-"dienst) en dat U er de broncode van hebt of kan krijgen als U dat wenst, dat\n"
-"U de software kan wijzigen of er delen van kan gebruiken in nieuwe vrije\n"
-"programma's en dat U weet dat U deze dingen kan doen. Om deze rechten te\n"
-"beschermen, moeten we verbieden dat iemand U deze rechten ontzegt of vraagt\n"
-"deze op te geven. Deze restricties brengen enkele verantwoordelijkheden mee\n"
-"indien U kopieën van de software verspreidt of de software wijzigt.\n"
-"Bijvoorbeeld, als U kopieën van zulk programma verspreidt, kostenloos of voor\n"
-"een vergoeding, dan moet U de personen die de software ontvangen al de\n"
-"rechten geven die U hebt. U moet uzelf ervan verzekeren dan ook zij de\n"
-"broncode ontvangen of kunnen verkrijgen. U moet hen ook deze licentie tonen\n"
-"zodat ze hun rechten kennen. We beschermen uw rechten met twee stappen\n"
-"(1) de software wordt auteursrechtelijk beschermd, en (2) we bieden U deze\n"
-"licentie die U de legale toestemming geeft om de software te kopiëren, te\n"
-"verspreiden en/of te wijzigen. Alsook willen we voor de bescherming van de\n"
-"auteur en onszelf iedereen ervan verzekeren dat er geen garantie is voor deze\n"
-"vrije software. Als de software gewijzigd is door iemand anders en\n"
-"doorgegeven, dan willen we dat de ontvanger weet dat wat ze ontvangen hebben\n"
-"niet het origineel is, zodat problemen veroorzaakt door anderen geen effect\n"
-"hebben op de reputatie van de oorspronkelijke auteur. Ten laatste, elk vrij\n"
-"programma wordt voortdurend bedreigd door softwarepatenten. We wensen het\n"
-"gevaar te vermijden dat de verdelers van een vrij programma uiteindelijk een\n"
-"patent verkrijgen op het programma en het daarmee in eigendom van een\n"
-"particulier brengen. Om dit te vermijden, hebben we het duidelijk gemaakt dat\n"
-"elk patent in licentie gegeven moet zijn voor eenieders vrij gebruik, oftewel\n"
-"helemaal niet in licentie gegeven mag zijn. De exacte bepalingen en condities\n"
-"om te kopiëren, verspreiden en wijzigen volgen hieronder.\n"
-"\n"
-"\t\t                      GNU ALGEMENE PUBLIEKE LICENTIE\n"
-"\n"
-"\t\t       BEPALINGEN EN VOORWAARDEN OM TE KOPIËREN, VERSPREIDEN EN WIJZIGEN\n"
-"\n"
-"  0.  Deze licentie is van toepassing op elk programma of ander werk dat een\n"
-"notie bevat van de eigenaar die zegt dat het verspreid mag worden onder de\n"
-"bepalingenvan deze licentie. Het \"Programma\", verder in de tekst, verwijst\n"
-"naar eenderzulk programma of werk, en een \"werk gebaseerd op het programma\"\n"
-"verwijst naar het Programma of een der welk ander afgeleid werk onder de wet\n"
-"van het auteursrecht: dit wil zeggen, een werk dat het Programma of een deel\n"
-"ervan bevat, letterlijk oftewel gewijzigd en/of vertaald naar een andere\n"
-"taal. (Hierna vallen vertalingen zonder beperking onder de term\n"
-"\"wijziging\".) Elke licentiehouder wordt geadresseerd als \"u\".\n"
-"\n"
-"Andere handelingen dan kopiëren, verspreiden en wijzigen zijn niet gedekt door\n"
-"deze licentie; hiervoor is deze licentie niet bedoeld. De handeling om het\n"
-"Programma uit te voeren is niet gelimiteerd, en de uitvoer van het Programma\n"
-"is enkel gedekt als de inhoud bestaat uit een werk gebaseerd op het\n"
-"Programma (onafhankelijk of deze uitvoergemaakt is door het Programma uit te\n"
-"voeren). Of dit waar is hangt af van wathet Programma doet.\n"
-"\n"
-"  1.  U mag letterlijke exemplaren verspreiden van de programma broncode en\n"
-"deze kopiëren zoals U deze ontvangt, in eender welke vorm, op voorwaarde dat\n"
-"U ervoor oplet dat U op elke kopie de gepaste auteursrechten en afwijzing van\n"
-"garantie vermeldt; hou alle referenties naar deze licentie en naar het\n"
-"ontbreken van garantie intact ;en geef aan elke andere ontvanger van het\n"
-"Programma een kopie van deze licentie, bijgevoegd bij het Programma. U mag\n"
-"een honorarium vragen voor de fysische daad van het afleveren van een kopie,\n"
-"en U mag indien U dat wenst een garantie bescherming bieden voor een \n"
-"honorarium.\n"
-"\n"
-"2.  U mag uw kopie of kopijen van het Programma, of een deel van het\n"
-"Programma, wijzigen, daarbij een werk gebaseerd op het Programma vormend.\n"
-"U mag deze wijzigingen kopiëren en verspreiden onder de bepalingen van\n"
-"Paragraaf 1 hierboven, indien U ook aan al deze voorwaarden voldoet:\n"
-"\n"
-"   a) U moet in de gewijzigde bestanden duidelijk vermelden dat U het\n"
-"      bestand gewijzigd hebt en de datum waarop U dat gedaan hebt.\n"
-"\n"
-"   b) U moet elk werk dat U publiceert of verspreidt en dat volledig of\n"
-"      gedeeltelijk bestaat uit het Programma, of daarvan een afgeleid werk \n"
-"      is, als een geheel in licentie geven, zonder kosten, aan alle derde\n"
-"      partijen onderde bepalingen van deze Licentie.\n"
-"\n"
-"   c) Indien het gewijzigde Programma normaal gezien interactief parameters\n"
-"      inleest, dan moet U er voor zorgen dat wanneer het Programma zonder\n"
-"      deze parameters gestart wordt, het een boodschap weergeeft met een\n"
-"      gepast auteursrechtbericht en een mededeling dat er geen garantie is\n"
-"      (of anders, dat U een garantie voorziet) en dat gebruikers het\n"
-"      Programma mogen verspreiden onder deze voorwaarden. De boodschap moet\n"
-"      de gebruiker ook duidelijk maken hoe hij een kopij van deze Licentie\n"
-"      kan bekijken. (Uitzondering : als het Programma zelfinteractief is en\n"
-"      normaal geen boodschap toont, dan is het niet vereist dat uw werk\n"
-"      gebaseerd op dit Programma zulk een boodschap weergeeft.\n"
-"\n"
-"Deze vereisten zijn van toepassing op het werk als een geheel. Als herkenbare\n"
-"stukken van dat werk niet afgeleid zijn van het Programma, en redelijkerwijs\n"
-"onafhankelijk beschouwd kunnen worden, dan is deze licentie, en zijn\n"
-"bepalingen, niet van toepassing op die delen als U die als aparte werken\n"
-"verspreidt. Maar als U die zelfde delen verspreidt als deel van een geheel\n"
-"dat een werk is gebaseerd op het Programma, dan moet de verspreiding van het\n"
-"geheel op de bepalingen van deze licentie geschieden, de welke's vergunningen\n"
-"voor andere licentiehouders zich uitbreiden tot het volledige geheel, en dus\n"
-"tot elke deel van het werk, onafhankelijk van wie het geschreven heeft. Dus,\n"
-"het is niet de bedoeling van deze sectie om uw rechten op te eisen of te\n"
-"wedijveren om uw rechten op werk dat geheel door uzelf geschreven is, het is\n"
-"eerder de bedoeling het recht controle uit te oefenen mogelijk te maken op de\n"
-"verspreiding van afgeleide of collectieve werken gebaseerd op het Programma.\n"
-"Daarenboven, de bundeling van een werk niet gebaseerd op het Programma met\n"
-"het Programma (of met een werk gebaseerd op het Programma) op een\n"
-"opslagmedium of verspreidingsmedium brengt het ander werk niet onder deze\n"
-"licentie.\n"
-"\n"
-"3.  U mag het Programma, of een werk gebaseerd op het Programma, zie\n"
-"paragraaf 2, verspreiden en kopiëren, in binaire of uitvoerbare vorm onderde\n"
-"bepalingen van paragraaf 1 en 2 hierboven, op voorwaarde dat U aan een van de\n"
-"volgende voorwaarden voldoet :\n"
-"\n"
-"   a) Voeg een volledige overeenkomende broncode bij, leesbaar door\n"
-"      computers, verspreid onder de bepalingen van de paragrafen 1 en 2, op\n"
-"      een medium dat gebruikelijk is voor het uitwisselen van software; of,\n"
-"\n"
-"   b) Voeg een voor minstens 3 jaar geldige, geschreven, offerte bij, om de\n"
-"      complete overeenstemmende broncode, op een medium dat hiervoor\n"
-"      gebruikelijk is, voor Computers leesbaar, verspreidbaar onder de\n"
-"      bepalingen van de paragrafen 1 en 2 hierboven, aan elke derde partij te\n"
-"      leveren, voor een vergoeding die niet meer bedraagt dan de kost om de\n"
-"      broncode te kopiëren.\n"
-"\n"
-"   c) Voeg de informatie bij die U ontving betreffende het aanbod om de\n"
-"      bijpassende broncode te verkrijgen.\n"
-"      (Dit alternatief is enkel toegestaan voor niet commerciële verspreiding\n"
-"      en enkel als U het programma in binaire of uitvoerbare vorm ontving met\n"
-"      zulk een aanbod, in overeenstemming met subparagraaf berboven.)\n"
-"\n"
-"De broncode van een werk is de vorm van het werk waaraan voorkeur wordt\n"
-"gegeven om er wijzigingen in aan te brengen. Voor een uitvoerbaar werk\n"
-"betekent volledige broncode alle code van alle modules waar het werk uit\n"
-"bestaat, en daarbovenop alle definitie bestanden van de interface(s) en alle\n"
-"scripts om het programma te compileren en het uitvoerbare bestand te\n"
-"installeren. Als een speciale uitzondering moet de verspreidde broncode niets\n"
-"bevatten dat normaal verspreid (in broncode of uitvoerbare vorm) wordt met de\n"
-"hoofdcomponenten (compiler, kernel, enz...) van het besturingssysteem op\n"
-"dewelke het Programma draait, tenzij die component bij het uitvoerbare bestand\n"
-"zit. Als verspreiding van een uitvoerbaar bestand of binaire code mogelijk\n"
-"gemaakt wordt door toegang tot het kopiëren van een vooraf bepaalde plaats,\n"
-"dan telt het mogelijk maken de broncode van diezelfde plaats te kopiëren als\n"
-"het verspreiden van de broncode, zelfs indien het mee kopiëren van de broncode\n"
-"optioneel is.\n"
-"\n"
-"4.  U mag het Programma niet kopiëren, wijzigen, verder in licentie geven of\n"
-"verspreiden behalve zoals expliciet vermeld in deze licentie. Eender welke\n"
-"poging om het programma op een andere manier te kopiëren, wijzigen, verder in\n"
-"licentie geven of verspreiden is ongeldig en verklaart automatisch uw rechten\n"
-"bepaald in deze licentie nietig. Derde partijen die kopieën of rechten van U\n"
-"hebben ontvangen onder deze licentie blijven hun rechten behouden zolang ze\n"
-"de voorwaarden niet schenden.\n"
-"\n"
-"5.  U bent  niet verplicht deze licentieovereenkomst te accepteren, aangezien\n"
-"U deze niet ondertekend hebt. Echter, niets anders geeft U de toestemming om\n"
-"het Programma of werken gebaseerd op het Programma te wijzigen of te\n"
-"verspreiden. Deze daden zijn door de wet verboden als U deze\n"
-"licentieovereenkomst niet accepteert. Daarom geeft u aan dat door het\n"
-"Programma te verspreiden of te wijzigen, U deze licentie, en al zijn\n"
-"voorwaarden en bepalingen in verband met kopiëren, wijzigen of verspreiden van\n"
-"het Programma, of werken gebaseerd op het Programma, accepteert om dat te\n"
-"kunnen doen.\n"
-"\n"
-"6.  Elke keer U het Programma (of een werk gebaseerd op het Programma)\n"
-"verspreidt, krijgt de ontvanger automatisch een licentie van de originele\n"
-"licentiehouder om het Programma te kopiëren, verspreiden of wijzigen,\n"
-"onderworpen aan deze bepalingen en voorwaarden. U mag de ontvanger geen\n"
-"beperkingen opleggen om de rechten uit te oefenen die hierin bepaald zijn.\n"
-"\n"
-"7.  Als door gevolg van een rechterlijke uitspraak of beweringen van\n"
-"patentenschending of door eender welke andere reden (niet beperkt tot\n"
-"patentenproblemen) U bepalingen worden opgelegd (door rechterlijk bevel,\n"
-"overeenkomst, of op andere wijze) die in tegenspraak zijn met bepalingen in\n"
-"deze licentie, dan sluit dat U niet uit om aan de voorwaarden van deze\n"
-"licentie te voldoen. Als U het Programma niet kan verspreiden en daarbij zowel\n"
-"aan tegelijk de bepalingen van deze licentie als aan andere relevante\n"
-"verplichtingen kan voldoen, dan mag U als gevolg daarvan het Programma\n"
-"helemaal niet verspreiden. Bijvoorbeeld, als een patent licentie overeenkomst\n"
-"niet zou toestaan dat het programma zonder het betalen van royalty's vrij\n"
-"verspreid mag worden door zij die het Programma direct van U verkrijgen en zij\n"
-"die het indirect door U verkrijgen, dan is de enige manier om zowel daaraan\n"
-"als aan deze licentie te voldoen dat U zich compleet onthoudt van het\n"
-"verspreiden van het Programma. Als een deel van dit artikel ongeldig wordt\n"
-"geacht, of het kan niet afgedwongen worden onder bepaalde omstandigheden dan\n"
-"is het de bedoeling dat het overwicht van dit artikel van toepassing is. In\n"
-"andere omstandigheden geldt dit artikel volledig. Het is niet het doel van\n"
-"dit artikel om u er toe aan te zetten om patenten, of andere aanspraken van\n"
-"bezit, te schenden of de geldigheid van zulke aanspraken aan te vechten. Het\n"
-"enige doel van dit artikel is om de integriteit te beschermen van het vrije\n"
-"software verspreidingssysteem, dat wordt toegepast door middel van Publieke\n"
-"Licentie praktijken. Veel mensen hebben royale bijdragen geleverd aan het\n"
-"systeem van vrije software rekenend op de betrouwbaarheid van zijn toepassing.\n"
-"Het is aan de auteur/donor om te bepalen of hij of zij bereidt is om software\n"
-"te verspreiden door middel van een ander systeem en een gelicensieerde kan\n"
-"die keuze niet afdwingen. Dit artikel is bedoeld om zeer duidelijk te maken\n"
-"wat geloofd wordt een gevolgte zijn van de rest van deze licentie.\n"
-"\n"
-"8. Als de verspreiding of het gebruik van het Programma gelimiteerd is in\n"
-"bepaalde landen, door patenten of door samenwerking van auteursrechthouders,\n"
-"dan mag de oorspronkelijke auteursrechthouder die het Programma onder deze\n"
-"licentie plaatste een expliciete geografische beperking toevoegen zodat\n"
-"verspreiding enkel toegestaan is in of tussen landen die niet uitgesloten zijn.\n"
-"In dat geval bevat deze licentie de beperking alsof ze in de kern van deze\n"
-"licentie geschreven was.\n"
-"\n"
-"9.  De Free Software Foundation mag gereviseerde en/of nieuwe versies van de\n"
-"Algemene Publieke Licentie uitbrengen van tijd tot tijd. Zulke nieuwe versies\n"
-"zullen gelijkaardig in karakter zijn in vergelijking met de huidige versie maar\n"
-"kunnen in details verschillen om nieuwe problemen of aangelegenheden te\n"
-"behandelen. Elke versie krijgt een expliciet versienummer mee. Als het Programma\n"
-"een versie van deze licentie specificeert waarop het van toepassing is en \"elke\n"
-"volgende versie\", dan hebt U de keuze om de bepalingen en voorwaarden van die\n"
-"licentie te volgen, of van eender welke versie die later uitgegeven werd door de\n"
-"Free Software Foundation. Als het programma geen versie nummer van de licentie\n"
-"specificeert, dan mag U de bepalingen en voorwaarden volgen van een\n"
-"der welke versie ooit uitgegeven door de Free Software Foundation.\n"
-"\n"
-"10.  Indien U delen van het Programma wil invoegen in andere vrije Programma's de\n"
-"welke's verspreidingsvoorwaarden anders zijn, dan moet U de auteur van dat\n"
-"programma om toestemming vragen. Voor software waarvan het auteursrecht bij de\n"
-"Free Software Foundation rust, schrijf naar de Free Software Foundation; we\n"
-"maken hier soms uitzonderingen op. Onze beslissing zal geleid worden door onze\n"
-"twee hoofddoelen om de vrije status van de afgeleiden van onze vrije software te\n"
-"vrijwaren en om het delen en hergebruiken van software in het algemeen te\n"
-"promoten.\n"
-"\n"
-"11.  OMDAT HET PROGRAMMA ZONDER KOSTEN IN LICENTIE GEGEVEN WORDT, IS ER GEEN\n"
-"GARANTIE VOOR HET PROGRAMMA, VOOR ZOVER MOGELIJK BINNEN DE GELDENDE WETGEVING.\n"
-"UITGEZONDERD WANNEER HET EXPLICIET GESCHREVEN STAAT LEVEREN DE\n"
-"AUTEURSRECHTHOUDERS HET PROGRAMMA \"ZOALS HET IS\", ZONDER EENDER WELKE GARANTIE,\n"
-"EXPLICIET UITGEDRUKT OF IMPLICIET BEDOELD, ZOALS, MAAR NIET GELIMITEERD TOT,\n"
-"DE IMPLICIETE GARANTIES VAN VERKOOPBAARHEID EN GESCHIKTHEID VOOR EEN BEPAALD\n"
-"DOEL. HET VOLLEDIGE RISICO BETREFFENDE DE KWALITEIT EN DE PRESTATIES VAN HET\n"
-"PROGRAMMA LIGT BIJ U. MOCHT HET PROGRAMMA DEFECT BLIJKEN DAN DRAAGT U DE\n"
-"KOSTEN VAN ALLE BENODIGDE DIENSTEN, REPARATIES OF CORRECTIES.\n"
-"\n"
-"12.  IN GEEN ENKEL GEVAL, TENZIJ VEREIST DOOR DE GELDENDE WET, OF SCHRIFTELIJK\n"
-"OVEREENGEKOMEN ZAL DE AUTEURSRECHTHOUDER, OF EENDER WELKE DERDE PARTIJ DIE HET\n"
-"PROGRAMMA MAG WIJZIGEN EN/OF VERSPREIDEN ZOALS TOEGESTAAN HIERBOVEN,\n"
-"VERANTWOORDELIJK KUNNEN WORDEN GEACHT TEGENOVER U BETREFFENDE ALGEMENE,\n"
-"SPECIALE, UITZONDERLIJKE OF RESULTERENDE SCHADE DIE VOORTVLOEIT UIT\n"
-"HET GEBRUIK, OF DE ONKUNDIGHEID OM HET PROGRAMMA TE GEBRUIKEN\n"
-"(INCLUSIEF, MAAR NIET GELIMITEERD TOT HET VERLIES VAN GEGEVENS,\n"
-"GEGEVENS DIE CORRUPT WORDEN, OF VERLIEZEN GELEDEN DOOR U OF DERDE PARTIJEN OF\n"
-"EEN FALING VAN HET PROGRAMMA OM SAMEN TE WERKEN MET ANDERE PROGRAMMA'S),\n"
-"ZELFS INDIEN DE AUTEURSRECHTHOUDER OF EEN ANDERE PARTIJ GEÏNFORMEERD WAS\n"
-"OVER DE MOGELIJKHEID TOT ZULKE SCHADE.\n"
-"\n"
-"\t\t        EINDE VAN DE BEPALINGEN EN VOORWAARDEN\n"
-"\n"
-"\t        Hoe deze bepalingen op uw nieuwe Programma's toepassen.\n"
-"\n"
-"Als U een nieuw Programma ontwikkelt en U wenst dat het van het grootst mogelijk\n"
-"nut is voor iedereen, dan is de beste manier om dit te bereiken door het\n"
-"Programma vrije software te maken de welke iedereen kan verspreiden en\n"
-"wijzigen onder deze bepalingen.\n"
-"Om dit te doen, voeg volgende boodschap toe aan het Programma. Het is het\n"
-"veiligst om ze in te voegen aan het begin van elk bronbestand, dit om het\n"
-"ontbreken van garantie duidelijk te maken; en elk bestand zou minstens\n"
-"de \"auteursrecht\" lijn en een directief naar waar de volledige boodschap\n"
-"gevonden kan worden moeten bevatten.\n"
-"<een regel voor de naam van het Programma en zijn doel>\n"
-"Auteursrecht (C) <jaar> <naam van de Auteur>\n"
-"Dit Programma is vrije software; U kan het verspreiden en/of wijzigen onder de\n"
-"bepalingen van de GNU Algemene Publieke Licentie, zoals uitgegeven door de Free\n"
-"Software Foundation; oftewel versie 2 van de Licentie,\n"
-"of (naar vrije keuze) een latere versie. Dit Programma is verspreid met de\n"
-"hoop dat het nuttig zal zijn maar ZONDER EENDER WELKE GARANTIE; zelfs zonder\n"
-"de impliciete garantie van VERKOOPBAARHEID of GESCHIKTHEID VOOR EEN BEPAALD\n"
-"DOEL. Zie de GNU AlgemenePublieke Licentie voor meer details.\n"
-"U zou een kopie van de GNU Algemene Publieke Licentie ontvangen moeten\n"
-"hebben samen met dit Programma; indien dit niet zo is, schrijf naar\n"
-"de Free Software Foundation, Inc.,\n"
-"59 Temple Place, Suite 330, Boston, MA 02111-1307 USA\n"
-"Voeg ook informatie bij hoe men U kan contacteren via e-mail en gewone post.\n"
-"Als het Programma interactief is, laat het een korte boodschap tonen zoals\n"
-"deze wanneer het in interactieve modus start:\n"
-"Fiscus versie 69, Auteursrecht (C) <jaar> <naam v/d auteur>\n"
-"Fiscus komt met ABSULUUT GEEN GARANTIE; voor details typ 'toon w'. Dit is\n"
-"vrije software en het is U toegestaan deze te verspreiden onder\n"
-"bepaalde voorwaarden; typ 'toon c' voor meer details.\n"
-"U zou ook uw werkgever (indien U als programmeur werkt) of uw school, indien die\n"
-"er is, om een \"auteursrecht afwijzing\" te laten tekenen voor het Programma,\n"
-"indien nodig. Hier is een voorbeeld; wijzig de namen:\n"
-"Yoyodyne, NV., verwerpt hier alle auteursrechtlijk interesses in het Programma\n"
-"Fiscus (dat belastingsaangiften invult) geschreven door James Hacker.\n"
-"<handtekening van Ty Coon>, 21 April 1984 Ty Coon, Vice voorzitter.\n"
-"Deze Algemene Publieke Licentie laat niet toe dat het Programma verwerkt wordt\n"
-"in een commercieel programma. Als uw Programma een subroutine bibliotheek is,\n"
-"dan kan U het misschien nuttige beschouwen om toe te staan dat uw Programma\n"
-"gelinkt word met commerciële programma's. Als dat is wat U wil doen, dan moet\n"
-"U de GNU Algemene Minder Publieke Licentie gebruiken in plaats van deze\n"
-"licentie."
+"Je zou een kopie van de GNU General Public License ontvangen\n"
+"moeten hebben bij dit programma; zo niet, schrijf dan naar:\n"
+"the Free Software Foundation, Inc.,\n"
+"51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n"
 
-#: src/interface.c:226
+#: src/interface.c:229
 msgid "FootPrintWizard for pcb footprints"
 msgstr "FootPrintWizard voor pcb elementen"
 
-#: src/interface.c:227
+#: src/interface.c:230
 msgid "pcb-gfpw FootPrint Wizard"
 msgstr "pcb-gfpw FootPrintWizard"
 
-#: src/interface.c:279
+#: src/interface.c:282
 msgid "Author"
 msgstr "Auteur"
 
-#: src/interface.c:287
+#: src/interface.c:290
 msgid "Distribution license "
 msgstr "Distributie licentie"
 
-#: src/interface.c:301
+#: src/interface.c:304
 msgid "Type your name here"
-msgstr "Tik je naam hier in"
+msgstr "Type je naam hier in"
 
-#: src/interface.c:310
+#: src/interface.c:313
 msgid "License under which you distribute the file"
 msgstr "Licentie waaronder het bestand gedistribueerd wordt"
 
-#: src/interface.c:311
+#: src/interface.c:314
 msgid "GPL"
 msgstr "GPL"
 
-#: src/interface.c:320
+#: src/interface.c:323
 msgid "Allowable usage"
 msgstr "Toegestaan gebruik"
 
-#: src/interface.c:321
+#: src/interface.c:324
 msgid "unlimited"
 msgstr "onbeperkt"
 
-#: src/interface.c:324
+#: src/interface.c:327
 msgid "Use license"
 msgstr "Gebruik licentie"
 
-#: src/interface.c:332
+#: src/interface.c:335
 msgid "Status"
 msgstr "Status"
 
-#: src/interface.c:347
+#: src/interface.c:350
 msgid "Experimental"
 msgstr "Experimenteel"
 
-#: src/interface.c:348
+#: src/interface.c:351
 msgid "Private (not published)"
 msgstr "Prive (niet gepubliceerd)"
 
-#: src/interface.c:349
+#: src/interface.c:352
 msgid "Public (released)"
 msgstr "Publiek (vrijgegeven)"
 
-#: src/interface.c:350
+#: src/interface.c:353
 msgid "Confirmed by peers (stable)"
 msgstr "Bevestigd door vakgenoten (stabiel)"
 
-#: src/interface.c:352
+#: src/interface.c:355
 msgid "<b>Author</b>"
 msgstr "<b>Auteur</b>"
 
-#: src/interface.c:377
+#: src/interface.c:380
 msgid "Units"
 msgstr "Eenheden"
 
-#: src/interface.c:392
+#: src/interface.c:395
 msgid "mil"
 msgstr "mil"
 
-#: src/interface.c:393
+#: src/interface.c:396
 msgid "mil/100"
 msgstr "mil/100"
 
-#: src/interface.c:394
+#: src/interface.c:397
 msgid "mm"
 msgstr "mm"
 
-#: src/interface.c:396
-msgid "Radial package "
-msgstr "Radiale behuizing"
-
-#: src/interface.c:402
-msgid "Check for a radial package"
-msgstr "Vink voor radiale behuizing"
-
-#: src/interface.c:404
-msgid "Body height (Z) "
-msgstr "Behuizing hoogte (Z)"
-
-#: src/interface.c:412
-msgid "Body width (Y)"
-msgstr "Behuizing breedte (Y)"
-
-#: src/interface.c:420
-msgid "Body length (X)"
-msgstr "Behuizing lengte (X)"
-
-#: src/interface.c:434
-msgid "Type the height dimension of the package body here"
-msgstr "Type de hoogtemaat van de behuizing hier in"
-
-#: src/interface.c:443
-msgid "Type the width dimension of the package body here"
-msgstr "Type de breedtemaat van de behuizing hier in"
-
-#: src/interface.c:452
-msgid "Type the length dimension of the package body here"
-msgstr "Type de lengtemaat van de behuizing hier in"
-
-#: src/interface.c:455
-msgid "Value"
-msgstr "Waarde"
-
-#: src/interface.c:469
-msgid "Type the value of the package here"
-msgstr "Type de waarde voor de behuizing hier"
-
-#: src/interface.c:478
+#: src/interface.c:405
 msgid "Type the name of the footprint here, no suffix please"
 msgstr "Type de naam van het element hier, geen achtervoegsel graag"
 
-#: src/interface.c:488
+#: src/interface.c:415
 msgid "BGA"
 msgstr "BGA"
 
-#: src/interface.c:489
+#: src/interface.c:416
+msgid "CAPAE"
+msgstr "CAPAE"
+
+#: src/interface.c:417
 msgid "CAPC"
 msgstr "CAPC"
 
-#: src/interface.c:490
+#: src/interface.c:418
 msgid "CAPM"
 msgstr "CAPM"
 
-#: src/interface.c:491
+#: src/interface.c:419
 msgid "CAPMP"
 msgstr "CAPMP"
 
-#: src/interface.c:492
+#: src/interface.c:420
+msgid "CON_DIL"
+msgstr "CON_DIL"
+
+#: src/interface.c:421
+msgid "CON_DIP"
+msgstr "CON_DIP"
+
+#: src/interface.c:422
+msgid "CON_HDR"
+msgstr "CON_HDR"
+
+#: src/interface.c:423
 msgid "DIL"
 msgstr "DIL"
 
-#: src/interface.c:493
+#: src/interface.c:424
 msgid "DIOM"
 msgstr "DIOM"
 
-#: src/interface.c:494
+#: src/interface.c:425
+msgid "DIOMELF"
+msgstr "DIOMELF"
+
+#: src/interface.c:426
 msgid "DIP"
 msgstr "DIP"
 
-#: src/interface.c:495
+#: src/interface.c:427
 msgid "INDC"
 msgstr "INDC"
 
-#: src/interface.c:496
+#: src/interface.c:428
 msgid "INDM"
 msgstr "INDM"
 
-#: src/interface.c:497
+#: src/interface.c:429
+msgid "INDP"
+msgstr "INDP"
+
+#: src/interface.c:430
+msgid "PGA"
+msgstr "PGA"
+
+#: src/interface.c:431
+msgid "PLCC"
+msgstr "PLCC"
+
+#: src/interface.c:432
+msgid "QFN"
+msgstr "QFN"
+
+#: src/interface.c:433
+msgid "QFP"
+msgstr "QFP"
+
+#: src/interface.c:434
+msgid "RES"
+msgstr "RES"
+
+#: src/interface.c:435
 msgid "RESC"
 msgstr "RESC"
 
-#: src/interface.c:498
+#: src/interface.c:436
 msgid "RESM"
 msgstr "RESM"
 
-#: src/interface.c:499
+#: src/interface.c:437
+msgid "RESMELF"
+msgstr "RESMELF"
+
+#: src/interface.c:438
+msgid "SIL"
+msgstr "SIL"
+
+#: src/interface.c:439
+msgid "SIP"
+msgstr "SIP"
+
+#: src/interface.c:440
+msgid "SO"
+msgstr "SO"
+
+#: src/interface.c:441
 msgid "TO92"
 msgstr "TO92"
 
-#: src/interface.c:500
+#: src/interface.c:442
 msgid "TO220"
 msgstr "TO220"
 
-#: src/interface.c:502
+#: src/interface.c:444
 msgid "Type"
 msgstr "Type"
 
-#: src/interface.c:510
+#: src/interface.c:452
 msgid "Name"
 msgstr "Naam"
 
-#: src/interface.c:518
+#: src/interface.c:466
+msgid "Type the height dimension of the package body here"
+msgstr "Type de hoogtemaat van de behuizing hier in"
+
+#: src/interface.c:469
+msgid "Body height (Z) "
+msgstr "Behuizing hoogte (Z)"
+
+#: src/interface.c:477
+msgid "Body width (Y)"
+msgstr "Behuizing breedte (Y)"
+
+#: src/interface.c:485
+msgid "Body length (X)"
+msgstr "Behuizing lengte (X)"
+
+#: src/interface.c:493
+msgid "Value"
+msgstr "Waarde"
+
+#: src/interface.c:507
+msgid "Type the width dimension of the package body here"
+msgstr "Type de breedtemaat van de behuizing hier in"
+
+#: src/interface.c:516
+msgid "Type the length dimension of the package body here"
+msgstr "Type de lengtemaat van de behuizing hier in"
+
+#: src/interface.c:525
+msgid "Type the value of the package here"
+msgstr "Type de waarde voor de behuizing hier"
+
+#: src/interface.c:528
+msgid "Refdes prefix"
+msgstr "Refdes prefix"
+
+#: src/interface.c:542
+msgid "Type a refdes prefix here, without the ? please"
+msgstr "Voer een refdes prefix in, zonder een ? graag"
+
+#: src/interface.c:545
+msgid "Add attributes to footprint"
+msgstr "Voeg attributen toe aan element"
+
+#: src/interface.c:551
+msgid "Check to add attributes to the footprint."
+msgstr "Vink aan om attributen aan het element toe te voegen."
+
+#: src/interface.c:553
+msgid "Radial package "
+msgstr "Radiale behuizing"
+
+#: src/interface.c:559
+msgid "Check for a radial package"
+msgstr "Vink voor radiale behuizing"
+
+#: src/interface.c:561
 msgid "<b>Footprint</b>"
 msgstr "<b>Element</b>"
 
-#: src/interface.c:524
+#: src/interface.c:567
 msgid "Footprint"
 msgstr "Element"
 
-#: src/interface.c:557
-#: src/interface.c:971
+#: src/interface.c:600
+#: src/interface.c:1014
 msgid "Pad solder mask clearance "
 msgstr "Pad soldeer masker vrijloop"
 
-#: src/interface.c:571
-#: src/interface.c:993
+#: src/interface.c:614
+#: src/interface.c:1036
 msgid "Clearance distance with solder mask"
 msgstr "Vrijloopafstand met soldeermasker"
 
-#: src/interface.c:574
+#: src/interface.c:617
 msgid "Pad clearance"
 msgstr "Pad vrijloop"
 
-#: src/interface.c:582
-#: src/interface.c:937
+#: src/interface.c:625
+#: src/interface.c:980
 msgid "Pad width (Y)"
 msgstr "Pad breedte (Y)"
 
-#: src/interface.c:590
+#: src/interface.c:633
 msgid "Pad length (X) "
 msgstr "Pad lengte (X)"
 
-#: src/interface.c:604
-#: src/interface.c:1002
+#: src/interface.c:647
+#: src/interface.c:1045
 msgid "Clearance distance with polygons"
 msgstr "Vrijloop afstand met polygonen"
 
-#: src/interface.c:613
+#: src/interface.c:656
 msgid "Width of pads"
 msgstr "Breedte van pads"
 
-#: src/interface.c:622
+#: src/interface.c:665
 msgid "Length of pads"
 msgstr "Lengte van pads"
 
-#: src/interface.c:625
+#: src/interface.c:668
 msgid "Pad shape"
 msgstr "Pad vorm"
 
-#: src/interface.c:640
+#: src/interface.c:683
 msgid "circular pad"
 msgstr "rond pad"
 
-#: src/interface.c:641
+#: src/interface.c:684
 msgid "rectangular pad"
 msgstr "rechthoekig pad"
 
-#: src/interface.c:642
+#: src/interface.c:685
 msgid "octagonal pad"
 msgstr "achthoekig pad"
 
-#: src/interface.c:643
+#: src/interface.c:686
 msgid "rounded pad, elongated"
 msgstr "afgerond pad, langwerpig"
 
-#: src/interface.c:645
+#: src/interface.c:688
 msgid "<b>Pads</b>"
 msgstr "<b>Pads</b>"
 
-#: src/interface.c:676
+#: src/interface.c:719
 msgid "Diameter of pad for pins"
 msgstr "Diameter van pad voor pennen"
 
-#: src/interface.c:679
+#: src/interface.c:722
 msgid "Pin drill diameter (d) "
 msgstr "Pen boordiameter (d)"
 
-#: src/interface.c:687
+#: src/interface.c:730
 msgid "Pin pad diameter (D) "
 msgstr "Pin Pad diameter (D)"
 
-#: src/interface.c:695
+#: src/interface.c:738
 msgid "Pin #1 square "
 msgstr "Pen nummer 1 vierkant"
 
-#: src/interface.c:701
+#: src/interface.c:744
 msgid "Check to draw square pin #1"
 msgstr "Markeer om een pen/pad #1 vierkant te tekenen"
 
-#: src/interface.c:710
+#: src/interface.c:753
 msgid "Diameter of drill hole for pins"
 msgstr "Diameter van boorgaten voor pennen"
 
-#: src/interface.c:713
+#: src/interface.c:756
 msgid "<b>Pins</b>"
 msgstr "<b>Pennen</b>"
 
-#: src/interface.c:738
+#: src/interface.c:781
 msgid "Total pins and pads "
 msgstr "Totaal van pennen en pads"
 
-#: src/interface.c:746
-msgid "Rows"
-msgstr "Rijen"
-
-#: src/interface.c:754
-msgid "Columns"
-msgstr "Kolommen"
-
-#: src/interface.c:762
+#: src/interface.c:789
 msgid "Pitch X-direction"
 msgstr "Steek in de X-richting"
 
-#: src/interface.c:770
+#: src/interface.c:797
 msgid "Pitch Y-direction"
 msgstr "Steek in de Y-richting"
 
-#: src/interface.c:784
+#: src/interface.c:811
 msgid "Total number of pins and pads"
 msgstr "Totaal aantal van pennen en pads"
 
-#: src/interface.c:793
-msgid "Number of rows"
-msgstr "Aantal rijen"
-
-#: src/interface.c:802
-msgid "Number of columns"
-msgstr "Aantal kolommen"
-
-#: src/interface.c:811
+#: src/interface.c:820
 msgid "Horizontal pin/pad pitch"
 msgstr "Horizontale pen/pad steek"
 
-#: src/interface.c:820
+#: src/interface.c:829
 msgid "Vertical pin/pad pitch"
 msgstr "Verticale pen/pad steek"
 
-#: src/interface.c:823
+#: src/interface.c:832
 msgid "Count X-direction"
 msgstr "Aantal in de X-richting"
 
-#: src/interface.c:831
+#: src/interface.c:840
 msgid "Count Y-direction"
 msgstr "Aantal in de Y-richting"
 
-#: src/interface.c:845
+#: src/interface.c:854
 msgid "Number of horizontal pin/pads"
 msgstr "Aantal horizontale pennen/pads"
 
-#: src/interface.c:854
+#: src/interface.c:863
 msgid "Number of vertical pin/pads"
 msgstr "Aantal verticale pennen/pads"
 
-#: src/interface.c:857
+#: src/interface.c:866
 msgid "Pin/pad #1 position "
 msgstr "Pen/pad #1 positie"
 
-#: src/interface.c:872
+#: src/interface.c:881
 msgid "Upper left"
 msgstr "Boven links"
 
-#: src/interface.c:873
+#: src/interface.c:882
 msgid "Middle left"
 msgstr "Midden links"
 
-#: src/interface.c:874
+#: src/interface.c:883
 msgid "Lower left"
 msgstr "Onder links"
 
-#: src/interface.c:875
+#: src/interface.c:884
 msgid "Upper middle"
 msgstr "Boven midden"
 
-#: src/interface.c:876
+#: src/interface.c:885
 msgid "Middle middle"
 msgstr "Midden midden"
 
-#: src/interface.c:877
+#: src/interface.c:886
 msgid "Lower middle"
 msgstr "Onder midden"
 
-#: src/interface.c:878
+#: src/interface.c:887
 msgid "Upper right"
 msgstr "Boven rechts"
 
-#: src/interface.c:879
+#: src/interface.c:888
 msgid "Middle right"
 msgstr "Midden rechts"
 
-#: src/interface.c:880
+#: src/interface.c:889
 msgid "Lower right"
 msgstr "Onder rechts"
 
-#: src/interface.c:881
+#: src/interface.c:890
 msgid " "
 msgstr " "
 
-#: src/interface.c:883
+#: src/interface.c:892
+msgid "Columns"
+msgstr "Kolommen"
+
+#: src/interface.c:906
+msgid "Number of columns"
+msgstr "Aantal kolommen"
+
+#: src/interface.c:909
+msgid "Rows"
+msgstr "Rijen"
+
+#: src/interface.c:923
+msgid "Number of rows"
+msgstr "Aantal rijen"
+
+#: src/interface.c:926
 msgid "<b>Pattern</b>"
 msgstr "<b>Patroon</b>"
 
-#: src/interface.c:889
+#: src/interface.c:932
 msgid "Pins/Pads"
 msgstr "Pennen/Pads"
 
-#: src/interface.c:921
-#: src/interface.c:1011
+#: src/interface.c:964
+#: src/interface.c:1054
 msgid "Thermal pad"
 msgstr "Thermisch pad"
 
-#: src/interface.c:927
+#: src/interface.c:970
 msgid "Check for a thermal pad"
 msgstr "Markeer voor een thermisch pad"
 
-#: src/interface.c:929
+#: src/interface.c:972
 msgid "Pad length (X)"
 msgstr "Pad lengte (X)"
 
-#: src/interface.c:951
+#: src/interface.c:994
 msgid "Width of thermal pad"
 msgstr "Breedte van het thermische pad"
 
-#: src/interface.c:960
+#: src/interface.c:1003
 msgid "Length of thermal pad"
 msgstr "Lengte van het thermische pad"
 
-#: src/interface.c:963
+#: src/interface.c:1006
 msgid "No paste on pad"
 msgstr "Geen pasta op pad"
 
-#: src/interface.c:969
+#: src/interface.c:1012
 msgid "Check for no paste on pad"
 msgstr "Markeer voor geen pasta op pad"
 
-#: src/interface.c:979
+#: src/interface.c:1022
 msgid "Pad Clearance "
 msgstr "Pad vrijloop"
 
-#: src/interface.c:1005
+#: src/interface.c:1048
 msgid "<b>Thermal pad</b>"
 msgstr "<b>Thermisch pad</b>"
 
-#: src/interface.c:1044
+#: src/interface.c:1087
 msgid "Print courtyard "
 msgstr "Druk de omheining af"
 
-#: src/interface.c:1050
+#: src/interface.c:1093
 msgid "Check to draw a courtyard (keepout)"
 msgstr "Markeer om een omheining (afscherming) te tekenen"
 
-#: src/interface.c:1052
+#: src/interface.c:1095
 msgid "Width (Y)"
 msgstr "Breedte (Y)"
 
-#: src/interface.c:1060
+#: src/interface.c:1103
 msgid "Length or diameter (X) "
 msgstr "Lengte of Diameter (X)"
 
-#: src/interface.c:1074
+#: src/interface.c:1117
 msgid "Length of courtyard"
 msgstr "Lengte van de omheining"
 
-#: src/interface.c:1083
+#: src/interface.c:1126
 msgid "Width of courtyard"
 msgstr "Breedte van de omheining"
 
-#: src/interface.c:1086
-#: src/interface.c:1161
+#: src/interface.c:1129
+#: src/interface.c:1204
 msgid "Line width"
 msgstr "Lijndikte"
 
-#: src/interface.c:1100
+#: src/interface.c:1143
 msgid "Line width for courtyard"
 msgstr "Lijndikte voor omheining"
 
-#: src/interface.c:1103
+#: src/interface.c:1146
 msgid "Clearance with package "
 msgstr "Vrijloop met behuizing"
 
-#: src/interface.c:1117
+#: src/interface.c:1160
 msgid "Clearance distance with package"
 msgstr "Vrijloop afstand met behuizing"
 
-#: src/interface.c:1120
+#: src/interface.c:1163
 msgid "<b>Courtyard</b>"
 msgstr "<b>Omheining</b>"
 
-#: src/interface.c:1145
+#: src/interface.c:1188
 msgid "Print package outline "
 msgstr "Druk behuizing omtrek af"
 
-#: src/interface.c:1151
+#: src/interface.c:1194
 msgid "Check to draw package outline"
 msgstr "Markeer om behuizing omtrek te tekenen"
 
-#: src/interface.c:1153
+#: src/interface.c:1196
 msgid "Pin/Pad #1 indicator "
 msgstr "Pen/Pad #1 indicator"
 
-#: src/interface.c:1159
+#: src/interface.c:1202
 msgid "Check to draw indicator for pin/pad #1"
 msgstr "Markeer om een indicator voor pen/pad #1 te tekenen"
 
-#: src/interface.c:1175
+#: src/interface.c:1218
 msgid "Line width for silkscreen"
 msgstr "Lijndikte voor opdruk"
 
-#: src/interface.c:1178
+#: src/interface.c:1221
 msgid "<b>Package</b>"
 msgstr "<b>Behuizing</b>"
 
-#: src/interface.c:1184
+#: src/interface.c:1227
 msgid "Silkscreen"
 msgstr "Opdruk"
 
-#: src/interface.c:1211
+#: src/interface.c:1254
 msgid "Inner-Inner (G1)"
 msgstr "Binnen-Binnen (G1)"
 
-#: src/interface.c:1220
+#: src/interface.c:1263
 msgid "Center-Center (C1)"
 msgstr "Midden-Midden (C1)"
 
-#: src/interface.c:1230
+#: src/interface.c:1273
 msgid "Outer-Outer (Z1)"
 msgstr "Buiten-Buiten (Z1)"
 
-#: src/interface.c:1245
+#: src/interface.c:1288
 msgid "Top to bottom inner distance between pads"
 msgstr "Boven naar beneden binnenafstand van pads"
 
-#: src/interface.c:1254
+#: src/interface.c:1297
 msgid "Top to bottom center distance between pads"
 msgstr "Boven naar beneden hart tot hart afstand van pads"
 
-#: src/interface.c:1263
+#: src/interface.c:1306
 msgid "Top to bottom outer distance between pads"
 msgstr "Boven naar beneden buitenafstand van pads"
 
-#: src/interface.c:1266
+#: src/interface.c:1309
 msgid "<b>Top to Bottom</b>"
 msgstr "<b>Boven naar Onder</b>"
 
-#: src/interface.c:1289
+#: src/interface.c:1332
 msgid "Inner-Inner (G2)"
 msgstr "Binnen-Binnen (G2)"
 
-#: src/interface.c:1298
+#: src/interface.c:1341
 msgid "Center-Center (C2)"
 msgstr "Midden-Midden (C2)"
 
-#: src/interface.c:1308
+#: src/interface.c:1351
 msgid "Outer-Outer (Z2)"
 msgstr "Buiten-Buiten (Z2)"
 
-#: src/interface.c:1323
+#: src/interface.c:1366
 msgid "Left to right inner distance between pads"
 msgstr "Links naar rechts binnenafstand van pads"
 
-#: src/interface.c:1332
+#: src/interface.c:1375
 msgid "Left to right center distance between pads"
 msgstr "Links naar rechts hart tot hart afstand van pads"
 
-#: src/interface.c:1341
+#: src/interface.c:1384
 msgid "Left to right outer distance between pads"
 msgstr "Links naar rechts buitenafstand van pads"
 
-#: src/interface.c:1344
+#: src/interface.c:1387
 msgid "<b>Left to Right</b>"
 msgstr "<b>Links naar Rechts</b>"
 
-#: src/interface.c:1350
+#: src/interface.c:1393
 msgid "Heel & Toe goals"
 msgstr "Hiel & Teen doelen"
 
-#: src/interface.c:1373
-msgid "<b>Preview</b>"
-msgstr "<b>Voorvertoning</b>"
+#: src/interface.c:1416
+msgid "<b>Dimensions</b>"
+msgstr "<b>Bemating</b>"
 
-#: src/interface.c:1391
+#: src/interface.c:1434
 msgid "Click the Close button to exit"
 msgstr "Klik de Afsluiten knop om af te sluiten"
 
-#: src/interface.c:1398
+#: src/interface.c:1441
 msgid "Click the Clear button to clear all entries"
 msgstr "Klik op de Wissen knop om alle invoervakken leeg te maken"
 
-#: src/interface.c:1405
+#: src/interface.c:1448
 msgid "Click the Open button to read an existing footprint file"
 msgstr "Klik op de Open knop om een element te laden"
 
-#: src/interface.c:1412
+#: src/interface.c:1455
 msgid "Click the Save button to write the footprint file"
 msgstr "Klik op de Opslaan knop om het element op te slaan"
 
-#: src/interface.c:1419
+#: src/interface.c:1462
 msgid "Click on the refresh button to refresh the preview"
 msgstr "Klik op de Ververs knop om de voorvertoning te verversen"
 
-#: src/interface.c:1774
+#: src/interface.c:1826
 msgid "pcb-gfpw: choose a .fpw file"
 msgstr "pcb-gfpw: kies een .fpw bestand"
 
-#: src/callbacks.c:786
+#: src/callbacks.c:1597
 #, c-format
 msgid "ERROR: current folder is not initialised  (null pointer)."
 msgstr "FOUT: huidige foldernaam is niet ge-initialiseerd (null pointer)."
 
-#: src/callbacks.c:795
+#: src/callbacks.c:1605
 #, c-format
 msgid "ERROR: current folder contains an empty string."
-msgstr "FOUT: huidge foldernaam bevat een lege text,"
+msgstr "FOUT: huidige foldernaam bevat een lege text."
 
-#: src/callbacks.c:839
+#: src/callbacks.c:1645
 #, c-format
 msgid "ERROR: selected filename is not initialised  (null pointer)."
-msgstr "FOUT: geselcteerde bestandnaamis  niet ge-initialiseerd (null pointer)."
+msgstr "FOUT: geselecteerde bestandnaamis  niet ge-initialiseerd (null pointer)."
 
-#: src/callbacks.c:848
+#: src/callbacks.c:1653
 #, c-format
 msgid "ERROR: selected filename contains an empty string."
-msgstr "FOUT: geselecteerde bestandnaam bevat een lege text,"
+msgstr "FOUT: geselecteerde bestandnaam bevat een lege text."
 
-#: src/callbacks.c:858
+#: src/callbacks.c:1662
 #, c-format
 msgid "ERROR: selected filename is a directory."
 msgstr "FOUT: geselecteerde bestandnaam is een folder."
 
-#: src/callbacks.c:871
+#: src/callbacks.c:1674
 #, c-format
 msgid "Read footprintwizard file %s."
 msgstr "Footprintwizard bestand %s gelezen."
 
-#: src/callbacks.c:877
+#: src/callbacks.c:1679
 #, c-format
 msgid "ERROR: Unable to read footprint wizard file %s."
 msgstr "FOUT: kan Footprintwizard bestand %s niet lezen."
 
-#: src/callbacks.c:959
-#: src/callbacks.c:1658
+#: src/callbacks.c:1769
+#: src/callbacks.c:2575
 #, c-format
 msgid "ERROR: footprint name not initialised (null pointer)."
 msgstr "FOUT: elementnaam niet ge-initialiseerd (null pointer)."
 
-#: src/callbacks.c:969
-#: src/callbacks.c:1668
+#: src/callbacks.c:1778
+#: src/callbacks.c:2584
 #, c-format
 msgid "ERROR: footprint name contains an empty string."
 msgstr "FOUT: elementnaam bevat een lege text,"
 
-#: src/callbacks.c:1034
-#, c-format
-msgid "ERROR: footprint type BGA is not yet implemented."
-msgstr "FOUT: elementtype BGA is nog niet ge-implementeerd."
-
-#: src/callbacks.c:1062
-#, c-format
-msgid "ERROR: footprint type PGA is not yet implemented."
-msgstr "FOUT: elementtype PGA is nog niet ge-implementeerd."
-
-#: src/callbacks.c:1070
+#: src/callbacks.c:1941
 #, c-format
 msgid "ERROR: footprint type QFN is not yet implemented."
 msgstr "FOUT: elementtype QFN is nog niet ge-implementeerd."
 
-#: src/callbacks.c:1078
+#: src/callbacks.c:1949
 #, c-format
 msgid "ERROR: footprint type QFP is not yet implemented."
 msgstr "FOUT: elementtype QFP is nog niet ge-implementeerd."
 
-#: src/callbacks.c:1091
+#: src/callbacks.c:1971
 #, c-format
 msgid "ERROR: footprint type SIL is not yet implemented."
 msgstr "FOUT: elementtype SIL is nog niet ge-implementeerd."
 
-#: src/callbacks.c:1099
+#: src/callbacks.c:1979
 #, c-format
 msgid "ERROR: footprint type SIP is not yet implemented."
 msgstr "FOUT: elementtype SIP is nog niet ge-implementeerd."
 
-#: src/callbacks.c:1107
+#: src/callbacks.c:1987
 #, c-format
 msgid "ERROR: footprint type SO is not yet implemented."
 msgstr "FOUT: elementtype SO is nog niet ge-implementeerd."
 
-#: src/callbacks.c:1117
+#: src/callbacks.c:1998
 #, c-format
 msgid "ERROR: unknown or not yet implemented footprint type entered."
 msgstr "FOUT: onbekend of nog niet ge-implementeerd element type ingevoerd."
 
-#: src/callbacks.c:1139
+#: src/callbacks.c:2020
 #, c-format
 msgid "ERROR: footprint units not initialised (null pointer)."
 msgstr "FOUT: elementeenheden is niet ge-initialiseerd (null pointer)."
 
-#: src/callbacks.c:1149
+#: src/callbacks.c:2029
 #, c-format
 msgid "ERROR: footprint units contains an empty string."
 msgstr "FOUT: elementeenheden bevat een lege text,"
 
-#: src/callbacks.c:1176
+#: src/callbacks.c:2054
 #, c-format
 msgid "ERROR: footprint units contains an unknown units type."
 msgstr "FOUT: elementeenheden bevat een onbekende eenheidtype."
 
-#: src/callbacks.c:1453
+#: src/callbacks.c:2346
 #, c-format
 msgid "ERROR: pad shape not initialised (null pointer)."
 msgstr "FOUT: padvorm is niet ge-initialiseerd (null pointer)."
 
-#: src/callbacks.c:1463
+#: src/callbacks.c:2355
 #, c-format
 msgid "ERROR: pad shape contains an empty string."
 msgstr "FOUT: padvorm bevat een lege text,"
 
-#: src/callbacks.c:1495
+#: src/callbacks.c:2385
 #, c-format
 msgid "ERROR: pad shape contains an unknown pad shape type."
-msgstr "FOUT: pad vorm bevat een onbekend pad vorm type."
+msgstr "FOUT: pad vorm bevat een onbekend padvorm type."
 
-#: src/callbacks.c:1725
+#: src/callbacks.c:2642
 #, c-format
 msgid "ERROR: Unable to write footprintwizard file %s."
 msgstr "FOUT: kan Footprintwizard bestand %s niet schrijven."
 
-#: src/callbacks.c:1733
+#: src/callbacks.c:2649
 #, c-format
 msgid "Wrote footprint %s to file."
 msgstr "Element %s naar bestand geschreven."
 
-#: src/callbacks.c:1739
+#: src/callbacks.c:2654
 #, c-format
 msgid "ERROR: Unable to write footprint %s to file."
 msgstr "FOUT: kan element bestand %s niet schrijven."
@@ -1420,4 +854,156 @@ msgstr "FOUT: kan element bestand %s niet schrijven."
 #, c-format
 msgid "Couldn't find pixmap file: %s"
 msgstr "Kan pixmap bestand: %s niet vinden"
+
+#: src/fpw.c:80
+#, c-format
+msgid ""
+"\n"
+"%s version %s\n"
+msgstr ""
+"\n"
+"%s versie %s\n"
+
+#: src/fpw.c:81
+#, c-format
+msgid "(C) 2007, 2008 by Bert Timmerman.\n"
+msgstr "(C) 2007, 2008 door Bert Timmerman.\n"
+
+#: src/fpw.c:82
+#, c-format
+msgid "This is free software; see the source for copying conditions.\n"
+msgstr "Dit is vrije programmatuur; zie de bronbestanden voor kopieer omstandigheden.\n"
+
+#: src/fpw.c:83
+#, c-format
+msgid "There is NO warranty; not even for MERCHANTABILITY\n"
+msgstr "Er wordt GEEN garantie gegeven; zelfs niet voor VERHANDELBAARHEID\n"
+
+#: src/fpw.c:84
+#, c-format
+msgid ""
+"or FITNESS FOR A PARTICULAR PURPOSE.\n"
+"\n"
+msgstr ""
+"of GESCHIKTHEID VOOR EEN BEPAALD DOELEINDE.\n"
+"\n"
+
+#: src/fpw.c:95
+#, c-format
+msgid ""
+"\n"
+"%s usage:\n"
+msgstr ""
+"\n"
+"%s gebruik:\n"
+
+#: src/fpw.c:96
+#, c-format
+msgid ""
+"%s -h   : print this help message and exit.\n"
+"\n"
+msgstr ""
+"%s -h   : druk dit hulp bericht af en sluit het programma af.\n"
+"\n"
+
+#: src/fpw.c:97
+#, c-format
+msgid ""
+"%s -V   : print the version information and exit.\n"
+"\n"
+msgstr ""
+"%s -V   : druk de versie informatie af en sluit het programma af.\n"
+"\n"
+
+#: src/fpw.c:98
+#, c-format
+msgid ""
+"To write a footprint file use:\n"
+"\n"
+msgstr ""
+"Om een element bestand te schrijven gebruik:\n"
+"\n"
+
+#: src/fpw.c:99
+#, c-format
+msgid ""
+"\t%s -f fpw_filename -o footprint_name\n"
+"\n"
+msgstr ""
+"\t%s -f fpw_bestandnaam -o element_bestandnaam\n"
+"\n"
+
+#: src/fpw.c:139
+#, c-format
+msgid "I'm quiting, let me do something useful.\n"
+msgstr "Ik stop ermee, laat mij iets zinnigs doen.\n"
+
+#: src/fpw.c:145
+#, c-format
+msgid "SUCCESS: reading footprintwizard file %s.\n"
+msgstr "SUCCES: Footprintwizard bestand %s gelezen.\n"
+
+#: src/fpw.c:150
+#, c-format
+msgid "ERROR: reading footprintwizard file %s.\n"
+msgstr "FOUT: bij het lezen van footprintwizard bestand %s.\n"
+
+#: src/fpw.c:158
+#, c-format
+msgid "ERROR: footprint units contains a null pointer.\n"
+msgstr "FOUT: elementeenheden bevat een null pointer.\n"
+
+#: src/fpw.c:165
+#, c-format
+msgid "ERROR: footprint units contains an empty string.\n"
+msgstr "FOUT: elementeenheden bevat een lege tekst.\n"
+
+#: src/fpw.c:172
+#, c-format
+msgid "ERROR: pad shape contains a null pointer.\n"
+msgstr "FOUT: padvorm bevat een null pointer.\n"
+
+#: src/fpw.c:179
+#, c-format
+msgid "ERROR: pad shape contains an empty string.\n"
+msgstr "FOUT: padvorm bevat een lege tekst.\n"
+
+#: src/fpw.c:186
+#, c-format
+msgid "ERROR: footprint name contains a null pointer.\n"
+msgstr "FOUT: elementnaam bevat een null pointer.\n"
+
+#: src/fpw.c:193
+#, c-format
+msgid "ERROR: footprint name contains an empty string.\n"
+msgstr "FOUT: elementnaam bevat een lege text.\n"
+
+#: src/fpw.c:216
+#, c-format
+msgid "ERROR: footprint units contains an unknown units type.\n"
+msgstr "FOUT: elementeenheden bevat een onbekende eenheidtype.\n"
+
+#: src/fpw.c:230
+#, c-format
+msgid "ERROR: pad shape contains an unknown pad shape type.\n"
+msgstr "FOUT: pad vorm bevat een onbekend pad vorm type.\n"
+
+#: src/fpw.c:261
+#: src/fpw.c:268
+#: src/fpw.c:279
+#: src/fpw.c:286
+#: src/fpw.c:293
+#, c-format
+msgid "ERROR: footprint type %s not yet implemented.\n"
+msgstr "FOUT: elementtype %s is nog niet ge-implementeerd.\n"
+
+#: src/fpw.c:303
+#, c-format
+msgid "ERROR: unknown or not yet implemented footprint type entered.\n"
+msgstr "FOUT: onbekend of nog niet ge-implementeerd element type ingevoerd.\n"
+
+#: src/fpw.c:307
+#, c-format
+msgid "Footprint %s is written successful."
+msgstr "Element %s is succesvol opgeslagen."
 
