@@ -51,11 +51,11 @@ gchar *program_name = NULL;
 static void
 print_version ()
 {
-        fprintf (stderr, "\n%s version %s\n", program_name, FPW_VERSION);
-        fprintf (stderr, "(C) 2007, 2008 by Bert Timmerman.\n\n");
-        fprintf (stderr, "This is free software; see the source for copying conditions.\n");
-        fprintf (stderr, "There is NO warranty; not even for MERCHANTABILITY\n");
-        fprintf (stderr, "or FITNESS FOR A PARTICULAR PURPOSE.\n\n");
+        fprintf (stderr, (_("\n%s version %s\n")), program_name, FPW_VERSION);
+        fprintf (stderr, (_("(C) 2007, 2008 by Bert Timmerman.\n")));
+        fprintf (stderr, (_("This is free software; see the source for copying conditions.\n")));
+        fprintf (stderr, (_("There is NO warranty; not even for MERCHANTABILITY\n")));
+        fprintf (stderr, (_("or FITNESS FOR A PARTICULAR PURPOSE.\n\n")));
         exit (EXIT_SUCCESS);
 }
 
@@ -66,15 +66,11 @@ print_version ()
 static void
 print_usage ()
 {
-        fprintf (stderr, "\n%s usage:\n", program_name);
-        fprintf (stderr, "%s -h   : print this help message and exit.\n", program_name);
-        fprintf (stderr, "\n");
-        fprintf (stderr, "%s -V   : print the version information and exit.\n", program_name);
-        fprintf (stderr, "\n");
-        fprintf (stderr, "To write a footprint file use:\n");
-        fprintf (stderr, "\n");
-        fprintf (stderr, "\t%s -f fpw_filename -o footprint_name\n", program_name);
-        fprintf (stderr, "\n");
+        fprintf (stderr, (_("\n%s usage:\n")), program_name);
+        fprintf (stderr, (_("%s -h   : print this help message and exit.\n\n")), program_name);
+        fprintf (stderr, (_("%s -V   : print the version information and exit.\n\n")), program_name);
+        fprintf (stderr, (_("To write a footprint file use:\n\n")));
+        fprintf (stderr, (_("\t%s -f fpw_filename -o footprint_name\n\n")), program_name);
         exit (EXIT_SUCCESS);
 }
 
@@ -114,59 +110,61 @@ main
         }
         else
         {
-                fprintf (stderr, "I'm quiting, let me do something useful.\n");
+                fprintf (stderr, (_("I'm quiting, let me do something useful.\n")));
                 exit (EXIT_FAILURE);
         }
         /* Read variables from the fpw file */
         if (read_footprintwizard_file (fpw_filename))
         {
-                fprintf (stderr, "SUCCESS: reading footprintwizard file %s.\n", fpw_filename);
+                fprintf (stderr, (_("SUCCESS: reading footprintwizard file %s.\n")),
+                        fpw_filename);
         }
         else
         {
-                fprintf (stderr, "ERROR: reading footprintwizard file %s.\n", fpw_filename);
+                fprintf (stderr, (_("ERROR: reading footprintwizard file %s.\n")),
+                        fpw_filename);
                 exit (EXIT_FAILURE);
               }
         /* Check for a null pointer in footprint_units for this might cause a
          * segmentation fault or undefined behaviour. */
         if (!footprint_units)
         {
-                fprintf (stderr, "ERROR: footprint units contains a null pointer.\n");
+                fprintf (stderr, (_("ERROR: footprint units contains a null pointer.\n")));
                 exit (EXIT_FAILURE);
         }
         /* Check for an empty footprint_units string for this might cause a
          * segmentation fault or undefined behaviour. */
         if (!strcmp (footprint_units, ""))
         {
-                fprintf (stderr, "ERROR: footprint units contains an empty string.\n");
+                fprintf (stderr, (_("ERROR: footprint units contains an empty string.\n")));
                 exit (EXIT_FAILURE);
         }
         /* Check for a null pointer in pad_shape for this might cause a
          * segmentation fault or undefined behaviour. */
         if (!pad_shape)
         {
-                fprintf (stderr, "ERROR: pad shape contains a null pointer.\n");
+                fprintf (stderr, (_("ERROR: pad shape contains a null pointer.\n")));
                 exit (EXIT_FAILURE);
         }
         /* Check for an empty pad_shape string for this might cause a
          * segmentation fault or undefined behaviour. */
         if (!strcmp (pad_shape, ""))
         {
-                fprintf (stderr, "ERROR: pad shape contains an empty string.\n");
+                fprintf (stderr, (_("ERROR: pad shape contains an empty string.\n")));
                 exit (EXIT_FAILURE);
         }
         /* Check for a null pointer in footprint_name for this might cause a
          * segmentation fault or undefined behaviour. */
         if (!footprint_name)
         {
-                fprintf (stderr, "ERROR: footprint name contains a null pointer.\n");
+                fprintf (stderr, (_("ERROR: footprint name contains a null pointer.\n")));
                 exit (EXIT_FAILURE);
         }
         /* Check for an empty footprint_name string for this might cause a
          * segmentation fault or undefined behaviour. */
         if (!strcmp (footprint_name, ""))
         {
-                fprintf (stderr, "ERROR: footprint name contains an empty string.\n");
+                fprintf (stderr, (_("ERROR: footprint name contains an empty string.\n")));
                 exit (EXIT_FAILURE);
         }
         /* If the footprint_filename contains a valid footprintname, use it. */
@@ -189,7 +187,7 @@ main
                 multiplier = (1000 / 25.4) * 100;
         else
         {
-                fprintf (stderr, "ERROR: footprint units contains an unknown units type.\n");
+                fprintf (stderr, (_("ERROR: footprint units contains an unknown units type.\n")));
                 exit (EXIT_FAILURE);
         }
         /* Determine the pad shape type, default is a circular pad */
@@ -203,7 +201,7 @@ main
                 g_strconcat (pin_pad_flags, "", NULL);
         else
         {
-                fprintf (stderr, "ERROR: pad shape contains an unknown pad shape type.\n");
+                fprintf (stderr, (_("ERROR: pad shape contains an unknown pad shape type.\n")));
                 exit (EXIT_FAILURE);
         }
         /* Determine the package type */
@@ -234,13 +232,15 @@ main
         else if (!strcmp (footprint_type, "QFN"))
         {
                 package_type = QFN;
-                fprintf (stderr, "ERROR: footprint type QFN not yet implemented.\n");
+                fprintf (stderr, (_("ERROR: footprint type %s not yet implemented.\n")),
+                        footprint_type);
                 exit (EXIT_FAILURE);
         }
         else if (!strcmp (footprint_type, "QFP"))
         {
                 package_type = QFP;
-                fprintf (stderr, "ERROR: footprint type QFP not yet implemented.\n");
+                fprintf (stderr, (_("ERROR: footprint type %s not yet implemented.\n")),
+                        footprint_type);
                 exit (EXIT_FAILURE);
         }
         else if (!strcmp (footprint_type, "RESC"))
@@ -250,19 +250,22 @@ main
         else if (!strcmp (footprint_type, "SIL"))
         {
                 package_type = SIP;
-                fprintf (stderr, "ERROR: footprint type SIL not yet implemented.\n");
+                fprintf (stderr, (_("ERROR: footprint type %s not yet implemented.\n")),
+                        footprint_type);
                 exit (EXIT_FAILURE);
         }
         else if (!strcmp (footprint_type, "SIP"))
         {
                 package_type = SIP;
-                fprintf (stderr, "ERROR: footprint type SIP not yet implemented.\n");
+                fprintf (stderr, (_("ERROR: footprint type %s not yet implemented.\n")),
+                        footprint_type);
                 exit (EXIT_FAILURE);
         }
         else if (!strcmp (footprint_type, "SO"))
         {
                 package_type = SO;
-                fprintf (stderr, "ERROR: footprint type SO not yet implemented.\n");
+                fprintf (stderr, (_("ERROR: footprint type %s not yet implemented.\n")),
+                        footprint_type);
                 exit (EXIT_FAILURE);
         }
         else if (!strcmp (footprint_type, "TO92"))
@@ -271,11 +274,12 @@ main
         }
         else
         {
-                fprintf (stderr, "ERROR: unknown or not yet implemented footprint type entered.\n");
+                fprintf (stderr, (_("ERROR: unknown or not yet implemented footprint type entered.\n")));
                 exit (EXIT_FAILURE);
         }
         write_footprint ();
-        fprintf (stderr, "Footprint %s is written successful.", footprint_name);
+        fprintf (stderr, (_("Footprint %s is written successful.")),
+                footprint_name);
 }
 
 /* EOF */
