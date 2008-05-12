@@ -791,9 +791,9 @@ write_footprint_bga ()
                                 multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
                                 multiplier * ((((-number_of_columns -1) / 2.0) + 1 + j) * pitch_x), /* x1 coordinate */
                                 multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y1-coordinate */
-                                multiplier * pad_width, /* pad width */
+                                multiplier * pad_diameter, /* pad width */
                                 multiplier * pad_clearance, /* clearance */
-                                multiplier * (pad_width + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                                multiplier * (pad_diameter + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
                                 pin_pad_flags /* flags */
                         );
                         pin_number++;
