@@ -67,18 +67,28 @@ The first tab with entries is named <b>"Footprint"</b> and can be used for the
 input of general information about the footprint.<br>
 <ul>
 <li>At the entry named <b>"Type"</b> the footprint type is entered by 
-selecting a footprint type from a list, the program will guess for the prefix 
-of the footprint as the first couple of characters of the footprint name.<br>
+selecting a footprint type from a predefined list.<br>
+The program will use this as a prefix for the footprint name if no footprint 
+name is entered yet, or an existing prefix is altered.<br>
 The pcb-fpw program will try to guess which entries are needed for this 
 footprint type and "grey out" the entries and checkbuttons which it thinks are 
 not needed.<br>
 <br>
-Note: the footprint types follow a "well known and standard" footprint 
+Notes:<br>
+<ol>
+<li>The footprint types follow a "well known and standard" footprint 
 naming convention.<br>
-Disclaimer: only this part of the "well known and standard" naming convention 
+<li>Entering no footprint type, that is a blanc entry, will leave give pcb-gfpw 
+clueless on how to generate a footprint.<br.
+</ol>
+<br>
+Disclaimers:<br>
+<ul>
+<li>Only the prefix part of the "well known and standard" naming convention 
 is used.<br>
-The actual data for creating footprints relies on vendor specific 
+<li>The actual data for creating footprints relies on vendor specific 
 datasheets (both method and content).<br>
+</ul>
 <br>
 <li>The entry named <b>"Name"</b> will contain the name that the actual 
 footprint file will get when the footprint is saved to disk.<br>
