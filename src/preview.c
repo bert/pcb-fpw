@@ -129,9 +129,16 @@ preview_draw_background (GtkWidget *widget, gdouble x, gdouble y)
 static void
 preview_draw_line
 (
-        GtkWidget *widget
+        GtkWidget *widget, /*!< The toplevel widget containing the drawable. */
+        GdkDrawable *drawable, /*!< The drawable to draw the line onto.*/
+        GdkGC *gc, /*!< The graphics context. */
+        gint x1, /*!< X-coordinate of start point of the line. */
+        gint y1, /*!< Y-coordinate of start point of the line. */
+        gint x2, /*!< X-coordinate of the end point of the line. */
+        gint y2 /*!< Y-coordinate of the end point of the line. */
 )
 {
+        gdk_draw_line (drawable, gc, x1, y1, x2, y2 );
 }
 
 
