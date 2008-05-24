@@ -184,6 +184,18 @@ main (int argc, char** argv)
         gtk_init (&argc, &argv);
         /* Create a preview window */
         GtkWindow *preview_window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+        /* Destroy the preview window when the main window of pcb-gfpw gets
+         * destroyed */
+        gtk_window_set_destroy_with_parent (preview_window, TRUE);
+        /* Set the preview window title */
+        /*!
+         * \todo In the near future, when the preview window is called from
+         * pcb-gfpw, include the name of the footprint.\n
+         */
+//        gchar *preview_window_title = g_strdup_printf ("pcb-fpw preview: %s",
+//                footprint_name);
+//        gtk_window_set_title (preview_window, preview_window_title);
+//        g_free (preview_window_title);
         gtk_window_set_title (preview_window, "pcb-fpw preview");
         /* Set signals for the window */
         gtk_signal_connect
