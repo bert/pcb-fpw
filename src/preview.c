@@ -197,6 +197,7 @@ main (int argc, char** argv)
 //        gtk_window_set_title (preview_window, preview_window_title);
 //        g_free (preview_window_title);
         gtk_window_set_title (preview_window, "pcb-fpw preview");
+        gtk_container_set_border_width (GTK_CONTAINER (preview_window), 10);
         /* Set signals for the window */
         gtk_signal_connect
         (
@@ -206,7 +207,7 @@ main (int argc, char** argv)
                 NULL
         );
         /* Create a vertical box */
-        GtkWindow *vbox = gtk_vbox_new (FALSE, 0);
+        GtkWindow *vbox = gtk_vbox_new (FALSE, 10);
         gtk_container_add (GTK_CONTAINER (preview_window), vbox);
         /* Create a preview drawing area */
         GtkWidget *preview_drawing_area = gtk_drawing_area_new ();
