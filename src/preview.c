@@ -36,6 +36,16 @@ gint depth = -1;
 
 
 /*!
+ * \brief Close the preview window (destroy the preview widget).
+ */
+static void
+preview_close_cb (GtkWidget * widget, GtkWidget *preview_window)
+{
+        gtk_widget_destroy (preview_window);
+}
+
+
+/*!
  * \brief Create a new backing pixmap of the appropriate size.
  */
 static gboolean
@@ -172,36 +182,81 @@ int
 main (int argc, char** argv)
 {
         gtk_init (&argc, &argv);
-        GtkWindow  *window = NULL;
-        window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-        gtk_window_set_title (window, "pcb-fpw preview");
+        /* Create a preview window */
+        GtkWindow *preview_window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+        gtk_window_set_title (preview_window, "pcb-fpw preview");
         /* Set signals for the window */
-        gtk_signal_connect (GTK_OBJECT (window),
+        gtk_signal_connect
+        (
+                GTK_OBJECT (preview_window),
                 "delete_event",
                 (GtkSignalFunc) preview_delete_event,
-                NULL);
-        /* Create a drawing area */
-        drawing_area = gtk_drawing_area_new ();
-        gtk_widget_set_size_request (drawing_area, width, height);
+                NULL
+        );
+        /* Create a vertical box */
+        GtkWindow *vbox = gtk_vbox_new (FALSE, 0);
+        gtk_container_add (GTK_CONTAINER (preview_window), vbox);
+        /* Create a preview drawing area */
+        GtkWidget *preview_drawing_area = gtk_drawing_area_new ();
+        gtk_widget_set_size_request (preview_drawing_area, width, height);
         /* Set signals for the drawing area */
-        gtk_signal_connect (GTK_OBJECT (drawing_area),
+        gtk_signal_connect
+        (
+                GTK_OBJECT (preview_drawing_area),
                 "expose_event",
                 (GtkSignalFunc) preview_expose_event,
-                NULL);
-        gtk_signal_connect (GTK_OBJECT (drawing_area),
+                NULL
+        );
+        gtk_signal_connect
+        (
+                GTK_OBJECT (preview_drawing_area),
                 "configure_event",
                 (GtkSignalFunc) preview_configure_event,
-                NULL);
-        gtk_widget_set_events (drawing_area,
-                GDK_EXPOSURE_MASK
-                | GDK_LEAVE_NOTIFY_MASK);
-        /* Add the drawing area to the window container */
-        gtk_container_add (GTK_CONTAINER (window), drawing_area);
+                NULL
+        );
+        gtk_widget_set_events
+        (
+                preview_drawing_area,
+                GDK_EXPOSURE_MASK | GDK_LEAVE_NOTIFY_MASK
+        );
+        /* Create an adjustable viewport */
+        GtkWidget *preview_viewport = gtk_viewport_new (NULL, NULL);
+        gtk_viewport_set_shadow_type (GTK_VIEWPORT (preview_viewport), GTK_SHADOW_IN);
+        /* Pack the viewport into the vbox */
+        gtk_box_pack_start (GTK_BOX (vbox), preview_viewport, TRUE, TRUE, 0);
+        /* Add the drawing area to the viewport container */
+        gtk_container_add (GTK_CONTAINER (preview_viewport), preview_drawing_area);
+        /* Create a horizontal button box */
+        GtkWidget *hbox = gtk_hbutton_box_new ();
+        gtk_button_box_set_layout (GTK_BUTTON_BOX (hbox), GTK_BUTTONBOX_END);
+        /* Create a close button */
+        GtkWidget *button = gtk_button_new_from_stock (GTK_STOCK_CLOSE);
+        g_signal_connect
+        (
+                G_OBJECT (button),
+                "clicked",
+                G_CALLBACK (preview_close_cb),
+                preview_window
+        );
+        /* Pack the button into the hbox */
+        gtk_box_pack_start (GTK_BOX (hbox), button, TRUE, TRUE, 0);
+        /* Pack the hbox into the vbox */
+        gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
+        /* Get the correct size for the preview window */
+        gtk_window_set_default_size
+        (
+                GTK_WINDOW (preview_window),
+                width + 50,
+                height + 50
+        );
         /* Show the window */
-        gtk_widget_show_all (window);
+        gtk_widget_realize (preview_window);
+        gtk_widget_show_all (preview_window);
         /* Enter the GTK main loop */
         gtk_main ();
         return 0;
 }
 
 /* EOF */
+
+
