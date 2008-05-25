@@ -80,31 +80,58 @@ preview_delete_event (GtkWidget *widget, GdkEvent *event)
 
 
 /*!
+ * \brief Set the foreground color of the Graphics Context.
+ */
+int
+preview_set_fg_color
+(
+        GdkGC *gc,
+        const char *color_name
+)
+{
+        if (!gc)
+                return 0;
+        if (color_name == NULL)
+        {
+                fprintf (stderr, "WARNING in %s():  name = NULL, setting color to magenta\n",
+                        __FUNCTION__);
+                color_name = "magenta";
+        }
+        GdkColor color;
+        if (!gdk_color_parse (color_name, &color))
+                return 0;
+        gdk_gc_set_foreground (gc, &color);
+        return (gc);
+}
+
+
+/*!
  * \brief Use a Graphics Context when drawing entities.
  *
  * If the passed Graphics Context is NULL , create a Graphics Context.
  */
-GdkGC
+int
 preview_use_gc
 (
         GdkDrawable *drawable,
-        GdkGC *gc
+        GdkGC *gc,
+        const char * color_name
 )
 {
         if (!drawable)
                 return 0;
         if (!gc)
         {
-                gc = gdk_gc_new (drawable);
-//                preview_set_fg_color (gc, gc->fg_colorname);
+                GdkGC *gc = gdk_gc_new (drawable);
+                preview_set_fg_color (gc, color_name);
 //                preview_set_font (gc, gc->font);
 //                preview_set_line_width (gc, gc->width);
 //                preview_set_line_cap (gc, gc->cap);
 //                preview_set_line_style (gc, gc->style);
 //                preview_set_fill (gc, gc->fill);
 //                preview_set_draw_xor (gc, gc->xor);
+                return (&gc);
         }
-        return (gc);
 }
 
 
@@ -160,15 +187,15 @@ preview_draw_line
 (
         GtkWidget *widget, /*!< The toplevel widget containing the drawable. */
         GdkDrawable *drawable, /*!< The drawable to draw the line onto.*/
-        GdkGC *gc, /*!< The graphics context. */
+        const gchar * color_name, /*!< */
         gint x1, /*!< X-coordinate of start point of the line. */
         gint y1, /*!< Y-coordinate of start point of the line. */
         gint x2, /*!< X-coordinate of the end point of the line. */
         gint y2 /*!< Y-coordinate of the end point of the line. */
 )
 {
-        if (!preview_use_gc (gc))
-                return;
+        GdkGC *gc;
+        preview_use_gc (drawable, gc, color_name);
         gdk_draw_line (drawable, gc, x1, y1, x2, y2 );
 }
 
