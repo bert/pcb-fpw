@@ -80,6 +80,35 @@ preview_delete_event (GtkWidget *widget, GdkEvent *event)
 
 
 /*!
+ * \brief Use a Graphics Context when drawing entities.
+ *
+ * If the passed Graphics Context is NULL , create a Graphics Context.
+ */
+GdkGC
+preview_use_gc
+(
+        GdkDrawable *drawable,
+        GdkGC *gc
+)
+{
+        if (!drawable)
+                return 0;
+        if (!gc)
+        {
+                gc = gdk_gc_new (drawable);
+//                preview_set_fg_color (gc, gc->fg_colorname);
+//                preview_set_font (gc, gc->font);
+//                preview_set_line_width (gc, gc->width);
+//                preview_set_line_cap (gc, gc->cap);
+//                preview_set_line_style (gc, gc->style);
+//                preview_set_fill (gc, gc->fill);
+//                preview_set_draw_xor (gc, gc->xor);
+        }
+        return (gc);
+}
+
+
+/*!
  * \brief Draw an arc on the preview pixmap.
  */
 static void
@@ -138,6 +167,8 @@ preview_draw_line
         gint y2 /*!< Y-coordinate of the end point of the line. */
 )
 {
+        if (!preview_use_gc (gc))
+                return;
         gdk_draw_line (drawable, gc, x1, y1, x2, y2 );
 }
 
