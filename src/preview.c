@@ -106,6 +106,48 @@ preview_set_fg_color
 
 
 /*!
+ * \brief Set the line width of the Graphics Context.
+ */
+int
+preview_set_line_width
+(
+        GdkGC *gc,
+        gint line_width
+)
+{
+        if (!gc)
+                return 0;
+        if (line_width == 0)
+                return 0;
+        GdkGCValues gc_values;
+        gdk_gc_get_values (gc, &gc_values);
+        if (line_width == 1)
+        {
+                gdk_gc_set_line_attributes
+                (
+                        gc,
+                        line_width,
+                        GDK_LINE_DOUBLE_DASH,
+                        gc_values.cap_style,
+                        gc_values.join_style
+        );
+        }
+        else
+        {
+                gdk_gc_set_line_attributes
+                (
+                        gc,
+                        line_width,
+                        gc_values.line_style,
+                        gc_values.cap_style,
+                        gc_values.join_style
+        );
+        }
+        return (&gc);
+}
+
+
+/*!
  * \brief Use a Graphics Context when drawing entities.
  *
  * If the passed Graphics Context is NULL , create a Graphics Context.
@@ -115,7 +157,8 @@ preview_use_gc
 (
         GdkDrawable *drawable,
         GdkGC *gc,
-        const char * color_name
+        const char * color_name,
+        gint line_width
 )
 {
         if (!drawable)
@@ -124,8 +167,7 @@ preview_use_gc
         {
                 GdkGC *gc = gdk_gc_new (drawable);
                 preview_set_fg_color (gc, color_name);
-//                preview_set_font (gc, gc->font);
-//                preview_set_line_width (gc, gc->width);
+                preview_set_line_width (gc, line_width);
 //                preview_set_line_cap (gc, gc->cap);
 //                preview_set_line_style (gc, gc->style);
 //                preview_set_fill (gc, gc->fill);
@@ -187,15 +229,16 @@ preview_draw_line
 (
         GtkWidget *widget, /*!< The toplevel widget containing the drawable. */
         GdkDrawable *drawable, /*!< The drawable to draw the line onto.*/
-        const gchar * color_name, /*!< */
         gint x1, /*!< X-coordinate of start point of the line. */
         gint y1, /*!< Y-coordinate of start point of the line. */
         gint x2, /*!< X-coordinate of the end point of the line. */
-        gint y2 /*!< Y-coordinate of the end point of the line. */
+        gint y2, /*!< Y-coordinate of the end point of the line. */
+        const gchar *color_name, /*!< */
+        gint line_width /*!< */
 )
 {
         GdkGC *gc;
-        preview_use_gc (drawable, gc, color_name);
+        preview_use_gc (drawable, gc, color_name, line_width);
         gdk_draw_line (drawable, gc, x1, y1, x2, y2 );
 }
 
