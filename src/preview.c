@@ -106,6 +106,33 @@ preview_set_fg_color
 
 
 /*!
+ * \brief Set the fill mode of the Graphics Context.
+ */
+int
+preview_set_fill_mode
+(
+        GdkGC *gc,
+        GdkFill fill_mode
+)
+{
+        if (!gc)
+                return 0;
+        if (fill == NULL)
+        {
+                fprintf (stderr, "WARNING in %s():  fill mode = NULL, setting fill mode to SOLID.\n",
+                        __FUNCTION__);
+                fill_mode = GDK_SOLID;
+        }
+        gdk_gc_set_fill
+        (
+                gc,
+                fill_mode
+        );
+        return (&gc);
+}
+
+
+/*!
  * \brief Set the line capsulation of the Graphics Context.
  */
 int
@@ -224,7 +251,8 @@ preview_use_gc
         const char * color_name,
         gint line_width,
         GdkCapStyle line_cap,
-        GdkLineStyle line_style
+        GdkLineStyle line_style,
+        GdkFill fill_mode
 )
 {
         if (!drawable)
@@ -236,7 +264,7 @@ preview_use_gc
                 preview_set_line_width (gc, line_width);
                 preview_set_line_cap (gc, line_cap);
                 preview_set_line_style (gc, line_style);
-//                preview_set_fill (gc, gc->fill);
+                preview_set_fill_mode (gc, fill_mode);
 //                preview_set_draw_xor (gc, gc->xor);
                 return (&gc);
         }
