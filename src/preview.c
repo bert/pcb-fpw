@@ -93,7 +93,7 @@ preview_set_fg_color
                 return 0;
         if (color_name == NULL)
         {
-                fprintf (stderr, "WARNING in %s():  name = NULL, setting color to magenta\n",
+                fprintf (stderr, "WARNING in %s():  name = NULL, setting color to magenta.\n",
                         __FUNCTION__);
                 color_name = "magenta";
         }
@@ -119,44 +119,52 @@ preview_set_line_cap
                 return 0;
         if (line_cap == NULL)
         {
-                fprintf (stderr, "WARNING in %s():  line cap = NULL, setting line cap  to ROUND\n",
+                fprintf (stderr, "WARNING in %s():  line cap = NULL, setting line cap  to ROUND.\n",
                         __FUNCTION__);
                 line_cap = GDK_CAP_ROUND;
         }
         GdkGCValues gc_values;
         gdk_gc_get_values (gc, &gc_values);
-        switch (line_cap)
+        gdk_gc_set_line_attributes
+        (
+                gc,
+                gc_values.line_width,
+                gc_values.line_style,
+                line_cap,
+                gc_values.join_style
+        );
+        return (&gc);
+}
+
+
+/*!
+ * \brief Set the line style of the Graphics Context.
+ */
+int
+preview_set_line_style
+(
+        GdkGC *gc,
+        GdkLineStyle line_style
+)
+{
+        if (!gc)
+                return 0;
+        if (line_style == NULL)
         {
-                case GDK_CAP_BUTT :
-                        gdk_gc_set_line_attributes
-                        (
-                                gc,
-                                gc_values.line_width,
-                                gc_values.line_style,
-                                GDK_CAP_BUTT,
-                                gc_values.join_style
-                        );
-                        break;
-                case GDK_CAP_PROJECTING :
-                        gdk_gc_set_line_attributes
-                        (
-                                gc,
-                                gc_values.line_width,
-                                gc_values.line_style,
-                                GDK_CAP_PROJECTING,
-                                gc_values.join_style
-                        );
-                        break;
-                default:
-                        gdk_gc_set_line_attributes
-                        (
-                                gc,
-                                gc_values.line_width,
-                                gc_values.line_style,
-                                GDK_CAP_ROUND,
-                                gc_values.join_style
-                        );
+                fprintf (stderr, "WARNING in %s():  line style = NULL, setting line style  to SOLID.\n",
+                        __FUNCTION__);
+                line_style = GDK_LINE_SOLID;
         }
+        GdkGCValues gc_values;
+        gdk_gc_get_values (gc, &gc_values);
+        gdk_gc_set_line_attributes
+        (
+                gc,
+                gc_values.line_width,
+                line_style,
+                gc_values.cap_style,
+                gc_values.join_style
+        );
         return (&gc);
 }
 
@@ -215,7 +223,8 @@ preview_use_gc
         GdkGC *gc,
         const char * color_name,
         gint line_width,
-        GdkCapStyle line_cap
+        GdkCapStyle line_cap,
+        GdkLineStyle line_style
 )
 {
         if (!drawable)
@@ -226,7 +235,7 @@ preview_use_gc
                 preview_set_fg_color (gc, color_name);
                 preview_set_line_width (gc, line_width);
                 preview_set_line_cap (gc, line_cap);
-//                preview_set_line_style (gc, gc->style);
+                preview_set_line_style (gc, line_style);
 //                preview_set_fill (gc, gc->fill);
 //                preview_set_draw_xor (gc, gc->xor);
                 return (&gc);
@@ -291,11 +300,13 @@ preview_draw_line
         gint x2, /*!< X-coordinate of the end point of the line. */
         gint y2, /*!< Y-coordinate of the end point of the line. */
         const gchar *color_name, /*!< */
-        gint line_width /*!< */
+        gint line_width, /*!< */
+        GdkCapStyle line_cap, /*!< */
+        GdkLineStyle line_style /*!< */
 )
 {
         GdkGC *gc;
-        preview_use_gc (drawable, gc, color_name, line_width);
+        preview_use_gc (drawable, gc, color_name, line_width, line_cap, line_style);
         gdk_draw_line (drawable, gc, x1, y1, x2, y2 );
 }
 
