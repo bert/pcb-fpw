@@ -106,6 +106,62 @@ preview_set_fg_color
 
 
 /*!
+ * \brief Set the line capsulation of the Graphics Context.
+ */
+int
+preview_set_line_cap
+(
+        GdkGC *gc,
+        GdkCapStyle line_cap
+)
+{
+        if (!gc)
+                return 0;
+        if (line_cap == NULL)
+        {
+                fprintf (stderr, "WARNING in %s():  line cap = NULL, setting line cap  to ROUND\n",
+                        __FUNCTION__);
+                line_cap = GDK_CAP_ROUND;
+        }
+        GdkGCValues gc_values;
+        gdk_gc_get_values (gc, &gc_values);
+        switch (line_cap)
+        {
+                case GDK_CAP_BUTT :
+                        gdk_gc_set_line_attributes
+                        (
+                                gc,
+                                gc_values.line_width,
+                                gc_values.line_style,
+                                GDK_CAP_BUTT,
+                                gc_values.join_style
+                        );
+                        break;
+                case GDK_CAP_PROJECTING :
+                        gdk_gc_set_line_attributes
+                        (
+                                gc,
+                                gc_values.line_width,
+                                gc_values.line_style,
+                                GDK_CAP_PROJECTING,
+                                gc_values.join_style
+                        );
+                        break;
+                default:
+                        gdk_gc_set_line_attributes
+                        (
+                                gc,
+                                gc_values.line_width,
+                                gc_values.line_style,
+                                GDK_CAP_ROUND,
+                                gc_values.join_style
+                        );
+        }
+        return (&gc);
+}
+
+
+/*!
  * \brief Set the line width of the Graphics Context.
  */
 int
@@ -130,7 +186,7 @@ preview_set_line_width
                         GDK_LINE_DOUBLE_DASH,
                         gc_values.cap_style,
                         gc_values.join_style
-        );
+                );
         }
         else
         {
@@ -141,7 +197,7 @@ preview_set_line_width
                         gc_values.line_style,
                         gc_values.cap_style,
                         gc_values.join_style
-        );
+                );
         }
         return (&gc);
 }
@@ -158,7 +214,8 @@ preview_use_gc
         GdkDrawable *drawable,
         GdkGC *gc,
         const char * color_name,
-        gint line_width
+        gint line_width,
+        GdkCapStyle line_cap
 )
 {
         if (!drawable)
@@ -168,7 +225,7 @@ preview_use_gc
                 GdkGC *gc = gdk_gc_new (drawable);
                 preview_set_fg_color (gc, color_name);
                 preview_set_line_width (gc, line_width);
-//                preview_set_line_cap (gc, gc->cap);
+                preview_set_line_cap (gc, line_cap);
 //                preview_set_line_style (gc, gc->style);
 //                preview_set_fill (gc, gc->fill);
 //                preview_set_draw_xor (gc, gc->xor);
