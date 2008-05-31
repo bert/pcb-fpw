@@ -542,6 +542,35 @@ write_element_line
 
 
 /*!
+ * \brief Write a license statement (at the begin of the footprint file).
+ *
+ */
+int
+write_license
+(
+)
+{
+        /* Write the license statement for footprints for the GPL version to file */
+        fprintf (fp, "# This footprint is free software; you may redistribute it and/or modify\n");
+        fprintf (fp, "# it under the terms of the GNU General Public License as published by the\n");
+        fprintf (fp, "# Free Software Foundation; either version 2 of the License, or (at your\n");
+        fprintf (fp, "# option) any later version.\n");
+        fprintf (fp, "# As a special exception, if you create a design which uses this\n");
+        fprintf (fp, "# footprint, and embed this footprint or unaltered portions of this\n");
+        fprintf (fp, "# footprint into the design, this footprint does not by itself cause\n");
+        fprintf (fp, "# the resulting design to be covered by the GNU General Public\n");
+        fprintf (fp, "# License.\n");
+        fprintf (fp, "# This exception does not however invalidate any other reasons why\n");
+        fprintf (fp, "# the design itself might be covered by the GNU General Public\n");
+        fprintf (fp, "# License.\n");
+        fprintf (fp, "# If you modify this footprint, you may extend this exception to your\n");
+        fprintf (fp, "# version of the footprint, but you are not obligated to do so.\n");
+        fprintf (fp, "# If you do not wish to do so, delete this exception statement from\n");
+        fprintf (fp, "# your version.\n");
+}
+
+
+/*!
  * \brief Write a pad for any given footprint.
  *
  * This function is here to avoid the exhaustive changes of boiler plate code
