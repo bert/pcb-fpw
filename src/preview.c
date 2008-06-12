@@ -75,7 +75,7 @@ preview_configure_event (GtkWidget *widget, GdkEventConfigure *event)
 void
 preview_delete_event (GtkWidget *widget, GdkEvent *event)
 {
-        gtk_main_quit ();
+        gtk_widget_destroy (preview_window);
 }
 
 
@@ -256,7 +256,10 @@ preview_use_gc
 )
 {
         if (!drawable)
+        {
+                fprintf (stderr, "WARNING: couldn't allocate a gc, invalid drawable was passed.\n");
                 return 0;
+        }
         if (!gc)
         {
                 GdkGC *gc = gdk_gc_new (drawable);
