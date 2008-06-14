@@ -34,6 +34,27 @@ gint width = 200;
 gint height = 200;
 gint depth = -1;
 
+/*!
+ * \brief Struct containing all data to draw an arc on the preview canvas.
+ */
+typedef struct preview_arc
+{
+        GdkDrawable *drawable; /*!< a GdkDrawable (a GdkWindow or a GdkPixmap). */
+        GdkGC *gc; /*!< Graphics Context */
+        gboolean filled; /*!< TRUE if the arc should be filled, producing a 'pie slice'. */
+        gint x; /*!< The x coordinate of the left edge of the bounding rectangle. */
+        gint y; /*!< The y coordinate of the top edge of the bounding rectangle. */
+        gint width; /*!< The width of the bounding rectangle. */
+        gint height; /*!< The height of the bounding rectangle. */
+        gint angle1; /*!< The start angle of the arc,
+                      * relative to the 3 o'clock position,
+                      * counter-clockwise,
+                      * in 1/64ths of a degree. */
+        gint angle2; /*!< The end angle of the arc,
+                     * relative to angle1,
+                     * in 1/64ths of a degree. */
+} *preview_arc;
+
 
 /*!
  * \brief Close the preview window (destroy the preview widget).
