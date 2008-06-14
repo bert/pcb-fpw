@@ -96,7 +96,7 @@ preview_configure_event (GtkWidget *widget, GdkEventConfigure *event)
 void
 preview_delete_event (GtkWidget *widget, GdkEvent *event)
 {
-        gtk_widget_destroy (preview_window);
+        gtk_widget_destroy (widget);
 }
 
 
