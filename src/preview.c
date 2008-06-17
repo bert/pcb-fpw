@@ -374,6 +374,8 @@ preview_draw_background (GtkWidget *widget, gdouble x, gdouble y)
 
 /*!
  * \brief Draw a line on the preview pixmap.
+ *
+ * Draws a line, using the foreground color and other attributes of the GdkGC.
  */
 static void
 preview_draw_line
