@@ -379,20 +379,18 @@ static void
 preview_draw_line
 (
         GtkWidget *widget, /*!< The toplevel widget containing the drawable. */
-        GdkDrawable *drawable, /*!< The drawable to draw the line onto.*/
-        gint x1, /*!< X-coordinate of start point of the line. */
-        gint y1, /*!< Y-coordinate of start point of the line. */
-        gint x2, /*!< X-coordinate of the end point of the line. */
-        gint y2, /*!< Y-coordinate of the end point of the line. */
-        const gchar *color_name, /*!< */
-        gint line_width, /*!< */
-        GdkCapStyle line_cap, /*!< */
-        GdkLineStyle line_style /*!< */
+        preview_line *line /*!< A preview line. */
 )
 {
-        GdkGC *gc;
-        preview_use_gc (drawable, gc, color_name, line_width, line_cap, line_style);
-        gdk_draw_line (drawable, gc, x1, y1, x2, y2 );
+        gdk_draw_line
+        (
+                line.drawable,
+                line.gc,
+                line.x1,
+                line.y1,
+                line.x2,
+                line.y2
+        );
 }
 
 
