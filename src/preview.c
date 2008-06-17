@@ -55,6 +55,16 @@ typedef struct preview_arc
                      * in 1/64ths of a degree. */
 } *preview_arc;
 
+typedef struct preview_line
+{
+        GdkDrawable *drawable; /*!< a GdkDrawable (a GdkWindow or a GdkPixmap). */
+        GdkGC *gc; /*!< Graphics Context */
+        gint x1; /*!< X-coordinate of start point of the line. */
+        gint y1; /*!< Y-coordinate of start point of the line. */
+        gint x2; /*!< X-coordinate of the end point of the line. */
+        gint y2; /*!< Y-coordinate of the end point of the line. */
+} *preview_line;
+
 
 /*!
  * \brief Close the preview window (destroy the preview widget).
