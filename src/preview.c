@@ -151,7 +151,7 @@ preview_set_fill_mode
 {
         if (!gc)
                 return 0;
-        if (fill == NULL)
+        if (fill_mode == NULL)
         {
                 fprintf (stderr, "WARNING in %s():  fill mode = NULL, setting fill mode to SOLID.\n",
                         __FUNCTION__);
