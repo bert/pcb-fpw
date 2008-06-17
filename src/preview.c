@@ -55,6 +55,9 @@ typedef struct preview_arc
                      * in 1/64ths of a degree. */
 } *preview_arc;
 
+/*!
+ * \brief Struct containing all data to draw a line on the preview canvas.
+ */
 typedef struct preview_line
 {
         GdkDrawable *drawable; /*!< a GdkDrawable (a GdkWindow or a GdkPixmap). */
