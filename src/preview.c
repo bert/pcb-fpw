@@ -310,6 +310,10 @@ preview_use_gc
 
 /*!
  * \brief Draw an arc on the preview pixmap.
+ *
+ * Draws an arc or a filled 'pie slice'.\n
+ * The arc is defined by the bounding rectangle of the entire ellipse, and
+ * the start and end angles of the part of the ellipse to be drawn.
  */
 static void
 preview_draw_arc
