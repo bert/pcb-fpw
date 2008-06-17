@@ -319,27 +319,27 @@ static void
 preview_draw_arc
 (
         GtkWidget *widget, /*!< The toplevel widget containing the drawable. */
-        preview_arc *arc /*!< A preview arc. */
+        preview_arc arc /*!< A preview arc. */
 )
 {
         if (!arc)
         {
-                fprintf ("WARNING: passed arc was invalid.\n");
+                fprintf (stderr, "WARNING: passed arc was invalid.\n");
                 return;
         }
         /* Modify angles from degrees to Gdk format */
-        arc.angle1 = 64.0 * arc.angle1;
+        arc->angle1 = 64.0 * arc->angle1;
         gdk_draw_arc
         (
-                arc.drawable,
-                arc.gc,
-                arc.filled,
-                arc.x,
-                arc.y,
-                arc.width,
-                arc.height,
-                arc.angle1,
-                arc.angle2
+                arc->drawable,
+                arc->gc,
+                arc->filled,
+                arc->x,
+                arc->y,
+                arc->width,
+                arc->height,
+                arc->angle1,
+                arc->angle2
         );
 }
 
@@ -385,17 +385,17 @@ static void
 preview_draw_line
 (
         GtkWidget *widget, /*!< The toplevel widget containing the drawable. */
-        preview_line *line /*!< A preview line. */
+        preview_line line /*!< A preview line. */
 )
 {
         gdk_draw_line
         (
-                line.drawable,
-                line.gc,
-                line.x1,
-                line.y1,
-                line.x2,
-                line.y2
+                line->drawable,
+                line->gc,
+                line->x1,
+                line->y1,
+                line->x2,
+                line->y2
         );
 }
 
