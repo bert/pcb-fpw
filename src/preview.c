@@ -68,6 +68,29 @@ typedef struct preview_line
         gint y2; /*!< Y-coordinate of the end point of the line. */
 } *preview_line;
 
+/*!
+ * \brief Struct containing all data to draw a rectangle on the preview canvas.
+ *
+ * Draws a rectangular outline or filled rectangle, using the foreground
+ * color and other attributes of the GdkGC.\n
+ * A rectangle drawn filled is 1 pixel smaller in both dimensions than a
+ * rectangle outlined.\n
+ * Calling gdk_draw_rectangle (window, gc, TRUE, 0, 0, 20, 20) results in a
+ * filled rectangle 20 pixels wide and 20 pixels high.\n
+ * Calling gdk_draw_rectangle (window, gc, FALSE, 0, 0, 20, 20) results in an
+ * outlined rectangle with corners at (0, 0), (0, 20), (20, 20), and (20, 0),
+ * which makes it 21 pixels wide and 21 pixels high.
+ */
+typedef struct preview_rectangle
+{
+        GdkDrawable *drawable; /*!< a GdkDrawable (a GdkWindow or a GdkPixmap). */
+        GdkGC *gc; /*!< Graphics Context. */
+        gboolean filled; /*!< TRUE if the rectangle should be filled. */
+        gint x; /*!< The X-coordinate of the left edge of the rectangle. */
+        gint y; /*!< The Y-coordinate of the top edge of the rectangle. */
+        gint width; /*!< The width of the rectangle. */
+        gint height; /*!< The height of the rectangle. */
+} *preview_rectangle;
 
 /*!
  * \brief Close the preview window (destroy the preview widget).
