@@ -417,6 +417,11 @@ preview_draw_line
         preview_line line /*!< A preview line. */
 )
 {
+        if (!line)
+        {
+                fprintf (stderr, "WARNING: passed line was invalid.\n");
+                return;
+        }
         gdk_draw_line
         (
                 line->drawable,
