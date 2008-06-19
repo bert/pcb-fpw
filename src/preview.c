@@ -454,6 +454,32 @@ preview_draw_pin
 
 
 /*!
+ * \brief Draw a pin on the preview pixmap.
+ */
+static void
+preview_draw_polygon
+(
+        GtkWidget *widget, /*!< The toplevel widget containing the drawable. */
+        preview_polygon polygon /*!< A preview polygon. */
+)
+{
+        if (!polygon)
+        {
+                fprintf (stderr, "WARNING: passed polygon was invalid.\n");
+                return;
+        }
+        gdk_draw_polygon
+        (
+                polygon->drawable,
+                polygon->gc,
+                polygon->filled,
+                polygon->points,
+                polygon->npoints
+        );
+}
+
+
+/*!
  * \brief Draws a rectangle on the preview canvas.
  *
  * Draws a rectangular outline or filled rectangle, using the foreground
