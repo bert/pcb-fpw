@@ -71,6 +71,19 @@ typedef struct preview_line
 
 
 /*!
+ * \brief Struct containing all data to draw a polygon on the preview canvas.
+ */
+typedef struct preview_polygon
+{
+        GdkDrawable *drawable; /*!< a GdkDrawable (a GdkWindow or a GdkPixmap). */
+        GdkGC *gc; /*!< Graphics Context. */
+        gboolean filled; /*!< TRUE if the polygon should be filled. */
+        GdkPoint *points; /*!< An array of GdkPoint structures specifying the points making up the polygon. */
+        gint npoints; /*!< The number of points. */
+} *preview_polygon;
+
+
+/*!
  * \brief Struct containing all data to draw a rectangle on the preview canvas.
  */
 typedef struct preview_rectangle
