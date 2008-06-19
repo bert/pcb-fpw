@@ -501,7 +501,7 @@ static void
 preview_draw_rectangle
 (
         GtkWidget *widget, /*!< The toplevel widget containing the drawable. */
-        preview_rectangle rectangle
+        preview_rectangle rectangle /*!< A preview rectangle. */
 )
 {
         if (!rectangle)
