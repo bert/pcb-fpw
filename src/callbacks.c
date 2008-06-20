@@ -36,6 +36,7 @@
 #include "support.h"
 
 #include "libfpw.c"
+#include "preview.c"
 
 
 gboolean main_window_title_has_asterisk = FALSE;
@@ -2545,6 +2546,7 @@ void
 on_refresh_button_clicked              (GtkButton       *button,
                                         gpointer         user_data)
 {
+        preview_create_window (footprint_name, 300, 200);
 }
 
 /*!

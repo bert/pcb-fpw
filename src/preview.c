@@ -30,8 +30,6 @@ GdkPixmap *pixmap = NULL;
         /*!< Backing pixmap for drawing area */
 
 GtkDrawingArea *drawing_area = NULL;
-gint width = 200;
-gint height = 200;
 gint depth = -1;
 
 /*!
@@ -577,9 +575,13 @@ preview_expose_event (GtkWidget *widget, GdkEventExpose *event)
 
 
 int
-main (int argc, char** argv)
+preview_create_window
+(
+        gchar *footprint_name,
+        gint width,
+        gint height
+)
 {
-        gtk_init (&argc, &argv);
         /* Create a preview window */
         GtkWindow *preview_window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
         /* Destroy the preview window when the main window of pcb-gfpw gets
@@ -590,11 +592,10 @@ main (int argc, char** argv)
          * \todo In the near future, when the preview window is called from
          * pcb-gfpw, include the name of the footprint.\n
          */
-//        gchar *preview_window_title = g_strdup_printf ("pcb-fpw preview: %s",
-//                footprint_name);
-//        gtk_window_set_title (preview_window, preview_window_title);
-//        g_free (preview_window_title);
-        gtk_window_set_title (preview_window, "pcb-fpw preview");
+        gchar *preview_window_title = g_strdup_printf ("pcb-fpw preview: %s",
+                footprint_name);
+        gtk_window_set_title (preview_window, preview_window_title);
+        g_free (preview_window_title);
         gtk_container_set_border_width (GTK_CONTAINER (preview_window), 10);
         /* Set signals for the window */
         gtk_signal_connect
