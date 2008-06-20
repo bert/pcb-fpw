@@ -30,7 +30,6 @@ GdkPixmap *pixmap = NULL;
         /*!< Backing pixmap for drawing area */
 
 GtkDrawingArea *drawing_area = NULL;
-gint depth = -1;
 
 /*!
  * \brief Struct containing all data to draw an arc on the preview canvas.
@@ -127,7 +126,11 @@ typedef struct preview_rectangle
  * \brief Close the preview window (destroy the preview widget).
  */
 static void
-preview_close_cb (GtkWidget * widget, GtkWidget *preview_window)
+preview_close_cb
+(
+        GtkWidget * widget,
+        GtkWidget *preview_window
+)
 {
         gtk_widget_destroy (preview_window);
 }
@@ -137,11 +140,17 @@ preview_close_cb (GtkWidget * widget, GtkWidget *preview_window)
  * \brief Create a new backing pixmap of the appropriate size.
  */
 static gboolean
-preview_configure_event (GtkWidget *widget, GdkEventConfigure *event)
+preview_configure_event
+(
+        GtkWidget *widget,
+        GdkEventConfigure *event
+)
 {
+        gint depth = -1;
         if (pixmap)
                 g_object_unref (pixmap);
-        pixmap = gdk_pixmap_new (widget->window,
+        pixmap = gdk_pixmap_new (
+                widget->window,
                 widget->allocation.width,
                 widget->allocation.height,
                 depth);
@@ -161,7 +170,11 @@ preview_configure_event (GtkWidget *widget, GdkEventConfigure *event)
  * \brief Delete the window.
  */
 void
-preview_delete_event (GtkWidget *widget, GdkEvent *event)
+preview_delete_event
+(
+        GtkWidget *widget,
+        GdkEvent *event
+)
 {
         gtk_widget_destroy (widget);
 }
@@ -404,7 +417,12 @@ preview_draw_arc
  * \brief Draw a white background (rectangle) on the screen.
  */
 static void
-preview_draw_background (GtkWidget *widget, gdouble x, gdouble y)
+preview_draw_background
+(
+        GtkWidget *widget,
+        gdouble x,
+        gdouble y
+)
 {
         GdkRectangle update_rect;
         update_rect.x = x - 5;
@@ -559,7 +577,11 @@ preview_draw_rectangle
  * \brief Redraw the screen from the backing pixmap.
  */
 static gboolean
-preview_expose_event (GtkWidget *widget, GdkEventExpose *event)
+preview_expose_event
+(
+        GtkWidget *widget,
+        GdkEventExpose *event
+)
 {
         gdk_draw_drawable (widget->window,
                 widget->style->fg_gc[GTK_WIDGET_STATE (widget)],
