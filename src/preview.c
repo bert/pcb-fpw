@@ -29,7 +29,6 @@
 GdkPixmap *pixmap = NULL;
         /*!< Backing pixmap for drawing area */
 
-GtkDrawingArea *drawing_area = NULL;
 
 /*!
  * \brief Struct containing all data to draw an arc on the preview canvas.
