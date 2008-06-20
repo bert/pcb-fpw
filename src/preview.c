@@ -39,20 +39,26 @@ gint depth = -1;
  */
 typedef struct preview_arc
 {
-        GdkDrawable *drawable; /*!< a GdkDrawable (a GdkWindow or a GdkPixmap). */
-        GdkGC *gc; /*!< Graphics Context */
-        gboolean filled; /*!< TRUE if the arc should be filled, producing a 'pie slice'. */
-        gint x; /*!< The x coordinate of the left edge of the bounding rectangle. */
-        gint y; /*!< The y coordinate of the top edge of the bounding rectangle. */
-        gint width; /*!< The width of the bounding rectangle. */
-        gint height; /*!< The height of the bounding rectangle. */
-        gint angle1; /*!< The start angle of the arc,
-                      * relative to the 3 o'clock position,
-                      * counter-clockwise,
-                      * in 1/64ths of a degree. */
-        gint angle2; /*!< The end angle of the arc,
-                     * relative to angle1,
-                     * in 1/64ths of a degree. */
+        GdkDrawable *drawable;
+                /*!< a GdkDrawable (a GdkWindow or a GdkPixmap). */
+        GdkGC *gc;
+                /*!< Graphics Context */
+        gboolean filled;
+                /*!< TRUE if the arc should be filled, producing a 'pie slice'. */
+        gint x;
+                /*!< The x coordinate of the left edge of the bounding rectangle. */
+        gint y;
+                /*!< The y coordinate of the top edge of the bounding rectangle. */
+        gint width;
+                /*!< The width of the bounding rectangle. */
+        gint height;
+                /*!< The height of the bounding rectangle. */
+        gint angle1;
+                /*!< The start angle of the arc, relative to the 3 o'clock
+                 * position, counter-clockwise, in 1/64ths of a degree. */
+        gint angle2;
+                /*!< The end angle of the arc, relative to angle1, in 1/64ths
+                 * of a degree. */
 } *preview_arc;
 
 
@@ -61,12 +67,18 @@ typedef struct preview_arc
  */
 typedef struct preview_line
 {
-        GdkDrawable *drawable; /*!< a GdkDrawable (a GdkWindow or a GdkPixmap). */
-        GdkGC *gc; /*!< Graphics Context */
-        gint x1; /*!< X-coordinate of start point of the line. */
-        gint y1; /*!< Y-coordinate of start point of the line. */
-        gint x2; /*!< X-coordinate of the end point of the line. */
-        gint y2; /*!< Y-coordinate of the end point of the line. */
+        GdkDrawable *drawable;
+                /*!< a GdkDrawable (a GdkWindow or a GdkPixmap). */
+        GdkGC *gc;
+                /*!< Graphics Context */
+        gint x1;
+                /*!< X-coordinate of start point of the line. */
+        gint y1;
+                /*!< Y-coordinate of start point of the line. */
+        gint x2;
+                /*!< X-coordinate of the end point of the line. */
+        gint y2;
+                /*!< Y-coordinate of the end point of the line. */
 } *preview_line;
 
 
@@ -75,11 +87,17 @@ typedef struct preview_line
  */
 typedef struct preview_polygon
 {
-        GdkDrawable *drawable; /*!< a GdkDrawable (a GdkWindow or a GdkPixmap). */
-        GdkGC *gc; /*!< Graphics Context. */
-        gboolean filled; /*!< TRUE if the polygon should be filled. */
-        GdkPoint *points; /*!< An array of GdkPoint structures specifying the points making up the polygon. */
-        gint npoints; /*!< The number of points. */
+        GdkDrawable *drawable;
+                /*!< a GdkDrawable (a GdkWindow or a GdkPixmap). */
+        GdkGC *gc;
+                /*!< Graphics Context. */
+        gboolean filled;
+                /*!< TRUE if the polygon should be filled. */
+        GdkPoint *points;
+                /*!< An array of GdkPoint structures specifying the points
+                 * making up the polygon. */
+        gint npoints;
+                /*!< The number of points. */
 } *preview_polygon;
 
 
@@ -88,13 +106,22 @@ typedef struct preview_polygon
  */
 typedef struct preview_rectangle
 {
-        GdkDrawable *drawable; /*!< a GdkDrawable (a GdkWindow or a GdkPixmap). */
-        GdkGC *gc; /*!< Graphics Context. */
-        gboolean filled; /*!< TRUE if the rectangle should be filled. */
-        gint x; /*!< The X-coordinate of the left edge of the rectangle. */
-        gint y; /*!< The Y-coordinate of the top edge of the rectangle. */
-        gint width; /*!< The width of the rectangle. */
-        gint height; /*!< The height of the rectangle. */
+        GdkDrawable *drawable;
+                /*!< a GdkDrawable (a GdkWindow or a GdkPixmap). */
+        GdkGC *gc;
+                /*!< Graphics Context. */
+        gboolean filled;
+                /*!< TRUE if the polygon should be filled.\n
+                * The polygon is closed automatically, connecting the last
+                * point to the first point if necessary. */
+        gint x;
+                /*!< The X-coordinate of the left edge of the rectangle. */
+        gint y;
+                /*!< The Y-coordinate of the top edge of the rectangle. */
+        gint width;
+                /*!< The width of the rectangle. */
+        gint height;
+                /*!< The height of the rectangle. */
 } *preview_rectangle;
 
 
@@ -347,8 +374,10 @@ preview_use_gc
 static void
 preview_draw_arc
 (
-        GtkWidget *widget, /*!< The toplevel widget containing the drawable. */
-        preview_arc arc /*!< A preview arc. */
+        GtkWidget *widget,
+                /*!< The toplevel widget containing the drawable. */
+        preview_arc arc
+                /*!< A preview arc. */
 )
 {
         if (!arc)
@@ -413,8 +442,10 @@ preview_draw_background (GtkWidget *widget, gdouble x, gdouble y)
 static void
 preview_draw_line
 (
-        GtkWidget *widget, /*!< The toplevel widget containing the drawable. */
-        preview_line line /*!< A preview line. */
+        GtkWidget *widget,
+                /*!< The toplevel widget containing the drawable. */
+        preview_line line
+                /*!< A preview line. */
 )
 {
         if (!line)
@@ -464,8 +495,10 @@ preview_draw_pin
 static void
 preview_draw_polygon
 (
-        GtkWidget *widget, /*!< The toplevel widget containing the drawable. */
-        preview_polygon polygon /*!< A preview polygon. */
+        GtkWidget *widget,
+                /*!< The toplevel widget containing the drawable. */
+        preview_polygon polygon
+                /*!< A preview polygon. */
 )
 {
         if (!polygon)
@@ -500,8 +533,10 @@ preview_draw_polygon
 static void
 preview_draw_rectangle
 (
-        GtkWidget *widget, /*!< The toplevel widget containing the drawable. */
-        preview_rectangle rectangle /*!< A preview rectangle. */
+        GtkWidget *widget,
+                /*!< The toplevel widget containing the drawable. */
+        preview_rectangle rectangle
+                /*!< A preview rectangle. */
 )
 {
         if (!rectangle)
