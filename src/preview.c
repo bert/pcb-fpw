@@ -201,7 +201,7 @@ preview_set_fg_color
         if (!gdk_color_parse (color_name, &color))
                 return 0;
         gdk_gc_set_foreground (gc, &color);
-        return (gc);
+        return (&gc);
 }
 
 
