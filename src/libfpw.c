@@ -84,6 +84,20 @@ enum packages
 typedef enum packages package_t;
 
 /*!
+ * \brief Some units types.
+ */
+typedef enum units
+{
+        NONE, /*!< For those living in the void. */
+        MIL, /*!< Imperial units type (Imperial standard "inch" divided by 1,000). */
+        MIL_100, /*!< Imperial units type (Imperial standard "inch" divided by 100,000). */
+        MM, /*!< Metric units type (Metric standard "meter" divided by 1,000). */
+        NUMBER_OF_UNITS_TYPES /*!< Number of units types. */
+} units_t;
+
+units_t units_type = NONE;
+
+/*!
  * \brief Set of valid letter combinations for row identifiers for BGA and
  * PGA packages.
  */
@@ -379,6 +393,33 @@ read_footprintwizard_file (gchar *fpw_filename)
         fscanf (fpw, "%f\n", z2);
         fclose (fpw);
         fprintf (stderr, "SUCCESS: read a footprint wizard file: %s.\n", fpw_filename);
+}
+
+
+/*!
+ * \brief Update (units) multiplier and units type variables.
+ */
+int
+update_units_variables ()
+{
+        if (!strcmp (footprint_units, "mil"))
+        {
+                multiplier = 100.0;
+                units_type = MIL;
+                return;
+        }
+        if (!strcmp (footprint_units, "mil/100"))
+        {
+                multiplier = 1.0;
+                units_type = MIL_100;
+                return;
+        }
+        if (!strcmp (footprint_units, "mm"))
+        {
+                multiplier = (1000 / 25.4) * 100;
+                units_type = MM;
+                return;
+        }
 }
 
 
