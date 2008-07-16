@@ -38,6 +38,7 @@ sot_get_default_footprint_values
                 package_body_width = 2.27;
                 package_body_length = 3.80;
                 package_body_height = 1.40;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 4;
                 pitch_x = 3.00;
@@ -64,6 +65,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.50;
                 package_body_length = 3.04;
                 package_body_height = 1.02;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
                 pitch_x = 0.65;
@@ -90,6 +92,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.40;
                 package_body_length = 3.00;
                 package_body_height = 1.09;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
 /*! \todo Look up datasheet and check values.
@@ -118,6 +121,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.40;
                 package_body_length = 3.00;
                 package_body_height = 1.10;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
                 pitch_x = 2.00;
@@ -144,6 +148,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.40;
                 package_body_length = 3.00;
                 package_body_height = 1.24;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
                 pitch_x = 2.00;
@@ -176,6 +181,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.40;
                 package_body_length = 3.04;
                 package_body_height = 1.12;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
                 pitch_x = 2.10;
@@ -202,6 +208,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.40;
                 package_body_length = 3.00;
                 package_body_height = 1.10;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
                 pitch_x = 2.10;
@@ -228,6 +235,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.40;
                 package_body_length = 3.00;
                 package_body_height = 1.14;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
 /*! \todo Look up datasheet and check values.
@@ -256,6 +264,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.52;
                 package_body_length = 3.04;
                 package_body_height = 1.12;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
 /*! \todo Look up datasheet and check values.
@@ -285,6 +294,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.80;
                 package_body_length = 3.10;
                 package_body_height = 1.45;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
 /*! \todo Look up datasheet and check values.
@@ -313,6 +323,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.70;
                 package_body_length = 3.10;
                 package_body_height = 1.30;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
                 pitch_x = 2.50;
@@ -339,6 +350,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.80;
                 package_body_length = 3.10;
                 package_body_height = 1.45;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
                 pitch_x = 2.50;
@@ -366,6 +378,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.76;
                 package_body_length = 3.04;
                 package_body_height = 1.42;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
                 pitch_x = 2.50;
@@ -392,6 +405,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.75;
                 package_body_length = 3.00;
                 package_body_height = 1.00;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
                 pitch_x = 2.40;
@@ -418,6 +432,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.75;
                 package_body_length = 3.00;
                 package_body_height = 1.00;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
                 pitch_x = 2.40;
@@ -446,6 +461,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.75;
                 package_body_length = 3.05;
                 package_body_height = 1.10;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
                 pitch_x = 2.50;
@@ -475,6 +491,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.75;
                 package_body_length = 3.05;
                 package_body_height = 1.10;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
                 pitch_x = 2.50;
@@ -501,6 +518,7 @@ sot_get_default_footprint_values
                 package_body_width = 2.00;
                 package_body_length = 3.10;
                 package_body_height = 1.15;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
 /*! \todo Look up datasheet and check values.
@@ -529,6 +547,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.70;
                 package_body_length = 3.00;
                 package_body_height = 1.35;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
 /*! \todo Look up datasheet and check values.
@@ -557,6 +576,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.30;
                 package_body_length = 2.90;
                 package_body_height = 1.35;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
                 pitch_x = 2.30;
@@ -583,6 +603,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.70;
                 package_body_length = 3.00;
                 package_body_height = 1.35;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
 /*! \todo Look up datasheet and check values.
@@ -612,6 +633,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.75;
                 package_body_length = 3.00;
                 package_body_height = 1.45;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
                 pitch_x = 2.50;
@@ -640,6 +662,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.75;
                 package_body_length = 3.05;
                 package_body_height = 1.45;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
                 pitch_x = 2.50;
@@ -667,6 +690,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.70;
                 package_body_length = 3.00;
                 package_body_height = 1.45;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
                 pitch_x = 2.50;
@@ -694,6 +718,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.75;
                 package_body_length = 3.05;
                 package_body_height = 1.45;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
                 pitch_x = 2.50;
@@ -720,6 +745,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.67;
                 package_body_length = 2.99;
                 package_body_height = 1.22;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
                 pitch_x = 2.40;
@@ -748,6 +774,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.67;
                 package_body_length = 2.99;
                 package_body_height = 1.22;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
                 pitch_x = 2.40;
@@ -774,6 +801,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.70;
                 package_body_length = 3.10;
                 package_body_height = 1.40;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
                 pitch_x = 2.40;
@@ -800,6 +828,7 @@ sot_get_default_footprint_values
                 package_body_width = 1.75;
                 package_body_length = 3.07;
                 package_body_height = 0.90;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
                 pitch_x = 2.40;
@@ -826,6 +855,7 @@ sot_get_default_footprint_values
                 package_body_width = 3.42;
                 package_body_length = 4.18;
                 package_body_height = 1.24;
+                package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
 /*! \todo Look up datasheet and check values.
