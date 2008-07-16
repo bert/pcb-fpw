@@ -14,16 +14,17 @@ GUI application "pcb-gfpw".
 
 Basically it comes down to the following:
         - Startup the application,
-        - fill the needed entries,
-        - check the preview widget (when and if this is implemented),
+        - fill the needed entries with values,
+        - check the footprint in the preview popup dialog window,
+        - modify values if needed,
         - save the footprint file.
 
 Subsequent actions to load the footprint file into pcb are described in the 
 pcb, xgsch2pcb or gsch2pcb documentation.
 
-The layout of the program consists of five tabs with entry fields and a preview 
-drawing area (when and if implemented), and a button bar with five buttons on 
-the lower part of the window.
+The layout of the program consists of five tabs with entry fields and a 
+dimensions drawing area (when and if implemented), and a button bar with 
+five buttons on the lower part of the window.
 
 As you start entering the footprint type by selecting from a specified list, 
 the program will guess for the prefix of the footprint as the first couple of 
@@ -51,13 +52,13 @@ This tab is for the input of heel and toe parameters to allow for the creation
 of PLCC, SO, QFN or QFP packages.
 
 The five buttons in the lower part will have the following functions:
-        - "Close" to exit the application.,
+        - "Close" to exit the application and preview dialog window,
         - "Clear" to empty all entry fields and reset all checkbuttons to the 
-          default setting,
-        - "Open" to choose and read an existing footprintwizard file,
+          default (initial) setting,
+        - "Open" to choose and load an existing footprintwizard file,
         - "Save" to write the current values in the entries to a 
           footprintwizard file and to generate a footprint file,
-        - "Refresh" to refresh the preview area (when and if implemented).
+        - "Refresh" to create or refresh the preview popup dialog window.
 
 
 Command Line Interface (CLI).
