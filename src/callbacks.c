@@ -1990,6 +1990,14 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                 message_to_statusbar (GTK_WIDGET (combobox), message);
                 return;
         }
+        else if (!strcmp (footprint_type, "SOT"))
+        {
+                all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                package_type = SOT;
+                gchar *message = g_strdup_printf (_("ERROR: footprint type SOT is not yet implemented."));
+                message_to_statusbar (GTK_WIDGET (combobox), message);
+                return;
+        }
         else if (!strcmp (footprint_type, "TO92"))
         {
                 all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
