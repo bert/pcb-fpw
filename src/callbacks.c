@@ -56,6 +56,15 @@ gchar *work_dir = NULL;
  * \brief Set all entries widgets to default sensitivity.
  */
 int
+all_entries_need_updated (GtkWidget *widget)
+{
+}
+
+
+/*!
+ * \brief Set all entries widgets to default sensitivity.
+ */
+int
 all_entries_to_default_sensitivity (GtkWidget *widget)
 {
         /* Widgets on tab 1 "Footprint" */
@@ -239,6 +248,7 @@ all_entries_to_default_sensitivity (GtkWidget *widget)
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (Z2_radiobutton), FALSE);
         gtk_widget_set_sensitive (Z2_radiobutton, TRUE);
 }
+
 
 /*!
  * \brief Change the main window title.
@@ -1780,6 +1790,19 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
                 gchar *message = g_strdup_printf (_("ERROR: footprint name contains an empty string."));
                 message_to_statusbar (GTK_WIDGET (editable), message);
                 return;
+        }
+        else if (g_str_has_prefix (footprint_name, "?"))
+        {
+                switch (package_type)
+                {
+                        case SOT:
+                        {
+                                if (sot_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
+                                        all_entries_need_updated (GTK_WIDGET (editable));
+                                else
+                                        return;
+                        }
+                }
         }
         else
         {
