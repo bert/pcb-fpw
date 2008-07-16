@@ -36,6 +36,7 @@
 #include "support.h"
 
 #include "libfpw.c"
+#include "sot.c"
 #include "preview.c"
 
 
