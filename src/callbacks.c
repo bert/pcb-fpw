@@ -1996,8 +1996,30 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                 package_type = TO92;
                 return;
         }
-        gchar *message = g_strdup_printf (_("ERROR: unknown or not yet implemented footprint type entered."));
-        message_to_statusbar (GTK_WIDGET (combobox), message);
+        else
+        {
+                gchar *message = g_strdup_printf (_("ERROR: unknown or not yet implemented footprint type entered."));
+                message_to_statusbar (GTK_WIDGET (combobox), message);
+                return;
+        }
+        /* Lookup the dimensions image and the dimensions alignment widgets */
+        GtkWidget *dimensions_image = lookup_widget (GTK_WIDGET (combobox),
+                "dimensions_image");
+        GtkWidget *dimensions_alignment = lookup_widget (GTK_WIDGET (combobox),
+                "dimensions_alignment");
+        /* Remove the dimensions image that is acually present in the GUI,
+         * or the splash_wiz.xpm image if that one is still there */
+        gtk_container_remove (GTK_CONTAINER (dimensions_alignment),
+                dimensions_image);
+        /* Now load a pre-cooked dimensions image for the footprint type and
+         * set the name accordingly */
+        dimensions_image = gtk_image_new_from_file (g_strconcat (footprint_type,
+                 ".xpm", NULL));
+        gtk_widget_set_name (dimensions_image, "dimensions_image");
+        /* Display the pre-cooked dimensions image for the footprint type */
+        gtk_widget_show (dimensions_image);
+        gtk_container_add (GTK_CONTAINER (dimensions_alignment),
+                dimensions_image);
 }
 
 
