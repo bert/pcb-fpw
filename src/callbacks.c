@@ -53,11 +53,24 @@ gchar *work_dir = NULL;
 
 
 /*!
- * \brief Set all entries widgets to default sensitivity.
+ * \brief All entries need to be updated.
  */
 int
 all_entries_need_updated (GtkWidget *widget)
 {
+        /* Widgets on tab 1 "Footprint" */
+        GtkWidget *footprint_name_entry = lookup_widget (GTK_WIDGET (widget),
+                "footprint_name_entry");
+        gtk_entry_set_text (GTK_ENTRY (footprint_name_entry),
+                g_strdup_printf ("%s", footprint_name));
+        GtkWidget *footprint_units_entry = lookup_widget (GTK_WIDGET (widget),
+                "footprint_units_entry");
+        update_units_variables ();
+        gtk_combo_box_set_active (GTK_COMBO_BOX (footprint_units_entry), units_type);
+        GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
+                "package_is_radial_checkbutton");
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (package_is_radial_checkbutton), FALSE);
+        gtk_widget_set_sensitive (package_is_radial_checkbutton, package_is_radial);
 }
 
 
@@ -1799,8 +1812,7 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
                         {
                                 if (sot_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
                                         all_entries_need_updated (GTK_WIDGET (editable));
-                                else
-                                        return;
+                                return;
                         }
                 }
         }
@@ -2090,22 +2102,8 @@ on_footprint_units_entry_changed       (GtkComboBox     *combobox,
                 gchar *message = g_strdup_printf ("");
                 message_to_statusbar (GTK_WIDGET (combobox), message);
         }
-        /* Determine the multiplier based upon the units type */
-        if (!strcmp (footprint_units, "mil"))
-        {
-                multiplier = 100.0;
-                return;
-        }
-        if (!strcmp (footprint_units, "mil/100"))
-        {
-                multiplier = 1.0;
-                return;
-        }
-        if (!strcmp (footprint_units, "mm"))
-        {
-                multiplier = (1000 / 25.4) * 100;
-                return;
-        }
+        /* Determine the units multiplier and units type */
+        update_units_variables ();
         gchar *message = g_strdup_printf (_("ERROR: footprint units contains an unknown units type."));
         message_to_statusbar (GTK_WIDGET (combobox), message);
 }
