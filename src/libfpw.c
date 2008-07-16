@@ -74,6 +74,7 @@ enum packages
         SIL, /*!< Single inline package. */
         SIP, /*!< Single inline package. */
         SO, /*!< Small outline package. */
+        SOT, /*!< Small outline transistor package. */
         TO, /*!< Transistor outline package. */
         TO92, /*!< Transistor outline package. */
         TO220, /*!< Transistor outline package. */
