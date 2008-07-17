@@ -2238,6 +2238,7 @@ on_open_button_clicked                 (GtkButton       *button,
 {
         GtkWidget *filechooser_dialog = create_filechooser_dialog ();
         GtkFileFilter *file_filter = gtk_file_filter_new ();
+        gtk_file_filter_set_name (file_filter, "fpw filter");
         gtk_file_filter_add_pattern (GTK_FILE_FILTER (file_filter), "*.fpw");
         gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (filechooser_dialog),
                 GTK_FILE_FILTER (file_filter));
