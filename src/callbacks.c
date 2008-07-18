@@ -106,6 +106,7 @@ all_entries_to_default_sensitivity (GtkWidget *widget)
         gtk_widget_set_sensitive (package_body_height_entry, TRUE);
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
+        gtk_widget_set_sensitive (package_is_radial_checkbutton, TRUE);
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (package_is_radial_checkbutton), FALSE);
         GtkWidget *footprint_author_entry = lookup_widget (GTK_WIDGET (widget),
                 "footprint_author_entry");
@@ -1885,7 +1886,10 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                 gtk_entry_set_text (GTK_ENTRY (footprint_name_entry), footprint_name);
         }
         else
+        {
                 footprint_type = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
+        }
+        all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
         entry_has_changed (GTK_WIDGET (combobox));
         /* Determine the package type */
         if (!strcmp (footprint_type, "BGA"))
