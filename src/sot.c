@@ -89,7 +89,7 @@ sot_get_default_footprint_values
                  * SOT, 0.95mm pitch;
                  * 3 pin, 1.40mm W X 3.00mm L X 1.09mm H Body
                  * TO-236AB Fairchild SOT-23 FS-49 */
-                pitch_x = 0.95;
+                pitch_y = 0.95;
                 number_of_pins = 3;
                 package_body_width = 1.40;
                 package_body_length = 3.00;
