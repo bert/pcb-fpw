@@ -61,8 +61,7 @@ all_entries_need_updated (GtkWidget *widget)
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *footprint_name_entry = lookup_widget (GTK_WIDGET (widget),
                 "footprint_name_entry");
-        gtk_entry_set_text (GTK_ENTRY (footprint_name_entry),
-                g_strdup_printf ("%s", footprint_name));
+        gtk_entry_set_text (GTK_ENTRY (footprint_name_entry), footprint_name);
         GtkWidget *footprint_units_entry = lookup_widget (GTK_WIDGET (widget),
                 "footprint_units_entry");
         update_units_variables ();
