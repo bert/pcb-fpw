@@ -79,13 +79,13 @@ main (int argc, char *argv[])
         /* Now create the main dialog. */
         pcb_gfpw = create_pcb_gfpw ();
         /* Set the initial state of the total pins and pads entry to
-         * insensitive. The entry is to be used as a label for most packages
+         * sensitive. The entry is to be used as a label for most packages
          * as the total amount of pins and pads can be caluculated.
          * However for some packages it might be needed to set a value here.
          */
         GtkWidget *number_total_pins_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
                 "number_total_pins_entry");
-        gtk_widget_set_sensitive (number_total_pins_entry, FALSE);
+        gtk_widget_set_sensitive (number_total_pins_entry, TRUE);
         /* Set the initial state of the checkbutton for the thermal pad to false,
          * set the "length" entry for the thermal pad to insensitive,
          * set the "width" entry for the thermal pad to insensitive,
