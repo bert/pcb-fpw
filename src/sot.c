@@ -51,6 +51,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT80P330X140-8N");
                 return (EXIT_SUCCESS);
         }
@@ -78,6 +79,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P228X102-3N");
                 return (EXIT_SUCCESS);
         }
@@ -107,6 +109,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P230X109-3N");
                 return (EXIT_SUCCESS);
         }
@@ -134,6 +137,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P230X110-3N");
                 return (EXIT_SUCCESS);
         }
@@ -161,6 +165,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P230X124-3N");
                 return (EXIT_SUCCESS);
         }
@@ -194,6 +199,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P237X112-3N");
                 return (EXIT_SUCCESS);
         }
@@ -221,6 +227,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P240X110-3N");
                 return (EXIT_SUCCESS);
         }
@@ -250,6 +257,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P240X114-3N");
                 return (EXIT_SUCCESS);
         }
@@ -279,6 +287,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P251X112-3N");
                 return (EXIT_SUCCESS);
         }
@@ -309,6 +318,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P270X145-5N");
                 return (EXIT_SUCCESS);
         }
@@ -336,6 +346,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P275X130-3N");
                 return (EXIT_SUCCESS);
         }
@@ -363,6 +374,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P275X145-6N");
                 return (EXIT_SUCCESS);
         }
@@ -391,6 +403,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P279X142-5N");
                 return (EXIT_SUCCESS);
         }
@@ -418,6 +431,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P280X100-5N");
                 return (EXIT_SUCCESS);
         }
@@ -445,6 +459,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P280X100-6N");
                 return (EXIT_SUCCESS);
         }
@@ -474,6 +489,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P280X110-5N");
                 return (EXIT_SUCCESS);
         }
@@ -504,6 +520,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P280X110-6N");
                 return (EXIT_SUCCESS);
         }
@@ -533,6 +550,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P280X115-6N");
                 return (EXIT_SUCCESS);
         }
@@ -562,6 +580,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P280X135-3AN");
                 return (EXIT_SUCCESS);
         }
@@ -589,6 +608,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P280X135-3N");
                 return (EXIT_SUCCESS);
         }
@@ -618,6 +638,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P280X135-5N");
                 return (EXIT_SUCCESS);
         }
@@ -646,6 +667,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P280X145-5AN");
                 return (EXIT_SUCCESS);
         }
@@ -675,6 +697,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P280X145-5N");
                 return (EXIT_SUCCESS);
         }
@@ -703,6 +726,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P280X145-6AN");
                 return (EXIT_SUCCESS);
         }
@@ -731,6 +755,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P280X145-6N");
                 return (EXIT_SUCCESS);
         }
@@ -758,6 +783,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P284X122-5N");
                 return (EXIT_SUCCESS);
         }
@@ -787,6 +813,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P280X145-5N");
                 return (EXIT_SUCCESS);
         }
@@ -814,6 +841,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P285X140-3N");
                 return (EXIT_SUCCESS);
         }
@@ -841,6 +869,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P285X905-6N");
                 return (EXIT_SUCCESS);
         }
@@ -870,6 +899,7 @@ sot_get_default_footprint_values
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P470X124-8N");
                 return (EXIT_SUCCESS);
         }
