@@ -36,6 +36,7 @@
 #include "support.h"
 
 #include "libfpw.c"
+#include "dip.c"
 #include "sot.c"
 #include "preview.c"
 
@@ -1867,10 +1868,22 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
         {
                 switch (package_type)
                 {
+                        case DIP:
+                        {
+                                if (dip_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
+                                        all_entries_need_updated (GTK_WIDGET (editable));
+                                return;
+                        }
                         case SOT:
                         {
                                 if (sot_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
                                         all_entries_need_updated (GTK_WIDGET (editable));
+                                return;
+                        }
+                        default:
+                        {
+                                gchar *message = g_strdup_printf (_("ERROR: unknown or not yet implemented footprint type entered."));
+                                message_to_statusbar (GTK_WIDGET (editable), message);
                                 return;
                         }
                 }
