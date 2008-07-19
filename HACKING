@@ -47,7 +47,7 @@ Comments
 --------
 /* Comments should be added at the correct level of identation. */
 
-/* More leaborate comments, which span across the 80 character limit,
+/* More elaborate comments, which span across the 80 character limit,
  * (described below) should have an asterisk in front on every line of the
  * comment.
  */
@@ -114,6 +114,17 @@ ChangeLog
 A ChangeLog is generated from all commit message entries entered when a blob
 of code is committed with git.
 I generate the ChangeLog prior to a new release.
+
+
+About git commit messages and blobs
+-----------------------------------
+Keep commit messages as clear as possible:
+
+If a file is added or deleted mentioning "new file: blah.c" or 
+"deleted file: blah2.c" says it all.
+
+Keep blobs as granular as possible, do not commit blobs from different files in 
+a single commit. I would rather have five commits if that is what it takes.
 
 
 Functions
