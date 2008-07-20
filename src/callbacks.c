@@ -2172,15 +2172,17 @@ on_footprint_units_entry_changed       (GtkComboBox     *combobox,
                 message_to_statusbar (GTK_WIDGET (combobox), message);
                 return;
         }
+        /* Determine the units multiplier and units type */
+        else if (update_units_variables () == EXIT_FAILURE)
+        {
+                gchar *message = g_strdup_printf (_("ERROR: footprint units contains an unknown units type."));
+                message_to_statusbar (GTK_WIDGET (combobox), message);
+        }
         else
         {
                 gchar *message = g_strdup_printf ("");
                 message_to_statusbar (GTK_WIDGET (combobox), message);
         }
-        /* Determine the units multiplier and units type */
-        update_units_variables ();
-        gchar *message = g_strdup_printf (_("ERROR: footprint units contains an unknown units type."));
-        message_to_statusbar (GTK_WIDGET (combobox), message);
 }
 
 
