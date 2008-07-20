@@ -208,7 +208,7 @@ gdouble package_body_width;
         /*!< Width dimension of the package body. */
 gdouble package_body_height;
         /*!< Height dimension of the package body. */
-gboolean package_is_radial;
+gboolean package_is_radial = FALSE;
         /*!< Package has a radial body. */
 
 gchar *footprint_author = NULL;
