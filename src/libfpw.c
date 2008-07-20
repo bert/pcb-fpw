@@ -113,23 +113,36 @@ char *row_letters[] =
         "CL", "CM", "CN", "CP", "CR", "CT", "CU", "CV", "CW", "CY"
 };
 
-/* Some locations for pin #1 orientation */
-/*   2 -- 5 -- 8  */
-/*   |    |    |  */
-/*   1 -- 4 -- 7  */
-/*   |    |    |  */
-/*   0 -- 3 -- 6  */
+/*!
+ * \brief Some locations for pin #1 orientation.
+ *
+ * <pre>
+ *    9    3   10
+ *   +-----------+
+ *  0|     |     |6
+ *   |     |     |
+ *  1+ --- 4 --- +7
+ *   |     |     |
+ *  2|     |     |8
+ *   +-----------+
+ *    11   5   12
+ * </pre>
+ */
 enum locations
 {
-        LOWER_LEFT, /*!< Package has the lower left pin as pin #1. */
-        MIDDLE_LEFT, /*!< Package has the middle left pin as pin #1. */
         UPPER_LEFT, /*!< Package has the upper left pin as pin #1. */
-        LOWER_MIDDLE, /*!< Package has the lower middle pin as pin #1. */
-        MIDDLE_MIDDLE, /*!< Package has the middle middle pin as pin #1. */
+        MIDDLE_LEFT, /*!< Package has the middle left pin as pin #1. */
+        LOWER_LEFT, /*!< Package has the lower left pin as pin #1. */
         UPPER_MIDDLE, /*!< Package has the upper middle pin as pin #1. */
-        LOWER_RIGHT, /*!< Package has the lower right pin as pin #1. */
-        MIDDLE_RIGHT, /*!< Package has the middle right pin as pin #1. */
+        MIDDLE_MIDDLE, /*!< Package has the middle middle pin as pin #1. */
+        LOWER_MIDDLE, /*!< Package has the lower middle pin as pin #1. */
         UPPER_RIGHT, /*!< Package has the upper right pin as pin #1. */
+        MIDDLE_RIGHT, /*!< Package has the middle right pin as pin #1. */
+        LOWER_RIGHT, /*!< Package has the lower right pin as pin #1. */
+        LEFT_TOP, /*!< Package has the left topside pin as pin #1. */
+        RIGHT_TOP, /*!< Package has the right topside pin as pin #1. */
+        LEFT_BOTTOM, /*!< Package has the left bottomside pin as pin #1. */
+        RIGHT_BOTTOM, /*!< Package has the right bottomside pin as pin #1. */
         NUMBER_OF_LOCATIONS /*!< Number of location types. */
 };
 
