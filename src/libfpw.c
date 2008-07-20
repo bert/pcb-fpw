@@ -406,20 +406,21 @@ update_units_variables ()
         {
                 multiplier = 100.0;
                 units_type = MIL;
-                return;
+                return (EXIT_SUCCESS);
         }
         if (!strcmp (footprint_units, "mil/100"))
         {
                 multiplier = 1.0;
                 units_type = MIL_100;
-                return;
+                return (EXIT_SUCCESS);
         }
         if (!strcmp (footprint_units, "mm"))
         {
                 multiplier = (1000 / 25.4) * 100;
                 units_type = MM;
-                return;
+                return (EXIT_SUCCESS);
         }
+        return (EXIT_FAILURE);
 }
 
 
