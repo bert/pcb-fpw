@@ -128,7 +128,7 @@ char *row_letters[] =
  *    11   5   12
  * </pre>
  */
-enum locations
+typedef enum locations
 {
         UPPER_LEFT, /*!< Package has the upper left pin as pin #1. */
         MIDDLE_LEFT, /*!< Package has the middle left pin as pin #1. */
@@ -144,9 +144,7 @@ enum locations
         LEFT_BOTTOM, /*!< Package has the left bottomside pin as pin #1. */
         RIGHT_BOTTOM, /*!< Package has the right bottomside pin as pin #1. */
         NUMBER_OF_LOCATIONS /*!< Number of location types. */
-};
-
-typedef enum locations location_t;
+} location_t;
 
 /* Thin lines are not printed on silkscreen (in the real world) */
 #define THIN_DRAW 1 /*!< Draw with thin lines. */
