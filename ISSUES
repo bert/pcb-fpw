@@ -1,5 +1,22 @@
-=======	LIST OF ISSUES WITH PCB-FPW =======
+======= LIST OF ISSUES WITH PCB-FPW =======
 
+pcb-gfpw (GUI):
+-------------
+
+- It seems that the "Total number of pins/pads" entry does not update correct
+  when a predefined footprint is recognised and values are/should be loaded.
+
+
+fpw (CLI):
+----------
+
+
+Generated FootPrintWizard files:
+--------------------------------
+
+
+Generated footprints:
+---------------------
 
 
 /* EOF */
