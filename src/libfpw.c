@@ -408,6 +408,81 @@ read_footprintwizard_file (gchar *fpw_filename)
 
 
 /*!
+ * \brief Update locations type variables.
+ */
+int
+update_location_variables ()
+{
+        if (!strcmp (pin_1_position, "Upper left"))
+        {
+                pin1_location = UPPER_LEFT;
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (pin_1_position, "Middle left"))
+        {
+                pin1_location = MIDDLE_LEFT;
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (pin_1_position, "Lower left"))
+        {
+                pin1_location = LOWER_LEFT;
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (pin_1_position, "Upper middle"))
+        {
+                pin1_location = UPPER_MIDDLE;
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (pin_1_position, "Middle middle"))
+        {
+                pin1_location = MIDDLE_MIDDLE;
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (pin_1_position, "Lower middle"))
+        {
+                pin1_location = LOWER_MIDDLE;
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (pin_1_position, "Upper right"))
+        {
+                pin1_location = UPPER_RIGHT;
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (pin_1_position, "Middle right"))
+        {
+                pin1_location = MIDDLE_RIGHT;
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (pin_1_position, "Lower right"))
+        {
+                pin1_location = LOWER_RIGHT;
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (pin_1_position, "Left topside"))
+        {
+                pin1_location = LEFT_TOP;
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (pin_1_position, "Right topside"))
+        {
+                pin1_location = RIGHT_TOP;
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (pin_1_position, "Left bottomside"))
+        {
+                pin1_location = LEFT_BOTTOM;
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (pin_1_position, "Right bottomside"))
+        {
+                pin1_location = RIGHT_BOTTOM;
+                return (EXIT_SUCCESS);
+        }
+        return (EXIT_FAILURE);
+}
+
+
+/*!
  * \brief Update (units) multiplier and units type variables.
  */
 int
