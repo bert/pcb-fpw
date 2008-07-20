@@ -72,7 +72,8 @@ all_entries_need_updated (GtkWidget *widget)
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
         gtk_widget_set_sensitive (package_is_radial_checkbutton, TRUE);
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (package_is_radial_checkbutton), FALSE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (package_is_radial_checkbutton),
+                package_is_radial);
         GtkWidget *package_body_length_entry = lookup_widget (GTK_WIDGET (widget),
                 "package_body_length_entry");
         gtk_widget_set_sensitive (package_body_length_entry, TRUE);
