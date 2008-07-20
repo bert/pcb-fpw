@@ -197,9 +197,9 @@ gchar *footprint_units = NULL;
         /*!< Units for the footprint dimensions. */
 gdouble multiplier;
         /*!< Multiplier to convert to mils/100. */
-gchar *footprint_refdes;
+gchar *footprint_refdes = NULL;
         /*!< Default value of the refdes prefix. */
-gchar *footprint_value;
+gchar *footprint_value = NULL;
         /*!< Default value of the package. */
 
 gdouble package_body_length;
@@ -211,13 +211,13 @@ gdouble package_body_height;
 gboolean package_is_radial;
         /*!< Package has a radial body. */
 
-gchar *footprint_author;
+gchar *footprint_author = NULL;
         /*!< Author of the footprint. */
-gchar *footprint_dist_license;
+gchar *footprint_dist_license = NULL;
         /*!< Distribution license of the footprint. */
-gchar *footprint_use_license;
+gchar *footprint_use_license = NULL;
         /*!< Usage license of the footprint. */
-gchar *footprint_status;
+gchar *footprint_status = NULL;
         /*!< Status of the footprint. */
 gboolean attributes_in_footprint;
         /*!< Include the global values based on the entry values of the GUI
@@ -229,7 +229,7 @@ gint number_of_columns;
         /*!< Number of columns. */
 gint number_of_rows;
         /*!< Number of rows. */
-gchar *pin_1_position;
+gchar *pin_1_position = NULL;
         /*!< Position of number 1 pin. */
 location_t pin1_location;
         /*!< Location of number 1 pin. */
@@ -255,7 +255,7 @@ gint pin_pad_type;
         /*!< Type of pads/pins. */
 gboolean pin1_square;
         /*!< Pin #1 is square. */
-gchar *pin_pad_flags;
+gchar *pin_pad_flags = NULL;
         /*!< Flags of pins/pads. */
 gdouble pad_solder_mask_clearance;
         /*!< Solder mask clearance of a pin/pad. */
