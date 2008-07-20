@@ -124,12 +124,12 @@ all_entries_need_updated (GtkWidget *widget)
                 "count_x_entry");
         gtk_widget_set_sensitive (count_x_entry, TRUE);
         gtk_entry_set_text (GTK_ENTRY (count_x_entry),
-                g_strdup_printf ("%f", count_x));
+                g_strdup_printf ("%d", count_x));
         GtkWidget *count_y_entry = lookup_widget (GTK_WIDGET (widget),
                 "count_y_entry");
         gtk_widget_set_sensitive (count_y_entry, TRUE);
         gtk_entry_set_text (GTK_ENTRY (count_y_entry),
-                g_strdup_printf ("%f", count_y));
+                g_strdup_printf ("%d", count_y));
 }
 
 
