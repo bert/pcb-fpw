@@ -117,19 +117,20 @@ char *row_letters[] =
  * \brief Some locations for pin #1 orientation.
  *
  * <pre>
- *    9    3   10
+ *   10    4   11
  *   +-----------+
- *  0|     |     |6
+ *  1|     |     |7
  *   |     |     |
- *  1+ --- 4 --- +7
+ *  2+ --- 5 --- +8
  *   |     |     |
- *  2|     |     |8
+ *  3|     |     |9
  *   +-----------+
- *    11   5   12
+ *    12   6   13
  * </pre>
  */
 typedef enum locations
 {
+        NO_LOCATION, /*!< For those living in the void. */
         UPPER_LEFT, /*!< Package has the upper left pin as pin #1. */
         MIDDLE_LEFT, /*!< Package has the middle left pin as pin #1. */
         LOWER_LEFT, /*!< Package has the lower left pin as pin #1. */
