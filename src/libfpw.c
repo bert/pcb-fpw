@@ -88,7 +88,7 @@ typedef enum packages package_t;
  */
 typedef enum units
 {
-        NONE, /*!< For those living in the void. */
+        NO_UNITS, /*!< For those living in the void. */
         MIL, /*!< Imperial units type (Imperial standard "inch" divided by 1,000). */
         MIL_100, /*!< Imperial units type (Imperial standard "inch" divided by 100,000). */
         MM, /*!< Metric units type (Metric standard "meter" divided by 1,000). */
