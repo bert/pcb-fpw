@@ -95,7 +95,7 @@ typedef enum units
         NUMBER_OF_UNITS_TYPES /*!< Number of units types. */
 } units_t;
 
-units_t units_type = NONE;
+units_t units_type = NO_UNITS;
 
 /*!
  * \brief Set of valid letter combinations for row identifiers for BGA and
