@@ -45,7 +45,7 @@
 /*!
  * \brief Some package types conforming to IPC name space definitions.
  */
-enum packages
+typedef enum packages
 {
         BGA, /*!< Ball gate array package. */
         CAPAE, /*!< Capacitor, aluminium electrolytic package. */
@@ -79,9 +79,7 @@ enum packages
         TO92, /*!< Transistor outline package. */
         TO220, /*!< Transistor outline package. */
         NUMBER_OF_PACKAGE_TYPES /*!< Number of package types. */
-};
-
-typedef enum packages package_t;
+} package_t;
 
 /*!
  * \brief Some units types.
