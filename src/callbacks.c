@@ -60,78 +60,200 @@ int
 all_entries_need_updated (GtkWidget *widget)
 {
         /* Widgets on tab 1 "Footprint" */
-        GtkWidget *footprint_name_entry = lookup_widget (GTK_WIDGET (widget),
-                "footprint_name_entry");
-        gtk_widget_set_sensitive (footprint_name_entry, TRUE);
-        gtk_entry_set_text (GTK_ENTRY (footprint_name_entry), footprint_name);
-        GtkWidget *footprint_units_entry = lookup_widget (GTK_WIDGET (widget),
-                "footprint_units_entry");
-        gtk_widget_set_sensitive (footprint_units_entry, TRUE);
-        update_units_variables ();
-        gtk_combo_box_set_active (GTK_COMBO_BOX (footprint_units_entry), units_type);
+        /* Only update the "footprint name" entry with a sensible value */
+        if (!footprint_name)
+        {
+                GtkWidget *footprint_name_entry = lookup_widget (GTK_WIDGET (widget),
+                        "footprint_name_entry");
+                gtk_widget_set_sensitive (footprint_name_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY (footprint_name_entry), footprint_name);
+        }
+        /* Only update the "footprint name" entry with a sensible value */
+        if (!footprint_units)
+        {
+                GtkWidget *footprint_units_entry = lookup_widget (GTK_WIDGET (widget),
+                        "footprint_units_entry");
+                gtk_widget_set_sensitive (footprint_units_entry, TRUE);
+                update_units_variables ();
+                gtk_combo_box_set_active (GTK_COMBO_BOX (footprint_units_entry), units_type);
+        }
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
         gtk_widget_set_sensitive (package_is_radial_checkbutton, TRUE);
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (package_is_radial_checkbutton),
                 package_is_radial);
-        GtkWidget *package_body_length_entry = lookup_widget (GTK_WIDGET (widget),
-                "package_body_length_entry");
-        gtk_widget_set_sensitive (package_body_length_entry, TRUE);
-        gtk_entry_set_text (GTK_ENTRY (package_body_length_entry),
-                g_strdup_printf ("%f", package_body_length));
-        GtkWidget *package_body_width_entry = lookup_widget (GTK_WIDGET (widget),
-                "package_body_width_entry");
-        gtk_widget_set_sensitive (package_body_width_entry, TRUE);
-        gtk_entry_set_text (GTK_ENTRY (package_body_width_entry),
-                g_strdup_printf ("%f", package_body_width));
-        GtkWidget *package_body_height_entry = lookup_widget (GTK_WIDGET (widget),
-                "package_body_height_entry");
-        gtk_widget_set_sensitive (package_body_height_entry, TRUE);
-        gtk_entry_set_text (GTK_ENTRY (package_body_height_entry),
-                g_strdup_printf ("%f", package_body_height));
-        GtkWidget *footprint_author_entry = lookup_widget (GTK_WIDGET (widget),
-                "footprint_author_entry");
-        gtk_widget_set_sensitive (footprint_author_entry, TRUE);
-        gtk_entry_set_text (GTK_ENTRY (footprint_author_entry),
-                g_strdup_printf ("%s", g_get_real_name()));
-
+        /* Only update the "package body length" entry with a sensible value */
+        if (package_body_length != 0.0)
+        {
+                GtkWidget *package_body_length_entry = lookup_widget (GTK_WIDGET (widget),
+                        "package_body_length_entry");
+                gtk_widget_set_sensitive (package_body_length_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY (package_body_length_entry),
+                        g_strdup_printf ("%f", package_body_length));
+        }
+        /* Only update the "package body width" entry with a sensible value */
+        if (package_body_width != 0.0)
+        {
+                GtkWidget *package_body_width_entry = lookup_widget (GTK_WIDGET (widget),
+                        "package_body_width_entry");
+                gtk_widget_set_sensitive (package_body_width_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY (package_body_width_entry),
+                        g_strdup_printf ("%f", package_body_width));
+        }
+        /* Only update the "package body height" entry with a sensible value */
+        if (package_body_height != 0.0)
+        {
+                GtkWidget *package_body_height_entry = lookup_widget (GTK_WIDGET (widget),
+                        "package_body_height_entry");
+                gtk_widget_set_sensitive (package_body_height_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY (package_body_height_entry),
+                        g_strdup_printf ("%f", package_body_height));
+        }
+        /* Only update the "footprint author" entry with a sensible value */
+        if (!footprint_author)
+        {
+                GtkWidget *footprint_author_entry = lookup_widget (GTK_WIDGET (widget),
+                        "footprint_author_entry");
+                gtk_widget_set_sensitive (footprint_author_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY (footprint_author_entry),
+                        g_get_real_name ());
+        }
         /* Widgets on tab 2 "Pins/Pads" */
-        GtkWidget *number_total_pins_entry = lookup_widget (GTK_WIDGET (widget),
-                "number_total_pins_entry");
-        gtk_widget_set_sensitive (number_total_pins_entry, TRUE);
-        gtk_entry_set_text (GTK_ENTRY (number_total_pins_entry),
-                g_strdup_printf ("%d", number_of_pins));
-        GtkWidget *number_of_rows_entry = lookup_widget (GTK_WIDGET (widget),
-                "number_of_rows_entry");
-        gtk_widget_set_sensitive (number_of_rows_entry, TRUE);
-        gtk_entry_set_text (GTK_ENTRY (number_of_rows_entry),
-                g_strdup_printf ("%d", number_of_rows));
-        GtkWidget *number_of_columns_entry = lookup_widget (GTK_WIDGET (widget),
-                "number_of_columns_entry");
-        gtk_widget_set_sensitive (number_of_columns_entry, TRUE);
-        gtk_entry_set_text (GTK_ENTRY (number_of_columns_entry),
-                g_strdup_printf ("%d", number_of_columns));
-        GtkWidget *pitch_x_entry = lookup_widget (GTK_WIDGET (widget),
-                "pitch_x_entry");
-        gtk_widget_set_sensitive (pitch_x_entry, TRUE);
-        gtk_entry_set_text (GTK_ENTRY (pitch_x_entry),
-                g_strdup_printf ("%f", pitch_x));
-        GtkWidget *pitch_y_entry = lookup_widget (GTK_WIDGET (widget),
-                "pitch_y_entry");
-        gtk_widget_set_sensitive (pitch_y_entry, TRUE);
-        gtk_entry_set_text (GTK_ENTRY (pitch_y_entry),
-                g_strdup_printf ("%f", pitch_y));
-        GtkWidget *count_x_entry = lookup_widget (GTK_WIDGET (widget),
-                "count_x_entry");
-        gtk_widget_set_sensitive (count_x_entry, TRUE);
-        gtk_entry_set_text (GTK_ENTRY (count_x_entry),
-                g_strdup_printf ("%d", count_x));
-        GtkWidget *count_y_entry = lookup_widget (GTK_WIDGET (widget),
-                "count_y_entry");
-        gtk_widget_set_sensitive (count_y_entry, TRUE);
-        gtk_entry_set_text (GTK_ENTRY (count_y_entry),
-                g_strdup_printf ("%d", count_y));
+        /* Only update the "number of pins" entry with a sensible value */
+        if (number_of_pins != 0)
+        {
+                GtkWidget *number_total_pins_entry = lookup_widget (GTK_WIDGET (widget),
+                        "number_total_pins_entry");
+                gtk_widget_set_sensitive (number_total_pins_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY (number_total_pins_entry),
+                        g_strdup_printf ("%d", number_of_pins));
+        }
+        /* Only update the "number of rows" entry with a sensible value */
+        if (number_of_rows != 0)
+        {
+                GtkWidget *number_of_rows_entry = lookup_widget (GTK_WIDGET (widget),
+                        "number_of_rows_entry");
+                gtk_widget_set_sensitive (number_of_rows_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY (number_of_rows_entry),
+                        g_strdup_printf ("%d", number_of_rows));
+        }
+        /* Only update the "number of columns" entry with a sensible value */
+        if (number_of_columns != 0)
+        {
+                GtkWidget *number_of_columns_entry = lookup_widget (GTK_WIDGET (widget),
+                        "number_of_columns_entry");
+                gtk_widget_set_sensitive (number_of_columns_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY (number_of_columns_entry),
+                        g_strdup_printf ("%d", number_of_columns));
+        }
+        /* Only update the "pitch x" entry with a sensible value */
+        if (pitch_x != 0.0)
+        {
+                GtkWidget *pitch_x_entry = lookup_widget (GTK_WIDGET (widget),
+                        "pitch_x_entry");
+                gtk_widget_set_sensitive (pitch_x_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY (pitch_x_entry),
+                        g_strdup_printf ("%f", pitch_x));
+        }
+        /* Only update the "pitch y" entry with a sensible value */
+        if (pitch_y != 0.0)
+        {
+                GtkWidget *pitch_y_entry = lookup_widget (GTK_WIDGET (widget),
+                        "pitch_y_entry");
+                gtk_widget_set_sensitive (pitch_y_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY (pitch_y_entry),
+                        g_strdup_printf ("%f", pitch_y));
+        }
+        /* Only update the "count x" entry with a sensible value */
+        if (count_x != 0)
+        {
+                GtkWidget *count_x_entry = lookup_widget (GTK_WIDGET (widget),
+                        "count_x_entry");
+                gtk_widget_set_sensitive (count_x_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY (count_x_entry),
+                        g_strdup_printf ("%d", count_x));
+        }
+        /* Only update the "count y" entry with a sensible value */
+        if (count_y != 0)
+        {
+                GtkWidget *count_y_entry = lookup_widget (GTK_WIDGET (widget),
+                        "count_y_entry");
+                gtk_widget_set_sensitive (count_y_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY (count_y_entry),
+                        g_strdup_printf ("%d", count_y));
+        }
+        /* Only update the "pin #1 position" entry with a sensible value */
+        if (!footprint_units)
+        {
+                GtkWidget *pin_1_position_entry = lookup_widget (GTK_WIDGET (widget),
+                        "pin_1_position_entry");
+                gtk_widget_set_sensitive (pin_1_position_entry, TRUE);
+                update_location_variables ();
+                gtk_combo_box_set_active (GTK_COMBO_BOX (pin_1_position_entry),
+                        pin1_location);
+        }
+        /* Only update the "pad diameter" entry with a sensible value */
+        if (pad_diameter != 0.0)
+        {
+                GtkWidget *pad_diameter_entry = lookup_widget (GTK_WIDGET (widget),
+                        "pad_diameter_entry");
+                gtk_widget_set_sensitive (pad_diameter_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY (pad_diameter_entry),
+                        g_strdup_printf ("%f", pad_diameter));
+        }
+        /* Only update the "pin drill diameter" entry with a sensible value */
+        if (pin_drill_diameter != 0.0)
+        {
+                GtkWidget *pin_drill_diameter_entry = lookup_widget (GTK_WIDGET (widget),
+                        "pin_drill_diameter_entry");
+                gtk_widget_set_sensitive (pin_drill_diameter_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY (pin_drill_diameter_entry),
+                        g_strdup_printf ("%f", pin_drill_diameter));
+        }
+        GtkWidget *pin1_square_checkbutton = lookup_widget (GTK_WIDGET (widget),
+                "pin1_square_checkbutton");
+        gtk_widget_set_sensitive (pin1_square_checkbutton, TRUE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (pin1_square_checkbutton),
+                pin1_square);
+
+        /* Only update the "pad length" entry with a sensible value */
+        if (pad_length != 0.0)
+        {
+                GtkWidget *pad_length_entry = lookup_widget (GTK_WIDGET (widget),
+                        "pad_length_entry");
+                gtk_widget_set_sensitive (pad_length_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY (pad_length_entry),
+                        g_strdup_printf ("%f", pad_length));
+        }
+        /* Only update the "pad width" entry with a sensible value */
+        if (pad_width != 0.0)
+        {
+                GtkWidget *pad_width_entry = lookup_widget (GTK_WIDGET (widget),
+                        "pad_width_entry");
+                gtk_widget_set_sensitive (pad_width_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY (pad_width_entry),
+                        g_strdup_printf ("%f", pad_width));
+        }
+        /* Only update the "pad clearance" entry with a sensible value */
+        if (pad_clearance != 0.0)
+        {
+                GtkWidget *pad_clearance_entry = lookup_widget (GTK_WIDGET (widget),
+                        "pad_clearance_entry");
+                gtk_widget_set_sensitive (pad_clearance_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY (pad_clearance_entry),
+                        g_strdup_printf ("%f", pad_clearance));
+        }
+        /* Only update the "pad solder mask clearance" entry with a sensible value */
+        if (pad_solder_mask_clearance != 0.0)
+        {
+                GtkWidget *pad_solder_mask_clearance_entry = lookup_widget (GTK_WIDGET (widget),
+                        "pad_solder_mask_clearance_entry");
+                gtk_widget_set_sensitive (pad_solder_mask_clearance_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY (pad_solder_mask_clearance_entry),
+                        g_strdup_printf ("%f", pad_solder_mask_clearance));
+        }
 }
+
 
 
 /*!
