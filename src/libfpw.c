@@ -145,6 +145,18 @@ typedef enum locations
         NUMBER_OF_LOCATIONS /*!< Number of location types. */
 } location_t;
 
+/*!
+ * \brief Some pad shapes types.
+ */
+typedef enum pad_shapes
+{
+        ROUND,
+        SQUARE,
+        OCTAGONAL,
+        ROUND_ELONGATED,
+        NUMBER_OF_PAD_SHAPES
+} pad_shapes_t;
+
 /* Thin lines are not printed on silkscreen (in the real world) */
 #define THIN_DRAW 1 /*!< Draw with thin lines. */
 
