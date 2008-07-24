@@ -275,7 +275,7 @@ gdouble pad_width;
         /*!< Width of pad (perpendicular to Element X-axis). */
 gchar *pad_shape;
         /*!< Shape of pads/pins. */
-pad_shapes_t pad_shapes = NO_SHAPE;
+pad_shapes_t pad_shapes_type = NO_SHAPE;
         /*!< Shape of pads/pins (enumerated).\n
          * Initial value is \c NO_SHAPE. */
 gint pin_pad_type;
@@ -511,25 +511,25 @@ update_pad_shapes_variables ()
         if (!strcmp (pad_shape, "circular pad"))
         {
                 g_strconcat (pin_pad_flags, "", NULL);
-                pad_shapes = ROUND;
+                pad_shapes_type = ROUND;
                 return (EXIT_SUCCESS);
         }
         if (!strcmp (pad_shape, "rectangular pad"))
         {
                 g_strconcat (pin_pad_flags, "square", NULL);
-                pad_shapes = SQUARE;
+                pad_shapes_type = SQUARE;
                 return (EXIT_SUCCESS);
         }
         if (!strcmp (pad_shape, "octagonal pad"))
         {
                 g_strconcat (pin_pad_flags, "octagon", NULL);
-                pad_shapes = OCTAGONAL;
+                pad_shapes_type = OCTAGONAL;
                 return (EXIT_SUCCESS);
         }
         if (!strcmp (pad_shape, "rounded pad, elongated"))
         {
                 g_strconcat (pin_pad_flags, "", NULL);
-                pad_shapes = ROUND_ELONGATED;
+                pad_shapes_type = ROUND_ELONGATED;
                 return (EXIT_SUCCESS);
         }
         return (EXIT_FAILURE);
