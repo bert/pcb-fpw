@@ -2610,34 +2610,17 @@ on_pad_shape_entry_changed    (GtkComboBox     *combobox,
                 message_to_statusbar (GTK_WIDGET (combobox), message);
                 return;
         }
+        /* Determine the pad shape type */
+        else if (update_pad_shapes_variables () == EXIT_FAILURE)
+        {
+                gchar *message = g_strdup_printf (_("ERROR: pad shape contains an unknown pad shape type."));
+                message_to_statusbar (GTK_WIDGET (combobox), message);
+        }
         else
         {
                 gchar *message = g_strdup_printf ("");
                 message_to_statusbar (GTK_WIDGET (combobox), message);
         }
-        /* Determine the pad shape type, default is a circular pad */
-        if (!strcmp (pad_shape, "circular pad"))
-        {
-                g_strconcat (pin_pad_flags, "", NULL);
-                return;
-        }
-        if (!strcmp (pad_shape, "rectangular pad"))
-        {
-                g_strconcat (pin_pad_flags, "square", NULL);
-                return;
-        }
-        if (!strcmp (pad_shape, "octagonal pad"))
-        {
-                g_strconcat (pin_pad_flags, "octagon", NULL);
-                return;
-        }
-        if (!strcmp (pad_shape, "rounded pad, elongated"))
-        {
-                g_strconcat (pin_pad_flags, "", NULL);
-                return;
-        }
-        gchar *message = g_strdup_printf (_("ERROR: pad shape contains an unknown pad shape type."));
-        message_to_statusbar (GTK_WIDGET (combobox), message);
 }
 
 
