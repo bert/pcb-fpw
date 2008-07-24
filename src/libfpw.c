@@ -148,6 +148,7 @@ typedef enum locations
  */
 typedef enum pad_shapes
 {
+        NO_SHAPE,
         ROUND,
         SQUARE,
         OCTAGONAL,
@@ -274,9 +275,9 @@ gdouble pad_width;
         /*!< Width of pad (perpendicular to Element X-axis). */
 gchar *pad_shape;
         /*!< Shape of pads/pins. */
-pad_shapes_t pad_shapes = ROUND;
+pad_shapes_t pad_shapes = NO_SHAPE;
         /*!< Shape of pads/pins (enumerated).\n
-         * Initial value is \c ROUND. */
+         * Initial value is \c NO_SHAPE. */
 gint pin_pad_type;
         /*!< Type of pads/pins. */
 gboolean pin1_square;
