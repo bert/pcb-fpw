@@ -183,7 +183,7 @@ all_entries_need_updated (GtkWidget *widget)
                         g_strdup_printf ("%d", count_y));
         }
         /* Only update the "pin #1 position" entry with a sensible value */
-        if (!footprint_units)
+        if (!pin_1_position)
         {
                 GtkWidget *pin_1_position_entry = lookup_widget (GTK_WIDGET (widget),
                         "pin_1_position_entry");
@@ -215,7 +215,15 @@ all_entries_need_updated (GtkWidget *widget)
         gtk_widget_set_sensitive (pin1_square_checkbutton, TRUE);
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (pin1_square_checkbutton),
                 pin1_square);
-
+        /* Only update the "pad shape" entry with a sensible value */
+        if (!pad_shape)
+        {
+                GtkWidget *pad_shape_entry = lookup_widget (GTK_WIDGET (widget),
+                        "pad_shape_entry");
+                gtk_widget_set_sensitive (pad_shape_entry, TRUE);
+                update_pad_shapes_variables ();
+                gtk_combo_box_set_active (GTK_COMBO_BOX (pad_shape_entry), pad_shapes_type);
+        }
         /* Only update the "pad length" entry with a sensible value */
         if (pad_length != 0.0)
         {
