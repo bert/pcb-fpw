@@ -494,6 +494,39 @@ update_location_variables ()
 
 
 /*!
+ * \brief Update pad shapes type variables.
+ *
+ * \return Returns \c EXIT_SUCCESS when a known pad shape was determined.\n
+ * Returns \c EXIT_FAILURE when an unknown pad shape was determined.
+ *
+ */
+int
+update_pad_shapes_variables ()
+{
+        if (!strcmp (pad_shape, "circular pad"))
+        {
+                g_strconcat (pin_pad_flags, "", NULL);
+                return (EXIT_SUCCESS);
+        }
+        if (!strcmp (pad_shape, "rectangular pad"))
+        {
+                g_strconcat (pin_pad_flags, "square", NULL);
+                return (EXIT_SUCCESS);
+        }
+        if (!strcmp (pad_shape, "octagonal pad"))
+        {
+                g_strconcat (pin_pad_flags, "octagon", NULL);
+                return (EXIT_SUCCESS);
+        }
+        if (!strcmp (pad_shape, "rounded pad, elongated"))
+        {
+                g_strconcat (pin_pad_flags, "", NULL);
+                return (EXIT_SUCCESS);
+        }
+        return (EXIT_FAILURE);
+}
+
+/*!
  * \brief Update (units) multiplier and units type variables.
  */
 int
