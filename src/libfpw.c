@@ -93,8 +93,6 @@ typedef enum units
         NUMBER_OF_UNITS_TYPES /*!< Number of units types. */
 } units_t;
 
-units_t units_type = NO_UNITS;
-
 /*!
  * \brief Set of valid letter combinations for row identifiers for BGA and
  * PGA packages.
@@ -217,6 +215,9 @@ package_t package_type;
         /*!< Type of the package. */
 gchar *footprint_units = NULL;
         /*!< Units for the footprint dimensions. */
+units_t units_type = NO_UNITS;
+        /*!< Units (enumerated) for the footprint dimensions.\n
+         * Initial value is \c NO_UNITS. */
 gdouble multiplier;
         /*!< Multiplier to convert to mils/100. */
 gchar *footprint_refdes = NULL;
