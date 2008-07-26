@@ -21,6 +21,20 @@
 
 /*!
  * \brief Look up default values for SOT footprint.
+ *
+ * Footprint values can be looked up by placing a question mark "?" in front
+ * of the footprint name.\n
+ * If the footprint name is recognised known values will be loaded and the
+ * entries involved in the GUI will be updated accordingly.\n
+ * Currently the following footprints are supported:\n
+ * SOT80P330X140-8N, SOT95P228X102-3N, SOT95P230X109-3N, SOT95P230X110-3N,
+ * SOT95P230X124-3N, SOT95P237X112-3N, SOT95P240X110-3N, SOT95P251X112-3N,
+ * SOT95P270X145-5N, SOT95P275X130-3N, SOT95P275X145-6N, SOT95P279X142-5N,
+ * SOT95P280X100-5N, SOT95P280X100-6N, SOT95P280X110-5N, SOT95P280X110-6N,
+ * SOT95P280X115-6N, SOT95P280X135-3AN, SOT95P280X135-3N, SOT95P280X135-5N,
+ * SOT95P280X145-5AN, SOT95P280X145-5N, SOT95P280X145-6AN, SOT95P280X145-6N,
+ * SOT95P284X122-5N, SOT95P284X122-6N, SOT95P285X140-3N, SOT95P285X90-6N,
+ * SOT95P470X124-8N.
  */
 int
 sot_get_default_footprint_values
@@ -814,7 +828,7 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                footprint_name = g_strdup ("SOT95P280X145-5N");
+                footprint_name = g_strdup ("SOT95P284X122-6N");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?SOT95P285X140-3N"))
@@ -870,7 +884,7 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                footprint_name = g_strdup ("SOT95P285X905-6N");
+                footprint_name = g_strdup ("SOT95P285X90-6N");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?SOT95P470X124-8N"))
