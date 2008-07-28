@@ -1862,7 +1862,7 @@ on_filechooser_dialog_open_button_clicked
                 message_to_statusbar (GTK_WIDGET (button), message);
                 return;
         }
-        /* Test if selected filename is a null pointer.
+        /* Test if selected filename is an empty string.
          * If so, please notify the user (in the statusbar). */
         if (!strcmp (selected_filename, ""))
         {
