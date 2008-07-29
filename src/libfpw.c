@@ -202,6 +202,8 @@ gint gui = TRUE;
          * for fpw == FALSE (will override the default setting) */
 FILE *fp;
         /*!< Global file pointer for the footprint file. */
+gchar fpw_pathname = NULL;
+        /*!< Path to the footprintwizard file */
 gchar *fpw_suffix = "fpw";
         /*!< Suffix of footprintwizard file. */
 gchar *footprint_filename = NULL;
