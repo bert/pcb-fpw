@@ -1853,13 +1853,14 @@ on_filechooser_dialog_open_button_clicked
 {
         GtkWidget *filechooser_dialog = lookup_widget (GTK_WIDGET (button),
                 "filechooser_dialog");
-        gchar *selected_filename = g_strdup (gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (filechooser_dialog)));
+        gchar *selected_filename = NULL;
+        selected_filename = g_strdup (gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (filechooser_dialog)));
         /* Test if selected filename is a null pointer.
          * If so, please notify the user (in the statusbar). */
         if (!selected_filename)
         {
                 gchar *message = g_strdup_printf (_("ERROR: selected filename is not initialised  (null pointer)."));
-                message_to_statusbar (GTK_WIDGET (button), message);
+                g_log ("", G_LOG_LEVEL_ERROR, message);
                 return;
         }
         /* Test if selected filename is an empty string.
@@ -1867,7 +1868,7 @@ on_filechooser_dialog_open_button_clicked
         if (!strcmp (selected_filename, ""))
         {
                 gchar *message = g_strdup_printf (_("ERROR: selected filename contains an empty string."));
-                message_to_statusbar (GTK_WIDGET (button), message);
+                g_log ("", G_LOG_LEVEL_ERROR, message);
                 return;
         }
         /* Test if selected filename is a directory.
@@ -1875,27 +1876,36 @@ on_filechooser_dialog_open_button_clicked
          * instead. */
         if (g_file_test (selected_filename, G_FILE_TEST_IS_DIR))
         {
-                gchar *message = g_strdup_printf (_("ERROR: selected filename is a directory."));
-                message_to_statusbar (GTK_WIDGET (button), message);
+                gchar *message = g_strdup_printf (_("WARNING: selected filename is a directory."));
+                g_log ("", G_LOG_LEVEL_ERROR, message);
+                /* Let's see if we can build a pathname across directories. */
+                fpw_pathname = g_build_path
+                        (G_DIR_SEPARATOR_S,
+                        fpw_pathname,
+                        selected_filename);
+                fprintf (stderr, "fpw pathname: %s\n", fpw_pathname);
                 return;
         }
-        /* Store the (now validated) selected filename */
+        /* Store the (now validated) selected filename. */
         gchar *fpw_filename = g_strdup (selected_filename);
-        /* Update the working directory (test for null pointer) */
+        /* Update the working directory (test for null pointer). */
         if (!temp_dir)
                 work_dir = g_strdup (temp_dir);
-        /* Read new global values from the selected footprintwizard file */
+        /* Read new global values from the selected footprintwizard file. */
         if (read_footprintwizard_file (fpw_filename))
         {
                 gchar *message = g_strdup_printf (_("Read footprintwizard file %s."), fpw_filename);
-                message_to_statusbar (GTK_WIDGET (button), message);
+                g_log ("", G_LOG_LEVEL_INFO, message);
         }
         else
         {
                 gchar *message = g_strdup_printf (_("ERROR: Unable to read footprint wizard file %s."), fpw_filename);
-                message_to_statusbar (GTK_WIDGET (button), message);
+                g_log ("", G_LOG_LEVEL_ERROR, message);
         }
-        /* Update the entry widgets to reflect the changes */
+        /* Update the entry widgets to reflect the changes. */
+        all_entries_need_updated (GTK_WIDGET (button));
+        /* Clean up fpw filename variable. */
+        g_free (fpw_filename);
 }
 
 
