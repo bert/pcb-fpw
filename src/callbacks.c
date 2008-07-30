@@ -1901,6 +1901,7 @@ on_filechooser_dialog_open_button_clicked
         {
                 gchar *message = g_strdup_printf (_("ERROR: Unable to read footprint wizard file %s."), fpw_filename);
                 g_log ("", G_LOG_LEVEL_ERROR, message);
+                return;
         }
         /* Update the entry widgets to reflect the changes. */
         all_entries_need_updated (GTK_WIDGET (button));
