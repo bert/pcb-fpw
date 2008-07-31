@@ -205,7 +205,7 @@ gboolean verbose = TRUE;
 
 FILE *fp;
         /*!< Global file pointer for the footprint file. */
-gchar fpw_pathname = NULL;
+gchar *fpw_pathname = NULL;
         /*!< Path to the footprintwizard file */
 gchar *fpw_suffix = "fpw";
         /*!< Suffix of footprintwizard file. */
