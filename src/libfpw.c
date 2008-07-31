@@ -200,6 +200,9 @@ gint gui = TRUE;
         /*!< Graphical User Interface:\n
          * for gfpw == TRUE (default) \n
          * for fpw == FALSE (will override the default setting) */
+gboolean verbose = TRUE;
+        /*!< Global file pointer for being verbose or not. */
+
 FILE *fp;
         /*!< Global file pointer for the footprint file. */
 gchar fpw_pathname = NULL;
