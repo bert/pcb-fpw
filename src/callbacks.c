@@ -61,7 +61,7 @@ all_entries_need_updated (GtkWidget *widget)
 {
         /* Widgets on tab 1 "Footprint" */
         /* Only update the "footprint name" entry with a sensible value */
-        if (!footprint_name)
+        if (footprint_name)
         {
                 GtkWidget *footprint_name_entry = lookup_widget (GTK_WIDGET (widget),
                         "footprint_name_entry");
@@ -69,7 +69,7 @@ all_entries_need_updated (GtkWidget *widget)
                 gtk_entry_set_text (GTK_ENTRY (footprint_name_entry), footprint_name);
         }
         /* Only update the "footprint name" entry with a sensible value */
-        if (!footprint_units)
+        if (footprint_units)
         {
                 GtkWidget *footprint_units_entry = lookup_widget (GTK_WIDGET (widget),
                         "footprint_units_entry");
@@ -110,7 +110,7 @@ all_entries_need_updated (GtkWidget *widget)
                         g_strdup_printf ("%f", package_body_height));
         }
         /* Only update the "footprint author" entry with a sensible value */
-        if (!footprint_author)
+        if (footprint_author)
         {
                 GtkWidget *footprint_author_entry = lookup_widget (GTK_WIDGET (widget),
                         "footprint_author_entry");
@@ -183,7 +183,7 @@ all_entries_need_updated (GtkWidget *widget)
                         g_strdup_printf ("%d", count_y));
         }
         /* Only update the "pin #1 position" entry with a sensible value */
-        if (!pin_1_position)
+        if (pin_1_position)
         {
                 GtkWidget *pin_1_position_entry = lookup_widget (GTK_WIDGET (widget),
                         "pin_1_position_entry");
@@ -216,7 +216,7 @@ all_entries_need_updated (GtkWidget *widget)
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (pin1_square_checkbutton),
                 pin1_square);
         /* Only update the "pad shape" entry with a sensible value */
-        if (!pad_shape)
+        if (pad_shape)
         {
                 GtkWidget *pad_shape_entry = lookup_widget (GTK_WIDGET (widget),
                         "pad_shape_entry");
