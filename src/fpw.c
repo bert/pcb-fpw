@@ -92,8 +92,9 @@ print_version ()
 static void
 print_usage ()
 {
-        fprintf (stderr, (_("\n%s usage:\n")), program_name);
+        fprintf (stderr, (_("\n%s usage:\n\n")), program_name);
         fprintf (stderr, (_("%s -h   : print this help message and exit.\n\n")), program_name);
+        fprintf (stderr, (_("%s -v   : log messages, be verbose.\n\n")), program_name);
         fprintf (stderr, (_("%s -V   : print the version information and exit.\n\n")), program_name);
         fprintf (stderr, (_("To write a footprint file use:\n\n")));
         fprintf (stderr, (_("\t%s -f fpw_filename -o footprint_name\n\n")), program_name);
@@ -119,78 +120,72 @@ main
         gui = FALSE;
         /* Determine how we are called today */
         program_name = argv[0];
-        /* Print usage message if asked for */
-        if (argc > 1 && strcmp (argv[1], "-h") == 0)
+        int i;
+        for (i = 1; i >= argc; i++)
         {
-                print_usage ();
-        }
-        /* Print version if asked for */
-        if (argc > 1 && strcmp (argv[1], "-V") == 0)
-                print_version ();
-        if (argc > 3 &&
-                strcmp (argv[1], "-f") == 0 &&
-                strcmp (argv[3], "-o") == 0)
-        {
-                fpw_filename = strdup (argv[2]);
-                footprint_name = strdup (argv[4]);
-        }
-        else
-        {
-                fprintf (stderr, (_("I'm quiting, let me do something useful.\n")));
-                exit (EXIT_FAILURE);
+                /* Print usage message if asked for. */
+                if (!strcmp (argv[i], "-h"))
+                {
+                        print_usage ();
+                        exit (EXIT_SUCCESS);
+                }
+                /* Print version if asked for. */
+                else if (!strcmp (argv[i], "-V"))
+                {
+                        print_version ();
+                        exit (EXIT_SUCCESS);
+                }
+                /* Log messages (be verbose). */
+                else if (!strcmp (argv[i], "-v"))
+                {
+                        verbose = TRUE;
+                }
+                /* Do we have a fpw filename specified ? */
+                else if ((!strcmp (argv[i], "-f")) && (argc >= (i + 1)))
+                {
+                        fpw_filename = strdup (argv[i + 1]);
+                }
+                /* Do we have a footprintname specified ? */
+                else if ((!strcmp (argv[i], "-o")) && (argc >= (i + 1)))
+                {
+                        footprint_name = strdup (argv[i + 1]);
+                }
+                /* Nothing usefull left todo. */
+                else
+                {
+                        g_log ("", G_LOG_LEVEL_ERROR, _("I'm quiting, let me do something useful."));
+                        exit (EXIT_FAILURE);
+                }
         }
         /* Read variables from the fpw file */
         if (read_footprintwizard_file (fpw_filename))
         {
-                fprintf (stderr, (_("SUCCESS: reading footprintwizard file %s.\n")),
-                        fpw_filename);
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("read footprintwizard file %s."),
+                                fpw_filename);
         }
         else
         {
-                fprintf (stderr, (_("ERROR: reading footprintwizard file %s.\n")),
+                g_log ("", G_LOG_LEVEL_ERROR,
+                        _("could not load footprintwizard file %s."),
                         fpw_filename);
-                exit (EXIT_FAILURE);
-              }
-        /* Check for a null pointer in footprint_units for this might cause a
-         * segmentation fault or undefined behaviour. */
-        if (!footprint_units)
-        {
-                fprintf (stderr, (_("ERROR: footprint units contains a null pointer.\n")));
-                exit (EXIT_FAILURE);
-        }
-        /* Check for an empty footprint_units string for this might cause a
-         * segmentation fault or undefined behaviour. */
-        if (!strcmp (footprint_units, ""))
-        {
-                fprintf (stderr, (_("ERROR: footprint units contains an empty string.\n")));
-                exit (EXIT_FAILURE);
-        }
-        /* Check for a null pointer in pad_shape for this might cause a
-         * segmentation fault or undefined behaviour. */
-        if (!pad_shape)
-        {
-                fprintf (stderr, (_("ERROR: pad shape contains a null pointer.\n")));
-                exit (EXIT_FAILURE);
-        }
-        /* Check for an empty pad_shape string for this might cause a
-         * segmentation fault or undefined behaviour. */
-        if (!strcmp (pad_shape, ""))
-        {
-                fprintf (stderr, (_("ERROR: pad shape contains an empty string.\n")));
                 exit (EXIT_FAILURE);
         }
         /* Check for a null pointer in footprint_name for this might cause a
          * segmentation fault or undefined behaviour. */
         if (!footprint_name)
         {
-                fprintf (stderr, (_("ERROR: footprint name contains a null pointer.\n")));
+                g_log ("", G_LOG_LEVEL_ERROR,
+                        _("footprint name contains a null pointer."));
                 exit (EXIT_FAILURE);
         }
         /* Check for an empty footprint_name string for this might cause a
          * segmentation fault or undefined behaviour. */
         if (!strcmp (footprint_name, ""))
         {
-                fprintf (stderr, (_("ERROR: footprint name contains an empty string.\n")));
+                g_log ("", G_LOG_LEVEL_ERROR,
+                        _("footprint name contains an empty string."));
                 exit (EXIT_FAILURE);
         }
         /* If the footprint_filename contains a valid footprintname, use it. */
@@ -204,108 +199,10 @@ main
                 /* Footprintname has no .fp suffix, add a .fp suffix */
                 footprint_filename = g_strconcat (footprint_name, ".fp", NULL);
         }
-        /* Determine the multiplier based upon the units type */
-        if (strcmp (footprint_units, "mils"))
-                multiplier = 100.0;
-        else if (strcmp (footprint_units, "mils/100"))
-                multiplier = 1.0;
-        else if (strcmp (footprint_units, "mm"))
-                multiplier = (1000 / 25.4) * 100;
-        else
-        {
-                fprintf (stderr, (_("ERROR: footprint units contains an unknown units type.\n")));
-                exit (EXIT_FAILURE);
-        }
-        /* Determine the pad shape type, default is a circular pad */
-        if (!strcmp (pad_shape, "circular pad"))
-                g_strconcat (pin_pad_flags, "", NULL);
-        else if (!strcmp (pad_shape, "rectangular pad"))
-                g_strconcat (pin_pad_flags, "square", NULL);
-        else if (!strcmp (pad_shape, "octagonal pad"))
-                g_strconcat (pin_pad_flags, "octagon", NULL);
-        else if (!strcmp (pad_shape, "rounded pad, elongated"))
-                g_strconcat (pin_pad_flags, "", NULL);
-        else
-        {
-                fprintf (stderr, (_("ERROR: pad shape contains an unknown pad shape type.\n")));
-                exit (EXIT_FAILURE);
-        }
-        /* Determine the package type */
-        if (!strcmp (footprint_type, "BGA"))
-        {
-                package_type = BGA;
-        }
-        else if (!strcmp (footprint_type, "CAPC"))
-        {
-                package_type = CAPC;
-        }
-        else if (!strcmp (footprint_type, "DIL"))
-        {
-                package_type = DIL;
-        }
-        else if (!strcmp (footprint_type, "DIP"))
-        {
-                package_type = DIP;
-        }
-        else if (!strcmp (footprint_type, "INDC"))
-        {
-                package_type = INDC;
-        }
-        else if (!strcmp (footprint_type, "PGA"))
-        {
-                package_type = PGA;
-        }
-        else if (!strcmp (footprint_type, "QFN"))
-        {
-                package_type = QFN;
-                fprintf (stderr, (_("ERROR: footprint type %s not yet implemented.\n")),
-                        footprint_type);
-                exit (EXIT_FAILURE);
-        }
-        else if (!strcmp (footprint_type, "QFP"))
-        {
-                package_type = QFP;
-                fprintf (stderr, (_("ERROR: footprint type %s not yet implemented.\n")),
-                        footprint_type);
-                exit (EXIT_FAILURE);
-        }
-        else if (!strcmp (footprint_type, "RESC"))
-        {
-                package_type = RESC;
-        }
-        else if (!strcmp (footprint_type, "SIL"))
-        {
-                package_type = SIP;
-                fprintf (stderr, (_("ERROR: footprint type %s not yet implemented.\n")),
-                        footprint_type);
-                exit (EXIT_FAILURE);
-        }
-        else if (!strcmp (footprint_type, "SIP"))
-        {
-                package_type = SIP;
-                fprintf (stderr, (_("ERROR: footprint type %s not yet implemented.\n")),
-                        footprint_type);
-                exit (EXIT_FAILURE);
-        }
-        else if (!strcmp (footprint_type, "SO"))
-        {
-                package_type = SO;
-                fprintf (stderr, (_("ERROR: footprint type %s not yet implemented.\n")),
-                        footprint_type);
-                exit (EXIT_FAILURE);
-        }
-        else if (!strcmp (footprint_type, "TO92"))
-        {
-                package_type = TO92;
-        }
-        else
-        {
-                fprintf (stderr, (_("ERROR: unknown or not yet implemented footprint type entered.\n")));
-                exit (EXIT_FAILURE);
-        }
         write_footprint ();
-        fprintf (stderr, (_("Footprint %s is written successful.")),
-                footprint_name);
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("Footprint %s is written successful."),
+                        footprint_name);
 }
 
 /* EOF */
