@@ -242,11 +242,11 @@ gboolean package_is_radial = FALSE;
 
 gchar *footprint_author = NULL;
         /*!< Author of the footprint. */
-gchar *footprint_dist_license = NULL;
+gchar *footprint_dist_license = "GPL";
         /*!< Distribution license of the footprint. */
-gchar *footprint_use_license = NULL;
+gchar *footprint_use_license = "unlimited";
         /*!< Usage license of the footprint. */
-gchar *footprint_status = NULL;
+gchar *footprint_status = "Experimental";
         /*!< Status of the footprint. */
 gboolean attributes_in_footprint;
         /*!< Include the global values based on the entry values of the GUI
