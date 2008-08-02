@@ -369,13 +369,137 @@ read_footprintwizard_file (gchar *fpw_filename)
         FILE *fpw = fopen (fpw_filename, "r");
         if (!fpw)
         {
-                fprintf (stderr, "ERROR: could not open footprint wizard file: %s for reading.\n", fpw_filename);
+                g_log ("", G_LOG_LEVEL_INFO,
+                        "could not open footprint wizard file: %s for reading.\n",
+                        fpw_filename);
                 return (EXIT_FAILURE);
         }
         fscanf (fpw, "%s\n", footprint_filename);
         fscanf (fpw, "%s\n", dummy); /* do not (re)use this value ! */
         fscanf (fpw, "%s\n", footprint_type);
+        /* Determine the package type */
+        if (!strcmp (footprint_type, "BGA"))
+        {
+                package_type = BGA;
+        }
+        else if (!strcmp (footprint_type, "CAPC"))
+        {
+                package_type = CAPC;
+        }
+        else if (!strcmp (footprint_type, "DIL"))
+        {
+                package_type = DIL;
+        }
+        else if (!strcmp (footprint_type, "DIP"))
+        {
+                package_type = DIP;
+        }
+        else if (!strcmp (footprint_type, "INDC"))
+        {
+                package_type = INDC;
+        }
+        else if (!strcmp (footprint_type, "PGA"))
+        {
+                package_type = PGA;
+        }
+        else if (!strcmp (footprint_type, "QFN"))
+        {
+                package_type = QFN;
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("footprint type %s not yet implemented."),
+                        footprint_type);
+                return (EXIT_FAILURE);
+        }
+        else if (!strcmp (footprint_type, "QFP"))
+        {
+                package_type = QFP;
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("footprint type %s not yet implemented."),
+                        footprint_type);
+                return (EXIT_FAILURE);
+        }
+        else if (!strcmp (footprint_type, "RESC"))
+        {
+                package_type = RESC;
+        }
+        else if (!strcmp (footprint_type, "SIL"))
+        {
+                package_type = SIP;
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("footprint type %s not yet implemented."),
+                        footprint_type);
+                return (EXIT_FAILURE);
+        }
+        else if (!strcmp (footprint_type, "SIP"))
+        {
+                package_type = SIP;
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("footprint type %s not yet implemented."),
+                        footprint_type);
+                return (EXIT_FAILURE);
+        }
+        else if (!strcmp (footprint_type, "SO"))
+        {
+                package_type = SO;
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("footprint type %s not yet implemented."),
+                        footprint_type);
+                return (EXIT_FAILURE);
+        }
+        else if (!strcmp (footprint_type, "SOT"))
+        {
+                package_type = SOT;
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("footprint type %s not yet implemented."),
+                        footprint_type);
+                return (EXIT_FAILURE);
+        }
+        else if (!strcmp (footprint_type, "TO92"))
+        {
+                package_type = TO92;
+        }
+        else
+        {
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("ERROR: unknown or not yet implemented footprint type entered.\n"));
+                return (EXIT_FAILURE);
+        }
         fscanf (fpw, "%s\n", footprint_units);
+        /* Check for a null pointer in footprint_units for this might cause a
+         * segmentation fault or undefined behaviour. */
+        if (!footprint_units)
+        {
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("footprint units contains a null pointer."));
+                return (EXIT_FAILURE);
+        }
+        if (!strcmp (footprint_units, "(null)"))
+        {
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("footprint units contains a meaningless string."));
+                return (EXIT_FAILURE);
+        }
+        /* Check for an empty footprint_units string for this might cause a
+         * segmentation fault or undefined behaviour. */
+        if (!strcmp (footprint_units, ""))
+        {
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("footprint units contains an empty string."));
+                return (EXIT_FAILURE);
+        }
+        /* Update the units related variables. */
+        if (update_units_variables () == EXIT_FAILURE)
+        {
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("footprint units contains an unknown units type."));
+                return (EXIT_FAILURE);
+        }
+        else
+        {
+                if (verbose)
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("footprint units variables updated successfull."));
+        }
         fscanf (fpw, "%s\n", footprint_refdes);
         fscanf (fpw, "%s\n", footprint_value);
         fscanf (fpw, "%f\n", package_body_length);
@@ -395,6 +519,41 @@ read_footprintwizard_file (gchar *fpw_filename)
         fscanf (fpw, "%f\n", count_x);
         fscanf (fpw, "%f\n", count_y);
         fscanf (fpw, "%s\n", pad_shape);
+        /* Check for a null pointer in pad_shape for this might cause a
+         * segmentation fault or undefined behaviour. */
+        if (!pad_shape)
+        {
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("pad shape contains a null pointer."));
+                return (EXIT_FAILURE);
+        }
+        if (!strcmp (pad_shape, "(null)"))
+        {
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("pad shape contains a meaningless string."));
+                return (EXIT_FAILURE);
+        }
+        /* Check for an empty pad_shape string for this might cause a
+         * segmentation fault or undefined behaviour. */
+        if (!strcmp (pad_shape, ""))
+        {
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("pad shape contains an empty string."));
+                return (EXIT_FAILURE);
+        }
+        /* Update the pad shape related variables. */
+        if (update_pad_shapes_variables () == EXIT_FAILURE)
+        {
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("pad shape contains an unknown pad shape type."));
+                return (EXIT_FAILURE);
+        }
+        else
+        {
+                if (verbose)
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("pad shape variables updated successfull."));
+        }
         fscanf (fpw, "%s\n", pin_1_position);
         fscanf (fpw, "%f\n", pad_length);
         fscanf (fpw, "%f\n", pad_width);
@@ -424,7 +583,10 @@ read_footprintwizard_file (gchar *fpw_filename)
         fscanf (fpw, "%f\n", g2);
         fscanf (fpw, "%f\n", z2);
         fclose (fpw);
-        fprintf (stderr, "SUCCESS: read a footprint wizard file: %s.\n", fpw_filename);
+        if (verbose)
+                g_log ("", G_LOG_LEVEL_INFO,
+                        "read a footprint wizard file: %s.\n", fpw_filename);
+        return (EXIT_SUCCESS);
 }
 
 
