@@ -369,14 +369,32 @@ read_footprintwizard_file (gchar *fpw_filename)
         FILE *fpw = fopen (fpw_filename, "r");
         if (!fpw)
         {
-                g_log ("", G_LOG_LEVEL_INFO,
-                        "could not open footprint wizard file: %s for reading.\n",
+                g_log ("", G_LOG_LEVEL_CRITICAL,
+                        _("could not open footprint wizard file: %s for reading.\n"),
                         fpw_filename);
                 return (EXIT_FAILURE);
         }
         fscanf (fpw, "%s\n", footprint_filename);
+        /* Check for null pointers or meaningless values. */
+        if (!footprint_filename || (!strcmp (footprint_filename, "(null)")))
+        {
+                g_log ("", G_LOG_LEVEL_CRITICAL,
+                        _("footprint filename with a null pointer found in: %s.\n"),
+                        fpw_filename);
+                footprint_filename = g_strdup ("");
+                return (EXIT_FAILURE);
+        }
         fscanf (fpw, "%s\n", dummy); /* do not (re)use this value ! */
         fscanf (fpw, "%s\n", footprint_type);
+        /* Check for null pointers or meaningless values. */
+        if (!footprint_type || (!strcmp (footprint_type, "(null)")))
+        {
+                g_log ("", G_LOG_LEVEL_CRITICAL,
+                        _("footprint type with a null pointer found in: %s.\n"),
+                        fpw_filename);
+                footprint_type = g_strdup ("");
+                return (EXIT_FAILURE);
+        }
         /* Determine the package type */
         if (!strcmp (footprint_type, "BGA"))
         {
@@ -405,7 +423,7 @@ read_footprintwizard_file (gchar *fpw_filename)
         else if (!strcmp (footprint_type, "QFN"))
         {
                 package_type = QFN;
-                g_log ("", G_LOG_LEVEL_INFO,
+                g_log ("", G_LOG_LEVEL_CRITICAL,
                         _("footprint type %s not yet implemented."),
                         footprint_type);
                 return (EXIT_FAILURE);
@@ -413,7 +431,7 @@ read_footprintwizard_file (gchar *fpw_filename)
         else if (!strcmp (footprint_type, "QFP"))
         {
                 package_type = QFP;
-                g_log ("", G_LOG_LEVEL_INFO,
+                g_log ("", G_LOG_LEVEL_CRITICAL,
                         _("footprint type %s not yet implemented."),
                         footprint_type);
                 return (EXIT_FAILURE);
@@ -425,7 +443,7 @@ read_footprintwizard_file (gchar *fpw_filename)
         else if (!strcmp (footprint_type, "SIL"))
         {
                 package_type = SIP;
-                g_log ("", G_LOG_LEVEL_INFO,
+                g_log ("", G_LOG_LEVEL_CRITICAL,
                         _("footprint type %s not yet implemented."),
                         footprint_type);
                 return (EXIT_FAILURE);
@@ -433,7 +451,7 @@ read_footprintwizard_file (gchar *fpw_filename)
         else if (!strcmp (footprint_type, "SIP"))
         {
                 package_type = SIP;
-                g_log ("", G_LOG_LEVEL_INFO,
+                g_log ("", G_LOG_LEVEL_CRITICAL,
                         _("footprint type %s not yet implemented."),
                         footprint_type);
                 return (EXIT_FAILURE);
@@ -441,7 +459,7 @@ read_footprintwizard_file (gchar *fpw_filename)
         else if (!strcmp (footprint_type, "SO"))
         {
                 package_type = SO;
-                g_log ("", G_LOG_LEVEL_INFO,
+                g_log ("", G_LOG_LEVEL_CRITICAL,
                         _("footprint type %s not yet implemented."),
                         footprint_type);
                 return (EXIT_FAILURE);
@@ -449,7 +467,7 @@ read_footprintwizard_file (gchar *fpw_filename)
         else if (!strcmp (footprint_type, "SOT"))
         {
                 package_type = SOT;
-                g_log ("", G_LOG_LEVEL_INFO,
+                g_log ("", G_LOG_LEVEL_CRITICAL,
                         _("footprint type %s not yet implemented."),
                         footprint_type);
                 return (EXIT_FAILURE);
@@ -460,56 +478,99 @@ read_footprintwizard_file (gchar *fpw_filename)
         }
         else
         {
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("ERROR: unknown or not yet implemented footprint type entered.\n"));
+                g_log ("", G_LOG_LEVEL_CRITICAL,
+                        _("footprint type %s is not valid."),
+                        footprint_type);
                 return (EXIT_FAILURE);
         }
         fscanf (fpw, "%s\n", footprint_units);
-        /* Check for a null pointer in footprint_units for this might cause a
-         * segmentation fault or undefined behaviour. */
-        if (!footprint_units)
+        /* Check for null pointers or meaningless values. */
+        if (!footprint_units || (!strcmp (footprint_units, "(null)")))
         {
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("footprint units contains a null pointer."));
-                return (EXIT_FAILURE);
-        }
-        if (!strcmp (footprint_units, "(null)"))
-        {
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("footprint units contains a meaningless string."));
-                return (EXIT_FAILURE);
-        }
-        /* Check for an empty footprint_units string for this might cause a
-         * segmentation fault or undefined behaviour. */
-        if (!strcmp (footprint_units, ""))
-        {
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("footprint units contains an empty string."));
+                g_log ("", G_LOG_LEVEL_CRITICAL,
+                        _("footprint units with null pointer found in: %s.\n"),
+                        fpw_filename);
+                footprint_units = g_strdup ("");
                 return (EXIT_FAILURE);
         }
         /* Update the units related variables. */
         if (update_units_variables () == EXIT_FAILURE)
         {
-                g_log ("", G_LOG_LEVEL_INFO,
+                g_log ("", G_LOG_LEVEL_CRITICAL,
                         _("footprint units contains an unknown units type."));
+                footprint_units = g_strdup ("");
                 return (EXIT_FAILURE);
         }
         else
         {
                 if (verbose)
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("footprint units variables updated successfull."));
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("footprint units variables updated successfull."));
         }
         fscanf (fpw, "%s\n", footprint_refdes);
+        /* Check for null pointers or meaningless values. */
+        if (!footprint_refdes || (!strcmp (footprint_refdes, "(null)")))
+        {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("footprint refdes with a null pointer found in: %s.\n"),
+                                fpw_filename);
+                footprint_refdes = g_strdup ("");
+        }
         fscanf (fpw, "%s\n", footprint_value);
+        /* Check for null pointers or meaningless values. */
+        if (!footprint_value || (!strcmp (footprint_value, "(null)")))
+        {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("footprint value with a null pointer found in: %s.\n"),
+                                fpw_filename);
+                footprint_value = g_strdup ("");
+        }
         fscanf (fpw, "%f\n", package_body_length);
         fscanf (fpw, "%f\n", package_body_width);
         fscanf (fpw, "%f\n", package_body_height);
         fscanf (fpw, "%d\n", package_is_radial);
         fscanf (fpw, "%s\n", footprint_author);
+        /* Check for null pointers or meaningless values. */
+        if (!footprint_author || (!strcmp (footprint_author, "(null)")))
+        {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("footprint author with a null pointer found in: %s.\n"),
+                                fpw_filename);
+                footprint_author = g_strdup ("");
+        }
         fscanf (fpw, "%s\n", footprint_dist_license);
+        /* Check for null pointers or meaningless values. */
+        if (!footprint_dist_license || (!strcmp (footprint_dist_license, "(null)")))
+        {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("footprint dirstribution license with a null pointer found in: %s.\n"),
+                                fpw_filename);
+                footprint_dist_license = g_strdup ("");
+        }
         fscanf (fpw, "%s\n", footprint_use_license);
+        /* Check for null pointers or meaningless values. */
+        if (!footprint_use_license || (!strcmp (footprint_use_license, "(null)")))
+        {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("footprint usage license with a null pointer found in: %s.\n"),
+                                fpw_filename);
+                footprint_use_license = g_strdup ("");
+        }
         fscanf (fpw, "%s\n", footprint_status);
+        /* Check for null pointers or meaningless values. */
+        if (!footprint_status || (!strcmp (footprint_status, "(null)")))
+        {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("footprint status with a null pointer found in: %s.\n"),
+                                fpw_filename);
+                footprint_status = g_strdup ("");
+        }
         fscanf (fpw, "%d\n", attributes_in_footprint);
         fscanf (fpw, "%d\n", number_of_pins);
         fscanf (fpw, "%d\n", number_of_columns);
@@ -519,42 +580,38 @@ read_footprintwizard_file (gchar *fpw_filename)
         fscanf (fpw, "%f\n", count_x);
         fscanf (fpw, "%f\n", count_y);
         fscanf (fpw, "%s\n", pad_shape);
-        /* Check for a null pointer in pad_shape for this might cause a
-         * segmentation fault or undefined behaviour. */
-        if (!pad_shape)
+        /* Check for null pointers or meaningless values. */
+        if (!pad_shape || (!strcmp (pad_shape, "(null)")))
         {
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("pad shape contains a null pointer."));
-                return (EXIT_FAILURE);
-        }
-        if (!strcmp (pad_shape, "(null)"))
-        {
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("pad shape contains a meaningless string."));
-                return (EXIT_FAILURE);
-        }
-        /* Check for an empty pad_shape string for this might cause a
-         * segmentation fault or undefined behaviour. */
-        if (!strcmp (pad_shape, ""))
-        {
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("pad shape contains an empty string."));
+                g_log ("", G_LOG_LEVEL_CRITICAL,
+                        _("pad shape with a null pointer found in: %s.\n"),
+                        fpw_filename);
+                pad_shape = g_strdup ("");
                 return (EXIT_FAILURE);
         }
         /* Update the pad shape related variables. */
         if (update_pad_shapes_variables () == EXIT_FAILURE)
         {
-                g_log ("", G_LOG_LEVEL_INFO,
+                g_log ("", G_LOG_LEVEL_CRITICAL,
                         _("pad shape contains an unknown pad shape type."));
                 return (EXIT_FAILURE);
         }
         else
         {
                 if (verbose)
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("pad shape variables updated successfull."));
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("pad shape variables updated successfull."));
         }
         fscanf (fpw, "%s\n", pin_1_position);
+        /* Check for null pointers or meaningless values. */
+        if (!pin_1_position || (!strcmp (pin_1_position, "(null)")))
+        {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("pin #1 position with a null pointer found in: %s.\n"),
+                                fpw_filename);
+                pin_1_position = g_strdup ("");
+        }
         fscanf (fpw, "%f\n", pad_length);
         fscanf (fpw, "%f\n", pad_width);
         fscanf (fpw, "%f\n", pad_diameter);
