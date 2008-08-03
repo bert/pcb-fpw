@@ -360,41 +360,11 @@ gchar *dummy = NULL;
 
 
 /*!
- * \brief Read a footprintwizard file into the global variables.
+ * \brief Determine the package type.
  */
 int
-read_footprintwizard_file (gchar *fpw_filename)
+get_package_type ()
 {
-        /* Get global variables from footprintwizard file with .fpw suffix */
-        FILE *fpw = fopen (fpw_filename, "r");
-        if (!fpw)
-        {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("could not open footprint wizard file: %s for reading.\n"),
-                        fpw_filename);
-                return (EXIT_FAILURE);
-        }
-        fscanf (fpw, "%s\n", footprint_filename);
-        /* Check for null pointers or meaningless values. */
-        if (!footprint_filename || (!strcmp (footprint_filename, "(null)")))
-        {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("footprint filename with a null pointer found in: %s.\n"),
-                        fpw_filename);
-                footprint_filename = g_strdup ("");
-                return (EXIT_FAILURE);
-        }
-        fscanf (fpw, "%s\n", dummy); /* do not (re)use this value ! */
-        fscanf (fpw, "%s\n", footprint_type);
-        /* Check for null pointers or meaningless values. */
-        if (!footprint_type || (!strcmp (footprint_type, "(null)")))
-        {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("footprint type with a null pointer found in: %s.\n"),
-                        fpw_filename);
-                footprint_type = g_strdup ("");
-                return (EXIT_FAILURE);
-        }
         /* Determine the package type */
         if (!strcmp (footprint_type, "BGA"))
         {
@@ -482,6 +452,59 @@ read_footprintwizard_file (gchar *fpw_filename)
                         _("footprint type %s is not valid."),
                         footprint_type);
                 return (EXIT_FAILURE);
+        }
+        return (EXIT_SUCCESS);
+}
+
+/*!
+ * \brief Read a footprintwizard file into the global variables.
+ */
+int
+read_footprintwizard_file (gchar *fpw_filename)
+{
+        /* Get global variables from footprintwizard file with .fpw suffix */
+        FILE *fpw = fopen (fpw_filename, "r");
+        if (!fpw)
+        {
+                g_log ("", G_LOG_LEVEL_CRITICAL,
+                        _("could not open footprint wizard file: %s for reading.\n"),
+                        fpw_filename);
+                return (EXIT_FAILURE);
+        }
+        fscanf (fpw, "%s\n", footprint_filename);
+        /* Check for null pointers or meaningless values. */
+        if (!footprint_filename || (!strcmp (footprint_filename, "(null)")))
+        {
+                g_log ("", G_LOG_LEVEL_CRITICAL,
+                        _("footprint filename with a null pointer found in: %s.\n"),
+                        fpw_filename);
+                footprint_filename = g_strdup ("");
+                return (EXIT_FAILURE);
+        }
+        fscanf (fpw, "%s\n", dummy); /* do not (re)use this value ! */
+        fscanf (fpw, "%s\n", footprint_type);
+        /* Check for null pointers or meaningless values. */
+        if (!footprint_type || (!strcmp (footprint_type, "(null)")))
+        {
+                g_log ("", G_LOG_LEVEL_CRITICAL,
+                        _("footprint type with a null pointer found in: %s.\n"),
+                        fpw_filename);
+                footprint_type = g_strdup ("");
+                return (EXIT_FAILURE);
+        }
+        /* Determine the package type */
+        if (get_package_type () == EXIT_FAILURE)
+        {
+                g_log ("", G_LOG_LEVEL_CRITICAL,
+                        _("footprint type contains an unknown package type."));
+                footprint_type = g_strdup ("");
+                return (EXIT_FAILURE);
+        }
+        else
+        {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("determined the package type successfull."));
         }
         fscanf (fpw, "%s\n", footprint_units);
         /* Check for null pointers or meaningless values. */
