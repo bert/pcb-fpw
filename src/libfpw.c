@@ -3787,79 +3787,86 @@ write_footprint()
         /* Switch depending the package type */
         switch (package_type)
         {
-                case BGA :
+                case BGA:
                         write_footprint_bga ();
                         break;
-                case CAPC :
+                case CAPC:
                         write_footprint_smt ();
                         break;
-                case CAPM :
+                case CAPM:
                         write_footprint_smt_molded ();
                         break;
-                case CAPMP :
+                case CAPMP:
                         write_footprint_smt_molded_cap ();
                         break;
-                case CON_DIL :
+                case CON_DIL:
                         write_footprint_con_dil ();
                         break;
-                case CON_DIP :
+                case CON_DIP:
                         write_footprint_con_dip ();
                         break;
-                case DIL :
+                case CON_HDR:
+//                        write_footprint_con_hdr ();
                         return;
                         break;
-                case DIOM :
+                case DIL:
+                        return;
+                        break;
+                case DIOM:
                         write_footprint_smt_molded_diode ();
                         break;
-                case DIOMELF :
+                case DIOMELF:
                         write_footprint_smt_molded_diode ();
                         break;
-                case DIP :
+                case DIP:
                         write_footprint_dip ();
                         break;
-                case INDC :
+                case INDC:
                         write_footprint_smt ();
                         break;
-                case INDM :
+                case INDM:
                         write_footprint_smt_molded ();
                         break;
-                case INDP :
+                case INDP:
                         write_footprint_smt ();
                         break;
-                case PGA :
+                case PGA:
                         write_footprint_pga ();
                         break;
-                case PLCC :
+                case PLCC:
                         write_footprint_plcc ();
                         break;
-                case QFN :
+                case QFN:
                         return;
                         break;
-                case QFP :
+                case QFP:
                         return;
                         break;
-                case RESC :
+                case RESC:
                         write_footprint_smt ();
                         break;
-                case RESM :
+                case RESM:
                         write_footprint_smt_molded ();
                         break;
-                case RESMELF :
+                case RESMELF:
                         write_footprint_smt ();
                         break;
-                case SIL :
+                case SIL:
                         return;
                         break;
-                case SIP :
+                case SIP:
                         return;
                         break;
-                case SO :
+                case SO:
                         return;
                         break;
-                case TO92 :
+                case SOT:
+                        return;
+                        break;
+                case TO92:
                         write_footprint_to92 ();
                         break;
-                default :
+                default:
                         fprintf (stderr, "ERROR: unknown or not yet implemented footprint type entered.\n");
                         return (EXIT_FAILURE);
                         break;
