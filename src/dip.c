@@ -781,7 +781,7 @@ dip_set_gui_constraints (GtkWidget *widget)
         gtk_widget_set_sensitive (count_y_entry, TRUE);
         GtkWidget *number_1_position_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_1_position_entry");
-        gtk_combo_box_set_active (GTK_COMBO_BOX (number_1_position_entry), 1);
+        gtk_combo_box_set_active (GTK_COMBO_BOX (number_1_position_entry), UPPER_LEFT);
         gtk_widget_set_sensitive (number_1_position_entry, FALSE);
 
         /* Widgets on tab 3 "Thermal Pad" */
