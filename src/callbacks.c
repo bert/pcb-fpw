@@ -2143,159 +2143,191 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                         gui_constraints_set_bga (GTK_WIDGET (combobox));
-                        return;
+                        break;
                 }
                 case CAPC:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                         gui_constraints_set_smt (GTK_WIDGET (combobox));
-                        return;
+                        break;
                 }
                 case CAPM:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                         gui_constraints_set_smt (GTK_WIDGET (combobox));
-                        return;
+                        break;
+                }
+                case CAPMP:
+                {
+                        all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                        gui_constraints_set_smt (GTK_WIDGET (combobox));
+                        break;
                 }
                 case CON_DIL:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                         gui_constraints_set_con_dil (GTK_WIDGET (combobox));
-                        return;
+                        break;
                 }
                 case CON_DIP:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                         gui_constraints_set_con_dip (GTK_WIDGET (combobox));
-                        return;
+                        break;
                 }
                 case CON_HDR:
                 {
-                        package_type = CON_HDR;
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        return;
+                        break;
                 }
                 case DIL:
                 {
-                        package_type = DIL;
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        return;
+                        break;
+                }
+                case DIOM:
+                {
+                        all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                        gui_constraints_set_smt (GTK_WIDGET (combobox));
+                        break;
+                }
+                case DIOMELF:
+                {
+                        all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                        gui_constraints_set_smt (GTK_WIDGET (combobox));
+                        break;
                 }
                 case DIP:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                         gui_constraints_set_dip (GTK_WIDGET (combobox));
-                        return;
+                        break;
                 }
                 case INDC:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                         gui_constraints_set_smt (GTK_WIDGET (combobox));
-                        return;
+                        break;
                 }
                 case INDM:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                         gui_constraints_set_smt (GTK_WIDGET (combobox));
-                        return;
+                        break;
+                }
+                case INDP:
+                {
+                        all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                        gui_constraints_set_smt (GTK_WIDGET (combobox));
+                        break;
                 }
                 case PGA:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                         gui_constraints_set_pga (GTK_WIDGET (combobox));
-                        return;
+                        break;
                 }
                 case PLCC:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                         gui_constraints_set_plcc (GTK_WIDGET (combobox));
-                        return;
+                        break;
                 }
                 case QFN:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                         gchar *message = g_strdup_printf (_("ERROR: footprint type QFN is not yet implemented."));
                         message_to_statusbar (GTK_WIDGET (combobox), message);
-                        return;
+                        break;
                 }
                 case QFP:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                         gchar *message = g_strdup_printf (_("ERROR: footprint type QFP is not yet implemented."));
                         message_to_statusbar (GTK_WIDGET (combobox), message);
-                        return;
+                        break;
                 }
                 case RESC:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                         gui_constraints_set_smt (GTK_WIDGET (combobox));
-                        return;
+                        break;
                 }
                 case RESM:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                         gui_constraints_set_smt (GTK_WIDGET (combobox));
-                        return;
+                        break;
+                }
+                case RESMELF:
+                {
+                        all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                        gui_constraints_set_smt (GTK_WIDGET (combobox));
+                        break;
                 }
                 case SIL:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                         gchar *message = g_strdup_printf (_("ERROR: footprint type SIL is not yet implemented."));
                         message_to_statusbar (GTK_WIDGET (combobox), message);
-                        return;
+                        break;
                 }
                 case SIP:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                         gchar *message = g_strdup_printf (_("ERROR: footprint type SIP is not yet implemented."));
                         message_to_statusbar (GTK_WIDGET (combobox), message);
-                        return;
+                        break;
                 }
                 case SO:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                         gchar *message = g_strdup_printf (_("ERROR: footprint type SO is not yet implemented."));
                         message_to_statusbar (GTK_WIDGET (combobox), message);
-                        return;
+                        break;
                 }
                 case SOT:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                         gchar *message = g_strdup_printf (_("ERROR: footprint type SOT is not yet implemented."));
                         message_to_statusbar (GTK_WIDGET (combobox), message);
-                        return;
+                        break;
                 }
                 case TO92:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                         gui_constraints_set_to92 (GTK_WIDGET (combobox));
-                        return;
+                        break;
                 }
                 default:
                 {
                         gchar *message = g_strdup_printf (_("ERROR: unknown or not yet implemented footprint type entered."));
                         message_to_statusbar (GTK_WIDGET (combobox), message);
-                        return;
+                        break;
                 }
         }
-        /* Lookup the dimensions image and the dimensions alignment widgets */
-        GtkWidget *dimensions_image = lookup_widget (GTK_WIDGET (combobox),
-                "dimensions_image");
-        GtkWidget *dimensions_alignment = lookup_widget (GTK_WIDGET (combobox),
-                "dimensions_alignment");
-        /* Remove the dimensions image that is acually present in the GUI,
-         * or the splash_wiz.xpm image if that one is still there */
-        gtk_container_remove (GTK_CONTAINER (dimensions_alignment),
-                dimensions_image);
-        /* Now load a pre-cooked dimensions image for the footprint type and
-         * set the name accordingly */
-        dimensions_image = gtk_image_new_from_file (g_strconcat (footprint_type,
-                 ".xpm", NULL));
-        gtk_widget_set_name (dimensions_image, "dimensions_image");
-        /* Display the pre-cooked dimensions image for the footprint type */
-        gtk_widget_show (dimensions_image);
-        gtk_container_add (GTK_CONTAINER (dimensions_alignment),
-                dimensions_image);
+        gchar *image_filename = g_strconcat (footprint_type, ".xpm", NULL);
+        if (g_file_test (image_filename, G_FILE_TEST_EXISTS))
+        {
+                /* Lookup the dimensions image and the dimensions alignment widgets */
+                GtkWidget *dimensions_image = lookup_widget (GTK_WIDGET (combobox),
+                        "dimensions_image");
+                GtkWidget *dimensions_alignment = lookup_widget (GTK_WIDGET (combobox),
+                        "dimensions_alignment");
+                /* Remove the dimensions image that is acually present in the GUI,
+                 * or the splash_wiz.xpm image if that one is still there */
+                gtk_container_remove (GTK_CONTAINER (dimensions_alignment),
+                        dimensions_image);
+                /* Now load a pre-cooked dimensions image for the footprint type and
+                 * set the name accordingly */
+                dimensions_image = gtk_image_new_from_file (image_filename);
+                gtk_widget_set_name (dimensions_image, "dimensions_image");
+                /* Display the pre-cooked dimensions image for the footprint type */
+                gtk_widget_show (dimensions_image);
+                gtk_container_add (GTK_CONTAINER (dimensions_alignment),
+                        dimensions_image);
+        }
+        g_free (image_filename);
 }
 
 
