@@ -2675,6 +2675,24 @@ on_pin_drill_diameter_entry_changed    (GtkEditable     *editable,
 
 
 /*!
+ * \brief The "pin/pads exception" entry is changed.
+ *
+ * - get the chars from the entry.
+ * - store the contents in the \c pin_pad_exception_string variable (global)
+ *   for processing while generating a footprint or preview.
+ */
+void
+on_pin_pad_exception_entry_changed     (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+        GtkWidget *pin_pad_exception_entry = lookup_widget (GTK_WIDGET (editable),
+                "pin_pad_exception_entry");
+        pin_pad_exception_string = gtk_entry_get_text (GTK_ENTRY (pin_pad_exception_entry));
+        entry_has_changed (GTK_WIDGET (editable));
+
+}
+
+/*!
  * \brief The "pin #1 square" checkbutton is toggled.
  *
  * - save the state of the checkbutton in the \c pin1_square variable (global).

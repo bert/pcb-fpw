@@ -144,6 +144,8 @@ create_pcb_gfpw (void)
   GtkWidget *number_of_columns_entry;
   GtkWidget *number_of_rows_label;
   GtkWidget *number_of_rows_entry;
+  GtkWidget *pin_pad_exceptions_label;
+  GtkWidget *pin_pad_exception_entry;
   GtkWidget *pins_pads_pattern_label;
   GtkWidget *pins_pads_tab_tab_label;
   GtkWidget *thermal_table;
@@ -773,7 +775,7 @@ create_pcb_gfpw (void)
   gtk_container_add (GTK_CONTAINER (pins_pads_pattern_frame), pins_pads_pattern_alignment);
   gtk_alignment_set_padding (GTK_ALIGNMENT (pins_pads_pattern_alignment), 0, 0, 12, 0);
 
-  pins_pads_pattern_table = gtk_table_new (8, 2, FALSE);
+  pins_pads_pattern_table = gtk_table_new (9, 2, FALSE);
   gtk_widget_set_name (pins_pads_pattern_table, "pins_pads_pattern_table");
   gtk_widget_show (pins_pads_pattern_table);
   gtk_container_add (GTK_CONTAINER (pins_pads_pattern_alignment), pins_pads_pattern_table);
@@ -922,6 +924,23 @@ create_pcb_gfpw (void)
                     (GtkAttachOptions) (0), 0, 0);
   gtk_tooltips_set_tip (tooltips, number_of_rows_entry, _("Number of rows"), NULL);
   gtk_entry_set_invisible_char (GTK_ENTRY (number_of_rows_entry), 8226);
+
+  pin_pad_exceptions_label = gtk_label_new (_("Pin/pad exceptions"));
+  gtk_widget_set_name (pin_pad_exceptions_label, "pin_pad_exceptions_label");
+  gtk_widget_show (pin_pad_exceptions_label);
+  gtk_table_attach (GTK_TABLE (pins_pads_pattern_table), pin_pad_exceptions_label, 0, 1, 8, 9,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_misc_set_alignment (GTK_MISC (pin_pad_exceptions_label), 0, 0.5);
+
+  pin_pad_exception_entry = gtk_entry_new ();
+  gtk_widget_set_name (pin_pad_exception_entry, "pin_pad_exception_entry");
+  gtk_widget_show (pin_pad_exception_entry);
+  gtk_table_attach (GTK_TABLE (pins_pads_pattern_table), pin_pad_exception_entry, 1, 2, 8, 9,
+                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_tooltips_set_tip (tooltips, pin_pad_exception_entry, _("Enter non-existing pins or pads here"), NULL);
+  gtk_entry_set_invisible_char (GTK_ENTRY (pin_pad_exception_entry), 8226);
 
   pins_pads_pattern_label = gtk_label_new (_("<b>Pattern</b>"));
   gtk_widget_set_name (pins_pads_pattern_label, "pins_pads_pattern_label");
@@ -1556,6 +1575,9 @@ create_pcb_gfpw (void)
   g_signal_connect ((gpointer) number_of_rows_entry, "changed",
                     G_CALLBACK (on_number_of_rows_entry_changed),
                     NULL);
+  g_signal_connect ((gpointer) pin_pad_exception_entry, "changed",
+                    G_CALLBACK (on_pin_pad_exception_entry_changed),
+                    NULL);
   g_signal_connect ((gpointer) thermal_checkbutton, "toggled",
                     G_CALLBACK (on_thermal_checkbutton_toggled),
                     NULL);
@@ -1734,6 +1756,8 @@ create_pcb_gfpw (void)
   GLADE_HOOKUP_OBJECT (pcb_gfpw, number_of_columns_entry, "number_of_columns_entry");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, number_of_rows_label, "number_of_rows_label");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, number_of_rows_entry, "number_of_rows_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, pin_pad_exceptions_label, "pin_pad_exceptions_label");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, pin_pad_exception_entry, "pin_pad_exception_entry");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, pins_pads_pattern_label, "pins_pads_pattern_label");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, pins_pads_tab_tab_label, "pins_pads_tab_tab_label");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_table, "thermal_table");
