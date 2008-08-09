@@ -27,56 +27,148 @@
  * If the footprint name is recognised the values will be loaded and the
  * entries involved in the GUI will be updated accordingly.\n
  * Currently the following footprints are supported:\n
+ * BGA100C100P10X10_1100X1100X140, BGA100C100P10X10_1100X1100X170,
+ * BGA100C100P10X10_1100X1100X350, BGA100C50P11X11_600X600X100,
+ * BGA100C50P14X14_800X800X120,
  */
 int
 bga_get_default_footprint_values
 (
         gchar *footprint_name)
 {
-        if (!strcmp (footprint_name, "?BGAxx"))
+        if (!strcmp (footprint_name, "?BGA100C100P10X10_1100X1100X140"))
         {
-                footprint_units = g_strdup ("mil");
-                number_of_pins = 4;
-                package_body_width = 300;
-                package_body_length = 200;
-                package_body_height = 200;
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 100;
+                package_body_width = 11.00;
+                package_body_length = 11.00;
+                package_body_height = 1.40;
                 package_is_radial = FALSE;
-                number_of_columns = 2;
-                number_of_rows = 0;
-                pitch_x = 300;
-                pitch_y = 100;
+                number_of_columns = 10;
+                number_of_rows = 10;
+                pitch_x = 1.00;
+                pitch_y = 1.00;
                 count_x = 0;
-                count_y = 2;
+                count_y = 0;
                 pad_shape = g_strdup ("circular pad");
-                pin_drill_diameter = 28;
-                pad_diameter = 60;
-                pad_clearance = 15;
-                pad_solder_mask_clearance = 6;
+                pin_drill_diameter = 0.0;
+                pad_diameter = 0.40;
+                pad_clearance = 0.15;
+                pad_solder_mask_clearance = 0.15;
+                courtyard_length = 13.00;
+                courtyard_width = 13.00;
+                silkscreen_length = 11.00;
+                silkscreen_width = 11.00;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("BGAxx");
+                footprint_name = g_strdup ("BGA100C100P10X10_1100X1100X140");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?BGAyy"))
+        else if (!strcmp (footprint_name, "?BGA100C100P10X10_1100X1100X170"))
         {
-                footprint_units = g_strdup ("mil");
-                number_of_pins = 6;
-                package_body_width = 300;
-                package_body_length = 300;
-                package_body_height = 200;
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 100;
+                package_body_width = 11.00;
+                package_body_length = 11.00;
+                package_body_height = 1.70;
                 package_is_radial = FALSE;
-                number_of_columns = 2;
-                number_of_rows = 0;
-                pitch_x = 300;
-                pitch_y = 100;
+                number_of_columns = 10;
+                number_of_rows = 10;
+                pitch_x = 1.00;
+                pitch_y = 1.00;
                 count_x = 0;
-                count_y = 3;
+                count_y = 0;
                 pad_shape = g_strdup ("circular pad");
-                pin_drill_diameter = 28;
-                pad_diameter = 60;
-                pad_clearance = 15;
-                pad_solder_mask_clearance = 6;
+                pin_drill_diameter = 0.0;
+                pad_diameter = 0.40;
+                pad_clearance = 0.15;
+                pad_solder_mask_clearance = 0.15;
+                courtyard_length = 13.00;
+                courtyard_width = 13.00;
+                silkscreen_length = 11.00;
+                silkscreen_width = 11.00;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("BGAyy");
+                footprint_name = g_strdup ("BGA100C100P10X10_1100X1100X170");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?BGA100C100P10X10_1100X1100X350"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 100;
+                package_body_width = 11.00;
+                package_body_length = 11.00;
+                package_body_height = 1.70;
+                package_is_radial = FALSE;
+                number_of_columns = 10;
+                number_of_rows = 10;
+                pitch_x = 1.00;
+                pitch_y = 1.00;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 0.0;
+                pad_diameter = 0.45;
+                pad_clearance = 0.15;
+                pad_solder_mask_clearance = 0.15;
+                courtyard_length = 13.00;
+                courtyard_width = 13.00;
+                silkscreen_length = 11.00;
+                silkscreen_width = 11.00;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("BGA100C100P10X10_1100X1100X350");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?BGA100C50P11X11_600X600X100"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 121;
+                package_body_width = 6.00;
+                package_body_length = 6.00;
+                package_body_height = 1.00;
+                package_is_radial = FALSE;
+                number_of_columns = 11;
+                number_of_rows = 11;
+                pitch_x = 0.50;
+                pitch_y = 0.50;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 0.0;
+                pad_diameter = 0.25;
+                pad_clearance = 0.15;
+                pad_solder_mask_clearance = 0.15;
+                courtyard_length = 7.00;
+                courtyard_width = 7.00;
+                silkscreen_length = 6.10;
+                silkscreen_width = 6.10;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("BGA100C50P11X11_600X600X100");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?BGA100C50P14X14_800X800X120"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 196;
+                package_body_width = 8.00;
+                package_body_length = 8.00;
+                package_body_height = 1.20;
+                package_is_radial = FALSE;
+                number_of_columns = 14;
+                number_of_rows = 14;
+                pitch_x = 0.50;
+                pitch_y = 0.50;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 0.0;
+                pad_diameter = 0.25;
+                pad_clearance = 0.15;
+                pad_solder_mask_clearance = 0.15;
+                courtyard_length = 9.00;
+                courtyard_width = 9.00;
+                silkscreen_length = 8.00;
+                silkscreen_width = 8.00;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("BGA100C50P14X14_800X800X120");
                 return (EXIT_SUCCESS);
         }
         else
