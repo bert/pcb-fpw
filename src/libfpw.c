@@ -458,6 +458,43 @@ get_package_type ()
         return (EXIT_SUCCESS);
 }
 
+
+/*!
+ * \brief Determine if the pin/pad is a non-existing pin or pad.
+ *
+ * \retval EXIT_SUCCESS if pin/pad is non-existing (included in the
+ * \c pin_pad)exception_string).\n
+ * \retval EXIT_FAILURE if pin/pad exists (not included in the
+ * \c pin_pad_exception_string).
+ */
+int
+get_pin_pad_exception (gchar pin_pad_name)
+{
+        /* Test if a NULL pointer or empty string was passed. */
+        if (!pin_pad_name)
+                return EXIT_FAILURE;
+        if (!strcmp (pin_pad_name, ""))
+                return EXIT_FAILURE;
+        /* Disect the pin_pad_exception_string by tokenizing it and test
+         * the tokens against the pin_pad_name. */
+        const gchar* delimiters = g_strdup (".,/-:; ");
+        const gchar* search_string = g_strdup (pin_pad_exception_string);
+        /* Test the first token. */
+        const gchar* tag = strtok (search_string, delimiters);
+        if (!strcmp (pin_pad_name, tag))
+                return EXIT_SUCCESS;
+        /* Test following tokens in a loop. */
+        while (strlen (search_string))
+        {
+                tag = strtok (NULL, delimiters);
+                if (!strcmp (pin_pad_name, tag))
+                        return EXIT_SUCCESS;
+        }
+        /* If we do get until here, let's assume the pin/pad exists. */
+        return EXIT_FAILURE;
+}
+
+
 /*!
  * \brief Read a footprintwizard file into the global variables.
  */
