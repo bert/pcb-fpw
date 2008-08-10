@@ -1804,7 +1804,7 @@ on_filechooser_dialog_open_button_clicked
                         if (verbose)
                                 g_log ("", G_LOG_LEVEL_INFO, _("Read footprintwizard file %s."), fpw_filename);
                         /* Update the entry widgets to reflect the changes. */
-                        GtkWidget *toplevel = gtk_widget_get_toplevel (button);
+                        GtkWidget *toplevel = gtk_widget_get_toplevel (GTK_WIDGET (button));
                         if (GTK_WIDGET_TOPLEVEL (toplevel))
                         {
                                 all_entries_need_updated (GTK_WIDGET (toplevel));
@@ -1814,23 +1814,23 @@ on_filechooser_dialog_open_button_clicked
                 }
                 else
                 {
-                        GtkWidget *toplevel = gtk_widget_get_toplevel (button);
+                        GtkWidget *toplevel = gtk_widget_get_toplevel (GTK_WIDGET (button));
                         if (GTK_WIDGET_TOPLEVEL (toplevel))
                         {
-                                GtkWidget *dialog = NULL;
-                                dialog = gtk_message_dialog_new
-                                        (toplevel,
+                                GtkWidget *dialog = gtk_message_dialog_new
+                                (
+                                        toplevel,
                                         GTK_DIALOG_DESTROY_WITH_PARENT,
                                         GTK_MESSAGE_ERROR,
                                         GTK_BUTTONS_CLOSE,
-                                        _("ERROR: Unable to read footprint wizard file %s."),
-                                        fpw_filename);
+                                        g_strdup_printf (_("ERROR: Unable to read footprint wizard file %s."), fpw_filename)
+                                );
                                 gtk_dialog_run (GTK_DIALOG (dialog));
                                 gtk_widget_destroy (dialog);
-                                g_free (toplevel);
                                 g_free (dialog);
                                 return;
                         }
+                        g_free (toplevel);
                 }
                 /* Clean up used variable(s). */
                 g_free (fpw_filename);
