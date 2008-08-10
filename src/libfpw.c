@@ -462,13 +462,13 @@ get_package_type ()
 /*!
  * \brief Determine if the pin/pad is a non-existing pin or pad.
  *
- * \retval EXIT_SUCCESS if pin/pad is non-existing (included in the
- * \c pin_pad)exception_string).\n
- * \retval EXIT_FAILURE if pin/pad exists (not included in the
+ * \retval EXIT_SUCCESS if pin/pad is non-existing (it is found in the
+ * \c pin_pad_exception_string).\n
+ * \retval EXIT_FAILURE if pin/pad exists (it is not found in the
  * \c pin_pad_exception_string).
  */
 int
-get_pin_pad_exception (gchar pin_pad_name)
+get_pin_pad_exception (gchar *pin_pad_name)
 {
         /* Test if a NULL pointer or empty string was passed. */
         if (!pin_pad_name)
@@ -477,18 +477,27 @@ get_pin_pad_exception (gchar pin_pad_name)
                 return EXIT_FAILURE;
         /* Disect the pin_pad_exception_string by tokenizing it and test
          * the tokens against the pin_pad_name. */
-        const gchar* delimiters = g_strdup (".,/-:; ");
-        const gchar* search_string = g_strdup (pin_pad_exception_string);
+        gchar *delimiters = g_strdup (", ");
+        gchar *search_string = g_strdup (pin_pad_exception_string);
         /* Test the first token. */
-        const gchar* tag = strtok (search_string, delimiters);
-        if (!strcmp (pin_pad_name, tag))
-                return EXIT_SUCCESS;
-        /* Test following tokens in a loop. */
-        while (strlen (search_string))
+        gchar *token = strtok (search_string, delimiters);
+        if (!strcmp (pin_pad_name, token))
         {
-                tag = strtok (NULL, delimiters);
-                if (!strcmp (pin_pad_name, tag))
-                        return EXIT_SUCCESS;
+                return EXIT_SUCCESS;
+        }
+        else
+        {
+                /* Test following tokens in a loop. */
+                while (token)
+                {
+                        token = strtok (NULL, delimiters);
+                        if (!token)
+                                return EXIT_FAILURE;
+                        if (!strcmp (pin_pad_name, token))
+                        {
+                                return EXIT_SUCCESS;
+                        }
+                }
         }
         /* If we do get until here, let's assume the pin/pad exists. */
         return EXIT_FAILURE;
@@ -1268,7 +1277,7 @@ write_footprint_bga ()
          * excluding "I", "O", "Q", "S" and "Z" */
         {
                 for (j = 0; (j < number_of_columns); j++)
-                /* all columns o a row [1 .. n]
+                /* all columns of a row [1 .. n]
                  * where j is a member of the positive Natural numbers (N) */
                 {
                         if (pin1_square && (pin_number == 1))
@@ -1276,19 +1285,22 @@ write_footprint_bga ()
                         else
                                 pin_pad_flags = g_strdup ("");
                         pin_pad_name = g_strdup_printf ("%s%d", (row_letters[i]), (j + 1));
-                        write_pad
-                        (
-                                pin_number, /* pin number */
-                                pin_pad_name, /* pin name */
-                                multiplier * ((((-number_of_columns -1) / 2.0) + 1 + j) * pitch_x), /* x0 coordinate */
-                                multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
-                                multiplier * ((((-number_of_columns -1) / 2.0) + 1 + j) * pitch_x), /* x1 coordinate */
-                                multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y1-coordinate */
-                                multiplier * pad_diameter, /* pad width */
-                                multiplier * pad_clearance, /* clearance */
-                                multiplier * (pad_diameter + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
-                                pin_pad_flags /* flags */
-                        );
+                        if (get_pin_pad_exception (pin_pad_name))
+                        {
+                                write_pad
+                                (
+                                        pin_number, /* pin number */
+                                        pin_pad_name, /* pin name */
+                                        multiplier * ((((-number_of_columns -1) / 2.0) + 1 + j) * pitch_x), /* x0 coordinate */
+                                        multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
+                                        multiplier * ((((-number_of_columns -1) / 2.0) + 1 + j) * pitch_x), /* x1 coordinate */
+                                        multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y1-coordinate */
+                                        multiplier * pad_diameter, /* pad width */
+                                        multiplier * pad_clearance, /* clearance */
+                                        multiplier * (pad_diameter + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                                        pin_pad_flags /* flags */
+                                );
+                        }
                         pin_number++;
                 }
         }
