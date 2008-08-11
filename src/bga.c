@@ -250,6 +250,19 @@ bga_set_gui_constraints (GtkWidget *widget)
 
         /* Widgets on tab 3 "Thermal Pad" */
         gui_constraints_disable_thermal_tab_widgets (widget);
+        GtkToggleButton *fiducial = lookup_widget (GTK_WIDGET (widget),
+                "fiducial_checkbutton");
+        gtk_toggle_button_set_active (fiducial, FALSE);
+        gtk_widget_set_sensitive (fiducial, TRUE);
+        GtkWidget *fiducial_pad_diameter_entry = lookup_widget
+                (GTK_WIDGET (widget),
+                "fiducial_pad_diameter_entry");
+        gtk_widget_set_sensitive (fiducial_pad_diameter_entry, TRUE);
+        GtkWidget *fiducial_pad_solder_mask_clearance_entry = lookup_widget
+                (GTK_WIDGET (widget),
+                "fiducial_pad_solder_mask_clearance_entry");
+        gtk_widget_set_sensitive (fiducial_pad_solder_mask_clearance_entry,
+                TRUE);
 
         /* Widgets on tab 5 "Heel & Toe goals" */
         gui_constraints_disable_heel_and_toe_goals_tab_widgets (widget);
