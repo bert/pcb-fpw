@@ -147,6 +147,9 @@ bga_get_default_footprint_values
                 pad_diameter = 0.25;
                 pad_clearance = 0.15;
                 pad_solder_mask_clearance = 0.15;
+                fiducial = TRUE;
+                fiducial_pad_diameter = 1.00;
+                fiducial_pad_solder_mask_clearance = 1.00;
                 courtyard_length = 7.00;
                 courtyard_width = 7.00;
                 silkscreen_length = 6.10;
@@ -188,6 +191,9 @@ bga_get_default_footprint_values
                 pad_diameter = 0.25;
                 pad_clearance = 0.15;
                 pad_solder_mask_clearance = 0.15;
+                fiducial = TRUE;
+                fiducial_pad_diameter = 1.00;
+                fiducial_pad_solder_mask_clearance = 1.00;
                 courtyard_length = 9.00;
                 courtyard_width = 9.00;
                 silkscreen_length = 8.00;
