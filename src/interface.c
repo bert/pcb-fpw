@@ -163,6 +163,15 @@ create_pcb_gfpw (void)
   GtkWidget *thermal_solder_mask_clearance_entry;
   GtkWidget *thermal_clearance_entry;
   GtkWidget *thermal_pad_label;
+  GtkWidget *fiducials_frame;
+  GtkWidget *fiducials_alignment;
+  GtkWidget *fiducials_table;
+  GtkWidget *fiducial_pad_diameter_label;
+  GtkWidget *fiducial_solder_mask_clearance_label;
+  GtkWidget *fiducial_pad_diameter_entry;
+  GtkWidget *fiducial_checkbutton;
+  GtkWidget *fiducial_pad_solder_mask_clearance_entry;
+  GtkWidget *fiducials_label;
   GtkWidget *thermal_pad_tab_label;
   GtkWidget *silkscreen_table;
   GtkWidget *courtyard_frame;
@@ -953,13 +962,14 @@ create_pcb_gfpw (void)
   gtk_widget_show (pins_pads_tab_tab_label);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook), 1), pins_pads_tab_tab_label);
 
-  thermal_table = gtk_table_new (1, 1, FALSE);
+  thermal_table = gtk_table_new (2, 1, FALSE);
   gtk_widget_set_name (thermal_table, "thermal_table");
   gtk_widget_show (thermal_table);
   gtk_container_add (GTK_CONTAINER (notebook), thermal_table);
   gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebook), thermal_table,
                                       FALSE, FALSE, GTK_PACK_START);
   gtk_container_set_border_width (GTK_CONTAINER (thermal_table), 5);
+  gtk_table_set_row_spacings (GTK_TABLE (thermal_table), 10);
 
   thermal_pad_frame = gtk_frame_new (NULL);
   gtk_widget_set_name (thermal_pad_frame, "thermal_pad_frame");
@@ -1069,6 +1079,72 @@ create_pcb_gfpw (void)
   gtk_widget_show (thermal_pad_label);
   gtk_frame_set_label_widget (GTK_FRAME (thermal_pad_frame), thermal_pad_label);
   gtk_label_set_use_markup (GTK_LABEL (thermal_pad_label), TRUE);
+
+  fiducials_frame = gtk_frame_new (NULL);
+  gtk_widget_set_name (fiducials_frame, "fiducials_frame");
+  gtk_widget_show (fiducials_frame);
+  gtk_table_attach (GTK_TABLE (thermal_table), fiducials_frame, 0, 1, 1, 2,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL), 0, 0);
+  gtk_frame_set_shadow_type (GTK_FRAME (fiducials_frame), GTK_SHADOW_NONE);
+
+  fiducials_alignment = gtk_alignment_new (0.5, 0.5, 1, 1);
+  gtk_widget_set_name (fiducials_alignment, "fiducials_alignment");
+  gtk_widget_show (fiducials_alignment);
+  gtk_container_add (GTK_CONTAINER (fiducials_frame), fiducials_alignment);
+  gtk_alignment_set_padding (GTK_ALIGNMENT (fiducials_alignment), 0, 0, 12, 0);
+
+  fiducials_table = gtk_table_new (3, 2, FALSE);
+  gtk_widget_set_name (fiducials_table, "fiducials_table");
+  gtk_widget_show (fiducials_table);
+  gtk_container_add (GTK_CONTAINER (fiducials_alignment), fiducials_table);
+
+  fiducial_pad_diameter_label = gtk_label_new (_("Fiducial pad diameter (D)"));
+  gtk_widget_set_name (fiducial_pad_diameter_label, "fiducial_pad_diameter_label");
+  gtk_widget_show (fiducial_pad_diameter_label);
+  gtk_table_attach (GTK_TABLE (fiducials_table), fiducial_pad_diameter_label, 0, 1, 1, 2,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_misc_set_alignment (GTK_MISC (fiducial_pad_diameter_label), 0, 0.5);
+
+  fiducial_solder_mask_clearance_label = gtk_label_new (_("Fiducial solder mask clearance"));
+  gtk_widget_set_name (fiducial_solder_mask_clearance_label, "fiducial_solder_mask_clearance_label");
+  gtk_widget_show (fiducial_solder_mask_clearance_label);
+  gtk_table_attach (GTK_TABLE (fiducials_table), fiducial_solder_mask_clearance_label, 0, 1, 2, 3,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_misc_set_alignment (GTK_MISC (fiducial_solder_mask_clearance_label), 0, 0.5);
+
+  fiducial_pad_diameter_entry = gtk_entry_new ();
+  gtk_widget_set_name (fiducial_pad_diameter_entry, "fiducial_pad_diameter_entry");
+  gtk_widget_show (fiducial_pad_diameter_entry);
+  gtk_table_attach (GTK_TABLE (fiducials_table), fiducial_pad_diameter_entry, 1, 2, 1, 2,
+                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_tooltips_set_tip (tooltips, fiducial_pad_diameter_entry, _("Diameter of fiducial pad"), NULL);
+  gtk_entry_set_invisible_char (GTK_ENTRY (fiducial_pad_diameter_entry), 8226);
+
+  fiducial_checkbutton = gtk_check_button_new_with_mnemonic (_("Fiducials"));
+  gtk_widget_set_name (fiducial_checkbutton, "fiducial_checkbutton");
+  gtk_widget_show (fiducial_checkbutton);
+  gtk_table_attach (GTK_TABLE (fiducials_table), fiducial_checkbutton, 0, 1, 0, 1,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+
+  fiducial_pad_solder_mask_clearance_entry = gtk_entry_new ();
+  gtk_widget_set_name (fiducial_pad_solder_mask_clearance_entry, "fiducial_pad_solder_mask_clearance_entry");
+  gtk_widget_show (fiducial_pad_solder_mask_clearance_entry);
+  gtk_table_attach (GTK_TABLE (fiducials_table), fiducial_pad_solder_mask_clearance_entry, 1, 2, 2, 3,
+                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_tooltips_set_tip (tooltips, fiducial_pad_solder_mask_clearance_entry, _("Clearance distance with solder mask"), NULL);
+  gtk_entry_set_invisible_char (GTK_ENTRY (fiducial_pad_solder_mask_clearance_entry), 8226);
+
+  fiducials_label = gtk_label_new (_("<b>Fiducials</b>"));
+  gtk_widget_set_name (fiducials_label, "fiducials_label");
+  gtk_widget_show (fiducials_label);
+  gtk_frame_set_label_widget (GTK_FRAME (fiducials_frame), fiducials_label);
+  gtk_label_set_use_markup (GTK_LABEL (fiducials_label), TRUE);
 
   thermal_pad_tab_label = gtk_label_new (_("Thermal pad"));
   gtk_widget_set_name (thermal_pad_tab_label, "thermal_pad_tab_label");
@@ -1596,6 +1672,15 @@ create_pcb_gfpw (void)
   g_signal_connect ((gpointer) thermal_clearance_entry, "changed",
                     G_CALLBACK (on_thermal_clearance_entry_changed),
                     NULL);
+  g_signal_connect ((gpointer) fiducial_pad_diameter_entry, "changed",
+                    G_CALLBACK (on_fiducial_pad_diameter_entry_changed),
+                    NULL);
+  g_signal_connect ((gpointer) fiducial_checkbutton, "toggled",
+                    G_CALLBACK (on_fiducial_checkbutton_toggled),
+                    NULL);
+  g_signal_connect ((gpointer) fiducial_pad_solder_mask_clearance_entry, "changed",
+                    G_CALLBACK (on_fiducial_pad_solder_mask_clearance_entry_changed),
+                    NULL);
   g_signal_connect ((gpointer) courtyard_checkbutton, "toggled",
                     G_CALLBACK (on_courtyard_checkbutton_toggled),
                     NULL);
@@ -1775,6 +1860,15 @@ create_pcb_gfpw (void)
   GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_solder_mask_clearance_entry, "thermal_solder_mask_clearance_entry");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_clearance_entry, "thermal_clearance_entry");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_pad_label, "thermal_pad_label");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, fiducials_frame, "fiducials_frame");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, fiducials_alignment, "fiducials_alignment");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, fiducials_table, "fiducials_table");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, fiducial_pad_diameter_label, "fiducial_pad_diameter_label");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, fiducial_solder_mask_clearance_label, "fiducial_solder_mask_clearance_label");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, fiducial_pad_diameter_entry, "fiducial_pad_diameter_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, fiducial_checkbutton, "fiducial_checkbutton");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, fiducial_pad_solder_mask_clearance_entry, "fiducial_pad_solder_mask_clearance_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, fiducials_label, "fiducials_label");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_pad_tab_label, "thermal_pad_tab_label");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, silkscreen_table, "silkscreen_table");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_frame, "courtyard_frame");

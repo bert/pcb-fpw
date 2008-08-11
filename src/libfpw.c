@@ -331,6 +331,13 @@ gdouble thermal_solder_mask_clearance;
 gdouble thermal_clearance;
         /*!< Clearance of a thermal pad. */
 
+gboolean fiducial;
+        /*!< Draw fiducials. */
+gdouble fiducial_pad_diameter;
+        /*!< Outer diameter of the fiducial pad. */
+gdouble fiducial_pad_solder_mask_clearance;
+        /*!< Solder mask clearance of a fiducial pad. */
+
 gboolean c1_state = TRUE;
         /*!< State of the top to bottom center-center distance radiobutton. */
 gdouble c1;

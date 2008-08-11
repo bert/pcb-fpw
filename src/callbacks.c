@@ -1664,6 +1664,79 @@ on_courtyard_width_entry_changed       (GtkEditable     *editable,
 
 
 /*!
+ * \brief The "fiducial" checkbutton is toggled.
+ *
+ * - get active state.
+ * - store in the \c fiducial variable (global).
+ * - set pad diameter and pad solder mask clearance entries to the
+ *   corresponding sensitive state.
+ * - set fpw entries have changed marker.
+ */
+void
+on_fiducial_checkbutton_toggled        (GtkToggleButton *togglebutton,
+                                        gpointer         user_data)
+{
+        fiducial = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
+        GtkWidget *fiducial_pad_diameter_entry = lookup_widget (GTK_WIDGET (togglebutton),
+                "fiducial_pad_diameter_entry");
+        gtk_widget_set_sensitive (fiducial_pad_diameter_entry, fiducial);
+        GtkWidget *fiducial_pad_soldermask_clearance_entry = lookup_widget
+                (GTK_WIDGET (togglebutton),
+                "fiducial_pad_solder_mask_clearance_entry");
+        gtk_widget_set_sensitive (fiducial_pad_soldermask_clearance_entry, fiducial);
+        entry_has_changed (GTK_WIDGET (togglebutton));
+}
+
+
+/*!
+ * \brief The "fiducial pad diameter (D)" entry is changed.
+ *
+ * - get the chars from the entry.
+ * - convert to a double and store in the \c fiducial_pad_diameter variable
+ *   (global).
+ * - set fpw entries have changed marker.
+ */
+void
+on_fiducial_pad_diameter_entry_changed (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+        gchar *leftovers;
+        GtkWidget *fiducial_pad_diameter_entry = lookup_widget (GTK_WIDGET (editable),
+                "fiducial_pad_diameter_entry");
+        const gchar* fiducial_pad_diameter_string =
+                gtk_entry_get_text (GTK_ENTRY (fiducial_pad_diameter_entry));
+        fiducial_pad_diameter = g_ascii_strtod (fiducial_pad_diameter_string, &leftovers);
+        entry_has_changed (GTK_WIDGET (editable));
+}
+
+
+/*!
+ * \brief The "fiducial pad solder mask clearance" entry is changed.
+ *
+ * - get the chars from the entry.
+ * - convert to a double and store in the \c fiducial_pad_solder_mask_clearance
+ *   variable (global).
+ * - set fpw entries have changed marker.
+ */
+void
+on_fiducial_pad_solder_mask_clearance_entry_changed
+                                        (GtkEditable     *editable,
+                                         gpointer         user_data)
+{
+        gchar *leftovers;
+        GtkWidget *fiducial_pad_solder_mask_clearance_entry =
+                lookup_widget (GTK_WIDGET (editable),
+                "fiducial_pad_solder_mask_clearance_entry");
+        const gchar* fiducial_pad_solder_mask_clearance_string =
+                gtk_entry_get_text (GTK_ENTRY
+                (fiducial_pad_solder_mask_clearance_entry));
+        fiducial_pad_solder_mask_clearance = g_ascii_strtod
+                (fiducial_pad_solder_mask_clearance_string, &leftovers);
+        entry_has_changed (GTK_WIDGET (editable));
+}
+
+
+/*!
  * \brief The file chooser dialog "Cancel" button is clicked.
  *
  * - lookup the dialog widget.
