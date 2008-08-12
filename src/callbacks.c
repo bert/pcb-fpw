@@ -572,8 +572,37 @@ gui_constraints_disable_thermal_tab_widgets (GtkWidget *widget)
 {
         GtkWidget *thermal_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "thermal_checkbutton");
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (thermal_checkbutton), FALSE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (thermal_checkbutton),
+                FALSE);
         gtk_widget_set_sensitive (thermal_checkbutton, FALSE);
+        GtkToggleButton *thermal_nopaste_checkbutton = lookup_widget
+                (GTK_WIDGET (widget), "thermal_nopaste_checkbutton");
+        gtk_widget_set_sensitive (thermal_nopaste_checkbutton, FALSE);
+        GtkWidget *thermal_length_entry = lookup_widget (GTK_WIDGET (widget),
+                "thermal_length_entry");
+        gtk_widget_set_sensitive (thermal_length_entry, FALSE);
+        GtkWidget *thermal_width_entry = lookup_widget (GTK_WIDGET (widget),
+                "thermal_width_entry");
+        gtk_widget_set_sensitive (thermal_width_entry, FALSE);
+        GtkWidget *thermal_clearance_entry = lookup_widget (GTK_WIDGET
+                (widget), "thermal_clearance_entry");
+        gtk_widget_set_sensitive (thermal_clearance_entry, FALSE);
+        GtkWidget *thermal_solder_mask_clearance_entry = lookup_widget
+                (GTK_WIDGET (widget), "thermal_solder_mask_clearance_entry");
+        gtk_widget_set_sensitive (thermal_solder_mask_clearance_entry, FALSE);
+        GtkToggleButton *fiducial_checkbutton = lookup_widget (GTK_WIDGET (widget),
+                "fiducial_checkbutton");
+        gtk_toggle_button_set_active (fiducial_checkbutton, FALSE);
+        gtk_widget_set_sensitive (fiducial_checkbutton, FALSE);
+        GtkWidget *fiducial_pad_diameter_entry = lookup_widget
+                (GTK_WIDGET (widget),
+                "fiducial_pad_diameter_entry");
+        gtk_widget_set_sensitive (fiducial_pad_diameter_entry, FALSE);
+        GtkWidget *fiducial_pad_solder_mask_clearance_entry = lookup_widget
+                (GTK_WIDGET (widget),
+                "fiducial_pad_solder_mask_clearance_entry");
+        gtk_widget_set_sensitive (fiducial_pad_solder_mask_clearance_entry,
+                FALSE);
 }
 
 
