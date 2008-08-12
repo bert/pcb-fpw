@@ -36,6 +36,9 @@
 #include "support.h"
 
 #include "libfpw.c"
+#include "bga.c"
+#include "dip.c"
+#include "sot.c"
 #include "preview.c"
 
 

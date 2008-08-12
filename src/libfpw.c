@@ -40,10 +40,6 @@
 #include <gtk/gtk.h>
 #include <stdlib.h>
 
-#include "bga.c"
-#include "dip.c"
-#include "sot.c"
-
 #define FPW_VERSION "0.0.7"
 
 
