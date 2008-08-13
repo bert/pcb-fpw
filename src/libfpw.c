@@ -151,7 +151,11 @@ get_pin_pad_exception (gchar *pin_pad_name)
         /* Test if a NULL pointer or empty string was passed. */
         if (!pin_pad_name)
                 return EXIT_FAILURE;
+        if (!pin_pad_exception_string)
+                return EXIT_FAILURE;
         if (!strcmp (pin_pad_name, ""))
+                return EXIT_FAILURE;
+        if (!strcmp (pin_pad_exception_string, ""))
                 return EXIT_FAILURE;
         /* Disect the pin_pad_exception_string by tokenizing it and test
          * the tokens against the pin_pad_name. */
