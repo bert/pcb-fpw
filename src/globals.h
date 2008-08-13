@@ -147,6 +147,9 @@ typedef enum pad_shapes
 /* Thin lines are not printed on silkscreen (in the real world) */
 #define THIN_DRAW 1 /*!< Draw with thin lines. */
 
+#define MIL_TO_MM 0.025400000 /*!< Convert mil to mm. */
+#define MM_TO_MIL 39.37007874 /*!< Convert mm to mil. */
+
 /* Pin or pad types / Object flag values */
 #define PIN 0x0001
         /*!< If set, this object is a pin.\n
