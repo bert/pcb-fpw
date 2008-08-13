@@ -986,6 +986,70 @@ write_footprint_bga ()
                         pin_number++;
                 }
         }
+        /* Write fiducials if the package seem to have them. */
+        if (fiducial)
+        {
+                fprintf (fp, "# Write fiducials\n");
+                pin_pad_name = g_strdup ("");
+                pin_pad_flags = g_strdup ("");
+                write_pad
+                (
+                        pin_number, /* pin number */
+                        pin_pad_name, /* pin name */
+                        multiplier * ((silkscreen_length - courtyard_length > 2) ?
+                                (courtyard_length / 2) :
+                                ((courtyard_length / 2 ) + 1)),
+                                /* x0 coordinate */
+                        multiplier * ((silkscreen_width - courtyard_width > 2) ?
+                                (-courtyard_width / 2) :
+                                ((-courtyard_width / 2 ) - 1)),
+                                /* y0 coordinate */
+                        multiplier * ((silkscreen_length - courtyard_length > 2) ?
+                                (courtyard_length / 2) :
+                                ((courtyard_length / 2 ) + 1)),
+                                /* x1 coordinate */
+                        multiplier * ((silkscreen_width - courtyard_width > 2) ?
+                                (-courtyard_width / 2) :
+                                ((-courtyard_width / 2 ) - 1)),
+                                /* y1 coordinate */
+                        multiplier * fiducial_pad_diameter, /* pad width */
+                        multiplier * fiducial_pad_solder_mask_clearance,
+                                /* pad clearance */
+                        multiplier * (fiducial_pad_diameter +
+                                (2 * fiducial_pad_solder_mask_clearance)),
+                                /* solder mask clearance */
+                        pin_pad_flags /* flags */
+                );
+                pin_number++;
+                write_pad
+                (
+                        pin_number, /* pin number */
+                        pin_pad_name, /* pin name */
+                        multiplier * ((silkscreen_length - courtyard_length > 2) ?
+                                (-courtyard_length / 2) :
+                                ((-courtyard_length / 2 ) - 1)),
+                                /* x0 coordinate */
+                        multiplier * ((silkscreen_width - courtyard_width > 2) ?
+                                (courtyard_width / 2) :
+                                ((courtyard_width / 2 ) + 1)),
+                                /* y0 coordinate */
+                        multiplier * ((silkscreen_length - courtyard_length > 2) ?
+                                (-courtyard_length / 2) :
+                                ((-courtyard_length / 2 ) - 1)),
+                                /* x1 coordinate */
+                        multiplier * ((silkscreen_width - courtyard_width > 2) ?
+                                (courtyard_width / 2) :
+                                ((courtyard_width / 2 ) + 1)),
+                                /* y1 coordinate */
+                        multiplier * fiducial_pad_diameter, /* pad width */
+                        multiplier * fiducial_pad_solder_mask_clearance,
+                                /* pad clearance */
+                        multiplier * (fiducial_pad_diameter +
+                                (2 * fiducial_pad_solder_mask_clearance)),
+                                /* solder mask clearance */
+                        pin_pad_flags /* flags */
+                );
+        }
         /* Write a package body on the silkscreen */
         if (silkscreen_package_outline)
         {
