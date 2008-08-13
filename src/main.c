@@ -115,9 +115,9 @@ main (int argc, char *argv[])
          * to insensitive, and set the "fiducial pad solder mask clearance"
          * entry for the fiducial pads to insensitive.
          */
-        GtkToggleButton *fiducial = lookup_widget (GTK_WIDGET (pcb_gfpw),
+        GtkToggleButton *fiducial_checkbutton = lookup_widget (GTK_WIDGET (pcb_gfpw),
                 "fiducial_checkbutton");
-        gtk_toggle_button_set_active (fiducial, FALSE);
+        gtk_toggle_button_set_active (fiducial_checkbutton, FALSE);
         GtkWidget *fiducial_pad_diameter_entry = lookup_widget
                 (GTK_WIDGET (pcb_gfpw),
                 "fiducial_pad_diameter_entry");
