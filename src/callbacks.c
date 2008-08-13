@@ -183,6 +183,15 @@ all_entries_need_updated (GtkWidget *widget)
                 gtk_entry_set_text (GTK_ENTRY (count_y_entry),
                         g_strdup_printf ("%d", count_y));
         }
+        /* Only update the "pin/pad exceptions" entry with a sensible value. */
+        if (!pin_pad_exception_string || (!strcmp (pin_pad_exception_string, "")))
+        {
+                GtkWidget *pin_pad_exception_string_entry = lookup_widget
+                        (GTK_WIDGET (widget), "pin_pad_exception_string_entry");
+                gtk_widget_set_sensitive (pin_pad_exception_string_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY (pin_pad_exception_string_entry),
+                        g_strdup_printf ("%s", pin_pad_exception_string));
+        }
         /* Only update the "pin #1 position" entry with a sensible value */
         if (pin_1_position)
         {
@@ -260,6 +269,36 @@ all_entries_need_updated (GtkWidget *widget)
                 gtk_widget_set_sensitive (pad_solder_mask_clearance_entry, TRUE);
                 gtk_entry_set_text (GTK_ENTRY (pad_solder_mask_clearance_entry),
                         g_strdup_printf ("%f", pad_solder_mask_clearance));
+        }
+        /* Widgets on tab 3 "Thermal Pads". */
+        GtkWidget *fiducial_checkbutton = lookup_widget (GTK_WIDGET (widget),
+                "fiducial_checkbutton");
+        gtk_widget_set_sensitive (fiducial_checkbutton, TRUE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fiducial_checkbutton),
+                fiducial);
+        /* Only update the "fiducial pad diameter" entry with a sensible
+         * value. */
+        if (fiducial_pad_diameter != 0.0)
+        {
+                GtkWidget *fiducial_pad_diameter_entry = lookup_widget
+                        (GTK_WIDGET (widget), "fiducial_pad_diameter_entry");
+                gtk_widget_set_sensitive (fiducial_pad_diameter_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY (fiducial_pad_diameter_entry),
+                        g_strdup_printf ("%f", fiducial_pad_diameter));
+        }
+        /* Only update the "fiducial pad solder mask clearance" entry with a
+         * sensible value. */
+        if (fiducial_pad_solder_mask_clearance != 0.0)
+        {
+                GtkWidget *fiducial_pad_solder_mask_clearance_entry =
+                        lookup_widget (GTK_WIDGET (widget),
+                        "fiducial_pad_solder_mask_clearance_entry");
+                gtk_widget_set_sensitive (fiducial_pad_solder_mask_clearance_entry,
+                        TRUE);
+                gtk_entry_set_text (GTK_ENTRY
+                        (fiducial_pad_solder_mask_clearance_entry),
+                        g_strdup_printf ("%f",
+                        fiducial_pad_solder_mask_clearance));
         }
 }
 
