@@ -1,5 +1,9 @@
 =======	CODING STANDARD FOR PCB-FPW =======
 
+Rationale
+---------
+Here follow some notes to myself, or any other volunteer hacker who wants to 
+join the effort.
 
 File headers
 ------------ 
@@ -10,6 +14,8 @@ A default header looks similar to the following:
  * \file default.c
  * \author Copyright (C) 2008 by Author <author@email.address>
  * \brief A brief description of the files use.
+ *
+ * A more elaborate description follows here, and can span several lines.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,14 +36,16 @@ A default header looks similar to the following:
 
 Doxygen style comments
 ----------------------
-The preferd style for a Doxygen comment for a entity is:
+The prefered style for a Doxygen comment for a function or any other entity is:
 /*!
  * \brief Brief description.
  *
  * Followed by a more verbose description of what is to be explained about the 
  * entity.
- * \ret Return value can be described here.
+ * \param Description of a parameter.
  * \bugs Can be reported here.
+ * \execption Can be described here.
+ * \return Return value can be described here.
  * \todo Can be described here.
  * The more verbose statement is closed with:
  */
@@ -55,7 +63,7 @@ Comments
 
 Indentation
 -----------
-To hack in this code you need to set emacs (or whatever you use) to
+To hack in this code you need to set emacs (or whatever editor you use) to
 8 indentation steps and {} at the right places (see code).
 No tabs, just plain spaces, except in Makefiles and config stuff where tabs 
 have a meaning.
@@ -67,10 +75,22 @@ My ~/.emacs are:
 
 (add-hook 'c-mode-hook 'my-c-mode-hook)
 
+Truncation
+----------
 It is prefered for lines to not extend beyond 80 characters long.
 If you need more than 40 characters to ident (5 levels) you probably should 
 write a function.
 However, I'm not very strict about this myself.
+Please do truncate a line at a convenient position, for example:
+
+        if (((very_elaborate_variable_description_1 > 0)
+        || (very_elaborate_variable_description_2 < 0))
+        && (very_elaborate_variable_description_3 > 1000))
+        {
+                blah;
+        }
+
+Improve readability by putting the operator at the start of the new line.
 
 
 Curly Braces
