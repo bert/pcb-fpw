@@ -271,6 +271,60 @@ all_entries_need_updated (GtkWidget *widget)
                         g_strdup_printf ("%f", pad_solder_mask_clearance));
         }
         /* Widgets on tab 3 "Thermal Pads". */
+        /* Update the "thermal" checkbutton. */
+        GtkWidget *thermal_checkbutton = lookup_widget (GTK_WIDGET (widget),
+                "thermal_checkbutton");
+        gtk_widget_set_sensitive (thermal_checkbutton, TRUE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (thermal_checkbutton),
+                thermal);
+        /* Update the "thermal nopaste" checkbutton. */
+        GtkWidget *thermal_nopaste_checkbutton = lookup_widget
+                (GTK_WIDGET (widget), "thermal_nopaste_checkbutton");
+        gtk_widget_set_sensitive (thermal_nopaste_checkbutton, TRUE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON
+                (thermal_nopaste_checkbutton), thermal_nopaste);
+        /* Only update the "thermal length" entry with a sensible value. */
+        if (thermal_length != 0.0)
+        {
+                GtkWidget *thermal_length_entry = lookup_widget
+                        (GTK_WIDGET (widget), "thermal_length_entry");
+                gtk_widget_set_sensitive (thermal_length_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY (thermal_length_entry),
+                        g_strdup_printf ("%f", thermal_length));
+        }
+        /* Only update the "thermal width" entry with a sensible value. */
+        if (thermal_width != 0.0)
+        {
+                GtkWidget *thermal_width_entry = lookup_widget
+                        (GTK_WIDGET (widget), "thermal_width_entry");
+                gtk_widget_set_sensitive (thermal_width_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY (thermal_width_entry),
+                        g_strdup_printf ("%f", thermal_width));
+        }
+        /* Only update the "thermal pad clearance" entry with a sensible
+         * value. */
+        if (thermal_clearance != 0.0)
+        {
+                GtkWidget *thermal_clearance_entry = lookup_widget
+                        (GTK_WIDGET (widget), "thermal_clearance_entry");
+                gtk_widget_set_sensitive (thermal_clearance_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY (thermal_clearance_entry),
+                        g_strdup_printf ("%f", thermal_clearance));
+        }
+        /* Only update the "thermal pad clearance" entry with a sensible
+         * value. */
+        if (thermal_solder_mask_clearance != 0.0)
+        {
+                GtkWidget *thermal_solder_mask_clearance_entry =
+                        lookup_widget (GTK_WIDGET (widget),
+                        "thermal_solder_mask_clearance_entry");
+                gtk_widget_set_sensitive (thermal_solder_mask_clearance_entry,
+                        TRUE);
+                gtk_entry_set_text (GTK_ENTRY
+                        (thermal_solder_mask_clearance_entry),
+                        g_strdup_printf ("%f",
+                        thermal_solder_mask_clearance));
+        }
         GtkWidget *fiducial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "fiducial_checkbutton");
         gtk_widget_set_sensitive (fiducial_checkbutton, TRUE);
