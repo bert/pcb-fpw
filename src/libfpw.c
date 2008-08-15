@@ -378,6 +378,9 @@ read_footprintwizard_file (gchar *fpw_filename)
         fscanf (fpw, "%f\n", thermal_width);
         fscanf (fpw, "%f\n", thermal_clearance);
         fscanf (fpw, "%f\n", thermal_solder_mask_clearance);
+        fscanf (fpw, "%d\n", fiducial);
+        fscanf (fpw, "%f\n", fiducial_pad_diameter);
+        fscanf (fpw, "%f\n", fiducial_pad_solder_mask_clearance);
         fscanf (fpw, "%d\n", silkscreen_package_outline);
         fscanf (fpw, "%d\n", silkscreen_indicate_1);
         fscanf (fpw, "%f\n", silkscreen_line_width);
@@ -3552,6 +3555,9 @@ write_footprintwizard_file (gchar *fpw_filename)
         fprintf (fpw, "%f\n", thermal_width);
         fprintf (fpw, "%f\n", thermal_clearance);
         fprintf (fpw, "%f\n", thermal_solder_mask_clearance);
+        fprintf (fpw, "%d\n", fiducial);
+        fprintf (fpw, "%f\n", fiducial_pad_diameter);
+        fprintf (fpw, "%f\n", fiducial_pad_solder_mask_clearance);
         fprintf (fpw, "%f\n", silkscreen_package_outline);
         fprintf (fpw, "%f\n", silkscreen_indicate_1);
         fprintf (fpw, "%f\n", silkscreen_line_width);
@@ -3567,7 +3573,8 @@ write_footprintwizard_file (gchar *fpw_filename)
         fprintf (fpw, "%f\n", g2);
         fprintf (fpw, "%f\n", z2);
         fclose (fpw);
-        fprintf (stderr, "SUCCESS: wrote Footprintwizard file %s.\n", fpw_filename);
+        fprintf (stderr, "SUCCESS: wrote Footprintwizard file %s.\n",
+                fpw_filename);
 }
 
 
