@@ -472,9 +472,19 @@ all_entries_to_default_sensitivity (GtkWidget *widget)
         GtkWidget *thermal_clearance_entry = lookup_widget (GTK_WIDGET (widget),
                 "thermal_clearance_entry");
         gtk_widget_set_sensitive (thermal_clearance_entry, FALSE);
-        GtkWidget *thermal_solder_mask_clearance_entry = lookup_widget (GTK_WIDGET (widget),
-                "thermal_solder_mask_clearance_entry");
+        GtkWidget *thermal_solder_mask_clearance_entry = lookup_widget
+                (GTK_WIDGET (widget), "thermal_solder_mask_clearance_entry");
         gtk_widget_set_sensitive (thermal_solder_mask_clearance_entry, FALSE);
+        GtkWidget *fiducial_checkbutton = lookup_widget (GTK_WIDGET (widget),
+                "fiducial_checkbutton");
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fiducial_checkbutton),
+                FALSE);
+        GtkWidget *fiducial_pad_diameter_entry = lookup_widget (GTK_WIDGET
+                (widget), "fiducial_pad_diameter_entry");
+        gtk_widget_set_sensitive (fiducial_pad_diameter_entry, FALSE);
+        GtkWidget *fiducial_pad_solder_mask_clearance_entry = lookup_widget
+                (GTK_WIDGET (widget), "fiducial_pad_solder_mask_clearance_entry");
+        gtk_widget_set_sensitive (fiducial_pad_diameter_entry, FALSE);
 
         /* Widgets on tab 4 "Silkscreen" */
         GtkWidget *silkscreen_package_outline_checkbutton = lookup_widget (GTK_WIDGET (widget),
