@@ -33,6 +33,7 @@
  * BGA100C65P10X10_800X800X140, BGA100C80P10X10_1000X1000X140,
  * BGA100C80P10X10_1000X1000X150, BGA100C80P10X10_900X900X100,
  * BGA100C80P10X10_900X900X150, BGA100C80P11X11_1100X1100X140,
+ * BGA1020C100P32X32_3300X3300X350,
  */
 int
 bga_get_default_footprint_values
@@ -447,6 +448,42 @@ bga_get_default_footprint_values
                 silkscreen_width = 11.00;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA100C80P11X11_1100X1100X140");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?BGA1020C100P32X32_3300X3300X350"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 1020;
+                pin_pad_exception_string = g_strconcat
+                (
+                        "A1,A32,",
+                        "AM1,AM32,",
+                        NULL
+                );
+                package_body_width = 33.00;
+                package_body_length = 33.00;
+                package_body_height = 3.50;
+                package_is_radial = FALSE;
+                number_of_columns = 32;
+                number_of_rows = 32;
+                pitch_x = 1.00;
+                pitch_y = 1.00;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 0.0;
+                pad_diameter = 0.45;
+                pad_clearance = 0.15;
+                pad_solder_mask_clearance = 0.15;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                courtyard_length = 35.00;
+                courtyard_width = 35.00;
+                silkscreen_length = 33.00;
+                silkscreen_width = 33.00;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("BGA1020C100P32X32_3300X3300X350");
                 return (EXIT_SUCCESS);
         }
         else
