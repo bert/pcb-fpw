@@ -39,6 +39,7 @@
 #include "bga.c"
 #include "dip.c"
 #include "pga.c"
+#include "plcc.c"
 #include "sot.c"
 #include "preview.c"
 
@@ -833,40 +834,6 @@ gui_constraints_set_con_hdr (GtkWidget *widget)
 
         /* Widgets on tab 5 "Heel & Toe goals" */
         gui_constraints_disable_heel_and_toe_goals_tab_widgets (widget);
-}
-
-
-/*!
- * \brief Set GUI constraints for the PLCC package type.
- */
-int
-gui_constraints_set_plcc (GtkWidget *widget)
-{
-        /* Widgets on tab 1 "Footprint" */
-        GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
-                "package_is_radial_checkbutton");
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (package_is_radial_checkbutton), FALSE);
-        gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
-
-        /* Widgets on tab 2 "Pins/Pads" */
-        GtkWidget *number_1_position_entry = lookup_widget (GTK_WIDGET (widget),
-                "number_1_position_entry");
-        gtk_combo_box_set_active (GTK_COMBO_BOX (number_1_position_entry), 4);
-        gtk_widget_set_sensitive (number_1_position_entry, FALSE);
-        GtkWidget *pad_diameter_entry = lookup_widget (GTK_WIDGET (widget),
-                "pad_diameter_entry");
-        gtk_entry_set_text (GTK_ENTRY (pad_diameter_entry), "");
-        gtk_widget_set_sensitive (pad_diameter_entry, FALSE);
-        GtkWidget *pin_drill_diameter_entry = lookup_widget (GTK_WIDGET (widget),
-                "pin_drill_diameter_entry");
-        gtk_entry_set_text (GTK_ENTRY (pin_drill_diameter_entry), "");
-        gtk_widget_set_sensitive (pin_drill_diameter_entry, FALSE);
-        GtkWidget *pad_shape_entry = lookup_widget (GTK_WIDGET (widget),
-                "pad_shape_entry");
-        gtk_combo_box_set_active (GTK_COMBO_BOX (pad_shape_entry), 2);
-
-        /* Widgets on tab 3 "Thermal Pad" */
-        gui_constraints_disable_thermal_tab_widgets (widget);
 }
 
 
@@ -2112,6 +2079,12 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
                                         all_entries_need_updated (GTK_WIDGET (editable));
                                 return;
                         }
+                        case PLCC:
+                        {
+                                if (plcc_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
+                                        all_entries_need_updated (GTK_WIDGET (editable));
+                                return;
+                        }
                         case SOT:
                         {
                                 if (sot_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
@@ -2306,7 +2279,7 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                 case PLCC:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        gui_constraints_set_plcc (GTK_WIDGET (combobox));
+                        plcc_set_gui_constraints (GTK_WIDGET (combobox));
                         break;
                 }
                 case QFN:
