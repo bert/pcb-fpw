@@ -37,6 +37,7 @@
  * BGA1024C100P32X32_3300X3300X350, BGA103C65P8X13_600X900X100,
  * BGA1056C100P39X39_4000X4000X380, BGA1056C100P39X39_4000X4000X400,
  * BGA105C50P15X15_800X800X140, BGA107C80P10X14_1050X1300X120,
+ * BGA107C80P10X14_1050X1300X140, BGA107C80P10X14_1050X1600X140,
  */
 int
 bga_get_default_footprint_values
@@ -803,6 +804,98 @@ bga_get_default_footprint_values
                 silkscreen_width = 13.00;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA107C80P10X14_1050X1300X120");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?BGA107C80P10X14_1050X1300X140"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 107;
+                pin_pad_exception_string = g_strconcat
+                (
+                        "A1,A3,A4,A5,A6,A7,A8,",
+                        "C1,C10,",
+                        "D1,D10,",
+                        "E1,E10,",
+                        "F1,F10,",
+                        "G1,G10,",
+                        "H1,H10,",
+                        "J1,J10,",
+                        "K1,K10,",
+                        "L1,L10,",
+                        "M1,M10,",
+                        "P3,P4,P5,P6,P7,P8,",
+                        NULL
+                );
+                package_body_width = 10.50;
+                package_body_length = 13.00;
+                package_body_height = 1.40;
+                package_is_radial = FALSE;
+                number_of_columns = 10;
+                number_of_rows = 14;
+                pitch_x = 0.80;
+                pitch_y = 0.80;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 0.0;
+                pad_diameter = 0.40;
+                pad_clearance = 0.15;
+                pad_solder_mask_clearance = 0.15;
+                fiducial = TRUE;
+                fiducial_pad_diameter = 1.00;
+                fiducial_pad_solder_mask_clearance = 1.00;
+                courtyard_length = 12.50;
+                courtyard_width = 15.00;
+                silkscreen_length = 10.50;
+                silkscreen_width = 13.00;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("BGA107C80P10X14_1050X1300X140");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?BGA107C80P10X14_1050X1600X140"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 107;
+                pin_pad_exception_string = g_strconcat
+                (
+                        "A1,A3,A4,A5,A6,A7,A8,",
+                        "C1,C10,",
+                        "D1,D10,",
+                        "E1,E10,",
+                        "F1,F10,",
+                        "G1,G10,",
+                        "H1,H10,",
+                        "J1,J10,",
+                        "K1,K10,",
+                        "L1,L10,",
+                        "M1,M10,",
+                        "P3,P4,P5,P6,P7,P8,",
+                        NULL
+                );
+                package_body_width = 10.50;
+                package_body_length = 16.00;
+                package_body_height = 1.40;
+                package_is_radial = FALSE;
+                number_of_columns = 10;
+                number_of_rows = 14;
+                pitch_x = 0.80;
+                pitch_y = 0.80;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 0.0;
+                pad_diameter = 0.40;
+                pad_clearance = 0.15;
+                pad_solder_mask_clearance = 0.15;
+                fiducial = TRUE;
+                fiducial_pad_diameter = 1.00;
+                fiducial_pad_solder_mask_clearance = 1.00;
+                courtyard_length = 12.50;
+                courtyard_width = 15.00;
+                silkscreen_length = 10.50;
+                silkscreen_width = 16.00;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("BGA107C80P10X14_1050X1600X140");
                 return (EXIT_SUCCESS);
         }
         else
