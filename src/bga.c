@@ -38,6 +38,7 @@
  * BGA1056C100P39X39_4000X4000X380, BGA1056C100P39X39_4000X4000X400,
  * BGA105C50P15X15_800X800X140, BGA107C80P10X14_1050X1300X120,
  * BGA107C80P10X14_1050X1300X140, BGA107C80P10X14_1050X1600X140,
+ * BGA1089C100P33X33_3500X3500X350, BGA1089C127P33X33_4250X4250X350,
  */
 int
 bga_get_default_footprint_values
@@ -896,6 +897,68 @@ bga_get_default_footprint_values
                 silkscreen_width = 16.00;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA107C80P10X14_1050X1600X140");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?BGA1089C100P33X33_3500X3500X350"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 1089;
+                pin_pad_exception_string = g_strdup ("");
+                package_body_width = 35.00;
+                package_body_length = 35.00;
+                package_body_height = 3.50;
+                package_is_radial = FALSE;
+                number_of_columns = 33;
+                number_of_rows = 33;
+                pitch_x = 1.00;
+                pitch_y = 1.00;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 0.0;
+                pad_diameter = 0.45;
+                pad_clearance = 0.15;
+                pad_solder_mask_clearance = 0.15;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                courtyard_length = 37.00;
+                courtyard_width = 37.00;
+                silkscreen_length = 35.00;
+                silkscreen_width = 35.00;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("BGA1089C100P33X33_3500X3500X350");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?BGA1089C127P33X33_4250X4250X350"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 1089;
+                pin_pad_exception_string = g_strdup ("");
+                package_body_width = 42.50;
+                package_body_length = 42.50;
+                package_body_height = 3.50;
+                package_is_radial = FALSE;
+                number_of_columns = 33;
+                number_of_rows = 33;
+                pitch_x = 1.27;
+                pitch_y = 1.27;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 0.0;
+                pad_diameter = 0.55;
+                pad_clearance = 0.15;
+                pad_solder_mask_clearance = 0.15;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                courtyard_length = 46.50;
+                courtyard_width = 46.50;
+                silkscreen_length = 42.50;
+                silkscreen_width = 42.50;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("BGA1089C127P33X33_4250X4250X350");
                 return (EXIT_SUCCESS);
         }
         else
