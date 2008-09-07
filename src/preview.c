@@ -609,10 +609,6 @@ preview_create_window
          * destroyed */
         gtk_window_set_destroy_with_parent (preview_window, TRUE);
         /* Set the preview window title */
-        /*!
-         * \todo In the near future, when the preview window is called from
-         * pcb-gfpw, include the name of the footprint.\n
-         */
         gchar *preview_window_title = g_strdup_printf ("pcb-fpw preview: %s",
                 footprint_name);
         gtk_window_set_title (preview_window, preview_window_title);
