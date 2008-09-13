@@ -261,7 +261,7 @@ gint count_x;
         /*!< Number of pin/pads in the X-direction. */
 gint count_y;
         /*!< Number of pin/pads in the Y-direction. */
-const gchar* pin_pad_exception_string;
+const gchar* pin_pad_exceptions_string;
         /*!< String with exceptions of existing pins or pads. */
 gdouble pin_drill_diameter;
         /*!< Diameter of pin hole. */

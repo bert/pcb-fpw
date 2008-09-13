@@ -1894,35 +1894,7 @@ Lower right
 			      </child>
 
 			      <child>
-				<widget class="GtkLabel" id="pin_pad_exceptions_label">
-				  <property name="visible">True</property>
-				  <property name="label" translatable="yes">Pin/pad exceptions</property>
-				  <property name="use_underline">False</property>
-				  <property name="use_markup">False</property>
-				  <property name="justify">GTK_JUSTIFY_LEFT</property>
-				  <property name="wrap">False</property>
-				  <property name="selectable">False</property>
-				  <property name="xalign">0</property>
-				  <property name="yalign">0.5</property>
-				  <property name="xpad">0</property>
-				  <property name="ypad">0</property>
-				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
-				  <property name="width_chars">-1</property>
-				  <property name="single_line_mode">False</property>
-				  <property name="angle">0</property>
-				</widget>
-				<packing>
-				  <property name="left_attach">0</property>
-				  <property name="right_attach">1</property>
-				  <property name="top_attach">8</property>
-				  <property name="bottom_attach">9</property>
-				  <property name="x_options">fill</property>
-				  <property name="y_options"></property>
-				</packing>
-			      </child>
-
-			      <child>
-				<widget class="GtkEntry" id="pin_pad_exception_entry">
+				<widget class="GtkEntry" id="pin_pad_exceptions_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Enter non-existing pins or pads here</property>
 				  <property name="can_focus">True</property>
@@ -1933,13 +1905,34 @@ Lower right
 				  <property name="has_frame">True</property>
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
-				  <signal name="changed" handler="on_pin_pad_exception_entry_changed" last_modification_time="Sat, 09 Aug 2008 19:46:56 GMT"/>
+				  <signal name="changed" handler="on_pin_pad_exceptions_entry_changed" last_modification_time="Sat, 13 Sep 2008 12:35:53 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>
 				  <property name="right_attach">2</property>
 				  <property name="top_attach">8</property>
 				  <property name="bottom_attach">9</property>
+				  <property name="y_options"></property>
+				</packing>
+			      </child>
+
+			      <child>
+				<widget class="GtkButton" id="pin_pad_exceptions_button">
+				  <property name="visible">True</property>
+				  <property name="tooltip" translatable="yes">Click to select pin/pad exceptions</property>
+				  <property name="can_focus">True</property>
+				  <property name="label" translatable="yes">Pin/Pad exceptions</property>
+				  <property name="use_underline">True</property>
+				  <property name="relief">GTK_RELIEF_NORMAL</property>
+				  <property name="focus_on_click">True</property>
+				  <signal name="clicked" handler="on_pin_pad_exceptions_button_clicked" last_modification_time="Sat, 13 Sep 2008 09:26:19 GMT"/>
+				</widget>
+				<packing>
+				  <property name="left_attach">0</property>
+				  <property name="right_attach">1</property>
+				  <property name="top_attach">8</property>
+				  <property name="bottom_attach">9</property>
+				  <property name="x_options">fill</property>
 				  <property name="y_options"></property>
 				</packing>
 			      </child>

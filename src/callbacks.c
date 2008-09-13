@@ -42,6 +42,7 @@
 #include "plcc.c"
 #include "sot.c"
 #include "preview.c"
+#include "select_exceptions.c"
 
 
 gboolean main_window_title_has_asterisk = FALSE;
@@ -186,13 +187,13 @@ all_entries_need_updated (GtkWidget *widget)
                         g_strdup_printf ("%d", count_y));
         }
         /* Only update the "pin/pad exceptions" entry with a sensible value. */
-        if (!pin_pad_exception_string || (!strcmp (pin_pad_exception_string, "")))
+        if (!pin_pad_exceptions_string || (!strcmp (pin_pad_exceptions_string, "")))
         {
-                GtkWidget *pin_pad_exception_string_entry = lookup_widget
+                GtkWidget *pin_pad_exceptions_string_entry = lookup_widget
                         (GTK_WIDGET (widget), "pin_pad_exception_string_entry");
-                gtk_widget_set_sensitive (pin_pad_exception_string_entry, TRUE);
-                gtk_entry_set_text (GTK_ENTRY (pin_pad_exception_string_entry),
-                        g_strdup_printf ("%s", pin_pad_exception_string));
+                gtk_widget_set_sensitive (pin_pad_exceptions_string_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY (pin_pad_exceptions_string_entry),
+                        g_strdup_printf ("%s", pin_pad_exceptions_string));
         }
         /* Only update the "pin #1 position" entry with a sensible value */
         if (pin_1_position)
@@ -2820,19 +2821,57 @@ on_pin_drill_diameter_entry_changed    (GtkEditable     *editable,
 
 
 /*!
- * \brief The "pin/pads exception" entry is changed.
+ * \brief The "Pin/Pad exceptions" button is clicked.
+ *
+ * - check if a (valid) footprint type has been selected and if a valid
+ *   number of rows and a valid number of columns is selected:
+ *   - if non valid values have been selected (or not selected yet)
+ *     log a warning and let this occurance pass.
+ *   - if valid values have been selected create a seperate window
+ *     with radio buttons depicting the package leads.
+ */
+void
+on_pin_pad_exceptions_button_clicked   (GtkButton       *button,
+                                        gpointer         user_data)
+{
+        if (!footprint_type ||
+                (!strcmp (footprint_type, "")) ||
+                (number_of_rows < 1) ||
+                (number_of_columns < 1))
+        {
+                return;
+        }
+        else
+        {
+                if (!footprint_name || (!strcmp (footprint_name, "")))
+                {
+                        select_exceptions_create_window (footprint_type,
+                        number_of_rows, number_of_columns);
+                }
+                else
+                {
+                        select_exceptions_create_window (footprint_name,
+                        number_of_rows, number_of_columns);
+                }
+        }
+
+}
+
+
+/*!
+ * \brief The "pin/pad exceptions" entry is changed.
  *
  * - get the chars from the entry.
  * - store the contents in the \c pin_pad_exception_string variable (global)
  *   for processing while generating a footprint or preview.
  */
 void
-on_pin_pad_exception_entry_changed     (GtkEditable     *editable,
+on_pin_pad_exceptions_entry_changed     (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-        GtkWidget *pin_pad_exception_entry = lookup_widget (GTK_WIDGET (editable),
-                "pin_pad_exception_entry");
-        pin_pad_exception_string = gtk_entry_get_text (GTK_ENTRY (pin_pad_exception_entry));
+        GtkWidget *pin_pad_exceptions_entry = lookup_widget (GTK_WIDGET (editable),
+                "pin_pad_exceptions_entry");
+        pin_pad_exceptions_string = gtk_entry_get_text (GTK_ENTRY (pin_pad_exceptions_entry));
         entry_has_changed (GTK_WIDGET (editable));
 
 }

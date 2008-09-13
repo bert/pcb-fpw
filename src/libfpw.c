@@ -152,16 +152,16 @@ get_pin_pad_exception (gchar *pin_pad_name)
         /* Test if a NULL pointer or empty string was passed. */
         if (!pin_pad_name)
                 return EXIT_FAILURE;
-        if (!pin_pad_exception_string)
+        if (!pin_pad_exceptions_string)
                 return EXIT_FAILURE;
         if (!strcmp (pin_pad_name, ""))
                 return EXIT_FAILURE;
-        if (!strcmp (pin_pad_exception_string, ""))
+        if (!strcmp (pin_pad_exceptions_string, ""))
                 return EXIT_FAILURE;
-        /* Disect the pin_pad_exception_string by tokenizing it and test
+        /* Disect the pin_pad_exceptions_string by tokenizing it and test
          * the tokens against the pin_pad_name. */
         gchar *delimiters = g_strdup (", ");
-        gchar *search_string = g_strdup (pin_pad_exception_string);
+        gchar *search_string = g_strdup (pin_pad_exceptions_string);
         /* Test the first token. */
         gchar *token = strtok (search_string, delimiters);
         if (!strcmp (pin_pad_name, token))

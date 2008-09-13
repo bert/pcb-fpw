@@ -51,7 +51,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 100;
-                pin_pad_exception_string = g_strdup ("");
+                pin_pad_exceptions_string = g_strdup ("");
                 package_body_width = 11.00;
                 package_body_length = 11.00;
                 package_body_height = 1.40;
@@ -79,7 +79,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 100;
-                pin_pad_exception_string = g_strdup ("");
+                pin_pad_exceptions_string = g_strdup ("");
                 package_body_width = 11.00;
                 package_body_length = 11.00;
                 package_body_height = 1.70;
@@ -107,7 +107,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 100;
-                pin_pad_exception_string = g_strdup ("");
+                pin_pad_exceptions_string = g_strdup ("");
                 package_body_width = 11.00;
                 package_body_length = 11.00;
                 package_body_height = 1.70;
@@ -135,7 +135,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 100;
-                pin_pad_exception_string = g_strconcat
+                pin_pad_exceptions_string = g_strconcat
                 (
                         "A1,A6,A11,",
                         "D5,D6,D7,",
@@ -176,7 +176,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 100;
-                pin_pad_exception_string = g_strconcat
+                pin_pad_exceptions_string = g_strconcat
                 (
                         "C3,C4,C5,C6,C7,C9,C10,C11,C12,",
                         "D3,D4,D5,D6,D7,D8,D9,D10,D11,D12,",
@@ -220,7 +220,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 100;
-                pin_pad_exception_string = g_strconcat
+                pin_pad_exceptions_string = g_strconcat
                 (
                         "B2,B14,",
                         "C3,C4,C5,C6,C7,C8,C9,C10,C11,C12,C13,",
@@ -267,7 +267,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 100;
-                pin_pad_exception_string = g_strdup ("");
+                pin_pad_exceptions_string = g_strdup ("");
                 package_body_width = 8.00;
                 package_body_length = 8.00;
                 package_body_height = 1.40;
@@ -298,7 +298,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 100;
-                pin_pad_exception_string = g_strdup ("");
+                pin_pad_exceptions_string = g_strdup ("");
                 package_body_width = 10.00;
                 package_body_length = 10.00;
                 package_body_height = 1.40;
@@ -329,7 +329,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 100;
-                pin_pad_exception_string = g_strdup ("");
+                pin_pad_exceptions_string = g_strdup ("");
                 package_body_width = 10.00;
                 package_body_length = 10.00;
                 package_body_height = 1.50;
@@ -360,7 +360,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 100;
-                pin_pad_exception_string = g_strdup ("");
+                pin_pad_exceptions_string = g_strdup ("");
                 package_body_width = 9.00;
                 package_body_length = 9.00;
                 package_body_height = 1.00;
@@ -391,7 +391,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 100;
-                pin_pad_exception_string = g_strdup ("");
+                pin_pad_exceptions_string = g_strdup ("");
                 package_body_width = 9.00;
                 package_body_length = 9.00;
                 package_body_height = 1.50;
@@ -422,7 +422,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 100;
-                pin_pad_exception_string = g_strconcat
+                pin_pad_exceptions_string = g_strconcat
                 (
                         "D5,D6,D7,",
                         "E4,E5,E6,E7,E8,",
@@ -461,7 +461,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 1020;
-                pin_pad_exception_string = g_strconcat
+                pin_pad_exceptions_string = g_strconcat
                 (
                         "A1,A32,",
                         "AM1,AM32,",
@@ -497,7 +497,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 1023;
-                pin_pad_exception_string = g_strconcat
+                pin_pad_exceptions_string = g_strconcat
                 (
                         "A1",
                         NULL
@@ -532,7 +532,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 1024;
-                pin_pad_exception_string = g_strdup ("");
+                pin_pad_exceptions_string = g_strdup ("");
                 package_body_width = 33.00;
                 package_body_length = 33.00;
                 package_body_height = 3.50;
@@ -563,7 +563,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 103;
-                pin_pad_exception_string = g_strconcat
+                pin_pad_exceptions_string = g_strconcat
                 (
                         "C3",
                         NULL
@@ -598,7 +598,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 1056;
-                pin_pad_exception_string = g_strconcat
+                pin_pad_exceptions_string = g_strconcat
                 (
                         "A1,A2,A3,A37,A38,A39,",
                         "B1,B2,B38,B39,",
@@ -659,7 +659,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 1056;
-                pin_pad_exception_string = g_strconcat
+                pin_pad_exceptions_string = g_strconcat
                 (
                         "A1,A2,A3,A37,A38,A39,",
                         "B1,B2,B38,B39,",
@@ -720,7 +720,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 105;
-                pin_pad_exception_string = g_strconcat
+                pin_pad_exceptions_string = g_strconcat
                 (
                         "B14",
                         "C3,C4,C5,C6,C7,C8,C9,C10,C11,C12,C13,",
@@ -767,7 +767,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 107;
-                pin_pad_exception_string = g_strconcat
+                pin_pad_exceptions_string = g_strconcat
                 (
                         "A1,A3,A4,A5,A6,A7,A8,",
                         "C1,C10,",
@@ -813,7 +813,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 107;
-                pin_pad_exception_string = g_strconcat
+                pin_pad_exceptions_string = g_strconcat
                 (
                         "A1,A3,A4,A5,A6,A7,A8,",
                         "C1,C10,",
@@ -859,7 +859,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 107;
-                pin_pad_exception_string = g_strconcat
+                pin_pad_exceptions_string = g_strconcat
                 (
                         "A1,A3,A4,A5,A6,A7,A8,",
                         "C1,C10,",
@@ -905,7 +905,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 1089;
-                pin_pad_exception_string = g_strdup ("");
+                pin_pad_exceptions_string = g_strdup ("");
                 package_body_width = 35.00;
                 package_body_length = 35.00;
                 package_body_height = 3.50;
@@ -936,7 +936,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 1089;
-                pin_pad_exception_string = g_strdup ("");
+                pin_pad_exceptions_string = g_strdup ("");
                 package_body_width = 42.50;
                 package_body_length = 42.50;
                 package_body_height = 3.50;
@@ -967,7 +967,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 108;
-                pin_pad_exception_string = g_strconcat
+                pin_pad_exceptions_string = g_strconcat
                 (
                         "D5,D6,D7,D8,D9,",
                         "E4,E5,E6,E7,E8,E9,",
@@ -1007,7 +1007,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 10;
-                pin_pad_exception_string = g_strconcat
+                pin_pad_exceptions_string = g_strconcat
                 (
                         "B2,",
                         "C2,",
@@ -1043,7 +1043,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 10;
-                pin_pad_exception_string = g_strconcat
+                pin_pad_exceptions_string = g_strconcat
                 (
                         "B2,",
                         "C2,",
@@ -1079,7 +1079,7 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 111;
-                pin_pad_exception_string = g_strconcat
+                pin_pad_exceptions_string = g_strconcat
                 (
                         "A1,A3,A4,A5,A6,A7,A8,A9,A10",
                         "D1,D2,D11,D12,",
