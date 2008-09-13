@@ -45,6 +45,9 @@ void
 on_Z2_radiobutton_toggled (GtkToggleButton *togglebutton, gpointer user_data);
 
 void
+on_add_attribs_checkbutton_toggled (GtkToggleButton *togglebutton, gpointer user_data);
+
+void
 on_clear_button_clicked (GtkButton *button, gpointer user_data);
 
 void
@@ -72,6 +75,18 @@ void
 on_courtyard_width_entry_changed (GtkEditable *editable, gpointer user_data);
 
 void
+on_fiducial_checkbutton_toggled (GtkToggleButton *togglebutton, gpointer user_data);
+
+void
+on_fiducial_pad_diameter_entry_changed (GtkEditable *editable, gpointer user_data);
+
+void
+on_fiducial_pad_solder_mask_clearance_entry_changed (GtkEditable *editable, gpointer user_data);
+
+void
+on_fiducial_solder_mask_clearance_entry_changed (GtkEditable *editable, gpointer user_data);
+
+void
 on_filechooser_dialog_cancel_button_clicked (GtkButton *button, gpointer user_data);
 
 void
@@ -97,6 +112,9 @@ on_footprint_dist_license_entry_changed (GtkEditable *editable, gpointer user_da
 
 void
 on_footprint_name_entry_changed (GtkEditable *editable, gpointer user_data);
+
+void
+on_footprint_refdes_entry_changed (GtkEditable *editable, gpointer user_data);
 
 void
 on_footprint_status_entry_changed (GtkComboBox *combobox, gpointer user_data);
@@ -165,6 +183,11 @@ void
 on_pin_drill_diameter_entry_changed (GtkEditable *editable, gpointer user_data);
 
 void
+on_pin_pad_exceptions_button_clicked (GtkButton *button, gpointer user_data);
+
+void
+on_pin_pad_exceptions_entry_changed (GtkEditable *editable, gpointer user_data);
+void
 on_pin_square_checkbutton_toggled (GtkToggleButton *togglebutton, gpointer user_data);
 
 void
@@ -210,37 +233,3 @@ void
 on_thermal_width_entry_changed (GtkEditable *editable, gpointer user_data);
 
 /* EOF */
-
-void
-on_footprint_refdes_entry_changed      (GtkEditable     *editable,
-                                        gpointer         user_data);
-
-void
-on_add_attribs_checkbutton_toggled     (GtkToggleButton *togglebutton,
-                                        gpointer         user_data);
-
-void
-on_fiducial_pad_diameter_entry_changed (GtkEditable     *editable,
-                                        gpointer         user_data);
-
-void
-on_fiducial_checkbutton_toggled        (GtkToggleButton *togglebutton,
-                                        gpointer         user_data);
-
-void
-on_fiducial_solder_mask_clearance_entry_changed
-                                        (GtkEditable     *editable,
-                                        gpointer         user_data);
-
-void
-on_fiducial_pad_solder_mask_clearance_entry_changed
-                                        (GtkEditable     *editable,
-                                        gpointer         user_data);
-
-void
-on_pin_pad_exceptions_button_clicked   (GtkButton       *button,
-                                        gpointer         user_data);
-
-void
-on_pin_pad_exceptions_entry_changed    (GtkEditable     *editable,
-                                        gpointer         user_data);
