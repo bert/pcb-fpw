@@ -86,18 +86,21 @@ main (int argc, char *argv[])
         GtkWidget *number_total_pins_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
                 "number_total_pins_entry");
         gtk_widget_set_sensitive (number_total_pins_entry, TRUE);
+        GtkWidget *pin_pad_exceptions_button = lookup_widget (GTK_WIDGET (pcb_gfpw),
+                "pin_pad_exceptions_button");
+        gtk_widget_set_sensitive (pin_pad_exceptions_button, FALSE);
         /* Set the initial state of the checkbutton for the thermal pad to false,
          * set the "length" entry for the thermal pad to insensitive,
          * set the "width" entry for the thermal pad to insensitive,
          * set the "clearance" entry for the thermal pad to insensitive,
          * and set the "solder mask clearance" entry for the thermal pad to insensitive.
          */
-        GtkToggleButton *thermal = lookup_widget (GTK_WIDGET (pcb_gfpw),
+        GtkWidget *thermal_checkbutton = lookup_widget (GTK_WIDGET (pcb_gfpw),
                 "thermal_checkbutton");
-        gtk_toggle_button_set_active (thermal, FALSE);
-        GtkToggleButton *thermal_nopaste_checkbutton = lookup_widget (GTK_WIDGET (pcb_gfpw),
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (thermal_checkbutton), FALSE);
+        GtkWidget *thermal_nopaste_checkbutton = lookup_widget (GTK_WIDGET (pcb_gfpw),
                 "thermal_nopaste_checkbutton");
-        gtk_widget_set_sensitive (thermal_nopaste_checkbutton, FALSE);
+        gtk_widget_set_sensitive (GTK_WIDGET (thermal_nopaste_checkbutton), FALSE);
         GtkWidget *thermal_length_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
                 "thermal_length_entry");
         gtk_widget_set_sensitive (thermal_length_entry, FALSE);
@@ -115,9 +118,9 @@ main (int argc, char *argv[])
          * to insensitive, and set the "fiducial pad solder mask clearance"
          * entry for the fiducial pads to insensitive.
          */
-        GtkToggleButton *fiducial_checkbutton = lookup_widget (GTK_WIDGET (pcb_gfpw),
+        GtkWidget *fiducial_checkbutton = lookup_widget (GTK_WIDGET (pcb_gfpw),
                 "fiducial_checkbutton");
-        gtk_toggle_button_set_active (fiducial_checkbutton, FALSE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fiducial_checkbutton), FALSE);
         GtkWidget *fiducial_pad_diameter_entry = lookup_widget
                 (GTK_WIDGET (pcb_gfpw),
                 "fiducial_pad_diameter_entry");
@@ -130,9 +133,9 @@ main (int argc, char *argv[])
         /* Set the initial state of the checkbutton for the silkscreen to true,
          * set the "linewidth" entry for the silkscreen to sensitive.
          */
-        GtkToggleButton *silkscreen_package_outline = lookup_widget (GTK_WIDGET (pcb_gfpw),
+        GtkWidget *silkscreen_package_outline = lookup_widget (GTK_WIDGET (pcb_gfpw),
                 "silkscreen_package_outline_checkbutton");
-        gtk_toggle_button_set_active (silkscreen_package_outline, TRUE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (silkscreen_package_outline), TRUE);
         GtkWidget *silkscreen_line_width_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
                 "silkscreen_line_width_entry");
         gtk_widget_set_sensitive (silkscreen_line_width_entry, TRUE);
@@ -143,9 +146,9 @@ main (int argc, char *argv[])
          * and set the "clearance to package" entry for the courtyard to
          * insensitive.
          */
-        GtkToggleButton *courtyard = lookup_widget (GTK_WIDGET (pcb_gfpw),
+        GtkWidget *courtyard_checkbutton = lookup_widget (GTK_WIDGET (pcb_gfpw),
                 "courtyard_checkbutton");
-        gtk_toggle_button_set_active (courtyard, FALSE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (courtyard_checkbutton), FALSE);
         GtkWidget *courtyard_length_entry = lookup_widget (GTK_WIDGET (pcb_gfpw),
                 "courtyard_length_entry");
         gtk_widget_set_sensitive (courtyard_length_entry, FALSE);
