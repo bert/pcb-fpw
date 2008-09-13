@@ -1172,9 +1172,10 @@ bga_set_gui_constraints (GtkWidget *widget)
 
         /* Widgets on tab 3 "Thermal Pad" */
         gui_constraints_disable_thermal_tab_widgets (widget);
-        GtkToggleButton *fiducial_checkbutton = lookup_widget (GTK_WIDGET (widget),
+        GtkWidget *fiducial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "fiducial_checkbutton");
-        gtk_toggle_button_set_active (fiducial_checkbutton, FALSE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fiducial_checkbutton),
+                FALSE);
         gtk_widget_set_sensitive (fiducial_checkbutton, TRUE);
         GtkWidget *fiducial_pad_diameter_entry = lookup_widget
                 (GTK_WIDGET (widget),
