@@ -681,9 +681,10 @@ gui_constraints_disable_thermal_tab_widgets (GtkWidget *widget)
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (thermal_checkbutton),
                 FALSE);
         gtk_widget_set_sensitive (thermal_checkbutton, FALSE);
-        GtkToggleButton *thermal_nopaste_checkbutton = lookup_widget
+        GtkWidget *thermal_nopaste_checkbutton = lookup_widget
                 (GTK_WIDGET (widget), "thermal_nopaste_checkbutton");
-        gtk_widget_set_sensitive (thermal_nopaste_checkbutton, FALSE);
+        gtk_widget_set_sensitive (GTK_WIDGET (thermal_nopaste_checkbutton),
+                FALSE);
         GtkWidget *thermal_length_entry = lookup_widget (GTK_WIDGET (widget),
                 "thermal_length_entry");
         gtk_widget_set_sensitive (thermal_length_entry, FALSE);
@@ -696,9 +697,10 @@ gui_constraints_disable_thermal_tab_widgets (GtkWidget *widget)
         GtkWidget *thermal_solder_mask_clearance_entry = lookup_widget
                 (GTK_WIDGET (widget), "thermal_solder_mask_clearance_entry");
         gtk_widget_set_sensitive (thermal_solder_mask_clearance_entry, FALSE);
-        GtkToggleButton *fiducial_checkbutton = lookup_widget (GTK_WIDGET (widget),
+        GtkWidget *fiducial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "fiducial_checkbutton");
-        gtk_toggle_button_set_active (fiducial_checkbutton, FALSE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fiducial_checkbutton),
+                FALSE);
         gtk_widget_set_sensitive (fiducial_checkbutton, FALSE);
         GtkWidget *fiducial_pad_diameter_entry = lookup_widget
                 (GTK_WIDGET (widget),
@@ -1947,7 +1949,7 @@ on_filechooser_dialog_open_button_clicked
                         {
                                 GtkWidget *dialog = gtk_message_dialog_new
                                 (
-                                        toplevel,
+                                        GTK_WINDOW (toplevel),
                                         GTK_DIALOG_DESTROY_WITH_PARENT,
                                         GTK_MESSAGE_ERROR,
                                         GTK_BUTTONS_CLOSE,
