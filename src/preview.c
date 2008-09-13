@@ -190,18 +190,19 @@ preview_set_fg_color
 )
 {
         if (!gc)
-                return 0;
-        if (color_name == NULL)
+                return (EXIT_FAILURE);
+        if (!color_name)
         {
                 fprintf (stderr, "WARNING in %s():  name = NULL, setting color to magenta.\n",
                         __FUNCTION__);
                 color_name = "magenta";
+                return (EXIT_FAILURE);
         }
         GdkColor color;
         if (!gdk_color_parse (color_name, &color))
-                return 0;
+                return;
         gdk_gc_set_foreground (gc, &color);
-        return (&gc);
+        return (EXIT_SUCCESS);
 }
 
 
@@ -216,19 +217,20 @@ preview_set_fill_mode
 )
 {
         if (!gc)
-                return 0;
-        if (fill_mode == NULL)
+                return (EXIT_FAILURE);
+        if (!fill_mode)
         {
                 fprintf (stderr, "WARNING in %s():  fill mode = NULL, setting fill mode to SOLID.\n",
                         __FUNCTION__);
                 fill_mode = GDK_SOLID;
+                return (EXIT_FAILURE);
         }
         gdk_gc_set_fill
         (
                 gc,
                 fill_mode
         );
-        return (&gc);
+        return (EXIT_SUCCESS);
 }
 
 
@@ -243,12 +245,13 @@ preview_set_line_cap
 )
 {
         if (!gc)
-                return 0;
-        if (line_cap == NULL)
+                return (EXIT_FAILURE);
+        if (!line_cap)
         {
                 fprintf (stderr, "WARNING in %s():  line cap = NULL, setting line cap  to ROUND.\n",
                         __FUNCTION__);
                 line_cap = GDK_CAP_ROUND;
+                return (EXIT_FAILURE);
         }
         GdkGCValues gc_values;
         gdk_gc_get_values (gc, &gc_values);
@@ -260,7 +263,7 @@ preview_set_line_cap
                 line_cap,
                 gc_values.join_style
         );
-        return (&gc);
+        return (EXIT_SUCCESS);
 }
 
 
@@ -275,12 +278,13 @@ preview_set_line_style
 )
 {
         if (!gc)
-                return 0;
-        if (line_style == NULL)
+                return (EXIT_FAILURE);
+        if (!line_style)
         {
                 fprintf (stderr, "WARNING in %s():  line style = NULL, setting line style  to SOLID.\n",
                         __FUNCTION__);
                 line_style = GDK_LINE_SOLID;
+                return (EXIT_FAILURE);
         }
         GdkGCValues gc_values;
         gdk_gc_get_values (gc, &gc_values);
@@ -292,7 +296,7 @@ preview_set_line_style
                 gc_values.cap_style,
                 gc_values.join_style
         );
-        return (&gc);
+        return (EXIT_SUCCESS);
 }
 
 
@@ -306,18 +310,16 @@ preview_set_line_width
         gint line_width
 )
 {
-        if (!gc)
-                return 0;
-        if (line_width == 0)
-                return 0;
+        if ((!gc) || (line_width == 0))
+                return (EXIT_FAILURE);
         GdkGCValues gc_values;
         gdk_gc_get_values (gc, &gc_values);
-        if (line_width == 1)
+        if (line_width < 0)
         {
                 gdk_gc_set_line_attributes
                 (
                         gc,
-                        line_width,
+                        abs (line_width),
                         GDK_LINE_DOUBLE_DASH,
                         gc_values.cap_style,
                         gc_values.join_style
@@ -334,7 +336,7 @@ preview_set_line_width
                         gc_values.join_style
                 );
         }
-        return (&gc);
+        return (EXIT_SUCCESS);
 }
 
 
@@ -358,7 +360,7 @@ preview_use_gc
         if (!drawable)
         {
                 fprintf (stderr, "WARNING: couldn't allocate a gc, invalid drawable was passed.\n");
-                return 0;
+                return (EXIT_FAILURE);
         }
         if (!gc)
         {
@@ -369,7 +371,7 @@ preview_use_gc
                 preview_set_line_style (gc, line_style);
                 preview_set_fill_mode (gc, fill_mode);
 //                preview_set_draw_xor (gc, gc->xor);
-                return (&gc);
+                return (EXIT_SUCCESS);
         }
 }
 
@@ -604,14 +606,15 @@ preview_create_window
 )
 {
         /* Create a preview window */
-        GtkWindow *preview_window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+        GtkWidget *preview_window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
         /* Destroy the preview window when the main window of pcb-gfpw gets
          * destroyed */
-        gtk_window_set_destroy_with_parent (preview_window, TRUE);
+        gtk_window_set_destroy_with_parent (GTK_WINDOW (preview_window), TRUE);
         /* Set the preview window title */
         gchar *preview_window_title = g_strdup_printf ("pcb-fpw preview: %s",
                 footprint_name);
-        gtk_window_set_title (preview_window, preview_window_title);
+        gtk_window_set_title (GTK_WINDOW (preview_window),
+                preview_window_title);
         g_free (preview_window_title);
         gtk_container_set_border_width (GTK_CONTAINER (preview_window), 10);
         /* Set signals for the window */
@@ -623,7 +626,7 @@ preview_create_window
                 NULL
         );
         /* Create a vertical box */
-        GtkWindow *vbox = gtk_vbox_new (FALSE, 10);
+        GtkWidget *vbox = gtk_vbox_new (FALSE, 10);
         gtk_container_add (GTK_CONTAINER (preview_window), vbox);
         /* Create a preview drawing area */
         GtkWidget *preview_drawing_area = gtk_drawing_area_new ();
