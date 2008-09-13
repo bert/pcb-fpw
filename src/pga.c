@@ -96,6 +96,9 @@ pga_set_gui_constraints (GtkWidget *widget)
                 "number_1_position_entry");
         gtk_combo_box_set_active (GTK_COMBO_BOX (number_1_position_entry), 1);
         gtk_widget_set_sensitive (number_1_position_entry, FALSE);
+        GtkWidget *pin_pad_exceptions_button = lookup_widget (GTK_WIDGET (widget),
+                "pin_pad_exceptions_button");
+        gtk_widget_set_sensitive (pin_pad_exceptions_button, TRUE);
         GtkWidget *pad_shape_entry = lookup_widget (GTK_WIDGET (widget),
                 "pad_shape_entry");
         gtk_combo_box_set_active (GTK_COMBO_BOX (pad_shape_entry), 1);

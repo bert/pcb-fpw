@@ -437,6 +437,9 @@ all_entries_to_default_sensitivity (GtkWidget *widget)
         GtkWidget *number_1_position_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_1_position_entry");
         gtk_widget_set_sensitive (number_1_position_entry, TRUE);
+        GtkWidget *pin_pad_exceptions_button = lookup_widget (GTK_WIDGET (widget),
+                "pin_pad_exceptions_button");
+        gtk_widget_set_sensitive (pin_pad_exceptions_button, FALSE);
         GtkWidget *pad_diameter_entry = lookup_widget (GTK_WIDGET (widget),
                 "pad_diameter_entry");
         gtk_widget_set_sensitive (pad_diameter_entry, TRUE);

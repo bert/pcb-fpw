@@ -1153,6 +1153,9 @@ bga_set_gui_constraints (GtkWidget *widget)
                 "number_1_position_entry");
         gtk_combo_box_set_active (GTK_COMBO_BOX (number_1_position_entry), 1);
         gtk_widget_set_sensitive (number_1_position_entry, FALSE);
+        GtkWidget *pin_pad_exceptions_button = lookup_widget (GTK_WIDGET (widget),
+                "pin_pad_exceptions_button");
+        gtk_widget_set_sensitive (pin_pad_exceptions_button, TRUE);
         GtkWidget *pin_drill_diameter_entry = lookup_widget (GTK_WIDGET (widget),
                 "pin_drill_diameter_entry");
         gtk_entry_set_text (GTK_ENTRY (pin_drill_diameter_entry), "");
