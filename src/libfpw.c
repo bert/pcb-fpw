@@ -2097,7 +2097,7 @@ write_footprint_pga ()
          * excluding "I", "O", "Q", "S" and "Z" */
         {
                 for (j = 0; (j < number_of_columns); j++)
-                /* all columns o a row [1 .. n]
+                /* all columns of a row [1 .. n]
                  * where j is a member of the positive Natural numbers (N) */
                 {
                         if (pin1_square && (pin_number == 1))
@@ -2105,18 +2105,21 @@ write_footprint_pga ()
                         else
                                 pin_pad_flags = g_strdup ("");
                         pin_pad_name = g_strdup_printf ("%s%d", (row_letters[i]), (j + 1));
-                        write_pin
-                        (
-                                pin_number, /* pin number */
-                                pin_pad_name, /* pin name */
-                                multiplier * ((((- number_of_columns -1) / 2.0) + 1 + j) * pitch_x), /* x0 coordinate */
-                                multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
-                                multiplier * pad_diameter, /* width of the annulus ring (pad) */
-                                multiplier * pad_clearance, /* clearance */
-                                multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
-                                multiplier * pin_drill_diameter, /* pin drill diameter */
-                                pin_pad_flags /* flags */
-                        );
+                        if (get_pin_pad_exception (pin_pad_name))
+                        {
+                                write_pin
+                                (
+                                        pin_number, /* pin number */
+                                        pin_pad_name, /* pin name */
+                                        multiplier * ((((- number_of_columns -1) / 2.0) + 1 + j) * pitch_x), /* x0 coordinate */
+                                        multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
+                                        multiplier * pad_diameter, /* width of the annulus ring (pad) */
+                                        multiplier * pad_clearance, /* clearance */
+                                        multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
+                                        multiplier * pin_drill_diameter, /* pin drill diameter */
+                                        pin_pad_flags /* flags */
+                                );
+                        }
                         pin_number++;
                 }
         }
