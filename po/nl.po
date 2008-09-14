@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcb-fpw\n"
 "Report-Msgid-Bugs-To: bert.timmerman@xs4all.nl\n"
 "POT-Creation-Date: 2008-01-15 21:19+0100\n"
-"PO-Revision-Date: 2008-05-12 22:32+0100\n"
+"PO-Revision-Date: 2008-09-14 10:14+0100\n"
 "Last-Translator: Bert Timmerman <bert.timmerman@xs4all.nl>\n"
 "Language-Team: DUTCH LANGUAGE TEAM <bert.timmerman@xs4all.nl>\n"
 "MIME-Version: 1.0\n"
@@ -65,786 +65,837 @@ msgstr ""
 "the Free Software Foundation, Inc.,\n"
 "51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n"
 
-#: src/interface.c:229
+#: src/interface.c:240
 msgid "FootPrintWizard for pcb footprints"
 msgstr "FootPrintWizard voor pcb elementen"
 
-#: src/interface.c:230
+#: src/interface.c:241
 msgid "pcb-gfpw FootPrint Wizard"
 msgstr "pcb-gfpw FootPrintWizard"
 
-#: src/interface.c:282
+#: src/interface.c:293
 msgid "Author"
 msgstr "Auteur"
 
-#: src/interface.c:290
+#: src/interface.c:301
 msgid "Distribution license "
 msgstr "Distributie licentie"
 
-#: src/interface.c:304
+#: src/interface.c:315
 msgid "Type your name here"
 msgstr "Type je naam hier in"
 
-#: src/interface.c:313
+#: src/interface.c:324
 msgid "License under which you distribute the file"
 msgstr "Licentie waaronder het bestand gedistribueerd wordt"
 
-#: src/interface.c:314
+#: src/interface.c:325
 msgid "GPL"
 msgstr "GPL"
 
-#: src/interface.c:323
+#: src/interface.c:334
 msgid "Allowable usage"
 msgstr "Toegestaan gebruik"
 
-#: src/interface.c:324
+#: src/interface.c:335
 msgid "unlimited"
 msgstr "onbeperkt"
 
-#: src/interface.c:327
+#: src/interface.c:338
 msgid "Use license"
-msgstr "Gebruik licentie"
+msgstr "Gebruiks licentie"
 
-#: src/interface.c:335
+#: src/interface.c:346
 msgid "Status"
 msgstr "Status"
 
-#: src/interface.c:350
+#: src/interface.c:361
 msgid "Experimental"
 msgstr "Experimenteel"
 
-#: src/interface.c:351
+#: src/interface.c:362
 msgid "Private (not published)"
 msgstr "Prive (niet gepubliceerd)"
 
-#: src/interface.c:352
+#: src/interface.c:363
 msgid "Public (released)"
 msgstr "Publiek (vrijgegeven)"
 
-#: src/interface.c:353
+#: src/interface.c:364
 msgid "Confirmed by peers (stable)"
 msgstr "Bevestigd door vakgenoten (stabiel)"
 
-#: src/interface.c:355
+#: src/interface.c:366
 msgid "<b>Author</b>"
 msgstr "<b>Auteur</b>"
 
-#: src/interface.c:380
+#: src/interface.c:391
 msgid "Units"
 msgstr "Eenheden"
 
-#: src/interface.c:395
+#: src/interface.c:406
 msgid "mil"
 msgstr "mil"
 
-#: src/interface.c:396
+#: src/interface.c:407
 msgid "mil/100"
 msgstr "mil/100"
 
-#: src/interface.c:397
+#: src/interface.c:408
 msgid "mm"
 msgstr "mm"
 
-#: src/interface.c:405
+#: src/interface.c:416
 msgid "Type the name of the footprint here, no suffix please"
 msgstr "Type de naam van het element hier, geen achtervoegsel graag"
 
-#: src/interface.c:415
+#: src/interface.c:426
 msgid "BGA"
 msgstr "BGA"
 
-#: src/interface.c:416
+#: src/interface.c:427
 msgid "CAPAE"
 msgstr "CAPAE"
 
-#: src/interface.c:417
+#: src/interface.c:428
 msgid "CAPC"
 msgstr "CAPC"
 
-#: src/interface.c:418
+#: src/interface.c:429
 msgid "CAPM"
 msgstr "CAPM"
 
-#: src/interface.c:419
+#: src/interface.c:430
 msgid "CAPMP"
 msgstr "CAPMP"
 
-#: src/interface.c:420
+#: src/interface.c:431
 msgid "CON_DIL"
 msgstr "CON_DIL"
 
-#: src/interface.c:421
+#: src/interface.c:432
 msgid "CON_DIP"
 msgstr "CON_DIP"
 
-#: src/interface.c:422
+#: src/interface.c:433
 msgid "CON_HDR"
 msgstr "CON_HDR"
 
-#: src/interface.c:423
+#: src/interface.c:434
 msgid "DIL"
 msgstr "DIL"
 
-#: src/interface.c:424
+#: src/interface.c:435
 msgid "DIOM"
 msgstr "DIOM"
 
-#: src/interface.c:425
+#: src/interface.c:436
 msgid "DIOMELF"
 msgstr "DIOMELF"
 
-#: src/interface.c:426
+#: src/interface.c:437
 msgid "DIP"
 msgstr "DIP"
 
-#: src/interface.c:427
+#: src/interface.c:438
 msgid "INDC"
 msgstr "INDC"
 
-#: src/interface.c:428
+#: src/interface.c:439
 msgid "INDM"
 msgstr "INDM"
 
-#: src/interface.c:429
+#: src/interface.c:440
 msgid "INDP"
 msgstr "INDP"
 
-#: src/interface.c:430
+#: src/interface.c:441
 msgid "PGA"
 msgstr "PGA"
 
-#: src/interface.c:431
+#: src/interface.c:442
 msgid "PLCC"
 msgstr "PLCC"
 
-#: src/interface.c:432
+#: src/interface.c:443
 msgid "QFN"
 msgstr "QFN"
 
-#: src/interface.c:433
+#: src/interface.c:444
 msgid "QFP"
 msgstr "QFP"
 
-#: src/interface.c:434
+#: src/interface.c:445
 msgid "RES"
 msgstr "RES"
 
-#: src/interface.c:435
+#: src/interface.c:446
 msgid "RESC"
 msgstr "RESC"
 
-#: src/interface.c:436
+#: src/interface.c:447
 msgid "RESM"
 msgstr "RESM"
 
-#: src/interface.c:437
+#: src/interface.c:448
 msgid "RESMELF"
 msgstr "RESMELF"
 
-#: src/interface.c:438
+#: src/interface.c:449
 msgid "SIL"
 msgstr "SIL"
 
-#: src/interface.c:439
+#: src/interface.c:450
 msgid "SIP"
 msgstr "SIP"
 
-#: src/interface.c:440
+#: src/interface.c:451
 msgid "SO"
 msgstr "SO"
 
-#: src/interface.c:441
+#: src/interface.c:452
 msgid "TO92"
 msgstr "TO92"
 
-#: src/interface.c:442
+#: src/interface.c:453
 msgid "TO220"
 msgstr "TO220"
 
-#: src/interface.c:444
+#: src/interface.c:455
 msgid "Type"
 msgstr "Type"
 
-#: src/interface.c:452
+#: src/interface.c:463
 msgid "Name"
 msgstr "Naam"
 
-#: src/interface.c:466
+#: src/interface.c:477
 msgid "Type the height dimension of the package body here"
 msgstr "Type de hoogtemaat van de behuizing hier in"
 
-#: src/interface.c:469
+#: src/interface.c:480
 msgid "Body height (Z) "
 msgstr "Behuizing hoogte (Z)"
 
-#: src/interface.c:477
+#: src/interface.c:488
 msgid "Body width (Y)"
 msgstr "Behuizing breedte (Y)"
 
-#: src/interface.c:485
+#: src/interface.c:496
 msgid "Body length (X)"
 msgstr "Behuizing lengte (X)"
 
-#: src/interface.c:493
+#: src/interface.c:504
 msgid "Value"
 msgstr "Waarde"
 
-#: src/interface.c:507
+#: src/interface.c:518
 msgid "Type the width dimension of the package body here"
 msgstr "Type de breedtemaat van de behuizing hier in"
 
-#: src/interface.c:516
+#: src/interface.c:527
 msgid "Type the length dimension of the package body here"
 msgstr "Type de lengtemaat van de behuizing hier in"
 
-#: src/interface.c:525
+#: src/interface.c:536
 msgid "Type the value of the package here"
 msgstr "Type de waarde voor de behuizing hier"
 
-#: src/interface.c:528
+#: src/interface.c:539
 msgid "Refdes prefix"
-msgstr "Refdes prefix"
+msgstr "Refdes voorvoegsel"
 
-#: src/interface.c:542
+#: src/interface.c:553
 msgid "Type a refdes prefix here, without the ? please"
-msgstr "Voer een refdes prefix in, zonder een ? graag"
+msgstr "Voer een refdes voorvoegsel in, zonder een ? graag"
 
-#: src/interface.c:545
+#: src/interface.c:556
 msgid "Add attributes to footprint"
-msgstr "Voeg attributen toe aan element"
+msgstr "Voeg attributen toe aan het element"
 
-#: src/interface.c:551
+#: src/interface.c:562
 msgid "Check to add attributes to the footprint."
 msgstr "Vink aan om attributen aan het element toe te voegen."
 
-#: src/interface.c:553
+#: src/interface.c:564
 msgid "Radial package "
 msgstr "Radiale behuizing"
 
-#: src/interface.c:559
+#: src/interface.c:570
 msgid "Check for a radial package"
-msgstr "Vink voor radiale behuizing"
+msgstr "Vink aan voor radiale behuizing"
 
-#: src/interface.c:561
+#: src/interface.c:572
 msgid "<b>Footprint</b>"
 msgstr "<b>Element</b>"
 
-#: src/interface.c:567
+#: src/interface.c:578
 msgid "Footprint"
 msgstr "Element"
 
-#: src/interface.c:600
-#: src/interface.c:1014
+#: src/interface.c:611
+#: src/interface.c:1043
 msgid "Pad solder mask clearance "
-msgstr "Pad soldeer masker vrijloop"
-
-#: src/interface.c:614
-#: src/interface.c:1036
-msgid "Clearance distance with solder mask"
-msgstr "Vrijloopafstand met soldeermasker"
-
-#: src/interface.c:617
-msgid "Pad clearance"
-msgstr "Pad vrijloop"
+msgstr "Pad - soldeermasker vrije afstand"
 
 #: src/interface.c:625
-#: src/interface.c:980
+#: src/interface.c:1065
+#: src/interface.c:1140
+msgid "Clearance distance with solder mask"
+msgstr "Vrije afstand met soldeermasker"
+
+#: src/interface.c:628
+msgid "Pad clearance"
+msgstr "Pad vrije afstand"
+
+#: src/interface.c:636
+#: src/interface.c:1009
 msgid "Pad width (Y)"
 msgstr "Pad breedte (Y)"
 
-#: src/interface.c:633
+#: src/interface.c:644
 msgid "Pad length (X) "
 msgstr "Pad lengte (X)"
 
-#: src/interface.c:647
-#: src/interface.c:1045
+#: src/interface.c:658
+#: src/interface.c:1074
 msgid "Clearance distance with polygons"
-msgstr "Vrijloop afstand met polygonen"
+msgstr "Vrije afstand met polygonen"
 
-#: src/interface.c:656
+#: src/interface.c:667
 msgid "Width of pads"
 msgstr "Breedte van pads"
 
-#: src/interface.c:665
+#: src/interface.c:676
 msgid "Length of pads"
 msgstr "Lengte van pads"
 
-#: src/interface.c:668
+#: src/interface.c:679
 msgid "Pad shape"
 msgstr "Pad vorm"
 
-#: src/interface.c:683
+#: src/interface.c:694
 msgid "circular pad"
 msgstr "rond pad"
 
-#: src/interface.c:684
+#: src/interface.c:695
 msgid "rectangular pad"
 msgstr "rechthoekig pad"
 
-#: src/interface.c:685
+#: src/interface.c:696
 msgid "octagonal pad"
 msgstr "achthoekig pad"
 
-#: src/interface.c:686
+#: src/interface.c:697
 msgid "rounded pad, elongated"
 msgstr "afgerond pad, langwerpig"
 
-#: src/interface.c:688
+#: src/interface.c:699
 msgid "<b>Pads</b>"
 msgstr "<b>Pads</b>"
 
-#: src/interface.c:719
+#: src/interface.c:730
 msgid "Diameter of pad for pins"
 msgstr "Diameter van pad voor pennen"
 
-#: src/interface.c:722
+#: src/interface.c:733
 msgid "Pin drill diameter (d) "
 msgstr "Pen boordiameter (d)"
 
-#: src/interface.c:730
+#: src/interface.c:741
 msgid "Pin pad diameter (D) "
 msgstr "Pin Pad diameter (D)"
 
-#: src/interface.c:738
+#: src/interface.c:749
 msgid "Pin #1 square "
 msgstr "Pen nummer 1 vierkant"
 
-#: src/interface.c:744
+#: src/interface.c:755
 msgid "Check to draw square pin #1"
-msgstr "Markeer om een pen/pad #1 vierkant te tekenen"
+msgstr "Vink aan om een pen/pad #1 vierkant te tekenen"
 
-#: src/interface.c:753
+#: src/interface.c:764
 msgid "Diameter of drill hole for pins"
 msgstr "Diameter van boorgaten voor pennen"
 
-#: src/interface.c:756
+#: src/interface.c:767
 msgid "<b>Pins</b>"
 msgstr "<b>Pennen</b>"
 
-#: src/interface.c:781
+#: src/interface.c:792
 msgid "Total pins and pads "
 msgstr "Totaal van pennen en pads"
 
-#: src/interface.c:789
+#: src/interface.c:800
 msgid "Pitch X-direction"
 msgstr "Steek in de X-richting"
 
-#: src/interface.c:797
+#: src/interface.c:808
 msgid "Pitch Y-direction"
 msgstr "Steek in de Y-richting"
 
-#: src/interface.c:811
+#: src/interface.c:822
 msgid "Total number of pins and pads"
 msgstr "Totaal aantal van pennen en pads"
 
-#: src/interface.c:820
+#: src/interface.c:831
 msgid "Horizontal pin/pad pitch"
 msgstr "Horizontale pen/pad steek"
 
-#: src/interface.c:829
+#: src/interface.c:840
 msgid "Vertical pin/pad pitch"
 msgstr "Verticale pen/pad steek"
 
-#: src/interface.c:832
+#: src/interface.c:843
 msgid "Count X-direction"
 msgstr "Aantal in de X-richting"
 
-#: src/interface.c:840
+#: src/interface.c:851
 msgid "Count Y-direction"
 msgstr "Aantal in de Y-richting"
 
-#: src/interface.c:854
+#: src/interface.c:865
 msgid "Number of horizontal pin/pads"
 msgstr "Aantal horizontale pennen/pads"
 
-#: src/interface.c:863
+#: src/interface.c:874
 msgid "Number of vertical pin/pads"
 msgstr "Aantal verticale pennen/pads"
 
-#: src/interface.c:866
+#: src/interface.c:877
 msgid "Pin/pad #1 position "
 msgstr "Pen/pad #1 positie"
 
-#: src/interface.c:881
+#: src/interface.c:892
 msgid "Upper left"
 msgstr "Boven links"
 
-#: src/interface.c:882
+#: src/interface.c:893
 msgid "Middle left"
 msgstr "Midden links"
 
-#: src/interface.c:883
+#: src/interface.c:894
 msgid "Lower left"
 msgstr "Onder links"
 
-#: src/interface.c:884
+#: src/interface.c:895
 msgid "Upper middle"
 msgstr "Boven midden"
 
-#: src/interface.c:885
+#: src/interface.c:896
 msgid "Middle middle"
 msgstr "Midden midden"
 
-#: src/interface.c:886
+#: src/interface.c:897
 msgid "Lower middle"
 msgstr "Onder midden"
 
-#: src/interface.c:887
+#: src/interface.c:898
 msgid "Upper right"
 msgstr "Boven rechts"
 
-#: src/interface.c:888
+#: src/interface.c:899
 msgid "Middle right"
 msgstr "Midden rechts"
 
-#: src/interface.c:889
+#: src/interface.c:900
 msgid "Lower right"
 msgstr "Onder rechts"
 
-#: src/interface.c:890
+#: src/interface.c:901
 msgid " "
 msgstr " "
 
-#: src/interface.c:892
+#: src/interface.c:903
 msgid "Columns"
 msgstr "Kolommen"
 
-#: src/interface.c:906
+#: src/interface.c:917
 msgid "Number of columns"
 msgstr "Aantal kolommen"
 
-#: src/interface.c:909
+#: src/interface.c:920
 msgid "Rows"
 msgstr "Rijen"
 
-#: src/interface.c:923
+#: src/interface.c:934
 msgid "Number of rows"
 msgstr "Aantal rijen"
 
-#: src/interface.c:926
+#: src/interface.c:943
+msgid "Enter non-existing pins or pads here"
+msgstr "Voer hier de niet bestaande pennen of pads in"
+
+#: src/interface.c:946
+msgid "Pin/Pad exceptions"
+msgstr "Pen/pad uitzonderingen"
+
+#: src/interface.c:952
+msgid "Click to select pin/pad exceptions"
+msgstr "Klik om pen/pad uitzonderingen te selekteren"
+
+#: src/interface.c:954
 msgid "<b>Pattern</b>"
 msgstr "<b>Patroon</b>"
 
-#: src/interface.c:932
+#: src/interface.c:960
 msgid "Pins/Pads"
 msgstr "Pennen/Pads"
 
-#: src/interface.c:964
-#: src/interface.c:1054
+#: src/interface.c:993
+#: src/interface.c:1149
 msgid "Thermal pad"
 msgstr "Thermisch pad"
 
-#: src/interface.c:970
+#: src/interface.c:999
 msgid "Check for a thermal pad"
-msgstr "Markeer voor een thermisch pad"
+msgstr "Vink aan voor een thermisch pad"
 
-#: src/interface.c:972
+#: src/interface.c:1001
 msgid "Pad length (X)"
 msgstr "Pad lengte (X)"
 
-#: src/interface.c:994
+#: src/interface.c:1023
 msgid "Width of thermal pad"
 msgstr "Breedte van het thermische pad"
 
-#: src/interface.c:1003
+#: src/interface.c:1032
 msgid "Length of thermal pad"
 msgstr "Lengte van het thermische pad"
 
-#: src/interface.c:1006
+#: src/interface.c:1035
 msgid "No paste on pad"
 msgstr "Geen pasta op pad"
 
-#: src/interface.c:1012
+#: src/interface.c:1041
 msgid "Check for no paste on pad"
-msgstr "Markeer voor geen pasta op pad"
+msgstr "Vink aan voor geen pasta op pad"
 
-#: src/interface.c:1022
+#: src/interface.c:1051
 msgid "Pad Clearance "
-msgstr "Pad vrijloop"
+msgstr "Pad vrije afstand"
 
-#: src/interface.c:1048
+#: src/interface.c:1077
 msgid "<b>Thermal pad</b>"
 msgstr "<b>Thermisch pad</b>"
 
-#: src/interface.c:1087
+#: src/interface.c:1102
+msgid "Fiducial pad diameter (D)"
+msgstr "Fiducial Pad diameter (D)"
+
+#: src/interface.c:1110
+msgid "Fiducial solder mask clearance"
+msgstr "Fiducial soldeer masker vrijloop"
+
+#: src/interface.c:1124
+msgid "Diameter of fiducial pad"
+msgstr "Diameter van het fiducial pad"
+
+#: src/interface.c:1127
+msgid "Fiducials"
+msgstr "Fiducials"
+
+#: src/interface.c:1143
+msgid "<b>Fiducials</b>"
+msgstr "<b>Fiducials</b>"
+
+#: src/interface.c:1182
 msgid "Print courtyard "
-msgstr "Druk de omheining af"
+msgstr "Druk de begrenzing af"
 
-#: src/interface.c:1093
+#: src/interface.c:1188
 msgid "Check to draw a courtyard (keepout)"
-msgstr "Markeer om een omheining (afscherming) te tekenen"
+msgstr "Vink aan om een begrenzing (afscherming) te tekenen"
 
-#: src/interface.c:1095
+#: src/interface.c:1190
 msgid "Width (Y)"
 msgstr "Breedte (Y)"
 
-#: src/interface.c:1103
+#: src/interface.c:1198
 msgid "Length or diameter (X) "
 msgstr "Lengte of Diameter (X)"
 
-#: src/interface.c:1117
+#: src/interface.c:1212
 msgid "Length of courtyard"
-msgstr "Lengte van de omheining"
+msgstr "Lengte van de begrenzing"
 
-#: src/interface.c:1126
+#: src/interface.c:1221
 msgid "Width of courtyard"
-msgstr "Breedte van de omheining"
+msgstr "Breedte van de begrenzing"
 
-#: src/interface.c:1129
-#: src/interface.c:1204
+#: src/interface.c:1224
+#: src/interface.c:1299
 msgid "Line width"
-msgstr "Lijndikte"
+msgstr "Lijnbreedte"
 
-#: src/interface.c:1143
+#: src/interface.c:1238
 msgid "Line width for courtyard"
-msgstr "Lijndikte voor omheining"
+msgstr "Lijnbreedte voor begrenzing"
 
-#: src/interface.c:1146
+#: src/interface.c:1241
 msgid "Clearance with package "
-msgstr "Vrijloop met behuizing"
+msgstr "Vrije afstand met behuizing"
 
-#: src/interface.c:1160
+#: src/interface.c:1255
 msgid "Clearance distance with package"
-msgstr "Vrijloop afstand met behuizing"
+msgstr "Vrije afstand met behuizing"
 
-#: src/interface.c:1163
+#: src/interface.c:1258
 msgid "<b>Courtyard</b>"
-msgstr "<b>Omheining</b>"
+msgstr "<b>Begrenzing</b>"
 
-#: src/interface.c:1188
+#: src/interface.c:1283
 msgid "Print package outline "
 msgstr "Druk behuizing omtrek af"
 
-#: src/interface.c:1194
+#: src/interface.c:1289
 msgid "Check to draw package outline"
-msgstr "Markeer om behuizing omtrek te tekenen"
+msgstr "Vink aan om behuizing omtrek te tekenen"
 
-#: src/interface.c:1196
+#: src/interface.c:1291
 msgid "Pin/Pad #1 indicator "
 msgstr "Pen/Pad #1 indicator"
 
-#: src/interface.c:1202
+#: src/interface.c:1297
 msgid "Check to draw indicator for pin/pad #1"
-msgstr "Markeer om een indicator voor pen/pad #1 te tekenen"
+msgstr "Vink aan om een indicator voor pen/pad #1 te tekenen"
 
-#: src/interface.c:1218
+#: src/interface.c:1313
 msgid "Line width for silkscreen"
 msgstr "Lijndikte voor opdruk"
 
-#: src/interface.c:1221
+#: src/interface.c:1316
 msgid "<b>Package</b>"
 msgstr "<b>Behuizing</b>"
 
-#: src/interface.c:1227
+#: src/interface.c:1322
 msgid "Silkscreen"
 msgstr "Opdruk"
 
-#: src/interface.c:1254
+#: src/interface.c:1349
 msgid "Inner-Inner (G1)"
 msgstr "Binnen-Binnen (G1)"
 
-#: src/interface.c:1263
+#: src/interface.c:1358
 msgid "Center-Center (C1)"
 msgstr "Midden-Midden (C1)"
 
-#: src/interface.c:1273
+#: src/interface.c:1368
 msgid "Outer-Outer (Z1)"
 msgstr "Buiten-Buiten (Z1)"
 
-#: src/interface.c:1288
+#: src/interface.c:1383
 msgid "Top to bottom inner distance between pads"
 msgstr "Boven naar beneden binnenafstand van pads"
 
-#: src/interface.c:1297
+#: src/interface.c:1392
 msgid "Top to bottom center distance between pads"
 msgstr "Boven naar beneden hart tot hart afstand van pads"
 
-#: src/interface.c:1306
+#: src/interface.c:1401
 msgid "Top to bottom outer distance between pads"
 msgstr "Boven naar beneden buitenafstand van pads"
 
-#: src/interface.c:1309
+#: src/interface.c:1404
 msgid "<b>Top to Bottom</b>"
 msgstr "<b>Boven naar Onder</b>"
 
-#: src/interface.c:1332
+#: src/interface.c:1427
 msgid "Inner-Inner (G2)"
 msgstr "Binnen-Binnen (G2)"
 
-#: src/interface.c:1341
+#: src/interface.c:1436
 msgid "Center-Center (C2)"
 msgstr "Midden-Midden (C2)"
 
-#: src/interface.c:1351
+#: src/interface.c:1446
 msgid "Outer-Outer (Z2)"
 msgstr "Buiten-Buiten (Z2)"
 
-#: src/interface.c:1366
+#: src/interface.c:1461
 msgid "Left to right inner distance between pads"
 msgstr "Links naar rechts binnenafstand van pads"
 
-#: src/interface.c:1375
+#: src/interface.c:1470
 msgid "Left to right center distance between pads"
 msgstr "Links naar rechts hart tot hart afstand van pads"
 
-#: src/interface.c:1384
+#: src/interface.c:1479
 msgid "Left to right outer distance between pads"
 msgstr "Links naar rechts buitenafstand van pads"
 
-#: src/interface.c:1387
+#: src/interface.c:1482
 msgid "<b>Left to Right</b>"
 msgstr "<b>Links naar Rechts</b>"
 
-#: src/interface.c:1393
+#: src/interface.c:1488
 msgid "Heel & Toe goals"
 msgstr "Hiel & Teen doelen"
 
-#: src/interface.c:1416
+#: src/interface.c:1511
 msgid "<b>Dimensions</b>"
 msgstr "<b>Bemating</b>"
 
-#: src/interface.c:1434
+#: src/interface.c:1529
 msgid "Click the Close button to exit"
 msgstr "Klik de Afsluiten knop om af te sluiten"
 
-#: src/interface.c:1441
+#: src/interface.c:1536
 msgid "Click the Clear button to clear all entries"
 msgstr "Klik op de Wissen knop om alle invoervakken leeg te maken"
 
-#: src/interface.c:1448
+#: src/interface.c:1543
 msgid "Click the Open button to read an existing footprint file"
 msgstr "Klik op de Open knop om een element te laden"
 
-#: src/interface.c:1455
+#: src/interface.c:1550
 msgid "Click the Save button to write the footprint file"
 msgstr "Klik op de Opslaan knop om het element op te slaan"
 
-#: src/interface.c:1462
+#: src/interface.c:1557
 msgid "Click on the refresh button to refresh the preview"
 msgstr "Klik op de Ververs knop om de voorvertoning te verversen"
 
-#: src/interface.c:1826
+#: src/interface.c:1947
 msgid "pcb-gfpw: choose a .fpw file"
 msgstr "pcb-gfpw: kies een .fpw bestand"
 
-#: src/callbacks.c:1597
+#: src/callbacks.c:1858
 #, c-format
-msgid "ERROR: current folder is not initialised  (null pointer)."
-msgstr "FOUT: huidige foldernaam is niet ge-initialiseerd (null pointer)."
+msgid "current folder is not initialised  (null pointer)."
+msgstr "huidige foldernaam is niet ge-initialiseerd (null pointer)."
 
-#: src/callbacks.c:1605
+#: src/callbacks.c:1865
 #, c-format
-msgid "ERROR: current folder contains an empty string."
-msgstr "FOUT: huidige foldernaam bevat een lege text."
+msgid "current folder contains an empty string."
+msgstr "huidige foldernaam bevat een lege text."
 
-#: src/callbacks.c:1645
+#: src/callbacks.c:1911
 #, c-format
-msgid "ERROR: selected filename is not initialised  (null pointer)."
-msgstr "FOUT: geselecteerde bestandnaamis  niet ge-initialiseerd (null pointer)."
+msgid "selected filename is not initialised (NULL pointer)."
+msgstr "geselecteerde bestandnaamis  niet ge-initialiseerd (null pointer)."
 
-#: src/callbacks.c:1653
+#: src/callbacks.c:1918
 #, c-format
-msgid "ERROR: selected filename contains an empty string."
-msgstr "FOUT: geselecteerde bestandnaam bevat een lege text."
+msgid "selected filename contains an empty string."
+msgstr "geselecteerde bestandnaam bevat een lege text."
 
-#: src/callbacks.c:1662
+#: src/callbacks.c:1926
 #, c-format
-msgid "ERROR: selected filename is a directory."
-msgstr "FOUT: geselecteerde bestandnaam is een folder."
+msgid "selected filename is a directory."
+msgstr "geselecteerde bestandnaam is een folder."
 
-#: src/callbacks.c:1674
+#: src/callbacks.c:1938
 #, c-format
 msgid "Read footprintwizard file %s."
 msgstr "Footprintwizard bestand %s gelezen."
 
-#: src/callbacks.c:1679
+#: src/callbacks.c:1959
 #, c-format
 msgid "ERROR: Unable to read footprint wizard file %s."
 msgstr "FOUT: kan Footprintwizard bestand %s niet lezen."
 
-#: src/callbacks.c:1769
-#: src/callbacks.c:2575
+#: src/callbacks.c:2059
+#: src/callbacks.c:2996
 #, c-format
 msgid "ERROR: footprint name not initialised (null pointer)."
 msgstr "FOUT: elementnaam niet ge-initialiseerd (null pointer)."
 
-#: src/callbacks.c:1778
-#: src/callbacks.c:2584
+#: src/callbacks.c:2068
+#: src/callbacks.c:3005
 #, c-format
 msgid "ERROR: footprint name contains an empty string."
 msgstr "FOUT: elementnaam bevat een lege text,"
 
-#: src/callbacks.c:1941
-#, c-format
-msgid "ERROR: footprint type QFN is not yet implemented."
-msgstr "FOUT: elementtype QFN is nog niet ge-implementeerd."
-
-#: src/callbacks.c:1949
-#, c-format
-msgid "ERROR: footprint type QFP is not yet implemented."
-msgstr "FOUT: elementtype QFP is nog niet ge-implementeerd."
-
-#: src/callbacks.c:1971
-#, c-format
-msgid "ERROR: footprint type SIL is not yet implemented."
-msgstr "FOUT: elementtype SIL is nog niet ge-implementeerd."
-
-#: src/callbacks.c:1979
-#, c-format
-msgid "ERROR: footprint type SIP is not yet implemented."
-msgstr "FOUT: elementtype SIP is nog niet ge-implementeerd."
-
-#: src/callbacks.c:1987
-#, c-format
-msgid "ERROR: footprint type SO is not yet implemented."
-msgstr "FOUT: elementtype SO is nog niet ge-implementeerd."
-
-#: src/callbacks.c:1998
+#: src/callbacks.c:2108
+#: src/callbacks.c:2365
 #, c-format
 msgid "ERROR: unknown or not yet implemented footprint type entered."
 msgstr "FOUT: onbekend of nog niet ge-implementeerd element type ingevoerd."
 
-#: src/callbacks.c:2020
+#: src/callbacks.c:2190
+#: src/libfpw.c:232
+#, c-format
+msgid "footprint type contains an unknown package type."
+msgstr "element type bevat een onbekend behuizing type."
+
+#: src/callbacks.c:2198
+#: src/libfpw.c:241
+#, c-format
+msgid "determined the package type successfull."
+msgstr "het behuizing type is succesvol vastgesteld."
+
+#: src/callbacks.c:2300
+#, c-format
+msgid "ERROR: footprint type QFN is not yet implemented."
+msgstr "FOUT: elementtype QFN is nog niet ge-implementeerd."
+
+#: src/callbacks.c:2307
+#, c-format
+msgid "ERROR: footprint type QFP is not yet implemented."
+msgstr "FOUT: elementtype QFP is nog niet ge-implementeerd."
+
+#: src/callbacks.c:2332
+#, c-format
+msgid "ERROR: footprint type SIL is not yet implemented."
+msgstr "FOUT: elementtype SIL is nog niet ge-implementeerd."
+
+#: src/callbacks.c:2339
+#, c-format
+msgid "ERROR: footprint type SIP is not yet implemented."
+msgstr "FOUT: elementtype SIP is nog niet ge-implementeerd."
+
+#: src/callbacks.c:2346
+#, c-format
+msgid "ERROR: footprint type SO is not yet implemented."
+msgstr "FOUT: elementtype SO is nog niet ge-implementeerd."
+
+#: src/callbacks.c:2353
+#, c-format
+msgid "ERROR: footprint type SOT is not yet implemented."
+msgstr "FOUT: elementtype SOT is nog niet ge-implementeerd."
+
+#: src/callbacks.c:2412
 #, c-format
 msgid "ERROR: footprint units not initialised (null pointer)."
 msgstr "FOUT: elementeenheden is niet ge-initialiseerd (null pointer)."
 
-#: src/callbacks.c:2029
+#: src/callbacks.c:2421
 #, c-format
 msgid "ERROR: footprint units contains an empty string."
 msgstr "FOUT: elementeenheden bevat een lege text,"
 
-#: src/callbacks.c:2054
+#: src/callbacks.c:2428
 #, c-format
 msgid "ERROR: footprint units contains an unknown units type."
 msgstr "FOUT: elementeenheden bevat een onbekende eenheidtype."
 
-#: src/callbacks.c:2346
+#: src/callbacks.c:2727
 #, c-format
 msgid "ERROR: pad shape not initialised (null pointer)."
 msgstr "FOUT: padvorm is niet ge-initialiseerd (null pointer)."
 
-#: src/callbacks.c:2355
+#: src/callbacks.c:2736
 #, c-format
 msgid "ERROR: pad shape contains an empty string."
 msgstr "FOUT: padvorm bevat een lege text,"
 
-#: src/callbacks.c:2385
+#: src/callbacks.c:2743
 #, c-format
 msgid "ERROR: pad shape contains an unknown pad shape type."
 msgstr "FOUT: pad vorm bevat een onbekend padvorm type."
 
-#: src/callbacks.c:2642
+#: src/callbacks.c:3063
 #, c-format
 msgid "ERROR: Unable to write footprintwizard file %s."
 msgstr "FOUT: kan Footprintwizard bestand %s niet schrijven."
 
-#: src/callbacks.c:2649
+#: src/callbacks.c:3070
 #, c-format
 msgid "Wrote footprint %s to file."
 msgstr "Element %s naar bestand geschreven."
 
-#: src/callbacks.c:2654
+#: src/callbacks.c:3075
 #, c-format
 msgid "ERROR: Unable to write footprint %s to file."
 msgstr "FOUT: kan element bestand %s niet schrijven."
@@ -893,9 +944,11 @@ msgstr ""
 msgid ""
 "\n"
 "%s usage:\n"
+"\n"
 msgstr ""
 "\n"
 "%s gebruik:\n"
+"\n"
 
 #: src/fpw.c:96
 #, c-format
@@ -909,13 +962,22 @@ msgstr ""
 #: src/fpw.c:97
 #, c-format
 msgid ""
+"%s -v   : log messages, be verbose.\n"
+"\n"
+msgstr ""
+"%s -v   : log bericht, wees uitvoerig.\n"
+"\n"
+
+#: src/fpw.c:98
+#, c-format
+msgid ""
 "%s -V   : print the version information and exit.\n"
 "\n"
 msgstr ""
 "%s -V   : druk de versie informatie af en sluit het programma af.\n"
 "\n"
 
-#: src/fpw.c:98
+#: src/fpw.c:99
 #, c-format
 msgid ""
 "To write a footprint file use:\n"
@@ -924,7 +986,7 @@ msgstr ""
 "Om een element bestand te schrijven gebruik:\n"
 "\n"
 
-#: src/fpw.c:99
+#: src/fpw.c:100
 #, c-format
 msgid ""
 "\t%s -f fpw_filename -o footprint_name\n"
@@ -933,77 +995,268 @@ msgstr ""
 "\t%s -f fpw_bestandnaam -o element_bestandnaam\n"
 "\n"
 
-#: src/fpw.c:139
+#: src/fpw.c:156
 #, c-format
-msgid "I'm quiting, let me do something useful.\n"
-msgstr "Ik stop ermee, laat mij iets zinnigs doen.\n"
-
-#: src/fpw.c:145
-#, c-format
-msgid "SUCCESS: reading footprintwizard file %s.\n"
-msgstr "SUCCES: Footprintwizard bestand %s gelezen.\n"
-
-#: src/fpw.c:150
-#, c-format
-msgid "ERROR: reading footprintwizard file %s.\n"
-msgstr "FOUT: bij het lezen van footprintwizard bestand %s.\n"
-
-#: src/fpw.c:158
-#, c-format
-msgid "ERROR: footprint units contains a null pointer.\n"
-msgstr "FOUT: elementeenheden bevat een null pointer.\n"
+msgid "I'm quiting, let me do something useful."
+msgstr "Ik stop ermee, laat mij iets zinnigs doen."
 
 #: src/fpw.c:165
 #, c-format
-msgid "ERROR: footprint units contains an empty string.\n"
-msgstr "FOUT: elementeenheden bevat een lege tekst.\n"
+msgid "read footprintwizard file %s."
+msgstr "Footprintwizard bestand %s gelezen."
 
-#: src/fpw.c:172
+#: src/fpw.c:171
 #, c-format
-msgid "ERROR: pad shape contains a null pointer.\n"
-msgstr "FOUT: padvorm bevat een null pointer.\n"
+msgid "could not load footprintwizard file %s."
+msgstr "Kan footprintwizard bestand %s niet laden."
 
-#: src/fpw.c:179
+#: src/fpw.c:180
 #, c-format
-msgid "ERROR: pad shape contains an empty string.\n"
-msgstr "FOUT: padvorm bevat een lege tekst.\n"
+msgid "footprint name contains a null pointer."
+msgstr "elementnaam bevat een null pointer."
 
-#: src/fpw.c:186
+#: src/fpw.c:188
 #, c-format
-msgid "ERROR: footprint name contains a null pointer.\n"
-msgstr "FOUT: elementnaam bevat een null pointer.\n"
+msgid "footprint name contains an empty string."
+msgstr "elementnaam bevat een lege text."
 
-#: src/fpw.c:193
-#, c-format
-msgid "ERROR: footprint name contains an empty string.\n"
-msgstr "FOUT: elementnaam bevat een lege text.\n"
-
-#: src/fpw.c:216
-#, c-format
-msgid "ERROR: footprint units contains an unknown units type.\n"
-msgstr "FOUT: elementeenheden bevat een onbekende eenheidtype.\n"
-
-#: src/fpw.c:230
-#, c-format
-msgid "ERROR: pad shape contains an unknown pad shape type.\n"
-msgstr "FOUT: pad vorm bevat een onbekend pad vorm type.\n"
-
-#: src/fpw.c:261
-#: src/fpw.c:268
-#: src/fpw.c:279
-#: src/fpw.c:286
-#: src/fpw.c:293
-#, c-format
-msgid "ERROR: footprint type %s not yet implemented.\n"
-msgstr "FOUT: elementtype %s is nog niet ge-implementeerd.\n"
-
-#: src/fpw.c:303
-#, c-format
-msgid "ERROR: unknown or not yet implemented footprint type entered.\n"
-msgstr "FOUT: onbekend of nog niet ge-implementeerd element type ingevoerd.\n"
-
-#: src/fpw.c:307
+#: src/fpw.c:204
 #, c-format
 msgid "Footprint %s is written successful."
 msgstr "Element %s is succesvol opgeslagen."
+
+#: src/libfpw.c:78
+#: src/libfpw.c:86
+#: src/libfpw.c:98
+#: src/libfpw.c:106
+#: src/libfpw.c:114
+#: src/libfpw.c:122
+#, c-format
+msgid "footprint type %s not yet implemented."
+msgstr "elementtype %s is nog niet ge-implementeerd."
+
+#: src/libfpw.c:133
+#, c-format
+msgid "footprint type %s is not valid."
+msgstr "elementtype %s is niet geldig."
+
+#: src/libfpw.c:201
+#, c-format
+msgid "could not open footprint wizard file: %s for reading.\n"
+msgstr "kan footprintwizard bestand %s niet openen om te lezen.\n"
+
+#: src/libfpw.c:210
+#, c-format
+msgid "footprint filename with a null pointer found in: %s.\n"
+msgstr "element bestandnaam met een null pointer gevonden in: %s.\n"
+
+#: src/libfpw.c:222
+#, c-format
+msgid "footprint type with a null pointer found in: %s.\n"
+msgstr "element type met een null pointer gevonden in: %s.\n"
+
+#: src/libfpw.c:248
+#, c-format
+msgid "footprint units with null pointer found in: %s.\n"
+msgstr "element eenheid met een null pointer gevonden in: %s.\n"
+
+#: src/libfpw.c:258
+#, c-format
+msgid "footprint units contains an unknown units type."
+msgstr "element eenheid bevat een onbekend eenheidtype."
+
+#: src/libfpw.c:267
+#, c-format
+msgid "footprint units variables updated successfull."
+msgstr "element eenheden zijn succesvol bijgewerkt."
+
+#: src/libfpw.c:275
+#, c-format
+msgid "footprint refdes with a null pointer found in: %s.\n"
+msgstr "element refdes met een null pointer gevonden in: %s.\n"
+
+#: src/libfpw.c:285
+#, c-format
+msgid "footprint value with a null pointer found in: %s.\n"
+msgstr "element waarde met een null pointer gevonden in: %s.\n"
+
+#: src/libfpw.c:294
+#, c-format
+msgid "NaN found in package body length, in: %s.\n"
+msgstr "NaN gevonden in behuizing lengte, in: %s.\n"
+
+#: src/libfpw.c:303
+#, c-format
+msgid "NaN found in package body width, in: %s.\n"
+msgstr "NaN gevonden in behuizing breedte, in: %s.\n"
+
+#: src/libfpw.c:312
+#, c-format
+msgid "NaN found in package body heigth, in: %s.\n"
+msgstr "NaN gevonden in behuizing hoogte, in: %s.\n"
+
+#: src/libfpw.c:324
+#, c-format
+msgid "footprint author with a null pointer found in: %s.\n"
+msgstr "element auteur met een null pointer gevonden in: %s.\n"
+
+#: src/libfpw.c:335
+#, c-format
+msgid "footprint dirstribution license with a null pointer found in: %s.\n"
+msgstr "element distributie licentie met een null pointer gevonden in: %s.\n"
+
+#: src/libfpw.c:346
+#, c-format
+msgid "footprint usage license with a null pointer found in: %s.\n"
+msgstr "element gebruik licentie met een null pointer gevonden in: %s.\n"
+
+#: src/libfpw.c:356
+#, c-format
+msgid "footprint status with a null pointer found in: %s.\n"
+msgstr "element status met een null pointer gevonden in: %s.\n"
+
+#: src/libfpw.c:373
+#, c-format
+msgid "NaN number of pitch in X-direction found in: %s.\n"
+msgstr "NaN gevonden in de steek in de X-richting, in: %s.\n"
+
+#: src/libfpw.c:382
+#, c-format
+msgid "NaN number of pitch in Y-direction found in: %s.\n"
+msgstr "NaN gevonden in de steek in de Y-richting, in: %s.\n"
+
+#: src/libfpw.c:395
+#, c-format
+msgid "pad shape with a null pointer found in: %s.\n"
+msgstr "padvorm met een null pointer gevonden in: %s.\n"
+
+#: src/libfpw.c:404
+#, c-format
+msgid "pad shape contains an unknown pad shape type."
+msgstr "padvorm bevat een onbekend padvorm type."
+
+#: src/libfpw.c:411
+#, c-format
+msgid "pad shape variables updated successfull."
+msgstr "padvorm variabelen succesvol bijgewerkt."
+
+#: src/libfpw.c:419
+#, c-format
+msgid "pin #1 position with a null pointer found in: %s.\n"
+msgstr "pen nr. 1 met een null pointer gevonden in: %s.\n"
+
+#: src/libfpw.c:428
+#, c-format
+msgid "NaN number in pad length found in: %s.\n"
+msgstr "NaN gevonden in de lengte van elke pad, in: %s.\n"
+
+#: src/libfpw.c:437
+#, c-format
+msgid "NaN number in pad width found in: %s.\n"
+msgstr "NaN gevonden in de breedte van elke pad, in: %s.\n"
+
+#: src/libfpw.c:446
+#, c-format
+msgid "NaN number in pad diameter found in: %s.\n"
+msgstr "NaN gevonden in de diameter van elke pad, in: %s.\n"
+
+#: src/libfpw.c:455
+#, c-format
+msgid "NaN number in pin drill diameter found in: %s.\n"
+msgstr "NaN gevonden in de boorgat diameter, in: %s.\n"
+
+#: src/libfpw.c:466
+#, c-format
+msgid "NaN number in pad clearance found in: %s.\n"
+msgstr "NaN gevonden in de vrije afstand van elke pad, in: %s.\n"
+
+#: src/libfpw.c:476
+#, c-format
+msgid "NaN number in pad solder mask clearance found in: %s.\n"
+msgstr "NaN gevonden in de vrije afstand van elke pad met het soldeermasker, in: %s.\n"
+
+#: src/libfpw.c:489
+#, c-format
+msgid "NaN number in thermal length found in: %s.\n"
+msgstr "NaN gevonden in de lengte van het thermische pad, in: %s.\n"
+
+#: src/libfpw.c:498
+#, c-format
+msgid "NaN number in thermal width found in: %s.\n"
+msgstr "NaN gevonden in de breedte van het thermische pad, in: %s.\n"
+
+#: src/libfpw.c:507
+#, c-format
+msgid "NaN number in thermal clearance found in: %s.\n"
+msgstr "NaN gevonden in de vrije afstand van het thermische pad, in: %s.\n"
+
+#: src/libfpw.c:517
+#, c-format
+msgid "NaN number in thermal solder mask clearance found in: %s.\n"
+msgstr "NaN gevonden in de vrije afstand tussen het thermische pad en het soldeermasker , in: %s.\n"
+
+#: src/libfpw.c:528
+#, c-format
+msgid "NaN number in fiducial pad diameter found in: %s.\n"
+msgstr "NaN gevonden in de fiducial pad diameter, in: %s.\n"
+
+#: src/libfpw.c:538
+#, c-format
+msgid "NaN number in fiducial pad solder mask clearance found in: %s.\n"
+msgstr "NaN gevonden in de vrije afstand tussen het fiducial pad en het soldeermasker , in: %s.\n"
+
+#: src/libfpw.c:551
+#, c-format
+msgid "NaN number in silkscreen line width found in: %s.\n"
+msgstr "NaN gevonden in de opdruk lijnbreedte in: %s.\n"
+
+#: src/libfpw.c:562
+#, c-format
+msgid "NaN number in courtyard length found in: %s.\n"
+msgstr "NaN gevonden in de begrenzing lengte in: %s.\n"
+
+#: src/libfpw.c:571
+#, c-format
+msgid "NaN number in courtyard width found in: %s.\n"
+msgstr "NaN gevonden in de begrenzing breedte in: %s.\n"
+
+#: src/libfpw.c:580
+#, c-format
+msgid "NaN number in courtyard line width found in: %s.\n"
+msgstr "NaN gevonden in de begrenzing lijnbreedte in: %s.\n"
+
+#: src/libfpw.c:590
+#, c-format
+msgid "NaN number in courtyard clearance with package found in: %s.\n"
+msgstr "NaN gevonden in de vrije afstand van de begrenzing met de behuizing in: %s.\n"
+
+#: src/libfpw.c:600
+#, c-format
+msgid "NaN number in top to bottom center-center distance found in: %s.\n"
+msgstr "NaN gevonden in de verticale midden-midden afstand in: %s.\n"
+
+#: src/libfpw.c:609
+#, c-format
+msgid "NaN number in top to bottom inner-inner distance found in: %s.\n"
+msgstr "NaN gevonden in de verticale binnen-binnen afstand in: %s.\n"
+
+#: src/libfpw.c:618
+#, c-format
+msgid "NaN number in top to bottom outer-outer distance found in: %s.\n"
+msgstr "NaN gevonden in de verticale buiten-buiten afstand in: %s.\n"
+
+#: src/libfpw.c:627
+#, c-format
+msgid "NaN number in left to right center-center distance found in: %s.\n"
+msgstr "NaN gevonden in de horizontale midden-midden afstand in: %s.\n"
+
+#: src/libfpw.c:636
+#, c-format
+msgid "NaN number in left to right inner-inner distance found in: %s.\n"
+msgstr "NaN gevonden in de horizontale binnen-binnen afstand in: %s.\n"
+
+#: src/libfpw.c:645
+#, c-format
+msgid "NaN number in left to right outer-outer distance found in: %s.\n"
+msgstr "NaN gevonden in de horizontale buiten-buiten afstand in: %s.\n"
 
