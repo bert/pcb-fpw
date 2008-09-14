@@ -1,3 +1,1184 @@
+commit 29d80e1d2ba0870ee5f463d9e637794fc5646439
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Sep 14 10:14:37 2008 +0200
+
+    Updated the Dutch translation file.
+
+commit 30cbcd5c521ef62fe3f59f646ea1211c8a695207
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Sep 13 19:08:05 2008 +0200
+
+    Handling of the sensitivity of the "pin/pad exceptions" button.
+
+commit a36e9f7bf4812a83bb34ee3838e89154561e1167
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Sep 13 18:33:55 2008 +0200
+
+    Reducing compiler warnings in bga.c
+
+commit a43929626d5e9cb76565a859a6b806bcd9d368d5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Sep 13 18:21:47 2008 +0200
+
+    Reducing compiler warnings in preview.c
+
+commit 71952851f21ac8a9199c4c780f23a2e6a08c1c09
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Sep 13 17:53:15 2008 +0200
+
+    Reducing compiler warnings in callbacks.c
+
+commit 75b8e55791c783ad5932a2176d53dc5de2e8c561
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Sep 13 17:43:49 2008 +0200
+
+    Reducing compiler warnings in main.c
+
+commit 41b27f8e5370dfd20bbf60df7f302b4cc265d823
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Sep 13 17:18:13 2008 +0200
+
+    Clean up of callbacks.h.
+
+commit 3eeb3a2d8bdf673f9e1e73d810c9fdfe4f914512
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Sep 13 14:52:17 2008 +0200
+
+    Added a pin/pad exceptions window, button and callback.
+    
+    - cleaned up the pin/pad exceptions label.
+    - cleaned up typos in various files.
+
+commit 254015c4f2da68a6cd6003d93929b575a1692940
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Sep 13 11:53:05 2008 +0200
+
+    Additional checking and bug squashing.
+    
+    - Additional checks on float values in read_footprintwizard_file().
+    - Corrections on formatting strings for some int variables (boolean)
+      in write_footprintwizard_file().
+
+commit 2f22023bb20380fbfab65405244304950c7d1777
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Sep 8 08:30:29 2008 +0200
+
+    Added BGA packages.
+    
+    - BGA109C50P12X12_700X700X100,
+    - BGA10C50P3X4_220X250X60,
+    - BGA10N50P3X4_200X250X94,
+    - BGA111C80P12X13_1000X1100X140
+
+commit 656a0eb9506ee69f1c9f09c3c8d3ff919bfcc113
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Sep 8 00:01:21 2008 +0200
+
+    Added BGA packages.
+    
+    - BGA1089C100P33X33_3500X3500X350,
+    - BGA1089C127P33X33_4250X4250X350
+
+commit 5855f6b26c468cadb820e73b32c0d6a8f6dc5662
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Sep 7 23:48:38 2008 +0200
+
+    Added BGA packages.
+    
+    - BGA107C80P10X14_1050X1300X140,
+    - BGA107C80P10X14_1050X1600X140
+
+commit 6445c5190a11be2b503646516657a53fe276cc86
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Sep 7 22:26:14 2008 +0200
+
+    Remove todo comment from preview.c since it has been done.
+
+commit 1510f1a7ff71563ae32b1ee030d927d484694dfb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Sep 6 12:22:36 2008 +0200
+
+    Added BGA packages.
+    
+    - BGA1023C100P32X32_3300X3300X350,
+    - BGA1024C100P32X32_3300X3300X350,
+    - BGA103C65P8X13_600X900X100,
+    - BGA1056C100P39X39_4000X4000X380,
+    - BGA1056C100P39X39_4000X4000X400,
+    - BGA105C50P15X15_800X800X140,
+    - BGA107C80P10X14_1050X1300X120
+
+commit 587f4fa01ee7c19b9bab340270b581378c54e16b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Aug 18 23:43:23 2008 +0200
+
+    Added BGA package.
+    
+    - BGA1020C100P32X32_3300X3300X350.
+
+commit e9f4001b242d8216afa60685b02aad1d1aec5e38
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Aug 18 23:37:46 2008 +0200
+
+    Added BGA packages.
+    
+    - BGA100C80P10X10_900X900X100,
+    - BGA100C80P10X10_900X900X150,
+    - BGA100C80P11X11_1100X1100X140
+    - corrected values in other BGA package values.
+
+commit 3aac761b1ec5a7a5f39c609d69b6c2cab4b7feef
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Aug 18 19:56:10 2008 +0200
+
+    Connected a lookup routine for predefined values for PGA footprints.
+
+commit 23b4abff453a65bb0f842c27182e31ae20eaf94c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Aug 18 19:53:25 2008 +0200
+
+    Moved gui_constraints_set_plcc() to plcc_set_gui_constraints().
+
+commit ff10dbcf4a05a8363122cc1c24d40964489dfc50
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Aug 16 21:12:57 2008 +0200
+
+    Moved gui_constraints_set_pga() to pga_set_gui_constraints().
+
+commit dc46c9ba9469009d20a213c4859e73a7b7266e82
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Aug 16 08:21:36 2008 +0200
+
+    Added handling of fiducial widgets to all_entries_to_default_sensitivity().
+
+commit 543c6efeb7644b9d0d9fffbfce0bf9a722f35e27
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Aug 15 07:54:06 2008 +0200
+
+    Added fiducial variables to the footprintwizard file format.
+
+commit 11a7ce89ce512e7b9e8a7598879df1672daf8b38
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Aug 15 07:42:04 2008 +0200
+
+    And more widgets to be updated in all_entries_need_updated().
+
+commit f7b2c725fbe49b8b99608f9f74c5af2d84aab134
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Aug 14 08:15:46 2008 +0200
+
+    Added rationale and truncation, and some minor corrections.
+
+commit 706b21cfde475f0e8f0a2d28655b10b6bd09ea8d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Aug 13 22:57:24 2008 +0200
+
+    More widgets to be updated in all_entries_need_updated().
+
+commit c877297c3b27f4dc13a35fba25befc5747dbc83e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Aug 13 22:34:38 2008 +0200
+
+    Use a correct name for the fiducial checkbutton.
+
+commit df1b5e6aa2be6d7f4a4b94b4e1409db4cdf9b33f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Aug 13 22:29:36 2008 +0200
+
+    Connected a lookup routine for predefined values for BGA footprints.
+
+commit 05e02831f2749d4418e40e6afd4f5ab0d1bc36c8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Aug 13 22:21:37 2008 +0200
+
+    Added code for drawing fiducials on BGA package footprints.
+
+commit 3cc368583c007344d5812505eb460ee29372d7e4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Aug 13 21:55:47 2008 +0200
+
+    Added testing for null pointer or empty pin/pad exception string.
+
+commit 995434ca01e8173e002270ecf5df8c4a685c3f19
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Aug 13 07:49:31 2008 +0200
+
+    Added defines for converting units.
+
+commit c112862b37766b371d9c9a90cd8348e7709d482c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Aug 13 07:22:04 2008 +0200
+
+    Added a BGA100C80P10X10_1000X1000X150 package.
+
+commit 6ed073cc89e8a0fc71ac4957613baffd7d28a310
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Aug 12 23:07:18 2008 +0200
+
+    Added a BGA100C80P10X10_1000X1000X140 package.
+
+commit 60fad73f73de0c2279ee2ab41d5d19f59eaa4501
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Aug 12 22:57:13 2008 +0200
+
+    Added a BGA100C65P10X10_800X800X140 package.
+
+commit ed0d85b3b52ecf280e481eb45dcf03cb3b829b58
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Aug 12 22:49:20 2008 +0200
+
+    Added a BGA100C50P15X15_1000X1000X120 package.
+
+commit 2489df7178c6b4918c3b26f6ab0d473f0ec9caa5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Aug 12 22:38:59 2008 +0200
+
+    Moved global variables to file globals.h
+
+commit 7d9d47199f1a7f821aec5e4203052d11de75e061
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Aug 12 22:34:07 2008 +0200
+
+    Revert commit a8b297ea31afee511a2d7593b8a285263560c6aa
+
+commit a8b297ea31afee511a2d7593b8a285263560c6aa
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Aug 12 08:20:38 2008 +0200
+
+    Make package dependent code available to libfpw (and thus to both fpw and the GUI callbacks).
+
+commit 274e0cc9ca5524610eeb8b7e1bb00adb096cbad3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Aug 12 08:14:41 2008 +0200
+
+    Use a correct name for the fiducial checkbutton.
+
+commit 9fc6f3f97d3b43ae425b765ed18b998a63cf17c6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Aug 12 08:09:43 2008 +0200
+
+    Added code to gui_constraints_disable_thermal_tab_widgets.
+    
+    - disable all thermal pad entries as well.
+    - disable fiducial checkbutton.
+    - disable all fiducial entries.
+
+commit cce4f8e7ece3215b9440ec6c415415c211c69ad5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Aug 11 22:21:49 2008 +0200
+
+    Set fiducial varables for BGA footprints that seem to have them.
+
+commit d55c8cfd5f5b7bda1d31d0e9c29a703350603cc7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Aug 11 21:54:13 2008 +0200
+
+    Added correct sensitivity for fiducial checkbutton and entries with BGA package type.
+
+commit 9e8ddfac1e2e91f9892721838fc82a6b69c52fea
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Aug 11 21:40:58 2008 +0200
+
+    Added a "fiducials" checkbutton and corresponding entries in the pcb-gfpw GUI.
+    
+    - added a checkbutton and corresponding entries with labels in the glade file.
+    - added code to set the initial state.
+    - added a callback functions for the checkbutton and entries.
+    - added global variables in libfpw.c to store the contents.
+
+commit e5d303be775a4bed5cd4cf97a6b16620409c91c1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Aug 10 23:54:19 2008 +0200
+
+    Debugged get_pin_pad_exception() on BGA package type.
+
+commit 9463ee0130e2aba4816f93df0576c8ce2ad241a1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Aug 10 21:43:36 2008 +0200
+
+    Small corrections to fix a couple of compiler warnings.
+
+commit 27df91892309f33be175c83daecd3a577001d5b4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Aug 10 21:41:52 2008 +0200
+
+    Added pin/pad exceptions to BGA100C50P11X11_600X600X100 and BGA100C50P14X14_800X800X120.
+
+commit 2c0097fee0f64ea746d33eb15e289fb84fea66c7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Aug 10 08:06:03 2008 +0200
+
+    Added get_pin_pad_exception().
+    
+    - determine if the pin/pad is a non-existing pin or pad.
+    - return EXIT_SUCCESS if the pin/pad is non-existing
+      (included in the pin_pad)exception_string).
+    - return EXIT_FAILURE if the pin/pad exists
+      (not included in the pin_pad_exception_string).
+
+commit 182b900b993e51222a892ad821109eead262dd6c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Aug 9 22:25:44 2008 +0200
+
+    Added a "pin/pad exceptions" entry in the pcb-gfpw GUI.
+    
+    - added an entry and corresponding label in the glade file.
+    - added a callback function for the entry.
+    - added a global variable in libfpw.c to store the contents.
+
+commit 69c36bf4427b6802511ec4159c228d1073e479d7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Aug 9 21:42:49 2008 +0200
+
+    Added some BGA packages.
+
+commit 945405f031b385c8d802dd3b687b025136dfa4f7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Aug 9 20:40:22 2008 +0200
+
+    Moved gui_constraints_set_bga() to bga_set_gui_constraints().
+
+commit 52dc10f0bd9a38d56bf0218a48783c671c690600
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Aug 6 07:08:22 2008 +0200
+
+    Set GUI constraints for the SOT package type.
+
+commit 0b72b85f3297c92af62e557d95f723d406562dcd
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Aug 6 07:06:10 2008 +0200
+
+    Pin #1 position is UPPER_LEFT (was 1).
+
+commit a4455c78ff9273d1588f2bc397d4e9115fb6267a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Aug 6 06:54:11 2008 +0200
+
+    Moved gui_constraints_set_dip() to dip_set_gui_constraints().
+
+commit 2402779e2468253c08ac7bb3899323487eed8276
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Aug 6 06:29:16 2008 +0200
+
+    Changes in on_footprint_type_entry_changed().
+    
+    - exit the switch cases with break (was return, which leaves the function).
+    - only try to change the dimensions image if there is a pixmap on disk.
+
+commit ea5bf57718dbcca134dfd09d30613cc800eea012
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Aug 5 23:31:58 2008 +0200
+
+    Cosmetical changes.
+
+commit aac66ef31bada685da1b358f59fbf7e1f172944c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Aug 4 18:19:13 2008 +0200
+
+    Select on package type (was footprint type).
+
+commit 2f018db24987a3234036aeccabd69b753e2ed183
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Aug 3 15:06:27 2008 +0200
+
+    Moved testing for package type to separate function get_package_type().
+
+commit ff1b6fd1c65382ff48f85720baef22dd6cefe085
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Aug 3 14:10:30 2008 +0200
+
+    Added more checks while loading a fpw file, bumped some criticality log levels.
+
+commit 4072798d82008c45f3ad347515c010829de73935
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Aug 3 13:54:38 2008 +0200
+
+    Added stuff about log messages.
+
+commit 6f8aefb2df9dc8f86bb306aff7dcbef509620940
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Aug 2 17:07:17 2008 +0200
+
+    Defined an initial value.
+
+commit 6ec281f495d1433f1856c6c48236ac7db99293ca
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Aug 2 17:03:08 2008 +0200
+
+    Moved a lot of testing code from fpw in read_footprintwizard_file().
+    
+    This code is now being (re)used by the GUI version.
+
+commit ff74fc969628aaec2ace7bc66d6915f6510f1b08
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Aug 2 14:50:17 2008 +0200
+
+    Removed duplicate code from fpw.
+    
+    A lot of testing should be done in libfpw.
+    This moved code should be (re)used by the GUI version as well.
+
+commit 0137cfbd7b015b215b905cc0dce9e69687a85b22
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jul 31 22:42:34 2008 +0200
+
+    Correcting a small typo, which was giving some warning during compiling.
+
+commit f90a4f7624b77c9b0b54ef2100c8dd6137637e82
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jul 31 08:10:30 2008 +0200
+
+    Silly me, got it all the wrong way around, must have been late :-)
+
+commit 98c1907a392fbdc0025f4eebcf3973b8f44c1ef6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jul 31 08:04:09 2008 +0200
+
+    Rewrite of both on_filechooser_dialog_current_folder_changed() and on_filechooser_dialog_open_button_clicked().
+
+commit b7b7f8aa798074942034db387f5cde9b40727f32
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jul 31 08:02:56 2008 +0200
+
+    Added a variable for verbosity for both fpw and pcb-gfpw.
+
+commit 1a58032865de1bd0d010e215dbc42d75936b0ae5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jul 30 20:36:47 2008 +0200
+
+    Return from this function when nothing else usefull can be done.
+
+commit db18b3c07e554df83c4e3c93fbca5c06d5073a2e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jul 29 23:29:48 2008 +0200
+
+    Some changes in on_filechooser_dialog_open_button_clicked().
+    
+    - It seems that the error messages send to the statusbar do not
+      reach the main window statusbar.
+      Better to start logging errors and warnings with g_log ().
+    - Added some code to register the relative path to the
+      fpw file.
+    - Added a call to all_entries_need_updated() since it's now
+      implemented.
+      Also causing segfaults and the like :-(
+    - Freeing the fpw filename gchar after reading the file seems
+      to be a good practice.
+      Reading the fpw file is still causing segfaults :-(
+
+commit 34186f6b3698e11cba0ccb6f277f50d403c063d4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jul 29 07:52:00 2008 +0200
+
+    Added a pathname variable for the footprintwizard file.
+
+commit 2472cda8bebfa43fd75507059fc7fa57fe7ff82c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jul 29 01:19:51 2008 +0200
+
+    Correction in a comment.
+
+commit f8fd5e8c82af5eec1e4cad66a3a87503453bd08a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jul 26 14:42:34 2008 +0200
+
+    Corrected values, added doxygen comments, list of supported footprints.
+
+commit 6c6f31fe585da95f542e0ac92febaa11382f6215
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jul 26 12:18:37 2008 +0200
+
+    Added footprints and values, added doxygen comments, list of supported footprints.
+
+commit 0d98fdd0606c3280ce1b503f475eebf679ba4ea6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jul 24 23:58:57 2008 +0200
+
+    Minor correction and added code to all_entries_need_updated().
+
+commit cd18b61f37ecc4aa652ff89aab094b54e0d675b8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jul 24 23:57:45 2008 +0200
+
+    Fixed a misunderstanding.
+
+commit f3b85c5da8144d327c8e2b088c1f7db4f3e56ae8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jul 24 08:16:36 2008 +0200
+
+    Added NO_SHAPE pad shapes type value, and intialise pad_shapes variable with NO_SHAPE.
+
+commit 6fcc983d807715f4b54a8a71e27679fab1431406
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jul 24 08:13:59 2008 +0200
+
+    Relocated units_type variable.
+
+commit a1448d2e4baeb0f5806e1c2bc07cbf5deab5819f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jul 24 08:10:34 2008 +0200
+
+    Added pad shapes (enumerated) variable and implemetation in update_pad_shapes_variables().
+
+commit 8912cd3a273df0d1bf8efc56c43fe185302c96c2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jul 24 08:01:32 2008 +0200
+
+    Added update_pad_shapes_variables().
+
+commit 62cac7b1f97d29720741a620285ee8b5eefc5ec6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jul 24 08:00:38 2008 +0200
+
+    Changed pad shapes handling in on_pad_shape_entry_changed().
+
+commit fb7cfe4c6673be3b3956c9e188620854c26298b1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jul 23 21:09:27 2008 +0200
+
+    Added code to all_entries_need_updated().
+
+commit 2ef06fd2d28dcb99951f7abec3ddf3274bbddb1f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jul 23 21:08:03 2008 +0200
+
+    Added pad shapes type definition.
+
+commit 88ebaf324c3e09c2c86aaae76f3a83341555e796
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jul 22 21:44:59 2008 +0200
+
+    Redefined the packages typedef.
+
+commit f751614394adcb9a4dee4c9014c24dd56ce37665
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jul 21 22:33:54 2008 +0200
+
+    Changed initial value of units_type to NO_UNITS.
+
+commit db8e08dbbbbaaa99a8556ad4c215c5cba4723679
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jul 21 22:31:44 2008 +0200
+
+    Changed NONE units type into NO_UNITS.
+
+commit 800cd7182c441fa3c12edd4ad64cbff9f7b7bae1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jul 21 22:30:35 2008 +0200
+
+    Redefined the locations types.
+
+commit eab094dd2132e0d22cf4f98dd356a7687ab1202c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jul 20 22:18:10 2008 +0200
+
+    Added update_location_variables().
+
+commit 0632ed729f10a1b546155adff880c80e9086faa2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jul 20 19:36:57 2008 +0200
+
+    Changed the definition of locations_t.
+
+commit c1277eff55946e4edf4edd75c8a2bd0be6c81d5d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jul 20 19:33:42 2008 +0200
+
+    Changed the sequence of locations in the locations type.
+
+commit 08078d84b62043a1b9e85e3eaa3487577653e16d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jul 20 19:20:39 2008 +0200
+
+    Initialise gboolean package_is_radial to FALSE (from the 50/50 chance I guess > 75 % is).
+
+commit 8b2e549f2d2d3f7ab2147c8b1f5b62eec5b83a1c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jul 20 17:48:36 2008 +0200
+
+    Corrected "number of rows" <-> "count y".
+
+commit 60ef55121275402ebd4422084c5d0e3bf7b1727b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jul 20 16:35:05 2008 +0200
+
+    Initilize some gchar variables.
+
+commit 720f1cc3b09a953d5b218d7508096e88adfa9ff0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jul 20 15:06:59 2008 +0200
+
+    More issues emerge.
+
+commit 949a2d1398c481c808b3c5a6fbea6098134287c3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jul 20 14:51:31 2008 +0200
+
+    Yes, there seem to be issues.
+
+commit 9f5654af681a18e0084ceed8f099d32f164da925
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jul 20 13:49:58 2008 +0200
+
+    Bug squashed: set the "package is radial" checkbutton to it's state, not to always FALSE.
+
+commit 3e9b4122c1a8d4ca63df031b8313bea97c06a73b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jul 20 13:34:56 2008 +0200
+
+    Improved footprint units handling (again ;-)
+
+commit 5fbe62b9cdc715a1a23a6d5845928c26878f50ca
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jul 20 02:48:32 2008 +0200
+
+    Added exit status [EXIT_SUCCESS|EXIT_FAILURE] as a return value in update_units_variables().
+
+commit 21194cf1df4d796e4b92d40d99906e395103d167
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jul 20 02:35:15 2008 +0200
+
+    Small bugs corrected.
+
+commit a91982abb9fd1709eea1d301586120a2641f5f9b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jul 20 02:10:57 2008 +0200
+
+    Added a lookup routine of predefined values for DIP footprints.
+
+commit 6acd1e9be304c2c365411420c2d6c280a8127776
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jul 19 20:49:01 2008 +0200
+
+    Corrected a typo added stuff about git commit messages and blobs.
+
+commit 0857acd9a56c99bfe6e044653b61e0e78391a922
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jul 19 20:35:42 2008 +0200
+
+    Added a mechanism for looking up values for known DIP package types.
+
+commit 134d5a5099c0eb3adf3220d86c73f90b84f6a6db
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jul 18 22:49:52 2008 +0200
+
+    Lets start with keeping track of issues we have with pcb-fpw ;-)
+
+commit c4ee5cdd9643d4b1a2623517411c306aa6c3b950
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jul 18 21:44:28 2008 +0200
+
+    Some notes about conventions for hackers (and myself).
+
+commit 5bc1912e6f5492bc4f9ed3c3ba7cf48fd9786c03
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jul 18 20:59:59 2008 +0200
+
+    Better set sensitivity before setting a value in an entry.
+    
+    Added more code to all_entries_need_updated ().
+
+commit 6a985811df51668875b4cd828dbcf0799d5f64d2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jul 18 20:58:20 2008 +0200
+
+    Set number_total_pins_entry its initial state to sensitve.
+
+commit e315ca3fb0ac12255357ec63ec232b78fee1cead
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jul 18 09:17:29 2008 +0200
+
+    Added more code to all_entries_need_updated ().
+
+commit f99520e9cd92b6889f70bdc09503cbe879e0a5c8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jul 18 09:16:39 2008 +0200
+
+    Corrected a typo.
+
+commit 9276324dca25079cb6ee1871066f04b2c047ed36
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jul 18 08:36:57 2008 +0200
+
+    Squashed a bug: "package is radial" checkbutton did not reset to default when "footprint type" was changed.
+
+commit cc1fc9f57368ccfcf24e126eac2d3c484bf19b46
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jul 18 08:24:27 2008 +0200
+
+    Simplified code for updating the footprint name in the GUI.
+
+commit 44a578550ffbe54ff4919ea39c55d7fd317c4c39
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jul 18 08:23:42 2008 +0200
+
+    Freeing the footprint_name string seems to solve the problem of not updating the string in the GUI.
+
+commit 181f4a8771a75a3e6bd79eeb55b5e8715dc311b1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jul 18 07:12:05 2008 +0200
+
+    Added some new line markers in the doxygen documentation and changed the file description.
+
+commit dc31fa225ba26746417dde65311470c049951822
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jul 17 21:01:20 2008 +0200
+
+    Added a name for the file filter in the file chooser dialog.
+
+commit 9ab8c53c23c6b3bdf182aae5b9d5521eb780a7db
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jul 16 23:04:11 2008 +0200
+
+    Added some new line markers in the doxygen documentation.
+
+commit 9bb7f92d0f7a754d666cf31ff38950910d050630
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jul 16 23:00:26 2008 +0200
+
+    Added some code to all_entries_need_updated () and improved on units handling.
+
+commit 75839cf5ef3775c694ee3d0a79a91a3a435683c6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jul 16 22:58:57 2008 +0200
+
+    Added units_type variable and update_units_variables ()
+
+commit f96fab025faf9cb88cdb076e63e93c8333093585
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jul 16 12:39:51 2008 +0200
+
+    For SOT footprints package_is_radial is set to FALSE.
+
+commit d241badcbce5ae3caf7f737ced20be7ca4ac4bf6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jul 16 10:29:57 2008 +0200
+
+    Added all_entries_need_updated () as a placeholder.
+    
+    - code to be added.
+    - added a mechanism for looking up values for known SOT package types.
+    - this mechanism needs to be expanded for other package types.
+
+commit b71346375c8ac567776955f0ecfba18c25e12aaa
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jul 16 09:45:57 2008 +0200
+
+    Added SOT footprint type in on_footprint_name_entry_changed().
+
+commit 54087708d5134a2b086d0a9860c18f4b8a5e3dea
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jul 16 09:44:02 2008 +0200
+
+    Added exit status [EXIT_SUCCESS|EXIT_FAILURE] as a return value.
+
+commit 1c6136e0249b6599a02890da245cd091eb2a451f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jul 16 09:39:43 2008 +0200
+
+    Added SOT package type.
+
+commit 21580e1af8c96836aa8df7fa1f24a7f3d69592c5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jul 16 09:15:54 2008 +0200
+
+    Added the lookup routine of predefined values for SOT footprints.
+
+commit 16284b01e73d37963e4092010fa120b2826e288d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jul 16 08:42:24 2008 +0200
+
+    Updated the README documentation.
+
+commit 15fd8bf75487ae6f7d8dfe324cfba81cc8c06f37
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jul 16 08:30:51 2008 +0200
+
+    Added a mechanism to load an image showing dimensions of footprint type.
+    
+    This code needs debugging for it will not actually load the selected
+    footprint type dimension image (for example RES.xpm) in the dimensions_image
+    widget.
+    This code was (partly) duplicated from interface.c where the splash_wiz.xpm
+    pixmap file is loaded on start-up.
+
+commit db6f3f2f9f1336e8b974700be6973a1871aeda35
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jul 13 14:52:41 2008 +0200
+
+    Moved vertical justified dimensions into horizontal in RES.xpm.
+
+commit d38638a27cf935dd07bec5b8ef17735f455661a4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jul 13 13:40:55 2008 +0200
+
+    Changed a dimension in pixmaps/DIP.xpm.
+
+commit dc02a588211d70bf66db4a9a9317c1a0727f8fb9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jul 12 19:56:20 2008 +0200
+
+    Added new file pixmaps/DIPS.xpm with legenda for DIPS footprint type dimensions.
+
+commit 35323f24c25d835ea58145069cdf3948ea0013ba
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jul 12 15:10:41 2008 +0200
+
+    Added new file pixmaps/DIP.xpm with legenda for DIP footprint type dimensions
+
+commit fd9b685d63bb2c16654c8f929f9709ae2b993e65
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jul 9 22:35:43 2008 +0200
+
+    Added new file pixmaps/RES.xpm with legenda for RES footprint type dimensions.
+
+commit 7fbc5f960822be6df8b1b6facd55eee832a06adc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jul 8 23:15:15 2008 +0200
+
+    Corrected a small bug in src/preview.c
+
+commit 565ff7bd89659e2664332ebfb60b506c6bea5bf2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jun 20 23:40:16 2008 +0200
+
+    Cleanup in src/preview.c
+
+commit 1927f433b17911f1659cef432f10551e82d4276c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jun 20 23:26:37 2008 +0200
+
+    Reformatting in src/preview.c
+
+commit bfb338a3a039d0f1af6cac4b7ad60673c046cad4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jun 20 23:12:16 2008 +0200
+
+    Include src/preview with a compiler directive into src/callbacks.c
+
+commit 21315792616dc3649ecba0e113c9af99aa026ec9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jun 20 08:17:17 2008 +0200
+
+    Reformatting of comments in src/preview.c
+
+commit e9fb185082604fcf4ab7df65d96ba32f37e8c5f5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jun 20 00:42:21 2008 +0200
+
+    Added a comment in preview_draw_rectangle() in src/preview.c
+
+commit 35531787e035cdef2197f6cddece42bab01b710a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jun 20 00:40:25 2008 +0200
+
+    Checking for invalid line (NULL pointer) in preview_draw_line() in src/preview.c
+
+commit cd2fb8a912d6ed5e3dcac7fe7e7faee5a74af33b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jun 20 00:16:09 2008 +0200
+
+    Added preview_draw_polygon() in src/preview.c
+
+commit 52677e11561393ce83daf958ca817b4a717705e1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jun 19 23:17:16 2008 +0200
+
+    Added a preview polygon struct to src/preview.c
+
+commit 0b1cabf87a35739f25928633949e846b8b3383e6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jun 19 06:48:43 2008 +0200
+
+    Added preview_draw_rectangle() in src/preview.c
+
+commit aac6a7c9b7cca8942dd14a12e0b0df82fa78ad38
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jun 18 21:54:10 2008 +0200
+
+    Added a preview rectangle struct to src/preview.c
+
+commit 676272cd8e24db47bdd0264c4d6f4c6cc412c5a4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jun 17 08:02:34 2008 +0200
+
+    Solved bugs in preview_draw_arc() and preview_draw_line() in src/preview.c
+
+commit 808e9ff575e85fc7f547940b9f0ed7280fe08696
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jun 17 07:57:11 2008 +0200
+
+    Corrected error in preview_set_fill_mode() in src/preview.c
+
+commit b172c0a1a8650ec4447097237b22af8b31166164
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jun 17 07:51:41 2008 +0200
+
+    Changed comments on preview_draw_arc() in src/preview.c
+
+commit 96649365c93bac4b700301871b5dd972b48a26de
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jun 17 07:50:11 2008 +0200
+
+    Changed comments on preview_draw_line() in src/preview.c
+
+commit 4e86b8a683c24771b65d68e0e101b7731bd259ce
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jun 17 07:48:06 2008 +0200
+
+    Made a new start on preview_draw_line() in src/preview.c
+
+commit 0962aeea84d9732731ee623a8737ca957e24971f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jun 17 07:44:37 2008 +0200
+
+    Added code to preview_draw_arc() in src/preview.c.
+
+commit 5c533428f1fc308b15aea7fddcb93d38b1faa761
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jun 17 07:40:56 2008 +0200
+
+    Added comment to preview_line struct in src/preview.c
+
+commit 3af960b9e171cde2d46974f74dfc959c54a57f3b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jun 17 07:34:50 2008 +0200
+
+    Added a preview line struct to src/preview.c
+
+commit 5b6fb5c37923a99781a6e9059d5a3f6474fc9421
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jun 14 15:36:18 2008 +0200
+
+    In src/preview.c pass the correct widget to gtk_widget_destroy() in preview_delete_event().
+
+commit 0b61bf0c29ea6257005508ec07a72dde31ebf18f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jun 14 15:31:24 2008 +0200
+
+    Added a preview arc struct to src/preview.c
+
+commit 2a023d299ad91054d6a16a0862e423f576c04324
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jun 12 22:21:06 2008 +0200
+
+    Changed preview_delete_event() callback.
+    
+    When a delete event signal is received for the preview widget only
+    destroy the preview widget, not quit the main gtk loop.
+    
+    Added a warning when no Graphics Context was allocated in
+    preview_use_gc().
+
+commit 5f7f2250453bb9409ce6060737e46b2ec0993912
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat May 31 08:57:09 2008 +0200
+
+    Added write_license() to libfpw.c
+
+commit 0d6d1cbe3978d10e1adbcfba84d75ab7b1286a0f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue May 27 07:46:47 2008 +0200
+
+    WIP on the preview: set the fill mode in the Graphics Context.
+
+commit 05bf72c13b2261c2fc78b05078574305de0e870c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue May 27 06:40:14 2008 +0200
+
+    WIP on the preview: set the line style in the Graphics Context.
+    
+    Improved code on setting the line capsulation style.
+
+commit aeb6f38ee06cd06c99ae31f946a68c35bad597f3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue May 27 06:19:53 2008 +0200
+
+    WIP on the preview: set the line capsulation style in the Graphics Context.
+
+commit 4e4f5324ca5ae889f90d136ac01aa790781f7d1a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon May 26 22:53:16 2008 +0200
+
+    WIP on the preview: set the line width in the Graphics Context.
+
+commit 25934ef50537eb4dc6d23300c6c4425cdd45daa9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun May 25 19:43:09 2008 +0200
+
+    WIP on the preview: set the foreground color in the Graphics Context.
+
+commit 71b19d645b515e99c6b06307173872c52f9bd444
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun May 25 14:44:11 2008 +0200
+
+    Added a Grapics Context to be used.
+
+commit 9d55a8c62b53a092e894fa6d5f333229518f8379
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat May 24 13:56:42 2008 +0200
+
+    WIP on the preview: added code in preview_draw_line().
+
+commit ef7cd0c9fe00521e39fe74e7eba6d6b1afb64fc8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat May 24 10:48:51 2008 +0200
+
+    WIP on the preview.
+    
+    Added some padding between the widgets.
+
+commit b5b69fe9462207b3064bc708d1cef7bc16e59eed
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat May 24 10:42:46 2008 +0200
+
+    WIP on the preview.
+    
+    Destroy the preview widget the main window of pcb-gfpw gets destroyed.
+    In the near future, when the preview window is called from pcb-gfpw,
+    include the name of the footprint in the window title.
+
+commit bead13117139728669b0dfee9116a2d4a63bde5b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat May 24 09:23:41 2008 +0200
+
+    WIP on the preview.
+    
+    Added a horizontal button box.
+    Added a close button inside the button box..
+    Added a close callback for the preview window.
+    Placed the preview drawing area inside a adjustable viewport.
+    
+    As a result the whole packing and adding scheme of
+    widgets got shuffled.
+
+commit 3220bd1a65d23663e563f069dd7f9bdd8c9d59c9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat May 24 00:41:54 2008 +0200
+
+    WIP on preview.
+    
+    The preview now draws a white background.
+    Renamed functions with a preview_* prefix.
+    Added preview_draw_arc() (is still an empty placeholder).
+    Renamed draw_brush () to preview_draw_background() .
+    Added preview_draw_line() (is still an empty placeholder).
+    Added preview_draw_pin() (is still an empty placeholder).
+    Added preview_draw_pad() (is still an empty placeholder).
+
+commit eab2b3b2a0e3f49523cb7f5818bebf2ba8b1d6c7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed May 14 13:46:22 2008 +0200
+
+    Changes in documentation, User Manual, tab 1, footprint type usage description.
+
+commit e714716bfbbcada86e667fe4eb91a5310cf22fd8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon May 12 22:33:26 2008 +0200
+
+    Updated the dutch translation.
+
+commit 876870d78786ba2d7af76c45ebb418b0cfc7023a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon May 12 21:26:11 2008 +0200
+
+    Supposedly translatable strings are now made translatable and changed function call parameters.
+    
+    In:
+    - read_footprintwizard_file()
+    - write_footprintwizard_file()
+
+commit 1f9335334dac379a09026ed5d104c4190685cec2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon May 12 17:03:56 2008 +0200
+
+    Chasing incompatible pointer types as to suppress warnings during compilation.
+    
+    In the rest of the functions.
+    For now compiling gives no more errors (well, at least on my box ;-)
+
+commit f56d2f3e512b12454411e13ed1ce82e6310baf30
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon May 12 08:27:47 2008 +0200
+
+    Bug fix for correct pad diameter and solder mask clearance.
+
+commit f7d5fd85a5e2b3a443468981cd0db9e87423b678
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun May 11 23:06:09 2008 +0200
+
+    Chasing incompatible pointer types as to suppress warnings during compilation.
+    
+    In:
+    - gui_constraints_disable_thermal_tab_widgets()
+    - gui_constraints_set_bga()
+    - gui_constraints_set_con_dil()
+    - gui_constraints_set_con_dip()
+    - gui_constraints_set_con_hdr()
+    - gui_constraints_set_dip()
+    - gui_constraints_set_pga()
+    - gui_constraints_set_plcc()
+    - gui_constraints_set_smt()
+    - gui_constraints_set_to92()
+    - on_clear_button_clicked()
+
+commit 1be21c4af302650a89d0722815e7c77f6715b49d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun May 11 20:37:10 2008 +0200
+
+    Chasing incompatible pointer types as to suppress warnings during compilation.
+    
+    In:
+    - all_entries_to_default_sensitivity()
+    - change_main_window_title()
+
+commit 180edce2b2f78197d160dc0a130b66a49916100a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri May 9 22:53:08 2008 +0200
+
+    Corrected a typo.
+
+commit d60c44cc85cb872c3039dd18b47c5db68bc1a2a7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri May 2 08:31:36 2008 +0200
+
+    Renamed the preview area.
+    
+    Renamed the preview area in the main window to "Dimensions".
+    The dimensions area will show a precooked and per footprint type
+    picture of relevant dimensions.
+    The future preview widget will become a pop-up dialog window.
+
+commit a54395ffd7837e1d4a9077857b60b1489576b9bf
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu May 1 17:56:04 2008 +0200
+
+    Minor corrections in write_footprint_bga().
+
+commit 8b63cf2d248833105f1930bb2a0f9fc9129adddd
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu May 1 15:43:59 2008 +0200
+
+    Minor correction.
+
+commit 92a98ff9b32175074fa90106b607a208b7a90500
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu May 1 15:37:13 2008 +0200
+
+    Changed the license text in the About dialog to a more official looking text.
+
+commit ce9a445f1ffd34302edbb539f1a65a9eb17a8405
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu May 1 15:10:19 2008 +0200
+
+    Bumped the version to 0.0.7.
+
+commit cd853cc956c7945a4e566da9357cf841a1abaab4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu May 1 11:00:22 2008 +0200
+
+    Updated: git-log > Changelog
+
 commit 1045961cdb731302508684f9a3abc1336fb15e48
 Author: Bert Timmerman <bert.timmerman@xs4all.nl>
 Date:   Thu May 1 08:23:09 2008 +0200
