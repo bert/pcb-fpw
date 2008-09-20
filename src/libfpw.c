@@ -188,6 +188,44 @@ get_pin_pad_exception (gchar *pin_pad_name)
 
 
 /*!
+ * \brief Determine the status type.
+ */
+int
+get_status_type ()
+{
+        /* Determine the status type */
+        if ((!strcmp (footprint_status, "")) || (!footprint_status))
+        {
+                status_type = NO_STATUS;
+        }
+        else if (!strcmp (footprint_status, "Experimental"))
+        {
+                status_type = EXPERIMENTAL;
+        }
+        else if (!strcmp (footprint_status, "Private (not published)"))
+        {
+                status_type = PRIVATE;
+        }
+        else if (!strcmp (footprint_status, "Public (released)"))
+        {
+                status_type = PUBLIC;
+        }
+        else if (!strcmp (footprint_status, "Stable (confirmed by peers)"))
+        {
+                status_type = STABLE;
+        }
+        else
+        {
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("footprint status %s is not valid."),
+                        footprint_status);
+                return (EXIT_FAILURE);
+        }
+        return (EXIT_SUCCESS);
+}
+
+
+/*!
  * \brief Read a footprintwizard file into the global variables.
  */
 int
