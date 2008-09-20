@@ -66,8 +66,7 @@ typedef enum packages
         SOT, /*!< Small outline transistor package. */
         TO, /*!< Transistor outline package. */
         TO92, /*!< Transistor outline package. */
-        TO220, /*!< Transistor outline package. */
-        NUMBER_OF_PACKAGE_TYPES /*!< Number of package types. */
+        TO220 /*!< Transistor outline package. */
 } package_t;
 
 /*!
@@ -78,8 +77,7 @@ typedef enum units
         NO_UNITS, /*!< For those living in the void. */
         MIL, /*!< Imperial units type (Imperial standard "inch" divided by 1,000). */
         MIL_100, /*!< Imperial units type (Imperial standard "inch" divided by 100,000). */
-        MM, /*!< Metric units type (Metric standard "meter" divided by 1,000). */
-        NUMBER_OF_UNITS_TYPES /*!< Number of units types. */
+        MM /*!< Metric units type (Metric standard "meter" divided by 1,000). */
 } units_t;
 
 /*!
@@ -128,8 +126,7 @@ typedef enum locations
         LEFT_TOP, /*!< Package has the left topside pin as pin #1. */
         RIGHT_TOP, /*!< Package has the right topside pin as pin #1. */
         LEFT_BOTTOM, /*!< Package has the left bottomside pin as pin #1. */
-        RIGHT_BOTTOM, /*!< Package has the right bottomside pin as pin #1. */
-        NUMBER_OF_LOCATIONS /*!< Number of location types. */
+        RIGHT_BOTTOM /*!< Package has the right bottomside pin as pin #1. */
 } location_t;
 
 /*!
@@ -141,8 +138,7 @@ typedef enum pad_shapes
         ROUND,
         SQUARE,
         OCTAGONAL,
-        ROUND_ELONGATED,
-        NUMBER_OF_PAD_SHAPES
+        ROUND_ELONGATED
 } pad_shapes_t;
 
 /* Thin lines are not printed on silkscreen (in the real world) */
@@ -209,7 +205,7 @@ gchar *footprint_name = NULL;
         /*!< Name of the footprint. */
 gchar *footprint_type = NULL;
         /*!< Type of the footprint. */
-package_t package_type;
+package_t package_type = NO_PACKAGE;
         /*!< Type of the package. */
 gchar *footprint_units = NULL;
         /*!< Units for the footprint dimensions. */
