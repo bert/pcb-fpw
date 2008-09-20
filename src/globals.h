@@ -81,6 +81,18 @@ typedef enum units
 } units_t;
 
 /*!
+ * \brief Some units types.
+ */
+typedef enum status
+{
+        NO_STATUS, /*!< For those living in the void. */
+        EXPERIMENTAL, /*!< Experimental. */
+        PRIVATE, /*!< Private (not published). */
+        PUBLIC, /*!< Public (released). */
+        STABLE /*! Stable (confirmed by peers or by usage in an actual pcb).*/
+} status_t;
+
+/*!
  * \brief Set of valid letter combinations for row identifiers for BGA and
  * PGA packages.
  */
@@ -236,6 +248,9 @@ gchar *footprint_use_license = "unlimited";
         /*!< Usage license of the footprint. */
 gchar *footprint_status = "Experimental";
         /*!< Status of the footprint. */
+status_t status_type = NO_STATUS;
+        /*!< Status (enumerated) for the footprint status.\n
+         * Initial value is \c NO_STATUS. */
 gboolean attributes_in_footprint;
         /*!< Include the global values based on the entry values of the GUI
          * into the footprint file. */
