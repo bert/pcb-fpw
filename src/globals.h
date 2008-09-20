@@ -35,6 +35,7 @@
  */
 typedef enum packages
 {
+        NO_PACKAGE, /*!< For those living in the void. */
         BGA, /*!< Ball gate array package. */
         CAPAE, /*!< Capacitor, aluminium electrolytic package. */
         CAPC, /*!< Capacitor, chip package. */
