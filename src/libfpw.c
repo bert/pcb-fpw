@@ -47,7 +47,21 @@ int
 get_package_type ()
 {
         /* Determine the package type */
-        if (!strcmp (footprint_type, "BGA"))
+        if (!footprint_type)
+        {
+                package_type = NO_PACKAGE;
+                g_log ("", G_LOG_LEVEL_CRITICAL,
+                        _("footprint type is not valid."));
+                return (EXIT_FAILURE);
+        }
+        if (!strcmp (footprint_type, ""))
+        {
+                package_type = NO_PACKAGE;
+                g_log ("", G_LOG_LEVEL_CRITICAL,
+                        _("empty footprint type entered."));
+                return (EXIT_FAILURE);
+        }
+        else if (!strcmp (footprint_type, "BGA"))
         {
                 package_type = BGA;
         }
