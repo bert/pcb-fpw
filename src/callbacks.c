@@ -2332,6 +2332,20 @@ on_footprint_status_entry_changed      (GtkComboBox     *combobox,
 {
         footprint_status = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
         entry_has_changed (GTK_WIDGET (combobox));
+        /* Determine the status type. */
+        if (get_status_type () == EXIT_FAILURE)
+        {
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("footprint status contains an unknown status type."));
+//                footprint_status = g_strdup ("");
+                return;
+        }
+        else
+        {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("determined the status type successfull."));
+        }
 }
 
 
