@@ -301,7 +301,7 @@ the Free Software Foundation, Inc.,
 Experimental
 Private (not published)
 Public (released)
-Confirmed by peers (stable)</property>
+Stable (confirmed by peers)</property>
 				  <property name="add_tearoffs">False</property>
 				  <property name="has_frame">True</property>
 				  <property name="focus_on_click">True</property>

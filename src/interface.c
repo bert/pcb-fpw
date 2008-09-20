@@ -361,7 +361,7 @@ create_pcb_gfpw (void)
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_status_entry), _("Experimental"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_status_entry), _("Private (not published)"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_status_entry), _("Public (released)"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_status_entry), _("Confirmed by peers (stable)"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_status_entry), _("Stable (confirmed by peers)"));
 
   author_frame_label = gtk_label_new (_("<b>Author</b>"));
   gtk_widget_set_name (author_frame_label, "author_frame_label");
