@@ -47,7 +47,8 @@ static gint radio_button_index;
 /*!
  * \brief The "Clear" button is clicked.
  *
- * - set all radio buttons to the active state.
+ * - set the "active" field of all the radio_buttons members to \c TRUE.
+ * - set all radio buttons in the GUI to the active state.
  */
 static void
 select_exceptions_clear_cb
@@ -56,7 +57,36 @@ select_exceptions_clear_cb
         GtkWidget *select_exceptions_window
 )
 {
-        /*! \todo Add code here. */
+        gint i;
+        gint j;
+        SelectionButtonSet *radio_button;
+        radio_button_index = 0;
+        for (i = 0; (i < MAX_ROWS); i++)
+        {
+                for (j = 0; (j < MAX_COLUMNS); j++)
+                {
+                        radio_button = &radio_buttons[radio_button_index];
+                        radio_button->active = TRUE;
+                        radio_button_index++;
+                }
+        }
+        pin_pad_exceptions_string = g_strdup ("");
+        /* Set the existing array of radiobuttons to active. */
+        radio_button_index = 0;
+        for (i = 0; (i < number_of_rows); i++)
+        {
+                for (j = 0; (j < number_of_columns); j++)
+                /* all columns of a row [1 .. n]
+                 * where j is a member of the positive Natural numbers (N) */
+                {
+                        radio_button = &radio_buttons[radio_button_index];
+                        radio_button->active = TRUE;
+                        gtk_toggle_button_set_active
+                                (GTK_TOGGLE_BUTTON (radio_button->radio_select_button),
+                                TRUE);
+                        radio_button_index++;
+                }
+        }
 }
 
 
