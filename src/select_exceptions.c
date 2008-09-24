@@ -26,37 +26,53 @@
 #include <glib.h>
 
 
+#define MAX_ROWS 100
+#define MAX_COLUMNS 100
+
 /*!
- * \brief The "apply" button is clicked.
+ * \brief Radio button wrapper type.
+ */
+typedef struct
+{
+        GtkWidget *radio_select_button;
+        gchar *name;
+        gboolean active;
+        gint id;
+} SelectionButtonSet;
+
+static SelectionButtonSet radio_buttons[MAX_ROWS * MAX_COLUMNS];
+
+static gint radio_button_index;
+
+/*!
+ * \brief The "Clear" button is clicked.
  *
- * Save the state of all togglebuttons.
- * Close the window (destroy the widget).
+ * - set all radio buttons to the active state.
  */
 static void
-select_exceptions_apply_cb
+select_exceptions_clear_cb
 (
-        GtkWidget * widget,
-        GtkWidget *selection_window
+        GtkWidget *widget,
+        GtkWidget *select_exceptions_window
 )
 {
-        /* Lookup all togglebuttons and save the state in the exceptions
-         * array. */
-
-        gtk_widget_destroy (selection_window);
+        /*! \todo Add code here. */
 }
 
 
 /*!
- * \brief Close the window (destroy the widget).
+ * \brief The "Close" button is clicked.
+ *
+ * - close the window (destroy the widget).
  */
 static void
 select_exceptions_close_cb
 (
-        GtkWidget * widget,
-        GtkWidget *selection_window
+        GtkWidget *widget,
+        GtkWidget *select_exceptions_window
 )
 {
-        gtk_widget_destroy (selection_window);
+        gtk_widget_destroy (select_exceptions_window);
 }
 
 
@@ -74,6 +90,77 @@ select_exceptions_delete_event
 }
 
 
+/*!
+ * \brief The "OK" button is clicked.
+ *
+ * - save the state of all toggle (radio) buttons.
+ * - close the window (destroy the widget).
+ */
+static void
+select_exceptions_ok_cb
+(
+        GtkWidget *widget,
+        GtkWidget *select_exceptions_window
+)
+{
+        /* Lookup all togglebuttons and save the state in the exceptions
+         * array. */
+        gint i;
+        gint j;
+        SelectionButtonSet *radio_button;
+        radio_button_index = 0;
+        gchar *exceptions = g_strdup ("");
+        for (i = 0; (i < number_of_rows); i++)
+        /* one row at a time [A .. Y, AA .. YY] etc.
+         * where i is one or more letters of the alphabet,
+         * excluding "I", "O", "Q", "S" and "Z" */
+        {
+                for (j = 0; (j < number_of_columns); j++)
+                /* all columns of a row [1 .. n]
+                 * where j is a member of the positive Natural numbers (N) */
+                {
+                        gchar *radio_button_name = g_strdup_printf ("%s%d",
+                                (row_letters[i]), (j + 1));
+                        radio_button = &radio_buttons[radio_button_index];
+                        if (radio_button->active)
+                        {
+                                exceptions = g_strconcat (exceptions,
+                                        radio_button->name, ",", NULL);
+                        }
+                        radio_button_index++;
+                        g_free (radio_button_name);
+                }
+        }
+        pin_pad_exceptions_string = g_strdup (exceptions);
+        g_free (exceptions);
+        gtk_widget_destroy (select_exceptions_window);
+}
+
+
+/*!
+ * \brief One of the radio buttons is toggled.
+ *
+ * - lookup the radio button.
+ * - save the state of the radio button.
+ */
+static void
+select_exceptions_radio_button_toggled_cb
+(
+        GtkWidget *widget,
+        GtkWidget *select_exceptions_window
+)
+{
+        /*! \todo Add code here ! */
+}
+
+
+/*!
+ * \brief Create a selection exceptions window.
+ *
+ * - create a window with the footprint name or the footprint type as title.
+ * - depending on the package type create the pattern of radio buttons.
+ * - add "Close", "Clear" and "OK" stock buttons.
+ */
 int
 select_exceptions_create_window
 (
@@ -115,10 +202,13 @@ select_exceptions_create_window
         /* Write pin and/or pad radio buttons. */
         gint i;
         gint j;
+        SelectionButtonSet *radio_button;
+        radio_button_index = 0;
         /* Create top row of labels with pin/pad index numbers. */
         for (j = 1; (j < (number_of_columns + 1)); j++)
         {
                 GtkWidget *column_label = gtk_label_new (g_strdup_printf ("%d", j));
+                gtk_label_set_justify (GTK_LABEL (column_label), GTK_JUSTIFY_CENTER);
                 gtk_table_attach_defaults (GTK_TABLE (table), column_label,
                         j, (j + 1),
                         0, 1);
@@ -139,16 +229,35 @@ select_exceptions_create_window
                 /* all columns of a row [1 .. n]
                  * where j is a member of the positive Natural numbers (N) */
                 {
+                        radio_button = &radio_buttons[radio_button_index];
+                        radio_button->radio_select_button =
+                                gtk_radio_button_new (NULL);
+                        gtk_widget_show (radio_button->radio_select_button);
+                        radio_button->id = radio_button_index;
                         gchar *radio_button_name = g_strdup_printf ("%s%d",
                                 (row_letters[i]), (j + 1));
-                        GtkWidget *radio_button = gtk_radio_button_new (NULL);
-                        gtk_widget_set_name (radio_button, radio_button_name);
-                        gtk_table_attach_defaults (GTK_TABLE (table), radio_button,
+                        radio_button->name = g_strdup (radio_button_name);
+                        gtk_widget_set_name (radio_button->radio_select_button,
+                                radio_button_name);
+                        gtk_table_attach_defaults (GTK_TABLE (table),
+                                radio_button->radio_select_button,
                                 (j + 1), (j + 2), (i + 1), (i + 2));
-//                        gtk_toggle_action_set_active (radio_button,
-//                                !get_pin_pad_exception (radio_button_name));
+                        radio_button->active = !get_pin_pad_exception
+                                (radio_button_name);
+                        if (!get_pin_pad_exception (radio_button_name))
+                        {
+                                gtk_toggle_button_set_active
+                                        (GTK_TOGGLE_BUTTON (radio_button->radio_select_button),
+                                        TRUE);
+                        }
+                        else
+                        {
+                                gtk_toggle_button_set_active
+                                        (GTK_TOGGLE_BUTTON (radio_button->radio_select_button),
+                                        FALSE);
+                        }
                         /*! \todo Maybe connect some signals here ? */
-
+                        radio_button_index++;
                         g_free (radio_button_name);
                 }
         }
@@ -156,10 +265,11 @@ select_exceptions_create_window
         /* Pack the table into the vbox */
         gtk_box_pack_start (GTK_BOX (vbox), table, FALSE, FALSE, 0);
 
-        /* Create a horizontal button box */
+        /* Create a horizontal button box. */
         GtkWidget *hbox = gtk_hbutton_box_new ();
-        gtk_button_box_set_layout (GTK_BUTTON_BOX (hbox), GTK_BUTTONBOX_END);
-        /* Create a close button */
+        gtk_container_set_border_width (GTK_CONTAINER (hbox), 10);
+        gtk_button_box_set_layout (GTK_BUTTON_BOX (hbox), GTK_BUTTONBOX_SPREAD);
+        /* Create a close button. */
         GtkWidget *close_button = gtk_button_new_from_stock (GTK_STOCK_CLOSE);
         g_signal_connect
         (
@@ -170,16 +280,28 @@ select_exceptions_create_window
         );
         /* Pack the button into the hbox */
         gtk_box_pack_start (GTK_BOX (hbox), close_button, TRUE, TRUE, 0);
-        GtkWidget *apply_button = gtk_button_new_from_stock (GTK_STOCK_APPLY);
+        /* Create a clear button. */
+        GtkWidget *clear_button = gtk_button_new_from_stock (GTK_STOCK_CLEAR);
         g_signal_connect
         (
-                G_OBJECT (apply_button),
+                G_OBJECT (clear_button),
                 "clicked",
-                G_CALLBACK (select_exceptions_apply_cb),
+                G_CALLBACK (select_exceptions_clear_cb),
                 select_exceptions_window
         );
         /* Pack the button into the hbox */
-        gtk_box_pack_start (GTK_BOX (hbox), apply_button, TRUE, TRUE, 0);
+        gtk_box_pack_start (GTK_BOX (hbox), clear_button, TRUE, TRUE, 0);
+        /* Create an OK button. */
+        GtkWidget *ok_button = gtk_button_new_from_stock (GTK_STOCK_OK);
+        g_signal_connect
+        (
+                G_OBJECT (ok_button),
+                "clicked",
+                G_CALLBACK (select_exceptions_ok_cb),
+                select_exceptions_window
+        );
+        /* Pack the button into the hbox */
+        gtk_box_pack_start (GTK_BOX (hbox), ok_button, TRUE, TRUE, 0);
         /* Pack the hbox into the vbox */
         gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
 
