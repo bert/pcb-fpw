@@ -3039,25 +3039,15 @@ void
 on_pin_pad_exceptions_button_clicked   (GtkButton       *button,
                                         gpointer         user_data)
 {
-        if (!footprint_type ||
-                (!strcmp (footprint_type, "")) ||
-                (number_of_rows < 1) ||
+        if ((number_of_rows < 1) ||
                 (number_of_columns < 1))
         {
                 return;
         }
         else
         {
-                if (!footprint_name || (!strcmp (footprint_name, "")))
-                {
-                        select_exceptions_create_window (footprint_type,
-                        number_of_rows, number_of_columns);
-                }
-                else
-                {
-                        select_exceptions_create_window (footprint_name,
-                        number_of_rows, number_of_columns);
-                }
+                select_exceptions_create_window (number_of_rows,
+                        number_of_columns);
         }
 
 }

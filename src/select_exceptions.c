@@ -44,6 +44,7 @@ static SelectionButtonSet radio_buttons[MAX_ROWS * MAX_COLUMNS];
 
 static gint radio_button_index;
 
+GtkWidget *select_exceptions_window = NULL;
 /*!
  * \brief The "Clear" button is clicked.
  *
@@ -99,10 +100,11 @@ static void
 select_exceptions_close_cb
 (
         GtkWidget *widget,
-        GtkWidget *select_exceptions_window
+        GtkWidget *window
 )
 {
-        gtk_widget_destroy (select_exceptions_window);
+        gtk_widget_destroy (window);
+        select_exceptions_window = NULL;
 }
 
 
@@ -117,6 +119,7 @@ select_exceptions_delete_event
 )
 {
         gtk_widget_destroy (widget);
+        select_exceptions_window = NULL;
 }
 
 
@@ -162,6 +165,9 @@ select_exceptions_ok_cb
                 }
         }
         pin_pad_exceptions_string = g_strdup (exceptions);
+        /*!
+         * \todo How to update the pin_pad_exceptions_entry in the main
+         * window ? */
         g_free (exceptions);
         gtk_widget_destroy (select_exceptions_window);
 }
@@ -187,21 +193,24 @@ select_exceptions_radio_button_toggled_cb
 /*!
  * \brief Create a selection exceptions window.
  *
- * - create a window with the footprint name or the footprint type as title.
+ * - create only one single window with a title "select exceptions".
  * - depending on the package type create the pattern of radio buttons.
  * - add "Close", "Clear" and "OK" stock buttons.
  */
 int
 select_exceptions_create_window
 (
-        gchar *footprint_name,
         gint number_of_rows,
         gint number_of_columns
 )
 {
-
+        /* Return if a "select exceptions" window exist. */
+        if (select_exceptions_window)
+        {
+                return (EXIT_FAILURE);
+        }
         /* Create a dialog window */
-        GtkWidget *select_exceptions_window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+        select_exceptions_window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
         /* Destroy the preview window when the main window of pcb-gfpw gets
          * destroyed */
         gtk_window_set_destroy_with_parent (GTK_WINDOW (select_exceptions_window), TRUE);
