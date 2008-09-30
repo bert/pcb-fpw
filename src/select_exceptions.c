@@ -176,8 +176,16 @@ select_exceptions_ok_cb
 /*!
  * \brief One of the radio buttons is toggled.
  *
- * - lookup the radio button.
- * - save the state of the radio button.
+ * - lookup the radio button in the array \c radio_button.
+ * - save the state of the radio button in \c radio_button->active.
+ *
+ * \todo Radio buttons seem to be a poor choice here.
+ * The look of the radio button is highly wanted for it
+ * resembles a PGA pin/BGA pad in the GUI.
+ * OTOH, the behaviour of the button is that once clicked (TRUE)
+ * it doesn't get reset (FALSE) when clicked again.
+ * This has to be solved with code in the callback
+ * (if possible at all), or switch to GtkCheckButtons ?
  */
 static void
 select_exceptions_radio_button_toggled_cb
@@ -186,7 +194,16 @@ select_exceptions_radio_button_toggled_cb
         GtkWidget *select_exceptions_window
 )
 {
-        /*! \todo Add code here ! */
+        const gchar *widget_name;
+        SelectionButtonSet *radio_button;
+        radio_button_index = -1;
+        widget_name = gtk_widget_get_name (widget);
+        do
+        {
+                radio_button_index++;
+                radio_button = &radio_buttons[radio_button_index];
+        } while (strcmp (widget_name, radio_button->name));
+        radio_button->active = gtk_toggle_button_get_active (widget);
 }
 
 
@@ -295,6 +312,13 @@ select_exceptions_create_window
                                         (GTK_TOGGLE_BUTTON (radio_button->radio_select_button),
                                         FALSE);
                         }
+                        g_signal_connect
+                        (
+                                G_OBJECT (radio_button->radio_select_button),
+                                "clicked",
+                                G_CALLBACK (select_exceptions_radio_button_toggled_cb),
+                                select_exceptions_window
+                        );
                         /*! \todo Maybe connect some signals here ? */
                         radio_button_index++;
                         g_free (radio_button_name);
