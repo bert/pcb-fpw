@@ -174,7 +174,7 @@ select_exceptions_ok_cb
 
 
 /*!
- * \brief One of the radio buttons is toggled.
+ * \brief One of the radio buttons is clicked.
  *
  * - lookup the radio button in the array \c radio_button.
  * - save the state of the radio button in \c radio_button->active.
@@ -188,7 +188,7 @@ select_exceptions_ok_cb
  * (if possible at all), or switch to GtkCheckButtons ?
  */
 static void
-select_exceptions_radio_button_toggled_cb
+select_exceptions_radio_button_clicked_cb
 (
         GtkWidget *widget,
         GtkWidget *select_exceptions_window
@@ -203,7 +203,8 @@ select_exceptions_radio_button_toggled_cb
                 radio_button_index++;
                 radio_button = &radio_buttons[radio_button_index];
         } while (strcmp (widget_name, radio_button->name));
-        radio_button->active = gtk_toggle_button_get_active (widget);
+        radio_button->active = gtk_toggle_button_get_active
+                (GTK_TOGGLE_BUTTON (widget));
 }
 
 
@@ -316,10 +317,9 @@ select_exceptions_create_window
                         (
                                 G_OBJECT (radio_button->radio_select_button),
                                 "clicked",
-                                G_CALLBACK (select_exceptions_radio_button_toggled_cb),
+                                G_CALLBACK (select_exceptions_radio_button_clicked_cb),
                                 select_exceptions_window
                         );
-                        /*! \todo Maybe connect some signals here ? */
                         radio_button_index++;
                         g_free (radio_button_name);
                 }
