@@ -34,22 +34,22 @@
  */
 typedef struct
 {
-        GtkWidget *radio_select_button;
+        GtkWidget *button_widget;
         gchar *name;
         gboolean active;
         gint id;
 } SelectionButtonSet;
 
-static SelectionButtonSet radio_buttons[MAX_ROWS * MAX_COLUMNS];
+static SelectionButtonSet selection_buttons[MAX_ROWS * MAX_COLUMNS];
 
-static gint radio_button_index;
+static gint selection_button_index;
 
 GtkWidget *select_exceptions_window = NULL;
 /*!
  * \brief The "Clear" button is clicked.
  *
- * - set the "active" field of all the radio_buttons members to \c TRUE.
- * - set all radio buttons in the GUI to the active state.
+ * - set the "active" field of all the selection_buttons members to \c TRUE.
+ * - set all selection buttons in the GUI to the active state.
  */
 static void
 select_exceptions_clear_cb
@@ -60,32 +60,32 @@ select_exceptions_clear_cb
 {
         gint i;
         gint j;
-        SelectionButtonSet *radio_button;
-        radio_button_index = 0;
+        SelectionButtonSet *selection_button;
+        selection_button_index = 0;
         for (i = 0; (i < MAX_ROWS); i++)
         {
                 for (j = 0; (j < MAX_COLUMNS); j++)
                 {
-                        radio_button = &radio_buttons[radio_button_index];
-                        radio_button->active = TRUE;
-                        radio_button_index++;
+                        selection_button = &selection_buttons[selection_button_index];
+                        selection_button->active = TRUE;
+                        selection_button_index++;
                 }
         }
         pin_pad_exceptions_string = g_strdup ("");
-        /* Set the existing array of radiobuttons to active. */
-        radio_button_index = 0;
+        /* Set the existing array of selection buttons to active. */
+        selection_button_index = 0;
         for (i = 0; (i < number_of_rows); i++)
         {
                 for (j = 0; (j < number_of_columns); j++)
                 /* all columns of a row [1 .. n]
                  * where j is a member of the positive Natural numbers (N) */
                 {
-                        radio_button = &radio_buttons[radio_button_index];
-                        radio_button->active = TRUE;
+                        selection_button = &selection_buttons[selection_button_index];
+                        selection_button->active = TRUE;
                         gtk_toggle_button_set_active
-                                (GTK_TOGGLE_BUTTON (radio_button->radio_select_button),
+                                (GTK_TOGGLE_BUTTON (selection_button->button_widget),
                                 TRUE);
-                        radio_button_index++;
+                        selection_button_index++;
                 }
         }
 }
@@ -126,7 +126,7 @@ select_exceptions_delete_event
 /*!
  * \brief The "OK" button is clicked.
  *
- * - save the state of all toggle (radio) buttons.
+ * - save the state of all selection buttons.
  * - close the window (destroy the widget).
  */
 static void
@@ -140,8 +140,8 @@ select_exceptions_ok_cb
          * array. */
         gint i;
         gint j;
-        SelectionButtonSet *radio_button;
-        radio_button_index = 0;
+        SelectionButtonSet *selection_button;
+        selection_button_index = 0;
         gchar *exceptions = g_strdup ("");
         for (i = 0; (i < number_of_rows); i++)
         /* one row at a time [A .. Y, AA .. YY] etc.
@@ -152,16 +152,16 @@ select_exceptions_ok_cb
                 /* all columns of a row [1 .. n]
                  * where j is a member of the positive Natural numbers (N) */
                 {
-                        gchar *radio_button_name = g_strdup_printf ("%s%d",
+                        gchar *selection_button_name = g_strdup_printf ("%s%d",
                                 (row_letters[i]), (j + 1));
-                        radio_button = &radio_buttons[radio_button_index];
-                        if (radio_button->active)
+                        selection_button = &selection_buttons[selection_button_index];
+                        if (selection_button->active)
                         {
                                 exceptions = g_strconcat (exceptions,
-                                        radio_button->name, ",", NULL);
+                                        selection_button->name, ",", NULL);
                         }
-                        radio_button_index++;
-                        g_free (radio_button_name);
+                        selection_button_index++;
+                        g_free (selection_button_name);
                 }
         }
         pin_pad_exceptions_string = g_strdup (exceptions);
@@ -174,36 +174,28 @@ select_exceptions_ok_cb
 
 
 /*!
- * \brief One of the radio buttons is clicked.
+ * \brief One of the selection buttons is clicked.
  *
- * - lookup the radio button in the array \c radio_button.
- * - save the state of the radio button in \c radio_button->active.
- *
- * \todo Radio buttons seem to be a poor choice here.
- * The look of the radio button is highly wanted for it
- * resembles a PGA pin/BGA pad in the GUI.
- * OTOH, the behaviour of the button is that once clicked (TRUE)
- * it doesn't get reset (FALSE) when clicked again.
- * This has to be solved with code in the callback
- * (if possible at all), or switch to GtkCheckButtons ?
+ * - lookup the selection button in the array \c selection_button.
+ * - save the state of the selection button in \c selection_button->active.
  */
 static void
-select_exceptions_radio_button_clicked_cb
+select_exceptions_selection_button_clicked_cb
 (
         GtkWidget *widget,
         GtkWidget *select_exceptions_window
 )
 {
         const gchar *widget_name;
-        SelectionButtonSet *radio_button;
-        radio_button_index = -1;
+        SelectionButtonSet *selection_button;
+        selection_button_index = -1;
         widget_name = gtk_widget_get_name (widget);
         do
         {
-                radio_button_index++;
-                radio_button = &radio_buttons[radio_button_index];
-        } while (strcmp (widget_name, radio_button->name));
-        radio_button->active = gtk_toggle_button_get_active
+                selection_button_index++;
+                selection_button = &selection_buttons[selection_button_index];
+        } while (strcmp (widget_name, selection_button->name));
+        selection_button->active = gtk_toggle_button_get_active
                 (GTK_TOGGLE_BUTTON (widget));
 }
 
@@ -212,7 +204,7 @@ select_exceptions_radio_button_clicked_cb
  * \brief Create a selection exceptions window.
  *
  * - create only one single window with a title "select exceptions".
- * - depending on the package type create the pattern of radio buttons.
+ * - depending on the package type create the pattern of selection buttons.
  * - add "Close", "Clear" and "OK" stock buttons.
  */
 int
@@ -256,11 +248,11 @@ select_exceptions_create_window
                 (number_of_columns + 1), TRUE);
         gtk_table_set_col_spacings (GTK_TABLE (table), 2);
         gtk_table_set_row_spacings (GTK_TABLE (table), 2);
-        /* Write pin and/or pad radio buttons. */
+        /* Write pin and/or pad selection buttons. */
         gint i;
         gint j;
-        SelectionButtonSet *radio_button;
-        radio_button_index = 0;
+        SelectionButtonSet *selection_button;
+        selection_button_index = 0;
         /* Create top row of labels with pin/pad index numbers. */
         for (j = 1; (j < (number_of_columns + 1)); j++)
         {
@@ -270,8 +262,8 @@ select_exceptions_create_window
                         j, (j + 1),
                         0, 1);
         }
-        /* Create array of radiobuttons and add a label at the begin and end
-         * of the row stating the pin/pad index (valid) alphabet letter. */
+        /* Create array of selection buttons and add a label at the begin and
+         * end of the row stating the pin/pad index (valid) alphabet letter. */
         for (i = 0; (i < number_of_rows); i++)
         /* one row at a time [A .. Y, AA .. YY] etc.
          * where i is one or more letters of the alphabet,
@@ -286,42 +278,42 @@ select_exceptions_create_window
                 /* all columns of a row [1 .. n]
                  * where j is a member of the positive Natural numbers (N) */
                 {
-                        radio_button = &radio_buttons[radio_button_index];
-                        radio_button->radio_select_button =
-                                gtk_radio_button_new (NULL);
-                        gtk_widget_show (radio_button->radio_select_button);
-                        radio_button->id = radio_button_index;
-                        gchar *radio_button_name = g_strdup_printf ("%s%d",
+                        selection_button = &selection_buttons[selection_button_index];
+                        selection_button->button_widget =
+                                gtk_check_button_new ();
+                        gtk_widget_show (selection_button->button_widget);
+                        selection_button->id = selection_button_index;
+                        gchar *selection_button_name = g_strdup_printf ("%s%d",
                                 (row_letters[i]), (j + 1));
-                        radio_button->name = g_strdup (radio_button_name);
-                        gtk_widget_set_name (radio_button->radio_select_button,
-                                radio_button_name);
+                        selection_button->name = g_strdup (selection_button_name);
+                        gtk_widget_set_name (selection_button->button_widget,
+                                selection_button_name);
                         gtk_table_attach_defaults (GTK_TABLE (table),
-                                radio_button->radio_select_button,
+                                selection_button->button_widget,
                                 (j + 1), (j + 2), (i + 1), (i + 2));
-                        radio_button->active = !get_pin_pad_exception
-                                (radio_button_name);
-                        if (!get_pin_pad_exception (radio_button_name))
+                        selection_button->active = !get_pin_pad_exception
+                                (selection_button_name);
+                        if (get_pin_pad_exception (selection_button_name))
                         {
                                 gtk_toggle_button_set_active
-                                        (GTK_TOGGLE_BUTTON (radio_button->radio_select_button),
+                                        (GTK_TOGGLE_BUTTON (selection_button->button_widget),
                                         TRUE);
                         }
                         else
                         {
                                 gtk_toggle_button_set_active
-                                        (GTK_TOGGLE_BUTTON (radio_button->radio_select_button),
+                                        (GTK_TOGGLE_BUTTON (selection_button->button_widget),
                                         FALSE);
                         }
                         g_signal_connect
                         (
-                                G_OBJECT (radio_button->radio_select_button),
+                                G_OBJECT (selection_button->button_widget),
                                 "clicked",
-                                G_CALLBACK (select_exceptions_radio_button_clicked_cb),
+                                G_CALLBACK (select_exceptions_selection_button_clicked_cb),
                                 select_exceptions_window
                         );
-                        radio_button_index++;
-                        g_free (radio_button_name);
+                        selection_button_index++;
+                        g_free (selection_button_name);
                 }
         }
         /* Create bottom row of labels with pin/pad index numbers. */
