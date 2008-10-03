@@ -30,7 +30,7 @@
 #define MAX_COLUMNS 100
 
 /*!
- * \brief Radio button wrapper type.
+ * \brief Selection button wrapper type.
  */
 typedef struct
 {
@@ -57,7 +57,7 @@ static void
 select_exceptions_clear_cb
 (
         GtkWidget *widget,
-        GtkWidget *select_exceptions_window
+        GtkWidget *window
 )
 {
         gint i;
@@ -186,7 +186,7 @@ static void
 select_exceptions_selection_button_clicked_cb
 (
         GtkWidget *widget,
-        GtkWidget *select_exceptions_window
+        GtkWidget *window
 )
 {
         const gchar *widget_name;
