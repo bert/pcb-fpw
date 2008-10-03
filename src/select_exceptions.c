@@ -45,6 +45,8 @@ static SelectionButtonSet selection_buttons[MAX_ROWS * MAX_COLUMNS];
 static gint selection_button_index;
 
 GtkWidget *select_exceptions_window = NULL;
+
+
 /*!
  * \brief The "Clear" button is clicked.
  *
@@ -133,7 +135,7 @@ static void
 select_exceptions_ok_cb
 (
         GtkWidget *widget,
-        GtkWidget *select_exceptions_window
+        GtkWidget *window
 )
 {
         /* Lookup all togglebuttons and save the state in the exceptions
@@ -170,6 +172,7 @@ select_exceptions_ok_cb
          * window ? */
         g_free (exceptions);
         gtk_widget_destroy (select_exceptions_window);
+        select_exceptions_window = NULL;
 }
 
 
