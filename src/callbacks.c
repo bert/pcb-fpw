@@ -3042,10 +3042,14 @@ on_pin_pad_exceptions_button_clicked   (GtkButton       *button,
         if ((number_of_rows < 1) ||
                 (number_of_columns < 1))
         {
+                gchar *message = g_strdup_printf (_("Number of rows or columns is 0."));
+                message_to_statusbar (GTK_WIDGET (button), message);
                 return;
         }
         else
         {
+                gchar *message = g_strdup ("");
+                message_to_statusbar (GTK_WIDGET (button), message);
                 select_exceptions_create_window (number_of_rows,
                         number_of_columns);
         }
