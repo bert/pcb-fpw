@@ -2570,6 +2570,9 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         gchar *image_filename = g_strconcat (footprint_type, ".xpm", NULL);
         if (g_file_test (image_filename, G_FILE_TEST_EXISTS))
         {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                g_strdup_printf (_("loading image file: %s"), image_filename));
                 /* Lookup the dimensions image and the dimensions alignment widgets */
                 GtkWidget *dimensions_image = lookup_widget (GTK_WIDGET (combobox),
                         "dimensions_image");
@@ -2587,6 +2590,12 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                 gtk_widget_show (dimensions_image);
                 gtk_container_add (GTK_CONTAINER (dimensions_alignment),
                         dimensions_image);
+        }
+        else
+        {
+                if (verbose)
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        g_strdup_printf (_("image file: %s does not exist."), image_filename));
         }
         g_free (image_filename);
 }
