@@ -36,11 +36,7 @@
 #include "support.h"
 
 #include "libfpw.c"
-#include "bga.c"
-#include "dip.c"
-#include "pga.c"
-#include "plcc.c"
-#include "sot.c"
+#include "packages.h"
 #include "preview.c"
 #include "select_exceptions.c"
 
