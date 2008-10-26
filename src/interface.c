@@ -220,16 +220,28 @@ create_pcb_gfpw (void)
   GtkWidget *Z2_entry;
   GtkWidget *left_to_right_label;
   GtkWidget *heel_and_toe_goals_tab_label;
-  GtkWidget *dimensions_frame;
-  GtkWidget *dimensions_alignment;
-  GtkWidget *dimensions_image;
-  GtkWidget *dimensions_label;
-  GtkWidget *hbuttonbox;
-  GtkWidget *close_button;
+  GtkWidget *hbuttonbox0;
+  GtkWidget *refresh_button;
+  GtkWidget *dimensions_button;
+  GtkWidget *alignment4;
+  GtkWidget *hbox4;
+  GtkWidget *image4;
+  GtkWidget *label6;
+  GtkWidget *preview_button;
+  GtkWidget *alignment1;
+  GtkWidget *hbox1;
+  GtkWidget *image1;
+  GtkWidget *label3;
   GtkWidget *clear_button;
+  GtkWidget *hbuttonbox1;
+  GtkWidget *close_button;
+  GtkWidget *footprint_button;
+  GtkWidget *alignment3;
+  GtkWidget *hbox3;
+  GtkWidget *image3;
+  GtkWidget *label5;
   GtkWidget *open_button;
   GtkWidget *save_button;
-  GtkWidget *refresh_button;
   GtkWidget *statusbar;
   GtkTooltips *tooltips;
 
@@ -1490,71 +1502,133 @@ create_pcb_gfpw (void)
   gtk_widget_show (heel_and_toe_goals_tab_label);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook), 4), heel_and_toe_goals_tab_label);
 
-  dimensions_frame = gtk_frame_new (NULL);
-  gtk_widget_set_name (dimensions_frame, "dimensions_frame");
-  gtk_widget_show (dimensions_frame);
-  gtk_box_pack_start (GTK_BOX (hbox), dimensions_frame, FALSE, FALSE, 0);
-  gtk_container_set_border_width (GTK_CONTAINER (dimensions_frame), 10);
-  gtk_frame_set_shadow_type (GTK_FRAME (dimensions_frame), GTK_SHADOW_NONE);
+  hbuttonbox0 = gtk_hbutton_box_new ();
+  gtk_widget_set_name (hbuttonbox0, "hbuttonbox0");
+  gtk_widget_show (hbuttonbox0);
+  gtk_box_pack_start (GTK_BOX (vbox), hbuttonbox0, FALSE, FALSE, 0);
+  gtk_container_set_border_width (GTK_CONTAINER (hbuttonbox0), 10);
 
-  dimensions_alignment = gtk_alignment_new (0.5, 0.5, 1, 1);
-  gtk_widget_set_name (dimensions_alignment, "dimensions_alignment");
-  gtk_widget_show (dimensions_alignment);
-  gtk_container_add (GTK_CONTAINER (dimensions_frame), dimensions_alignment);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (dimensions_alignment), 0, 0, 12, 0);
+  refresh_button = gtk_button_new_from_stock ("gtk-refresh");
+  gtk_widget_set_name (refresh_button, "refresh_button");
+  gtk_widget_show (refresh_button);
+  gtk_container_add (GTK_CONTAINER (hbuttonbox0), refresh_button);
+  GTK_WIDGET_SET_FLAGS (refresh_button, GTK_CAN_DEFAULT);
+  gtk_tooltips_set_tip (tooltips, refresh_button, _("Click on the refresh button to refresh the preview"), NULL);
 
-  dimensions_image = create_pixmap (pcb_gfpw, "splash_wiz.xpm");
-  gtk_widget_set_name (dimensions_image, "dimensions_image");
-  gtk_widget_show (dimensions_image);
-  gtk_container_add (GTK_CONTAINER (dimensions_alignment), dimensions_image);
+  dimensions_button = gtk_button_new ();
+  gtk_widget_set_name (dimensions_button, "dimensions_button");
+  gtk_widget_show (dimensions_button);
+  gtk_container_add (GTK_CONTAINER (hbuttonbox0), dimensions_button);
+  GTK_WIDGET_SET_FLAGS (dimensions_button, GTK_CAN_DEFAULT);
+  gtk_tooltips_set_tip (tooltips, dimensions_button, _("Click on the Dimensions button for the package dimensions"), NULL);
 
-  dimensions_label = gtk_label_new (_("<b>Dimensions</b>"));
-  gtk_widget_set_name (dimensions_label, "dimensions_label");
-  gtk_widget_show (dimensions_label);
-  gtk_frame_set_label_widget (GTK_FRAME (dimensions_frame), dimensions_label);
-  gtk_label_set_use_markup (GTK_LABEL (dimensions_label), TRUE);
+  alignment4 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_set_name (alignment4, "alignment4");
+  gtk_widget_show (alignment4);
+  gtk_container_add (GTK_CONTAINER (dimensions_button), alignment4);
 
-  hbuttonbox = gtk_hbutton_box_new ();
-  gtk_widget_set_name (hbuttonbox, "hbuttonbox");
-  gtk_widget_show (hbuttonbox);
-  gtk_box_pack_start (GTK_BOX (vbox), hbuttonbox, FALSE, FALSE, 0);
-  gtk_container_set_border_width (GTK_CONTAINER (hbuttonbox), 10);
-  gtk_button_box_set_layout (GTK_BUTTON_BOX (hbuttonbox), GTK_BUTTONBOX_SPREAD);
+  hbox4 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_set_name (hbox4, "hbox4");
+  gtk_widget_show (hbox4);
+  gtk_container_add (GTK_CONTAINER (alignment4), hbox4);
 
-  close_button = gtk_button_new_from_stock ("gtk-close");
-  gtk_widget_set_name (close_button, "close_button");
-  gtk_widget_show (close_button);
-  gtk_container_add (GTK_CONTAINER (hbuttonbox), close_button);
-  GTK_WIDGET_SET_FLAGS (close_button, GTK_CAN_DEFAULT);
-  gtk_tooltips_set_tip (tooltips, close_button, _("Click the Close button to exit"), NULL);
+  image4 = gtk_image_new_from_stock ("gtk-info", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_set_name (image4, "image4");
+  gtk_widget_show (image4);
+  gtk_box_pack_start (GTK_BOX (hbox4), image4, FALSE, FALSE, 0);
+
+  label6 = gtk_label_new_with_mnemonic (_("Dimensions"));
+  gtk_widget_set_name (label6, "label6");
+  gtk_widget_show (label6);
+  gtk_box_pack_start (GTK_BOX (hbox4), label6, FALSE, FALSE, 0);
+
+  preview_button = gtk_button_new ();
+  gtk_widget_set_name (preview_button, "preview_button");
+  gtk_widget_show (preview_button);
+  gtk_container_add (GTK_CONTAINER (hbuttonbox0), preview_button);
+  GTK_WIDGET_SET_FLAGS (preview_button, GTK_CAN_DEFAULT);
+  gtk_tooltips_set_tip (tooltips, preview_button, _("Click on the Preview button to view the footprint"), NULL);
+
+  alignment1 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_set_name (alignment1, "alignment1");
+  gtk_widget_show (alignment1);
+  gtk_container_add (GTK_CONTAINER (preview_button), alignment1);
+
+  hbox1 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_set_name (hbox1, "hbox1");
+  gtk_widget_show (hbox1);
+  gtk_container_add (GTK_CONTAINER (alignment1), hbox1);
+
+  image1 = gtk_image_new_from_stock ("gtk-zoom-fit", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_set_name (image1, "image1");
+  gtk_widget_show (image1);
+  gtk_box_pack_start (GTK_BOX (hbox1), image1, FALSE, FALSE, 0);
+
+  label3 = gtk_label_new_with_mnemonic (_("Preview"));
+  gtk_widget_set_name (label3, "label3");
+  gtk_widget_show (label3);
+  gtk_box_pack_start (GTK_BOX (hbox1), label3, FALSE, FALSE, 0);
 
   clear_button = gtk_button_new_from_stock ("gtk-clear");
   gtk_widget_set_name (clear_button, "clear_button");
   gtk_widget_show (clear_button);
-  gtk_container_add (GTK_CONTAINER (hbuttonbox), clear_button);
+  gtk_container_add (GTK_CONTAINER (hbuttonbox0), clear_button);
   GTK_WIDGET_SET_FLAGS (clear_button, GTK_CAN_DEFAULT);
-  gtk_tooltips_set_tip (tooltips, clear_button, _("Click the Clear button to clear all entries"), NULL);
+  gtk_tooltips_set_tip (tooltips, clear_button, _("Click on the Clear button to clear all entries"), NULL);
+
+  hbuttonbox1 = gtk_hbutton_box_new ();
+  gtk_widget_set_name (hbuttonbox1, "hbuttonbox1");
+  gtk_widget_show (hbuttonbox1);
+  gtk_box_pack_start (GTK_BOX (vbox), hbuttonbox1, FALSE, FALSE, 0);
+  gtk_container_set_border_width (GTK_CONTAINER (hbuttonbox1), 10);
+
+  close_button = gtk_button_new_from_stock ("gtk-close");
+  gtk_widget_set_name (close_button, "close_button");
+  gtk_widget_show (close_button);
+  gtk_container_add (GTK_CONTAINER (hbuttonbox1), close_button);
+  GTK_WIDGET_SET_FLAGS (close_button, GTK_CAN_DEFAULT);
+  gtk_tooltips_set_tip (tooltips, close_button, _("Click the Close button to exit"), NULL);
+
+  footprint_button = gtk_button_new ();
+  gtk_widget_set_name (footprint_button, "footprint_button");
+  gtk_widget_show (footprint_button);
+  gtk_container_add (GTK_CONTAINER (hbuttonbox1), footprint_button);
+  GTK_WIDGET_SET_FLAGS (footprint_button, GTK_CAN_DEFAULT);
+  gtk_tooltips_set_tip (tooltips, footprint_button, _("Click the Footprint button to write a footprint file"), NULL);
+
+  alignment3 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_set_name (alignment3, "alignment3");
+  gtk_widget_show (alignment3);
+  gtk_container_add (GTK_CONTAINER (footprint_button), alignment3);
+
+  hbox3 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_set_name (hbox3, "hbox3");
+  gtk_widget_show (hbox3);
+  gtk_container_add (GTK_CONTAINER (alignment3), hbox3);
+
+  image3 = gtk_image_new_from_stock ("gtk-file", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_set_name (image3, "image3");
+  gtk_widget_show (image3);
+  gtk_box_pack_start (GTK_BOX (hbox3), image3, FALSE, FALSE, 0);
+
+  label5 = gtk_label_new_with_mnemonic ("Footprint");
+  gtk_widget_set_name (label5, "label5");
+  gtk_widget_show (label5);
+  gtk_box_pack_start (GTK_BOX (hbox3), label5, FALSE, FALSE, 0);
 
   open_button = gtk_button_new_from_stock ("gtk-open");
   gtk_widget_set_name (open_button, "open_button");
   gtk_widget_show (open_button);
-  gtk_container_add (GTK_CONTAINER (hbuttonbox), open_button);
+  gtk_container_add (GTK_CONTAINER (hbuttonbox1), open_button);
   GTK_WIDGET_SET_FLAGS (open_button, GTK_CAN_DEFAULT);
   gtk_tooltips_set_tip (tooltips, open_button, _("Click the Open button to read an existing footprint file"), NULL);
 
   save_button = gtk_button_new_from_stock ("gtk-save");
   gtk_widget_set_name (save_button, "save_button");
   gtk_widget_show (save_button);
-  gtk_container_add (GTK_CONTAINER (hbuttonbox), save_button);
+  gtk_container_add (GTK_CONTAINER (hbuttonbox1), save_button);
   GTK_WIDGET_SET_FLAGS (save_button, GTK_CAN_DEFAULT);
-  gtk_tooltips_set_tip (tooltips, save_button, _("Click the Save button to write the footprint file"), NULL);
-
-  refresh_button = gtk_button_new_from_stock ("gtk-refresh");
-  gtk_widget_set_name (refresh_button, "refresh_button");
-  gtk_widget_show (refresh_button);
-  gtk_container_add (GTK_CONTAINER (hbuttonbox), refresh_button);
-  GTK_WIDGET_SET_FLAGS (refresh_button, GTK_CAN_DEFAULT);
-  gtk_tooltips_set_tip (tooltips, refresh_button, _("Click on the refresh button to refresh the preview"), NULL);
+  gtk_tooltips_set_tip (tooltips, save_button, _("Click the Save button to write the footprintwizard file"), NULL);
 
   statusbar = gtk_statusbar_new ();
   gtk_widget_set_name (statusbar, "statusbar");
@@ -1744,20 +1818,29 @@ create_pcb_gfpw (void)
   g_signal_connect ((gpointer) Z2_entry, "changed",
                     G_CALLBACK (on_Z2_entry_changed),
                     NULL);
-  g_signal_connect ((gpointer) close_button, "clicked",
-                    G_CALLBACK (on_close_button_clicked),
+  g_signal_connect ((gpointer) refresh_button, "clicked",
+                    G_CALLBACK (on_refresh_button_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) dimensions_button, "clicked",
+                    G_CALLBACK (on_dimensions_button_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) preview_button, "clicked",
+                    G_CALLBACK (on_preview_button_clicked),
                     NULL);
   g_signal_connect ((gpointer) clear_button, "clicked",
                     G_CALLBACK (on_clear_button_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) close_button, "clicked",
+                    G_CALLBACK (on_close_button_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) footprint_button, "clicked",
+                    G_CALLBACK (on_footprint_button_clicked),
                     NULL);
   g_signal_connect ((gpointer) open_button, "clicked",
                     G_CALLBACK (on_open_button_clicked),
                     NULL);
   g_signal_connect ((gpointer) save_button, "clicked",
                     G_CALLBACK (on_save_button_clicked),
-                    NULL);
-  g_signal_connect ((gpointer) refresh_button, "clicked",
-                    G_CALLBACK (on_refresh_button_clicked),
                     NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
@@ -1918,16 +2001,28 @@ create_pcb_gfpw (void)
   GLADE_HOOKUP_OBJECT (pcb_gfpw, Z2_entry, "Z2_entry");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, left_to_right_label, "left_to_right_label");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, heel_and_toe_goals_tab_label, "heel_and_toe_goals_tab_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, dimensions_frame, "dimensions_frame");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, dimensions_alignment, "dimensions_alignment");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, dimensions_image, "dimensions_image");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, dimensions_label, "dimensions_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, hbuttonbox, "hbuttonbox");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, close_button, "close_button");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, hbuttonbox0, "hbuttonbox0");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, refresh_button, "refresh_button");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, dimensions_button, "dimensions_button");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, alignment4, "alignment4");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, hbox4, "hbox4");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, image4, "image4");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label6, "label6");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, preview_button, "preview_button");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, alignment1, "alignment1");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, hbox1, "hbox1");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, image1, "image1");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label3, "label3");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, clear_button, "clear_button");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, hbuttonbox1, "hbuttonbox1");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, close_button, "close_button");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_button, "footprint_button");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, alignment3, "alignment3");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, hbox3, "hbox3");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, image3, "image3");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, label5, "label5");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, open_button, "open_button");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, save_button, "save_button");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, refresh_button, "refresh_button");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, statusbar, "statusbar");
   GLADE_HOOKUP_OBJECT_NO_REF (pcb_gfpw, tooltips, "tooltips");
 

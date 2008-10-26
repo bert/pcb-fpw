@@ -37,6 +37,7 @@
 
 #include "libfpw.c"
 #include "packages.h"
+#include "dimensions.c"
 #include "preview.c"
 #include "select_exceptions.c"
 
@@ -1780,6 +1781,43 @@ on_courtyard_width_entry_changed       (GtkEditable     *editable,
 
 
 /*!
+ * \brief The "Dimensions" button is clicked.
+ *
+ * - create a window with a pixmap of the dimensions of the current footprint
+ * type (based on the value in the entry widget).
+ */
+void
+on_dimensions_button_clicked           (GtkButton       *button,
+                                        gpointer         user_data)
+{
+        gchar *image_filename = g_strconcat
+        (
+                g_get_current_dir (),
+                G_DIR_SEPARATOR,
+                "pixmaps",
+                G_DIR_SEPARATOR,
+                footprint_type, ".xpm", NULL
+        );
+        fprintf (stderr, "image filename: %s", image_filename);
+        if (g_file_test (image_filename, G_FILE_TEST_EXISTS))
+        {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                g_strdup_printf (_("loading image file: %s"),
+                                image_filename));
+                dimensions_create_window (image_filename, footprint_type);
+        }
+        else
+        {
+                if (verbose)
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        g_strdup_printf (_("image file: %s does not exist."), image_filename));
+        }
+        g_free (image_filename);
+}
+
+
+/*!
  * \brief The "fiducial" checkbutton is toggled.
  *
  * - get active state.
@@ -2074,6 +2112,72 @@ on_footprint_author_entry_changed      (GtkEditable     *editable,
                 "footprint_author_entry");
         footprint_author = g_strdup (gtk_entry_get_text (GTK_ENTRY (footprint_author_entry)));
         entry_has_changed (GTK_WIDGET (editable));
+}
+
+
+/*!
+ * \brief The "Footprint" button is clicked.
+ *
+ * - check for null pointer and empty string in \c footprint_name.\n
+ * - determine the name of the footprintwizard filename.\n
+ * - determine the name of the footprint filename.\n
+ * - invoke the write_footprint() function to write the footprint
+ *   file.\n
+ * - if the footprint file is written successfull reflect this in the
+ *   statusbar.\n
+ */
+void
+on_footprint_button_clicked            (GtkButton       *button,
+                                        gpointer         user_data)
+{
+        /* Check for a null pointer in footprint_name for this might cause a
+         * segmentation fault or undefined behaviour.
+         */
+        if (!footprint_name)
+        {
+                gchar *message = g_strdup_printf (_("ERROR: footprint name not initialised (null pointer)."));
+                message_to_statusbar (GTK_WIDGET (button), message);
+                return;
+        }
+        /* Check for an empty footprint_name string for this might cause a
+         * segmentation fault or undefined behaviour.
+         */
+        else if (!strcmp (footprint_name, ""))
+        {
+                gchar *message = g_strdup_printf (_("ERROR: footprint name contains an empty string."));
+                message_to_statusbar (GTK_WIDGET (button), message);
+                return;
+        }
+        else
+        {
+                gchar *message = g_strdup_printf ("");
+                message_to_statusbar (GTK_WIDGET (button), message);
+        }
+        /* Determine a filename for the footprint file */
+        footprint_filename = g_strdup (footprint_name);
+        if (g_str_has_suffix (footprint_filename, fp_suffix))
+        {
+                /* footprint_filename has the .fp suffix already,
+                 * so do nothing here */
+        }
+        else
+        {
+                /* footprint_filename has no .fp suffix,
+                 * so add a .fp suffix */
+                footprint_filename = g_strconcat (footprint_filename, ".fp", NULL);
+        }
+        /* If the footprint file is written successfull reflect this in the
+         * statusbar */
+        if (write_footprint () == EXIT_SUCCESS)
+        {
+                gchar *message = g_strdup_printf (_("Wrote footprint %s to file."), footprint_filename);
+                message_to_statusbar (GTK_WIDGET (button), message);
+        }
+        else
+        {
+                gchar *message = g_strdup_printf (_("ERROR: Unable to write footprint %s to file."), footprint_filename);
+                message_to_statusbar (GTK_WIDGET (button), message);
+        }
 }
 
 
@@ -2444,37 +2548,6 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                         break;
                 }
         }
-        gchar *image_filename = g_strconcat (footprint_type, ".xpm", NULL);
-        if (g_file_test (image_filename, G_FILE_TEST_EXISTS))
-        {
-                if (verbose)
-                        g_log ("", G_LOG_LEVEL_INFO,
-                                g_strdup_printf (_("loading image file: %s"), image_filename));
-                /* Lookup the dimensions image and the dimensions alignment widgets */
-                GtkWidget *dimensions_image = lookup_widget (GTK_WIDGET (combobox),
-                        "dimensions_image");
-                GtkWidget *dimensions_alignment = lookup_widget (GTK_WIDGET (combobox),
-                        "dimensions_alignment");
-                /* Remove the dimensions image that is acually present in the GUI,
-                 * or the splash_wiz.xpm image if that one is still there */
-                gtk_container_remove (GTK_CONTAINER (dimensions_alignment),
-                        dimensions_image);
-                /* Now load a pre-cooked dimensions image for the footprint type and
-                 * set the name accordingly */
-                dimensions_image = gtk_image_new_from_file (image_filename);
-                gtk_widget_set_name (dimensions_image, "dimensions_image");
-                /* Display the pre-cooked dimensions image for the footprint type */
-                gtk_widget_show (dimensions_image);
-                gtk_container_add (GTK_CONTAINER (dimensions_alignment),
-                        dimensions_image);
-        }
-        else
-        {
-                if (verbose)
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        g_strdup_printf (_("image file: %s does not exist."), image_filename));
-        }
-        g_free (image_filename);
 }
 
 
@@ -3012,6 +3085,21 @@ on_pitch_y_entry_changed               (GtkEditable     *editable,
         entry_has_changed (GTK_WIDGET (editable));
 }
 
+
+/*!
+ * \brief The "Preview" button is clicked.
+ *
+ * - create a pixmap of the footprint based on the values in the entry
+ * widgets.
+ */
+void
+on_preview_button_clicked              (GtkButton       *button,
+                                        gpointer         user_data)
+{
+        preview_create_window (footprint_name, 300, 200);
+}
+
+
 /*!
  * \brief The "Refresh" button is clicked.
  *
@@ -3051,7 +3139,7 @@ on_refresh_button_clicked              (GtkButton       *button,
 /*!
  * \brief The "Save" button is clicked.
  *
- * - check for null pointer and empty string.\n
+ * - check for null pointer and empty string in \c footprint_name.\n
  * - determine the name of the footprintwizard filename.\n
  * - determine the name of the footprint filename.\n
  * - invoke the write_footprintwizard_file() to write the global variables to
@@ -3115,22 +3203,9 @@ on_save_button_clicked                 (GtkButton       *button,
                         fpw_filename = g_strconcat (fpw_filename, ".fpw", NULL);
                 }
         }
-        /* Determine a filename for the actual footprint file */
-        footprint_filename = g_strdup (footprint_name);
-        if (g_str_has_suffix (footprint_filename, fp_suffix))
-        {
-                /* footprint_filename has the .fp suffix already,
-                 * so do nothing here */
-        }
-        else
-        {
-                /* footprint_filename has no .fp suffix,
-                 * so add a .fp suffix */
-                footprint_filename = g_strconcat (footprint_filename, ".fp", NULL);
-        }
         /* If the footprint wizard file is written successfull change the title of
          * the main window with the latest filename */
-        if (write_footprintwizard_file (fpw_filename))
+        if (write_footprintwizard_file (fpw_filename) == EXIT_SUCCESS)
         {
                 change_main_window_title (GTK_WIDGET (button),
                         g_strconcat ("pcb-gfpw : ",
@@ -3141,18 +3216,6 @@ on_save_button_clicked                 (GtkButton       *button,
         else
         {
                 gchar *message = g_strdup_printf (_("ERROR: Unable to write footprintwizard file %s."), footprint_filename);
-                message_to_statusbar (GTK_WIDGET (button), message);
-        }
-        /* If the footprint file is written successfull reflect this in the
-         * statusbar */
-        if (write_footprint ())
-        {
-                gchar *message = g_strdup_printf (_("Wrote footprint %s to file."), footprint_filename);
-                message_to_statusbar (GTK_WIDGET (button), message);
-        }
-        else
-        {
-                gchar *message = g_strdup_printf (_("ERROR: Unable to write footprint %s to file."), footprint_filename);
                 message_to_statusbar (GTK_WIDGET (button), message);
         }
 }

@@ -233,3 +233,19 @@ void
 on_thermal_width_entry_changed (GtkEditable *editable, gpointer user_data);
 
 /* EOF */
+
+void
+on_dimensions_button_clicked           (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_preview_button_clicked              (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_clear_button_clicked                (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_footprint_button_clicked            (GtkButton       *button,
+                                        gpointer         user_data);
