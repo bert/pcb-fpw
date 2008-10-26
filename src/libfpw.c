@@ -3982,6 +3982,7 @@ write_footprint()
                         return (EXIT_FAILURE);
                         break;
         }
+        return (EXIT_SUCCESS);
 }
 
 /* EOF */
