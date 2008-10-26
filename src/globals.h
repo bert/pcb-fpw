@@ -371,4 +371,227 @@ gchar *dummy = NULL;
         /*!< Every now and then the village-idot is needed ;-) */
 
 
+/*
+ * Now follows some definitions and typedefs copied from pcb.
+ *
+ * Do not change the following definitions even if they're not very nice.
+ * It allows us to have functions act on these "base types" and not need to
+ * know what kind of actual object they're working on.
+ * In the future this may simplify the conversion of pcb-gfpw from a
+ * stand-alone application to a pcb plug-in.
+ */
+
+#define MAX_LAYER 16
+/*!< Maximum number of layers, check the pcb source code for more changes,
+ * a *lot* more changes.
+ */
+#define MAX_ELEMENTNAMES 3
+/*!< Maximum number of supported names of an element. */
+
+#define EMARK_SIZE 1000
+/*!< Size of diamond element mark. */
+
+typedef int LocationType;
+typedef int BDimension; /*!< big dimension */
+typedef unsigned int Cardinal;
+typedef char Boolean;
+typedef char *String;
+typedef short Position;
+typedef short Dimension;
+typedef unsigned char BYTE;
+
+/*!
+ * \brief A bounding box. */
+typedef struct
+{
+        LocationType X1; /*!< X-value of the upper left corner coordinate. */
+        LocationType Y1; /*!< Y-value of the upper left corner coordinate. */
+        LocationType X2; /*!< X-value of the lower right corner coordinate. */
+        LocationType Y2; /*!< Y-value of the lower right corner coordinate. */
+} BoxType, *BoxTypePtr;
+
+/*!
+ * \brief A Flag type.
+ *
+ * This structure must be simple-assignable for now.
+ */
+typedef struct
+{
+  unsigned long f; /*!< Generic flags */
+  unsigned char t[(MAX_LAYER + 1) / 2]; /*!< Thermals */
+} FlagType, *FlagTypePtr;
+
+/*!
+ * \brief An Attribute type.
+ */
+typedef struct
+{
+        char *name;
+        char *value;
+} AttributeType, *AttributeTypePtr;
+
+/*!
+ * \brief An Attribute list.
+ */
+typedef struct
+{
+        int Number;
+        int Max;
+        AttributeType *List;
+} AttributeListType, *AttributeListTypePtr;
+
+/*!
+ * \brief A line or polygon point.
+ *
+ * Point type can be cast as BoxType
+ */
+typedef struct
+{
+  LocationType X;
+  LocationType Y;
+  LocationType X2;
+  LocationType Y2;
+  long int ID;
+} PointType, *PointTypePtr;
+
+/*
+ * Any object that uses the "object flags" defined in pcb/src/const.h,
+ * or exists as an object on the pcb, MUST be defined using this as the first
+ * fields, either directly or through ANYLINEFIELDS.
+ */
+#define ANYOBJECTFIELDS \
+        BoxType BoundingBox; \
+        long int ID; \
+        FlagType Flags; \
+        struct LibraryEntryType *net
+
+/*
+ * Lines, pads, and rats all use this so they can be cross-cast.
+ */
+#define ANYLINEFIELDS \
+        ANYOBJECTFIELDS; \
+        BDimension Thickness; \
+        BDimension Clearance; \
+        PointType Point1; \
+        PointType Point2
+
+/*!
+ * \brief Holds information of any line object type.
+ */
+typedef struct
+{
+        ANYLINEFIELDS;
+} AnyLineObjectType, *AnyLineObjectTypePtr;
+
+/*!
+ * ]\brief Holds information about one line entity.
+ */
+typedef struct
+{
+        ANYLINEFIELDS;
+        char *Number;
+} LineType, *LineTypePtr;
+
+/*!
+ * \brief Holds information about one mark entity.
+ */
+typedef struct
+{
+        Boolean status;
+        long int X; /*!< X-value of origin. */
+        long int Y; /*!< Y-value of origin. */
+} MarkType, *MarkTypePtr;
+
+/*!
+ * \brief Holds information about one text entity.
+ */
+typedef struct
+{
+        ANYOBJECTFIELDS;
+        BDimension Scale; /*!< text scaling in percent. */
+        LocationType X; /*!< X-value of origin (insertion point). */
+        LocationType Y; /*!< Y-value of origin (insertion point). */
+        BYTE Direction; /*!< Text direction. */
+        char *TextString; /*!< String value. */
+        void *Element;
+} TextType, *TextTypePtr;
+
+/*!
+ * \brief Holds information about one arc entity.
+ */
+typedef struct
+{
+        ANYOBJECTFIELDS;
+        BDimension Thickness; /*!< Trace width. */
+        BDimension Clearance; /*!< Clearance with polygons. */
+        LocationType Width; /*!< Length of axis. */
+        LocationType Height; /*!< Heigth of axis. */
+        LocationType X; /*!< X-value of center coordinate. */
+        LocationType Y; /*!< Y-value of center coordinate. */
+        long int StartAngle; /*!< limiting angle in degrees */
+        long int Delta; /*!< limiting angle in degrees */
+} ArcType, *ArcTypePtr;
+
+/*!
+ * \brief Holds information about one SMD pad entity.
+ */
+typedef struct
+{
+        ANYLINEFIELDS;
+        BDimension Mask;
+        char *Name; /*!< Pad name. */
+        char *Number; /*!< 'Line' */
+        void *Element;
+        void *Spare;
+} PadType, *PadTypePtr;
+
+/*!
+ * \brief Holds information about one through hole pin entity.
+ */
+typedef struct
+{
+        ANYOBJECTFIELDS;
+        BDimension Thickness; /*!< Diameter of annulus. */
+        BDimension Clearance; /*!< Clearance with polygons. */
+        BDimension Mask;
+        BDimension DrillingHole; /*!< Diameter of drill hole. */
+        LocationType X; /*!< X-value of center. */
+        LocationType Y; /*!< Y-value of center. */
+        char *Name; /*!< Pin name. */
+        char *Number; /*!< Pin number. */
+        void *Element;
+        void *Spare;
+} PinType, *PinTypePtr, **PinTypeHandle;
+
+/*!
+ * \brief Holds information about one element entity.
+ */
+typedef struct
+{
+        ANYOBJECTFIELDS;
+        TextType Name[MAX_ELEMENTNAMES];
+                /*!< the elements names: \n
+                 * - description text, \n
+                 * - name on PCB second, \n
+                 * - value third \n
+                 * see pcb/src/macro.h
+                 */
+        LocationType MarkX; /*!< X-value of position mark. */
+        LocationType MarkY; /*!< Y-value of position mark. */
+        Cardinal PinN; /*!< Number of pins. */
+        Cardinal PinMax; /*!< Maximum number of pins. */
+        Cardinal PadN; /*!< Number of pads. */
+        Cardinal PadMax; /*!< Maximum number of pads. */
+        Cardinal LineN; /*!< Number of lines. */
+        Cardinal LineMax; /*!< Maximum number of lines. */
+        Cardinal ArcN; /*!< Number of arcs. */
+        Cardinal ArcMax; /*!< Maximum number of arcs. */
+        PinTypePtr Pin; /*!< Pins contained by the element. */
+        PadTypePtr Pad; /*!< Pads contained by the element. */
+        LineTypePtr Line; /*!< Lines contained by the element. */
+        ArcTypePtr Arc; /*!< Arcs contained by the element. */
+        BoxType VBox;
+        AttributeListType Attributes; /*!< List of attributes. */
+} ElementType, *ElementTypePtr, **ElementTypeHandle;
+
 /* EOF */
