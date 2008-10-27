@@ -3824,20 +3824,54 @@ write_footprintwizard_file (gchar *fpw_filename)
                 fprintf (stderr, "ERROR: could not open footprint wizard file: %s for writing.\n", fpw_filename);
                 return (EXIT_FAILURE);
         }
-        fprintf (fpw, "%s\n", footprint_filename);
-        fprintf (fpw, "%s\n", footprint_name);
-        fprintf (fpw, "%s\n", footprint_type);
-        fprintf (fpw, "%s\n", footprint_units);
-        fprintf (fpw, "%s\n", footprint_refdes);
-        fprintf (fpw, "%s\n", footprint_value);
+        if (!footprint_filename)
+        {
+                return (EXIT_FAILURE);
+        }
+        else
+        {
+                fprintf (fpw, "%s\n", footprint_filename);
+        }
+        if (!footprint_name)
+        {
+                return (EXIT_FAILURE);
+        }
+        else
+        {
+                fprintf (fpw, "%s\n", footprint_name);
+        }
+        if (!footprint_type)
+        {
+                return (EXIT_FAILURE);
+        }
+        else
+        {
+                fprintf (fpw, "%s\n", footprint_type);
+        }
+        if (!footprint_units)
+        {
+                return (EXIT_FAILURE);
+        }
+        else
+        {
+                fprintf (fpw, "%s\n", footprint_units);
+        }
+        (!footprint_refdes) ? fprintf (fpw, "\n") :
+                fprintf (fpw, "%s\n", footprint_refdes);
+        (!footprint_value) ? fprintf (fpw, "\n") :
+                fprintf (fpw, "%s\n", footprint_value);
         fprintf (fpw, "%f\n", package_body_length);
         fprintf (fpw, "%f\n", package_body_width);
         fprintf (fpw, "%f\n", package_body_height);
         fprintf (fpw, "%d\n", package_is_radial);
-        fprintf (fpw, "%s\n", footprint_author);
-        fprintf (fpw, "%s\n", footprint_dist_license);
-        fprintf (fpw, "%s\n", footprint_use_license);
-        fprintf (fpw, "%s\n", footprint_status);
+        (!footprint_author) ? fprintf (fpw, "\n") :
+                fprintf (fpw, "%s\n", footprint_author);
+        (!footprint_dist_license) ? fprintf (fpw, "\n") :
+                fprintf (fpw, "%s\n", footprint_dist_license);
+        (!footprint_use_license) ? fprintf (fpw, "\n") :
+                fprintf (fpw, "%s\n", footprint_use_license);
+        (!footprint_status) ? fprintf (fpw, "\n") :
+                fprintf (fpw, "%s\n", footprint_status);
         fprintf (fpw, "%d\n", attributes_in_footprint);
         fprintf (fpw, "%d\n", number_of_pins);
         fprintf (fpw, "%d\n", number_of_columns);
@@ -3846,8 +3880,16 @@ write_footprintwizard_file (gchar *fpw_filename)
         fprintf (fpw, "%f\n", pitch_y);
         fprintf (fpw, "%f\n", count_x);
         fprintf (fpw, "%f\n", count_y);
-        fprintf (fpw, "%s\n", pad_shape);
-        fprintf (fpw, "%s\n", pin_1_position);
+        if (!pad_shape)
+        {
+                return (EXIT_FAILURE);
+        }
+        else
+        {
+                fprintf (fpw, "%s\n", pad_shape);
+        }
+        (!pin_1_position) ? fprintf (fpw, "\n") :
+                fprintf (fpw, "%s\n", pin_1_position);
         fprintf (fpw, "%f\n", pad_diameter);
         fprintf (fpw, "%f\n", pin_drill_diameter);
         fprintf (fpw, "%d\n", pin1_square);
