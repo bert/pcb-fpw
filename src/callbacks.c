@@ -3179,13 +3179,26 @@ on_save_button_clicked                 (GtkButton       *button,
                 gchar *message = g_strdup_printf ("");
                 message_to_statusbar (GTK_WIDGET (button), message);
         }
-        /* Determine a filename for the footprintwizard file */
+        /* Determine a filename for the footprint file. */
+        footprint_filename = g_strdup (footprint_name);
+        if (g_str_has_suffix (footprint_filename, fp_suffix))
+        {
+                /* footprint_filename has the .fp suffix already,
+                 * so do nothing here. */
+        }
+        else
+        {
+                /* footprint_filename has no .fp suffix,
+                 * so add a .fp suffix. */
+                footprint_filename = g_strconcat (footprint_filename, ".fp", NULL);
+        }
+        /* Determine a filename for the footprintwizard file. */
         gchar *fpw_filename = g_strdup (footprint_name);
         if (g_str_has_suffix (fpw_filename, fp_suffix))
         {
                 /* footprint_name had the .fp suffix already,
                  * only add a "w" here, else we would end up with a filename
-                 * like "footprint_name.fp.fpw" */
+                 * like "footprint_name.fp.fpw". */
                 fpw_filename = g_strconcat (fpw_filename, "w", NULL);
         }
         else
@@ -3194,17 +3207,17 @@ on_save_button_clicked                 (GtkButton       *button,
                 {
                         /* footprint_name had the .fpw suffix already,
                          * we probably read from an existing footprintwizard
-                         * file or screwed up, so do nothing here */
+                         * file or screwed up, so do nothing here. */
                 }
                 else
                 {
                         /* fpw_filename has no (.fpw) suffix yet,
-                         * so add a .fpw suffix */
+                         * so add a .fpw suffix. */
                         fpw_filename = g_strconcat (fpw_filename, ".fpw", NULL);
                 }
         }
         /* If the footprint wizard file is written successfull change the title of
-         * the main window with the latest filename */
+         * the main window with the latest filename. */
         if (write_footprintwizard_file (fpw_filename) == EXIT_SUCCESS)
         {
                 change_main_window_title (GTK_WIDGET (button),
