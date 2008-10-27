@@ -67,7 +67,10 @@
         textdomain (GETTEXT_PACKAGE);
 #endif
 
+#define GUI 0
+
 #include "libfpw.c"
+#include "packages.h"
 
 gchar *program_name = NULL;
 
@@ -116,8 +119,6 @@ main
         gchar *fpw_filename;
         gchar *suffix = ".fp";
 
-        /* Today we feel like a CLI application ! */
-        gui = FALSE;
         /* Determine how we are called today */
         program_name = argv[0];
         int i;

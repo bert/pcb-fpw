@@ -19,6 +19,7 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
+
 /*!
  * \brief Look up default values for BGA footprints.
  *
@@ -1478,6 +1479,7 @@ bga_get_default_footprint_values
 }
 
 
+#if GUI
 /*!
  * \brief Set GUI constraints for the BGA package type.
  */
@@ -1543,6 +1545,7 @@ bga_set_gui_constraints (GtkWidget *widget)
         /* Widgets on tab 5 "Heel & Toe goals" */
         gui_constraints_disable_heel_and_toe_goals_tab_widgets (widget);
 }
+#endif /* GUI */
 
 
 /* EOF */

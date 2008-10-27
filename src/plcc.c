@@ -71,6 +71,7 @@ plcc_get_default_footprint_values
 }
 
 
+#if GUI
 /*!
  * \brief Set GUI constraints for the PLCC package type.
  */
@@ -103,6 +104,7 @@ plcc_set_gui_constraints (GtkWidget *widget)
         /* Widgets on tab 3 "Thermal Pad" */
         gui_constraints_disable_thermal_tab_widgets (widget);
 }
+#endif /* GUI */
 
 
 /* EOF */

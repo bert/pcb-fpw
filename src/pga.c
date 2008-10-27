@@ -71,6 +71,7 @@ pga_get_default_footprint_values
 }
 
 
+#if GUI
 /*!
  * \brief Set GUI constraints for the PGA package type.
  */
@@ -118,6 +119,7 @@ pga_set_gui_constraints (GtkWidget *widget)
         /* Widgets on tab 5 "Heel & Toe goals" */
         gui_constraints_disable_heel_and_toe_goals_tab_widgets (widget);
 }
+#endif /* GUI */
 
 
 /* EOF */

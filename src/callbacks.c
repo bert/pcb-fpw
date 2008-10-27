@@ -35,6 +35,8 @@
 #include "interface.h"
 #include "support.h"
 
+#define GUI 1
+
 #include "libfpw.c"
 #include "packages.h"
 #include "dimensions.c"
