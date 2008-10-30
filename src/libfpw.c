@@ -99,6 +99,39 @@ create_new_arc
 
 
 /*!
+ * \brief Add an attribute to a list.
+ */
+AttributeTypePtr
+create_new_attribute
+(
+        AttributeListTypePtr list,
+        char *name,
+        char *value
+)
+{
+        if (list->Number >= list->Max)
+        {
+                list->Max += 10;
+
+                size_t size = list->Max * sizeof (AttributeType);
+                if (size == 0)
+                {
+                        size = 1;
+                }
+                void *p;
+                p = list->List ? realloc (list, size) : malloc (size);
+                if (!p)
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("out of memory during realloc() in create_new_attribute().\n"));
+        }
+        list->List[list->Number].name = g_strdup (name);
+        list->List[list->Number].value = g_strdup (value);
+        list->Number++;
+        return &list->List[list->Number - 1];
+}
+
+
+/*!
  * \brief Creates a new line for an element.
  */
 LineTypePtr
