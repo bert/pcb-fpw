@@ -383,9 +383,17 @@ gchar *dummy = NULL;
  */
 #define MAX_ELEMENTNAMES 3
 /*!< Maximum number of supported names of an element. */
-
 #define EMARK_SIZE 1000
 /*!< Size of diamond element mark. */
+#define        MIN_TEXTSCALE 10
+/*!< Scaling of text objects in percent */
+#define        MAX_TEXTSCALE 10000
+/*!< Scaling of text objects in percent */
+
+#ifndef MIN
+#define MIN(a,b) ((a) < (b) ? (a) : (b))
+#define MAX(a,b) ((a) > (b) ? (a) : (b))
+#endif
 
 typedef int LocationType;
 typedef int BDimension; /*!< big dimension */
