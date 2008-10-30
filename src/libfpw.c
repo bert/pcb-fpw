@@ -88,6 +88,40 @@ create_new_pad
 
 
 /*!
+ * \brief Creates a new pin in an element.
+ */
+PinTypePtr
+create_new_pin
+(
+        ElementTypePtr element,
+        LocationType X,
+        LocationType Y,
+        BDimension thickness,
+        BDimension clearance,
+        BDimension mask,
+        BDimension drillingHole,
+        char *name,
+        char *number,
+        FlagType flags
+)
+{
+        PinTypePtr pin;
+        /* copy values */
+        pin->X = X;
+        pin->Y = Y;
+        pin->Thickness = thickness;
+        pin->Clearance = clearance;
+        pin->Mask = mask;
+        pin->Name = g_strdup (name);
+        pin->Number = g_strdup (number);
+        pin->Flags = flags;
+        pin->ID = ID++;
+        pin->Element = element;
+        return (pin);
+}
+
+
+/*!
  * \brief Determine the package type.
  */
 int
