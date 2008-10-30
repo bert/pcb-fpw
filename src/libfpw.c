@@ -41,6 +41,64 @@
 
 
 /*!
+ * \brief Creates a new arc in an element.
+ */
+ArcTypePtr
+create_new_arc
+(
+        ElementTypePtr element,
+        LocationType X,
+        LocationType Y,
+        BDimension width,
+        BDimension height,
+        int angle,
+        int delta,
+        BDimension thickness)
+{
+        ArcTypePtr arc = element->Arc;
+        /* Reallocate new memory if necessary and clear it. */
+        if (element->ArcN >= element->ArcMax)
+        {
+                element->ArcMax += 5;
+                size_t size = element->ArcMax * sizeof (ArcType);
+                if (size == 0)
+                {
+                        size = 1;
+                }
+                void *p;
+                p = arc ? realloc (arc, size) : malloc (size);
+                if (!p)
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("out of memory during realloc() in create_new_arc().\n"));
+                arc = realloc (arc, element->ArcMax * sizeof (ArcType));
+                element->Arc = arc;
+                memset (arc + element->ArcN, 0, 5 * sizeof (ArcType));
+        }
+        /* Set Delta (0,360], StartAngle in [0,360). */
+        if ((delta = delta % 360) == 0)
+                delta = 360;
+        if (delta < 0)
+        {
+                angle += delta;
+                delta = -delta;
+        }
+        if ((angle = angle % 360) < 0)
+                angle += 360;
+        /* copy values */
+        arc = arc + element->ArcN++;
+        arc->X = X;
+        arc->Y = Y;
+        arc->Width = width;
+        arc->Height = height;
+        arc->StartAngle = angle;
+        arc->Delta = delta;
+        arc->Thickness = thickness;
+        arc->ID = ID++;
+        return (arc);
+}
+
+
+/*!
  * \brief Creates a new line for an element.
  */
 LineTypePtr
@@ -69,7 +127,7 @@ create_new_line
                 p = line ? realloc (line, size) : malloc (size);
                 if (!p)
                         g_log ("", G_LOG_LEVEL_WARNING,
-                        _("out of memory during realloc() in create_new_line().\n"));
+                                _("out of memory during realloc() in create_new_line().\n"));
                 element->Line = line;
                 memset ((line + element->LineN), 0, (10 * sizeof (LineType)));
         }
