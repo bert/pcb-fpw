@@ -41,6 +41,53 @@
 
 
 /*!
+ * \brief Creates a new pad in an element.
+ */
+PadTypePtr
+create_new_pad
+(
+        ElementTypePtr element,
+        LocationType X1,
+        LocationType Y1,
+        LocationType X2,
+        LocationType Y2,
+        BDimension thickness,
+        BDimension clearance,
+        BDimension mask,
+        char *name,
+        char *number,
+        FlagType flags
+)
+{
+        PadTypePtr pad;
+        /* copy values */
+        if (X1 > X2 || (X1 == X2 && Y1 > Y2))
+        {
+                pad->Point1.X = X2;
+                pad->Point1.Y = Y2;
+                pad->Point2.X = X1;
+                pad->Point2.Y = Y1;
+        }
+        else
+        {
+                pad->Point1.X = X1;
+                pad->Point1.Y = Y1;
+                pad->Point2.X = X2;
+                pad->Point2.Y = Y2;
+        }
+        pad->Thickness = thickness;
+        pad->Clearance = clearance;
+        pad->Mask = mask;
+        pad->Name = g_strdup (name);
+        pad->Number = g_strdup (number);
+        pad->Flags = flags;
+        pad->ID = ID++;
+        pad->Element = element;
+        return (pad);
+}
+
+
+/*!
  * \brief Determine the package type.
  */
 int
