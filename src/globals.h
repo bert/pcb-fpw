@@ -395,6 +395,10 @@ gchar *dummy = NULL;
 #define MAX(a,b) ((a) > (b) ? (a) : (b))
 #endif
 
+static int ID = 1;
+        /*!< Current object ID;\n
+         * incremented after each creation of an object. */
+
 typedef int LocationType;
 typedef int BDimension; /*!< big dimension */
 typedef unsigned int Cardinal;
