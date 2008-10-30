@@ -41,6 +41,52 @@
 
 
 /*!
+ * \brief Creates a new line for an element.
+ */
+LineTypePtr
+create_new_line
+(
+        ElementTypePtr element,
+        LocationType X1,
+        LocationType Y1,
+        LocationType X2,
+        LocationType Y2,
+        BDimension thickness)
+{
+        LineTypePtr line = element->Line;
+        if (thickness == 0)
+                return (NULL);
+        /* Reallocate new memory if necessary and clear it. */
+        if (element->LineN >= element->LineMax)
+        {
+                element->LineMax += 10;
+                size_t size = element->LineMax * sizeof (LineType);
+                if (size == 0)
+                {
+                        size = 1;
+                }
+                void *p;
+                p = line ? realloc (line, size) : malloc (size);
+                if (!p)
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                        _("out of memory during realloc() in create_new_line().\n"));
+                element->Line = line;
+                memset ((line + element->LineN), 0, (10 * sizeof (LineType)));
+        }
+        /* copy values */
+        line = line + element->LineN++;
+        line->Point1.X = X1;
+        line->Point1.Y = Y1;
+        line->Point2.X = X2;
+        line->Point2.Y = Y2;
+        line->Thickness = thickness;
+//        line->Flags = NoFlags ();
+        line->ID = ID++;
+        return (line);
+}
+
+
+/*!
  * \brief Creates a new pad in an element.
  */
 PadTypePtr
