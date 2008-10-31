@@ -399,6 +399,17 @@ static int ID = 1;
         /*!< Current object ID;\n
          * incremented after each creation of an object. */
 
+/*!
+ * \brief Some directions.
+ */
+typedef enum
+{
+        NORTH,
+        EAST,
+        SOUTH,
+        WEST
+} direction_t;
+
 typedef int LocationType;
 typedef int BDimension; /*!< big dimension */
 typedef unsigned int Cardinal;
