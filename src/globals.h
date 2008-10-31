@@ -385,9 +385,9 @@ gchar *dummy = NULL;
 /*!< Maximum number of supported names of an element. */
 #define EMARK_SIZE 1000
 /*!< Size of diamond element mark. */
-#define        MIN_TEXTSCALE 10
+#define MIN_TEXTSCALE 10
 /*!< Scaling of text objects in percent */
-#define        MAX_TEXTSCALE 10000
+#define MAX_TEXTSCALE 10000
 /*!< Scaling of text objects in percent */
 
 #ifndef MIN
