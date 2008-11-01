@@ -160,6 +160,8 @@ typedef enum pad_shapes
 #define MM_TO_MIL 39.37007874 /*!< Convert mm to mil. */
 
 /* Pin or pad types / Object flag values */
+#define CLEAR 0x0000
+        /*!< Default (round) pad. */
 #define PIN 0x0001
         /*!< If set, this object is a pin.\n
          * This flag is for internal use only. */
