@@ -112,7 +112,6 @@ create_new_attribute
         if (list->Number >= list->Max)
         {
                 list->Max += 10;
-
                 size_t size = list->Max * sizeof (AttributeType);
                 if (size == 0)
                 {
