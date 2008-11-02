@@ -19,6 +19,8 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
+#include "register_functions.c"
+
 /*!
  * \brief Look up default values for CON footprints.
  *
@@ -196,6 +198,47 @@ con_hdr_set_gui_constraints (GtkWidget *widget)
         gui_constraints_disable_heel_and_toe_goals_tab_widgets (widget);
 }
 #endif /* GUI */
+
+
+static fpw_function_t
+con_function_list[] =
+{
+#if GUI
+        {
+                "Set GUI constraints",
+                con_dil_set_gui_constraints,
+                "Set GUI constraints for a CON_DIL package",
+                NULL
+        },
+        {
+                "Set GUI constraints",
+                con_dip_set_gui_constraints,
+                "Set GUI constraints for a CON_DIP package",
+                NULL
+        },
+        {
+                "Set GUI constraints",
+                con_hdr_set_gui_constraints,
+                "Set GUI constraints for a CON_HDR package",
+                NULL
+        },
+#endif /* GUI */
+        {
+                "Default Element Values",
+                con_get_default_footprint_values,
+                "Get default values for a selected CON package",
+                NULL
+        }
+};
+
+
+REGISTER_FUNCTIONS (con_function_list)
+
+void
+con_init ()
+{
+        register_con_function_list ();
+}
 
 
 /* EOF */
