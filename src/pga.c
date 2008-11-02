@@ -130,14 +130,14 @@ pga_function_list[] =
         {
                 "Set GUI constraints",
                 pga_set_gui_constraints,
-                "Set GUI constraints for a BGA package",
+                "Set GUI constraints for a PGA package",
                 NULL
         },
 #endif /* GUI */
         {
                 "Default Element Values",
                 pga_get_default_footprint_values,
-                "Get default values for a slected BGA package",
+                "Get default values for a selected PGA package",
                 NULL
         }
 };

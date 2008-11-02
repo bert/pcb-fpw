@@ -115,14 +115,14 @@ plcc_function_list[] =
         {
                 "Set GUI constraints",
                 plcc_set_gui_constraints,
-                "Set GUI constraints for a BGA package",
+                "Set GUI constraints for a PLCC package",
                 NULL
         },
 #endif /* GUI */
         {
                 "Default Element Values",
                 plcc_get_default_footprint_values,
-                "Get default values for a slected BGA package",
+                "Get default values for a selected PLCC package",
                 NULL
         }
 };

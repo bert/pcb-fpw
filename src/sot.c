@@ -980,14 +980,14 @@ sot_function_list[] =
         {
                 "Set GUI constraints",
                 sot_set_gui_constraints,
-                "Set GUI constraints for a BGA package",
+                "Set GUI constraints for a SOT package",
                 NULL
         },
 #endif /* GUI */
         {
                 "Default Element Values",
                 sot_get_default_footprint_values,
-                "Get default values for a slected BGA package",
+                "Get default values for a selected SOT package",
                 NULL
         }
 };
