@@ -19,6 +19,7 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
+#include "register_functions.c"
 
 /*!
  * \brief Look up default values for PGA footprints.
@@ -120,6 +121,35 @@ pga_set_gui_constraints (GtkWidget *widget)
         gui_constraints_disable_heel_and_toe_goals_tab_widgets (widget);
 }
 #endif /* GUI */
+
+
+static fpw_function_t
+pga_function_list[] =
+{
+#if GUI
+        {
+                "Set GUI constraints",
+                pga_set_gui_constraints,
+                "Set GUI constraints for a BGA package",
+                NULL
+        },
+#endif /* GUI */
+        {
+                "Default Element Values",
+                pga_get_default_footprint_values,
+                "Get default values for a slected BGA package",
+                NULL
+        }
+};
+
+
+REGISTER_FUNCTIONS (pga_function_list)
+
+void
+pga_init ()
+{
+        register_pga_function_list ();
+}
 
 
 /* EOF */
