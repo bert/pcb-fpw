@@ -19,6 +19,7 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
+#include "register_functions.c"
 
 /*!
  * \brief Look up default values for PLCC footprints.
@@ -105,6 +106,35 @@ plcc_set_gui_constraints (GtkWidget *widget)
         gui_constraints_disable_thermal_tab_widgets (widget);
 }
 #endif /* GUI */
+
+
+static fpw_function_t
+plcc_function_list[] =
+{
+#if GUI
+        {
+                "Set GUI constraints",
+                plcc_set_gui_constraints,
+                "Set GUI constraints for a BGA package",
+                NULL
+        },
+#endif /* GUI */
+        {
+                "Default Element Values",
+                plcc_get_default_footprint_values,
+                "Get default values for a slected BGA package",
+                NULL
+        }
+};
+
+
+REGISTER_FUNCTIONS (plcc_function_list)
+
+void
+plcc_init ()
+{
+        register_plcc_function_list ();
+}
 
 
 /* EOF */
