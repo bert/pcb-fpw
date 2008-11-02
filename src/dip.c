@@ -19,6 +19,8 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
+#include "register_functions.c"
+
 /*!
  * \brief Look up default values for DIP footprint.
  *
@@ -793,5 +795,33 @@ dip_set_gui_constraints (GtkWidget *widget)
 }
 #endif /* GUI */
 
+
+static gfpw_function_t
+dip_function_list[] =
+{
+#if GUI
+        {
+                "Set GUI constraints",
+                dip_set_gui_constraints,
+                "Set GUI constraints for a DIP package",
+                NULL
+        },
+#endif /* GUI */
+        {
+                "Default Element Values",
+                dip_get_default_footprint_values,
+                "Get default values for a selected DIP package",
+                NULL
+        }
+};
+
+
+REGISTER_FUNCTIONS (dip_function_list)
+
+void
+dip_init ()
+{
+        register_dip_function_list ();
+}
 
 /* EOF */
