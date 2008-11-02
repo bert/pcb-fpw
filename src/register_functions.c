@@ -45,23 +45,36 @@ typedef struct
                 /*!< Short description that sometimes accompanies the name. */
         const char *syntax;
                 /*!< Full allowed syntax; use \n to separate lines. */
-} gfpw_function_t;
+} fpw_function_t;
 
-typedef struct gfpw_function_node_t
+
+typedef struct fpw_function_node_t
 {
-        struct gfpw_function_node_t *next;
-        gfpw_function_t *functions;
+        struct fpw_function_node_t *next;
+        fpw_function_t *functions;
         int n;
-} gfpw_function_node_t;
+} fpw_function_node_t;
 
-gfpw_function_node_t *gfpw_function_nodes = 0;
+fpw_function_node_t *fpw_function_nodes = 0;
+
 static int n_functions = 0;
-static gfpw_function_t *all_functions = 0;
 
-gfpw_function_t *
-gfpw_find_action (const char *name)
+static fpw_function_t *all_functions = 0;
+
+
+static int
+fpw_function_sort (const void *va, const void *vb)
 {
-        gfpw_function_node_t *gf;
+        fpw_function_t *a = (fpw_function_t *) va;
+        fpw_function_t *b = (fpw_function_t *) vb;
+        return strcmp (a->name, b->name);
+}
+
+
+fpw_function_t *
+fpw_find_function (const char *name)
+{
+        fpw_function_node_t *gf;
         int i, n, lower, upper;
 
         if (name == NULL)
@@ -69,11 +82,11 @@ gfpw_find_action (const char *name)
         if (all_functions == 0)
         {
                 n = 0;
-                all_functions = malloc (n_functions * sizeof (gfpw_function_t));
-                for (gf = gfpw_function_nodes; gf; gf = gf->next)
+                all_functions = malloc (n_functions * sizeof (fpw_function_t));
+                for (gf = fpw_function_nodes; gf; gf = gf->next)
                         for (i = 0; i < gf->n; i++)
                                 all_functions[n++] = gf->functions[i];
-//                qsort (all_functions, n_functions, sizeof (gfpw_function_t), action_sort);
+                qsort (all_functions, n_functions, sizeof (fpw_function_t), fpw_function_sort);
         }
         lower = -1;
         upper = n_functions;
@@ -97,11 +110,12 @@ gfpw_find_action (const char *name)
         return 0;
 }
 
+
 int
-gfpw_functionv (const char *name, int argc, char **argv)
+fpw_functionv (const char *name, int argc, char **argv)
 {
         int x = 0, y = 0, i;
-        gfpw_function_t *a;
+        fpw_function_t *a;
 
         if (verbose && name)
         {
@@ -110,28 +124,31 @@ gfpw_functionv (const char *name, int argc, char **argv)
                         fprintf (stderr, "%s%s", i ? "," : "", argv[i]);
                 fprintf (stderr, ")\033[0m\n");
         }
-        a = gfpw_find_action (name);
+        a = fpw_find_function (name);
         if (!a)
                 return 1;
         return a->trigger_cb (argc, argv, x, y);
 }
 
+
 int
-gfpw_function (const char *name)
+fpw_function (const char *name)
 {
-        return gfpw_functionv (name, 0, 0);
+        return fpw_functionv (name, 0, 0);
 }
 
-#define GFPW_CONCAT(a,b) a##b
+
+#define FPW_CONCAT(a,b) a##b
+
 
 void
-gfpw_register_functions (gfpw_function_t * a, int n)
+fpw_register_functions (fpw_function_t * a, int n)
 {
-        gfpw_function_node_t *gf;
+        fpw_function_node_t *gf;
         /* printf("%d fuctions registered\n", n); */
-        gf = (gfpw_function_node_t *) malloc (sizeof (gfpw_function_node_t));
-        gf->next = gfpw_function_nodes;
-        gfpw_function_nodes = gf;
+        gf = (fpw_function_node_t *) malloc (sizeof (fpw_function_node_t));
+        gf->next = fpw_function_nodes;
+        fpw_function_nodes = gf;
         gf->functions = a;
         gf->n = n;
         n_functions += n;
@@ -142,9 +159,12 @@ gfpw_register_functions (gfpw_function_t * a, int n)
         }
 }
 
-#define REGISTER_FUNCTIONS(a) GFPW_CONCAT(void register_,a) ()\
-{ gfpw_register_functions(a, sizeof(a)/sizeof(a[0])); }
+
+#define REGISTER_FUNCTIONS(a) FPW_CONCAT(void register_,a) ()\
+{ fpw_register_functions(a, sizeof(a)/sizeof(a[0])); }
+
 
 #endif /* _REGISTER_FUNCTIONS_ guard. */
+
 
 /* EOF */

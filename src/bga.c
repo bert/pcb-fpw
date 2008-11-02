@@ -2085,7 +2085,7 @@ bga_set_gui_constraints (GtkWidget *widget)
 #endif /* GUI */
 
 
-static gfpw_function_t
+static fpw_function_t
 bga_function_list[] =
 {
 #if GUI
