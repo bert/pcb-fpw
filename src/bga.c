@@ -2120,7 +2120,7 @@ bga_function_list[] =
 REGISTER_FUNCTIONS (bga_function_list)
 
 void
-gfpw_plugin_init()
+bga_init ()
 {
         register_bga_function_list ();
 }
