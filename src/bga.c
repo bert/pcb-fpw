@@ -19,6 +19,7 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
+#include "register_functions.c"
 
 /*!
  * \brief Create an Element for a BGA package.
@@ -2082,6 +2083,47 @@ bga_set_gui_constraints (GtkWidget *widget)
         gui_constraints_disable_heel_and_toe_goals_tab_widgets (widget);
 }
 #endif /* GUI */
+
+
+static gfpw_function_t
+bga_function_list[] =
+{
+#if GUI
+        {
+                "Set GUI constraints",
+                bga_set_gui_constraints,
+                "Set GUI constraints for a BGA package",
+                NULL
+        },
+#endif /* GUI */
+        {
+                "Create Element",
+                bga_create_element,
+                "Create a pcb element for a BGA package",
+                NULL
+        },
+        {
+                "DRC BGA Element",
+                bga_drc,
+                "Design Rule Check for a BGA package",
+                NULL
+        },
+        {
+                "Default Element Values",
+                bga_get_default_footprint_values,
+                "Get default values for a slected BGA package",
+                NULL
+        }
+};
+
+
+REGISTER_FUNCTIONS (bga_function_list)
+
+void
+gfpw_plugin_init()
+{
+        register_bga_function_list ();
+}
 
 
 /* EOF */
