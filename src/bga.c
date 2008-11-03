@@ -335,8 +335,11 @@ bga_create_element ()
  * - check for a zero sized courtyard.
  * - check for minimum clearance between copper (X-direction).
  * - check for minimum clearance between copper (Y-direction).
- * - check for minimum clearance between copper (between pads and fiducials,
- *   if any fiducials exist).
+ * - If any fiducials exist:
+ *   - check for zero fiducial pad diameter.
+ *   - check for zero width solder mask clearance.
+ *   - check for minimum clearance between copper (between pads and fiducials,
+ *     if any fiducials exist).
  * - check for clearance of the package length with regard to the courtyard
  *   dimensions.
  * - check for clearance of the package width with regard to the courtyard
@@ -450,10 +453,10 @@ bga_drc ()
                                 _("DRC Error: check for minimum clearance between copper (Y-direction)."));
                 return (EXIT_FAILURE);
         }
-        /*! \todo If any fiducials exist:
+        /*! If any fiducials exist:
          * - check for zero fiducial pad diameter.
          * - check for zero width solder mask clearance.
-         * - check for minimum clearance between pad copper and fiducial pad
+         * \todo - check for minimum clearance between pad copper and fiducial pad
          *   copper (including solder mask clearances).
          */
         if (fiducial)
@@ -474,6 +477,17 @@ bga_drc ()
                                         _("DRC Error: check for zero width solder mask clearance."));
                         return (EXIT_FAILURE);
                 }
+                /* Check for minimum clearance between pad copper and fiducial pad
+                 * copper (including solder mask clearances). */
+#if 0
+                if ()
+                {
+                        if (verbose)
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("DRC Error: check for distance between fiducial and nearest pad."));
+                        return (EXIT_FAILURE);
+                }
+#endif
         }
         /* Check for clearance of the package length with regard to the
          * courtyard dimensions. */
