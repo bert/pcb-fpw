@@ -36,7 +36,7 @@
  * SOT95P280X115-6N, SOT95P280X135-3AN, SOT95P280X135-3N, SOT95P280X135-5N,
  * SOT95P280X145-5AN, SOT95P280X145-5N, SOT95P280X145-6AN, SOT95P280X145-6N,
  * SOT95P284X122-5N, SOT95P284X122-6N, SOT95P285X140-3N, SOT95P285X90-6N,
- * SOT95P470X124-8N.
+ * SOT95P470X124-8N, SOT100P230X110-3N.
  */
 int
 sot_get_default_footprint_values
@@ -60,6 +60,7 @@ sot_get_default_footprint_values
                 pitch_x = 3.00;
                 pad_length = 1.15;
                 pad_width = 0.50;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = 1.00;
                 silkscreen_width = 3.80;
                 courtyard_length = 4.70;
@@ -88,6 +89,7 @@ sot_get_default_footprint_values
                 pitch_x = 0.65;
                 pad_length = 1.05;
                 pad_width = 0.65;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = 0.50;
                 silkscreen_width = 3.00;
                 courtyard_length = 3.80;
@@ -117,6 +119,7 @@ sot_get_default_footprint_values
                 pitch_x = ;
                 pad_length = ;
                 pad_width = ;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = ;
                 silkscreen_width = ;
                 courtyard_length = ;
@@ -146,6 +149,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.00;
                 pad_length = 1.25;
                 pad_width = 0.60;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = 0.20;
                 silkscreen_width = 3.00;
                 courtyard_length = 3.80;
@@ -174,6 +178,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.00;
                 pad_length = 1.25;
                 pad_width = 0.65;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = 0.20;
                 silkscreen_width = 3.00;
                 courtyard_length = 3.80;
@@ -208,6 +213,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.10;
                 pad_length = 1.30;
                 pad_width = 0.60;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = 0.20;
                 silkscreen_width = 3.00;
                 courtyard_length = 3.90;
@@ -236,6 +242,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.10;
                 pad_length = 1.30;
                 pad_width = 0.65;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = 0.20;
                 silkscreen_width = 3.00;
                 courtyard_length = 3.80;
@@ -265,6 +272,7 @@ sot_get_default_footprint_values
                 pitch_x = ;
                 pad_length = ;
                 pad_width = ;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = ;
                 silkscreen_width = ;
                 courtyard_length = ;
@@ -295,6 +303,7 @@ sot_get_default_footprint_values
                 pitch_x = ;
                 pad_length = ;
                 pad_width = ;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = ;
                 silkscreen_width = ;
                 courtyard_length = ;
@@ -326,6 +335,7 @@ sot_get_default_footprint_values
                 pitch_x = ;
                 pad_length = ;
                 pad_width = ;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = ;
                 silkscreen_width = ;
                 courtyard_length = ;
@@ -355,6 +365,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.50;
                 pad_length = 1.25;
                 pad_width = 0.60;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = 0.40;
                 silkscreen_width = 3.10;
                 courtyard_length = 4.30;
@@ -383,6 +394,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.50;
                 pad_length = 1.25;
                 pad_width = 0.65;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = 0.40;
                 silkscreen_width = 3.10;
                 courtyard_length = 4.30;
@@ -412,6 +424,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.50;
                 pad_length = 1.25;
                 pad_width = 0.60;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = 0.40;
                 silkscreen_width = 3.00;
                 courtyard_length = 4.30;
@@ -440,6 +453,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.40;
                 pad_length = 1.35;
                 pad_width = 0.55;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = 0.40;
                 silkscreen_width = 3.00;
                 courtyard_length = 4.30;
@@ -468,6 +482,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.40;
                 pad_length = 1.35;
                 pad_width = 0.55;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = 0.40;
                 silkscreen_width = 3.00;
                 courtyard_length = 4.30;
@@ -498,6 +513,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.50;
                 pad_length = 1.25;
                 pad_width = 0.60;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = 0.40;
                 silkscreen_width = 3.00;
                 courtyard_length = 4.30;
@@ -529,6 +545,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.50;
                 pad_length = 1.25;
                 pad_width = 0.60;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = 0.40;
                 silkscreen_width = 3.00;
                 courtyard_length = 4.30;
@@ -558,6 +575,7 @@ sot_get_default_footprint_values
                 pitch_x = ;
                 pad_length = ;
                 pad_width = ;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = ;
                 silkscreen_width = ;
                 courtyard_length = ;
@@ -588,6 +606,7 @@ sot_get_default_footprint_values
                 pitch_x = ;
                 pad_length = ;
                 pad_width = ;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = ;
                 silkscreen_width = ;
                 courtyard_length = ;
@@ -617,6 +636,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.30;
                 pad_length = 1.40;
                 pad_width = 0.65;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = 0.20;
                 silkscreen_width = 2.90;
                 courtyard_length = 4.20;
@@ -646,6 +666,7 @@ sot_get_default_footprint_values
                 pitch_x = ;
                 pad_length = ;
                 pad_width = ;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = ;
                 silkscreen_width = ;
                 courtyard_length = ;
@@ -676,6 +697,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.50;
                 pad_length = 1.20;
                 pad_width = 0.60;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = 0.50;
                 silkscreen_width = 3.00;
                 courtyard_length = 4.20;
@@ -706,6 +728,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.50;
                 pad_length = 1.20;
                 pad_width = 0.60;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = 0.50;
                 silkscreen_width = 3.00;
                 courtyard_length = 4.20;
@@ -735,6 +758,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.50;
                 pad_length = 1.20;
                 pad_width = 0.60;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = 0.50;
                 silkscreen_width = 3.00;
                 courtyard_length = 4.20;
@@ -764,6 +788,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.50;
                 pad_length = 1.20;
                 pad_width = 0.60;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = 0.50;
                 silkscreen_width = 3.00;
                 courtyard_length = 4.20;
@@ -792,6 +817,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.40;
                 pad_length = 1.35;
                 pad_width = 0.60;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = 0.40;
                 silkscreen_width = 3.00;
                 courtyard_length = 4.30;
@@ -822,6 +848,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.40;
                 pad_length = 1.35;
                 pad_width = 0.60;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = 0.40;
                 silkscreen_width = 3.00;
                 courtyard_length = 4.30;
@@ -850,6 +877,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.40;
                 pad_length = 1.35;
                 pad_width = 0.60;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = 0.40;
                 silkscreen_width = 3.10;
                 courtyard_length = 4.30;
@@ -878,6 +906,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.40;
                 pad_length = 1.30;
                 pad_width = 0.60;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = 0.50;
                 silkscreen_width = 3.10;
                 courtyard_length = 4.20;
@@ -906,6 +935,7 @@ sot_get_default_footprint_values
                 pitch_x = 4.40;
                 pad_length = 1.00;
                 pad_width = 0.70;
+                pad_shape = g_strdup ("square");
                 silkscreen_length = 3.30;
                 silkscreen_width = 4.06;
 //                courtyard_length = ;
@@ -915,6 +945,31 @@ sot_get_default_footprint_values
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P470X124-8N");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?SOT100P230X110-3N"))
+        {
+                pitch_y = 1.00;
+                number_of_pins = 3;
+                package_body_width = 1.40;
+                package_body_length = 3.00;
+                package_body_height = 1.10;
+                package_is_radial = FALSE;
+                number_of_columns = 2;
+                number_of_rows = 3;
+                pitch_x = 1.00;
+                pad_length = 1.10;
+                pad_width = 0.60;
+                pad_shape = g_strdup ("rounded");
+                silkscreen_length = 0.40;
+                silkscreen_width = 3.00;
+                courtyard_length = 3.70;
+                courtyard_width = 3.50;
+                count_x = 0;
+                count_y = 0;
+                footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
+                footprint_name = g_strdup ("SOT100P230X110-3N");
                 return (EXIT_SUCCESS);
         }
         else
