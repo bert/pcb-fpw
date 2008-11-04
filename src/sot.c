@@ -903,15 +903,13 @@ sot_get_default_footprint_values
                 package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
-/*! \todo Look up datasheet and check values.
-                pitch_x = ;
-                pad_length = ;
-                pad_width = ;
-                silkscreen_length = ;
-                silkscreen_width = ;
-                courtyard_length = ;
-                courtyard_width = ;
-*/
+                pitch_x = 4.40;
+                pad_length = 1.00;
+                pad_width = 0.70;
+                silkscreen_length = 3.30;
+                silkscreen_width = 4.06;
+//                courtyard_length = ;
+                courtyard_width = 4.85;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
