@@ -356,6 +356,7 @@ get_package_type ()
         }
         else
         {
+                package_type = NO_PACKAGE;
                 g_log ("", G_LOG_LEVEL_CRITICAL,
                         _("footprint type %s is not valid."),
                         footprint_type);
