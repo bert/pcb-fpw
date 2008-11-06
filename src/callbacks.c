@@ -2377,7 +2377,8 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         {
                 if (verbose)
                         g_log ("", G_LOG_LEVEL_INFO,
-                                _("determined the package type successfull."));
+                                _("determined the package type (%d) for footprint type %s successfull."),
+                                package_type, footprint_type);
         }
         switch (package_type)
         {

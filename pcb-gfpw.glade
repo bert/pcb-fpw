@@ -471,6 +471,7 @@ DIL
 DIOM
 DIOMELF
 DIP
+DO
 INDC
 INDM
 INDP
@@ -486,9 +487,9 @@ SIL
 SIP
 SO
 SOT
+TO
 TO92
-TO220
-</property>
+TO220</property>
 				  <property name="add_tearoffs">False</property>
 				  <property name="has_frame">True</property>
 				  <property name="focus_on_click">True</property>

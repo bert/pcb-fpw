@@ -447,6 +447,7 @@ create_pcb_gfpw (void)
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("DIOM"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("DIOMELF"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("DIP"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("DO"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("INDC"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("INDM"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("INDP"));
@@ -462,6 +463,7 @@ create_pcb_gfpw (void)
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("SIP"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("SO"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("SOT"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("TO"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("TO92"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("TO220"));
 
