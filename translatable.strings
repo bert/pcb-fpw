@@ -72,6 +72,7 @@ gchar *s = N_("RESMELF");
 gchar *s = N_("SIL");
 gchar *s = N_("SIP");
 gchar *s = N_("SO");
+gchar *s = N_("SOT");
 gchar *s = N_("TO92");
 gchar *s = N_("TO220");
 gchar *s = N_("Type");
