@@ -1026,6 +1026,199 @@ sot_set_gui_constraints (GtkWidget *widget)
 #endif /* GUI */
 
 
+/*!
+ * \brief Write a footprint for a SOT package.
+ */
+int
+sot_write_footprint ()
+{
+        gdouble xmax;
+        gdouble xmin;
+        gdouble ymax;
+        gdouble ymin;
+        gdouble x_text;
+        gdouble y_text;
+        gdouble dx;
+        gint pin_number;
+        gchar *pin_pad_name = g_strdup ("");
+
+        fp = fopen (footprint_filename, "w");
+        if (!fp)
+        {
+                fprintf
+                (
+                        stderr,
+                        "ERROR: could not open file for %s footprint: %s.\n",
+                        footprint_type,
+                        footprint_filename
+                );
+                return (EXIT_FAILURE);
+        }
+        /* Determine (extreme) courtyard dimensions based on pin/pad
+         * properties */
+        xmin = multiplier *
+        (
+                ((-pitch_x * number_of_columns) / 2.0) -
+                (pad_length / 2.0) -
+                pad_solder_mask_clearance
+        );
+        xmax = multiplier *
+        (
+                ((pitch_x * number_of_columns) / 2.0) +
+                (pad_length / 2.0) +
+                pad_solder_mask_clearance
+        );
+        ymin = multiplier *
+        (
+                ((-pitch_y * number_of_rows) / 2.0) -
+                (pad_width / 2.0) -
+                pad_solder_mask_clearance
+        );
+        ymax = multiplier *
+        (
+                ((pitch_y * number_of_rows) / 2.0) +
+                (pad_width / 2.0) +
+                pad_solder_mask_clearance
+        );
+        /* Determine (extreme) courtyard dimensions based on package
+         * properties */
+        if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
+                xmin = (multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package));
+        if ((multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package)) > xmax)
+                xmax = (multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package));
+        if ((multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package)) < ymin)
+                ymin = (multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package));
+        if ((multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package)) > ymax)
+                ymax = (multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package));
+        /* If the user input is using even more real-estate then use it */
+        if (multiplier * (-courtyard_length / 2.0) < xmin)
+                xmin = multiplier * (-courtyard_length / 2.0);
+        if (multiplier * (courtyard_length / 2.0) > xmax)
+                xmax = multiplier * (courtyard_length / 2.0);
+        if (multiplier * (-courtyard_width / 2.0) < ymin)
+                ymin = multiplier * (-courtyard_width / 2.0);
+        if (multiplier * (courtyard_width / 2.0) > ymax)
+                ymax = multiplier * (courtyard_width / 2.0);
+        /* Write element header
+         * Guess for a place where to put the refdes text */
+        x_text = 0.0 ; /* already in mil/100 */
+        y_text = (ymin - 10000.0); /* already in mil/100 */
+        write_element_header (x_text, y_text);
+        /* Write pin and/or pad entities */
+        switch (number_of_pins)
+        {
+                case 3:
+                {
+                        /* Pad #1 */
+                        write_pad
+                        (
+                                1, /* pin number */
+                                "", /* pin name */
+                                multiplier * ((-pitch_x - pad_length + pad_width) / 2.0), /* x0 coordinate */
+                                multiplier * (pitch_y), /* y0-coordinate */
+                                multiplier * ((-pitch_x + pad_length - pad_width) / 2.0), /* x1 coordinate */
+                                multiplier * (pitch_y), /* y1-coordinate */
+                                multiplier * pad_width, /* pad width */
+                                multiplier * pad_clearance, /* clearance */
+                                multiplier * (pad_diameter + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                                /* Write pin #1 with a square pad if checked */
+                                (pin1_square) ? "square" : pin_pad_flags /* flags */
+                        );
+                        /* Pad #2 */
+                        write_pad
+                        (
+                                2, /* pin number */
+                                "", /* pin name */
+                                multiplier * ((-pitch_x - pad_length + pad_width) / 2.0), /* x0 coordinate */
+                                multiplier * (-pitch_y), /* y0-coordinate */
+                                multiplier * ((-pitch_x + pad_length - pad_width) / 2.0), /* x1 coordinate */
+                                multiplier * (-pitch_y), /* y1-coordinate */
+                                multiplier * pad_width, /* pad width */
+                                multiplier * pad_clearance, /* clearance */
+                                multiplier * (pad_diameter + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                                pin_pad_flags /* flags */
+                        );
+                        /* Pad #3 */
+                        write_pad
+                        (
+                                3, /* pin number */
+                                "", /* pin name */
+                                multiplier * ((-pitch_x - pad_length + pad_width) / 2.0), /* x0 coordinate */
+                                0, /* y0-coordinate */
+                                multiplier * ((-pitch_x + pad_length - pad_width) / 2.0), /* x1 coordinate */
+                                0, /* y1-coordinate */
+                                multiplier * pad_width, /* pad width */
+                                multiplier * pad_clearance, /* clearance */
+                                multiplier * (pad_diameter + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                                pin_pad_flags /* flags */
+                        );
+                        break;
+                }
+                default:
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("number of pins of %d is not defined in sot_write_footprint().\n"),
+                                number_of_pins);
+
+                }
+        }
+        /* Write a package body on the silkscreen */
+        if (silkscreen_package_outline)
+        {
+                fprintf (fp, "# Write a package body on the silkscreen\n");
+                write_rectangle
+                (
+                        multiplier * (-silkscreen_length / 2.0),
+                        multiplier * (-silkscreen_width / 2.0),
+                        multiplier * (silkscreen_length / 2.0),
+                        multiplier * (silkscreen_width / 2.0),
+                        multiplier * silkscreen_line_width
+                );
+        }
+        /* Write a pin #1 marker on the silkscreen */
+        if (silkscreen_indicate_1)
+        {
+                fprintf (fp, "# Write a pin 1 marker on the silkscreen\n");
+                write_element_arc
+                (
+                        multiplier * (-pitch_x),
+                        multiplier * (-package_body_width / 2.0 - (2 * silkscreen_line_width)),
+                        multiplier * 0.5 * silkscreen_line_width,
+                        multiplier * 0.5 * silkscreen_line_width,
+                        0,
+                        360,
+                        multiplier * silkscreen_line_width
+                );
+        }
+        /* Write a courtyard on the silkscreen */
+        if (courtyard)
+        {
+                fprintf (fp, "# Write a courtyard on the silkscreen\n");
+                write_rectangle
+                (
+                        xmin, /* already in mil/100 */
+                        ymin, /* already in mil/100 */
+                        xmax, /* already in mil/100 */
+                        ymax, /* already in mil/100 */
+                        multiplier * courtyard_line_width
+                );
+        }
+        /* Write attributes */
+        if (attributes_in_footprint)
+                write_attributes ();
+        fprintf (fp, "\n");
+        fprintf (fp, ")\n");
+        fclose (fp);
+        fprintf
+        (
+                stderr,
+                "SUCCESS: wrote a footprint file for a %s package: %s.\n",
+                footprint_type,
+                footprint_filename
+        );
+}
+
+
 static fpw_function_t
 sot_function_list[] =
 {
@@ -1041,6 +1234,12 @@ sot_function_list[] =
                 "Default Element Values",
                 sot_get_default_footprint_values,
                 "Get default values for a selected SOT package",
+                NULL
+        },
+        {
+                "Write footprint",
+                sot_write_footprint,
+                "Write a footprint for a SOT package",
                 NULL
         }
 };
