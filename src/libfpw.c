@@ -2764,7 +2764,7 @@ write_footprint()
                         return;
                         break;
                 case SOT:
-                        return;
+                        sot_write_footprint ();
                         break;
                 case TO92:
                         write_footprint_to92 ();
