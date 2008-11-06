@@ -349,10 +349,6 @@ get_package_type ()
         else if (!strcmp (footprint_type, "SOT"))
         {
                 package_type = SOT;
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("footprint type %s not yet implemented."),
-                        footprint_type);
-                return (EXIT_FAILURE);
         }
         else if (!strcmp (footprint_type, "TO92"))
         {
