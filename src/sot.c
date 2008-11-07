@@ -59,7 +59,8 @@
  * - SOT95P285X90-6N,
  * - SOT95P470X124-8N,
  * - SOT100P230X110-3N,
- * - SOT127P700X180-6N.
+ * - SOT127P700X180-6N,
+ * - SOT150P700X180-5N.
  */
 int
 sot_get_default_footprint_values
@@ -1146,6 +1147,35 @@ sot_get_default_footprint_values
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT127P700X180-6N");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?SOT150P700X180-5N"))
+        {
+                pitch_y = 1.50;
+                number_of_pins = 5;
+                package_body_width = 3.70;
+                package_body_length = 6.70;
+                package_body_height = 1.80;
+                package_is_radial = FALSE;
+                number_of_columns = 2;
+                number_of_rows = 4;
+                pitch_x = 5.80;
+                pad_length = 2.15;
+                pad_width = 0.95;
+                pad_shape = g_strdup ("rectangular pad");
+                pad_shapes_type = SQUARE;
+                thermal = TRUE;
+                thermal_length = 2.15;
+                thermal_width = 3.15;
+                silkscreen_length = 2.80;
+                silkscreen_width = 6.70;
+                courtyard_length = 8.50;
+                courtyard_width = 7.20;
+                count_x = 0;
+                count_y = 0;
+                footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
+                footprint_name = g_strdup ("SOT150P700X180-5N");
                 return (EXIT_SUCCESS);
         }
         else
