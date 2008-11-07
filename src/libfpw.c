@@ -1075,10 +1075,10 @@ write_attributes
         fprintf (fp, "\tAttribute(\"dist-license\" \"%s\")\n", footprint_dist_license);
         fprintf (fp, "\tAttribute(\"use-license\" \"%s\")\n", footprint_use_license);
         fprintf (fp, "\tAttribute(\"status\" \"%s\")\n", footprint_status);
-        fprintf (fp, "\tAttribute(\"attributes in footprint\" \"%d\")\n", attributes_in_footprint);
-        fprintf (fp, "\tAttribute(\"package body length\" \"%d\")\n", (int) package_body_length);
-        fprintf (fp, "\tAttribute(\"package body width\" \"%d\")\n", (int) package_body_width);
-        fprintf (fp, "\tAttribute(\"package height\" \"%d\")\n", (int) package_body_height);
+        fprintf (fp, "\tAttribute(\"attributes in footprint\" \"%d\")\n", (int) attributes_in_footprint);
+        fprintf (fp, "\tAttribute(\"package body length\" \"%f\")\n", package_body_length);
+        fprintf (fp, "\tAttribute(\"package body width\" \"%f\")\n", package_body_width);
+        fprintf (fp, "\tAttribute(\"package height\" \"%f\")\n", package_body_height);
         fprintf (fp, "\tAttribute(\"package is radial\" \"%d\")\n", package_is_radial);
         fprintf (fp, "\tAttribute(\"number of pins\" \"%d\")\n", (int) number_of_pins);
         fprintf (fp, "\tAttribute(\"number of columns\" \"%d\")\n", (int) number_of_columns);
