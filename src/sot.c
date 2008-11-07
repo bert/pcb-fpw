@@ -1193,9 +1193,6 @@ sot_set_gui_constraints (GtkWidget *widget)
         gtk_combo_box_set_active (GTK_COMBO_BOX (number_1_position_entry), UPPER_LEFT);
         gtk_widget_set_sensitive (number_1_position_entry, FALSE);
 
-        /* Widgets on tab 3 "Thermal Pad" */
-        gui_constraints_disable_thermal_tab_widgets (widget);
-
         /* Widgets on tab 5 "Heel & Toe goals" */
         gui_constraints_disable_heel_and_toe_goals_tab_widgets (widget);
 }
