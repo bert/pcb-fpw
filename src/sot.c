@@ -1330,7 +1330,7 @@ sot_write_footprint ()
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("number of pins of %d is not defined in sot_write_footprint()."),
                                 number_of_pins);
-
+                        break;
                 }
         }
         /* Write a package body on the silkscreen */
