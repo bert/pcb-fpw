@@ -1250,9 +1250,7 @@ sot_write_footprint ()
         {
                 g_log ("", G_LOG_LEVEL_WARNING,
                         _("could not open file for %s footprint: %s."),
-                        footprint_type,
-                        footprint_filename
-                );
+                        footprint_type, footprint_filename);
                 return (EXIT_FAILURE);
         }
         /* Determine (extreme) courtyard dimensions based on pin/pad
@@ -1410,11 +1408,9 @@ sot_write_footprint ()
         fprintf (fp, "\n");
         fprintf (fp, ")\n");
         fclose (fp);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("wrote a footprint file for a %s package: %s."),
-                        footprint_type,
-                        footprint_filename
-                );
+        g_log ("", G_LOG_LEVEL_INFO,
+                _("wrote a footprint file for a %s package: %s."),
+                footprint_type, footprint_filename);
 }
 
 
