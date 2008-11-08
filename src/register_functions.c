@@ -106,7 +106,8 @@ fpw_find_function (const char *name)
         for (i = 0; i < n_functions; i++)
                 if (strcasecmp (all_functions[i].name, name) == 0)
                         return all_functions + i;
-        printf ("unknown function `%s'\n", name);
+        g_log ("", G_LOG_LEVEL_WARNING,
+                _("unknown function `%s'\n"), name);
         return 0;
 }
 
