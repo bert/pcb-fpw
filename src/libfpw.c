@@ -69,7 +69,7 @@ create_new_arc
                 p = arc ? realloc (arc, size) : malloc (size);
                 if (!p)
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("out of memory during realloc() in create_new_arc().\n"));
+                                _("out of memory during realloc() in create_new_arc()."));
                 arc = realloc (arc, element->ArcMax * sizeof (ArcType));
                 element->Arc = arc;
                 memset (arc + element->ArcN, 0, 5 * sizeof (ArcType));
@@ -121,7 +121,7 @@ create_new_attribute
                 p = list->List ? realloc (list, size) : malloc (size);
                 if (!p)
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("out of memory during realloc() in create_new_attribute().\n"));
+                                _("out of memory during realloc() in create_new_attribute()."));
         }
         list->List[list->Number].name = g_strdup (name);
         list->List[list->Number].value = g_strdup (value);
@@ -159,7 +159,7 @@ create_new_line
                 p = line ? realloc (line, size) : malloc (size);
                 if (!p)
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("out of memory during realloc() in create_new_line().\n"));
+                                _("out of memory during realloc() in create_new_line()."));
                 element->Line = line;
                 memset ((line + element->LineN), 0, (10 * sizeof (LineType)));
         }
