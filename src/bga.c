@@ -2120,13 +2120,9 @@ bga_write_footprint ()
         fp = fopen (footprint_filename, "w");
         if (!fp)
         {
-                fprintf
-                (
-                        stderr,
-                        "ERROR: could not open file for %s footprint: %s.\n",
-                        footprint_type,
-                        footprint_filename
-                );
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("could not open file for %s footprint: %s."),
+                        footprint_type, footprint_filename);
                 return (EXIT_FAILURE);
         }
         /* Determine (extreme) courtyard dimensions based on pin/pad
@@ -2326,13 +2322,9 @@ bga_write_footprint ()
         fprintf (fp, "\n");
         fprintf (fp, ")\n");
         fclose (fp);
-        fprintf
-        (
-                stderr,
-                "SUCCESS: wrote a footprint file for a %s package: %s.\n",
-                footprint_type,
-                footprint_filename
-        );
+        g_log ("", G_LOG_LEVEL_INFO,
+                _("wrote a footprint file for a %s package: %s."),
+                footprint_type, footprint_filename);
 }
 
 
