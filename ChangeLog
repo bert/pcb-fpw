@@ -1,3 +1,649 @@
+commit 3bd7f8ecd8a1e5863fe83b899683b4fb03f862b9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 9 08:48:28 2008 +0100
+
+    Updated the Dutch translation file.
+
+commit e8b5b2428cb05a442e2e2d8b1d902e198e9abe01
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 9 08:48:07 2008 +0100
+
+    Changes on translatable strings.
+
+commit f4fd2d3582d659bba179a0d3e6c823e6ae9d34d5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 9 08:30:18 2008 +0100
+
+    Added SOT65P210X110-3N package.
+
+commit 3737f182ea7f1aecde6fb2fbacf9209c73f9f9a0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 9 07:30:56 2008 +0100
+
+    Added SOT65P210X100-6N package.
+
+commit f731569da21d810acceff70822f62aa5612dae53
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 9 07:23:21 2008 +0100
+
+    Added SOT50P210X110-8N package.
+
+commit a3bdec80b721516ba69dd21e08caa77302581628
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 9 07:13:38 2008 +0100
+
+    Added SOT50P160X90-3N package.
+
+commit 220881e73793f61f3f09b9b809cd9a2b3fa369a7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 8 15:23:00 2008 +0100
+
+    Added SOT230P700X180-4N package.
+
+commit 04c2dfc84a2df5321afd728dd8706125fb5cdf32
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 8 15:15:15 2008 +0100
+
+    Changed logging from fprintf(stderr, ...) to g_log() in fpw_find_function().
+
+commit 92c5791e4dfe7b11c3463302b7253363cec7aeea
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 8 13:31:00 2008 +0100
+
+    Minor corrections in whitespace and indentation.
+
+commit e3a0a718b0a190b0835899370ca14e622b053a3b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 8 13:13:47 2008 +0100
+
+    Removed trailing /n characters in log messages.
+
+commit a14047edfcd92efa107f3cc879a27de893e62b8c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 8 13:12:59 2008 +0100
+
+    Changed logging from fprintf(stderr, ...) to g_log() in bga_write_footprint().
+
+commit 13b65f2ea6b00c8eef6755f6c5d8d7a937a3b90a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 8 10:09:27 2008 +0100
+
+    Updated the Dutch translation file.
+
+commit 4246c10a53547755f0dc7fee685b80be0190c8e5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Nov 7 22:56:58 2008 +0100
+
+    Added SOT150P700X180-5N package.
+
+commit 2c8684e99c1557f5fd816d62cf204a7f36f02464
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Nov 7 21:26:30 2008 +0100
+
+    Updated the user manual to version 0.0.8
+    
+    - renamed images.
+    - added credits dialog image.
+    - added license dialog image.
+    - added select exceptions dialog image.
+
+commit 20b7824fdf3c68d1446bd5b29f1152a55d542876
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Nov 7 19:14:50 2008 +0100
+
+    Added a break to the switch default in sot_write_footprint().
+
+commit ed2202a2027c424e5bc080e8715b42799ec8cc1f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Nov 7 11:29:16 2008 +0100
+
+    Removed the default disabling of the thermal tab (GUI).
+    
+    - some SOT packages do have a thermal pad.
+
+commit 822bfbca6600130f2d7f1e395343fe95b8c592ce
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Nov 7 10:35:28 2008 +0100
+
+    Added SOT127P700X180-6N package.
+    
+    - added thermal variable to default packages.
+    - added thermal_length varialble to default packages.
+    - added thermal_width varialble to default packages.
+    - added pad_shape_types variable to default packages.
+    - changed listed default packages in doxygen comments.
+
+commit 4f21360573f28dc02a449a85dbaaecec8580259f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Nov 7 09:43:39 2008 +0100
+
+    Changed logging from fprintf(stderr, ...) to g_log() in sot_write_footprint().
+
+commit 8d136fae35ace643c69d7b44ebc9f434a236019a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Nov 7 07:18:23 2008 +0100
+
+    Corrections of some bugs in write_attributes().
+
+commit 404433ebb32c5bfdb6c40d78a80e7713d0e120c9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 6 23:43:03 2008 +0100
+
+    Added missing package/footprint types in the GUI combobox list.
+
+commit 2aae96ce24761f7b66e39386533b9d1c90274bbb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 6 23:42:14 2008 +0100
+
+    Set package_type to NO_PACKAGE when an unvalid package is encountered.
+
+commit 9d1074898c59a4a7cfb88c14891b345fc9271d3e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 6 23:40:53 2008 +0100
+
+    Corrected wrong keyword strings.
+
+commit 77b36ab83e27366bcba2c9719ac9d0619890ef52
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 6 12:32:51 2008 +0100
+
+    Added sot_write_footprint().
+
+commit eda80136fdd1796d453988947da0352d1188d8bd
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 6 11:13:27 2008 +0100
+
+    Added call to sot_set_gui_constraints() in on_footprint_type_entry_changed().
+
+commit b4782ec4c7ae85898e51fdf9aa5883628188430c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 6 11:11:40 2008 +0100
+
+    Added SOT package type in get_package_type().
+
+commit f41479be77f619d8f1ec96d4c4c75b3baed53433
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 6 10:48:39 2008 +0100
+
+    Added SOT package type in GUI combobox list.
+
+commit 99eee9f867e25d37837b3ff5c925d5a7dac96694
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 6 10:47:52 2008 +0100
+
+    Added call to sot_write_footprint() from write_footprint().
+
+commit f1c1a66a1d62fe90ec189f2bd0725c47ade7c8a2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 4 23:01:58 2008 +0100
+
+    Added pad_shape values and SOT100P230X110-3N package data.
+
+commit 47a36f81b91e8956e2024b0db2395bbf31011280
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 4 22:21:25 2008 +0100
+
+    Added some missing values in sot_get_default_footprint_values().
+
+commit 81972f3154be29848f79be3051d5c5dfb3ff3892
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 4 06:49:45 2008 +0100
+
+    Moved write_footprint_con_*() to con_*_write_footprint().
+
+commit 59759e05ee59c10fcd4940b49bee9cbb23f7f942
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 3 22:04:48 2008 +0100
+
+    Moved write_footprint_plcc() to plcc_write_footprint().
+
+commit 22db9eb6e80d7fc50823600da655933d6371d5e6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 3 21:57:45 2008 +0100
+
+    Moved write_footprint_pga() to pga_write_footprint().
+
+commit 5b76dc8c23cd034134c445c985497050c697c8d9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 3 21:11:40 2008 +0100
+
+    Moved write_footprint_dip() to dip_write_footprint().
+
+commit db80514d7bdf872623a09261c9aa6acda8051030
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 3 20:08:36 2008 +0100
+
+    Moved write_footprint_bga() to bga_write_footprint().
+
+commit eeba40c5c48f2164e5968d450d19ee03eb68fe53
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 3 17:58:20 2008 +0100
+
+    WIP on bga_drc().
+
+commit ec3809bf944c48c72c7ef842e41bf1526a74eea8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 2 23:30:46 2008 +0100
+
+    Corrected some typos.
+
+commit 642c5a20d4a52a6930e3643839034af6b5cf1b35
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 2 23:28:34 2008 +0100
+
+    Added data for registering CON package dependant functions.
+
+commit 37fb875600c5c26ae2c3aaf55258be3accd26177
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 2 23:02:12 2008 +0100
+
+    Added data for registering SOT package dependant functions.
+
+commit 13c2bac04995ff859dbf19c0c6fab937e967fefa
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 2 22:58:51 2008 +0100
+
+    Added data for registering PLCC package dependant functions.
+
+commit 53e21453bf6fae14bdf0b2bf1ea4a273f8132e7b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 2 22:49:05 2008 +0100
+
+    Added data for registering PGA package dependant functions.
+
+commit f13b00c404017f59292400783a1296a487a9daba
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 2 20:29:19 2008 +0100
+
+    Removed the "g" in the namespace.
+    
+    Also used for the CLI version.
+
+commit f7ed2fba40bbfa8e677a3377826fa975b1531577
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 2 17:17:34 2008 +0100
+
+    Added data for registering DIP package dependant functions.
+
+commit ab4dc7d61b8e0a055fefe27b105100eaa8776fee
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 2 17:16:51 2008 +0100
+
+    Changed name of initializing function.
+
+commit e16a470dbedaac5abfc13c08059005dabfc25868
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 2 12:07:56 2008 +0100
+
+    Added data for registering BGA package dependant functions.
+
+commit 2138513d95a17c4ddc06fab8ec9da839a1c73394
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 2 12:06:58 2008 +0100
+
+    Added a function registering feature for package type dependant functions.
+    
+    This mechanism is not operational yet, just added for future usage.
+    This mechanism is copied from the pcb plug-in/HID mechanism.
+    The usual copyright disclaimer applies here and my thanks go to
+    DJ Delorie for creating this functionality in pcb.
+    This implementation is modified for the specific needs of pcb-gfpw/fpw.
+
+commit c414f246d3ac4d305b23e6b9f392404cf61a6c49
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 1 16:51:53 2008 +0100
+
+    Added bga_create_element().
+
+commit fe4dc3025d0307454e67ec34833d08cdea800d46
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 1 16:07:44 2008 +0100
+
+    Added a definition for a round pad (CLEAR).
+
+commit 9c522c34a2f76c75eef8e2766fc87d107d657e60
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 1 16:06:43 2008 +0100
+
+    Removed a line of whitespace.
+
+commit 4d40f65537e5e03c67ad9299431ca7dc10c9c84d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 31 11:49:05 2008 +0100
+
+    Added some directions (direction_t).
+
+commit 6e05ce4a155cc4c2bc6ef9ec88147b565a81e4bc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 31 08:07:27 2008 +0100
+
+    Removed some white space.
+
+commit 6828d1bee317f24c2a8d54a9d6aa12231b03e40f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Oct 30 23:26:32 2008 +0100
+
+    Added create_new_attribute().
+
+commit 5af3de48b17c7880ab8ac89c083a52d344917d41
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Oct 30 23:13:06 2008 +0100
+
+    Added create_new_arc().
+
+commit 90856c5e3aab104f4906a73b40b200bc8ec4c403
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Oct 30 22:58:39 2008 +0100
+
+    Added create_new_line().
+
+commit b7fe910310f6f043e9fe44fe1c2c80f05348df2e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Oct 30 21:11:13 2008 +0100
+
+    Added create_new_pin().
+
+commit affcd81319d6769f7b556efe8520f5fd9d2668b2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Oct 30 20:57:35 2008 +0100
+
+    Added create_new_pad().
+
+commit 05d0c9e8dae02e5d2ff68a0c40df7d1c6e84c455
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Oct 30 20:56:54 2008 +0100
+
+    Added a global variable for the current object ID.
+
+commit 9f2e9d8707db5c672aa4e01a0ba91bf7a0ec180b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Oct 30 08:10:50 2008 +0100
+
+    Added some defines and macros for creating Elements with native pcb structs.
+
+commit d7a2cde427d9373730be097845a7a7b3e539fd93
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Oct 29 23:14:00 2008 +0100
+
+    Made a start to do some DRC for BGA packages in the future by adding bga_drc().
+    
+    - check for allowed pad shapes.
+    - check for zero sized packages.
+    - check for a zero sized courtyard.
+    - check for minimum clearance between copper (X-direction).
+    - check for minimum clearance between copper (Y-direction).
+    - check for minimum clearance between copper (between pads and fiducials,
+      if any fiducials exist).
+    - check for clearance of the package length with regard to the courtyard
+      dimensions.
+    - check for clearance of the package width with regard to the courtyard
+      dimensions.
+    - check for any silk lines or texts touching bare copper.
+    - check for soldermask clearance (solder mask overlapping copper at the
+      solder fillet area or worse).
+    - check for a reasonable silk line width.
+
+commit 5ba62a1849e3a70ac8e854fdbefeb8979d0f5965
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Oct 27 21:49:31 2008 +0100
+
+    Added some guard #if GUI and #endif around GUI related code in files with both CLI and GUI usage.
+
+commit 22f04e8c702df61e6ef92b0c5eff2d380cb1151d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Oct 27 08:12:58 2008 +0100
+
+    Create a valid footprint filename in on_save_button_clicked().
+    
+    Before writing a fpw file create a valid footprint filename from scratch,
+    that is, derived from the entered footprint name.
+
+commit b6f8d8d709c961ca6f610ec93d0e115c39240b15
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Oct 27 01:04:16 2008 +0100
+
+    Added testing for null pointers in write_footprintwizard_file().
+
+commit 0c92049f4a53c4d404fe007c937281a3d74475fe
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Oct 26 23:17:00 2008 +0100
+
+    Added pixmaps/QFN.xpm
+
+commit 4ac32bf7c16bd090f32dc087bbad09333bf06c5f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Oct 26 19:12:10 2008 +0100
+
+    Changes in the GUI layout and callbacks.
+    
+    - removed the dimensions widget and splash image.
+    - added a dimensions window widget
+    - added a buttonbox on top of the previous.
+    - added a button for writing a footprint to file.
+    - changed the behaviour of the existing "save" button,
+      is now used for writing the footprintwizard file.
+    - separated the writing of a footprint file and a
+      footprintwizard file (in callback.c).
+
+commit 776b97d484be2cff62402374620e23b15382124e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Oct 26 19:03:39 2008 +0100
+
+    Added return value EXIT_SUCCESS at the end of write_footprint().
+
+commit 9c3450ab21b4384ac3d6c3a31aab2578782eccd6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Oct 26 15:28:51 2008 +0100
+
+    Added some typedefs and structs copied from pcb.
+    
+    Added all typedefs and structs for holding data for an element.
+    Added doxygen type comments to clarify some fields in the structs.
+    This way either a preview or a footprint file can be generated
+    from the same set of variables.
+    In the future this may simplify the conversion of pcb-gfpw from a
+    stand-alone application to a pcb plug-in.
+
+commit ae0fe84863f2b9a806759f3f055dc8318261accd
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Oct 25 23:35:19 2008 +0200
+
+    Moved gui_constraints_set_con_*() to con_*_set_gui_constraints().
+    
+    - for CON_DIL packages.
+    - for CON_DIP packages.
+    - for CON_HDR packages.
+    - added con_get_default_footprint_values().
+
+commit 730b8a4e17d264cc9f1028c30683adafa621c8a4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Oct 25 22:50:17 2008 +0200
+
+    Created a packages header file containing a list of package related files.
+
+commit 58c636239adcda40b7bde363a02865c7f3d97fc6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 17 23:08:36 2008 +0200
+
+    Added pixmaps/DIO.xpm
+
+commit b18698f81e88467b60c206bb900ce8193a8bbb08
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 17 08:09:56 2008 +0200
+
+    Added verbose log messages when loading dimensions pixmap.
+
+commit 04725e36ea12f3e981bd3e234412f46a3ed4566f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Oct 16 07:45:35 2008 +0200
+
+    More WIP on the select exceptions window.
+    
+    - added a message to statusbar in case the number
+      of rows or colums is zero.
+
+commit 21a181a6e5b64b2ddfcc811caee919c006dd3042
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Oct 16 07:12:41 2008 +0200
+
+    Added BGA packages.
+    
+    - BGA111C80P12X13_1100X1100X140,
+    - BGA112C80P11X11_1000X1000X130,
+    - BGA1148C100P34X34_3500X3500X340,
+    - BGA114C80P6X19_550X1600X140,
+    - BGA1152C100P34X34_3500X3500X340,
+    - BGA1152C100P34X34_3500X3500X350,
+    - BGA1156C100P34X34_3500X3500X260,
+    - BGA1156C100P34X34_3500X3500X311,
+    - BGA1156C100P34X34_3500X3500X350,
+    - BGA1156C100P34X34_3500X3500X380.
+
+commit 7c832967ca11e0154dccdbd8c23f74424f141e9e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Oct 4 00:41:21 2008 +0200
+
+    Minor corrections.
+
+commit 14dbbdd3e206a9168cef3206cd5e74938d03e270
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 3 23:21:57 2008 +0200
+
+    WIP on the select exceptions window.
+    
+    - the OK button now resets so calling from the
+      GUI main window will open the selection window.
+
+commit d39f7d565a0d30966059f1b55ffbc136302004bd
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Oct 2 22:14:41 2008 +0200
+
+    Changes in the select exceptions window.
+    
+    - changed radio buttons into check buttons.
+    - changed all name references to a more neutral
+      "selection button".
+
+commit 3a9399930d2e68f4d77115e13eb8acce0e64aae2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Sep 30 22:54:37 2008 +0200
+
+    Cleanup in select exceptions window.
+    
+    - changed "toggled" to "clicked.
+    - removed todo comment.
+
+commit 3ee52a163631167a52d97fc95c7df473ebe9b773
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Sep 30 22:21:11 2008 +0200
+
+    More WIP on the select exceptions window.
+    
+    - added code to select_exceptions_radio_button_toggled_cb().
+    - connected a "clicked" signal to every radio button.
+
+commit 63262ca0475b3865395fbc3df7c1ebfe583d6f1b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Sep 25 08:04:43 2008 +0200
+
+    More WIP on the select exceptions window.
+    
+    - keep the window title as short as possible as to avoid
+      disproportional wide windows due to a long footprint name.
+    - we only need one single "select exceptions" dialog window at
+      any given time to prevent confusion.
+    - added a todo reminder for updating the pin/pad exception string
+      in the main window GUI.
+
+commit fad448c439bae7dd9af244848850b3fd432426f1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Sep 24 23:52:09 2008 +0200
+
+    More WIP on the select exceptions window.
+    
+    - added code for select_exceptions_clear_cb().
+
+commit c85827891b9db1da1d170451edf1d37c6aa8bafe
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Sep 24 07:52:13 2008 +0200
+
+    WIP on select exceptions window.
+    
+    - made a struct containing radio button name and state.
+    - changed the stock "Apply" button into a stock "OK"
+      button.
+    - reading back the state of the radiobutton in the
+      OK callback now works.
+    - for now a limit of 100 colums and rows of radio buttons is set.
+
+commit 3b367379a1a1b8dc88b26ca5003cad698f9c46df
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Sep 20 12:15:38 2008 +0200
+
+    Changed status description of STABLE in the GUI.
+
+commit 67f1c7c455e47b419aa406d71a64377797f8aa39
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Sep 20 12:10:42 2008 +0200
+
+    Added testing for status_type in on_footprint_status_entry_changed().
+
+commit d836a9032636ad8e19d065eb1a0f30291ad972b4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Sep 20 11:30:46 2008 +0200
+
+    Corrections and additions to all_entries_need_updated().
+
+commit 880514e8028a0de79b9da72fed1fffeeb97408a8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Sep 20 11:28:07 2008 +0200
+
+    Added testing for null pointers and empty strings in get_package_type().
+
+commit 371ebea963bcf42d70bd209ffc1cab9ccd3d5f53
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Sep 20 11:20:49 2008 +0200
+
+    Added the get_status_type() function.
+    
+    This function is added to obtain an enumerated value of the footprint status.
+
+commit 7419eed81760b63febe2a84ada2b57e126f3e173
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Sep 20 11:18:44 2008 +0200
+
+    Added the status_t type and the status_type variable.
+
+commit 897607d5060079a32d1a5b86a2b94685ce02512a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Sep 20 11:17:12 2008 +0200
+
+    Deleted NUMBER_OF_* in typedefs since it has not the correct value.
+
+commit 5c1b8a4d95dfe982db02a37da97d3c19930dd34e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Sep 20 09:12:09 2008 +0200
+
+    Added the NO-PACKAGE package type.
+
+commit c019865b61ce5bb91c44230eac91206252ad51e5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Sep 14 22:09:12 2008 +0200
+
+    Added the pin/pad exceptions for the PGA package.
+
+commit 7006adc5c0647c4ef0a82563e698cd26c7e08e46
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Sep 14 19:04:43 2008 +0200
+
+    Bumped the version to 0.0.8
+
+commit 55fadf32dc58c7c3e41328157fa3d3b73bfe6349
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Sep 14 10:34:46 2008 +0200
+
+    Updated: git-log > Changelog
+
 commit 29d80e1d2ba0870ee5f463d9e637794fc5646439
 Author: Bert Timmerman <bert.timmerman@xs4all.nl>
 Date:   Sun Sep 14 10:14:37 2008 +0200
