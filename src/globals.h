@@ -475,7 +475,7 @@ typedef struct
   long int ID;
 } PointType, *PointTypePtr;
 
-/*
+/*!
  * Any object that uses the "object flags" defined in pcb/src/const.h,
  * or exists as an object on the pcb, MUST be defined using this as the first
  * fields, either directly or through ANYLINEFIELDS.
@@ -486,7 +486,7 @@ typedef struct
         FlagType Flags; \
         struct LibraryEntryType *net
 
-/*
+/*!
  * Lines, pads, and rats all use this so they can be cross-cast.
  */
 #define ANYLINEFIELDS \
