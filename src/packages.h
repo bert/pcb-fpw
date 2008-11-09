@@ -25,6 +25,7 @@
 #include "dip.c"
 #include "pga.c"
 #include "plcc.c"
+#include "smt.c"
 #include "sot.c"
 
 
