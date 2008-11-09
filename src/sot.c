@@ -29,6 +29,7 @@
  * If the footprint name is recognised known values will be loaded and the
  * entries involved in the GUI will be updated accordingly.\n
  * Currently the following footprints are supported:\n
+ * - SOT50P160X90-3N,
  * - SOT80P330X140-8N,
  * - SOT95P228X102-3N,
  * - SOT95P230X109-3N,
@@ -68,7 +69,37 @@ sot_get_default_footprint_values
 (
         gchar *footprint_name)
 {
-        if (!strcmp (footprint_name, "?SOT80P330X140-8N"))
+        if (!strcmp (footprint_name, "?SOT50P160X90-3N"))
+        {
+                pitch_y = 0.50;
+                number_of_pins = 3;
+                package_body_length = 0.85;
+                package_body_width = 1.70;
+                package_body_height = 0.90;
+                package_is_radial = FALSE;
+                number_of_columns = 2;
+                number_of_rows = 2;
+                pitch_x = 1.40;
+                pad_length = 1.10;
+                pad_width = 0.30;
+                pad_shape = g_strdup ("circular pad, elongated");
+                pad_shapes_type = ROUND_ELONGATED;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                silkscreen_package_outline = FALSE;
+                silkscreen_length = 0.00;
+                silkscreen_width = 0.00;
+                courtyard_length = 3.00;
+                courtyard_width = 2.20;
+                count_x = 0;
+                count_y = 0;
+                footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
+                footprint_name = g_strdup ("SOT50P160X90-3N");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?SOT80P330X140-8N"))
         {
                 /* SOT80P330X140-8N
                  * SOT, 0.80mm pitch;
