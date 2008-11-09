@@ -676,6 +676,16 @@ read_footprintwizard_file (gchar *fpw_filename)
                         g_log ("", G_LOG_LEVEL_INFO,
                                 _("pad shape variables updated successfull."));
         }
+        fscanf (fpw, "%s\n", pin_pad_exceptions_string);
+        /* Check for null pointers or meaningless values. */
+        if (!pin_pad_exceptions_string || (!strcmp (pin_pad_exceptions_string, "(null)")))
+        {
+                g_log ("", G_LOG_LEVEL_CRITICAL,
+                        _("pin/pad exceptions with a null pointer found in: %s.\n"),
+                        fpw_filename);
+                pin_pad_exceptions_string = g_strdup ("");
+                return (EXIT_FAILURE);
+        }
         fscanf (fpw, "%s\n", pin_1_position);
         /* Check for null pointers or meaningless values. */
         if (!pin_1_position || (!strcmp (pin_1_position, "(null)")))
@@ -1088,6 +1098,7 @@ write_attributes
         fprintf (fp, "\tAttribute(\"count_x\" \"%d\")\n", (int) count_x);
         fprintf (fp, "\tAttribute(\"count_x\" \"%d\")\n", (int) count_y);
         fprintf (fp, "\tAttribute(\"pad_shape\" \"%s\")\n", pad_shape);
+        fprintf (fp, "\tAttribute(\"pin_pad_exceptions\" \"%s\")\n", pin_pad_exceptions_string);
         fprintf (fp, "\tAttribute(\"pin_1_position\" \"%s\")\n", pin_1_position);
         fprintf (fp, "\tAttribute(\"pad_diameter\" \"%f\")\n", pad_diameter);
         fprintf (fp, "\tAttribute(\"pin_drill_diameter\" \"%f\")\n", pin_drill_diameter);
@@ -2634,6 +2645,14 @@ write_footprintwizard_file (gchar *fpw_filename)
         else
         {
                 fprintf (fpw, "%s\n", pad_shape);
+        }
+        if (!pin_pad_exceptions_string)
+        {
+                return (EXIT_FAILURE);
+        }
+        else
+        {
+                fprintf (fpw, "%s\n", pin_pad_exceptions_string);
         }
         (!pin_1_position) ? fprintf (fpw, "\n") :
                 fprintf (fpw, "%s\n", pin_1_position);
