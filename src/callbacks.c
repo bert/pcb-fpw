@@ -781,7 +781,7 @@ entry_has_changed (GtkWidget *widget)
                 {
                         /* fpw file has not been saved before */
                         change_main_window_title (GTK_WIDGET (main_window),
-                                g_strconcat ("pcb-gfpw : Unsaved fpw file",
+                                g_strconcat (_("pcb-gfpw : Unsaved fpw file"),
                                 NULL));
                 }
                 else
@@ -1945,20 +1945,23 @@ on_filechooser_dialog_current_folder_changed
 {
         GtkWidget *filechooser_dialog = lookup_widget (GTK_WIDGET (filechooser),
                 "filechooser_dialog");
-        gchar *current_folder = g_strdup (gtk_file_chooser_get_current_folder (GTK_FILE_CHOOSER (filechooser_dialog)));
+        gchar *current_folder = g_strdup (gtk_file_chooser_get_current_folder
+                (GTK_FILE_CHOOSER (filechooser_dialog)));
         /* Test if current folder is a null pointer.
          * If so, please log a message. */
         if (!current_folder)
         {
                 if (verbose)
-                        g_log ("", G_LOG_LEVEL_WARNING, _("current folder is not initialised  (null pointer)."));
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("current folder is not initialised  (null pointer)."));
         }
         /* Test if current folder is an empty string pointer.
          * If so, please log a message. */
         else if (!strcmp (current_folder, ""))
         {
                 if (verbose)
-                        g_log ("", G_LOG_LEVEL_WARNING, _("current folder contains an empty string."));
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("current folder contains an empty string."));
         }
         /* Test if current folder is a directory.
          * If so, store in temp_dir. */
@@ -1966,7 +1969,8 @@ on_filechooser_dialog_current_folder_changed
         {
                 temp_dir = g_strdup (current_folder);
                 if (verbose)
-                        g_log ("", G_LOG_LEVEL_INFO, "Changed cwd to: %s", current_folder);
+                        g_log ("", G_LOG_LEVEL_INFO, _("Changed cwd to: %s"),
+                                current_folder);
         }
         /* Clean up used variable(s). */
         g_free (current_folder);
@@ -2004,14 +2008,16 @@ on_filechooser_dialog_open_button_clicked
         if (!selected_filename)
         {
                 if (verbose)
-                        g_log ("", G_LOG_LEVEL_WARNING, _("selected filename is not initialised (NULL pointer)."));
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("selected filename is not initialised (NULL pointer)."));
         }
         /* Test if selected filename is an empty string.
          * If so, please log a message and return. */
         else if (!strcmp (selected_filename, ""))
         {
                 if (verbose)
-                        g_log ("", G_LOG_LEVEL_WARNING, _("selected filename contains an empty string."));
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("selected filename contains an empty string."));
         }
         /* Test if selected filename is a directory.
          * If so, please notify the user (in the statusbar), to select a file
