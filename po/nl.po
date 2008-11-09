@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcb-fpw\n"
 "Report-Msgid-Bugs-To: bert.timmerman@xs4all.nl\n"
 "POT-Creation-Date: 2008-01-15 21:19+0100\n"
-"PO-Revision-Date: 2008-11-08 10:07+0100\n"
+"PO-Revision-Date: 2008-11-09 08:46+0100\n"
 "Last-Translator: Bert Timmerman <bert.timmerman@xs4all.nl>\n"
 "Language-Team: DUTCH LANGUAGE TEAM <bert.timmerman@xs4all.nl>\n"
 "MIME-Version: 1.0\n"
@@ -788,6 +788,10 @@ msgstr "Klik op de Opslaan knop om het element-definitie op te slaan"
 msgid "pcb-gfpw: choose a .fpw file"
 msgstr "pcb-gfpw: kies een .fpw bestand"
 
+#: src/callbacks.c:784
+msgid "pcb-gfpw : Unsaved fpw file"
+msgstr "pcb-gfpw : fpw bestand niet opgeslagen"
+
 #: src/callbacks.c:1808
 #, c-format
 msgid "loading image file: %s"
@@ -798,153 +802,158 @@ msgstr "Inlezen afbeelding bestand: %s"
 msgid "image file: %s does not exist."
 msgstr "afbeelding bestand: %s bestaat niet."
 
-#: src/callbacks.c:1954
+#: src/callbacks.c:1956
 #, c-format
 msgid "current folder is not initialised  (null pointer)."
 msgstr "huidige foldernaam is niet ge-initialiseerd (null pointer)."
 
-#: src/callbacks.c:1961
+#: src/callbacks.c:1964
 #, c-format
 msgid "current folder contains an empty string."
 msgstr "huidige foldernaam bevat een lege text."
 
-#: src/callbacks.c:2007
+#: src/callbacks.c:1972
+#, c-format
+msgid "Changed cwd to: %s"
+msgstr "cwd gewijzigd naar: %s"
+
+#: src/callbacks.c:2012
 #, c-format
 msgid "selected filename is not initialised (NULL pointer)."
 msgstr "geselecteerde bestandnaamis  niet ge-initialiseerd (null pointer)."
 
-#: src/callbacks.c:2014
+#: src/callbacks.c:2020
 #, c-format
 msgid "selected filename contains an empty string."
 msgstr "geselecteerde bestandnaam bevat een lege text."
 
-#: src/callbacks.c:2022
+#: src/callbacks.c:2028
 #, c-format
 msgid "selected filename is a directory."
 msgstr "geselecteerde bestandnaam is een folder."
 
-#: src/callbacks.c:2034
+#: src/callbacks.c:2040
 #, c-format
 msgid "Read footprintwizard file %s."
 msgstr "Footprintwizard bestand %s gelezen."
 
-#: src/callbacks.c:2055
+#: src/callbacks.c:2061
 #, c-format
 msgid "ERROR: Unable to read footprint wizard file %s."
 msgstr "FOUT: kan Footprintwizard bestand %s niet lezen."
 
-#: src/callbacks.c:2140
-#: src/callbacks.c:2221
-#: src/callbacks.c:3166
+#: src/callbacks.c:2146
+#: src/callbacks.c:2227
+#: src/callbacks.c:3172
 #, c-format
 msgid "ERROR: footprint name not initialised (null pointer)."
 msgstr "FOUT: elementnaam niet ge-initialiseerd (null pointer)."
 
-#: src/callbacks.c:2149
-#: src/callbacks.c:2230
-#: src/callbacks.c:3175
+#: src/callbacks.c:2155
+#: src/callbacks.c:2236
+#: src/callbacks.c:3181
 #, c-format
 msgid "ERROR: footprint name contains an empty string."
 msgstr "FOUT: elementnaam bevat een lege text,"
 
-#: src/callbacks.c:2175
+#: src/callbacks.c:2181
 #, c-format
 msgid "Wrote footprint %s to file."
 msgstr "Element %s naar bestand geschreven."
 
-#: src/callbacks.c:2180
+#: src/callbacks.c:2186
 #, c-format
 msgid "ERROR: Unable to write footprint %s to file."
 msgstr "FOUT: kan element bestand %s niet schrijven."
 
-#: src/callbacks.c:2276
-#: src/callbacks.c:2548
+#: src/callbacks.c:2282
+#: src/callbacks.c:2554
 #, c-format
 msgid "ERROR: unknown or not yet implemented footprint type entered."
 msgstr "FOUT: onbekend of nog niet ge-implementeerd element type ingevoerd."
 
-#: src/callbacks.c:2321
+#: src/callbacks.c:2327
 #, c-format
 msgid "footprint status contains an unknown status type."
 msgstr "element status bevat een onbekend statustype."
 
-#: src/callbacks.c:2329
+#: src/callbacks.c:2335
 #, c-format
 msgid "determined the status type successfull."
 msgstr "het status type is succesvol vastgesteld."
 
-#: src/callbacks.c:2372
+#: src/callbacks.c:2378
 #: src/libfpw.c:498
 #, c-format
 msgid "footprint type contains an unknown package type."
 msgstr "element type bevat een onbekend behuizing type."
 
-#: src/callbacks.c:2380
+#: src/callbacks.c:2386
 #, c-format
 msgid "determined the package type (%d) for footprint type %s successfull."
 msgstr "het behuizing type (%d) voor element type %s is succesvol vastgesteld."
 
-#: src/callbacks.c:2484
+#: src/callbacks.c:2490
 #, c-format
 msgid "ERROR: footprint type QFN is not yet implemented."
 msgstr "FOUT: elementtype QFN is nog niet ge-implementeerd."
 
-#: src/callbacks.c:2491
+#: src/callbacks.c:2497
 #, c-format
 msgid "ERROR: footprint type QFP is not yet implemented."
 msgstr "FOUT: elementtype QFP is nog niet ge-implementeerd."
 
-#: src/callbacks.c:2516
+#: src/callbacks.c:2522
 #, c-format
 msgid "ERROR: footprint type SIL is not yet implemented."
 msgstr "FOUT: elementtype SIL is nog niet ge-implementeerd."
 
-#: src/callbacks.c:2523
+#: src/callbacks.c:2529
 #, c-format
 msgid "ERROR: footprint type SIP is not yet implemented."
 msgstr "FOUT: elementtype SIP is nog niet ge-implementeerd."
 
-#: src/callbacks.c:2530
+#: src/callbacks.c:2536
 #, c-format
 msgid "ERROR: footprint type SO is not yet implemented."
 msgstr "FOUT: elementtype SO is nog niet ge-implementeerd."
 
-#: src/callbacks.c:2573
+#: src/callbacks.c:2579
 #, c-format
 msgid "ERROR: footprint units not initialised (null pointer)."
 msgstr "FOUT: elementeenheden is niet ge-initialiseerd (null pointer)."
 
-#: src/callbacks.c:2582
+#: src/callbacks.c:2588
 #, c-format
 msgid "ERROR: footprint units contains an empty string."
 msgstr "FOUT: elementeenheden bevat een lege text,"
 
-#: src/callbacks.c:2589
+#: src/callbacks.c:2595
 #, c-format
 msgid "ERROR: footprint units contains an unknown units type."
 msgstr "FOUT: elementeenheden bevat een onbekende eenheidtype."
 
-#: src/callbacks.c:2888
+#: src/callbacks.c:2894
 #, c-format
 msgid "ERROR: pad shape not initialised (null pointer)."
 msgstr "FOUT: padvorm is niet ge-initialiseerd (null pointer)."
 
-#: src/callbacks.c:2897
+#: src/callbacks.c:2903
 #, c-format
 msgid "ERROR: pad shape contains an empty string."
 msgstr "FOUT: padvorm bevat een lege text,"
 
-#: src/callbacks.c:2904
+#: src/callbacks.c:2910
 #, c-format
 msgid "ERROR: pad shape contains an unknown pad shape type."
 msgstr "FOUT: pad vorm bevat een onbekend padvorm type."
 
-#: src/callbacks.c:3006
+#: src/callbacks.c:3012
 #, c-format
 msgid "Number of rows or columns is 0."
 msgstr "Aantal rijen of kolommen is 0."
 
-#: src/callbacks.c:3233
+#: src/callbacks.c:3239
 #, c-format
 msgid "ERROR: Unable to write footprintwizard file %s."
 msgstr "FOUT: kan Footprintwizard bestand %s niet schrijven."
@@ -1076,18 +1085,18 @@ msgstr "Element %s is succesvol opgeslagen."
 
 #: src/libfpw.c:72
 #, c-format
-msgid "out of memory during realloc() in create_new_arc().\n"
-msgstr "geen geheugen tijdens realloc() in create_new_arc().\n"
+msgid "out of memory during realloc() in create_new_arc()."
+msgstr "geen geheugen tijdens realloc() in create_new_arc()."
 
 #: src/libfpw.c:124
 #, c-format
-msgid "out of memory during realloc() in create_new_attribute().\n"
-msgstr "geen geheugen tijdens realloc() in create_new_attribute().\n"
+msgid "out of memory during realloc() in create_new_attribute()."
+msgstr "geen geheugen tijdens realloc() in create_new_attribute()."
 
 #: src/libfpw.c:162
 #, c-format
-msgid "out of memory during realloc() in create_new_line().\n"
-msgstr "geen geheugen tijdens realloc() in create_new_line().\n"
+msgid "out of memory during realloc() in create_new_line()."
+msgstr "geen geheugen tijdens realloc() in create_new_line()."
 
 #: src/libfpw.c:271
 #, c-format
