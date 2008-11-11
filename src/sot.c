@@ -33,6 +33,7 @@
  * - SOT50P210X110-8N,
  * - SOT65P210X100-6N,
  * - SOT65P210X110-3N,
+ * - SOT65P210X110-5N,
  * - SOT80P330X140-8N,
  * - SOT95P228X102-3N,
  * - SOT95P230X109-3N,
@@ -187,6 +188,35 @@ sot_get_default_footprint_values
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT65P210X110-3N");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?SOT65P210X110-5N"))
+        {
+                pitch_y = 0.65;
+                number_of_pins = 5;
+                package_body_length = 1.40;
+                package_body_width = 2.15;
+                package_body_height = 1.10;
+                package_is_radial = FALSE;
+                number_of_columns = 2;
+                number_of_rows = 3;
+                pitch_x = 1.90;
+                pad_length = 1.20;
+                pad_width = 0.40;
+                pad_shape = g_strdup ("circular pad, elongated");
+                pad_shapes_type = ROUND_ELONGATED;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                silkscreen_length = 0.20;
+                silkscreen_width = 2.20;
+                courtyard_length = 3.60;
+                courtyard_width = 2.70;
+                count_x = 0;
+                count_y = 0;
+                footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
+                footprint_name = g_strdup ("SOT65P210X110-5N");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?SOT80P330X140-8N"))
