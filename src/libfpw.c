@@ -35,7 +35,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define FPW_VERSION "0.0.8"
+#define FPW_VERSION "0.0.9"
 
 #include "globals.h"
 
