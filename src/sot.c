@@ -102,6 +102,8 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("SOT50P160X90-3N: footprint is too small for package outline on silkscreen."));
                 footprint_name = g_strdup ("SOT50P160X90-3N");
                 return (EXIT_SUCCESS);
         }
@@ -277,7 +279,7 @@ sot_get_default_footprint_values
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_WARNING,
-                        _("side of pads is being trimmed to maintain pad to pad clearance."));
+                        _("SOT65P275X110-8N: side of pads is being trimmed to maintain pad to pad clearance."));
                 footprint_name = g_strdup ("SOT65P275X110-8N");
                 return (EXIT_SUCCESS);
         }
