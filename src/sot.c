@@ -42,6 +42,7 @@ sot_create_packages_list ()
         sot_packages_list = g_list_append (sot_packages_list, "SOT65P280X130-8N");
         sot_packages_list = g_list_append (sot_packages_list, "SOT65P280X145-8AN");
         sot_packages_list = g_list_append (sot_packages_list, "SOT65P280X145-8BN");
+        sot_packages_list = g_list_append (sot_packages_list, "SOT65P280X145-8N");
         sot_packages_list = g_list_append (sot_packages_list, "SOT80P330X140-8N");
         sot_packages_list = g_list_append (sot_packages_list, "SOT95P228X102-3N");
         sot_packages_list = g_list_append (sot_packages_list, "SOT95P230X109-3N");
@@ -98,6 +99,7 @@ sot_create_packages_list ()
  * - SOT65P280X130-8N,
  * - SOT65P280X145-8AN,
  * - SOT65P280X145-8BN,
+ * - SOT65P280X145-8N,
  * - SOT80P330X140-8N,
  * - SOT95P228X102-3N,
  * - SOT95P230X109-3N,
@@ -467,6 +469,37 @@ sot_get_default_footprint_values
                 g_log ("", G_LOG_LEVEL_WARNING,
                         _("SOT65P280X145-8BN: side of pads is being trimmed to maintain pad to pad clearance."));
                 footprint_name = g_strdup ("SOT65P280X145-8BN");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?SOT65P280X145-8N"))
+        {
+                pitch_y = 0.65;
+                number_of_pins = 8;
+                package_body_length = 1.75;
+                package_body_width = 3.05;
+                package_body_height = 1.45;
+                package_is_radial = FALSE;
+                number_of_columns = 2;
+                number_of_rows = 4;
+                pitch_x = 2.50;
+                pad_length = 1.25;
+                pad_width = 0.45;
+                pad_shape = g_strdup ("circular pad, elongated");
+                pad_shapes_type = ROUND_ELONGATED;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                silkscreen_length = 0.40;
+                silkscreen_width = 3.00;
+                courtyard_length = 4.30;
+                courtyard_width = 3.60;
+                count_x = 0;
+                count_y = 0;
+                footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("SOT65P280X145-8N: side of pads is being trimmed to maintain pad to pad clearance."));
+                footprint_name = g_strdup ("SOT65P280X145-8N");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?SOT80P330X140-8N"))
