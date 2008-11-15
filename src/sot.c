@@ -587,15 +587,15 @@ sot_get_default_footprint_values
                 pad_length = ;
                 pad_width = ;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
-                thermal = FALSE;
-                thermal_length = 0.0;
-                thermal_width = 0.0;
                 silkscreen_length = ;
                 silkscreen_width = ;
                 courtyard_length = ;
                 courtyard_width = ;
 */
+                pad_shapes_type = SQUARE;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
@@ -759,16 +759,16 @@ sot_get_default_footprint_values
                 pitch_x = ;
                 pad_length = ;
                 pad_width = ;
-                pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
-                thermal = FALSE;
-                thermal_length = 0.0;
-                thermal_width = 0.0;
                 silkscreen_length = ;
                 silkscreen_width = ;
                 courtyard_length = ;
                 courtyard_width = ;
 */
+                pad_shape = g_strdup ("rectangular pad");
+                pad_shapes_type = SQUARE;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
@@ -794,16 +794,16 @@ sot_get_default_footprint_values
                 pitch_x = ;
                 pad_length = ;
                 pad_width = ;
-                pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
-                thermal = FALSE;
-                thermal_length = 0.0;
-                thermal_width = 0.0;
                 silkscreen_length = ;
                 silkscreen_width = ;
                 courtyard_length = ;
                 courtyard_width = ;
 */
+                pad_shape = g_strdup ("rectangular pad");
+                pad_shapes_type = SQUARE;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
@@ -830,16 +830,16 @@ sot_get_default_footprint_values
                 pitch_x = ;
                 pad_length = ;
                 pad_width = ;
-                pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
-                thermal = FALSE;
-                thermal_length = 0.0;
-                thermal_width = 0.0;
                 silkscreen_length = ;
                 silkscreen_width = ;
                 courtyard_length = ;
                 courtyard_width = ;
 */
+                pad_shape = g_strdup ("rectangular pad");
+                pad_shapes_type = SQUARE;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
@@ -1102,16 +1102,16 @@ sot_get_default_footprint_values
                 pitch_x = ;
                 pad_length = ;
                 pad_width = ;
-                pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
-                thermal = FALSE;
-                thermal_length = 0.0;
-                thermal_width = 0.0;
                 silkscreen_length = ;
                 silkscreen_width = ;
                 courtyard_length = ;
                 courtyard_width = ;
 */
+                pad_shape = g_strdup ("rectangular pad");
+                pad_shapes_type = SQUARE;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
@@ -1137,16 +1137,16 @@ sot_get_default_footprint_values
                 pitch_x = ;
                 pad_length = ;
                 pad_width = ;
-                pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
-                thermal = FALSE;
-                thermal_length = 0.0;
-                thermal_width = 0.0;
                 silkscreen_length = ;
                 silkscreen_width = ;
                 courtyard_length = ;
                 courtyard_width = ;
 */
+                pad_shape = g_strdup ("rectangular pad");
+                pad_shapes_type = SQUARE;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
@@ -1205,16 +1205,16 @@ sot_get_default_footprint_values
                 pitch_x = ;
                 pad_length = ;
                 pad_width = ;
-                pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
-                thermal = FALSE;
-                thermal_length = 0.0;
-                thermal_width = 0.0;
                 silkscreen_length = ;
                 silkscreen_width = ;
                 courtyard_length = ;
                 courtyard_width = ;
 */
+                pad_shape = g_strdup ("rectangular pad");
+                pad_shapes_type = SQUARE;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
@@ -1767,10 +1767,12 @@ sot_write_footprint ()
         x_text = 0.0 ; /* already in mil/100 */
         y_text = (ymin - 10000.0); /* already in mil/100 */
         write_element_header (x_text, y_text);
+        if (!strcmp (pad_shape, "rectangular pad"))
+                pin_pad_flags = g_strdup ("square");
         /* Write pin and/or pad entities */
-        switch (number_of_pins)
+        if (number_of_pins == 3)
         {
-                case 3:
+                if (!thermal)
                 {
                         /* Pad #1 */
                         write_pad
@@ -1806,24 +1808,22 @@ sot_write_footprint ()
                         (
                                 3, /* pin number */
                                 "", /* pin name */
-                                multiplier * ((-pitch_x - pad_length + pad_width) / 2.0), /* x0 coordinate */
+                                multiplier * ((pitch_x + pad_length - pad_width) / 2.0), /* x0 coordinate */
                                 0, /* y0-coordinate */
-                                multiplier * ((-pitch_x + pad_length - pad_width) / 2.0), /* x1 coordinate */
+                                multiplier * ((pitch_x - pad_length + pad_width) / 2.0), /* x1 coordinate */
                                 0, /* y1-coordinate */
                                 multiplier * pad_width, /* pad width */
                                 multiplier * pad_clearance, /* clearance */
                                 multiplier * (pad_diameter + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
                                 pin_pad_flags /* flags */
                         );
-                        break;
                 }
-                default:
-                {
-                        g_log ("", G_LOG_LEVEL_WARNING,
-                                _("number of pins of %d is not defined in sot_write_footprint()."),
-                                number_of_pins);
-                        break;
-                }
+        }
+        else
+        {
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("number of pins of %d is not defined in sot_write_footprint()."),
+                        number_of_pins);
         }
         /* Write a package body on the silkscreen */
         if (silkscreen_package_outline)
@@ -1859,10 +1859,18 @@ sot_write_footprint ()
                 fprintf (fp, "# Write a courtyard on the silkscreen\n");
                 write_rectangle
                 (
-                        xmin, /* already in mil/100 */
-                        ymin, /* already in mil/100 */
-                        xmax, /* already in mil/100 */
-                        ymax, /* already in mil/100 */
+                        courtyard_length > (package_body_length + courtyard_clearance_with_package)
+                        ? (multiplier * (-courtyard_length / 2.0))
+                        : (multiplier * ((-package_body_length - courtyard_clearance_with_package) / 2.0)),
+                        courtyard_width > (package_body_width + courtyard_clearance_with_package)
+                        ? (multiplier * (-courtyard_width / 2.0))
+                        : (multiplier * ((-package_body_width - courtyard_clearance_with_package) / 2.0)),
+                        courtyard_length > (package_body_length + courtyard_clearance_with_package)
+                        ? (multiplier * (courtyard_length / 2.0))
+                        : (multiplier * ((package_body_length + courtyard_clearance_with_package) / 2.0)),
+                        courtyard_width > (package_body_width + courtyard_clearance_with_package)
+                        ? (multiplier * (courtyard_width / 2.0))
+                        : (multiplier * ((package_body_width + courtyard_clearance_with_package) / 2.0)),
                         multiplier * courtyard_line_width
                 );
         }
