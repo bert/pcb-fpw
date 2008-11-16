@@ -1116,6 +1116,8 @@ number_of_pins_has_changed (GtkWidget *widget)
                         break;
                 case SO :
                         break;
+                case SOT :
+                        break;
                 case TO92 :
                         number_of_pins = 3;
                         break;

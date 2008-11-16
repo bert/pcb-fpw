@@ -1780,12 +1780,12 @@ sot_write_footprint ()
                                 1, /* pin number */
                                 "", /* pin name */
                                 multiplier * ((-pitch_x - pad_length + pad_width) / 2.0), /* x0 coordinate */
-                                multiplier * (pitch_y), /* y0-coordinate */
+                                multiplier * (-pitch_y), /* y0-coordinate */
                                 multiplier * ((-pitch_x + pad_length - pad_width) / 2.0), /* x1 coordinate */
-                                multiplier * (pitch_y), /* y1-coordinate */
+                                multiplier * (-pitch_y), /* y1-coordinate */
                                 multiplier * pad_width, /* pad width */
                                 multiplier * pad_clearance, /* clearance */
-                                multiplier * (pad_diameter + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                                multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
                                 /* Write pin #1 with a square pad if checked */
                                 (pin1_square) ? "square" : pin_pad_flags /* flags */
                         );
@@ -1795,12 +1795,12 @@ sot_write_footprint ()
                                 2, /* pin number */
                                 "", /* pin name */
                                 multiplier * ((-pitch_x - pad_length + pad_width) / 2.0), /* x0 coordinate */
-                                multiplier * (-pitch_y), /* y0-coordinate */
+                                multiplier * (pitch_y), /* y0-coordinate */
                                 multiplier * ((-pitch_x + pad_length - pad_width) / 2.0), /* x1 coordinate */
-                                multiplier * (-pitch_y), /* y1-coordinate */
+                                multiplier * (pitch_y), /* y1-coordinate */
                                 multiplier * pad_width, /* pad width */
                                 multiplier * pad_clearance, /* clearance */
-                                multiplier * (pad_diameter + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                                multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
                                 pin_pad_flags /* flags */
                         );
                         /* Pad #3 */
@@ -1814,7 +1814,80 @@ sot_write_footprint ()
                                 0, /* y1-coordinate */
                                 multiplier * pad_width, /* pad width */
                                 multiplier * pad_clearance, /* clearance */
-                                multiplier * (pad_diameter + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                                multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                                pin_pad_flags /* flags */
+                        );
+                }
+        }
+        else if (number_of_pins == 4)
+        {
+                if (thermal)
+                {
+                        /* Pad #1 */
+                        write_pad
+                        (
+                                1, /* pin number */
+                                "", /* pin name */
+                                multiplier * ((-pitch_x - pad_length + pad_width) / 2.0), /* x0 coordinate */
+                                multiplier * (-pitch_y), /* y0-coordinate */
+                                multiplier * ((-pitch_x + pad_length - pad_width) / 2.0), /* x1 coordinate */
+                                multiplier * (-pitch_y), /* y1-coordinate */
+                                multiplier * pad_width, /* pad width */
+                                multiplier * pad_clearance, /* clearance */
+                                multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                                /* Write pin #1 with a square pad if checked */
+                                (pin1_square) ? "square" : pin_pad_flags /* flags */
+                        );
+                        /* Pad #2 */
+                        write_pad
+                        (
+                                2, /* pin number */
+                                "", /* pin name */
+                                multiplier * ((-pitch_x - pad_length + pad_width) / 2.0), /* x0 coordinate */
+                                0, /* y0-coordinate */
+                                multiplier * ((-pitch_x + pad_length - pad_width) / 2.0), /* x1 coordinate */
+                                0, /* y1-coordinate */
+                                multiplier * pad_width, /* pad width */
+                                multiplier * pad_clearance, /* clearance */
+                                multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                                pin_pad_flags /* flags */
+                        );
+                        /* Pad #3 */
+                        write_pad
+                        (
+                                3, /* pin number */
+                                "", /* pin name */
+                                multiplier * ((-pitch_x - pad_length + pad_width) / 2.0), /* x0 coordinate */
+                                multiplier * (pitch_y), /* y0-coordinate */
+                                multiplier * ((-pitch_x + pad_length - pad_width) / 2.0), /* x1 coordinate */
+                                multiplier * (pitch_y), /* y1-coordinate */
+                                multiplier * pad_width, /* pad width */
+                                multiplier * pad_clearance, /* clearance */
+                                multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                                pin_pad_flags /* flags */
+                        );
+                        /* Thermal pad #4 */
+                        write_pad
+                        (
+                                4, /* pin number */
+                                "", /* pin name */
+                                thermal_length > thermal_width
+                                ? multiplier * ((pitch_x - pad_length + pad_width) / 2.0)
+                                : multiplier * (pitch_x / 2.0), /* x0 coordinate */
+                                thermal_length > thermal_width
+                                ? 0
+                                : multiplier * ((- thermal_width + thermal_length) / 2.0), /* y0-coordinate */
+                                thermal_length > thermal_width
+                                ? multiplier * ((pitch_x + pad_length - pad_width) / 2.0)
+                                : multiplier * (pitch_x / 2.0), /* x1 coordinate */
+                                thermal_length > thermal_width
+                                ? 0
+                                : multiplier * ((+ thermal_width - thermal_length) / 2.0), /* y1-coordinate */
+                                thermal_length > thermal_width
+                                ? multiplier * thermal_width
+                                : multiplier * thermal_length, /* pad width */
+                                multiplier * pad_clearance, /* clearance */
+                                multiplier * ((thermal_length > thermal_width ? thermal_width : thermal_length) + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
                                 pin_pad_flags /* flags */
                         );
                 }
@@ -1844,13 +1917,13 @@ sot_write_footprint ()
                 fprintf (fp, "# Write a pin 1 marker on the silkscreen\n");
                 write_element_arc
                 (
-                        multiplier * (-pitch_x),
-                        multiplier * (-package_body_width / 2.0 - (2 * silkscreen_line_width)),
-                        multiplier * 0.5 * silkscreen_line_width,
-                        multiplier * 0.5 * silkscreen_line_width,
-                        0,
-                        360,
-                        multiplier * silkscreen_line_width
+                        multiplier * (-pitch_x / 2.0), /* x-coordinate */
+                        multiplier * (-pitch_y * (number_of_rows) / 2.0), /* y-coordinate */
+                        multiplier * 0.5 * silkscreen_line_width, /* width */
+                        multiplier * 0.5 * silkscreen_line_width, /*height */
+                        0, /* start angke */
+                        360, /* delta angle */
+                        multiplier * silkscreen_line_width /* line width */
                 );
         }
         /* Write a courtyard on the silkscreen */
