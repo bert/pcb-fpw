@@ -1892,6 +1892,56 @@ sot_write_footprint ()
                         );
                 }
         }
+        else if (number_of_pins == 5)
+        {
+                if (thermal)
+                {
+                        int i;
+                        for (i = 0; (i < (number_of_rows)); i++)
+                        {
+                                pin_number = 1 + i;
+                        /* Pad #1 */
+                        write_pad
+                        (
+                                i, /* pin number */
+                                "", /* pin name */
+                                multiplier * ((-pitch_x - pad_length + pad_width) / 2.0), /* x0 coordinate */
+                                multiplier * ((((-number_of_rows - 1) / 2.0) +1 + i) * pitch_y), /* y0-coordinate */
+                                multiplier * ((-pitch_x + pad_length - pad_width) / 2.0), /* x1 coordinate */
+                                multiplier * ((((-number_of_rows - 1) / 2.0) +1 + i) * pitch_y), /* y1-coordinate */
+                                multiplier * pad_width, /* pad width */
+                                multiplier * pad_clearance, /* clearance */
+                                multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                                /* Write pin #1 with a square pad if checked */
+                                (pin1_square) ? "square" : pin_pad_flags /* flags */
+                        );
+                        }
+                        /* Thermal pad #5 */
+                        write_pad
+                        (
+                                5, /* pin number */
+                                "", /* pin name */
+                                thermal_length > thermal_width
+                                ? multiplier * ((pitch_x - pad_length + pad_width) / 2.0)
+                                : multiplier * (pitch_x / 2.0), /* x0 coordinate */
+                                thermal_length > thermal_width
+                                ? 0
+                                : multiplier * ((- thermal_width + thermal_length) / 2.0), /* y0-coordinate */
+                                thermal_length > thermal_width
+                                ? multiplier * ((pitch_x + pad_length - pad_width) / 2.0)
+                                : multiplier * (pitch_x / 2.0), /* x1 coordinate */
+                                thermal_length > thermal_width
+                                ? 0
+                                : multiplier * ((+ thermal_width - thermal_length) / 2.0), /* y1-coordinate */
+                                thermal_length > thermal_width
+                                ? multiplier * thermal_width
+                                : multiplier * thermal_length, /* pad width */
+                                multiplier * pad_clearance, /* clearance */
+                                multiplier * ((thermal_length > thermal_width ? thermal_width : thermal_length) + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                                pin_pad_flags /* flags */
+                        );
+                }
+        }
         else
         {
                 g_log ("", G_LOG_LEVEL_WARNING,
