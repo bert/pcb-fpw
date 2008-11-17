@@ -1,0 +1,139 @@
+Todo List
+
+Global bga_drc
+    - check for minimum clearance between pad copper and fiducial pad copper (including solder mask clearances). 
+
+Global bga_drc
+    Check for any silk lines or texts touching bare copper. 
+
+Global bga_drc
+    Check for soldermask clearance (solder mask overlapping copper at the solder fillet area or worse). 
+
+Global on_clear_button_clicked
+    Combobox entries to be stripped of characters with something like gtk_combo_box_remove_text ().
+
+Global on_filechooser_dialog_cancel_button_clicked
+    - maybe restore the preview widget ? 
+
+Global on_filechooser_dialog_selection_changed
+    - store the selected filename in temp_fpw_filename.
+
+    - read the values from the selected footprintwizard file in a temporary set of variables temp_*.
+
+    - generate a new preview image.
+
+    - update the preview widget. 
+
+Global on_filechooser_dialog_update_preview
+    - generate a new preview image.
+
+    - update the preview widget. 
+
+Global on_refresh_button_clicked
+    - create and (re)load the preview image.
+
+File globals.h
+    Collect all global variables for the footprint into a single struct.
+    Switching to another preview will be easier by just switching pointers.
+
+Global read_footprintwizard_file
+    Check contents here ! 
+
+Global read_footprintwizard_file
+    Check contents here ! 
+
+Global read_footprintwizard_file
+    Check contents here ! 
+
+Global read_footprintwizard_file
+    Check contents here ! 
+
+Global read_footprintwizard_file
+    Check contents here ! 
+
+Global read_footprintwizard_file
+    Check contents here ! 
+
+Global read_footprintwizard_file
+    Check contents here ! 
+
+Global read_footprintwizard_file
+    Check contents here ! 
+
+Global read_footprintwizard_file
+    Check contents here ! 
+
+Global read_footprintwizard_file
+    Check contents here ! 
+
+Global read_footprintwizard_file
+    Check contents here ! 
+
+Global read_footprintwizard_file
+    Check contents here ! 
+
+Global read_footprintwizard_file
+    Check contents here ! 
+
+Global read_footprintwizard_file
+    Check contents here ! 
+
+Global write_footprint_template
+    Write a pin/pad entities ! 
+
+Global write_footprint_template
+    Write a package body on the silkscreen ! 
+
+Global write_footprint_template
+    Write a pin #1 marker ! on the silkscreen 
+
+Global write_footprint_template
+    Write a courtyard on the silkscreen ! 
+
+Global write_footprint_to92
+    Write a pin #1 marker on the silkscreen ! 
+
+File main.c
+    When this wizard becomes really quit popular, we can write a function to read from the footprintwizard files as to allow for editing or any other (futuristic) purpose you can think of.
+    This needs debugging.
+
+File main.c
+    Add the preview widget as a popup dialog.
+
+File main.c
+    Change the current preview into a dimensions view.
+    Perhaps load a pre-cooked picture on a per footprint type basis ?.
+
+File main.c
+    Add a menubar (in the future ?).
+
+File main.c
+    GUI is now "static" and based on code generated with Glade.
+    In the distant future it can become neccessary to have a "dynamic" GUI to be generated with libglade code.
+
+File main.c
+    Inserting of generated footprint into pcb by means of an Inter Process Communication protocol such as DBUS for instance.
+
+Global select_exceptions_ok_cb
+    How to update the pin_pad_exceptions_entry in the main window ? 
+
+Global sot_get_default_footprint_values
+    Look up datasheet and check values. pitch_x = ; pad_length = ; pad_width = ; pad_shape = g_strdup ("square"); silkscreen_length = ; silkscreen_width = ; courtyard_length = ; courtyard_width = ; 
+
+Global sot_get_default_footprint_values
+    Look up datasheet and check values. pitch_x = ; pad_length = ; pad_width = ; pad_shape = g_strdup ("square"); silkscreen_length = ; silkscreen_width = ; courtyard_length = ; courtyard_width = ; 
+
+Global sot_get_default_footprint_values
+    Look up datasheet and check values. pitch_x = ; pad_length = ; pad_width = ; pad_shape = g_strdup ("square"); silkscreen_length = ; silkscreen_width = ; courtyard_length = ; courtyard_width = ; 
+
+Global sot_get_default_footprint_values
+    Look up datasheet and check values. pitch_x = ; pad_length = ; pad_width = ; pad_shape = g_strdup ("square"); silkscreen_length = ; silkscreen_width = ; courtyard_length = ; courtyard_width = ; 
+
+Global sot_get_default_footprint_values
+    Look up datasheet and check values. pitch_x = ; pad_length = ; pad_width = ; pad_shape = g_strdup ("square"); silkscreen_length = ; silkscreen_width = ; courtyard_length = ; courtyard_width = ; 
+
+Global sot_get_default_footprint_values
+    Look up datasheet and check values. pitch_x = ; pad_length = ; pad_width = ; pad_shape = g_strdup ("square"); silkscreen_length = ; silkscreen_width = ; courtyard_length = ; courtyard_width = ; 
+
+Global sot_get_default_footprint_values
+    Look up datasheet and check values. pitch_x = ; pad_length = ; pad_width = ; pad_shape = g_strdup ("square"); silkscreen_length = ; silkscreen_width = ; courtyard_length = ; courtyard_width = ; 
