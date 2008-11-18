@@ -1783,6 +1783,7 @@ write_footprint()
         switch (package_type)
         {
                 case BGA:
+                        bga_drc();
                         bga_write_footprint ();
                         break;
                 case CAPC:
