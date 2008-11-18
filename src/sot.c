@@ -1770,9 +1770,56 @@ sot_write_footprint ()
         if (!strcmp (pad_shape, "rectangular pad"))
                 pin_pad_flags = g_strdup ("square");
         /* Write pin and/or pad entities */
-        if (number_of_pins == 3)
+        if (thermal)
         {
-                if (!thermal)
+                /* Left side pads */
+                int i;
+                for (i = 0; (i < (number_of_rows)); i++)
+                {
+                        pin_number = 1 + i;
+                        write_pad
+                        (
+                                pin_number, /* pin number */
+                                "", /* pin name */
+                                multiplier * ((-pitch_x - pad_length + pad_width) / 2.0), /* x0 coordinate */
+                                multiplier * ((((-number_of_rows - 1) / 2.0) +1 + i) * pitch_y), /* y0-coordinate */
+                                multiplier * ((-pitch_x + pad_length - pad_width) / 2.0), /* x1 coordinate */
+                                multiplier * ((((-number_of_rows - 1) / 2.0) +1 + i) * pitch_y), /* y1-coordinate */
+                                multiplier * pad_width, /* pad width */
+                                multiplier * pad_clearance, /* clearance */
+                                multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                                pin_pad_flags /* flags */
+                        );
+                }
+                /* Thermal pad */
+                pin_number++;
+                write_pad
+                (
+                        pin_number, /* pin number */
+                        "", /* pin name */
+                        thermal_length > thermal_width
+                        ? multiplier * ((pitch_x - pad_length + pad_width) / 2.0)
+                        : multiplier * (pitch_x / 2.0), /* x0 coordinate */
+                        thermal_length > thermal_width
+                        ? 0
+                        : multiplier * ((- thermal_width + thermal_length) / 2.0), /* y0-coordinate */
+                        thermal_length > thermal_width
+                        ? multiplier * ((pitch_x + pad_length - pad_width) / 2.0)
+                        : multiplier * (pitch_x / 2.0), /* x1 coordinate */
+                        thermal_length > thermal_width
+                        ? 0
+                        : multiplier * ((+ thermal_width - thermal_length) / 2.0), /* y1-coordinate */
+                        thermal_length > thermal_width
+                        ? multiplier * thermal_width
+                        : multiplier * thermal_length, /* pad width */
+                        multiplier * pad_clearance, /* clearance */
+                        multiplier * ((thermal_length > thermal_width ? thermal_width : thermal_length) + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                        pin_pad_flags /* flags */
+                );
+        }
+        else
+        {
+                if (number_of_pins == 3)
                 {
                         /* Pad #1 */
                         pin_number = 1;
@@ -1820,107 +1867,13 @@ sot_write_footprint ()
                                 pin_pad_flags /* flags */
                         );
                 }
-        }
-        else if (number_of_pins == 4)
-        {
-                if (thermal)
+                else if (number_of_pins == 4)
                 {
-                        /* Left side pads */
-                        int i;
-                        for (i = 0; (i < (number_of_rows)); i++)
-                        {
-                                pin_number = 1 + i;
-                                write_pad
-                                (
-                                        pin_number, /* pin number */
-                                        "", /* pin name */
-                                        multiplier * ((-pitch_x - pad_length + pad_width) / 2.0), /* x0 coordinate */
-                                        multiplier * ((((-number_of_rows - 1) / 2.0) +1 + i) * pitch_y), /* y0-coordinate */
-                                        multiplier * ((-pitch_x + pad_length - pad_width) / 2.0), /* x1 coordinate */
-                                        multiplier * ((((-number_of_rows - 1) / 2.0) +1 + i) * pitch_y), /* y1-coordinate */
-                                        multiplier * pad_width, /* pad width */
-                                        multiplier * pad_clearance, /* clearance */
-                                        multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
-                                        pin_pad_flags /* flags */
-                                );
-                        }
-                        /* Thermal pad */
-                        pin_number++;
-                        write_pad
-                        (
-                                pin_number, /* pin number */
-                                "", /* pin name */
-                                thermal_length > thermal_width
-                                ? multiplier * ((pitch_x - pad_length + pad_width) / 2.0)
-                                : multiplier * (pitch_x / 2.0), /* x0 coordinate */
-                                thermal_length > thermal_width
-                                ? 0
-                                : multiplier * ((- thermal_width + thermal_length) / 2.0), /* y0-coordinate */
-                                thermal_length > thermal_width
-                                ? multiplier * ((pitch_x + pad_length - pad_width) / 2.0)
-                                : multiplier * (pitch_x / 2.0), /* x1 coordinate */
-                                thermal_length > thermal_width
-                                ? 0
-                                : multiplier * ((+ thermal_width - thermal_length) / 2.0), /* y1-coordinate */
-                                thermal_length > thermal_width
-                                ? multiplier * thermal_width
-                                : multiplier * thermal_length, /* pad width */
-                                multiplier * pad_clearance, /* clearance */
-                                multiplier * ((thermal_length > thermal_width ? thermal_width : thermal_length) + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
-                                pin_pad_flags /* flags */
-                        );
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("for now a number of pins of %d without a thermal pad is not implemented yet in sot_write_footprint()."),
+                                number_of_pins);
                 }
-        }
-        else if (number_of_pins == 5)
-        {
-                if (thermal)
-                {
-                        /* Left side pads */
-                        int i;
-                        for (i = 0; (i < (number_of_rows)); i++)
-                        {
-                                pin_number = 1 + i;
-                                write_pad
-                                (
-                                        pin_number, /* pin number */
-                                        "", /* pin name */
-                                        multiplier * ((-pitch_x - pad_length + pad_width) / 2.0), /* x0 coordinate */
-                                        multiplier * ((((-number_of_rows - 1) / 2.0) +1 + i) * pitch_y), /* y0-coordinate */
-                                        multiplier * ((-pitch_x + pad_length - pad_width) / 2.0), /* x1 coordinate */
-                                        multiplier * ((((-number_of_rows - 1) / 2.0) +1 + i) * pitch_y), /* y1-coordinate */
-                                        multiplier * pad_width, /* pad width */
-                                        multiplier * pad_clearance, /* clearance */
-                                        multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
-                                        pin_pad_flags /* flags */
-                                );
-                        }
-                        /* Thermal pad */
-                        pin_number++;
-                        write_pad
-                        (
-                                pin_number, /* pin number */
-                                "", /* pin name */
-                                thermal_length > thermal_width
-                                ? multiplier * ((pitch_x - pad_length + pad_width) / 2.0)
-                                : multiplier * (pitch_x / 2.0), /* x0 coordinate */
-                                thermal_length > thermal_width
-                                ? 0
-                                : multiplier * ((- thermal_width + thermal_length) / 2.0), /* y0-coordinate */
-                                thermal_length > thermal_width
-                                ? multiplier * ((pitch_x + pad_length - pad_width) / 2.0)
-                                : multiplier * (pitch_x / 2.0), /* x1 coordinate */
-                                thermal_length > thermal_width
-                                ? 0
-                                : multiplier * ((+ thermal_width - thermal_length) / 2.0), /* y1-coordinate */
-                                thermal_length > thermal_width
-                                ? multiplier * thermal_width
-                                : multiplier * thermal_length, /* pad width */
-                                multiplier * pad_clearance, /* clearance */
-                                multiplier * ((thermal_length > thermal_width ? thermal_width : thermal_length) + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
-                                pin_pad_flags /* flags */
-                        );
-                }
-                else
+                else if (number_of_pins == 5)
                 {
                         /* Left side pads */
                         int i;
@@ -1971,12 +1924,12 @@ sot_write_footprint ()
                                 );
                         }
                 }
-        }
-        else
-        {
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("number of pins of %d is not defined in sot_write_footprint()."),
-                        number_of_pins);
+                else
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("number of pins of %d is not defined in sot_write_footprint()."),
+                                number_of_pins);
+                }
         }
         /* Write a package body on the silkscreen */
         if (silkscreen_package_outline)
