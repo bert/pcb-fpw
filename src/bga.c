@@ -352,6 +352,9 @@ bga_create_element ()
 int
 bga_drc ()
 {
+        if (verbose)
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("DRC Check: checking BGA package %s."), footprint_name);
         /* Check for allowed pad shapes. */
         switch (pad_shapes_type)
         {
@@ -359,7 +362,7 @@ bga_drc ()
                 {
                         if (verbose)
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: no valid pad shape spefified for check for allowed pad shapes."));
+                                        _("DRC Error: no valid pad shape specified for check for allowed pad shapes."));
                         return (EXIT_FAILURE);
                         break;
                 }
@@ -371,7 +374,7 @@ bga_drc ()
                 {
                         if (verbose)
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: square pad shape spefified for check for allowed pad shapes."));
+                                        _("DRC Error: square pad shape specified for check for allowed pad shapes."));
                         return (EXIT_FAILURE);
                         break;
                 }
@@ -379,7 +382,7 @@ bga_drc ()
                 {
                         if (verbose)
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: octagonal pad shape spefified for check for allowed pad shapes."));
+                                        _("DRC Error: octagonal pad shape specified for check for allowed pad shapes."));
                         return (EXIT_FAILURE);
                         break;
                 }
@@ -387,7 +390,7 @@ bga_drc ()
                 {
                         if (verbose)
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: round elongated pad shape spefified for check for allowed pad shapes."));
+                                        _("DRC Error: round elongated pad shape specified for check for allowed pad shapes."));
                         return (EXIT_FAILURE);
                         break;
                 }
@@ -567,6 +570,9 @@ bga_drc ()
                 }
         }
         /* No failures on DRC found. */
+        if (verbose)
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("DRC Check: no errors while checking BGA package %s."), footprint_name);
         return (EXIT_SUCCESS);
 }
 
