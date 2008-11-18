@@ -1924,6 +1924,42 @@ sot_write_footprint ()
                                 );
                         }
                 }
+                else if ((number_of_pins == 6) || (number_of_pins == 8))
+                {
+                        /* Left side pads */
+                        int i;
+                        for (i = 0; (i < (number_of_rows)); i++)
+                        {
+                                pin_number = 1 + i;
+                                write_pad
+                                (
+                                        pin_number, /* pin number */
+                                        "", /* pin name */
+                                        multiplier * ((-pitch_x - pad_length + pad_width) / 2.0), /* x0 coordinate */
+                                        multiplier * ((((-number_of_rows - 1) / 2.0) +1 + i) * pitch_y), /* y0-coordinate */
+                                        multiplier * ((-pitch_x + pad_length - pad_width) / 2.0), /* x1 coordinate */
+                                        multiplier * ((((-number_of_rows - 1) / 2.0) +1 + i) * pitch_y), /* y1-coordinate */
+                                        multiplier * pad_width, /* pad width */
+                                        multiplier * pad_clearance, /* clearance */
+                                        multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                                        pin_pad_flags /* flags */
+                                );
+                                pin_number = (number_of_columns * number_of_rows) - i;
+                                write_pad
+                                (
+                                        pin_number, /* pad number = pin_number*/
+                                        pin_pad_name, /* pad name */
+                                        multiplier * (pitch_x - pad_length + pad_width) / 2.0, /* x0 coordinate */
+                                        multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
+                                        multiplier * (pitch_x + pad_length - pad_width) / 2.0, /* x1 coordinate */
+                                        multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
+                                        multiplier * pad_width, /* width of the pad */
+                                        multiplier * pad_clearance, /* clearance */
+                                        multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                                        pin_pad_flags /* flags */
+                                );
+                        }
+                }
                 else
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
