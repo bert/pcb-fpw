@@ -516,7 +516,7 @@ bga_drc ()
          * the solder fillet area or worse). */
 
         /* Check for a reasonable silk line width. */
-        if (silkscreen_line_width == 0.0)
+        if (silkscreen_package_outline || (silkscreen_line_width == 0.0))
         {
                 if (verbose)
                         g_log ("", G_LOG_LEVEL_WARNING,
