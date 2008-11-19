@@ -828,7 +828,8 @@ sot_get_default_footprint_values
                 package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
-/*! \todo Look up datasheet and check values.
+/*! \todo Look up datasheet and check values for SOT95P230X109-3N. */
+/*
                 pitch_x = ;
                 pad_length = ;
                 pad_width = ;
@@ -1001,7 +1002,8 @@ sot_get_default_footprint_values
                 package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
-/*! \todo Look up datasheet and check values.
+/*! \todo Look up datasheet and check values for SOT95P240X114-3N. */
+/*
                 pitch_x = ;
                 pad_length = ;
                 pad_width = ;
@@ -1036,7 +1038,8 @@ sot_get_default_footprint_values
                 package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
-/*! \todo Look up datasheet and check values.
+/*! \todo Look up datasheet and check values for SOT95P251X112-3N. */
+/*
                 pitch_x = ;
                 pad_length = ;
                 pad_width = ;
@@ -1072,7 +1075,8 @@ sot_get_default_footprint_values
                 package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
-/*! \todo Look up datasheet and check values.
+/*! \todo Look up datasheet and check values for SOT95P270X145-5N. */
+/*
                 pitch_x = ;
                 pad_length = ;
                 pad_width = ;
@@ -1344,7 +1348,8 @@ sot_get_default_footprint_values
                 package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
-/*! \todo Look up datasheet and check values.
+/*! \todo Look up datasheet and check values for SOT95P280X115-6N. */
+/*
                 pitch_x = ;
                 pad_length = ;
                 pad_width = ;
@@ -1379,7 +1384,8 @@ sot_get_default_footprint_values
                 package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
-/*! \todo Look up datasheet and check values.
+/*! \todo Look up datasheet and check values for SOT95P280X135-3AN. */
+/*
                 pitch_x = ;
                 pad_length = ;
                 pad_width = ;
@@ -1447,7 +1453,8 @@ sot_get_default_footprint_values
                 package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
-/*! \todo Look up datasheet and check values.
+/*! \todo Look up datasheet and check values SOT95P280X135-5N. */
+/*
                 pitch_x = ;
                 pad_length = ;
                 pad_width = ;
