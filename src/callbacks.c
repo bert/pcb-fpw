@@ -3101,20 +3101,6 @@ on_pitch_y_entry_changed               (GtkEditable     *editable,
  *
  * - create a pixmap of the footprint based on the values in the entry
  * widgets.
- */
-void
-on_preview_button_clicked              (GtkButton       *button,
-                                        gpointer         user_data)
-{
-        preview_create_window (footprint_name, 300, 200);
-}
-
-
-/*!
- * \brief The "Refresh" button is clicked.
- *
- * - create a pixmap of the footprint based on the values in the entry
- * widgets.
  *
  * \todo - create and (re)load the preview image.
  *
@@ -3140,10 +3126,23 @@ on_preview_button_clicked              (GtkButton       *button,
  * </ol>
  */
 void
-on_refresh_button_clicked              (GtkButton       *button,
+on_preview_button_clicked              (GtkButton       *button,
                                         gpointer         user_data)
 {
         preview_create_window (footprint_name, 300, 200);
+}
+
+
+/*!
+ * \brief The "Refresh" button is clicked.
+ *
+ * - refresh all the entries in the GUI.
+ */
+void
+on_refresh_button_clicked              (GtkButton       *button,
+                                        gpointer         user_data)
+{
+        all_entries_need_updated (button);
 }
 
 /*!
