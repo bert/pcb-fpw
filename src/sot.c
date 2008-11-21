@@ -22,6 +22,325 @@
 #include "register_functions.c"
 
 /*!
+ * \brief Create an Element for a SOT package.
+ */
+ElementTypePtr
+sot_create_element ()
+{
+        gdouble xmax;
+        gdouble xmin;
+        gdouble ymax;
+        gdouble ymin;
+        gdouble x_text;
+        gdouble y_text;
+        gdouble dx;
+        gint pin_number;
+        gchar *pin_pad_name = g_strdup ("");
+        FlagType pad_flag;
+        ElementTypePtr element;
+
+        if (!element)
+        {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("could not create a valid element pointer for a BGA package."));
+                return (NULL);
+        }
+        /* Define the center of our universe and guess for a place where to
+         * put the element mark */
+        element->MarkX = 0;
+        element->MarkY = 0;
+        /* Determine (extreme) courtyard dimensions based on pin/pad
+         * properties */
+        xmin = multiplier *
+        (
+                ((-pitch_x * number_of_columns) / 2.0) -
+                (pad_length / 2.0) -
+                pad_solder_mask_clearance
+        );
+        xmax = multiplier *
+        (
+                ((pitch_x * number_of_columns) / 2.0) +
+                (pad_length / 2.0) +
+                pad_solder_mask_clearance
+        );
+        ymin = multiplier *
+        (
+                ((-pitch_y * number_of_rows) / 2.0) -
+                (pad_width / 2.0) -
+                pad_solder_mask_clearance
+        );
+        ymax = multiplier *
+        (
+                ((pitch_y * number_of_rows) / 2.0) +
+                (pad_width / 2.0) +
+                pad_solder_mask_clearance
+        );
+        /* Determine (extreme) courtyard dimensions based on package
+         * properties */
+        if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
+                xmin = (multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package));
+        if ((multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package)) > xmax)
+                xmax = (multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package));
+        if ((multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package)) < ymin)
+                ymin = (multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package));
+        if ((multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package)) > ymax)
+                ymax = (multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package));
+        /* If the user input is using even more real-estate then use it */
+        if (multiplier * (-courtyard_length / 2.0) < xmin)
+                xmin = multiplier * (-courtyard_length / 2.0);
+        if (multiplier * (courtyard_length / 2.0) > xmax)
+                xmax = multiplier * (courtyard_length / 2.0);
+        if (multiplier * (-courtyard_width / 2.0) < ymin)
+                ymin = multiplier * (-courtyard_width / 2.0);
+        if (multiplier * (courtyard_width / 2.0) > ymax)
+                ymax = multiplier * (courtyard_width / 2.0);
+        /* Guess for a place where to put the element name */
+        element->Name[1].Scale = 100; /* 100 percent */
+        element->Name[1].X = 0.0 ; /* already in mil/100 */
+        element->Name[1].Y = (ymin - 10000.0); /* already in mil/100 */
+        element->Name[1].TextString = footprint_name;
+        element->Name[1].Element = element;
+        element->Name[1].Direction = EAST;
+        element->Name[1].ID = ID++;
+        /* Guess for a place where to put the element refdes */
+        element->Name[2].Scale = 100; /* 100 percent */
+        element->Name[2].X = 0.0 ; /* already in mil/100 */
+        element->Name[2].Y = (ymin - 10000.0); /* already in mil/100 */
+        element->Name[2].TextString = footprint_refdes;
+        element->Name[2].Element = element;
+        element->Name[2].Direction = EAST;
+        element->Name[2].ID = ID++;
+        /* Guess for a place where to put the element value */
+        element->Name[3].Scale = 100; /* 100 percent */
+        element->Name[3].X = 0.0 ; /* already in mil/100 */
+        element->Name[3].Y = (ymin - 10000.0); /* already in mil/100 */
+        element->Name[3].TextString = footprint_value;
+        element->Name[3].Element = element;
+        element->Name[3].Direction = EAST;
+        element->Name[3].ID = ID++;
+        /* Write pin and/or pad entities */
+        if (pad_shapes_type == SQUARE)
+                pad_flag.f = SQUARE;
+        else
+                pad_flag.f = CLEAR;
+        if (thermal)
+        {
+                /* Left side pads */
+                int i;
+                for (i = 0; (i < (number_of_rows)); i++)
+                {
+                        pin_number = 1 + i;
+                        create_new_pad
+                        (
+                                element,
+                                (int) (multiplier * ((-pitch_x - pad_length + pad_width) / 2.0)), /* x0 coordinate */
+                                (int) (multiplier * ((((-number_of_rows - 1) / 2.0) +1 + i) * pitch_y)), /* y0-coordinate */
+                                (int) (multiplier * ((-pitch_x + pad_length - pad_width) / 2.0)), /* x1 coordinate */
+                                (int) (multiplier * ((((-number_of_rows - 1) / 2.0) +1 + i) * pitch_y)), /* y1-coordinate */
+                                (int) (multiplier * pad_width), /* pad width */
+                                (int) (multiplier * pad_clearance), /* clearance */
+                                (int) (multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance))), /* solder mask clearance */
+                                "", /* pin name */
+                                g_strdup_printf ("%d", pin_number), /* pin number */
+                                pad_flag /* flags */
+                        );
+                }
+                /* Thermal pad */
+                pin_number++;
+                create_new_pad
+                (
+                        element,
+                        (int) (thermal_length > thermal_width
+                        ? multiplier * ((pitch_x - pad_length + pad_width) / 2.0)
+                        : multiplier * (pitch_x / 2.0)), /* x0 coordinate */
+                        (int) (thermal_length > thermal_width
+                        ? 0
+                        : multiplier * ((- thermal_width + thermal_length) / 2.0)), /* y0-coordinate */
+                        (int) (thermal_length > thermal_width
+                        ? multiplier * ((pitch_x + pad_length - pad_width) / 2.0)
+                        : multiplier * (pitch_x / 2.0)), /* x1 coordinate */
+                        (int) (thermal_length > thermal_width
+                        ? 0
+                        : multiplier * ((+ thermal_width - thermal_length) / 2.0)), /* y1-coordinate */
+                        (int) (thermal_length > thermal_width
+                        ? multiplier * thermal_width
+                        : multiplier * thermal_length), /* pad width */
+                        (int) (multiplier * pad_clearance), /* clearance */
+                        (int) (multiplier * ((thermal_length > thermal_width ? thermal_width : thermal_length) + (2 * pad_solder_mask_clearance))), /* solder mask clearance */
+                        "", /* pin name */
+                        g_strdup_printf ("%d", pin_number), /* pin number */
+                        pad_flag /* flags */
+                );
+        }
+        else
+        {
+                if (number_of_pins == 3)
+                {
+                        /* Pad #1 */
+                        pin_number = 1;
+                        create_new_pad
+                        (
+                                element,
+                                (int) (multiplier * ((-pitch_x - pad_length + pad_width) / 2.0)), /* x0 coordinate */
+                                (int) (multiplier * (-pitch_y)), /* y0-coordinate */
+                                (int) (multiplier * ((-pitch_x + pad_length - pad_width) / 2.0)), /* x1 coordinate */
+                                (int) (multiplier * (-pitch_y)), /* y1-coordinate */
+                                (int) (multiplier * pad_width), /* pad width */
+                                (int) (multiplier * pad_clearance), /* clearance */
+                                (int) (multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance))), /* solder mask clearance */
+                                "", /* pin name */
+                                g_strdup_printf ("%d", pin_number), /* pin number */
+                                pad_flag /* flags */
+                        );
+                        /* Pad #2 */
+                        pin_number++;
+                        create_new_pad
+                        (
+                                element,
+                                (int) (multiplier * ((-pitch_x - pad_length + pad_width) / 2.0)), /* x0 coordinate */
+                                (int) (multiplier * (pitch_y)), /* y0-coordinate */
+                                (int) (multiplier * ((-pitch_x + pad_length - pad_width) / 2.0)), /* x1 coordinate */
+                                (int) (multiplier * (pitch_y)), /* y1-coordinate */
+                                (int) (multiplier * pad_width), /* pad width */
+                                (int) (multiplier * pad_clearance), /* clearance */
+                                (int) (multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance))), /* solder mask clearance */
+                                "", /* pin name */
+                                g_strdup_printf ("%d", pin_number), /* pin number */
+                                pad_flag /* flags */
+                        );
+                        /* Pad #3 */
+                        pin_number++;
+                        create_new_pad
+                        (
+                                element,
+                                (int) (multiplier * ((pitch_x + pad_length - pad_width) / 2.0)), /* x0 coordinate */
+                                0, /* y0-coordinate */
+                                (int) (multiplier * ((pitch_x - pad_length + pad_width) / 2.0)), /* x1 coordinate */
+                                0, /* y1-coordinate */
+                                (int) (multiplier * pad_width), /* pad width */
+                                (int) (multiplier * pad_clearance), /* clearance */
+                                (int) (multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance))), /* solder mask clearance */
+                                "", /* pin name */
+                                g_strdup_printf ("%d", pin_number), /* pin number */
+                                pad_flag /* flags */
+                        );
+                }
+                else if (number_of_pins == 4)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("for now a number of pins of %d without a thermal pad is not implemented yet in sot_write_footprint()."),
+                                number_of_pins);
+                }
+                else if (number_of_pins == 5)
+                {
+                        /* Left side pads */
+                        int i;
+                        for (i = 0; (i < (number_of_rows)); i++)
+                        {
+                                pin_number = 1 + i;
+                                create_new_pad
+                                (
+                                        element,
+                                        (int) (multiplier * ((-pitch_x - pad_length + pad_width) / 2.0)), /* x0 coordinate */
+                                        (int) (multiplier * ((((-number_of_rows - 1) / 2.0) +1 + i) * pitch_y)), /* y0-coordinate */
+                                        (int) (multiplier * ((-pitch_x + pad_length - pad_width) / 2.0)), /* x1 coordinate */
+                                        (int) (multiplier * ((((-number_of_rows - 1) / 2.0) +1 + i) * pitch_y)), /* y1-coordinate */
+                                        (int) (multiplier * pad_width), /* pad width */
+                                        (int) (multiplier * pad_clearance), /* clearance */
+                                        (int) (multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance))), /* solder mask clearance */
+                                        "", /* pin name */
+                                        g_strdup_printf ("%d", pin_number), /* pin number */
+                                        pad_flag /* flags */
+                                );
+                                /* Right side pads */
+                                pin_number++;
+                                create_new_pad
+                                (
+                                        element,
+                                        (int) (multiplier * ((pitch_x - pad_length + pad_width) / 2.0)), /* x0 coordinate */
+                                        (int) (multiplier * (pitch_y)), /* y0-coordinate */
+                                        (int) (multiplier * ((pitch_x + pad_length - pad_width) / 2.0)), /* x1 coordinate */
+                                        (int) (multiplier * (pitch_y)), /* y1-coordinate */
+                                        (int) (multiplier * pad_width), /* pad width */
+                                        (int) (multiplier * pad_clearance), /* clearance */
+                                        (int) (multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance))), /* solder mask clearance */
+                                        "", /* pin name */
+                                        g_strdup_printf ("%d", pin_number), /* pin number */
+                                        pad_flag /* flags */
+                                );
+                                pin_number++;
+                                create_new_pad
+                                (
+                                        element,
+                                        (int) (multiplier * ((pitch_x - pad_length + pad_width) / 2.0)), /* x0 coordinate */
+                                        (int) (multiplier * (-pitch_y)), /* y0-coordinate */
+                                        (int) (multiplier * ((pitch_x + pad_length - pad_width) / 2.0)), /* x1 coordinate */
+                                        (int) (multiplier * (-pitch_y)), /* y1-coordinate */
+                                        (int) (multiplier * pad_width), /* pad width */
+                                        (int) (multiplier * pad_clearance), /* clearance */
+                                        (int) (multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance))), /* solder mask clearance */
+                                        "", /* pin name */
+                                        g_strdup_printf ("%d", pin_number), /* pin number */
+                                        pad_flag /* flags */
+                                );
+                        }
+                }
+                else if ((number_of_pins == 6) || (number_of_pins == 8))
+                {
+                        /* Left side pads */
+                        int i;
+                        for (i = 0; (i < (number_of_rows)); i++)
+                        {
+                                pin_number = 1 + i;
+                                create_new_pad
+                                (
+                                        element,
+                                        (int) (multiplier * ((-pitch_x - pad_length + pad_width) / 2.0)), /* x0 coordinate */
+                                        (int) (multiplier * ((((-number_of_rows - 1) / 2.0) +1 + i) * pitch_y)), /* y0-coordinate */
+                                        (int) (multiplier * ((-pitch_x + pad_length - pad_width) / 2.0)), /* x1 coordinate */
+                                        (int) (multiplier * ((((-number_of_rows - 1) / 2.0) +1 + i) * pitch_y)), /* y1-coordinate */
+                                        (int) (multiplier * pad_width), /* pad width */
+                                        (int) (multiplier * pad_clearance), /* clearance */
+                                        (int) (multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance))), /* solder mask clearance */
+                                        "", /* pin name */
+                                        g_strdup_printf ("%d", pin_number), /* pin number */
+                                        pad_flag /* flags */
+                                );
+                                pin_number = (number_of_columns * number_of_rows) - i;
+                                create_new_pad
+                                (
+                                        element,
+                                        (int) (multiplier * (pitch_x - pad_length + pad_width) / 2.0), /* x0 coordinate */
+                                        (int) (multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y)), /* y0-coordinate */
+                                        (int) (multiplier * (pitch_x + pad_length - pad_width) / 2.0), /* x1 coordinate */
+                                        (int) (multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y)), /* y0-coordinate */
+                                        (int) (multiplier * pad_width), /* width of the pad */
+                                        (int) (multiplier * pad_clearance), /* clearance */
+                                        (int) (multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance))), /* solder mask clearance */
+                                        "", /* pin name */
+                                        g_strdup_printf ("%d", pin_number), /* pin number */
+                                        pad_flag /* flags */
+                                );
+                        }
+                }
+                else
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("number of pins of %d is not defined in sot_write_footprint()."),
+                                number_of_pins);
+                }
+        }
+        if (verbose)
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("wrote a footprint file for a %s package: %s."),
+                        footprint_type,
+                        footprint_filename);
+        return (element);
+}
+
+
+/*!
  * \brief Create a list of SOT packages with pre-defined values.
  *
  * The data in this list can be used in a combo box to select a
