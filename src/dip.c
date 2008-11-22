@@ -74,11 +74,37 @@ dip_create_packages_list ()
  * If the footprint name is recognised the values will be loaded and the
  * entries involved in the GUI will be updated accordingly.\n
  * Currently the following footprints are supported:\n
- * DIP04300, DIP06300, DIP08300, DIP08400, DIP10300, DIP14300, DIP14400,
- * DIP16300, DIP16400, DIP18300, DIP18400, DIP20300, DIP20400, DIP22300,
- * DIP22400, DIP24300, DIP24400, DIP24600, DIP28300, DIP28400, DIP28600,
- * DIP32300, DIP32600, DIP36600, DIP38600, DIP40600, DIP42600, DIP48600,
- * DIP50900, DIP52600, DIP64900.
+ * - DIP04300,
+ * - DIP06300,
+ * - DIP08300,
+ * - DIP08400,
+ * - DIP10300,
+ * - DIP14300,
+ * - DIP14400,
+ * - DIP16300,
+ * - DIP16400,
+ * - DIP18300,
+ * - DIP18400,
+ * - DIP20300,
+ * - DIP20400,
+ * - DIP22300,
+ * - DIP22400,
+ * - DIP24300,
+ * - DIP24400,
+ * - DIP24600,
+ * - DIP28300,
+ * - DIP28400,
+ * - DIP28600,
+ * - DIP32300,
+ * - DIP32600,
+ * - DIP36600,
+ * - DIP38600,
+ * - DIP40600,
+ * - DIP42600,
+ * - DIP48600,
+ * - DIP50900,
+ * - DIP52600,
+ * - DIP64900.
  */
 int
 dip_get_default_footprint_values
