@@ -22,6 +22,51 @@
 #include "register_functions.c"
 
 /*!
+ * \brief Create a list of DIP packages with pre-defined values.
+ *
+ * The data in this list can be used in a combo box to select a
+ * pre-defined package.
+ */
+GList
+dip_create_packages_list ()
+{
+        GList *dip_packages_list = NULL;
+        dip_packages_list = g_list_append (dip_packages_list, "DIP04300");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP06300");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP08300");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP08400");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP10300");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP14300");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP14400");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP16300");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP16400");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP18300");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP18400");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP20300");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP20400");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP22300");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP22400");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP24300");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP24400");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP24600");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP28300");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP28400");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP28600");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP32300");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP32600");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP36600");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP38600");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP40600");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP42600");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP48600");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP50900");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP52600");
+        dip_packages_list = g_list_append (dip_packages_list, "DIP64900");
+        return (*dip_packages_list);
+}
+
+
+/*!
  * \brief Look up default values for DIP footprint.
  *
  * Footprint values can be looked up by placing a question mark "?" in front
