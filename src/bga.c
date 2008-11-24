@@ -131,9 +131,7 @@ bga_create_element ()
                  * where j is a member of the positive Natural numbers (N) */
                 {
                         if (pin1_square && (pin_number == 1))
-                        {
                                 pad_flag.f = SQUARE;
-                        }
                         else
                                 pad_flag.f = CLEAR;
                         pin_pad_name = g_strdup_printf ("%s%d", (row_letters[i]), (j + 1));
