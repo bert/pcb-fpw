@@ -579,7 +579,7 @@ dip_drc ()
                 }
         }
         /* No failures on DRC found. */
-        if (verbose)
+        if (verbose || (result == EXIT_SUCCESS))
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("DRC Check: no errors while checking DIP package %s."), footprint_name);
         return (result);
