@@ -348,6 +348,245 @@ dip_create_packages_list ()
 
 
 /*!
+ * \brief Do some Design Rule Checking for the DIP package type.
+ *
+ * - check for allowed pad shapes.
+ * - check for zero sized packages.
+ * - check for a zero sized courtyard.
+ * - check for minimum clearance between copper (X-direction).
+ * - check for minimum clearance between copper (Y-direction).
+ * - If any fiducials exist:
+ *   - check for zero fiducial pad diameter.
+ *   - check for zero width solder mask clearance.
+ *   - check for minimum clearance between copper (between pads and fiducials,
+ *     if any fiducials exist).
+ * - check for clearance of the package length with regard to the courtyard
+ *   dimensions.
+ * - check for clearance of the package width with regard to the courtyard
+ *   dimensions.
+ * - check for any silk lines or texts touching bare copper.
+ * - check for soldermask clearance (solder mask overlapping copper at the
+ *   solder fillet area or worse).
+ * - check for a reasonable silk line width.
+ */
+int
+dip_drc ()
+{
+        int result = EXIT_SUCCESS;
+        if (verbose)
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("DRC Check: checking DIP package %s."), footprint_name);
+        /* Check for allowed pad shapes. */
+        switch (pad_shapes_type)
+        {
+                case NO_SHAPE:
+                {
+                        if (verbose)
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("DRC Error: NO_SHAPE specified for check for allowed pad shapes."));
+                        result = EXIT_FAILURE;
+                        break;
+                }
+                case ROUND:
+                {
+                        break;
+                }
+                case SQUARE:
+                {
+                        break;
+                }
+                case OCTAGONAL:
+                {
+                        break;
+                }
+                case ROUND_ELONGATED:
+                {
+                        break;
+                }
+                default:
+                {
+                        if (verbose)
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("DRC Error: no valid pad shape type specified."));
+                        result = EXIT_FAILURE;
+                        break;
+                }
+        }
+        /* Check for zero sized packages. */
+        if (package_body_length <= 0.0)
+        {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("DRC Error: check for package body length is <= 0.0."));
+                result = EXIT_FAILURE;
+        }
+        if (package_body_width <= 0.0)
+        {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("DRC Error: check for package body width is <= 0.0."));
+                result = EXIT_FAILURE;
+        }
+        if (package_body_height <= 0.0)
+        {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("DRC Error: check for package body height is <= 0.0."));
+                result = EXIT_FAILURE;
+        }
+        /* Check for a zero sized courtyard. */
+        if (courtyard_length <= 0.0)
+        {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("DRC Error: check for courtyard length is <= 0.0."));
+                result = EXIT_FAILURE;
+        }
+        if (courtyard_width <= 0.0)
+        {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("DRC Error: check for courtyard width is <= 0.0."));
+                result = EXIT_FAILURE;
+        }
+        /* Check for minimum clearance between copper (X-direction). */
+        if ((pitch_x - pad_diameter < pad_clearance) || (pitch_x - pad_length < pad_clearance))
+        {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("DRC Error: check for minimum clearance between copper (X-direction)."));
+                result = EXIT_FAILURE;
+        }
+        /* Check for minimum clearance between copper (Y-direction). */
+        if ((pitch_y - pad_diameter < pad_clearance) || (pitch_y - pad_width < pad_clearance))
+        {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("DRC Error: check for minimum clearance between copper (Y-direction)."));
+                result = EXIT_FAILURE;
+        }
+        /*! If any fiducials exist:
+         * - check for zero fiducial pad diameter.
+         * - check for zero width solder mask clearance.
+         * \todo - check for minimum clearance between pad copper and fiducial pad
+         *   copper (including solder mask clearances).
+         */
+        if (fiducial)
+        {
+                /* Check for a zero width fiducial pad. */
+                if (fiducial_pad_diameter == 0.0)
+                {
+                        if (verbose)
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("DRC Error: check for zero width fiducial pad."));
+                        result = EXIT_FAILURE;
+                }
+                /* Check for a clearance of zero. */
+                if (fiducial_pad_solder_mask_clearance == 0.0)
+                {
+                        if (verbose)
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("DRC Error: check for zero width solder mask clearance."));
+                        result = EXIT_FAILURE;
+                }
+                /* Check for minimum clearance between pad copper and fiducial pad
+                 * copper (including solder mask clearances). */
+#if 0
+                if ()
+                {
+                        if (verbose)
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("DRC Error: check for distance between fiducial and nearest pad."));
+                        result = EXIT_FAILURE;
+                }
+#endif
+        }
+        /* Check for clearance of the package length with regard to the
+         * courtyard dimensions. */
+        if (package_body_length - courtyard_length < courtyard_clearance_with_package)
+        {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("DRC Error: check for clearance of the package length with regard to the courtyard dimensions."));
+                result = EXIT_FAILURE;
+        }
+        /* Check for clearance of the package width with regard to the
+         * courtyard dimensions. */
+        if (package_body_width - courtyard_width < courtyard_clearance_with_package)
+        {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("DRC Error: check for clearance of the package width with regard to the courtyard dimensions."));
+                result = EXIT_FAILURE;
+        }
+        /*! \todo Check for any silk lines or texts touching bare copper. */
+
+        /*! \todo Check for soldermask clearance (solder mask overlapping copper at
+         * the solder fillet area or worse). */
+
+        /* Check for a reasonable silk line width. */
+        if (silkscreen_package_outline || (silkscreen_line_width == 0.0))
+        {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("DRC Error: line width 0.0 specified for check for a reasonable silk line width."));
+                result = EXIT_FAILURE;
+        }
+        switch (units_type)
+        {
+                case NO_UNITS:
+                {
+                        if (verbose)
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("DRC Error: no units specified for check for a reasonable silk line width."));
+                        result = EXIT_FAILURE;
+                        break;
+                }
+                case MIL:
+                if (silkscreen_line_width > 40.0)
+                {
+                        if (verbose)
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("DRC Error: line width > 40.0 mil specified check for a reasonable silk line width."));
+                        result = EXIT_FAILURE;
+                        break;
+                }
+                case MIL_100:
+                if (silkscreen_line_width > 4000.0)
+                {
+                        if (verbose)
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("DRC Error: line width > 40.0 mil specified check for a reasonable silk line width."));
+                        result = EXIT_FAILURE;
+                        break;
+                }
+                case MM:
+                if (silkscreen_line_width > 1.0)
+                {
+                        if (verbose)
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("DRC Error: line width > 1.0 mm specified check for a reasonable silk line width."));
+                        result = EXIT_FAILURE;
+                        break;
+                }
+                default:
+                {
+                        if (verbose)
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("DRC Error: no valid units type specified for check for a reasonable silk line width."));
+                        result = EXIT_FAILURE;
+                        break;
+                }
+        }
+        /* No failures on DRC found. */
+        if (verbose)
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("DRC Check: no errors while checking DIP package %s."), footprint_name);
+        return (result);
+}
+
+
+/*!
  * \brief Look up default values for DIP footprint.
  *
  * Footprint values can be looked up by placing a question mark "?" in front
