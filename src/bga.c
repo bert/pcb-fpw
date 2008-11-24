@@ -47,11 +47,11 @@ bga_create_element ()
                 return (NULL);
         }
         /* Define the center of our universe and guess for a place where to
-         * put the element mark */
+         * put the element mark. */
         element->MarkX = 0;
         element->MarkY = 0;
         /* Determine (extreme) courtyard dimensions based on pin/pad
-         * properties */
+         * properties. */
         xmin = multiplier *
         (
                 ((-pitch_x * number_of_columns) / 2.0) -
@@ -77,7 +77,7 @@ bga_create_element ()
                 pad_solder_mask_clearance
         );
         /* Determine (extreme) courtyard dimensions based on package
-         * properties */
+         * properties. */
         if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
                 xmin = (multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package));
         if ((multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package)) > xmax)
@@ -86,7 +86,7 @@ bga_create_element ()
                 ymin = (multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package));
         if ((multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package)) > ymax)
                 ymax = (multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package));
-        /* If the user input is using even more real-estate then use it */
+        /* If the user input is using even more real-estate then use it. */
         if (multiplier * (-courtyard_length / 2.0) < xmin)
                 xmin = multiplier * (-courtyard_length / 2.0);
         if (multiplier * (courtyard_length / 2.0) > xmax)
@@ -95,7 +95,7 @@ bga_create_element ()
                 ymin = multiplier * (-courtyard_width / 2.0);
         if (multiplier * (courtyard_width / 2.0) > ymax)
                 ymax = multiplier * (courtyard_width / 2.0);
-        /* Guess for a place where to put the element name */
+        /* Guess for a place where to put the element name. */
         element->Name[1].Scale = 100; /* 100 percent */
         element->Name[1].X = 0.0 ; /* already in mil/100 */
         element->Name[1].Y = (ymin - 10000.0); /* already in mil/100 */
@@ -103,7 +103,7 @@ bga_create_element ()
         element->Name[1].Element = element;
         element->Name[1].Direction = EAST;
         element->Name[1].ID = ID++;
-        /* Guess for a place where to put the element refdes */
+        /* Guess for a place where to put the element refdes. */
         element->Name[2].Scale = 100; /* 100 percent */
         element->Name[2].X = 0.0 ; /* already in mil/100 */
         element->Name[2].Y = (ymin - 10000.0); /* already in mil/100 */
@@ -111,7 +111,7 @@ bga_create_element ()
         element->Name[2].Element = element;
         element->Name[2].Direction = EAST;
         element->Name[2].ID = ID++;
-        /* Guess for a place where to put the element value */
+        /* Guess for a place where to put the element value. */
         element->Name[3].Scale = 100; /* 100 percent */
         element->Name[3].X = 0.0 ; /* already in mil/100 */
         element->Name[3].Y = (ymin - 10000.0); /* already in mil/100 */
@@ -119,16 +119,16 @@ bga_create_element ()
         element->Name[3].Element = element;
         element->Name[3].Direction = EAST;
         element->Name[3].ID = ID++;
-        /* Write pin and/or pad entities */
+        /* Create pin and/or pad entities. */
         pin_number = 1;
         for (i = 0; (i < number_of_rows); i++)
         /* one row at a time [A .. ZZ ..] etc.
          * where i is one or more letters of the alphabet,
-         * excluding "I", "O", "Q", "S" and "Z" */
+         * excluding "I", "O", "Q", "S" and "Z". */
         {
                 for (j = 0; (j < number_of_columns); j++)
                 /* all columns of a row [1 .. n]
-                 * where j is a member of the positive Natural numbers (N) */
+                 * where j is a member of the positive Natural numbers (N). */
                 {
                         if (pin1_square && (pin_number == 1))
                                 pad_flag.f = SQUARE;
@@ -155,7 +155,7 @@ bga_create_element ()
                         pin_number++;
                 }
         }
-        /* Write fiducials if the package seem to have them. */
+        /* Create fiducials if the package seem to have them. */
         if (fiducial)
         {
                 pin_pad_name = g_strdup ("");
@@ -220,7 +220,7 @@ bga_create_element ()
                         pad_flag /* flags */
                 );
         }
-        /* Write a package body on the silkscreen */
+        /* Create a package body. */
         if (silkscreen_package_outline)
         {
                 create_new_line
@@ -260,7 +260,7 @@ bga_create_element ()
                         (int) (multiplier * silkscreen_line_width)
                 );
         }
-        /* Write a pin #1 marker on the silkscreen */
+        /* Create a pin #1 marker. */
         if (silkscreen_indicate_1)
         {
                 for (dx = 0.0; dx < (pitch_x / 2.0); dx = dx + silkscreen_line_width)
@@ -276,7 +276,7 @@ bga_create_element ()
                         );
                 }
         }
-        /* Write a courtyard on the silkscreen */
+        /* Create a courtyard. */
         if (courtyard)
         {
                 create_new_line
@@ -316,9 +316,11 @@ bga_create_element ()
                         (int) (multiplier * courtyard_line_width)
                 );
         }
+        /*! \todo Create attributes here. */
+        /* We are ready creating an element. */
         if (verbose)
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("wrote a footprint file for a %s package: %s."),
+                        _("created an element for a %s package: %s."),
                         footprint_type,
                         footprint_filename);
         return (element);
