@@ -622,6 +622,7 @@ bga_drc ()
                         break;
                 }
         }
+        /*! \todo Create attributes here. */
         /* No failures on DRC found. */
         if (verbose || (result == EXIT_SUCCESS))
                 g_log ("", G_LOG_LEVEL_INFO,
