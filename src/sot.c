@@ -152,13 +152,13 @@ sot_create_element ()
                 (
                         element,
                         (int) (thermal_length > thermal_width
-                        ? multiplier * ((pitch_x - pad_length + pad_width) / 2.0)
+                        ? multiplier * ((pitch_x - thermal_length + thermal_width) / 2.0)
                         : multiplier * (pitch_x / 2.0)), /* x0 coordinate */
                         (int) (thermal_length > thermal_width
                         ? 0
                         : multiplier * ((- thermal_width + thermal_length) / 2.0)), /* y0-coordinate */
                         (int) (thermal_length > thermal_width
-                        ? multiplier * ((pitch_x + pad_length - pad_width) / 2.0)
+                        ? multiplier * ((pitch_x + thermal_length - thermal_width) / 2.0)
                         : multiplier * (pitch_x / 2.0)), /* x1 coordinate */
                         (int) (thermal_length > thermal_width
                         ? 0
@@ -2372,13 +2372,13 @@ sot_write_footprint ()
                         pin_number, /* pin number */
                         "", /* pin name */
                         thermal_length > thermal_width
-                        ? multiplier * ((pitch_x - pad_length + pad_width) / 2.0)
+                        ? multiplier * ((pitch_x - thermal_length + thermal_width) / 2.0)
                         : multiplier * (pitch_x / 2.0), /* x0 coordinate */
                         thermal_length > thermal_width
                         ? 0
                         : multiplier * ((- thermal_width + thermal_length) / 2.0), /* y0-coordinate */
                         thermal_length > thermal_width
-                        ? multiplier * ((pitch_x + pad_length - pad_width) / 2.0)
+                        ? multiplier * ((pitch_x + thermal_length - thermal_width) / 2.0)
                         : multiplier * (pitch_x / 2.0), /* x1 coordinate */
                         thermal_length > thermal_width
                         ? 0
