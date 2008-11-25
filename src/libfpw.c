@@ -40,6 +40,70 @@
 #include "globals.h"
 
 
+AttributeTypePtr create_new_attribute (AttributeListTypePtr list, char *name, char *value);
+
+
+/*!
+ * \brief Create all attributes in an element.
+ */
+int
+create_attributes_in_element
+(
+        ElementTypePtr element,
+        char *name,
+        char *value
+
+)
+{
+        create_new_attribute (&element->Attributes, "author", g_strdup_printf ("%s", footprint_author));
+        create_new_attribute (&element->Attributes, "dist-license", g_strdup_printf ("%s", footprint_dist_license));
+        create_new_attribute (&element->Attributes, "use-license", g_strdup_printf ("%s", footprint_use_license));
+        create_new_attribute (&element->Attributes, "status\" \"%s\")\n", footprint_status);
+        create_new_attribute (&element->Attributes, "attributes in footprint", g_strdup_printf ("%d", (int) attributes_in_footprint));
+        create_new_attribute (&element->Attributes, "package body length", g_strdup_printf ("%f", package_body_length));
+        create_new_attribute (&element->Attributes, "package body width", g_strdup_printf ("%f", package_body_width));
+        create_new_attribute (&element->Attributes, "package height", g_strdup_printf ("%f", package_body_height));
+        create_new_attribute (&element->Attributes, "package is radial", g_strdup_printf ("%d", package_is_radial));
+        create_new_attribute (&element->Attributes, "number of pins", g_strdup_printf ("%d", (int) number_of_pins));
+        create_new_attribute (&element->Attributes, "number of columns", g_strdup_printf ("%d", (int) number_of_columns));
+        create_new_attribute (&element->Attributes, "number of rows", g_strdup_printf ("%d", (int) number_of_rows));
+        create_new_attribute (&element->Attributes, "pitch_x", g_strdup_printf ("%f", pitch_x));
+        create_new_attribute (&element->Attributes, "pitch_y", g_strdup_printf ("%f", pitch_y));
+        create_new_attribute (&element->Attributes, "count_x", g_strdup_printf ("%d", (int) count_x));
+        create_new_attribute (&element->Attributes, "count_x", g_strdup_printf ("%d", (int) count_y));
+        create_new_attribute (&element->Attributes, "pad_shape", g_strdup_printf ("%s", pad_shape));
+        create_new_attribute (&element->Attributes, "pin_pad_exceptions", g_strdup_printf ("%s", pin_pad_exceptions_string));
+        create_new_attribute (&element->Attributes, "pin_1_position", g_strdup_printf ("%s", pin_1_position));
+        create_new_attribute (&element->Attributes, "pad_diameter", g_strdup_printf ("%f", pad_diameter));
+        create_new_attribute (&element->Attributes, "pin_drill_diameter", g_strdup_printf ("%f", pin_drill_diameter));
+        create_new_attribute (&element->Attributes, "pin1_square", g_strdup_printf ("%d", (int) pin1_square));
+        create_new_attribute (&element->Attributes, "pad_length", g_strdup_printf ("%f", pad_length));
+        create_new_attribute (&element->Attributes, "pad_width", g_strdup_printf ("%f", pad_width));
+        create_new_attribute (&element->Attributes, "pad_clearance", g_strdup_printf ("%f", pad_clearance));
+        create_new_attribute (&element->Attributes, "pad_solder_mask_clearance", g_strdup_printf ("%f", pad_solder_mask_clearance));
+        create_new_attribute (&element->Attributes, "thermal", g_strdup_printf ("%d", (int) thermal));
+        create_new_attribute (&element->Attributes, "thermal_nopaste", g_strdup_printf ("%d", (int) thermal_nopaste));
+        create_new_attribute (&element->Attributes, "thermal_length", g_strdup_printf ("%f", thermal_length));
+        create_new_attribute (&element->Attributes, "thermal_width", g_strdup_printf ("%f", thermal_width));
+        create_new_attribute (&element->Attributes, "thermal_clearance", g_strdup_printf ("%f", thermal_clearance));
+        create_new_attribute (&element->Attributes, "thermal_solder_mask_clearance", g_strdup_printf ("%f", thermal_solder_mask_clearance));
+        create_new_attribute (&element->Attributes, "silkscreen_package_outline", g_strdup_printf ("%d", (int) silkscreen_package_outline));
+        create_new_attribute (&element->Attributes, "silkscreen_indicate_1", g_strdup_printf ("%d", (int) silkscreen_indicate_1));
+        create_new_attribute (&element->Attributes, "silkscreen_line_width", g_strdup_printf ("%f", silkscreen_line_width));
+        create_new_attribute (&element->Attributes, "courtyard", g_strdup_printf ("%d", (int) courtyard));
+        create_new_attribute (&element->Attributes, "courtyard_length", g_strdup_printf ("%f", courtyard_length));
+        create_new_attribute (&element->Attributes, "courtyard_width", g_strdup_printf ("%f", courtyard_width));
+        create_new_attribute (&element->Attributes, "courtyard_line_width", g_strdup_printf ("%f", courtyard_line_width));
+        create_new_attribute (&element->Attributes, "courtyard_clearance_with_package", g_strdup_printf ("%f", courtyard_clearance_with_package));
+        create_new_attribute (&element->Attributes, "c1", g_strdup_printf ("%f", c1));
+        create_new_attribute (&element->Attributes, "g1", g_strdup_printf ("%f", g1));
+        create_new_attribute (&element->Attributes, "z1", g_strdup_printf ("%f", z1));
+        create_new_attribute (&element->Attributes, "c2", g_strdup_printf ("%f", c2));
+        create_new_attribute (&element->Attributes, "g2", g_strdup_printf ("%f", g2));
+        create_new_attribute (&element->Attributes, "z2", g_strdup_printf ("%f", z2));
+}
+
+
 /*!
  * \brief Creates a new arc in an element.
  */
