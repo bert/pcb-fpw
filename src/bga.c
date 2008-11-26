@@ -316,7 +316,9 @@ bga_create_element ()
                         (int) (multiplier * courtyard_line_width)
                 );
         }
-        /*! \todo Create attributes here. */
+        /* Create attributes here. */
+        if (attributes_in_footprint)
+                element = create_attributes_in_element (element);
         /* We are ready creating an element. */
         if (verbose)
                 g_log ("", G_LOG_LEVEL_INFO,
