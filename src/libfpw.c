@@ -49,10 +49,7 @@ AttributeTypePtr create_new_attribute (AttributeListTypePtr list, char *name, ch
 int
 create_attributes_in_element
 (
-        ElementTypePtr element,
-        char *name,
-        char *value
-
+        ElementTypePtr element
 )
 {
         create_new_attribute (&element->Attributes, "author", g_strdup_printf ("%s", footprint_author));
