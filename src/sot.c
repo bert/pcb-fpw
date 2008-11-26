@@ -331,9 +331,13 @@ sot_create_element ()
                                 number_of_pins);
                 }
         }
+        /* Create attributes here. */
+        if (attributes_in_footprint)
+                element = create_attributes_in_element (element);
+        /* We are ready creating an element. */
         if (verbose)
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("wrote a footprint file for a %s package: %s."),
+                        _("created an element for a %s package: %s."),
                         footprint_type,
                         footprint_filename);
         return (element);
