@@ -5,6 +5,9 @@ pcb-gfpw (GUI):
 - It seems that the "Total number of pins/pads" entry does not update correct
   when a predefined footprint is recognised and values are/should be loaded.
 
+- The pin/pad exceptions dilog does not return the string with exceptions to 
+  the main dialog entry.
+
 
 fpw (CLI):
 ----------
