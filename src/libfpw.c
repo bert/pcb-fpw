@@ -46,7 +46,7 @@ AttributeTypePtr create_new_attribute (AttributeListTypePtr list, char *name, ch
 /*!
  * \brief Create all attributes in an element.
  */
-int
+ElementTypePtr
 create_attributes_in_element
 (
         ElementTypePtr element
@@ -98,6 +98,7 @@ create_attributes_in_element
         create_new_attribute (&element->Attributes, "c2", g_strdup_printf ("%f", c2));
         create_new_attribute (&element->Attributes, "g2", g_strdup_printf ("%f", g2));
         create_new_attribute (&element->Attributes, "z2", g_strdup_printf ("%f", z2));
+        return element;
 }
 
 
