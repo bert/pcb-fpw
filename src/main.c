@@ -8,25 +8,6 @@
  * (see http://pcb.sourgeforge.net) for the placement of parts in a pcb
  * layout.\n
  *
- * \todo When this wizard becomes really quit popular, we can write a function to
- * read from the footprintwizard files as to allow for editing or any other
- * (futuristic) purpose you can think of.\n
- * This needs debugging.
- *
- * \todo Add the preview widget as a popup dialog.
- *
- * \todo Change the current preview into a dimensions view.\n
- * Perhaps load a pre-cooked picture on a per footprint type basis ?.
- *
- * \todo Add a menubar (in the future ?).
- *
- * \todo GUI is now "static" and based on code generated with Glade.\n
- * In the distant future it can become neccessary to have a "dynamic" GUI to
- * be generated with libglade code.
- *
- * \todo Inserting of generated footprint into pcb by means of an Inter
- * Process Communication protocol such as DBUS for instance.
- *
  * This program is free software; you can redistribute it and/or modify\n
  * it under the terms of the GNU General Public License as published by\n
  * the Free Software Foundation; either version 2 of the License, or\n
