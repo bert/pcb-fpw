@@ -1717,41 +1717,63 @@ write_footprintwizard_file (gchar *fpw_filename)
         FILE *fpw = fopen (fpw_filename, "w");
         if (!fpw)
         {
-                fprintf (stderr, "ERROR: could not open footprint wizard file: %s for writing.\n", fpw_filename);
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("could not open footprint wizard file: %s for writing."),
+                        fpw_filename);
                 return (EXIT_FAILURE);
         }
-        if (!footprint_filename)
+        /* Footprint filename may not be null or empty. */
+        if (!footprint_filename || (!strcmp (footprint_filename, "")))
         {
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("could not write footprint wizard file (null or empty footprint filename string)."));
                 return (EXIT_FAILURE);
         }
-        else
+        /* Footprint name may not be null or empty. */
+        if (!footprint_name || (!strcmp (footprint_name, "")))
         {
-                fprintf (fpw, "%s\n", footprint_filename);
-        }
-        if (!footprint_name)
-        {
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("could not write footprint wizard file (null or empty footprint name string)."));
                 return (EXIT_FAILURE);
         }
-        else
+        /* Footprint type may not be null or empty. */
+        if (!footprint_type || (!strcmp (footprint_type, "")))
         {
-                fprintf (fpw, "%s\n", footprint_name);
-        }
-        if (!footprint_type)
-        {
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("could not write footprint wizard file (null or empty footprint type string)."));
                 return (EXIT_FAILURE);
         }
-        else
+        /* Footprint units may not be null or empty. */
+        if (!footprint_units || (!strcmp (footprint_units, "")))
         {
-                fprintf (fpw, "%s\n", footprint_type);
-        }
-        if (!footprint_units)
-        {
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("could not write footprint wizard file (null or empty footprint units string)."));
                 return (EXIT_FAILURE);
         }
-        else
+        /* The pad shape needs to be defined. */
+        if (!pad_shape)
         {
-                fprintf (fpw, "%s\n", footprint_units);
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("could not write footprint wizard file (null or empty pad shape string)."));
+                return (EXIT_FAILURE);
         }
+        if (!pin_pad_exceptions_string)
+        {
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("could not write footprint wizard file (null or empty pin/pad exception string)."));
+                return (EXIT_FAILURE);
+        }
+        /* These variables have been checked for valid content above. */
+        fprintf (fpw, "%s\n", footprint_filename);
+        fprintf (fpw, "%s\n", footprint_name);
+        fprintf (fpw, "%s\n", footprint_type);
+        fprintf (fpw, "%s\n", footprint_units);
+        /* The following string values may contain an empty string.
+         * If a null pointer is encountered an empty string is written as to
+         * prevent "(null)" string values from emerging in the fpw file.
+         * The following values of type double are allowed to be 0.0 .
+         * The following values of type integer are allowed to be 0 .
+         */
         (!footprint_refdes) ? fprintf (fpw, "\n") :
                 fprintf (fpw, "%s\n", footprint_refdes);
         (!footprint_value) ? fprintf (fpw, "\n") :
@@ -1776,22 +1798,8 @@ write_footprintwizard_file (gchar *fpw_filename)
         fprintf (fpw, "%f\n", pitch_y);
         fprintf (fpw, "%f\n", count_x);
         fprintf (fpw, "%f\n", count_y);
-        if (!pad_shape)
-        {
-                return (EXIT_FAILURE);
-        }
-        else
-        {
-                fprintf (fpw, "%s\n", pad_shape);
-        }
-        if (!pin_pad_exceptions_string)
-        {
-                return (EXIT_FAILURE);
-        }
-        else
-        {
-                fprintf (fpw, "%s\n", pin_pad_exceptions_string);
-        }
+        fprintf (fpw, "%s\n", pad_shape);
+        fprintf (fpw, "%s\n", pin_pad_exceptions_string);
         (!pin_1_position) ? fprintf (fpw, "\n") :
                 fprintf (fpw, "%s\n", pin_1_position);
         fprintf (fpw, "%f\n", pad_diameter);
