@@ -1,27 +1,10 @@
-======= LIST OF ISSUES WITH PCB-FPW =======
+======= ISSUES WITH PCB-FPW =======
 
-pcb-gfpw (GUI):
--------------
-- It seems that the "Total number of pins/pads" entry does not update correct
-  when a predefined footprint is recognised and values are/should be loaded.
+All issues, bug reports and feature requests should go into the Lighthouse 
+ticket application.
 
-- The pin/pad exceptions dilog does not return the string with exceptions to 
-  the main dialog entry.
+Lighthouse is to be found at:
 
-
-fpw (CLI):
-----------
-- It seems that more error checking is needed to load a fpw file in a proper
-  way.
-
-
-Generated FootPrintWizard files:
---------------------------------
-- Undefined string values are represented with (null).
-
-
-Generated footprints:
----------------------
-
+http://pcb-gfpw.lighthouseapp.com/projects/20664-pcb-fpw/tickets?q=all
 
 /* EOF */
