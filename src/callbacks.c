@@ -3142,7 +3142,7 @@ void
 on_refresh_button_clicked              (GtkButton       *button,
                                         gpointer         user_data)
 {
-        all_entries_need_updated (button);
+        all_entries_need_updated (GTK_WIDGET (button));
 }
 
 /*!
