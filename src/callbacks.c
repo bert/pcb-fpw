@@ -2036,7 +2036,7 @@ on_filechooser_dialog_open_button_clicked
                 if (temp_dir)
                         work_dir = g_strdup (temp_dir);
                 /* Read new global values from the selected footprintwizard file. */
-                if (read_footprintwizard_file (fpw_filename))
+                if (read_footprintwizard_file (fpw_filename) == EXIT_SUCCESS)
                 {
                         if (verbose)
                                 g_log ("", G_LOG_LEVEL_INFO, _("Read footprintwizard file %s."), fpw_filename);
