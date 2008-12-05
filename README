@@ -51,21 +51,22 @@ The fifth and last tab is named "Heel & Toe goals".
 This tab is for the input of heel and toe parameters to allow for the creation
 of PLCC, SO, QFN or QFP packages.
 
-The five buttons in the lower part will have the following functions:
-        - "Close" to exit the application and preview dialog window,
-        - "Clear" to empty all entry fields and reset all checkbuttons to the 
-          default (initial) setting,
-        - "Open" to choose and load an existing footprintwizard file,
-        - "Save" to write the current values in the entries to a 
-          footprintwizard file and to generate a footprint file,
-        - "Refresh" to create or refresh the preview popup dialog window.
+The eight buttons in the lower part will have the following functions:
+        - "Refresh": to refresh all entries,
+        - "Dimensions": to view a dimensions legenda in a popup dialog,
+        - "Preview": to view the footprint in a popup preview dialog (when and if implemented).
+        - "Clear": to empty all entry fields and reset all check boxes to the default setting,
+        - "Close": to exit the application,
+        - "Open": to choose and read an existing footprintwizard file,
+        - "Footprint": to write the current values in the entries into a footprint file,
+        - "Save": to write the current values in the entries into a footprintwizard file.
 
 
 Command Line Interface (CLI).
 -----------------------------
 
-The "other" modus of non-interactive operation is from the command line 
-interface.
+The "other" modus of non-interactive (batch) operation is from the Command Line 
+Interface.
 
 This assumes for an existing footprintwizard file (or series of files when 
 batch processing).
@@ -76,12 +77,15 @@ For more information type:
 
 fpw -h
 
+
+List of supported footprint types.
+----------------------------------
+
+BGA, CAPC, CAPM, CAPMP, CON_DIL, CON_DIP, DIOM, DIOMELF, DIP, INDC, INDM, INDP,
+PGA, PLCC, RESC, RESM, RESMELF, SOT and TO92.
+
+
 Have fun creating footprints  with pcb-fpw  ;-)
 
-
-List of supported footprint types:
-
-BGA, CAPC, CAPM, CAPMP, DIOM, DIOMELF, DIP, INDC, INDM, INDP, PGA, PLCC, RESC, 
-RESM, RESMELF and TO92.
 
 /* End Of File */
