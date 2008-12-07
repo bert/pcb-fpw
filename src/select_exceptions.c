@@ -322,7 +322,6 @@ select_exceptions_create_window
         /* Create bottom row of labels with pin/pad index numbers. */
         /* Pack the table into the vbox */
         gtk_box_pack_start (GTK_BOX (vbox), table, FALSE, FALSE, 0);
-
         /* Create a horizontal button box. */
         GtkWidget *hbox = gtk_hbutton_box_new ();
         gtk_container_set_border_width (GTK_CONTAINER (hbox), 10);
@@ -362,8 +361,6 @@ select_exceptions_create_window
         gtk_box_pack_start (GTK_BOX (hbox), ok_button, TRUE, TRUE, 0);
         /* Pack the hbox into the vbox */
         gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
-
-
         gtk_window_set_resizable (GTK_WINDOW (select_exceptions_window), FALSE);
         /* Show the window */
         gtk_widget_realize (select_exceptions_window);
