@@ -1796,13 +1796,8 @@ on_dimensions_button_clicked           (GtkButton       *button,
 {
         gchar *image_filename = g_strconcat
         (
-                g_get_current_dir (),
-                G_DIR_SEPARATOR,
-                "pixmaps",
-                G_DIR_SEPARATOR,
-                footprint_type, ".xpm", NULL
+                "pixmaps/", footprint_type, ".xpm", NULL
         );
-        fprintf (stderr, "image filename: %s", image_filename);
         if (g_file_test (image_filename, G_FILE_TEST_EXISTS))
         {
                 if (verbose)

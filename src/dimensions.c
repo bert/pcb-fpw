@@ -54,6 +54,35 @@ dimensions_window_delete_event
 }
 
 
+/*!
+ * \brief Expose the window.
+ */
+void
+dimensions_window_expose_event
+(
+        GtkWidget *widget,
+        GdkEventExpose *event,
+        GdkPixbuf *buf
+)
+{
+        gdk_draw_pixbuf
+        (
+                widget->window,
+                NULL,
+                buf,
+                0,
+                0,
+                0,
+                0,
+                -1,
+                -1,
+                GDK_RGB_DITHER_NONE,
+                0,
+                0
+        );
+}
+
+
 int
 dimensions_create_window
 (
@@ -68,13 +97,13 @@ dimensions_create_window
         gtk_window_set_destroy_with_parent (GTK_WINDOW (dimensions_window),
                 TRUE);
         /* Set the preview window title */
-        gchar *dimensions_window_title = g_strdup_printf ("dimensions of %s",
+        gchar *dimensions_window_title = g_strdup_printf (_("dimensions of %s"),
                 footprint_type);
         gtk_window_set_title (GTK_WINDOW (dimensions_window),
                 dimensions_window_title);
         g_free (dimensions_window_title);
         gtk_container_set_border_width (GTK_CONTAINER (dimensions_window), 10);
-        /* Set signals for the window */
+        /* Set the delete signal for the window */
         gtk_signal_connect
         (
                 GTK_OBJECT (dimensions_window),
@@ -87,12 +116,22 @@ dimensions_create_window
         gtk_container_add (GTK_CONTAINER (dimensions_window), vbox);
         /* Load a pre-cooked dimensions image for the footprint type
          * and set the name accordingly */
-        GtkWidget *dimensions_image = gtk_image_new_from_file (image_filename);
-        gtk_widget_set_name (dimensions_image, "dimensions_image");
-        /* Display the pre-cooked dimensions image for the footprint type */
-        gtk_widget_show (dimensions_image);
-        gtk_container_add (GTK_CONTAINER (dimensions_window),
-                dimensions_image);
+        GdkPixbuf *dimensions_image = gdk_pixbuf_new_from_file (image_filename, NULL);
+        GtkWidget *drawing_area = gtk_drawing_area_new ();
+        gtk_widget_set_app_paintable (drawing_area, TRUE);
+        /* Set the expose signal for the window */
+        g_signal_connect
+        (
+                GTK_OBJECT (drawing_area),
+                "expose-event",
+                (GtkSignalFunc) dimensions_window_expose_event,
+                dimensions_image
+        );
+        /* Get size of drawing_area and resize */
+        gint width = gdk_pixbuf_get_width (dimensions_image);
+        gint height = gdk_pixbuf_get_height (dimensions_image);
+        gtk_widget_set_size_request (GTK_WIDGET (drawing_area), width, height);
+        gtk_container_add (GTK_CONTAINER (vbox), drawing_area);
         /* Create a horizontal button box */
         GtkWidget *hbox = gtk_hbutton_box_new ();
         gtk_button_box_set_layout (GTK_BUTTON_BOX (hbox), GTK_BUTTONBOX_END);
@@ -110,6 +149,7 @@ dimensions_create_window
         /* Pack the hbox into the vbox */
         gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
         /* Show the window */
+        gtk_window_set_resizable (GTK_WINDOW (dimensions_window), FALSE);
         gtk_widget_realize (dimensions_window);
         gtk_widget_show_all (dimensions_window);
         /* Enter the GTK main loop */
