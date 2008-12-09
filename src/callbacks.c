@@ -259,7 +259,7 @@ all_entries_need_updated (GtkWidget *widget)
         if (!pin_pad_exceptions_string || (!strcmp (pin_pad_exceptions_string, "")))
         {
                 GtkWidget *pin_pad_exceptions_string_entry = lookup_widget
-                        (GTK_WIDGET (widget), "pin_pad_exception_string_entry");
+                        (GTK_WIDGET (widget), "pin_pad_exceptions_entry");
                 gtk_widget_set_sensitive (pin_pad_exceptions_string_entry, TRUE);
                 gtk_entry_set_text (GTK_ENTRY (pin_pad_exceptions_string_entry),
                         g_strdup_printf ("%s", pin_pad_exceptions_string));
@@ -268,7 +268,7 @@ all_entries_need_updated (GtkWidget *widget)
         if (pin_1_position)
         {
                 GtkWidget *pin_1_position_entry = lookup_widget (GTK_WIDGET (widget),
-                        "pin_1_position_entry");
+                        "number_1_position_entry");
                 gtk_widget_set_sensitive (pin_1_position_entry, TRUE);
                 update_location_variables ();
                 gtk_combo_box_set_active (GTK_COMBO_BOX (pin_1_position_entry),
@@ -293,7 +293,7 @@ all_entries_need_updated (GtkWidget *widget)
                         g_strdup_printf ("%f", pin_drill_diameter));
         }
         GtkWidget *pin1_square_checkbutton = lookup_widget (GTK_WIDGET (widget),
-                "pin1_square_checkbutton");
+                "pin_square_checkbutton");
         gtk_widget_set_sensitive (pin1_square_checkbutton, TRUE);
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (pin1_square_checkbutton),
                 pin1_square);
