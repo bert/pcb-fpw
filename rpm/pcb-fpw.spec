@@ -10,7 +10,17 @@ Source:		%{name}-%{version}.tar.gz
 Buildroot: 	/var/tmp/%{name}-%{version}
 
 %description
-.
+The pcb-fpw FootPrintWizard is what the name says it will be:
+a footprint wizard (a.k.a. footprint generator).
+pcb-fpw is not a footprint editor, therefor one can NOT load an existing 
+footprint file into pcb-fpw, make some changes and save it back to file, and 
+subsequent load the edited footprint file into pcb.
+The main, interactive, modus of operating the software is probably with the 
+GUI application "pcb-gfpw".
+The "other" modus of non-interactive (batch) operation is from the Command Line 
+Interface.
+This assumes for an existing footprintwizard file (or series of files when 
+batch processing).
 
 %prep
 %setup
