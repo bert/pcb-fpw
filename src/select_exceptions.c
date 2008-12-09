@@ -42,8 +42,6 @@ typedef struct
 
 static SelectionButtonSet selection_buttons[MAX_ROWS * MAX_COLUMNS];
 
-static gint selection_button_index;
-
 GtkWidget *select_exceptions_window = NULL;
 
 
@@ -63,7 +61,7 @@ select_exceptions_clear_cb
         gint i;
         gint j;
         SelectionButtonSet *selection_button;
-        selection_button_index = 0;
+        gint selection_button_index = 0;
         for (i = 0; (i < MAX_ROWS); i++)
         {
                 for (j = 0; (j < MAX_COLUMNS); j++)
@@ -143,8 +141,10 @@ select_exceptions_ok_cb
         gint i;
         gint j;
         SelectionButtonSet *selection_button;
-        selection_button_index = 0;
+        gint selection_button_index = 0;
         gchar *exceptions = g_strdup ("");
+        number_of_exceptions = 0;
+        /* parse the array for active selection buttons. */
         for (i = 0; (i < number_of_rows); i++)
         /* one row at a time [A .. Y, AA .. YY] etc.
          * where i is one or more letters of the alphabet,
@@ -161,10 +161,17 @@ select_exceptions_ok_cb
                         {
                                 exceptions = g_strconcat (exceptions,
                                         selection_button->name, ",", NULL);
+                                number_of_exceptions++;
                         }
                         selection_button_index++;
                         g_free (selection_button_name);
                 }
+        }
+        if (verbose)
+        {
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("found %d exceptions for pins/pads.")),
+                        number_of_exceptions);
         }
         pin_pad_exceptions_string = g_strdup (exceptions);
         /*!
@@ -191,7 +198,7 @@ select_exceptions_selection_button_clicked_cb
 {
         const gchar *widget_name;
         SelectionButtonSet *selection_button;
-        selection_button_index = -1;
+        gint selection_button_index = -1;
         widget_name = gtk_widget_get_name (widget);
         do
         {
@@ -255,8 +262,8 @@ select_exceptions_create_window
         gint i;
         gint j;
         SelectionButtonSet *selection_button;
-        selection_button_index = 0;
-        /* Create top row of labels with pin/pad index numbers. */
+        gint selection_button_index = 0;
+        /* Create top row with column labels with pin/pad index numbers. */
         for (j = 1; (j < (number_of_columns + 1)); j++)
         {
                 GtkWidget *column_label = gtk_label_new (g_strdup_printf ("%d", j));
@@ -272,6 +279,8 @@ select_exceptions_create_window
          * where i is one or more letters of the alphabet,
          * excluding "I", "O", "Q", "S" and "Z" */
         {
+                /* Create a label in the first column labels with the pin/pad
+                 * index character. */
                 GtkWidget *row_label = gtk_label_new (g_strdup_printf ("%s",
                         (row_letters[i])));
                 gtk_table_attach_defaults (GTK_TABLE (table), row_label,
@@ -296,7 +305,7 @@ select_exceptions_create_window
                                 (j + 1), (j + 2), (i + 1), (i + 2));
                         selection_button->active = !get_pin_pad_exception
                                 (selection_button_name);
-                        if (get_pin_pad_exception (selection_button_name))
+                        if (get_pin_pad_exception (selection_button_name) == EXIT_SUCCESS)
                         {
                                 gtk_toggle_button_set_active
                                         (GTK_TOGGLE_BUTTON (selection_button->button_widget),
@@ -319,7 +328,6 @@ select_exceptions_create_window
                         g_free (selection_button_name);
                 }
         }
-        /* Create bottom row of labels with pin/pad index numbers. */
         /* Pack the table into the vbox */
         gtk_box_pack_start (GTK_BOX (vbox), table, FALSE, FALSE, 0);
         /* Create a horizontal button box. */
