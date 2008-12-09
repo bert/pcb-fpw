@@ -1043,7 +1043,7 @@ number_of_pins_has_changed (GtkWidget *widget)
         switch (package_type)
         {
                 case BGA :
-                        number_of_pins = number_of_columns * number_of_rows;
+                        number_of_pins = (number_of_columns * number_of_rows) - number_of_exceptions;
                         break;
                 case CAPC :
                         number_of_pins = 2;
@@ -1085,7 +1085,7 @@ number_of_pins_has_changed (GtkWidget *widget)
                         number_of_pins = 2;
                         break;
                 case PGA :
-                        number_of_pins = number_of_columns * number_of_rows;
+                        number_of_pins = (number_of_columns * number_of_rows) - number_of_exceptions;
                         break;
                 case PLCC :
                         number_of_pins = (number_of_columns * count_x +
