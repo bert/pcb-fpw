@@ -258,10 +258,10 @@ all_entries_need_updated (GtkWidget *widget)
         /* Only update the "pin/pad exceptions" entry with a sensible value. */
         if (!pin_pad_exceptions_string || (!strcmp (pin_pad_exceptions_string, "")))
         {
-                GtkWidget *pin_pad_exceptions_string_entry = lookup_widget
+                GtkWidget *pin_pad_exceptions_entry = lookup_widget
                         (GTK_WIDGET (widget), "pin_pad_exceptions_entry");
-                gtk_widget_set_sensitive (pin_pad_exceptions_string_entry, TRUE);
-                gtk_entry_set_text (GTK_ENTRY (pin_pad_exceptions_string_entry),
+                gtk_widget_set_sensitive (pin_pad_exceptions_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY (pin_pad_exceptions_entry),
                         g_strdup_printf ("%s", pin_pad_exceptions_string));
         }
         /* Only update the "pin #1 position" entry with a sensible value */
