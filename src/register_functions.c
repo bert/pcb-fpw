@@ -33,6 +33,9 @@
 #define _REGISTER_FUNCTIONS_
 
 
+/*!
+ * \brief .
+ */
 typedef struct
 {
         char *name;
@@ -48,6 +51,9 @@ typedef struct
 } fpw_function_t;
 
 
+/*!
+ * \brief .
+ */
 typedef struct fpw_function_node_t
 {
         struct fpw_function_node_t *next;
@@ -71,6 +77,10 @@ fpw_function_sort (const void *va, const void *vb)
 }
 
 
+/*!
+ * \brief Find the function as described in \c name in the register.
+ * \return 0 if a NULL pointer is passed.
+ */
 fpw_function_t *
 fpw_find_function (const char *name)
 {
@@ -132,6 +142,9 @@ fpw_functionv (const char *name, int argc, char **argv)
 }
 
 
+/*!
+ * \brief .
+ */
 int
 fpw_function (const char *name)
 {
