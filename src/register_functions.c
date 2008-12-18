@@ -122,15 +122,20 @@ fpw_find_function (const char *name)
 }
 
 
+/*!
+ * \brief .
+ */
 int
 fpw_functionv (const char *name, int argc, char **argv)
 {
-        int x = 0, y = 0, i;
+        int x = 0;
+        int y = 0;
+        int i;
         fpw_function_t *a;
 
         if (verbose && name)
         {
-                fprintf (stderr, "Action: \033[34m%s(", name);
+                fprintf (stderr, "Function: \033[34m%s(", name);
                 for (i = 0; i < argc; i++)
                         fprintf (stderr, "%s%s", i ? "," : "", argv[i]);
                 fprintf (stderr, ")\033[0m\n");
@@ -155,11 +160,15 @@ fpw_function (const char *name)
 #define FPW_CONCAT(a,b) a##b
 
 
+/*!
+ * \brief .
+ */
 void
 fpw_register_functions (fpw_function_t * a, int n)
 {
         fpw_function_node_t *gf;
-        /* printf("%d fuctions registered\n", n); */
+
+        /* printf("%d functions registered\n", n); */
         gf = (fpw_function_node_t *) malloc (sizeof (fpw_function_node_t));
         gf->next = fpw_function_nodes;
         fpw_function_nodes = gf;
