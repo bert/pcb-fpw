@@ -2288,7 +2288,6 @@ write_footprint()
                         break;
                 case CON_HDR:
                         con_hdr_write_footprint ();
-                        return;
                         break;
                 case DIL:
                         return;
