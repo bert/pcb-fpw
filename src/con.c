@@ -68,6 +68,21 @@ con_get_default_footprint_values
 }
 
 
+/*!
+ * \brief Create a list of CON packages with pre-defined values.
+ *
+ * The data in this list can be used in a combo box to select a
+ * pre-defined package.
+ */
+GList
+con_create_packages_list ()
+{
+        GList *con_packages_list = NULL;
+        con_packages_list = g_list_append (con_packages_list, "CON-DIP");
+        return (*bga_packages_list);
+}
+
+
 #if GUI
 /*!
  * \brief Set GUI constraints for the CON-DIL package type.
