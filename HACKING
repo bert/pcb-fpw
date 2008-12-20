@@ -1,9 +1,19 @@
 =======	CODING STANDARD FOR PCB-FPW =======
 
-Rationale
----------
+Rationale on Coding Style
+-------------------------
 Here follow some notes to myself, or any other volunteer hacker who wants to 
 join the effort.
+The coding style followed is the Allman style is named after Eric Allman.
+It is sometimes referred to as "ANSI style" for its use in the documents
+describing the ANSI C standard.
+Proponents of this style often cite its use by ANSI and in other standards as 
+justification for its adoption.
+This style is similar to the standard indentation used by the Pascal programming
+language and Transact-SQL, where the braces are equivalent to the "begin" and 
+"end" keywords.
+As I started programming in Pascal way back in the 80's of the former century, 
+this is the reason for using this coding style in C code.
 
 File headers
 ------------ 
