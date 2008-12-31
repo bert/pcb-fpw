@@ -348,6 +348,18 @@ get_package_type ()
         {
                 package_type = CAPC;
         }
+        else if (!strcmp (footprint_type, "CON_DIL"))
+        {
+                package_type = CON_DIL;
+        }
+        else if (!strcmp (footprint_type, "CON_DIP"))
+        {
+                package_type = CON_DIP;
+        }
+        else if (!strcmp (footprint_type, "CON_HDR"))
+        {
+                package_type = CON_HDR;
+        }
         else if (!strcmp (footprint_type, "DIL"))
         {
                 package_type = DIL;
