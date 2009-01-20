@@ -81,7 +81,7 @@ fpw -h
 List of supported footprint types.
 ----------------------------------
 
-BGA, CAPC, CAPM, CAPMP, CON_DIL, CON_DIP, DIOM, DIOMELF, DIP, INDC, INDM, INDP,
+BGA, CAPC, CAPM, CAPMP, CON-DIL, CON-DIP, CON-HDR, DIOM, DIOMELF, DIP, INDC, INDM, INDP,
 PGA, PLCC, RESC, RESM, RESMELF, SOT and TO92.
 
 
