@@ -21,7 +21,9 @@
 
 
 #include "bga.c"
-#include "con.c"
+#include "con_dil.c"
+#include "con_dip.c"
+#include "con_hdr.c"
 #include "dip.c"
 #include "pga.c"
 #include "plcc.c"
