@@ -1,6 +1,6 @@
 /*!
  * \file con_hdr.c
- * \author Copyright (C) 2008 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief Predefined values for CON-HDR (connector) footprints.
  *
  * This program is free software; you can redistribute it and/or modify
@@ -97,6 +97,9 @@ con_hdr_set_gui_constraints (GtkWidget *widget)
         gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
 
         /* Widgets on tab 2 "Pins/Pads" */
+        GtkWidget *number_total_pins_entry = lookup_widget (GTK_WIDGET (widget),
+                "number_total_pins_entry");
+        gtk_widget_set_sensitive (number_total_pins_entry, FALSE);
         GtkWidget *number_of_columns_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_columns_entry");
         gtk_entry_set_text (GTK_ENTRY (number_of_columns_entry), "");
@@ -212,7 +215,7 @@ con_hdr_write_footprint ()
         /* Write pin and/or pad entities */
         for (i = 0; (i < count_x); i++)
         {
-                pin_number = 1 + i;
+                pin_number = (2 * i) + 1;
                 if (pin1_square && (pin_number == 1))
                         pin_pad_flags = g_strdup ("square");
                 else
@@ -244,21 +247,17 @@ con_hdr_write_footprint ()
                                 multiplier * ((((-count_x - 1) / 2.0) + 1 + i) * pitch_x), /* x1-coordinate */
                                 multiplier * (pitch_y - pad_length + pad_width) / 2.0, /* y1 coordinate */
                                 multiplier * pad_length, /* width of the pad */
-                                multiplier * pad_clearance, /* clearance */
-                                multiplier * (pad_width + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                                multiplier * 2 * pad_clearance, /* clearance */
+                                multiplier * (pad_length + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
                                 pin_pad_flags /* flags */
                         );
                 }
-                i++;
-                if (pin1_square && (pin_number == 1))
-                        pin_pad_flags = g_strdup ("square");
-                else
-                        pin_pad_flags = g_strdup ("");
+                pin_number++;
                 write_pin
                 (
                         pin_number, /* pin number */
                         pin_pad_name, /* pin name */
-                        multiplier * ((((-count_x - 1) / 2.0) + i) * pitch_x), /* x0-coordinate */
+                        multiplier * ((((-count_x - 1) / 2.0) + 1 + i) * pitch_x), /* x0-coordinate */
                         multiplier * (-pitch_y / 2.0), /* y0 coordinate */
                         multiplier * pad_diameter, /* width of the annulus ring (pad) */
                         multiplier * pad_clearance, /* clearance */
@@ -276,13 +275,13 @@ con_hdr_write_footprint ()
                         (
                                 pin_number, /* pad number = pin_number*/
                                 pin_pad_name, /* pad name */
-                                multiplier * ((((-count_x - 1) / 2.0) + i) * pitch_x), /* x0-coordinate */
+                                multiplier * ((((-count_x - 1) / 2.0) + 1 + i) * pitch_x), /* x0-coordinate */
                                 multiplier * (pitch_y - pad_length + pad_width) / 2.0, /* y0 coordinate */
-                                multiplier * ((((-count_x - 1) / 2.0) + i) * pitch_x), /* x1-coordinate */
+                                multiplier * ((((-count_x - 1) / 2.0) + 1 + i) * pitch_x), /* x1-coordinate */
                                 multiplier * (pitch_y + pad_length - pad_width) / 2.0, /* y1 coordinate */
                                 multiplier * pad_length, /* width of the pad */
-                                multiplier * pad_clearance, /* clearance */
-                                multiplier * (pad_width + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                                multiplier * 2 * pad_clearance, /* clearance */
+                                multiplier * (pad_length + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
                                 pin_pad_flags /* flags */
                         );
                 }
@@ -345,7 +344,7 @@ con_hdr_write_footprint ()
 
 
 static fpw_function_t
-con_function_list[] =
+con_hdr_function_list[] =
 {
 #if GUI
         {
