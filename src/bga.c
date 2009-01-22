@@ -709,8 +709,10 @@ bga_get_default_footprint_values
                 pad_solder_mask_clearance = 0.15;
                 courtyard_length = 13.00;
                 courtyard_width = 13.00;
+                courtyard_line_width = 0.05;
                 silkscreen_length = 11.00;
                 silkscreen_width = 11.00;
+                silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA100C100P10X10_1100X1100X140");
                 return (EXIT_SUCCESS);
