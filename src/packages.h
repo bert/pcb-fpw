@@ -21,12 +21,19 @@
 
 
 #include "bga.c"
+#include "capc.c"
+#include "capm.c"
+#include "capmp.c"
 #include "con_dil.c"
 #include "con_dip.c"
 #include "con_hdr.c"
+#include "diom.c"
+#include "diomelf.c"
 #include "dip.c"
+#include "indc.c"
 #include "pga.c"
 #include "plcc.c"
+#include "resc.c"
 #include "smt.c"
 #include "sot.c"
 
