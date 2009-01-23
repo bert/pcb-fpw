@@ -885,7 +885,7 @@ bga_get_default_footprint_values
                         "A1,A6,A11,",
                         "D5,D6,D7,",
                         "E4,E8,",
-                        "F1,F4,F8,F11,",
+                        "F1,F4,F6,F8,F11,",
                         "G4,G8,",
                         "H5,H6,H7,",
                         "L1,L6,L11",
@@ -904,15 +904,17 @@ bga_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 0.0;
                 pad_diameter = 0.25;
-                pad_clearance = 0.15;
-                pad_solder_mask_clearance = 0.15;
+                pad_clearance = 0.075;
+                pad_solder_mask_clearance = 0.075;
                 fiducial = TRUE;
                 fiducial_pad_diameter = 1.00;
                 fiducial_pad_solder_mask_clearance = 1.00;
                 courtyard_length = 7.00;
                 courtyard_width = 7.00;
-                silkscreen_length = 6.10;
-                silkscreen_width = 6.10;
+                courtyard_line_width = 0.05;
+                silkscreen_length = 6.00;
+                silkscreen_width = 6.00;
+                silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA100C50P11X11_600X600X100");
                 return (EXIT_SUCCESS);
