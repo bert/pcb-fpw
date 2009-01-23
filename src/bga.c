@@ -748,6 +748,8 @@ bga_get_default_footprint_values
                 silkscreen_width = 11.00;
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("BGA100C100P10X10_1100X1100X170: also known as JEDEC MO-192AAC-1."));
                 footprint_name = g_strdup ("BGA100C100P10X10_1100X1100X170");
                 return (EXIT_SUCCESS);
         }
