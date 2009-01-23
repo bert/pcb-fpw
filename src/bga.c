@@ -871,6 +871,8 @@ bga_get_default_footprint_values
                 silkscreen_width = 6.00;
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("BGA100C50P10X10_600X600X110: also known as JEDEC MO-195."));
                 footprint_name = g_strdup ("BGA100C50P10X10_600X600X110");
                 return (EXIT_SUCCESS);
         }
