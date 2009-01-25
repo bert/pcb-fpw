@@ -97,7 +97,7 @@ capmp_set_gui_constraints (GtkWidget *widget)
         GtkWidget *number_of_rows_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_rows_entry");
         gtk_entry_set_text (GTK_ENTRY (number_of_rows_entry), "1");
-        gtk_widget_set_sensitive (number_of_rows_entry, FALSEE);
+        gtk_widget_set_sensitive (number_of_rows_entry, FALSE);
         GtkWidget *count_x_entry = lookup_widget (GTK_WIDGET (widget),
                 "count_x_entry");
         gtk_entry_set_text (GTK_ENTRY (count_x_entry), "");
