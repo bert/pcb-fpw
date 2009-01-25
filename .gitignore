@@ -21,6 +21,6 @@ stamp-h1
 *.fpw
 .deps
 .git
-*,dev
+*.dev
 *.layout
 .msg
