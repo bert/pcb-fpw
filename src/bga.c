@@ -973,7 +973,7 @@ bga_get_default_footprint_values
                 number_of_pins = 100;
                 pin_pad_exceptions_string = g_strconcat
                 (
-                        "C4,C5,C6,C7,C9,C10,C11,",
+                        "C4,C5,C6,C7,C8,C9,C10,C11,",
                         "D3,D4,D5,D6,D7,D8,D9,D10,D11,D12,",
                         "E3,E4,E5,E6,E7,E8,E9,E10,E11,E12,",
                         "F3,F4,F5,F6,F7,F8,F9,F10,F11,F12,",
@@ -982,7 +982,7 @@ bga_get_default_footprint_values
                         "J3,J4,J5,J6,J7,J8,J9,J10,J11,J12,",
                         "K3,K4,K5,K6,K7,K8,K9,K10,K11,K12,",
                         "L3,L4,L5,L6,L7,L8,L9,L10,L11,L12,",
-                        "M4,M5,M6,M8,M9,M10,M11,",
+                        "M4,M5,M6,M7,M8,M9,M10,M11,",
                         NULL
                 );
                 package_body_width = 8.00;
