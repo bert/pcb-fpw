@@ -1320,7 +1320,7 @@ bga_get_default_footprint_values
                 count_y = 0;
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 0.0;
-                pad_diameter = 0.40;
+                pad_diameter = 0.45;
                 pad_clearance = 0.15;
                 pad_solder_mask_clearance = 0.15;
                 fiducial = TRUE;
@@ -1328,8 +1328,10 @@ bga_get_default_footprint_values
                 fiducial_pad_solder_mask_clearance = 1.00;
                 courtyard_length = 11.00;
                 courtyard_width = 11.00;
+                courtyard_line_width = 0.05;
                 silkscreen_length = 9.00;
                 silkscreen_width = 9.00;
+                silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA100C80P10X10_900X900X150");
                 return (EXIT_SUCCESS);
