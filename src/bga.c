@@ -1420,7 +1420,18 @@ bga_get_default_footprint_values
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 100;
-                pin_pad_exceptions_string = g_strdup ("");
+                pin_pad_exceptions_string = g_strconcat
+                (
+                        "C3,C4,C5,C6,C7,C8,C9,C10,",
+                        "D3,D10,",
+                        "E3,E10,",
+                        "F3,F10,",
+                        "G3,G10,",
+                        "H3,H10,",
+                        "J3,J10,",
+                        "K3,K4,K5,K6,K7,K8,K9,K10,",
+                        NULL
+                );
                 package_body_width = 10.00;
                 package_body_length = 10.00;
                 package_body_height = 1.40;
