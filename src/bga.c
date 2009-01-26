@@ -359,6 +359,7 @@ bga_create_packages_list ()
         bga_packages_list = g_list_append (bga_packages_list, "BGA100C80P10X10_900X900X150");
         bga_packages_list = g_list_append (bga_packages_list, "BGA100C80P10X10_900X900X160");
         bga_packages_list = g_list_append (bga_packages_list, "BGA100C80P11X11_1100X1100X140");
+        bga_packages_list = g_list_append (bga_packages_list, "BGA100C80P12X12_1200X1200X140");
         bga_packages_list = g_list_append (bga_packages_list, "BGA1020C100P32X32_3300X3300X350");
         bga_packages_list = g_list_append (bga_packages_list, "BGA1023C100P32X32_3300X3300X350");
         bga_packages_list = g_list_append (bga_packages_list, "BGA1024C100P32X32_3300X3300X350");
@@ -669,6 +670,7 @@ bga_drc ()
  * - BGA100C80P10X10_900X900X150,
  * - BGA100C80P10X10_900X900X160,
  * - BGA100C80P11X11_1100X1100X140,
+ * - BGA100C80P12X12_1000X1000X140,
  * - BGA1020C100P32X32_3300X3300X350,
  * - BGA1023C100P32X32_3300X3300X350,
  * - BGA1024C100P32X32_3300X3300X350,
@@ -1412,6 +1414,41 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA100C80P11X11_1100X1100X140");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?BGA100C80P12X12_1000X1000X140"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 100;
+                pin_pad_exceptions_string = g_strdup ("");
+                package_body_width = 10.00;
+                package_body_length = 10.00;
+                package_body_height = 1.40;
+                package_is_radial = FALSE;
+                number_of_columns = 12;
+                number_of_rows = 12;
+                pitch_x = 0.80;
+                pitch_y = 0.80;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 0.0;
+                pad_diameter = 0.40;
+                pad_clearance = 0.075;
+                pad_solder_mask_clearance = 0.075;
+                fiducial = TRUE;
+                fiducial_pad_diameter = 1.00;
+                fiducial_pad_solder_mask_clearance = 1.00;
+                courtyard_length = 12.00;
+                courtyard_width = 12.00;
+                courtyard_line_width = 0.05;
+                silkscreen_length = 10.00;
+                silkscreen_width = 10.00;
+                silkscreen_line_width = 0.20;
+                g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("BGA100C80P12X12_1000X1000X140: is also known as JEDEC MO-205AC."));
+                footprint_name = g_strdup ("BGA100C80P12X12_1000X1000X140");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA1020C100P32X32_3300X3300X350"))
