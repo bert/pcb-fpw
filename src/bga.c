@@ -1903,6 +1903,49 @@ bga_get_default_footprint_values
                 footprint_name = g_strdup ("BGA1056C100P39X39_4000X4000X400");
                 return (EXIT_SUCCESS);
         }
+        else if (!strcmp (footprint_name, "?BGA105C65P11X11_800X800X140"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 105;
+                pin_pad_exceptions_string = g_strconcat
+                (
+                        "D4,D5,D6,D7,D8,",
+                        "E4,E8,",
+                        "F4,F8,",
+                        "G4,G8,",
+                        "H4,H5,H6,H7,H8,",
+                        NULL
+                );
+                package_body_width = 8.00;
+                package_body_length = 8.00;
+                package_body_height = 1.40;
+                package_is_radial = FALSE;
+                number_of_columns = 11;
+                number_of_rows = 11;
+                pitch_x = 0.65;
+                pitch_y = 0.65;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 0.0;
+                pad_diameter = 0.35;
+                pad_clearance = 0.075;
+                pad_solder_mask_clearance = 0.075;
+                fiducial = TRUE;
+                fiducial_pad_diameter = 1.00;
+                fiducial_pad_solder_mask_clearance = 1.00;
+                courtyard_length = 10.00;
+                courtyard_width = 10.00;
+                courtyard_line_width = 0.05;
+                silkscreen_length = 8.00;
+                silkscreen_width = 8.00;
+                silkscreen_line_width = 0.20;
+                g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("BGA105C65P11X11_800X800X140: is also known as JEDEC MO-225."));
+                footprint_name = g_strdup ("BGA105C65P11X11_800X800X140");
+                return (EXIT_SUCCESS);
+        }
         else if (!strcmp (footprint_name, "?BGA105C50P15X15_800X800X140"))
         {
                 footprint_units = g_strdup ("mm");
