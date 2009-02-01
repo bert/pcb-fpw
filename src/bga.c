@@ -2375,6 +2375,44 @@ bga_get_default_footprint_values
                 footprint_name = g_strdup ("BGA109C80P12X12_1000X1000X140");
                 return (EXIT_SUCCESS);
         }
+        else if (!strcmp (footprint_name, "?BGA10C50P3X4_150X200X63"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 10;
+                pin_pad_exceptions_string = g_strconcat
+                (
+                        "B2,",
+                        "C2,",
+                        NULL
+                );
+                package_body_width = 1.50;
+                package_body_length = 2.00;
+                package_body_height = 0.63;
+                package_is_radial = FALSE;
+                number_of_columns = 3;
+                number_of_rows = 4;
+                pitch_x = 0.50;
+                pitch_y = 0.50;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 0.0;
+                pad_diameter = 0.25;
+                pad_clearance = 0.075;
+                pad_solder_mask_clearance = 0.075;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                courtyard_length = 3.50;
+                courtyard_width = 4.00;
+                courtyard_line_width = 0.05;
+                silkscreen_length = 2.00;
+                silkscreen_width = 2.50;
+                silkscreen_line_width = 0.20;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("BGA10C50P3X4_150X200X63");
+                return (EXIT_SUCCESS);
+        }
         else if (!strcmp (footprint_name, "?BGA10C50P3X4_220X250X60"))
         {
                 footprint_units = g_strdup ("mm");
