@@ -2436,15 +2436,19 @@ bga_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 0.0;
                 pad_diameter = 0.25;
-                pad_clearance = 0.15;
-                pad_solder_mask_clearance = 0.15;
+                pad_clearance = 0.075;
+                pad_solder_mask_clearance = 0.075;
                 fiducial = FALSE;
                 fiducial_pad_diameter = 0.00;
                 fiducial_pad_solder_mask_clearance = 0.00;
-                courtyard_length = 3.20;
-                courtyard_width = 3.50;
+                courtyard_length = 4.20;
+                courtyard_width = 4.50;
+                courtyard_line_width = 0.05;
                 silkscreen_length = 2.20;
-                silkscreen_width = 2.60;
+                silkscreen_width = 2.50;
+                silkscreen_line_width = 0.20;
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("BGA10C50P3X4_220X250X60: is also known as JEDEC MO-211BD."));
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA10C50P3X4_220X250X60");
                 return (EXIT_SUCCESS);
