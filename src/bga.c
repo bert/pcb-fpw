@@ -2235,8 +2235,10 @@ bga_get_default_footprint_values
                 fiducial_pad_solder_mask_clearance = 1.00;
                 courtyard_length = 17.00;
                 courtyard_width = 17.00;
+                courtyard_line_width = 0.05;
                 silkscreen_length = 13.00;
                 silkscreen_width = 13.00;
+                silkscreen_line_width = 0.20;
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("BGA108C100P12X12_1300X1300X185: is also known as JEDEC MO-192AAD-1."));
                 g_free (footprint_name);
