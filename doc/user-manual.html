@@ -2,16 +2,39 @@
 <title>User Manual for pcb-gfpw (version 0.0.8)</title>
 <body>
 <h1>User Manual for pcb-gfpw (version 0.0.8)</h1>
+<hr>
+
+
+<h2>What is "pcb-fpw" ?</h2>
+"pcb-fpw" is a FootPrintWizard for <b>"pcb"</b>.<br>
+<br>
+"fpw" (<b>F</b>oot<b>P</b>rint<b>W</b>izard) is a Command Line Interface program 
+for the (automated) creation of footprint files used by the pcb layout application for the 
+placement of parts in a pcb layout.<br>
+"pcb-gfpw" is a GTK GUI version for the interactive creation of footprint files 
+used by the pcb layout application for the placement of parts in a pcb layout.
 <p>
+ 
+<h2>What is "pcb" ?</h2>
+"pcb" is an interactive <b>P</b>rinted <b>C</b>ircuit <b>B</b>oard editor for the
+X11 window system (see <a href="http://pcb.sourgeforge.net">
+http://pcb.sourgeforge.net</a>).<br>
+PCB includes a rats nest feature, design rule checking, and can provide
+industry standard RS-274-X (Gerber), NC drill, and centroid data (X-Y data)
+output for use in the board fabrication and assembly process.<br>
+PCB offers high end features such as an autorouter and trace optimizer which
+can tremendously reduce layout time.
+<hr>
+
 <h2>Intended usage.</h2>
-The pcb-fpw FootPrintWizard is what the name says it will be:
+The "pcb-fpw" FootPrintWizard is what the name says it will be:
 a footprint wizard (a.k.a. footprint generator).<br>
 <br>
 pcb-fpw is not a footprint editor, therefor one can NOT load an existing 
 footprint file into pcb-gfpw, make some changes and save it back to file, and 
 subsequent load the edited footprint file into pcb.<br>
 <p>
-The usage of pcb-gfpw comes down to the following:<br>
+In a nutshell, the usage of pcb-gfpw comes down to the following:<br>
 <ul>
 <li>Startup the application,
 <li>Fill the apropriate entries in:
@@ -25,12 +48,13 @@ The usage of pcb-gfpw comes down to the following:<br>
 <li>Check the footprint in the preview widget (when and if this is implemented)
 by pressing the <b>"Preview"</b> button,
 <li>Save the footprint file by pressing the <b>"Footprint"</b> button.
-<li>Save the footprintwizard file by pressing the <b>"Save"</b> button.
+<li>Save the footprintwizard file (for future reuse or debugging) by pressing 
+the <b>"Save"</b> button.
 </ul>
 <hr>
 
 
-<h2>Starting up.</h2>
+<h2>Starting up the application.</h2>
 During the  startup of the application an <b>"About pcb-gfpw"</b> dialog appears, 
 shortly followed by the <b>"main window"</b>.<br>
 <p>
@@ -78,12 +102,12 @@ footprint type and "grey out" the entries and checkbuttons which it thinks are
 not needed.<br>
 <br>
 Notes:<br>
-<ol>
+<ul>
 <li>The footprint types follow a "well known and standard" footprint 
 naming convention.<br>
-<li>Entering no footprint type, that is a blank entry, will leave give pcb-gfpw 
+<li>Entering no footprint type, that is a blank entry, will leave pcb-gfpw 
 clueless on how to generate a footprint.<br.
-</ol>
+</ul>
 <br>
 Disclaimers:<br>
 <ul>
@@ -92,16 +116,22 @@ is used.<br>
 <li>The actual data for creating footprints relies on vendor specific 
 datasheets (both method and content).<br>
 </ul>
+</ul>
 <br>
 <li>The entry named <b>"Name"</b> will contain the name that the actual 
 footprint file will get when the footprint is saved to disk.<br>
 Add characters here to complete the footprint name.<br>
-If the footprint name contains additional characters , changing the footprint 
+Notes:
+<ul>
+<li>If the footprint name contains additional characters , changing the footprint 
 type will not update the prefix from the <b>"Type"</b> entry.<br>
-The footprint name should be entered without the ".fp" suffix.<br>
-Note: this is a mandatory entry, leaving this entry empty or filled with a non 
+<li>If the footpint name has a question mark as prefix, the program will try to 
+lookup values for the indicated footprint.<br>
+<li>The footprint name should be entered without the ".fp" suffix.<br>
+<li>This is a mandatory entry, leaving this entry empty or filled with a non 
 valid footprint name will <u>NOT</u> result in a footprint file when the 
 <b>"Save"</b> button is clicked.<br>
+</ul>
 <br>
 <li>In the entry named <b>"Units"</b> the units for the footprint dimensions 
 can be selected.<br>
@@ -162,8 +192,8 @@ footprint file.<br>
 <li>The <b>"Author"</b> entry can optionally contain your name and/or e-mail 
 address.<br>
 <br>
-<li>The <b>"Distribution license"</b> entry can be used to refer to the license under 
-which the footprint is released.<br>
+<li>The <b>"Distribution license"</b> entry can be used to refer to the license 
+under which the footprint is released.<br>
 As pcb-fpw comes under the GPL this is a default value which can be changed as
 required.<br>
 <br>
@@ -234,8 +264,8 @@ This select exception dialog is invoked by clicking the button left of the
 entry.<br>
 <br>
 <img src="images/select_exception_dialog.png"><br>
-The above example shows that all leads of a 100 pin (10 rows by 10 columns) BGA 
-package are present.<br>
+The above example shows that all leads of a 100 pad (10 rows by 10 columns) BGA 
+package (or all pins for a PGA package) are present.<br>
   <ul>
   <li>The <b>"Close"</B> button will ignore all changes and close the 
   dialog.<br>
