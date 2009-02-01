@@ -2483,8 +2483,10 @@ bga_get_default_footprint_values
                 fiducial_pad_solder_mask_clearance = 0.00;
                 courtyard_length = 4.20;
                 courtyard_width = 4.50;
+                courtyard_line_width = 0.05;
                 silkscreen_length = 2.20;
                 silkscreen_width = 2.50;
+                silkscreen_line_width = 0.20;
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("BGA10C50P3X4_200X250X94: is also known as JEDEC MO-211BD."));
                 g_free (footprint_name);
