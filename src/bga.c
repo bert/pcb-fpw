@@ -2453,6 +2453,44 @@ bga_get_default_footprint_values
                 footprint_name = g_strdup ("BGA10C50P3X4_220X250X60");
                 return (EXIT_SUCCESS);
         }
+        else if (!strcmp (footprint_name, "?BGA10C50P3X4_200X250X94"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 10;
+                pin_pad_exceptions_string = g_strconcat
+                (
+                        "B2,",
+                        "C2,",
+                        NULL
+                );
+                package_body_width = 2.00;
+                package_body_length = 2.50;
+                package_body_height = 0.94;
+                package_is_radial = FALSE;
+                number_of_columns = 3;
+                number_of_rows = 4;
+                pitch_x = 0.50;
+                pitch_y = 0.50;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 0.0;
+                pad_diameter = 0.25;
+                pad_clearance = 0.075;
+                pad_solder_mask_clearance = 0.075;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                courtyard_length = 4.20;
+                courtyard_width = 4.50;
+                silkscreen_length = 2.20;
+                silkscreen_width = 2.50;
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("BGA10C50P3X4_200X250X94: is also known as JEDEC MO-211BD."));
+                g_free (footprint_name);
+                footprint_name = g_strdup ("BGA10C50P3X4_200X250X94");
+                return (EXIT_SUCCESS);
+        }
         else if (!strcmp (footprint_name, "?BGA10N50P3X4_200X250X94"))
         {
                 footprint_units = g_strdup ("mm");
