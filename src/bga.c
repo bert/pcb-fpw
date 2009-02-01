@@ -2288,7 +2288,7 @@ bga_get_default_footprint_values
         else if (!strcmp (footprint_name, "?BGA109C50P12X12_700X700X100"))
         {
                 footprint_units = g_strdup ("mm");
-                number_of_pins = 108;
+                number_of_pins = 109;
                 pin_pad_exceptions_string = g_strconcat
                 (
                         "D5,D6,D7,D8,D9,",
@@ -2312,15 +2312,17 @@ bga_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 0.0;
                 pad_diameter = 0.25;
-                pad_clearance = 0.15;
-                pad_solder_mask_clearance = 0.15;
+                pad_clearance = 0.075;
+                pad_solder_mask_clearance = 0.075;
                 fiducial = TRUE;
                 fiducial_pad_diameter = 1.00;
                 fiducial_pad_solder_mask_clearance = 1.00;
-                courtyard_length = 8.00;
-                courtyard_width = 8.00;
+                courtyard_length = 9.00;
+                courtyard_width = 9.00;
+                courtyard_line_width = 0.05;
                 silkscreen_length = 7.00;
                 silkscreen_width = 7.00;
+                silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA109C50P12X12_700X700X100");
                 return (EXIT_SUCCESS);
