@@ -2866,6 +2866,7 @@ bga_get_default_footprint_values
                 fiducial_pad_solder_mask_clearance = 0.00;
                 courtyard_length = 39.00;
                 courtyard_width = 39.00;
+                courtyard_line_width = 0.05;
                 silkscreen_length = 35.00;
                 silkscreen_width = 35.00;
                 silkscreen_line_width = 0.20;
