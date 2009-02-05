@@ -365,23 +365,33 @@ bga_create_packages_list ()
         bga_packages_list = g_list_append (bga_packages_list, "BGA1023C100P32X32_3300X3300X287");
         bga_packages_list = g_list_append (bga_packages_list, "BGA1023C100P32X32_3300X3300X350");
         bga_packages_list = g_list_append (bga_packages_list, "BGA1024C100P32X32_3300X3300X350");
+        bga_packages_list = g_list_append (bga_packages_list, "BGA1036C100P44X44_4500X4500X275");
         bga_packages_list = g_list_append (bga_packages_list, "BGA103C65P8X13_600X900X100");
         bga_packages_list = g_list_append (bga_packages_list, "BGA1056C100P39X39_4000X4000X380");
         bga_packages_list = g_list_append (bga_packages_list, "BGA1056C100P39X39_4000X4000X400");
         bga_packages_list = g_list_append (bga_packages_list, "BGA105C50P15X15_800X800X140");
+        bga_packages_list = g_list_append (bga_packages_list, "BGA105C65P11X11_800X800X140");
         bga_packages_list = g_list_append (bga_packages_list, "BGA107C80P10X14_1050X1300X120");
         bga_packages_list = g_list_append (bga_packages_list, "BGA107C80P10X14_1050X1300X140");
         bga_packages_list = g_list_append (bga_packages_list, "BGA107C80P10X14_1050X1600X140");
         bga_packages_list = g_list_append (bga_packages_list, "BGA1089C100P33X33_3500X3500X350");
         bga_packages_list = g_list_append (bga_packages_list, "BGA1089C127P33X33_4250X4250X350");
+        bga_packages_list = g_list_append (bga_packages_list, "BGA108C100P12X12_1300X1300X185");
+        bga_packages_list = g_list_append (bga_packages_list, "BGA108C80P12X12_1000X1000X140");
         bga_packages_list = g_list_append (bga_packages_list, "BGA109C50P12X12_700X700X100");
+        bga_packages_list = g_list_append (bga_packages_list, "BGA109C80P12X12_1000X1000X140");
+        bga_packages_list = g_list_append (bga_packages_list, "BGA10C50P3X4_150X200X63");
         bga_packages_list = g_list_append (bga_packages_list, "BGA10C50P3X4_220X250X60");
+        bga_packages_list = g_list_append (bga_packages_list, "BGA10C50P3X4_200X250X94");
         bga_packages_list = g_list_append (bga_packages_list, "BGA10N50P3X4_200X250X94");
         bga_packages_list = g_list_append (bga_packages_list, "BGA111C80P12X13_1000X1100X140");
         bga_packages_list = g_list_append (bga_packages_list, "BGA111C80P12X13_1100X1100X140");
+        bga_packages_list = g_list_append (bga_packages_list, "BGA112C50P12X12_700X700X112");
         bga_packages_list = g_list_append (bga_packages_list, "BGA112C80P11X11_1000X1000X130");
         bga_packages_list = g_list_append (bga_packages_list, "BGA1148C100P34X34_3500X3500X340");
         bga_packages_list = g_list_append (bga_packages_list, "BGA114C80P6X19_550X1600X140");
+        bga_packages_list = g_list_append (bga_packages_list, "BGA114C80P6X19_550X1600X150");
+        bga_packages_list = g_list_append (bga_packages_list, "BGA1152C100P34X34_3500X3500X244");
         bga_packages_list = g_list_append (bga_packages_list, "BGA1152C100P34X34_3500X3500X340");
         bga_packages_list = g_list_append (bga_packages_list, "BGA1152C100P34X34_3500X3500X350");
         bga_packages_list = g_list_append (bga_packages_list, "BGA1156C100P34X34_3500X3500X260");
@@ -679,22 +689,32 @@ bga_drc ()
  * - BGA1023C100P32X32_3300X3300X350,
  * - BGA1024C100P32X32_3300X3300X350,
  * - BGA103C65P8X13_600X900X100,
+ * - BGA1036C100P44X44_4500X4500X275,
  * - BGA1056C100P39X39_4000X4000X380,
  * - BGA1056C100P39X39_4000X4000X400,
  * - BGA105C50P15X15_800X800X140,
+ * - BGA105C65P11X11_800X800X140,
  * - BGA107C80P10X14_1050X1300X120,
  * - BGA107C80P10X14_1050X1300X140,
  * - BGA107C80P10X14_1050X1600X140,
  * - BGA1089C100P33X33_3500X3500X350,
  * - BGA1089C127P33X33_4250X4250X350,
+ * - BGA108C100P12X12_1300X1300X85,
+ * - BGA108C80P12X12_1000X1000X140,
  * - BGA109C50P12X12_700X700X100,
+ * - BGA109C80P12X12_1000X1000X140,
+ * - BGA10C50P3X4_150X200X63,
  * - BGA10C50P3X4_220X250X60,
+ * - BGA10C50P3X4_220X250X94,
  * - BGA10N50P3X4_200X250X94,
  * - BGA111C80P12X13_1000X1100X140,
  * - BGA111C80P12X13_1100X1100X140,
+ * - BGA112C50P12X12_700X700X112,
  * - BGA112C80P11X11_1000X1000X130,
  * - BGA1148C100P34X34_3500X3500X340,
  * - BGA114C80P6X19_550X1600X140,
+ * - BGA114C80P6X19_550X1600X150,
+ * - BGA1152C100P34X34_3500X3500X244,
  * - BGA1152C100P34X34_3500X3500X340,
  * - BGA1152C100P34X34_3500X3500X350,
  * - BGA1156C100P34X34_3500X3500X260,
