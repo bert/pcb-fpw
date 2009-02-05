@@ -2765,7 +2765,7 @@ bga_get_default_footprint_values
                 silkscreen_width = 35.00;
                 silkscreen_line_width = 0.20;
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA1148C100P34X34_3500X3500X340: is also known as JEDEC MO-034AAR-1."));
+                        _("BGA1148C100P34X34_3500X3500X340: is also known as JEDEC MS-034AAR-1."));
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1148C100P34X34_3500X3500X340");
                 return (EXIT_SUCCESS);
@@ -2871,7 +2871,7 @@ bga_get_default_footprint_values
                 silkscreen_width = 35.00;
                 silkscreen_line_width = 0.20;
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA1152C100P34X34_3500X3500X244: is also known as JEDEC MO-034AAR-1."));
+                        _("BGA1152C100P34X34_3500X3500X244: is also known as JEDEC MS-034AAR-1."));
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1152C100P34X34_3500X3500X244");
                 return (EXIT_SUCCESS);
