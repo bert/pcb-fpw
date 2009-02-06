@@ -3046,16 +3046,20 @@ bga_get_default_footprint_values
                 count_y = 0;
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 0.0;
-                pad_diameter = 0.45;
-                pad_clearance = 0.15;
-                pad_solder_mask_clearance = 0.15;
+                pad_diameter = 0.50;
+                pad_clearance = 0.075;
+                pad_solder_mask_clearance = 0.075;
                 fiducial = FALSE;
                 fiducial_pad_diameter = 0.00;
                 fiducial_pad_solder_mask_clearance = 0.00;
-                courtyard_length = 37.00;
-                courtyard_width = 37.00;
+                courtyard_length = 39.00;
+                courtyard_width = 39.00;
+                courtyard_line_width = 0.05;
                 silkscreen_length = 35.00;
                 silkscreen_width = 35.00;
+                silkscreen_line_width = 0.20;
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("BGA1156C100P34X34_3500X3500X311: is also known as JEDEC MS-034AAR-1."));
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1156C100P34X34_3500X3500X311");
                 return (EXIT_SUCCESS);
