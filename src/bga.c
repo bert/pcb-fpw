@@ -403,6 +403,7 @@ bga_create_packages_list ()
         bga_packages_list = g_list_append (bga_packages_list, "BGA1156C100P34X34_3600X3600X450");
         bga_packages_list = g_list_append (bga_packages_list, "BGA115C80P10X14_800X1200X140");
         bga_packages_list = g_list_append (bga_packages_list, "BGA1160C100P39X39_4000X4000X245");
+        bga_packages_list = g_list_append (bga_packages_list, "BGA1172C100P39X39_4000X4000X310");
         return (*bga_packages_list);
 }
 
@@ -731,6 +732,7 @@ bga_drc ()
  * - BGA1156C100P34X34_3600X3600X450,
  * - BGA115C80P10X14_800X1200X140,
  * - BGA1160C100P39X39_4000X4000X245,
+ * - BGA1172C100P39X39_4000X4000X310,
  */
 int
 bga_get_default_footprint_values
@@ -3313,6 +3315,85 @@ bga_get_default_footprint_values
                         _("BGA1160C100P39X39_4000X4000X245: is also known as JEDEC MS-034."));
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1160C100P39X39_4000X4000X245");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?BGA1172C100P39X39_4000X4000X310"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 1172;
+                pin_pad_exceptions_string = g_strconcat
+                (
+                        "A1,A2,A3,A4,A5,A6,A7,A33,A34,A35,A36,A37,A38,A39,",
+                        "B1,B2,B3,B4,B5,B6,B34,B35,B36,B37,B38,B39,",
+                        "C1,C2,C3,C4,C5,C35,C36,C37,C38,C39,",
+                        "D1,D2,D3,D4,D36,D37,D38,D39,",
+                        "E1,E2,E3,E37,E38,E39,",
+                        "F1,F2,F38,F39,",
+                        "G1,G39,"
+                        "L12,L13,L14,L15,L16,L17,L18,L19,",
+                        "L20,L21,L22,L23,L24,L25,L26,L27,L28,",
+                        "M11,M12,M13,M14,M15,M16,M17,M18,M19,",
+                        "M20,M21,M22,M23,M24,M25,M26,M27,M28,M29,",
+                        "N11,N12,N13,N14,N15,N16,N17,N18,N19,",
+                        "N20,N21,N22,N23,N24,N25,N26,N27,N28,N29,",
+                        "P11,P12,P13,P14,P15,P16,P17,P18,P19,",
+                        "P20,P21,P22,P23,P24,P25,P26,P27,P28,P29,",
+                        "R11,R12,R13,R14,R15,R26,R27,R28,R29,",
+                        "T11,T12,T13,T14,T26,T27,T28,T29,",
+                        "U11,U12,U13,U14,U26,U27,U28,U29,",
+                        "V11,V12,V13,V14,V26,V27,V28,V29,",
+                        "W11,W12,W13,W14,W26,W27,W28,W29,",
+                        "Y11,Y12,Y13,Y14,Y26,Y27,Y28,Y29,",
+                        "AA11,AA12,AA13,AA14,AA26,AA27,AA28,AA29,",
+                        "AB11,AB12,AB13,AB14,AB26,AB27,AB28,AB29,",
+                        "AC11,AC12,AC13,AC14,AC26,AC27,AC28,AC29,",
+                        "AD11,AD12,AD13,AD14,AD26,AD27,AD28,AD29,",
+                        "AE11,AE12,AE13,AE14,AE26,AE27,AE28,AE29,",
+                        "AF11,AF12,AF13,AF14,AF15,AF16,AF17,AF18,AF19,",
+                        "AF20,AF21,AF22,AF23,AF24,AF25,AF26,AF27,AF28,AF29,",
+                        "AG11,AG12,AG13,AG14,AG15,AG16,AG17,AG18,AG19,",
+                        "AG20,AG21,AG22,AG23,AG24,AG25,AG26,AG27,AG28,AG29,",
+                        "AH11,AH12,AH13,AH14,AH15,AH16,AH17,AH18,AH19,",
+                        "AH20,AH21,AH22,AH23,AH24,AH25,AH26,AH27,AH28,AH29,",
+                        "AJ12,AJ13,AJ14,AJ15,AJ16,AJ17,AJ18,AJ19,",
+                        "AJ20,AJ21,AJ22,AJ23,AJ24,AJ25,AJ26,AJ27,AJ28,",
+                        "AN1,AN39,",
+                        "AP1,AP2,AK38,AK39,",
+                        "AR1,AR2,AR3,AR37,AR38,AR39,",
+                        "AT1,AT2,AT3,AT4,AT36,AT37,AT38,AT39,",
+                        "AU1,AU2,AU3,AU4,AU5,AU35,AU36,AU37,AU38,AU39,",
+                        "AV1,AV2,AV3,AV4,AV5,AV6,AV34,AV35,AV36,AV37,AV38,AV39,",
+                        "AW1,AW2,AW3,AW4,AW5,AW6,AW7,AW33,AW34,AW35,AW36,AW37,AW38,AW39,",
+                        NULL
+                );
+                package_body_width = 40.00;
+                package_body_length = 40.00;
+                package_body_height = 3.10;
+                package_is_radial = FALSE;
+                number_of_columns = 39;
+                number_of_rows = 39;
+                pitch_x = 1.00;
+                pitch_y = 1.00;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 0.0;
+                pad_diameter = 0.50;
+                pad_clearance = 0.075;
+                pad_solder_mask_clearance = 0.075;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                courtyard_length = 44.00;
+                courtyard_width = 44.00;
+                courtyard_line_width = 0.05;
+                silkscreen_length = 40.00;
+                silkscreen_width = 40.00;
+                silkscreen_line_width = 0.20;
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("BGA1172C100P39X39_4000X4000X310: is also known as JEDEC MS-034."));
+                g_free (footprint_name);
+                footprint_name = g_strdup ("BGA1172C100P39X39_4000X4000X310");
                 return (EXIT_SUCCESS);
         }
         else
