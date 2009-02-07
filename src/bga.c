@@ -404,6 +404,7 @@ bga_create_packages_list ()
         bga_packages_list = g_list_append (bga_packages_list, "BGA115C80P10X14_800X1200X140");
         bga_packages_list = g_list_append (bga_packages_list, "BGA1160C100P39X39_4000X4000X245");
         bga_packages_list = g_list_append (bga_packages_list, "BGA1172C100P39X39_4000X4000X310");
+        bga_packages_list = g_list_append (bga_packages_list, "BGA119C127P7X17_1400X2200X196");
         return (*bga_packages_list);
 }
 
@@ -733,6 +734,7 @@ bga_drc ()
  * - BGA115C80P10X14_800X1200X140,
  * - BGA1160C100P39X39_4000X4000X245,
  * - BGA1172C100P39X39_4000X4000X310,
+ * - BGA119C127P7X17_1400X2200X196,
  */
 int
 bga_get_default_footprint_values
@@ -3394,6 +3396,39 @@ bga_get_default_footprint_values
                         _("BGA1172C100P39X39_4000X4000X310: is also known as JEDEC MS-034."));
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1172C100P39X39_4000X4000X310");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?BGA119C127P7X17_1400X2200X196"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 119;
+                pin_pad_exceptions_string = g_strdup ("");
+                package_body_width = 14.00;
+                package_body_length = 22.00;
+                package_body_height = 1.96;
+                package_is_radial = FALSE;
+                number_of_columns = 7;
+                number_of_rows = 17;
+                pitch_x = 1.27;
+                pitch_y = 1.27;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 0.0;
+                pad_diameter = 0.60;
+                pad_clearance = 0.075;
+                pad_solder_mask_clearance = 0.075;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                courtyard_length = 18.00;
+                courtyard_width = 26.00;
+                courtyard_line_width = 0.05;
+                silkscreen_length = 14.00;
+                silkscreen_width = 22.00;
+                silkscreen_line_width = 0.20;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("BGA119C127P7X17_1400X2200X196");
                 return (EXIT_SUCCESS);
         }
         else
