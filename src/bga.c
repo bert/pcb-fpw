@@ -414,6 +414,7 @@ bga_create_packages_list ()
         bga_packages_list = g_list_append (bga_packages_list, "BGA1216C100P41X41_4250X4250X380");
         bga_packages_list = g_list_append (bga_packages_list, "BGA1216C100P41X41_4250X4250X400");
         bga_packages_list = g_list_append (bga_packages_list, "BGA121C100P11X11_1200X1200X185");
+        bga_packages_list = g_list_append (bga_packages_list, "BGA121C100P11X11_1200X1200X350");
         return (*bga_packages_list);
 }
 
@@ -753,6 +754,7 @@ bga_drc ()
  * - BGA1216C100P41X41_4250X4250X380,
  * - BGA1216C100P41X41_4250X4250X400,
  * - BGA121C100P11X11_1200X1200X185,
+ * - BGA121C100P11X11_1200X1200X350,
  */
 int
 bga_get_default_footprint_values
@@ -3874,6 +3876,41 @@ bga_get_default_footprint_values
                         _("BGA121C100P11X11_1200X1200X185: is also known as JEDEC MO-192ABD-1."));
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA121C100P11X11_1200X1200X185");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?BGA121C100P11X11_1200X1200X350"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 121;
+                pin_pad_exceptions_string = g_strdup ("");
+                package_body_width = 12.00;
+                package_body_length = 12.00;
+                package_body_height = 3.50;
+                package_is_radial = FALSE;
+                number_of_columns = 11;
+                number_of_rows = 11;
+                pitch_x = 1.00;
+                pitch_y = 1.00;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 0.0;
+                pad_diameter = 0.50;
+                pad_clearance = 0.075;
+                pad_solder_mask_clearance = 0.075;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                courtyard_length = 16.00;
+                courtyard_width = 16.00;
+                courtyard_line_width = 0.05;
+                silkscreen_length = 12.00;
+                silkscreen_width = 12.00;
+                silkscreen_line_width = 0.20;
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("BGA121C100P11X11_1200X1200X350: is also known as JEDEC MO-192ABD-1."));
+                g_free (footprint_name);
+                footprint_name = g_strdup ("BGA121C100P11X11_1200X1200X350");
                 return (EXIT_SUCCESS);
         }
         else
