@@ -63,6 +63,13 @@ gchar *work_dir = NULL;
  * for instance) the entry fields, combo boxes and check buttons need to be
  * updated to be in sync with the global variables (which are considered
  * leading over the actual values shown in the GUI in this case).
+ * This function is to be called on one of the following events:
+ * <ul>
+ * <li>The "refresh" button is clicked.
+ * <li>The "footprint name" entry has changed.
+ * <li>The "open" button of the file chooser is clicked and new values are
+ * loaded successfull.
+ * </ul>
  */
 int
 all_entries_need_updated (GtkWidget *widget)
