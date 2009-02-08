@@ -233,7 +233,7 @@ gint count_x;
         /*!< Number of pin/pads in the X-direction. */
 gint count_y;
         /*!< Number of pin/pads in the Y-direction. */
-const gchar *pin_pad_exceptions_string;
+gchar *pin_pad_exceptions_string;
         /*!< String with exceptions of existing pins or pads. */
 gint number_of_exceptions = 0;
         /*!< Number of exceptions of existing pins or pads. */
