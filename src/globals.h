@@ -159,44 +159,6 @@ typedef enum pad_shapes
 #define MIL_TO_MM 0.025400000 /*!< Convert mil to mm. */
 #define MM_TO_MIL 39.37007874 /*!< Convert mm to mil. */
 
-/* Pin or pad types / Object flag values */
-#define CLEAR 0x0000
-        /*!< Default (round) pad. */
-#define PIN 0x0001
-        /*!< If set, this object is a pin.\n
-         * This flag is for internal use only. */
-#define VIA 0x0002
-        /*!< Likewise, for vias. */
-#define HOLE 0x0008
-        /*!< For pins and vias, this flag means that the pin or via is a hole
-         * without a copper annulus. */
-#define PININPOLY 0x0010
-        /*!< For pins and pads, this flag is used internally to indicate that
-         * the pin or pad overlaps a polygon on some layer. */
-#define SHOWNAME 0x0020
-        /*!< For elements, when set the names of pins are shown. */
-#define ONSOLDER 0x0080
-        /*!< For elements and pads, indicates that they are on the solder
-         * side. */
-#define SQUARE 0x0100
-        /*!< For pins and pads, indicates a square (vs round) pin/pad. */
-#define WARN 0x0200
-        /*!< For pins, vias, and pads, set to indicate a warning. */
-#define OCTAGON 0x0800
-        /*!< Draw pins and vias as octagons. */
-#define LOCK 0x2000
-        /*!< Set for locked objects. */
-#define EDGE2 0x4000
-        /*!< For pads, indicates that the second point is closer to the
-         * edge.\n
-         * For pins, indicates that the pin is closer to a horizontal edge
-         * and thus pinout text should be vertical. */
-#define MARKER 0x8000
-        /*!< Marker used internally to avoid revisiting an object. */
-#define NOPASTE 0x10000
-        /*!< For pads, set to prevent a solderpaste stencil opening for the
-         * pad.\n
-         * Primarily used for pads used as fiducials. */
 
 gboolean verbose = TRUE;
         /*!< Global file pointer for being verbose or not. */
@@ -399,6 +361,44 @@ gchar *dummy = NULL;
 #define MAX(a,b) ((a) > (b) ? (a) : (b))
 #endif
 
+/* Pin or pad types / Object flag values */
+#define CLEAR 0x0000
+        /*!< Default (round) pad. */
+#define PIN 0x0001
+        /*!< If set, this object is a pin.\n
+         * This flag is for internal use only. */
+#define VIA 0x0002
+        /*!< Likewise, for vias. */
+#define HOLE 0x0008
+        /*!< For pins and vias, this flag means that the pin or via is a hole
+         * without a copper annulus. */
+#define PININPOLY 0x0010
+        /*!< For pins and pads, this flag is used internally to indicate that
+         * the pin or pad overlaps a polygon on some layer. */
+#define SHOWNAME 0x0020
+        /*!< For elements, when set the names of pins are shown. */
+#define ONSOLDER 0x0080
+        /*!< For elements and pads, indicates that they are on the solder
+         * side. */
+#define SQUARE 0x0100
+        /*!< For pins and pads, indicates a square (vs round) pin/pad. */
+#define WARN 0x0200
+        /*!< For pins, vias, and pads, set to indicate a warning. */
+#define OCTAGON 0x0800
+        /*!< Draw pins and vias as octagons. */
+#define LOCK 0x2000
+        /*!< Set for locked objects. */
+#define EDGE2 0x4000
+        /*!< For pads, indicates that the second point is closer to the
+         * edge.\n
+         * For pins, indicates that the pin is closer to a horizontal edge
+         * and thus pinout text should be vertical. */
+#define MARKER 0x8000
+        /*!< Marker used internally to avoid revisiting an object. */
+#define NOPASTE 0x10000
+        /*!< For pads, set to prevent a solderpaste stencil opening for the
+         * pad.\n
+         * Primarily used for pads used as fiducials. */
 static int ID = 1;
         /*!< Current object ID;\n
          * incremented after each creation of an object. */
