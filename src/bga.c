@@ -416,6 +416,7 @@ bga_create_packages_list ()
         bga_packages_list = g_list_append (bga_packages_list, "BGA121C100P11X11_1200X1200X185");
         bga_packages_list = g_list_append (bga_packages_list, "BGA121C100P11X11_1200X1200X350");
         bga_packages_list = g_list_append (bga_packages_list, "BGA121C50P14X14_1000X1300X110");
+        bga_packages_list = g_list_append (bga_packages_list, "BGA121C50P14X14_1000X1300X130");
         return (*bga_packages_list);
 }
 
@@ -757,6 +758,7 @@ bga_drc ()
  * - BGA121C100P11X11_1200X1200X185,
  * - BGA121C100P11X11_1200X1200X350,
  * - BGA121C50P14X14_1000X1300X110,
+ * - BGA121C50P14X14_1000X1300X130,
  */
 int
 bga_get_default_footprint_values
@@ -3961,6 +3963,54 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA121C50P14X14_1000X1300X110");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?BGA121C50P14X14_1000X1300X130"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 121;
+                pin_pad_exceptions_string = g_strconcat
+                (
+                        "A1,A2,A13,A14,",
+                        "B1,B14,",
+                        "D5,D6,D7,D8,D9,D10,D11,",
+                        "E4,E5,E6,E7,E8,E9,E10,E11,",
+                        "F4,F5,F6,F7,F8,F9,F10,F11,",
+                        "G4,G5,G6,G7,G8,G9,G10,G11,",
+                        "H4,H5,H6,H7,H8,H9,H10,H11,",
+                        "J4,J5,J6,J7,J8,J9,J10,J11,",
+                        "K4,K5,K6,K7,K8,K9,K10,K11",
+                        "L4,L5,L6,L7,L8,L9,L10,L11",
+                        "N1,N14,",
+                        "P1,P2,P13,P14,",
+                        NULL
+                );
+                package_body_width = 10.00;
+                package_body_length = 13.00;
+                package_body_height = 1.30;
+                package_is_radial = FALSE;
+                number_of_columns = 14;
+                number_of_rows = 14;
+                pitch_x = 0.50;
+                pitch_y = 0.50;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 0.0;
+                pad_diameter = 0.25;
+                pad_clearance = 0.075;
+                pad_solder_mask_clearance = 0.075;
+                fiducial = TRUE;
+                fiducial_pad_diameter = 1.00;
+                fiducial_pad_solder_mask_clearance = 1.00;
+                courtyard_length = 12.00;
+                courtyard_width = 15.00;
+                courtyard_line_width = 0.05;
+                silkscreen_length = 10.00;
+                silkscreen_width = 13.00;
+                silkscreen_line_width = 0.20;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("BGA121C50P14X14_1000X1300X130");
                 return (EXIT_SUCCESS);
         }
         else
