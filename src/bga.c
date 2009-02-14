@@ -419,6 +419,7 @@ bga_create_packages_list ()
         bga_packages_list = g_list_append (bga_packages_list, "BGA121C50P14X14_1000X1300X130");
         bga_packages_list = g_list_append (bga_packages_list, "BGA121C50P14X14_1050X1600X130");
         bga_packages_list = g_list_append (bga_packages_list, "BGA121C65P11X11_800X800X130");
+        bga_packages_list = g_list_append (bga_packages_list, "BGA124C100P14X14_1500X1500X170");
         return (*bga_packages_list);
 }
 
@@ -763,6 +764,7 @@ bga_drc ()
  * - BGA121C50P14X14_1000X1300X130,
  * - BGA121C50P14X14_1050X1600X130,
  * - BGA121C65P11X11_800X800X130,
+ * - BGA124C100P14X14_1500X1500X170,
  */
 int
 bga_get_default_footprint_values
@@ -4096,6 +4098,53 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA121C65P11X11_800X800X130");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?BGA124C100P14X14_1500X1500X170"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 124;
+                pin_pad_exceptions_string = g_strconcat
+                (
+                        "A3,A5,A7,A9,A11,A13,",
+                        "B2,B4,B6,B8,B10,B12,B14,",
+                        "C1,C3,C4,C5,C6,C7,C8,C9,C10,C11,C13,",
+                        "D2,D3,D4,D5,D6,D7,D8,D9,D10,D11,D12,D14,",
+                        "E1,E3,E5,E7,E9,E11,E13,",
+                        "F2,F4,F6,F8,F10,F11,F12,F14,",
+                        "G1,G2,G3,G4,G5,G6,G7,G8,G9,G10,G11,G12,G13,",
+                        "H3,H12,H14,",
+                        "J1,J2,J13,J14,",
+                        NULL
+                );
+                package_body_width = 15.00;
+                package_body_length = 15.00;
+                package_body_height = 1.70;
+                package_is_radial = FALSE;
+                number_of_columns = 14;
+                number_of_rows = 14;
+                pitch_x = 1.00;
+                pitch_y = 1.00;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 0.0;
+                pad_diameter = 0.40;
+                pad_clearance = 0.075;
+                pad_solder_mask_clearance = 0.075;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                courtyard_length = 17.00;
+                courtyard_width = 17.00;
+                courtyard_line_width = 0.05;
+                silkscreen_length = 15.00;
+                silkscreen_width = 15.00;
+                silkscreen_line_width = 0.20;
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("BGA124C100P14X14_1500X1500X170: is also known as JEDEC MO-192AAE-1."));
+                g_free (footprint_name);
+                footprint_name = g_strdup ("BGA124C100P14X14_1500X1500X170");
                 return (EXIT_SUCCESS);
         }
         else
