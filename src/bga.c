@@ -4166,7 +4166,7 @@ bga_get_default_footprint_values
                         "G1,G4,G5,G7,G9,G10,G13,",
                         "H4,H5,H9,H10,",
                         "J4,J5,J6,J7,J8,J9,J10,",
-                        "K4,K5,K6,K7,K8,K9,K10,
+                        "K4,K5,K6,K7,K8,K9,K10,",
                         "N7,",
                         NULL
                 );
