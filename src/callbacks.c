@@ -1,6 +1,6 @@
 /*!
  * \file callbacks.c
- * \author Copyright (C) 2007, 2008 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007 .. 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief Callback functions for the pcb footprintwizard (pcb-gfpw).
  *
  * pcb-gfpw (GtkFootPrintWizard) is a program for the creation of footprint
@@ -2244,9 +2244,21 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
                                         all_entries_need_updated (GTK_WIDGET (editable));
                                 return;
                         }
-                        case CON_DIL: CON_DIP: CON_HDR:
+                        case CON_DIL:
                         {
-                                if (con_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
+                                if (con_dil_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
+                                        all_entries_need_updated (GTK_WIDGET (editable));
+                                return;
+                        }
+                        case CON_DIP:
+                        {
+                                if (con_dip_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
+                                        all_entries_need_updated (GTK_WIDGET (editable));
+                                return;
+                        }
+                        case CON_HDR:
+                        {
+                                if (con_hdr_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
                                         all_entries_need_updated (GTK_WIDGET (editable));
                                 return;
                         }
@@ -2436,13 +2448,13 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                 case DIOM:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        gui_constraints_set_smt (GTK_WIDGET (combobox));
+                        diom_set_gui_constraints (GTK_WIDGET (combobox));
                         break;
                 }
                 case DIOMELF:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        gui_constraints_set_smt (GTK_WIDGET (combobox));
+                        diomelf_set_gui_constraints (GTK_WIDGET (combobox));
                         break;
                 }
                 case DIP:
@@ -2454,7 +2466,7 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                 case INDC:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        gui_constraints_set_smt (GTK_WIDGET (combobox));
+                        indc_set_gui_constraints (GTK_WIDGET (combobox));
                         break;
                 }
                 case INDM:
@@ -2498,7 +2510,7 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                 case RESC:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        gui_constraints_set_smt (GTK_WIDGET (combobox));
+                        resc_set_gui_constraints (GTK_WIDGET (combobox));
                         break;
                 }
                 case RESM:
