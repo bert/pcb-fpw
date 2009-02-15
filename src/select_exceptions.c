@@ -1,6 +1,6 @@
 /*!
  * \file select_exceptions.c
- * \author Copyright (C) 2008 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2008 .. 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief A widget for selecting exception pin/pads in an array type footprint.
  *
  * This program is free software; you can redistribute it and/or modify\n
@@ -167,17 +167,21 @@ select_exceptions_ok_cb
                         g_free (selection_button_name);
                 }
         }
+        pin_pad_exceptions_string = g_strdup_printf ("%s", exceptions);
         if (verbose)
         {
                 g_log ("", G_LOG_LEVEL_INFO,
-                        (_("found %d exceptions for pins/pads.")),
+                        (_("found a total of %d exceptions for pins/pads.")),
                         number_of_exceptions);
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("found the following exceptions for pins/pads: %s.")),
+                        pin_pad_exceptions_string);
         }
-        pin_pad_exceptions_string = g_strdup (exceptions);
-        /*!
-         * \todo How to update the pin_pad_exceptions_entry in the main
-         * window ? */
         g_free (exceptions);
+        /* Update the entries in the main window */
+        GtkWidget *pcb_gfpw = gtk_widget_get_toplevel (GTK_WIDGET (select_exceptions_window));
+        all_entries_need_updated (GTK_WIDGET (pcb_gfpw));
+        /* Destroy the widget and reset the value in the pointer */
         gtk_widget_destroy (select_exceptions_window);
         select_exceptions_window = NULL;
 }
@@ -231,6 +235,7 @@ select_exceptions_create_window
         }
         /* Create a dialog window */
         select_exceptions_window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+//        gtk_widget_set_name (select_exceptions_window, "select_exceptions_window");
         /* Destroy the preview window when the main window of pcb-gfpw gets
          * destroyed */
         gtk_window_set_destroy_with_parent (GTK_WINDOW (select_exceptions_window), TRUE);
