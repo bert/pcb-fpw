@@ -1,5 +1,6 @@
 html
 latex
+header.html
 *~
 *.bak
 .gitignore~
