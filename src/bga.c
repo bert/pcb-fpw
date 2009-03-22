@@ -1,28 +1,34 @@
 /*!
  * \file bga.c
- * \author Copyright (C) 2008 .. 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2008 ... 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief Functions for BGA footprints.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.\n
- *
+ * \n
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n
- * See the GNU General Public License for more details.\n
- *
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.\n
+ * \n
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to:\n
- * the Free Software Foundation, Inc., \n
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.\n
  */
+
 
 #include "register_functions.c"
 
+
 /*!
  * \brief Create an Element for a BGA package.
+ *
+ * <b>Parameters:</b> none.\n
+ * \n
+ * <b>Returns:</b> a pointer to the created element.
  */
 ElementTypePtr
 bga_create_element ()
@@ -333,7 +339,11 @@ bga_create_element ()
  * \brief Create a list of BGA packages with pre-defined values.
  *
  * The data in this list can be used in a combo box to select a
- * pre-defined package.
+ * pre-defined package.\n
+ * \n
+ * <b>Parameters:</b> none.\n
+ * \n
+ * <b>Returns:</b> a list containing all package names known by pcb-fpw.
  */
 GList
 bga_create_packages_list ()
@@ -431,24 +441,33 @@ bga_create_packages_list ()
 /*!
  * \brief Do some Design Rule Checking for the BGA package type.
  *
- * - check for allowed pad shapes.
- * - check for zero sized packages.
- * - check for a zero sized courtyard.
- * - check for minimum clearance between copper (X-direction).
- * - check for minimum clearance between copper (Y-direction).
- * - If any fiducials exist:
- *   - check for zero fiducial pad diameter.
- *   - check for zero width solder mask clearance.
- *   - check for minimum clearance between copper (between pads and fiducials,
- *     if any fiducials exist).
- * - check for clearance of the package length with regard to the courtyard
- *   dimensions.
- * - check for clearance of the package width with regard to the courtyard
- *   dimensions.
- * - check for any silk lines or texts touching bare copper.
- * - check for soldermask clearance (solder mask overlapping copper at the
- *   solder fillet area or worse).
- * - check for a reasonable silk line width.
+ * <ul>
+ * <li> check for allowed pad shapes.
+ * <li> check for zero sized packages.
+ * <li> check for a zero sized courtyard.
+ * <li> check for minimum clearance between copper (X-direction).
+ * <li> check for minimum clearance between copper (Y-direction).
+ * <li> If any fiducials exist:
+ *   <ul>
+ *   <li> check for zero fiducial pad diameter.
+ *   <li> check for zero width solder mask clearance.
+ *   <li> check for minimum clearance between copper (between pads and
+ *   fiducials, if any fiducials exist).
+ *   </ul>
+ * <li> check for clearance of the package length with regard to the
+ * courtyard dimensions.
+ * <li> check for clearance of the package width with regard to the
+ * courtyard dimensions.
+ * <li> check for any silk lines or texts touching bare copper.
+ * <li> check for soldermask clearance (solder mask overlapping copper
+ * at the solder fillet area or worse).
+ * <li> check for a reasonable silk line width.
+ * </ul>
+ *
+ * <b>Parameters:</b> none.\n
+ * \n
+ * <b>Returns:</b> \c EXIT_SUCCESS when no DRC violations were encountered,
+ * \c EXIT_FAILURE when DRC violations were found.
  */
 int
 bga_drc ()
@@ -773,6 +792,11 @@ bga_drc ()
  * - BGA124C65P12X12_900X900X140,
  * - BGA127C80P12X13_10500X1200X140,
  * - BGA1284C100P36X36_3750X3750X380,
+ *
+ * <b>Parameters:</b> \c *footprint_name a \c NULL terminated footprint name.\n
+ * \n
+ * <b>Returns:</b> \c EXIT_SUCCESS when default values for a footprint were
+ * found, \c EXIT_FAILURE when the footprint name was not found.
  */
 int
 bga_get_default_footprint_values
@@ -4339,10 +4363,16 @@ bga_get_default_footprint_values
 }
 
 
-#if GUI
 /*!
  * \brief Set GUI constraints for the BGA package type.
+ *
+ * This function is only to be compiled for GUI targets.
+ * \n
+ * <b>Parameters:</b> \c *widget: the caller widget.\n
+ * \n
+ * <b>Returns:</b> \c EXIT_SUCCESS when completed.
  */
+#if GUI
 int
 bga_set_gui_constraints (GtkWidget *widget)
 {
@@ -4404,12 +4434,18 @@ bga_set_gui_constraints (GtkWidget *widget)
 
         /* Widgets on tab 5 "Heel & Toe goals" */
         gui_constraints_disable_heel_and_toe_goals_tab_widgets (widget);
+	return (EXIT_SUCCESS);
 }
 #endif /* GUI */
 
 
 /*!
  * \brief Write a footprint for a BGA package.
+ *
+ * <b>Parameters:</b> none.\n
+ * \n
+ * <b>Returns:</b> \c EXIT_FAILURE when errors were encountered,
+ * \c EXIT_SUCCESS when done.
  */
 int
 bga_write_footprint ()
@@ -4634,9 +4670,13 @@ bga_write_footprint ()
         g_log ("", G_LOG_LEVEL_INFO,
                 _("wrote a footprint file for a %s package: %s."),
                 footprint_type, footprint_filename);
+	return (EXIT_SUCCESS);
 }
 
 
+/*!
+ * \brief A list containing all BGA related functions.
+ */
 static fpw_function_t
 bga_function_list[] =
 {
@@ -4677,6 +4717,14 @@ bga_function_list[] =
 
 REGISTER_FUNCTIONS (bga_function_list)
 
+
+/*!
+ * \brief Intialise by registering all BGA related functions.
+ *
+ * <b>Parameters:</b> none.\n
+ * \n
+ * <b>Returns:</b> none.
+ */
 void
 bga_init ()
 {
