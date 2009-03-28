@@ -1,27 +1,27 @@
 /*!
  * \file callbacks.c
- * \author Copyright (C) 2007 .. 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007 .. 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief Callback functions for the pcb footprintwizard (pcb-gfpw).
  *
- * pcb-gfpw (GtkFootPrintWizard) is a program for the creation of footprint
- * files to be used by the pcb layout application
- * (see http://pcb.sourgeforge.net) for the placement of parts in a pcb
- * layout.\n
+ * pcb-gfpw (GtkFootPrintWizard) is a program for the creation of
+ * footprint files to be used by the pcb layout application
+ * (see http://pcb.sourgeforge.net) for the placement of parts in
+ * a pcb layout.\n
  * \n
- * This program is free software; you can redistribute it and/or modify\n
- * it under the terms of the GNU General Public License as published by\n
- * the Free Software Foundation; either version 2 of the License, or\n
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.\n
  * \n
- * This program is distributed in the hope that it will be useful,\n
- * but WITHOUT ANY WARRANTY; without even the implied warranty of\n
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n
- * See the GNU General Public License for more details.\n
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.\n
  * \n
- * You should have received a copy of the GNU General Public License\n
- * along with this program; if not, write to:\n
- * the Free Software Foundation, Inc.,\n
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.\n
  */
 
 
@@ -35,6 +35,7 @@
 #include "interface.h"
 #include "support.h"
 
+/*! Define whether this is a GUI or not. */
 #define GUI 1
 
 #include "libfpw.c"
@@ -51,9 +52,9 @@ gboolean fpw_file_saved = FALSE;
         /*!< Keep track whether the FootPrintWizard file is saved, and thus
          * has a valid filename. */
 gchar *temp_dir = NULL;
-        /*! Temporary directory from the GUI filechooser. */
+        /*!< Temporary directory from the GUI filechooser. */
 gchar *work_dir = NULL;
-        /*! Working directory. */
+        /*!< Working directory. */
 
 
 /*!
@@ -70,6 +71,10 @@ gchar *work_dir = NULL;
  * <li>The "open" button of the file chooser is clicked and new values are
  * loaded successfull.
  * </ul>
+ *
+ * <b>Parameters:</b> \c *widget is the caller widget.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 int
 all_entries_need_updated (GtkWidget *widget)
@@ -555,6 +560,10 @@ all_entries_need_updated (GtkWidget *widget)
 
 /*!
  * \brief Set all entries widgets to default sensitivity.
+ *
+ * <b>Parameters:</b> \c *widget is the caller widget.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 int
 all_entries_to_default_sensitivity (GtkWidget *widget)
@@ -758,6 +767,13 @@ all_entries_to_default_sensitivity (GtkWidget *widget)
 
 /*!
  * \brief Change the main window title.
+ *
+ * <b>Parameters:</b> \c *widget is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c *main_window_title is the string containing
+ * the new title.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 int
 change_main_window_title (GtkWidget *widget, gchar *main_window_title)
@@ -772,7 +788,11 @@ change_main_window_title (GtkWidget *widget, gchar *main_window_title)
 /*!
  * \brief The value in one of the entries in the GUI has changed.
  *
- * - add an asterix between brackets [*] before the current window title.
+ * Add an asterix between brackets [*] before the current window title.\n
+ * \n
+ * <b>Parameters:</b> \c *widget is the caller widget.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 int
 entry_has_changed (GtkWidget *widget)
@@ -809,6 +829,10 @@ entry_has_changed (GtkWidget *widget)
 /*!
  * \brief Set GUI constraints: disable the entries in the
  * "Heel and Toe goals" tab.
+ *
+ * <b>Parameters:</b> \c *widget is the caller widget.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 int
 gui_constraints_disable_heel_and_toe_goals_tab_widgets (GtkWidget *widget)
@@ -867,6 +891,10 @@ gui_constraints_disable_heel_and_toe_goals_tab_widgets (GtkWidget *widget)
 /*!
  * \brief Set GUI constraints: disable the entries in the
  * "Thermal Pad" tab.
+ *
+ * <b>Parameters:</b> \c *widget is the caller widget.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 int
 gui_constraints_disable_thermal_tab_widgets (GtkWidget *widget)
@@ -912,8 +940,12 @@ gui_constraints_disable_thermal_tab_widgets (GtkWidget *widget)
 /*!
  * \brief Set GUI constraints for SMT package types.
  *
- * The following types are applicable:
+ * The following types are applicable: \n
  * CAPC, CAPM, CAPMP, DIOM, DIOMELF, INDC, INDM, INDP, RESC, RESM and RESMELF.
+ * \n
+ * <b>Parameters:</b> \c *widget is the caller widget.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 int
 gui_constraints_set_smt (GtkWidget *widget)
@@ -967,6 +999,10 @@ gui_constraints_set_smt (GtkWidget *widget)
 
 /*!
  * \brief Set GUI constraints for the TO92 package type.
+ *
+ * <b>Parameters:</b> \c *widget is the caller widget.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 int
 gui_constraints_set_to92 (GtkWidget *widget)
@@ -1016,6 +1052,13 @@ gui_constraints_set_to92 (GtkWidget *widget)
 
 /*!
  * \brief Send a message to the statusbar.
+ *
+ * <b>Parameters:</b> \c *widget is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c *message is the string containing the new
+ * message for  the statusbar.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 int
 message_to_statusbar (GtkWidget *widget, gchar *message)
@@ -1041,6 +1084,10 @@ message_to_statusbar (GtkWidget *widget, gchar *message)
  * <li>Count of pin/pads (on a column) in the Y-direction entry is changed: \c count_y changes.
  * <li>The thermal pad button is toggled: \c thermal changes.
  * </ul>
+ *
+ * <b>Parameters:</b> \c *widget is the caller widget.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 int
 number_of_pins_has_changed (GtkWidget *widget)
@@ -1143,8 +1190,16 @@ number_of_pins_has_changed (GtkWidget *widget)
  * \brief The "top to bottom pads/pins center-center distance (C1)" entry is
  * changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c c1 variable (global).
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c c1 variable (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_C1_entry_changed                    (GtkEditable     *editable,
@@ -1163,9 +1218,17 @@ on_C1_entry_changed                    (GtkEditable     *editable,
  * \brief The "top to bottom pads/pins center-center distance (C1)"
  * radiobutton is clicked.
  *
- * - set the "center-center distance (C1)" entry to sensitive.
- * - set the "inner-inner distance (G1)" entry to insensitive.
- * - set the "outer-outer distance (Z1)" entry to insensitive.
+ * <ul>
+ * <li>set the "center-center distance (C1)" entry to sensitive.
+ * <li>set the "inner-inner distance (G1)" entry to insensitive.
+ * <li>set the "outer-outer distance (Z1)" entry to insensitive.
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *togglebutton is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_C1_radiobutton_toggled              (GtkToggleButton *togglebutton,
@@ -1187,8 +1250,16 @@ on_C1_radiobutton_toggled              (GtkToggleButton *togglebutton,
  * \brief The "left to right pads/pins center-center distance (C2)" entry is
  * changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c c2 variable (global).
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c c2 variable (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_C2_entry_changed                    (GtkEditable     *editable,
@@ -1207,9 +1278,17 @@ on_C2_entry_changed                    (GtkEditable     *editable,
  * \brief The "left to right pads/pins center-center distance (C2)"
  * radiobutton is clicked.
  *
- * - set the "center-center distance (C2)" entry to sensitive.
- * - set the "inner-inner distance (G2)" entry to insensitive.
- * - set the "outer-outer distance (Z2)" entry to insensitive.
+ * <ul>
+ * <li>set the "center-center distance (C2)" entry to sensitive.
+ * <li>set the "inner-inner distance (G2)" entry to insensitive.
+ * <li>set the "outer-outer distance (Z2)" entry to insensitive.
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *togglebutton is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_C2_radiobutton_toggled              (GtkToggleButton *togglebutton,
@@ -1231,8 +1310,16 @@ on_C2_radiobutton_toggled              (GtkToggleButton *togglebutton,
  * \brief The top to bottom pads/pins inner-inner distance (G1) entry is
  * changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c g1 variable (global).
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c g1 variable (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_G1_entry_changed                    (GtkEditable     *editable,
@@ -1251,9 +1338,17 @@ on_G1_entry_changed                    (GtkEditable     *editable,
  * \brief The top to bottom pads/pins inner-inner distance (G1) radiobutton
  * is clicked.
  *
- * - set the inner-inner (G1) entry to sensitive.
- * - set the center-center (C1) entry to insensitive.
- * - set the outer-outer (Z1) entry to insensitive.
+ * <ul>
+ * <li>set the inner-inner (G1) entry to sensitive.
+ * <li>set the center-center (C1) entry to insensitive.
+ * <li>set the outer-outer (Z1) entry to insensitive.
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *togglebutton is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_G1_radiobutton_toggled              (GtkToggleButton *togglebutton,
@@ -1275,8 +1370,16 @@ on_G1_radiobutton_toggled              (GtkToggleButton *togglebutton,
  * \brief The left to right pads/pins inner-inner distance (G2) entry is
  * changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c g2 variable (global).
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c g2 variable (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_G2_entry_changed                    (GtkEditable     *editable,
@@ -1295,9 +1398,17 @@ on_G2_entry_changed                    (GtkEditable     *editable,
  * \brief The left to right pads/pins inner-inner distance (G2) radiobutton
  * is clicked.
  *
- * - set the inner-inner (G2) entry to sensitive.
- * - set the center-centr (C2) entry to insensitive.
- * - set the outer-outer (Z2) entry to insensitive.
+ * <ul>
+ * <li>set the inner-inner (G2) entry to sensitive.
+ * <li>set the center-centr (C2) entry to insensitive.
+ * <li>set the outer-outer (Z2) entry to insensitive.
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *togglebutton is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_G2_radiobutton_toggled              (GtkToggleButton *togglebutton,
@@ -1319,8 +1430,16 @@ on_G2_radiobutton_toggled              (GtkToggleButton *togglebutton,
  * \brief The top to bottom pads/pins outer-outer distance (Z1) entry is
  * changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c z1 variable (global).
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c z1 variable (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_Z1_entry_changed                    (GtkEditable     *editable,
@@ -1339,9 +1458,17 @@ on_Z1_entry_changed                    (GtkEditable     *editable,
  * \brief The top to bottom pads/pins outer-outer (Z1) radiobutton
  * is clicked.
  *
- * - set the outer-outer (Z1) entry to sensitive.
- * - set the center-center (C1) entry to insensitive.
- * - set the inner-inner (G1) entry to insensitive.
+ * <ul>
+ * <li>set the outer-outer (Z1) entry to sensitive.
+ * <li>set the center-center (C1) entry to insensitive.
+ * <li>set the inner-inner (G1) entry to insensitive.
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *togglebutton is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_Z1_radiobutton_toggled              (GtkToggleButton *togglebutton,
@@ -1363,8 +1490,16 @@ on_Z1_radiobutton_toggled              (GtkToggleButton *togglebutton,
  * \brief The left to right pads/pins outer-outer distance (Z2) entry is
  * changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c z2 variable (global).
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c z2 variable (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_Z2_entry_changed                    (GtkEditable     *editable,
@@ -1383,9 +1518,17 @@ on_Z2_entry_changed                    (GtkEditable     *editable,
  * \brief The left to right pads/pins outer-outer (Z2) radiobutton
  * is clicked.
  *
- * - set the "outer-outer distance (Z2)" entry to sensitive.
- * - set the "center-center distance (C2)" entry to insensitive.
- * - set the "inner-inner distance (G2)" entry to insensitive.
+ * <ul>
+ * <li>set the "outer-outer distance (Z2)" entry to sensitive.
+ * <li>set the "center-center distance (C2)" entry to insensitive.
+ * <li>set the "inner-inner distance (G2)" entry to insensitive.
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *togglebutton is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_Z2_radiobutton_toggled              (GtkToggleButton *togglebutton,
@@ -1406,8 +1549,16 @@ on_Z2_radiobutton_toggled              (GtkToggleButton *togglebutton,
 /*!
  * \brief The "add attributes to footprint" checkbutton is toggled.
  *
- * - get active state.
- * - store in the \c attributes_in_footprint variable (global).
+ * <ul>
+ * <li>get active state.
+ * <li>store in the \c attributes_in_footprint variable (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *togglebutton is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_add_attribs_checkbutton_toggled     (GtkToggleButton *togglebutton,
@@ -1420,13 +1571,20 @@ on_add_attribs_checkbutton_toggled     (GtkToggleButton *togglebutton,
 /*!
  * \brief The "Clear" button is clicked.
  *
- * - clear all entries or set entries which have a default values to that
+ * <ul>
+ * <li>clear all entries or set entries which have a default values to that
  *   value,
- * - set all togglebuttons to the initial state.
+ * <li>set all togglebuttons to the initial state.
+ * </ul>
  *
  * \todo Combobox entries to be stripped of characters with something like
  * gtk_combo_box_remove_text ().
  *
+ * <b>Parameters:</b> \c *button is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_clear_button_clicked                (GtkButton       *button,
@@ -1623,7 +1781,13 @@ on_clear_button_clicked                (GtkButton       *button,
 /*!
  * \brief The "Close" button is clicked.
  *
- * - close the application.
+ * Close the application.
+ *
+ * <b>Parameters:</b> \c *button is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_close_button_clicked                (GtkButton       *button,
@@ -1636,8 +1800,17 @@ on_close_button_clicked                (GtkButton       *button,
 /*!
  * \brief The "Count X-direction" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to an integer and store in the \c count_x variable (global).
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to an integer and store in the \c count_x variable
+ *   (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_count_x_entry_changed               (GtkEditable     *editable,
@@ -1661,8 +1834,17 @@ on_count_x_entry_changed               (GtkEditable     *editable,
 /*!
  * \brief The "Count Y-direction" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to an integer and store in the \c count_y variable (global).
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to an integer and store in the \c count_y variable
+ *   (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_count_y_entry_changed               (GtkEditable     *editable,
@@ -1686,8 +1868,16 @@ on_count_y_entry_changed               (GtkEditable     *editable,
 /*!
  * \brief The "courtyard" checkbutton is toggled.
  *
- * - get active state.
- * - store in the \c courtyard variable (global).
+ * <ul>
+ * <li>get active state.
+ * <li>store in the \c courtyard variable (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *togglebutton is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_courtyard_checkbutton_toggled       (GtkToggleButton *togglebutton,
@@ -1713,9 +1903,17 @@ on_courtyard_checkbutton_toggled       (GtkToggleButton *togglebutton,
 /*!
  * \brief The "courtyard clearance with package" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c courtyard_clearance_with_package
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c courtyard_clearance_with_package
  *   variable (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_courtyard_clearance_with_package_entry_changed
@@ -1734,9 +1932,17 @@ on_courtyard_clearance_with_package_entry_changed
 /*!
  * \brief The "length of the courtyard (X)" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c courtyard_length variable
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c courtyard_length variable
  *   (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_courtyard_length_entry_changed      (GtkEditable     *editable,
@@ -1754,9 +1960,17 @@ on_courtyard_length_entry_changed      (GtkEditable     *editable,
 /*!
  * \brief The "courtyard line width" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c courtyard_line_width variable
- * (global).
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c courtyard_line_width
+ *   variable (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_courtyard_line_width_entry_changed  (GtkEditable     *editable,
@@ -1774,9 +1988,17 @@ on_courtyard_line_width_entry_changed  (GtkEditable     *editable,
 /*!
  * \brief The "width of the courtyard (Y)" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c courtyard_width variable
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c courtyard_width variable
  *   (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_courtyard_width_entry_changed       (GtkEditable     *editable,
@@ -1794,8 +2016,14 @@ on_courtyard_width_entry_changed       (GtkEditable     *editable,
 /*!
  * \brief The "Dimensions" button is clicked.
  *
- * - create a window with a pixmap of the dimensions of the current footprint
- * type (based on the value in the entry widget).
+ * Create a window with a pixmap of the dimensions of the current
+ * footprint type (based on the value in the entry widget).
+ *
+ * <b>Parameters:</b> \c *button is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_dimensions_button_clicked           (GtkButton       *button,
@@ -1826,11 +2054,19 @@ on_dimensions_button_clicked           (GtkButton       *button,
 /*!
  * \brief The "fiducial" checkbutton is toggled.
  *
- * - get active state.
- * - store in the \c fiducial variable (global).
- * - set pad diameter and pad solder mask clearance entries to the
+ * <ul>
+ * <li>get active state.
+ * <li>store in the \c fiducial variable (global).
+ * <li>set pad diameter and pad solder mask clearance entries to the
  *   corresponding sensitive state.
- * - set fpw entries have changed marker.
+ * <li>set fpw entries have changed marker.
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *togglebutton is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_fiducial_checkbutton_toggled        (GtkToggleButton *togglebutton,
@@ -1851,10 +2087,18 @@ on_fiducial_checkbutton_toggled        (GtkToggleButton *togglebutton,
 /*!
  * \brief The "fiducial pad diameter (D)" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c fiducial_pad_diameter variable
- *   (global).
- * - set fpw entries have changed marker.
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c fiducial_pad_diameter
+ *   variable (global).
+ * <li>set fpw entries have changed marker.
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_fiducial_pad_diameter_entry_changed (GtkEditable     *editable,
@@ -1873,10 +2117,18 @@ on_fiducial_pad_diameter_entry_changed (GtkEditable     *editable,
 /*!
  * \brief The "fiducial pad solder mask clearance" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c fiducial_pad_solder_mask_clearance
- *   variable (global).
- * - set fpw entries have changed marker.
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the
+ *   \c fiducial_pad_solder_mask_clearance variable (global).
+ * <li>set fpw entries have changed marker.
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_fiducial_pad_solder_mask_clearance_entry_changed
@@ -1899,9 +2151,18 @@ on_fiducial_pad_solder_mask_clearance_entry_changed
 /*!
  * \brief The file chooser dialog "Cancel" button is clicked.
  *
- * - lookup the dialog widget.
- * - destroy the file chooser widget.
+ * <ul>
+ * <li>lookup the dialog widget.
+ * <li>destroy the file chooser widget.
+ * </ul>
+ *
  * \todo - maybe restore the preview widget ?
+ *
+ * <b>Parameters:</b> \c *button is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_filechooser_dialog_cancel_button_clicked
@@ -1917,8 +2178,16 @@ on_filechooser_dialog_cancel_button_clicked
 /*!
  * \brief The file chooser dialog "close" signal is emitted.
  *
- * - lookup the dialog widget.
- * - destroy the file chooser widget.
+ * <ul>
+ * <li>lookup the dialog widget.
+ * <li>destroy the file chooser widget.
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *dialog is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_filechooser_dialog_close            (GtkDialog       *dialog,
@@ -1934,11 +2203,19 @@ on_filechooser_dialog_close            (GtkDialog       *dialog,
 /*!
  * \brief The file chooser dialog "current folder changed" signal is emitted.
  *
- * - lookup the dialog widget.
- * - get the current folder.
- * - test the current folder for null pointer or empty string and if true,
- *   please log a message and return.
- * - store the (new) current folder name in \c temp_dir.
+ * <ul>
+ * <li>lookup the dialog widget.
+ * <li>get the current folder.
+ * <li>test the current folder for null pointer or empty string and if
+ *   true, please log a message and return.
+ * <li>store the (new) current folder name in \c temp_dir.
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *filechooser is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_filechooser_dialog_current_folder_changed
@@ -1984,17 +2261,25 @@ on_filechooser_dialog_current_folder_changed
 /*!
  * \brief The file chooser dialog "Open" button is clicked.
  *
- * - lookup the dialog widget.
- * - get the selected filename.
- * - test the selected filename for null pointer or empty string and if true,
+ * <ul>
+ * <li>lookup the dialog widget.
+ * <li>get the selected filename.
+ * <li>test the selected filename for null pointer or empty string and if true,
  *   please log a message.
- * - test if the selected filename is not a directory and if true,
+ * <li>test if the selected filename is not a directory and if true,
  *   please log a message.
- * - store the selected filename in \c fpw_filename.
- * - duplicate the (new) current directory name from \c temp_dir into
+ * <li>store the selected filename in \c fpw_filename.
+ * <li>duplicate the (new) current directory name from \c temp_dir into
  *   \c work_dir.
- * - read new global values from the selected footprintwizard file.
- * - update the entry widgets to reflect the changes.
+ * <li>read new global values from the selected footprintwizard file.
+ * <li>update the entry widgets to reflect the changes.
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *button is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_filechooser_dialog_open_button_clicked
@@ -2087,6 +2372,12 @@ on_filechooser_dialog_open_button_clicked
  * temporary set of variables \c temp_*.
  * \todo - generate a new preview image.
  * \todo - update the preview widget.
+ *
+ * <b>Parameters:</b> \c *filechooser is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_filechooser_dialog_selection_changed
@@ -2102,6 +2393,12 @@ on_filechooser_dialog_selection_changed
  *
  * \todo - generate a new preview image.
  * \todo - update the preview widget.
+ *
+ * <b>Parameters:</b> \c *filechooser is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_filechooser_dialog_update_preview   (GtkFileChooser  *filechooser,
@@ -2114,7 +2411,13 @@ on_filechooser_dialog_update_preview   (GtkFileChooser  *filechooser,
 /*!
  * \brief The "footprint author name" entry is changed.
  *
- * - store in the \c footprint_author variable (global).
+ * Store in the \c footprint_author variable (global).
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_footprint_author_entry_changed      (GtkEditable     *editable,
@@ -2130,13 +2433,21 @@ on_footprint_author_entry_changed      (GtkEditable     *editable,
 /*!
  * \brief The "Footprint" button is clicked.
  *
- * - check for null pointer and empty string in \c footprint_name.\n
- * - determine the name of the footprintwizard filename.\n
- * - determine the name of the footprint filename.\n
- * - invoke the write_footprint() function to write the footprint
- *   file.\n
- * - if the footprint file is written successfull reflect this in the
- *   statusbar.\n
+ * <ul>
+ * <li>check for null pointer and empty string in \c footprint_name.
+ * <li>determine the name of the footprintwizard filename.
+ * <li>determine the name of the footprint filename.
+ * <li>invoke the write_footprint() function to write the footprint
+ *   file.
+ * <li>if the footprint file is written successfull reflect this in the
+ *   statusbar.
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *button is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_footprint_button_clicked            (GtkButton       *button,
@@ -2196,7 +2507,13 @@ on_footprint_button_clicked            (GtkButton       *button,
 /*!
  * \brief The "footprint distribution license" entry is changed.
  *
- * - store in the \c footprint_dist_license variable (global).
+ * Store in the \c footprint_dist_license variable (global).
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_footprint_dist_license_entry_changed
@@ -2213,7 +2530,13 @@ on_footprint_dist_license_entry_changed
 /*!
  * \brief The "footprint name" entry is changed.
  *
- * - store in the \c footprint_name variable (global).
+ * Store in the \c footprint_name variable (global).
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_footprint_name_entry_changed        (GtkEditable     *editable,
@@ -2313,7 +2636,13 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
 /*!
  * \brief The "footprint refdes prefix" entry is changed.
  *
- * - store in the \c footprint_refdes variable (global).
+ * Store in the \c footprint_refdes variable (global).
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_footprint_refdes_entry_changed      (GtkEditable     *editable,
@@ -2328,7 +2657,13 @@ on_footprint_refdes_entry_changed      (GtkEditable     *editable,
 /*!
  * \brief The "footprint status" entry is changed.
  *
- * - store in the \c footprint_status variable (global).
+ * Store in the \c footprint_status variable (global).
+ *
+ * <b>Parameters:</b> \c *combobox is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_footprint_status_entry_changed      (GtkComboBox     *combobox,
@@ -2356,10 +2691,18 @@ on_footprint_status_entry_changed      (GtkComboBox     *combobox,
 /*!
  * \brief The "footprint type" entry is changed.
  *
- * - test if the footprint name is equal with the footprint type or has a
+ * <ul>
+ * <li>test if the footprint name is equal with the footprint type or has a
  *   null pointer or is an empty string, if so copy the footprint type into
  *   the footprint name entry.
- * - store the new value in the \c footprint_type variable (global).
+ * <li>store the new value in the \c footprint_type variable (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *combobox is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_footprint_type_entry_changed        (GtkComboBox     *combobox,
@@ -2578,8 +2921,16 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
 /*!
  * \brief The "footprint units" entry is changed.
  *
- * - store in the \c footprint_units variable (global).
- * - check for null pointer and empty string.
+ * <ul>
+ * <li>store in the \c footprint_units variable (global).
+ * <li>check for null pointer and empty string.
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *combobox is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_footprint_units_entry_changed       (GtkComboBox     *combobox,
@@ -2622,7 +2973,13 @@ on_footprint_units_entry_changed       (GtkComboBox     *combobox,
 /*!
  * \brief The "footprint usage license" entry is changed.
  *
- * - store in the \c footprint_use_license variable (global).
+ * Store in the \c footprint_use_license variable (global).
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_footprint_use_license_entry_changed (GtkEditable     *editable,
@@ -2638,7 +2995,13 @@ on_footprint_use_license_entry_changed (GtkEditable     *editable,
 /*!
  * \brief The "footprint value" entry is changed.
  *
- * - store in the \c footprint_value variable (global).
+ * Store in the \c footprint_value variable (global).
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_footprint_value_entry_changed       (GtkEditable     *editable,
@@ -2654,7 +3017,13 @@ on_footprint_value_entry_changed       (GtkEditable     *editable,
 /*!
  * \brief The "position of number 1 pad/pin" entry is changed.
  *
- * - store in the \c n1_pos variable (global).
+ * Store in the \c n1_pos variable (global).
+ *
+ * <b>Parameters:</b> \c *combobox is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_number_1_position_entry_changed
@@ -2669,8 +3038,16 @@ on_number_1_position_entry_changed
 /*!
  * \brief The "number of columns" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c n_col variable (global).
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c n_col variable (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_number_of_columns_entry_changed     (GtkEditable     *editable,
@@ -2694,8 +3071,16 @@ on_number_of_columns_entry_changed     (GtkEditable     *editable,
 /*!
  * \brief The "number of rows" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c n_row variable (global).
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c n_row variable (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_number_of_rows_entry_changed        (GtkEditable     *editable,
@@ -2719,8 +3104,16 @@ on_number_of_rows_entry_changed        (GtkEditable     *editable,
 /*!
  * \brief The "number of pads/pins" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c n variable (global).
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c n variable (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_number_total_pins_entry_changed     (GtkEditable     *editable,
@@ -2738,9 +3131,17 @@ on_number_total_pins_entry_changed     (GtkEditable     *editable,
 /*!
  * \brief The "Open" button is clicked.
  *
- * - create a file chooser dialog.
- * - create and set a file filter "*.fpw" and add to the file chooser.
- * - show the file chooser widget to let the user select a .fpw file.
+ * <ul>
+ * <li>create a file chooser dialog.
+ * <li>create and set a file filter "*.fpw" and add to the file chooser.
+ * <li>show the file chooser widget to let the user select a .fpw file.
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *button is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_open_button_clicked                 (GtkButton       *button,
@@ -2759,9 +3160,17 @@ on_open_button_clicked                 (GtkButton       *button,
 /*!
  * \brief The "package body height" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c package_body_height variable
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c package_body_height variable
  *   (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_package_body_height_entry_changed   (GtkEditable     *editable,
@@ -2779,9 +3188,17 @@ on_package_body_height_entry_changed   (GtkEditable     *editable,
 /*!
  * \brief The "package body length" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c package_body_length variable
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c package_body_length variable
  *   (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_package_body_length_entry_changed   (GtkEditable     *editable,
@@ -2799,9 +3216,17 @@ on_package_body_length_entry_changed   (GtkEditable     *editable,
 /*!
  * \brief The "package body width" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c package_body_width variable
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c package_body_width variable
  *   (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_package_body_width_entry_changed    (GtkEditable     *editable,
@@ -2819,8 +3244,14 @@ on_package_body_width_entry_changed    (GtkEditable     *editable,
 /*!
  * \brief The "package is radial" checkbutton is toggled.
  *
- * - store the state of the checkbutton in the \c package_is_radial
- *   variable (global).
+ * Store the state of the checkbutton in the \c package_is_radial
+ * variable (global).
+ *
+ * <b>Parameters:</b> \c *togglebutton is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_package_is_radial_checkbutton_toggled
@@ -2835,9 +3266,17 @@ on_package_is_radial_checkbutton_toggled
 /*!
  * \brief The "pad clearance" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c pad_clearance variable
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c pad_clearance variable
  *   (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_pad_clearance_entry_changed         (GtkEditable     *editable,
@@ -2855,8 +3294,16 @@ on_pad_clearance_entry_changed         (GtkEditable     *editable,
 /*!
  * \brief The "diameter of the pad (D)" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c d_pad variable (global).
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c d_pad variable (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_pad_diameter_entry_changed          (GtkEditable     *editable,
@@ -2874,8 +3321,17 @@ on_pad_diameter_entry_changed          (GtkEditable     *editable,
 /*!
  * \brief The "length of the pads (X)" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c pad_length variable (global).
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c pad_length variable
+ *   (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_pad_length_entry_changed            (GtkEditable     *editable,
@@ -2893,8 +3349,16 @@ on_pad_length_entry_changed            (GtkEditable     *editable,
 /*!
  * \brief The "shape of pads" entry is changed.
  *
- * - store in the \c pad_shape variable (global).
- * - check for null pointer and empty string.
+ * <ul>
+ * <li>store in the \c pad_shape variable (global).
+ * <li>check for null pointer and empty string.
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *combobox is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_pad_shape_entry_changed    (GtkComboBox     *combobox,
@@ -2937,9 +3401,17 @@ on_pad_shape_entry_changed    (GtkComboBox     *combobox,
 /*!
  * \brief The "pad solder mask clearance" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c solder_mask_clearance variable
- *   (global).
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c solder_mask_clearance
+ *   variable (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_pad_solder_mask_clearance_entry_changed
@@ -2958,8 +3430,17 @@ on_pad_solder_mask_clearance_entry_changed
 /*!
  * \brief The "width of the pads (Y)" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c pad_with variable (global).
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c pad_with variable
+ *   (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_pad_width_entry_changed             (GtkEditable     *editable,
@@ -2977,8 +3458,13 @@ on_pad_width_entry_changed             (GtkEditable     *editable,
 /*!
  * \brief The top-right "X" is clicked.
  *
- * - close the application.
+ * Close the application.
  *
+ * <b>Parameters:</b> \c *object is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_pcb_gfpw_destroy                    (GtkObject       *object,
@@ -2991,9 +3477,17 @@ on_pcb_gfpw_destroy                    (GtkObject       *object,
 /*!
  * \brief The "diameter of the drill holes (d)" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c pin_drill_diameter
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c pin_drill_diameter
  *   variable (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_pin_drill_diameter_entry_changed    (GtkEditable     *editable,
@@ -3011,12 +3505,22 @@ on_pin_drill_diameter_entry_changed    (GtkEditable     *editable,
 /*!
  * \brief The "Pin/Pad exceptions" button is clicked.
  *
- * - check if a (valid) footprint type has been selected and if a valid
- *   number of rows and a valid number of columns is selected:
- *   - if non valid values have been selected (or not selected yet)
+ * <ul>
+ * <li>check if a (valid) footprint type has been selected and if a
+ *   valid number of rows and a valid number of columns is selected:
+ *   <ul>
+ *   <li>if non valid values have been selected (or not selected yet)
  *     log a warning and let this occurance pass.
- *   - if valid values have been selected create a seperate window
+ *   <li>if valid values have been selected create a seperate window
  *     with radio buttons depicting the package leads.
+ *   </ul>
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *button is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_pin_pad_exceptions_button_clicked   (GtkButton       *button,
@@ -3043,9 +3547,17 @@ on_pin_pad_exceptions_button_clicked   (GtkButton       *button,
 /*!
  * \brief The "pin/pad exceptions" entry is changed.
  *
- * - get the chars from the entry.
- * - store the contents in the \c pin_pad_exception_string variable (global)
- *   for processing while generating a footprint or preview.
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>store the contents in the \c pin_pad_exception_string variable
+ *   (global) for processing while generating a footprint or preview.
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_pin_pad_exceptions_entry_changed     (GtkEditable     *editable,
@@ -3061,7 +3573,14 @@ on_pin_pad_exceptions_entry_changed     (GtkEditable     *editable,
 /*!
  * \brief The "pin #1 square" checkbutton is toggled.
  *
- * - save the state of the checkbutton in the \c pin1_square variable (global).
+ * Save the state of the checkbutton in the \c pin1_square variable
+ * (global).
+ *
+ * <b>Parameters:</b> \c *togglebutton is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_pin_square_checkbutton_toggled      (GtkToggleButton *togglebutton,
@@ -3075,8 +3594,16 @@ on_pin_square_checkbutton_toggled      (GtkToggleButton *togglebutton,
 /*!
  * \brief The "Pitch X-direction" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c pitch_x variable (global).
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c pitch_x variable (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_pitch_x_entry_changed               (GtkEditable     *editable,
@@ -3094,8 +3621,16 @@ on_pitch_x_entry_changed               (GtkEditable     *editable,
 /*!
  * \brief The "Pitch Y-direction" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c pitch_y variable (global).
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c pitch_y variable (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_pitch_y_entry_changed               (GtkEditable     *editable,
@@ -3113,7 +3648,7 @@ on_pitch_y_entry_changed               (GtkEditable     *editable,
 /*!
  * \brief The "Preview" button is clicked.
  *
- * - create a pixmap of the footprint based on the values in the entry
+ * Create a pixmap of the footprint based on the values in the entry
  * widgets.
  *
  * \todo - create and (re)load the preview image.
@@ -3138,7 +3673,13 @@ on_pitch_y_entry_changed               (GtkEditable     *editable,
  * canvas, regardless if pcb is installed/available or not.\n
  * Disadvantage: a lot of code to duplicate, modify and maintain.\n
  * </ol>
- */
+ *
+ * <b>Parameters:</b> \c *button is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
+*/
 void
 on_preview_button_clicked              (GtkButton       *button,
                                         gpointer         user_data)
@@ -3150,7 +3691,13 @@ on_preview_button_clicked              (GtkButton       *button,
 /*!
  * \brief The "Refresh" button is clicked.
  *
- * - refresh all the entries in the GUI.
+ * Refresh all the entries in the GUI.
+ *
+ * <b>Parameters:</b> \c *button is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_refresh_button_clicked              (GtkButton       *button,
@@ -3162,18 +3709,26 @@ on_refresh_button_clicked              (GtkButton       *button,
 /*!
  * \brief The "Save" button is clicked.
  *
- * - check for null pointer and empty string in \c footprint_name.\n
- * - determine the name of the footprintwizard filename.\n
- * - determine the name of the footprint filename.\n
- * - invoke the write_footprintwizard_file() to write the global variables to
+ * <ul>
+ * <li>check for null pointer and empty string in \c footprint_name.
+ * <li>determine the name of the footprintwizard filename.
+ * <li>determine the name of the footprint filename.
+ * <li>invoke the write_footprintwizard_file() to write the global variables to
  *   the footprintwizard file, with a .fpw suffix, for debugging and other
- *   (future) purposes.\n
- * - if the footprint wizard file is written successfull change the title of
- *   the main window with the latest filename.\n
- * - invoke the write_footprint() function to write the actual footprint
- *   file.\n
- * - if the footprint file is written successfull reflect this in the
- *   statusbar.\n
+ *   (future) purposes.
+ * <li>if the footprint wizard file is written successfull change the title of
+ *   the main window with the latest filename.
+ * <li>invoke the write_footprint() function to write the actual footprint
+ *   file.
+ * <li>if the footprint file is written successfull reflect this in the
+ *   statusbar.
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *button is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_save_button_clicked                 (GtkButton       *button,
@@ -3260,8 +3815,14 @@ on_save_button_clicked                 (GtkButton       *button,
 /*!
  * \brief The "indicate pin/pad number 1" checkbutton is toggled.
  *
- * - store the state of the checkbutton in the \c silkscreen_indicate_1
+ * Store the state of the checkbutton in the \c silkscreen_indicate_1
  *   variable (global).
+ *
+ * <b>Parameters:</b> \c *togglebutton is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_silkscreen_indicate_1_checkbutton_toggled
@@ -3276,9 +3837,17 @@ on_silkscreen_indicate_1_checkbutton_toggled
 /*!
  * \brief The "silkscreen line width" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c silkscreen_line_thickness
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c silkscreen_line_thickness
  *   variable (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *ediatble is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_silkscreen_line_width_entry_changed (GtkEditable     *editable,
@@ -3296,12 +3865,20 @@ on_silkscreen_line_width_entry_changed (GtkEditable     *editable,
 /*!
  * \brief The "package outline" checkbutton is toggled.
  *
- * - save the state of the checkbutton in the \c silkscreen_package_outline
+ * <ul>
+ * <li>save the state of the checkbutton in the \c silkscreen_package_outline
  *   variable (global).
- * - if the "package outline" checkbutton is not "checked", set the linewidth
+ * <li>if the "package outline" checkbutton is not "checked", set the linewidth
  *   entry to insensitive.
- * - if the "package outline" checkbutton is "checked", set the line width
+ * <li>if the "package outline" checkbutton is "checked", set the line width
  *   entry to sensitive.
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *togglebutton is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_silkscreen_package_outline_checkbutton_toggled
@@ -3322,13 +3899,22 @@ on_silkscreen_package_outline_checkbutton_toggled
 /*!
  * \brief The "thermal pad" checkbutton is toggled.
  *
- * - save the state of the checkbutton in the \c thermal variable (global).
- * - if the "thermal pad" checkbutton is not "checked", set the length and
- *   width entries to insensitive.
- * - if the "thermal pad" checkbutton is "checked", set the length and width
- *   entries to sensitive.
- * - if the "thermal pad" checkbutton is "checked", set the no paste
+ * <ul>
+ * <li>save the state of the checkbutton in the \c thermal variable
+ *   (global).
+ * <li>if the "thermal pad" checkbutton is not "checked", set the length
+ *   and width entries to insensitive.
+ * <li>if the "thermal pad" checkbutton is "checked", set the length and
+ *   width entries to sensitive.
+ * <li>if the "thermal pad" checkbutton is "checked", set the no paste
  *   checkbutton to sensitive and active (on).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *togglebutton is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_thermal_checkbutton_toggled         (GtkToggleButton *togglebutton,
@@ -3367,9 +3953,17 @@ on_thermal_checkbutton_toggled         (GtkToggleButton *togglebutton,
 /*!
  * \brief The "thermal pad clearance" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c thermal_clearance
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c thermal_clearance
  *   variable (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_thermal_clearance_entry_changed     (GtkEditable     *editable,
@@ -3387,8 +3981,17 @@ on_thermal_clearance_entry_changed     (GtkEditable     *editable,
 /*!
  * \brief The "thermal pad length" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c thermal_length variable (global).
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c thermal_length variable
+ *   (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_thermal_length_entry_changed        (GtkEditable     *editable,
@@ -3406,8 +4009,14 @@ on_thermal_length_entry_changed        (GtkEditable     *editable,
 /*!
  * \brief The "thermal pad no paste" checkbutton is clicked.
  *
- * - store the state of the checkbutton in the \c thermal_nopaste variable
+ * Store the state of the checkbutton in the \c thermal_nopaste variable
  *   (global).
+ *
+ * <b>Parameters:</b> \c *togglebutton is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_thermal_nopaste_checkbutton_toggled (GtkToggleButton *togglebutton,
@@ -3421,9 +4030,17 @@ on_thermal_nopaste_checkbutton_toggled (GtkToggleButton *togglebutton,
 /*!
  * \brief The "thermal pad solder mask clearance" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c thermal_solder_clearance
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c thermal_solder_clearance
  *   variable (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_thermal_solder_mask_clearance_entry_changed
@@ -3442,8 +4059,17 @@ on_thermal_solder_mask_clearance_entry_changed
 /*!
  * \brief The "thermal pad width" entry is changed.
  *
- * - get the chars from the entry.
- * - convert to a double and store in the \c thermal_width variable (global).
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the \c thermal_width variable
+ *   (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 on_thermal_width_entry_changed         (GtkEditable     *editable,
