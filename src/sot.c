@@ -2151,10 +2151,12 @@ sot_get_default_footprint_values
                 thermal = TRUE;
                 thermal_length = 2.05;
                 thermal_width = 3.20;
-                silkscreen_length = 3.20;
-                silkscreen_width = 6.60;
+                silkscreen_length = 3.30;
+                silkscreen_width = 6.50;
+		silkscreen_line_width = 0.20;
                 courtyard_length = 8.60;
                 courtyard_width = 7.10;
+		courtyard_line_width = 0.05;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
