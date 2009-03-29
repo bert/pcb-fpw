@@ -400,6 +400,7 @@ sot_create_packages_list ()
         sot_packages_list = g_list_append (sot_packages_list, "SOT150P700X180-5N");
         sot_packages_list = g_list_append (sot_packages_list, "SOT230P700X180-4N");
         sot_packages_list = g_list_append (sot_packages_list, "SOT230P700X180-4AN");
+        sot_packages_list = g_list_append (sot_packages_list, "SOT230P700X180-4BN");
         return (*sot_packages_list);
 }
 
@@ -706,6 +707,7 @@ sot_drc ()
  * - SOT150P700X180-5N,
  * - SOT230P700X180-4N.
  * - SOT230P700X180-4AN.
+ * - SOT230P700X180-4BN.
  */
 int
 sot_get_default_footprint_values
@@ -2263,6 +2265,39 @@ sot_get_default_footprint_values
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("SOT230P700X180-4N: is also known as JEITA SC-73."));
                 footprint_name = g_strdup ("SOT230P700X180-4AN");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?SOT230P700X180-4BN"))
+        {
+                pitch_y = 2.30;
+                number_of_pins = 4;
+                package_body_width = 3.70;
+                package_body_length = 6.70;
+                package_body_height = 1.80;
+                package_is_radial = FALSE;
+                number_of_columns = 2;
+                number_of_rows = 3;
+                pitch_x = 6.10;
+                pad_length = 1.90;
+                pad_width = 0.95;
+                pad_shape = g_strdup ("rectangular pad");
+                pad_shapes_type = SQUARE;
+                thermal = TRUE;
+                thermal_length = 1.90;
+                thermal_width = 3.25;
+                silkscreen_length = 3.55;
+                silkscreen_width = 6.50;
+                silkscreen_line_width = 0.20;
+                courtyard_length = 8.50;
+                courtyard_width = 7.20;
+                courtyard_line_width = 0.05;
+                count_x = 0;
+                count_y = 0;
+                footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("SOT230P700X180-4N: is also known as JEDEC TO-261."));
+                footprint_name = g_strdup ("SOT230P700X180-4BN");
                 return (EXIT_SUCCESS);
         }
         else
