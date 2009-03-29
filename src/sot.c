@@ -737,8 +737,10 @@ sot_get_default_footprint_values
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.20;
                 silkscreen_width = 1.60;
+                silkscreen_line_width = 0.20;
                 courtyard_length = 3.00;
                 courtyard_width = 2.20;
+                courtyard_line_width = 0.05;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
