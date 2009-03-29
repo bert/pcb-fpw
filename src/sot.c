@@ -724,8 +724,8 @@ sot_get_default_footprint_values
                 package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 2;
-                pitch_x = 1.40;
-                pad_length = 1.10;
+                pitch_x = 1.60;
+                pad_length = 0.85;
                 pad_width = 0.30;
                 pad_shape = g_strdup ("circular pad, elongated");
                 pad_shapes_type = ROUND_ELONGATED;
@@ -733,8 +733,8 @@ sot_get_default_footprint_values
                 thermal_length = 0.0;
                 thermal_width = 0.0;
                 silkscreen_package_outline = FALSE;
-                silkscreen_length = 0.00;
-                silkscreen_width = 0.00;
+                silkscreen_length = 0.20;
+                silkscreen_width = 1.60;
                 courtyard_length = 3.00;
                 courtyard_width = 2.20;
                 count_x = 0;
@@ -743,6 +743,8 @@ sot_get_default_footprint_values
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_WARNING,
                         _("SOT50P160X90-3N: footprint is too small for package outline on silkscreen."));
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("SOT50P160X90-3N: is also known as SOT523."));
                 footprint_name = g_strdup ("SOT50P160X90-3N");
                 return (EXIT_SUCCESS);
         }
