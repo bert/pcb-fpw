@@ -4761,7 +4761,7 @@ REGISTER_FUNCTIONS (bga_function_list)
 
 
 /*!
- * \brief Intialise by registering all BGA related functions.
+ * \brief Initialise by registering all BGA related functions.
  *
  * <b>Parameters:</b> none.\n
  * \n
