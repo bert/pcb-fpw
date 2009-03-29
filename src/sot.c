@@ -966,8 +966,10 @@ sot_get_default_footprint_values
                 thermal_width = 0.0;
                 silkscreen_length = 0.55;
                 silkscreen_width = 2.00;
+		silkscreen_line_width = 0.20;
                 courtyard_length = 3.50;
                 courtyard_width = 2.70;
+                courtyard_line_width = 0.05;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
