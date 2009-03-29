@@ -356,6 +356,7 @@ sot_create_packages_list ()
         GList *sot_packages_list = NULL;
         sot_packages_list = g_list_append (sot_packages_list, "SOT50P160X90-3N");
         sot_packages_list = g_list_append (sot_packages_list, "SOT50P210X110-8N");
+        sot_packages_list = g_list_append (sot_packages_list, "SOT65P210X100-3N");
         sot_packages_list = g_list_append (sot_packages_list, "SOT65P210X100-6N");
         sot_packages_list = g_list_append (sot_packages_list, "SOT65P210X110-3N");
         sot_packages_list = g_list_append (sot_packages_list, "SOT65P210X110-5N");
@@ -663,6 +664,7 @@ sot_drc ()
  * Currently the following footprints are supported:\n
  * - SOT50P160X90-3N,
  * - SOT50P210X110-8N,
+ * - SOT65P210X100-3N,
  * - SOT65P210X100-6N,
  * - SOT65P210X110-3N,
  * - SOT65P210X110-5N,
@@ -779,6 +781,39 @@ sot_get_default_footprint_values
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("SOT50P210X110-8N: is also known as JEDEC MO-203BA."));
                 footprint_name = g_strdup ("SOT50P210X110-8N");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?SOT65P210X100-3N"))
+        {
+                pitch_y = 0.65;
+                number_of_pins = 3;
+                package_body_length = 1.35;
+                package_body_width = 2.10;
+                package_body_height = 1.00;
+                package_is_radial = FALSE;
+                number_of_columns = 2;
+                number_of_rows = 3;
+                pitch_x = 2.10;
+                pad_length = 0.90;
+                pad_width = 0.50;
+                pad_shape = g_strdup ("rectangular pad");
+                pad_shapes_type = SQUARE;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                silkscreen_length = 0.55;
+                silkscreen_width = 2.00;
+                silkscreen_line_width = 0.20;
+                courtyard_length = 3.50;
+                courtyard_width = 2.60;
+                courtyard_line_width = 0.05;
+                count_x = 0;
+                count_y = 0;
+                footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("SOT65P210X100-3N: is also known as JEITA SC-70."));
+                footprint_name = g_strdup ("SOT65P210X100-3N");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?SOT65P210X100-6N"))
