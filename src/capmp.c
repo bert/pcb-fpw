@@ -1,25 +1,27 @@
 /*!
  * \file capmp.c
- * \author Copyright (C) 2008 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2008 ... 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief Functions for CAPMP SMT footprints.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.\n
- *
+ * \n
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n
- * See the GNU General Public License for more details.\n
- *
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.\n
+ * \n
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to:\n
- * the Free Software Foundation, Inc., \n
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.\n
  */
 
+
 #include "register_functions.c"
+
 
 /*!
  * \brief Look up default values for a CAPMP SMT footprint.
@@ -30,6 +32,12 @@
  * entries involved in the GUI will be updated accordingly.\n
  * Currently the following footprints are supported:\n
  * - .
+ *
+ * <b>Parameters:</b> \c *footprint_name a \c NULL terminated footprint
+ * name.\n
+ * \n
+ * <b>Returns:</b> \c EXIT_SUCCESS when default values for a footprint
+ * were found, \c EXIT_FAILURE when the footprint name was not found.
  */
 int
 capmp_get_default_footprint_values
@@ -76,10 +84,14 @@ capmp_get_default_footprint_values
 }
 
 
-#if GUI
 /*!
  * \brief Set GUI constraints for a CAPMP SMT package type.
+ *
+ * <b>Parameters:</b> \c *widget is the caller widget.\n
+ * \n
+ * <b>Returns:</b> none.
  */
+#if GUI
 int
 capmp_set_gui_constraints (GtkWidget *widget)
 {
@@ -119,6 +131,11 @@ capmp_set_gui_constraints (GtkWidget *widget)
 
 /*!
  * \brief Write a SMT footprint with two pads for a molded capacitor package.
+ *
+ * <b>Parameters:</b> none.\n
+ * \n
+ * <b>Returns:</b> \c EXIT_FAILURE when errors were encountered,
+ * \c EXIT_SUCCESS when OK.
  */
 int
 capmp_write_footprint ()
@@ -371,9 +388,13 @@ capmp_write_footprint ()
                 footprint_type,
                 footprint_filename
         );
+	return (EXIT_SUCCESS);
 }
 
 
+/*!
+ * \brief A list containing all CAPMP related functions.
+ */
 static fpw_function_t
 capmp_function_list[] =
 {
@@ -400,8 +421,19 @@ capmp_function_list[] =
 };
 
 
+/*!
+ * \brief A list containing all CAPMP related functions.
+ */
 REGISTER_FUNCTIONS (capmp_function_list)
 
+
+/*!
+ * \brief Initialise by registering all CAPMP related functions.
+ *
+ * <b>Parameters:</b> none.\n
+ * \n
+ * <b>Returns:</b> none.
+ */
 void
 capmp_init ()
 {
