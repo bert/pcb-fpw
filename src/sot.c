@@ -854,27 +854,31 @@ sot_get_default_footprint_values
                 pitch_y = 0.65;
                 number_of_pins = 3;
                 package_body_length = 1.35;
-                package_body_width = 2.20;
+                package_body_width = 2.10;
                 package_body_height = 1.10;
                 package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
-                pitch_x = 1.90;
-                pad_length = 1.00;
+                pitch_x = 2.10;
+                pad_length = 0.85;
                 pad_width = 0.55;
                 pad_shape = g_strdup ("circular pad, elongated");
                 pad_shapes_type = ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
-                silkscreen_length = 0.20;
-                silkscreen_width = 2.20;
-                courtyard_length = 3.40;
-                courtyard_width = 2.70;
+                silkscreen_length = 0.60;
+                silkscreen_width = 2.00;
+                silkscreen_line_width = 0.20;
+                courtyard_length = 3.50;
+                courtyard_width = 2.60;
+                courtyard_line_width = 0.05;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("SOT65P210X110-3N: is also known as SOT323."));
                 footprint_name = g_strdup ("SOT65P210X110-3N");
                 return (EXIT_SUCCESS);
         }
