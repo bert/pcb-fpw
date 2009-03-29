@@ -393,6 +393,9 @@ capm_write_footprint ()
 }
 
 
+/*!
+ * \brief A list containing all CAPM related functions.
+ */
 static fpw_function_t
 capm_function_list[] =
 {
