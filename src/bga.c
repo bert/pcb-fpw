@@ -343,7 +343,8 @@ bga_create_element ()
  * \n
  * <b>Parameters:</b> none.\n
  * \n
- * <b>Returns:</b> a list containing all package names known by pcb-fpw.
+ * <b>Returns:</b> a list containing all package names of this footprint
+ * type known by pcb-fpw.
  */
 GList
 bga_create_packages_list ()
