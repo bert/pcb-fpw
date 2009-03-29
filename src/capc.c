@@ -346,7 +346,7 @@ REGISTER_FUNCTIONS (capc_function_list)
 
 
 /*!
- * \brief Intialise by registering all CAPC related functions.
+ * \brief Initialise by registering all CAPC related functions.
  *
  * <b>Parameters:</b> none.\n
  * \n
