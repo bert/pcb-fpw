@@ -1,25 +1,27 @@
 /*!
  * \file capm.c
- * \author Copyright (C) 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief Functions for CAPM SMT footprints.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.\n
- *
+ * \n
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n
- * See the GNU General Public License for more details.\n
- *
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.\n
+ * \n
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to:\n
- * the Free Software Foundation, Inc., \n
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.\n
  */
 
+
 #include "register_functions.c"
+
 
 /*!
  * \brief Look up default values for a CAPM SMT footprint.
@@ -30,6 +32,12 @@
  * entries involved in the GUI will be updated accordingly.\n
  * Currently the following footprints are supported:\n
  * - .
+ *
+ * <b>Parameters:</b> \c *footprint_name a \c NULL terminated footprint
+ * name.\n
+ * \n
+ * <b>Returns:</b> \c EXIT_SUCCESS when default values for a footprint
+ * were found, \c EXIT_FAILURE when the footprint name was not found.
  */
 int
 capm_get_default_footprint_values
@@ -77,10 +85,14 @@ capm_get_default_footprint_values
 }
 
 
-#if GUI
 /*!
  * \brief Set GUI constraints for a CAPM SMT package type.
+ *
+ * <b>Parameters:</b> \c *widget is the caller widget.\n
+ * \n
+ * <b>Returns:</b> none.
  */
+#if GUI
 int
 capm_set_gui_constraints (GtkWidget *widget)
 {
@@ -120,6 +132,11 @@ capm_set_gui_constraints (GtkWidget *widget)
 
 /*!
  * \brief Write a footprint with two pads for a CAPM SMT package.
+ *
+ * <b>Parameters:</b> none.\n
+ * \n
+ * <b>Returns:</b> \c EXIT_FAILURE when errors were encountered,
+ * \c EXIT_SUCCESS when OK.
  */
 int
 capm_write_footprint ()
@@ -372,6 +389,7 @@ capm_write_footprint ()
                 footprint_type,
                 footprint_filename
         );
+	return (EXIT_SUCCESS);
 }
 
 
@@ -401,8 +419,19 @@ capm_function_list[] =
 };
 
 
+/*!
+ * \brief A list containing all CAPM related functions.
+ */
 REGISTER_FUNCTIONS (capm_function_list)
 
+
+/*!
+ * \brief Initialise by registering all CAPM related functions.
+ *
+ * <b>Parameters:</b> none.\n
+ * \n
+ * <b>Returns:</b> none.
+ */
 void
 capm_init ()
 {
