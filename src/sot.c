@@ -2153,10 +2153,10 @@ sot_get_default_footprint_values
                 thermal_width = 3.20;
                 silkscreen_length = 3.30;
                 silkscreen_width = 6.50;
-		silkscreen_line_width = 0.20;
+                silkscreen_line_width = 0.20;
                 courtyard_length = 8.60;
                 courtyard_width = 7.10;
-		courtyard_line_width = 0.05;
+                courtyard_line_width = 0.05;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
@@ -2168,7 +2168,7 @@ sot_get_default_footprint_values
         {
                 pitch_y = 1.50;
                 number_of_pins = 5;
-                package_body_width = 3.70;
+                package_body_width = 3.76;
                 package_body_length = 6.70;
                 package_body_height = 1.80;
                 package_is_radial = FALSE;
@@ -2182,14 +2182,18 @@ sot_get_default_footprint_values
                 thermal = TRUE;
                 thermal_length = 2.15;
                 thermal_width = 3.15;
-                silkscreen_length = 2.80;
-                silkscreen_width = 6.70;
+                silkscreen_length = 3.00;
+                silkscreen_width = 6.50;
+                silkscreen_line_width = 0.20;
                 courtyard_length = 8.50;
                 courtyard_width = 7.20;
+                courtyard_line_width = 0.05;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("SOT150P700X180-5N: is also known as JEDEC MO-192AAC-1."));
                 footprint_name = g_strdup ("SOT150P700X180-5N");
                 return (EXIT_SUCCESS);
         }
