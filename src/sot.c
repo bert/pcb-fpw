@@ -2193,7 +2193,7 @@ sot_get_default_footprint_values
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT150P700X180-5N: is also known as JEDEC MO-192AAC-1."));
+                        _("SOT150P700X180-5N: is also known as JEDEC TO-261AB."));
                 footprint_name = g_strdup ("SOT150P700X180-5N");
                 return (EXIT_SUCCESS);
         }
