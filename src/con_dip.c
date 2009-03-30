@@ -369,6 +369,9 @@ con_dip_write_footprint ()
 }
 
 
+/*!
+ * \brief A list containing all CON-DIP related functions.
+ */
 static fpw_function_t
 con_dip_function_list[] =
 {
