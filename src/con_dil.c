@@ -1,25 +1,27 @@
 /*!
  * \file con_dil.c
- * \author Copyright (C) 2008 by Bert Timmerman <bert.timmerman@xs4all.nl>
- * \brief Predefined values for CON-DIL (connector) footprints.
+ * \author Copyright 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \brief Functions for CON-DIL (connector) footprints.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.\n
- *
+ * \n
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n
- * See the GNU General Public License for more details.\n
- *
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.\n
+ * \n
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to:\n
- * the Free Software Foundation, Inc., \n
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.\n
  */
 
+
 #include "register_functions.c"
+
 
 /*!
  * \brief Look up default values for CON-DIL footprints.
@@ -29,6 +31,12 @@
  * If the footprint name is recognised the values will be loaded and the
  * entries involved in the GUI will be updated accordingly.\n
  * Currently the following footprints are supported:\n
+ *
+ * <b>Parameters:</b> \c *footprint_name a \c NULL terminated footprint
+ * name.\n
+ * \n
+ * <b>Returns:</b> \c EXIT_SUCCESS when default values for a footprint
+ * were found, \c EXIT_FAILURE when the footprint name was not found.
  */
 int
 con_dil_get_default_footprint_values
@@ -73,6 +81,11 @@ con_dil_get_default_footprint_values
  *
  * The data in this list can be used in a combo box to select a
  * pre-defined package.
+ * \n
+ * <b>Parameters:</b> none.\n
+ * \n
+ * <b>Returns:</b> a list containing all package names of this footprint
+ * type known by pcb-fpw.
  */
 GList
 con_dil_create_packages_list ()
@@ -83,10 +96,14 @@ con_dil_create_packages_list ()
 }
 
 
-#if GUI
 /*!
  * \brief Set GUI constraints for the CON-DIL package type.
+ *
+ * <b>Parameters:</b> \c *widget is the caller widget.\n
+ * \n
+ * <b>Returns:</b> none.
  */
+#if GUI
 int
 con_dil_set_gui_constraints (GtkWidget *widget)
 {
@@ -132,7 +149,12 @@ con_dil_set_gui_constraints (GtkWidget *widget)
  *
  * The pin/pad numbering scheme of the CON-DIP package is: \n
  * 5 6 7 8 \n
- * 1 2 3 4
+ * 1 2 3 4 \n
+ * \n
+ * <b>Parameters:</b> none.\n
+ * \n
+ * <b>Returns:</b> \c EXIT_FAILURE when errors were encountered,
+ * \c EXIT_SUCCESS when OK.
  */
 int
 con_dil_write_footprint ()
@@ -341,9 +363,13 @@ con_dil_write_footprint ()
                 footprint_type,
                 footprint_filename
         );
+	return (EXIT_SUCCESS);
 }
 
 
+/*!
+ * \brief A list containing all CON-DIL related functions.
+ */
 static fpw_function_t
 con_dil_function_list[] =
 {
@@ -370,8 +396,19 @@ con_dil_function_list[] =
 };
 
 
+/*!
+ * \brief A list containing all CON-DIL related functions.
+ */
 REGISTER_FUNCTIONS (con_dil_function_list)
 
+
+/*!
+ * \brief Initialise by registering all CON-DIL related functions.
+ *
+ * <b>Parameters:</b> none.\n
+ * \n
+ * <b>Returns:</b> none.
+ */
 void
 con_dil_init ()
 {
