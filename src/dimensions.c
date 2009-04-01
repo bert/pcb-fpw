@@ -1,22 +1,22 @@
 /*!
  * \file dimensions.c
- * \author Copyright (C) 2008 by Bert Timmerman <bert.timmerman@xs4all.nl>
- * \brief A footprint dimensions widget.
+ * \author Copyright 2008 ... 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \brief Functions for a footprint dimensions preview widget.
  *
- * This program is free software; you can redistribute it and/or modify\n
- * it under the terms of the GNU General Public License as published by\n
- * the Free Software Foundation; either version 2 of the License, or\n
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.\n
  * \n
- * This program is distributed in the hope that it will be useful,\n
- * but WITHOUT ANY WARRANTY; without even the implied warranty of\n
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n
- * See the GNU General Public License for more details.\n
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.\n
  * \n
- * You should have received a copy of the GNU General Public License\n
- * along with this program; if not, write to:\n
- * the Free Software Foundation, Inc.,\n
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.\n
  */
 
 
@@ -28,6 +28,12 @@
 
 /*!
  * \brief Close the dimensions window (destroy the \c dimensions_window widget).
+ *
+ * <b>Parameters:</b> \c *widget is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c *dimension_window is the widget to be closed.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 static void
 dimensions_window_close_cb
@@ -42,6 +48,12 @@ dimensions_window_close_cb
 
 /*!
  * \brief Delete the window.
+ *
+ * <b>Parameters:</b> \c *widget is the widget to be deleted.\n
+ * \n
+ * <b>Parameters:</b> \c *event is the event passed from the caller.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 dimensions_window_delete_event
@@ -56,6 +68,15 @@ dimensions_window_delete_event
 
 /*!
  * \brief Expose the window.
+ *
+ * <b>Parameters:</b> \c *widget is the (drawable) widget to contain the
+ * image.\n
+ * \n
+ * <b>Parameters:</b> \c *event is the event passed from the caller.\n
+ * \n
+ * <b>Parameters:</b> \c *buf is the image to (re)draw.\n
+ * \n
+ * <b>Returns:</b> none.
  */
 void
 dimensions_window_expose_event
@@ -83,6 +104,18 @@ dimensions_window_expose_event
 }
 
 
+/*!
+ * \brief Create a dialog window containing a pre-defined pixbuf (from file).
+ *
+ * The \c footprint_name variable is used in the dialog title. \n
+ * \n
+ * <b>Parameters:</b> \c *image_filename is the image to draw in the
+ * window.\n
+ * \n
+ * <b>Parameters:</b> \c *footprint_type.\n
+ * \n
+ * <b>Returns:</b> 0 when successfull.
+ */
 int
 dimensions_create_window
 (
@@ -157,6 +190,5 @@ dimensions_create_window
         return 0;
 }
 
+
 /* EOF */
-
-
