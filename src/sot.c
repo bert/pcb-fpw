@@ -1087,29 +1087,33 @@ sot_get_default_footprint_values
                 pitch_y = 0.65;
                 number_of_pins = 8;
                 package_body_length = 1.75;
-                package_body_width = 3.05;
+                package_body_width = 3.00;
                 package_body_height = 1.45;
                 package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 4;
-                pitch_x = 2.50;
-                pad_length = 1.20;
-                pad_width = 0.45;
+                pitch_x = 2.60;
+                pad_length = 1.10;
+                pad_width = 0.50;
                 pad_shape = g_strdup ("circular pad, elongated");
                 pad_shapes_type = ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
-                silkscreen_length = 0.50;
-                silkscreen_width = 3.00;
+                silkscreen_length = 0.85;
+                silkscreen_width = 2.90;
+		silkscreen_line_width = 0.20;
                 courtyard_length = 4.20;
-                courtyard_width = 3.60;
+                courtyard_width = 3.50;
+                courtyard_line_width = 0.05;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_WARNING,
                         _("SOT65P280X145-8AN: side of pads is being trimmed to maintain pad to pad clearance."));
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("SOT65P280X145-8AN: is also known as JEDEC MO-178BA."));
                 footprint_name = g_strdup ("SOT65P280X145-8AN");
                 return (EXIT_SUCCESS);
         }
