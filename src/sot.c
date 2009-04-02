@@ -1219,6 +1219,8 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("SOT80P330X140-8N: side of pads is being trimmed to maintain pad to pad clearance."));
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("SOT80P330X140-8N: is also known as SOT23-8."));
                 footprint_name = g_strdup ("SOT80P330X140-8N");
