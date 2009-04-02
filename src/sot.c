@@ -374,6 +374,7 @@ sot_create_packages_list ()
         sot_packages_list = g_list_append (sot_packages_list, "SOT95P230X110-3N");
         sot_packages_list = g_list_append (sot_packages_list, "SOT95P230X124-3N");
         sot_packages_list = g_list_append (sot_packages_list, "SOT95P237X112-3N");
+        sot_packages_list = g_list_append (sot_packages_list, "SOT95P237X117-3N");
         sot_packages_list = g_list_append (sot_packages_list, "SOT95P240X110-3N");
         sot_packages_list = g_list_append (sot_packages_list, "SOT95P251X112-3N");
         sot_packages_list = g_list_append (sot_packages_list, "SOT95P270X145-5N");
@@ -683,6 +684,7 @@ sot_drc ()
  * - SOT95P230X110-3N,
  * - SOT95P230X124-3N,
  * - SOT95P237X112-3N,
+ * - SOT95P237X117-3N,
  * - SOT95P240X110-3N,
  * - SOT95P251X112-3N,
  * - SOT95P270X145-5N,
@@ -1421,6 +1423,41 @@ sot_get_default_footprint_values
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("SOT95P237X112-3N: is also known as JEDEC TO-236AB."));
                 footprint_name = g_strdup ("SOT95P237X112-3N");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?SOT95P237X117-3N"))
+        {
+                pitch_y = 0.95;
+                number_of_pins = 3;
+                package_body_width = 1.40;
+                package_body_length = 3.04;
+                package_body_height = 1.17;
+                package_is_radial = FALSE;
+                number_of_columns = 2;
+                number_of_rows = 3;
+                pitch_x = 2.30;
+                pad_length = 1.05;
+                pad_width = 0.60;
+                pad_shape = g_strdup ("rectangular pad");
+                pad_shapes_type = SQUARE;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                silkscreen_length = 0.60;
+                silkscreen_width = 2.90;
+                silkscreen_line_width = 0.20;
+                courtyard_length = 3.90;
+                courtyard_width = 3.60;
+                courtyard_line_width = 0.05;
+                count_x = 0;
+                count_y = 0;
+                footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("SOT95P237X117-3N: side of pads is being trimmed to maintain pad to pad clearance."));
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("SOT95P237X117-3N: is also known as JEDEC TO-236AB."));
+                footprint_name = g_strdup ("SOT95P237X117-3N");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?SOT95P240X110-3N"))
