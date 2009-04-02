@@ -1266,36 +1266,39 @@ sot_get_default_footprint_values
         else if (!strcmp (footprint_name, "?SOT95P230X109-3N"))
         {
                 /* SOT95P230X109-3N
-                 * SOT, 0.95mm pitch;
-                 * 3 pin, 1.40mm W X 3.00mm L X 1.09mm H Body
+                 * SOT, 0.95 mm pitch;
+                 * 3 pin, 1.40 mm W X 3.05 mm L X 1.09 mm H Body
                  * TO-236AB Fairchild SOT-23 FS-49 */
                 pitch_y = 0.95;
                 number_of_pins = 3;
                 package_body_width = 1.40;
-                package_body_length = 3.00;
+                package_body_length = 3.05;
                 package_body_height = 1.09;
                 package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
-/*! \todo Look up datasheet and check values for SOT95P230X109-3N. */
-/*
-                pitch_x = ;
-                pad_length = ;
-                pad_width = ;
+                pitch_x = 2.30;
+                pad_length = 1.00;
+                pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
-                silkscreen_length = ;
-                silkscreen_width = ;
-                courtyard_length = ;
-                courtyard_width = ;
-*/
                 pad_shapes_type = SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
+                silkscreen_length = 0.65;
+                silkscreen_width = 2.90;
+                silkscreen_line_width = 0.20;
+                courtyard_length = 3.80;
+                courtyard_width = 3.60;
+                courtyard_line_width = 0.05;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("SOT95P230X109-3N: side of pads is being trimmed to maintain pad to pad clearance."));
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("SOT95P230X109-3N: is also known as JEDEC TO-236AB."));
                 footprint_name = g_strdup ("SOT95P230X109-3N");
                 return (EXIT_SUCCESS);
         }
