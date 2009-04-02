@@ -1196,27 +1196,31 @@ sot_get_default_footprint_values
                 pitch_y = 0.80;
                 number_of_pins = 8;
                 package_body_width = 2.27;
-                package_body_length = 3.80;
+                package_body_length = 3.70;
                 package_body_height = 1.40;
                 package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 4;
-                pitch_x = 3.00;
-                pad_length = 1.15;
+                pitch_x = 3.10;
+                pad_length = 1.00;
                 pad_width = 0.50;
                 pad_shape = g_strdup ("rectangular pad");
                 pad_shapes_type = SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
-                silkscreen_length = 1.00;
-                silkscreen_width = 3.80;
-                courtyard_length = 4.70;
-                courtyard_width = 4.30;
+                silkscreen_length = 1.45;
+                silkscreen_width = 3.50;
+                silkscreen_line_width = 0.20;
+                courtyard_length = 4.60;
+                courtyard_width = 4.20;
+                courtyard_line_width = 0.05;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("SOT80P330X140-8N: is also known as SOT23-8."));
                 footprint_name = g_strdup ("SOT80P330X140-8N");
                 return (EXIT_SUCCESS);
         }
