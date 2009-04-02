@@ -1383,8 +1383,8 @@ sot_get_default_footprint_values
         else if (!strcmp (footprint_name, "?SOT95P237X112-3N"))
         {
                 /* SOT95P237X112-3N
-                 * SOT, 0.95mm pitch;
-                 * 3 pin, 1.40mm W X 3.04mm L X 1.12mm H Body
+                 * SOT, 0.95 mm pitch;
+                 * 3 pin, 1.40 mm W X 3.04 mm L X 1.12 mm H Body
                  * JEDEC TO-236AB Analog Devices 3 LEAD SOT23 RT-3
                  * JEDEC TO-236AB Dallas/Maxim 21-0051 SOT23
                  * JEDEC TO-236AB Dallas/Maxim 3L SOT-23 3L SOT-23
@@ -1403,19 +1403,23 @@ sot_get_default_footprint_values
                 pitch_x = 2.10;
                 pad_length = 1.30;
                 pad_width = 0.60;
-                pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shape = g_strdup ("circular pad, elongated");
+                pad_shapes_type = ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
                 silkscreen_length = 0.20;
-                silkscreen_width = 3.00;
+                silkscreen_width = 2.90;
+                silkscreen_line_width = 0.20;
                 courtyard_length = 3.90;
-                courtyard_width = 3.50;
+                courtyard_width = 3.60;
+                courtyard_line_width = 0.05;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("SOT95P237X112-3N: is also known as JEDEC TO-236AB."));
                 footprint_name = g_strdup ("SOT95P237X112-3N");
                 return (EXIT_SUCCESS);
         }
