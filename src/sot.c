@@ -1230,32 +1230,36 @@ sot_get_default_footprint_values
         {
                 /* SOT95P228X102-3N
                  * SOT, 0.95mm pitch;
-                 * 3 pin, 1.50mm W X 3.04mm L X 1.02mm H body
+                 * 3 pin, 1.52 mm W X 3.05 mm L X 1.02 mm H body
                  * Dallas/Maxim 56-G2017-001 SOT23 */
                 pitch_y = 0.95;
                 number_of_pins = 3;
-                package_body_width = 1.50;
-                package_body_length = 3.04;
+                package_body_width = 1.52;
+                package_body_length = 3.05;
                 package_body_height = 1.02;
                 package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
-                pitch_x = 0.65;
-                pad_length = 1.05;
+                pitch_x = 2.20;
+                pad_length = 1.00;
                 pad_width = 0.65;
                 pad_shape = g_strdup ("rectangular pad");
                 pad_shapes_type = SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
-                silkscreen_length = 0.50;
-                silkscreen_width = 3.00;
-                courtyard_length = 3.80;
+                silkscreen_length = 0.55;
+                silkscreen_width = 2.80;
+                silkscreen_line_width = 0.20;
+                courtyard_length = 3.70;
                 courtyard_width = 3.60;
+                courtyard_line_width = 0.05;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("SOT95P228X102-3N: side of pads is being trimmed to maintain pad to pad clearance."));
                 footprint_name = g_strdup ("SOT95P228X102-3N");
                 return (EXIT_SUCCESS);
         }
