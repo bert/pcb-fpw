@@ -750,7 +750,7 @@ sot_get_default_footprint_values
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT50P160X90-3N: footprint is too small for package outline on silkscreen."));
+                        _("SOT50P160X90-3N: pads are being trimmed to prevent extension under the package body."));
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("SOT50P160X90-3N: is also known as SOT523."));
                 footprint_name = g_strdup ("SOT50P160X90-3N");
@@ -1012,7 +1012,7 @@ sot_get_default_footprint_values
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT65P275X110-8N: side of pads is being trimmed to maintain pad to pad clearance."));
+                        _("SOT65P275X110-8N: pads are being trimmed to prevent extension under the package body."));
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("SOT65P275X110-8N: is also known as JEDEC MO-193BA."));
                 footprint_name = g_strdup ("SOT65P275X110-8N");
@@ -1047,7 +1047,7 @@ sot_get_default_footprint_values
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT65P280X100-8N: side of pads is being trimmed to maintain pad to pad clearance."));
+                        _("SOT65P280X100-8N: pads are being trimmed to prevent extension under the package body."));
                 footprint_name = g_strdup ("SOT65P280X100-8N");
                 return (EXIT_SUCCESS);
         }
@@ -1080,7 +1080,7 @@ sot_get_default_footprint_values
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT65P280X130-8N: side of pads is being trimmed to maintain pad to pad clearance."));
+                        _("SOT65P280X130-8N: pads are being trimmed to prevent extension under the package body."));
                 footprint_name = g_strdup ("SOT65P280X130-8N");
                 return (EXIT_SUCCESS);
         }
@@ -1113,7 +1113,7 @@ sot_get_default_footprint_values
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT65P280X145-8AN: side of pads is being trimmed to maintain pad to pad clearance."));
+                        _("SOT65P280X145-8AN: pads are being trimmed to prevent extension under the package body."));
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("SOT65P280X145-8AN: is also known as JEDEC MO-178BA."));
                 footprint_name = g_strdup ("SOT65P280X145-8AN");
@@ -1148,7 +1148,7 @@ sot_get_default_footprint_values
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT65P280X145-8BN: side of pads is being trimmed to maintain pad to pad clearance."));
+                        _("SOT65P280X145-8BN: pads are being trimmed to prevent extension under the package body."));
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("SOT65P280X145-8BN: is also known as EIAJ SC-74."));
                 footprint_name = g_strdup ("SOT65P280X145-8BN");
@@ -1183,7 +1183,7 @@ sot_get_default_footprint_values
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT65P280X145-8N: side of pads is being trimmed to maintain pad to pad clearance."));
+                        _("SOT65P280X145-8N: pads are being trimmed to prevent extension under the package body."));
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("SOT65P280X145-8N: is also known as JEDEC MO-193BA."));
                 footprint_name = g_strdup ("SOT65P280X145-8N");
@@ -1222,7 +1222,7 @@ sot_get_default_footprint_values
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT80P330X140-8N: side of pads is being trimmed to maintain pad to pad clearance."));
+                        _("SOT80P330X140-8N: pads are being trimmed to prevent extension under the package body."));
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("SOT80P330X140-8N: is also known as SOT23-8."));
                 footprint_name = g_strdup ("SOT80P330X140-8N");
@@ -1261,7 +1261,7 @@ sot_get_default_footprint_values
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P228X102-3N: side of pads is being trimmed to maintain pad to pad clearance."));
+                        _("SOT95P228X102-3N: pads are being trimmed to prevent extension under the package body."));
                 footprint_name = g_strdup ("SOT95P228X102-3N");
                 return (EXIT_SUCCESS);
         }
@@ -1298,7 +1298,7 @@ sot_get_default_footprint_values
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P230X109-3N: side of pads is being trimmed to maintain pad to pad clearance."));
+                        _("SOT95P230X109-3N: pads are being trimmed to prevent extension under the package body."));
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("SOT95P230X109-3N: is also known as JEDEC TO-236AB."));
                 footprint_name = g_strdup ("SOT95P230X109-3N");
@@ -1337,7 +1337,7 @@ sot_get_default_footprint_values
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P230X110-3N: side of pads is being trimmed to maintain pad to pad clearance."));
+                        _("SOT95P230X110-3N: pads are being trimmed to prevent extension under the package body."));
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("SOT95P230X110-3N: is also known as JEDEC TO-236AB."));
                 footprint_name = g_strdup ("SOT95P230X110-3N");
@@ -1376,7 +1376,7 @@ sot_get_default_footprint_values
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P230X124-3N: side of pads is being trimmed to maintain pad to pad clearance."));
+                        _("SOT95P230X124-3N: pads are being trimmed to prevent extension under the package body."));
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("SOT95P230X124-3N: is also known as JEDEC TO-236AA."));
                 footprint_name = g_strdup ("SOT95P230X124-3N");
@@ -1454,7 +1454,7 @@ sot_get_default_footprint_values
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P237X117-3N: side of pads is being trimmed to maintain pad to pad clearance."));
+                        _("SOT95P237X117-3N: pads are being trimmed to prevent extension under the package body."));
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("SOT95P237X117-3N: is also known as JEDEC TO-236AB."));
                 footprint_name = g_strdup ("SOT95P237X117-3N");
@@ -1493,7 +1493,7 @@ sot_get_default_footprint_values
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P240X110-3N: side of pads is being trimmed to maintain pad to pad clearance."));
+                        _("SOT95P240X110-3N: pads are being trimmed to prevent extension under the package body."));
                 footprint_name = g_strdup ("SOT95P240X110-3N");
                 return (EXIT_SUCCESS);
         }
@@ -1530,7 +1530,7 @@ sot_get_default_footprint_values
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P240X114-3N: side of pads is being trimmed to maintain pad to pad clearance."));
+                        _("SOT95P240X114-3N: pads are being trimmed to prevent extension under the package body."));
                 footprint_name = g_strdup ("SOT95P240X114-3N");
                 return (EXIT_SUCCESS);
         }
