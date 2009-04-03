@@ -1614,8 +1614,8 @@ sot_get_default_footprint_values
         else if (!strcmp (footprint_name, "?SOT95P275X130-3N"))
         {
                 /* SOT95P275X130-3N
-                 * SOT, 0.95mm pitch;
-                 * 3 pin, 1.70mm W X 3.10mm L X 1.30mm H Body
+                 * SOT, 0.95 mm pitch;
+                 * 3 pin, 1.70 mm W X 3.10 mm L X 1.30 mm H Body
                  * SOT346 SOT346 */
                 pitch_y = 0.95;
                 number_of_pins = 3;
@@ -1635,8 +1635,10 @@ sot_get_default_footprint_values
                 thermal_width = 0.0;
                 silkscreen_length = 0.40;
                 silkscreen_width = 3.10;
+                silkscreen_line_width = 0.20;
                 courtyard_length = 4.30;
                 courtyard_width = 3.60;
+                courtyard_line_width = 0.05;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
