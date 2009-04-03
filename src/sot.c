@@ -1684,34 +1684,40 @@ sot_get_default_footprint_values
         else if (!strcmp (footprint_name, "?SOT95P279X142-5N"))
         {
                 /* SOT95P279X142-5N
-                 * SOT, 0.95mm pitch;
-                 * 5 pin, 1.76mm W X 3.04mm L X 1.42mm H body
+                 * SOT, 0.95 mm pitch;
+                 * 5 pin, 1.76 mm W X 3.04 mm L X 1.42 mm H body
                  * SOT23-5 National Semiconductor 5L SOT23 MA05A
                  * SOT23-5 National Semiconductor 5L SOT23 MA05B */
                 pitch_y = 0.95;
                 number_of_pins = 5;
-                package_body_width = 1.76;
+                package_body_width = 1.80;
                 package_body_length = 3.04;
                 package_body_height = 1.42;
                 package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
-                pitch_x = 2.50;
-                pad_length = 1.25;
+                pitch_x = 2.70;
+                pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
                 pad_shapes_type = SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
-                silkscreen_length = 0.40;
-                silkscreen_width = 3.00;
+                silkscreen_length = 0.95;
+                silkscreen_width = 2.90;
+                silkscreen_line_width = 0.20;
                 courtyard_length = 4.30;
                 courtyard_width = 3.60;
+                courtyard_line_width = 0.05;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("SOT95P279X142-5N: is also known as SOT23-5."));
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("SOT95P279X142-5N: pads are being trimmed to prevent extension under the package body."));
                 footprint_name = g_strdup ("SOT95P279X142-5N");
                 return (EXIT_SUCCESS);
         }
