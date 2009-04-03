@@ -1537,8 +1537,8 @@ sot_get_default_footprint_values
         else if (!strcmp (footprint_name, "?SOT95P251X112-3N"))
         {
                 /* SOT95P251X112-3N
-                 * SOT, 0.95mm pitch;
-                 * 3 pin, 1.52mm W X 3.04mm L X 1.12mm H body
+                 * SOT, 0.95 mm pitch;
+                 * 3 pin, 1.52 mm W X 3.04 mm L X 1.12 mm H body
                  * Fairchild SSOT-3 MA03, FS-32 */
                 pitch_y = 0.95;
                 number_of_pins = 3;
@@ -1548,25 +1548,26 @@ sot_get_default_footprint_values
                 package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
-/*! \todo Look up datasheet and check values for SOT95P251X112-3N. */
-/*
-                pitch_x = ;
-                pad_length = ;
-                pad_width = ;
-                silkscreen_length = ;
-                silkscreen_width = ;
-                courtyard_length = ;
-                courtyard_width = ;
-*/
+                pitch_x = 2.40;
+                pad_length = 1.05;
+                pad_width = 0.65;
                 pad_shape = g_strdup ("rectangular pad");
                 pad_shapes_type = SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
+                silkscreen_length = 0.70;
+                silkscreen_width = 2.90;
+                silkscreen_line_width = 0.20;
+                courtyard_length = 4.00;
+                courtyard_width = 3.60;
+                courtyard_line_width = 0.05;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("SOT95P251X112-3N: pads are being trimmed to prevent extension under the package body."));
                 footprint_name = g_strdup ("SOT95P251X112-3N");
                 return (EXIT_SUCCESS);
         }
