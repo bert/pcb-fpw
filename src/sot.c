@@ -1777,8 +1777,8 @@ sot_get_default_footprint_values
                 pitch_x = 2.70;
                 pad_length = 1.10;
                 pad_width = 0.55;
-                pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shape = g_strdup ("circular pad, elongated");
+                pad_shapes_type = ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
