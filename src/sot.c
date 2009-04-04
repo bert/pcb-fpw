@@ -1998,8 +1998,8 @@ sot_get_default_footprint_values
         else if (!strcmp (footprint_name, "?SOT95P280X135-5N"))
         {
                 /* SOT95P280X135-5N
-                 * SOT, 0.95mm pitch;
-                 * 5 pin, 1.70mm W X 3.00mm L X 1.35mm H body
+                 * SOT, 0.95 mm pitch;
+                 * 5 pin, 1.60 mm W X 3.00 mm L X 1.35 mm H body
                  * JEDEC MO-178 Philips Plastic/Surface mount/Dual/SO SO5/SOP003 */
                 pitch_y = 0.95;
                 number_of_pins = 5;
@@ -2009,25 +2009,28 @@ sot_get_default_footprint_values
                 package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
-/*! \todo Look up datasheet and check values SOT95P280X135-5N. */
-/*
-                pitch_x = ;
-                pad_length = ;
-                pad_width = ;
-                silkscreen_length = ;
-                silkscreen_width = ;
-                courtyard_length = ;
-                courtyard_width = ;
-*/
+                pitch_x = 2.60;
+                pad_length = 1.10;
+                pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
                 pad_shapes_type = SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
+                silkscreen_length = 0.85;
+                silkscreen_width = 2.90;
+                silkscreen_line_width = 0.20;
+                courtyard_length = 4.20;
+                courtyard_width = 3.50;
+                courtyard_line_width = 0.05;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("SOT95P280X135-5N: is also known as JEDEC MO-178."));
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("SOT95P280X135-5N: pads are being trimmed to prevent extension under the package body."));
                 footprint_name = g_strdup ("SOT95P280X135-5N");
                 return (EXIT_SUCCESS);
         }
