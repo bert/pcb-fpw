@@ -1843,8 +1843,8 @@ sot_get_default_footprint_values
         else if (!strcmp (footprint_name, "?SOT95P280X110-6N"))
         {
                 /* SOT95P280X110-6N
-                 * SOT, 0.95mm pitch;
-                 * 6 pin, 1.75mm W X 3.05mm L X 1.10mm H Body
+                 * SOT, 0.95 mm pitch;
+                 * 6 pin, 1.75 mm W X 3.05 mm L X 1.10 mm H Body
                  * JEDEC MO-193AA Analog Devices 6 LEAD TSOT UJ-6
                  * JEDEC MO-193AA Dallas/Maxim 21-0114 Thin SOT23
                  * JEDEC MO-193AA Fairchild TSOP-6
@@ -1857,22 +1857,28 @@ sot_get_default_footprint_values
                 package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
-                pitch_x = 2.50;
-                pad_length = 1.25;
+                pitch_x = 2.70;
+                pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
                 pad_shapes_type = SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
-                silkscreen_length = 0.40;
-                silkscreen_width = 3.00;
+                silkscreen_length = 0.95;
+                silkscreen_width = 2.90;
+                silkscreen_line_width = 0.20;
                 courtyard_length = 4.30;
                 courtyard_width = 3.60;
+                courtyard_line_width = 0.05;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("SOT95P280X110-6N: is also known as JEDEC MO-193AA."));
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("SOT95P280X110-6N: pads are being trimmed to prevent extension under the package body."));
                 footprint_name = g_strdup ("SOT95P280X110-6N");
                 return (EXIT_SUCCESS);
         }
