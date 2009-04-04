@@ -1961,33 +1961,37 @@ sot_get_default_footprint_values
         else if (!strcmp (footprint_name, "?SOT95P280X135-3N"))
         {
                 /* SOT95P280X135-3N
-                 * SOT, 0.95mm pitch;
-                 * 3 pin, 1.30mm W X 2.90mm L X 1.35mm H Body
+                 * SOT, 0.95 mm pitch;
+                 * 3 pin, 1.60 mm W X 2.90 mm L X 1.35 mm H Body
                  * SOT23 Texas Instruments 3 SOT-23 DBV */
                 pitch_y = 0.95;
                 number_of_pins = 3;
-                package_body_width = 1.30;
-                package_body_length = 2.90;
+                package_body_width = 1.70;
+                package_body_length = 3.00;
                 package_body_height = 1.35;
                 package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
-                pitch_x = 2.30;
-                pad_length = 1.40;
+                pitch_x = 2.60;
+                pad_length = 1.10;
                 pad_width = 0.65;
                 pad_shape = g_strdup ("rectangular pad");
                 pad_shapes_type = SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
-                silkscreen_length = 0.20;
+                silkscreen_length = 0.85;
                 silkscreen_width = 2.90;
+                silkscreen_line_width = 0.20;
                 courtyard_length = 4.20;
-                courtyard_width = 3.40;
+                courtyard_width = 3.50;
+                courtyard_line_width = 0.05;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("SOT95P280X135-3N: pads are being trimmed to prevent extension under the package body."));
                 footprint_name = g_strdup ("SOT95P280X135-3N");
                 return (EXIT_SUCCESS);
         }
