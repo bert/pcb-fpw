@@ -2118,8 +2118,8 @@ sot_get_default_footprint_values
         else if (!strcmp (footprint_name, "?SOT95P280X145-6AN"))
         {
                 /* SOT95P280X145-6AN
-                 * SOT, 0.95mm pitch;
-                 * 6 pin, 1.70mm W X 3.00mm L X 1.45mm H Body
+                 * SOT, 0.95 mm pitch;
+                 * 6 pin, 1.70 mm W X 3.00 mm L X 1.45 mm H Body
                  * JEDEC MO-178AB Analog Devices 6 LEAD SOT23 RJ-6
                  * JEDEC MO-178AB Texas Instruments 6 ZZ (BB) ZZ332 */
                 pitch_y = 0.95;
@@ -2130,22 +2130,28 @@ sot_get_default_footprint_values
                 package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
-                pitch_x = 2.50;
-                pad_length = 1.20;
+                pitch_x = 2.60;
+                pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
                 pad_shapes_type = SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
-                silkscreen_length = 0.50;
-                silkscreen_width = 3.00;
+                silkscreen_length = 0.85;
+                silkscreen_width = 2.90;
+                silkscreen_line_width = 0.20;
                 courtyard_length = 4.20;
                 courtyard_width = 3.50;
+                courtyard_line_width = 0.05;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("SOT95P280X145-6AN: is also known as JEDEC MO-178AB."));
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("SOT95P280X145-6AN: pads are being trimmed to prevent extension under the package body."));
                 footprint_name = g_strdup ("SOT95P280X145-6AN");
                 return (EXIT_SUCCESS);
         }
