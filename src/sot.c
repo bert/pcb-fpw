@@ -2158,8 +2158,8 @@ sot_get_default_footprint_values
         else if (!strcmp (footprint_name, "?SOT95P280X145-6N"))
         {
                 /* SOT95P280X145-6N
-                 * SOT, 0.95mm pitch;
-                 * 6 pin, 1.75mm W X 3.05mm L X 1.45mm H Body
+                 * SOT, 0.95 mm pitch;
+                 * 6 pin, 1.75 mm W X 3.05 mm L X 1.45 mm H Body
                  * JEDEC MO-178AB Dallas/Maxim 21-0058 SOT23
                  * JEDEC MO-178AB Texas Instruments 6 SOT-23 DBV */
                 pitch_y = 0.95;
@@ -2170,22 +2170,28 @@ sot_get_default_footprint_values
                 package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
-                pitch_x = 2.50;
-                pad_length = 1.20;
+                pitch_x = 2.60;
+                pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
                 pad_shapes_type = SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
-                silkscreen_length = 0.50;
-                silkscreen_width = 3.00;
+                silkscreen_length = 0.85;
+                silkscreen_width = 2.90;
+                silkscreen_line_width = 0.20;
                 courtyard_length = 4.20;
                 courtyard_width = 3.60;
+                courtyard_line_width = 0.05;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("SOT95P280X145-6N: is also known as JEDEC MO-178AB."));
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("SOT95P280X145-6N: pads are being trimmed to prevent extension under the package body."));
                 footprint_name = g_strdup ("SOT95P280X145-6N");
                 return (EXIT_SUCCESS);
         }
