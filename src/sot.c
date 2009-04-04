@@ -2356,8 +2356,8 @@ sot_get_default_footprint_values
         else if (!strcmp (footprint_name, "?SOT95P470X124-8N"))
         {
                 /* SOT95P470X124-8N
-                 * SOT, 0.95mm pitch;
-                 * 8 pin, 3.42mm W X 4.18mm L X 1.24mm H body
+                 * SOT, 0.95 mm pitch;
+                 * 8 pin, 3.42 mm W X 4.18 mm L X 1.24 mm H body
                  * Fairchild SSOT-8 MA08C */
                 pitch_y = 0.95;
                 number_of_pins = 8;
@@ -2366,23 +2366,27 @@ sot_get_default_footprint_values
                 package_body_height = 1.24;
                 package_is_radial = FALSE;
                 number_of_columns = 2;
-                number_of_rows = 3;
+                number_of_rows = 4;
                 pitch_x = 4.40;
-                pad_length = 1.00;
-                pad_width = 0.70;
-                pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_length = 1.20;
+                pad_width = 0.60;
+                pad_shape = g_strdup ("circular pad, elongated");
+                pad_shapes_type = ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
-                silkscreen_length = 3.30;
-                silkscreen_width = 4.06;
-//                courtyard_length = ;
-                courtyard_width = 4.85;
+                silkscreen_length = 2.55;
+                silkscreen_width = 4.10;
+                silkscreen_line_width = 0.20;
+                courtyard_length = 6.10;
+                courtyard_width = 4.70;
+                courtyard_line_width = 0.05;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("SOT95P470X124-8N: pads are being trimmed to prevent extension under the package body."));
                 footprint_name = g_strdup ("SOT95P470X124-8N");
                 return (EXIT_SUCCESS);
         }
