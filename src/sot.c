@@ -1885,8 +1885,8 @@ sot_get_default_footprint_values
         else if (!strcmp (footprint_name, "?SOT95P280X115-6N"))
         {
                 /* SOT95P280X115-6N
-                 * SOT, 0.95mm pitch;
-                 * 6 pin, 2.00mm W X 3.10mm L X 1.15mm H body
+                 * SOT, 0.95 mm pitch;
+                 * 6 pin, 2.00 mm W X 3.10 mm L X 1.15 mm H body
                  * JEDEC MO-178 Philips Plastic/Surface mount/Dual/SO SO6/SOP004 */
                 pitch_y = 0.95;
                 number_of_pins = 6;
@@ -1896,16 +1896,15 @@ sot_get_default_footprint_values
                 package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
-/*! \todo Look up datasheet and check values for SOT95P280X115-6N. */
-/*
-                pitch_x = ;
-                pad_length = ;
-                pad_width = ;
-                silkscreen_length = ;
-                silkscreen_width = ;
-                courtyard_length = ;
-                courtyard_width = ;
-*/
+                pitch_x = 2.70;
+                pad_length = 1.00;
+                pad_width = 0.60;
+                silkscreen_length = 1.05;
+                silkscreen_width = 2.90;
+                silkscreen_line_width = 0.20;
+                courtyard_length = 4.20;
+                courtyard_width = 3.60;
+                courtyard_line_width = 0.05;
                 pad_shape = g_strdup ("rectangular pad");
                 pad_shapes_type = SQUARE;
                 thermal = FALSE;
@@ -1915,14 +1914,18 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("SOT95P280X115-6N: is also known as JEDEC MO-178."));
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("SOT95P280X115-6N: pads are being trimmed to prevent extension under the package body."));
                 footprint_name = g_strdup ("SOT95P280X115-6N");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?SOT95P280X135-3AN"))
         {
                 /* SOT95P280X135-3AN
-                 * SOT, 0.95mm pitch;
-                 * 3 pin, 1.70mm W X 3.00mm L X 1.35mm H body
+                 * SOT, 0.95 mm pitch;
+                 * 3 pin, 1.70 mm W X 3.00 mm L X 1.35 mm H body
                  * Philips Plastic/Surface mount/Dual/SO SO3/SOP015 */
                 pitch_y = 0.95;
                 number_of_pins = 3;
@@ -1932,25 +1935,26 @@ sot_get_default_footprint_values
                 package_is_radial = FALSE;
                 number_of_columns = 2;
                 number_of_rows = 3;
-/*! \todo Look up datasheet and check values for SOT95P280X135-3AN. */
-/*
-                pitch_x = ;
-                pad_length = ;
-                pad_width = ;
-                silkscreen_length = ;
-                silkscreen_width = ;
-                courtyard_length = ;
-                courtyard_width = ;
-*/
+                pitch_x = 2.60;
+                pad_length = 1.10;
+                pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
                 pad_shapes_type = SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
+                silkscreen_length = 0.85;
+                silkscreen_width = 2.90;
+                silkscreen_line_width = 0.20;
+                courtyard_length = 4.20;
+                courtyard_width = 3.50;
+                courtyard_line_width = 0.05;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("SOT95P280X135-3AN: pads are being trimmed to prevent extension under the package body."));
                 footprint_name = g_strdup ("SOT95P280X135-3AN");
                 return (EXIT_SUCCESS);
         }
