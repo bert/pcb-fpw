@@ -1,5 +1,5 @@
 /*! \mainpage PCB FPW - Printed Circuit Board FootPrintWizard.
-\image html pcb-fpw-logo-small.png
+\image html pcb-fpw_64x64.png
 \section pcb-intro PCB FPW Introduction
     \htmlinclude what-is-pcb-fpw.html
 */
