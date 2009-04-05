@@ -102,7 +102,7 @@ diomelf_get_default_footprint_values
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("DIOMELF1911N: is also known as MicroMELF."));
-                footprint_name = g_strdup ("DIOMELF");
+                footprint_name = g_strdup ("DIOMELF1911N");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?DIOMELF3414N"))
