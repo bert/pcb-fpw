@@ -138,7 +138,7 @@ diomelf_get_default_footprint_values
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("DIOMELF3414N: is also known as SOD-80."));
-                footprint_name = g_strdup ("DIOMELF");
+                footprint_name = g_strdup ("DIOMELF3414N");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?DIOMELF3515N"))
