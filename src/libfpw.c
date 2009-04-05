@@ -344,9 +344,21 @@ get_package_type ()
         {
                 package_type = BGA;
         }
+        else if (!strcmp (footprint_type, "CAPAE"))
+        {
+                package_type = CAPAE;
+        }
         else if (!strcmp (footprint_type, "CAPC"))
         {
                 package_type = CAPC;
+        }
+        else if (!strcmp (footprint_type, "CAPM"))
+        {
+                package_type = CAPM;
+        }
+        else if (!strcmp (footprint_type, "CAPMP"))
+        {
+                package_type = CAPMP;
         }
         else if (!strcmp (footprint_type, "CON_DIL"))
         {
@@ -363,6 +375,14 @@ get_package_type ()
         else if (!strcmp (footprint_type, "DIL"))
         {
                 package_type = DIL;
+        }
+        else if (!strcmp (footprint_type, "DIOM"))
+        {
+                package_type = DIOM;
+        }
+        else if (!strcmp (footprint_type, "DIOMELF"))
+        {
+                package_type = DIOMELF;
         }
         else if (!strcmp (footprint_type, "DIP"))
         {
@@ -2284,13 +2304,13 @@ write_footprint()
                         bga_write_footprint ();
                         break;
                 case CAPC:
-                        smt_write_footprint ();
+                        capc_write_footprint ();
                         break;
                 case CAPM:
-                        smt_write_footprint_molded ();
+                        capm_write_footprint ();
                         break;
                 case CAPMP:
-                        smt_write_footprint_molded_cap ();
+                        capmp_write_footprint ();
                         break;
                 case CON_DIL:
                         con_dil_write_footprint ();
@@ -2305,12 +2325,13 @@ write_footprint()
                         return;
                         break;
                 case DIOM:
-                        smt_write_footprint_molded_diode ();
+                        diomelf_write_footprint ();
                         break;
                 case DIOMELF:
-                        smt_write_footprint_molded_diode ();
+                        diomelf_write_footprint ();
                         break;
                 case DIP:
+                        dip_drc ();
                         dip_write_footprint ();
                         break;
                 case INDC:
