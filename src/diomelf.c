@@ -40,6 +40,7 @@ diomelf_create_packages_list ()
         GList *diomelf_packages_list = NULL;
         diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF1911N");
         diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF3414N");
+        diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF3515N");
         return (*diomelf_packages_list);
 }
 
@@ -54,6 +55,7 @@ diomelf_create_packages_list ()
  * Currently the following footprints are supported:\n
  * - DIOMELF1911N,
  * - DIOMELF3414N,
+ * - DIOMELF3515N,
  *
  * \n
  * <b>Parameters:</b> \c *footprint_name a \c NULL terminated footprint
@@ -137,6 +139,42 @@ diomelf_get_default_footprint_values
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("DIOMELF3414N: is also known as SOD-80."));
                 footprint_name = g_strdup ("DIOMELF");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?DIOMELF3515N"))
+        {
+                pitch_y = 0.0;
+                number_of_pins = 2;
+                package_body_length = 3.70;
+                package_body_width = 1.60;
+                package_body_height = 1.60;
+                package_is_radial = FALSE;
+                number_of_columns = 0;
+                number_of_rows = 0;
+                pitch_x = 3.50;
+                pad_length = 1.00;
+                pad_width = 1.75;
+                pad_shape = g_strdup ("rectangular pad");
+                pad_shapes_type = SQUARE;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.0;
+                fiducial_pad_solder_mask_clearance = 0.0;
+                silkscreen_length = 1.80;
+                silkscreen_width = 1.50;
+                silkscreen_line_width = 0.20;
+                courtyard_length = 5.00;
+                courtyard_width = 2.30;
+                courtyard_line_width = 0.05;
+                count_x = 0;
+                count_y = 0;
+                footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("DIOMELF3515N: is also known as IEC 100H01."));
+                footprint_name = g_strdup ("DIOMELF3515N");
                 return (EXIT_SUCCESS);
         }
         else
