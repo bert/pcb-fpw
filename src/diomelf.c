@@ -47,6 +47,7 @@ diomelf_create_packages_list ()
         diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF3515L");
         diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF3515M");
         diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF3515N");
+        diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF3516L");
         diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF3516M");
         diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF3516N");
         diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF3520M");
@@ -72,6 +73,7 @@ diomelf_create_packages_list ()
  * - DIOMELF3515L,
  * - DIOMELF3515M,
  * - DIOMELF3515N,
+ * - DIOMELF3516L,
  * - DIOMELF3516M,
  * - DIOMELF3516N,
  * - DIOMELF3520M,
@@ -411,6 +413,40 @@ diomelf_get_default_footprint_values
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("DIOMELF3515N: is also known as IEC 100H01."));
                 footprint_name = g_strdup ("DIOMELF3515N");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?DIOMELF3516L"))
+        {
+                pitch_y = 0.0;
+                number_of_pins = 2;
+                package_body_length = 3.70;
+                package_body_width = 1.70;
+                package_body_height = 1.70;
+                package_is_radial = FALSE;
+                number_of_columns = 0;
+                number_of_rows = 0;
+                pitch_x = 3.20;
+                pad_length = 0.95;
+                pad_width = 1.80;
+                pad_shape = g_strdup ("rectangular pad");
+                pad_shapes_type = SQUARE;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.0;
+                fiducial_pad_solder_mask_clearance = 0.0;
+                silkscreen_length = 1.50;
+                silkscreen_width = 1.70;
+                silkscreen_line_width = 0.20;
+                courtyard_length = 4.40;
+                courtyard_width = 2.00;
+                courtyard_line_width = 0.05;
+                count_x = 0;
+                count_y = 0;
+                footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
+                footprint_name = g_strdup ("DIOMELF3516L");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?DIOMELF3516M"))
