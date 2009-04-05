@@ -1,28 +1,32 @@
 /*!
  * \file dip.c
- * \author Copyright (C) 2008 by Bert Timmerman <bert.timmerman@xs4all.nl>
- * \brief Predefined values for DIP footprints.
+ * \author Copyright (C) 2008 ... 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \brief Functions for DIP footprints.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.\n
- *
+ * \n
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n
- * See the GNU General Public License for more details.\n
- *
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.\n
+ * \n
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to:\n
- * the Free Software Foundation, Inc., \n
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.\n
  */
 
 #include "register_functions.c"
 
 /*!
  * \brief Create an Element for a DIP package.
+ *
+ * <b>Parameters:</b> \c none .\n
+ * \n
+ * <b>Returns:</b> a pointer to the created element.
  */
 ElementTypePtr
 dip_create_element ()
@@ -309,6 +313,11 @@ dip_create_element ()
  *
  * The data in this list can be used in a combo box to select a
  * pre-defined package.
+ * \n
+ * <b>Parameters:</b> none.\n
+ * \n
+ * <b>Returns:</b> a list containing all package names of this footprint
+ * type known by pcb-fpw.
  */
 GList
 dip_create_packages_list ()
@@ -352,24 +361,33 @@ dip_create_packages_list ()
 /*!
  * \brief Do some Design Rule Checking for the DIP package type.
  *
- * - check for allowed pad shapes.
- * - check for zero sized packages.
- * - check for a zero sized courtyard.
- * - check for minimum clearance between copper (X-direction).
- * - check for minimum clearance between copper (Y-direction).
- * - If any fiducials exist:
- *   - check for zero fiducial pad diameter.
- *   - check for zero width solder mask clearance.
- *   - check for minimum clearance between copper (between pads and fiducials,
- *     if any fiducials exist).
- * - check for clearance of the package length with regard to the courtyard
- *   dimensions.
- * - check for clearance of the package width with regard to the courtyard
- *   dimensions.
- * - check for any silk lines or texts touching bare copper.
- * - check for soldermask clearance (solder mask overlapping copper at the
- *   solder fillet area or worse).
- * - check for a reasonable silk line width.
+ * <ul>
+ * <li>check for allowed pad shapes.
+ * <li>check for zero sized packages.
+ * <li>check for a zero sized courtyard.
+ * <li>check for minimum clearance between copper (X-direction).
+ * <li>check for minimum clearance between copper (Y-direction).
+ * <li>If any fiducials exist:
+ *   <ul>
+ *   <li>check for zero fiducial pad diameter.
+ *   <li>check for zero width solder mask clearance.
+ *   <li>check for minimum clearance between copper (between pads and
+ *     fiducials, if any fiducials exist).
+ *   </ul>
+ * <li>check for clearance of the package length with regard to the
+ *   courtyard dimensions.
+ * <li>check for clearance of the package width with regard to the
+ *   courtyard dimensions.
+ * <li>check for any silk lines or texts touching bare copper.
+ * <li>check for soldermask clearance (solder mask overlapping copper
+ *   at the solder fillet area or worse).
+ * <li>check for a reasonable silk line width.
+ * </ul>
+ * \n
+ * <b>Parameters:</b> none.\n
+ * \n
+ * <b>Returns:</b> \c EXIT_SUCCESS when no DRC violations were encountered,
+ * \c EXIT_FAILURE when DRC violations were found.
  */
 int
 dip_drc ()
@@ -627,6 +645,11 @@ dip_drc ()
  * - DIP50900,
  * - DIP52600,
  * - DIP64900.
+ *
+ * <b>Parameters:</b> \c *footprint_name a \c NULL terminated footprint name.\n
+ * \n
+ * <b>Returns:</b> \c EXIT_SUCCESS when default values for a footprint were
+ * found, \c EXIT_FAILURE when the footprint name was not found.
  */
 int
 dip_get_default_footprint_values
@@ -1345,10 +1368,14 @@ dip_get_default_footprint_values
 }
 
 
-#if GUI
 /*!
  * \brief Set GUI constraints for the DIP package type.
+ *
+ * <b>Parameters:</b> \c *widget is the caller widget.\n
+ * \n
+ * <b>Returns:</b> none.
  */
+#if GUI
 int
 dip_set_gui_constraints (GtkWidget *widget)
 {
@@ -1391,6 +1418,11 @@ dip_set_gui_constraints (GtkWidget *widget)
 
 /*!
  * \brief Write a DIP pin through hole footprint.
+ *
+ * <b>Parameters:</b> none.\n
+ * \n
+ * <b>Returns:</b> \c EXIT_FAILURE when errors were encountered,
+ * \c EXIT_SUCCESS when OK.
  */
 int
 dip_write_footprint ()
@@ -1602,6 +1634,9 @@ dip_write_footprint ()
 }
 
 
+/*!
+ * \brief A list containing all DIP related functions.
+ */
 static fpw_function_t
 dip_function_list[] =
 {
@@ -1628,12 +1663,24 @@ dip_function_list[] =
 };
 
 
+/*!
+ * \brief A list containing all DIP related functions.
+ */
 REGISTER_FUNCTIONS (dip_function_list)
 
+
+/*!
+ * \brief Initialise by registering all DIOMELF related functions.
+ *
+ * <b>Parameters:</b> none.\n
+ * \n
+ * <b>Returns:</b> none.
+ */
 void
 dip_init ()
 {
         register_dip_function_list ();
 }
+
 
 /* EOF */
