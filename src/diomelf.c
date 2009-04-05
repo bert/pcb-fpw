@@ -38,6 +38,7 @@ GList
 diomelf_create_packages_list ()
 {
         GList *diomelf_packages_list = NULL;
+        diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF1911M");
         diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF1911N");
         diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF3414N");
         diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF3515N");
@@ -55,6 +56,7 @@ diomelf_create_packages_list ()
  * If the footprint name is recognised known values will be loaded and the
  * entries involved in the GUI will be updated accordingly.\n
  * Currently the following footprints are supported:\n
+ * - DIOMELF1911M,
  * - DIOMELF1911N,
  * - DIOMELF3414N,
  * - DIOMELF3515N,
@@ -73,7 +75,43 @@ diomelf_get_default_footprint_values
 (
         gchar *footprint_name)
 {
-        if (!strcmp (footprint_name, "?DIOMELF1911N"))
+        if (!strcmp (footprint_name, "?DIOMELF1911M"))
+        {
+                pitch_y = 0.0;
+                number_of_pins = 2;
+                package_body_length = 2.00;
+                package_body_width = 1.20;
+                package_body_height = 1.20;
+                package_is_radial = FALSE;
+                number_of_columns = 0;
+                number_of_rows = 0;
+                pitch_x = 2.10;
+                pad_length = 1.15;
+                pad_width = 1.45;
+                pad_shape = g_strdup ("rectangular pad");
+                pad_shapes_type = SQUARE;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.0;
+                fiducial_pad_solder_mask_clearance = 0.0;
+                silkscreen_length = 0.20;
+                silkscreen_width = 1.20;
+                silkscreen_line_width = 0.20;
+                courtyard_length = 4.30;
+                courtyard_width = 2.50;
+                courtyard_line_width = 0.05;
+                count_x = 0;
+                count_y = 0;
+                footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("DIOMELF1911M: is also known as MicroMELF."));
+                footprint_name = g_strdup ("DIOMELF1911M");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?DIOMELF1911N"))
         {
                 pitch_y = 0.0;
                 number_of_pins = 2;
