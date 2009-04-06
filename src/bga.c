@@ -2114,8 +2114,8 @@ bga_get_default_footprint_values
                         "P3,P4,P5,P6,P7,P8,",
                         NULL
                 );
-                package_body_width = 10.50;
-                package_body_length = 13.00;
+                package_body_length = 10.50;
+                package_body_width = 13.00;
                 package_body_height = 1.20;
                 package_is_radial = FALSE;
                 number_of_columns = 10;
