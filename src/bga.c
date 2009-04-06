@@ -1754,8 +1754,8 @@ bga_get_default_footprint_values
                         "C3",
                         NULL
                 );
-                package_body_width = 6.00;
-                package_body_length = 9.00;
+                package_body_length = 6.00;
+                package_body_width = 9.00;
                 package_body_height = 1.00;
                 package_is_radial = FALSE;
                 number_of_columns = 8;
