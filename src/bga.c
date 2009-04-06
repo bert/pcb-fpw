@@ -2885,8 +2885,8 @@ bga_get_default_footprint_values
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 114;
                 pin_pad_exceptions_string = g_strdup ("");
-                package_body_width = 5.50;
-                package_body_length = 16.00;
+                package_body_length = 5.50;
+                package_body_width = 16.00;
                 package_body_height = 1.50;
                 package_is_radial = FALSE;
                 number_of_columns = 6;
