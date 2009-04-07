@@ -4738,6 +4738,12 @@ bga_function_list[] =
                 NULL
         },
         {
+                "Create Packages List",
+                bga_create_packages_list,
+                "Create a list of packages with known values",
+                NULL
+        },
+        {
                 "DRC BGA Element",
                 bga_drc,
                 "Design Rule Check for a BGA package",
