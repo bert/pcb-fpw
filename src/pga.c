@@ -568,6 +568,12 @@ pga_function_list[] =
         },
 #endif /* GUI */
         {
+                "DRC PGA Element",
+                pga_drc,
+                "Design Rule Check for a PGA package",
+                NULL
+        },
+        {
                 "Default Element Values",
                 pga_get_default_footprint_values,
                 "Get default values for a selected PGA package",
