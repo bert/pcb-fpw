@@ -1928,6 +1928,24 @@ dip_function_list[] =
         },
 #endif /* GUI */
         {
+                "Create Element",
+                dip_create_element,
+                "Create a pcb element for a DIP package",
+                NULL
+        },
+        {
+                "Create Package List",
+                dip_create_packages_list,
+                "Create a list of packages with known values",
+                NULL
+        },
+        {
+                "DRC DIP Element",
+                dip_drc,
+                "Design Rule Check for a DIP package",
+                NULL
+        },
+        {
                 "Default Element Values",
                 dip_get_default_footprint_values,
                 "Get default values for a selected DIP package",
