@@ -360,6 +360,12 @@ con_hdr_function_list[] =
         },
 #endif /* GUI */
         {
+                "Create Package List",
+                con_hdr_create_packages_list,
+                "Create a list of packages with known values",
+                NULL
+        },
+        {
                 "Default Element Values",
                 con_hdr_get_default_footprint_values,
                 "Get default values for a selected CON-HDR package",
