@@ -384,6 +384,12 @@ con_dip_function_list[] =
         },
 #endif /* GUI */
         {
+                "Create Package List",
+                con_dip_create_packages_list,
+                "Create a list of packages with known values",
+                NULL
+        },
+        {
                 "Default Element Values",
                 con_dip_get_default_footprint_values,
                 "Get default values for a selected CON package",
