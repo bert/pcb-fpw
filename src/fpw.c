@@ -1,6 +1,6 @@
 /*!
  * \file fpw.c
- * \author Copyright (C) 2007, 2008 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007 ... 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief fpw (FootPrintWizard) is a CLI program for the creation of
  * footprints.
  *
@@ -10,20 +10,20 @@
  * (see http://pcb.sourgeforge.net) to allow for the placement of parts on a
  * pcb layout.\n
  *
- * This program is free software; you can redistribute it and/or modify\n
- * it under the terms of the GNU General Public License as published by\n
- * the Free Software Foundation; either version 2 of the License, or\n
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.\n
  * \n
- * This program is distributed in the hope that it will be useful,\n
- * but WITHOUT ANY WARRANTY; without even the implied warranty of\n
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- * See the GNU General Public License for more details.\n
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.\n
  * \n
- * You should have received a copy of the GNU General Public License\n
- * along with this program; if not, write to:\n
- * the Free Software Foundation, Inc.,\n
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.\n
  */
 
 
@@ -76,6 +76,10 @@ gchar *program_name = NULL;
 
 /*!
  * \brief Print the version of the footprintwizard to stderr.
+ *
+ * <b>Parameters:</b> \c none .\n
+ * \n
+ * <b>Returns:</b> \c EXIT_SUCCESS.
  */
 static void
 print_version ()
@@ -91,6 +95,10 @@ print_version ()
 
 /*!
  * \brief Print the usage message for the footprintwizard to stderr.
+ *
+ * <b>Parameters:</b> \c none .\n
+ * \n
+ * <b>Returns:</b> \c EXIT_SUCCESS.
  */
 static void
 print_usage ()
@@ -107,6 +115,12 @@ print_usage ()
 
 /*!
  * \brief The CLI for the footprintwizard.
+ *
+ * <b>Parameters:</b> \c argc number of arguments.\n
+ * \n
+ * <b>Parameters:</b> \c argv array of argument variables.\n
+ * \n
+ * <b>Returns:</b> \c EXIT_SUCCESS.
  */
 int
 main
@@ -205,5 +219,6 @@ main
                         _("Footprint %s is written successful."),
                         footprint_name);
 }
+
 
 /* EOF */
