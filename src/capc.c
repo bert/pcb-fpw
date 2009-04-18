@@ -38,6 +38,7 @@ GList
 capc_create_packages_list ()
 {
         GList *capc_packages_list = NULL;
+        capc_packages_list = g_list_append (capc_packages_list, "CAPC0603X33N");
         capc_packages_list = g_list_append (capc_packages_list, "CAPC3216X105L");
         return (*capc_packages_list);
 }
@@ -51,6 +52,7 @@ capc_create_packages_list ()
  * If the footprint name is recognised known values will be loaded and the
  * entries involved in the GUI will be updated accordingly.\n
  * Currently the following footprints are supported:\n
+ * - CAPC0603X33N,
  * - CAPC3216X105L.
  *
  * <b>Parameters:</b> \c *footprint_name is a \c NULL terminated
@@ -65,7 +67,44 @@ capc_get_default_footprint_values
         gchar *footprint_name
 )
 {
-        if (!strcmp (footprint_name, "?CAPC3216X105L"))
+        if (!strcmp (footprint_name, "?CAPC0603X33N"))
+        {
+                number_of_pins = 2;
+                package_body_length = 0.63;
+                package_body_width = 0.33;
+                package_body_height = 0.33;
+                package_is_radial = FALSE;
+                number_of_columns = 0;
+                number_of_rows = 0;
+                pitch_x = 0.66;
+                pitch_y = 0.0;
+                pad_length = 0.46;
+                pad_width = 0.42;
+                pad_shape = g_strdup ("rectangular pad");
+                pad_shapes_type = SQUARE;
+                pad_clearance = 0.075;
+                pad_solder_mask_clearance = 0.075;
+                silkscreen_package_outline = FALSE;
+                silkscreen_length = 0.00;
+                silkscreen_width = 0.00;
+                silkscreen_line_width = 0.00;
+                courtyard_length = 1.42;
+                courtyard_width = 0.72;
+                courtyard_line_width = 0.05;
+                count_x = 0;
+                count_y = 0;
+                footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("CAPC0603X33N: is also known as EIA 0201, metric 0603."));
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("CAPC0603X33N: Pads are being trimmed."));
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("CAPC0603X33N: Footprint is too small for a package outline on the silkscreen."));
+                footprint_name = g_strdup ("CAPC0603X33N");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?CAPC3216X105L"))
         {
                 number_of_pins = 2;
                 package_body_length = 3.40;
