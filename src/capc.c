@@ -119,6 +119,8 @@ capc_get_default_footprint_values
                 pad_width = 1.70;
                 pad_shape = g_strdup ("rectangular pad");
                 pad_shapes_type = SQUARE;
+                pad_clearance = 0.075;
+                pad_solder_mask_clearance = 0.075;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
