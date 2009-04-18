@@ -38,7 +38,7 @@ GList
 capc_create_packages_list ()
 {
         GList *capc_packages_list = NULL;
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC");
+        capc_packages_list = g_list_append (capc_packages_list, "CAPC3216X105L");
         return (*capc_packages_list);
 }
 
@@ -51,7 +51,7 @@ capc_create_packages_list ()
  * If the footprint name is recognised known values will be loaded and the
  * entries involved in the GUI will be updated accordingly.\n
  * Currently the following footprints are supported:\n
- * - .
+ * - CAPC3216X105L.
  *
  * <b>Parameters:</b> \c *footprint_name is a \c NULL terminated
  * footprint name.\n
@@ -65,34 +65,36 @@ capc_get_default_footprint_values
         gchar *footprint_name
 )
 {
-        if (!strcmp (footprint_name, "?CAPC"))
+        if (!strcmp (footprint_name, "?CAPC3216X105L"))
         {
                 number_of_pins = 2;
-                package_body_length = 0.0;
-                package_body_width = 0.0;
-                package_body_height = 0.0;
+                package_body_length = 3.40;
+                package_body_width = 1.80;
+                package_body_height = 1.05;
                 package_is_radial = FALSE;
                 number_of_columns = 0;
                 number_of_rows = 0;
-                pitch_x = 0.0;
+                pitch_x = 2.80;
                 pitch_y = 0.0;
-                pad_length = 0.0;
-                pad_width = 0.0;
+                pad_length = 0.95;
+                pad_width = 1.70;
                 pad_shape = g_strdup ("rectangular pad");
                 pad_shapes_type = SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
-                silkscreen_package_outline = FALSE;
-                silkscreen_length = 0.0;
-                silkscreen_width = 0.0;
-                courtyard_length = 0.0;
-                courtyard_width = 0.0;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = 1.10;
+                silkscreen_width = 1.60;
+                silkscreen_line_width = 0.20;
+                courtyard_length = 4.00;
+                courtyard_width = 2.00;
+                courtyard_line_width = 0.05;
                 count_x = 0;
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CAPC");
+                footprint_name = g_strdup ("CAPC3216X105L");
                 return (EXIT_SUCCESS);
         }
         else
