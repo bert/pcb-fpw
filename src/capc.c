@@ -94,6 +94,8 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("CAPC3216X105L: is also known as EIA 1206."));
                 footprint_name = g_strdup ("CAPC3216X105L");
                 return (EXIT_SUCCESS);
         }
