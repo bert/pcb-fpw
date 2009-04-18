@@ -24,6 +24,26 @@
 
 
 /*!
+ * \brief Create a list of CAPC packages with pre-defined values.
+ *
+ * The data in this list can be used in a combobox to select a
+ * pre-defined package.
+ * \n
+ * <b>Parameters:</b> none.\n
+ * \n
+ * <b>Returns:</b> a list containing all package names of this footprint
+ * type known by pcb-fpw.
+ */
+GList
+capc_create_packages_list ()
+{
+        GList *capc_packages_list = NULL;
+        capc_packages_list = g_list_append (capc_packages_list, "CAPC");
+        return (*capc_packages_list);
+}
+
+
+/*!
  * \brief Look up default values for CAPC SMT footprint.
  *
  * Footprint values can be looked up by placing a question mark "?" in
