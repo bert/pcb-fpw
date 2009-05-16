@@ -178,9 +178,6 @@ select_exceptions_ok_cb
                         pin_pad_exceptions_string);
         }
         g_free (exceptions);
-        /* Update the entries in the main window */
-        GtkWidget *pcb_gfpw = gtk_widget_get_toplevel (GTK_WIDGET (select_exceptions_window));
-        all_entries_need_updated (GTK_WIDGET (pcb_gfpw));
         /* Destroy the widget and reset the value in the pointer */
         gtk_widget_destroy (select_exceptions_window);
         select_exceptions_window = NULL;
@@ -235,7 +232,6 @@ select_exceptions_create_window
         }
         /* Create a dialog window */
         select_exceptions_window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-//        gtk_widget_set_name (select_exceptions_window, "select_exceptions_window");
         /* Destroy the preview window when the main window of pcb-gfpw gets
          * destroyed */
         gtk_window_set_destroy_with_parent (GTK_WINDOW (select_exceptions_window), TRUE);
