@@ -41,6 +41,7 @@ capc_create_packages_list ()
         capc_packages_list = g_list_append (capc_packages_list, "CAPC0603X33N");
         capc_packages_list = g_list_append (capc_packages_list, "CAPC0816X61N");
         capc_packages_list = g_list_append (capc_packages_list, "CAPC1005X55N");
+        capc_packages_list = g_list_append (capc_packages_list, "CAPC1005X56N");
         capc_packages_list = g_list_append (capc_packages_list, "CAPC3216X105L");
         return (*capc_packages_list);
 }
@@ -57,6 +58,7 @@ capc_create_packages_list ()
  * - CAPC0603X33N,
  * - CAPC0816X61N,
  * - CAPC1005X55N,
+ * - CAPC1005X56N,
  * - CAPC3216X105L.
  *
  * <b>Parameters:</b> \c *footprint_name is a \c NULL terminated
@@ -178,6 +180,41 @@ capc_get_default_footprint_values
                 g_log ("", G_LOG_LEVEL_WARNING,
                         _("CAPC1005X55N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC1005X55N");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?CAPC1005X56N"))
+        {
+                number_of_pins = 2;
+                package_body_length = 1.10;
+                package_body_width = 0.50;
+                package_body_height = 0.56;
+                package_is_radial = FALSE;
+                number_of_columns = 0;
+                number_of_rows = 0;
+                pitch_x = 0.96;
+                pitch_y = 0.0;
+                pad_length = 0.59;
+                pad_width = 0.64;
+                pad_shape = g_strdup ("rectangular pad");
+                pad_shapes_type = SQUARE;
+                pad_clearance = 0.075;
+                pad_solder_mask_clearance = 0.075;
+                silkscreen_package_outline = FALSE;
+                silkscreen_length = 0.00;
+                silkscreen_width = 0.00;
+                silkscreen_line_width = 0.00;
+                courtyard_length = 1.86;
+                courtyard_width = 0.94;
+                courtyard_line_width = 0.05;
+                count_x = 0;
+                count_y = 0;
+                footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("CAPC1005X56N: is also known as EIA 0402, metric 1005."));
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("CAPC1005X56N: Footprint is too small for a package outline on the silkscreen."));
+                footprint_name = g_strdup ("CAPC1005X56N");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC3216X105L"))
