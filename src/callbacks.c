@@ -79,6 +79,8 @@ gchar *work_dir = NULL;
 int
 all_entries_need_updated (GtkWidget *widget)
 {
+	/* *Recalculate the number of pins and/or pads.*/
+        number_of_pins_has_changed (widget);
         /* Widgets on tab 1 "Footprint". */
         /* Only update the "footprint type" entry with a sensible value. */
         if (footprint_type)
