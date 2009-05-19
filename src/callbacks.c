@@ -268,7 +268,7 @@ all_entries_need_updated (GtkWidget *widget)
                         g_strdup_printf ("%d", count_y));
         }
         /* Only update the "pin/pad exceptions" entry with a sensible value. */
-        if (!pin_pad_exceptions_string || (!strcmp (pin_pad_exceptions_string, "")))
+        if (pin_pad_exceptions_string || (!strcmp (pin_pad_exceptions_string, "")))
         {
                 GtkWidget *pin_pad_exceptions_entry = lookup_widget
                         (GTK_WIDGET (widget), "pin_pad_exceptions_entry");
