@@ -3551,7 +3551,7 @@ on_pin_pad_exceptions_entry_changed     (GtkEditable     *editable,
 {
         GtkWidget *pin_pad_exceptions_entry = lookup_widget (GTK_WIDGET (editable),
                 "pin_pad_exceptions_entry");
-        pin_pad_exceptions_string = gtk_entry_get_text (GTK_ENTRY (pin_pad_exceptions_entry));
+        pin_pad_exceptions_string = g_strdup_printf (gtk_entry_get_text (GTK_ENTRY (pin_pad_exceptions_entry)));
         entry_has_changed (GTK_WIDGET (editable));
 
 }
