@@ -2290,12 +2290,25 @@ write_footprintwizard_file (gchar *fpw_filename)
  * \brief Write a footprint based on the global variables.
  *
  * This function does not write the footprint file itself.\n
- * It is a dispatcher for helper functions who <b>actually</b> do write the
- * footprint to file.
+ * It is a dispatcher for helper functions who <b>actually</b> do write
+ * the contents for the footprint to file.
  */
 int
 write_footprint()
 {
+        fp = fopen (footprint_filename, "w");
+        if (!fp)
+        {
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("could not open file for %s footprint: %s."),
+                        footprint_type, footprint_filename);
+                fclose (fp);
+                return (EXIT_FAILURE);
+        }
+        if (license_in_footprint)
+        {
+                write_license ();
+	}
         /* Switch depending the package type */
         switch (package_type)
         {
@@ -2335,7 +2348,7 @@ write_footprint()
                         dip_write_footprint ();
                         break;
                 case INDC:
-                        smt_write_footprint ();
+                        indc_write_footprint ();
                         break;
                 case INDM:
                         smt_write_footprint_molded ();
@@ -2356,7 +2369,7 @@ write_footprint()
                         return;
                         break;
                 case RESC:
-                        smt_write_footprint ();
+                        resc_write_footprint ();
                         break;
                 case RESM:
                         smt_write_footprint_molded ();
@@ -2381,9 +2394,19 @@ write_footprint()
                         break;
                 default:
                         fprintf (stderr, "ERROR: unknown or not yet implemented footprint type entered.\n");
+                        fclose (fp);
                         return (EXIT_FAILURE);
                         break;
         }
+        /* Write attributes */
+        if (attributes_in_footprint)
+                write_attributes ();
+        fprintf (fp, "\n");
+        fprintf (fp, ")\n");
+        fclose (fp);
+        g_log ("", G_LOG_LEVEL_INFO,
+                _("wrote a footprint file for a %s package: %s."),
+                footprint_type, footprint_filename);
         return (EXIT_SUCCESS);
 }
 

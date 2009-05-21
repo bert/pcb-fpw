@@ -148,18 +148,6 @@ diom_write_footprint ()
         gdouble x_text;
         gdouble y_text;
 
-        fp = fopen (footprint_filename, "w");
-        if (!fp)
-        {
-                fprintf
-                (
-                        stderr,
-                        "Error: could not open file for %s footprint: %s.\n",
-                        footprint_type,
-                        footprint_filename
-                );
-                return (EXIT_FAILURE);
-        }
         /* Determine (extreme) courtyard dimensions based on pin/pad
          * properties */
         xmin = multiplier * ((-pitch_x / 2.0) - (pad_length / 2.0) - pad_solder_mask_clearance);
@@ -376,20 +364,7 @@ diom_write_footprint ()
                         multiplier * courtyard_line_width
                 );
         }
-        /* Write attributes */
-        if (attributes_in_footprint)
-                write_attributes ();
-        fprintf (fp, "\n");
-        fprintf (fp, ")\n");
-        fclose (fp);
-        fprintf
-        (
-                stderr,
-                "SUCCESS: wrote a footprint file for a %s package: %s.\n",
-                footprint_type,
-                footprint_filename
-        );
-	return (EXIT_SUCCESS);
+        return (EXIT_SUCCESS);
 }
 
 
