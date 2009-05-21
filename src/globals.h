@@ -211,6 +211,8 @@ gchar *footprint_status = "Experimental";
 status_t status_type = NO_STATUS;
         /*!< Status (enumerated) for the footprint status.\n
          * Initial value is \c NO_STATUS. */
+gboolean license_in_footprint;
+        /*!< Include a license text into the footprint file. */
 gboolean attributes_in_footprint;
         /*!< Include the global values based on the entry values of the GUI
          * into the footprint file. */

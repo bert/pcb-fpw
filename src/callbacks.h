@@ -1,6 +1,6 @@
 /*!
  * \file callbacks.h
- * \author Copyright (C) 2007, 2008 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007 ... 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief Callback functions header file for the pcb footprintwizard.
  */
 
@@ -48,6 +48,9 @@ void
 on_add_attribs_checkbutton_toggled (GtkToggleButton *togglebutton, gpointer user_data);
 
 void
+on_add_license_checkbutton_toggled (GtkToggleButton *togglebutton, gpointer user_data);
+
+void
 on_clear_button_clicked (GtkButton *button, gpointer user_data);
 
 void
@@ -73,6 +76,9 @@ on_courtyard_line_width_entry_changed (GtkEditable *editable, gpointer user_data
 
 void
 on_courtyard_width_entry_changed (GtkEditable *editable, gpointer user_data);
+
+void
+on_dimensions_button_clicked  (GtkButton *button, gpointer user_data);
 
 void
 on_fiducial_checkbutton_toggled (GtkToggleButton *togglebutton, gpointer user_data);
@@ -106,6 +112,9 @@ on_filechooser_dialog_update_preview (GtkFileChooser *filechooser, gpointer user
 
 void
 on_footprint_author_entry_changed (GtkEditable *editable, gpointer user_data);
+
+void
+on_footprint_button_clicked (GtkButton *button, gpointer user_data);
 
 void
 on_footprint_dist_license_entry_changed (GtkEditable *editable, gpointer user_data);
@@ -233,19 +242,3 @@ void
 on_thermal_width_entry_changed (GtkEditable *editable, gpointer user_data);
 
 /* EOF */
-
-void
-on_dimensions_button_clicked           (GtkButton       *button,
-                                        gpointer         user_data);
-
-void
-on_preview_button_clicked              (GtkButton       *button,
-                                        gpointer         user_data);
-
-void
-on_clear_button_clicked                (GtkButton       *button,
-                                        gpointer         user_data);
-
-void
-on_footprint_button_clicked            (GtkButton       *button,
-                                        gpointer         user_data);

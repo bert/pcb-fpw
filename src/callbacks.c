@@ -1571,6 +1571,28 @@ on_add_attribs_checkbutton_toggled     (GtkToggleButton *togglebutton,
 
 
 /*!
+ * \brief The "add a license text to footprint" checkbutton is toggled.
+ *
+ * <ul>
+ * <li>get active state.
+ * <li>store in the \c license_in_footprint variable (global).
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *togglebutton is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
+ */
+void
+on_add_license_checkbutton_toggled     (GtkToggleButton *togglebutton,
+                                        gpointer         user_data)
+{
+        license_in_footprint = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (togglebutton));
+}
+
+
+/*!
  * \brief The "Clear" button is clicked.
  *
  * <ul>

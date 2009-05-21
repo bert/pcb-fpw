@@ -97,8 +97,9 @@ create_pcb_gfpw (void)
   GtkWidget *footprint_value_entry;
   GtkWidget *footprint_refdes_label;
   GtkWidget *footprint_refdes_entry;
-  GtkWidget *add_attribs_checkbutton;
+  GtkWidget *add_license_checkbutton;
   GtkWidget *package_is_radial_checkbutton;
+  GtkWidget *add_attribs_checkbutton;
   GtkWidget *footprint_frame_label;
   GtkWidget *footprint_tab_label;
   GtkWidget *pins_pads_table;
@@ -395,7 +396,7 @@ create_pcb_gfpw (void)
   gtk_container_add (GTK_CONTAINER (footprint_frame), footprint_frame_alignment);
   gtk_alignment_set_padding (GTK_ALIGNMENT (footprint_frame_alignment), 0, 0, 12, 0);
 
-  footprint_table = gtk_table_new (10, 2, FALSE);
+  footprint_table = gtk_table_new (11, 2, FALSE);
   gtk_widget_set_name (footprint_table, "footprint_table");
   gtk_widget_show (footprint_table);
   gtk_container_add (GTK_CONTAINER (footprint_frame_alignment), footprint_table);
@@ -568,13 +569,13 @@ create_pcb_gfpw (void)
   gtk_tooltips_set_tip (tooltips, footprint_refdes_entry, _("Type a refdes prefix here, without the ? please"), NULL);
   gtk_entry_set_invisible_char (GTK_ENTRY (footprint_refdes_entry), 8226);
 
-  add_attribs_checkbutton = gtk_check_button_new_with_mnemonic (_("Add attributes to footprint"));
-  gtk_widget_set_name (add_attribs_checkbutton, "add_attribs_checkbutton");
-  gtk_widget_show (add_attribs_checkbutton);
-  gtk_table_attach (GTK_TABLE (footprint_table), add_attribs_checkbutton, 0, 2, 9, 10,
+  add_license_checkbutton = gtk_check_button_new_with_mnemonic (_("Add license to footprint"));
+  gtk_widget_set_name (add_license_checkbutton, "add_license_checkbutton");
+  gtk_widget_show (add_license_checkbutton);
+  gtk_table_attach (GTK_TABLE (footprint_table), add_license_checkbutton, 0, 2, 9, 10,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, add_attribs_checkbutton, _("Check to add attributes to the footprint."), NULL);
+  gtk_tooltips_set_tip (tooltips, add_license_checkbutton, _("Check to add a license text to the footprint."), NULL);
 
   package_is_radial_checkbutton = gtk_check_button_new_with_mnemonic (_("Radial package "));
   gtk_widget_set_name (package_is_radial_checkbutton, "package_is_radial_checkbutton");
@@ -583,6 +584,14 @@ create_pcb_gfpw (void)
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
   gtk_tooltips_set_tip (tooltips, package_is_radial_checkbutton, _("Check for a radial package"), NULL);
+
+  add_attribs_checkbutton = gtk_check_button_new_with_mnemonic (_("Add attributes to footprint"));
+  gtk_widget_set_name (add_attribs_checkbutton, "add_attribs_checkbutton");
+  gtk_widget_show (add_attribs_checkbutton);
+  gtk_table_attach (GTK_TABLE (footprint_table), add_attribs_checkbutton, 0, 2, 10, 11,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_tooltips_set_tip (tooltips, add_attribs_checkbutton, _("Check to add attributes to the footprint."), NULL);
 
   footprint_frame_label = gtk_label_new (_("<b>Footprint</b>"));
   gtk_widget_set_name (footprint_frame_label, "footprint_frame_label");
@@ -1674,11 +1683,14 @@ create_pcb_gfpw (void)
   g_signal_connect ((gpointer) footprint_refdes_entry, "changed",
                     G_CALLBACK (on_footprint_refdes_entry_changed),
                     NULL);
-  g_signal_connect ((gpointer) add_attribs_checkbutton, "toggled",
-                    G_CALLBACK (on_add_attribs_checkbutton_toggled),
+  g_signal_connect ((gpointer) add_license_checkbutton, "toggled",
+                    G_CALLBACK (on_add_license_checkbutton_toggled),
                     NULL);
   g_signal_connect ((gpointer) package_is_radial_checkbutton, "toggled",
                     G_CALLBACK (on_package_is_radial_checkbutton_toggled),
+                    NULL);
+  g_signal_connect ((gpointer) add_attribs_checkbutton, "toggled",
+                    G_CALLBACK (on_add_attribs_checkbutton_toggled),
                     NULL);
   g_signal_connect ((gpointer) pad_solder_mask_clearance_entry, "changed",
                     G_CALLBACK (on_pad_solder_mask_clearance_entry_changed),
@@ -1883,8 +1895,9 @@ create_pcb_gfpw (void)
   GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_value_entry, "footprint_value_entry");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_refdes_label, "footprint_refdes_label");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_refdes_entry, "footprint_refdes_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, add_attribs_checkbutton, "add_attribs_checkbutton");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, add_license_checkbutton, "add_license_checkbutton");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, package_is_radial_checkbutton, "package_is_radial_checkbutton");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, add_attribs_checkbutton, "add_attribs_checkbutton");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_frame_label, "footprint_frame_label");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, footprint_tab_label, "footprint_tab_label");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, pins_pads_table, "pins_pads_table");
