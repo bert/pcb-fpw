@@ -7,9 +7,9 @@
   <property name="visible">True</property>
   <property name="destroy_with_parent">False</property>
   <property name="name" translatable="yes">pcb-gfpw</property>
-  <property name="copyright" translatable="yes">(C) 2007, 2008 Bert Timmerman.</property>
-  <property name="comments" translatable="yes">The pcb FootPrintWizard generates footprint files for pcb.
-(see http://pcb.sourceforge.net)
+  <property name="copyright" translatable="yes">(C) 2007 ... 2009 Bert Timmerman.</property>
+  <property name="comments" translatable="yes">The pcb FootPrintWizard generates footprint files for the pcb layout editor.
+(see http://pcb.gpleda.org)
 </property>
   <property name="license" translatable="yes">This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

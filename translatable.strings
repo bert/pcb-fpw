@@ -5,9 +5,9 @@
  */
 
 gchar *s = N_("pcb-gfpw");
-gchar *s = N_("(C) 2007, 2008 Bert Timmerman.");
-gchar *s = N_("The pcb FootPrintWizard generates footprint files for pcb.\n"
-              "(see http://pcb.sourceforge.net)\n"
+gchar *s = N_("(C) 2007 ... 2009 Bert Timmerman.");
+gchar *s = N_("The pcb FootPrintWizard generates footprint files for the pcb layout editor.\n"
+              "(see http://pcb.gpleda.org)\n"
               "");
 gchar *s = N_("This program is free software; you can redistribute it and/or modify\n"
               "it under the terms of the GNU General Public License as published by\n"
