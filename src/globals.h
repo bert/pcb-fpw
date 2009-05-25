@@ -99,7 +99,7 @@ typedef enum status
 char *row_letters[] =
 {
         "A", "B", "C", "D", "E", "F", "G", "H", "J", "K",
-        "L","M", "N", "P", "R", "T", "U", "V", "W", "Y",
+        "L", "M", "N", "P", "R", "T", "U", "V", "W", "Y",
         "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AJ", "AK",
         "AL", "AM", "AN", "AP", "AR", "AT", "AU", "AV", "AW", "AY",
         "BA", "BB", "BC", "BD", "BE", "BF", "BG", "BH", "BJ", "BK",
