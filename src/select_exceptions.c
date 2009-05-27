@@ -67,7 +67,7 @@ select_exceptions_clear_cb
                 for (j = 0; (j < MAX_COLUMNS); j++)
                 {
                         selection_button = &selection_buttons[selection_button_index];
-                        selection_button->active = TRUE;
+                        selection_button->active = FALSE;
                         selection_button_index++;
                 }
         }
@@ -81,10 +81,10 @@ select_exceptions_clear_cb
                  * where j is a member of the positive Natural numbers (N) */
                 {
                         selection_button = &selection_buttons[selection_button_index];
-                        selection_button->active = TRUE;
+                        selection_button->active = FALSE;
                         gtk_toggle_button_set_active
                                 (GTK_TOGGLE_BUTTON (selection_button->button_widget),
-                                TRUE);
+                                FALSE);
                         selection_button_index++;
                 }
         }
@@ -264,7 +264,7 @@ select_exceptions_create_window
         gint j;
         SelectionButtonSet *selection_button;
         gint selection_button_index = 0;
-        /* Create top row with column labels with pin/pad index numbers. */
+        /* Create the top row with column labels with pin/pad index numbers. */
         for (j = 1; (j < (number_of_columns + 1)); j++)
         {
                 GtkWidget *column_label = gtk_label_new (g_strdup_printf ("%d", j));
@@ -273,14 +273,14 @@ select_exceptions_create_window
                         j, (j + 1),
                         0, 1);
         }
-        /* Create array of selection buttons and add a label at the begin and
+        /* Create an array of selection buttons and add a label at the begin and
          * end of the row stating the pin/pad index (valid) alphabet letter. */
         for (i = 0; (i < number_of_rows); i++)
         /* one row at a time [A .. Y, AA .. YY] etc.
          * where i is one or more letters of the alphabet,
          * excluding "I", "O", "Q", "S" and "Z" */
         {
-                /* Create a label in the first column labels with the pin/pad
+                /* Create a label in the first column with the pin/pad
                  * index character. */
                 GtkWidget *row_label = gtk_label_new (g_strdup_printf ("%s",
                         (row_letters[i])));
@@ -318,6 +318,11 @@ select_exceptions_create_window
                                         (GTK_TOGGLE_BUTTON (selection_button->button_widget),
                                         FALSE);
                         }
+                        /* connect the button clicked signal for all selection buttons
+                         * to one single callback function.
+                         * this saves generating a callback for every single selection
+                         * button in the array, but this comes with the cost (time) of parsing
+                         * all the buttons in the array when one button is clicked */
                         g_signal_connect
                         (
                                 G_OBJECT (selection_button->button_widget),
