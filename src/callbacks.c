@@ -3545,6 +3545,40 @@ on_pin_pad_exceptions_button_clicked   (GtkButton       *button,
         }
         else
         {
+                /* initialise the entire selection button array with
+                 * FALSE values */
+                gint i;
+                gint j;
+                SelectionButtonSet *selection_button;
+                gint selection_button_index = 0;
+                for (i = 0; (i < MAX_ROWS); i++)
+                {
+                        for (j = 0; (j < MAX_COLUMNS); j++)
+                        {
+                                selection_button = &selection_buttons[selection_button_index];
+                                selection_button->active = FALSE;
+                                selection_button_index++;
+                        }
+                }
+                /* fill the selection button array with values based on
+	         * the current string obtained from the "pin/pad exceptions"
+                 * entry */
+                selection_button_index = 0;
+                for (i = 0; (i < number_of_rows); i++)
+                {
+                        for (j = 0; (j < number_of_columns); j++)
+                        {
+                                selection_button = &selection_buttons[selection_button_index];
+                                selection_button->id = selection_button_index;
+                                gchar *selection_button_name = g_strdup_printf ("%s%d",
+                                        (row_letters[i]), (j + 1));
+                                selection_button->name = g_strdup (selection_button_name);
+                                selection_button->active = !get_pin_pad_exception
+                                        (selection_button_name);
+                                selection_button_index++;
+                                g_free (selection_button_name);
+                        }
+                }
                 gchar *message = g_strdup ("");
                 message_to_statusbar (GTK_WIDGET (button), message);
                 select_exceptions_create_window (number_of_rows,
