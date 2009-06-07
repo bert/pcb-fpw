@@ -1,3 +1,2554 @@
+commit 6ee9e3559b48a0a303f7a68939a13bfaf8321066
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jun 7 09:43:26 2009 +0200
+
+    Updated the User manual.
+
+commit e36869e4d43b1f105090afd56674330968feabac
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed May 27 22:31:20 2009 +0200
+
+    Correction on setting selection buttons in the proper state in select_exceptions_clear_cb [#1].
+    
+    Changed/added comments.
+
+commit e6a1f65bd46598ae479fd69ecff30a1745594c63
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed May 27 22:27:41 2009 +0200
+
+    Initialise the entire selection button array before loading existing exceptions [#1].
+
+commit 17f9ef2b1612c8535b762e0ebacd933a16b1ff8c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon May 25 23:47:58 2009 +0200
+
+    Added a white space.
+
+commit 53a12a9638f0cb5055200c304b7d358ac7b9dee4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri May 22 16:57:03 2009 +0200
+
+    Updated the year in the about dialog window.
+
+commit d7d96fb90f1598a06354cd8ebe11628e50879970
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu May 21 16:52:07 2009 +0200
+
+    Correction of the URL of the PCB homepage.
+
+commit 611425de65d06ad4bb3531560fb4ab865da3d06c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu May 21 15:57:15 2009 +0200
+
+    Updated the Dutch translation file.
+
+commit d83b43e5d48620eb46447185f536ff0d08440623
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu May 21 10:21:45 2009 +0200
+
+    Added a hint where to register bugs etc.
+
+commit 6141cf33d5cdb55a8bb0942e967cee3b46e698fa
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu May 21 08:55:44 2009 +0200
+
+    Code cleanup.
+    
+    - Removed a lot of duplicate code for wrtiting footprints and
+      put this into libfpw,c.
+    - Added a test for writing a predefined license text in the
+      footprint header. This is a hardcoded text for now.
+
+commit 620a5cf20643454c1f4f6ca88d1e55af428ac28a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu May 21 08:37:18 2009 +0200
+
+    Added a "add license to footprint" checkbox to the Footprint tab.
+
+commit 5941a5809b5dcc4a52eb03dd1eed051df0f66898
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue May 19 08:03:46 2009 +0200
+
+    Recalculate the number of pins and/or pads when refreshing [#2].
+
+commit 053fc31c1d49be228044f2f1db29750bcab7531d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue May 19 07:38:15 2009 +0200
+
+    Reduced compiler warning in on_pin_pad_exceptions_entry_changed() [#19].
+
+commit ffbd5e99435936bb0d90c79ebd544443eafe382a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue May 19 07:31:44 2009 +0200
+
+    Correction on testing for updating the pin/pad exceptions in all_entries_need_updated( [#1]).
+
+commit 5b3faadb5edb6e07ce565927ef797b9eee823f15
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Mon May 18 21:41:56 2009 +0200
+
+    Added data for a CAPC1608X87N package [#21].
+
+commit e797135be125d10e42c922152f4c77ac6617322f
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Mon May 18 20:53:56 2009 +0200
+
+    Added data for a CAPC1608X86N package [#21].
+
+commit 2343db338cb389f86b9559f240300c3e1e44a53f
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun May 17 21:03:34 2009 +0200
+
+    Added data for a CAPC1608X55N package [#21].
+
+commit 4edf75fb36494b9fb5a802cb1341e740d03ed1fa
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun May 17 20:32:38 2009 +0200
+
+    Added data for a CAPC1508X65N package [#21].
+
+commit ff3893d66ccb13c5f14728c9299c803acb88acdb
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun May 17 19:59:45 2009 +0200
+
+    Added data for a CAPC1320X76N package [#21].
+
+commit 65e7cb3f69e1893f574e8ff8a99abf2576b4af18
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun May 17 19:05:43 2009 +0200
+
+    Added data for a CAPC1220X107N package [#21].
+
+commit 037f498d5fbff4742849e0f46e0e2b2955214e48
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun May 17 18:31:02 2009 +0200
+
+    Added data for a CAPC1005X60N package [#21].
+
+commit ee64d9b47f5a33ba6cc3e02d8952f237f866df3b
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun May 17 14:54:59 2009 +0200
+
+    Added data for a CAPC1005X56N package [#21].
+
+commit 3835f8baf966ebf16c553877edfa3b7f2f756b0c
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun May 17 14:45:51 2009 +0200
+
+    Added data for a CAPC1005X55N package. [#21]
+
+commit a874ab9cec0a6d648d1ae9533788ad167f94a409
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat May 16 22:19:22 2009 +0200
+
+    Clean up unneccessary code in select_exceptions.c we do not need.
+
+commit 8ccbd884f49d02822ff9d42013d788dcdd46c5b2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat May 16 15:28:07 2009 +0200
+
+    Changes in the number of pins will be handled in number_of_pins_has_changed().
+    
+    For now this includes changes in the number of [columns, rows] entries and count [x, y] entries.
+
+commit 480d99c62c571f5b83c88e2ef4e81fbf433c6615
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 18 23:07:00 2009 +0200
+
+    Added data for a CAPC0816X61N package.
+
+commit 168a243e16fc4a1054f7ed738f1400494e7e4745
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 18 22:41:54 2009 +0200
+
+    Added pad clearance data for the CAPC3216X105L package.
+
+commit e6684901f02dd26fdf9dca1c30fff0da6cadb342
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 18 22:40:31 2009 +0200
+
+    Added data for a CAPC0603X33N package.
+
+commit dc805c7c198cce9c6462b2bab4521a057295ee69
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 18 20:57:28 2009 +0200
+
+    Added info log to CAPC3216X105L package data.
+
+commit d0d576c90909c5392c6535e1b96e2af46ce8972a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 18 20:54:04 2009 +0200
+
+    Added data for a CAPC3216X105L package.
+
+commit f812fbc3e095f73a790e67e9971443985c5f83f6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 18 20:36:19 2009 +0200
+
+    Added capc_create_packages_list().
+
+commit 17dc548fa98193342b55bce750e464ddb8f5a605
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 11 00:09:45 2009 +0200
+
+    Corrections and additions in doxygen comments.
+
+commit 30664080283afa7fe56e8bb433c4955a77a0d285
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Apr 10 22:52:39 2009 +0200
+
+    Register dip functions.
+    
+    dip_create_element()
+    dip_create_packages_list()
+    dip_drc()
+
+commit d0695e91b76ab713a46136d82f50d9d1f8006fec
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Apr 10 21:54:59 2009 +0200
+
+    Register con_hdr_create_packages_list().
+
+commit 6752548786e63c495ba177e77409655b0c3ff0eb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Apr 10 21:22:54 2009 +0200
+
+    Register con_dip_create_packages_list().
+
+commit 19e6a2917d3ee17e89a2bbfa4fb52794b139937d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Apr 10 07:35:38 2009 +0200
+
+    Register con_dil_create_packages_list().
+
+commit c7d9f06e5a355df49b4d03a4182d583e7be88d0c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 7 19:52:21 2009 +0200
+
+    Register bga_create_packages_list().
+
+commit 5c8aaaa2f71f9b407237adc4d0b174b10165e099
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 7 08:14:34 2009 +0200
+
+    Register pga_drc().
+
+commit 74efd37252e67e77800b5cc08a6bd4227934e4d8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 7 08:12:34 2009 +0200
+
+    Do some Design Rule Checking for the PGA package type.
+
+commit c83481d2f2d8858dc5225c08ecf89465599fc113
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 7 00:37:12 2009 +0200
+
+    Corrections on the BGA127C80P12X13_1050X1200X140 package [#30 state:resolved].
+
+commit c60de2c3010c49d002a5be5c7ea25b23917f19d0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 7 00:35:21 2009 +0200
+
+    Corrections on the BGA121C50P14X14_1050X1600X130 package [#30].
+
+commit 3e7922d88b1c7904a95d5913039ff1dfe614d798
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 7 00:33:27 2009 +0200
+
+    Corrections on the BGA121C50P14X14_1000X1300X130 package [#30].
+
+commit 082fa12fbbb534cd703956c20bdd2e624813c14f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 7 00:32:19 2009 +0200
+
+    Corrections on the BGA121C50P14X14_1000X1300X110 package [#30].
+
+commit 12c61e1454b77de4f357e2a4ecf7ecb24a768346
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 7 00:30:46 2009 +0200
+
+    Corrections on the BGA120C80P10X13_1000X1300X120 package [#30].
+
+commit 1745d4e66b36fac4076afeeb52403bb70b6fa0c7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 7 00:29:22 2009 +0200
+
+    Corrections on the BGA119C127P7X17_1400X2200X240 package [#30].
+
+commit b004f1e01677263cc4951f9ef055148347ba6410
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 7 00:28:00 2009 +0200
+
+    Corrections on the BGA119C127P7X17_1400X2200X221 package [#30].
+
+commit cff1dd4c095a06e38c638fca0f790c836d48d577
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 7 00:26:51 2009 +0200
+
+    Corrections on the BGA119C127P7X17_1400X2200X196 package [#30].
+
+commit 1acddbd6631b6e63b2d6b51c398ddbce484d0cbe
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 7 00:25:37 2009 +0200
+
+    Corrections on the BGA115C80P10X14_800X1200X140 package [#30].
+
+commit bc1f7116c2d0a01e4c1a5659597eb040817d5101
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 7 00:24:14 2009 +0200
+
+    Corrections on the BGA114C80P6X19_550X1600X150 package [#30].
+
+commit 37c4077f9706cb58e873ff38311de22cc02db7c7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 7 00:23:06 2009 +0200
+
+    Corrections on the BGA114C80P6X19_550X1600X140 package [#30].
+
+commit 91f6b7f8f064cafb60d2dbd39630488dbe270d52
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 7 00:21:49 2009 +0200
+
+    Corrections on the BGA111C80P12X13_1000X1100X140 package [#30].
+
+commit 543183e177d734603c7d4c22d3e8d34c87a650bc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 7 00:20:39 2009 +0200
+
+    Corrections on the BGA10N50P3X4_200X250X94 package [#30].
+
+commit 0a8159aaeed39d53e523ca363a716df026f8c878
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 7 00:18:55 2009 +0200
+
+    Corrections on the BGA10C50P3X4_200X250X94 package [#30].
+
+commit 09ae2129464c828677fdb6ae135df75a439cb611
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 7 00:17:33 2009 +0200
+
+    Corrections on the BGA10C50P3X4_220X250X60 package [#30].
+
+commit 24b90bf4383a64bcd0059cd80c7e984a5136d15c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 7 00:16:15 2009 +0200
+
+    Corrections on the BGA107C80P10X14_1050X1600X140 package [#30].
+
+commit 4e371bd6e38373df098fff7fd99b022fe07668a1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 7 00:14:59 2009 +0200
+
+    Corrections on the BGA107C80P10X14_1050X1300X140 package [#30].
+
+commit c1583f3e201b28f9ab66168e8ae133b32196a741
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 7 00:12:52 2009 +0200
+
+    Corrections on the BGA107C80P10X14_1050X1300X120 package [#30].
+
+commit af60c7d86ca1eaa85a76da7e09114088d8eca1c1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 7 00:02:58 2009 +0200
+
+    Corrections on the BGA103C65P8X13_600X900X100 package [#30].
+
+commit cba6497bbb6037442a150fa546a7dbaa4962411d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Apr 6 23:59:27 2009 +0200
+
+    Corrections on the BGA10C50P3X4_150X200X63 package [#30 state:open]
+
+commit e314f2505bad60ac409c49a13d79bc25edf94afb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 19:04:19 2009 +0200
+
+    Corrections and additions for now known footprint types.
+
+commit 6876b01035024e28bfa8969f0609d5131adf6bf2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 16:52:19 2009 +0200
+
+    Get default values for the DIOMELF package type.
+
+commit 990a93d7cabd63ab462dd185a101844f2a0807b2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 16:45:33 2009 +0200
+
+    Added data for a DIOMELF3520L package.
+
+commit 5864d550dc10e8edb17c7f85cd9e866f65b8a875
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 16:27:33 2009 +0200
+
+    Added data for a DIOMELF3516L package.
+
+commit 8385231bade540c9ed925fc693e61ff12803c2cb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 15:13:12 2009 +0200
+
+    Added data for a DIOMELF3515L package.
+
+commit 03e63ca85968f73d829e8e4477abcca318cd9663
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 15:07:35 2009 +0200
+
+    Added data for a DIOMELF3414L package.
+
+commit f6ceeb6dbd5ee16371055dcb13889530865586d7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 15:04:25 2009 +0200
+
+    Added data for a DIOMELF1911L package.
+
+commit 1a88598a7be7bebc6b364a2db69159f513cf014a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 14:52:51 2009 +0200
+
+    Added data for a DIOMELF3520M package.
+
+commit 1b9ce79b8aaa7d40998a68fe669a19a0bb17dbe8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 14:46:56 2009 +0200
+
+    Added data for a DIOMELF3516M package.
+
+commit c682a1d4d3aed5eb132e0e095c21fd0ad5d6909b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 14:31:55 2009 +0200
+
+    Added data for a DIOMELF3515M package.
+
+commit a9fb4caa081c14639a8de022f6a79298258492b4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 14:27:31 2009 +0200
+
+    Added data for a DIOMELF3414M package.
+
+commit b19fa9680acb7cd08cfeb3fe1ad6da53cb884e83
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 14:24:07 2009 +0200
+
+    Added data for a DIOMELF1911M package.
+
+commit d22bd6d7c7eb51daf0c01c608c8d68b2af600a8f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 14:18:06 2009 +0200
+
+    Added data for a DIOMELF3516N package.
+
+commit 7f4a3467a05108910fdfe3d19c47bea9cb0318ea
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 14:13:25 2009 +0200
+
+    Added data for a DIOMELF3520N package.
+
+commit ab1d89456917530c4209193a57eae020c1d2f7c9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 14:07:54 2009 +0200
+
+    Correction on the DIOMELF1911N package.
+
+commit c4b0a081658b3c743c1fd70e66e43406dc583af3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 14:06:55 2009 +0200
+
+    Correction on the DIOMELF3414N package.
+
+commit 66cb80e7e65a1b958bf10545ef3464f7ff36f70e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 14:06:00 2009 +0200
+
+    Added data for a DIOMELF3515N package.
+
+commit 4c6eb8d4c0944046c8ac499fc5a2f42078719787
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 13:56:33 2009 +0200
+
+    Added data for a DIOMELF3414N package.
+
+commit bef0b8fedece9b5ff743c136235c3089e6433af2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 13:50:23 2009 +0200
+
+    Added data for a DIOMELF1911N package.
+
+commit 0000352ac6ca1891bdeb8eb93ceee8c73decbd0f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 13:41:18 2009 +0200
+
+    Create a list of pre-defined DIOMELF packages.
+
+commit ac8e876414151bb2f863ed95c18d0103775fb599
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 12:17:15 2009 +0200
+
+    Corrections on the DIP64900 package [#17 state:resolved].
+
+commit 41c5ef4bfd23c04719a7090cc724e6a913962fec
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 12:15:27 2009 +0200
+
+    Corrections on the DIP52600 package [#17].
+
+commit 7840e616cc8b8870af1708e5291c618e6bae06c6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 12:14:01 2009 +0200
+
+    Corrections on the DIP50900 package [#17].
+
+commit 452c1e3119e90f35e937b01aa23922021decc84a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 12:12:15 2009 +0200
+
+    Corrections on the DIP48600 package [#17].
+
+commit 3f187b1743b99d4db6519dc46789c27513f76096
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 12:10:38 2009 +0200
+
+    Corrections on the DIP42600 package [#17].
+
+commit 79d9ecc02f1637a3399c2a2be0a12cfe096fc8f0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 12:09:44 2009 +0200
+
+    Corrections on the DIP40600 package [#17].
+
+commit 2f096b8a80b4384d855283712bc31ad9b73724c1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 12:08:40 2009 +0200
+
+    Corrections on the DIP38600 package [#17].
+
+commit 6c4b40d4e98860c7c64131c5a5269eab6e89d52d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 12:07:29 2009 +0200
+
+    Corrections on the DIP36600 package [#17].
+
+commit ba72e9345488bce85544a8d385db3af2fbdfcaea
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 12:03:33 2009 +0200
+
+    Corrections on the DIP32600 package [#17].
+
+commit 960c418037568041ac79b1dca616efd5a2113797
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 12:01:46 2009 +0200
+
+    Corrections on the DIP32300 package [#17].
+
+commit 9e7ef4d53c4bafdeebce430a15f5c24d08a6a2ac
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 12:00:02 2009 +0200
+
+    Corrections on the DIP28600 package [#17].
+
+commit 28ed983c300227cd4299097f4c8e276481264147
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 11:59:04 2009 +0200
+
+    Corrections on the DIP28400 package [#17].
+
+commit a6e5dfb7b1ff1c669e6676522c3a36dad639358c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 11:58:04 2009 +0200
+
+    Corrections on the DIP28300 package [#17].
+
+commit a9a10642bdd9fc51e17b8c1d05f60de1653bcb16
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 11:14:22 2009 +0200
+
+    Corrections on the DIP24600 package [#17].
+
+commit 7058ea91e5ecd020b6189965a7d61ba56d00db18
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 11:03:21 2009 +0200
+
+    Corrections on the DIP24400 package [#17].
+
+commit b20e430df0df571d006b4ba3e4ca63f9b6d1672d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 11:02:21 2009 +0200
+
+    Corrections on the DIP24300 package [#17].
+
+commit 94bc5772352bd39e89a370bd10b2bb6a8aae36a5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 11:01:21 2009 +0200
+
+    Corrections on the DIP22400 package [#17].
+
+commit e1ad6416aa8ed9eb50741776adfe2f46a654704f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 10:42:53 2009 +0200
+
+    Corrections on the DIP22300 package [#17].
+
+commit 42079352bda354f56d8a5bc82e1ecc8b42be4168
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 10:41:50 2009 +0200
+
+    Corrections on the DIP20400 package [#17].
+
+commit bc4be66a35a3912e5348b9f7b37bcfa892c73475
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 10:40:43 2009 +0200
+
+    Corrections on the DIP20300 package [#17].
+
+commit 85b8c07a335251d71afc79a731025d91c9bdd07f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 09:51:07 2009 +0200
+
+    Corrections on the DIP18400 package [#17].
+
+commit 88fe905fd196b20c676269e1e8116a56362a3ccb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 09:49:45 2009 +0200
+
+    Corrections on the DIP18300 package [#17].
+
+commit 642e20cc32c51bd1764f21c8edc232c22e6e4325
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 09:48:00 2009 +0200
+
+    Corrections on the DIP16400 package [#17].
+
+commit f3bd32bc4b52050947a641630a2f26d832ff969b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 09:46:36 2009 +0200
+
+    Corrections on the DIP16300 package [#17].
+
+commit 9ddc7feb534a563ff80ac3adcae906549f0f8bc5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 09:44:04 2009 +0200
+
+    Corrections on the DIP14400 package [#17].
+
+commit 489fdca2fc35ae948b15c4669ee7da8f84eaccb6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 09:35:02 2009 +0200
+
+    Corrections on the DIP14300 package [#17].
+
+commit 007d11938db31f8a044ab34a25e1a2e2dba394d4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 09:33:25 2009 +0200
+
+    Corrections on the DIP10300 package [#17].
+
+commit ff5694321ca363c525c06ff70319c6f170959e85
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 09:27:36 2009 +0200
+
+    Corrections on the DIP08400 package [#17].
+
+commit 72c74742dc39c54bcd44ab19995040a3eb0c1985
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 09:25:49 2009 +0200
+
+    Corrections on the DIP08300 package [#17].
+
+commit a64e3c5f2a8bdf9fc6d9b3049f10b7b21fda4f97
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 08:26:27 2009 +0200
+
+    Corrections on the DIP06300 package [#17].
+
+commit 55caeed2b2b19742bcb2fc00ac76ec0833404253
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 08:02:04 2009 +0200
+
+    Corrections on the DIP04300 package [#17 state:open].
+
+commit c5a1c4ae05886fc1fdaebcac5e8d5fad461e1e5f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 5 07:54:52 2009 +0200
+
+    Corrections and additions in doxygen comments.
+
+commit 7c428264a8fba6e9b1d4ab333453c4a9a38f85fd
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 4 22:42:21 2009 +0200
+
+    Corrections on the SOT95P470X124-8N package [#10].
+
+commit fbedfec942f51a5ba15c1a0bc09994c24412932f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 4 22:36:09 2009 +0200
+
+    Corrections on the SOT95P285X90-6N package [#10].
+
+commit 22ef8f3d8675ecd740f83e56ea013ae0d4ab8a99
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 4 22:32:07 2009 +0200
+
+    Corrections on the SOT95P285X140-3N package [#10].
+
+commit 227d4605b6bd90fb475ebc6124014ea22334ff4a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 4 22:25:09 2009 +0200
+
+    Corrections on the SOT95P284X122-6N package [#10].
+
+commit e5503ef95258742a9df5f0861cec17ed66e0688b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 4 22:14:36 2009 +0200
+
+    Corrections on the SOT95P284X122-5N package [#10].
+
+commit a56fded63cc83927eb14b855267022a5d6e3e1d3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 4 22:05:03 2009 +0200
+
+    Corrections on the SOT95P280X145-6N package [#10].
+
+commit 13cb504baf3824e4d38d4ad0ebeb90ef2353aee6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 4 21:54:46 2009 +0200
+
+    Corrections on the SOT95P280X145-6AN package [#10].
+
+commit 9c7fdc16e5d0aee5a5df4429c304e78ad59a8213
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 4 21:51:06 2009 +0200
+
+    Corrections on the SOT95P280X145-5N package [#10].
+
+commit a74f00a1ecdd7551573e5dc51caedd63c2e3607e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 4 18:18:44 2009 +0200
+
+    Corrections on the SOT95P280X145-5AN package [#10].
+
+commit 1b5cad2cb579a6b55816cff3352b3832e5c0fb65
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 4 18:13:24 2009 +0200
+
+    Corrections on the SOT95P280X135-5N package [#10].
+
+commit 46681fd0f86417e8159226274db1f2da212b100c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 4 17:24:15 2009 +0200
+
+    Corrections on the SOT95P280X135-3N package [#10].
+
+commit 8d5c86bb967742b81371b3985be9c57791062e7a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 4 14:41:38 2009 +0200
+
+    Corrections on the SOT95P280X115-6N and SOT95P280X135-3AN package [#10].
+
+commit c06427a8ab7c04a45f1116eb00320a376f2931a6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 4 10:48:44 2009 +0200
+
+    Corrections on the SOT95P280X110-6N package [#10].
+
+commit 46095a5bc18ce4806a3e55b68ab480b0c79bb988
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 4 10:42:43 2009 +0200
+
+    Corrections on the SOT95P280X110-5N package [#10].
+
+commit 379486950faee7c037dd5d6f51d9a5437d1b44ec
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 4 10:32:44 2009 +0200
+
+    Correcting pad shape on the SOT95P280X100-6N package [#10].
+
+commit 51e7623bb9db084b167a5b3f2dc8f73719ce80d8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 4 10:11:00 2009 +0200
+
+    Corrections on the SOT95P280X100-6N package [#10].
+
+commit de189d72d58cc3d1b4a9d59809b5f78e901d7ee0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Apr 4 10:09:34 2009 +0200
+
+    Changed the logo in the doxygen documentation.
+
+commit 2fa56aabf743a14dc4ec317b3c83b5ede432df94
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Apr 3 19:36:26 2009 +0200
+
+    Corrections on the SOT95P280X100-5N package [#10].
+
+commit abf9c359afca72b36cfcaeefccd919000dbaebbd
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Apr 3 19:30:43 2009 +0200
+
+    Corrections on the SOT95P279X142-5N package [#10].
+
+commit 359e6abaa88bc6a73af10c8763ce7867929170b6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Apr 3 19:12:09 2009 +0200
+
+    Additions on the SOT95P275X145-6N package [#10].
+
+commit 727a6a37df847f51c9f0c89553b51d8616e8f132
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Apr 3 19:04:33 2009 +0200
+
+    Additions on the SOT95P275X130-3N package [#10].
+
+commit 0eca49b8f4a8f64a7b6059e9c0a80b5a824737a4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Apr 3 17:51:20 2009 +0200
+
+    Corrections on the SOT95P270X145-5N package [#10].
+
+commit 64923d0e75431f9c4c89b56a59aa592ff167976c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Apr 3 17:45:52 2009 +0200
+
+    Corrections on log warnings.
+
+commit 3fc5c23b48c9b4abf0ade79b508c8aea0ba10762
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Apr 3 16:59:42 2009 +0200
+
+    Corrections on the SOT95P251X112-3N package [#10].
+
+commit a479cec13ea2f59672e83d68d35d168a8e5e9b78
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 2 22:52:30 2009 +0200
+
+    Corrections on the SOT95P240X114-3N package [#10].
+
+commit 848871c66cd756b45d1df481ab63fc29cad468e7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 2 22:44:31 2009 +0200
+
+    Corrections on the SOT95P240X110-3N package [#10].
+
+commit 8354a4ca84ad2dfe77ba7ad02c3ee96e57a16675
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 2 22:07:50 2009 +0200
+
+    Added data for a SOT95P237X117-3N package [#10].
+
+commit 3c37cf4e4133bd3e7ecba14c62a604cfc9170540
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 2 21:55:44 2009 +0200
+
+    Corrections on the SOT95P237X112-3N package [#10].
+
+commit 6c7e5a72bb4fa5fd88224720d7bd6b12fec2cfb5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 2 21:46:53 2009 +0200
+
+    Corrections on the SOT95P230X124-3N package [#10].
+
+commit 940c4b965385954c21b8246b69987129d68970db
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 2 21:28:05 2009 +0200
+
+    Corrections on the SOT95P230X110-3N package [#10].
+
+commit 5067a1b4465d7081b2e867b133ce72f522829b78
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 2 21:12:52 2009 +0200
+
+    Corrections on the SOT95P230X109-3N package [#10].
+
+commit aba1cf350feb692b12083adf0dc1e6f9e37c7960
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 2 21:00:33 2009 +0200
+
+    Corrections on the SOT95P228X102-3N package [#10].
+
+commit d43372458463fac57edbe7db18b6bbfe4477b608
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 2 19:54:23 2009 +0200
+
+    Additions on the SOT80P330X140-8N package [#10].
+
+commit 07ba250701e240d84d19e2b3c42cd801464c828f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 2 19:46:59 2009 +0200
+
+    More inspiration for pcb-fpw icons.
+
+commit 2531d7c00caa53e7840edd3b652adec017ca26e5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Apr 2 19:42:52 2009 +0200
+
+    Corrections on the SOT80P330X140-8N package [#10].
+
+commit ae54317f24bf904aafd3c418f47d0263b5500050
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 1 22:45:28 2009 +0200
+
+    Corrections on the SOT65P280X145-8N package [#10].
+
+commit b05bf8979ccfc49c86fbbb7d90d20d3af89392a2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 1 22:33:16 2009 +0200
+
+    Corrections on the SOT65P280X145-8BN package [#10].
+
+commit 6166504b5d4a6f50de1af4859eeb295f3d734048
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 1 22:25:09 2009 +0200
+
+    Corrections on the SOT65P280X145-8AN package [#10].
+
+commit 3de3de77e5d5a812cce1f646b3d87f2348cfca25
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Apr 1 22:06:58 2009 +0200
+
+    Corrections and additions in doxygen comments.
+
+commit 85e6922e72942baca33835236d586f55d8773588
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Mar 31 23:06:43 2009 +0200
+
+    Corrections and additions in doxygen comments.
+
+commit b53266062163d245ff391b46de79caae29a36b80
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Mar 30 23:02:30 2009 +0200
+
+    Corrections and additions in doxygen comments.
+
+commit 201c0df605dc8f08edaee34cfe9709b6bb573c1a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Mar 30 22:34:30 2009 +0200
+
+    Corrections and additions in doxygen comments.
+
+commit 064a506ad6d8191865f5a648630fdb828e010ec9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Mar 30 22:33:26 2009 +0200
+
+    Added doxygen comment.
+
+commit 971f476530e3a095f9bc58f02e710b4ac72139ba
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Mar 30 08:13:25 2009 +0200
+
+    Corrections and additions in doxygen comments.
+
+commit ca6e777ea5d621cff35927d7bc705f955b05cb2e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Mar 30 08:04:48 2009 +0200
+
+    Corrections and additions in doxygen comments.
+
+commit 58644c7a0b3b5694a4e4f32d9fb6687dead51d1d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 23:07:28 2009 +0200
+
+    Corrections on the SOT65P280X130-8N package [#10].
+
+commit bab728908f8da9e15bd44ef7999c328730107d22
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 22:44:29 2009 +0200
+
+    Corrections on the SOT65P280X100-8N package [#10].
+
+commit 8883ea05be16d82f764db142bef1e3c73af7234c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 22:40:29 2009 +0200
+
+    Corrections on the SOT65P275X110-8N package [#10].
+
+commit 204c468b2d346321ae0bf6c924d48b3a54784a6a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 22:35:28 2009 +0200
+
+    Corrections on the SOT65P210X110-6N package [#10].
+
+commit 15c9e805033e409ca64b610d72f3968e37ac858a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 22:28:02 2009 +0200
+
+    Corrections on the SOT65P210X110-6AN package [#10].
+
+commit bd2ad1c9a37fc420eb03314810977778b596b612
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 22:25:40 2009 +0200
+
+    Added data for a SOT65P210X110-6AN package [#10].
+
+commit 8c693614ef9a6783efe95b1cb0913dfd06e175eb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 22:05:32 2009 +0200
+
+    Corrections on the SOT65P210X110-5N package [#10].
+
+commit 5f6be826f4095e23f7205a2790cbda4d1072cc56
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 21:52:02 2009 +0200
+
+    Addition in a doxygen comment.
+
+commit a5e69006e71f97ff0f9149693017f77c703414fe
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 21:50:23 2009 +0200
+
+    Corrections on the SOT65P210X110-3N package [#10].
+
+commit c266d908fde5d0493848784bdb45184049317b54
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 21:46:05 2009 +0200
+
+    Corrections on the SOT65P210X100-6N package [#10].
+
+commit ce069bca1b3b73d011ca7dfce3b8df7a0b8116ed
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 21:06:55 2009 +0200
+
+    Corrections on the SOT50P160X90-3N package [#10].
+
+commit 2e62fa8f1df471497bc955465069773f637a0563
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 21:03:43 2009 +0200
+
+    Added data for a SOT65P210X100-3N package [#10].
+
+commit ca5f5d9238542264c0a40bf96cb3212832c8c600
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 20:32:15 2009 +0200
+
+    Corrections on the SOT50P210X110-8N package [#10].
+
+commit e0071e0d7c2dbb782f3f1dab54f5698314114dd4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 20:10:20 2009 +0200
+
+    Corrections on the SOT50P160X90-3N package [#10].
+
+commit 0b3b943058613c7f61953ddc12328faf5e41c2ba
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 19:24:28 2009 +0200
+
+    Added data for a SOT230P700X180-4BN package [#10].
+
+commit 017e91717fce4bf48118c0f41e7733af4a221e28
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 19:19:35 2009 +0200
+
+    Added data for a SOT230P700X180-4AN package [#10].
+
+commit 10f906b09f97b82d88dce35a763633ed2d0710da
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 19:12:11 2009 +0200
+
+    Corrections on the SOT230P700X180-4N package [#10].
+
+commit f707d9a90c7e8f4acf252d60d4831295d49822e6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 17:47:00 2009 +0200
+
+    Correction on the SOT150P700X180-5N package [#10].
+
+commit 41e850d1dfd7d8a0422a3f532b2d70bb9b52a06d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 17:40:46 2009 +0200
+
+    Corrections on the SOT150P700X180-5N package [#10 state:open].
+
+commit e9e0abaa06230963bb78af55103fbf26b3beeb87
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 17:22:10 2009 +0200
+
+    Correction on the SOT127P700X180-6N package.
+    
+    [\#10].
+
+commit ff07a6c2480e0613ff53a2b45707f9d2dc25ac1a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 10:18:56 2009 +0200
+
+    Corrections and additions in doxygen comments.
+
+commit 136f6d274e4a980e03870663e0bb103f4889eded
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 10:09:26 2009 +0200
+
+    Additions in doxygen comments.
+
+commit f46dc8cd916e74d04843280fafb53a91499e43c5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 09:05:16 2009 +0200
+
+    Corrections and additions in doxygen comments.
+
+commit deb71ec80bc55651b6d46a3162a0e15cb84faa37
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 09:04:07 2009 +0200
+
+    Fixed a typo in the doxygen comments.
+
+commit 402b77ba42031a120e83968cf4b5330d1b700e70
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 09:03:23 2009 +0200
+
+    Fixed a typo in the doxygen comments.
+
+commit 1840d67c1ed75712f07e4b948b45dfda39e7bd76
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 29 08:18:23 2009 +0200
+
+    Finally found the inspiration for a logo.
+
+commit 1b79e8b2b773012300abface02cb5e709c901889
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 28 20:22:24 2009 +0100
+
+    Corrections and additions in doxygen comments.
+
+commit b91f2904bdf2a5cf2396d465d1a115a3ba291fe8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 28 20:08:46 2009 +0100
+
+    Corrections and additions in doxygen comments.
+
+commit f7b23e99b68bccd82bf08a8668a716782c4e3a14
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 22 19:56:49 2009 +0100
+
+    Added package data for a BGA1284C100P36X36_3750X3750X400 package.
+
+commit 046c533d55060988be8228be965b855151e90c5f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Mar 22 18:47:39 2009 +0100
+
+    Corrections and additions in doxygen commenst.
+
+commit b60c562f903534ef5ef6b44f1c06d5941054bdca
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 7 17:44:48 2009 +0100
+
+    Added file type to be ignored.
+
+commit 650f38e06d3058ac16fcc15468c427bf11521a42
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Mar 2 08:13:20 2009 +0100
+
+    Remove the version tag since a header with "git describe" version tag is used instead.
+
+commit 242c534b0b59b9a6032b98e3202c9933616946f6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 26 21:44:14 2009 +0100
+
+    Ignore the html header file as it is generated by a shell script.
+
+commit e01a5f7ec43de35e4443773711c966ba5589ea80
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 26 21:35:22 2009 +0100
+
+    Create a header for doxygen docs with git describe tag.
+    
+    I added two shell scripts for generating doxygen developer docs
+    with and without callgraphs.
+    The scripts first generate a html header file and insert the git describe
+    tag with the current tag, the number of commits after this tag and the first
+    8 characters of the hash of the most recent commit (HEAD).
+    When finished with header the developer docs are generated by calling
+    doxygen with the configuration file of choice.
+
+commit 59edfc1a6bfceab88a84a23f317fe5f687e5d5db
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 15 21:44:07 2009 +0100
+
+    Added data for a BGA1284C100P36X36_3750X3750X380 package.
+
+commit 4263e5526ec263ed1ec809c46eeb932173365dba
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 15 21:27:37 2009 +0100
+
+    Correction on the GA124C50P13X13_800X800X120 package.
+
+commit 409586b2e746b6cc1ac2edb7d0846cf3fcd33035
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 15 21:14:44 2009 +0100
+
+    Correction on the BGA127C80P12X13_1050X1200X140 package.
+
+commit a5ce56d9a3c67ac701f2b66dc6cc935dc474d2f9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 15 20:32:29 2009 +0100
+
+    Updated the copyright notice.
+
+commit f1ff9107d14e18fecd21d5e9ad3f339dde8f4e51
+Merge: b504612... a34edda...
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 15 20:14:51 2009 +0100
+
+    Merge branch 'bga_content'
+
+commit b504612a9228c3ee302a7864f737d7bb65a2a3c2
+Merge: dd7da34... 8ef36df...
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 15 20:10:07 2009 +0100
+
+    Merge branch 'master' of git@github.com:bert/pcb-fpw
+
+commit dd7da3406f399e8fcdfeb87e4d96d69bdceec014
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 15 20:08:01 2009 +0100
+
+    Added a link to the user manual in the doxygen documentation.
+
+commit acca631dd69033ee45583bb8f7ca161653dce2e7
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 15 20:07:20 2009 +0100
+
+    Correcting the URL of the pcb website on SF.
+
+commit 8ef36df349326380524ba504b058211b34d1cffa
+Merge: a21304f... 1e5d467...
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 15 19:44:01 2009 +0100
+
+    Merge branch 'master' of git@github.com:bert/pcb-fpw
+
+commit 1e5d4676ebcca678cf0c0b44631f8669d2e263be
+Merge: f9e985c... 4d5ad6b...
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 15 12:29:22 2009 +0100
+
+    WIP on debugging the CON_HDR footprint generation.
+
+commit a34eddab252fd87c2738091c62039b783d7ab4e9
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 15 11:04:49 2009 +0100
+
+    Added data for a BGA127C80P12X13_1050X1200X140 package.
+
+commit 347739e55992ce25dc0610dc4625a61f79af5e6a
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Feb 14 22:05:30 2009 +0100
+
+    Added data for a BGA124C65P12X12_900X900X140 package.
+
+commit 0965cd342fde203a26f66d8ecc3b66418f4422c2
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Feb 14 21:15:27 2009 +0100
+
+    Added data for a BGA124C50P13X13_800X800X120 package.
+
+commit ba82ccd88ada9b90ccf72ca7f70fa12dcc69f50a
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Feb 14 18:00:20 2009 +0100
+
+    Added data for a BGA124C100P14X14_1500X1500X170 package.
+
+commit 720e9251defade468ea5f27c7edb638e4ab34417
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Feb 14 09:48:34 2009 +0100
+
+    Added data for a BGA121C65P11X11_800X800X130 package.
+
+commit 782dbafe91319e7d7a09b3fdbc9233cebcb848f1
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Wed Feb 11 21:53:53 2009 +0100
+
+    Added data for a BGA121C50P14X14_1050X1600X130 package.
+
+commit 7d8de298a108192d38e3c686614817c0344e57dc
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Wed Feb 11 21:47:38 2009 +0100
+
+    Added data for a BGA121C50P14X14_1000X1300X130 package.
+
+commit cf78a6b9858ed48b2719276deaf2cb60e5d40b46
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Wed Feb 11 21:41:50 2009 +0100
+
+    Added data for a BGA121C50P14X14_1000X1300X110 package.
+
+commit 674bba28d122add25628c5e38c72e017035790f2
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 8 21:22:02 2009 +0100
+
+    Added data for a BGA121C100P11X11_1200X1200X350 package.
+
+commit 3acf2adbe69b7727536971c636a875525de9f373
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 8 21:11:56 2009 +0100
+
+    Added data for a BGA121C100P11X11_1200X1200X185 package.
+
+commit a21304f1773058d9f4a1719b02bc4de2545b46de
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 8 16:46:38 2009 +0100
+
+    WIP on the "select exceptions" dialog.
+    
+    - the footprints created do not contain the exceptions, s o that goes well.
+    - the GUI entry for the exceptions string does not update properly.
+    - the GUI entry for the total number of pins does not get updated with
+      the correct number of pins, that is the number of exceptions is not
+      subtracted.
+
+commit eca1532dcff3425431e68e8f581e082c334aa85d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 8 16:43:11 2009 +0100
+
+    Pin/pad exception string doesn't need to be const.
+
+commit 3533b2624b9990823215e119cff959500c65c094
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 8 16:41:32 2009 +0100
+
+    Added doxygen comments to all_entries_need_updated().
+
+commit de7edc26852f15a583748917e82abf6de29fc61a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 8 14:46:31 2009 +0100
+
+    These defines were copied from pcb and are now moved to the pcb section of this file.
+
+commit c26722cb499969a51ecf8198c7ad585f5e7bf9db
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 8 10:59:50 2009 +0100
+
+    Added dt for a BGA1216C100P41X41_4250X4250X400 package.
+
+commit cb47d5173b37ab2d2233ef7f432f9a8acc98ef8d
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 8 09:44:43 2009 +0100
+
+    Added data for a BGA1216C100P41X41_4250X4250X380 package.
+
+commit 2c0e9ab074ba571ea09f225c3e0f7f14993d1fb2
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 8 06:57:36 2009 +0100
+
+    Added data for a BGA120C80P10X13_1000X1300X120 package.
+
+commit 2612dd03dc172bf2963348dbeb045afb6d4999b7
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Feb 7 23:44:21 2009 +0100
+
+    Added data for a BGA120C50P13X13_700X700X140 package.
+
+commit 874012c3bffaa7db5c2623a602a458ba96c891ed
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Feb 7 23:27:19 2009 +0100
+
+    Added data for a BGA120C50P11X11_600X600X80 package.
+
+commit 4f660306b3fca2efcb65037ed380f1463ec82331
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Feb 7 23:12:45 2009 +0100
+
+    Added data for a BGA120C50P11X11_600X600X100 package.
+
+commit def0d4e0ec5fc4fc601dc8acb55ee906aa5007ce
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Feb 7 23:03:50 2009 +0100
+
+    Added data for a BGA119C127P7X17_1400X2200X240 package.
+
+commit 3a2e905c793d3aa824ac7274a4fbdad6d8530e24
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Feb 7 22:59:00 2009 +0100
+
+    Added data for a BGA119C127P7X17_1400X2200X221 package.
+
+commit c3bf711b2f54c1e40259614da3b2220987b00516
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Feb 7 21:58:04 2009 +0100
+
+    Added data for a BGA119C127P7X17_1400X2200X196 package.
+
+commit 4705f86c97a0e8a829906857426e1abc10a4175c
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Feb 7 16:47:19 2009 +0100
+
+    Added data for a BGA1172C100P39X39_4000X4000X310 package.
+
+commit cd5d9df0980e2666a83c0b9637db767db67568b4
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Feb 7 08:50:03 2009 +0100
+
+    Correction on the BGA115C80P10X14_800X1200X140 package.
+
+commit 9ebcdcdc357cbb9e0eb7c7d6c7e08278c29534bb
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Feb 7 08:42:48 2009 +0100
+
+    Added data for a BGA1160C100P39X39_4000X4000X245 package.
+
+commit 29c7e0954882f7b37e9a56b48258f8f753085734
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Feb 6 08:10:16 2009 +0100
+
+    Added pad exceptions for the BGA115C80P10X14_800X1200X140 package.
+
+commit 3eb0819e816320937764ac7fd397a04ce0f9d433
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Feb 6 08:04:54 2009 +0100
+
+    Added data for a BGA115C80P10X14_800X1200X140 package.
+
+commit 88416d69c62132123f236c59559a69bbdbdffa4c
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Feb 6 07:58:13 2009 +0100
+
+    Added data for a BGA1156C100P34X34_3600X3600X450 package.
+
+commit aac7a9ed36d3c01f9c50a67643053bb6b695d04e
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Feb 6 07:52:55 2009 +0100
+
+    Added data for a BGA1156C100P34X34_3500X3500X400 package.
+
+commit b160a526f0d26ef5d91bfa3b314ece29d469e2c2
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Feb 6 07:49:43 2009 +0100
+
+    Corrections on the BGA1156C100P34X34_3500X3500X380 package.
+
+commit 511367acf19c27ee8986b2c6dbff2e6548d74c06
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Feb 6 07:46:14 2009 +0100
+
+    Corrections on the BGA1156C100P34X34_3500X3500X311 package.
+
+commit 204dbb4104cd2f0552210d4ab41e85d7ce0bd998
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Feb 6 07:35:40 2009 +0100
+
+    Correction of a typo.
+
+commit d41dc9f402719aa8797460667925d39ba6b7fe72
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Feb 6 07:34:57 2009 +0100
+
+    Corrections on the BGA1156C100P34X34_3500X3500X260 package.
+
+commit 2daa7be2c3ee52ac94f3dd3b6dd299882b121043
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Feb 6 06:56:25 2009 +0100
+
+    Corrections on the BGA1152C100P34X34_3500X3500X350 package.
+
+commit 070d97127b70abc88fbbdf942999a1ef71f841b1
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Feb 5 21:46:25 2009 +0100
+
+    Corrections on JEDEC code typos.
+
+commit 120423d8b2e7cc317b8effa10f84d7409599558e
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Feb 5 21:44:33 2009 +0100
+
+    Corrections on the BGA1152C100P34X34_3500X3500X340 package.
+
+commit afaf4f7587ca982acc9e084461e393e690a8aafd
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Feb 5 21:41:28 2009 +0100
+
+    Correction on the BGA1152C100P34X34_3500X3500X332 package.
+
+commit 586855e1ca661cb29b35413f6865e318595c5f44
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Feb 5 21:40:32 2009 +0100
+
+    Correction on the BGA1152C100P34X34_3500X3500X244 package.
+
+commit e471b5beb80b88a3b734205442c94af9b21226cc
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Feb 5 21:29:07 2009 +0100
+
+    Added data for a BGA1152C100P34X34_3500X3500X332 package.
+
+commit 3da0f065d38c516c1bdaeea9555c9aebf9eb7e8c
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Feb 5 21:24:09 2009 +0100
+
+    Forget to add newly added packages to the list.
+
+commit 64d5ed8b950c9c7cfa5572acb5624b893e3666d8
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Feb 5 20:49:04 2009 +0100
+
+    Added data for a BGA1152C100P34X34_3500X3500X244 package.
+
+commit 0f9cdf2eca8fcd3d3e3c74d7b5c44b5ebee31037
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Feb 5 20:43:10 2009 +0100
+
+    Added data for a BGA114C80P6X19_550X1600X150 package.
+
+commit b476be7a87e76d20bcc3894141784c31f61fffad
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Feb 5 20:40:15 2009 +0100
+
+    Corrections on the BGA114C80P6X19_550X1600X140 package.
+
+commit 9ebba8da9975023a4814e9b255737d07f89164e2
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Feb 5 20:37:01 2009 +0100
+
+    Corrections on the BGA1148C100P34X34_3500X3500X340 package.
+
+commit e2d63a6bfa141aea0d953e59f439922cc7d97c54
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Mon Feb 2 07:59:08 2009 +0100
+
+    Corrections on the BGA112C80P11X11_1000X1000X130 package.
+
+commit 20e19ff4e5c2b7388485297cc85c31b78318122d
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Mon Feb 2 07:55:57 2009 +0100
+
+    Added data for a BGA112C50P12X12_700X700X112 package.
+
+commit f90243eb9c4895b79fa37a2de887f885bd3e8cf4
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 1 14:15:07 2009 +0100
+
+    Corrections on the BGA111C80P12X13_1100X1100X140 package.
+
+commit 08f1b16cb37cde9f67651b7fa4d3d059cf114150
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 1 14:12:57 2009 +0100
+
+    Corrections on the BGA111C80P12X13_1000X1100X140 package.
+
+commit 08f8e07980fb684492227687031600953b9f68ec
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 1 13:32:03 2009 +0100
+
+    Corrections on the BGA10N50P3X4_200X250X94 package.
+
+commit 6db1d01c6b4abc672a2320ba44a10ddf529d4e5d
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 1 13:29:23 2009 +0100
+
+    Corrections on the BGA10C50P3X4_200X250X94 package.
+
+commit a375c1ec387b9b8ebe5c0e630c335f8dd9226c66
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 1 13:27:45 2009 +0100
+
+    Added data for a BGA10C50P3X4_200X250X94 package.
+
+commit 1ed37736f760c3f41d0af489a129f7e9499d3ecd
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 1 12:49:28 2009 +0100
+
+    Corrections on the BGA10C50P3X4_220X250X60 package.
+
+commit 1307416046dbbd4af5ac85c32eb60360d8a77ea2
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 1 12:38:36 2009 +0100
+
+    Added data for a BGA10C50P3X4_150X200X63 package.
+
+commit 29cd686c2a15c29401e83a52aa3d15b420026f10
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 1 11:43:38 2009 +0100
+
+    Added data for a BGA109C80P12X12_1000X1000X140 package.
+
+commit a0814dc78e7b14c73477de94185edab3245282b8
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 1 11:01:30 2009 +0100
+
+    Corrections on the BGA108C80P12X12_1000X1000X140 package.
+
+commit 5c1e7239037a546d8e79b14ea24e052add1ad995
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 1 10:59:44 2009 +0100
+
+    Corrections on the BGA108C100P12X12_1300X1300X185 package.
+
+commit 89a589d801faf86c302a3999ead1a3ab280b5135
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 1 10:58:13 2009 +0100
+
+    Corrections on the BGA109C50P12X12_700X700X100 package.
+
+commit d9dd9eb945532f6d02030bb09ac5ad7bcfe37da1
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 1 10:54:40 2009 +0100
+
+    Added data for a BGA108C80P12X12_1000X1000X140 package.
+
+commit a5ec232aa9f5c60002399446caf21dc06f5b28d7
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 1 10:49:32 2009 +0100
+
+    Added data for a BGA108C100P12X12_1300X1300X185 package.
+
+commit fb57f791ca1c681a7993e15837eb70efcbbcb215
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 1 10:32:25 2009 +0100
+
+    Corrections on the BGA107C80P10X14_1050X1600X140 package.
+
+commit 5666a41adc432c488bb6384df03a9fab1a667f7e
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 1 09:32:16 2009 +0100
+
+    Corrections on the BGA107C80P10X14_1050X1300X140 package.
+
+commit f9e985cea429659383da539b4c3795c0833a08ad
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 1 08:58:02 2009 +0100
+
+    Additions to the User Manual.
+
+commit 90598500aa068c11b022f32a614b0c5d03088a39
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Jan 31 17:26:51 2009 +0100
+
+    Corrections on the BGA107C80P10X14_1050X1300X120 package.
+
+commit 2d939bdd2ed944e02f9a99912b597ea2a819f74f
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Jan 31 16:48:34 2009 +0100
+
+    Added some whitespace for better reading and a note on branching
+    and merging in git.
+
+commit 70dc56c8bb710e4a20a02fcf94028a728853353c
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Jan 31 16:33:46 2009 +0100
+
+    Added data for a BGA105C65P11X11_800X800X140 package.
+
+commit 258d92b87338656d5b68c77bceb8178c2c6db7e5
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Jan 31 14:15:32 2009 +0100
+
+    Added a ConTEXT highlighter for fpw files.
+
+commit ffa2ce8f3df8e39d21f541509ac5a3518aa92278
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Jan 31 11:54:22 2009 +0100
+
+    Corrections on the BGA105C50P15X15_800X800X140 package.
+
+commit fbc04c8afb6d76d6309c692f15e6e9e3c503ce35
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Jan 31 11:36:14 2009 +0100
+
+    Corrections on the BGA1056C100P39X39_4000X4000X400 package.
+
+commit fae061d4112e5b6a327957d926d588b7d0f9d46d
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Jan 31 11:18:35 2009 +0100
+
+    Corrections on the BGA1056C100P39X39_4000X4000X380 package.
+
+commit 1a3eb1948f13e4373bddcd4e10728f8e0e0215e5
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Jan 31 11:12:16 2009 +0100
+
+    Corrections on the BGA103C65P8X13_600X900X100 package.
+
+commit c2612b4189e67a3b6ddfb9c32cf98ac0bc2b2c90
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Jan 31 11:06:02 2009 +0100
+
+    Added data for a BGA1036C100P44X44_4500X4500X275 package.
+
+commit f5ca0e6aca5087ae15a08b9e2cbb6f1a379b9fab
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Jan 31 09:20:20 2009 +0100
+
+    Added data for a BGA1023C100P32X32_3300X3300X272 package.
+
+commit 99f4de450c3a5a93eaa75fc36c6b9d1ddff8b6e2
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Jan 30 08:17:32 2009 +0100
+
+    Added data for a BGA1023C100P32X32_3300X3300X287 package.
+
+commit 209af7b1d016f568df604840cfe8e0eea0cfd429
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Jan 30 07:56:56 2009 +0100
+
+    Added data for a BGA1023C100P32X32_3300X3300X272 package.
+
+commit 4d5ad6b08a7dae601810b3fc05c3748b4a68c53e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jan 29 17:44:11 2009 +0100
+
+    WIP and debugging on CON-HDR packages.
+
+commit ca1ec3089585ec96b0b3dc06ac4fd0d701609974
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jan 29 17:20:07 2009 +0100
+
+    Get default values for CON_DIL, CON_DIP and CON_HDR package types.
+    
+    Set proper GUI constraints for DIOM, DIOMELF, INDC and RESC package types.
+
+commit 5cb6c6a26cbeb86dcb63dae63bfd37a79bf5b661
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Mon Jan 26 21:34:54 2009 +0100
+
+    Corrections on the BGA1020C100P32X32_3300X3300X350 package.
+
+commit c855c2c340badca7a9740d659b9daf18b55e8e95
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Mon Jan 26 21:24:46 2009 +0100
+
+    Added pin/pad exceptions for the BGA100C80P12X12_1000X1000X140 package.
+
+commit baa3327e8d36e2cba6de417946a804606423f5fe
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Mon Jan 26 21:14:49 2009 +0100
+
+    Added data for a BGA100C80P12X12_1200X1200X140 package.
+
+commit 45bfacd0c6921ea4d87b407915c61f5387a3c0b2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 25 20:09:21 2009 +0100
+
+    Correction of a typo.
+
+commit c781a4344f19b68be0c16d37f5482dd001648f14
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Jan 25 19:42:25 2009 +0100
+
+    Corrections on the BGA100C80P11X11_1100X1100X140 package.
+
+commit c2da4fdac04ce69399b706263c3d83bbb554b8ca
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Jan 25 18:31:10 2009 +0100
+
+    Added data for a BGA100C80P10X10_900X900X160 package.
+
+commit db323a2407a093fd7bcd35fa0fed77df71cb76b7
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Jan 25 17:23:29 2009 +0100
+
+    Corrections on the BGA100C80P10X10_900X900X150 package.
+
+commit 7e6f5583ae2a534f9d682b464da137a66e0d1013
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Jan 25 16:26:48 2009 +0100
+
+    Added data for a BGA100C80P10X10_900X900X140 package.
+
+commit 5d8ee17fd7587631ee22974d85d67565516102f0
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Jan 25 16:18:58 2009 +0100
+
+    Minor corrections in English language.
+
+commit fa907a3c6b7f582497275107d79685ade2cf1d50
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Jan 25 16:17:12 2009 +0100
+
+    Added data for a BGA100C80P10X10_900X900X120A package.
+
+commit 0a744cee995719eeaf7075965e3ea4bd0f9fa1da
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Jan 25 15:47:34 2009 +0100
+
+    Added data for a BGA100C80P10X10_900X900X120 package.
+
+commit 38a7ec91e9cc89462aa8892f0c1292463eafe887
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Jan 25 15:37:51 2009 +0100
+
+    Corrections on the BGA100C80P10X10_900X900X100 package.
+
+commit 6fe953cea5b156189fbabc48cf1e6a3956b10591
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Jan 25 15:19:16 2009 +0100
+
+    Corrections on the BGA100C80P10X10_1000X1000X150 package.
+
+commit 5b7162188749ef429a68f5b5a3ca105347f0e5a4
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Jan 25 15:17:07 2009 +0100
+
+    Corrections on the BGA100C80P10X10_1000X1000X140 package.
+
+commit 25cac9ebbbcb192c035b0dfb25c9c64e975d930d
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Jan 25 14:43:17 2009 +0100
+
+    Corrections on the BGA100C65P10X10_800X800X140 package.
+
+commit 49335269e543b3aac701c582ee4d8b31d9c5ac26
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Jan 25 14:38:12 2009 +0100
+
+    Corrections on the BGA100C50P15X15_1000X1000X120 package.
+
+commit 5060611eb81ba13c0680ef1208876a8d75218e0e
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Jan 25 14:33:55 2009 +0100
+
+    Correction on the BGA100C50P14X14_800X800X135 package.
+
+commit 0f5d80309ae472bf7115dff966ecb7cb8ea1b561
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Jan 25 14:31:25 2009 +0100
+
+    Added data for a BGA100C50P14X14_800X800X135 package.
+
+commit 80d7279021ee8914a9a89d20d5cf9cffb02ed076
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Jan 25 14:23:15 2009 +0100
+
+    Corrections on the BGA100C50P14X14_800X800X120 package.
+
+commit fd645cc1310e69d81ed0f593619cdc83bc65acea
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 25 14:10:17 2009 +0100
+
+    Removed con.c since it is replaced by con_dil.c, con_dip.c and con_hdr.c
+
+commit f03357ffb21931c19b9fb5898a6ac343c5a98397
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Jan 25 13:57:10 2009 +0100
+
+    Correction of a typo.
+
+commit f2e06bec7d9bcbe24892a3dd7be896f101f7c80c
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Jan 24 04:22:24 2009 +0800
+
+    Corrections on the BGA100C50P11X11_600X600X100 package.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit 8a9a28f9ec978793032b6cad24611b5e4954255d
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Jan 24 04:03:03 2009 +0800
+
+    Added a log message to BGA100C50P10X10_600X600X110.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit dafcd7b38518e4c39f2d8254e536ea0ab432398a
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Jan 24 03:56:23 2009 +0800
+
+    Added filenames for recently included source files.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit 0e02e0284ed9db6b2bd00d7a0936e013d5988f1d
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Jan 24 03:54:30 2009 +0800
+
+    Added a log message to BGA100C100P10X10_1100X1100X170.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit 3606f148f4affe6ff97f52612c15202ea66d4b93
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Jan 23 06:35:07 2009 +0800
+
+    Added data for a BGA100C50P10X10_600X600X110 package.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit f98ad5eeea3b5086502878d2c932a15fba8cbe42
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Jan 23 06:19:26 2009 +0800
+
+    Added data for a BGA100C100P10X10_1100X1100X200 package.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit aed1be7c9f62a9239a68ed44a91cf853c60ee189
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Jan 23 06:06:10 2009 +0800
+
+    Added linewidths to the BGA100C100P10X10_1100X1100X170 package.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit 445c7bfb1530b3edbab50340f7a23f1a3b549ca1
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Jan 23 05:55:43 2009 +0800
+
+    Added linewidths to the BGA100C100P10X10_1100X1100X140 package.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit 39d0d340e690b876b34ad4490558bcd98f85ab32
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Jan 23 05:43:46 2009 +0800
+
+    Added data for a BGA100C100P10X10_1100X1100X170A package.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit 95f7c8b2257b672468b524f2c75b7eefbb87679a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jan 21 08:13:31 2009 +0100
+
+    WIP and debugging on CON-HDR packages.
+    
+    - bumped the year in the copyright notice.
+    - made "total number of pins" unsensitive because it is calculated.
+    - correction of an ommission.
+
+commit f004d21a1714fe7ce18d2dae2380564d5ba2e408
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Wed Jan 21 04:31:48 2009 +0800
+
+    Added code for chip diode MELF packages.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit c09938effa198743c918861e2e9f6d90bd1d9418
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Wed Jan 21 04:31:02 2009 +0800
+
+    Added code for chip molded diode packages.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit 4ee1c253aeff078ab8a0468f4a366622641429fb
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Wed Jan 21 04:30:29 2009 +0800
+
+    Added code for chip molded polarized capacitor packages.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit 1ce9c6f27c042347088f18a66bf6ed27e9d54a5e
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Wed Jan 21 03:37:55 2009 +0800
+
+    Added code for a molded chip capacitor.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit bb2cec3d00d665c9bbdaadd1e7368d414abc103b
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Tue Jan 20 21:57:50 2009 +0800
+
+    Added code for chip resistor packages.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit c97b75e7fc5721c8118863e929ae9fa34183146c
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Tue Jan 20 21:57:26 2009 +0800
+
+    Added code for chip inductor packages.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit c6a3a8aa7114dbf0af64b99fa5c994dcae84925f
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Tue Jan 20 21:56:58 2009 +0800
+
+    Added code for chip capacitor packages.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit 3a56a1c600f7494aa96896d40b3acd14488448fd
+Merge: 23b0faf... ec617fb...
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 20 12:45:32 2009 +0100
+
+    Merge commit from lambert
+    
+    - Added separate package files for CON-DIL, CON-DIP and CON-HDR
+    - Changed README
+
+commit ec617fb4cfc71acda04259822b0989807acc1613
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Tue Jan 20 18:33:30 2009 +0800
+
+    Changed and added footprint types to the list of supported types.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit f0f64c711661dfd50c9416c248c32bde6b1d0867
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Tue Jan 20 16:12:25 2009 +0800
+
+    Added code for Header connectors.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit e1bafd5b56205b899d28567c8f9f0a7a5e85ac08
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Tue Jan 20 16:04:13 2009 +0800
+
+    Added code for Dual Inline Package connectors.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit 702326f7cb324cf86cf7e3d7e4bdd02a4cae08ee
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Tue Jan 20 05:41:30 2009 +0800
+
+    Added code for handling Dual In Line connectors.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit 23b0faf55e3dea0f48e7f74e8d854da45d1086ab
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Tue Jan 20 18:44:04 2009 +0800
+
+    Changed and added package types to be included.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit 9bede5d0b8a731f8d95d1147aa2ae24ec6443f33
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Dec 31 22:45:11 2008 +0100
+
+    Adding test for CON_DIL, CON_DIP and CON_HDR package types to get_package_type().
+
+commit 559a0f4992ab25a4b44d5fe4a1f2ecc868a73295
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Dec 20 07:38:38 2008 +0100
+
+    Extended the Rationale on Coding Style.
+
+commit a3c1e92e7b0437f6dbffa06019cad13357eb30f4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Dec 19 14:13:14 2008 +0100
+
+    Added con_hdr_write_footprint().
+    
+    - minor correction in con_create_packages_list().
+    - minor corrections in con_function_list[].
+
+commit 0038c0458d9f684dc9f91f3f28b36c6c763b8fd3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 18 21:24:45 2008 +0100
+
+    Removed obsoleted return statement.
+
+commit 73ac615c9f98d151fe3162691bfa3f9159d01169
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 18 21:14:51 2008 +0100
+
+    Activate CON-HDR footprint type.
+
+commit 9a7e5177e583d3f9f5029d3a1ee8728d97a34788
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 18 19:53:06 2008 +0100
+
+    Corrections on minor typos and added doxygen comments.
+
+commit 75ecad18f940a55b78e61f1c03c56648c3acb9d8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 18 19:51:41 2008 +0100
+
+    Added doxygen comments.
+
+commit 0806cc724c0f88b15f42acb4a86972afdbf9fbf3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 18 18:39:07 2008 +0100
+
+    Added con_create_packages_list().
+
+commit 166bf958e2c25ae275a56a24070e733c8a0eb3be
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Dec 13 12:09:29 2008 +0100
+
+    Correction on widget name in all_entries_need_updated().
+
+commit 9062e3b52db374224ce9a61cdba954ad846f5415
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 9 16:14:50 2008 +0100
+
+    Added a description to the rpm package spec file.
+
+commit 994244b554406386fa381a56e8c9329f7e9db4f8
+Merge: e3eb934... 1368128...
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 9 16:08:59 2008 +0100
+
+    Added initial version of a rpm package spec file.
+
+commit e3eb9345c8fd8582e52173536d7e6639673a8112
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 9 14:59:27 2008 +0100
+
+    WIP on the pin/pad exception dialog.
+
+commit 1fa44e3ced7be4caf71d556fea6a9e0ca300962a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 9 14:54:12 2008 +0100
+
+    Add a "number of exceptions" global variable.
+    
+    - minor correction on pin_pad_exceptions_string definition.
+
+commit 170d7a868a3c933ed3986dfd7e9353c7af1c21f8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 9 14:50:47 2008 +0100
+
+    Take the number of exceptions ino account when calculating the total number of pins.
+    
+    For BGA and PGA packages subtract the "number of exceptions" from the product of
+    "number of columns" and "number of rows".
+
+commit ad713aae8a7add39410288c2426ec4b8fdbedb36
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 9 14:46:59 2008 +0100
+
+    Corrections to widget names as to avoid run-time error messages and warnings.
+    
+    Looking up widgets with a wrong name does not help much.
+
+commit ab1c61f7caa9d76af8d59746fbce2aab236764d5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Dec 8 00:16:47 2008 +0100
+
+    Issue #12: the dimension preview dialog now shows a pixmap on request.
+
+commit 913adca2eb8e2946ee1ff5c02e94b8eb7c911b3c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Dec 7 23:13:45 2008 +0100
+
+    Removed empty lines (white space).
+
+commit 8067ff47286aed7a28550b8e79e50de7fcc662bd
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Dec 5 08:06:56 2008 +0100
+
+    Updated the README file to reflect the changes up to version 0.0.8.
+
+commit 267cc6a32166165dee9309e7d9e2c8f132021545
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 4 22:47:51 2008 +0100
+
+    Reducing compiler warnings in callbacks.c
+
+commit 0de8ab95c6ab3bfa1920cfd206390de9a901d160
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 4 22:44:27 2008 +0100
+
+    Issue #4: added error checking on loading fpw files.
+    
+    - did not test against a proper value.
+
+commit eb6f206ef4e8b973fa3760308ce4cf7f9c12345c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Dec 1 08:17:30 2008 +0100
+
+    Issue #4: added error checking on loading fpw files.
+    
+    - added more checks on errors occuring while reading from
+      the stream.
+    - it looks like some bugs still exist in the code.
+
+commit abee47ea4cbab68433e4d121467c1e8076477c41
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 29 19:07:06 2008 +0100
+
+    Ignore DevCpp layout and dev files.
+
+commit fb3e66d51aca33807320e66296731898c36cdcc7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 29 18:51:52 2008 +0100
+
+    Issue #16: Error checking on saving fpw files.
+    
+    - improved error logging.
+    - testing parameters is now done before writing to file.
+
+commit 90a1e8ece7ef56d9e1cf4e7d8625b61c3cce5269
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 29 01:17:22 2008 +0100
+
+    Removed issuess as these now live in Lighthouse.
+    
+    All issues, feature requests and bug reports should go into:
+    
+    http://pcb-gfpw.lighthouseapp.com/projects/20664-pcb-fpw/tickets?q=all
+
+commit 3180c51827310ed415f6bcb34e6ecb9700855155
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Nov 28 08:21:35 2008 +0100
+
+    Removed \todo doxygen comments as these now live in lighthouse.
+    
+    All new feature requests and bug reports to go into:
+    http://pcb-gfpw.lighthouseapp.com/projects/20664-pcb-fpw/tickets?q=all
+
+commit 136812851c466eb0f282859ed4cb7c15aef9e523
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 27 21:07:40 2008 +0100
+
+    Added new file rpm/pcb-fpw.spec
+    
+    - initial version does not build into a binary package,
+      needs tweaking.
+
+commit 7d858665d8209793d140a1fcc87a25bcfce88788
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Nov 26 23:00:32 2008 +0100
+
+    Call create_attributes_in_element() if attributes are to be included in sot.c
+    
+    - corrected the log message for when an element is created successful.
+
+commit a4ba2d32227a42ba0329e68874528c11ddf85ea1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Nov 26 22:59:18 2008 +0100
+
+    Call create_attributes_in_element() if attributes are to be included in dip.c
+
+commit 1c6b881a44bb7458f628cf579fe39c9afb664201
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Nov 26 21:21:59 2008 +0100
+
+    Issue added.
+
+commit db22f5881307c4099e664b025a1d450ffaacdc7a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Nov 26 20:48:04 2008 +0100
+
+    Call create_attributes_in_element() if attributes are to be included.
+
+commit 5105e59c6711ea852f64d5bf04a0738a2be52137
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Nov 26 20:47:07 2008 +0100
+
+    Correct return value type and function type in create_attributes_in_element().
+
+commit 2bf37588804b0d1483930d8405350df7560656e0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Nov 26 08:17:28 2008 +0100
+
+    Removed obsolete function parameters in create_attributes_in_element().
+
+commit d5aa2db3e9f3378405e73aa79bb563574a448028
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 25 21:30:35 2008 +0100
+
+    Added create_attributes_in_element().
+
+commit a0c0a07ffb2e2e6d71fe349e9e21c6c278fb2ba7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 25 01:32:04 2008 +0100
+
+    Corrected a copy-and-paste bug.
+
+commit 6fcac3885a52d1ded93c5681a3193d5db2805358
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 25 00:51:00 2008 +0100
+
+    Added a doxygen todo comment for adding attributes.
+
+commit c35c28176c8b0d4f41ffd1a2b8d7349ad69f99e5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 25 00:50:23 2008 +0100
+
+    Do not bail out after the first error, DRC all criteria listed.
+
+commit f12d7546fc8e93ef972ec9add4c43f16e9cc1a5f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 24 22:42:12 2008 +0100
+
+    Do not bail out after the first error, DRC all criteria listed.
+
+commit 8db106810562c0b138b980493613820ea1568442
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 24 22:40:49 2008 +0100
+
+    Small correction for reporting success.
+
+commit f4938ecf6fbbccee2affd3a0e217d9f8ebf1826d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 24 22:22:12 2008 +0100
+
+    Added dip_drc().
+
+commit 2606972b6e9cd86bad09bec8f96627f15395f55c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 24 20:58:30 2008 +0100
+
+    Corrections on interpunction, an error message and comments.
+
+commit fe7ac7e5a5f706502576d9e93d6aaed484a2319f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 24 20:54:31 2008 +0100
+
+    Added dip_create_element().
+
+commit 0cd644e9bec4c342148253d72ed3bb217f80d509
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 24 08:20:24 2008 +0100
+
+    Removed obsolete curly brackets.
+
+commit 652ac0edeac0ed88cb78241f2adaf4ed649ec48f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 22 13:40:00 2008 +0100
+
+    Changes in doxygen comments.
+
+commit afd394d3acb57e1e147405cffb482149457cad7b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 22 13:36:45 2008 +0100
+
+    Added dip_create_packages_list().
+
+commit ea92e8f9a116cad7514ef587f664a0634d10a8a0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Nov 21 20:34:38 2008 +0100
+
+    Minor correction on comment.
+
+commit 19e6f9fd39dd1d51137cbf65a8232fbd0c77dc3e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Nov 21 20:33:04 2008 +0100
+
+    Added sot_create_element().
+
+commit fa77a2aa66a974690d256504c07527964487a93c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Nov 19 22:35:15 2008 +0100
+
+    Better doxygen description on todo's in sot_get_default_footprint_values().
+
+commit 5109e9ee1f933f74272d7878ca822a5760f3696c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Nov 19 22:11:27 2008 +0100
+
+    Changes in doxygen comments.
+
+commit a3205ed388c94b05c5a343e8ca9d79da971f5944
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Nov 19 21:04:57 2008 +0100
+
+    Added bga_create_packages_list().
+    
+    Create a list of BGA packages with pre-defined values.
+    The data in this list can be used in for instance a combo box
+    to select a pre-defined package.
+
+commit 93d5f35e7dda4b0526479eadf7c554942c5216e4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Nov 19 07:52:40 2008 +0100
+
+    Ignore git messages (in ".msg" file).
+
+commit e5d3faef901e824cd1fe7c309c29af6916da6445
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Nov 19 07:51:33 2008 +0100
+
+    Updated the "Refresh" and Preview" callbacks.
+    
+    - the "Refresh" button now updates all entries and togglebuttons in the GUI.
+    - the "Preview" button now launches a "Preview" dialog window.
+
+commit 7284507d92267552f622a10b7d1c330faa62e841
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Nov 19 06:25:59 2008 +0100
+
+    Apply DRC rule for silksreen linewidth only if a package outline on silkscreen is chosen.
+
+commit c08f562ef251bb3e2970f55bce16f6b726ab046c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Nov 19 06:24:02 2008 +0100
+
+    Added DRC rules for SOT packages in sot_drc().
+
+commit 5135d7d881ec4e009bf3a80129f7d76a32a73d7a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 18 23:07:34 2008 +0100
+
+    Corrections on warning messages.
+    
+    - added head and tail message for DRC.
+    - corrected a typo in some warning messages.
+
+commit d97a0983b2ae6ddce5792aecf9e1542edad7fe38
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 18 23:06:23 2008 +0100
+
+    Switched on DRC for BGA packages.
+
+commit 239e3a712ccd10205cfb40c8e079eedeaadcf07f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 18 22:18:01 2008 +0100
+
+    Added support for 6 or 8 lead SOT packages with no thermal pad.
+
+commit 15c786f05c502cd0a456e58fbee5cdc4bee70e74
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 18 08:02:39 2008 +0100
+
+    Rewrite of the creation of pads in sot_write_footprint().
+    
+    - this time I corrected really messed up and obfuscated code,
+      I hope this is better readable to humans now ;-)
+
+commit 81acdc9e0b1d9ac56c80804b94f54806ceaf0d68
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 18 00:45:06 2008 +0100
+
+    Cleanup in sot_write_footprint().
+
+commit f0fe46e46316e66667660630bef22c7fabc79a95
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 17 20:03:33 2008 +0100
+
+    Added a BUGS list (currently empty).
+
+commit 16624aadd843bbd52852225da02f61cab2a8ffde
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 17 20:02:06 2008 +0100
+
+    Added a TODO list.
+
+commit cf2fd92315fe0638fe53c5a0c9f0a27bd46e0292
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 16 10:39:25 2008 +0100
+
+    Added support for 5 lead SOT packages with no thermal pad.
+
+commit 12a225becbbed76f586c606b4df1b817fb5c9e4f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 16 09:09:45 2008 +0100
+
+    Indentation and small corrections on 4 lead SOT packages with thermal pad.
+
+commit 9c95c277c0ad24de90fbf8aa54371c5955cfd976
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 16 08:47:49 2008 +0100
+
+    Added support for 4 lead SOT packages with thermal pad.
+
+commit d25fed296fdfb0cffae6e357241476943f2ee411
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 16 01:38:52 2008 +0100
+
+    Bugs hunting for SOT packages.
+
+commit 45194a2e533f7d92110ceaa6566223f44053b4bc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 15 23:38:55 2008 +0100
+
+    Changed courtyard drawing.
+    
+    - moved defined values into scope in sot_get_default_footprint_values().
+    - corrections on drawing a courtyard.
+      We used to draw the min-max rectangle.
+      Now we draw the max value of courtyard dimensions or
+      package dimensions + clearance.
+
+commit 4cc1bf5e479dae841b6ae63145d3c5ccc608eaca
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 15 19:27:14 2008 +0100
+
+    Added SOT65P280X145-8N package.
+
+commit 0e9971b5ce2278236cfea979c35b9a231580d551
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 11 23:21:44 2008 +0100
+
+    Added sot_create_packages_list().
+    
+    Create a list of SOT packages with pre-defined values.
+    The data in this list can be used in for instance a combo box
+    to select a pre-defined package.
+
+commit 68b9eeebe46d202ebac590b152c1186444c34d21
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 11 22:37:13 2008 +0100
+
+    Added SOT65P280X145-8BN package.
+
+commit 53e0be549c453a504e099b65bdf19188fdee047b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 11 22:28:06 2008 +0100
+
+    Added SOT65P280X145-8AN packet.
+
+commit 3e5706085b1242af308aa0f32769ad2c408ba33b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 11 22:19:46 2008 +0100
+
+    Added SOT65P280X130-8N package.
+
+commit c51edc77afeb59571713cdb31a73fccd5223e24d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 11 21:14:01 2008 +0100
+
+    Added SOT65P280X100-8N package.
+
+commit 7b5cf325dd620477af12ade99222ddd2eb8aa574
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 11 20:59:28 2008 +0100
+
+    Added and changed warnings regarding package footprints.
+
+commit d00e41d5d876f51d75cb548e0717b8834aac51c1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 11 17:37:01 2008 +0100
+
+    Added SOT65P275X110-8N package.
+
+commit b88c631c18237bbb03cabec749e61e514695da68
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 11 08:14:23 2008 +0100
+
+    Oops, almost forgot to bump the version to 0.0.9 :)
+
+commit 2ee859a864fa46a3ad82083a258c129b9b4c9acf
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 11 08:08:57 2008 +0100
+
+    Added SOT65P210X110-6N package.
+
+commit dd8970228f6c57ded024ca4719416d01610b554c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 11 08:05:36 2008 +0100
+
+    Added SOT65P210X110-5N package.
+
+commit 2e8df5a911649ec1912da5ced9d3608bae4cfa45
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 9 20:56:12 2008 +0100
+
+    Correction in doxygen comment.
+
+commit c3489fdd8824f348422f43aa5e4ac270ca236a6e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 9 20:55:25 2008 +0100
+
+    Moved write_footprint_smt_*() to smt_write_footprint_*().
+
+commit aa5831c845258e33293b5dab484b80daab70638f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 9 13:33:49 2008 +0100
+
+    Implemented pin/pad exceptions in the fp and fpw file formats.
+    
+    - read_footprintwizard_file().
+    - write_attributes().
+    - write_footprintwizard_file().
+
+commit 43cc0b9aa65020726ef466027fbd28dd6a8ed5c1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 9 13:14:53 2008 +0100
+
+    Changed regular comments into doxygen comments.
+
+commit bc02a4e21a093a4d7bc182e236182d271a131df0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 9 09:39:08 2008 +0100
+
+    Updated: git-log > ChangeLog.
+
 commit 3bd7f8ecd8a1e5863fe83b899683b4fb03f862b9
 Author: Bert Timmerman <bert.timmerman@xs4all.nl>
 Date:   Sun Nov 9 08:48:28 2008 +0100
