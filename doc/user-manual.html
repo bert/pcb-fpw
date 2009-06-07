@@ -1,7 +1,7 @@
 <html>
-<title>User Manual for pcb-gfpw (version 0.0.8)</title>
+<title>User Manual for pcb-gfpw (version 0.0.9)</title>
 <body>
-<h1>User Manual for pcb-gfpw (version 0.0.8)</h1>
+<h1>User Manual for pcb-gfpw (version 0.0.9)</h1>
 <hr>
 
 
@@ -9,7 +9,7 @@
 "pcb-fpw" is a FootPrintWizard for <b>"pcb"</b>.<br>
 <br>
 "fpw" (<b>F</b>oot<b>P</b>rint<b>W</b>izard) is a Command Line Interface program 
-for the (automated) creation of footprint files used by the pcb layout application for the 
+for the (automated) creation of footprint files used by the pcb layout editor for the 
 placement of parts in a pcb layout.<br>
 "pcb-gfpw" is a GTK GUI version for the interactive creation of footprint files 
 used by the pcb layout application for the placement of parts in a pcb layout.
@@ -17,12 +17,12 @@ used by the pcb layout application for the placement of parts in a pcb layout.
  
 <h2>What is "pcb" ?</h2>
 "pcb" is an interactive <b>P</b>rinted <b>C</b>ircuit <b>B</b>oard editor for the
-X11 window system (see <a href="http://pcb.sourceforge.net">
-http://pcb.sourceforge.net</a>).<br>
+X11 window system (see <a href="http://pcb.gpleda.org">
+http://pcb.gpleda.org</a>).<br>
 PCB includes a rats nest feature, design rule checking, and can provide
 industry standard RS-274-X (Gerber), NC drill, and centroid data (X-Y data)
 output for use in the board fabrication and assembly process.<br>
-PCB offers high end features such as an autorouter and trace optimizer which
+PCB offers high end features such as an autorouter, topological router and trace optimizer which
 can tremendously reduce layout time.
 <hr>
 
@@ -65,10 +65,12 @@ The <b>"About pcb-gfpw"</b> dialog contains the following buttons:<br>
 <li>The <b>"Credits"</b> button: clicking this button raises a 
 <a href="images/credits_dialog.png">credits popup dialog</a> in which a message 
 about the names of the authors or translators are given (select the tab of your 
-choice).
+choice).<br>
+<br>
 <li>The <b>"License"</b> button: clicking this button raises a 
 <a href="images/license_dialog.png">license popup dialog</a> in which a message 
-about the license is given.
+about the license is given under which pcb-gfpw is distributed.<br>
+<br>
 <li>The <b>"Close"</b> button: clicking this button closes the "About pcb-gfpw"
 dialog.
 </ul>
@@ -179,6 +181,12 @@ not to be checked.<br>
 In all cases defined package types entered in the <b>"Type"</b> entry, pcb-fpw 
 follows the design rules for this package type.<br>
 <br>
+<li>The <b>"Add license to footprint"</b> checkbutton can be used to include
+a license text in the header of the footprint file.<br>
+For now this is a hard coded text resembling the 
+<a href="http://www.gpleda.org/license.html">exception for symbols</a> as with 
+gschem or fonts in general.<br>
+<br>
 <li>The <b>"Add attributes to footprint"</b> checkbutton can be used to include
 all values in the entries, and the state of all check and toggle buttons as 
 attributes in the footprint file.<br>
@@ -258,19 +266,38 @@ It contains pre-defined positions.<br>
 <br> 
 <li>The <b>"Pin/pads exceptions"</b> entry is used for entering the pins or 
 pads that are not present at the package.<br>
-For entering large amount of exceptions on BGA footprints there is a select
-exception dialog available.<br>
+All exceptions are to be specified individually by a row indicator where the 
+indicator is one or more letters of the alphabet ([A .. Y, AA .. YY] etc. 
+excluding "I", "O", "Q", "S" and "Z"), and a column indicator where the 
+indicator is a member of the positive Natural numbers (N), each exception is 
+separated by a comma (",").<br>
+No wildcards ["?","*"] or collections [A1-A5","B2-B6"] allowed, this is left for
+a future enhancement, and kudos if you send in a patch with a (fully tested)
+solution ;-)<br>
+Currently the limit is set to a maximum of 10.000 leads, and 80 rows
+(this limit is hard coded for now).<br>
+<br>
+For entering large amounts of exceptions on BGA or PGA footprints, there is a 
+select exception dialog available.<br>
 This select exception dialog is invoked by clicking the button left of the 
-entry.<br>
+text entry.<br>
 <br>
 <img src="images/select_exception_dialog.png"><br>
-The above example shows that all leads of a 100 pad (10 rows by 10 columns) BGA 
-package (or all pins for a PGA package) are present.<br>
+<br>
+The above example shows that only the outer two rows/columns of leads of a 100 
+pad (10 rows by 10 columns) BGA package (or all pins for a PGA package) are 
+present.<br>
+The 36 exceptions are withdrawn from the total number of pins/pads, and this is 
+reflected in the "total pins and pads" entry after the "refresh" button is 
+clicked.<br>
+<br>
   <ul>
   <li>The <b>"Close"</B> button will ignore all changes and close the 
   dialog.<br>
+  <br>
   <li>The <b>"Clear"</B> button will clear all ticks from check boxes in the 
   dialog (this means: no leads present on this package).<br>
+  <br>
   <li>The <b>"OK"</B> button will accept all changes and close the dialog.<br>
   </ul>
 <br> 
@@ -457,7 +484,7 @@ footprint file,<br>
 footprintwizard file.<br>
 </ul>
 <hr>
-Last update: November 7th, 2008 by Bert Timmerman.
+Updated: June 7th, 2009 by Bert Timmerman.
 <hr>
 </body>
 </html>
