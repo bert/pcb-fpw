@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcb-fpw\n"
 "Report-Msgid-Bugs-To: bert.timmerman@xs4all.nl\n"
 "POT-Creation-Date: 2008-01-15 21:19+0100\n"
-"PO-Revision-Date: 2009-05-21 15:56+0100\n"
+"PO-Revision-Date: 2009-06-07 14:45+0100\n"
 "Last-Translator: Bert Timmerman <bert.timmerman@xs4all.nl>\n"
 "Language-Team: DUTCH LANGUAGE TEAM <bert.timmerman@xs4all.nl>\n"
 "MIME-Version: 1.0\n"
@@ -22,16 +22,16 @@ msgid "pcb-gfpw"
 msgstr "pcb-gfpw"
 
 #: src/interface.c:45
-msgid "(C) 2007, 2008 Bert Timmerman."
-msgstr "(C) 2007, 2008 Bert Timmerman."
+msgid "(C) 2007 ... 2009 Bert Timmerman."
+msgstr "(C) 2007 ... 2009 Bert Timmerman."
 
 #: src/interface.c:46
 msgid ""
-"The pcb FootPrintWizard generates footprint files for pcb.\n"
-"(see http://pcb.sourceforge.net)\n"
+"The pcb FootPrintWizard generates footprint files for the pcb layout editor.\n"
+"(see http://pcb.gpleda.org)\n"
 msgstr ""
 "De pcb FootPrintWizard genereerd element bestanden voor pcb.\n"
-"(zie http://pcb.sourceforge.net)\n"
+"(zie http://pcb.gpleda.org)\n"
 
 #: src/interface.c:47
 msgid ""
@@ -852,14 +852,14 @@ msgstr "FOUT: kan Footprintwizard bestand %s niet lezen."
 
 #: src/callbacks.c:2475
 #: src/callbacks.c:2568
-#: src/callbacks.c:3752
+#: src/callbacks.c:3786
 #, c-format
 msgid "ERROR: footprint name not initialised (null pointer)."
 msgstr "FOUT: elementnaam niet ge-initialiseerd (null pointer)."
 
 #: src/callbacks.c:2484
 #: src/callbacks.c:2577
-#: src/callbacks.c:3761
+#: src/callbacks.c:3795
 #, c-format
 msgid "ERROR: footprint name contains an empty string."
 msgstr "FOUT: elementnaam bevat een lege text,"
@@ -961,7 +961,7 @@ msgstr "FOUT: pad vorm bevat een onbekend padvorm type."
 msgid "Number of rows or columns is 0."
 msgstr "Aantal rijen of kolommen is 0."
 
-#: src/callbacks.c:3819
+#: src/callbacks.c:3853
 #, c-format
 msgid "ERROR: Unable to write footprintwizard file %s."
 msgstr "FOUT: kan Footprintwizard bestand %s niet schrijven."
