@@ -51,6 +51,13 @@ create_about_dialog (void)
   about_dialog_logo_pixbuf = create_pixbuf ("splash_wiz.xpm");
   gtk_about_dialog_set_logo (GTK_ABOUT_DIALOG (about_dialog), about_dialog_logo_pixbuf);
 
+  g_signal_connect ((gpointer) about_dialog, "close",
+                    G_CALLBACK (on_about_dialog_close),
+                    NULL);
+  g_signal_connect ((gpointer) about_dialog, "destroy",
+                    G_CALLBACK (on_about_dialog_destroy),
+                    NULL);
+
   /* Store pointers to all widgets, for use by lookup_widget(). */
   GLADE_HOOKUP_OBJECT_NO_REF (about_dialog, about_dialog, "about_dialog");
 

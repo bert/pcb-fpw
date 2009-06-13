@@ -1549,6 +1549,44 @@ on_Z2_radiobutton_toggled              (GtkToggleButton *togglebutton,
 
 
 /*!
+ * \brief The close button of the about dialog is clicked.
+ *
+ * <b>Parameters:</b> \c *dialog is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
+ */
+void
+on_about_dialog_close                  (GtkDialog       *dialog,
+                                        gpointer         user_data)
+{
+        GtkWidget *about_dialog = lookup_widget (GTK_WIDGET (dialog),
+                "about_dialog");
+        gtk_widget_destroy (about_dialog);
+}
+
+
+/*!
+ * \brief The destroy button of the about dialog is clicked.
+ *
+ * <b>Parameters:</b> \c *object is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
+ */
+void
+on_about_dialog_destroy                (GtkObject       *object,
+                                        gpointer         user_data)
+{
+        GtkWidget *about_dialog = lookup_widget (GTK_WIDGET (object),
+                "about_dialog");
+        gtk_widget_destroy (about_dialog);
+}
+
+
+/*!
  * \brief The "add attributes to footprint" checkbutton is toggled.
  *
  * <ul>
