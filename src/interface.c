@@ -1654,6 +1654,9 @@ create_pcb_gfpw (void)
   gtk_widget_show (statusbar);
   gtk_box_pack_start (GTK_BOX (vbox), statusbar, FALSE, FALSE, 0);
 
+  g_signal_connect ((gpointer) pcb_gfpw, "destroy",
+                    G_CALLBACK (on_pcb_gfpw_destroy),
+                    NULL);
   g_signal_connect ((gpointer) footprint_author_entry, "changed",
                     G_CALLBACK (on_footprint_author_entry_changed),
                     NULL);
