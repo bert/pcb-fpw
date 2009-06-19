@@ -7,19 +7,39 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.\n
- *
+ * \n
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n
- * See the GNU General Public License for more details.\n
- *
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.\n
+ * \n
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to:\n
- * the Free Software Foundation, Inc., \n
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.\n
  */
 
 #include "register_functions.c"
+
+/*!
+ * \brief Create a list of INDC packages with pre-defined values.
+ *
+ * The data in this list can be used in a combobox to select a
+ * pre-defined package.
+ * \n
+ * <b>Parameters:</b> none.\n
+ * \n
+ * <b>Returns:</b> a list containing all package names of this footprint
+ * type known by pcb-fpw.
+ */
+GList
+indc_create_packages_list ()
+{
+        GList *indc_packages_list = NULL;
+        indc_packages_list = g_list_append (indc_packages_list, "INDC0603X33N");
+        return (*indc_packages_list);
+}
+
 
 /*!
  * \brief Look up default values for INDC SMT footprint.
@@ -30,6 +50,12 @@
  * entries involved in the GUI will be updated accordingly.\n
  * Currently the following footprints are supported:\n
  * - .
+ *
+ * <b>Parameters:</b> \c *footprint_name is a \c NULL terminated
+ * footprint name.\n
+ * \n
+ * <b>Returns:</b> \c EXIT_SUCCESS when default values for a footprint
+ * were found, \c EXIT_FAILURE when the footprint name was not found.
  */
 int
 indc_get_default_footprint_values
@@ -77,10 +103,14 @@ indc_get_default_footprint_values
 }
 
 
-#if GUI
 /*!
  * \brief Set GUI constraints for the INDC SMT package type.
+ *
+ * <b>Parameters:</b> \c *widget is the caller widget.\n
+ * \n
+ * <b>Returns:</b> none.
  */
+#if GUI
 int
 indc_set_gui_constraints (GtkWidget *widget)
 {
@@ -120,6 +150,11 @@ indc_set_gui_constraints (GtkWidget *widget)
 
 /*!
  * \brief Write a INDC SMT footprint with two pads for a chip package.
+ *
+ * <b>Parameters:</b> none.
+ * \n
+ * <b>Returns:</b> \c EXIT_FAILURE when errors were encountered,
+ * \c EXIT_SUCCESS when OK.
  */
 int
 indc_write_footprint ()
@@ -271,6 +306,9 @@ indc_write_footprint ()
 }
 
 
+/*!
+ * \brief A list containing all INDC related functions.
+ */
 static fpw_function_t
 indc_function_list[] =
 {
@@ -299,6 +337,14 @@ indc_function_list[] =
 
 REGISTER_FUNCTIONS (indc_function_list)
 
+
+/*!
+ * \brief Initialise by registering all INDC related functions.
+ *
+ * <b>Parameters:</b> none.\n
+ * \n
+ * <b>Returns:</b> none.
+ */
 void
 indc_init ()
 {
