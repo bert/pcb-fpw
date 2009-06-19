@@ -5,8 +5,8 @@
  *
  * pcb-gfpw (GtkFootPrintWizard) is a program for the creation of
  * footprint files to be used by the pcb layout application
- * (see http://pcb.sourgeforge.net) for the placement of parts in
- * a pcb layout.\n
+ * (see http://pcb.gpleda.org) for the placement of parts in a pcb
+ * layout.\n
  * \n
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

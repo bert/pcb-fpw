@@ -7,9 +7,9 @@
  * fpw (FootPrintWizard) is a program run from the Command Line Interface
  * (CLI) for the creation of footprints files.\n
  * These footprint files can be used by the pcb layout application
- * (see http://pcb.sourgeforge.net) to allow for the placement of parts on a
+ * (see http://pcb.gpleda.org) to allow for the placement of parts on a
  * pcb layout.\n
- *
+ * \n
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
