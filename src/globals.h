@@ -15,25 +15,25 @@
  * \todo Collect all global variables for the footprint into a single struct.\n
  * Switching to another preview will be easier by just switching pointers.
  *
- * This program is free software; you can redistribute it and/or modify\n
- * it under the terms of the GNU General Public License as published by\n
- * the Free Software Foundation; either version 2 of the License, or\n
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.\n
  * \n
- * This program is distributed in the hope that it will be useful,\n
- * but WITHOUT ANY WARRANTY; without even the implied warranty of\n
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n
- * See the GNU General Public License for more details.\n
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.\n
  * \n
- * You should have received a copy of the GNU General Public License\n
- * along with this program; if not, write to:\n
- * the Free Software Foundation, Inc.,\n
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.\n
  */
 
 
 /*!
- * \brief Some package types conforming to IPC name space definitions.
+ * \brief Some package types conforming to standard name space definitions.
  */
 typedef enum packages
 {
@@ -83,7 +83,7 @@ typedef enum units
 } units_t;
 
 /*!
- * \brief Some units types.
+ * \brief Some status types.
  */
 typedef enum status
 {
@@ -163,7 +163,7 @@ typedef enum pad_shapes
 
 
 gboolean verbose = TRUE;
-        /*!< Global file pointer for being verbose or not. */
+        /*!< Global for being verbose or not. */
 
 FILE *fp;
         /*!< Global file pointer for the footprint file. */
