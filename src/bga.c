@@ -26,9 +26,7 @@
 /*!
  * \brief Create an Element for a BGA package.
  *
- * <b>Parameters:</b> none.\n
- * \n
- * <b>Returns:</b> a pointer to the created element.
+ * \return the created \c element.
  */
 ElementTypePtr
 bga_create_element ()
@@ -340,11 +338,9 @@ bga_create_element ()
  *
  * The data in this list can be used in a combo box to select a
  * pre-defined package.\n
- * \n
- * <b>Parameters:</b> none.\n
- * \n
- * <b>Returns:</b> a list containing all package names of this footprint
- * type known by pcb-fpw.
+ *
+ * \return a list containing all package names of this footprint type
+ * known by pcb-fpw.
  */
 GList
 bga_create_packages_list ()
@@ -466,9 +462,7 @@ bga_create_packages_list ()
  * <li> check for a reasonable silk line width.
  * </ul>
  *
- * <b>Parameters:</b> none.\n
- * \n
- * <b>Returns:</b> \c EXIT_SUCCESS when no DRC violations were encountered,
+ * \return \c EXIT_SUCCESS when no DRC violations were encountered,
  * \c EXIT_FAILURE when DRC violations were found.
  */
 int
@@ -579,12 +573,6 @@ bga_drc ()
                                 _("DRC Error: check for minimum clearance between copper (Y-direction)."));
                 result = EXIT_FAILURE;
         }
-        /*! If any fiducials exist:
-         * - check for zero fiducial pad diameter.
-         * - check for zero width solder mask clearance.
-         * \todo - check for minimum clearance between pad copper and fiducial pad
-         *   copper (including solder mask clearances).
-         */
         if (fiducial)
         {
                 /* Check for a zero width fiducial pad. */
@@ -603,6 +591,9 @@ bga_drc ()
                                         _("DRC Error: check for zero width solder mask clearance."));
                         result = EXIT_FAILURE;
                 }
+                /*! \todo Check for minimum clearance between pad copper and fiducial pad
+                 *   copper (including solder mask clearances).
+                 */
                 /* Check for minimum clearance between pad copper and fiducial pad
                  * copper (including solder mask clearances). */
 #if 0
@@ -704,10 +695,10 @@ bga_drc ()
 /*!
  * \brief Look up default values for BGA footprints.
  *
- * Footprint values can be looked up by placing a question mark "?" in front
- * of the footprint name.\n
- * If the footprint name is recognised the known values will be loaded and the
- * entries involved in the GUI will be updated accordingly.\n
+ * Footprint values can be looked up by placing a question mark "?" in
+ * front of the footprint name.\n
+ * If the footprint name is recognised the known values will be loaded
+ * and the entries involved in the GUI will be updated accordingly.\n
  * Currently the following footprints are supported:\n
  * - BGA100C100P10X10_1100X1100X140,
  * - BGA100C100P10X10_1100X1100X170,
@@ -796,15 +787,15 @@ bga_drc ()
  * - BGA1284C100P36X36_3750X3750X380,
  * - BGA1284C100P36X36_3750X3750X400,
  *
- * <b>Parameters:</b> \c *footprint_name a \c NULL terminated footprint name.\n
- * \n
- * <b>Returns:</b> \c EXIT_SUCCESS when default values for a footprint were
+ * \return \c EXIT_SUCCESS when default values for a footprint were
  * found, \c EXIT_FAILURE when the footprint name was not found.
  */
 int
 bga_get_default_footprint_values
 (
-        gchar *footprint_name)
+        gchar *footprint_name
+                /*!< : a \c NULL terminated footprint name.*/
+)
 {
         if (!strcmp (footprint_name, "?BGA100C100P10X10_1100X1100X140"))
         {
@@ -4410,14 +4401,16 @@ bga_get_default_footprint_values
  * \brief Set GUI constraints for the BGA package type.
  *
  * This function is only to be compiled for GUI targets.
- * \n
- * <b>Parameters:</b> \c *widget: the caller widget.\n
- * \n
- * <b>Returns:</b> \c EXIT_SUCCESS when completed.
+ *
+ * \return \c EXIT_SUCCESS when the function is completed.
  */
 #if GUI
 int
-bga_set_gui_constraints (GtkWidget *widget)
+bga_set_gui_constraints
+(
+        GtkWidget *widget
+                /*!< : the caller widget.*/
+)
 {
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
@@ -4485,10 +4478,8 @@ bga_set_gui_constraints (GtkWidget *widget)
 /*!
  * \brief Write a footprint for a BGA package.
  *
- * <b>Parameters:</b> none.\n
- * \n
- * <b>Returns:</b> \c EXIT_FAILURE when errors were encountered,
- * \c EXIT_SUCCESS when done.
+ * \return \c EXIT_FAILURE when errors were encountered, \c EXIT_SUCCESS
+ * when done.
  */
 int
 bga_write_footprint ()
@@ -4752,10 +4743,6 @@ REGISTER_FUNCTIONS (bga_function_list)
 
 /*!
  * \brief Initialise by registering all BGA related functions.
- *
- * <b>Parameters:</b> none.\n
- * \n
- * <b>Returns:</b> none.
  */
 void
 bga_init ()
