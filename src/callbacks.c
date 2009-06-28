@@ -156,11 +156,19 @@ all_entries_need_updated (GtkWidget *widget)
                 gtk_entry_set_text (GTK_ENTRY (package_body_height_entry),
                         g_strdup_printf ("%f", package_body_height));
         }
+        /* Update the "package is radial" checkbutton. */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET
                 (widget), "package_is_radial_checkbutton");
         gtk_widget_set_sensitive (package_is_radial_checkbutton, TRUE);
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON
                 (package_is_radial_checkbutton), package_is_radial);
+        /* Update the "add license to footprint" checkbutton. */
+        GtkWidget *add_license_checkbutton = lookup_widget (GTK_WIDGET
+                (widget), "add_license_checkbutton");
+        gtk_widget_set_sensitive (add_license_checkbutton, TRUE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON
+                (add_license_checkbutton), license_in_footprint);
+	/* Update the "add attributes" checkbutton. */
         GtkWidget *add_attribs_checkbutton = lookup_widget (GTK_WIDGET
                 (widget), "add_attribs_checkbutton");
         gtk_widget_set_sensitive (add_attribs_checkbutton, TRUE);
