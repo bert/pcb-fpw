@@ -111,9 +111,6 @@ void
 on_fiducial_pad_solder_mask_clearance_entry_changed (GtkEditable *editable, gpointer user_data);
 
 void
-on_fiducial_solder_mask_clearance_entry_changed (GtkEditable *editable, gpointer user_data);
-
-void
 on_filechooser_dialog_cancel_button_clicked (GtkButton *button, gpointer user_data);
 
 void
