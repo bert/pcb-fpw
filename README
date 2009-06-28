@@ -1,15 +1,39 @@
+======= WHAT IS PCB-FPW =======
+
 The pcb-fpw FootPrintWizard is what the name says it will be:
 a footprint wizard (a.k.a. footprint generator).
 
-pcb-fpw is not a footprint editor, therefor one can NOT load an existing 
-footprint file into pcb-fpw, make some changes and save it back to file, and 
+pcb-fpw is not a footprint editor, therefor one can NOT load an existing
+footprint file into pcb-fpw, make some changes and save it back to file, and
 subsequent load the edited footprint file into pcb.
 
+======= ISSUES WITH PCB-FPW =======
+
+All issues, bug reports and feature requests should go into the Lighthouse
+ticket application.
+
+Lighthouse is to be found at:
+
+http://pcb-gfpw.lighthouseapp.com/projects/20664-pcb-fpw/tickets?q=all
+
+======= STATISTICS =======
+
+Statistics and other code metrics are to be found at:
+
+http://www.ohloh.net/p/pcb-fpw/
+
+======= HOW DO I CREATE FOOTPRINTS WITH PCB-FPW =======
+
+A User Manual with pictures can be found here:
+
+http://www.xs4all.nl/~ljh4timm/pcb-fpw/user-manual.html
+
+Now follows a condensed version without the pictures.
 
 Graphical User Interface (GUI).
 -------------------------------
 
-The main, interactive, modus of operating the software is probably with the 
+The main, interactive, modus of operating the software is probably with the
 GUI application "pcb-gfpw".
 
 Basically it comes down to the following:
@@ -19,32 +43,32 @@ Basically it comes down to the following:
         - modify values if needed,
         - save the footprint file.
 
-Subsequent actions to load the footprint file into pcb are described in the 
+Subsequent actions to load the footprint file into pcb are described in the
 pcb, xgsch2pcb or gsch2pcb documentation.
 
-The layout of the program consists of five tabs with entry fields and a 
-dimensions drawing area (when and if implemented), and a button bar with 
+The layout of the program consists of five tabs with entry fields and a
+dimensions drawing area (when and if implemented), and a button bar with
 five buttons on the lower part of the window.
 
-As you start entering the footprint type by selecting from a specified list, 
-the program will guess for the prefix of the footprint as the first couple of 
+As you start entering the footprint type by selecting from a specified list,
+the program will guess for the prefix of the footprint as the first couple of
 characters of the footprint name.
 
-The program will also try to guess which entries are needed for this footprint 
+The program will also try to guess which entries are needed for this footprint
 type and "grey out" the entries and checkbuttons which it thinks are not needed.
 
-The first tab with entries is named "Footprint" and can be used for the input 
+The first tab with entries is named "Footprint" and can be used for the input
 of general information about the footprint.
 
-The second tab is named "Pins/Pads" and should be used for the input of  
-information about the number and pattern of pins and/or pads, the shape and 
+The second tab is named "Pins/Pads" and should be used for the input of
+information about the number and pattern of pins and/or pads, the shape and
 clearances.
 
-The third tab is named "Thermal pad" and can be used for an optional thermal 
+The third tab is named "Thermal pad" and can be used for an optional thermal
 pad if the footprint type allows for such an option.
 
-The fourth tab is named "Silkscreen" and can be used for the input of an 
-optional silkscreen to be drawn, such as package outline, pin/pad #1 marker 
+The fourth tab is named "Silkscreen" and can be used for the input of an
+optional silkscreen to be drawn, such as package outline, pin/pad #1 marker
 and/or courtyard.
 
 The fifth and last tab is named "Heel & Toe goals".
@@ -65,10 +89,10 @@ The eight buttons in the lower part will have the following functions:
 Command Line Interface (CLI).
 -----------------------------
 
-The "other" modus of non-interactive (batch) operation is from the Command Line 
+The "other" modus of non-interactive (batch) operation is from the Command Line
 Interface.
 
-This assumes for an existing footprintwizard file (or series of files when 
+This assumes for an existing footprintwizard file (or series of files when
 batch processing).
 
 Footprintwizard files are to have a .fpw suffix.
