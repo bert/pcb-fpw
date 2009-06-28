@@ -59,6 +59,12 @@ main (int argc, char *argv[])
         gtk_widget_show (about_dialog);
         /* Now create the main dialog. */
         pcb_gfpw = create_pcb_gfpw ();
+        /* Set the "Add license to footprint" checkbutton initially to
+         * TRUE */
+        GtkWidget *add_license_checkbutton = lookup_widget (GTK_WIDGET (pcb_gfpw),
+                "add_license_checkbutton");
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (add_license_checkbutton),
+                TRUE);
         /* Set the initial state of the total pins and pads entry to
          * sensitive. The entry is to be used as a label for most packages
          * as the total amount of pins and pads can be caluculated.
