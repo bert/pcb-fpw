@@ -12,20 +12,20 @@
  * The functions in libfpw are called by both the CLI version of the
  * FootPrintWizard (fpw) as well as the GUI version (pcb-gfpw).\n
  *
- * This program is free software; you can redistribute it and/or modify\n
- * it under the terms of the GNU General Public License as published by\n
- * the Free Software Foundation; either version 2 of the License, or\n
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.\n
  * \n
- * This program is distributed in the hope that it will be useful,\n
- * but WITHOUT ANY WARRANTY; without even the implied warranty of\n
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n
- * See the GNU General Public License for more details.\n
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.\n
  * \n
- * You should have received a copy of the GNU General Public License\n
- * along with this program; if not, write to:\n
- * the Free Software Foundation, Inc.,\n
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.\n
  */
 
 
@@ -46,12 +46,20 @@ AttributeTypePtr create_new_attribute (AttributeListTypePtr list, char *name, ch
 
 
 /*!
- * \brief Create all attributes in an element.
+ * \brief Create all defining attributes of a footprint in the \c
+ * element and add the values to the \c Attributes struct inside the
+ * \c element.
+ *
+ * \todo Add tests to check if \c Attributes are already present and do
+ * not contain the defining value already, thus avoiding duplication.\n
+ *
+ * \return an \c element with \c Attributes added.
  */
 ElementTypePtr
 create_attributes_in_element
 (
         ElementTypePtr element
+                /*!< : a pointer to an \c element without \c Attributes.*/
 )
 {
         create_new_attribute (&element->Attributes, "author", g_strdup_printf ("%s", footprint_author));
@@ -105,19 +113,32 @@ create_attributes_in_element
 
 
 /*!
- * \brief Creates a new arc in an element.
+ * \brief Creates a new \c arc entity in the \c element.
+ *
+ * \todo Check all existing \c Arc entities in the \c element to avoid
+ * duplication.
+ *
+ * \return a newly created \c arc within the specified \c element.
  */
 ArcTypePtr
 create_new_arc
 (
         ElementTypePtr element,
+                /*!< : the \c element to create an \c arc in.*/
         LocationType X,
+                /*!< : X-coordinate of the \c arc.*/
         LocationType Y,
+                /*!< : Y-coordinate of the \c arc.*/
         BDimension width,
+                /*!< : width of the \c arc.*/
         BDimension height,
+                /*!< : height of the \c arc.*/
         int angle,
+                /*!< : start angle.*/
         int delta,
+                /*!< : angle of sweep.*/
         BDimension thickness)
+                /*!< : line thickness.*/
 {
         ArcTypePtr arc = element->Arc;
         /* Reallocate new memory if necessary and clear it. */
@@ -163,14 +184,22 @@ create_new_arc
 
 
 /*!
- * \brief Add an attribute to a list.
+ * \brief Add an \c Attribute to an \c AttributeList.
+ *
+ * \todo Check all existing \c Attributes in the \c element to avoid
+ * duplication.
+ *
+ * \return the newly created \c Attribute in the \c AttributeList.
  */
 AttributeTypePtr
 create_new_attribute
 (
         AttributeListTypePtr list,
+                /*!< : an \c AttributeList to add the \c Attribute to.*/
         char *name,
+                /*!< : a \c name for the \c Attribute.*/
         char *value
+                /*!< : a \c value for the \c Attribute.*/
 )
 {
         if (list->Number >= list->Max)
@@ -195,17 +224,28 @@ create_new_attribute
 
 
 /*!
- * \brief Creates a new line for an element.
+ * \brief Creates a new \c Line in an \c Element.
+ *
+ * \todo Check all existing \c Line entities in the \c element to avoid
+ * duplication.
+ *
+ * \return a newly created \c Line within the specified \c element.
  */
 LineTypePtr
 create_new_line
 (
         ElementTypePtr element,
+                /*!< : the \c element to create a \c line in.*/
         LocationType X1,
+                /*!< : the X-value of the start point.*/
         LocationType Y1,
+                /*!< : the Y-value of the start point.*/
         LocationType X2,
+                /*!< : the X-value of the end point.*/
         LocationType Y2,
+                /*!< : the Y-value of the end point.*/
         BDimension thickness)
+                /*!< : the line thickness.*/
 {
         LineTypePtr line = element->Line;
         if (thickness == 0)
@@ -241,22 +281,51 @@ create_new_line
 
 
 /*!
- * \brief Creates a new pad in an element.
+ * \brief Creates a new \c pad in an \c element.
+ *
+ * \todo Check all existing \c Pad entities in the \c element to avoid
+ * duplication.
+ *
+ * \return a newly created \c Pad within the specified \c element.
  */
 PadTypePtr
 create_new_pad
 (
         ElementTypePtr element,
+                /*!< : the \c element to add the \c pad to.*/
         LocationType X1,
+                /*!< : the X-value of the start point.*/
         LocationType Y1,
+                /*!< : the Y-value of the start point.*/
         LocationType X2,
+                /*!< : the X-value of the end point.*/
         LocationType Y2,
+                /*!< : the Y-value of the end point.*/
         BDimension thickness,
+                /*!< : the line thickness.*/
         BDimension clearance,
+                /*!< : the clearance of copper around the \c pad. */
         BDimension mask,
+                /*!< : the clearance of the solder mask around the \c pad.*/
         char *name,
+                /*!< : the name of the \c pad.*/
         char *number,
+                /*!< : the number of the \c pad.*/
         FlagType flags
+                /*!< : flags separated by commas:
+                 * <ul>
+                 * <li> \c CLEAR : default is round pads on the
+                 * component side of the pcb.
+                 * <li> \c EDGE2 : indicates that the second point is
+                 * closer to the edge.
+                 * <li> \c LOCK : for locked objects.
+                 * <li> \c NOPASTE : set to prevent a solderpaste
+                 * stencil opening for the pad.
+                 * <li> \c ONSOLDER : for pads on the solder side.
+                 * <li> \c SQUARE : for rectangular pads.
+                 * <li> \c WARN : set to indicate a warning.
+                 * </ul>
+                 */
 )
 {
         PadTypePtr pad;
@@ -289,20 +358,48 @@ create_new_pad
 
 /*!
  * \brief Creates a new pin in an element.
+ *
+ * \todo Check all existing \c Pin entities in the \c element to avoid
+ * duplication.
+ *
+ * \return a newly created \c Pin within the specified \c element.
  */
 PinTypePtr
 create_new_pin
 (
         ElementTypePtr element,
+                /*!< : the \c element to add the \c pad to.*/
         LocationType X,
+                /*!< : the X-value of the center point.*/
         LocationType Y,
+                /*!< : the Y-value of the center point.*/
         BDimension thickness,
+                /*!< : the annulus thickness.*/
         BDimension clearance,
+                /*!< : the clearance of copper around the \c pin. */
         BDimension mask,
-        BDimension drillingHole,
+                /*!< : the clearance of the solder mask around the \c pin.*/
+        BDimension drillinghole,
+                /*!< : the size of the drilling hole of the \c pin.*/
         char *name,
+                /*!< : the name of the \c pin.*/
         char *number,
+                /*!< : the number of the \c pin.*/
         FlagType flags
+                /*!< : flags separated by commas:
+                 * <ul>
+                 * <li> \c CLEAR : default is round pads on both sides
+                 * of the pcb.
+                 * <li> \c EDGE2 : indicates that the pin is closer to a
+                 * horizontal edge and thus pinout text should be
+                 * vertical.
+                 * <li> \c HOLE : for unplated holes.
+                 * <li> \c LOCK : for locked objects.
+                 * <li> \c OCTAGON : for octagon pads.
+                 * <li> \c SQUARE : for square pads.
+                 * <li> \c WARN : set to indicate a warning.
+                 * <\ul>
+                 */
 )
 {
         PinTypePtr pin;
@@ -312,6 +409,7 @@ create_new_pin
         pin->Thickness = thickness;
         pin->Clearance = clearance;
         pin->Mask = mask;
+        pin->DrillingHole = drillinghole;
         pin->Name = g_strdup (name);
         pin->Number = g_strdup (number);
         pin->Flags = flags;
@@ -323,6 +421,9 @@ create_new_pin
 
 /*!
  * \brief Determine the package type.
+ *
+ * \return EXIT_SUCCESS if a valid package type was determined,
+ * EXIT_FAILURE if no valid package type was determined.
  */
 int
 get_package_type ()
@@ -465,13 +566,16 @@ get_package_type ()
 /*!
  * \brief Determine if the pin/pad is a non-existing pin or pad.
  *
- * \retval EXIT_SUCCESS if pin/pad is non-existing (it is found in the
- * \c pin_pad_exception_string).\n
- * \retval EXIT_FAILURE if pin/pad exists (it is not found in the
- * \c pin_pad_exception_string).
+ * \return EXIT_SUCCESS if pin/pad is non-existing (it is found in the
+ * \c pin_pad_exception_string), EXIT_FAILURE if pin/pad exists (it is
+ * not found in the \c pin_pad_exception_string).
  */
 int
-get_pin_pad_exception (gchar *pin_pad_name)
+get_pin_pad_exception
+(
+        gchar *pin_pad_name
+                /*!< : name of the pin/pad. */
+)
 {
         /* Test if a NULL pointer or empty string was passed. */
         if (!pin_pad_name)
@@ -513,6 +617,10 @@ get_pin_pad_exception (gchar *pin_pad_name)
 
 /*!
  * \brief Determine the status type.
+ *
+ * \return EXIT_SUCCESS if a known status is found in
+ * \c footprint_status, EXIT_FAILURE if no known status was found in
+ * \c footprint_status.
  */
 int
 get_status_type ()
@@ -551,9 +659,16 @@ get_status_type ()
 
 /*!
  * \brief Read a footprintwizard file into the global variables.
+ *
+ * \return EXIT_SUCCESS if footprintwizard is completely read and parsed,
+ * EXIT_FAILURE if an error was encountered.
  */
 int
-read_footprintwizard_file (gchar *fpw_filename)
+read_footprintwizard_file
+(
+        gchar *fpw_filename
+                /*!< : name of the footprintwizard file. */
+)
 {
         /* Get global variables from footprintwizard file with .fpw suffix */
         FILE *fpw = fopen (fpw_filename, "r");
@@ -1443,6 +1558,9 @@ read_footprintwizard_file (gchar *fpw_filename)
 
 /*!
  * \brief Update locations type variables.
+ *
+ * \return \c EXIT_SUCCESS when a the locations variables were updated,
+ * \c EXIT_FAILURE when errors were encountered.
  */
 int
 update_location_variables ()
@@ -1519,9 +1637,8 @@ update_location_variables ()
 /*!
  * \brief Update pad shapes type variables.
  *
- * \return Returns \c EXIT_SUCCESS when a known pad shape was determined.\n
- * Returns \c EXIT_FAILURE when an unknown pad shape was determined.
- *
+ * \return \c EXIT_SUCCESS when a known pad shape was determined,
+ * \c EXIT_FAILURE when an unknown pad shape was encountered.
  */
 int
 update_pad_shapes_variables ()
@@ -1555,6 +1672,9 @@ update_pad_shapes_variables ()
 
 /*!
  * \brief Update (units) multiplier and units type variables.
+ *
+ * \return \c EXIT_SUCCESS when a known units type was determined,
+ * \c EXIT_FAILURE when an unknown units type was encountered.
  */
 int
 update_units_variables ()
@@ -1584,11 +1704,10 @@ update_units_variables ()
 /*!
  * \brief Write attributes based on the global variables.
  *
+ * \return \c EXIT_SUCCESS when the function is completed.
  */
 int
-write_attributes
-(
-)
+write_attributes ()
 {
         /* Attributes in the form "Attribute("name" "value")" */
         fprintf (fp, "# Write attributes\n");
@@ -1638,6 +1757,7 @@ write_attributes
         fprintf (fp, "\tAttribute(\"c2\" \"%f\")\n", c2);
         fprintf (fp, "\tAttribute(\"g2\" \"%f\")\n", g2);
         fprintf (fp, "\tAttribute(\"z2\" \"%f\")\n", z2);
+        return (EXIT_SUCCESS);
 }
 
 
@@ -1646,45 +1766,58 @@ write_attributes
  *
  * This function is here to avoid the exhaustive changes of boiler plate code
  * when the file format of pcb footprint changes.
+ *
+ * \return \c EXIT_SUCCESS when the function is completed.
  */
 int
 write_element_arc
 (
-        gdouble _x, /*!< X-coordinate of center. */
-        gdouble _y, /*!< Y-coordinate of center. */
-        gdouble _width, /*!< Width from center to edge. */
-        gdouble _height, /*!< Height from center to edge. */
-        gdouble _start_angle, /*!< The angle of the start of the arc in degrees.\n
-                              * 0 = negative X-axis, 90 = positive Y-axis. */
-        gdouble _delta_angle, /*!< The angle of sweep in degrees.\n
-                              * positive = CCW, negative = CW. */
-        gdouble _line_width /*!< The width of the line which forms the arc. */
+        gdouble x,
+                /*!< : X-coordinate of center. */
+        gdouble y,
+                /*!< : Y-coordinate of center. */
+        gdouble width,
+                /*!< : width from center to edge. */
+        gdouble height,
+                /*!< : height from center to edge. */
+        gdouble start_angle,
+                /*!< : the angle of the start of the arc in degrees.
+                 * 0 = negative X-axis, 90 = positive Y-axis. */
+        gdouble delta_angle,
+                /*!< : the angle of sweep in degrees.
+                 * positive = CCW, negative = CW. */
+        gdouble line_width
+                /*!< The width of the line which forms the arc. */
 )
 {
         fprintf
         (
                 fp,
                 "\tElementArc[%d %d %d %d %d %d %d]\n",
-                (int) _x,
-                (int) _y,
-                (int) _width,
-                (int) _height,
-                (int) _start_angle,
-                (int) _delta_angle,
-                (int) _line_width
+                (int) x,
+                (int) y,
+                (int) width,
+                (int) height,
+                (int) start_angle,
+                (int) delta_angle,
+                (int) line_width
         );
+        return (EXIT_SUCCESS);
 }
 
 
 /*!
  * \brief Write an element header based on the global variables.
  *
+ * \return \c EXIT_SUCCESS when the function is completed.
  */
 int
 write_element_header
 (
-        gdouble x_text, /*!< X-coordinate of text */
-        gdouble y_text /*!< y-coordinate of text */
+        gdouble x_text,
+                /*!< : X-coordinate of the text insertion point.*/
+        gdouble y_text
+		/*!< : Y-coordinate of the text insertion point.*/
 )
 {
         /* Write header to file */
@@ -1698,6 +1831,7 @@ write_element_header
                 (int) (x_text),
                 (int) (y_text)
         );
+        return (EXIT_SUCCESS);
 }
 
 
@@ -1706,23 +1840,30 @@ write_element_header
  *
  * This function is here to avoid the exhaustive changes of boiler plate code
  * when the file format of pcb footprint changes.
+ *
+ * \return \c EXIT_SUCCESS when the function is completed.
  */
 int
 write_element_line
 (
-        gdouble x0, /*!< X-coordinate of the starting point of the line.\n
-                     * These are relative to the Elements mark point for
-                     * new element formats, or absolute for older formats. */
-        gdouble y0, /*!< Y-coordinate of the starting point of the line.\n
-                     * These are relative to the Elements mark point for
-                     * new element formats, or absolute for older formats. */
-        gdouble x1, /*!< X-coordinate of the ending point of the line.\n
-                     * These are relative to the Elements mark point for
-                     * new element formats, or absolute for older formats. */
-        gdouble y1, /*!< Y-coordinate of the ending point of the line.\n
-                     * These are relative to the Elements mark point for
-                     * new element formats, or absolute for older formats. */
-        gdouble line_width /*!< The width of the silk for this line. */
+        gdouble x0,
+                /*!< : X-coordinate of the starting point of the line.
+                 * These are relative to the Elements mark point for
+                 * new element formats, or absolute for older formats.*/
+        gdouble y0,
+                /*!< : Y-coordinate of the starting point of the line.
+                 * These are relative to the Elements mark point for
+                 * new element formats, or absolute for older formats.*/
+        gdouble x1,
+                /*!< : X-coordinate of the ending point of the line.\n
+                 * These are relative to the Elements mark point for
+                 * new element formats, or absolute for older formats.*/
+        gdouble y1,
+                /*!< : Y-coordinate of the ending point of the line.
+                 * These are relative to the Elements mark point for
+                 * new element formats, or absolute for older formats.*/
+        gdouble line_width
+                /*!< : the width of the silk for this line.*/
 )
 {
         fprintf
@@ -1735,12 +1876,110 @@ write_element_line
                 (int) y1,
                 (int) line_width
         );
+        return (EXIT_SUCCESS);
 }
 
 
 /*!
- * \brief Write a license statement (at the begin of the footprint file).
+ * \brief Write a GPL alike license statement (at the begin of the footprint file).
  *
+ * This license text is not identical to the GPL version 2, due to the
+ * fact that generated footprints are not a program or (shared) library.\n
+ * All software components of pcb-fpw is released under the GNU General
+ * Public License (GPL) version 2 or later.\n
+ * However, some confusion may exist about the footprints.\n
+ * What license do they use?\n
+ * Will GPL footprints "infect" your design, thereby requiring you to
+ * release your design to the public?\n
+ * If you modify any of these footprints, must you release the modified
+ * versions under the GPL?\n
+ * \n
+ * The goal of the pcb-fpw Project is to provide an open-source program
+ * which may be used for non-commerical as well as commercial
+ * projects.\n
+ * This program is aimed for use by students, hobbyists, educators,
+ * consultants, and -- yes -- corporate engineers.\n
+ * We are not interested in exerting any control over your designs, or
+ * forcing you to reveal proprietary information contained in your
+ * designs.\n
+ * \n
+ * Footprints are similar to the font files used in document processing
+ * software -- they are graphical objects used to express your ideas.\n
+ * We want you to retain control of your own ideas (your design), while
+ * the pcb-fpw Project retains a say in how you redistribute the
+ * footprints themselves.\n
+ * \n
+ * There are three ways a footprint might be distributed:
+ * <ol>
+ * <li>As part of a footprint library, or individually as a .fp file
+ * (i.e. as a footprint itself).
+ * <li>Embedded in a .pcb file (i.e. part of the soft, or editable copy
+ * of a design).\n
+ * N.B.: In the pcb application this license text is being stripped, as
+ * are all comments, the pcb footprint file parser simply ignores
+ * them.\n
+ * <li>The resulting graphical expression in gerber files of a pcb
+ * design (i.e. as part of the hard, or non-editable copy of a design).
+ * </ol>
+ * There is a distinction between cases 1 and (2, 3).\n
+ * In case 1, the object of interest is the symbol library (or
+ * individual symbol) itself.\n
+ * In case (2, 3), the object of interest is the design.\n
+ * Some label case 1 "distribution", and case (2, 3) "use" of the
+ * symbol.
+ * Our goals for the symbols are:
+ * <ul>
+ * <li> We wish to distribute the footprints under a licencing scheme
+ * which encourages that you give back to the community if you
+ * redistribute the the footprints themselves -- whether modified or
+ * unmodified.\n
+ * This is case 1 distribution; the GPL ensures this.\n
+ * <li> We wish to specifically prohibit anybody from building pcb-fpw
+ * footprints into their *software* products, and then place
+ * restrictions on how the resulting product may be used.\n
+ * If you bundle pcb-fpw footprints -- whether modified or unmodified --
+ * into your software and then distribute it, then you must allow for
+ * the software's (and footprints') continued redistribution under the
+ * GPL.\n
+ * Again, this is case 1 distribution; the GPL ensures this.\n
+ * However, we do not wish to "infect" your *electronic* design, or
+ * force you to release your proprietary design information if you use
+ * or embedd pcb-fpw footprints in your design.\n
+ * This is case (2, 3) use.\n
+ * </ul>
+ * \n
+ * The Free Software Foundation has recognized a possible conflict of
+ * the base GPL with the use of fonts -- and, by analogy, footprints
+ * used in case (2, 3).\n
+ * Their solution is to use an exemption clause in the GPL which you
+ * explicitly insert for fonts.\n
+ * Read about it here:
+ * http://www.fsf.org/licensing/licenses/gpl-faq.html#FontException
+ * \n
+ * \n
+ * Therefore, using this as a template, all footprints released with
+ * pcb-fpw are covered under the GPL with the following exception
+ * clause:\n
+ * <pre>
+ * # This footprint is free software; you may redistribute it and/or modify
+ * # it under the terms of the GNU General Public License as published by the
+ * # Free Software Foundation; either version 2 of the License, or (at your
+ * # option) any later version.
+ * # As a special exception, if you create a design which uses this
+ * # footprint, and embed this footprint or unaltered portions of this
+ * # footprint into the design, this footprint does not by itself cause
+ * # the resulting design to be covered by the GNU General Public
+ * # License.
+ * # This exception does not however invalidate any other reasons why
+ * # the design itself might be covered by the GNU General Public
+ * # License.
+ * # If you modify this footprint, you may extend this exception to your
+ * # version of the footprint, but you are not obligated to do so.
+ * # If you do not wish to do so, delete this exception statement from
+ * # your version.
+ * </pre>
+ *
+ * \return \c EXIT_SUCCESS when the function is completed.
  */
 int
 write_license
@@ -1764,6 +2003,7 @@ write_license
         fprintf (fp, "# version of the footprint, but you are not obligated to do so.\n");
         fprintf (fp, "# If you do not wish to do so, delete this exception statement from\n");
         fprintf (fp, "# your version.\n");
+        return (EXIT_SUCCESS);
 }
 
 
@@ -1772,35 +2012,61 @@ write_license
  *
  * This function is here to avoid the exhaustive changes of boiler plate code
  * when the file format of pcb footprint changes.
+ *
+ * \return \c EXIT_SUCCESS when the function is completed.
  */
 int
 write_pad
 (
-        gint _pad_number, /*!< pad number */
-        gchar *_pad_name, /*!< pad name */
-        gdouble _x0, /*!< x0 coordinate */
-        gdouble _y0, /*!< y0-coordinate */
-        gdouble _x1, /*!< x1 coordinate */
-        gdouble _y1, /*!< y1-coordinate */
-        gdouble _width, /*!< width of the pad */
-        gdouble _clearance, /*!< clearance */
-        gdouble _pad_solder_mask_clearance, /*!< solder mask clearance */
-        gchar *_flags /*!< flags */
+        gint pad_number,
+                /*!< : pad number */
+        gchar *pad_name,
+                /*!< : pad name */
+        gdouble x0,
+                /*!< : X-coordinate of the starting point of the pad.*/
+        gdouble y0,
+                /*!< : Y-coordinate of the starting point of the pad.*/
+        gdouble x1,
+                /*!< : X-coordinate of the end point of the pad.*/
+        gdouble y1,
+                /*!< : Y-coordinate of the end point of the pad.*/
+        gdouble width,
+                /*!< : the width of the pad.*/
+        gdouble clearance,
+                /*!< : clearance of other copper around the pad.*/
+        gdouble pad_solder_mask_clearance,
+                /*!< : solder mask clearance araound the pad.*/
+        gchar *flags
+                /*!< : flags separated by commas:
+                 * <ul>
+                 * <li> \c CLEAR : default is round pads on the
+                 * component side of the pcb.
+                 * <li> \c EDGE2 : indicates that the second point is
+                 * closer to the edge.
+                 * <li> \c LOCK : for locked objects.
+                 * <li> \c NOPASTE : set to prevent a solderpaste
+                 * stencil opening for the pad.
+                 * <li> \c ONSOLDER : for pads on the solder side.
+                 * <li> \c SQUARE : for rectangular pads.
+                 * <li> \c WARN : set to indicate a warning.
+                 * </ul>
+                 */
 )
 {
         fprintf (fp,
                 "\tPad[%d %d %d %d %d %d %d \"%s\" \"%d\" \"%s\"]\n",
-                (int) _x0,
-                (int) _y0,
-                (int) _x1,
-                (int) _y1,
-                (int) _width,
-                (int) _clearance,
-                (int) _pad_solder_mask_clearance,
-                _pad_name,
-                _pad_number,
-                _flags
+                (int) x0,
+                (int) y0,
+                (int) x1,
+                (int) y1,
+                (int) width,
+                (int) clearance,
+                (int) pad_solder_mask_clearance,
+                pad_name,
+                pad_number,
+                flags
                 );
+        return (EXIT_SUCCESS);
 }
 
 
@@ -1809,33 +2075,58 @@ write_pad
  *
  * This function is here to avoid the exhaustive changes of boiler plate code
  * when the file format of pcb footprint changes.
+ *
+ * \return \c EXIT_SUCCESS when the function is completed.
  */
 int
 write_pin
 (
-        gint _pin_number, /*!< pin number */
-        gchar *_pin_name, /*!< pin name */
-        gdouble _x0, /*!< x0 coordinate */
-        gdouble _y0, /*!< y0-coordinate */
-        gdouble _width, /*!< width of the annulus ring (pad) */
-        gdouble _clearance, /*!< clearance */
-        gdouble _pad_solder_mask_clearance, /*!< solder mask clearance */
-        gdouble _drill, /*!< pin drill diameter */
-        gchar *_flags /*!< flags */
+        gint pin_number,
+                /*!< : pin number */
+        gchar *pin_name,
+                /*!< : pin name */
+        gdouble x0,
+                /*!< : X-coordinate of the pin.*/
+        gdouble y0,
+                /*!< : Y-coordinate of the pin.*/
+        gdouble width,
+                /*!< : width of the annulus ring of the pin (pad).*/
+        gdouble clearance,
+                /*!< : clearance of other copper around the pin.*/
+        gdouble pad_solder_mask_clearance,
+                /*!< : solder mask clearance around the pin (pad)*/
+        gdouble drill,
+                /*!< : pin drill diameter.*/
+        gchar *flags
+                /*!< : flags separated by commas:
+                 * <ul>
+                 * <li> \c CLEAR : default is round pads on both sides
+                 * of the pcb.
+                 * <li> \c EDGE2 : indicates that the pin is closer to a
+                 * horizontal edge and thus pinout text should be
+                 * vertical.
+                 * <li> \c HOLE : for unplated holes.
+                 * <li> \c LOCK : for locked objects.
+                 * <li> \c OCTAGON : for octagon pads.
+                 * <li> \c SQUARE : for square pads.
+                 * <li> \c WARN : set to indicate a warning.
+                 * <\ul>
+                 */
 )
 {
         fprintf (fp,
                 "\tPin[%d %d %d %d %d %d \"%s\" \"%d\" \"%s\"]\n",
-                (int) _x0,
-                (int) _y0,
-                (int) _width,
-                (int) _clearance,
-                (int) _pad_solder_mask_clearance,
-                (int) _drill,
-                _pin_name,
-                _pin_number,
-                _flags
+                (int) x0,
+                (int) y0,
+                (int) width,
+                (int) clearance,
+                (int) pad_solder_mask_clearance,
+                (int) drill,
+                pin_name,
+                pin_number,
+                flags
                 );
+        return (EXIT_SUCCESS);
 }
 
 /*!
@@ -1845,15 +2136,22 @@ write_pin
  * If line_width is 0.0 no rectangle is drawn.
  * If line_width is < 0.0 a rectangle with a linewidth of 1/100 of
  * a mil is drawn (#define THIN_DRAW 1).
+ *
+ * \return \c EXIT_SUCCESS when the function is completed.
  */
 int
 write_rectangle
 (
-        gdouble xmin, /*!< minimum x-coordinate of rectangle. */
-        gdouble ymin, /*!< minimum y-coordinate of rectangle. */
-        gdouble xmax, /*!< maximum x-coordinate of rectangle. */
-        gdouble ymax, /*!< maximum y-coordinate of rectangle. */
-        gdouble line_width /*!< courtyard line width */
+        gdouble xmin,
+                /*!< : minimum X-coordinate of rectangle.*/
+        gdouble ymin,
+                /*!< : minimum Y-coordinate of rectangle.*/
+        gdouble xmax,
+                /*!< : maximum X-coordinate of rectangle.*/
+        gdouble ymax,
+                /*!< : maximum Y-coordinate of rectangle.*/
+        gdouble line_width
+                /*!< : line width. */
 )
 {
         /* If line_width is 0.0 do not draw a rectangle */
@@ -1910,257 +2208,22 @@ write_rectangle
                 (int) ymax,
                 (int) line_width
         );
+        return (EXIT_SUCCESS);
 }
 
 
 /*!
- * \brief Write a TO92 footprint for a transistor package.
- */
-int
-write_footprint_to92 ()
-{
-        gdouble xmax;
-        gdouble xmin;
-        gdouble ymax;
-        gdouble ymin;
-        gdouble x_text;
-        gdouble y_text;
-
-        fp = fopen (footprint_filename, "w");
-        if (!fp)
-        {
-                fprintf
-                (
-                        stderr,
-                        "ERROR: could not open file for %s footprint: %s.\n",
-                        footprint_type,
-                        footprint_filename
-                );
-                return (EXIT_FAILURE);
-        }
-        /* Determine (extreme) courtyard dimensions based on pin/pad
-         * properties */
-        xmin = -10500 - (multiplier * courtyard_clearance_with_package); /* in mil/100 */
-        xmax = 10500 + (multiplier * courtyard_clearance_with_package); /* in mil/100 */
-        ymin = -8600 - (multiplier * courtyard_clearance_with_package); /* in mil/100 */
-        ymax = 10500 + (multiplier * courtyard_clearance_with_package); /* in mil/100 */
-        /* Determine (extreme) courtyard dimensions based on package
-         * properties */
-        if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
-                xmin = (multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package));
-        if ((multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package)) > xmax)
-                xmax = (multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package));
-        if ((multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package)) < ymin)
-                ymin = (multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package));
-        if ((multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package)) > ymax)
-                ymax = (multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package));
-        /* If the user input is using even more real-estate then use it */
-        if (multiplier * (-courtyard_length / 2.0) < xmin)
-                xmin = multiplier * (-courtyard_length / 2.0);
-        if (multiplier * (courtyard_length / 2.0) > xmax)
-                xmax = multiplier * (courtyard_length / 2.0);
-        if (multiplier * (-courtyard_width / 2.0) < ymin)
-                ymin = multiplier * (-courtyard_width / 2.0);
-        if (multiplier * (courtyard_width / 2.0) > ymax)
-                ymax = multiplier * (courtyard_width / 2.0);
-        /* Write element header
-         * Guess for a place where to put the refdes text */
-        x_text = 0.0 ; /* already in mil/100 */
-        y_text = (ymin - 10000.0); /* already in mil/100 */
-        write_element_header (x_text, y_text);
-        /* Write pin and/or pad entities */
-        if (!strcmp (pad_shape, "rectangular pad"))
-                pin_pad_flags = g_strdup ("square");
-        else
-                pin_pad_flags = g_strdup ("");
-        write_pin
-        (
-                1, /* pin number */
-                "", /* pin name */
-                -5000.0, /* x0 coordinate */
-                0.0, /* y0-coordinate */
-                multiplier * pad_diameter, /* width of the annulus ring (pad) */
-                multiplier * pad_clearance, /* clearance */
-                multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
-                multiplier * pin_drill_diameter, /* pin drill diameter */
-                /* Write pin #1 with a square pad */
-                (pin1_square) ? "square" : "" /* flags */
-        );
-        write_pin
-        (
-                2, /* pin number */
-                "", /* pin name */
-                0.0, /* x0 coordinate */
-                0.0, /* y0-coordinate */
-                multiplier * pad_diameter, /* width of the annulus ring (pad) */
-                multiplier * pad_clearance, /* clearance */
-                multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
-                multiplier * pin_drill_diameter, /* pin drill diameter */
-                pin_pad_flags /* flags */
-        );
-        write_pin
-        (
-                3, /* pin number */
-                "", /* pin name */
-                5000.0, /* x0 coordinate */
-                0.0, /* y0-coordinate */
-                multiplier * pad_diameter, /* width of the annulus ring (pad) */
-                multiplier * pad_clearance, /* clearance */
-                multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
-                multiplier * pin_drill_diameter, /* pin drill diameter */
-                pin_pad_flags /* flags */
-        );
-        /* Write package body on the silkscreen */
-        if (silkscreen_package_outline)
-        {
-                fprintf (fp, "# Write a package body on the silkscreen\n");
-                fprintf (fp, "\tElementLine[-8600 -6000 8600 -6000 1000]\n");
-                fprintf (fp, "\tElementArc[0 0 10500 10500 -35 250 1000]\n");
-        }
-        /* Write a pin #1 marker on the silkscreen */
-        if (silkscreen_indicate_1)
-        {
-                /*! \todo Write a pin #1 marker on the silkscreen ! */
-        }
-        /* Write a courtyard on the silkscreen */
-        if (courtyard)
-        {
-                fprintf (fp, "# Write a courtyard on the silkscreen\n");
-                if (package_is_radial)
-                {
-                        write_element_arc
-                        (
-                                0.0,
-                                0.0,
-                                xmax, /* already in mil/100 */
-                                ymax, /* already in mil/100 */
-                                0,
-                                360,
-                                multiplier * courtyard_line_width
-                        );
-                }
-                else
-                {
-                        write_rectangle
-                        (
-                                xmin, /* already in mil/100 */
-                                ymin, /* already in mil/100 */
-                                xmax, /* already in mil/100 */
-                                ymax, /* already in mil/100 */
-                                multiplier * courtyard_line_width
-                        );
-                }
-        }
-        /* Write attributes */
-        if (attributes_in_footprint)
-                write_attributes ();
-        fprintf (fp, "\n");
-        fprintf (fp, ")\n");
-        fclose (fp);
-        fprintf
-        (
-                stderr,
-                "SUCCESS: wrote a footprint file for a %s package: %s.\n",
-                footprint_type,
-                footprint_filename
-        );
-}
-
-
-/*!
- * \brief Write a TH/SMT footprint for a ? package.
- */
-int
-write_footprint_template ()
-{
-        gdouble xmax;
-        gdouble xmin;
-        gdouble ymax;
-        gdouble ymin;
-        gdouble x_text;
-        gdouble y_text;
-
-        fp = fopen (footprint_filename, "w");
-        if (!fp)
-        {
-                fprintf
-                (
-                        stderr,
-                        "ERROR: could not open file for %s footprint: %s.\n",
-                        footprint_type,
-                        footprint_filename
-                );
-                return (EXIT_FAILURE);
-        }
-        /* Determine (extreme) courtyard dimensions based on pin/pad
-         * properties */
-
-        /* Determine (extreme) courtyard dimensions based on package
-         * properties */
-        if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
-                xmin = (multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package));
-        if ((multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package)) > xmax)
-                xmax = (multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package));
-        if ((multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package)) < ymin)
-                ymin = (multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package));
-        if ((multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package)) > ymax)
-                ymax = (multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package));
-        /* If the user input is using even more real-estate then use it */
-        if (multiplier * (-courtyard_length / 2.0) < xmin)
-                xmin = multiplier * (-courtyard_length / 2.0);
-        if (multiplier * (courtyard_length / 2.0) > xmax)
-                xmax = multiplier * (courtyard_length / 2.0);
-        if (multiplier * (-courtyard_width / 2.0) < ymin)
-                ymin = multiplier * (-courtyard_width / 2.0);
-        if (multiplier * (courtyard_width / 2.0) > ymax)
-                ymax = multiplier * (courtyard_width / 2.0);
-        /* Write element header
-         * Guess for a place where to put the refdes text */
-        x_text = 0.0 ; /* already in mil/100 */
-        y_text = (ymin - 10000.0); /* already in mil/100 */
-        write_element_header (x_text, y_text);
-        /* Write pin and/or pad entities */
-                /*! \todo Write a pin/pad entities ! */
-        /* Write package body on silkscreen */
-        if (silkscreen_package_outline)
-        {
-                fprintf (fp, "# Write a package body on the silkscreen\n");
-                /*! \todo Write a package body on the silkscreen ! */
-        }
-        /* Write a pin #1 marker on the silkscreen */
-        if (silkscreen_indicate_1)
-        {
-                fprintf (fp, "# Write a pin 1 marker on the silkscreen\n");
-                /*! \todo Write a pin #1 marker ! on the silkscreen */
-        }
-        /* Write a courtyard on the silkscreen */
-        if (courtyard)
-        {
-                fprintf (fp, "# Write a courtyard on the silkscreen\n");
-                /*! \todo Write a courtyard on the silkscreen ! */
-        }
-        /* Write attributes */
-        if (attributes_in_footprint)
-                write_attributes ();
-        fprintf (fp, "\n");
-        fprintf (fp, ")\n");
-        fclose (fp);
-        fprintf
-        (
-                stderr,
-                "SUCCESS: wrote a footprint file for a %s package: %s.\n",
-                footprint_type,
-                footprint_filename
-        );
-}
-
-
-/*!
- * \brief Write a footprintwizard file based on the current global variables.
+ * \brief Write a footprintwizard file based on the current global
+ * variables.
  *
+ * \return \c EXIT_SUCCESS when the function is completed.
  */
 int
-write_footprintwizard_file (gchar *fpw_filename)
+write_footprintwizard_file
+(
+        gchar *fpw_filename
+                /*!< : a \c NULL terminated fpw_filename.*/
+)
 {
         /* Write global variables to footprintwizard file with .fpw suffix */
         FILE *fpw = fopen (fpw_filename, "w");
@@ -2294,6 +2357,8 @@ write_footprintwizard_file (gchar *fpw_filename)
  * This function does not write the footprint file itself.\n
  * It is a dispatcher for helper functions who <b>actually</b> do write
  * the contents for the footprint to file.
+ *
+ * \return \c EXIT_SUCCESS when the function is completed.
  */
 int
 write_footprint()
@@ -2392,7 +2457,7 @@ write_footprint()
                         sot_write_footprint ();
                         break;
                 case TO92:
-                        write_footprint_to92 ();
+                        to_write_footprint_to92 ();
                         break;
                 default:
                         fprintf (stderr, "ERROR: unknown or not yet implemented footprint type entered.\n");
