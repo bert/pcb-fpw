@@ -21,6 +21,8 @@ repository, requires (at least):
 gcc >= 4.1.1
 autoconf >= 2.63
 automake >= 1.9.6
+pkg-config >= 0.9.0
+libtool >= 1.5.22
 glib >= 1.2.10
 glib2 >= 2.10.3
 gtk >= 2.8.20
@@ -29,7 +31,7 @@ cairo >= 1.0.4
 pango >= 1.12.4
 gettext >= 0.16.1
 
-and any other dependency these packages may require.
+and many other dependency these packages may require.
 
 YMMV with lesser version numbers, these are the minimum versions I use to
 develop pcb-fpw with.
