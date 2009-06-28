@@ -28,11 +28,9 @@
  *
  * The data in this list can be used in a combobox to select a
  * pre-defined package.
- * \n
- * <b>Parameters:</b> none.\n
- * \n
- * <b>Returns:</b> a list containing all package names of this footprint
- * type known by pcb-fpw.
+ *
+ * \return a list containing all package names of this footprint type
+ * known by pcb-fpw.
  */
 GList
 capc_create_packages_list ()
@@ -75,16 +73,14 @@ capc_create_packages_list ()
  * - CAPC1608X87N,
  * - CAPC3216X105L.
  *
- * <b>Parameters:</b> \c *footprint_name is a \c NULL terminated
- * footprint name.\n
- * \n
- * <b>Returns:</b> \c EXIT_SUCCESS when default values for a footprint
- * were found, \c EXIT_FAILURE when the footprint name was not found.
+ * \return EXIT_SUCCESS when default values for a footprint were found,
+ * \c EXIT_FAILURE when the footprint name was not found.
  */
 int
 capc_get_default_footprint_values
 (
         gchar *footprint_name
+                /*!< : a \c NULL terminated footprint name.*/
 )
 {
         if (!strcmp (footprint_name, "?CAPC0603X33N"))
@@ -527,13 +523,18 @@ capc_get_default_footprint_values
 /*!
  * \brief Set GUI constraints for the CAPC SMT package type.
  *
- * <b>Parameters:</b> \c *widget is the caller widget.\n
- * \n
- * <b>Returns:</b> none.
+ * This function is only to be compiled for GUI targets.
+ *
+ * \return \c EXIT_SUCCESS when the function is completed.
  */
 #if GUI
 int
-capc_set_gui_constraints (GtkWidget *widget)
+capc_set_gui_constraints
+(
+        GtkWidget *widget
+                /*!< : is the caller widget.*/
+
+)
 {
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
@@ -565,6 +566,7 @@ capc_set_gui_constraints (GtkWidget *widget)
 
         /* Widgets on tab 5 "Heel & Toe goals" */
         gui_constraints_disable_heel_and_toe_goals_tab_widgets (widget);
+        return (EXIT_SUCCESS);
 }
 #endif /* GUI */
 
@@ -572,9 +574,7 @@ capc_set_gui_constraints (GtkWidget *widget)
 /*!
  * \brief Write a CAPC SMT footprint with two pads for a chip package.
  *
- * <b>Parameters:</b> none.
- * \n
- * <b>Returns:</b> \c EXIT_FAILURE when errors were encountered,
+ * \return \c EXIT_FAILURE when errors were encountered,
  * \c EXIT_SUCCESS when OK.
  */
 int
@@ -761,10 +761,6 @@ REGISTER_FUNCTIONS (capc_function_list)
 
 /*!
  * \brief Initialise by registering all CAPC related functions.
- *
- * <b>Parameters:</b> none.\n
- * \n
- * <b>Returns:</b> none.
  */
 void
 capc_init ()
