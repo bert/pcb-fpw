@@ -1,0 +1,33 @@
+PCB-FPW
+-------
+
+README for icon data
+
+This file describes where the various icons came from and their license.
+
+The FPW icon is designed by Bert Timmerman.
+The mime registration data is to be done by Bert Timmerman (todo).
+
+The icons are licensed under the GPL2 license.
+
+Scalable versions: (128x128 canvas for the "hicolor" fallback theme).
+These were scaled up from the 48x48 pixel targeted version.
+
+application-x-fpw.svg (todo)
+
+Pixel targeted variants:
+
+application-x-fpw-{16,22,32,48}.svg (todo)
+
+PNG versions of the above icons were created with GIMP.
+The versions are copied from the 48x48 version:
+
+application-x-fpw-{16,22,24,32,48}.png
+
+The script "regen_files" will re-export the SVG drawings to PNG and also
+regenerate the windows icon file. (todo)
+
+fpw.svg
+fpw-48.png
+
+# EOF #
