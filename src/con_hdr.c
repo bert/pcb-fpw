@@ -33,16 +33,15 @@
  * Currently the following footprints are supported:\n
  * - ,
  *
- * <b>Parameters:</b> \c *footprint_name a \c NULL terminated footprint
- * name.\n
- * \n
- * <b>Returns:</b> \c EXIT_SUCCESS when default values for a footprint
- * were found, \c EXIT_FAILURE when the footprint name was not found.
+ * \return \c EXIT_SUCCESS when default values for a footprint were
+ * found, \c EXIT_FAILURE when the footprint name was not found.
  */
 int
 con_hdr_get_default_footprint_values
 (
-        gchar *footprint_name)
+        gchar *footprint_name
+                /*!< : a \c NULL terminated footprint name.*/
+)
 {
         if (!strcmp (footprint_name, "?CON-HDR"))
         {
@@ -74,6 +73,7 @@ con_hdr_get_default_footprint_values
                          footprint_name);
                 return (EXIT_FAILURE);
         }
+        return (EXIT_SUCCESS);
 }
 
 
@@ -82,11 +82,9 @@ con_hdr_get_default_footprint_values
  *
  * The data in this list can be used in a combo box to select a
  * pre-defined package.
- * \n
- * <b>Parameters:</b> none.\n
- * \n
- * <b>Returns:</b> a list containing all package names of this footprint
- * type known by pcb-fpw.
+ *
+ * \return a list containing all package names of this footprint type
+ * known by pcb-fpw.
  */
 GList
 con_hdr_create_packages_list ()
@@ -100,13 +98,17 @@ con_hdr_create_packages_list ()
 /*!
  * \brief Set GUI constraints for the CON-HDR package type.
  *
- * <b>Parameters:</b> \c *widget is the caller widget.\n
- * \n
- * <b>Returns:</b> none.
+ * This function is only to be compiled for GUI targets.
+ *
+ * \return \c EXIT_SUCCESS when the function is completed.
  */
 #if GUI
 int
-con_hdr_set_gui_constraints (GtkWidget *widget)
+con_hdr_set_gui_constraints
+(
+        GtkWidget *widget
+                /*!< : the caller widget.*/
+)
 {
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
@@ -144,6 +146,7 @@ con_hdr_set_gui_constraints (GtkWidget *widget)
 
         /* Widgets on tab 5 "Heel & Toe goals" */
         gui_constraints_disable_heel_and_toe_goals_tab_widgets (widget);
+        return (EXIT_SUCCESS);
 }
 #endif /* GUI */
 
@@ -160,10 +163,8 @@ con_hdr_set_gui_constraints (GtkWidget *widget)
  * 2  5  8  11 \n
  * 1  4  7  10 \n
  * You get the idea for 4 or more rows. \n
- * \n
- * <b>Parameters:</b> none.\n
- * \n
- * <b>Returns:</b> \c EXIT_FAILURE when errors were encountered,
+ *
+ * \return \c EXIT_FAILURE when errors were encountered,
  * \c EXIT_SUCCESS when OK.
  */
 int
@@ -363,10 +364,6 @@ REGISTER_FUNCTIONS (con_hdr_function_list)
 
 /*!
  * \brief Initialise by registering all CON-HDR related functions.
- *
- * <b>Parameters:</b> none.\n
- * \n
- * <b>Returns:</b> none.
  */
 void
 con_hdr_init ()
