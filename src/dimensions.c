@@ -28,18 +28,14 @@
 
 /*!
  * \brief Close the dimensions window (destroy the \c dimensions_window widget).
- *
- * <b>Parameters:</b> \c *widget is the caller widget.\n
- * \n
- * <b>Parameters:</b> \c *dimension_window is the widget to be closed.\n
- * \n
- * <b>Returns:</b> none.
  */
 static void
 dimensions_window_close_cb
 (
         GtkWidget *widget,
+                /*!< : is the caller widget.*/
         GtkWidget *dimensions_window
+		/*!< : is the widget to be closed.*/
 )
 {
         gtk_widget_destroy (dimensions_window);
@@ -48,18 +44,14 @@ dimensions_window_close_cb
 
 /*!
  * \brief Delete the window.
- *
- * <b>Parameters:</b> \c *widget is the widget to be deleted.\n
- * \n
- * <b>Parameters:</b> \c *event is the event passed from the caller.\n
- * \n
- * <b>Returns:</b> none.
  */
 void
 dimensions_window_delete_event
 (
         GtkWidget *widget,
+		/*!< : is the widget to be deleted.*/
         GdkEvent *event
+		/*!< : is the event passed from the caller.*/
 )
 {
         gtk_widget_destroy (widget);
@@ -68,22 +60,16 @@ dimensions_window_delete_event
 
 /*!
  * \brief Expose the window.
- *
- * <b>Parameters:</b> \c *widget is the (drawable) widget to contain the
- * image.\n
- * \n
- * <b>Parameters:</b> \c *event is the event passed from the caller.\n
- * \n
- * <b>Parameters:</b> \c *buf is the image to (re)draw.\n
- * \n
- * <b>Returns:</b> none.
  */
 void
 dimensions_window_expose_event
 (
         GtkWidget *widget,
+                /*!< : is the (drawable) widget to contain the image.*/
         GdkEventExpose *event,
+		/*!< : is the event passed from the caller.*/
         GdkPixbuf *buf
+		/*!< : is the image to (re)draw.*/
 )
 {
         gdk_draw_pixbuf
@@ -105,22 +91,21 @@ dimensions_window_expose_event
 
 
 /*!
- * \brief Create a dialog window containing a pre-defined pixbuf (from file).
+ * \brief Create a dialog window containing a pre-defined pixbuf (from
+ * file).
  *
- * The \c footprint_name variable is used in the dialog title. \n
- * \n
- * <b>Parameters:</b> \c *image_filename is the image to draw in the
- * window.\n
- * \n
- * <b>Parameters:</b> \c *footprint_type.\n
- * \n
- * <b>Returns:</b> 0 when successfull.
+ * The \c footprint_name variable is used in the dialog title.
+ *
+ * \return 0 when successfull.
  */
 int
 dimensions_create_window
 (
         gchar *image_filename,
+		/*!< : is the filename of the image to draw in the
+                 * window.*/
         gchar *footprint_type
+                /*!< : is the footprint type.*/
 )
 {
         /* Create a dimensions window */
