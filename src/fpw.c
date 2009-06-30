@@ -77,9 +77,7 @@ gchar *program_name = NULL;
 /*!
  * \brief Print the version of the footprintwizard to stderr.
  *
- * <b>Parameters:</b> \c none .\n
- * \n
- * <b>Returns:</b> \c EXIT_SUCCESS.
+ * \return \c EXIT_SUCCESS.
  */
 static void
 print_version ()
@@ -96,9 +94,7 @@ print_version ()
 /*!
  * \brief Print the usage message for the footprintwizard to stderr.
  *
- * <b>Parameters:</b> \c none .\n
- * \n
- * <b>Returns:</b> \c EXIT_SUCCESS.
+ * \return \c EXIT_SUCCESS.
  */
 static void
 print_usage ()
@@ -116,17 +112,13 @@ print_usage ()
 /*!
  * \brief The CLI for the footprintwizard.
  *
- * <b>Parameters:</b> \c argc number of arguments.\n
- * \n
- * <b>Parameters:</b> \c argv array of argument variables.\n
- * \n
- * <b>Returns:</b> \c EXIT_SUCCESS.
+ * \return \c EXIT_SUCCESS.
  */
 int
 main
 (
-        int argc, /*!< number of arguments on CLI */
-        char *argv[] /*!< array of argument variables */
+        int argc, /*!< : number of arguments on CLI */
+        char *argv[] /*!< : array of argument variables */
 )
 {
         FILE *fp;
@@ -215,9 +207,9 @@ main
                 footprint_filename = g_strconcat (footprint_name, ".fp", NULL);
         }
         write_footprint ();
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("Footprint %s is written successful."),
-                        footprint_name);
+        g_log ("", G_LOG_LEVEL_INFO,
+                _("Footprint %s is written successful."),
+                footprint_name);
 }
 
 
