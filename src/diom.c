@@ -33,16 +33,15 @@
  * Currently the following footprints are supported:\n
  * - .
  *
- * <b>Parameters:</b> \c *footprint_name a \c NULL terminated footprint
- * name.\n
- * \n
- * <b>Returns:</b> \c EXIT_SUCCESS when default values for a footprint
- * were found, \c EXIT_FAILURE when the footprint name was not found.
+ * \return \c EXIT_SUCCESS when default values for a footprint were
+ * found, \c EXIT_FAILURE when the footprint name was not found.
  */
 int
 diom_get_default_footprint_values
 (
-        gchar *footprint_name)
+        gchar *footprint_name
+                /*!< : a \c NULL terminated footprint name.*/
+)
 {
         if (!strcmp (footprint_name, "?DIOM"))
         {
@@ -81,19 +80,24 @@ diom_get_default_footprint_values
                         footprint_name);
                 return (EXIT_FAILURE);
         }
+	return (EXIT_SUCCESS);
 }
 
 
 /*!
  * \brief Set GUI constraints for a DIOM SMT package type.
  *
- * <b>Parameters:</b> \c *widget is the caller widget.\n
- * \n
- * <b>Returns:</b> none.
+ * This function is only to be compiled for GUI targets.
+ *
+ * \return \c EXIT_SUCCESS when the function is completed.
  */
 #if GUI
 int
-diom_set_gui_constraints (GtkWidget *widget)
+diom_set_gui_constraints
+(
+        GtkWidget *widget
+                /*!< : the caller widget.*/
+)
 {
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
@@ -125,6 +129,7 @@ diom_set_gui_constraints (GtkWidget *widget)
 
         /* Widgets on tab 5 "Heel & Toe goals" */
         gui_constraints_disable_heel_and_toe_goals_tab_widgets (widget);
+        return (EXIT_SUCCESS);
 }
 #endif /* GUI */
 
@@ -132,10 +137,7 @@ diom_set_gui_constraints (GtkWidget *widget)
 /*!
  * \brief Write a footprint with two pads for a DIOM SMT package.
  *
- * \n
- * <b>Parameters:</b> none.\n
- * \n
- * <b>Returns:</b> \c EXIT_FAILURE when errors were encountered,
+ * \return \c EXIT_FAILURE when errors were encountered,
  * \c EXIT_SUCCESS when OK.
  */
 int
@@ -405,10 +407,6 @@ REGISTER_FUNCTIONS (diom_function_list)
 
 /*!
  * \brief Initialise by registering all DIOM related functions.
- *
- * <b>Parameters:</b> none.\n
- * \n
- * <b>Returns:</b> none.
  */
 void
 diom_init ()
