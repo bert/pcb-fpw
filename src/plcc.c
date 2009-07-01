@@ -1,22 +1,22 @@
 /*!
  * \file plcc.c
- * \author Copyright (C) 2008 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2008 ... 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief Predefined values for PGA footprints.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.\n
- *
+ * \n
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n
- * See the GNU General Public License for more details.\n
- *
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.\n
+ * \n
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to:\n
- * the Free Software Foundation, Inc., \n
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.\n
  */
 
 #include "register_functions.c"
@@ -29,11 +29,17 @@
  * If the footprint name is recognised the values will be loaded and the
  * entries involved in the GUI will be updated accordingly.\n
  * Currently the following footprints are supported:\n
+ * -.
+ *
+ * \return \c EXIT_SUCCESS when default values for a footprint were
+ * found, \c EXIT_FAILURE when the footprint name was not found.
  */
 int
 plcc_get_default_footprint_values
 (
-        gchar *footprint_name)
+        gchar *footprint_name
+                /*!< : a \c NULL terminated footprint name.*/
+)
 {
         if (!strcmp (footprint_name, "?PLCC84"))
         {
@@ -75,9 +81,17 @@ plcc_get_default_footprint_values
 #if GUI
 /*!
  * \brief Set GUI constraints for the PLCC package type.
+ *
+ * This function is only to be compiled for GUI targets.
+ *
+ * \return \c EXIT_SUCCESS when the function is completed.
  */
 int
-plcc_set_gui_constraints (GtkWidget *widget)
+plcc_set_gui_constraints
+(
+        GtkWidget *widget
+                /*!< : the caller widget.*/
+)
 {
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
@@ -104,12 +118,16 @@ plcc_set_gui_constraints (GtkWidget *widget)
 
         /* Widgets on tab 3 "Thermal Pad" */
         gui_constraints_disable_thermal_tab_widgets (widget);
+        return (EXIT_SUCCESS);
 }
 #endif /* GUI */
 
 
 /*!
  * \brief Write a SMT footprint for a PLCC package.
+ *
+ * \return \c EXIT_FAILURE when errors were encountered,
+ * \c EXIT_SUCCESS when OK.
  */
 int
 plcc_write_footprint ()
@@ -495,6 +513,9 @@ plcc_write_footprint ()
 }
 
 
+/*!
+ * \brief A list containing all PLCC related functions.
+ */
 static fpw_function_t
 plcc_function_list[] =
 {
@@ -521,8 +542,15 @@ plcc_function_list[] =
 };
 
 
+/*!
+ * \brief A list containing all PLCC related functions.
+ */
 REGISTER_FUNCTIONS (plcc_function_list)
 
+
+/*!
+ * \brief Initialise by registering all PLCC related functions.
+ */
 void
 plcc_init ()
 {
