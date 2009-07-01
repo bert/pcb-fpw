@@ -7,16 +7,16 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.\n
- *
+ * \n
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n
- * See the GNU General Public License for more details.\n
- *
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.\n
+ * \n
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to:\n
- * the Free Software Foundation, Inc., \n
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.\n
  */
 
 #include "register_functions.c"
@@ -47,9 +47,7 @@
  * <li> check for a reasonable silk line width.
  * </ul>
  *
- * <b>Parameters:</b> none.\n
- * \n
- * <b>Returns:</b> \c EXIT_SUCCESS when no DRC violations were encountered,
+ * \return \c EXIT_SUCCESS when no DRC violations were encountered,
  * \c EXIT_FAILURE when DRC violations were found.
  */
 int
@@ -290,6 +288,10 @@ pga_drc ()
  * If the footprint name is recognised the values will be loaded and the
  * entries involved in the GUI will be updated accordingly.\n
  * Currently the following footprints are supported:\n
+ * -.
+ *
+ * \return \c EXIT_SUCCESS when default values for a footprint were
+ * found, \c EXIT_FAILURE when the footprint name was not found.
  */
 int
 pga_get_default_footprint_values
@@ -330,15 +332,24 @@ pga_get_default_footprint_values
                          footprint_name);
                 return (EXIT_FAILURE);
         }
+        return (EXIT_FAILURE);
 }
 
 
 #if GUI
 /*!
  * \brief Set GUI constraints for the PGA package type.
+ *
+ * This function is only to be compiled for GUI targets.
+ *
+ * \return \c EXIT_SUCCESS when the function is completed.
  */
 int
-pga_set_gui_constraints (GtkWidget *widget)
+pga_set_gui_constraints
+(
+        GtkWidget *widget
+                /*!< : the caller widget.*/
+)
 {
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
@@ -380,12 +391,16 @@ pga_set_gui_constraints (GtkWidget *widget)
 
         /* Widgets on tab 5 "Heel & Toe goals" */
         gui_constraints_disable_heel_and_toe_goals_tab_widgets (widget);
+        return (EXIT_SUCCESS);
 }
 #endif /* GUI */
 
 
 /*!
  * \brief Write a footprint for a PGA package.
+ *
+ * \return \c EXIT_FAILURE when errors were encountered,
+ * \c EXIT_SUCCESS when OK.
  */
 int
 pga_write_footprint ()
@@ -532,6 +547,9 @@ pga_write_footprint ()
 }
 
 
+/*!
+ * \brief A list containing all PGA related functions.
+ */
 static fpw_function_t
 pga_function_list[] =
 {
@@ -566,6 +584,10 @@ pga_function_list[] =
 
 REGISTER_FUNCTIONS (pga_function_list)
 
+
+/*!
+ * \brief Initialise by registering all PGA related functions.
+ */
 void
 pga_init ()
 {
