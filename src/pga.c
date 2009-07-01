@@ -296,7 +296,9 @@ pga_drc ()
 int
 pga_get_default_footprint_values
 (
-        gchar *footprint_name)
+        gchar *footprint_name
+                /*!< : a \c NULL terminated footprint name.*/
+)
 {
         if (!strcmp (footprint_name, "?PGA100"))
         {
