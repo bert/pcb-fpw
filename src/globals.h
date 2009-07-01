@@ -1,6 +1,6 @@
 /*!
  * \file globals.h
- * \author Copyright (C) 2008 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2008 ... 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief Contains global variables and structs for both fpw (CLI) and
  * pcb-gfpw (GUI) versions of the pcb FootPrintWizard.
  *
@@ -127,20 +127,20 @@ char *row_letters[] =
  */
 typedef enum locations
 {
-        NO_LOCATION, /*!< For those living in the void. */
-        UPPER_LEFT, /*!< Package has the upper left pin as pin #1. */
-        MIDDLE_LEFT, /*!< Package has the middle left pin as pin #1. */
-        LOWER_LEFT, /*!< Package has the lower left pin as pin #1. */
-        UPPER_MIDDLE, /*!< Package has the upper middle pin as pin #1. */
-        MIDDLE_MIDDLE, /*!< Package has the middle middle pin as pin #1. */
-        LOWER_MIDDLE, /*!< Package has the lower middle pin as pin #1. */
-        UPPER_RIGHT, /*!< Package has the upper right pin as pin #1. */
-        MIDDLE_RIGHT, /*!< Package has the middle right pin as pin #1. */
-        LOWER_RIGHT, /*!< Package has the lower right pin as pin #1. */
-        LEFT_TOP, /*!< Package has the left topside pin as pin #1. */
-        RIGHT_TOP, /*!< Package has the right topside pin as pin #1. */
-        LEFT_BOTTOM, /*!< Package has the left bottomside pin as pin #1. */
-        RIGHT_BOTTOM /*!< Package has the right bottomside pin as pin #1. */
+        NO_LOCATION, /*!< For those living in the void.*/
+        UPPER_LEFT, /*!< 1: Package has the upper left pin as pin #1.*/
+        MIDDLE_LEFT, /*!< 2: Package has the middle left pin as pin #1.*/
+        LOWER_LEFT, /*!< 3: Package has the lower left pin as pin #1.*/
+        UPPER_MIDDLE, /*!< 4: Package has the upper middle pin as pin #1.*/
+        MIDDLE_MIDDLE, /*!< 5: Package has the middle middle pin as pin #1.*/
+        LOWER_MIDDLE, /*!< 6: Package has the lower middle pin as pin #1.*/
+        UPPER_RIGHT, /*!< 7: Package has the upper right pin as pin #1.*/
+        MIDDLE_RIGHT, /*!< 8: Package has the middle right pin as pin #1.*/
+        LOWER_RIGHT, /*!< 9: Package has the lower right pin as pin #1.*/
+        LEFT_TOP, /*!< 10: Package has the left topside pin as pin #1.*/
+        RIGHT_TOP, /*!< 11: Package has the right topside pin as pin #1.*/
+        LEFT_BOTTOM, /*!< 12: Package has the left bottomside pin as pin #1.*/
+        RIGHT_BOTTOM /*!< 13: Package has the right bottomside pin as pin #1.*/
 } location_t;
 
 /*!
@@ -168,7 +168,7 @@ gboolean verbose = TRUE;
 FILE *fp;
         /*!< Global file pointer for the footprint file. */
 gchar *fpw_pathname = NULL;
-        /*!< Path to the footprintwizard file */
+        /*!< Path to the footprintwizard file.*/
 gchar *fpw_suffix = "fpw";
         /*!< Suffix of footprintwizard file. */
 gchar *footprint_filename = NULL;
@@ -348,17 +348,17 @@ gchar *dummy = NULL;
  */
 
 #define MAX_LAYER 16
-/*!< Maximum number of layers, check the pcb source code for more changes,
- * a *lot* more changes.
- */
+        /*!< Maximum number of layers, check the pcb source code for more changes,
+         * a *lot* more changes.
+         */
 #define MAX_ELEMENTNAMES 3
-/*!< Maximum number of supported names of an element. */
+        /*!< Maximum number of supported names of an element. */
 #define EMARK_SIZE 1000
-/*!< Size of diamond element mark. */
+        /*!< Size of diamond element mark. */
 #define MIN_TEXTSCALE 10
-/*!< Scaling of text objects in percent */
+        /*!< Scaling of text objects in percent */
 #define MAX_TEXTSCALE 10000
-/*!< Scaling of text objects in percent */
+        /*!< Scaling of text objects in percent */
 
 #ifndef MIN
 #define MIN(a,b) ((a) < (b) ? (a) : (b))
@@ -419,7 +419,8 @@ typedef enum
 } direction_t;
 
 typedef int LocationType;
-typedef int BDimension; /*!< big dimension */
+typedef int BDimension;
+        /*!< big dimension */
 typedef unsigned int Cardinal;
 typedef char Boolean;
 typedef char *String;
@@ -431,10 +432,14 @@ typedef unsigned char BYTE;
  * \brief A bounding box. */
 typedef struct
 {
-        LocationType X1; /*!< X-value of the upper left corner coordinate. */
-        LocationType Y1; /*!< Y-value of the upper left corner coordinate. */
-        LocationType X2; /*!< X-value of the lower right corner coordinate. */
-        LocationType Y2; /*!< Y-value of the lower right corner coordinate. */
+        LocationType X1;
+                /*!< X-value of the upper left corner coordinate. */
+        LocationType Y1;
+                /*!< Y-value of the upper left corner coordinate. */
+        LocationType X2;
+                /*!< X-value of the lower right corner coordinate. */
+        LocationType Y2;
+                /*!< Y-value of the lower right corner coordinate. */
 } BoxType, *BoxTypePtr;
 
 /*!
@@ -444,8 +449,10 @@ typedef struct
  */
 typedef struct
 {
-  unsigned long f; /*!< Generic flags */
-  unsigned char t[(MAX_LAYER + 1) / 2]; /*!< Thermals */
+        unsigned long f;
+                /*!< Generic flags */
+        unsigned char t[(MAX_LAYER + 1) / 2];
+                /*!< Thermals */
 } FlagType, *FlagTypePtr;
 
 /*!
@@ -511,7 +518,7 @@ typedef struct
 } AnyLineObjectType, *AnyLineObjectTypePtr;
 
 /*!
- * ]\brief Holds information about one line entity.
+ * \brief Holds information about one line entity.
  */
 typedef struct
 {
@@ -525,8 +532,10 @@ typedef struct
 typedef struct
 {
         Boolean status;
-        long int X; /*!< X-value of origin. */
-        long int Y; /*!< Y-value of origin. */
+        long int X;
+                /*!< X-value of origin point.*/
+        long int Y;
+                /*!< Y-value of origin point.*/
 } MarkType, *MarkTypePtr;
 
 /*!
@@ -535,11 +544,16 @@ typedef struct
 typedef struct
 {
         ANYOBJECTFIELDS;
-        BDimension Scale; /*!< text scaling in percent. */
-        LocationType X; /*!< X-value of origin (insertion point). */
-        LocationType Y; /*!< Y-value of origin (insertion point). */
-        BYTE Direction; /*!< Text direction. */
-        char *TextString; /*!< String value. */
+        BDimension Scale;
+                /*!< text scaling in percent. */
+        LocationType X;
+                /*!< X-value of origin (insertion point). */
+        LocationType Y;
+                /*!< Y-value of origin (insertion point). */
+        BYTE Direction;
+                /*!< Text direction. */
+        char *TextString;
+                /*!< String value. */
         void *Element;
 } TextType, *TextTypePtr;
 
@@ -549,14 +563,22 @@ typedef struct
 typedef struct
 {
         ANYOBJECTFIELDS;
-        BDimension Thickness; /*!< Trace width. */
-        BDimension Clearance; /*!< Clearance with polygons. */
-        LocationType Width; /*!< Length of axis. */
-        LocationType Height; /*!< Heigth of axis. */
-        LocationType X; /*!< X-value of center coordinate. */
-        LocationType Y; /*!< Y-value of center coordinate. */
-        long int StartAngle; /*!< limiting angle in degrees */
-        long int Delta; /*!< limiting angle in degrees */
+        BDimension Thickness;
+                /*!< Trace width. */
+        BDimension Clearance;
+                /*!< Clearance with polygons. */
+        LocationType Width;
+                /*!< Length of axis. */
+        LocationType Height;
+                /*!< Heigth of axis. */
+        LocationType X;
+                /*!< X-value of center coordinate. */
+        LocationType Y;
+                /*!< Y-value of center coordinate. */
+        long int StartAngle;
+                /*!< limiting angle in degrees */
+        long int Delta;
+                /*!< limiting angle in degrees */
 } ArcType, *ArcTypePtr;
 
 /*!
@@ -566,8 +588,10 @@ typedef struct
 {
         ANYLINEFIELDS;
         BDimension Mask;
-        char *Name; /*!< Pad name. */
-        char *Number; /*!< 'Line' */
+        char *Name;
+                /*!< Pad name. */
+        char *Number;
+                /*!< 'Line' */
         void *Element;
         void *Spare;
 } PadType, *PadTypePtr;
@@ -578,14 +602,21 @@ typedef struct
 typedef struct
 {
         ANYOBJECTFIELDS;
-        BDimension Thickness; /*!< Diameter of annulus. */
-        BDimension Clearance; /*!< Clearance with polygons. */
+        BDimension Thickness;
+                /*!< Diameter of annulus.*/
+        BDimension Clearance;
+                /*!< Clearance with polygons.*/
         BDimension Mask;
-        BDimension DrillingHole; /*!< Diameter of drill hole. */
-        LocationType X; /*!< X-value of center. */
-        LocationType Y; /*!< Y-value of center. */
-        char *Name; /*!< Pin name. */
-        char *Number; /*!< Pin number. */
+        BDimension DrillingHole;
+                /*!< Diameter of drill hole.*/
+        LocationType X;
+                /*!< X-value of center point.*/
+        LocationType Y;
+                /*!< Y-value of center point.*/
+        char *Name;
+                /*!< Pin name. */
+        char *Number;
+                /*!< Pin number. */
         void *Element;
         void *Spare;
 } PinType, *PinTypePtr, **PinTypeHandle;
@@ -597,28 +628,45 @@ typedef struct
 {
         ANYOBJECTFIELDS;
         TextType Name[MAX_ELEMENTNAMES];
-                /*!< the elements names: \n
-                 * - description text, \n
-                 * - name on PCB second, \n
-                 * - value third \n
+                /*!< the elements names:\n
+                 * - description text,\n
+                 * - name on PCB second,\n
+                 * - value third\n
                  * see pcb/src/macro.h
                  */
-        LocationType MarkX; /*!< X-value of position mark. */
-        LocationType MarkY; /*!< Y-value of position mark. */
-        Cardinal PinN; /*!< Number of pins. */
-        Cardinal PinMax; /*!< Maximum number of pins. */
-        Cardinal PadN; /*!< Number of pads. */
-        Cardinal PadMax; /*!< Maximum number of pads. */
-        Cardinal LineN; /*!< Number of lines. */
-        Cardinal LineMax; /*!< Maximum number of lines. */
-        Cardinal ArcN; /*!< Number of arcs. */
-        Cardinal ArcMax; /*!< Maximum number of arcs. */
-        PinTypePtr Pin; /*!< Pins contained by the element. */
-        PadTypePtr Pad; /*!< Pads contained by the element. */
-        LineTypePtr Line; /*!< Lines contained by the element. */
-        ArcTypePtr Arc; /*!< Arcs contained by the element. */
+        LocationType MarkX;
+                /*!< X-value of position mark.*/
+        LocationType MarkY;
+                /*!< Y-value of position mark.*/
+        Cardinal PinN;
+                /*!< Pin Number.*/
+        Cardinal PinMax;
+                /*!< Maximum number of pins.*/
+        Cardinal PadN;
+                /*!< Pad Number.*/
+        Cardinal PadMax;
+                /*!< Maximum number of pads.*/
+        Cardinal LineN;
+                /*!< Line Number.*/
+        Cardinal LineMax;
+                /*!< Maximum number of lines. */
+        Cardinal ArcN;
+                /*!< Arc Number.*/
+        Cardinal ArcMax;
+                /*!< Maximum number of arcs.*/
+        PinTypePtr Pin;
+                /*!< Pins contained by the element.*/
+        PadTypePtr Pad;
+                /*!< Pads contained by the element.*/
+        LineTypePtr Line;
+                /*!< Lines contained by the element.*/
+        ArcTypePtr Arc;
+                /*!< Arcs contained by the element.*/
         BoxType VBox;
-        AttributeListType Attributes; /*!< List of attributes. */
+                /*!< Bounding box.*/
+        AttributeListType Attributes;
+                /*!< List of attributes. */
 } ElementType, *ElementTypePtr, **ElementTypeHandle;
+
 
 /* EOF */
