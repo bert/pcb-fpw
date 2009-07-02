@@ -1,22 +1,22 @@
 /*!
  * \file preview.c
- * \author Copyright (C) 2008 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2008 ... 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief A footprint preview widget.
  *
- * This program is free software; you can redistribute it and/or modify\n
- * it under the terms of the GNU General Public License as published by\n
- * the Free Software Foundation; either version 2 of the License, or\n
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.\n
  * \n
- * This program is distributed in the hope that it will be useful,\n
- * but WITHOUT ANY WARRANTY; without even the implied warranty of\n
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n
- * See the GNU General Public License for more details.\n
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.\n
  * \n
- * You should have received a copy of the GNU General Public License\n
- * along with this program; if not, write to:\n
- * the Free Software Foundation, Inc.,\n
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.\n
  */
 
 
@@ -40,7 +40,7 @@ typedef struct preview_arc
         GdkGC *gc;
                 /*!< Graphics Context */
         gboolean filled;
-                /*!< TRUE if the arc should be filled, producing a 'pie slice'. */
+                /*!< \c TRUE if the arc should be filled, producing a 'pie slice'. */
         gint x;
                 /*!< The x coordinate of the left edge of the bounding rectangle. */
         gint y;
@@ -88,7 +88,7 @@ typedef struct preview_polygon
         GdkGC *gc;
                 /*!< Graphics Context. */
         gboolean filled;
-                /*!< TRUE if the polygon should be filled. */
+                /*!< \c TRUE if the polygon should be filled. */
         GdkPoint *points;
                 /*!< An array of GdkPoint structures specifying the points
                  * making up the polygon. */
@@ -107,7 +107,7 @@ typedef struct preview_rectangle
         GdkGC *gc;
                 /*!< Graphics Context. */
         gboolean filled;
-                /*!< TRUE if the polygon should be filled.\n
+                /*!< \c TRUE if the polygon should be filled.\n
                 * The polygon is closed automatically, connecting the last
                 * point to the first point if necessary. */
         gint x;
@@ -128,7 +128,9 @@ static void
 preview_close_cb
 (
         GtkWidget * widget,
+                /*!< : is the caller widget.*/
         GtkWidget *preview_window
+		/*!< : is the widget to be closed.*/
 )
 {
         gtk_widget_destroy (preview_window);
@@ -137,12 +139,16 @@ preview_close_cb
 
 /*!
  * \brief Create a new backing pixmap of the appropriate size.
+ *
+ * \return \c TRUE when function is completed.
  */
 static gboolean
 preview_configure_event
 (
         GtkWidget *widget,
+                /*!< : is the (drawable) widget to contain the image.*/
         GdkEventConfigure *event
+		/*!< : is the configure event passed from the caller.*/
 )
 {
         gint depth = -1;
@@ -172,7 +178,9 @@ void
 preview_delete_event
 (
         GtkWidget *widget,
+		/*!< : is the widget to be deleted.*/
         GdkEvent *event
+		/*!< : is the delete event passed from the caller.*/
 )
 {
         gtk_widget_destroy (widget);
@@ -181,26 +189,35 @@ preview_delete_event
 
 /*!
  * \brief Set the foreground color of the Graphics Context.
+ *
+ * \return \c EXIT_SUCCESS when function is completed,
+ * \c EXIT_FAILURE when an eror occurred.
  */
 int
 preview_set_fg_color
 (
         GdkGC *gc,
+                /*!< : is the Graphics Context. */
         const char *color_name
+                /*!< : is a \c NULL terminated color name.*/
 )
 {
         if (!gc)
                 return (EXIT_FAILURE);
         if (!color_name)
         {
-                fprintf (stderr, "WARNING in %s():  name = NULL, setting color to magenta.\n",
+                fprintf (stderr, "WARNING in %s():  color_name = NULL, setting color to magenta.\n",
                         __FUNCTION__);
                 color_name = "magenta";
                 return (EXIT_FAILURE);
         }
         GdkColor color;
         if (!gdk_color_parse (color_name, &color))
-                return;
+        {
+                fprintf (stderr, "WARNING in %s():  could not parse color %s.\n",
+                        __FUNCTION__, color_name);
+                return (EXIT_FAILURE);
+        }
         gdk_gc_set_foreground (gc, &color);
         return (EXIT_SUCCESS);
 }
@@ -208,12 +225,34 @@ preview_set_fg_color
 
 /*!
  * \brief Set the fill mode of the Graphics Context.
+ *
+ * \return \c EXIT_SUCCESS when function is completed,
+ * \c EXIT_FAILURE when an eror occurred.
  */
 int
 preview_set_fill_mode
 (
         GdkGC *gc,
+                /*!< : is the Graphics Context. */
         GdkFill fill_mode
+                /*!< : determines how primitives are drawn.\n
+                 * Valid values are:\n
+                 * <ul>
+                 * <li> \c GDK_SOLID : draw with the foreground color.\n
+                 * <li> \c GDK_TILED : draw with a tiled pixmap.\n
+                 * <li> \c GDK_STIPPLED : draw using the stipple bitmap.\n
+                 * Pixels corresponding to bits in the stipple bitmap
+                 * that are set will be drawn in the foreground color;\n
+                 * pixels corresponding to bits that are not set will be
+                 * left untouched.
+                 * <li> \c GDK_OPAQUE_STIPPLED : draw using the stipple
+                 * bitmap.\n
+                 * Pixels corresponding to bits in the stipple bitmap
+                 * that are set will be drawn in the foreground color;\n
+                 * pixels corresponding to bits that are not set will be
+                 * drawn with the background color.\n
+                 * </ul>
+                 */
 )
 {
         if (!gc)
@@ -236,19 +275,41 @@ preview_set_fill_mode
 
 /*!
  * \brief Set the line capsulation of the Graphics Context.
+ *
+ * \return \c EXIT_SUCCESS when function is completed,
+ * \c EXIT_FAILURE when an eror occurs.
  */
 int
 preview_set_line_cap
 (
         GdkGC *gc,
+                /*!< : is the Graphics Context. */
         GdkCapStyle line_cap
+                /*!< : determines how the end of lines are drawn.\n
+                 * Valid values are:\n
+                 * <ul>
+                 * <li> \c GDK_CAP_NOT_LAST : the same as GDK_CAP_BUTT
+                 * for lines of non-zero width.\n
+                 * for zero width lines, the final point on the line
+                 * will not be drawn.
+                 * <li> \c GDK_CAP_BUTT : the ends of the lines are
+                 * drawn squared off and extending to the coordinates of
+                 * the end point.
+                 * <li> \c GDK_CAP_ROUND : the ends of the lines are
+                 * drawn as semicircles with the diameter equal to the
+                 * line width and centered at the end point.
+                 * <li> \c GDK_CAP_PROJECTING : the ends of the lines
+                 * are drawn squared off and extending half the width of
+                 * the line beyond the end point.
+                 * </ul>
+                 */
 )
 {
         if (!gc)
                 return (EXIT_FAILURE);
         if (!line_cap)
         {
-                fprintf (stderr, "WARNING in %s():  line cap = NULL, setting line cap  to ROUND.\n",
+                fprintf (stderr, "WARNING in %s():  line cap = NULL, setting line cap to ROUND.\n",
                         __FUNCTION__);
                 line_cap = GDK_CAP_ROUND;
                 return (EXIT_FAILURE);
@@ -269,12 +330,31 @@ preview_set_line_cap
 
 /*!
  * \brief Set the line style of the Graphics Context.
+ *
+ * \return \c EXIT_SUCCESS when function is completed,
+ * \c EXIT_FAILURE when an eror occurs.
  */
 int
 preview_set_line_style
 (
         GdkGC *gc,
+                /*!< : is the Graphics Context. */
         GdkLineStyle line_style
+                /*!< : determines how lines are drawn.\n
+                 * Valid values are:\n
+                 * <ul>
+                 * <li> \c GDK_LINE_SOLID : lines are drawn solid.
+                 * <li> \c GDK_LINE_ON_OFF_DASH : even segments are
+                 * drawn;\n
+                 * odd segments are not drawn.
+                 * <li> \c GDK_LINE_DOUBLE_DASH : even segments are
+                 * normally.\n
+                 * Odd segments are drawn in the background color if the
+                 * fill style is GDK_SOLID, or in the background color
+                 * masked by the stipple if the fill style is
+                 * GDK_STIPPLED.
+                 * </ul>
+                 */
 )
 {
         if (!gc)
@@ -302,16 +382,23 @@ preview_set_line_style
 
 /*!
  * \brief Set the line width of the Graphics Context.
+ *
+ * \return \c EXIT_SUCCESS when function is completed,
+ * \c EXIT_FAILURE when an eror occurs.
  */
 int
 preview_set_line_width
 (
         GdkGC *gc,
+                /*!< : is the Graphics Context. */
         gint line_width
+                /*!< : is the line width in pixels [px]. */
 )
 {
         if ((!gc) || (line_width == 0))
+	{
                 return (EXIT_FAILURE);
+	}
         GdkGCValues gc_values;
         gdk_gc_get_values (gc, &gc_values);
         if (line_width < 0)
@@ -344,17 +431,78 @@ preview_set_line_width
  * \brief Use a Graphics Context when drawing entities.
  *
  * If the passed Graphics Context is NULL , create a Graphics Context.
+ *
+ * \return \c EXIT_SUCCESS when function is completed,
+ * \c EXIT_FAILURE when an eror occurs.
  */
 int
 preview_use_gc
 (
         GdkDrawable *drawable,
+                /*!< : is an opaque structure representing an object that can
+                 * be drawn onto.\n
+                 * This can be a GdkPixmap, a GdkBitmap, or a GdkWindow.
+                 */
         GdkGC *gc,
+                /*!< : is the Graphics Context. */
         const char * color_name,
+                /*!< : is a \c NULL terminated color name.*/
         gint line_width,
+                /*!< : is the line width in pixels [px]. */
         GdkCapStyle line_cap,
+                /*!< : determines how the end of lines are drawn.\n
+                 * Valid values are:\n
+                 * <ul>
+                 * <li> \c GDK_CAP_NOT_LAST : the same as GDK_CAP_BUTT
+                 * for lines of non-zero width.\n
+                 * for zero width lines, the final point on the line
+                 * will not be drawn.
+                 * <li> \c GDK_CAP_BUTT : the ends of the lines are
+                 * drawn squared off and extending to the coordinates of
+                 * the end point.
+                 * <li> \c GDK_CAP_ROUND : the ends of the lines are
+                 * drawn as semicircles with the diameter equal to the
+                 * line width and centered at the end point.
+                 * <li> \c GDK_CAP_PROJECTING : the ends of the lines
+                 * are drawn squared off and extending half the width of
+                 * the line beyond the end point.
+                 * </ul>
+                 */
         GdkLineStyle line_style,
+                /*!< : determines how lines are drawn.\n
+                 * Valid values are:\n
+                 * <ul>
+                 * <li> \c GDK_LINE_SOLID : lines are drawn solid.
+                 * <li> \c GDK_LINE_ON_OFF_DASH : even segments are
+                 * drawn;\n
+                 * odd segments are not drawn.
+                 * <li> \c GDK_LINE_DOUBLE_DASH : even segments are
+                 * normally.\n
+                 * Odd segments are drawn in the background color if the
+                 * fill style is GDK_SOLID, or in the background color
+                 * masked by the stipple if the fill style is
+                 * GDK_STIPPLED.
+                 * </ul>
+                 */
         GdkFill fill_mode
+                /*!< : determines how primitives are drawn.\n
+                 * Valid values are:\n
+                 * <ul>
+                 * <li> \c GDK_SOLID : draw with the foreground color.\n
+                 * <li> \c GDK_TILED : draw with a tiled pixmap.\n
+                 * <li> \c GDK_STIPPLED : draw using the stipple bitmap.\n
+                 * Pixels corresponding to bits in the stipple bitmap
+                 * that are set will be drawn in the foreground color;\n
+                 * pixels corresponding to bits that are not set will be
+                 * left untouched.
+                 * <li> \c GDK_OPAQUE_STIPPLED : draw using the stipple
+                 * bitmap.\n
+                 * Pixels corresponding to bits in the stipple bitmap
+                 * that are set will be drawn in the foreground color;\n
+                 * pixels corresponding to bits that are not set will be
+                 * drawn with the background color.\n
+                 * </ul>
+                 */
 )
 {
         if (!drawable)
@@ -387,9 +535,9 @@ static void
 preview_draw_arc
 (
         GtkWidget *widget,
-                /*!< The toplevel widget containing the drawable. */
+                /*!< : is the toplevel widget containing the drawable. */
         preview_arc arc
-                /*!< A preview arc. */
+                /*!< : is a preview arc. */
 )
 {
         if (!arc)
@@ -421,8 +569,11 @@ static void
 preview_draw_background
 (
         GtkWidget *widget,
+                /*!< : is the toplevel widget containing the drawable. */
         gdouble x,
+                /*!< : is the X-coordinate of the left edge of the background. */
         gdouble y
+                /*!< : is the Y-coordinate of the top edge of the background. */
 )
 {
         GdkRectangle update_rect;
@@ -460,9 +611,9 @@ static void
 preview_draw_line
 (
         GtkWidget *widget,
-                /*!< The toplevel widget containing the drawable. */
+                /*!< : is the toplevel widget containing the drawable. */
         preview_line line
-                /*!< A preview line. */
+                /*!< : is a preview line. */
 )
 {
         if (!line)
@@ -489,8 +640,10 @@ static void
 preview_draw_pad
 (
         GtkWidget *widget
+                /*!< : is the toplevel widget containing the drawable. */
 )
 {
+        /*! \todo Add code here.*/
 }
 
 
@@ -501,8 +654,10 @@ static void
 preview_draw_pin
 (
         GtkWidget *widget
+                /*!< : is the toplevel widget containing the drawable. */
 )
 {
+        /*! \todo Add code here.*/
 }
 
 
@@ -513,9 +668,9 @@ static void
 preview_draw_polygon
 (
         GtkWidget *widget,
-                /*!< The toplevel widget containing the drawable. */
+                /*!< : is the toplevel widget containing the drawable. */
         preview_polygon polygon
-                /*!< A preview polygon. */
+                /*!< : is a preview polygon. */
 )
 {
         if (!polygon)
@@ -551,9 +706,9 @@ static void
 preview_draw_rectangle
 (
         GtkWidget *widget,
-                /*!< The toplevel widget containing the drawable. */
+                /*!< : is the toplevel widget containing the drawable. */
         preview_rectangle rectangle
-                /*!< A preview rectangle. */
+                /*!< : is a preview rectangle. */
 )
 {
         if (!rectangle)
@@ -576,12 +731,16 @@ preview_draw_rectangle
 
 /*!
  * \brief Redraw the screen from the backing pixmap.
+ *
+ * \return \c FALSE when function is completed.
  */
 static gboolean
 preview_expose_event
 (
         GtkWidget *widget,
+                /*!< : is the toplevel widget containing the drawable. */
         GdkEventExpose *event
+		/*!< : is the event passed from the caller.*/
 )
 {
         gdk_draw_drawable (widget->window,
@@ -593,16 +752,31 @@ preview_expose_event
                 event->area.y,
                 event->area.width,
                 event->area.height);
+
+        /*! \todo Add code here to draw footprints.*/
+
+
         return FALSE;
 }
 
 
+/*!
+ * \brief Create a preview window containing a pixmap with the
+ * footprint.
+ *
+ * The \c footprint_name variable is used in the dialog title.
+ *
+ * \return 0 when successfull.
+ */
 int
 preview_create_window
 (
         gchar *footprint_name,
+                /*!< : is the footprint type.*/
         gint width,
+                /*!< : is width of the pixmap.*/
         gint height
+                /*!< : is height of the pixmap.*/
 )
 {
         /* Create a preview window */
@@ -690,5 +864,3 @@ preview_create_window
 }
 
 /* EOF */
-
-
