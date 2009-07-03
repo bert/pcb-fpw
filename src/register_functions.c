@@ -4,28 +4,29 @@
  * \brief Contains helper functions to register package dependant functions
  * for both fpw (CLI) and pcb-gfpw (GUI) versions of the pcb FootPrintWizard.
  *
- * This mechanism is copied from the pcb plug-in/HID mechanism. \n
+ * This mechanism is copied from the pcb plug-in/HID mechanism.\n
  * The usual copyright disclaimer applies here and my thanks go to
- * DJ Delorie for creating this functionality in pcb. \n
- * The implementation is modified for the specific needs of pcb-gfpw/fpw. \n
+ * DJ Delorie for creating this functionality in pcb.\n
+ * The implementation is modified for the specific needs of pcb-gfpw/fpw.\n
  * fpw (FootPrintWizard) is a program for the creation of footprint files
  * to be used by the pcb layout application
- * (see http://pcb.sourgeforge.net) for the placement of parts in a pcb layout.\n\n
+ * (see http://pcb.sourgeforge.net) for the placement of parts in a pcb layout.\n
+ * \n
  *
- * This program is free software; you can redistribute it and/or modify\n
- * it under the terms of the GNU General Public License as published by\n
- * the Free Software Foundation; either version 2 of the License, or\n
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.\n
  * \n
- * This program is distributed in the hope that it will be useful,\n
- * but WITHOUT ANY WARRANTY; without even the implied warranty of\n
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n
- * See the GNU General Public License for more details.\n
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.\n
  * \n
- * You should have received a copy of the GNU General Public License\n
- * along with this program; if not, write to:\n
- * the Free Software Foundation, Inc.,\n
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.\n
  */
 
 
@@ -39,15 +40,17 @@
 typedef struct
 {
         char *name;
-                /*!< This is matched against fuction names. */
+                /*!< This name is matched against fuction names.*/
         int (*trigger_cb) (int argc, char **argv, int x, int y);
-                /*!< Called when the function is called.  If this function returns
-                 * non-zero, no further actions will be invoked for this event.
+                /*!< Is called when the function is called.\n
+                 * If this function returns non-zero, no further actions
+                 * will be invoked for this event.
                  */
         const char *description;
-                /*!< Short description that sometimes accompanies the name. */
+                /*!< This is a short description that sometimes
+                 * accompanies the name.*/
         const char *syntax;
-                /*!< Full allowed syntax; use \n to separate lines. */
+                /*!< Full allowed syntax; use \\n to separate lines.*/
 } fpw_function_t;
 
 
@@ -57,19 +60,37 @@ typedef struct
 typedef struct fpw_function_node_t
 {
         struct fpw_function_node_t *next;
+                /*!< The next function node.*/
         fpw_function_t *functions;
+                /*!< The next function.*/
         int n;
+                /*!< The number of function nodes ?.*/
 } fpw_function_node_t;
+
 
 fpw_function_node_t *fpw_function_nodes = 0;
 
+
 static int n_functions = 0;
+
 
 static fpw_function_t *all_functions = 0;
 
 
+/*!
+ * \brief Compare the function names.
+ *
+ * \return \c TRUE if function names are equal,
+ * \c FALSE if the functions have different names.
+ */
 static int
-fpw_function_sort (const void *va, const void *vb)
+fpw_function_sort
+(
+        const void *va,
+                /*!< : this is the pointer to the first function.*/
+        const void *vb
+                /*!< : this is the pointer to the second function.*/
+)
 {
         fpw_function_t *a = (fpw_function_t *) va;
         fpw_function_t *b = (fpw_function_t *) vb;
@@ -79,10 +100,15 @@ fpw_function_sort (const void *va, const void *vb)
 
 /*!
  * \brief Find the function as described in \c name in the register.
+ *
  * \return 0 if a NULL pointer is passed.
  */
 fpw_function_t *
-fpw_find_function (const char *name)
+fpw_find_function
+(
+        const char *name
+                /*!< : this is the function name.*/
+)
 {
         fpw_function_node_t *gf;
         int i, n, lower, upper;
@@ -123,10 +149,25 @@ fpw_find_function (const char *name)
 
 
 /*!
- * \brief .
+ * \brief Find the trigger callback of the registered function.
+ *
+ * I guess this is the worker part of the function.
+ *
+ * \todo The registering and usage of functions still needs to be
+ * implemented in proper way.
+ *
+ * \return the trigger callback of the registered function.
  */
 int
-fpw_functionv (const char *name, int argc, char **argv)
+fpw_functionv
+(
+        const char *name,
+                /*!< : this is the function name.*/
+        int argc,
+                /*!< : number of arguments.*/
+        char **argv
+                /*!< : array of argument variables.*/
+)
 {
         int x = 0;
         int y = 0;
@@ -148,10 +189,21 @@ fpw_functionv (const char *name, int argc, char **argv)
 
 
 /*!
- * \brief .
+ * \brief Find the trigger callback of the registered function.
+ *
+ * I guess this is the front end part of the function.
+ *
+ * \todo The registering and usage of functions still needs to be
+ * implemented in proper way.
+ *
+ * \return the trigger callback of the registered function.
  */
 int
-fpw_function (const char *name)
+fpw_function
+(
+        const char *name
+                /*!< : this is the function name.*/
+)
 {
         return fpw_functionv (name, 0, 0);
 }
@@ -161,15 +213,25 @@ fpw_function (const char *name)
 
 
 /*!
- * \brief .
+ * \brief Register all functions related to packages/footprints.
+ *
+ * \todo The registering and usage of functions still needs to be
+ * implemented in proper way.
  */
 void
-fpw_register_functions (fpw_function_t * a, int n)
+fpw_register_functions
+(
+        fpw_function_t * a,
+        int n
+)
 {
         fpw_function_node_t *gf;
 
-        /* printf("%d functions registered\n", n); */
-        gf = (fpw_function_node_t *) malloc (sizeof (fpw_function_node_t));
+        if (verbose)
+        {
+                fprintf(stderr, "%d functions registered.\n", n);
+        }
+	gf = (fpw_function_node_t *) malloc (sizeof (fpw_function_node_t));
         gf->next = fpw_function_nodes;
         fpw_function_nodes = gf;
         gf->functions = a;
