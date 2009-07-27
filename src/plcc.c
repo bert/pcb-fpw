@@ -1,7 +1,7 @@
 /*!
  * \file plcc.c
  * \author Copyright (C) 2008 ... 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
- * \brief Predefined values for PGA footprints.
+ * \brief Functions for PLCC footprints.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
