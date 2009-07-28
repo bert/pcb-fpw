@@ -262,7 +262,9 @@ int
 select_exceptions_create_window
 (
         gint number_of_rows,
+                /*!< : is the number of pin/pad rows (selection buttons).*/
         gint number_of_columns
+                /*!< : is the number of pin/pad columns (selection buttons).*/
 )
 {
         /* Return if a "select exceptions" window exist. */
