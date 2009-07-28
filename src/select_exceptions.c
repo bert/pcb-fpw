@@ -3,20 +3,20 @@
  * \author Copyright (C) 2008 .. 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief A widget for selecting exception pin/pads in an array type footprint.
  *
- * This program is free software; you can redistribute it and/or modify\n
- * it under the terms of the GNU General Public License as published by\n
- * the Free Software Foundation; either version 2 of the License, or\n
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.\n
  * \n
- * This program is distributed in the hope that it will be useful,\n
- * but WITHOUT ANY WARRANTY; without even the implied warranty of\n
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n
- * See the GNU General Public License for more details.\n
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.\n
  * \n
- * You should have received a copy of the GNU General Public License\n
- * along with this program; if not, write to:\n
- * the Free Software Foundation, Inc.,\n
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.\n
  */
 
 
@@ -35,9 +35,14 @@
 typedef struct
 {
         GtkWidget *button_widget;
+                /*!< : is the button widget appearing in the dialog window.*/
         gchar *name;
+                /*!< : is the name of the button widget.*/
         gboolean active;
+                /*!< : is the state of the button,*/
         gint id;
+                /*!< : is the identificatoion number (sequential) of the
+                 * button.*/
 } SelectionButtonSet;
 
 static SelectionButtonSet selection_buttons[MAX_ROWS * MAX_COLUMNS];
@@ -48,14 +53,18 @@ GtkWidget *select_exceptions_window = NULL;
 /*!
  * \brief The "Clear" button is clicked.
  *
- * - set the "active" field of all the selection_buttons members to \c TRUE.
- * - set all selection buttons in the GUI to the active state.
+ * <ul>
+ * <li>set the "active" field of all the selection_buttons members to \c TRUE.
+ * <li>set all selection buttons in the GUI to the active state.
+ * </ul>
  */
 static void
 select_exceptions_clear_cb
 (
         GtkWidget *widget,
+                /*!< : is the caller widget.*/
         GtkWidget *window
+                /*!< : is the window widget.*/
 )
 {
         gint i;
@@ -78,7 +87,8 @@ select_exceptions_clear_cb
         {
                 for (j = 0; (j < number_of_columns); j++)
                 /* all columns of a row [1 .. n]
-                 * where j is a member of the positive Natural numbers (N) */
+                 * where j is a member of the positive Natural numbers
+                 * (N). */
                 {
                         selection_button = &selection_buttons[selection_button_index];
                         selection_button->active = FALSE;
@@ -94,13 +104,18 @@ select_exceptions_clear_cb
 /*!
  * \brief The "Close" button is clicked.
  *
- * - close the window (destroy the widget).
+ * <ul>
+ * <li>close the window (destroy the widget).
+ * <li>reset the pointer value of the select exceptions window (global).
+ * </ul>
  */
 static void
 select_exceptions_close_cb
 (
         GtkWidget *widget,
+                /*!< : is the caller widget.*/
         GtkWidget *window
+                /*!< : is the window widget to close (destroy).*/
 )
 {
         gtk_widget_destroy (window);
@@ -110,12 +125,19 @@ select_exceptions_close_cb
 
 /*!
  * \brief Delete the window.
+ *
+ * <ul>
+ * <li>close the window (destroy the widget).
+ * <li>reset the pointer value of the select exceptions window (global).
+ * </ul>
  */
-void
+static void
 select_exceptions_delete_event
 (
         GtkWidget *widget,
+                /*!< : is the caller widget.*/
         GdkEvent *event
+		/*!< : is the event passed from the caller.*/
 )
 {
         gtk_widget_destroy (widget);
@@ -126,14 +148,21 @@ select_exceptions_delete_event
 /*!
  * \brief The "OK" button is clicked.
  *
- * - save the state of all selection buttons.
- * - close the window (destroy the widget).
+ * <ul>
+ * <li>save the state of all selection buttons.
+ * <li>collect all the exceptions in the \c pin_pad_exception_string
+ * (global).
+ * <li>close the window (destroy the widget).
+ * <li>reset the pointer value of the select exceptions window (global).
+ * </ul>
  */
 static void
 select_exceptions_ok_cb
 (
         GtkWidget *widget,
+                /*!< : is the caller widget (the OK button).*/
         GtkWidget *window
+                /*!< : is the window widget to close (destroy).*/
 )
 {
         /* Lookup all togglebuttons and save the state in the exceptions
@@ -147,12 +176,13 @@ select_exceptions_ok_cb
         /* parse the array for active selection buttons. */
         for (i = 0; (i < number_of_rows); i++)
         /* one row at a time [A .. Y, AA .. YY] etc.
-         * where i is one or more letters of the alphabet,
-         * excluding "I", "O", "Q", "S" and "Z" */
+         * where rowletter[i] is one or more letters of the alphabet,
+         * excluding all instances with "I", "O", "Q", "S" and "Z". */
         {
                 for (j = 0; (j < number_of_columns); j++)
                 /* all columns of a row [1 .. n]
-                 * where j is a member of the positive Natural numbers (N) */
+                 * where j is a member of the positive Natural numbers
+		 * (N). */
                 {
                         gchar *selection_button_name = g_strdup_printf ("%s%d",
                                 (row_letters[i]), (j + 1));
@@ -187,14 +217,19 @@ select_exceptions_ok_cb
 /*!
  * \brief One of the selection buttons is clicked.
  *
- * - lookup the selection button in the array \c selection_button.
- * - save the state of the selection button in \c selection_button->active.
+ * <ul>
+ * <li>lookup the selection button in the array \c selection_button.
+ * <li>save the state of the selection button in \c
+ * selection_button->active.
+ * </ul>
  */
 static void
 select_exceptions_selection_button_clicked_cb
 (
         GtkWidget *widget,
+                /*!< : is the caller widget (the clicked button).*/
         GtkWidget *window
+                /*!< : is the parent window widget of the clicked button).*/
 )
 {
         const gchar *widget_name;
@@ -214,9 +249,14 @@ select_exceptions_selection_button_clicked_cb
 /*!
  * \brief Create a selection exceptions window.
  *
- * - create only one single window with a title "select exceptions".
- * - depending on the package type create the pattern of selection buttons.
- * - add "Close", "Clear" and "OK" stock buttons.
+ * <ul>
+ * <li>create only <b>one</b> single window with a title "select exceptions".
+ * <li>depending on the package type create the pattern of selection
+ * buttons.
+ * <li>add "Close", "Clear" and "OK" stock buttons.
+ * </ul>
+ *
+ * \return \c EXIT_SUCCESS when the function is completed.
  */
 int
 select_exceptions_create_window
@@ -381,7 +421,7 @@ select_exceptions_create_window
         gtk_widget_show_all (select_exceptions_window);
         /* Enter the GTK main loop */
         gtk_main ();
-        return 0;
+        return (EXIT_SUCCESS);
 }
 
 /* EOF */
