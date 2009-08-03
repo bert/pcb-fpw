@@ -103,6 +103,8 @@ to_get_default_footprint_values
 /*!
  * \brief Set GUI constraints for the TO package type.
  *
+ * This function is only to be compiled for GUI targets.
+ *
  * \return \c EXIT_SUCCESS when the function is completed.
  */
 #if GUI
@@ -151,7 +153,8 @@ to_set_gui_constraints
 /*!
  * \brief Write a TO92 footprint for a transistor package.
  *
- * \return \c EXIT_SUCCESS when the function is completed.
+ * \return \c EXIT_FAILURE when errors were encountered,
+ * \c EXIT_SUCCESS when OK.
  */
 int
 to_write_footprint_to92 ()
@@ -334,6 +337,9 @@ to_function_list[] =
 };
 
 
+/*!
+ * \brief A list containing all TO related functions.
+ */
 REGISTER_FUNCTIONS (to_function_list)
 
 
