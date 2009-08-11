@@ -43,6 +43,7 @@ bga_create_element ()
         FlagType pad_flag;
         ElementTypePtr element;
 
+        element = malloc (sizeof (ElementTypePtr));
         if (!element)
         {
                 if (verbose)
