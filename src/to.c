@@ -74,7 +74,7 @@ to_get_default_footprint_values
                 pad_length = 0.0;
                 pad_width = 0.0;
                 pad_shape = g_strdup ("rounded pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;

@@ -399,7 +399,7 @@ dip_drc ()
         /* Check for allowed pad shapes. */
         switch (pad_shapes_type)
         {
-                case NO_SHAPE:
+                case PAD_HAS_NO_SHAPE:
                 {
                         if (verbose)
                                 g_log ("", G_LOG_LEVEL_WARNING,
@@ -407,19 +407,19 @@ dip_drc ()
                         result = EXIT_FAILURE;
                         break;
                 }
-                case ROUND:
+                case PAD_IS_ROUND:
                 {
                         break;
                 }
-                case SQUARE:
+                case PAD_IS_SQUARE:
                 {
                         break;
                 }
-                case OCTAGONAL:
+                case PAD_IS_OCTAGONAL:
                 {
                         break;
                 }
-                case ROUND_ELONGATED:
+                case PAD_IS_ROUND_ELONGATED:
                 {
                         break;
                 }
@@ -671,7 +671,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 2;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -703,7 +703,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 3;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -735,7 +735,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 4;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -767,7 +767,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 4;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -799,7 +799,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 5;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -831,7 +831,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 7;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -862,7 +862,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 7;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -894,7 +894,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 8;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -925,7 +925,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 8;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -957,7 +957,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 9;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -989,7 +989,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 9;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -1021,7 +1021,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 10;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -1052,7 +1052,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 10;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -1084,7 +1084,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 11;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -1115,7 +1115,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 11;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -1147,7 +1147,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 12;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -1179,7 +1179,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 12;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -1211,7 +1211,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 12;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -1243,7 +1243,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 14;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -1274,7 +1274,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 14;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -1306,7 +1306,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 14;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -1338,7 +1338,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 16;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -1370,7 +1370,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 16;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -1401,7 +1401,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 18;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -1432,7 +1432,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 19;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -1464,7 +1464,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 20;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -1495,7 +1495,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 21;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -1527,7 +1527,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 24;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -1558,7 +1558,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 25;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -1589,7 +1589,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 26;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;
@@ -1620,7 +1620,7 @@ dip_get_default_footprint_values
                 count_x = 0;
                 count_y = 32;
                 pad_shape = g_strdup ("circular pad");
-                pad_shapes_type = ROUND;
+                pad_shapes_type = PAD_IS_ROUND;
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
                 pad_clearance = 15;

@@ -50,7 +50,7 @@ smt_get_default_footprint_values
                 pad_length = 0.00;
                 pad_width = 0.00;
                 pad_shape = g_strdup ("circular pad, elongated");
-                pad_shapes_type = ROUND_ELONGATED;
+                pad_shapes_type = PAD_IS_ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;

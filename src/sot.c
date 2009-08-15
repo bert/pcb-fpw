@@ -453,7 +453,7 @@ sot_drc ()
         /* Check for allowed pad shapes. */
         switch (pad_shapes_type)
         {
-                case NO_SHAPE:
+                case PAD_HAS_NO_SHAPE:
                 {
                         if (verbose)
                                 g_log ("", G_LOG_LEVEL_WARNING,
@@ -461,7 +461,7 @@ sot_drc ()
                         result = EXIT_FAILURE;
                         break;
                 }
-                case ROUND:
+                case PAD_IS_ROUND:
                 {
                         if (verbose)
                                 g_log ("", G_LOG_LEVEL_WARNING,
@@ -469,11 +469,11 @@ sot_drc ()
                         result = EXIT_FAILURE;
                         break;
                 }
-                case SQUARE:
+                case PAD_IS_SQUARE:
                 {
                         break;
                 }
-                case OCTAGONAL:
+                case PAD_IS_OCTAGONAL:
                 {
                         if (verbose)
                                 g_log ("", G_LOG_LEVEL_WARNING,
@@ -481,7 +481,7 @@ sot_drc ()
                         result = EXIT_FAILURE;
                         break;
                 }
-                case ROUND_ELONGATED:
+                case PAD_IS_ROUND_ELONGATED:
                 {
                         break;
                 }
@@ -747,7 +747,7 @@ sot_get_default_footprint_values
                 pad_length = 0.85;
                 pad_width = 0.30;
                 pad_shape = g_strdup ("circular pad, elongated");
-                pad_shapes_type = ROUND_ELONGATED;
+                pad_shapes_type = PAD_IS_ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -783,7 +783,7 @@ sot_get_default_footprint_values
                 pad_length = 0.95;
                 pad_width = 0.30;
                 pad_shape = g_strdup ("circular pad, elongated");
-                pad_shapes_type = ROUND_ELONGATED;
+                pad_shapes_type = PAD_IS_ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -816,7 +816,7 @@ sot_get_default_footprint_values
                 pad_length = 0.90;
                 pad_width = 0.50;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -849,7 +849,7 @@ sot_get_default_footprint_values
                 pad_length = 1.00;
                 pad_width = 0.40;
                 pad_shape = g_strdup ("circular pad, elongated");
-                pad_shapes_type = ROUND_ELONGATED;
+                pad_shapes_type = PAD_IS_ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -880,7 +880,7 @@ sot_get_default_footprint_values
                 pad_length = 0.85;
                 pad_width = 0.55;
                 pad_shape = g_strdup ("circular pad, elongated");
-                pad_shapes_type = ROUND_ELONGATED;
+                pad_shapes_type = PAD_IS_ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -913,7 +913,7 @@ sot_get_default_footprint_values
                 pad_length = 0.95;
                 pad_width = 0.40;
                 pad_shape = g_strdup ("circular pad, elongated");
-                pad_shapes_type = ROUND_ELONGATED;
+                pad_shapes_type = PAD_IS_ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -946,7 +946,7 @@ sot_get_default_footprint_values
                 pad_length = 0.95;
                 pad_width = 0.40;
                 pad_shape = g_strdup ("circular pad, elongated");
-                pad_shapes_type = ROUND_ELONGATED;
+                pad_shapes_type = PAD_IS_ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -979,7 +979,7 @@ sot_get_default_footprint_values
                 pad_length = 0.90;
                 pad_width = 0.40;
                 pad_shape = g_strdup ("circular pad, elongated");
-                pad_shapes_type = ROUND_ELONGATED;
+                pad_shapes_type = PAD_IS_ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1010,7 +1010,7 @@ sot_get_default_footprint_values
                 pad_length = 1.05;
                 pad_width = 0.50;
                 pad_shape = g_strdup ("circular pad, elongated");
-                pad_shapes_type = ROUND_ELONGATED;
+                pad_shapes_type = PAD_IS_ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1045,7 +1045,7 @@ sot_get_default_footprint_values
                 pad_length = 0.95;
                 pad_width = 0.50;
                 pad_shape = g_strdup ("circular pad, elongated");
-                pad_shapes_type = ROUND_ELONGATED;
+                pad_shapes_type = PAD_IS_ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1078,7 +1078,7 @@ sot_get_default_footprint_values
                 pad_length = 1.10;
                 pad_width = 0.50;
                 pad_shape = g_strdup ("circular pad, elongated");
-                pad_shapes_type = ROUND_ELONGATED;
+                pad_shapes_type = PAD_IS_ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1111,7 +1111,7 @@ sot_get_default_footprint_values
                 pad_length = 1.10;
                 pad_width = 0.50;
                 pad_shape = g_strdup ("circular pad, elongated");
-                pad_shapes_type = ROUND_ELONGATED;
+                pad_shapes_type = PAD_IS_ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1146,7 +1146,7 @@ sot_get_default_footprint_values
                 pad_length = 1.10;
                 pad_width = 0.55;
                 pad_shape = g_strdup ("circular pad, elongated");
-                pad_shapes_type = ROUND_ELONGATED;
+                pad_shapes_type = PAD_IS_ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1181,7 +1181,7 @@ sot_get_default_footprint_values
                 pad_length = 1.10;
                 pad_width = 0.50;
                 pad_shape = g_strdup ("circular pad, elongated");
-                pad_shapes_type = ROUND_ELONGATED;
+                pad_shapes_type = PAD_IS_ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1220,7 +1220,7 @@ sot_get_default_footprint_values
                 pad_length = 1.00;
                 pad_width = 0.50;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1259,7 +1259,7 @@ sot_get_default_footprint_values
                 pad_length = 1.00;
                 pad_width = 0.65;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1296,7 +1296,7 @@ sot_get_default_footprint_values
                 pad_length = 1.00;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1335,7 +1335,7 @@ sot_get_default_footprint_values
                 pad_length = 1.00;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1374,7 +1374,7 @@ sot_get_default_footprint_values
                 pad_length = 1.00;
                 pad_width = 0.65;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1419,7 +1419,7 @@ sot_get_default_footprint_values
                 pad_length = 1.30;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("circular pad, elongated");
-                pad_shapes_type = ROUND_ELONGATED;
+                pad_shapes_type = PAD_IS_ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1452,7 +1452,7 @@ sot_get_default_footprint_values
                 pad_length = 1.05;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1491,7 +1491,7 @@ sot_get_default_footprint_values
                 pad_length = 1.05;
                 pad_width = 0.65;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1528,7 +1528,7 @@ sot_get_default_footprint_values
                 pad_length = 1.00;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1565,7 +1565,7 @@ sot_get_default_footprint_values
                 pad_length = 1.05;
                 pad_width = 0.65;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1603,7 +1603,7 @@ sot_get_default_footprint_values
                 pad_length = 1.15;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1642,7 +1642,7 @@ sot_get_default_footprint_values
                 pad_length = 1.25;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1677,7 +1677,7 @@ sot_get_default_footprint_values
                 pad_length = 1.25;
                 pad_width = 0.65;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1713,7 +1713,7 @@ sot_get_default_footprint_values
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1752,7 +1752,7 @@ sot_get_default_footprint_values
                 pad_length = 1.10;
                 pad_width = 0.55;
                 pad_shape = g_strdup ("circular pad, elongated");
-                pad_shapes_type = ROUND_ELONGATED;
+                pad_shapes_type = PAD_IS_ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1791,7 +1791,7 @@ sot_get_default_footprint_values
                 pad_length = 1.10;
                 pad_width = 0.55;
                 pad_shape = g_strdup ("circular pad, elongated");
-                pad_shapes_type = ROUND_ELONGATED;
+                pad_shapes_type = PAD_IS_ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1832,7 +1832,7 @@ sot_get_default_footprint_values
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1874,7 +1874,7 @@ sot_get_default_footprint_values
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1919,7 +1919,7 @@ sot_get_default_footprint_values
                 courtyard_width = 3.60;
                 courtyard_line_width = 0.05;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1952,7 +1952,7 @@ sot_get_default_footprint_values
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -1989,7 +1989,7 @@ sot_get_default_footprint_values
                 pad_length = 1.10;
                 pad_width = 0.65;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -2026,7 +2026,7 @@ sot_get_default_footprint_values
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -2066,7 +2066,7 @@ sot_get_default_footprint_values
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -2107,7 +2107,7 @@ sot_get_default_footprint_values
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -2147,7 +2147,7 @@ sot_get_default_footprint_values
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -2187,7 +2187,7 @@ sot_get_default_footprint_values
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -2226,7 +2226,7 @@ sot_get_default_footprint_values
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -2267,7 +2267,7 @@ sot_get_default_footprint_values
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -2306,7 +2306,7 @@ sot_get_default_footprint_values
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -2345,7 +2345,7 @@ sot_get_default_footprint_values
                 pad_length = 1.05;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -2384,7 +2384,7 @@ sot_get_default_footprint_values
                 pad_length = 1.20;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("circular pad, elongated");
-                pad_shapes_type = ROUND_ELONGATED;
+                pad_shapes_type = PAD_IS_ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -2417,7 +2417,7 @@ sot_get_default_footprint_values
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rounded pad, elongated");
-                pad_shapes_type = ROUND_ELONGATED;
+                pad_shapes_type = PAD_IS_ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -2446,7 +2446,7 @@ sot_get_default_footprint_values
                 pad_length = 2.05;
                 pad_width = 0.65;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = TRUE;
                 thermal_length = 2.05;
                 thermal_width = 3.20;
@@ -2477,7 +2477,7 @@ sot_get_default_footprint_values
                 pad_length = 2.15;
                 pad_width = 0.95;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = TRUE;
                 thermal_length = 2.15;
                 thermal_width = 3.15;
@@ -2510,7 +2510,7 @@ sot_get_default_footprint_values
                 pad_length = 2.15;
                 pad_width = 0.95;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = TRUE;
                 thermal_length = 2.15;
                 thermal_width = 3.25;
@@ -2543,7 +2543,7 @@ sot_get_default_footprint_values
                 pad_length = 1.95;
                 pad_width = 0.90;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = TRUE;
                 thermal_length = 1.95;
                 thermal_width = 3.20;
@@ -2576,7 +2576,7 @@ sot_get_default_footprint_values
                 pad_length = 1.90;
                 pad_width = 0.95;
                 pad_shape = g_strdup ("rectangular pad");
-                pad_shapes_type = SQUARE;
+                pad_shapes_type = PAD_IS_SQUARE;
                 thermal = TRUE;
                 thermal_length = 1.90;
                 thermal_width = 3.25;

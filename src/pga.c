@@ -60,7 +60,7 @@ pga_drc ()
         /* Check for allowed pad shapes. */
         switch (pad_shapes_type)
         {
-                case NO_SHAPE:
+                case PAD_HAS_NO_SHAPE:
                 {
                         if (verbose)
                                 g_log ("", G_LOG_LEVEL_WARNING,
@@ -68,11 +68,11 @@ pga_drc ()
                         result = EXIT_FAILURE;
                         break;
                 }
-                case ROUND:
+                case PAD_IS_ROUND:
                 {
                         break;
                 }
-                case SQUARE:
+                case PAD_IS_SQUARE:
                 {
                         if (verbose)
                                 g_log ("", G_LOG_LEVEL_WARNING,
@@ -80,7 +80,7 @@ pga_drc ()
                         result = EXIT_FAILURE;
                         break;
                 }
-                case OCTAGONAL:
+                case PAD_IS_OCTAGONAL:
                 {
                         if (verbose)
                                 g_log ("", G_LOG_LEVEL_WARNING,
@@ -88,7 +88,7 @@ pga_drc ()
                         result = EXIT_FAILURE;
                         break;
                 }
-                case ROUND_ELONGATED:
+                case PAD_IS_ROUND_ELONGATED:
                 {
                         if (verbose)
                                 g_log ("", G_LOG_LEVEL_WARNING,
