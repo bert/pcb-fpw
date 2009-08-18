@@ -20,6 +20,7 @@
  */
 
 
+#include "bga.h"
 #include "register_functions.c"
 
 
