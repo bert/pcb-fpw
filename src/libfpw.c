@@ -39,10 +39,7 @@
 
 #define FPW_VERSION "0.0.10"
 
-#include "globals.h"
-
-
-AttributeTypePtr create_new_attribute (AttributeListTypePtr list, char *name, char *value);
+#include "libfpw.h"
 
 
 /*!
