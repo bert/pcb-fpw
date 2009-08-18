@@ -3774,7 +3774,8 @@ void
 on_preview_button_clicked              (GtkButton       *button,
                                         gpointer         user_data)
 {
-        preview_create_window (footprint_name, 300, 200);
+        preview_element = current_element;
+        preview_create_window (preview_element);
 }
 
 
