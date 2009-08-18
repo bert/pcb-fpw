@@ -58,7 +58,7 @@
         /*!< Convert mil to mm. */
 #define MM_TO_MIL 39.37007874
         /*!< Convert mm to mil. */
-#define	TAN_22_5_DEGREE_2 0.207106781
+#define TAN_22_5_DEGREE_2 0.207106781
         /*!< For convenience: 0.5 * tan (22.5) */
 
 #ifndef MIN
@@ -106,12 +106,12 @@
          * Primarily used for pads used as fiducials. */
 
 /* Object flag values. */
-#define	NOFLAG 0x0000
-#define	PINFLAG 0x0001
+#define NOFLAG 0x0000
+#define PINFLAG 0x0001
         /*!< is a pin. */
-#define	VIAFLAG 0x0002
+#define VIAFLAG 0x0002
         /*!< is a via. */
-#define	FOUNDFLAG 0x0004
+#define FOUNDFLAG 0x0004
         /*!< used by 'FindConnection()'. */
 #define HOLEFLAG 0x0008
         /*!< pin or via is only a hole. */
@@ -127,20 +127,20 @@
         /*!< pins/vias clear these polygons. */
 #define HIDENAMEFLAG 0x0010
         /*!< hide the element name. */
-#define	DISPLAYNAMEFLAG 0x0020
+#define DISPLAYNAMEFLAG 0x0020
         /*!< display the names of pins/pads of an element. */
 #define CLEARLINEFLAG 0x0020
         /*!< line doesn't touch polygons. */
 #define FULLPOLYFLAG 0x0020
         /*!< full polygon is drawn (i.e. all parts instead of only the
          * biggest one). */
-#define	SELECTEDFLAG 0x0040
+#define SELECTEDFLAG 0x0040
         /*!< object has been selected. */
-#define	ONSOLDERFLAG 0x0080
+#define ONSOLDERFLAG 0x0080
         /*!< element is on bottom side. */
 #define AUTOFLAG 0x0080
         /*!< line/via created by auto-router. */
-#define	SQUAREFLAG 0x0100
+#define SQUAREFLAG 0x0100
         /*!< pin is square, not round. */
 #define RUBBERENDFLAG 0x0200
         /*!< indicates one end already rubber banding same as warn flag
@@ -164,27 +164,27 @@
         /*!< marker to avoid re-visiting an object. */
 
 /* Elements name index within the structure. */
-#define	DESCRIPTION_INDEX 0
-#define	NAMEONPCB_INDEX 1
-#define	VALUE_INDEX 2
+#define DESCRIPTION_INDEX 0
+#define NAMEONPCB_INDEX 1
+#define VALUE_INDEX 2
 
 /* Access macros for elements name structure. */
-#define	NAME_INDEX(p)           (TEST_FLAG(NAMEONPCBFLAG,(p)) ? NAMEONPCB_INDEX :\
+#define NAME_INDEX(p)           (TEST_FLAG(NAMEONPCBFLAG,(p)) ? NAMEONPCB_INDEX :\
                                 (TEST_FLAG(DESCRIPTIONFLAG, (p)) ? \
                                 DESCRIPTION_INDEX : VALUE_INDEX))
-#define	ELEMENT_NAME(p,e)	((e)->Name[NAME_INDEX((p))].TextString)
-#define	DESCRIPTION_NAME(e)     ((e)->Name[DESCRIPTION_INDEX].TextString)
-#define	NAMEONPCB_NAME(e)	((e)->Name[NAMEONPCB_INDEX].TextString)
-#define	VALUE_NAME(e)		((e)->Name[VALUE_INDEX].TextString)
-#define	ELEMENT_TEXT(p,e)	((e)->Name[NAME_INDEX((p))])
-#define	DESCRIPTION_TEXT(e)	((e)->Name[DESCRIPTION_INDEX])
-#define	NAMEONPCB_TEXT(e)	((e)->Name[NAMEONPCB_INDEX])
-#define	VALUE_TEXT(e)		((e)->Name[VALUE_INDEX])
+#define ELEMENT_NAME(p,e)       ((e)->Name[NAME_INDEX((p))].TextString)
+#define DESCRIPTION_NAME(e)     ((e)->Name[DESCRIPTION_INDEX].TextString)
+#define NAMEONPCB_NAME(e)       ((e)->Name[NAMEONPCB_INDEX].TextString)
+#define VALUE_NAME(e)           ((e)->Name[VALUE_INDEX].TextString)
+#define ELEMENT_TEXT(p,e)       ((e)->Name[NAME_INDEX((p))])
+#define DESCRIPTION_TEXT(e)     ((e)->Name[DESCRIPTION_INDEX])
+#define NAMEONPCB_TEXT(e)       ((e)->Name[NAMEONPCB_INDEX])
+#define VALUE_TEXT(e)           ((e)->Name[VALUE_INDEX])
 
 /*!
  * \brief Routine for testing flags.
  */
-#define	TEST_FLAG(F,P) ((P)->Flags.f & (F) ? 1 : 0)
+#define TEST_FLAG(F,P) ((P)->Flags.f & (F) ? 1 : 0)
 
 /*!
  * \brief Pin loop shortcut.
@@ -309,11 +309,11 @@ typedef struct
  */
 typedef struct
 {
-  LocationType X;
-  LocationType Y;
-  LocationType X2;
-  LocationType Y2;
-  long int ID;
+        LocationType X;
+        LocationType Y;
+        LocationType X2;
+        LocationType Y2;
+        long int ID;
 } PointType, *PointTypePtr;
 
 /*!
