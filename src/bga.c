@@ -41,16 +41,24 @@ bga_create_element ()
         gchar *pin_pad_name = g_strdup ("");
         gint i;
         gint j;
-        FlagType pad_flag;
+        FlagTypePtr pad_flag;
         ElementTypePtr element;
 
         element = malloc (sizeof (ElementTypePtr));
+        pad_flag = malloc (sizeof (FlagType));
         if (!element)
         {
                 if (verbose)
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("could not create a valid element pointer for a BGA package."));
-                return (NULL);
+                return (element);
+        }
+        if (!pad_flag)
+        {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("could not create a valid pad_flag pointer for a BGA package."));
+                return (element);
         }
         /* Define the center of our universe and guess for a place where to
          * put the element mark. */
@@ -136,10 +144,11 @@ bga_create_element ()
                 /* all columns of a row [1 .. n]
                  * where j is a member of the positive Natural numbers (N). */
                 {
-                        if (pin1_square && (pin_number == 1))
-                                pad_flag.f = SQUARE;
+
+			if (pin1_square && (pin_number == 1))
+                                pad_flag->f = SQUARE;
                         else
-                                pad_flag.f = CLEAR;
+                                pad_flag->f = CLEAR;
                         pin_pad_name = g_strdup_printf ("%s%d", (row_letters[i]), (j + 1));
                         if (get_pin_pad_exception (pin_pad_name))
                         {
@@ -155,7 +164,7 @@ bga_create_element ()
                                         (int) (multiplier * (pad_diameter + (2 * pad_solder_mask_clearance))), /* solder mask clearance */
                                         pin_pad_name, /* pin name */
                                         g_strdup_printf ("%d", pin_number), /* pin number */
-                                        pad_flag /* flags */
+                                        pad_flag->f /* flags */
                                 );
                         }
                         pin_number++;
@@ -165,7 +174,7 @@ bga_create_element ()
         if (fiducial)
         {
                 pin_pad_name = g_strdup ("");
-                pad_flag.f = NOPASTE;
+                pad_flag->f = NOPASTE;
                 create_new_pad
                 (
                         element,
@@ -193,7 +202,7 @@ bga_create_element ()
                                 /* solder mask clearance */
                         pin_pad_name, /* pin name */
                         g_strdup_printf ("%d", pin_number), /* pin number */
-                        pad_flag /* flags */
+                        pad_flag->f /* flags */
                 );
                 pin_number++;
                 create_new_pad
@@ -223,7 +232,7 @@ bga_create_element ()
                                 /* solder mask clearance */
                         pin_pad_name, /* pin name */
                         g_strdup_printf ("%d", pin_number), /* pin number */
-                        pad_flag /* flags */
+                        pad_flag->f /* flags */
                 );
         }
         /* Create a package body. */
@@ -324,14 +333,14 @@ bga_create_element ()
         }
         /* Create attributes here. */
         if (attributes_in_footprint)
-                element = create_attributes_in_element (element);
+                element = (ElementTypePtr) create_attributes_in_element (element);
         /* We are ready creating an element. */
         if (verbose)
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("created an element for a %s package: %s."),
                         footprint_type,
                         footprint_filename);
-        return (element);
+        return ((ElementTypePtr) element);
 }
 
 
