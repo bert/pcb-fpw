@@ -27,7 +27,7 @@
 
 
 /* Forward declaration of functions. */
-ElementTypePtr *sot_create_element ();
+ElementTypePtr sot_create_element ();
 GList sot_create_packages_list ();
 int sot_drc ();
 int sot_get_default_footprint_values (gchar *);
