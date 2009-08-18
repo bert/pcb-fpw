@@ -20,6 +20,9 @@
  */
 
 
+#ifndef __PACKAGES_INCLUDED__
+#define __PACKAGES_INCLUDED__
+
 #include "bga.c"
 #include "capc.c"
 #include "capm.c"
@@ -38,5 +41,6 @@
 #include "sot.c"
 #include "to.c"
 
+#endif /* __PACKAGES_INCLUDED__ */
 
 /* EOF */
