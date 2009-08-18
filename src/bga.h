@@ -21,7 +21,7 @@
 
 
 #ifndef __BGA_INCLUDED__
-#define __BGA_INCLIDED__
+#define __BGA_INCLUDED__
 
 #include "globals.h"
 
