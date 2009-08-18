@@ -19,7 +19,10 @@
  * MA 02110-1301, USA.\n
  */
 
+
+#include "sot.h"
 #include "register_functions.c"
+
 
 /*!
  * \brief Create an Element for a SOT package.
