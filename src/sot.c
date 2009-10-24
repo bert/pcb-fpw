@@ -22,6 +22,7 @@
 
 #include "sot.h"
 #include "register_functions.c"
+#include "libfpw.h"
 
 
 /*!

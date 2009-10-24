@@ -221,6 +221,33 @@ create_new_attribute
 
 
 /*!
+ * \brief Create a new \c Element.
+ *
+ * \return the pointer to the newly created \c Element.
+ */
+ElementTypePtr
+create_new_element
+(
+)
+{
+        ElementTypePtr element;
+
+        size_t size = sizeof (ElementType);
+        if (size == 0)
+        {
+                size = 1;
+        }
+        void *p;
+        p = element ? realloc (element, size) : malloc (size);
+        if (!p)
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("out of memory during realloc() in create_new_element()."));
+        memset (element, 0, sizeof (ElementType));
+        return (element);
+}
+
+
+/*!
  * \brief Creates a new \c Line in an \c Element.
  *
  * \todo Check all existing \c Line entities in the \c element to avoid
@@ -241,8 +268,9 @@ create_new_line
                 /*!< : the X-value of the end point.*/
         LocationType Y2,
                 /*!< : the Y-value of the end point.*/
-        BDimension thickness)
+        BDimension thickness
                 /*!< : the line thickness.*/
+)
 {
         LineTypePtr line = element->Line;
         if (thickness == 0)
@@ -326,6 +354,8 @@ create_new_pad
 )
 {
         PadTypePtr pad;
+
+        pad = malloc (sizeof (PadTypePtr));
         /* copy values */
         if (X1 > X2 || (X1 == X2 && Y1 > Y2))
         {
@@ -2360,6 +2390,31 @@ write_footprintwizard_file
 int
 write_footprint()
 {
+        current_element = malloc (sizeof (ElementTypePtr));
+        if (!footprint_name)
+        {
+                current_element->Name[DESCRIPTION_INDEX].TextString = g_strdup ("");
+        }
+        else
+        {
+                current_element->Name[DESCRIPTION_INDEX].TextString = g_strdup (footprint_name);
+        }
+        if (!footprint_refdes)
+        {
+                current_element->Name[NAMEONPCB_INDEX].TextString = g_strdup ("");
+        }
+        else
+        {
+                current_element->Name[NAMEONPCB_INDEX].TextString = g_strdup (footprint_name);
+        }
+        if (!footprint_value)
+        {
+                current_element->Name[VALUE_INDEX].TextString = g_strdup ("");
+        }
+        else
+        {
+                current_element->Name[VALUE_INDEX].TextString = g_strdup (footprint_name);
+        }
         fp = fopen (footprint_filename, "w");
         if (!fp)
         {
@@ -2378,6 +2433,7 @@ write_footprint()
         {
                 case BGA:
                         bga_drc();
+                        bga_create_element ();
                         bga_write_footprint ();
                         break;
                 case CAPC:
@@ -2451,6 +2507,8 @@ write_footprint()
                         return;
                         break;
                 case SOT:
+                        current_element = malloc (sizeof (ElementTypePtr));
+                        current_element = sot_create_element ();
                         sot_write_footprint ();
                         break;
                 case TO92:

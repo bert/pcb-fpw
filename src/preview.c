@@ -25,15 +25,28 @@
 #include <gtk/gtk.h>
 #include <glib.h>
 
+#include "globals.h"
+
+#define PREVIEW_BG_COLOR "Black"
+#define PREVIEW_FG_COLOR "Red"
+#define PREVIEW_COPPER_COLOR "Copper"
+#define PREVIEW_MASK_COLOR "Green"
+#define PREVIEW_SILK_COLOR "White"
 
 GdkPixmap *pixmap = NULL;
         /*!< Backing pixmap for drawing area */
 
 
 /*!
+ * \brief The element to view in the dialog window.
+ */
+ElementType *preview_element;
+
+
+/*!
  * \brief Struct containing all data to draw an arc on the preview canvas.
  */
-typedef struct preview_arc
+typedef struct
 {
         GdkDrawable *drawable;
                 /*!< a GdkDrawable (a GdkWindow or a GdkPixmap). */
@@ -55,13 +68,13 @@ typedef struct preview_arc
         gint angle2;
                 /*!< The end angle of the arc, relative to angle1, in 1/64ths
                  * of a degree. */
-} *preview_arc;
+} *preview_arc_t;
 
 
 /*!
  * \brief Struct containing all data to draw a line on the preview canvas.
  */
-typedef struct preview_line
+typedef struct
 {
         GdkDrawable *drawable;
                 /*!< a GdkDrawable (a GdkWindow or a GdkPixmap). */
@@ -75,7 +88,7 @@ typedef struct preview_line
                 /*!< X-coordinate of the end point of the line. */
         gint y2;
                 /*!< Y-coordinate of the end point of the line. */
-} *preview_line;
+} *preview_line_t;
 
 
 /*!
@@ -527,7 +540,7 @@ preview_use_gc
 /*!
  * \brief Draw an arc on the preview pixmap.
  *
- * Draws an arc or a filled 'pie slice'.\n
+ * Draw an arc or a filled 'pie slice'.\n
  * The arc is defined by the bounding rectangle of the entire ellipse, and
  * the start and end angles of the part of the ellipse to be drawn.
  */
@@ -536,8 +549,8 @@ preview_draw_arc
 (
         GtkWidget *widget,
                 /*!< : is the toplevel widget containing the drawable. */
-        preview_arc arc
-                /*!< : is a preview arc. */
+        ArcType *arc
+                /*!< : is a pcb arc. */
 )
 {
         if (!arc)
@@ -545,25 +558,29 @@ preview_draw_arc
                 fprintf (stderr, "WARNING: passed arc was invalid.\n");
                 return;
         }
-        /* Modify angles from degrees to Gdk format */
-        arc->angle1 = 64.0 * arc->angle1;
+        /* Create a Graphics Context. */
+        GdkGC *gc;
+        preview_set_fg_color (gc, PREVIEW_SILK_COLOR);
+        preview_set_line_width (gc, arc->Thickness);
+        preview_set_line_cap (gc, GDK_CAP_ROUND);
+        preview_set_line_style (gc, GDK_SOLID);
         gdk_draw_arc
         (
-                arc->drawable,
-                arc->gc,
-                arc->filled,
-                arc->x,
-                arc->y,
-                arc->width,
-                arc->height,
-                arc->angle1,
-                arc->angle2
+                widget->window,
+                gc,
+                FALSE,
+                arc->X,
+                arc->Y,
+                arc->Width,
+                arc->Height,
+                arc->StartAngle * 64,
+                arc->Delta * 64
         );
 }
 
 
 /*!
- * \brief Draw a white background (rectangle) on the screen.
+ * \brief Draw a black background (rectangle) on the screen.
  */
 static void
 preview_draw_background
@@ -603,17 +620,59 @@ preview_draw_background
 
 
 /*!
+ * \brief Draw a circle on the preview pixmap.
+ *
+ * Draw a filled circle, using the background color and other
+ * attributes of the GdkGC.
+ */
+static void
+preview_draw_filled_circle
+(
+        GtkWidget *widget,
+                /*!< : is the toplevel widget containing the drawable. */
+        ArcType *arc
+                /*!< : is a pcb line. */
+)
+{
+        if (!arc)
+        {
+                fprintf (stderr, "WARNING: passed arc was invalid.\n");
+                return;
+        }
+        /* Create a Graphics Context. */
+        GdkGC *gc;
+        preview_set_fg_color (gc, PREVIEW_BG_COLOR);
+        preview_set_line_width (gc, arc->Thickness);
+        preview_set_line_cap (gc, GDK_CAP_ROUND);
+        preview_set_line_style (gc, GDK_SOLID);
+        gdk_draw_arc
+        (
+                widget->window,
+                gc,
+                TRUE,
+                arc->X,
+                arc->Y,
+                arc->Width,
+                arc->Height,
+                arc->StartAngle,
+                arc->Delta
+        );
+}
+
+
+/*!
  * \brief Draw a line on the preview pixmap.
  *
- * Draws a line, using the foreground color and other attributes of the GdkGC.
+ * Draw a line, using the silkscreen color and other attributes of the
+ * GdkGC.
  */
 static void
 preview_draw_line
 (
         GtkWidget *widget,
                 /*!< : is the toplevel widget containing the drawable. */
-        preview_line line
-                /*!< : is a preview line. */
+        LineType *line
+                /*!< : is a pcb line. */
 )
 {
         if (!line)
@@ -621,43 +680,210 @@ preview_draw_line
                 fprintf (stderr, "WARNING: passed line was invalid.\n");
                 return;
         }
+        /* Create a Graphics Context. */
+        GdkGC *gc;
+        preview_set_fg_color (gc, PREVIEW_SILK_COLOR);
+        preview_set_line_width (gc, line->Thickness);
+        preview_set_line_cap (gc, GDK_CAP_ROUND);
+        preview_set_line_style (gc, GDK_SOLID);
         gdk_draw_line
         (
-                line->drawable,
-                line->gc,
-                line->x1,
-                line->y1,
-                line->x2,
-                line->y2
+                widget->window,
+                gc,
+                line->Point1.X,
+                line->Point1.Y,
+                line->Point2.X,
+                line->Point2.Y
         );
 }
 
 
 /*!
  * \brief Draw a pad on the preview pixmap.
+ *
+ * Draw a pad, using the copper color and other attributes of the
+ * GdkGC.
  */
 static void
 preview_draw_pad
 (
-        GtkWidget *widget
+        GtkWidget *widget,
                 /*!< : is the toplevel widget containing the drawable. */
+        ElementType *element,
+                /*!< : is an pcb element. */
+        PadType *pad
+                /*!< : is a pcb pad. */
 )
 {
-        /*! \todo Add code here.*/
+        if (TEST_FLAG (SQUAREFLAG, pad))
+        {
+                /* Create a Graphics Context with a \c SQUARE line cap
+                 * extending with half the thickness. */
+                GdkGC *gc;
+                preview_set_fg_color (gc, PREVIEW_COPPER_COLOR);
+                preview_set_line_width (gc, pad->Thickness);
+                preview_set_line_cap (gc, GDK_CAP_PROJECTING);
+                preview_set_line_style (gc, GDK_SOLID);
+                gdk_draw_line
+                (
+                        widget->window,
+                        gc,
+                        pad->Point1.X,
+                        pad->Point1.Y,
+                        pad->Point2.X,
+                        pad->Point2.Y
+                );
+        }
+        else
+        {
+                /* Create a Graphics Context with a \c ROUND line cap. */
+                GdkGC *gc;
+                preview_set_fg_color (gc, PREVIEW_COPPER_COLOR);
+                preview_set_line_width (gc, pad->Thickness);
+                preview_set_line_cap (gc, GDK_CAP_ROUND);
+                preview_set_line_style (gc, GDK_SOLID);
+                gdk_draw_line
+                (
+                        widget->window,
+                        gc,
+                        pad->Point1.X,
+                        pad->Point1.Y,
+                        pad->Point2.X,
+                        pad->Point2.Y
+                );
+        }
 }
 
 
 /*!
  * \brief Draw a pin on the preview pixmap.
+ *
+ * Draw a pin, using the copper color and other attributes of the
+ * GdkGC.
+
  */
 static void
 preview_draw_pin
 (
-        GtkWidget *widget
+        GtkWidget *widget,
                 /*!< : is the toplevel widget containing the drawable. */
+        ElementType *element,
+                /*!< : is an pcb element. */
+        PinType *pin
+                /*!< : is a pcb pad. */
 )
 {
-        /*! \todo Add code here.*/
+        /* First draw the anulus in copper color.*/
+        if (TEST_FLAG (OCTAGONFLAG, pin))
+        {
+                /*
+                 * Draw a polygon.
+                 * x and y are already in display coordinates.
+                 * The points are numbered:
+                 *
+                 *          5 --- 6
+                 *         /       \
+                 *        4         7
+                 *        |         |
+                 *        3         0
+                 *         \       /
+                 *          2 --- 1
+                 */
+                static FloatPolyType p[8] =
+                {
+                    {0.5, -TAN_22_5_DEGREE_2},
+                    {TAN_22_5_DEGREE_2, -0.5},
+                    {-TAN_22_5_DEGREE_2, -0.5},
+                    {-0.5, -TAN_22_5_DEGREE_2},
+                    {-0.5, TAN_22_5_DEGREE_2},
+                    {-TAN_22_5_DEGREE_2, 0.5},
+                    {TAN_22_5_DEGREE_2, 0.5},
+                    {0.5, TAN_22_5_DEGREE_2}
+                };
+                GdkPoint *points[9];
+                int polygon_x[9]; /* X-coordinates of vertices */
+                int polygon_y[9]; /* Y-coordinates of vertices */
+                int i;
+
+                for (i = 0; i < 8; i++)
+                {
+                        points[i]->x = pin->X + (p[i].X * pin->Thickness);
+                        points[i]->y = pin->Y + (p[i].Y * pin->Thickness);
+                }
+                /* Create a Graphics Context with a \c ROUND line cap
+                 * extending with half the thickness. */
+                GdkGC *gc;
+                preview_set_fg_color (gc, PREVIEW_COPPER_COLOR);
+                preview_set_line_width (gc, pin->Thickness);
+                preview_set_line_cap (gc, GDK_CAP_ROUND);
+                preview_set_line_style (gc, GDK_SOLID);
+                gdk_draw_polygon
+                (
+                        widget->window,
+                        gc,
+                        TRUE,
+                        points,
+                        8
+                );
+        }
+        else if (TEST_FLAG (SQUAREFLAG, pin))
+        {
+                /* Create a Graphics Context with a \c SQUARE line cap
+                 * extending with half the thickness. */
+                GdkGC *gc;
+                preview_set_fg_color (gc, PREVIEW_COPPER_COLOR);
+                preview_set_line_width (gc, pin->Thickness);
+                preview_set_line_cap (gc, GDK_CAP_PROJECTING);
+                preview_set_line_style (gc, GDK_SOLID);
+                /* Draw a zero length line. */
+                gdk_draw_line
+                (
+                        widget->window,
+                        gc,
+                        pin->X,
+                        pin->Y,
+                        pin->X,
+                        pin->Y
+                );
+        }
+        else
+        {
+                /* Create a Graphics Context with a \c ROUND line cap. */
+                GdkGC *gc;
+                preview_set_fg_color (gc, PREVIEW_COPPER_COLOR);
+                preview_set_line_width (gc, pin->Thickness);
+                preview_set_line_cap (gc, GDK_CAP_ROUND);
+                preview_set_line_style (gc, GDK_SOLID);
+                /* Draw a zero length line. */
+                gdk_draw_line
+                (
+                        widget->window,
+                        gc,
+                        pin->X,
+                        pin->Y,
+                        pin->X,
+                        pin->Y
+                );
+        }
+        /* Create a Graphics Context with a \c ROUND line cap. */
+        GdkGC *gc;
+        preview_set_fg_color (gc, PREVIEW_BG_COLOR);
+        preview_set_line_width (gc, (int) (0.5 * pin->DrillingHole));
+        preview_set_line_cap (gc, GDK_CAP_ROUND);
+        preview_set_line_style (gc, GDK_SOLID);
+        /* Draw a drilling hole for the pin in background color. */
+        gdk_draw_arc
+        (
+                widget->window,
+                gc,
+                TRUE,
+                pin->X,
+                pin->Y,
+                pin->DrillingHole,
+                pin->DrillingHole,
+                0,
+                360 * 64
+        );
 }
 
 
@@ -740,7 +966,7 @@ preview_expose_event
         GtkWidget *widget,
                 /*!< : is the toplevel widget containing the drawable. */
         GdkEventExpose *event
-		/*!< : is the event passed from the caller.*/
+                /*!< : is the event passed from the caller.*/
 )
 {
         gdk_draw_drawable (widget->window,
@@ -754,8 +980,24 @@ preview_expose_event
                 event->area.height);
 
         /*! \todo Add code here to draw footprints.*/
-
-
+        /* Draw all element pads. */
+	PAD_LOOP (preview_element);
+                preview_draw_pad (widget, preview_element, pad);
+        END_LOOP;
+        /* Draw all element pins. */
+	PIN_LOOP (preview_element);
+        END_LOOP;
+        /* Draw the soldermask. */
+        /* Draw all element arcs. */
+        ELEMENTARC_LOOP (preview_element);
+                preview_draw_arc (widget, arc);
+        END_LOOP;
+        /* Draw all element lines. */
+        ELEMENTLINE_LOOP (preview_element);
+                preview_draw_line (widget, line);
+        END_LOOP;
+        /* Draw all element texts. */
+        /* Draw a marker. */
         return FALSE;
 }
 
@@ -771,27 +1013,26 @@ preview_expose_event
 int
 preview_create_window
 (
-        gchar *footprint_name,
-                /*!< : is the footprint type.*/
-        gint width,
-                /*!< : is width of the pixmap.*/
-        gint height
-                /*!< : is height of the pixmap.*/
+        ElementType *preview_element
+                /*!< : is the element we want to preview.*/
 )
 {
-        /* Create a preview window */
+        gint width; /* is the width of the pixmap.*/
+        gint height; /* is the height of the pixmap.*/
+
+        /* Create a preview window. */
         GtkWidget *preview_window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
         /* Destroy the preview window when the main window of pcb-gfpw gets
-         * destroyed */
+         * destroyed. */
         gtk_window_set_destroy_with_parent (GTK_WINDOW (preview_window), TRUE);
-        /* Set the preview window title */
+        /* Set the preview window title. */
         gchar *preview_window_title = g_strdup_printf ("pcb-fpw preview: %s",
-                footprint_name);
+                preview_element->Name[0]);
         gtk_window_set_title (GTK_WINDOW (preview_window),
                 preview_window_title);
         g_free (preview_window_title);
         gtk_container_set_border_width (GTK_CONTAINER (preview_window), 10);
-        /* Set signals for the window */
+        /* Set signals for the window. */
         gtk_signal_connect
         (
                 GTK_OBJECT (preview_window),
@@ -799,13 +1040,16 @@ preview_create_window
                 (GtkSignalFunc) preview_delete_event,
                 NULL
         );
-        /* Create a vertical box */
+        /* Create a horizontal box. */
+        /* Create a vertical box for the solderside. */
         GtkWidget *vbox = gtk_vbox_new (FALSE, 10);
         gtk_container_add (GTK_CONTAINER (preview_window), vbox);
-        /* Create a preview drawing area */
+        /* Create a preview drawing area. */
         GtkWidget *preview_drawing_area = gtk_drawing_area_new ();
+        width = 300;
+	height = 200;
         gtk_widget_set_size_request (preview_drawing_area, width, height);
-        /* Set signals for the drawing area */
+        /* Set signals for the drawing area. */
         gtk_signal_connect
         (
                 GTK_OBJECT (preview_drawing_area),

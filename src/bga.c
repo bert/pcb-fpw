@@ -22,6 +22,7 @@
 
 #include "bga.h"
 #include "register_functions.c"
+#include "libfpw.h"
 
 
 /*!
@@ -41,10 +42,10 @@ bga_create_element ()
         gchar *pin_pad_name = g_strdup ("");
         gint i;
         gint j;
-        FlagTypePtr pad_flag;
         ElementTypePtr element;
+        FlagTypePtr pad_flag;
 
-        element = malloc (sizeof (ElementTypePtr));
+        element = create_new_element ();
         pad_flag = malloc (sizeof (FlagType));
         if (!element)
         {
@@ -333,13 +334,17 @@ bga_create_element ()
         }
         /* Create attributes here. */
         if (attributes_in_footprint)
-                element = (ElementTypePtr) create_attributes_in_element (element);
+        {
+                element = create_attributes_in_element (element);
+        }
         /* We are ready creating an element. */
         if (verbose)
+        {
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("created an element for a %s package: %s."),
                         footprint_type,
                         footprint_filename);
+        }
         return ((ElementTypePtr) element);
 }
 

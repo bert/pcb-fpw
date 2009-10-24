@@ -38,7 +38,8 @@
 /* Forward declaration of functions. */
 ElementTypePtr create_attributes_in_element (ElementTypePtr);
 AttributeTypePtr create_new_attribute (AttributeListTypePtr, char *, char *);
-ArcTypePtr create_new_arc(ElementTypePtr *, LocationType, LocationType, BDimension, BDimension, int, int, BDimension);
+ArcTypePtr create_new_arc (ElementTypePtr, LocationType, LocationType, BDimension, BDimension, int, int, BDimension);
+ElementTypePtr create_new_element ();
 LineTypePtr create_new_line (ElementTypePtr, LocationType, LocationType, LocationType, LocationType, BDimension);
 PadTypePtr create_new_pad (ElementTypePtr, LocationType, LocationType, LocationType, LocationType, BDimension, BDimension, BDimension, char *, char *, FlagType);
 PinTypePtr create_new_pin (ElementTypePtr, LocationType, LocationType, BDimension, BDimension, BDimension, BDimension, char *, char *, FlagType);
