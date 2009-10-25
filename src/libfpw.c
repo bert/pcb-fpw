@@ -515,6 +515,10 @@ get_package_type ()
                         footprint_type);
                 return (EXIT_FAILURE);
         }
+        else if (!strcmp (footprint_type, "RES"))
+        {
+                package_type = RES;
+        }
         else if (!strcmp (footprint_type, "RESC"))
         {
                 package_type = RESC;
@@ -2434,6 +2438,9 @@ write_footprint()
                         break;
                 case QFP:
                         return;
+                        break;
+                case RES:
+                        res_write_footprint ();
                         break;
                 case RESC:
                         resc_write_footprint ();

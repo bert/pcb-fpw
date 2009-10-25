@@ -2676,6 +2676,12 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
                                         all_entries_need_updated (GTK_WIDGET (editable));
                                 return;
                         }
+                        case RES:
+                        {
+                                if (res_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
+                                        all_entries_need_updated (GTK_WIDGET (editable));
+                                return;
+                        }
                         case SOT:
                         {
                                 if (sot_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
@@ -2921,6 +2927,12 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                         gchar *message = g_strdup_printf (_("ERROR: footprint type QFP is not yet implemented."));
                         message_to_statusbar (GTK_WIDGET (combobox), message);
+                        break;
+                }
+                case RES:
+                {
+                        all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                        res_set_gui_constraints (GTK_WIDGET (combobox));
                         break;
                 }
                 case RESC:
