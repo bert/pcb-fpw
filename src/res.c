@@ -56,7 +56,7 @@ res_create_element ()
         element->MarkY = 0;
         /* Determine (extreme) courtyard dimensions based on pin/pad
          * properties */
-        if (pad_shape == ROUND_ELONGATED)
+        if (pad_shapes_type == ROUND_ELONGATED)
         {
                 xmin = multiplier *
                 (
@@ -801,7 +801,7 @@ res_write_footprint ()
         }
         /* Determine (extreme) courtyard dimensions based on pin/pad
          * properties */
-        if (pad_shape == ROUND_ELONGATED)
+        if (pad_shapes_type == ROUND_ELONGATED)
         {
                 xmin = multiplier *
                 (
