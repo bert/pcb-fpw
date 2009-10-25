@@ -190,7 +190,7 @@ bga_create_element ()
                                 (2 * fiducial_pad_solder_mask_clearance))),
                                 /* solder mask clearance */
                         pin_pad_name, /* pin name */
-                        g_strdup_printf ("%d", pin_number), /* pin number */
+                        "0", /* pin number */
                         pad_flag /* flags */
                 );
                 pin_number++;
@@ -220,7 +220,7 @@ bga_create_element ()
                                 (2 * fiducial_pad_solder_mask_clearance))),
                                 /* solder mask clearance */
                         pin_pad_name, /* pin name */
-                        g_strdup_printf ("%d", pin_number), /* pin number */
+                        "0", /* pin number */
                         pad_flag /* flags */
                 );
         }
