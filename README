@@ -106,7 +106,7 @@ List of supported footprint types.
 ----------------------------------
 
 BGA, CAPC, CAPM, CAPMP, CON-DIL, CON-DIP, CON-HDR, DIOM, DIOMELF, DIP, INDC, INDM, INDP,
-PGA, PLCC, RESC, RESM, RESMELF, SOT and TO92.
+PGA, PLCC, RES, RESC, RESM, RESMELF, SOT and TO92.
 
 
 Have fun creating footprints  with pcb-fpw  ;-)
