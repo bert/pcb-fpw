@@ -33,6 +33,7 @@
 #include "indc.c"
 #include "pga.c"
 #include "plcc.c"
+#include "res.c"
 #include "resc.c"
 #include "smt.c"
 #include "sot.c"
