@@ -46,8 +46,10 @@ bga_create_element ()
         if (!element)
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("could not create a valid element pointer for a BGA package."));
+                }
                 return (NULL);
         }
         /* Define the center of our universe and guess for a place where to
@@ -83,22 +85,38 @@ bga_create_element ()
         /* Determine (extreme) courtyard dimensions based on package
          * properties. */
         if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
+        {
                 xmin = (multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package));
+        }
         if ((multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package)) > xmax)
+        {
                 xmax = (multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package));
+        }
         if ((multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package)) < ymin)
+        {
                 ymin = (multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package));
+        }
         if ((multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package)) > ymax)
+        {
                 ymax = (multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package));
+        }
         /* If the user input is using even more real-estate then use it. */
         if (multiplier * (-courtyard_length / 2.0) < xmin)
+        {
                 xmin = multiplier * (-courtyard_length / 2.0);
+        }
         if (multiplier * (courtyard_length / 2.0) > xmax)
+        {
                 xmax = multiplier * (courtyard_length / 2.0);
+        }
         if (multiplier * (-courtyard_width / 2.0) < ymin)
+        {
                 ymin = multiplier * (-courtyard_width / 2.0);
+        }
         if (multiplier * (courtyard_width / 2.0) > ymax)
+        {
                 ymax = multiplier * (courtyard_width / 2.0);
+        }
         /* Guess for a place where to put the element name. */
         element->Name[1].Scale = 100; /* 100 percent */
         element->Name[1].X = 0.0 ; /* already in mil/100 */
@@ -135,9 +153,13 @@ bga_create_element ()
                  * where j is a member of the positive Natural numbers (N). */
                 {
                         if (pin1_square && (pin_number == 1))
+                        {
                                 pad_flag.f = SQUARE;
+                        }
                         else
+                        {
                                 pad_flag.f = CLEAR;
+                        }
                         pin_pad_name = g_strdup_printf ("%s%d", (row_letters[i]), (j + 1));
                         if (get_pin_pad_exception (pin_pad_name))
                         {
@@ -474,16 +496,20 @@ bga_drc ()
 {
         int result = EXIT_SUCCESS;
         if (verbose)
+        {
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("DRC Check: checking BGA package %s."), footprint_name);
+        }
         /* Check for allowed pad shapes. */
         switch (pad_shapes_type)
         {
                 case NO_SHAPE:
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
                                         _("DRC Error: NO_SHAPE specified for check for allowed pad shapes."));
+                        }
                         result = EXIT_FAILURE;
                         break;
                 }
@@ -494,32 +520,40 @@ bga_drc ()
                 case SQUARE:
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
                                         _("DRC Error: square pad shape specified for check for allowed pad shapes."));
+                        }
                         result = EXIT_FAILURE;
                         break;
                 }
                 case OCTAGONAL:
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
                                         _("DRC Error: octagonal pad shape specified for check for allowed pad shapes."));
+                        }
                         result = EXIT_FAILURE;
                         break;
                 }
                 case ROUND_ELONGATED:
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
                                         _("DRC Error: round elongated pad shape specified for check for allowed pad shapes."));
+                        }
                         result = EXIT_FAILURE;
                         break;
                 }
                 default:
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
                                         _("DRC Error: no valid pad shape type specified."));
+                        }
                         result = EXIT_FAILURE;
                         break;
                 }
@@ -528,53 +562,67 @@ bga_drc ()
         if (package_body_length <= 0.0)
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("DRC Error: check for package body length is <= 0.0."));
+                }
                 result = EXIT_FAILURE;
         }
         if (package_body_width <= 0.0)
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("DRC Error: check for package body width is <= 0.0."));
+                }
                 result = EXIT_FAILURE;
         }
         if (package_body_height <= 0.0)
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("DRC Error: check for package body height is <= 0.0."));
+                }
                 result = EXIT_FAILURE;
         }
         /* Check for a zero sized courtyard. */
         if (courtyard_length <= 0.0)
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("DRC Error: check for courtyard length is <= 0.0."));
+                }
                 result = EXIT_FAILURE;
         }
         if (courtyard_width <= 0.0)
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("DRC Error: check for courtyard width is <= 0.0."));
+                }
                 result = EXIT_FAILURE;
         }
         /* Check for minimum clearance between copper (X-direction). */
         if (pitch_x - pad_diameter < pad_clearance)
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("DRC Error: check for minimum clearance between copper (X-direction)."));
+                }
                 result = EXIT_FAILURE;
         }
         /* Check for minimum clearance between copper (Y-direction). */
         if (pitch_y - pad_diameter < pad_clearance)
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("DRC Error: check for minimum clearance between copper (Y-direction)."));
+                }
                 result = EXIT_FAILURE;
         }
         if (fiducial)
@@ -583,16 +631,20 @@ bga_drc ()
                 if (fiducial_pad_diameter == 0.0)
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
                                         _("DRC Error: check for zero width fiducial pad."));
+                        }
                         result = EXIT_FAILURE;
                 }
                 /* Check for a clearance of zero. */
                 if (fiducial_pad_solder_mask_clearance == 0.0)
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
                                         _("DRC Error: check for zero width solder mask clearance."));
+                        }
                         result = EXIT_FAILURE;
                 }
                 /*! \todo Check for minimum clearance between pad copper and fiducial pad
@@ -604,8 +656,10 @@ bga_drc ()
                 if ()
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
                                         _("DRC Error: check for distance between fiducial and nearest pad."));
+                        }
                         result = EXIT_FAILURE;
                 }
 #endif
@@ -615,8 +669,10 @@ bga_drc ()
         if (package_body_length - courtyard_length < courtyard_clearance_with_package)
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("DRC Error: check for clearance of the package length with regard to the courtyard dimensions."));
+                }
                 result = EXIT_FAILURE;
         }
         /* Check for clearance of the package width with regard to the
@@ -624,8 +680,10 @@ bga_drc ()
         if (package_body_width - courtyard_width < courtyard_clearance_with_package)
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("DRC Error: check for clearance of the package width with regard to the courtyard dimensions."));
+                }
                 result = EXIT_FAILURE;
         }
         /*! \todo Check for any silk lines or texts touching bare copper. */
@@ -637,8 +695,10 @@ bga_drc ()
         if (silkscreen_package_outline || (silkscreen_line_width == 0.0))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("DRC Error: line width 0.0 specified for check for a reasonable silk line width."));
+                }
                 result = EXIT_FAILURE;
         }
         switch (units_type)
@@ -646,8 +706,10 @@ bga_drc ()
                 case NO_UNITS:
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
                                         _("DRC Error: no units specified for check for a reasonable silk line width."));
+                        }
                         result = EXIT_FAILURE;
                         break;
                 }
@@ -655,8 +717,10 @@ bga_drc ()
                 if (silkscreen_line_width > 40.0)
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
                                         _("DRC Error: line width > 40.0 mil specified check for a reasonable silk line width."));
+                        }
                         result = EXIT_FAILURE;
                         break;
                 }
@@ -664,8 +728,10 @@ bga_drc ()
                 if (silkscreen_line_width > 4000.0)
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
                                         _("DRC Error: line width > 40.0 mil specified check for a reasonable silk line width."));
+                        }
                         result = EXIT_FAILURE;
                         break;
                 }
@@ -673,16 +739,20 @@ bga_drc ()
                 if (silkscreen_line_width > 1.0)
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
                                         _("DRC Error: line width > 1.0 mm specified check for a reasonable silk line width."));
+                        }
                         result = EXIT_FAILURE;
                         break;
                 }
                 default:
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
                                         _("DRC Error: no valid units type specified for check for a reasonable silk line width."));
+                        }
                         result = EXIT_FAILURE;
                         break;
                 }
@@ -690,8 +760,10 @@ bga_drc ()
         /*! \todo Create attributes here. */
         /* No failures on DRC found. */
         if (verbose || (result == EXIT_SUCCESS))
+        {
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("DRC Check: no errors while checking BGA package %s."), footprint_name);
+        }
         return (result);
 }
 
@@ -4529,22 +4601,38 @@ bga_write_footprint ()
         /* Determine (extreme) courtyard dimensions based on package
          * properties */
         if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
+        {
                 xmin = (multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package));
+        }
         if ((multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package)) > xmax)
+        {
                 xmax = (multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package));
+        }
         if ((multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package)) < ymin)
+        {
                 ymin = (multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package));
+        }
         if ((multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package)) > ymax)
+        {
                 ymax = (multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package));
+        }
         /* If the user input is using even more real-estate then use it */
         if (multiplier * (-courtyard_length / 2.0) < xmin)
+        {
                 xmin = multiplier * (-courtyard_length / 2.0);
+        }
         if (multiplier * (courtyard_length / 2.0) > xmax)
+        {
                 xmax = multiplier * (courtyard_length / 2.0);
+        }
         if (multiplier * (-courtyard_width / 2.0) < ymin)
+        {
                 ymin = multiplier * (-courtyard_width / 2.0);
+        }
         if (multiplier * (courtyard_width / 2.0) > ymax)
+        {
                 ymax = multiplier * (courtyard_width / 2.0);
+        }
         /* Write element header
          * Guess for a place where to put the refdes text */
         x_text = 0.0 ; /* already in mil/100 */
@@ -4562,9 +4650,13 @@ bga_write_footprint ()
                  * where j is a member of the positive Natural numbers (N) */
                 {
                         if (pin1_square && (pin_number == 1))
+                        {
                                 pin_pad_flags = g_strdup ("square");
+                        }
                         else
+                        {
                                 pin_pad_flags = g_strdup ("");
+                        }
                         pin_pad_name = g_strdup_printf ("%s%d", (row_letters[i]), (j + 1));
                         if (get_pin_pad_exception (pin_pad_name))
                         {
