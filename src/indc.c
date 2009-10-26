@@ -1,6 +1,6 @@
 /*!
  * \file indc.c
- * \author Copyright (C) 2008 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007, 2008, 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief Functions for INDC SMT footprints.
  *
  * This program is free software; you can redistribute it and/or modify

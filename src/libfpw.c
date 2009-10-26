@@ -1,6 +1,6 @@
 /*!
  * \file libfpw.c
- * \author Copyright (C) 2007, 2008 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007, 2008, 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief libfpw contains helper functions for both fpw (CLI) and
  * pcb-gfpw (GUI) versions of the pcb FootPrintWizard.
  *

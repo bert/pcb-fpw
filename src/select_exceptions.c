@@ -1,6 +1,6 @@
 /*!
  * \file select_exceptions.c
- * \author Copyright (C) 2008 .. 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007, 2008, 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief A widget for selecting exception pin/pads in an array type footprint.
  *
  * This program is free software; you can redistribute it and/or modify

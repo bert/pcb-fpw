@@ -1,6 +1,6 @@
 /*!
  * \file callbacks.c
- * \author Copyright 2007 .. 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007, 2008, 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief Callback functions for the pcb footprintwizard (pcb-gfpw).
  *
  * pcb-gfpw (GtkFootPrintWizard) is a program for the creation of
