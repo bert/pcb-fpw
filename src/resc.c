@@ -22,6 +22,24 @@
 #include "register_functions.c"
 
 /*!
+ * \brief Create a list of RESC packages with pre-defined values.
+ *
+ * The data in this list can be used in a combobox to select a
+ * pre-defined package.
+ *
+ * \return a list containing all package names of this footprint type
+ * known by pcb-fpw.
+ */
+GList
+resc_create_packages_list ()
+{
+        GList *resc_packages_list = NULL;
+        resc_packages_list = g_list_append (resc_packages_list, "RESC");
+        return (*resc_packages_list);
+}
+
+
+/*!
  * \brief Look up default values for RESC SMT footprint.
  *
  * Footprint values can be looked up by placing a question mark "?" in front
