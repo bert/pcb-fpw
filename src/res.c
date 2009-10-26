@@ -213,7 +213,7 @@ res_create_element ()
                 "1", /* pin number */
                 pad_flag /* flags */
         );
-        if (pad_shape == ROUND_ELONGATED)
+        if (pad_shapes_type == ROUND_ELONGATED)
         {
                 /* Add pads on component side */
                 pad_flag.f = CLEAR;
@@ -937,7 +937,7 @@ res_write_footprint ()
                 multiplier * pin_drill_diameter, /* pin drill diameter */
                 pin_pad_flags /* flags */
         );
-        if (pad_shape == ROUND_ELONGATED)
+        if (pad_shapes_type == ROUND_ELONGATED)
         {
                 /* Add pads on component side */
                 pin_pad_flags = g_strdup ("");
