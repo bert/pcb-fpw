@@ -1186,6 +1186,12 @@ capc_function_list[] =
         },
 #endif /* GUI */
         {
+                "Create Packages List",
+                capc_create_packages_list,
+                "Create a list of known packages",
+                NULL
+        },
+        {
                 "Default Element Values",
                 capc_get_default_footprint_values,
                 "Get default values for a CAPC SMT package",
