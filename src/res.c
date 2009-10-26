@@ -679,7 +679,7 @@ res_get_default_footprint_values
 {
         if (!strcmp (footprint_name, "?RES"))
         {
-                units_type = MM;
+                footprint_units = g_strdup ("mm");
                 number_of_pins = 2;
                 package_body_length = 0.80;
                 package_body_width = 0.40;
