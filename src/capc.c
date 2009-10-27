@@ -1370,7 +1370,7 @@ capc_write_footprint ()
                         "", /* pad name */
                         multiplier * (-pitch_x / 2.0), /* x0-coordinate */
                         multiplier * ((pad_width - pad_length) / 2.0), /* y0-coordinate */
-                        multiplier * (-pitch_x / 2), /* x0-coordinate */
+                        multiplier * (-pitch_x / 2), /* x1-coordinate */
                         multiplier * ((-pad_width + pad_length) / 2.0), /* y1-coordinate */
                         multiplier * pad_length, /* width of the pad */
                         multiplier * pad_clearance, /* clearance */
@@ -1383,7 +1383,7 @@ capc_write_footprint ()
                 (
                         2, /* pad number */
                         "", /* pad name */
-                        multiplier * (pitch_x / 2.0), /* x1-coordinate */
+                        multiplier * (pitch_x / 2.0), /* x0-coordinate */
                         multiplier * ((pad_width - pad_length) / 2.0), /* y0-coordinate */
                         multiplier * (pitch_x / 2.0), /* x1-coordinate */
                         multiplier * ((-pad_width + pad_length) / 2.0), /* y1-coordinate */
