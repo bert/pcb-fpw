@@ -898,7 +898,7 @@ indc_function_list[] =
         {
                 "Create Element",
                 indc_create_element,
-                "Create a pcb element for an INDC package",
+                "Create a pcb element for an INDC SMT package",
                 NULL
         },
         {
