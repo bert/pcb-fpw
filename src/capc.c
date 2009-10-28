@@ -1773,6 +1773,12 @@ capc_function_list[] =
                 NULL
         },
         {
+                "DRC CAPC Element",
+                capc_drc,
+                "Design Rule Check for an CAPC SMT package",
+                NULL
+        },
+        {
                 "Default Element Values",
                 capc_get_default_footprint_values,
                 "Get default values for a CAPC SMT package",
