@@ -4810,7 +4810,7 @@ bga_function_list[] =
         {
                 "Create Packages List",
                 bga_create_packages_list,
-                "Create a list of packages with known values",
+                "Create a list of known BGA packages",
                 NULL
         },
         {
