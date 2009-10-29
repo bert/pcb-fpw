@@ -4822,7 +4822,7 @@ bga_function_list[] =
         {
                 "Default Element Values",
                 bga_get_default_footprint_values,
-                "Get default values for a slected BGA package",
+                "Get default values for a selected BGA package",
                 NULL
         },
         {
