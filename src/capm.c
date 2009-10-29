@@ -379,20 +379,20 @@ capm_function_list[] =
         {
                 "Set GUI constraints",
                 capm_set_gui_constraints,
-                "Set GUI constraints for a CAPM SMT package",
+                "Set GUI constraints for a CAPM package",
                 NULL
         },
 #endif /* GUI */
         {
                 "Default Element Values",
                 capm_get_default_footprint_values,
-                "Get default values for a CAPM SMT package",
+                "Get default values for a CAPM package",
                 NULL
         },
         {
                 "Write footprint",
                 capm_write_footprint,
-                "Write a footprint for a CAPM SMT package",
+                "Write a footprint for a CAPM package",
                 NULL
         }
 };
