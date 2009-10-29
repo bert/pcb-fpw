@@ -1756,7 +1756,7 @@ capc_function_list[] =
         {
                 "Set GUI constraints",
                 capc_set_gui_constraints,
-                "Set GUI constraints for a CAPC SMT package",
+                "Set GUI constraints for a CAPC package",
                 NULL
         },
 #endif /* GUI */
@@ -1769,25 +1769,25 @@ capc_function_list[] =
         {
                 "Create Packages List",
                 capc_create_packages_list,
-                "Create a list of known packages",
+                "Create a list of known CAPC packages",
                 NULL
         },
         {
                 "DRC CAPC Element",
                 capc_drc,
-                "Design Rule Check for an CAPC SMT package",
+                "Design Rule Check for an CAPC package",
                 NULL
         },
         {
                 "Default Element Values",
                 capc_get_default_footprint_values,
-                "Get default values for a CAPC SMT package",
+                "Get default values for a selected CAPC package",
                 NULL
         },
         {
                 "Write footprint",
                 capc_write_footprint,
-                "Write a footprint for a CAPC SMT package",
+                "Write a footprint for a CAPC package",
                 NULL
         }
 };
