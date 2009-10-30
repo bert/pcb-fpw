@@ -1775,7 +1775,7 @@ capc_function_list[] =
         {
                 "DRC CAPC Element",
                 capc_drc,
-                "Design Rule Check for an CAPC package",
+                "Design Rule Check for a CAPC package",
                 NULL
         },
         {
