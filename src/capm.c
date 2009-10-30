@@ -24,6 +24,24 @@
 
 
 /*!
+ * \brief Create a list of known CAPM packages.
+ *
+ * The data in this list can be used in a combobox to select a
+ * pre-defined package.
+ *
+ * \return a list containing all package names of this footprint type
+ * known by pcb-fpw.
+ */
+GList
+capm_create_packages_list ()
+{
+        GList *capm_packages_list = NULL;
+        capm_packages_list = g_list_append (capm_packages_list, "CAPM");
+        return (*capm_packages_list);
+}
+
+
+/*!
  * \brief Do some Design Rule Checking for the CAPM package type.
  *
  * <ul>
@@ -693,6 +711,12 @@ capm_function_list[] =
                 NULL
         },
 #endif /* GUI */
+        {
+                "Create Packages List",
+                capm_create_packages_list,
+                "Create a list of known CAPM packages",
+                NULL
+        },
         {
                 "DRC CAPM Element",
                 capm_drc,
