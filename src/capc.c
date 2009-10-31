@@ -1,7 +1,7 @@
 /*!
  * \file capc.c
  * \author Copyright 2007, 2008, 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
- * \brief Functions for CAPC SMT footprints.
+ * \brief Functions for CAPC footprints.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@
 
 
 /*!
- * \brief Create an Element for a CAPC SMT package.
+ * \brief Create an Element for a CAPC package.
  *
  * \return the created \c element.
  */
@@ -289,7 +289,7 @@ capc_create_element ()
 
 
 /*!
- * \brief Create a list of CAPC packages with pre-defined values.
+ * \brief Create a list of known CAPC packages.
  *
  * The data in this list can be used in a combobox to select a
  * pre-defined package.
@@ -640,7 +640,7 @@ capc_drc ()
 
 
 /*!
- * \brief Look up default values for CAPC SMT footprint.
+ * \brief Look up default values for CAPC footprints.
  *
  * Footprint values can be looked up by placing a question mark "?" in
  * front of the footprint name.\n
@@ -1540,7 +1540,7 @@ capc_get_default_footprint_values
 
 
 /*!
- * \brief Set GUI constraints for the CAPC SMT package type.
+ * \brief Set GUI constraints for the CAPC package type.
  *
  * This function is only to be compiled for GUI targets.
  *
@@ -1591,7 +1591,7 @@ capc_set_gui_constraints
 
 
 /*!
- * \brief Write a CAPC SMT footprint with two pads for a chip package.
+ * \brief Write a footprint for a CAPC package.
  *
  * \return \c EXIT_FAILURE when errors were encountered,
  * \c EXIT_SUCCESS when OK.
