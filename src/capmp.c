@@ -1,7 +1,7 @@
 /*!
  * \file capmp.c
  * \author Copyright 2007, 2008, 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
- * \brief Functions for CAPMP SMT footprints.
+ * \brief Functions for CAPMP footprints.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -334,7 +334,7 @@ capmp_drc ()
 
 
 /*!
- * \brief Look up default values for a CAPMP SMT footprint.
+ * \brief Look up default values for a CAPMP footprint.
  *
  * Footprint values can be looked up by placing a question mark "?" in front
  * of the footprint name.\n
@@ -393,7 +393,7 @@ capmp_get_default_footprint_values
 
 
 /*!
- * \brief Set GUI constraints for a CAPMP SMT package type.
+ * \brief Set GUI constraints for a CAPMP package type.
  *
  * This function is only to be compiled for GUI targets.
  *
@@ -443,7 +443,7 @@ capmp_set_gui_constraints
 
 
 /*!
- * \brief Write a SMT footprint with two pads for a molded capacitor package.
+ * \brief Write a footprint for a CAPMP package.
  *
  * \return \c EXIT_FAILURE when errors were encountered,
  * \c EXIT_SUCCESS when OK.
@@ -532,7 +532,7 @@ capmp_write_footprint ()
                         "P", /* pad name */
                         multiplier * (-pitch_x / 2.0), /* x0-coordinate */
                         multiplier * ((pad_width - pad_length) / 2.0), /* y0-coordinate */
-                        multiplier * (-pitch_x / 2), /* x0-coordinate */
+                        multiplier * (-pitch_x / 2), /* x1-coordinate */
                         multiplier * ((-pad_width + pad_length) / 2.0), /* y1-coordinate */
                         multiplier * pad_length, /* width of the pad */
                         multiplier * pad_clearance, /* clearance */
@@ -545,7 +545,7 @@ capmp_write_footprint ()
                 (
                         2, /* pad number */
                         "N", /* pad name */
-                        multiplier * (pitch_x / 2.0), /* x1-coordinate */
+                        multiplier * (pitch_x / 2.0), /* x0-coordinate */
                         multiplier * ((pad_width - pad_length) / 2.0), /* y0-coordinate */
                         multiplier * (pitch_x / 2.0), /* x1-coordinate */
                         multiplier * ((-pad_width + pad_length) / 2.0), /* y1-coordinate */
@@ -688,7 +688,7 @@ capmp_function_list[] =
         {
                 "Set GUI constraints",
                 capmp_set_gui_constraints,
-                "Set GUI constraints for a CAPMP SMT package",
+                "Set GUI constraints for a CAPMP package",
                 NULL
         },
 #endif /* GUI */
@@ -701,13 +701,13 @@ capmp_function_list[] =
         {
                 "Default Element Values",
                 capmp_get_default_footprint_values,
-                "Get default values for a CAPMP SMT package",
+                "Get default values for a CAPMP package",
                 NULL
         },
         {
                 "Write footprint",
                 capmp_write_footprint,
-                "Write a footprint for a CAPMP SMT package",
+                "Write a footprint for a CAPMP package",
                 NULL
         }
 };
