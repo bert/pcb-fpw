@@ -360,7 +360,7 @@ bga_create_element ()
 
 
 /*!
- * \brief Create a list of BGA packages with pre-defined values.
+ * \brief Create a list of known BGA packages.
  *
  * The data in this list can be used in a combo box to select a
  * pre-defined package.\n
