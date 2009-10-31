@@ -643,7 +643,7 @@ capm_drc ()
 
 
 /*!
- * \brief Look up default values for a CAPM SMT footprint.
+ * \brief Look up default values for a CAPM footprint.
  *
  * Footprint values can be looked up by placing a question mark "?" in front
  * of the footprint name.\n
@@ -703,7 +703,7 @@ capm_get_default_footprint_values
 
 
 /*!
- * \brief Set GUI constraints for a CAPM SMT package type.
+ * \brief Set GUI constraints for a CAPM package type.
  *
  * This function is only to be compiled for GUI targets.
  *
@@ -753,7 +753,7 @@ capm_set_gui_constraints
 
 
 /*!
- * \brief Write a footprint with two pads for a CAPM SMT package.
+ * \brief Write a footprint with two pads for a CAPM package.
  *
  * \return \c EXIT_FAILURE when errors were encountered,
  * \c EXIT_SUCCESS when OK.
