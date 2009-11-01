@@ -24,6 +24,24 @@
 
 
 /*!
+ * \brief Create a list of known CAPMP packages.
+ *
+ * The data in this list can be used in a combobox to select a
+ * pre-defined package.
+ *
+ * \return a list containing all package names of this footprint type
+ * known by pcb-fpw.
+ */
+GList
+capmp_create_packages_list ()
+{
+        GList *capmp_packages_list = NULL;
+        capmp_packages_list = g_list_append (capmp_packages_list, "CAPMP");
+        return (*capmp_packages_list);
+}
+
+
+/*!
  * \brief Do some Design Rule Checking for the CAPMP package type.
  *
  * <ul>
@@ -692,6 +710,12 @@ capmp_function_list[] =
                 NULL
         },
 #endif /* GUI */
+        {
+                "Create Packages List",
+                capmp_create_packages_list,
+                "Create a list of known CAPMP packages",
+                NULL
+        },
         {
                 "DRC CAPMP Element",
                 capmp_drc,
