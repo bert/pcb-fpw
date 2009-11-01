@@ -141,7 +141,7 @@ capm_create_element ()
                         (int) (multiplier * pad_width), /* pad width */
                         (int) (multiplier * pad_clearance), /* clearance */
                         (int) (multiplier * (pad_width + (2 * pad_solder_mask_clearance))), /* solder mask clearance */
-                        "", /* pin name */
+                        "N", /* pad name */
                         "2", /* pin number */
                         pad_flag /* flags */
                 );
@@ -161,7 +161,7 @@ capm_create_element ()
                         (int) (multiplier * pad_width), /* pad width */
                         (int) (multiplier * pad_clearance), /* clearance */
                         (int) (multiplier * (pad_width + (2 * pad_solder_mask_clearance))), /* solder mask clearance */
-                        "", /* pin name */
+                        "P", /* pad name */
                         "1", /* pin number */
                         pad_flag /* flags */
                 );
@@ -179,7 +179,7 @@ capm_create_element ()
                         (int) (multiplier * pad_length), /* pad width */
                         (int) (multiplier * pad_clearance), /* clearance */
                         (int) (multiplier * (pad_length + (2 * pad_solder_mask_clearance))), /* solder mask clearance */
-                        "", /* pin name */
+                        "N", /* pad name */
                         "2", /* pin number */
                         pad_flag /* flags */
                 );
@@ -199,7 +199,7 @@ capm_create_element ()
                         (int) (multiplier * pad_length), /* pad width */
                         (int) (multiplier * pad_clearance), /* clearance */
                         (int) (multiplier * (pad_length + (2 * pad_solder_mask_clearance))), /* solder mask clearance */
-                        "", /* pin name */
+                        "P", /* pad name */
                         "1", /* pin number */
                         pad_flag /* flags */
                 );
