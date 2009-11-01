@@ -205,7 +205,7 @@ capm_create_element ()
                 );
         }
         /* Create a package body. */
-        if (silkscreen_package_outline && (package_body_width))
+        if (silkscreen_package_outline && package_body_width)
         {
                 if (pad_width >= package_body_width)
                 {
@@ -928,7 +928,7 @@ capm_write_footprint ()
                 );
         }
         /* Write a package body on the silkscreen */
-        if (silkscreen_package_outline && (package_body_width))
+        if (silkscreen_package_outline && package_body_width)
         {
                 fprintf (fp, "# Write a package body on the silkscreen\n");
                 if (pad_width >= package_body_width)
