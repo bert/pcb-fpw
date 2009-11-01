@@ -205,7 +205,7 @@ capc_create_element ()
                 );
         }
         /* Create a package body. */
-        if (silkscreen_package_outline && (package_body_width))
+        if (silkscreen_package_outline && package_body_width)
         {
                 create_new_line
                 (
