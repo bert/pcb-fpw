@@ -1,7 +1,7 @@
 /*!
  * \file diom.c
  * \author Copyright 2007, 2008, 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
- * \brief Functions for DIOM SMT footprints.
+ * \brief Functions for DIOM footprints.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@
 
 
 /*!
- * \brief Look up default values for a DIOM SMT footprint.
+ * \brief Look up default values for a DIOM footprint.
  *
  * Footprint values can be looked up by placing a question mark "?" in front
  * of the footprint name.\n
@@ -85,7 +85,7 @@ diom_get_default_footprint_values
 
 
 /*!
- * \brief Set GUI constraints for a DIOM SMT package type.
+ * \brief Set GUI constraints for a DIOM package type.
  *
  * This function is only to be compiled for GUI targets.
  *
@@ -135,7 +135,7 @@ diom_set_gui_constraints
 
 
 /*!
- * \brief Write a footprint with two pads for a DIOM SMT package.
+ * \brief Write a footprint with two pads for a DIOM package.
  *
  * \return \c EXIT_FAILURE when errors were encountered,
  * \c EXIT_SUCCESS when OK.
@@ -224,7 +224,7 @@ diom_write_footprint ()
                         "C", /* pad name */
                         multiplier * (-pitch_x / 2.0), /* x0-coordinate */
                         multiplier * ((pad_width - pad_length) / 2.0), /* y0-coordinate */
-                        multiplier * (-pitch_x / 2), /* x0-coordinate */
+                        multiplier * (-pitch_x / 2), /* x1-coordinate */
                         multiplier * ((-pad_width + pad_length) / 2.0), /* y1-coordinate */
                         multiplier * pad_length, /* width of the pad */
                         multiplier * pad_clearance, /* clearance */
@@ -237,7 +237,7 @@ diom_write_footprint ()
                 (
                         2, /* pad number */
                         "A", /* pad name */
-                        multiplier * (pitch_x / 2.0), /* x1-coordinate */
+                        multiplier * (pitch_x / 2.0), /* x0-coordinate */
                         multiplier * ((pad_width - pad_length) / 2.0), /* y0-coordinate */
                         multiplier * (pitch_x / 2.0), /* x1-coordinate */
                         multiplier * ((-pad_width + pad_length) / 2.0), /* y1-coordinate */
@@ -248,7 +248,7 @@ diom_write_footprint ()
                 );
         }
         /* Write a package body on the silkscreen */
-        if (silkscreen_package_outline && (package_body_width))
+        if (silkscreen_package_outline && package_body_width)
         {
                 fprintf (fp, "# Write a package body on the silkscreen\n");
                 if (pad_width >= package_body_width)
@@ -380,20 +380,20 @@ diom_function_list[] =
         {
                 "Set GUI constraints",
                 diom_set_gui_constraints,
-                "Set GUI constraints for a DIOM SMT package",
+                "Set GUI constraints for a DIOM package",
                 NULL
         },
 #endif /* GUI */
         {
                 "Default Element Values",
                 diom_get_default_footprint_values,
-                "Get default values for a DIOM SMT package",
+                "Get default values for a DIOM package",
                 NULL
         },
         {
                 "Write footprint",
                 diom_write_footprint,
-                "Write a footprint for a DIOM SMT package",
+                "Write a footprint for a DIOM package",
                 NULL
         }
 };
