@@ -207,24 +207,86 @@ capm_create_element ()
         /* Create a package body. */
         if (silkscreen_package_outline && (package_body_width))
         {
-                create_new_line
-                (
-                        element,
-                        (int) (multiplier * (((-pitch_x + pad_length) / 2.0) + pad_solder_mask_clearance + silkscreen_line_width)),
-                        (int) (multiplier * (package_body_width / 2.0)),
-                        (int) (multiplier * (((pitch_x - pad_length) / 2.0) - pad_solder_mask_clearance - silkscreen_line_width)),
-                        (int) (multiplier * (package_body_width / 2.0)),
-                        (int) (multiplier * silkscreen_line_width)
-                );
-                create_new_line
-                (
-                        element,
-                        (int) (multiplier * (((-pitch_x + pad_length) / 2.0) + pad_solder_mask_clearance + silkscreen_line_width)),
-                        (int) (multiplier * (-package_body_width / 2.0)),
-                        (int) (multiplier * (((pitch_x - pad_length) / 2.0) - pad_solder_mask_clearance - silkscreen_line_width)),
-                        (int) (multiplier * (-package_body_width / 2.0)),
-                        (int) (multiplier * silkscreen_line_width)
-                );
+                if (pad_width >= package_body_width)
+                {
+                        create_new_line
+                        (
+                                element,
+                                (int) (multiplier * (((-pitch_x + pad_length) / 2.0) + pad_solder_mask_clearance + silkscreen_line_width)),
+                                (int) (multiplier * (package_body_width / 2.0)),
+                                (int) (multiplier * (((pitch_x - pad_length) / 2.0) - pad_solder_mask_clearance - silkscreen_line_width)),
+                                (int) (multiplier * (package_body_width / 2.0)),
+                                (int) (multiplier * silkscreen_line_width)
+                        );
+                        create_new_line
+                        (
+                                element,
+                                (int) (multiplier * (((-pitch_x + pad_length) / 2.0) + pad_solder_mask_clearance + silkscreen_line_width)),
+                                (int) (multiplier * (-package_body_width / 2.0)),
+                                (int) (multiplier * (((pitch_x - pad_length) / 2.0) - pad_solder_mask_clearance - silkscreen_line_width)),
+                                (int) (multiplier * (-package_body_width / 2.0)),
+                                (int) (multiplier * silkscreen_line_width)
+                        );
+                }
+                else
+                {
+                        /* lines parallel to X-axis */
+                        create_new_line
+                        (
+                                element,
+                                (int) (multiplier * (-package_body_length / 2.0)),
+                                (int) (multiplier * (package_body_width / 2.0)),
+                                (int) (multiplier * (package_body_length / 2.0)),
+                                (int) (multiplier * (package_body_width / 2.0)),
+                                (int) (multiplier * silkscreen_line_width)
+                        );
+                        create_new_line
+                        (
+                                element,
+                                (int) (multiplier * (-package_body_length / 2.0)),
+                                (int) (multiplier * (-package_body_width / 2.0)),
+                                (int) (multiplier * (package_body_length / 2.0)),
+                                (int) (multiplier * (-package_body_width / 2.0)),
+                                (int) (multiplier * silkscreen_line_width)
+                        );
+                        /* lines perpendicular to X-axis */
+                        create_new_line
+                        (
+                                element,
+                                (int) (multiplier * (-package_body_length / 2.0)),
+                                (int) (multiplier * (-package_body_width / 2.0)),
+                                (int) (multiplier * (-package_body_length / 2.0)),
+                                (int) (multiplier * (((-pad_width - silkscreen_line_width) / 2.0) - pad_solder_mask_clearance)),
+                                (int) (multiplier * silkscreen_line_width)
+                        );
+                        create_new_line
+                        (
+                                element,
+                                (int) (multiplier * (-package_body_length / 2.0)),
+                                (int) (multiplier * (package_body_width / 2.0)),
+                                (int) (multiplier * (-package_body_length / 2.0)),
+                                (int) (multiplier * (((pad_width + silkscreen_line_width) / 2.0) + pad_solder_mask_clearance)),
+                                (int) (multiplier * silkscreen_line_width)
+                        );
+                        create_new_line
+                        (
+                                element,
+                                (int) (multiplier * (package_body_length / 2.0)),
+                                (int) (multiplier * (-package_body_width / 2.0)),
+                                (int) (multiplier * (package_body_length / 2.0)),
+                                (int) (multiplier * (((-pad_width - silkscreen_line_width) / 2.0) - pad_solder_mask_clearance)),
+                                (int) (multiplier * silkscreen_line_width)
+                        );
+                        create_new_line
+                        (
+                                element,
+                                (int) (multiplier * (package_body_length / 2.0)),
+                                (int) (multiplier * (package_body_width / 2.0)),
+                                (int) (multiplier * (package_body_length / 2.0)),
+                                (int) (multiplier * (((pad_width + silkscreen_line_width) / 2.0) + pad_solder_mask_clearance)),
+                                (int) (multiplier * silkscreen_line_width)
+                        );
+                }
         }
         /* Create a pin #1 marker. */
         if (silkscreen_indicate_1)
