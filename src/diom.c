@@ -24,6 +24,24 @@
 
 
 /*!
+ * \brief Create a list of known DIOM packages.
+ *
+ * The data in this list can be used in a combobox to select a
+ * pre-defined package.
+ *
+ * \return a list containing all package names of this footprint type
+ * known by pcb-fpw.
+ */
+GList
+diom_create_packages_list ()
+{
+        GList *diom_packages_list = NULL;
+        diom_packages_list = g_list_append (diom_packages_list, "DIOM");
+        return (*diom_packages_list);
+}
+
+
+/*!
  * \brief Do some Design Rule Checking for the DIOM package type.
  *
  * <ul>
@@ -694,6 +712,12 @@ diom_function_list[] =
                 NULL
         },
 #endif /* GUI */
+        {
+                "Create Packages List",
+                diom_create_packages_list,
+                "Create a list of known DIOM packages",
+                NULL
+        },
         {
                 "DRC DIOM Element",
                 diom_drc,
