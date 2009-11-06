@@ -1,7 +1,7 @@
 /*!
  * \file diomelf.c
  * \author Copyright 2007, 2008, 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
- * \brief Functions for DIOMELF SMT footprints.
+ * \brief Functions for DIOMELF footprints.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@
 
 
 /*!
- * \brief Create a list of DIOMELF packages with pre-defined values.
+ * \brief Create a list of known DIOMELF packages.
  *
  * The data in this list can be used in a combo box to select a
  * pre-defined package.
@@ -56,7 +56,7 @@ diomelf_create_packages_list ()
 
 
 /*!
- * \brief Look up default values for a DIOMELF SMT footprint.
+ * \brief Look up default values for a DIOMELF footprint.
  *
  * Footprint values can be looked up by placing a question mark "?" in front
  * of the footprint name.\n
@@ -633,7 +633,7 @@ diomelf_get_default_footprint_values
 
 
 /*!
- * \brief Set GUI constraints for a DIOMELF SMT package type.
+ * \brief Set GUI constraints for a DIOMELF package type.
  *
  * This function is only to be compiled for GUI targets.
  *
@@ -683,7 +683,7 @@ diomelf_set_gui_constraints
 
 
 /*!
- * \brief Write a footprint with two pads for a DIOMELF SMT package.
+ * \brief Write a footprint with two pads for a DIOMELF package.
  *
  * \return \c EXIT_FAILURE when errors were encountered,
  * \c EXIT_SUCCESS when OK.
@@ -928,20 +928,20 @@ diomelf_function_list[] =
         {
                 "Set GUI constraints",
                 diomelf_set_gui_constraints,
-                "Set GUI constraints for a DIOMELF SMT package",
+                "Set GUI constraints for a DIOMELF package",
                 NULL
         },
 #endif /* GUI */
         {
                 "Default Element Values",
                 diomelf_get_default_footprint_values,
-                "Get default values for a DIOMELF SMT package",
+                "Get default values for a DIOMELF package",
                 NULL
         },
         {
                 "Write footprint",
                 diomelf_write_footprint,
-                "Write a footprint for a DIOMELF SMT package",
+                "Write a footprint for a DIOMELF package",
                 NULL
         }
 };
