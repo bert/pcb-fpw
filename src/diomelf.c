@@ -933,6 +933,12 @@ diomelf_function_list[] =
         },
 #endif /* GUI */
         {
+                "Create Packages List",
+                diomelf_create_packages_list,
+                "Create a list of known DIOMELF packages",
+                NULL
+        },
+        {
                 "Default Element Values",
                 diomelf_get_default_footprint_values,
                 "Get default values for a DIOMELF package",
