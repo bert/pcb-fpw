@@ -1407,8 +1407,8 @@ capc_get_default_footprint_values
                 number_of_rows = 0;
                 pitch_x = 1.80;
                 pitch_y = 0.0;
-                pad_length = 1.40;
-                pad_width = 1.05;
+                pad_length = 1.05;
+                pad_width = 1.40;
                 pad_shape = g_strdup ("rectangular pad");
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
@@ -1442,8 +1442,8 @@ capc_get_default_footprint_values
                 number_of_rows = 0;
                 pitch_x = 1.80;
                 pitch_y = 0.0;
-                pad_length = 1.45;
-                pad_width = 1.15;
+                pad_length = 1.15;
+                pad_width = 1.45;
                 pad_shape = g_strdup ("rectangular pad");
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
