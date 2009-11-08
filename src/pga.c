@@ -22,6 +22,24 @@
 #include "register_functions.c"
 
 /*!
+ * \brief Create a list of PGA packages with pre-defined values.
+ *
+ * The data in this list can be used in a combobox to select a
+ * pre-defined package.
+ *
+ * \return a list containing all package names of this footprint type
+ * known by pcb-fpw.
+ */
+GList
+pga_create_packages_list ()
+{
+        GList *pga_packages_list = NULL;
+        pga_packages_list = g_list_append (pga_packages_list, "INDC0603X33N");
+        return (*pga_packages_list);
+}
+
+
+/*!
  * \brief Do some Design Rule Checking for the PGA package type.
  *
  * <ul>
@@ -563,6 +581,12 @@ pga_function_list[] =
                 NULL
         },
 #endif /* GUI */
+        {
+                "Create Packages List",
+                pga_create_packages_list,
+                "Create a list of known PGA packages",
+                NULL
+        },
         {
                 "DRC PGA Element",
                 pga_drc,
