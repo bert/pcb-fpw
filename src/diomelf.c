@@ -1558,6 +1558,12 @@ diomelf_function_list[] =
         },
 #endif /* GUI */
         {
+                "Create Element",
+                diomelf_create_element,
+                "Create a pcb element for a DIOMELF package",
+                NULL
+        },
+        {
                 "Create Packages List",
                 diomelf_create_packages_list,
                 "Create a list of known DIOMELF packages",
