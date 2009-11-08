@@ -2634,6 +2634,24 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
                                         all_entries_need_updated (GTK_WIDGET (editable));
                                 return;
                         }
+                        case CAPC:
+                        {
+                                if (capc_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
+                                        all_entries_need_updated (GTK_WIDGET (editable));
+                                return;
+                        }
+                        case CAPM:
+                        {
+                                if (capm_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
+                                        all_entries_need_updated (GTK_WIDGET (editable));
+                                return;
+                        }
+                        case CAPMP:
+                        {
+                                if (capmp_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
+                                        all_entries_need_updated (GTK_WIDGET (editable));
+                                return;
+                        }
                         case CON_DIL:
                         {
                                 if (con_dil_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
@@ -2652,6 +2670,12 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
                                         all_entries_need_updated (GTK_WIDGET (editable));
                                 return;
                         }
+                        case DIOM:
+                        {
+                                if (diom_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
+                                        all_entries_need_updated (GTK_WIDGET (editable));
+                                return;
+                        }
                         case DIOMELF:
                         {
                                 if (diomelf_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
@@ -2661,6 +2685,12 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
                         case DIP:
                         {
                                 if (dip_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
+                                        all_entries_need_updated (GTK_WIDGET (editable));
+                                return;
+                        }
+                        case INDC:
+                        {
+                                if (indc_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
                                         all_entries_need_updated (GTK_WIDGET (editable));
                                 return;
                         }
