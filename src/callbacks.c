@@ -2712,6 +2712,12 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
                                         all_entries_need_updated (GTK_WIDGET (editable));
                                 return;
                         }
+                        case RESC:
+                        {
+                                if (resc_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
+                                        all_entries_need_updated (GTK_WIDGET (editable));
+                                return;
+                        }
                         case SOT:
                         {
                                 if (sot_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
