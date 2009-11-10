@@ -22,6 +22,258 @@
 #include "register_functions.c"
 
 /*!
+ * \brief Create an Element for a PGA package.
+ *
+ * \return the created \c element.
+ */
+ElementTypePtr
+pga_create_element ()
+{
+        gdouble xmax;
+        gdouble xmin;
+        gdouble ymax;
+        gdouble ymin;
+        gdouble x_text;
+        gdouble y_text;
+        gdouble dx;
+        gint pin_number;
+        gchar *pin_pad_name = g_strdup ("");
+        FlagType pad_flag;
+        ElementTypePtr element;
+        gint i;
+        gint j;
+
+        if (!element)
+        {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("could not create a valid element pointer for a ? package."));
+                return (NULL);
+        }
+        /* Define the center of our universe and guess for a place where to
+         * put the element mark */
+        element->MarkX = 0;
+        element->MarkY = 0;
+        /* Determine (extreme) courtyard dimensions based on pin/pad
+         * properties */
+
+        /* Determine (extreme) courtyard dimensions based on package
+         * properties */
+        if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
+        {
+                xmin = (multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package));
+        }
+        if ((multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package)) > xmax)
+        {
+                xmax = (multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package));
+        }
+        if ((multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package)) < ymin)
+        {
+                ymin = (multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package));
+        }
+        if ((multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package)) > ymax)
+        {
+                ymax = (multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package));
+        }
+        /* If the user input is using even more real-estate then use it */
+        if (multiplier * (-courtyard_length / 2.0) < xmin)
+        {
+                xmin = multiplier * (-courtyard_length / 2.0);
+        }
+        if (multiplier * (courtyard_length / 2.0) > xmax)
+        {
+                xmax = multiplier * (courtyard_length / 2.0);
+        }
+        if (multiplier * (-courtyard_width / 2.0) < ymin)
+        {
+                ymin = multiplier * (-courtyard_width / 2.0);
+        }
+        if (multiplier * (courtyard_width / 2.0) > ymax)
+        {
+                ymax = multiplier * (courtyard_width / 2.0);
+        }
+        /* Guess for a place where to put the element name */
+        element->Name[1].Scale = 100; /* 100 percent */
+        element->Name[1].X = 0.0 ; /* already in mil/100 */
+        element->Name[1].Y = (ymin - 10000.0); /* already in mil/100 */
+        element->Name[1].TextString = footprint_name;
+        element->Name[1].Element = element;
+        element->Name[1].Direction = EAST;
+        element->Name[1].ID = ID++;
+        /* Guess for a place where to put the element refdes */
+        element->Name[2].Scale = 100; /* 100 percent */
+        element->Name[2].X = 0.0 ; /* already in mil/100 */
+        element->Name[2].Y = (ymin - 10000.0); /* already in mil/100 */
+        element->Name[2].TextString = footprint_refdes;
+        element->Name[2].Element = element;
+        element->Name[2].Direction = EAST;
+        element->Name[2].ID = ID++;
+        /* Guess for a place where to put the element value */
+        element->Name[3].Scale = 100; /* 100 percent */
+        element->Name[3].X = 0.0 ; /* already in mil/100 */
+        element->Name[3].Y = (ymin - 10000.0); /* already in mil/100 */
+        element->Name[3].TextString = footprint_value;
+        element->Name[3].Element = element;
+        element->Name[3].Direction = EAST;
+        element->Name[3].ID = ID++;
+        /* Create pin and/or pad entities */
+        if (pad_shapes_type == SQUARE)
+        {
+                pad_flag.f = SQUARE;
+        }
+        else
+        {
+                pad_flag.f = CLEAR;
+        }
+        pin_number = 1;
+        for (i = 0; (i < number_of_rows); i++)
+        /* one row at a time [A .. ZZ ..] etc.
+         * where i is one or more letters of the alphabet,
+         * excluding "I", "O", "Q", "S" and "Z" */
+        {
+                for (j = 0; (j < number_of_columns); j++)
+                /* all columns of a row [1 .. n]
+                 * where j is a member of the positive Natural numbers (N) */
+                {
+                        if (pin1_square && (pin_number == 1))
+                                pad_flag.f = SQUARE;
+                        else
+                                pad_flag.f = CLEAR;
+                        pin_pad_name = g_strdup_printf ("%s%d", (row_letters[i]), (j + 1));
+                        if (get_pin_pad_exception (pin_pad_name))
+                        {
+                                create_new_pin
+                                (
+                                        element,
+                                        (int) (multiplier * ((((- number_of_columns -1) / 2.0) + 1 + j) * pitch_x)), /* x0 coordinate */
+                                        (int) (multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y)), /* y0-coordinate */
+                                        (int) (multiplier * pad_diameter), /* pad width */
+                                        (int) (multiplier * pad_clearance), /* clearance */
+                                        (int) (multiplier * (pad_diameter + pad_solder_mask_clearance)), /* solder mask clearance */
+                                        (int) (multiplier * pin_drill_diameter), /* pin drill diameter */
+                                        pin_pad_name, /* pin name */
+                                        g_strdup_printf ("%d", pin_number), /* pin number */
+                                        pad_flag /* flags */
+                                );
+                        }
+                        pin_number++;
+                }
+        }
+        /* Create a package body. */
+        if (courtyard)
+        {
+                create_new_line
+                (
+                        element,
+                        (int) (multiplier * (-package_body_length / 2.0)),
+                        (int) (multiplier * (-package_body_width / 2.0)),
+                        (int) (multiplier * (-package_body_length / 2.0)),
+                        (int) (multiplier * (package_body_width / 2.0)),
+                        (int) (multiplier * silkscreen_line_width)
+                );
+                create_new_line
+                (
+                        element,
+                        (int) (multiplier * (package_body_length / 2.0)),
+                        (int) (multiplier * (-package_body_width / 2.0)),
+                        (int) (multiplier * (package_body_length / 2.0)),
+                        (int) (multiplier * (package_body_width / 2.0)),
+                        (int) (multiplier * silkscreen_line_width)
+                );
+                create_new_line
+                (
+                        element,
+                        (int) (multiplier * (-package_body_length / 2.0)),
+                        (int) (multiplier * (-package_body_width / 2.0)),
+                        (int) (multiplier * (package_body_length / 2.0)),
+                        (int) (multiplier * (-package_body_width / 2.0)),
+                        (int) (multiplier * silkscreen_line_width)
+                );
+                create_new_line
+                (
+                        element,
+                        (int) (multiplier * (package_body_length / 2.0)),
+                        (int) (multiplier * (package_body_width / 2.0)),
+                        (int) (multiplier * (-package_body_length / 2.0)),
+                        (int) (multiplier * (package_body_width / 2.0)),
+                        (int) (multiplier * silkscreen_line_width)
+                );
+        }
+        /* Create a pin #1 marker on the silkscreen. */
+        if (silkscreen_indicate_1)
+        {
+                fprintf (fp, "# Write a pin 1 marker on the silkscreen\n");
+                for (dx = 0.0; dx < (pitch_x / 2.0); dx = dx + silkscreen_line_width)
+                {
+                        create_new_line
+                        (
+                                element,
+                                (int) (multiplier * (-package_body_length / 2.0)),
+                                (int) (multiplier * ((-package_body_width / 2.0) + dx)),
+                                (int) (multiplier * ((-package_body_length / 2.0) + dx)),
+                                (int) (multiplier * (-package_body_width / 2.0)),
+                                (int) (multiplier * silkscreen_line_width)
+                        );
+                }
+        }
+        /* Create a courtyard. */
+        if (courtyard)
+        {
+                create_new_line
+                (
+                        element,
+                        (int) (xmin), /* already in mil/100 */
+                        (int) (ymin), /* already in mil/100 */
+                        (int) (xmin), /* already in mil/100 */
+                        (int) (ymax), /* already in mil/100 */
+                        (int) (multiplier * courtyard_line_width)
+                );
+                create_new_line
+                (
+                        element,
+                        (int) (xmax), /* already in mil/100 */
+                        (int) (ymin), /* already in mil/100 */
+                        (int) (xmax), /* already in mil/100 */
+                        (int) (ymax), /* already in mil/100 */
+                        (int) (multiplier * courtyard_line_width)
+                );
+                create_new_line
+                (
+                        element,
+                        (int) (xmin), /* already in mil/100 */
+                        (int) (ymin), /* already in mil/100 */
+                        (int) (xmax), /* already in mil/100 */
+                        (int) (ymin), /* already in mil/100 */
+                        (int) (multiplier * courtyard_line_width)
+                );
+                create_new_line
+                (
+                        element,
+                        (int) (xmax), /* already in mil/100 */
+                        (int) (ymax), /* already in mil/100 */
+                        (int) (xmin), /* already in mil/100 */
+                        (int) (ymax), /* already in mil/100 */
+                        (int) (multiplier * courtyard_line_width)
+                );
+        }
+        /* Create attributes. */
+        if (attributes_in_footprint)
+        {
+                element = create_attributes_in_element (element);
+        }
+        /* We are ready creating an element. */
+        if (verbose)
+        {
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("created an element for a %s package: %s."),
+                        footprint_type,
+                        footprint_filename);
+        }
+        return (element);
+}
+
+
+/*!
  * \brief Create a list of PGA packages with pre-defined values.
  *
  * The data in this list can be used in a combobox to select a
@@ -581,6 +833,12 @@ pga_function_list[] =
                 NULL
         },
 #endif /* GUI */
+        {
+                "Create element",
+                pga_create_element,
+                "Create an element for a PGA package",
+                NULL
+        },
         {
                 "Create Packages List",
                 pga_create_packages_list,
