@@ -22,6 +22,24 @@
 #include "register_functions.c"
 
 /*!
+ * \brief Create a list of known PLCC packages.
+ *
+ * The data in this list can be used in a combobox to select a
+ * pre-defined package.
+ *
+ * \return a list containing all package names of this footprint type
+ * known by pcb-fpw.
+ */
+GList
+plcc_create_packages_list ()
+{
+        GList *plcc_packages_list = NULL;
+        plcc_packages_list = g_list_append (plcc_packages_list, "INDC0603X33N");
+        return (*plcc_packages_list);
+}
+
+
+/*!
  * \brief Do some Design Rule Checking for the PLCC package type.
  *
  * <ul>
@@ -833,6 +851,12 @@ plcc_function_list[] =
                 NULL
         },
 #endif /* GUI */
+        {
+                "Create Packages List",
+                plcc_create_packages_list,
+                "Create a list of known PLCC packages",
+                NULL
+        },
         {
                 "DRC PLCC Element",
                 plcc_drc,
