@@ -48,7 +48,8 @@ bga_create_element ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("could not create a valid element pointer for a BGA package."));
+                                _("could not create a valid element pointer for a %s package."),
+                                footprint_type);
                 }
                 return (NULL);
         }
