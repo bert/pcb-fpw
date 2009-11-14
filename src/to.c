@@ -71,6 +71,8 @@ to_get_default_footprint_values
                 number_of_rows = 0;
                 pitch_x = 0.0;
                 pitch_y = 0.0;
+                pad_diameter = 1.00; /* approx. 40 mil */
+                pin_drill_diameter = 0.72; /* approx. 28 mil */
                 pad_length = 0.0;
                 pad_width = 0.0;
                 pad_shape = g_strdup ("rounded pad");
