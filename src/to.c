@@ -23,6 +23,208 @@
 
 
 /*!
+ * \brief Create an Element for a TO92 package.
+ *
+ * \return the created \c element.
+ */
+ElementTypePtr
+to_create_element_to92 ()
+{
+        gdouble xmax;
+        gdouble xmin;
+        gdouble ymax;
+        gdouble ymin;
+        gdouble x_text;
+        gdouble y_text;
+        gdouble dx;
+        gint pin_number;
+        gchar *pin_pad_name = g_strdup ("");
+        FlagType pad_flag;
+        ElementTypePtr element;
+
+        if (!element)
+        {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("could not create a valid element pointer for a %s package."),
+                                footprint_type);
+                return (NULL);
+        }
+        /* Define the center of our universe and guess for a place where to
+         * put the element mark */
+        element->MarkX = 0;
+        element->MarkY = 0;
+        /* Determine (extreme) courtyard dimensions based on pin/pad
+         * properties */
+
+        /* Determine (extreme) courtyard dimensions based on package
+         * properties */
+        if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
+        {
+                xmin = (multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package));
+        }
+        if ((multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package)) > xmax)
+        {
+                xmax = (multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package));
+        }
+        if ((multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package)) < ymin)
+        {
+                ymin = (multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package));
+        }
+        if ((multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package)) > ymax)
+        {
+                ymax = (multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package));
+        }
+        /* If the user input is using even more real-estate then use it */
+        if (multiplier * (-courtyard_length / 2.0) < xmin)
+        {
+                xmin = multiplier * (-courtyard_length / 2.0);
+        }
+        if (multiplier * (courtyard_length / 2.0) > xmax)
+        {
+                xmax = multiplier * (courtyard_length / 2.0);
+        }
+        if (multiplier * (-courtyard_width / 2.0) < ymin)
+        {
+                ymin = multiplier * (-courtyard_width / 2.0);
+        }
+        if (multiplier * (courtyard_width / 2.0) > ymax)
+        {
+                ymax = multiplier * (courtyard_width / 2.0);
+        }
+        /* Guess for a place where to put the element name */
+        element->Name[1].Scale = 100; /* 100 percent */
+        element->Name[1].X = 0.0 ; /* already in mil/100 */
+        element->Name[1].Y = (ymin - 10000.0); /* already in mil/100 */
+        element->Name[1].TextString = footprint_name;
+        element->Name[1].Element = element;
+        element->Name[1].Direction = EAST;
+        element->Name[1].ID = ID++;
+        /* Guess for a place where to put the element refdes */
+        element->Name[2].Scale = 100; /* 100 percent */
+        element->Name[2].X = 0.0 ; /* already in mil/100 */
+        element->Name[2].Y = (ymin - 10000.0); /* already in mil/100 */
+        element->Name[2].TextString = footprint_refdes;
+        element->Name[2].Element = element;
+        element->Name[2].Direction = EAST;
+        element->Name[2].ID = ID++;
+        /* Guess for a place where to put the element value */
+        element->Name[3].Scale = 100; /* 100 percent */
+        element->Name[3].X = 0.0 ; /* already in mil/100 */
+        element->Name[3].Y = (ymin - 10000.0); /* already in mil/100 */
+        element->Name[3].TextString = footprint_value;
+        element->Name[3].Element = element;
+        element->Name[3].Direction = EAST;
+        element->Name[3].ID = ID++;
+        /* Create pin and/or pad entities */
+        if (pad_shapes_type == SQUARE)
+        {
+                pad_flag.f = SQUARE;
+        }
+        else
+        {
+                pad_flag.f = CLEAR;
+        }
+        create_new_pin
+        (
+                element,
+                (int) (5000), /* x0 coordinate */
+                (int) (0), /* y0-coordinate */
+                (int) (multiplier * pad_diameter), /* pad width */
+                (int) (multiplier * pad_clearance), /* clearance */
+                (int) (multiplier * (pad_diameter + pad_solder_mask_clearance)), /* solder mask clearance */
+                (int) (multiplier * pin_drill_diameter), /* pin drill diameter */
+                "", /* pin name */
+                "3", /* pin number */
+                pad_flag /* flags */
+        );
+        create_new_pin
+        (
+                element,
+                (int) (0), /* x0 coordinate */
+                (int) (0), /* y0-coordinate */
+                (int) (multiplier * pad_diameter), /* pad width */
+                (int) (multiplier * pad_clearance), /* clearance */
+                (int) (multiplier * (pad_diameter + pad_solder_mask_clearance)), /* solder mask clearance */
+                (int) (multiplier * pin_drill_diameter), /* pin drill diameter */
+                "", /* pin name */
+                "2", /* pin number */
+                pad_flag /* flags */
+        );
+        if (pin1_square || (pad_shapes_type == SQUARE))
+        {
+                pad_flag.f = SQUARE;
+        }
+        else
+        {
+                pad_flag.f = CLEAR;
+        }
+        create_new_pin
+        (
+                element,
+                -5000, /* x0 coordinate, already in mil/100 */
+                0, /* y0-coordinate, already in mil/100 */
+                (int) (multiplier * pad_diameter), /* pad width */
+                (int) (multiplier * pad_clearance), /* clearance */
+                (int) (multiplier * (pad_diameter + pad_solder_mask_clearance)), /* solder mask clearance */
+                (int) (multiplier * pin_drill_diameter), /* pin drill diameter */
+                "", /* pin name */
+                "1", /* pin number */
+                pad_flag /* flags */
+        );
+        /* Create a package body. */
+        create_new_line
+        (
+                element,
+                -8600, /* x0 coordinate, already in mil/100 */
+                -6000, /* y0-coordinate, already in mil/100 */
+                8600, /* x1-coordinate, already in mil/100 */
+                -6000, /* y1-coordinate, already in mil/100 */
+                (int) (multiplier * silkscreen_line_width) /* line width */
+        );
+        create_new_arc
+        (
+                element,
+                0, /* x coordinate of center point, already in mil/100 */
+                0, /* y coordinate of center point, already in mil/100 */
+                10500, /* width, already in mil/100 */
+                10500, /* height, already in mil/100 */
+                -35, /* start angle */
+                250, /* delta angle */
+                (int) (multiplier * silkscreen_line_width) /* line width */
+        );
+        /* Create a pin #1 marker. */
+                /* package has marker in package body outline geometry */
+        /* Create a courtyard outline. */
+        create_new_arc
+        (
+                element,
+                0, /* x coordinate of center point, already in mil/100 */
+                0, /* y coordinate of center point, already in mil/100 */
+                xmax, /* width, already in mil/100 */
+                ymax, /* height, already in mil/100 */
+                0, /* start angle */
+                360, /* delta angle */
+                (int) (multiplier * silkscreen_line_width) /* line width */
+        );
+        /* Create attributes. */
+        if (attributes_in_footprint)
+        {
+                element = create_attributes_in_element (element);
+        }
+        /* We are ready creating an element. */
+        if (verbose)
+        {
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("created an element for a %s package: %s."),
+                        footprint_type,
+                        footprint_filename);
+        }
+        return (element);
+}
+
+
+/*!
  * \brief Create a list of TO packages with pre-defined values.
  *
  * The data in this list can be used in a combobox to select a
@@ -324,6 +526,12 @@ to_function_list[] =
                 NULL
         },
 #endif /* GUI */
+        {
+                "Create element",
+                to_create_element_to92,
+                "Create an element for a TO92 package",
+                NULL
+        },
         {
                 "Default Element Values",
                 to_get_default_footprint_values,
