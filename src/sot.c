@@ -350,15 +350,114 @@ sot_create_element ()
                                 number_of_pins);
                 }
         }
-        /* Create attributes here. */
+        /* Create a package body. */
+        if (silkscreen_package_outline)
+        {
+                create_new_line
+                (
+                        element,
+                        (int) (multiplier * (-silkscreen_length / 2.0)),
+                        (int) (multiplier * (-silkscreen_width / 2.0)),
+                        (int) (multiplier * (-silkscreen_length / 2.0)),
+                        (int) (multiplier * (silkscreen_width / 2.0)),
+                        (int) (multiplier * silkscreen_line_width)
+                );
+                create_new_line
+                (
+                        element,
+                        (int) (multiplier * (silkscreen_length / 2.0)),
+                        (int) (multiplier * (-silkscreen_width / 2.0)),
+                        (int) (multiplier * (silkscreen_length / 2.0)),
+                        (int) (multiplier * (silkscreen_width / 2.0)),
+                        (int) (multiplier * silkscreen_line_width)
+                );
+                create_new_line
+                (
+                        element,
+                        (int) (multiplier * (-silkscreen_length / 2.0)),
+                        (int) (multiplier * (-silkscreen_width / 2.0)),
+                        (int) (multiplier * (silkscreen_length / 2.0)),
+                        (int) (multiplier * (-silkscreen_width / 2.0)),
+                        (int) (multiplier * silkscreen_line_width)
+                );
+                create_new_line
+                (
+                        element,
+                        (int) (multiplier * (silkscreen_length / 2.0)),
+                        (int) (multiplier * (silkscreen_width / 2.0)),
+                        (int) (multiplier * (-silkscreen_length / 2.0)),
+                        (int) (multiplier * (silkscreen_width / 2.0)),
+                        (int) (multiplier * silkscreen_line_width)
+                );
+        }
+        /* Create a pin #1 marker. */
+        if (silkscreen_indicate_1)
+        {
+                create_new_arc
+                (
+                        element,
+                        (int) (multiplier * (-pitch_x / 2.0)), /* x-coordinate */
+                        (int) (multiplier * (-pitch_y * (number_of_rows) / 2.0)), /* y-coordinate */
+                        (int) (multiplier * 0.5 * silkscreen_line_width), /* width */
+                        (int) (multiplier * 0.5 * silkscreen_line_width), /*height */
+                        0, /* start angke */
+                        360, /* delta angle */
+                        (int) (multiplier * silkscreen_line_width) /* line width */
+                );
+        }
+        /* Create a courtyard outline. */
+        if (courtyard)
+        {
+                create_new_line
+                (
+                        element,
+                        (int) (xmin), /* already in mil/100 */
+                        (int) (ymin), /* already in mil/100 */
+                        (int) (xmin), /* already in mil/100 */
+                        (int) (ymax), /* already in mil/100 */
+                        (int) (multiplier * courtyard_line_width)
+                );
+                create_new_line
+                (
+                        element,
+                        (int) (xmax), /* already in mil/100 */
+                        (int) (ymin), /* already in mil/100 */
+                        (int) (xmax), /* already in mil/100 */
+                        (int) (ymax), /* already in mil/100 */
+                        (int) (multiplier * courtyard_line_width)
+                );
+                create_new_line
+                (
+                        element,
+                        (int) (xmin), /* already in mil/100 */
+                        (int) (ymin), /* already in mil/100 */
+                        (int) (xmax), /* already in mil/100 */
+                        (int) (ymin), /* already in mil/100 */
+                        (int) (multiplier * courtyard_line_width)
+                );
+                create_new_line
+                (
+                        element,
+                        (int) (xmax), /* already in mil/100 */
+                        (int) (ymax), /* already in mil/100 */
+                        (int) (xmin), /* already in mil/100 */
+                        (int) (ymax), /* already in mil/100 */
+                        (int) (multiplier * courtyard_line_width)
+                );
+        }
+        /* Create attributes. */
         if (attributes_in_footprint)
+        {
                 element = create_attributes_in_element (element);
+        }
         /* We are ready creating an element. */
         if (verbose)
+        {
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("created an element for a %s package: %s."),
                         footprint_type,
                         footprint_filename);
+        }
         return (element);
 }
 
