@@ -2814,22 +2814,38 @@ sot_write_footprint ()
         /* Determine (extreme) courtyard dimensions based on package
          * properties */
         if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
+        {
                 xmin = (multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package));
+        }
         if ((multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package)) > xmax)
+        {
                 xmax = (multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package));
+        }
         if ((multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package)) < ymin)
+        {
                 ymin = (multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package));
+        }
         if ((multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package)) > ymax)
+        {
                 ymax = (multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package));
+        }
         /* If the user input is using even more real-estate then use it */
         if (multiplier * (-courtyard_length / 2.0) < xmin)
+        {
                 xmin = multiplier * (-courtyard_length / 2.0);
+        }
         if (multiplier * (courtyard_length / 2.0) > xmax)
+        {
                 xmax = multiplier * (courtyard_length / 2.0);
+        }
         if (multiplier * (-courtyard_width / 2.0) < ymin)
+        {
                 ymin = multiplier * (-courtyard_width / 2.0);
+        }
         if (multiplier * (courtyard_width / 2.0) > ymax)
+        {
                 ymax = multiplier * (courtyard_width / 2.0);
+        }
         /* Write element header
          * Guess for a place where to put the refdes text */
         x_text = 0.0 ; /* already in mil/100 */
