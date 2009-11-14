@@ -533,6 +533,12 @@ to_function_list[] =
                 NULL
         },
         {
+                "Packages list",
+                to_create_packages_list,
+                "Create a list of known TO packages",
+                NULL
+        },
+        {
                 "Default Element Values",
                 to_get_default_footprint_values,
                 "Get default values for a INDC SMT package",
