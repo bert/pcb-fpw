@@ -1915,6 +1915,7 @@ dip_write_footprint ()
                 footprint_type,
                 footprint_filename
         );
+        return (EXIT_SUCCESS);
 }
 
 
