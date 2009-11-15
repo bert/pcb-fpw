@@ -1031,7 +1031,7 @@ capm_write_footprint ()
         if (verbose)
         {
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("created an element for a %s package: %s."),
+                        _("wrote a footprint for a %s package: %s."),
                         footprint_type,
                         footprint_filename);
         }
