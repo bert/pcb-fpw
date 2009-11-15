@@ -4784,6 +4784,23 @@ bga_write_footprint ()
                         multiplier * courtyard_line_width
                 );
         }
+        /* Write attributes to the footprint file. */
+        if (attributes_in_footprint)
+        {
+                write_attributes ();
+        }
+        /* Finishing touch. */
+        fprintf (fp, "\n");
+        fprintf (fp, ")\n");
+        fclose (fp);
+        /* We are ready creating a footprint. */
+        fprintf
+        (
+                stderr,
+                "SUCCESS: wrote a footprint file for a %s package: %s.\n",
+                footprint_type,
+                footprint_filename
+        );
         return (EXIT_SUCCESS);
 }
 
