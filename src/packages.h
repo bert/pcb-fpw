@@ -35,6 +35,7 @@
 #include "plcc.c"
 #include "res.c"
 #include "resc.c"
+#include "resm.c"
 #include "smt.c"
 #include "sot.c"
 #include "to.c"
