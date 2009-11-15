@@ -3085,19 +3085,11 @@ sot_write_footprint ()
                 fprintf (fp, "# Write a courtyard on the silkscreen\n");
                 write_rectangle
                 (
-                        courtyard_length > (package_body_length + courtyard_clearance_with_package)
-                        ? (multiplier * (-courtyard_length / 2.0))
-                        : (multiplier * ((-package_body_length - courtyard_clearance_with_package) / 2.0)),
-                        courtyard_width > (package_body_width + courtyard_clearance_with_package)
-                        ? (multiplier * (-courtyard_width / 2.0))
-                        : (multiplier * ((-package_body_width - courtyard_clearance_with_package) / 2.0)),
-                        courtyard_length > (package_body_length + courtyard_clearance_with_package)
-                        ? (multiplier * (courtyard_length / 2.0))
-                        : (multiplier * ((package_body_length + courtyard_clearance_with_package) / 2.0)),
-                        courtyard_width > (package_body_width + courtyard_clearance_with_package)
-                        ? (multiplier * (courtyard_width / 2.0))
-                        : (multiplier * ((package_body_width + courtyard_clearance_with_package) / 2.0)),
-                        multiplier * courtyard_line_width
+                        xmin, /* already in mil/100 */
+                        ymin, /* already in mil/100 */
+                        xmax, /* already in mil/100 */
+                        ymax, /* already in mil/100 */
+                        multiplier * silkscreen_line_width
                 );
         }
         return (EXIT_SUCCESS);
