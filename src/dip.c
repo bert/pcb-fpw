@@ -1898,12 +1898,16 @@ dip_write_footprint ()
                         multiplier * courtyard_line_width
                 );
         }
-        /* Write attributes */
+        /* Write attributes to the footprint file. */
         if (attributes_in_footprint)
+        {
                 write_attributes ();
+        }
+        /* Finishing touch. */
         fprintf (fp, "\n");
         fprintf (fp, ")\n");
         fclose (fp);
+        /* We are ready creating a footprint. */
         fprintf
         (
                 stderr,
