@@ -2446,7 +2446,8 @@ write_footprint()
                         resc_write_footprint ();
                         break;
                 case RESM:
-                        smt_write_footprint_molded ();
+                        resm_drc ();
+                        resm_write_footprint ();
                         break;
                 case RESMELF:
                         smt_write_footprint ();
