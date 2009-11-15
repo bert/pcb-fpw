@@ -1048,19 +1048,24 @@ res_write_footprint ()
                         multiplier * courtyard_line_width
                 );
         }
-        /* Write attributes */
+        /* Write attributes to the footprint file. */
         if (attributes_in_footprint)
+        {
                 write_attributes ();
+        }
+        /* Finishing touch. */
         fprintf (fp, "\n");
         fprintf (fp, ")\n");
         fclose (fp);
-        fprintf
-        (
-                stderr,
-                "SUCCESS: wrote a footprint file for a %s package: %s.\n",
-                footprint_type,
-                footprint_filename
-        );
+        /* We are ready creating a footprint. */
+        if (verbose)
+        {
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("wrote a footprint for a %s package: %s."),
+                        footprint_type,
+                        footprint_filename);
+        }
+        return (EXIT_SUCCESS);
 }
 
 
