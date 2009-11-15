@@ -3089,7 +3089,7 @@ sot_write_footprint ()
                         ymin, /* already in mil/100 */
                         xmax, /* already in mil/100 */
                         ymax, /* already in mil/100 */
-                        multiplier * silkscreen_line_width
+                        multiplier * courtyard_line_width
                 );
         }
         return (EXIT_SUCCESS);
