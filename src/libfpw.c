@@ -2422,7 +2422,8 @@ write_footprint()
                         indc_write_footprint ();
                         break;
                 case INDM:
-                        smt_write_footprint_molded ();
+                        indm_drc ();
+                        indm_write_footprint ();
                         break;
                 case INDP:
                         smt_write_footprint ();

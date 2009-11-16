@@ -2694,6 +2694,12 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
                                         all_entries_need_updated (GTK_WIDGET (editable));
                                 return;
                         }
+                        case INDM:
+                        {
+                                if (indm_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
+                                        all_entries_need_updated (GTK_WIDGET (editable));
+                                return;
+                        }
                         case PGA:
                         {
                                 if (pga_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
@@ -2936,7 +2942,7 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                 case INDM:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        gui_constraints_set_smt (GTK_WIDGET (combobox));
+                        indm_set_gui_constraints (GTK_WIDGET (combobox));
                         break;
                 }
                 case INDP:
