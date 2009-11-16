@@ -31,6 +31,7 @@
 #include "diomelf.c"
 #include "dip.c"
 #include "indc.c"
+#include "indm.c"
 #include "pga.c"
 #include "plcc.c"
 #include "res.c"
