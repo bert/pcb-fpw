@@ -2388,9 +2388,11 @@ write_footprint()
                         bga_write_footprint ();
                         break;
                 case CAPC:
+                        capc_drc ();
                         capc_write_footprint ();
                         break;
                 case CAPM:
+                        capm_drc ();
                         capm_write_footprint ();
                         break;
                 case CAPMP:
@@ -2409,9 +2411,11 @@ write_footprint()
                         return;
                         break;
                 case DIOM:
-                        diomelf_write_footprint ();
+                        diom_drc ();
+                        diom_write_footprint ();
                         break;
                 case DIOMELF:
+                        diomelf_drc ();
                         diomelf_write_footprint ();
                         break;
                 case DIP:
@@ -2419,6 +2423,7 @@ write_footprint()
                         dip_write_footprint ();
                         break;
                 case INDC:
+                        indc_drc ();
                         indc_write_footprint ();
                         break;
                 case INDM:
@@ -2429,9 +2434,11 @@ write_footprint()
                         smt_write_footprint ();
                         break;
                 case PGA:
+                        pga_drc ();
                         pga_write_footprint ();
                         break;
                 case PLCC:
+                        plcc_drc ();
                         plcc_write_footprint ();
                         break;
                 case QFN:
@@ -2441,9 +2448,11 @@ write_footprint()
                         return;
                         break;
                 case RES:
+                        res_drc ();
                         res_write_footprint ();
                         break;
                 case RESC:
+                        resc_drc ();
                         resc_write_footprint ();
                         break;
                 case RESM:
@@ -2463,6 +2472,7 @@ write_footprint()
                         return;
                         break;
                 case SOT:
+                        sot_drc ();
                         sot_write_footprint ();
                         break;
                 case TO92:
