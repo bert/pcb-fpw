@@ -1931,7 +1931,7 @@ write_element_line
  * In case (2, 3), the object of interest is the design.\n
  * Some label case 1 "distribution", and case (2, 3) "use" of the
  * symbol.
- * Our goals for the symbols are:
+ * Our goals for the footprints are:
  * <ul>
  * <li> We wish to distribute the footprints under a licencing scheme
  * which encourages that you give back to the community if you
