@@ -17,7 +17,7 @@
 
 .SH NAME
 .B fpw
-\- FootPrintWizard for the printed circuit board layout tool
+\- FootPrintWizard for the printed circuit board layout tool.
 
 .SH SYNOPSIS
 .B fpw
@@ -25,7 +25,7 @@
 [--verbose | -v]
 [--version | -V]
 [--help | -h]
-[--format <footprint wizardfilename> | -f <footprint wizardfilename>]
+[--format <footprint wizardfilename> | -f <footprintwizard filename>]
 [--output <footprint filename> | -o <footprint filename>]
 
 .SH DESCRIPTION
@@ -50,33 +50,40 @@ The prefix "/usr/local" may vary at your site.
 \fIfpw\fP accepts the following options:
 .TP 8
 .B -q
+.TP 8
 .B --quiet
-.Quiet mode on.  This mode turns off all warnings/notes/messages. (optional)
+Quiet mode on.  This mode turns off all warnings/notes/messages. (optional)
 .TP 8
 .B -v
+.TP 8
 .B --verbose
 Verbose mode on.  This mode gives as much feedback to the user as possible. (optional)
 .TP 8
-.b -h
+.B -h
+.TP 8
 .B --help
 Print a message explaining the usage of the command line version of the program. (optional)
-.TP8
+.TP 8
 .B -V
+.TP 8
 .B --version
 Print the version of the program. (optional)
 .TP 8
-.B -f <footprintwizard filename>
+.B -f
+.TP 8
+.B --format <footprintwizard filename>
 Specify a filename for the program to read the resources for the footprint from.
 .TP 8
-.B -o <footprint filename>
+.B -o
+.TP 8
+.B --output <footprint filename>
 Specify a filename for the footprint to be created.
 
 .SH EXAMPLES
-These examples assume that you have a footprintwizard file called BGA10x10.fpw in
+This example assumes that you have a footprintwizard file called BGA10X10.fpw in
 the current directory.
-
-.\" Add example here
-
+.TP 8
+.B fpw --quiet --format BGA10X10.fpw --output BGA50C10X10-100_1100X1100.fp
 
 .SH "ENVIRONMENT"
 \fIfpw\fP respects the following environment variable:
@@ -85,14 +92,14 @@ the current directory.
 .B <none>
 
 .SH "AUTHOR"
-Bert Timmerman and maybe others
+Bert Timmerman and maybe others.
 
 .SH SEE ALSO
 .BR ... (1)
 
 .SH COPYRIGHT
 .nf
-Copyright \(co  2007-2009 Bert Timmerman
+Copyright \(co  2007-2009 Bert Timmerman.
 
 This document can be freely redistributed according to the terms of the
 GNU General Public License version 2 or any later version.
