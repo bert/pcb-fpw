@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+_Comment=FootPrintWizard file
+MimeType=application/x-fpw
+Type=MimeType
+Icon=application-x-fpw
+Patterns=*.fpw
+X-KDE-IsAlso=text/plain
