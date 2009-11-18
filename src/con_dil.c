@@ -169,6 +169,21 @@ con_dil_write_footprint ()
         gchar *pin_pad_name = g_strdup ("");
         gint i;
 
+        /* Attempt to open a file with write permission. */
+        fp = fopen (footprint_filename, "w");
+        if (!fp)
+        {
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("could not open file for %s footprint: %s."),
+                        footprint_type, footprint_filename);
+                fclose (fp);
+                return (EXIT_FAILURE);
+        }
+        /* Print a license if requested. */
+        if (license_in_footprint)
+        {
+                write_license ();
+	}
         /* Determine (extreme) courtyard dimensions based on pin/pad
          * properties */
         xmin = multiplier *
