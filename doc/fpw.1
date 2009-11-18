@@ -1,0 +1,98 @@
+.\"  This program is free software; you can redistribute it and/or modify
+.\"  it under the terms of the GNU General Public License as published by
+.\"  the Free Software Foundation; either version 2 of the License, or
+.\"  (at your option) any later version.
+.\"
+.\"  This program is distributed in the hope that it will be useful,
+.\"  but WITHOUT ANY WARRANTY; without even the implied warranty of
+.\"  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+.\"  GNU General Public License for more details.
+.\"
+.\"  You should have received a copy of the GNU General Public License
+.\"  along with this program; if not, write to the Free Software
+.\"  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+.\"
+
+.TH FPW 1
+
+.SH NAME
+.B fpw
+\- FootPrintWizard for the printed circuit board layout tool
+
+.SH SYNOPSIS
+.B fpw
+[--quiet | -q]
+[--verbose | -v]
+[--version | -V]
+[--help | -h]
+[--format <footprint wizardfilename> | -f <footprint wizardfilename>]
+[--output <footprint filename> | -o <footprint filename>]
+
+.SH DESCRIPTION
+The
+.B fpw
+program is a tool for the creation of footprints to be used in the layout of printed circuit boards.
+The complete manual for
+.B fpw
+is provided in a GNU texinfo format as well as HTML and PDF.
+The texinfo version of the manual is typically viewed with the
+.B info
+program or alternatively with
+.B emacs
+or a graphical info viewer such as
+.B tkinfo
+.  The PDF and HTML documentation is typically installed as
+/usr/local/share/fpw/fpw.html and /usr/local/share/fpw/fpw.pdf.
+The prefix "/usr/local" may vary at your site.
+
+.SH OPTIONS
+.l
+\fIfpw\fP accepts the following options:
+.TP 8
+.B -q
+.B --quiet
+.Quiet mode on.  This mode turns off all warnings/notes/messages. (optional)
+.TP 8
+.B -v
+.B --verbose
+Verbose mode on.  This mode gives as much feedback to the user as possible. (optional)
+.TP 8
+.b -h
+.B --help
+Print a message explaining the usage of the command line version of the program. (optional)
+.TP8
+.B -V
+.B --version
+Print the version of the program. (optional)
+.TP 8
+.B -f <footprintwizard filename>
+Specify a filename for the program to read the resources for the footprint from.
+.TP 8
+.B -o <footprint filename>
+Specify a filename for the footprint to be created.
+
+.SH EXAMPLES
+These examples assume that you have a footprintwizard file called BGA10x10.fpw in
+the current directory.
+
+.\" Add example here
+
+
+.SH "ENVIRONMENT"
+\fIfpw\fP respects the following environment variable:
+.PP
+.TP 8
+.B <none>
+
+.SH "AUTHOR"
+Bert Timmerman and maybe others
+
+.SH SEE ALSO
+.BR ... (1)
+
+.SH COPYRIGHT
+.nf
+Copyright \(co  2007-2009 Bert Timmerman
+
+This document can be freely redistributed according to the terms of the
+GNU General Public License version 2 or any later version.
