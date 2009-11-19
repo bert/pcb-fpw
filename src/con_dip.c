@@ -185,7 +185,7 @@ con_dip_write_footprint ()
         if (license_in_footprint)
         {
                 write_license ();
-	}
+        }
         /* Determine (extreme) courtyard dimensions based on pin/pad
          * properties */
         xmin = multiplier *

@@ -952,7 +952,7 @@ plcc_write_footprint ()
         if (license_in_footprint)
         {
                 write_license ();
-	}
+        }
         /* Determine (extreme) courtyard dimensions based on pin/pad
          * properties */
         if (c1_state) /* center-center distance */

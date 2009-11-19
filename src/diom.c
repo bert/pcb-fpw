@@ -814,7 +814,7 @@ diom_write_footprint ()
         if (license_in_footprint)
         {
                 write_license ();
-	}
+        }
         /* Determine (extreme) courtyard dimensions based on pin/pad
          * properties */
         xmin = multiplier * ((-pitch_x / 2.0) - (pad_length / 2.0) - pad_solder_mask_clearance);
