@@ -2939,7 +2939,7 @@ sot_write_footprint ()
                                 multiplier * pad_width, /* pad width */
                                 multiplier * pad_clearance, /* clearance */
                                 multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
-                                pin_pad_flags /* flags */
+                                pin1_square ? "square" : pin_pad_flags /* flags */
                         );
                         /* Pad #2 */
                         pin_number++;
