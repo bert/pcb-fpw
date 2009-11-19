@@ -21,7 +21,8 @@
 
 .SH SYNOPSIS
 .B fpw
-[--quiet | -q]
+[--help | -h]
+[--quiet |--silent | -q]
 [--verbose | -v]
 [--version | -V]
 [--help | -h]
@@ -49,9 +50,17 @@ The prefix "/usr/local" may vary at your site.
 .l
 \fIfpw\fP accepts the following options:
 .TP 8
+.B -h
+.TP 8
+.B --help
+Print a help message with command line options. (optional)
+.TP 8
 .B -q
 .TP 8
 .B --quiet
+.TP 8
+.B --silent
+.TP 8
 Quiet mode on.  This mode turns off all warnings/notes/messages. (optional)
 .TP 8
 .B -v
@@ -84,6 +93,8 @@ This example assumes that you have a footprintwizard file called BGA10X10.fpw in
 the current directory.
 .TP 8
 .B fpw --quiet --format BGA10X10.fpw --output BGA50C10X10-100_1100X1100.fp
+.TP 8
+to create a footprint file while having no warnings, info or error log messages whatsoever.
 
 .SH "ENVIRONMENT"
 \fIfpw\fP respects the following environment variable:
