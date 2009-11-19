@@ -396,7 +396,7 @@ sot_create_element ()
                 create_new_arc
                 (
                         element,
-                        (int) (multiplier * (-pitch_x / 2.0)), /* x-coordinate */
+                        (int) (multiplier * (-pitch_x)), /* x-coordinate */
                         (int) (multiplier * (-pitch_y * (number_of_rows) / 2.0)), /* y-coordinate */
                         (int) (multiplier * 0.5 * silkscreen_line_width), /* width */
                         (int) (multiplier * 0.5 * silkscreen_line_width), /*height */
@@ -3085,7 +3085,7 @@ sot_write_footprint ()
                 fprintf (fp, "# Write a pin 1 marker on the silkscreen\n");
                 write_element_arc
                 (
-                        multiplier * (-pitch_x / 2.0), /* x-coordinate */
+                        multiplier * (-pitch_x), /* x-coordinate */
                         multiplier * (-pitch_y * (number_of_rows) / 2.0), /* y-coordinate */
                         multiplier * 0.5 * silkscreen_line_width, /* width */
                         multiplier * 0.5 * silkscreen_line_width, /*height */
