@@ -2367,19 +2367,6 @@ write_footprintwizard_file
 int
 write_footprint()
 {
-        fp = fopen (footprint_filename, "w");
-        if (!fp)
-        {
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("could not open file for %s footprint: %s."),
-                        footprint_type, footprint_filename);
-                fclose (fp);
-                return (EXIT_FAILURE);
-        }
-        if (license_in_footprint)
-        {
-                write_license ();
-	}
         /* Switch depending the package type */
         switch (package_type)
         {
