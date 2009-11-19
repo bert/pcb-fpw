@@ -2980,11 +2980,11 @@ sot_write_footprint ()
                 }
                 else if (number_of_pins == 5)
                 {
-                        /* Left side pads */
                         int i;
                         for (i = 0; (i < (number_of_rows)); i++)
                         {
                                 pin_number = 1 + i;
+                                /* Left side pads */
                                 write_pad
                                 (
                                         pin_number, /* pin number */
@@ -3031,11 +3031,11 @@ sot_write_footprint ()
                 }
                 else if ((number_of_pins == 6) || (number_of_pins == 8))
                 {
-                        /* Left side pads */
                         int i;
                         for (i = 0; (i < (number_of_rows)); i++)
                         {
                                 pin_number = 1 + i;
+                                /* Left side pads */
                                 write_pad
                                 (
                                         pin_number, /* pin number */
@@ -3050,6 +3050,7 @@ sot_write_footprint ()
                                         pin_pad_flags /* flags */
                                 );
                                 pin_number = (number_of_columns * number_of_rows) - i;
+                                /* Right side pads */
                                 write_pad
                                 (
                                         pin_number, /* pad number = pin_number*/
