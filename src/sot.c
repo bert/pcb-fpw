@@ -2868,7 +2868,13 @@ sot_write_footprint ()
         write_element_header (x_text, y_text);
         /* Write pin and/or pad entities */
         if (!strcmp (pad_shape, "rectangular pad"))
+        {
                 pin_pad_flags = g_strdup ("square");
+        }
+        else
+        {
+                pin_pad_flags = g_strdup ("");
+        }
         if (thermal)
         {
                 /* Left side pads */
