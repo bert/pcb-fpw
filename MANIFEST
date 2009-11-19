@@ -20,6 +20,7 @@ pcb-gfpw.gladep
 stamp-h.in
 translatable.strings
 
+data/.gitignore
 data/Makefile.am
 data/README
 data/application-x-fpw-16.png
@@ -36,10 +37,12 @@ data/fpw-48.ico
 data/fpw-48.png
 data/fpw.xml.in
 data/regen_files
+data/x-fpw.desktop.in
 
 doc/.gitignore
 doc/create_fpw-dox-no-call-graphs.sh
 doc/create_fpw-dox-with-call-graphs.sh
+doc/fpw.1
 doc/fpw-dox-no-call-graphs.dox
 doc/fpw-dox-with-call-graphs.dox
 doc/images/about_dialog.png
@@ -120,6 +123,8 @@ src/preview.c
 src/register_functions.c
 src/res.c
 src/resc.c
+src/resm.c
+src/resm.h
 src/select_exceptions.c
 src/smt.c
 src/sot.c
