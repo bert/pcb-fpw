@@ -201,31 +201,42 @@ main
         if (read_footprintwizard_file (fpw_filename))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_INFO,
                                 _("read footprintwizard file %s."),
                                 fpw_filename);
+                }
         }
         else
         {
-                g_log ("", G_LOG_LEVEL_ERROR,
-                        _("could not load footprintwizard file %s."),
-                        fpw_filename);
-                exit (EXIT_FAILURE);
+                if (!verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_ERROR,
+                                _("could not load footprintwizard file %s."),
+                                fpw_filename);
+                }
+                        exit (EXIT_FAILURE);
         }
         /* Check for a null pointer in footprint_name for this might cause a
          * segmentation fault or undefined behaviour. */
         if (!footprint_name)
         {
-                g_log ("", G_LOG_LEVEL_ERROR,
-                        _("footprint name contains a null pointer."));
-                exit (EXIT_FAILURE);
+                if (!verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_ERROR,
+                                _("footprint name contains a null pointer."));
+                }
+                        exit (EXIT_FAILURE);
         }
         /* Check for an empty footprint_name string for this might cause a
          * segmentation fault or undefined behaviour. */
         if (!strcmp (footprint_name, ""))
         {
-                g_log ("", G_LOG_LEVEL_ERROR,
-                        _("footprint name contains an empty string."));
+                if (!verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_ERROR,
+                                _("footprint name contains an empty string."));
+                }
                 exit (EXIT_FAILURE);
         }
         /* If the footprint_filename contains a valid footprintname, use it. */
@@ -240,9 +251,12 @@ main
                 footprint_filename = g_strconcat (footprint_name, ".fp", NULL);
         }
         write_footprint ();
-        g_log ("", G_LOG_LEVEL_INFO,
+        if (verbose)
+        {
+                g_log ("", G_LOG_LEVEL_INFO,
                 _("Footprint %s is written successful."),
                 footprint_name);
+        }
 }
 
 
