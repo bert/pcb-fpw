@@ -36,7 +36,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <stdio.h>
-
+#include <getopt.h>
 #include <gtk/gtk.h>
 #include <stdlib.h>
 
@@ -73,6 +73,8 @@
 #include "packages.h"
 
 gchar *program_name = NULL;
+gchar *fpw_filename;
+
 
 /*!
  * \brief Print the version of the footprintwizard to stderr.
@@ -82,8 +84,8 @@ gchar *program_name = NULL;
 static void
 print_version ()
 {
-        fprintf (stderr, (_("\n%s version %s\n")), program_name, FPW_VERSION);
-        fprintf (stderr, (_("(C) 2007, 2008 by Bert Timmerman.\n")));
+        fprintf (stderr, (_("\nfpw version %s\n")), FPW_VERSION);
+        fprintf (stderr, (_("(C) 2007, 2008, 2009 by Bert Timmerman.\n")));
         fprintf (stderr, (_("This is free software; see the source for copying conditions.\n")));
         fprintf (stderr, (_("There is NO warranty; not even for MERCHANTABILITY\n")));
         fprintf (stderr, (_("or FITNESS FOR A PARTICULAR PURPOSE.\n\n")));
@@ -99,12 +101,23 @@ print_version ()
 static void
 print_usage ()
 {
-        fprintf (stderr, (_("\n%s usage:\n\n")), program_name);
-        fprintf (stderr, (_("%s -h   : print this help message and exit.\n\n")), program_name);
-        fprintf (stderr, (_("%s -v   : log messages, be verbose.\n\n")), program_name);
-        fprintf (stderr, (_("%s -V   : print the version information and exit.\n\n")), program_name);
-        fprintf (stderr, (_("To write a footprint file use:\n\n")));
-        fprintf (stderr, (_("\t%s -f fpw_filename -o footprint_name\n\n")), program_name);
+        fprintf (stderr, (_("\nfpw usage and options:\n")));
+        fprintf (stderr, (_("\t --help \n")));
+        fprintf (stderr, (_("\t -? \n")));
+        fprintf (stderr, (_("\t -h        : print this help message and exit.\n\n")));
+        fprintf (stderr, (_("\t --verbose \n")));
+        fprintf (stderr, (_("\t -v        : log messages, be verbose.\n\n")));
+        fprintf (stderr, (_("\t --silent \n")));
+        fprintf (stderr, (_("\t --quiet \n")));
+        fprintf (stderr, (_("\t -q        : do not log messages.\n\n")));
+        fprintf (stderr, (_("\t --version \n")));
+        fprintf (stderr, (_("\t -V        : print the version information and exit.\n\n")));
+        fprintf (stderr, (_("\t --format <fpw_footprintwizard filename> \n")));
+        fprintf (stderr, (_("\t -f <fpw_footprintwizard filename>\n\n")));
+        fprintf (stderr, (_("\t --output <footprint name> \n")));
+        fprintf (stderr, (_("\t -o <footprint name>\n\n")));
+        fprintf (stderr, (_("\t --debug \n")));
+        fprintf (stderr, (_("\t -d        : turn on debugging output messages.\n\n")));
         exit (EXIT_SUCCESS);
 }
 
@@ -118,51 +131,71 @@ int
 main
 (
         int argc, /*!< : number of arguments on CLI */
-        char *argv[] /*!< : array of argument variables */
+        char **argv /*!< : array of argument variables */
 )
 {
         FILE *fp;
-        gchar *fpw_filename;
         gchar *suffix = ".fp";
+        int debug = 0;
 
         /* Determine how we are called today */
         program_name = argv[0];
-        int i;
-        for (i = 1; i >= argc; i++)
+        static const struct option opts[] =
         {
-                /* Print usage message if asked for. */
-                if (!strcmp (argv[i], "-h"))
+                {"debug", no_argument, NULL, 'd'},
+                {"help", no_argument, NULL, 'h'},
+                {"version", no_argument, NULL, 'V'},
+                {"verbose", no_argument, NULL, 'v'},
+                {"quiet", no_argument, NULL, 'q'},
+                {"silent", no_argument, NULL, 'q'},
+                {"format", required_argument, NULL, 'f'},
+                {"output", required_argument, NULL, 'o'},
+                {0, 0, 0, 0}
+        };
+        int optc;
+        while ((optc = getopt_long (argc, argv, "dVvqqf:o:", opts, NULL)) != -1)
+        {
+                switch (optc)
                 {
-                        print_usage ();
-                        exit (EXIT_SUCCESS);
+                        case 'd':
+                                debug = TRUE;
+                                break;
+                        case 'h':
+                                print_usage ();
+                                exit (EXIT_SUCCESS);
+                        case 'V':
+                                print_version ();
+                                exit (EXIT_SUCCESS);
+                        case 'v':
+                                verbose = TRUE;
+                                break;
+                        case 'q':
+                                verbose = FALSE;
+                                break;
+                        case 'f':
+                                fpw_filename = strdup (optarg);
+                                if (debug)
+                                        fprintf (stderr, "fpw filename = %s\n", fpw_filename);
+                                break;
+                        case 'o':
+                                footprint_name = strdup (optarg);
+                                if (debug)
+                                        fprintf (stderr, "footprint name = %s\n", footprint_name);
+                                break;
+                        case '?':
+                                print_usage ();
+                                exit (EXIT_FAILURE);
+                        default:
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("unknown command line option encountered.\n"));
+                                print_usage ();
+                                exit (EXIT_FAILURE);
                 }
-                /* Print version if asked for. */
-                else if (!strcmp (argv[i], "-V"))
-                {
-                        print_version ();
-                        exit (EXIT_SUCCESS);
-                }
-                /* Log messages (be verbose). */
-                else if (!strcmp (argv[i], "-v"))
-                {
-                        verbose = TRUE;
-                }
-                /* Do we have a fpw filename specified ? */
-                else if ((!strcmp (argv[i], "-f")) && (argc >= (i + 1)))
-                {
-                        fpw_filename = strdup (argv[i + 1]);
-                }
-                /* Do we have a footprintname specified ? */
-                else if ((!strcmp (argv[i], "-o")) && (argc >= (i + 1)))
-                {
-                        footprint_name = strdup (argv[i + 1]);
-                }
-                /* Nothing usefull left todo. */
-                else
-                {
-                        g_log ("", G_LOG_LEVEL_ERROR, _("I'm quiting, let me do something useful."));
-                        exit (EXIT_FAILURE);
-                }
+        }
+        if (optind < argc)
+        {
+                print_usage ();
+                exit (EXIT_FAILURE);
         }
         /* Read variables from the fpw file */
         if (read_footprintwizard_file (fpw_filename))
