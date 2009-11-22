@@ -81,7 +81,7 @@ gchar *fpw_filename;
  *
  * \return \c EXIT_SUCCESS.
  */
-static void
+int
 print_version ()
 {
         fprintf (stderr, (_("\nfpw version %s\n")), FPW_VERSION);
@@ -98,7 +98,7 @@ print_version ()
  *
  * \return \c EXIT_SUCCESS.
  */
-static void
+int
 print_usage ()
 {
         fprintf (stderr, (_("\nfpw usage and options:\n")));
