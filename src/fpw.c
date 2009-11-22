@@ -210,7 +210,7 @@ main
         }
         else
         {
-                if (!verbose)
+                if ((verbose) && (!silent))
                 {
                         g_log ("", G_LOG_LEVEL_ERROR,
                                 _("could not load footprintwizard file %s."),
@@ -222,7 +222,7 @@ main
          * segmentation fault or undefined behaviour. */
         if (!footprint_name)
         {
-                if (!verbose)
+                if ((verbose) && (!silent))
                 {
                         g_log ("", G_LOG_LEVEL_ERROR,
                                 _("footprint name contains a null pointer."));
@@ -233,7 +233,7 @@ main
          * segmentation fault or undefined behaviour. */
         if (!strcmp (footprint_name, ""))
         {
-                if (!verbose)
+                if ((verbose) && (!silent))
                 {
                         g_log ("", G_LOG_LEVEL_ERROR,
                                 _("footprint name contains an empty string."));
