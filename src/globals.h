@@ -163,7 +163,11 @@ typedef enum pad_shapes
 
 
 gboolean verbose = TRUE;
-        /*!< Global for being verbose or not. */
+        /*!< Global for being verbose on logging of information and
+         * warning messages or not. */
+
+gboolean silent = FALSE;
+        /*!< Global for suppressing the logging of critical messaged or not. */
 
 FILE *fp;
         /*!< Global file pointer for the footprint file. */
