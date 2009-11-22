@@ -109,7 +109,7 @@ print_usage ()
         fprintf (stderr, (_("\t -v        : log messages, be verbose.\n\n")));
         fprintf (stderr, (_("\t --silent \n")));
         fprintf (stderr, (_("\t --quiet \n")));
-        fprintf (stderr, (_("\t -q        : do not log messages.\n\n")));
+        fprintf (stderr, (_("\t -q        : do not log messages, overrides --verbose.\n\n")));
         fprintf (stderr, (_("\t --version \n")));
         fprintf (stderr, (_("\t -V        : print the version information and exit.\n\n")));
         fprintf (stderr, (_("\t --format <fpw_footprintwizard filename> \n")));
@@ -170,7 +170,8 @@ main
                                 verbose = TRUE;
                                 break;
                         case 'q':
-                                verbose = FALSE;
+                                silent = TRUE;
+                                verbose = FALSE; /* Just to be sure. */
                                 break;
                         case 'f':
                                 fpw_filename = strdup (optarg);
