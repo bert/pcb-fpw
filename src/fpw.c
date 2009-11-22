@@ -89,7 +89,7 @@ print_version ()
         fprintf (stderr, (_("This is free software; see the source for copying conditions.\n")));
         fprintf (stderr, (_("There is NO warranty; not even for MERCHANTABILITY\n")));
         fprintf (stderr, (_("or FITNESS FOR A PARTICULAR PURPOSE.\n\n")));
-        exit (EXIT_SUCCESS);
+        return (EXIT_SUCCESS);
 }
 
 
@@ -118,7 +118,7 @@ print_usage ()
         fprintf (stderr, (_("\t -o <footprint name>\n\n")));
         fprintf (stderr, (_("\t --debug \n")));
         fprintf (stderr, (_("\t -d        : turn on debugging output messages.\n\n")));
-        exit (EXIT_SUCCESS);
+        return (EXIT_SUCCESS);
 }
 
 
