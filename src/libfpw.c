@@ -678,26 +678,35 @@ read_footprintwizard_file
         FILE *fpw = fopen (fpw_filename, "r");
         if (!fpw)
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("could not open footprint wizard file: %s for reading.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("could not open footprint wizard file: %s for reading.\n"),
+                                fpw_filename);
+                }
                 return (EXIT_FAILURE);
         }
         fscanf (fpw, "%s\n", footprint_filename);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading footprint_filename value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading footprint_filename value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
         /* Check for null pointers or meaningless values. */
         if (!footprint_filename || (!strcmp (footprint_filename, "(null)")))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("footprint filename with a null pointer found in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("footprint filename with a null pointer found in: %s.\n"),
+                                fpw_filename);
+                }
                 footprint_filename = g_strdup ("");
                 fclose (fpw);
                 return (EXIT_FAILURE);
@@ -705,27 +714,36 @@ read_footprintwizard_file
         fscanf (fpw, "%s\n", dummy); /* do not (re)use this value ! */
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading a dummy value in: %s.\n"),
-                        fpw_filename);
+                if (!verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading a dummy value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
         fscanf (fpw, "%s\n", footprint_type);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading footprint_type value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading footprint_type value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
         /* Check for null pointers or meaningless values. */
         if (!footprint_type || (!strcmp (footprint_type, "(null)")))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("footprint type with a null pointer found in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("footprint type with a null pointer found in: %s.\n"),
+                                fpw_filename);
+                }
                 footprint_type = g_strdup ("");
                 fclose (fpw);
                 return (EXIT_FAILURE);
@@ -733,8 +751,11 @@ read_footprintwizard_file
         /* Determine the package type */
         if (get_package_type () == EXIT_FAILURE)
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("footprint type contains an unknown package type."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("footprint type contains an unknown package type."));
+                }
                 footprint_type = g_strdup ("");
                 fclose (fpw);
                 return (EXIT_FAILURE);
@@ -748,18 +769,24 @@ read_footprintwizard_file
         fscanf (fpw, "%s\n", footprint_units);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading footprint_units value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading footprint_units value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
         /* Check for null pointers or meaningless values. */
         if (!footprint_units || (!strcmp (footprint_units, "(null)")))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("footprint units with null pointer found in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("footprint units with null pointer found in: %s.\n"),
+                                fpw_filename);
+                }
                 footprint_units = g_strdup ("");
                 fclose (fpw);
                 return (EXIT_FAILURE);
@@ -767,8 +794,11 @@ read_footprintwizard_file
         /* Update the units related variables. */
         if (update_units_variables () == EXIT_FAILURE)
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("footprint units contains an unknown units type."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("footprint units contains an unknown units type."));
+                }
                 footprint_units = g_strdup ("");
                 fclose (fpw);
                 return (EXIT_FAILURE);
@@ -782,9 +812,12 @@ read_footprintwizard_file
         fscanf (fpw, "%s\n", footprint_refdes);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading footprint_refdes value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading footprint_refdes value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -800,9 +833,12 @@ read_footprintwizard_file
         fscanf (fpw, "%s\n", footprint_value);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading footprint_value value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading footprint_value value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -818,9 +854,12 @@ read_footprintwizard_file
         fscanf (fpw, "%f\n", package_body_length);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading package_body_length value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading package_body_length value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -835,9 +874,12 @@ read_footprintwizard_file
         fscanf (fpw, "%f\n", package_body_width);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading package_body_width value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading package_body_width value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -852,9 +894,12 @@ read_footprintwizard_file
         fscanf (fpw, "%f\n", package_body_height);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading package_body_height value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading package_body_height value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -869,18 +914,24 @@ read_footprintwizard_file
         fscanf (fpw, "%d\n", package_is_radial);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading package_is_radial value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading package_is_radial value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
         fscanf (fpw, "%s\n", footprint_author);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading footprint_author value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading footprint_author value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -896,9 +947,12 @@ read_footprintwizard_file
         fscanf (fpw, "%s\n", footprint_dist_license);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading footprint_dist_license value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading footprint_dist_license value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -915,9 +969,12 @@ read_footprintwizard_file
         fscanf (fpw, "%s\n", footprint_use_license);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading footprint_use_license value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading footprint_use_license value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -934,9 +991,12 @@ read_footprintwizard_file
         fscanf (fpw, "%s\n", footprint_status);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading footprint_status value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading footprint_status value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -952,45 +1012,60 @@ read_footprintwizard_file
         fscanf (fpw, "%d\n", attributes_in_footprint);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading attributes_in_footprint value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading attributes_in_footprint value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
         fscanf (fpw, "%d\n", number_of_pins);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading number_of_pins value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading number_of_pins value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
         fscanf (fpw, "%d\n", number_of_columns);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading number_of_columns value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading number_of_columns value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
         fscanf (fpw, "%d\n", number_of_rows);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading number_of_rows value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading number_of_rows value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
         fscanf (fpw, "%f\n", pitch_x);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading pitch_x value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading pitch_x value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -1005,9 +1080,12 @@ read_footprintwizard_file
         fscanf (fpw, "%f\n", pitch_y);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading pitch_y value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading pitch_y value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -1022,44 +1100,59 @@ read_footprintwizard_file
         fscanf (fpw, "%d\n", count_x);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading count_x value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading count_x value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
         fscanf (fpw, "%d\n", count_y);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading count_y value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading count_y value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
         fscanf (fpw, "%s\n", pad_shape);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading pad_shape value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading pad_shape value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
         /* Check for null pointers or meaningless values. */
         if (!pad_shape || (!strcmp (pad_shape, "(null)")))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("pad shape with a null pointer found in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("pad shape with a null pointer found in: %s.\n"),
+                                fpw_filename);
+                }
                 pad_shape = g_strdup ("");
                 return (EXIT_FAILURE);
         }
         /* Update the pad shape related variables. */
         if (update_pad_shapes_variables () == EXIT_FAILURE)
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("pad shape contains an unknown pad shape type."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("pad shape contains an unknown pad shape type."));
+                }
                 return (EXIT_FAILURE);
         }
         else
@@ -1071,27 +1164,36 @@ read_footprintwizard_file
         fscanf (fpw, "%s\n", pin_pad_exceptions_string);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading pin_pad_exceptions_string value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading pin_pad_exceptions_string value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
         /* Check for null pointers or meaningless values. */
         if (!pin_pad_exceptions_string || (!strcmp (pin_pad_exceptions_string, "(null)")))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("pin/pad exceptions with a null pointer found in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("pin/pad exceptions with a null pointer found in: %s.\n"),
+                                fpw_filename);
+                }
                 pin_pad_exceptions_string = g_strdup ("");
                 return (EXIT_FAILURE);
         }
         fscanf (fpw, "%s\n", pin_1_position);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading pin_1_position value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading pin_1_position value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -1107,9 +1209,12 @@ read_footprintwizard_file
         fscanf (fpw, "%f\n", pad_length);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading pad_length value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading pad_length value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -1124,9 +1229,12 @@ read_footprintwizard_file
         fscanf (fpw, "%f\n", pad_width);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading pad_width value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading pad_width value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -1141,9 +1249,12 @@ read_footprintwizard_file
         fscanf (fpw, "%f\n", pad_diameter);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading pad_diameter value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading pad_diameter value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -1158,9 +1269,12 @@ read_footprintwizard_file
         fscanf (fpw, "%f\n", pin_drill_diameter);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading pin_drill_diameter value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading pin_drill_diameter value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -1175,17 +1289,23 @@ read_footprintwizard_file
         fscanf (fpw, "%d\n", pin1_square);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading pin1_square value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading pin1_square value in: %s.\n"),
+                                fpw_filename);
+                }
                 return (EXIT_FAILURE);
         }
         fscanf (fpw, "%f\n", pad_clearance);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading pad_clearance value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading pad_clearance value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -1200,9 +1320,12 @@ read_footprintwizard_file
         fscanf (fpw, "%f\n", pad_solder_mask_clearance);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading pad_solder_mask_clearance value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading pad_solder_mask_clearance value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -1218,25 +1341,34 @@ read_footprintwizard_file
         fscanf (fpw, "%d\n", thermal);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading thermal value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading thermal value in: %s.\n"),
+                                fpw_filename);
+                }
                 return (EXIT_FAILURE);
         }
         fscanf (fpw, "%d\n", thermal_nopaste);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading thermal_nopaste value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading thermal_nopaste value in: %s.\n"),
+                                fpw_filename);
+                }
                 return (EXIT_FAILURE);
         }
         fscanf (fpw, "%f\n", thermal_length);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading thermal_length value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading thermal_length value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -1251,9 +1383,12 @@ read_footprintwizard_file
         fscanf (fpw, "%f\n", thermal_width);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading thermal_width value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading thermal_width value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -1268,9 +1403,12 @@ read_footprintwizard_file
         fscanf (fpw, "%f\n", thermal_clearance);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading thermal_clearance value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading thermal_clearance value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -1285,9 +1423,12 @@ read_footprintwizard_file
         fscanf (fpw, "%f\n", thermal_solder_mask_clearance);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading thermal_solder_mask value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading thermal_solder_mask value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -1303,17 +1444,23 @@ read_footprintwizard_file
         fscanf (fpw, "%d\n", fiducial);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading fiducial value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading fiducial value in: %s.\n"),
+                                fpw_filename);
+                }
                 return (EXIT_FAILURE);
         }
         fscanf (fpw, "%f\n", fiducial_pad_diameter);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading fiducial_pad_diameter value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading fiducial_pad_diameter value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -1328,9 +1475,12 @@ read_footprintwizard_file
         fscanf (fpw, "%f\n", fiducial_pad_solder_mask_clearance);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading fiducial_pad_solder_mask value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading fiducial_pad_solder_mask value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -1346,17 +1496,23 @@ read_footprintwizard_file
         fscanf (fpw, "%d\n", silkscreen_package_outline);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading silkscreen_package_outline value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading silkscreen_package_outline value in: %s.\n"),
+                                fpw_filename);
+                }
                 return (EXIT_FAILURE);
         }
         fscanf (fpw, "%d\n", silkscreen_indicate_1);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading silkscreen_indicate_1 value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading silkscreen_indicate_1 value in: %s.\n"),
+                                fpw_filename);
+                }
                 return (EXIT_FAILURE);
         }
         fscanf (fpw, "%f\n", silkscreen_line_width);
@@ -1371,17 +1527,23 @@ read_footprintwizard_file
         fscanf (fpw, "%d\n", courtyard);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading courtyard value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading courtyard value in: %s.\n"),
+                                fpw_filename);
+                }
                 return (EXIT_FAILURE);
         }
         fscanf (fpw, "%f\n", courtyard_length);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading courtyard_length value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading courtyard_length value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -1396,9 +1558,12 @@ read_footprintwizard_file
         fscanf (fpw, "%f\n", courtyard_width);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading courtyard_width value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading courtyard_width value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -1413,9 +1578,12 @@ read_footprintwizard_file
         fscanf (fpw, "%f\n", courtyard_line_width);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading courtyard_line_width value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading courtyard_line_width value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -1430,9 +1598,12 @@ read_footprintwizard_file
         fscanf (fpw, "%f\n", courtyard_clearance_with_package);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading courtyard_clearance_with_package value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading courtyard_clearance_with_package value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -1449,9 +1620,12 @@ read_footprintwizard_file
         fscanf (fpw, "%f\n", c1);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading c1 value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading c1 value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -1466,9 +1640,12 @@ read_footprintwizard_file
         fscanf (fpw, "%f\n", g1);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading g1 value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading g1 value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -1483,9 +1660,12 @@ read_footprintwizard_file
         fscanf (fpw, "%f\n", z1);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading z1 value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading z1 value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -1500,9 +1680,12 @@ read_footprintwizard_file
         fscanf (fpw, "%f\n", c2);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading c2 value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading c2 value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -1517,9 +1700,12 @@ read_footprintwizard_file
         fscanf (fpw, "%f\n", g2);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading g2 value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading g2 value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
@@ -1534,9 +1720,12 @@ read_footprintwizard_file
         fscanf (fpw, "%f\n", z2);
         if (ferror (fpw))
         {
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("error while reading z2 value in: %s.\n"),
-                        fpw_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_CRITICAL,
+                                _("error while reading z2 value in: %s.\n"),
+                                fpw_filename);
+                }
                 fclose (fpw);
                 return (EXIT_FAILURE);
         }
