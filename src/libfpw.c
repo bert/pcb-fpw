@@ -763,8 +763,10 @@ read_footprintwizard_file
         else
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_INFO,
                                 _("determined the package type successfull."));
+                }
         }
         fscanf (fpw, "%s\n", footprint_units);
         if (ferror (fpw))
@@ -806,8 +808,10 @@ read_footprintwizard_file
         else
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_INFO,
                                 _("footprint units variables updated successfull."));
+                }
         }
         fscanf (fpw, "%s\n", footprint_refdes);
         if (ferror (fpw))
@@ -825,9 +829,11 @@ read_footprintwizard_file
         if (!footprint_refdes || (!strcmp (footprint_refdes, "(null)")))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("footprint refdes with a null pointer found in: %s.\n"),
                                 fpw_filename);
+                }
                 footprint_refdes = g_strdup ("");
         }
         fscanf (fpw, "%s\n", footprint_value);
@@ -846,9 +852,11 @@ read_footprintwizard_file
         if (!footprint_value || (!strcmp (footprint_value, "(null)")))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("footprint value with a null pointer found in: %s.\n"),
                                 fpw_filename);
+                }
                 footprint_value = g_strdup ("");
         }
         fscanf (fpw, "%f\n", package_body_length);
@@ -866,9 +874,11 @@ read_footprintwizard_file
         if ((isnan (package_body_length)) || (isinf (package_body_length)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN found in package body length, in: %s.\n"),
                                 fpw_filename);
+                }
                 package_body_length = 0.0;
         }
         fscanf (fpw, "%f\n", package_body_width);
@@ -886,9 +896,11 @@ read_footprintwizard_file
         if ((isnan (package_body_width)) || (isinf (package_body_width)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN found in package body width, in: %s.\n"),
                                 fpw_filename);
+                }
                 package_body_width = 0.0;
         }
         fscanf (fpw, "%f\n", package_body_height);
@@ -906,9 +918,11 @@ read_footprintwizard_file
         if ((isnan (package_body_height)) || (isinf (package_body_height)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN found in package body heigth, in: %s.\n"),
                                 fpw_filename);
+                }
                 package_body_height = 0.0;
         }
         fscanf (fpw, "%d\n", package_is_radial);
@@ -939,9 +953,11 @@ read_footprintwizard_file
         if (!footprint_author || (!strcmp (footprint_author, "(null)")))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("footprint author with a null pointer found in: %s.\n"),
                                 fpw_filename);
+                }
                 footprint_author = g_strdup ("");
         }
         fscanf (fpw, "%s\n", footprint_dist_license);
@@ -957,13 +973,15 @@ read_footprintwizard_file
                 return (EXIT_FAILURE);
         }
         /* Check for null pointers or meaningless values. */
-        if (!footprint_dist_license ||
-                (!strcmp (footprint_dist_license, "(null)")))
+        if (!footprint_dist_license
+                || (!strcmp (footprint_dist_license, "(null)")))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("footprint dirstribution license with a null pointer found in: %s.\n"),
                                 fpw_filename);
+                }
                 footprint_dist_license = g_strdup ("");
         }
         fscanf (fpw, "%s\n", footprint_use_license);
@@ -979,13 +997,15 @@ read_footprintwizard_file
                 return (EXIT_FAILURE);
         }
         /* Check for null pointers or meaningless values. */
-        if (!footprint_use_license ||
-                (!strcmp (footprint_use_license, "(null)")))
+        if (!footprint_use_license
+                || (!strcmp (footprint_use_license, "(null)")))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("footprint usage license with a null pointer found in: %s.\n"),
                                 fpw_filename);
+                }
                 footprint_use_license = g_strdup ("");
         }
         fscanf (fpw, "%s\n", footprint_status);
@@ -1004,9 +1024,11 @@ read_footprintwizard_file
         if (!footprint_status || (!strcmp (footprint_status, "(null)")))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("footprint status with a null pointer found in: %s.\n"),
                                 fpw_filename);
+                }
                 footprint_status = g_strdup ("");
         }
         fscanf (fpw, "%d\n", attributes_in_footprint);
@@ -1072,9 +1094,11 @@ read_footprintwizard_file
         if ((isnan (pitch_x)) || (isinf (pitch_x)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN number of pitch in X-direction found in: %s.\n"),
                                 fpw_filename);
+                }
                 pitch_x = 0.0;
         }
         fscanf (fpw, "%f\n", pitch_y);
@@ -1158,8 +1182,10 @@ read_footprintwizard_file
         else
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_INFO,
                                 _("pad shape variables updated successfull."));
+                }
         }
         fscanf (fpw, "%s\n", pin_pad_exceptions_string);
         if (ferror (fpw))
@@ -1201,9 +1227,11 @@ read_footprintwizard_file
         if (!pin_1_position || (!strcmp (pin_1_position, "(null)")))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("pin #1 position with a null pointer found in: %s.\n"),
                                 fpw_filename);
+                }
                 pin_1_position = g_strdup ("");
         }
         fscanf (fpw, "%f\n", pad_length);
@@ -1221,9 +1249,11 @@ read_footprintwizard_file
         if ((isnan (pad_length)) || (isinf (pad_length)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN number in pad length found in: %s.\n"),
                                 fpw_filename);
+                }
                 pad_length = 0.0;
         }
         fscanf (fpw, "%f\n", pad_width);
@@ -1241,9 +1271,11 @@ read_footprintwizard_file
         if ((isnan (pad_width)) || (isinf (pad_width)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN number in pad width found in: %s.\n"),
                                 fpw_filename);
+                }
                 pad_width = 0.0;
         }
         fscanf (fpw, "%f\n", pad_diameter);
@@ -1261,9 +1293,11 @@ read_footprintwizard_file
         if ((isnan (pad_diameter)) || (isinf (pad_diameter)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN number in pad diameter found in: %s.\n"),
                                 fpw_filename);
+                }
                 pad_diameter = 0.0;
         }
         fscanf (fpw, "%f\n", pin_drill_diameter);
@@ -1281,9 +1315,11 @@ read_footprintwizard_file
         if ((isnan (pin_drill_diameter)) || (isinf (pin_drill_diameter)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN number in pin drill diameter found in: %s.\n"),
                                 fpw_filename);
+                }
                 pin_drill_diameter = 0.0;
         }
         fscanf (fpw, "%d\n", pin1_square);
@@ -1312,9 +1348,11 @@ read_footprintwizard_file
         if ((isnan (pad_clearance)) || (isinf (pad_clearance)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN number in pad clearance found in: %s.\n"),
                                 fpw_filename);
+                }
                 pad_clearance = 0.0;
         }
         fscanf (fpw, "%f\n", pad_solder_mask_clearance);
@@ -1377,9 +1415,11 @@ read_footprintwizard_file
         if ((isnan (thermal_length)) || (isinf (thermal_length)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN number in thermal length found in: %s.\n"),
                                 fpw_filename);
+                }
                 thermal_length = 0.0;
         }
         fscanf (fpw, "%f\n", thermal_width);
@@ -1397,9 +1437,11 @@ read_footprintwizard_file
         if ((isnan (thermal_width)) || (isinf (thermal_width)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN number in thermal width found in: %s.\n"),
                                 fpw_filename);
+                }
                 thermal_width = 0.0;
         }
         fscanf (fpw, "%f\n", thermal_clearance);
@@ -1417,9 +1459,11 @@ read_footprintwizard_file
         if ((isnan (thermal_clearance)) || (isinf (thermal_clearance)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN number in thermal clearance found in: %s.\n"),
                                 fpw_filename);
+                }
                 thermal_clearance = 0.0;
         }
         fscanf (fpw, "%f\n", thermal_solder_mask_clearance);
@@ -1438,9 +1482,11 @@ read_footprintwizard_file
                 (isinf (thermal_solder_mask_clearance)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN number in thermal solder mask clearance found in: %s.\n"),
                                 fpw_filename);
+                }
                 thermal_solder_mask_clearance = 0.0;
         }
         fscanf (fpw, "%d\n", fiducial);
@@ -1469,9 +1515,11 @@ read_footprintwizard_file
         if ((isnan (fiducial_pad_diameter)) || (isinf (fiducial_pad_diameter)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN number in fiducial pad diameter found in: %s.\n"),
                                 fpw_filename);
+                }
                 fiducial_pad_diameter = 0.0;
         }
         fscanf (fpw, "%f\n", fiducial_pad_solder_mask_clearance);
@@ -1490,9 +1538,11 @@ read_footprintwizard_file
                 (isinf (fiducial_pad_solder_mask_clearance)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN number in fiducial pad solder mask clearance found in: %s.\n"),
                                 fpw_filename);
+                }
                 fiducial_pad_solder_mask_clearance = 0.0;
         }
         fscanf (fpw, "%d\n", silkscreen_package_outline);
@@ -1521,9 +1571,11 @@ read_footprintwizard_file
         if ((isnan (silkscreen_line_width)) || (isinf (silkscreen_line_width)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN number in silkscreen line width found in: %s.\n"),
                                 fpw_filename);
+                }
                 silkscreen_line_width = 0.0;
         }
         fscanf (fpw, "%d\n", courtyard);
@@ -1552,9 +1604,11 @@ read_footprintwizard_file
         if ((isnan (courtyard_length)) || (isinf (courtyard_length)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN number in courtyard length found in: %s.\n"),
                                 fpw_filename);
+                }
                 courtyard_length = 0.0;
         }
         fscanf (fpw, "%f\n", courtyard_width);
@@ -1572,9 +1626,11 @@ read_footprintwizard_file
         if ((isnan (courtyard_width)) || (isinf (courtyard_width)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN number in courtyard width found in: %s.\n"),
                                 fpw_filename);
+                }
                 courtyard_width = 0.0;
         }
         fscanf (fpw, "%f\n", courtyard_line_width);
@@ -1592,9 +1648,11 @@ read_footprintwizard_file
         if ((isnan (courtyard_line_width)) || (isinf (courtyard_line_width)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN number in courtyard line width found in: %s.\n"),
                                 fpw_filename);
+                }
                 courtyard_line_width = 0.0;
         }
         fscanf (fpw, "%f\n", courtyard_clearance_with_package);
@@ -1613,9 +1671,11 @@ read_footprintwizard_file
                 (isinf (courtyard_clearance_with_package)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN number in courtyard clearance with package found in: %s.\n"),
                                 fpw_filename);
+                }
                 courtyard_clearance_with_package = 0.0;
         }
 
@@ -1634,9 +1694,11 @@ read_footprintwizard_file
         if ((isnan (c1)) || (isinf (c1)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN number in top to bottom center-center distance found in: %s.\n"),
                                 fpw_filename);
+                }
                 c1 = 0.0;
         }
         fscanf (fpw, "%f\n", g1);
@@ -1654,9 +1716,11 @@ read_footprintwizard_file
         if ((isnan (g1)) || (isinf (g1)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN number in top to bottom inner-inner distance found in: %s.\n"),
                                 fpw_filename);
+                }
                 g1 = 0.0;
         }
         fscanf (fpw, "%f\n", z1);
@@ -1674,9 +1738,11 @@ read_footprintwizard_file
         if ((isnan (z1)) || (isinf (z1)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN number in top to bottom outer-outer distance found in: %s.\n"),
                                 fpw_filename);
+                }
                 z1 = 0.0;
         }
         fscanf (fpw, "%f\n", c2);
@@ -1694,9 +1760,11 @@ read_footprintwizard_file
         if ((isnan (c2)) || (isinf (c2)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN number in left to right center-center distance found in: %s.\n"),
                                 fpw_filename);
+                }
                 c2 = 0.0;
         }
         fscanf (fpw, "%f\n", g2);
@@ -1714,9 +1782,11 @@ read_footprintwizard_file
         if ((isnan (g2)) || (isinf (g2)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN number in left to right inner-inner distance found in: %s.\n"),
                                 fpw_filename);
+                }
                 g2 = 0.0;
         }
         fscanf (fpw, "%f\n", z2);
@@ -1734,18 +1804,22 @@ read_footprintwizard_file
         if ((isnan (z2)) || (isinf (z2)))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("NaN number in left to right outer-outer distance found in: %s.\n"),
                                 fpw_filename);
+                }
                 z2 = 0.0;
         }
         if (feof (fpw))
         {
                 fclose (fpw);
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_INFO,
                                 "read footprint wizard file: %s.\n",
                                 fpw_filename);
+                }
         }
         return (EXIT_SUCCESS);
 }
