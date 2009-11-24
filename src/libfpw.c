@@ -2731,7 +2731,11 @@ write_footprint()
                         to_write_footprint_to92 ();
                         break;
                 default:
-                        fprintf (stderr, "ERROR: unknown or not yet implemented footprint type entered.\n");
+                        if ((verbose) || (!silent))
+                        {
+                                g_log ("", G_LOG_LEVEL_CRITICAL,
+                                        _("unknown or not yet implemented footprint type entered.\n"));
+                        }
                         fclose (fp);
                         return (EXIT_FAILURE);
                         break;
