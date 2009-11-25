@@ -247,9 +247,12 @@ sot_create_element ()
                 }
                 else if (number_of_pins == 4)
                 {
-                        g_log ("", G_LOG_LEVEL_WARNING,
-                                _("for now a number of pins of %d without a thermal pad is not implemented yet in sot_write_footprint()."),
-                                number_of_pins);
+                        if (verbose)
+                        {
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("for now a number of pins of %d without a thermal pad is not implemented yet in sot_write_footprint()."),
+                                        number_of_pins);
+                        }
                 }
                 else if (number_of_pins == 5)
                 {
@@ -345,9 +348,12 @@ sot_create_element ()
                 }
                 else
                 {
-                        g_log ("", G_LOG_LEVEL_WARNING,
-                                _("number of pins of %d is not defined in sot_write_footprint()."),
-                                number_of_pins);
+                        if (verbose)
+                        {
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("number of pins of %d is not defined in sot_write_footprint()."),
+                                        number_of_pins);
+                        }
                 }
         }
         /* Create a package body. */
@@ -775,8 +781,11 @@ sot_drc ()
         /*! \todo Create attributes here. */
         /* No failures on DRC found. */
         if (verbose || (result == EXIT_SUCCESS))
+        {
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("DRC Check: no errors while checking SOT package %s."), footprint_name);
+                        _("DRC Check: no errors while checking SOT package %s."),
+                        footprint_name);
+        }
         return result;
 }
 
@@ -877,10 +886,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT50P160X90-3N: pads are being trimmed to prevent extension under the package body."));
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT50P160X90-3N: is also known as SOT523."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT50P160X90-3N: pads are being trimmed to prevent extension under the package body."));
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT50P160X90-3N: is also known as SOT523."));
+                }
                 footprint_name = g_strdup ("SOT50P160X90-3N");
                 return (EXIT_SUCCESS);
         }
@@ -912,8 +924,11 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT50P210X110-8N: is also known as JEDEC MO-203BA."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT50P210X110-8N: is also known as JEDEC MO-203BA."));
+                }
                 footprint_name = g_strdup ("SOT50P210X110-8N");
                 return (EXIT_SUCCESS);
         }
@@ -945,8 +960,11 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT65P210X100-3N: is also known as JEITA SC-70."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT65P210X100-3N: is also known as JEITA SC-70."));
+                }
                 footprint_name = g_strdup ("SOT65P210X100-3N");
                 return (EXIT_SUCCESS);
         }
@@ -1009,8 +1027,11 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT65P210X110-3N: is also known as SOT323."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT65P210X110-3N: is also known as SOT323."));
+                }
                 footprint_name = g_strdup ("SOT65P210X110-3N");
                 return (EXIT_SUCCESS);
         }
@@ -1042,8 +1063,11 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT65P210X110-5N: is also known as JEDEC MO-203AA."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT65P210X110-5N: is also known as JEDEC MO-203AA."));
+                }
                 footprint_name = g_strdup ("SOT65P210X110-5N");
                 return (EXIT_SUCCESS);
         }
@@ -1075,8 +1099,11 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT65P210X110-6N: is also known as JEDEC MO-203AB."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT65P210X110-6N: is also known as JEDEC MO-203AB."));
+                }
                 footprint_name = g_strdup ("SOT65P210X110-6N");
                 return (EXIT_SUCCESS);
         }
@@ -1139,10 +1166,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT65P275X110-8N: pads are being trimmed to prevent extension under the package body."));
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT65P275X110-8N: is also known as JEDEC MO-193BA."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT65P275X110-8N: pads are being trimmed to prevent extension under the package body."));
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT65P275X110-8N: is also known as JEDEC MO-193BA."));
+                }
                 footprint_name = g_strdup ("SOT65P275X110-8N");
                 return (EXIT_SUCCESS);
         }
@@ -1174,8 +1204,11 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT65P280X100-8N: pads are being trimmed to prevent extension under the package body."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT65P280X100-8N: pads are being trimmed to prevent extension under the package body."));
+                }
                 footprint_name = g_strdup ("SOT65P280X100-8N");
                 return (EXIT_SUCCESS);
         }
@@ -1207,8 +1240,11 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT65P280X130-8N: pads are being trimmed to prevent extension under the package body."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT65P280X130-8N: pads are being trimmed to prevent extension under the package body."));
+                }
                 footprint_name = g_strdup ("SOT65P280X130-8N");
                 return (EXIT_SUCCESS);
         }
@@ -1240,10 +1276,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT65P280X145-8AN: pads are being trimmed to prevent extension under the package body."));
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT65P280X145-8AN: is also known as JEDEC MO-178BA."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT65P280X145-8AN: pads are being trimmed to prevent extension under the package body."));
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT65P280X145-8AN: is also known as JEDEC MO-178BA."));
+                }
                 footprint_name = g_strdup ("SOT65P280X145-8AN");
                 return (EXIT_SUCCESS);
         }
@@ -1275,10 +1314,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT65P280X145-8BN: pads are being trimmed to prevent extension under the package body."));
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT65P280X145-8BN: is also known as EIAJ SC-74."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT65P280X145-8BN: pads are being trimmed to prevent extension under the package body."));
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT65P280X145-8BN: is also known as EIAJ SC-74."));
+                }
                 footprint_name = g_strdup ("SOT65P280X145-8BN");
                 return (EXIT_SUCCESS);
         }
@@ -1310,10 +1352,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT65P280X145-8N: pads are being trimmed to prevent extension under the package body."));
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT65P280X145-8N: is also known as JEDEC MO-193BA."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT65P280X145-8N: pads are being trimmed to prevent extension under the package body."));
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT65P280X145-8N: is also known as JEDEC MO-193BA."));
+                }
                 footprint_name = g_strdup ("SOT65P280X145-8N");
                 return (EXIT_SUCCESS);
         }
@@ -1349,10 +1394,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT80P330X140-8N: pads are being trimmed to prevent extension under the package body."));
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT80P330X140-8N: is also known as SOT23-8."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT80P330X140-8N: pads are being trimmed to prevent extension under the package body."));
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT80P330X140-8N: is also known as SOT23-8."));
+                }
                 footprint_name = g_strdup ("SOT80P330X140-8N");
                 return (EXIT_SUCCESS);
         }
@@ -1388,8 +1436,11 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P228X102-3N: pads are being trimmed to prevent extension under the package body."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P228X102-3N: pads are being trimmed to prevent extension under the package body."));
+                }
                 footprint_name = g_strdup ("SOT95P228X102-3N");
                 return (EXIT_SUCCESS);
         }
@@ -1425,10 +1476,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P230X109-3N: pads are being trimmed to prevent extension under the package body."));
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT95P230X109-3N: is also known as JEDEC TO-236AB."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P230X109-3N: pads are being trimmed to prevent extension under the package body."));
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT95P230X109-3N: is also known as JEDEC TO-236AB."));
+                }
                 footprint_name = g_strdup ("SOT95P230X109-3N");
                 return (EXIT_SUCCESS);
         }
@@ -1464,10 +1518,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P230X110-3N: pads are being trimmed to prevent extension under the package body."));
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT95P230X110-3N: is also known as JEDEC TO-236AB."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P230X110-3N: pads are being trimmed to prevent extension under the package body."));
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT95P230X110-3N: is also known as JEDEC TO-236AB."));
+                }
                 footprint_name = g_strdup ("SOT95P230X110-3N");
                 return (EXIT_SUCCESS);
         }
@@ -1503,10 +1560,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P230X124-3N: pads are being trimmed to prevent extension under the package body."));
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT95P230X124-3N: is also known as JEDEC TO-236AA."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P230X124-3N: pads are being trimmed to prevent extension under the package body."));
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT95P230X124-3N: is also known as JEDEC TO-236AA."));
+                }
                 footprint_name = g_strdup ("SOT95P230X124-3N");
                 return (EXIT_SUCCESS);
         }
@@ -1548,8 +1608,11 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT95P237X112-3N: is also known as JEDEC TO-236AB."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT95P237X112-3N: is also known as JEDEC TO-236AB."));
+                }
                 footprint_name = g_strdup ("SOT95P237X112-3N");
                 return (EXIT_SUCCESS);
         }
@@ -1581,10 +1644,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P237X117-3N: pads are being trimmed to prevent extension under the package body."));
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT95P237X117-3N: is also known as JEDEC TO-236AB."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P237X117-3N: pads are being trimmed to prevent extension under the package body."));
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT95P237X117-3N: is also known as JEDEC TO-236AB."));
+                }
                 footprint_name = g_strdup ("SOT95P237X117-3N");
                 return (EXIT_SUCCESS);
         }
@@ -1620,8 +1686,11 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P240X110-3N: pads are being trimmed to prevent extension under the package body."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P240X110-3N: pads are being trimmed to prevent extension under the package body."));
+                }
                 footprint_name = g_strdup ("SOT95P240X110-3N");
                 return (EXIT_SUCCESS);
         }
@@ -1657,8 +1726,11 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P240X114-3N: pads are being trimmed to prevent extension under the package body."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P240X114-3N: pads are being trimmed to prevent extension under the package body."));
+                }
                 footprint_name = g_strdup ("SOT95P240X114-3N");
                 return (EXIT_SUCCESS);
         }
@@ -1694,8 +1766,11 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P251X112-3N: pads are being trimmed to prevent extension under the package body."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P251X112-3N: pads are being trimmed to prevent extension under the package body."));
+                }
                 footprint_name = g_strdup ("SOT95P251X112-3N");
                 return (EXIT_SUCCESS);
         }
@@ -1732,10 +1807,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT95P270X145-5N: is also known as EIAJ SC-74A."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P270X145-5N: pads are being trimmed to prevent extension under the package body."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT95P270X145-5N: is also known as EIAJ SC-74A."));
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P270X145-5N: pads are being trimmed to prevent extension under the package body."));
+                }
                 footprint_name = g_strdup ("SOT95P270X145-5N");
                 return (EXIT_SUCCESS);
         }
@@ -1842,10 +1920,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT95P279X142-5N: is also known as SOT23-5."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P279X142-5N: pads are being trimmed to prevent extension under the package body."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT95P279X142-5N: is also known as SOT23-5."));
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P279X142-5N: pads are being trimmed to prevent extension under the package body."));
+                }
                 footprint_name = g_strdup ("SOT95P279X142-5N");
                 return (EXIT_SUCCESS);
         }
@@ -1881,10 +1962,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT95P280X100-5N: is also known as JEDEC MO-193."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P280X100-5N: pads are being trimmed to prevent extension under the package body."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT95P280X100-5N: is also known as JEDEC MO-193."));
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P280X100-5N: pads are being trimmed to prevent extension under the package body."));
+                }
                 footprint_name = g_strdup ("SOT95P280X100-5N");
                 return (EXIT_SUCCESS);
         }
@@ -1920,10 +2004,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT95P280X100-6N: is also known as JEDEC MO-193."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P280X100-6N: pads are being trimmed to prevent extension under the package body."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT95P280X100-6N: is also known as JEDEC MO-193."));
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P280X100-6N: pads are being trimmed to prevent extension under the package body."));
+                }
                 footprint_name = g_strdup ("SOT95P280X100-6N");
                 return (EXIT_SUCCESS);
         }
@@ -1961,10 +2048,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT95P280X110-5N: is also known as JEDEC MO-193AB."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P280X110-5N: pads are being trimmed to prevent extension under the package body."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT95P280X110-5N: is also known as JEDEC MO-193AB."));
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P280X110-5N: pads are being trimmed to prevent extension under the package body."));
+                }
                 footprint_name = g_strdup ("SOT95P280X110-5N");
                 return (EXIT_SUCCESS);
         }
@@ -2003,10 +2093,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT95P280X110-6N: is also known as JEDEC MO-193AA."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P280X110-6N: pads are being trimmed to prevent extension under the package body."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT95P280X110-6N: is also known as JEDEC MO-193AA."));
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P280X110-6N: pads are being trimmed to prevent extension under the package body."));
+                }
                 footprint_name = g_strdup ("SOT95P280X110-6N");
                 return (EXIT_SUCCESS);
         }
@@ -2042,10 +2135,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT95P280X115-6N: is also known as JEDEC MO-178."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P280X115-6N: pads are being trimmed to prevent extension under the package body."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT95P280X115-6N: is also known as JEDEC MO-178."));
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P280X115-6N: pads are being trimmed to prevent extension under the package body."));
+                }
                 footprint_name = g_strdup ("SOT95P280X115-6N");
                 return (EXIT_SUCCESS);
         }
@@ -2081,8 +2177,11 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P280X135-3AN: pads are being trimmed to prevent extension under the package body."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P280X135-3AN: pads are being trimmed to prevent extension under the package body."));
+                }
                 footprint_name = g_strdup ("SOT95P280X135-3AN");
                 return (EXIT_SUCCESS);
         }
@@ -2118,8 +2217,11 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P280X135-3N: pads are being trimmed to prevent extension under the package body."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P280X135-3N: pads are being trimmed to prevent extension under the package body."));
+                }
                 footprint_name = g_strdup ("SOT95P280X135-3N");
                 return (EXIT_SUCCESS);
         }
@@ -2155,10 +2257,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT95P280X135-5N: is also known as JEDEC MO-178."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P280X135-5N: pads are being trimmed to prevent extension under the package body."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT95P280X135-5N: is also known as JEDEC MO-178."));
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P280X135-5N: pads are being trimmed to prevent extension under the package body."));
+                }
                 footprint_name = g_strdup ("SOT95P280X135-5N");
                 return (EXIT_SUCCESS);
         }
@@ -2195,10 +2300,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT95P280X145-5AN: is also known as JEDEC MO-178AA."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P280X145-5AN: pads are being trimmed to prevent extension under the package body."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT95P280X145-5AN: is also known as JEDEC MO-178AA."));
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P280X145-5AN: pads are being trimmed to prevent extension under the package body."));
+                }
                 footprint_name = g_strdup ("SOT95P280X145-5AN");
                 return (EXIT_SUCCESS);
         }
@@ -2236,10 +2344,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT95P280X145-5N: is also known as JEDEC MO-178AA."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P280X145-5N: pads are being trimmed to prevent extension under the package body."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT95P280X145-5N: is also known as JEDEC MO-178AA."));
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P280X145-5N: pads are being trimmed to prevent extension under the package body."));
+                }
                 footprint_name = g_strdup ("SOT95P280X145-5N");
                 return (EXIT_SUCCESS);
         }
@@ -2276,10 +2387,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT95P280X145-6AN: is also known as JEDEC MO-178AB."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P280X145-6AN: pads are being trimmed to prevent extension under the package body."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT95P280X145-6AN: is also known as JEDEC MO-178AB."));
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P280X145-6AN: pads are being trimmed to prevent extension under the package body."));
+                }
                 footprint_name = g_strdup ("SOT95P280X145-6AN");
                 return (EXIT_SUCCESS);
         }
@@ -2316,10 +2430,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT95P280X145-6N: is also known as JEDEC MO-178AB."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P280X145-6N: pads are being trimmed to prevent extension under the package body."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT95P280X145-6N: is also known as JEDEC MO-178AB."));
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P280X145-6N: pads are being trimmed to prevent extension under the package body."));
+                }
                 footprint_name = g_strdup ("SOT95P280X145-6N");
                 return (EXIT_SUCCESS);
         }
@@ -2355,10 +2472,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT95P284X122-5N: is also known as JEDEC MO-178AA."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P284X122-5N: pads are being trimmed to prevent extension under the package body."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT95P284X122-5N: is also known as JEDEC MO-178AA."));
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P284X122-5N: pads are being trimmed to prevent extension under the package body."));
+                }
                 footprint_name = g_strdup ("SOT95P284X122-5N");
                 return (EXIT_SUCCESS);
         }
@@ -2396,10 +2516,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT95P284X122-6N: is also known as JEDEC MO-178AB."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P284X122-5N: pads are being trimmed to prevent extension under the package body."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT95P284X122-6N: is also known as JEDEC MO-178AB."));
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P284X122-5N: pads are being trimmed to prevent extension under the package body."));
+                }
                 footprint_name = g_strdup ("SOT95P284X122-6N");
                 return (EXIT_SUCCESS);
         }
@@ -2435,10 +2558,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT95P285X140-3N: is also known as SC-59."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P285X140-3N: pads are being trimmed to prevent extension under the package body."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT95P285X140-3N: is also known as SC-59."));
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P285X140-3N: pads are being trimmed to prevent extension under the package body."));
+                }
                 footprint_name = g_strdup ("SOT95P285X140-3N");
                 return (EXIT_SUCCESS);
         }
@@ -2474,10 +2600,13 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT95P285X90-6N: is also known as JEDEC MO-193AA."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P285X90-6N: pads are being trimmed to prevent extension under the package body."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT95P285X90-6N: is also known as JEDEC MO-193AA."));
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P285X90-6N: pads are being trimmed to prevent extension under the package body."));
+                }
                 footprint_name = g_strdup ("SOT95P285X90-6N");
                 return (EXIT_SUCCESS);
         }
@@ -2513,8 +2642,11 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("SOT95P470X124-8N: pads are being trimmed to prevent extension under the package body."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("SOT95P470X124-8N: pads are being trimmed to prevent extension under the package body."));
+                }
                 footprint_name = g_strdup ("SOT95P470X124-8N");
                 return (EXIT_SUCCESS);
         }
@@ -2606,8 +2738,11 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT150P700X180-5N: is also known as JEDEC TO-261AB."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT150P700X180-5N: is also known as JEDEC TO-261AB."));
+                }
                 footprint_name = g_strdup ("SOT150P700X180-5N");
                 return (EXIT_SUCCESS);
         }
@@ -2639,8 +2774,11 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT230P700X180-4N: is also known as JEDEC TO-261AA."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT230P700X180-4N: is also known as JEDEC TO-261AA."));
+                }
                 footprint_name = g_strdup ("SOT230P700X180-4N");
                 return (EXIT_SUCCESS);
         }
@@ -2672,8 +2810,11 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT230P700X180-4N: is also known as JEITA SC-73."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT230P700X180-4N: is also known as JEITA SC-73."));
+                }
                 footprint_name = g_strdup ("SOT230P700X180-4AN");
                 return (EXIT_SUCCESS);
         }
@@ -2705,16 +2846,22 @@ sot_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("SOT230P700X180-4N: is also known as JEDEC TO-261."));
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                _("SOT230P700X180-4N: is also known as JEDEC TO-261."));
+                }
                 footprint_name = g_strdup ("SOT230P700X180-4BN");
                 return (EXIT_SUCCESS);
         }
         else
         {
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("default values for footprint %s not found.\n"),
-                        footprint_name);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("default values for footprint %s not found.\n"),
+                                footprint_name);
+                }
                 return (EXIT_FAILURE);
         }
 }
@@ -2789,9 +2936,12 @@ sot_write_footprint ()
         fp = fopen (footprint_filename, "w");
         if (!fp)
         {
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("could not open file for %s footprint: %s."),
-                        footprint_type, footprint_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("could not open file for %s footprint: %s."),
+                                footprint_type, footprint_filename);
+                }
                 fclose (fp);
                 return (EXIT_FAILURE);
         }
@@ -2974,9 +3124,12 @@ sot_write_footprint ()
                 }
                 else if (number_of_pins == 4)
                 {
-                        g_log ("", G_LOG_LEVEL_WARNING,
-                                _("for now a number of pins of %d without a thermal pad is not implemented yet in sot_write_footprint()."),
-                                number_of_pins);
+                        if (verbose)
+                        {
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("for now a number of pins of %d without a thermal pad is not implemented yet in sot_write_footprint()."),
+                                        number_of_pins);
+                        }
                 }
                 else if (number_of_pins == 5)
                 {
@@ -3068,9 +3221,12 @@ sot_write_footprint ()
                 }
                 else
                 {
-                        g_log ("", G_LOG_LEVEL_WARNING,
-                                _("number of pins of %d is not defined in sot_write_footprint()."),
-                                number_of_pins);
+                        if (verbose)
+                        {
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("number of pins of %d is not defined in sot_write_footprint()."),
+                                        number_of_pins);
+                        }
                 }
         }
         /* Write a package body on the silkscreen */
