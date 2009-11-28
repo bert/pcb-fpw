@@ -46,9 +46,11 @@ res_create_element ()
         if (!element)
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("could not create a valid element pointer for a %s package."),
                                 footprint_type);
+                }
                 return (NULL);
         }
         /* Define the center of our universe and guess for a place where to
@@ -391,10 +393,12 @@ res_create_element ()
         }
         /* We are ready creating an element. */
         if (verbose)
+        {
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("created an element for a %s package: %s."),
                         footprint_type,
                         footprint_filename);
+        }
         return (element);
 }
 
@@ -412,7 +416,7 @@ GList
 res_create_packages_list ()
 {
         GList *res_packages_list = NULL;
-        res_packages_list = g_list_append (res_packages_list, "");
+        res_packages_list = g_list_append (res_packages_list, "RES");
         return (*res_packages_list);
 }
 
@@ -451,16 +455,21 @@ res_drc ()
 {
         int result = EXIT_SUCCESS;
         if (verbose)
+        {
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("DRC Check: checking %s package %s."), footprint_name, footprint_type);
+                        _("DRC Check: checking %s package %s."),
+                        footprint_name, footprint_type);
+        }
         /* Check for allowed pad shapes. */
         switch (pad_shapes_type)
         {
                 case NO_SHAPE:
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
                                         _("DRC Error: NO_SHAPE specified for check for allowed pad shapes."));
+                        }
                         result = EXIT_FAILURE;
                         break;
                 }
@@ -483,8 +492,10 @@ res_drc ()
                 default:
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
                                         _("DRC Error: no valid pad shape type specified."));
+                        }
                         result = EXIT_FAILURE;
                         break;
                 }
@@ -607,8 +618,10 @@ res_drc ()
                 case NO_UNITS:
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
                                         _("DRC Error: no units specified for check for a reasonable silk line width."));
+                        }
                         result = EXIT_FAILURE;
                         break;
                 }
@@ -616,8 +629,10 @@ res_drc ()
                 if (silkscreen_line_width > 40.0)
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
                                         _("DRC Error: line width > 40.0 mil specified check for a reasonable silk line width."));
+                        }
                         result = EXIT_FAILURE;
                         break;
                 }
@@ -625,8 +640,10 @@ res_drc ()
                 if (silkscreen_line_width > 4000.0)
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
                                         _("DRC Error: line width > 40.0 mil specified check for a reasonable silk line width."));
+                        }
                         result = EXIT_FAILURE;
                         break;
                 }
@@ -634,16 +651,20 @@ res_drc ()
                 if (silkscreen_line_width > 1.0)
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
                                         _("DRC Error: line width > 1.0 mm specified check for a reasonable silk line width."));
+                        }
                         result = EXIT_FAILURE;
                         break;
                 }
                 default:
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
                                         _("DRC Error: no valid units type specified for check for a reasonable silk line width."));
+                        }
                         result = EXIT_FAILURE;
                         break;
                 }
@@ -653,7 +674,8 @@ res_drc ()
         if (verbose || (result == EXIT_SUCCESS))
         {
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("DRC Check: no errors while checking %s package %s."), footprint_name, footprint_type);
+                        _("DRC Check: no errors while checking %s package %s."),
+                        footprint_name, footprint_type);
         }
         return result;
 }
@@ -715,9 +737,12 @@ res_get_default_footprint_values
         }
         else
         {
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("default values for footprint %s not found.\n"),
-                        footprint_name);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("default values for footprint %s not found.\n"),
+                                footprint_name);
+                }
                 return (EXIT_FAILURE);
         }
 }
@@ -792,9 +817,12 @@ res_write_footprint ()
         fp = fopen (footprint_filename, "w");
         if (!fp)
         {
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("could not open file for %s footprint: %s."),
-                        footprint_type, footprint_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("could not open file for %s footprint: %s."),
+                                footprint_type, footprint_filename);
+                }
                 fclose (fp);
                 return (EXIT_FAILURE);
         }
