@@ -67,9 +67,12 @@ con_dil_get_default_footprint_values
         }
         else
         {
-                fprintf (stderr,
-                         _("WARNING: default values for footprint %s not found.\n"),
-                         footprint_name);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("default values for footprint %s not found.\n"),
+                                footprint_name);
+                }
                 return (EXIT_FAILURE);
         }
 }
@@ -173,9 +176,12 @@ con_dil_write_footprint ()
         fp = fopen (footprint_filename, "w");
         if (!fp)
         {
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("could not open file for %s footprint: %s."),
-                        footprint_type, footprint_filename);
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("could not open file for %s footprint: %s."),
+                                footprint_type, footprint_filename);
+                }
                 fclose (fp);
                 return (EXIT_FAILURE);
         }
@@ -213,22 +219,38 @@ con_dil_write_footprint ()
         /* Determine (extreme) courtyard dimensions based on package
          * properties */
         if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
+        {
                 xmin = (multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package));
+        }
         if ((multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package)) > xmax)
+        {
                 xmax = (multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package));
+        }
         if ((multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package)) < ymin)
+        {
                 ymin = (multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package));
+        }
         if ((multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package)) > ymax)
+        {
                 ymax = (multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package));
+        }
         /* If the user input is using even more real-estate then use it */
         if (multiplier * (-courtyard_length / 2.0) < xmin)
+        {
                 xmin = multiplier * (-courtyard_length / 2.0);
+        }
         if (multiplier * (courtyard_length / 2.0) > xmax)
+        {
                 xmax = multiplier * (courtyard_length / 2.0);
+        }
         if (multiplier * (-courtyard_width / 2.0) < ymin)
+        {
                 ymin = multiplier * (-courtyard_width / 2.0);
+        }
         if (multiplier * (courtyard_width / 2.0) > ymax)
+        {
                 ymax = multiplier * (courtyard_width / 2.0);
+        }
         /* Write element header
          * Guess for a place where to put the refdes text */
         x_text = 0.0 ; /* already in mil/100 */
