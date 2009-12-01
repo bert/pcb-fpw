@@ -1064,6 +1064,12 @@ con_dil_function_list[] =
                 NULL
         },
         {
+                "DRC CON-DIL Element",
+                con_dil_drc,
+                "Design Rule Check for a CON-DIL package",
+                NULL
+        },
+        {
                 "Default Element Values",
                 con_dil_get_default_footprint_values,
                 "Get default values for a selected CON-DIL package",
