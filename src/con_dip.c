@@ -24,6 +24,368 @@
 
 
 /*!
+ * \brief Create a list of CON-DIP packages with pre-defined values.
+ *
+ * The data in this list can be used in a combo box to select a
+ * pre-defined package.
+ *
+ * \return a list containing all package names of this footprint type
+ * known by pcb-fpw.
+ */
+GList
+con_dip_create_packages_list ()
+{
+        GList *con_dip_packages_list = NULL;
+        con_dip_packages_list = g_list_append (con_dip_packages_list, "CON-DIP");
+        return (*con_dip_packages_list);
+}
+
+
+/*!
+ * \brief Do some Design Rule Checking for the CON-DIP package type.
+ *
+ * <ul>
+ * <li> check for total number of pins is even.
+ * <li> check for number of rows is 2.
+ * <li> check for number of columns is more than 1.
+ * <li> check for allowed pad shapes.
+ * <li> check for zero sized packages.
+ * <li> check for a zero sized courtyard.
+ * <li> check for minimum clearance between copper (X-direction).
+ * <li> check for minimum clearance between copper (Y-direction).
+ * <li> If any fiducials exist:
+ *   <ul>
+ *   <li> check for zero fiducial pad diameter.
+ *   <li> check for zero width solder mask clearance.
+ *   <li> check for minimum clearance between copper (between pads and
+ *   fiducials, if any fiducials exist).
+ *   </ul>
+ * <li> check for clearance of the package length with regard to the
+ * courtyard dimensions.
+ * <li> check for clearance of the package width with regard to the
+ * courtyard dimensions.
+ * <li> check for any silk lines or texts touching bare copper.
+ * <li> check for soldermask clearance (solder mask overlapping copper
+ * at the solder fillet area or worse).
+ * <li> check for a reasonable silk line width.
+ * </ul>
+ *
+ * \return \c EXIT_SUCCESS when no DRC violations were encountered,
+ * \c EXIT_FAILURE when DRC violations were found.
+ */
+int
+con_dip_drc ()
+{
+        int result = EXIT_SUCCESS;
+        if (verbose)
+        {
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("DRC Check: checking %s package %s."),
+                        footprint_type, footprint_name);
+        }
+        /* Check for total number of pins is even. */
+        if (!(number_of_pins % 2))
+        {
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("DRC Error: check for number of pins is even."));
+                }
+                result = EXIT_FAILURE;
+        }
+        /* Check for number of rows is 2. */
+        if (number_of_rows != 2)
+        {
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("DRC Error: check for number of rows = 2."));
+                }
+                result = EXIT_FAILURE;
+        }
+        /* Check for number of columns < 1. */
+        if (number_of_columns < 1)
+        {
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("DRC Error: check for number of columns < 1."));
+                }
+                result = EXIT_FAILURE;
+        }
+        /* Check for allowed pad shapes. */
+        switch (pad_shapes_type)
+        {
+                case NO_SHAPE:
+                {
+                        if (verbose)
+                        {
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("DRC Error: NO_SHAPE specified for check for allowed pad shapes."));
+                        }
+                        result = EXIT_FAILURE;
+                        break;
+                }
+                case ROUND:
+                {
+                        break;
+                }
+                case SQUARE:
+                {
+                        if (verbose)
+                        {
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("DRC Error: square pad shape specified for check for allowed pad shapes."));
+                        }
+                        result = EXIT_FAILURE;
+                        break;
+                }
+                case OCTAGONAL:
+                {
+                        if (verbose)
+                        {
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("DRC Error: octagonal pad shape specified for check for allowed pad shapes."));
+                        }
+                        result = EXIT_FAILURE;
+                        break;
+                }
+                case ROUND_ELONGATED:
+                {
+                        if (verbose)
+                        {
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("DRC Error: round elongated pad shape specified for check for allowed pad shapes."));
+                        }
+                        result = EXIT_FAILURE;
+                        break;
+                }
+                default:
+                {
+                        if (verbose)
+                        {
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("DRC Error: no valid pad shape type specified."));
+                        }
+                        result = EXIT_FAILURE;
+                        break;
+                }
+        }
+        /* Check for zero sized packages. */
+        if (package_body_length <= 0.0)
+        {
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("DRC Error: check for package body length is <= 0.0."));
+                }
+                result = EXIT_FAILURE;
+        }
+        if (package_body_width <= 0.0)
+        {
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("DRC Error: check for package body width is <= 0.0."));
+                }
+                result = EXIT_FAILURE;
+        }
+        if (package_body_height <= 0.0)
+        {
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("DRC Error: check for package body height is <= 0.0."));
+                }
+                result = EXIT_FAILURE;
+        }
+        /* Check for a zero sized courtyard. */
+        if (courtyard_length <= 0.0)
+        {
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("DRC Error: check for courtyard length is <= 0.0."));
+                }
+                result = EXIT_FAILURE;
+        }
+        if (courtyard_width <= 0.0)
+        {
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("DRC Error: check for courtyard width is <= 0.0."));
+                }
+                result = EXIT_FAILURE;
+        }
+        /* Check for minimum clearance between copper (X-direction). */
+        if (pitch_x - pad_diameter < pad_clearance)
+        {
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("DRC Error: check for minimum clearance between copper (X-direction)."));
+                }
+                result = EXIT_FAILURE;
+        }
+        /* Check for minimum clearance between copper (Y-direction). */
+        if (pitch_y - pad_diameter < pad_clearance)
+        {
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("DRC Error: check for minimum clearance between copper (Y-direction)."));
+                }
+                result = EXIT_FAILURE;
+        }
+        /*! If any fiducials exist:
+         * - check for zero fiducial pad diameter.
+         * - check for zero width solder mask clearance.
+         * \todo - check for minimum clearance between pad copper and fiducial pad
+         *   copper (including solder mask clearances).
+         */
+        if (fiducial)
+        {
+                /* Check for a zero width fiducial pad. */
+                if (fiducial_pad_diameter == 0.0)
+                {
+                        if (verbose)
+                        {
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("DRC Error: check for zero width fiducial pad."));
+                        }
+                        result = EXIT_FAILURE;
+                }
+                /* Check for a clearance of zero. */
+                if (fiducial_pad_solder_mask_clearance == 0.0)
+                {
+                        if (verbose)
+                        {
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("DRC Error: check for zero width solder mask clearance."));
+                        }
+                        result = EXIT_FAILURE;
+                }
+                /* Check for minimum clearance between pad copper and fiducial pad
+                 * copper (including solder mask clearances). */
+#if 0
+                if ()
+                {
+                        if (verbose)
+                        {
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("DRC Error: check for distance between fiducial and nearest pad."));
+                        }
+                        result = EXIT_FAILURE;
+                }
+#endif
+        }
+        /* Check for clearance of the package length with regard to the
+         * courtyard dimensions. */
+        if (package_body_length - courtyard_length < courtyard_clearance_with_package)
+        {
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("DRC Error: check for clearance of the package length with regard to the courtyard dimensions."));
+                }
+                result = EXIT_FAILURE;
+        }
+        /* Check for clearance of the package width with regard to the
+         * courtyard dimensions. */
+        if (package_body_width - courtyard_width < courtyard_clearance_with_package)
+        {
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("DRC Error: check for clearance of the package width with regard to the courtyard dimensions."));
+                }
+                result = EXIT_FAILURE;
+        }
+        /*! \todo Check for any silk lines or texts touching bare copper. */
+
+        /*! \todo Check for soldermask clearance (solder mask overlapping copper at
+         * the solder fillet area or worse). */
+
+        /* Check for a reasonable silk line width. */
+        if (silkscreen_package_outline || (silkscreen_line_width == 0.0))
+        {
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                _("DRC Error: line width 0.0 specified for check for a reasonable silk line width."));
+                }
+                result = EXIT_FAILURE;
+        }
+        switch (units_type)
+        {
+                case NO_UNITS:
+                {
+                        if (verbose)
+                        {
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("DRC Error: no units specified for check for a reasonable silk line width."));
+                        }
+                        result = EXIT_FAILURE;
+                        break;
+                }
+                case MIL:
+                if (silkscreen_line_width > 40.0)
+                {
+                        if (verbose)
+                        {
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("DRC Error: line width > 40.0 mil specified check for a reasonable silk line width."));
+                        }
+                        result = EXIT_FAILURE;
+                        break;
+                }
+                case MIL_100:
+                if (silkscreen_line_width > 4000.0)
+                {
+                        if (verbose)
+                        {
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("DRC Error: line width > 40.0 mil specified check for a reasonable silk line width."));
+                        }
+                        result = EXIT_FAILURE;
+                        break;
+                }
+                case MM:
+                if (silkscreen_line_width > 1.0)
+                {
+                        if (verbose)
+                        {
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("DRC Error: line width > 1.0 mm specified check for a reasonable silk line width."));
+                        }
+                        result = EXIT_FAILURE;
+                        break;
+                }
+                default:
+                {
+                        if (verbose)
+                        {
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("DRC Error: no valid units type specified for check for a reasonable silk line width."));
+                        }
+                        result = EXIT_FAILURE;
+                        break;
+                }
+        }
+        /*! \todo Create attributes here. */
+        /* No failures on DRC found. */
+        if (verbose || (result == EXIT_SUCCESS))
+        {
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("DRC Check: no errors while checking PGA package %s."),
+                        footprint_name);
+        }
+        return (result);
+}
+
+
+/*!
  * \brief Look up default values for CON-DIP footprints.
  *
  * Footprint values can be looked up by placing a question mark "?" in front
@@ -74,24 +436,6 @@ con_dip_get_default_footprint_values
                 return (EXIT_FAILURE);
         }
         return (EXIT_SUCCESS);
-}
-
-
-/*!
- * \brief Create a list of CON-DIP packages with pre-defined values.
- *
- * The data in this list can be used in a combo box to select a
- * pre-defined package.
- *
- * \return a list containing all package names of this footprint type
- * known by pcb-fpw.
- */
-GList
-con_dip_create_packages_list ()
-{
-        GList *con_dip_packages_list = NULL;
-        con_dip_packages_list = g_list_append (con_dip_packages_list, "CON-DIP");
-        return (*con_dip_packages_list);
 }
 
 
@@ -394,6 +738,12 @@ con_dip_function_list[] =
                 "Create Package List",
                 con_dip_create_packages_list,
                 "Create a list of packages with known values",
+                NULL
+        },
+        {
+                "DRC CON-DIP Element",
+                con_dip_drc,
+                "Design Rule Check for a CON-DIP package",
                 NULL
         },
         {
