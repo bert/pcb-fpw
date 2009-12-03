@@ -687,6 +687,7 @@ pga_write_footprint ()
         gdouble dx;
         gint pin_number;
         gchar *pin_pad_name = g_strdup ("");
+        gchar *pin_pad_flags = g_strdup ("");
         gint i;
         gint j;
 
