@@ -129,6 +129,7 @@ smt_write_footprint ()
         gdouble ymin;
         gdouble x_text;
         gdouble y_text;
+        gchar *pin_pad_flags = g_strdup ("");
 
         fp = fopen (footprint_filename, "w");
         if (!fp)
@@ -294,6 +295,7 @@ smt_write_footprint_molded ()
         gdouble ymin;
         gdouble x_text;
         gdouble y_text;
+        gchar *pin_pad_flags = g_strdup ("");
 
         /* Determine (extreme) courtyard dimensions based on pin/pad
          * properties */
@@ -503,6 +505,7 @@ smt_write_footprint_molded_cap ()
         gdouble ymin;
         gdouble x_text;
         gdouble y_text;
+        gchar *pin_pad_flags = g_strdup ("");
 
         /* Determine (extreme) courtyard dimensions based on pin/pad
          * properties */
@@ -736,6 +739,7 @@ smt_write_footprint_molded_diode ()
         gdouble ymin;
         gdouble x_text;
         gdouble y_text;
+        gchar *pin_pad_flags = g_strdup ("");
 
         /* Attempt to open a file with write permission. */
         fp = fopen (footprint_filename, "w");
