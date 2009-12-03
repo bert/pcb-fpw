@@ -178,6 +178,7 @@ con_hdr_write_footprint ()
         gdouble y_text;
         gint pin_number;
         gchar *pin_pad_name = g_strdup ("");
+        gchar *pin_pad_flags = g_strdup ("");
         gint i;
         gint j;
 
