@@ -262,8 +262,6 @@ gint pin_pad_type;
         /*!< Type of pads/pins. */
 gboolean pin1_square;
         /*!< Pin #1 is square. */
-gchar *pin_pad_flags = NULL;
-        /*!< Flags of pins/pads. */
 gdouble pad_solder_mask_clearance;
         /*!< Solder mask clearance of a pin/pad. */
 gdouble pad_clearance;
