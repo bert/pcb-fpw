@@ -1945,6 +1945,7 @@ capc_write_footprint ()
         gdouble ymin;
         gdouble x_text;
         gdouble y_text;
+        gchar *pin_pad_flags = g_strdup ("");
 
         /* Attempt to open a file with write permission. */
         fp = fopen (footprint_filename, "w");
