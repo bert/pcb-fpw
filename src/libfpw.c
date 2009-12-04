@@ -1915,24 +1915,58 @@ update_pad_shapes_variables ()
         if (!strcmp (pad_shape, "circular pad"))
         {
                 pad_shapes_type = ROUND;
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                              _(" pad shape is %s, setting pad_shapes_type to ROUND."),
+                              pad_shape);
+                }
                 return (EXIT_SUCCESS);
         }
-        if (!strcmp (pad_shape, "rectangular pad"))
+        else if (!strcmp (pad_shape, "rectangular pad"))
         {
                 pad_shapes_type = SQUARE;
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                              _(" pad shape is %s, setting pad_shapes_type to SQUARE."),
+                              pad_shape);
+                }
                 return (EXIT_SUCCESS);
         }
-        if (!strcmp (pad_shape, "octagonal pad"))
+        else if (!strcmp (pad_shape, "octagonal pad"))
         {
                 pad_shapes_type = OCTAGONAL;
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                              _(" pad shape is %s, setting pad_shapes_type to OCTOGONAL."),
+                              pad_shape);
+                }
                 return (EXIT_SUCCESS);
         }
-        if (!strcmp (pad_shape, "rounded pad, elongated"))
+        else if (!strcmp (pad_shape, "rounded pad, elongated"))
         {
                 pad_shapes_type = ROUND_ELONGATED;
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                              _(" pad shape is %s, setting pad_shapes_type to ROUND_ELONGATED."),
+                              pad_shape);
+                }
                 return (EXIT_SUCCESS);
         }
-        return (EXIT_FAILURE);
+        else
+        {
+                pad_shapes_type = NO_SHAPE;
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                              _("encountered a %s pad shape, resetting pad_shapes_type to NO_SHAPE."),
+                              pad_shape);
+                }
+                return (EXIT_FAILURE);
+        }
 }
 
 /*!
