@@ -21,7 +21,7 @@
 
 
 #include "register_functions.c"
-
+#include "resmelf.h"
 
 /*!
  * \brief Create an Element for a RESMELF package.
