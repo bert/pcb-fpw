@@ -37,6 +37,7 @@
 #include "res.c"
 #include "resc.c"
 #include "resm.c"
+#include "resmelf.c"
 #include "smt.c"
 #include "sot.c"
 #include "to.c"
