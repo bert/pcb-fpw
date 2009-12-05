@@ -21,7 +21,7 @@
 
 
 #include "register_functions.c"
-
+#include "resm.h"
 
 /*!
  * \brief Create an Element for a RESM package.
