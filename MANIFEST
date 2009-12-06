@@ -122,9 +122,12 @@ src/plcc.c
 src/preview.c
 src/register_functions.c
 src/res.c
+src/res.h
 src/resc.c
 src/resm.c
 src/resm.h
+src/resmelf.c
+src/resmelf.h
 src/select_exceptions.c
 src/smt.c
 src/sot.c
