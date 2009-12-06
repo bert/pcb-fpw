@@ -339,6 +339,7 @@ capc_create_packages_list ()
         capc_packages_list = g_list_append (capc_packages_list, "CAPC3216X125N");
         capc_packages_list = g_list_append (capc_packages_list, "CAPC3216X127N");
         capc_packages_list = g_list_append (capc_packages_list, "CAPC3216X130N");
+        capc_packages_list = g_list_append (capc_packages_list, "CAPC3216X130AN");
         capc_packages_list = g_list_append (capc_packages_list, "CAPC3216X105L");
         return (*capc_packages_list);
 }
@@ -670,6 +671,7 @@ capc_drc ()
  * - CAPC3216X125N,
  * - CAPC3216X127N,
  * - CAPC3216X130N,
+ * - CAPC3216X130AN,
  * - CAPC3216X105L.
  *
  * \return EXIT_SUCCESS when default values for a footprint were found,
@@ -1971,6 +1973,39 @@ capc_get_default_footprint_values
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("CAPC3216X130N: is also known as EIA 1206, metric 3216."));
                 footprint_name = g_strdup ("CAPC3216X130N");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?CAPC3216X130AN"))
+        {
+                number_of_pins = 2;
+                package_body_length = 3.58;
+                package_body_width = 1.98;
+                package_body_height = 1.30;
+                package_is_radial = FALSE;
+                number_of_columns = 0;
+                number_of_rows = 0;
+                pitch_x = 3.00;
+                pitch_y = 0.0;
+                pad_length = 1.30;
+                pad_width = 2.00;
+                pad_shape = g_strdup ("rectangular pad");
+                pad_shapes_type = SQUARE;
+                pad_clearance = 0.075;
+                pad_solder_mask_clearance = 0.075;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = 1.00;
+                silkscreen_width = 1.60;
+                silkscreen_line_width = 0.20;
+                courtyard_length = 4.80;
+                courtyard_width = 2.50;
+                courtyard_line_width = 0.05;
+                count_x = 0;
+                count_y = 0;
+                footprint_units = g_strdup ("mm");
+                g_free (footprint_name);
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("CAPC3216X130AN: is also known as 1206, metric 3216."));
+                footprint_name = g_strdup ("CAPC3216X130AN");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC3216X105L"))
