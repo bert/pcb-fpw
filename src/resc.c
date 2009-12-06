@@ -20,6 +20,7 @@
  */
 
 #include "register_functions.c"
+#include "resc.h"
 
 /*!
  * \brief Create an Element for a RESC package.
