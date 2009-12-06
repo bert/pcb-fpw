@@ -2998,7 +2998,7 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                 case RESMELF:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        gui_constraints_set_smt (GTK_WIDGET (combobox));
+                        resmelf_set_gui_constraints (GTK_WIDGET (combobox));
                         break;
                 }
                 case SIL:

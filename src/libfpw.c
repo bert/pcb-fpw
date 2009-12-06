@@ -2742,7 +2742,8 @@ write_footprint()
                         resm_write_footprint ();
                         break;
                 case RESMELF:
-                        smt_write_footprint ();
+                        resmelf_drc ();
+                        resmelf_write_footprint ();
                         break;
                 case SIL:
                         return;
