@@ -112,6 +112,8 @@ src/dip.c
 src/fpw.c
 src/globals.h
 src/indc.c
+src/indm.c
+src/indm.h
 src/interface.c
 src/interface.h
 src/libfpw.c
@@ -124,6 +126,7 @@ src/register_functions.c
 src/res.c
 src/res.h
 src/resc.c
+src/resc.h
 src/resm.c
 src/resm.h
 src/resmelf.c
