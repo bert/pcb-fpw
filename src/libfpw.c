@@ -1918,7 +1918,7 @@ update_pad_shapes_variables ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_INFO,
-                              _(" pad shape is %s, setting pad_shapes_type to ROUND."),
+                              _("pad shape is %s, setting pad_shapes_type to ROUND."),
                               pad_shape);
                 }
                 return (EXIT_SUCCESS);
@@ -1929,7 +1929,7 @@ update_pad_shapes_variables ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_INFO,
-                              _(" pad shape is %s, setting pad_shapes_type to SQUARE."),
+                              _("pad shape is %s, setting pad_shapes_type to SQUARE."),
                               pad_shape);
                 }
                 return (EXIT_SUCCESS);
@@ -1940,7 +1940,7 @@ update_pad_shapes_variables ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_INFO,
-                              _(" pad shape is %s, setting pad_shapes_type to OCTOGONAL."),
+                              _("pad shape is %s, setting pad_shapes_type to OCTOGONAL."),
                               pad_shape);
                 }
                 return (EXIT_SUCCESS);
@@ -1951,7 +1951,7 @@ update_pad_shapes_variables ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_INFO,
-                              _(" pad shape is %s, setting pad_shapes_type to ROUND_ELONGATED."),
+                              _("pad shape is %s, setting pad_shapes_type to ROUND_ELONGATED."),
                               pad_shape);
                 }
                 return (EXIT_SUCCESS);
