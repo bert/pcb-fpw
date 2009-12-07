@@ -3018,7 +3018,7 @@ sot_write_footprint ()
         y_text = (ymin - 10000.0); /* already in mil/100 */
         write_element_header (x_text, y_text);
         /* Write pin and/or pad entities */
-        if (!strcmp (pad_shape, "rectangular pad"))
+        if (pad_shapes_type == SQUARE)
         {
                 pin_pad_flags = g_strdup ("square");
         }
