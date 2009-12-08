@@ -21,6 +21,7 @@
 
 
 #include "register_functions.c"
+#include "capm.h"
 
 
 /*!

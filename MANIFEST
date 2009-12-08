@@ -102,6 +102,7 @@ src/callbacks.h
 src/capc.c
 src/capc.h
 src/capm.c
+src/capm.h
 src/capmp.c
 src/con_dil.c
 src/con_dip.c
