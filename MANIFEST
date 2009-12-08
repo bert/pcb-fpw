@@ -100,6 +100,7 @@ src/bga.c
 src/callbacks.c
 src/callbacks.h
 src/capc.c
+src/capc.h
 src/capm.c
 src/capmp.c
 src/con_dil.c

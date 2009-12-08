@@ -21,7 +21,7 @@
 
 
 #include "register_functions.c"
-
+#include "capc.h"
 
 /*!
  * \brief Create an Element for a CAPC package.
