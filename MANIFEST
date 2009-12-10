@@ -97,6 +97,7 @@ rpm/pcb-fpw.spec
 src/.gitignore
 src/Makefile.am
 src/bga.c
+src/bga.h
 src/callbacks.c
 src/callbacks.h
 src/capc.c
