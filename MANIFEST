@@ -109,6 +109,7 @@ src/capmp.h
 src/con_dil.c
 src/con_dil.h
 src/con_dip.c
+src/con_dip.h
 src/con_hdr.c
 src/dimensions.c
 src/diom.c

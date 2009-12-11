@@ -21,6 +21,7 @@
 
 
 #include "register_functions.c"
+#include "con_dip.h"
 
 
 /*!
