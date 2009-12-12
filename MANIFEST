@@ -111,6 +111,7 @@ src/con_dil.h
 src/con_dip.c
 src/con_dip.h
 src/con_hdr.c
+src/con_hdr.h
 src/dimensions.c
 src/diom.c
 src/diomelf.c
