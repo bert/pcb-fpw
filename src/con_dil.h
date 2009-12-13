@@ -20,6 +20,10 @@
  */
 
 
+#ifndef __CON_DIL_INCLUDED__
+#define __CON_DIL_INCLUDED__
+
+
 ElementTypePtr con_dil_create_element ();
 GList con_dil_create_packages_list ();
 int con_dil_drc ();
@@ -29,6 +33,9 @@ int con_dil_set_gui_constraints (GtkWidget *widget);
 #endif /* GUI */
 int con_dil_write_footprint ();
 void con_dil_init ();
+
+
+#endif /* __CON_DIL_INCLUDED__ */
 
 
 /* EOF */

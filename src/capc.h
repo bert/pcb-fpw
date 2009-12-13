@@ -20,6 +20,10 @@
  */
 
 
+#ifndef __CAPC_INCLUDED__
+#define __CAPC_INCLUDED__
+
+
 ElementTypePtr capc_create_element ();
 GList capc_create_packages_list ();
 int capc_drc ();
@@ -29,6 +33,9 @@ int capc_set_gui_constraints (GtkWidget *widget);
 #endif /* GUI */
 int capc_write_footprint ();
 void capc_init ();
+
+
+#endif /* __CAPC_INCLUDED__ */
 
 
 /* EOF */

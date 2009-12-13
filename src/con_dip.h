@@ -20,6 +20,10 @@
  */
 
 
+#ifndef __CON_DIP_INCLUDED__
+#define __CON_DIP_INCLUDED__
+
+
 GList con_dip_create_packages_list ();
 int con_dip_drc ();
 int con_dip_get_default_footprint_values (gchar *footprint_name);
@@ -28,6 +32,9 @@ int con_dip_set_gui_constraints (GtkWidget *widget);
 #endif /* GUI */
 int con_dip_write_footprint ();
 void con_dip_init ();
+
+
+#endif /* __CON_DIP_INCLUDED__ */
 
 
 /* EOF */

@@ -20,6 +20,10 @@
  */
 
 
+#ifndef __BGA_INCLUDED__
+#define __BGA_INCLUDED__
+
+
 ElementTypePtr bga_create_element ();
 GList bga_create_packages_list ();
 int bga_drc ();
@@ -29,6 +33,9 @@ int bga_set_gui_constraints (GtkWidget *widget);
 #endif /* GUI */
 int bga_write_footprint ();
 void bga_init ();
+
+
+#endif /* __BGA_INCLUDED__ */
 
 
 /* EOF */

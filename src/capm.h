@@ -20,6 +20,10 @@
  */
 
 
+#ifndef __CAPM_INCLUDED__
+#define __CAPM_INCLUDED__
+
+
 ElementTypePtr capm_create_element ();
 GList capm_create_packages_list ();
 int capm_drc ();
@@ -29,6 +33,9 @@ int capm_set_gui_constraints (GtkWidget *widget);
 #endif /* GUI */
 int capm_write_footprint ();
 void capm_init ();
+
+
+#endif /* __CAPM_INCLUDED__ */
 
 
 /* EOF */
