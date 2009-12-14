@@ -114,6 +114,7 @@ src/con_hdr.c
 src/con_hdr.h
 src/dimensions.c
 src/diom.c
+src/diom.h
 src/diomelf.c
 src/dip.c
 src/fpw.c
