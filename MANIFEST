@@ -118,6 +118,7 @@ src/diom.h
 src/diomelf.c
 src/diomelf.h
 src/dip.c
+src/dip.h
 src/fpw.c
 src/globals.h
 src/indc.c

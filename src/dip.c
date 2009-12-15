@@ -19,7 +19,10 @@
  * MA 02110-1301, USA.\n
  */
 
+
 #include "register_functions.c"
+#include "dip.h"
+
 
 /*!
  * \brief Create an Element for a DIP package.
