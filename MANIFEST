@@ -116,6 +116,7 @@ src/dimensions.c
 src/diom.c
 src/diom.h
 src/diomelf.c
+src/diomelf.h
 src/dip.c
 src/fpw.c
 src/globals.h
