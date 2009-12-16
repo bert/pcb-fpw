@@ -122,6 +122,7 @@ src/dip.h
 src/fpw.c
 src/globals.h
 src/indc.c
+src/indc.h
 src/indm.c
 src/indm.h
 src/interface.c

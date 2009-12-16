@@ -19,7 +19,10 @@
  * MA 02110-1301, USA.\n
  */
 
+
 #include "register_functions.c"
+#include "indc.h"
+
 
 /*!
  * \brief Create an Element for an INDC SMT package.
