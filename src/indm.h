@@ -20,6 +20,10 @@
  */
 
 
+#ifndef __INDM_INCLUDED__
+#define __INDM_INCLUDED__
+
+
 ElementTypePtr indm_create_element ();
 GList indm_create_packages_list ();
 int indm_drc ();
@@ -29,6 +33,9 @@ int indm_set_gui_constraints (GtkWidget *widget);
 #endif /* GUI */
 int indm_write_footprint ();
 void indm_init ();
+
+
+#endif /* _INDM_INCLUDED__ */
 
 
 /* EOF */
