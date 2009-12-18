@@ -133,6 +133,7 @@ src/packages.h
 src/pga.c
 src/pga.h
 src/plcc.c
+src/plcc.h
 src/preview.c
 src/register_functions.c
 src/res.c
