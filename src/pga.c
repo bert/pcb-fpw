@@ -19,7 +19,10 @@
  * MA 02110-1301, USA.\n
  */
 
+
 #include "register_functions.c"
+#include "pga.h"
+
 
 /*!
  * \brief Create an Element for a PGA package.

@@ -131,6 +131,7 @@ src/libfpw.c
 src/main.c
 src/packages.h
 src/pga.c
+src/pga.h
 src/plcc.c
 src/preview.c
 src/register_functions.c
