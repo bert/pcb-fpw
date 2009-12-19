@@ -41,7 +41,7 @@
 #include "libfpw.c"
 #include "packages.h"
 #include "dimensions.c"
-#include "preview.c"
+#include "preview.h"
 #include "select_exceptions.c"
 
 
@@ -3834,7 +3834,9 @@ void
 on_preview_button_clicked              (GtkButton       *button,
                                         gpointer         user_data)
 {
-        preview_create_window (footprint_name, 300, 200);
+/*! \bug  Invoking preview_create_window (footprint_name, 300, 200);
+ * gives an error by ld.
+ */
 }
 
 

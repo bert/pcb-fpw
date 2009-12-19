@@ -135,6 +135,7 @@ src/pga.h
 src/plcc.c
 src/plcc.h
 src/preview.c
+src/preview.h
 src/register_functions.c
 src/res.c
 src/res.h
