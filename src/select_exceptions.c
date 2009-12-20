@@ -20,32 +20,11 @@
  */
 
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <gtk/gtk.h>
-#include <glib.h>
+#include "select_exceptions.h"
 
-
-#define MAX_ROWS 100
-#define MAX_COLUMNS 100
-
-/*!
- * \brief Selection button wrapper type.
- */
-typedef struct
-{
-        GtkWidget *button_widget;
-                /*!< : is the button widget appearing in the dialog window.*/
-        gchar *name;
-                /*!< : is the name of the button widget.*/
-        gboolean active;
-                /*!< : is the state of the button,*/
-        gint id;
-                /*!< : is the identificatoion number (sequential) of the
-                 * button.*/
-} SelectionButtonSet;
 
 static SelectionButtonSet selection_buttons[MAX_ROWS * MAX_COLUMNS];
+
 
 GtkWidget *select_exceptions_window = NULL;
 
@@ -425,5 +404,6 @@ select_exceptions_create_window
         gtk_main ();
         return (EXIT_SUCCESS);
 }
+
 
 /* EOF */

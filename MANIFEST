@@ -146,6 +146,7 @@ src/resm.h
 src/resmelf.c
 src/resmelf.h
 src/select_exceptions.c
+src/select_exceptions.h
 src/smt.c
 src/sot.c
 src/sot.h
