@@ -34,47 +34,7 @@
 #define _REGISTER_FUNCTIONS_
 
 
-/*!
- * \brief .
- */
-typedef struct
-{
-        char *name;
-                /*!< This name is matched against fuction names.*/
-        int (*trigger_cb) (int argc, char **argv, int x, int y);
-                /*!< Is called when the function is called.\n
-                 * If this function returns non-zero, no further actions
-                 * will be invoked for this event.
-                 */
-        const char *description;
-                /*!< This is a short description that sometimes
-                 * accompanies the name.*/
-        const char *syntax;
-                /*!< Full allowed syntax; use \\n to separate lines.*/
-} fpw_function_t;
-
-
-/*!
- * \brief .
- */
-typedef struct fpw_function_node_t
-{
-        struct fpw_function_node_t *next;
-                /*!< The next function node.*/
-        fpw_function_t *functions;
-                /*!< The next function.*/
-        int n;
-                /*!< The number of function nodes ?.*/
-} fpw_function_node_t;
-
-
-fpw_function_node_t *fpw_function_nodes = 0;
-
-
-static int n_functions = 0;
-
-
-static fpw_function_t *all_functions = 0;
+#include "register_functions.h"
 
 
 /*!
@@ -209,9 +169,6 @@ fpw_function
 }
 
 
-#define FPW_CONCAT(a,b) a##b
-
-
 /*!
  * \brief Register all functions related to packages/footprints.
  *
@@ -243,10 +200,6 @@ fpw_register_functions
                 all_functions = 0;
         }
 }
-
-
-#define REGISTER_FUNCTIONS(a) FPW_CONCAT(void register_,a) ()\
-{ fpw_register_functions(a, sizeof(a)/sizeof(a[0])); }
 
 
 #endif /* _REGISTER_FUNCTIONS_ guard. */

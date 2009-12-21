@@ -137,6 +137,7 @@ src/plcc.h
 src/preview.c
 src/preview.h
 src/register_functions.c
+src/register_functions.h
 src/res.c
 src/res.h
 src/resc.c
