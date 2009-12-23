@@ -463,7 +463,18 @@ to_write_footprint_to220 ()
         if (silkscreen_package_outline)
         {
                 fprintf (fp, "# Write a package body on the silkscreen\n");
-                fprintf (fp, "\tElementLine[-15000 -10000 15000 -10000 1000]\n");
+                fprintf (fp, "\tElementLine[-20750 -12600 -20750 5900 %s]\n",
+                        (multiplier * silkscreen_line_width));
+                fprintf (fp, "\tElementLine[-20750 5900 20750 5900 %s]\n",
+                        (multiplier * silkscreen_line_width));
+                fprintf (fp, "\tElementLine[20750 5900 20750 -12600 %s]\n",
+                        (multiplier * silkscreen_line_width));
+                fprintf (fp, "\tElementLine[20750 -12600 -20750 -12600 %s]\n",
+                        (multiplier * silkscreen_line_width));
+                fprintf (fp, "\tElementLine[-18750 -10000 18750 -10000 5200]\n");
+                fprintf (fp, "\tElementLine[-20750 -7600 20750 -7600 %s]\n",
+                        (multiplier * silkscreen_line_width));
+
         }
         /* Write a pin #1 marker on the silkscreen */
         if (silkscreen_indicate_1)
