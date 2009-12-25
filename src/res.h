@@ -20,6 +20,10 @@
  */
 
 
+#ifndef __RES_INCLUDED__
+#define __RES_INCLUDED__
+
+
 ElementTypePtr res_create_element ();
 GList res_create_packages_list ();
 int res_drc ();
@@ -29,6 +33,9 @@ int res_set_gui_constraints (GtkWidget *widget);
 #endif /* GUI */
 int res_write_footprint ();
 void res_init ();
+
+
+#endif /* __RES_INCLUDED__ */
 
 
 /* EOF */
