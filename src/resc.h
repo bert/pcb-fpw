@@ -19,6 +19,11 @@
  * MA 02110-1301, USA.\n
  */
 
+
+#ifndef __RESC_INCLUDED__
+#define __RESC_INCLUDED__
+
+
 ElementTypePtr resc_create_element ();
 GList resc_create_packages_list ();
 int resc_drc ();
@@ -28,6 +33,9 @@ int resc_set_gui_constraints (GtkWidget *widget);
 #endif /* GUI */
 int resc_write_footprint ();
 void resc_init ();
+
+
+#endif /* __RESC_INCLUDED__ */
 
 
 /* EOF */
