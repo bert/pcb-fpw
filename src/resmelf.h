@@ -20,6 +20,10 @@
  */
 
 
+#ifndef __RESMELF_INCLUDED__
+#define __RESMELF_INCLUDED__
+
+
 ElementTypePtr resmelf_create_element ();
 GList resmelf_create_packages_list ();
 int resmelf_drc ();
@@ -29,6 +33,9 @@ int resmelf_set_gui_constraints (GtkWidget *widget);
 #endif /* GUI */
 int resmelf_write_footprint ();
 void resmelf_init ();
+
+
+#endif /* __RESMELF_INCLUDED__ */
 
 
 /* EOF */
