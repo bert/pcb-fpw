@@ -20,6 +20,10 @@
  */
 
 
+#ifndef __RESM_INCLUDED__
+#define __RESM_INCLUDED__
+
+
 ElementTypePtr resm_create_element ();
 GList resm_create_packages_list ();
 int resm_drc ();
@@ -29,6 +33,9 @@ int resm_set_gui_constraints (GtkWidget *widget);
 #endif /* GUI */
 int resm_write_footprint ();
 void resm_init ();
+
+
+#endif /* __RESM_INCLUDED__ */
 
 
 /* EOF */
