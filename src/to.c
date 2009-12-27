@@ -356,13 +356,331 @@ to_set_gui_constraints
 
 
 /*!
- * \brief Write a TO220 footprint for a transistor package.
+ * \brief Write a footprint for a TO220 transistor package.
  *
  * \return \c EXIT_FAILURE when errors were encountered,
  * \c EXIT_SUCCESS when OK.
  */
 int
 to_write_footprint_to220 ()
+{
+        gdouble xmax;
+        gdouble xmin;
+        gdouble ymax;
+        gdouble ymin;
+        gdouble x_text;
+        gdouble y_text;
+        gchar *pin_pad_flags = g_strdup ("");
+
+        /* Attempt to open a file with write permission. */
+        fp = fopen (footprint_filename, "w");
+        if (!fp)
+        {
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("could not open file for %s footprint: %s."),
+                        footprint_type, footprint_filename);
+                fclose (fp);
+                return (EXIT_FAILURE);
+        }
+        /* Print a license if requested. */
+        if (license_in_footprint)
+        {
+                write_license ();
+        }
+        /* Determine (extreme) courtyard dimensions based on pin/pad/
+         * package body properties */
+        xmin = -20000 - (multiplier * courtyard_clearance_with_package); /* in mil/100 */
+        xmax = 20000 + (multiplier * courtyard_clearance_with_package); /* in mil/100 */
+        ymin = -79000 - (multiplier * courtyard_clearance_with_package); /* in mil/100 */
+        ymax = 10000 + (multiplier * courtyard_clearance_with_package); /* in mil/100 */
+        /* Determine (extreme) courtyard dimensions based on package
+         * properties */
+        if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
+                xmin = (multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package));
+        if ((multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package)) > xmax)
+                xmax = (multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package));
+        if ((multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package)) < ymin)
+                ymin = (multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package));
+        if ((multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package)) > ymax)
+                ymax = (multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package));
+        /* If the user input is using even more real-estate then use it */
+        if (multiplier * (-courtyard_length / 2.0) < xmin)
+                xmin = multiplier * (-courtyard_length / 2.0);
+        if (multiplier * (courtyard_length / 2.0) > xmax)
+                xmax = multiplier * (courtyard_length / 2.0);
+        if (multiplier * (-courtyard_width / 2.0) < ymin)
+                ymin = multiplier * (-courtyard_width / 2.0);
+        if (multiplier * (courtyard_width / 2.0) > ymax)
+                ymax = multiplier * (courtyard_width / 2.0);
+        /* Write element header
+         * Guess for a place where to put the refdes text */
+        x_text = 0.0 ; /* already in mil/100 */
+        y_text = (ymin - 10000.0); /* already in mil/100 */
+        write_element_header (x_text, y_text);
+        /* Write pin and/or pad entities */
+        if (!strcmp (pad_shape, "rectangular pad"))
+                pin_pad_flags = g_strdup ("square");
+        else
+                pin_pad_flags = g_strdup ("");
+        write_pin
+        (
+                1, /* pin number */
+                "", /* pin name */
+                -10000.0, /* x0 coordinate */
+                0.0, /* y0-coordinate */
+                multiplier * pad_diameter, /* width of the annulus ring (pad) */
+                multiplier * pad_clearance, /* clearance */
+                multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
+                multiplier * pin_drill_diameter, /* pin drill diameter */
+                /* Write pin #1 with a square pad */
+                (pin1_square) ? "square" : "" /* flags */
+        );
+        write_pin
+        (
+                2, /* pin number */
+                "", /* pin name */
+                0.0, /* x0 coordinate */
+                0.0, /* y0-coordinate */
+                multiplier * pad_diameter, /* width of the annulus ring (pad) */
+                multiplier * pad_clearance, /* clearance */
+                multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
+                multiplier * pin_drill_diameter, /* pin drill diameter */
+                pin_pad_flags /* flags */
+        );
+        write_pin
+        (
+                3, /* pin number */
+                "", /* pin name */
+                10000.0, /* x0 coordinate */
+                0.0, /* y0-coordinate */
+                multiplier * pad_diameter, /* width of the annulus ring (pad) */
+                multiplier * pad_clearance, /* clearance */
+                multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
+                multiplier * pin_drill_diameter, /* pin drill diameter */
+                pin_pad_flags /* flags */
+        );
+        /* Attachment drill hole (PTH). */
+        write_pin
+        (
+                0, /* pin number */
+                "", /* pin name */
+                10000.0, /* x0 coordinate */
+                -67000.0, /* y0-coordinate */
+                15000.0, /* width of the annulus ring (pad) */
+                multiplier * pad_clearance, /* clearance */
+                15000.0 + (multiplier * pad_solder_mask_clearance), /* solder mask clearance */
+                13000.0, /* pin drill diameter */
+                "hole" /* flags */
+        );
+        /* Write package body on the silkscreen */
+        if (silkscreen_package_outline)
+        {
+	        /* Leads. */
+                fprintf (fp, "# Write leads on the silkscreen\n");
+                write_element_line
+                (
+                        -10000,
+                        (int) (multiplier * (-pad_diameter)),
+                        -10000,
+                        -18000,
+                        (int) multiplier * (2 * silkscreen_line_width)
+                );
+                write_element_line
+                (
+                        0,
+                        (int) (multiplier * (-pad_diameter)),
+                        0,
+                        -18000,
+                        (int) multiplier * (2 * silkscreen_line_width)
+                );
+                write_element_line
+                (
+                        10000,
+                        (int) (multiplier * (-pad_diameter)),
+                        10000,
+                        -18000,
+                        (int) multiplier * (2 * silkscreen_line_width)
+                );
+	        /* Body. */
+                fprintf (fp, "# Write a package body on the silkscreen\n");
+                write_element_line
+                (
+                        -20000,
+                        -18000,
+                        -20000,
+                        -55500,
+                        (int) multiplier * (silkscreen_line_width)
+                );
+                write_element_line
+                (
+                        20000,
+                        -18000,
+                        20000,
+                        -55500,
+                        (int) multiplier * (silkscreen_line_width)
+                );
+                write_element_line
+                (
+                        -20000,
+                        -55500,
+                        20000,
+                        -55500,
+                        (int) multiplier * (silkscreen_line_width)
+                );
+                write_element_line
+                (
+                        -20000,
+                        -18000,
+                        20000,
+                        -18000,
+                        (int) multiplier * (silkscreen_line_width)
+                );
+	        /* Cooling tab with notches. */
+                fprintf (fp, "# Write a Cooling tab with notches on the silkscreen\n");
+                write_element_line
+                (
+                        -20000,
+                        -55500,
+                        20000,
+                        -55500,
+                        (int) multiplier * (silkscreen_line_width)
+                );
+                write_element_line
+                (
+                        20000,
+                        -55500,
+                        20000,
+                        -68000,
+                        (int) multiplier * (silkscreen_line_width)
+                );
+                write_element_line
+                (
+                        20000,
+                        -68000,
+                        18500,
+                        -68000,
+                        (int) multiplier * (silkscreen_line_width)
+                );
+                write_element_line
+                (
+                        18500,
+                        -68000,
+                        18500,
+                        -75000,
+                        (int) multiplier * (silkscreen_line_width)
+                );
+                write_element_line
+                (
+                        18500,
+                        -75000,
+                        20000,
+                        -75000,
+                        (int) multiplier * (silkscreen_line_width)
+                );
+                write_element_line
+                (
+                        20000,
+                        -75000,
+                        20000,
+                        -79000,
+                        (int) multiplier * (silkscreen_line_width)
+                );
+                write_element_line
+                (
+                        20000,
+                        -79000,
+                        -20000,
+                        -79000,
+                        (int) multiplier * (silkscreen_line_width)
+                );
+                write_element_line
+                (
+                        -20000,
+                        -79000,
+                        -20000,
+                        -75000,
+                        (int) multiplier * (silkscreen_line_width)
+                );
+                write_element_line
+                (
+                        -20000,
+                        -75000,
+                        -18500,
+                        -75000,
+                        (int) multiplier * (silkscreen_line_width)
+                );
+                write_element_line
+                (
+                        -18500,
+                        -75000,
+                        -18500,
+                        -68000,
+                        (int) multiplier * (silkscreen_line_width)
+                );
+                write_element_line
+                (
+                        -18500,
+                        -68000,
+                        -20000,
+                        -68000,
+                        (int) multiplier * (silkscreen_line_width)
+                );
+                write_element_line
+                (
+                        -20000,
+                        -68000,
+                        -20000,
+                        -55500,
+                        (int) multiplier * (silkscreen_line_width)
+                );
+        }
+        /* Write a pin #1 marker on the silkscreen */
+        if (silkscreen_indicate_1)
+        {
+                /*! \todo Write a pin #1 marker on the silkscreen ! */
+        }
+        /* Write a courtyard on the silkscreen */
+        if (courtyard)
+        {
+                fprintf (fp, "# Write a courtyard on the silkscreen\n");
+                write_rectangle
+                (
+                        xmin, /* already in mil/100 */
+                        ymin, /* already in mil/100 */
+                        xmax, /* already in mil/100 */
+                        ymax, /* already in mil/100 */
+                        multiplier * courtyard_line_width
+                );
+        }
+        /* Write attributes to the footprint file. */
+        if (attributes_in_footprint)
+        {
+                write_attributes ();
+        }
+        /* Finishing touch. */
+        fprintf (fp, "\n");
+        fprintf (fp, ")\n");
+        fclose (fp);
+        /* We are ready creating a footprint. */
+        if (verbose)
+        {
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("wrote a footprint for a %s package: %s."),
+                        footprint_type,
+                        footprint_filename);
+        }
+        return (EXIT_SUCCESS);
+}
+
+
+/*!
+ * \brief Write a footprint for a TO220 transistor package (standing).
+ *
+ * \return \c EXIT_FAILURE when errors were encountered,
+ * \c EXIT_SUCCESS when OK.
+ */
+int
+to_write_footprint_to220_standing ()
 {
         gdouble xmax;
         gdouble xmin;
@@ -463,18 +781,54 @@ to_write_footprint_to220 ()
         if (silkscreen_package_outline)
         {
                 fprintf (fp, "# Write a package body on the silkscreen\n");
-                fprintf (fp, "\tElementLine[-20750 -12600 -20750 5900 %s]\n",
-                        (multiplier * silkscreen_line_width));
-                fprintf (fp, "\tElementLine[-20750 5900 20750 5900 %s]\n",
-                        (multiplier * silkscreen_line_width));
-                fprintf (fp, "\tElementLine[20750 5900 20750 -12600 %s]\n",
-                        (multiplier * silkscreen_line_width));
-                fprintf (fp, "\tElementLine[20750 -12600 -20750 -12600 %s]\n",
-                        (multiplier * silkscreen_line_width));
-                fprintf (fp, "\tElementLine[-18750 -10000 18750 -10000 5200]\n");
-                fprintf (fp, "\tElementLine[-20750 -7600 20750 -7600 %s]\n",
-                        (multiplier * silkscreen_line_width));
-
+                write_element_line
+                (
+                        -20750,
+                        -12600,
+                        -20750,
+                        5900,
+                        (int) multiplier * (silkscreen_line_width)
+                );
+                write_element_line
+                (
+                        -20750,
+                        5900,
+                        20750,
+                        5900,
+                        (int) multiplier * (silkscreen_line_width)
+                );
+                write_element_line
+                (
+                        20750,
+                        5900,
+                        20750,
+                        912600,
+                        (int) multiplier * (silkscreen_line_width)
+                );
+                write_element_line
+                (
+                        20750,
+                        -12600,
+                        -20750,
+                        -12600,
+                        (int) multiplier * (silkscreen_line_width)
+                );
+                write_element_line
+                (
+                        -18750,
+                        -10000,
+                        18750,
+                        -10000,
+                        5200
+                );
+                write_element_line
+                (
+                        -20750,
+                        -7600,
+                        20750,
+                        -7600,
+                        (int) multiplier * (silkscreen_line_width)
+                );
         }
         /* Write a pin #1 marker on the silkscreen */
         if (silkscreen_indicate_1)
