@@ -329,7 +329,7 @@ to_set_gui_constraints
         /* Widgets on tab 2 "Pins/Pads" */
         GtkWidget *number_of_columns_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_columns_entry");
-        gtk_entry_set_text (GTK_ENTRY (number_of_columns_entry), "2");
+        gtk_entry_set_text (GTK_ENTRY (number_of_columns_entry), "3");
         gtk_widget_set_sensitive (number_of_columns_entry, FALSE);
         GtkWidget *number_of_rows_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_rows_entry");
