@@ -2761,6 +2761,12 @@ write_footprint()
                 case TO92:
                         to_write_footprint_to92 ();
                         break;
+                case TO220:
+                        to_write_footprint_to220 ();
+                        break;
+                case TO220W:
+                        to_write_footprint_to220_standing ();
+                        break;
                 default:
                         if ((verbose) || (!silent))
                         {

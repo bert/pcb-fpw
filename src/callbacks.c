@@ -3031,7 +3031,19 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                 case TO92:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        gui_constraints_set_to92 (GTK_WIDGET (combobox));
+                        to_set_gui_constraints (GTK_WIDGET (combobox));
+                        break;
+                }
+                case TO220:
+                {
+                        all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                        to_set_gui_constraints (GTK_WIDGET (combobox));
+                        break;
+                }
+                case TO220W:
+                {
+                        all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                        to_set_gui_constraints (GTK_WIDGET (combobox));
                         break;
                 }
                 default:
