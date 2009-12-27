@@ -705,12 +705,12 @@ to_write_footprint_to220_standing ()
         {
                 write_license ();
         }
-        /* Determine (extreme) courtyard dimensions based on pin/pad
-         * properties */
-        xmin = 0 - (multiplier * courtyard_clearance_with_package); /* in mil/100 */
-        xmax = 0 + (multiplier * courtyard_clearance_with_package); /* in mil/100 */
-        ymin = 0 - (multiplier * courtyard_clearance_with_package); /* in mil/100 */
-        ymax = 0 + (multiplier * courtyard_clearance_with_package); /* in mil/100 */
+        /* Determine (extreme) courtyard dimensions based on pin/pad/
+         * package body properties */
+        xmin = -20750 - (multiplier * courtyard_clearance_with_package); /* in mil/100 */
+        xmax = 20750 + (multiplier * courtyard_clearance_with_package); /* in mil/100 */
+        ymin = -12600 - (multiplier * courtyard_clearance_with_package); /* in mil/100 */
+        ymax = 5900 + (multiplier * courtyard_clearance_with_package); /* in mil/100 */
         /* Determine (extreme) courtyard dimensions based on package
          * properties */
         if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
@@ -802,7 +802,7 @@ to_write_footprint_to220_standing ()
                         20750,
                         5900,
                         20750,
-                        912600,
+                        -12600,
                         (int) multiplier * (silkscreen_line_width)
                 );
                 write_element_line
