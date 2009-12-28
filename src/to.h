@@ -31,6 +31,9 @@ int to_get_default_footprint_values (gchar *footprint_name);
 int to_set_gui_constraints (GtkWidget *widget);
 #endif /* GUI */
 int to_write_footprint_to220 ();
+int to_write_footprint_to220_staggered ();
+int to_write_footprint_to220_standing ();
+int to_write_footprint_to220_standing_staggered ();
 int to_write_footprint_to92 ();
 void to_init ();
 
