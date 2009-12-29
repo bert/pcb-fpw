@@ -1493,8 +1493,24 @@ to_write_footprint_to92 ()
         if (silkscreen_package_outline)
         {
                 fprintf (fp, "# Write a package body on the silkscreen\n");
-                fprintf (fp, "\tElementLine[-8600 -6000 8600 -6000 1000]\n");
-                fprintf (fp, "\tElementArc[0 0 10500 10500 -35 250 1000]\n");
+                write_element_line
+                (
+                        -8600, /* x0-coordinate */
+                        -6000, /* y0-coordinate */
+                        8600, /* x1-coordinate */
+                        -6000, /* y1-coordinate */
+                        (int) multiplier * (silkscreen_line_width)
+                );
+                write_element_arc
+                (
+                        0, /* x-coordinate */
+                        0, /* y-coordinate */
+                        10500, /* width */
+                        10500, /*height */
+                        -35, /* start angke */
+                        250, /* delta angle */
+                        multiplier * silkscreen_line_width /* line width */
+                );
         }
         /* Write a pin #1 marker on the silkscreen */
         if (silkscreen_indicate_1)
