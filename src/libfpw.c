@@ -2764,6 +2764,12 @@ write_footprint()
                 case TO220:
                         to_write_footprint_to220 ();
                         break;
+                case TO220S:
+                        to_write_footprint_to220_staggered ();
+                        break;
+                case TO220SW:
+                        to_write_footprint_to220_standing_staggered ();
+                        break;
                 case TO220W:
                         to_write_footprint_to220_standing ();
                         break;
