@@ -1591,6 +1591,24 @@ to_function_list[] =
         },
         {
                 "Write footprint",
+                to_write_footprint_to220_staggered,
+                "Write a footprint for a TO220S package",
+                NULL
+        },
+        {
+                "Write footprint",
+                to_write_footprint_to220_standing,
+                "Write a footprint for a TO220W package",
+                NULL
+        },
+        {
+                "Write footprint",
+                to_write_footprint_to220_standing_staggered,
+                "Write a footprint for a TO220SW package",
+                NULL
+        },
+        {
+                "Write footprint",
                 to_write_footprint_to92,
                 "Write a footprint for a TO92 package",
                 NULL
