@@ -1568,6 +1568,189 @@ to_write_footprint_to92 ()
 
 
 /*!
+ * \brief Write a TO92S footprint for a transistor package (with
+ * staggered pins).
+ *
+ * \return \c EXIT_FAILURE when errors were encountered,
+ * \c EXIT_SUCCESS when OK.
+ */
+int
+to_write_footprint_to92_staggered ()
+{
+        gdouble xmax;
+        gdouble xmin;
+        gdouble ymax;
+        gdouble ymin;
+        gdouble x_text;
+        gdouble y_text;
+        gchar *pin_pad_flags = g_strdup ("");
+
+        /* Attempt to open a file with write permission. */
+        fp = fopen (footprint_filename, "w");
+        if (!fp)
+        {
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        _("could not open file for %s footprint: %s."),
+                        footprint_type, footprint_filename);
+                fclose (fp);
+                return (EXIT_FAILURE);
+        }
+        /* Print a license if requested. */
+        if (license_in_footprint)
+        {
+                write_license ();
+        }
+        /* Determine (extreme) courtyard dimensions based on pin/pad
+         * properties */
+        xmin = -10500 - (multiplier * courtyard_clearance_with_package); /* in mil/100 */
+        xmax = 10500 + (multiplier * courtyard_clearance_with_package); /* in mil/100 */
+        ymin = -8600 - (multiplier * courtyard_clearance_with_package); /* in mil/100 */
+        ymax = 10500 + (multiplier * courtyard_clearance_with_package); /* in mil/100 */
+        /* Determine (extreme) courtyard dimensions based on package
+         * properties */
+        if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
+                xmin = (multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package));
+        if ((multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package)) > xmax)
+                xmax = (multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package));
+        if ((multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package)) < ymin)
+                ymin = (multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package));
+        if ((multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package)) > ymax)
+                ymax = (multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package));
+        /* If the user input is using even more real-estate then use it */
+        if (multiplier * (-courtyard_length / 2.0) < xmin)
+                xmin = multiplier * (-courtyard_length / 2.0);
+        if (multiplier * (courtyard_length / 2.0) > xmax)
+                xmax = multiplier * (courtyard_length / 2.0);
+        if (multiplier * (-courtyard_width / 2.0) < ymin)
+                ymin = multiplier * (-courtyard_width / 2.0);
+        if (multiplier * (courtyard_width / 2.0) > ymax)
+                ymax = multiplier * (courtyard_width / 2.0);
+        /* Write element header
+         * Guess for a place where to put the refdes text */
+        x_text = 0.0 ; /* already in mil/100 */
+        y_text = (ymin - 10000.0); /* already in mil/100 */
+        write_element_header (x_text, y_text);
+        /* Write pin and/or pad entities */
+        if (!strcmp (pad_shape, "rectangular pad"))
+                pin_pad_flags = g_strdup ("square");
+        else
+                pin_pad_flags = g_strdup ("");
+        write_pin
+        (
+                1, /* pin number */
+                "", /* pin name */
+                -5000.0, /* x0 coordinate */
+                0.0, /* y0-coordinate */
+                multiplier * pad_diameter, /* width of the annulus ring (pad) */
+                multiplier * pad_clearance, /* clearance */
+                multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
+                multiplier * pin_drill_diameter, /* pin drill diameter */
+                /* Write pin #1 with a square pad */
+                (pin1_square) ? "square" : "" /* flags */
+        );
+        write_pin
+        (
+                2, /* pin number */
+                "", /* pin name */
+                0.0, /* x0 coordinate */
+                -5000.0, /* y0-coordinate */
+                multiplier * pad_diameter, /* width of the annulus ring (pad) */
+                multiplier * pad_clearance, /* clearance */
+                multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
+                multiplier * pin_drill_diameter, /* pin drill diameter */
+                pin_pad_flags /* flags */
+        );
+        write_pin
+        (
+                3, /* pin number */
+                "", /* pin name */
+                5000.0, /* x0 coordinate */
+                0.0, /* y0-coordinate */
+                multiplier * pad_diameter, /* width of the annulus ring (pad) */
+                multiplier * pad_clearance, /* clearance */
+                multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
+                multiplier * pin_drill_diameter, /* pin drill diameter */
+                pin_pad_flags /* flags */
+        );
+        /* Write package body on the silkscreen */
+        if (silkscreen_package_outline)
+        {
+                fprintf (fp, "# Write a package body on the silkscreen\n");
+                write_element_line
+                (
+                        -8600, /* x0-coordinate */
+                        -6000, /* y0-coordinate */
+                        8600, /* x1-coordinate */
+                        -6000, /* y1-coordinate */
+                        (int) multiplier * (silkscreen_line_width)
+                );
+                write_element_arc
+                (
+                        0, /* x-coordinate */
+                        0, /* y-coordinate */
+                        10500, /* width */
+                        10500, /*height */
+                        -35, /* start angke */
+                        250, /* delta angle */
+                        multiplier * silkscreen_line_width /* line width */
+                );
+        }
+        /* Write a pin #1 marker on the silkscreen */
+        if (silkscreen_indicate_1)
+        {
+                /*! \todo Write a pin #1 marker on the silkscreen ! */
+        }
+        /* Write a courtyard on the silkscreen */
+        if (courtyard)
+        {
+                fprintf (fp, "# Write a courtyard on the silkscreen\n");
+                if (package_is_radial)
+                {
+                        write_element_arc
+                        (
+                                0.0,
+                                0.0,
+                                xmax, /* already in mil/100 */
+                                ymax, /* already in mil/100 */
+                                0,
+                                360,
+                                multiplier * courtyard_line_width
+                        );
+                }
+                else
+                {
+                        write_rectangle
+                        (
+                                xmin, /* already in mil/100 */
+                                ymin, /* already in mil/100 */
+                                xmax, /* already in mil/100 */
+                                ymax, /* already in mil/100 */
+                                multiplier * courtyard_line_width
+                        );
+                }
+        }
+        /* Write attributes to the footprint file. */
+        if (attributes_in_footprint)
+        {
+                write_attributes ();
+        }
+        /* Finishing touch. */
+        fprintf (fp, "\n");
+        fprintf (fp, ")\n");
+        fclose (fp);
+        /* We are ready creating a footprint. */
+        if (verbose)
+        {
+                g_log ("", G_LOG_LEVEL_INFO,
+                        _("wrote a footprint for a %s package: %s."),
+                        footprint_type,
+                        footprint_filename);
+        }
+        return (EXIT_SUCCESS);
+}
+
+
+/*!
  * \brief A list containing all TO related functions.
  */
 static fpw_function_t
