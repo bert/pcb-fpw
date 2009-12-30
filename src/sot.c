@@ -472,6 +472,72 @@ sot_create_element ()
 
 
 /*!
+ * \brief Write fpw files for all known SOT packages.
+ *
+ * Walk the list from begin to end (until we get a NULL pointer),
+ * <ul>
+ * <li>get the footprint name (the data),
+ * <li>look up default values,
+ * <li>write the fpw file.
+ * </ul>
+ */
+int
+sot_create_fpw_files_from_packages_list ()
+{
+        guint i = 1;
+        GList *work_list = NULL;
+        sot_create_packages_list (work_list);
+        while (g_list_nth_data (work_list, i))
+        {
+                /* get the footprint name (the data). */
+                gchar *data = g_list_nth_data (work_list, i);
+                footprint_name = g_strconcat ("?", data);
+                sot_get_default_footprint_values (footprint_name);
+                /* Determine a filename for the footprintwizard file. */
+                gchar *fpw_filename = g_strdup (footprint_name);
+                if (g_str_has_suffix (fpw_filename, fp_suffix))
+                {
+                        /* footprint_name had the .fp suffix already,
+                         * only add a "w" here, else we would end up with a filename
+                         * like "footprint_name.fp.fpw". */
+                        fpw_filename = g_strconcat (fpw_filename, "w", NULL);
+                }
+                else
+                {
+                        if (g_str_has_suffix (fpw_filename, fpw_suffix))
+                        {
+                                /* footprint_name had the .fpw suffix already,
+                                 * we probably read from an existing footprintwizard
+                                 * file or screwed up, so do nothing here. */
+                        }
+                        else
+                        {
+                                /* fpw_filename has no (.fpw) suffix yet,
+                                 * so add a .fpw suffix. */
+                                fpw_filename = g_strconcat (fpw_filename, ".fpw", NULL);
+                        }
+                }
+                /* If the footprint wizard file is written successfull change the title of
+                 * the main window with the latest filename. */
+                if (write_footprintwizard_file (fpw_filename) == EXIT_FAILURE)
+                {
+                        if (verbose)
+                        {
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("ERROR: Unable to write footprintwizard file %s."),
+                                        footprint_filename);
+                        }
+                }
+                g_free (fpw_filename);
+                i++;
+        }
+        g_list_free (work_list);
+        footprint_name = g_strdup ("SOT_done_creating_all_default_fpw_files");
+        return (EXIT_SUCCESS);
+}
+
+
+/*!
  * \brief Create a list of SOT packages with pre-defined values.
  *
  * The data in this list can be used in a combo box to select a
