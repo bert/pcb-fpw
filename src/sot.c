@@ -481,9 +481,8 @@ sot_create_element ()
  * known by pcb-fpw.
  */
 GList
-sot_create_packages_list ()
+sot_create_packages_list (GList *sot_packages_list)
 {
-        GList *sot_packages_list = NULL;
         sot_packages_list = g_list_append (sot_packages_list, "SOT50P160X90-3N");
         sot_packages_list = g_list_append (sot_packages_list, "SOT50P210X110-8N");
         sot_packages_list = g_list_append (sot_packages_list, "SOT65P210X100-3N");

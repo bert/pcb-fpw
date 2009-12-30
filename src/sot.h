@@ -25,7 +25,7 @@
 
 
 ElementTypePtr sot_create_element ();
-GList sot_create_packages_list ();
+GList sot_create_packages_list (GList *);
 int sot_drc ();
 int sot_get_default_footprint_values (gchar *footprint_name);
 #if GUI
