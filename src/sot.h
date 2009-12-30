@@ -27,9 +27,9 @@
 ElementTypePtr sot_create_element ();
 GList sot_create_packages_list (GList *);
 int sot_drc ();
-int sot_get_default_footprint_values (gchar *footprint_name);
+int sot_get_default_footprint_values (gchar *);
 #if GUI
-int sot_set_gui_constraints (GtkWidget *widget);
+int sot_set_gui_constraints (GtkWidget *);
 #endif /* GUI */
 int sot_write_footprint ();
 void sot_init ();
