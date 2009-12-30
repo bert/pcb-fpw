@@ -3375,6 +3375,12 @@ sot_function_list[] =
         },
 #endif /* GUI */
         {
+                "Create fpw files",
+                sot_create_fpw_files_from_packages_list,
+                "Create fpw files for all known SOT packages",
+                NULL
+        },
+        {
                 "Packages list",
                 sot_create_packages_list,
                 "Create a list of known SOT packages",
