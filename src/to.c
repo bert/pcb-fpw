@@ -1386,7 +1386,7 @@ to_write_footprint_to220_standing_staggered ()
 
 
 /*!
- * \brief Write a TO92 footprint for a transistor package.
+ * \brief Write a footprint for a TO92 transistor package.
  *
  * \return \c EXIT_FAILURE when errors were encountered,
  * \c EXIT_SUCCESS when OK.
@@ -1568,7 +1568,7 @@ to_write_footprint_to92 ()
 
 
 /*!
- * \brief Write a TO92S footprint for a transistor package (with
+ * \brief Write a footprint for a TO92S transistor package (with
  * staggered pins).
  *
  * \return \c EXIT_FAILURE when errors were encountered,
