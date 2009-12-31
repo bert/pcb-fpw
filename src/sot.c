@@ -490,7 +490,8 @@ sot_create_fpw_files_from_packages_list ()
         while (g_list_nth_data (work_list, i))
         {
                 /* get the footprint name (the data). */
-                gchar *data = g_list_nth_data (work_list, i);
+                gchar *data;
+                data = (char *) g_list_nth_data (work_list, i);
                 footprint_name = g_strconcat ("?", data);
                 sot_get_default_footprint_values (footprint_name);
                 /* Determine a filename for the footprintwizard file. */
@@ -517,8 +518,6 @@ sot_create_fpw_files_from_packages_list ()
                                 fpw_filename = g_strconcat (fpw_filename, ".fpw", NULL);
                         }
                 }
-                /* If the footprint wizard file is written successfull change the title of
-                 * the main window with the latest filename. */
                 if (write_footprintwizard_file (fpw_filename) == EXIT_FAILURE)
                 {
                         if (verbose)
