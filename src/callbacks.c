@@ -81,7 +81,7 @@ all_entries_need_updated (GtkWidget *widget)
 {
 	/* *Recalculate the number of pins and/or pads.*/
         number_of_pins_has_changed (widget);
-        /* Widgets on tab 1 "Footprint". */
+        /* Widgets on tab "Footprint". */
         /* Only update the "footprint type" entry with a sensible value. */
         if (footprint_type)
         {
@@ -213,7 +213,7 @@ all_entries_need_updated (GtkWidget *widget)
                 gtk_combo_box_set_active (GTK_COMBO_BOX (footprint_status_entry),
                         status_type);
         }
-        /* Widgets on tab 2 "Pins/Pads". */
+        /* Widgets on tab "Pins/Pads". */
         /* Only update the "number of pins" entry with a sensible value. */
         if (number_of_pins != 0)
         {
@@ -364,7 +364,68 @@ all_entries_need_updated (GtkWidget *widget)
                 gtk_entry_set_text (GTK_ENTRY (pad_solder_mask_clearance_entry),
                         g_strdup_printf ("%f", pad_solder_mask_clearance));
         }
-        /* Widgets on tab 3 "Thermal Pads". */
+        /* Widgets on tab "Silkscreen" */
+        GtkWidget *silkscreen_package_outline_checkbutton =
+                lookup_widget (GTK_WIDGET (widget),
+                "silkscreen_package_outline_checkbutton");
+        gtk_widget_set_sensitive (silkscreen_package_outline_checkbutton, TRUE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON
+                (silkscreen_package_outline_checkbutton),
+                silkscreen_package_outline);
+        GtkWidget *silkscreen_indicate_1_checkbutton =
+                lookup_widget (GTK_WIDGET (widget),
+                "silkscreen_indicate_1_checkbutton");
+        gtk_widget_set_sensitive (silkscreen_indicate_1_checkbutton, TRUE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON
+                (silkscreen_indicate_1_checkbutton),
+                silkscreen_indicate_1);
+        /* Only update the "courtyard length" entry with a sensible value. */
+        if (courtyard_length != 0.0)
+        {
+                GtkWidget *courtyard_length_entry = lookup_widget (GTK_WIDGET
+                        (widget), "courtyard_length_entry");
+                gtk_widget_set_sensitive (courtyard_length_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY
+                        (courtyard_length_entry),
+                        g_strdup_printf ("%f",
+                        courtyard_length));
+        }
+        /* Only update the "courtyard width" entry with a sensible value. */
+        if (courtyard_width != 0.0)
+        {
+                GtkWidget *courtyard_width_entry = lookup_widget (GTK_WIDGET (widget),
+                        "courtyard_width_entry");
+                gtk_widget_set_sensitive (courtyard_width_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY
+                        (courtyard_width_entry),
+                        g_strdup_printf ("%f",
+                        courtyard_width));
+        }
+        /* Only update the "courtyard line width" entry with a sensible value. */
+        if (courtyard_line_width != 0.0)
+        {
+                GtkWidget *courtyard_line_width_entry = lookup_widget (GTK_WIDGET (widget),
+                        "courtyard_line_width_entry");
+                gtk_widget_set_sensitive (courtyard_line_width_entry, TRUE);
+                gtk_entry_set_text (GTK_ENTRY
+                        (courtyard_line_width_entry),
+                        g_strdup_printf ("%f",
+                        courtyard_line_width));
+        }
+        /* Only update the "courtyard clearance with package" entry with a sensible value. */
+        if (courtyard_clearance_with_package != 0.0)
+        {
+                GtkWidget *courtyard_clearance_with_package_entry =
+                        lookup_widget (GTK_WIDGET (widget),
+                        "courtyard_clearance_with_package_entry");
+                gtk_widget_set_sensitive (courtyard_clearance_with_package_entry,
+                        TRUE);
+                gtk_entry_set_text (GTK_ENTRY
+                        (courtyard_clearance_with_package_entry),
+                        g_strdup_printf ("%f",
+                        courtyard_clearance_with_package));
+        }
+        /* Widgets on tab "Thermal Pads". */
         /* Update the "thermal" checkbutton. */
         GtkWidget *thermal_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "thermal_checkbutton");
@@ -448,68 +509,7 @@ all_entries_need_updated (GtkWidget *widget)
                         g_strdup_printf ("%f",
                         fiducial_pad_solder_mask_clearance));
         }
-        /* Widgets on tab 4 "Silkscreen" */
-        GtkWidget *silkscreen_package_outline_checkbutton =
-                lookup_widget (GTK_WIDGET (widget),
-                "silkscreen_package_outline_checkbutton");
-        gtk_widget_set_sensitive (silkscreen_package_outline_checkbutton, TRUE);
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON
-                (silkscreen_package_outline_checkbutton),
-                silkscreen_package_outline);
-        GtkWidget *silkscreen_indicate_1_checkbutton =
-                lookup_widget (GTK_WIDGET (widget),
-                "silkscreen_indicate_1_checkbutton");
-        gtk_widget_set_sensitive (silkscreen_indicate_1_checkbutton, TRUE);
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON
-                (silkscreen_indicate_1_checkbutton),
-                silkscreen_indicate_1);
-        /* Only update the "courtyard length" entry with a sensible value. */
-        if (courtyard_length != 0.0)
-        {
-                GtkWidget *courtyard_length_entry = lookup_widget (GTK_WIDGET
-                        (widget), "courtyard_length_entry");
-                gtk_widget_set_sensitive (courtyard_length_entry, TRUE);
-                gtk_entry_set_text (GTK_ENTRY
-                        (courtyard_length_entry),
-                        g_strdup_printf ("%f",
-                        courtyard_length));
-        }
-        /* Only update the "courtyard width" entry with a sensible value. */
-        if (courtyard_width != 0.0)
-        {
-                GtkWidget *courtyard_width_entry = lookup_widget (GTK_WIDGET (widget),
-                        "courtyard_width_entry");
-                gtk_widget_set_sensitive (courtyard_width_entry, TRUE);
-                gtk_entry_set_text (GTK_ENTRY
-                        (courtyard_width_entry),
-                        g_strdup_printf ("%f",
-                        courtyard_width));
-        }
-        /* Only update the "courtyard line width" entry with a sensible value. */
-        if (courtyard_line_width != 0.0)
-        {
-                GtkWidget *courtyard_line_width_entry = lookup_widget (GTK_WIDGET (widget),
-                        "courtyard_line_width_entry");
-                gtk_widget_set_sensitive (courtyard_line_width_entry, TRUE);
-                gtk_entry_set_text (GTK_ENTRY
-                        (courtyard_line_width_entry),
-                        g_strdup_printf ("%f",
-                        courtyard_line_width));
-        }
-        /* Only update the "courtyard clearance with package" entry with a sensible value. */
-        if (courtyard_clearance_with_package != 0.0)
-        {
-                GtkWidget *courtyard_clearance_with_package_entry =
-                        lookup_widget (GTK_WIDGET (widget),
-                        "courtyard_clearance_with_package_entry");
-                gtk_widget_set_sensitive (courtyard_clearance_with_package_entry,
-                        TRUE);
-                gtk_entry_set_text (GTK_ENTRY
-                        (courtyard_clearance_with_package_entry),
-                        g_strdup_printf ("%f",
-                        courtyard_clearance_with_package));
-        }
-        /* Widgets on tab 5 "Heel & Toe goals" */
+        /* Widgets on tab "Heel & Toe goals" */
         /* Only update the "C1" entry with a sensible value. */
         if (c1 != 0.0)
         {
