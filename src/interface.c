@@ -156,6 +156,29 @@ create_pcb_gfpw (void)
   GtkWidget *pin_pad_exceptions_button;
   GtkWidget *pins_pads_pattern_label;
   GtkWidget *pins_pads_tab_tab_label;
+  GtkWidget *silkscreen_table;
+  GtkWidget *courtyard_frame;
+  GtkWidget *courtyard_alignment;
+  GtkWidget *courtyard_table;
+  GtkWidget *courtyard_checkbutton;
+  GtkWidget *courtyard_width_label;
+  GtkWidget *courtyard_length_label;
+  GtkWidget *courtyard_length_entry;
+  GtkWidget *courtyard_width_entry;
+  GtkWidget *courtyard_line_width_label;
+  GtkWidget *courtyard_line_width_entry;
+  GtkWidget *courtyard_clearance_with_package_label;
+  GtkWidget *courtyard_clearance_with_package_entry;
+  GtkWidget *courtyard_label;
+  GtkWidget *package_frame;
+  GtkWidget *package_alignment;
+  GtkWidget *package_table;
+  GtkWidget *silkscreen_package_outline_checkbutton;
+  GtkWidget *silkscreen_indicate_1_checkbutton;
+  GtkWidget *silkscreen_line_width_label;
+  GtkWidget *silkscreen_line_width_entry;
+  GtkWidget *package_label;
+  GtkWidget *silkscreen_tab_label;
   GtkWidget *thermal_table;
   GtkWidget *thermal_pad_frame;
   GtkWidget *thermal_pad_alignment;
@@ -181,29 +204,6 @@ create_pcb_gfpw (void)
   GtkWidget *fiducial_pad_solder_mask_clearance_entry;
   GtkWidget *fiducials_label;
   GtkWidget *thermal_pad_tab_label;
-  GtkWidget *silkscreen_table;
-  GtkWidget *courtyard_frame;
-  GtkWidget *courtyard_alignment;
-  GtkWidget *courtyard_table;
-  GtkWidget *courtyard_checkbutton;
-  GtkWidget *courtyard_width_label;
-  GtkWidget *courtyard_length_label;
-  GtkWidget *courtyard_length_entry;
-  GtkWidget *courtyard_width_entry;
-  GtkWidget *courtyard_line_width_label;
-  GtkWidget *courtyard_line_width_entry;
-  GtkWidget *courtyard_clearance_with_package_label;
-  GtkWidget *courtyard_clearance_with_package_entry;
-  GtkWidget *courtyard_label;
-  GtkWidget *package_frame;
-  GtkWidget *package_alignment;
-  GtkWidget *package_table;
-  GtkWidget *silkscreen_package_outline_checkbutton;
-  GtkWidget *silkscreen_indicate_1_checkbutton;
-  GtkWidget *silkscreen_line_width_label;
-  GtkWidget *silkscreen_line_width_entry;
-  GtkWidget *package_label;
-  GtkWidget *silkscreen_tab_label;
   GtkWidget *heel_and_toe_goals_vbox;
   GtkWidget *top_to_bottom_frame;
   GtkWidget *top_to_bottom_alignment;
@@ -993,6 +993,179 @@ create_pcb_gfpw (void)
   gtk_widget_show (pins_pads_tab_tab_label);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook), 1), pins_pads_tab_tab_label);
 
+  silkscreen_table = gtk_table_new (2, 1, FALSE);
+  gtk_widget_set_name (silkscreen_table, "silkscreen_table");
+  gtk_widget_show (silkscreen_table);
+  gtk_container_add (GTK_CONTAINER (notebook), silkscreen_table);
+  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebook), silkscreen_table,
+                                      FALSE, FALSE, GTK_PACK_START);
+  gtk_container_set_border_width (GTK_CONTAINER (silkscreen_table), 5);
+  gtk_table_set_row_spacings (GTK_TABLE (silkscreen_table), 10);
+
+  courtyard_frame = gtk_frame_new (NULL);
+  gtk_widget_set_name (courtyard_frame, "courtyard_frame");
+  gtk_widget_show (courtyard_frame);
+  gtk_table_attach (GTK_TABLE (silkscreen_table), courtyard_frame, 0, 1, 1, 2,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_frame_set_shadow_type (GTK_FRAME (courtyard_frame), GTK_SHADOW_NONE);
+
+  courtyard_alignment = gtk_alignment_new (0.5, 0.5, 1, 1);
+  gtk_widget_set_name (courtyard_alignment, "courtyard_alignment");
+  gtk_widget_show (courtyard_alignment);
+  gtk_container_add (GTK_CONTAINER (courtyard_frame), courtyard_alignment);
+  gtk_alignment_set_padding (GTK_ALIGNMENT (courtyard_alignment), 0, 0, 12, 0);
+
+  courtyard_table = gtk_table_new (5, 2, FALSE);
+  gtk_widget_set_name (courtyard_table, "courtyard_table");
+  gtk_widget_show (courtyard_table);
+  gtk_container_add (GTK_CONTAINER (courtyard_alignment), courtyard_table);
+
+  courtyard_checkbutton = gtk_check_button_new_with_mnemonic (_("Print courtyard "));
+  gtk_widget_set_name (courtyard_checkbutton, "courtyard_checkbutton");
+  gtk_widget_show (courtyard_checkbutton);
+  gtk_table_attach (GTK_TABLE (courtyard_table), courtyard_checkbutton, 0, 1, 0, 1,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_tooltips_set_tip (tooltips, courtyard_checkbutton, _("Check to draw a courtyard (keepout)"), NULL);
+
+  courtyard_width_label = gtk_label_new (_("Width (Y)"));
+  gtk_widget_set_name (courtyard_width_label, "courtyard_width_label");
+  gtk_widget_show (courtyard_width_label);
+  gtk_table_attach (GTK_TABLE (courtyard_table), courtyard_width_label, 0, 1, 2, 3,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_misc_set_alignment (GTK_MISC (courtyard_width_label), 0, 0.5);
+
+  courtyard_length_label = gtk_label_new (_("Length or diameter (X) "));
+  gtk_widget_set_name (courtyard_length_label, "courtyard_length_label");
+  gtk_widget_show (courtyard_length_label);
+  gtk_table_attach (GTK_TABLE (courtyard_table), courtyard_length_label, 0, 1, 1, 2,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_misc_set_alignment (GTK_MISC (courtyard_length_label), 0, 0.5);
+
+  courtyard_length_entry = gtk_entry_new ();
+  gtk_widget_set_name (courtyard_length_entry, "courtyard_length_entry");
+  gtk_widget_show (courtyard_length_entry);
+  gtk_table_attach (GTK_TABLE (courtyard_table), courtyard_length_entry, 1, 2, 1, 2,
+                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_tooltips_set_tip (tooltips, courtyard_length_entry, _("Length of courtyard"), NULL);
+  gtk_entry_set_invisible_char (GTK_ENTRY (courtyard_length_entry), 8226);
+
+  courtyard_width_entry = gtk_entry_new ();
+  gtk_widget_set_name (courtyard_width_entry, "courtyard_width_entry");
+  gtk_widget_show (courtyard_width_entry);
+  gtk_table_attach (GTK_TABLE (courtyard_table), courtyard_width_entry, 1, 2, 2, 3,
+                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_tooltips_set_tip (tooltips, courtyard_width_entry, _("Width of courtyard"), NULL);
+  gtk_entry_set_invisible_char (GTK_ENTRY (courtyard_width_entry), 8226);
+
+  courtyard_line_width_label = gtk_label_new (_("Line width"));
+  gtk_widget_set_name (courtyard_line_width_label, "courtyard_line_width_label");
+  gtk_widget_show (courtyard_line_width_label);
+  gtk_table_attach (GTK_TABLE (courtyard_table), courtyard_line_width_label, 0, 1, 3, 4,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_misc_set_alignment (GTK_MISC (courtyard_line_width_label), 0, 0.5);
+
+  courtyard_line_width_entry = gtk_entry_new ();
+  gtk_widget_set_name (courtyard_line_width_entry, "courtyard_line_width_entry");
+  gtk_widget_show (courtyard_line_width_entry);
+  gtk_table_attach (GTK_TABLE (courtyard_table), courtyard_line_width_entry, 1, 2, 3, 4,
+                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_tooltips_set_tip (tooltips, courtyard_line_width_entry, _("Line width for courtyard"), NULL);
+  gtk_entry_set_invisible_char (GTK_ENTRY (courtyard_line_width_entry), 8226);
+
+  courtyard_clearance_with_package_label = gtk_label_new (_("Clearance with package "));
+  gtk_widget_set_name (courtyard_clearance_with_package_label, "courtyard_clearance_with_package_label");
+  gtk_widget_show (courtyard_clearance_with_package_label);
+  gtk_table_attach (GTK_TABLE (courtyard_table), courtyard_clearance_with_package_label, 0, 1, 4, 5,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_misc_set_alignment (GTK_MISC (courtyard_clearance_with_package_label), 0, 0.5);
+
+  courtyard_clearance_with_package_entry = gtk_entry_new ();
+  gtk_widget_set_name (courtyard_clearance_with_package_entry, "courtyard_clearance_with_package_entry");
+  gtk_widget_show (courtyard_clearance_with_package_entry);
+  gtk_table_attach (GTK_TABLE (courtyard_table), courtyard_clearance_with_package_entry, 1, 2, 4, 5,
+                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_tooltips_set_tip (tooltips, courtyard_clearance_with_package_entry, _("Clearance distance with package"), NULL);
+  gtk_entry_set_invisible_char (GTK_ENTRY (courtyard_clearance_with_package_entry), 8226);
+
+  courtyard_label = gtk_label_new (_("<b>Courtyard</b>"));
+  gtk_widget_set_name (courtyard_label, "courtyard_label");
+  gtk_widget_show (courtyard_label);
+  gtk_frame_set_label_widget (GTK_FRAME (courtyard_frame), courtyard_label);
+  gtk_label_set_use_markup (GTK_LABEL (courtyard_label), TRUE);
+
+  package_frame = gtk_frame_new (NULL);
+  gtk_widget_set_name (package_frame, "package_frame");
+  gtk_widget_show (package_frame);
+  gtk_table_attach (GTK_TABLE (silkscreen_table), package_frame, 0, 1, 0, 1,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_frame_set_shadow_type (GTK_FRAME (package_frame), GTK_SHADOW_NONE);
+
+  package_alignment = gtk_alignment_new (0.5, 0.5, 1, 1);
+  gtk_widget_set_name (package_alignment, "package_alignment");
+  gtk_widget_show (package_alignment);
+  gtk_container_add (GTK_CONTAINER (package_frame), package_alignment);
+  gtk_alignment_set_padding (GTK_ALIGNMENT (package_alignment), 0, 0, 12, 0);
+
+  package_table = gtk_table_new (2, 2, FALSE);
+  gtk_widget_set_name (package_table, "package_table");
+  gtk_widget_show (package_table);
+  gtk_container_add (GTK_CONTAINER (package_alignment), package_table);
+
+  silkscreen_package_outline_checkbutton = gtk_check_button_new_with_mnemonic (_("Print package outline "));
+  gtk_widget_set_name (silkscreen_package_outline_checkbutton, "silkscreen_package_outline_checkbutton");
+  gtk_widget_show (silkscreen_package_outline_checkbutton);
+  gtk_table_attach (GTK_TABLE (package_table), silkscreen_package_outline_checkbutton, 0, 1, 0, 1,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_tooltips_set_tip (tooltips, silkscreen_package_outline_checkbutton, _("Check to draw package outline"), NULL);
+
+  silkscreen_indicate_1_checkbutton = gtk_check_button_new_with_mnemonic (_("Pin/Pad #1 indicator "));
+  gtk_widget_set_name (silkscreen_indicate_1_checkbutton, "silkscreen_indicate_1_checkbutton");
+  gtk_widget_show (silkscreen_indicate_1_checkbutton);
+  gtk_table_attach (GTK_TABLE (package_table), silkscreen_indicate_1_checkbutton, 1, 2, 0, 1,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_tooltips_set_tip (tooltips, silkscreen_indicate_1_checkbutton, _("Check to draw indicator for pin/pad #1"), NULL);
+
+  silkscreen_line_width_label = gtk_label_new (_("Line width"));
+  gtk_widget_set_name (silkscreen_line_width_label, "silkscreen_line_width_label");
+  gtk_widget_show (silkscreen_line_width_label);
+  gtk_table_attach (GTK_TABLE (package_table), silkscreen_line_width_label, 0, 1, 1, 2,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_misc_set_alignment (GTK_MISC (silkscreen_line_width_label), 0, 0.5);
+
+  silkscreen_line_width_entry = gtk_entry_new ();
+  gtk_widget_set_name (silkscreen_line_width_entry, "silkscreen_line_width_entry");
+  gtk_widget_show (silkscreen_line_width_entry);
+  gtk_table_attach (GTK_TABLE (package_table), silkscreen_line_width_entry, 1, 2, 1, 2,
+                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_tooltips_set_tip (tooltips, silkscreen_line_width_entry, _("Line width for silkscreen"), NULL);
+  gtk_entry_set_invisible_char (GTK_ENTRY (silkscreen_line_width_entry), 8226);
+
+  package_label = gtk_label_new (_("<b>Package</b>"));
+  gtk_widget_set_name (package_label, "package_label");
+  gtk_widget_show (package_label);
+  gtk_frame_set_label_widget (GTK_FRAME (package_frame), package_label);
+  gtk_label_set_use_markup (GTK_LABEL (package_label), TRUE);
+
+  silkscreen_tab_label = gtk_label_new (_("Silkscreen"));
+  gtk_widget_set_name (silkscreen_tab_label, "silkscreen_tab_label");
+  gtk_widget_show (silkscreen_tab_label);
+  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook), 2), silkscreen_tab_label);
+
   thermal_table = gtk_table_new (2, 1, FALSE);
   gtk_widget_set_name (thermal_table, "thermal_table");
   gtk_widget_show (thermal_table);
@@ -1180,180 +1353,7 @@ create_pcb_gfpw (void)
   thermal_pad_tab_label = gtk_label_new (_("Thermal pad"));
   gtk_widget_set_name (thermal_pad_tab_label, "thermal_pad_tab_label");
   gtk_widget_show (thermal_pad_tab_label);
-  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook), 2), thermal_pad_tab_label);
-
-  silkscreen_table = gtk_table_new (2, 1, FALSE);
-  gtk_widget_set_name (silkscreen_table, "silkscreen_table");
-  gtk_widget_show (silkscreen_table);
-  gtk_container_add (GTK_CONTAINER (notebook), silkscreen_table);
-  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebook), silkscreen_table,
-                                      FALSE, FALSE, GTK_PACK_START);
-  gtk_container_set_border_width (GTK_CONTAINER (silkscreen_table), 5);
-  gtk_table_set_row_spacings (GTK_TABLE (silkscreen_table), 10);
-
-  courtyard_frame = gtk_frame_new (NULL);
-  gtk_widget_set_name (courtyard_frame, "courtyard_frame");
-  gtk_widget_show (courtyard_frame);
-  gtk_table_attach (GTK_TABLE (silkscreen_table), courtyard_frame, 0, 1, 1, 2,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_frame_set_shadow_type (GTK_FRAME (courtyard_frame), GTK_SHADOW_NONE);
-
-  courtyard_alignment = gtk_alignment_new (0.5, 0.5, 1, 1);
-  gtk_widget_set_name (courtyard_alignment, "courtyard_alignment");
-  gtk_widget_show (courtyard_alignment);
-  gtk_container_add (GTK_CONTAINER (courtyard_frame), courtyard_alignment);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (courtyard_alignment), 0, 0, 12, 0);
-
-  courtyard_table = gtk_table_new (5, 2, FALSE);
-  gtk_widget_set_name (courtyard_table, "courtyard_table");
-  gtk_widget_show (courtyard_table);
-  gtk_container_add (GTK_CONTAINER (courtyard_alignment), courtyard_table);
-
-  courtyard_checkbutton = gtk_check_button_new_with_mnemonic (_("Print courtyard "));
-  gtk_widget_set_name (courtyard_checkbutton, "courtyard_checkbutton");
-  gtk_widget_show (courtyard_checkbutton);
-  gtk_table_attach (GTK_TABLE (courtyard_table), courtyard_checkbutton, 0, 1, 0, 1,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, courtyard_checkbutton, _("Check to draw a courtyard (keepout)"), NULL);
-
-  courtyard_width_label = gtk_label_new (_("Width (Y)"));
-  gtk_widget_set_name (courtyard_width_label, "courtyard_width_label");
-  gtk_widget_show (courtyard_width_label);
-  gtk_table_attach (GTK_TABLE (courtyard_table), courtyard_width_label, 0, 1, 2, 3,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (courtyard_width_label), 0, 0.5);
-
-  courtyard_length_label = gtk_label_new (_("Length or diameter (X) "));
-  gtk_widget_set_name (courtyard_length_label, "courtyard_length_label");
-  gtk_widget_show (courtyard_length_label);
-  gtk_table_attach (GTK_TABLE (courtyard_table), courtyard_length_label, 0, 1, 1, 2,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (courtyard_length_label), 0, 0.5);
-
-  courtyard_length_entry = gtk_entry_new ();
-  gtk_widget_set_name (courtyard_length_entry, "courtyard_length_entry");
-  gtk_widget_show (courtyard_length_entry);
-  gtk_table_attach (GTK_TABLE (courtyard_table), courtyard_length_entry, 1, 2, 1, 2,
-                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, courtyard_length_entry, _("Length of courtyard"), NULL);
-  gtk_entry_set_invisible_char (GTK_ENTRY (courtyard_length_entry), 8226);
-
-  courtyard_width_entry = gtk_entry_new ();
-  gtk_widget_set_name (courtyard_width_entry, "courtyard_width_entry");
-  gtk_widget_show (courtyard_width_entry);
-  gtk_table_attach (GTK_TABLE (courtyard_table), courtyard_width_entry, 1, 2, 2, 3,
-                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, courtyard_width_entry, _("Width of courtyard"), NULL);
-  gtk_entry_set_invisible_char (GTK_ENTRY (courtyard_width_entry), 8226);
-
-  courtyard_line_width_label = gtk_label_new (_("Line width"));
-  gtk_widget_set_name (courtyard_line_width_label, "courtyard_line_width_label");
-  gtk_widget_show (courtyard_line_width_label);
-  gtk_table_attach (GTK_TABLE (courtyard_table), courtyard_line_width_label, 0, 1, 3, 4,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (courtyard_line_width_label), 0, 0.5);
-
-  courtyard_line_width_entry = gtk_entry_new ();
-  gtk_widget_set_name (courtyard_line_width_entry, "courtyard_line_width_entry");
-  gtk_widget_show (courtyard_line_width_entry);
-  gtk_table_attach (GTK_TABLE (courtyard_table), courtyard_line_width_entry, 1, 2, 3, 4,
-                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, courtyard_line_width_entry, _("Line width for courtyard"), NULL);
-  gtk_entry_set_invisible_char (GTK_ENTRY (courtyard_line_width_entry), 8226);
-
-  courtyard_clearance_with_package_label = gtk_label_new (_("Clearance with package "));
-  gtk_widget_set_name (courtyard_clearance_with_package_label, "courtyard_clearance_with_package_label");
-  gtk_widget_show (courtyard_clearance_with_package_label);
-  gtk_table_attach (GTK_TABLE (courtyard_table), courtyard_clearance_with_package_label, 0, 1, 4, 5,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (courtyard_clearance_with_package_label), 0, 0.5);
-
-  courtyard_clearance_with_package_entry = gtk_entry_new ();
-  gtk_widget_set_name (courtyard_clearance_with_package_entry, "courtyard_clearance_with_package_entry");
-  gtk_widget_show (courtyard_clearance_with_package_entry);
-  gtk_table_attach (GTK_TABLE (courtyard_table), courtyard_clearance_with_package_entry, 1, 2, 4, 5,
-                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, courtyard_clearance_with_package_entry, _("Clearance distance with package"), NULL);
-  gtk_entry_set_invisible_char (GTK_ENTRY (courtyard_clearance_with_package_entry), 8226);
-
-  courtyard_label = gtk_label_new (_("<b>Courtyard</b>"));
-  gtk_widget_set_name (courtyard_label, "courtyard_label");
-  gtk_widget_show (courtyard_label);
-  gtk_frame_set_label_widget (GTK_FRAME (courtyard_frame), courtyard_label);
-  gtk_label_set_use_markup (GTK_LABEL (courtyard_label), TRUE);
-
-  package_frame = gtk_frame_new (NULL);
-  gtk_widget_set_name (package_frame, "package_frame");
-  gtk_widget_show (package_frame);
-  gtk_table_attach (GTK_TABLE (silkscreen_table), package_frame, 0, 1, 0, 1,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_frame_set_shadow_type (GTK_FRAME (package_frame), GTK_SHADOW_NONE);
-
-  package_alignment = gtk_alignment_new (0.5, 0.5, 1, 1);
-  gtk_widget_set_name (package_alignment, "package_alignment");
-  gtk_widget_show (package_alignment);
-  gtk_container_add (GTK_CONTAINER (package_frame), package_alignment);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (package_alignment), 0, 0, 12, 0);
-
-  package_table = gtk_table_new (2, 2, FALSE);
-  gtk_widget_set_name (package_table, "package_table");
-  gtk_widget_show (package_table);
-  gtk_container_add (GTK_CONTAINER (package_alignment), package_table);
-
-  silkscreen_package_outline_checkbutton = gtk_check_button_new_with_mnemonic (_("Print package outline "));
-  gtk_widget_set_name (silkscreen_package_outline_checkbutton, "silkscreen_package_outline_checkbutton");
-  gtk_widget_show (silkscreen_package_outline_checkbutton);
-  gtk_table_attach (GTK_TABLE (package_table), silkscreen_package_outline_checkbutton, 0, 1, 0, 1,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, silkscreen_package_outline_checkbutton, _("Check to draw package outline"), NULL);
-
-  silkscreen_indicate_1_checkbutton = gtk_check_button_new_with_mnemonic (_("Pin/Pad #1 indicator "));
-  gtk_widget_set_name (silkscreen_indicate_1_checkbutton, "silkscreen_indicate_1_checkbutton");
-  gtk_widget_show (silkscreen_indicate_1_checkbutton);
-  gtk_table_attach (GTK_TABLE (package_table), silkscreen_indicate_1_checkbutton, 1, 2, 0, 1,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, silkscreen_indicate_1_checkbutton, _("Check to draw indicator for pin/pad #1"), NULL);
-
-  silkscreen_line_width_label = gtk_label_new (_("Line width"));
-  gtk_widget_set_name (silkscreen_line_width_label, "silkscreen_line_width_label");
-  gtk_widget_show (silkscreen_line_width_label);
-  gtk_table_attach (GTK_TABLE (package_table), silkscreen_line_width_label, 0, 1, 1, 2,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (silkscreen_line_width_label), 0, 0.5);
-
-  silkscreen_line_width_entry = gtk_entry_new ();
-  gtk_widget_set_name (silkscreen_line_width_entry, "silkscreen_line_width_entry");
-  gtk_widget_show (silkscreen_line_width_entry);
-  gtk_table_attach (GTK_TABLE (package_table), silkscreen_line_width_entry, 1, 2, 1, 2,
-                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, silkscreen_line_width_entry, _("Line width for silkscreen"), NULL);
-  gtk_entry_set_invisible_char (GTK_ENTRY (silkscreen_line_width_entry), 8226);
-
-  package_label = gtk_label_new (_("<b>Package</b>"));
-  gtk_widget_set_name (package_label, "package_label");
-  gtk_widget_show (package_label);
-  gtk_frame_set_label_widget (GTK_FRAME (package_frame), package_label);
-  gtk_label_set_use_markup (GTK_LABEL (package_label), TRUE);
-
-  silkscreen_tab_label = gtk_label_new (_("Silkscreen"));
-  gtk_widget_set_name (silkscreen_tab_label, "silkscreen_tab_label");
-  gtk_widget_show (silkscreen_tab_label);
-  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook), 3), silkscreen_tab_label);
+  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook), 3), thermal_pad_tab_label);
 
   heel_and_toe_goals_vbox = gtk_vbox_new (FALSE, 10);
   gtk_widget_set_name (heel_and_toe_goals_vbox, "heel_and_toe_goals_vbox");
@@ -1756,6 +1756,30 @@ create_pcb_gfpw (void)
   g_signal_connect ((gpointer) pin_pad_exceptions_button, "clicked",
                     G_CALLBACK (on_pin_pad_exceptions_button_clicked),
                     NULL);
+  g_signal_connect ((gpointer) courtyard_checkbutton, "toggled",
+                    G_CALLBACK (on_courtyard_checkbutton_toggled),
+                    NULL);
+  g_signal_connect ((gpointer) courtyard_length_entry, "changed",
+                    G_CALLBACK (on_courtyard_length_entry_changed),
+                    NULL);
+  g_signal_connect ((gpointer) courtyard_width_entry, "changed",
+                    G_CALLBACK (on_courtyard_width_entry_changed),
+                    NULL);
+  g_signal_connect ((gpointer) courtyard_line_width_entry, "changed",
+                    G_CALLBACK (on_courtyard_line_width_entry_changed),
+                    NULL);
+  g_signal_connect ((gpointer) courtyard_clearance_with_package_entry, "changed",
+                    G_CALLBACK (on_courtyard_clearance_with_package_entry_changed),
+                    NULL);
+  g_signal_connect ((gpointer) silkscreen_package_outline_checkbutton, "toggled",
+                    G_CALLBACK (on_silkscreen_package_outline_checkbutton_toggled),
+                    NULL);
+  g_signal_connect ((gpointer) silkscreen_indicate_1_checkbutton, "toggled",
+                    G_CALLBACK (on_silkscreen_indicate_1_checkbutton_toggled),
+                    NULL);
+  g_signal_connect ((gpointer) silkscreen_line_width_entry, "changed",
+                    G_CALLBACK (on_silkscreen_line_width_entry_changed),
+                    NULL);
   g_signal_connect ((gpointer) thermal_checkbutton, "toggled",
                     G_CALLBACK (on_thermal_checkbutton_toggled),
                     NULL);
@@ -1782,30 +1806,6 @@ create_pcb_gfpw (void)
                     NULL);
   g_signal_connect ((gpointer) fiducial_pad_solder_mask_clearance_entry, "changed",
                     G_CALLBACK (on_fiducial_pad_solder_mask_clearance_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) courtyard_checkbutton, "toggled",
-                    G_CALLBACK (on_courtyard_checkbutton_toggled),
-                    NULL);
-  g_signal_connect ((gpointer) courtyard_length_entry, "changed",
-                    G_CALLBACK (on_courtyard_length_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) courtyard_width_entry, "changed",
-                    G_CALLBACK (on_courtyard_width_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) courtyard_line_width_entry, "changed",
-                    G_CALLBACK (on_courtyard_line_width_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) courtyard_clearance_with_package_entry, "changed",
-                    G_CALLBACK (on_courtyard_clearance_with_package_entry_changed),
-                    NULL);
-  g_signal_connect ((gpointer) silkscreen_package_outline_checkbutton, "toggled",
-                    G_CALLBACK (on_silkscreen_package_outline_checkbutton_toggled),
-                    NULL);
-  g_signal_connect ((gpointer) silkscreen_indicate_1_checkbutton, "toggled",
-                    G_CALLBACK (on_silkscreen_indicate_1_checkbutton_toggled),
-                    NULL);
-  g_signal_connect ((gpointer) silkscreen_line_width_entry, "changed",
-                    G_CALLBACK (on_silkscreen_line_width_entry_changed),
                     NULL);
   g_signal_connect ((gpointer) G1_radiobutton, "toggled",
                     G_CALLBACK (on_G1_radiobutton_toggled),
@@ -1957,6 +1957,29 @@ create_pcb_gfpw (void)
   GLADE_HOOKUP_OBJECT (pcb_gfpw, pin_pad_exceptions_button, "pin_pad_exceptions_button");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, pins_pads_pattern_label, "pins_pads_pattern_label");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, pins_pads_tab_tab_label, "pins_pads_tab_tab_label");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, silkscreen_table, "silkscreen_table");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_frame, "courtyard_frame");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_alignment, "courtyard_alignment");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_table, "courtyard_table");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_checkbutton, "courtyard_checkbutton");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_width_label, "courtyard_width_label");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_length_label, "courtyard_length_label");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_length_entry, "courtyard_length_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_width_entry, "courtyard_width_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_line_width_label, "courtyard_line_width_label");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_line_width_entry, "courtyard_line_width_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_clearance_with_package_label, "courtyard_clearance_with_package_label");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_clearance_with_package_entry, "courtyard_clearance_with_package_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_label, "courtyard_label");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, package_frame, "package_frame");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, package_alignment, "package_alignment");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, package_table, "package_table");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, silkscreen_package_outline_checkbutton, "silkscreen_package_outline_checkbutton");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, silkscreen_indicate_1_checkbutton, "silkscreen_indicate_1_checkbutton");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, silkscreen_line_width_label, "silkscreen_line_width_label");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, silkscreen_line_width_entry, "silkscreen_line_width_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, package_label, "package_label");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, silkscreen_tab_label, "silkscreen_tab_label");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_table, "thermal_table");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_pad_frame, "thermal_pad_frame");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_pad_alignment, "thermal_pad_alignment");
@@ -1982,29 +2005,6 @@ create_pcb_gfpw (void)
   GLADE_HOOKUP_OBJECT (pcb_gfpw, fiducial_pad_solder_mask_clearance_entry, "fiducial_pad_solder_mask_clearance_entry");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, fiducials_label, "fiducials_label");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_pad_tab_label, "thermal_pad_tab_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, silkscreen_table, "silkscreen_table");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_frame, "courtyard_frame");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_alignment, "courtyard_alignment");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_table, "courtyard_table");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_checkbutton, "courtyard_checkbutton");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_width_label, "courtyard_width_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_length_label, "courtyard_length_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_length_entry, "courtyard_length_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_width_entry, "courtyard_width_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_line_width_label, "courtyard_line_width_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_line_width_entry, "courtyard_line_width_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_clearance_with_package_label, "courtyard_clearance_with_package_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_clearance_with_package_entry, "courtyard_clearance_with_package_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, courtyard_label, "courtyard_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, package_frame, "package_frame");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, package_alignment, "package_alignment");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, package_table, "package_table");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, silkscreen_package_outline_checkbutton, "silkscreen_package_outline_checkbutton");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, silkscreen_indicate_1_checkbutton, "silkscreen_indicate_1_checkbutton");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, silkscreen_line_width_label, "silkscreen_line_width_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, silkscreen_line_width_entry, "silkscreen_line_width_entry");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, package_label, "package_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, silkscreen_tab_label, "silkscreen_tab_label");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, heel_and_toe_goals_vbox, "heel_and_toe_goals_vbox");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, top_to_bottom_frame, "top_to_bottom_frame");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, top_to_bottom_alignment, "top_to_bottom_alignment");
