@@ -27,9 +27,9 @@
 ElementTypePtr bga_create_element ();
 GList bga_create_packages_list ();
 int bga_drc ();
-int bga_get_default_footprint_values (gchar *footprint_name);
+int bga_get_default_footprint_values (gchar *);
 #if GUI
-int bga_set_gui_constraints (GtkWidget *widget);
+int bga_set_gui_constraints (GtkWidget *);
 #endif /* GUI */
 int bga_write_footprint ();
 void bga_init ();
