@@ -937,7 +937,7 @@ sot_get_default_footprint_values
                 pitch_x = 1.60;
                 pad_length = 0.85;
                 pad_width = 0.30;
-                pad_shape = g_strdup ("circular pad, elongated");
+                pad_shape = g_strdup ("rounded pad, elongated");
                 pad_shapes_type = ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
@@ -976,7 +976,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.20;
                 pad_length = 0.95;
                 pad_width = 0.30;
-                pad_shape = g_strdup ("circular pad, elongated");
+                pad_shape = g_strdup ("rounded pad, elongated");
                 pad_shapes_type = ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
@@ -1048,7 +1048,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.20;
                 pad_length = 1.00;
                 pad_width = 0.40;
-                pad_shape = g_strdup ("circular pad, elongated");
+                pad_shape = g_strdup ("rounded pad, elongated");
                 pad_shapes_type = ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
@@ -1079,7 +1079,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.10;
                 pad_length = 0.85;
                 pad_width = 0.55;
-                pad_shape = g_strdup ("circular pad, elongated");
+                pad_shape = g_strdup ("rounded pad, elongated");
                 pad_shapes_type = ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
@@ -1115,7 +1115,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.20;
                 pad_length = 0.95;
                 pad_width = 0.40;
-                pad_shape = g_strdup ("circular pad, elongated");
+                pad_shape = g_strdup ("rounded pad, elongated");
                 pad_shapes_type = ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
@@ -1151,7 +1151,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.20;
                 pad_length = 0.95;
                 pad_width = 0.40;
-                pad_shape = g_strdup ("circular pad, elongated");
+                pad_shape = g_strdup ("rounded pad, elongated");
                 pad_shapes_type = ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
@@ -1187,7 +1187,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.10;
                 pad_length = 0.90;
                 pad_width = 0.40;
-                pad_shape = g_strdup ("circular pad, elongated");
+                pad_shape = g_strdup ("rounded pad, elongated");
                 pad_shapes_type = ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
@@ -1218,7 +1218,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.60;
                 pad_length = 1.05;
                 pad_width = 0.50;
-                pad_shape = g_strdup ("circular pad, elongated");
+                pad_shape = g_strdup ("rounded pad, elongated");
                 pad_shapes_type = ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
@@ -1256,7 +1256,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.70;
                 pad_length = 0.95;
                 pad_width = 0.50;
-                pad_shape = g_strdup ("circular pad, elongated");
+                pad_shape = g_strdup ("rounded pad, elongated");
                 pad_shapes_type = ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
@@ -1292,7 +1292,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.60;
                 pad_length = 1.10;
                 pad_width = 0.50;
-                pad_shape = g_strdup ("circular pad, elongated");
+                pad_shape = g_strdup ("rounded pad, elongated");
                 pad_shapes_type = ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
@@ -1328,7 +1328,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.60;
                 pad_length = 1.10;
                 pad_width = 0.50;
-                pad_shape = g_strdup ("circular pad, elongated");
+                pad_shape = g_strdup ("rounded pad, elongated");
                 pad_shapes_type = ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
@@ -1366,7 +1366,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.60;
                 pad_length = 1.10;
                 pad_width = 0.55;
-                pad_shape = g_strdup ("circular pad, elongated");
+                pad_shape = g_strdup ("rounded pad, elongated");
                 pad_shapes_type = ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
@@ -1404,7 +1404,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.60;
                 pad_length = 1.10;
                 pad_width = 0.50;
-                pad_shape = g_strdup ("circular pad, elongated");
+                pad_shape = g_strdup ("rounded pad, elongated");
                 pad_shapes_type = ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
@@ -1660,7 +1660,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.10;
                 pad_length = 1.30;
                 pad_width = 0.60;
-                pad_shape = g_strdup ("circular pad, elongated");
+                pad_shape = g_strdup ("rounded pad, elongated");
                 pad_shapes_type = ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
@@ -2014,7 +2014,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.70;
                 pad_length = 1.10;
                 pad_width = 0.55;
-                pad_shape = g_strdup ("circular pad, elongated");
+                pad_shape = g_strdup ("rounded pad, elongated");
                 pad_shapes_type = ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
@@ -2056,7 +2056,7 @@ sot_get_default_footprint_values
                 pitch_x = 2.70;
                 pad_length = 1.10;
                 pad_width = 0.55;
-                pad_shape = g_strdup ("circular pad, elongated");
+                pad_shape = g_strdup ("rounded pad, elongated");
                 pad_shapes_type = ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
@@ -2694,7 +2694,7 @@ sot_get_default_footprint_values
                 pitch_x = 4.40;
                 pad_length = 1.20;
                 pad_width = 0.60;
-                pad_shape = g_strdup ("circular pad, elongated");
+                pad_shape = g_strdup ("rounded pad, elongated");
                 pad_shapes_type = ROUND_ELONGATED;
                 thermal = FALSE;
                 thermal_length = 0.0;
