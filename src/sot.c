@@ -2945,7 +2945,7 @@ sot_get_default_footprint_values
 int
 sot_set_gui_constraints (GtkWidget *widget)
 {
-        /* Widgets on tab 1 "Footprint" */
+        /* Widgets on tab "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (package_is_radial_checkbutton), FALSE);
@@ -2973,7 +2973,7 @@ sot_set_gui_constraints (GtkWidget *widget)
         gtk_combo_box_set_active (GTK_COMBO_BOX (number_1_position_entry), UPPER_LEFT);
         gtk_widget_set_sensitive (number_1_position_entry, FALSE);
 
-        /* Widgets on tab 5 "Heel & Toe goals" */
+        /* Widgets on tab "Heel & Toe goals" */
         gui_constraints_disable_heel_and_toe_goals_tab_widgets (widget);
         return (EXIT_SUCCESS);
 }
