@@ -27,9 +27,9 @@
 ElementTypePtr capmp_create_element ();
 GList capmp_create_packages_list ();
 int capmp_drc ();
-int capmp_get_default_footprint_values (gchar *footprint_name);
+int capmp_get_default_footprint_values (gchar *);
 #if GUI
-int capmp_set_gui_constraints (GtkWidget *widget);
+int capmp_set_gui_constraints (GtkWidget *);
 #endif /* GUI */
 int capmp_write_footprint ();
 void capmp_init ();
