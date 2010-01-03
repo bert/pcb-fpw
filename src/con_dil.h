@@ -27,9 +27,9 @@
 ElementTypePtr con_dil_create_element ();
 GList con_dil_create_packages_list ();
 int con_dil_drc ();
-int con_dil_get_default_footprint_values (gchar *footprint_name);
+int con_dil_get_default_footprint_values (gchar *);
 #if GUI
-int con_dil_set_gui_constraints (GtkWidget *widget);
+int con_dil_set_gui_constraints (GtkWidget *);
 #endif /* GUI */
 int con_dil_write_footprint ();
 void con_dil_init ();
