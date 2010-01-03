@@ -153,7 +153,7 @@ main
                 {0, 0, 0, 0}
         };
         int optc;
-        while ((optc = getopt_long (argc, argv, "dVvqqf:o:", opts, NULL)) != -1)
+        while ((optc = getopt_long (argc, argv, "dhVvqqf:o:", opts, NULL)) != -1)
         {
                 switch (optc)
                 {
