@@ -25,6 +25,7 @@
 #include <gtk/gtk.h>
 #include <glib.h>
 
+#include "dimensions.h"
 
 /*!
  * \brief Close the dimensions window (destroy the \c dimensions_window widget).
