@@ -27,9 +27,9 @@
 ElementTypePtr diomelf_create_element ();
 GList diomelf_create_packages_list ();
 int diomelf_drc ();
-int diomelf_get_default_footprint_values (gchar *footprint_name);
+int diomelf_get_default_footprint_values (gchar *);
 #if GUI
-int diomelf_set_gui_constraints (GtkWidget *widget);
+int diomelf_set_gui_constraints (GtkWidget *);
 #endif /* GUI */
 int diomelf_write_footprint ();
 void diomelf_init ();
