@@ -24,10 +24,10 @@
 #define __CON_HDR_INCLUDED__
 
 
-int con_hdr_get_default_footprint_values (gchar *footprint_name);
+int con_hdr_get_default_footprint_values (gchar *);
 GList con_hdr_create_packages_list ();
 #if GUI
-int con_hdr_set_gui_constraints (GtkWidget *widget);
+int con_hdr_set_gui_constraints (GtkWidget *);
 #endif /* GUI */
 int con_hdr_write_footprint ();
 void con_hdr_init ();
