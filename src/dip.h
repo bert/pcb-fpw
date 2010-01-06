@@ -27,9 +27,9 @@
 ElementTypePtr dip_create_element ();
 GList dip_create_packages_list ();
 int dip_drc ();
-int dip_get_default_footprint_values (gchar *footprint_name);
+int dip_get_default_footprint_values (gchar *);
 #if GUI
-int dip_set_gui_constraints (GtkWidget *widget);
+int dip_set_gui_constraints (GtkWidget *);
 #endif /* GUI */
 int dip_write_footprint ();
 void dip_init ();
