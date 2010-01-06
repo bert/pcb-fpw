@@ -27,9 +27,9 @@
 ElementTypePtr pga_create_element ();
 GList pga_create_packages_list ();
 int pga_drc ();
-int pga_get_default_footprint_values (gchar *footprint_name);
+int pga_get_default_footprint_values (gchar *);
 #if GUI
-int pga_set_gui_constraints (GtkWidget *widget);
+int pga_set_gui_constraints (GtkWidget *);
 #endif /* GUI */
 int pga_write_footprint ();
 void pga_init ();
