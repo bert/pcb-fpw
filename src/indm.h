@@ -27,9 +27,9 @@
 ElementTypePtr indm_create_element ();
 GList indm_create_packages_list ();
 int indm_drc ();
-int indm_get_default_footprint_values (gchar *footprint_name);
+int indm_get_default_footprint_values (gchar *);
 #if GUI
-int indm_set_gui_constraints (GtkWidget *widget);
+int indm_set_gui_constraints (GtkWidget *);
 #endif /* GUI */
 int indm_write_footprint ();
 void indm_init ();
