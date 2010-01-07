@@ -69,8 +69,11 @@
 
 #define GUI 0
 
+
 #include "libfpw.c"
 #include "packages.h"
+#include "fpw.h"
+
 
 gchar *program_name = NULL;
 gchar *fpw_filename;
