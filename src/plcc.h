@@ -27,9 +27,9 @@
 ElementTypePtr plcc_create_element ();
 GList plcc_create_packages_list ();
 int plcc_drc ();
-int plcc_get_default_footprint_values (gchar *footprint_name);
+int plcc_get_default_footprint_values (gchar *);
 #if GUI
-int plcc_set_gui_constraints (GtkWidget *widget);
+int plcc_set_gui_constraints (GtkWidget *);
 #endif /* GUI */
 int plcc_write_footprint ();
 void plcc_init ();
