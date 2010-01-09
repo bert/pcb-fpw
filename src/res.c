@@ -1040,7 +1040,7 @@ res_write_footprint ()
                         multiplier * (-package_body_width / 2.0),
                         multiplier * (package_body_length / 2.0),
                         multiplier * (package_body_width / 2.0),
-                        multiplier * courtyard_line_width
+                        multiplier * silkscreen_line_width
                 );
                 /* Now draw some leads if available real estate allows for it. */
                 if (package_body_length < ((pitch_x - pad_diameter - pad_solder_mask_clearance) / 2.0) - silkscreen_line_width)
