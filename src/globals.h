@@ -32,6 +32,10 @@
  */
 
 
+#ifndef __GLOBALS_INCLUDED__
+#define __GLOBALS_INCLUDED__
+
+
 /*!
  * \brief Some package types conforming to standard name space definitions.
  */
@@ -672,6 +676,9 @@ typedef struct
         AttributeListType Attributes;
                 /*!< List of attributes. */
 } ElementType, *ElementTypePtr, **ElementTypeHandle;
+
+
+#endif /* __GLOBALS_INCLUDED__ */
 
 
 /* EOF */
