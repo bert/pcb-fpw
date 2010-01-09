@@ -27,9 +27,9 @@
 ElementTypePtr resc_create_element ();
 GList resc_create_packages_list ();
 int resc_drc ();
-int resc_get_default_footprint_values (gchar *footprint_name);
+int resc_get_default_footprint_values (gchar *);
 #if GUI
-int resc_set_gui_constraints (GtkWidget *widget);
+int resc_set_gui_constraints (GtkWidget *);
 #endif /* GUI */
 int resc_write_footprint ();
 void resc_init ();
