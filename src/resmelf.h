@@ -27,9 +27,9 @@
 ElementTypePtr resmelf_create_element ();
 GList resmelf_create_packages_list ();
 int resmelf_drc ();
-int resmelf_get_default_footprint_values (gchar *footprint_name);
+int resmelf_get_default_footprint_values (gchar *);
 #if GUI
-int resmelf_set_gui_constraints (GtkWidget *widget);
+int resmelf_set_gui_constraints (GtkWidget *);
 #endif /* GUI */
 int resmelf_write_footprint ();
 void resmelf_init ();
