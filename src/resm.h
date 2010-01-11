@@ -27,9 +27,9 @@
 ElementTypePtr resm_create_element ();
 GList resm_create_packages_list ();
 int resm_drc ();
-int resm_get_default_footprint_values (gchar *footprint_name);
+int resm_get_default_footprint_values (gchar *);
 #if GUI
-int resm_set_gui_constraints (GtkWidget *widget);
+int resm_set_gui_constraints (GtkWidget *);
 #endif /* GUI */
 int resm_write_footprint ();
 void resm_init ();
