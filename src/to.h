@@ -1,6 +1,6 @@
 /*!
  * \file to.h
- * \author Copyright (C) 2007, 2008, 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief Header file for functions for TO (Transistor Outline) footprints.
  *
  * This program is free software; you can redistribute it and/or modify
@@ -26,9 +26,9 @@
 
 ElementTypePtr to_create_element_to92 ();
 GList to_create_packages_list ();
-int to_get_default_footprint_values (gchar *footprint_name);
+int to_get_default_footprint_values (gchar *);
 #if GUI
-int to_set_gui_constraints (GtkWidget *widget);
+int to_set_gui_constraints (GtkWidget *);
 #endif /* GUI */
 int to_write_footprint_to220 ();
 int to_write_footprint_to220_staggered ();
