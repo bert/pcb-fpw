@@ -47,9 +47,11 @@ capa_create_element ()
         if (!element)
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("could not create a valid element pointer for a %s package."),
                                 footprint_type);
+                }
                 return (NULL);
         }
         /* Define the center of our universe and guess for a place where to
@@ -455,7 +457,8 @@ capa_drc ()
         if (verbose)
         {
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("DRC Check: checking %s package %s."), footprint_name, footprint_type);
+                        _("DRC Check: checking %s package %s."),
+                        footprint_name, footprint_type);
         }
         /* Check for allowed pad shapes. */
         switch (pad_shapes_type)
@@ -703,7 +706,6 @@ capa_get_default_footprint_values
 {
         if (!strcmp (footprint_name, "?CAPA770-380X250"))
         {
-                footprint_units = g_strdup ("mm");
                 footprint_units = g_strdup ("mm");
                 package_body_length = 3.80;
                 package_body_width = 2.50;
