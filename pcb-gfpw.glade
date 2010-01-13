@@ -463,6 +463,7 @@ mm</property>
 				  <property name="visible">True</property>
 				  <property name="items" translatable="yes">
 BGA
+CAPA
 CAPAE
 CAPC
 CAPM
@@ -492,7 +493,10 @@ SO
 SOT
 TO
 TO92
-TO220</property>
+TO220
+TO220S
+TO220SW
+TO220W</property>
 				  <property name="add_tearoffs">False</property>
 				  <property name="has_frame">True</property>
 				  <property name="focus_on_click">True</property>

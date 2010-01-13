@@ -444,6 +444,7 @@ create_pcb_gfpw (void)
                     (GtkAttachOptions) (GTK_FILL), 0, 0);
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), "");
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("BGA"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CAPA"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CAPAE"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CAPC"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CAPM"));
@@ -474,6 +475,9 @@ create_pcb_gfpw (void)
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("TO"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("TO92"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("TO220"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("TO220S"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("TO220SW"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("TO220W"));
 
   footprint_type_label = gtk_label_new (_("Type"));
   gtk_widget_set_name (footprint_type_label, "footprint_type_label");
