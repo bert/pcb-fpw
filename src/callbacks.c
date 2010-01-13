@@ -2873,6 +2873,12 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                         bga_set_gui_constraints (GTK_WIDGET (combobox));
                         break;
                 }
+                case CAPA:
+                {
+                        all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                        capa_set_gui_constraints (GTK_WIDGET (combobox));
+                        break;
+                }
                 case CAPC:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));

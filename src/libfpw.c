@@ -2669,6 +2669,10 @@ write_footprint()
                         bga_drc();
                         bga_write_footprint ();
                         break;
+                case CAPA:
+                        capa_drc ();
+                        capa_write_footprint ();
+                        break;
                 case CAPC:
                         capc_drc ();
                         capc_write_footprint ();
