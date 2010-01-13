@@ -414,9 +414,8 @@ res_create_element ()
  * known by pcb-fpw.
  */
 GList
-res_create_packages_list ()
+res_create_packages_list (GList *res_packages_list)
 {
-        GList *res_packages_list = NULL;
         res_packages_list = g_list_append (res_packages_list, "RES");
         return (*res_packages_list);
 }
