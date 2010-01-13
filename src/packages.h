@@ -21,6 +21,7 @@
 
 
 #include "bga.c"
+#include "capa.c"
 #include "capc.c"
 #include "capm.c"
 #include "capmp.c"
