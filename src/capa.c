@@ -176,6 +176,10 @@ capa_create_element ()
         {
                 pad_flag.f = SQUARE;
         }
+        else if (pad_shapes_type == OCTAGONAL)
+        {
+                pad_flag.f = OCTAGON;
+        }
         else
         {
                 pad_flag.f = CLEAR;
