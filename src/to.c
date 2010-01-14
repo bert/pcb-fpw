@@ -475,18 +475,18 @@ to_write_footprint_to220 ()
         /* Add a thermal pad if the user requests for it. */
         if (thermal)
         {
-        write_pad
-        (
-                0, /* pin number */
-                "", /* pin name */
-                0, /* x0 coordinate */
-                -67000 - (multiplier * (thermal_width + (thermal_length / 2))), /* y0-coordinate */
-                0, /* x1 coordinate */
-                -67000 + (multiplier * (thermal_width + (thermal_length / 2))), /* y1-coordinate */
-                multiplier * thermal_length, /* pad width */
-                multiplier * pad_clearance, /* clearance with other copper */
-                multiplier * (thermal_length + (2 * thermal_solder_mask_clearance)), /* solder mask clearance */
-                pin_pad_flags /* flags */
+                write_pad
+                (
+                        0, /* pin number */
+                        "", /* pin name */
+                        0, /* x0 coordinate */
+                        -67000 - (multiplier * (thermal_width + (thermal_length / 2))), /* y0-coordinate */
+                        0, /* x1 coordinate */
+                        -67000 + (multiplier * (thermal_width + (thermal_length / 2))), /* y1-coordinate */
+                        multiplier * thermal_length, /* pad width */
+                        multiplier * pad_clearance, /* clearance with other copper */
+                        multiplier * (thermal_length + (2 * thermal_solder_mask_clearance)), /* solder mask clearance */
+                        pin_pad_flags /* flags */
                 );
         }
         /* Write package body on the silkscreen */
@@ -808,6 +808,23 @@ to_write_footprint_to220_staggered ()
                 13000.0, /* pin drill diameter */
                 "hole" /* flags */
         );
+        /* Add a thermal pad if the user requests for it. */
+        if (thermal)
+        {
+                write_pad
+                (
+                        0, /* pin number */
+                        "", /* pin name */
+                        0, /* x0 coordinate */
+                        -67000 - (multiplier * (thermal_width + (thermal_length / 2))), /* y0-coordinate */
+                        0, /* x1 coordinate */
+                        -67000 + (multiplier * (thermal_width + (thermal_length / 2))), /* y1-coordinate */
+                        multiplier * thermal_length, /* pad width */
+                        multiplier * pad_clearance, /* clearance with other copper */
+                        multiplier * (thermal_length + (2 * thermal_solder_mask_clearance)), /* solder mask clearance */
+                        pin_pad_flags /* flags */
+                );
+        }
         /* Write package body on the silkscreen */
         if (silkscreen_package_outline)
         {
