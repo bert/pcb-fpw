@@ -1,6 +1,6 @@
 /*!
  * \file con_dip.h
- * \author Copyright 2007, 2008, 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief Header file for functions for CON-DIP (connector) footprints.
  *
  * This program is free software; you can redistribute it and/or modify
