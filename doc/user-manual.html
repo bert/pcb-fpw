@@ -41,8 +41,8 @@ In a nutshell, the usage of pcb-gfpw comes down to the following:<br>
   <ul>
   <li>The <b>"Footprint"</b> tab,
   <li>The <b>"Pins/pads"</b> tab,
-  <li>The <b>"Thermal pad"</b> tab,
   <li>The <b>"Silkscreen"</b> tab,
+  <li>The <b>"Thermal pad"</b> tab,
   <li>The <b>"Heel & Toe goals"</b> tab,
   </ul>
 <li>Check the footprint in the preview widget (when and if this is implemented)
@@ -341,6 +341,47 @@ distance between the pad (copper) and the solder mask (solder resist).<br>
 <hr>
 
 
+<h2>The "Silkscreen" tab.</h2>
+<p>
+<img src="images/silkscreen_tab.png">
+<p>
+The fourth tab is named <b>"Silkscreen"</b> and can be used for the input of an 
+optional silkscreen to be drawn, such as package outline, pin/pad #1 marker 
+and/or courtyard.<br>
+The first group of entries <b>"Package"</b> is used for the drawing of the 
+artwork on the silkscreen.<br>
+<ul>
+<li>The <b>"Print package outline"</b> check button is used for selecting or 
+deselecting whether the footprint contains a package outline.<br>
+<br> 
+<li>The <b>"Pad #1 indicator"</b> check button is used for selecting or 
+deselecting whether the footprint contains a pin #1 indicator.<br>
+<br> 
+<li>The <b>"Line width"</b> entry is used for entering the line width of the 
+package outline.<br>
+</ul>
+<br>
+<p> 
+The second group of entries <b>"Courtyard"</b> is used for the dimensions of 
+the courtyard.<br>
+<ul>
+<li>The <b>"Print Courtyard"</b> check box is used for selecting or deselecting 
+printing of a courtyard on the footprint.<br>
+<br> 
+<li>The <b>"Length or diameter (X)"</b> entry is used for entering the length or 
+diameter of the courtyard.<br>
+<br> 
+<li>The <b>"Width (Y)"</b> entry is used for entering the width of the 
+courtyard.<br>
+<li>The <b>"Line width"</b> entry is used for entering the line width of the 
+courtyard.<br>
+<li>The <b>"Clearance with package"</b> entry is used for entering the 
+clearance between the package outline and the package itself.<br>
+<br> 
+</ul>
+<hr>
+
+
 <h2>The "Thermal pad" tab.</h2>
 <p>
 <img src="images/thermal_pad_tab.png">
@@ -385,45 +426,8 @@ distance between the fiducial pad (copper) and the solder mask (solder
 resist).<br>
 </ul>
 <hr>
-<h2>The "Silkscreen" tab.</h2>
-<p>
-<img src="images/silkscreen_tab.png">
-<p>
-The fourth tab is named <b>"Silkscreen"</b> and can be used for the input of an 
-optional silkscreen to be drawn, such as package outline, pin/pad #1 marker 
-and/or courtyard.<br>
-The first group of entries <b>"Package"</b> is used for the drawing of the 
-artwork on the silkscreen.<br>
-<ul>
-<li>The <b>"Print package outline"</b> check button is used for selecting or 
-deselecting whether the footprint contains a package outline.<br>
-<br> 
-<li>The <b>"Pad #1 indicator"</b> check button is used for selecting or 
-deselecting whether the footprint contains a pin #1 indicator.<br>
-<br> 
-<li>The <b>"Line width"</b> entry is used for entering the line width of the 
-package outline.<br>
-</ul>
-<br>
-<p> 
-The second group of entries <b>"Courtyard"</b> is used for the dimensions of 
-the courtyard.<br>
-<ul>
-<li>The <b>"Print Courtyard"</b> check box is used for selecting or deselecting 
-printing of a courtyard on the footprint.<br>
-<br> 
-<li>The <b>"Length or diameter (X)"</b> entry is used for entering the length or 
-diameter of the courtyard.<br>
-<br> 
-<li>The <b>"Width (Y)"</b> entry is used for entering the width of the 
-courtyard.<br>
-<li>The <b>"Line width"</b> entry is used for entering the line width of the 
-courtyard.<br>
-<li>The <b>"Clearance with package"</b> entry is used for entering the 
-clearance between the package outline and the package itself.<br>
-<br> 
-</ul>
-<hr>
+
+
 <h2>The "Heel & Toe goals" tab.</h2>
 <p>
 <img src="images/heel_and_toe_goals_tab.png">
@@ -468,7 +472,7 @@ distance.<br>
 
 <h2>The buttons.</h2>
 <p>
-The eight buttons in the lower part will have the following functions:<br>
+The eight buttons in the lower part have the following functions:<br>
 <ul>
 <li><b>"Refresh"</b>: to refresh all entries,<br>
 <li><b>"Dimensions"</b>: to view a dimensions legenda in a popup dialog,<br>
@@ -484,7 +488,7 @@ footprint file,<br>
 footprintwizard file.<br>
 </ul>
 <hr>
-Updated: June 7th, 2009 by Bert Timmerman.
+Updated: January 16th, 2010 by Bert Timmerman.
 <hr>
 </body>
 </html>
