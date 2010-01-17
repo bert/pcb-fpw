@@ -2894,7 +2894,7 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                 case CAPMP:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        gui_constraints_set_smt (GTK_WIDGET (combobox));
+                        capmp_set_gui_constraints (GTK_WIDGET (combobox));
                         break;
                 }
                 case CON_DIL:
