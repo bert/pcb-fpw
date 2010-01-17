@@ -2682,6 +2682,7 @@ write_footprint()
                         capm_write_footprint ();
                         break;
                 case CAPMP:
+                        capmp_drc ();
                         capmp_write_footprint ();
                         break;
                 case CON_DIL:
