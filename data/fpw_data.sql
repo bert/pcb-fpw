@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 20, 2010 at 07:15 AM
+-- Generation Time: Jan 20, 2010 at 06:42 PM
 -- Server version: 5.1.36
 -- PHP Version: 5.3.0
 
@@ -82,9 +82,18 @@ CREATE TABLE IF NOT EXISTS `fpw_data` (
   `remarks` text COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`footprint_id`),
   UNIQUE KEY `FootprintID` (`footprint_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `fpw_data`
 --
 
+INSERT INTO `fpw_data` (`footprint_id`, `footprint_type`, `footprint_name`, `footprint_units`, `footprint_status`, `package_body_length`, `package_body_width`, `package_body_height`, `package_is_radial`, `number_of_pins`, `number_of_columns`, `number_of_rows`, `pin1_location`, `pitch_x`, `pitch_y`, `count_x`, `count_y`, `pin_pad_exceptions_string`, `number_of_exceptions`, `pin_drill_diameter`, `pad_diameter`, `pad_length`, `pad_width`, `pad_shapes_type`, `pin1_square`, `pad_solder_mask_clearance`, `pad_clearance`, `silkscreen_package_outline`, `silkscreen_indicate_1`, `silkscreen_length`, `silkscreen_width`, `silkscreen_line_width`, `courtyard`, `courtyard_length`, `courtyard_width`, `courtyard_line_width`, `courtyard_clearance_with_package`, `thermal`, `thermal_nopaste`, `thermal_length`, `thermal_width`, `thermal_solder_mask_clearance`, `thermal_clearance`, `fiducial`, `fiducial_pad_diameter`, `fiducial_pad_solder_mask_clearance`, `fiducial_clearance`, `c1`, `g1`, `z1`, `c2`, `g2`, `z2`, `remarks`) VALUES
+(1, 'BGA', 'BGA100C100P10X10_1100X1100X140', 'mm', 'EXPERIMENTAL', 11, 11, 1.4, 0, 100, 10, 10, 'UPPER_LEFT', 1, 1, 0, 0, '', 0, 0, 0.4, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 11, 11, 0.2, 1, 13, 13, 0.05, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
+(2, 'BGA', 'BGA100C100P10X10_1100X1100X170', 'mm', 'EXPERIMENTAL', 11, 11, 1.7, 0, 100, 10, 10, 'UPPER_LEFT', 1, 1, 0, 0, '', 0, 0, 0.4, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 11, 11, 0.2, 1, 13, 13, 0.05, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
+(3, 'BGA', 'BGA100C100P10X10_1100X1100X170A', 'mm', 'EXPERIMENTAL', 11, 11, 1.7, 0, 100, 10, 10, 'UPPER_LEFT', 1, 1, 0, 0, '', 0, 0, 0.45, 0, 0, 'ROUND', 1, 0, 0, 1, 1, 11, 11, 0.2, 1, 13, 13, 0.05, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
+(4, 'BGA', 'BGA100C100P10X10_1100X1100X200', 'mm', 'EXPERIMENTAL', 11, 11, 2, 0, 100, 10, 10, 'UPPER_LEFT', 1, 1, 0, 0, '', 0, 0, 0.4, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 11, 11, 0.2, 1, 13, 13, 0.05, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
+(5, 'BGA', 'BGA100C50P10X10_600X600X110', 'mm', 'EXPERIMENTAL', 6, 6, 1.1, 0, 100, 10, 10, 'UPPER_LEFT', 0.5, 0.5, 0, 0, '', 0, 0, 0.25, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 6, 6, 0.2, 1, 8, 8, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, ''),
+(6, 'BGA', 'BGA100C50P11X11_600X600X100', 'mm', 'EXPERIMENTAL', 6, 6, 1, 0, 100, 11, 11, 'UPPER_LEFT', 0.5, 0.5, 0, 0, '', 0, 0, 0.25, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 6, 6, 0.2, 1, 8, 8, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, ''),
+(7, 'BGA', 'BGA100C50P14X14_800X800X120', 'mm', 'EXPERIMENTAL', 8, 8, 1.2, 0, 100, 14, 14, 'UPPER_LEFT', 0.5, 0.5, 0, 0, '', 0, 0, 0.25, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 8, 8, 0.2, 1, 10, 10, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, ''),
+(8, 'BGA', 'BGA100C50P14X14_800X800X135', 'mm', 'EXPERIMENTAL', 8, 8, 1.35, 0, 100, 14, 14, 'UPPER_LEFT', 0.5, 0.5, 0, 0, '', 0, 0, 0.25, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 8, 8, 0.2, 1, 10, 10, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, '');
