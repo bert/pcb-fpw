@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 22, 2010 at 09:18 PM
+-- Generation Time: Jan 22, 2010 at 09:32 PM
 -- Server version: 5.1.36
 -- PHP Version: 5.3.0
 
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `fpw_data` (
   `warning` text COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`footprint_id`),
   UNIQUE KEY `FootprintID` (`footprint_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=14 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `fpw_data`
@@ -102,4 +102,7 @@ INSERT INTO `fpw_data` (`footprint_id`, `footprint_type`, `footprint_name`, `foo
 (10, 'BGA', 'BGA100C65P10X10_800X800X140', 'mm', 'EXPERIMENTAL', 8, 8, 1.4, 0, 100, 10, 10, 'UPPER_LEFT', 0.65, 0.65, 0, 0, '', 0, 0, 0.35, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 8, 8, 0.2, 1, 10, 10, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, '', ''),
 (11, 'BGA', 'BGA100C80P10X10_1000X1000X140', 'mm', 'EXPERIMENTAL', 10, 10, 1.4, 0, 100, 10, 10, 'UPPER_LEFT', 0.8, 0.8, 0, 0, '', 0, 0, 0.45, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 10, 10, 0.2, 1, 12, 12, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, '', ''),
 (12, 'BGA', 'BGA100C80P10X10_1000X1000X150', 'mm', 'EXPERIMENTAL', 10, 10, 1.5, 0, 100, 10, 10, 'UPPER_LEFT', 0.8, 0.8, 0, 0, '', 0, 0, 0.4, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 10, 10, 0.2, 1, 12, 12, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, '', ''),
-(13, 'BGA', 'BGA100C80P10X10_900X900X100', 'mm', 'EXPERIMENTAL', 9, 9, 1, 0, 100, 10, 10, 'UPPER_LEFT', 0.8, 0.8, 0, 0, '', 0, 0, 0.35, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 9, 9, 0.2, 1, 11, 11, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, '', '');
+(13, 'BGA', 'BGA100C80P10X10_900X900X100', 'mm', 'EXPERIMENTAL', 9, 9, 1, 0, 100, 10, 10, 'UPPER_LEFT', 0.8, 0.8, 0, 0, '', 0, 0, 0.35, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 9, 9, 0.2, 1, 11, 11, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, '', ''),
+(14, 'BGA', 'BGA100C80P10X10_900X900X120', 'mm', 'EXPERIMENTAL', 9, 9, 1.2, 0, 100, 10, 10, 'UPPER_LEFT', 0.8, 0.8, 0, 0, '', 0, 0, 0.4, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 9, 9, 0.2, 1, 11, 11, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, '', ''),
+(15, 'BGA', 'BGA100C80P10X10_900X900X120A', 'mm', 'EXPERIMENTAL', 9, 9, 1.2, 0, 100, 10, 10, 'UPPER_LEFT', 0.8, 0.8, 0, 0, '', 0, 0, 0.45, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 9, 9, 0.2, 1, 11, 11, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 'package is also known as JEDEC MO216', ''),
+(16, 'BGA', 'BGA100C80P10X10_900X900X140', 'mm', 'EXPERIMENTAL', 9, 9, 1.4, 0, 100, 10, 10, 'UPPER_LEFT', 0.8, 0.8, 0, 0, '', 0, 0, 0.45, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 9, 9, 0.2, 1, 11, 11, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 'package is also known as JEDEC MO-205AB', '');
