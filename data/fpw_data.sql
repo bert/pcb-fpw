@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 24, 2010 at 12:17 PM
+-- Generation Time: Jan 24, 2010 at 01:31 PM
 -- Server version: 5.1.36
 -- PHP Version: 5.3.0
 
@@ -81,8 +81,7 @@ CREATE TABLE IF NOT EXISTS `fpw_data` (
   `z2` double NOT NULL,
   `remarks` text COLLATE utf8_bin NOT NULL,
   `warning` text COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`footprint_id`),
-  UNIQUE KEY `FootprintID` (`footprint_id`)
+  PRIMARY KEY (`footprint_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=36 ;
 
 --
