@@ -2119,7 +2119,7 @@ bga_get_default_footprint_values
                 number_of_pins = 105;
                 pin_pad_exceptions_string = g_strconcat
                 (
-                        "B14",
+                        "B14,",
                         "C3,C4,C5,C6,C7,C8,C9,C10,C11,C12,C13,",
                         "D3,D4,D5,D6,D7,D8,D9,D10,D11,D12,D13,",
                         "E3,E4,E6,E7,E8,E9,E10,E12,E13,",
