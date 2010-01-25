@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 24, 2010 at 01:31 PM
+-- Generation Time: Jan 25, 2010 at 08:07 PM
 -- Server version: 5.1.36
 -- PHP Version: 5.3.0
 
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `fpw_data` (
   `remarks` text COLLATE utf8_bin NOT NULL,
   `warning` text COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`footprint_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=36 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=41 ;
 
 --
 -- Dumping data for table `fpw_data`
@@ -123,4 +123,9 @@ INSERT INTO `fpw_data` (`footprint_id`, `footprint_type`, `footprint_name`, `foo
 (32, 'BGA', 'BGA107C80P10X14_1050X1600X140', 'mm', 'EXPERIMENTAL', 10.5, 16, 1.4, 0, 107, 10, 14, 'UPPER_LEFT', 0.8, 0.8, 0, 0, 'A1,A3,A4,A5,A6,A7,A8,C1,C10,D1,D10,E1,E10,F1,F10,G1,G10,H1,H10,J1,J10,K1,K10,L1,L10,M1,M10,P3,P4,P5,P6,P7,P8', 33, 0, 0.4, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 10.5, 16, 0.2, 1, 12.5, 18, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, '', ''),
 (33, 'BGA', 'BGA108C100P12X12_1300X1300X185', 'mm', 'EXPERIMENTAL', 13, 13, 1.85, 0, 108, 12, 12, 'UPPER_LEFT', 1, 1, 0, 0, 'D4,D5,D6,D7,D8,D9,E4,E5,E6,E7,E8,E9,F4,F5,F6,F7,F8,F9,G4,G5,G6,G7,G8,G9,H4,H5,H6,H7,H8,H9,J4,J5,J6,J7,J8,J9', 36, 0, 0.55, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 13, 13, 0.2, 1, 17, 17, 0.05, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'package is also known as JEDEC MO-192AAD-1', ''),
 (34, 'BGA', 'BGA108C80P12X12_1000X1000X140', 'mm', 'EXPERIMENTAL', 10, 10, 1.4, 0, 108, 12, 12, 'UPPER_LEFT', 0.8, 0.8, 0, 0, 'D4,D5,D6,D7,D8,D9,E4,E5,E6,E7,E8,E9,F4,F5,F6,F7,F8,F9,G4,G5,G6,G7,G8,G9,H4,H5,H6,H7,H8,H9,J4,J5,J6,J7,J8,J9', 36, 0, 0.45, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 10, 10, 0.2, 1, 12, 12, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 'package is also known as JEDEC MO-205AC', ''),
-(35, 'BGA', 'BGA109C50P12X12_700X700X100', 'mm', 'EXPERIMENTAL', 7, 7, 1, 0, 109, 12, 12, 'UPPER_LEFT', 0.5, 0.5, 0, 0, 'D5,D6,D7,D8,D9,E4,E5,E6,E7,E8,E9,F4,F5,F6,F7,F8,F9,G4,G5,G6,G7,G8,G9,H4,H5,H6,H7,H8,H9,J4,J5,J6,J7,J8,J9', 35, 0, 0.25, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 7, 7, 0.2, 1, 9, 9, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 'package is also known as JEDEC MO-225', '');
+(35, 'BGA', 'BGA109C50P12X12_700X700X100', 'mm', 'EXPERIMENTAL', 7, 7, 1, 0, 109, 12, 12, 'UPPER_LEFT', 0.5, 0.5, 0, 0, 'D5,D6,D7,D8,D9,E4,E5,E6,E7,E8,E9,F4,F5,F6,F7,F8,F9,G4,G5,G6,G7,G8,G9,H4,H5,H6,H7,H8,H9,J4,J5,J6,J7,J8,J9', 35, 0, 0.25, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 7, 7, 0.2, 1, 9, 9, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 'package is also known as JEDEC MO-225', ''),
+(36, 'BGA', 'BGA109C80P12X12_1000X1000X140', 'mm', 'EXPERIMENTAL', 10, 10, 1.4, 0, 109, 12, 12, 'UPPER_LEFT', 0.8, 0.8, 0, 0, 'D5,D6,D7,D8,D9,E4,E5,E6,E7,E8,E9,F4,F5,F6,F7,F8,F9,G4,G5,G6,G7,G8,G9,H4,H5,H6,H7,H8,H9,J4,J5,J6,J7,J8,J9', 35, 0, 0.45, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 10, 10, 0.2, 1, 12, 12, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 'package is also known as JEDEC MO-205AC', ''),
+(37, 'BGA', 'BGA10C50P3X4_150X200X63', 'mm', 'EXPERIMENTAL', 1.5, 2, 0.63, 0, 10, 3, 4, 'UPPER_LEFT', 0.5, 0.5, 0, 0, 'B2,C2', 2, 0, 0.25, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 1.5, 2, 0.2, 1, 3.5, 4, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, '', ''),
+(38, 'BGA', 'BGA10C50P3X4_220X250X60', 'mm', 'EXPERIMENTAL', 2.2, 2.5, 0.6, 0, 10, 3, 4, 'UPPER_LEFT', 0.5, 0.5, 0, 0, 'B2,C2', 2, 0, 0.25, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 2.2, 2.5, 0.2, 1, 4.2, 4.5, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 'package is also known as JEDEC MO-211BD', ''),
+(39, 'BGA', 'BGA10C50P3X4_220X250X94', 'mm', 'EXPERIMENTAL', 2.2, 2.5, 0.94, 0, 10, 3, 4, 'UPPER_LEFT', 0.5, 0.5, 0, 0, 'B2,C2', 2, 0, 0.25, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 2.2, 2.5, 0.2, 1, 4.2, 4.5, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 'package is also known as JEDEC MO-211BD', ''),
+(40, 'BGA', 'BGA10N50P3X4_200X250X94', 'mm', 'EXPERIMENTAL', 2, 2.5, 0.94, 0, 10, 3, 4, 'UPPER_LEFT', 0.5, 0.5, 0, 0, 'B2,C2', 2, 0, 0.21, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 2, 2.5, 0.2, 1, 3, 3.5, 0.05, 0.5, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 'package is also known as JEDEC MO-211BC', '');
