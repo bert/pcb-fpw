@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 25, 2010 at 09:49 PM
+-- Generation Time: Jan 30, 2010 at 03:41 PM
 -- Server version: 5.1.36
 -- PHP Version: 5.3.0
 
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `fpw_data` (
   `remarks` text COLLATE utf8_bin NOT NULL,
   `warning` text COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`footprint_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=44 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=51 ;
 
 --
 -- Dumping data for table `fpw_data`
@@ -131,4 +131,11 @@ INSERT INTO `fpw_data` (`footprint_id`, `footprint_type`, `footprint_name`, `foo
 (40, 'BGA', 'BGA10N50P3X4_200X250X94', 'mm', 'EXPERIMENTAL', 2, 2.5, 0.94, 0, 10, 3, 4, 'UPPER_LEFT', 0.5, 0.5, 0, 0, 'B2,C2', 2, 0, 0.21, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 2, 2.5, 0.2, 1, 3, 3.5, 0.05, 0.5, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 'package is also known as JEDEC MO-211BC', ''),
 (41, 'BGA', 'BGA111C80P12X13_1000X1100X140', 'mm', 'EXPERIMENTAL', 10, 10, 1.4, 0, 111, 12, 13, 'UPPER_LEFT', 0.8, 0.8, 0, 0, 'A1,A3,A4,A5,A6,A7,A8,A9,A10D1,D2,D11,D12,E1,E2,E11,E12,F1,F2,F11,F12,G1,G2,G11,G12,H1,H2,H11,H12,J1,J2,J11,J12,K1,K2,K11,K12,N3,N4,N5,N6,N7,N8,N9,N10', 45, 0, 0.4, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 10, 10, 0.2, 1, 12, 13, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, '', ''),
 (42, 'BGA', 'BGA111C80P12X13_1100X1100X140', 'mm', 'EXPERIMENTAL', 11, 11, 1.4, 0, 111, 12, 13, 'UPPER_LEFT', 0.8, 0.8, 0, 0, 'A1,A3,A4,A5,A6,A7,A8,A9,A10D1,D2,D11,D12,E1,E2,E11,E12,F1,F2,F11,F12,G1,G2,G11,G12,H1,H2,H11,H12,J1,J2,J11,J12,K1,K2,K11,K12,N3,N4,N5,N6,N7,N8,N9,N10', 45, 0, 0.4, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 11, 11, 0.2, 1, 13, 13, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, '', ''),
-(43, 'BGA', 'BGA112C50P12X12_700X700X112', 'mm', 'EXPERIMENTAL', 7, 7, 1.12, 0, 112, 12, 12, 'UPPER_LEFT', 0.5, 0.5, 0, 0, 'D5,D6,D7,D8,E4,E5,E6,E7,E8,E9,E4,F5,F6,F7,F8,F9,G4,G5,G6,G7,G8,G9,H4,H5,H6,H7,H8,H9,J5,J6,J7,J8', 32, 0, 0.25, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 7, 7, 0.2, 1, 9, 9, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 'package is also known as JEDEC MO-195', '');
+(43, 'BGA', 'BGA112C50P12X12_700X700X112', 'mm', 'EXPERIMENTAL', 7, 7, 1.12, 0, 112, 12, 12, 'UPPER_LEFT', 0.5, 0.5, 0, 0, 'D5,D6,D7,D8,E4,E5,E6,E7,E8,E9,E4,F5,F6,F7,F8,F9,G4,G5,G6,G7,G8,G9,H4,H5,H6,H7,H8,H9,J5,J6,J7,J8', 32, 0, 0.25, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 7, 7, 0.2, 1, 9, 9, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 'package is also known as JEDEC MO-195', ''),
+(44, 'BGA', 'BGA1148C100P34X34_3500X3500X340', 'mm', 'EXPERIMENTAL', 35, 35, 3.4, 0, 1148, 34, 34, 'UPPER_LEFT', 1, 1, 0, 0, 'A1,A34,P14,P21,AA14,AA21,AP1,AP34', 8, 0, 0.5, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 35, 35, 0.2, 1, 39, 39, 0.05, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'package is also known as JEDEC MS-034AAR-1', ''),
+(45, 'BGA', 'BGA114C80P6X19_550X1600X140', 'mm', 'EXPERIMENTAL', 5.5, 16, 1.4, 0, 114, 6, 19, 'UPPER_LEFT', 0.8, 0.8, 0, 0, '', 0, 0, 0.45, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 5.5, 16, 0.2, 1, 7.5, 18, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 'package is also known as JEDEC MO-205DC', ''),
+(46, 'BGA', 'BGA114C80P6X19_550X1600X150', 'mm', 'EXPERIMENTAL', 5.5, 16, 1.5, 0, 114, 6, 19, 'UPPER_LEFT', 0.8, 0.8, 0, 0, '', 0, 0, 0.4, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 5.5, 16, 0.2, 1, 7.5, 18, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, '', ''),
+(47, 'BGA', 'BGA1152C100P34X34_3500X3500X244', 'mm', 'EXPERIMENTAL', 35, 35, 2.44, 0, 1152, 34, 34, 'UPPER_LEFT', 1, 1, 0, 0, 'A1,A34,AP1,AP34', 4, 0, 0.5, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 35, 35, 0.2, 1, 39, 39, 0.05, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'package is also known as JEDEC MS-034AAR-1', ''),
+(48, 'BGA', 'BGA1152C100P34X34_3500X3500X332', 'mm', 'EXPERIMENTAL', 35, 35, 3.32, 0, 1152, 34, 34, 'UPPER_LEFT', 1, 1, 0, 0, 'A1,A34,AP1,AP34', 4, 0, 0.5, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 35, 35, 0.2, 1, 39, 39, 0.05, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', ''),
+(49, 'BGA', 'BGA1152C100P34X34_3500X3500X340', 'mm', 'EXPERIMENTAL', 35, 35, 3.4, 0, 1152, 34, 34, 'UPPER_LEFT', 1, 1, 0, 0, 'A1,A34,AP1,AP34', 4, 0, 0.5, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 35, 35, 0.2, 1, 39, 39, 0.05, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'package is also known as JEDEC MS-034AAR-1', ''),
+(50, 'BGA', 'BGA1152C100P34X34_3500X3500X350', 'mm', 'EXPERIMENTAL', 35, 35, 3.5, 0, 1152, 34, 34, 'UPPER_LEFT', 1, 1, 0, 0, 'A1,A34,AP1,AP34', 4, 0, 0.5, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 35, 35, 0.2, 1, 39, 39, 0.05, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'package is also known as JEDEC MS-034AAR-1', '');
