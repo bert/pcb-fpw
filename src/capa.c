@@ -457,8 +457,8 @@ capa_drc ()
         if (verbose)
         {
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("DRC Check: checking %s package %s."),
-                        footprint_name, footprint_type);
+                        _("[%s] DRC Check: checking package %s."),
+                        footprint_type, footprint_name);
         }
         /* Check for allowed pad shapes. */
         switch (pad_shapes_type)
@@ -468,7 +468,8 @@ capa_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: NO_SHAPE specified for check for allowed pad shapes."));
+                                        _("[%s] DRC Error: NO_SHAPE specified for check for allowed pad shapes."),
+                                        footprint_type);
                         }
                         result = EXIT_FAILURE;
                         break;
@@ -482,7 +483,8 @@ capa_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: square pad shape specified for check for allowed pad shapes."));
+                                        _("[%s] DRC Error: square pad shape specified for check for allowed pad shapes."),
+                                        footprint_type);
                         }
                         result = EXIT_FAILURE;
                         break;
@@ -500,7 +502,8 @@ capa_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: no valid pad shape type specified."));
+                                        _("[%s] DRC Error: no valid pad shape type specified."),
+                                        footprint_type);
                         }
                         result = EXIT_FAILURE;
                         break;
@@ -512,7 +515,8 @@ capa_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for package body length is <= 0.0."));
+                                _("[%s] DRC Error: specified package body length is too small."),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -521,7 +525,8 @@ capa_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for package body width is <= 0.0."));
+                                _("[%s] DRC Error: specified package body width is too small."),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -530,7 +535,8 @@ capa_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for package body height is <= 0.0."));
+                                _("[%s] DRC Error: specified package body height is too small."),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -540,7 +546,8 @@ capa_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for courtyard length is <= 0.0."));
+                                _("[%s] DRC Error: specified courtyard length is too small."),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -549,7 +556,8 @@ capa_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for courtyard width is <= 0.0."));
+                                _("[%s] DRC Error: specified courtyard width is too small."),
+                                footprint_type);
                 }
                 return (EXIT_FAILURE);
         }
@@ -559,7 +567,8 @@ capa_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for minimum clearance between copper (X-direction)."));
+                                _("[%s] DRC Error: minimum clearance between copper (X-direction) is too small."),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -569,7 +578,8 @@ capa_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for minimum clearance between copper (Y-direction)."));
+                                _("[%s] DRC Error: minimum clearance between copper (Y-direction) is too small."),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -578,7 +588,8 @@ capa_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: package should not have a fiducial pad."));
+                                _("[%s] DRC Error: package should not have a fiducial pad."),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }

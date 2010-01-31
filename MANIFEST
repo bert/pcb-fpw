@@ -35,6 +35,8 @@ data/application-x-fpw-48.png
 data/application-x-fpw-48.xpm
 data/fpw-48.ico
 data/fpw-48.png
+data/fpw_data.csv
+data/fpw_data.sql
 data/fpw.xml.in
 data/regen_files
 data/x-fpw.desktop.in
