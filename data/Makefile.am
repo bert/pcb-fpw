@@ -92,10 +92,18 @@ endif
 
 MAINTAINERCLEANFILES = *.log core FILE *~ Makefile.in
 DISTCLEANFILES = $(xml_DATA) $(application_DATA) $(desktop_DATA)
-EXTRA_DIST = $(mime_icon_files) $(mime_icon_sources) \
-             $(xml_in_files) $(xml_DATA) \
-             $(application_in_files) \
-             $(app_icon_files) \
-             $(desktop_in_files) $(desktop_DATA) \
-	     regen_files fpw_icon.ico
+EXTRA_DIST = $(mime_icon_files) \
+	$(mime_icon_sources) \
+	$(xml_in_files) \
+	$(xml_DATA) \
+	$(application_in_files) \
+	$(app_icon_files) \
+	$(desktop_in_files) \
+	$(desktop_DATA) \
+	regen_files \
+	fpw_icon.ico \
+	fpw_data.sql \
+	fpw_data.csv \
+	user_data.sql \
+	user_data.csv
 
