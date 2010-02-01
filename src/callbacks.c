@@ -592,7 +592,7 @@ all_entries_need_updated (GtkWidget *widget)
 int
 all_entries_to_default_sensitivity (GtkWidget *widget)
 {
-        /* Widgets on tab 1 "Footprint" */
+        /* Widgets on tab "Footprint" */
         GtkWidget *footprint_type_entry = lookup_widget (GTK_WIDGET (widget),
                 "footprint_type_entry");
         gtk_widget_set_sensitive (footprint_type_entry, TRUE);
@@ -634,7 +634,7 @@ all_entries_to_default_sensitivity (GtkWidget *widget)
                 "footprint_status_entry");
         gtk_widget_set_sensitive (footprint_status_entry, TRUE);
 
-        /* Widgets on tab 2 "Pins/Pads" */
+        /* Widgets on tab Pins/Pads" */
         GtkWidget *number_total_pins_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_total_pins_entry");
         gtk_widget_set_sensitive (number_total_pins_entry, TRUE);
@@ -687,7 +687,33 @@ all_entries_to_default_sensitivity (GtkWidget *widget)
                 "pad_solder_mask_clearance_entry");
         gtk_widget_set_sensitive (pad_solder_mask_clearance_entry, TRUE);
 
-        /* Widgets on tab 3 "Thermal pad" */
+        /* Widgets on tab "Silkscreen" */
+        GtkWidget *silkscreen_package_outline_checkbutton = lookup_widget (GTK_WIDGET (widget),
+                "silkscreen_package_outline_checkbutton");
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (silkscreen_package_outline_checkbutton), FALSE);
+        GtkWidget *silkscreen_line_width_entry = lookup_widget (GTK_WIDGET (widget),
+                "silkscreen_line_width_entry");
+        gtk_widget_set_sensitive (silkscreen_line_width_entry, FALSE);
+        GtkWidget *silkscreen_indicate_1_checkbutton = lookup_widget (GTK_WIDGET (widget),
+                "silkscreen_indicate_1_checkbutton");
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (silkscreen_indicate_1_checkbutton), FALSE);
+        GtkWidget *courtyard_checkbutton = lookup_widget (GTK_WIDGET (widget),
+                "courtyard_checkbutton");
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (courtyard_checkbutton), FALSE);
+        GtkWidget *courtyard_length_entry = lookup_widget (GTK_WIDGET (widget),
+                "courtyard_length_entry");
+        gtk_widget_set_sensitive (courtyard_length_entry, FALSE);
+        GtkWidget *courtyard_width_entry = lookup_widget (GTK_WIDGET (widget),
+                "courtyard_width_entry");
+        gtk_widget_set_sensitive (courtyard_width_entry, FALSE);
+        GtkWidget *courtyard_line_width_entry = lookup_widget (GTK_WIDGET (widget),
+                "courtyard_line_width_entry");
+        gtk_widget_set_sensitive (courtyard_line_width_entry, FALSE);
+        GtkWidget *courtyard_clearance_with_package_entry = lookup_widget (GTK_WIDGET (widget),
+                "courtyard_clearance_with_package_entry");
+        gtk_widget_set_sensitive (courtyard_clearance_with_package_entry, FALSE);
+
+        /* Widgets on tab "Thermal pad" */
         GtkWidget *thermal_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "thermal_checkbutton");
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (thermal_checkbutton), FALSE);
@@ -720,33 +746,7 @@ all_entries_to_default_sensitivity (GtkWidget *widget)
                 (GTK_WIDGET (widget), "fiducial_pad_solder_mask_clearance_entry");
         gtk_widget_set_sensitive (fiducial_pad_solder_mask_clearance_entry, FALSE);
 
-        /* Widgets on tab 4 "Silkscreen" */
-        GtkWidget *silkscreen_package_outline_checkbutton = lookup_widget (GTK_WIDGET (widget),
-                "silkscreen_package_outline_checkbutton");
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (silkscreen_package_outline_checkbutton), FALSE);
-        GtkWidget *silkscreen_line_width_entry = lookup_widget (GTK_WIDGET (widget),
-                "silkscreen_line_width_entry");
-        gtk_widget_set_sensitive (silkscreen_line_width_entry, FALSE);
-        GtkWidget *silkscreen_indicate_1_checkbutton = lookup_widget (GTK_WIDGET (widget),
-                "silkscreen_indicate_1_checkbutton");
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (silkscreen_indicate_1_checkbutton), FALSE);
-        GtkWidget *courtyard_checkbutton = lookup_widget (GTK_WIDGET (widget),
-                "courtyard_checkbutton");
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (courtyard_checkbutton), FALSE);
-        GtkWidget *courtyard_length_entry = lookup_widget (GTK_WIDGET (widget),
-                "courtyard_length_entry");
-        gtk_widget_set_sensitive (courtyard_length_entry, FALSE);
-        GtkWidget *courtyard_width_entry = lookup_widget (GTK_WIDGET (widget),
-                "courtyard_width_entry");
-        gtk_widget_set_sensitive (courtyard_width_entry, FALSE);
-        GtkWidget *courtyard_line_width_entry = lookup_widget (GTK_WIDGET (widget),
-                "courtyard_line_width_entry");
-        gtk_widget_set_sensitive (courtyard_line_width_entry, FALSE);
-        GtkWidget *courtyard_clearance_with_package_entry = lookup_widget (GTK_WIDGET (widget),
-                "courtyard_clearance_with_package_entry");
-        gtk_widget_set_sensitive (courtyard_clearance_with_package_entry, FALSE);
-
-        /* Widgets on tab 5 "Heel & Toe goals" */
+        /* Widgets on tab "Heel & Toe goals" */
         GtkWidget *C1_entry = lookup_widget (GTK_WIDGET (widget),
                 "C1_entry");
         gtk_widget_set_sensitive (C1_entry, TRUE);
