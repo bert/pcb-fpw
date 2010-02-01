@@ -314,6 +314,8 @@ gboolean fiducial;
         /*!< Draw fiducials. */
 gdouble fiducial_pad_diameter;
         /*!< Outer diameter of the fiducial pad. */
+gdouble fiducial_pad_clearance;
+        /*!< Clearance of a fiducial pad. */
 gdouble fiducial_pad_solder_mask_clearance;
         /*!< Solder mask clearance of a fiducial pad. */
 

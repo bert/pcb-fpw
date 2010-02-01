@@ -495,6 +495,20 @@ all_entries_need_updated (GtkWidget *widget)
                 gtk_entry_set_text (GTK_ENTRY (fiducial_pad_diameter_entry),
                         g_strdup_printf ("%f", fiducial_pad_diameter));
         }
+        /* Only update the "fiducial pad clearance" entry with a
+         * sensible value. */
+        if (fiducial_pad_clearance != 0.0)
+        {
+                GtkWidget *fiducial_pad_clearance_entry =
+                        lookup_widget (GTK_WIDGET (widget),
+                        "fiducial_pad_clearance_entry");
+                gtk_widget_set_sensitive (fiducial_pad_clearance_entry,
+                        TRUE);
+                gtk_entry_set_text (GTK_ENTRY
+                        (fiducial_pad_clearance_entry),
+                        g_strdup_printf ("%f",
+                        fiducial_pad_clearance));
+        }
         /* Only update the "fiducial pad solder mask clearance" entry with a
          * sensible value. */
         if (fiducial_pad_solder_mask_clearance != 0.0)
@@ -699,9 +713,12 @@ all_entries_to_default_sensitivity (GtkWidget *widget)
         GtkWidget *fiducial_pad_diameter_entry = lookup_widget (GTK_WIDGET
                 (widget), "fiducial_pad_diameter_entry");
         gtk_widget_set_sensitive (fiducial_pad_diameter_entry, FALSE);
+        GtkWidget *fiducial_pad_clearance_entry = lookup_widget
+                (GTK_WIDGET (widget), "fiducial_pad_clearance_entry");
+        gtk_widget_set_sensitive (fiducial_pad_clearance_entry, FALSE);
         GtkWidget *fiducial_pad_solder_mask_clearance_entry = lookup_widget
                 (GTK_WIDGET (widget), "fiducial_pad_solder_mask_clearance_entry");
-        gtk_widget_set_sensitive (fiducial_pad_diameter_entry, FALSE);
+        gtk_widget_set_sensitive (fiducial_pad_solder_mask_clearance_entry, FALSE);
 
         /* Widgets on tab 4 "Silkscreen" */
         GtkWidget *silkscreen_package_outline_checkbutton = lookup_widget (GTK_WIDGET (widget),
@@ -939,6 +956,11 @@ gui_constraints_disable_thermal_tab_widgets (GtkWidget *widget)
                 (GTK_WIDGET (widget),
                 "fiducial_pad_diameter_entry");
         gtk_widget_set_sensitive (fiducial_pad_diameter_entry, FALSE);
+        GtkWidget *fiducial_pad_clearance_entry = lookup_widget
+                (GTK_WIDGET (widget),
+                "fiducial_pad_clearance_entry");
+        gtk_widget_set_sensitive (fiducial_pad_clearance_entry,
+                FALSE);
         GtkWidget *fiducial_pad_solder_mask_clearance_entry = lookup_widget
                 (GTK_WIDGET (widget),
                 "fiducial_pad_solder_mask_clearance_entry");
@@ -2141,6 +2163,38 @@ on_fiducial_checkbutton_toggled        (GtkToggleButton *togglebutton,
                 "fiducial_pad_solder_mask_clearance_entry");
         gtk_widget_set_sensitive (fiducial_pad_soldermask_clearance_entry, fiducial);
         entry_has_changed (GTK_WIDGET (togglebutton));
+}
+
+
+/*!
+ * \brief The "fiducial pad clearance" entry is changed.
+ *
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert to a double and store in the
+ *   \c fiducial_pad_clearance variable (global).
+ * <li>set the fpw entries have changed marker "[*]" in the title bar.
+ * </ul>
+ *
+ * <b>Parameters:</b> \c *editable is the caller widget.\n
+ * \n
+ * <b>Parameters:</b> \c user_data.\n
+ * \n
+ * <b>Returns:</b> none.
+ */
+void
+on_fiducial_pad_clearance_entry_changed
+                                        (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+        gchar *leftovers;
+        GtkWidget *fiducial_pad_clearance_entry = lookup_widget (GTK_WIDGET (editable),
+                "fiducial_pad_clearance_entry");
+        const gchar* fiducial_pad_clearance_string =
+                gtk_entry_get_text (GTK_ENTRY (fiducial_pad_clearance_entry));
+        fiducial_pad_clearance = g_ascii_strtod (fiducial_pad_clearance_string, &leftovers);
+        entry_has_changed (GTK_WIDGET (editable));
+
 }
 
 
@@ -4266,3 +4320,4 @@ on_thermal_width_entry_changed         (GtkEditable     *editable,
 }
 
 /* EOF */
+

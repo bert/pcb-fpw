@@ -7,7 +7,7 @@
   <property name="visible">True</property>
   <property name="destroy_with_parent">False</property>
   <property name="name" translatable="yes">pcb-gfpw</property>
-  <property name="copyright" translatable="yes">(C) 2007 ... 2009 Bert Timmerman.</property>
+  <property name="copyright" translatable="yes">(C) 2007, 2008, 2009, 2010 Bert Timmerman.</property>
   <property name="comments" translatable="yes">The pcb FootPrintWizard generates footprint files for the pcb layout editor.
 (see http://pcb.gpleda.org)
 </property>
@@ -27,10 +27,10 @@ the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 </property>
   <property name="wrap_license">False</property>
-  <property name="website">http://www.xs4all.nl/~ljh4timm/pcb-fpw.html</property>
+  <property name="website">http://www.xs4all.nl/~ljh4timm/pcb-fpw/pcb-fpw.html</property>
   <property name="authors">Bert Timmerman &lt;bert.timmerman@xs4all.nl&gt;</property>
   <property name="documenters"></property>
-  <property name="translator_credits" translatable="yes" comments="TRANSLATORS: Replace this string with your names, one name per line.">Bert Timmerman (nl_NL)</property>
+  <property name="translator_credits" translatable="yes" comments="TRANSLATORS: Replace this string with your names, one name per line.">Bert Timmerman (nl)</property>
   <property name="logo">splash_wiz.xpm</property>
   <signal name="close" handler="on_about_dialog_close" last_modification_time="Sat, 13 Jun 2009 09:41:03 GMT"/>
   <signal name="destroy" handler="on_about_dialog_destroy" last_modification_time="Sat, 13 Jun 2009 09:41:17 GMT"/>
@@ -2881,7 +2881,7 @@ Lower right
 			  <child>
 			    <widget class="GtkTable" id="fiducials_table">
 			      <property name="visible">True</property>
-			      <property name="n_rows">3</property>
+			      <property name="n_rows">4</property>
 			      <property name="n_columns">2</property>
 			      <property name="homogeneous">False</property>
 			      <property name="row_spacing">0</property>
@@ -2910,34 +2910,6 @@ Lower right
 				  <property name="right_attach">1</property>
 				  <property name="top_attach">1</property>
 				  <property name="bottom_attach">2</property>
-				  <property name="x_options">fill</property>
-				  <property name="y_options"></property>
-				</packing>
-			      </child>
-
-			      <child>
-				<widget class="GtkLabel" id="fiducial_solder_mask_clearance_label">
-				  <property name="visible">True</property>
-				  <property name="label" translatable="yes">Fiducial solder mask clearance</property>
-				  <property name="use_underline">False</property>
-				  <property name="use_markup">False</property>
-				  <property name="justify">GTK_JUSTIFY_LEFT</property>
-				  <property name="wrap">False</property>
-				  <property name="selectable">False</property>
-				  <property name="xalign">0</property>
-				  <property name="yalign">0.5</property>
-				  <property name="xpad">0</property>
-				  <property name="ypad">0</property>
-				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
-				  <property name="width_chars">-1</property>
-				  <property name="single_line_mode">False</property>
-				  <property name="angle">0</property>
-				</widget>
-				<packing>
-				  <property name="left_attach">0</property>
-				  <property name="right_attach">1</property>
-				  <property name="top_attach">2</property>
-				  <property name="bottom_attach">3</property>
 				  <property name="x_options">fill</property>
 				  <property name="y_options"></property>
 				</packing>
@@ -2990,6 +2962,34 @@ Lower right
 			      </child>
 
 			      <child>
+				<widget class="GtkLabel" id="fiducial_solder_mask_clearance_label">
+				  <property name="visible">True</property>
+				  <property name="label" translatable="yes">Fiducial solder mask clearance</property>
+				  <property name="use_underline">False</property>
+				  <property name="use_markup">False</property>
+				  <property name="justify">GTK_JUSTIFY_LEFT</property>
+				  <property name="wrap">False</property>
+				  <property name="selectable">False</property>
+				  <property name="xalign">0</property>
+				  <property name="yalign">0.5</property>
+				  <property name="xpad">0</property>
+				  <property name="ypad">0</property>
+				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+				  <property name="width_chars">-1</property>
+				  <property name="single_line_mode">False</property>
+				  <property name="angle">0</property>
+				</widget>
+				<packing>
+				  <property name="left_attach">0</property>
+				  <property name="right_attach">1</property>
+				  <property name="top_attach">3</property>
+				  <property name="bottom_attach">4</property>
+				  <property name="x_options">fill</property>
+				  <property name="y_options"></property>
+				</packing>
+			      </child>
+
+			      <child>
 				<widget class="GtkEntry" id="fiducial_pad_solder_mask_clearance_entry">
 				  <property name="visible">True</property>
 				  <property name="tooltip" translatable="yes">Clearance distance with solder mask</property>
@@ -3002,6 +3002,57 @@ Lower right
 				  <property name="invisible_char">•</property>
 				  <property name="activates_default">False</property>
 				  <signal name="changed" handler="on_fiducial_pad_solder_mask_clearance_entry_changed" last_modification_time="Mon, 11 Aug 2008 18:22:09 GMT"/>
+				</widget>
+				<packing>
+				  <property name="left_attach">1</property>
+				  <property name="right_attach">2</property>
+				  <property name="top_attach">3</property>
+				  <property name="bottom_attach">4</property>
+				  <property name="y_options"></property>
+				</packing>
+			      </child>
+
+			      <child>
+				<widget class="GtkLabel" id="fiducial_pad_clearance_label">
+				  <property name="visible">True</property>
+				  <property name="label" translatable="yes">Fiducial Pad Clearance</property>
+				  <property name="use_underline">False</property>
+				  <property name="use_markup">False</property>
+				  <property name="justify">GTK_JUSTIFY_LEFT</property>
+				  <property name="wrap">False</property>
+				  <property name="selectable">False</property>
+				  <property name="xalign">0</property>
+				  <property name="yalign">0.5</property>
+				  <property name="xpad">0</property>
+				  <property name="ypad">0</property>
+				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+				  <property name="width_chars">-1</property>
+				  <property name="single_line_mode">False</property>
+				  <property name="angle">0</property>
+				</widget>
+				<packing>
+				  <property name="left_attach">0</property>
+				  <property name="right_attach">1</property>
+				  <property name="top_attach">2</property>
+				  <property name="bottom_attach">3</property>
+				  <property name="x_options">fill</property>
+				  <property name="y_options"></property>
+				</packing>
+			      </child>
+
+			      <child>
+				<widget class="GtkEntry" id="fiducial_pad_clearance_entry">
+				  <property name="visible">True</property>
+				  <property name="tooltip" translatable="yes">Clearance distance with polygons</property>
+				  <property name="can_focus">True</property>
+				  <property name="editable">True</property>
+				  <property name="visibility">True</property>
+				  <property name="max_length">0</property>
+				  <property name="text" translatable="yes"></property>
+				  <property name="has_frame">True</property>
+				  <property name="invisible_char">•</property>
+				  <property name="activates_default">False</property>
+				  <signal name="changed" handler="on_fiducial_pad_clearance_entry_changed" last_modification_time="Sun, 31 Jan 2010 20:55:06 GMT"/>
 				</widget>
 				<packing>
 				  <property name="left_attach">1</property>

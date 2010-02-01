@@ -35,17 +35,17 @@ create_about_dialog (void)
     NULL
   };
   /* TRANSLATORS: Replace this string with your names, one name per line. */
-  gchar *translators = "Bert Timmerman (nl_NL)";
+  gchar *translators = "Bert Timmerman (nl)";
   GdkPixbuf *about_dialog_logo_pixbuf;
 
   about_dialog = gtk_about_dialog_new ();
   gtk_widget_set_name (about_dialog, "about_dialog");
   gtk_about_dialog_set_version (GTK_ABOUT_DIALOG (about_dialog), VERSION);
   gtk_about_dialog_set_name (GTK_ABOUT_DIALOG (about_dialog), _("pcb-gfpw"));
-  gtk_about_dialog_set_copyright (GTK_ABOUT_DIALOG (about_dialog), _("(C) 2007 ... 2009 Bert Timmerman."));
+  gtk_about_dialog_set_copyright (GTK_ABOUT_DIALOG (about_dialog), _("(C) 2007, 2008, 2009, 2010 Bert Timmerman."));
   gtk_about_dialog_set_comments (GTK_ABOUT_DIALOG (about_dialog), _("The pcb FootPrintWizard generates footprint files for the pcb layout editor.\n(see http://pcb.gpleda.org)\n"));
   gtk_about_dialog_set_license (GTK_ABOUT_DIALOG (about_dialog), _("This program is free software; you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation; either version 2 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\nSee the GNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program; if not, write to:\nthe Free Software Foundation, Inc.,\n51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n"));
-  gtk_about_dialog_set_website (GTK_ABOUT_DIALOG (about_dialog), "http://www.xs4all.nl/~ljh4timm/pcb-fpw.html");
+  gtk_about_dialog_set_website (GTK_ABOUT_DIALOG (about_dialog), "http://www.xs4all.nl/~ljh4timm/pcb-fpw/pcb-fpw.html");
   gtk_about_dialog_set_authors (GTK_ABOUT_DIALOG (about_dialog), authors);
   gtk_about_dialog_set_translator_credits (GTK_ABOUT_DIALOG (about_dialog), translators);
   about_dialog_logo_pixbuf = create_pixbuf ("splash_wiz.xpm");
@@ -198,10 +198,12 @@ create_pcb_gfpw (void)
   GtkWidget *fiducials_alignment;
   GtkWidget *fiducials_table;
   GtkWidget *fiducial_pad_diameter_label;
-  GtkWidget *fiducial_solder_mask_clearance_label;
   GtkWidget *fiducial_pad_diameter_entry;
   GtkWidget *fiducial_checkbutton;
+  GtkWidget *fiducial_solder_mask_clearance_label;
   GtkWidget *fiducial_pad_solder_mask_clearance_entry;
+  GtkWidget *fiducial_pad_clearance_label;
+  GtkWidget *fiducial_pad_clearance_entry;
   GtkWidget *fiducials_label;
   GtkWidget *thermal_pad_tab_label;
   GtkWidget *heel_and_toe_goals_vbox;
@@ -1302,7 +1304,7 @@ create_pcb_gfpw (void)
   gtk_container_add (GTK_CONTAINER (fiducials_frame), fiducials_alignment);
   gtk_alignment_set_padding (GTK_ALIGNMENT (fiducials_alignment), 0, 0, 12, 0);
 
-  fiducials_table = gtk_table_new (3, 2, FALSE);
+  fiducials_table = gtk_table_new (4, 2, FALSE);
   gtk_widget_set_name (fiducials_table, "fiducials_table");
   gtk_widget_show (fiducials_table);
   gtk_container_add (GTK_CONTAINER (fiducials_alignment), fiducials_table);
@@ -1314,14 +1316,6 @@ create_pcb_gfpw (void)
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
   gtk_misc_set_alignment (GTK_MISC (fiducial_pad_diameter_label), 0, 0.5);
-
-  fiducial_solder_mask_clearance_label = gtk_label_new (_("Fiducial solder mask clearance"));
-  gtk_widget_set_name (fiducial_solder_mask_clearance_label, "fiducial_solder_mask_clearance_label");
-  gtk_widget_show (fiducial_solder_mask_clearance_label);
-  gtk_table_attach (GTK_TABLE (fiducials_table), fiducial_solder_mask_clearance_label, 0, 1, 2, 3,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (fiducial_solder_mask_clearance_label), 0, 0.5);
 
   fiducial_pad_diameter_entry = gtk_entry_new ();
   gtk_widget_set_name (fiducial_pad_diameter_entry, "fiducial_pad_diameter_entry");
@@ -1339,14 +1333,39 @@ create_pcb_gfpw (void)
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
 
+  fiducial_solder_mask_clearance_label = gtk_label_new (_("Fiducial solder mask clearance"));
+  gtk_widget_set_name (fiducial_solder_mask_clearance_label, "fiducial_solder_mask_clearance_label");
+  gtk_widget_show (fiducial_solder_mask_clearance_label);
+  gtk_table_attach (GTK_TABLE (fiducials_table), fiducial_solder_mask_clearance_label, 0, 1, 3, 4,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_misc_set_alignment (GTK_MISC (fiducial_solder_mask_clearance_label), 0, 0.5);
+
   fiducial_pad_solder_mask_clearance_entry = gtk_entry_new ();
   gtk_widget_set_name (fiducial_pad_solder_mask_clearance_entry, "fiducial_pad_solder_mask_clearance_entry");
   gtk_widget_show (fiducial_pad_solder_mask_clearance_entry);
-  gtk_table_attach (GTK_TABLE (fiducials_table), fiducial_pad_solder_mask_clearance_entry, 1, 2, 2, 3,
+  gtk_table_attach (GTK_TABLE (fiducials_table), fiducial_pad_solder_mask_clearance_entry, 1, 2, 3, 4,
                     (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
   gtk_tooltips_set_tip (tooltips, fiducial_pad_solder_mask_clearance_entry, _("Clearance distance with solder mask"), NULL);
   gtk_entry_set_invisible_char (GTK_ENTRY (fiducial_pad_solder_mask_clearance_entry), 8226);
+
+  fiducial_pad_clearance_label = gtk_label_new (_("Fiducial Pad Clearance"));
+  gtk_widget_set_name (fiducial_pad_clearance_label, "fiducial_pad_clearance_label");
+  gtk_widget_show (fiducial_pad_clearance_label);
+  gtk_table_attach (GTK_TABLE (fiducials_table), fiducial_pad_clearance_label, 0, 1, 2, 3,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_misc_set_alignment (GTK_MISC (fiducial_pad_clearance_label), 0, 0.5);
+
+  fiducial_pad_clearance_entry = gtk_entry_new ();
+  gtk_widget_set_name (fiducial_pad_clearance_entry, "fiducial_pad_clearance_entry");
+  gtk_widget_show (fiducial_pad_clearance_entry);
+  gtk_table_attach (GTK_TABLE (fiducials_table), fiducial_pad_clearance_entry, 1, 2, 2, 3,
+                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_tooltips_set_tip (tooltips, fiducial_pad_clearance_entry, _("Clearance distance with polygons"), NULL);
+  gtk_entry_set_invisible_char (GTK_ENTRY (fiducial_pad_clearance_entry), 8226);
 
   fiducials_label = gtk_label_new (_("<b>Fiducials</b>"));
   gtk_widget_set_name (fiducials_label, "fiducials_label");
@@ -1811,6 +1830,9 @@ create_pcb_gfpw (void)
   g_signal_connect ((gpointer) fiducial_pad_solder_mask_clearance_entry, "changed",
                     G_CALLBACK (on_fiducial_pad_solder_mask_clearance_entry_changed),
                     NULL);
+  g_signal_connect ((gpointer) fiducial_pad_clearance_entry, "changed",
+                    G_CALLBACK (on_fiducial_pad_clearance_entry_changed),
+                    NULL);
   g_signal_connect ((gpointer) G1_radiobutton, "toggled",
                     G_CALLBACK (on_G1_radiobutton_toggled),
                     NULL);
@@ -2003,10 +2025,12 @@ create_pcb_gfpw (void)
   GLADE_HOOKUP_OBJECT (pcb_gfpw, fiducials_alignment, "fiducials_alignment");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, fiducials_table, "fiducials_table");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, fiducial_pad_diameter_label, "fiducial_pad_diameter_label");
-  GLADE_HOOKUP_OBJECT (pcb_gfpw, fiducial_solder_mask_clearance_label, "fiducial_solder_mask_clearance_label");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, fiducial_pad_diameter_entry, "fiducial_pad_diameter_entry");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, fiducial_checkbutton, "fiducial_checkbutton");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, fiducial_solder_mask_clearance_label, "fiducial_solder_mask_clearance_label");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, fiducial_pad_solder_mask_clearance_entry, "fiducial_pad_solder_mask_clearance_entry");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, fiducial_pad_clearance_label, "fiducial_pad_clearance_label");
+  GLADE_HOOKUP_OBJECT (pcb_gfpw, fiducial_pad_clearance_entry, "fiducial_pad_clearance_entry");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, fiducials_label, "fiducials_label");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, thermal_pad_tab_label, "thermal_pad_tab_label");
   GLADE_HOOKUP_OBJECT (pcb_gfpw, heel_and_toe_goals_vbox, "heel_and_toe_goals_vbox");

@@ -105,6 +105,9 @@ void
 on_fiducial_checkbutton_toggled (GtkToggleButton *togglebutton, gpointer user_data);
 
 void
+on_fiducial_pad_clearance_entry_changed (GtkEditable *editable, gpointer user_data);
+
+void
 on_fiducial_pad_diameter_entry_changed (GtkEditable *editable, gpointer user_data);
 
 void
