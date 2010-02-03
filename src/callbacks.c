@@ -1144,7 +1144,7 @@ number_of_pins_has_changed (GtkWidget *widget)
                         number_of_pins = number_of_rows * count_x;
                         break;
                 case CON_DIP :
-                        number_of_pins = number_of_rows * count_x;
+                        number_of_pins = number_of_columns * number_of_rows;
                         break;
                 case CON_HDR :
                         number_of_pins = number_of_rows * count_x;

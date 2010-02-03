@@ -95,23 +95,24 @@ con_dip_drc ()
                 result = EXIT_FAILURE;
         }
         /* Check for number of rows is 2. */
-        if (number_of_rows != 2)
+        if (number_of_rows < 1)
         {
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for number of rows = 2."));
+                                _("DRC Error: check for number of rows < 1."));
                 }
                 result = EXIT_FAILURE;
         }
         /* Check for number of columns < 1. */
-        if (number_of_columns < 1)
+        if (number_of_columns != 2)
         {
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for number of columns < 1."));
+                                _("DRC Error: check for number of columns = 2."));
                 }
+                number_of_columns = 2;
                 result = EXIT_FAILURE;
         }
         /* Check for allowed pad shapes. */
@@ -406,20 +407,20 @@ con_dip_get_default_footprint_values
                 /*!< : a \c NULL terminated footprint name.*/
 )
 {
-        if (!strcmp (footprint_name, "?CON-DIP"))
+        if (!strcmp (footprint_name, "?CON-DIP04300"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 4;
-                package_body_width = 300;
-                package_body_length = 100;
+                package_body_width = 200;
+                package_body_length = 200;
                 package_body_height = 200;
                 package_is_radial = FALSE;
                 number_of_columns = 2;
-                number_of_rows = 0;
+                number_of_rows = 2;
                 pitch_x = 100;
                 pitch_y = 100;
                 count_x = 0;
-                count_y = 2;
+                count_y = 0;
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
@@ -464,12 +465,12 @@ con_dip_set_gui_constraints
         /* Widgets on tab 2 "Pins/Pads" */
         GtkWidget *number_of_columns_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_columns_entry");
-        gtk_entry_set_text (GTK_ENTRY (number_of_columns_entry), "");
-        gtk_widget_set_sensitive (number_of_columns_entry, TRUE);
+        gtk_entry_set_text (GTK_ENTRY (number_of_columns_entry), "2");
+        gtk_widget_set_sensitive (number_of_columns_entry, FALSE);
         GtkWidget *number_of_rows_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_rows_entry");
-        gtk_entry_set_text (GTK_ENTRY (number_of_rows_entry), "2");
-        gtk_widget_set_sensitive (number_of_rows_entry, FALSE);
+        gtk_entry_set_text (GTK_ENTRY (number_of_rows_entry), "");
+        gtk_widget_set_sensitive (number_of_rows_entry, TRUE);
         GtkWidget *count_x_entry = lookup_widget (GTK_WIDGET (widget),
                 "count_x_entry");
         gtk_entry_set_text (GTK_ENTRY (count_x_entry), "");
@@ -480,7 +481,7 @@ con_dip_set_gui_constraints
         gtk_widget_set_sensitive (count_y_entry, FALSE);
         GtkWidget *number_1_position_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_1_position_entry");
-        gtk_combo_box_set_active (GTK_COMBO_BOX (number_1_position_entry), 3);
+        gtk_combo_box_set_active (GTK_COMBO_BOX (number_1_position_entry), UPPER_LEFT);
         gtk_widget_set_sensitive (number_1_position_entry, FALSE);
 
         /* Widgets on tab 3 "Thermal Pad" */
@@ -497,8 +498,10 @@ con_dip_set_gui_constraints
  * \brief Write a CON-DIP pin through hole footprint.
  *
  * The pin/pad numbering scheme of the CON-DIP package is: \n
- * 8 7 6 5 \n
- * 1 2 3 4 \n
+ * 1  8 \n
+ * 2  7 \n
+ * 3  6 \n
+ * 4  5 \n
  *
  * \return \c EXIT_FAILURE when errors were encountered,
  * \c EXIT_SUCCESS when OK.
@@ -517,6 +520,7 @@ con_dip_write_footprint ()
         gchar *pin_pad_flags = g_strdup ("");
         gint i;
 
+        number_of_columns = 2;
         /* Attempt to open a file with write permission. */
         fp = fopen (footprint_filename, "w");
         if (!fp)
@@ -548,42 +552,58 @@ con_dip_write_footprint ()
         );
         ymin = multiplier *
         (
-                (-pitch_y / 2.0) -
+                (((-number_of_rows + 1) / 2.0) * pitch_y) -
                 (((pad_diameter > pad_width) ? pad_diameter : pad_width) / 2.0) -
                 pad_solder_mask_clearance
         );
         ymax = multiplier *
         (
-                (pitch_y / 2.0) +
+                (((number_of_rows - 1 ) / 2.0) * pitch_y) +
                 (((pad_diameter > pad_width) ? pad_diameter : pad_width) / 2.0) +
                 pad_solder_mask_clearance
         );
         /* Determine (extreme) courtyard dimensions based on package
          * properties */
         if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
+        {
                 xmin = (multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package));
+        }
         if ((multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package)) > xmax)
+        {
                 xmax = (multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package));
+        }
         if ((multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package)) < ymin)
+        {
                 ymin = (multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package));
+        }
         if ((multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package)) > ymax)
+        {
                 ymax = (multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package));
+        }
         /* If the user input is using even more real-estate then use it */
         if (multiplier * (-courtyard_length / 2.0) < xmin)
+        {
                 xmin = multiplier * (-courtyard_length / 2.0);
+        }
         if (multiplier * (courtyard_length / 2.0) > xmax)
+        {
                 xmax = multiplier * (courtyard_length / 2.0);
+        }
         if (multiplier * (-courtyard_width / 2.0) < ymin)
+        {
                 ymin = multiplier * (-courtyard_width / 2.0);
+        }
         if (multiplier * (courtyard_width / 2.0) > ymax)
+        {
                 ymax = multiplier * (courtyard_width / 2.0);
+        }
         /* Write element header
          * Guess for a place where to put the refdes text */
         x_text = 0.0 ; /* already in mil/100 */
         y_text = (ymin - 10000.0); /* already in mil/100 */
         write_element_header (x_text, y_text);
         /* Write pin and/or pad entities */
-        for (i = 0; (i < number_of_columns); i++)
+        for (i = 0; (i < number_of_rows); i++)
         {
                 pin_number = 1 + i;
                 if (pin1_square && (pin_number == 1))
@@ -594,8 +614,8 @@ con_dip_write_footprint ()
                 (
                         pin_number, /* pin number */
                         pin_pad_name, /* pin name */
-                        multiplier * ((((-number_of_columns - 1) / 2.0) +1 + i) * pitch_x), /* x0-coordinate */
-                        multiplier * (pitch_y / 2.0), /* y0 coordinate */
+                        multiplier * (-pitch_x / 2.0), /* x0 coordinate */
+                        multiplier * ((((-number_of_rows - 1) / 2.0) +1 + i) * pitch_y), /* y0-coordinate */
                         multiplier * pad_diameter, /* width of the annulus ring (pad) */
                         multiplier * pad_clearance, /* clearance */
                         multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
@@ -612,10 +632,10 @@ con_dip_write_footprint ()
                         (
                                 pin_number, /* pad number = pin_number */
                                 pin_pad_name, /* pad name */
-                                multiplier * ((((-number_of_columns - 1) / 2.0) + 1 + i) * pitch_x), /* x0-coordinate */
-                                multiplier * (pitch_y + pad_length - pad_width) / 2.0, /* y0 coordinate */
-                                multiplier * ((((-number_of_columns - 1) / 2.0) + 1 + i) * pitch_x), /* x1-coordinate */
-                                multiplier * (pitch_y - pad_length + pad_width) / 2.0, /* y1 coordinate */
+                                multiplier * (-pitch_x - pad_width + pad_length) / 2.0, /* x0 coordinate */
+                                multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
+                                multiplier * (-pitch_x + pad_width - pad_length) / 2.0, /* x1 coordinate */
+                                multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y1-coordinate */
                                 multiplier * pad_length, /* width of the pad */
                                 multiplier * pad_clearance, /* clearance */
                                 multiplier * (pad_width + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
@@ -631,8 +651,8 @@ con_dip_write_footprint ()
                 (
                         pin_number, /* pin number */
                         pin_pad_name, /* pin name */
-                        multiplier * ((((-number_of_columns - 1) / 2.0) + 1 + i) * pitch_x), /* x0-coordinate */
-                        multiplier * (-pitch_y / 2.0), /* y0 coordinate */
+                        multiplier * (pitch_x / 2.0), /* x0 coordinate */
+                        multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
                         multiplier * pad_diameter, /* width of the annulus ring (pad) */
                         multiplier * pad_clearance, /* clearance */
                         multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
@@ -649,10 +669,10 @@ con_dip_write_footprint ()
                         (
                                 pin_number, /* pad number = pin_number*/
                                 pin_pad_name, /* pad name */
-                                multiplier * ((((-number_of_columns - 1) / 2.0) + 1 + i) * pitch_x), /* x0-coordinate */
-                                multiplier * (pitch_y - pad_length + pad_width) / 2.0, /* y0 coordinate */
-                                multiplier * ((((-number_of_columns - 1) / 2.0) + 1 + i) * pitch_x), /* x1-coordinate */
-                                multiplier * (pitch_y + pad_length - pad_width) / 2.0, /* y1 coordinate */
+                                multiplier * (pitch_x - pad_width + pad_length) / 2.0, /* x0 coordinate */
+                                multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
+                                multiplier * (pitch_x + pad_width - pad_length) / 2.0, /* x1 coordinate */
+                                multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y1-coordinate */
                                 multiplier * pad_length, /* width of the pad */
                                 multiplier * pad_clearance, /* clearance */
                                 multiplier * (pad_width + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
@@ -677,16 +697,6 @@ con_dip_write_footprint ()
         if (silkscreen_indicate_1)
         {
                 fprintf (fp, "# Write a pin 1 marker on the silkscreen\n");
-                write_element_arc
-                (
-                        xmin - (multiplier * (pad_solder_mask_clearance + pad_clearance)), /* xmin already in mil/100 */
-                        ymax + (multiplier * (pad_solder_mask_clearance + pad_clearance)), /* ymax already in mil/100 */
-                        multiplier * 0.5 * silkscreen_line_width,
-                        multiplier * 0.5 * silkscreen_line_width,
-                        0,
-                        360,
-                        multiplier * silkscreen_line_width
-                );
         }
         /* Write a courtyard on the silkscreen */
         if (courtyard)
