@@ -686,10 +686,10 @@ con_dip_write_footprint ()
                 fprintf (fp, "# Write a package body on the silkscreen\n");
                 write_rectangle
                 (
-                        multiplier * ((-package_body_length - silkscreen_line_width) / 2.0) ,
-                        multiplier * ((-package_body_width - silkscreen_line_width) / 2.0) ,
-                        multiplier * ((package_body_length + silkscreen_line_width) / 2.0) ,
-                        multiplier * ((package_body_width + silkscreen_line_width) / 2.0) ,
+                        multiplier * ((-package_body_length - silkscreen_line_width) / 2.0), /* xmin-coordinate */
+                        multiplier * ((-package_body_width - silkscreen_line_width) / 2.0), /* ymin-coordinate */
+                        multiplier * ((package_body_length + silkscreen_line_width) / 2.0), /* xmax-coordinate */
+                        multiplier * ((package_body_width + silkscreen_line_width) / 2.0), /* ymax-coordiante */
                         multiplier * silkscreen_line_width
                 );
         }
