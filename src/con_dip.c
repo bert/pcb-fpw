@@ -697,6 +697,22 @@ con_dip_write_footprint ()
         if (silkscreen_indicate_1)
         {
                 fprintf (fp, "# Write a pin 1 marker on the silkscreen\n");
+                write_element_line
+                (
+                        multiplier * (-package_body_length / 2.0), /* x0-coordinate */
+                        multiplier * ((((-number_of_rows - 1) / 2.0) + 1.5) * pitch_y), /* y0-coordinate */
+                        multiplier * (0), /* x1-coordinate */
+                        multiplier * ((((-number_of_rows - 1) / 2.0) + 1.5) * pitch_y), /* y1-coordinate */
+                        multiplier * (silkscreen_line_width)
+                );
+                write_element_line
+                (
+                        multiplier * (0), /* x0-coordinate */
+                        multiplier * ((((-number_of_rows - 1) / 2.0) + 1.5) * pitch_y), /* y0-coordinate */
+                        multiplier * (0), /* x1-coordinate */
+                        multiplier * ((((-number_of_rows - 1) / 2.0) + 0.5) * pitch_y), /* y1-coordinate */
+                        multiplier * (silkscreen_line_width)
+                );
         }
         /* Write a courtyard on the silkscreen */
         if (courtyard)
