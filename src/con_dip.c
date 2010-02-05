@@ -686,10 +686,10 @@ con_dip_write_footprint ()
                 fprintf (fp, "# Write a package body on the silkscreen\n");
                 write_rectangle
                 (
-                        multiplier * ((-package_body_length - silkscreen_line_width) / 2.0), /* xmin-coordinate */
-                        multiplier * ((-package_body_width - silkscreen_line_width) / 2.0), /* ymin-coordinate */
-                        multiplier * ((package_body_length + silkscreen_line_width) / 2.0), /* xmax-coordinate */
-                        multiplier * ((package_body_width + silkscreen_line_width) / 2.0), /* ymax-coordiante */
+                        multiplier * ((-package_body_length) / 2.0), /* xmin-coordinate */
+                        multiplier * ((-package_body_width) / 2.0), /* ymin-coordinate */
+                        multiplier * ((package_body_length) / 2.0), /* xmax-coordinate */
+                        multiplier * ((package_body_width) / 2.0), /* ymax-coordiante */
                         multiplier * silkscreen_line_width
                 );
         }
@@ -697,6 +697,7 @@ con_dip_write_footprint ()
         if (silkscreen_indicate_1)
         {
                 fprintf (fp, "# Write a pin 1 marker on the silkscreen\n");
+                /* Write a marker around pin #1 inside the package outline */
                 write_element_line
                 (
                         multiplier * (-package_body_length / 2.0), /* x0-coordinate */
@@ -713,6 +714,34 @@ con_dip_write_footprint ()
                         multiplier * ((((-number_of_rows - 1) / 2.0) + 0.5) * pitch_y), /* y1-coordinate */
                         multiplier * (silkscreen_line_width)
                 );
+                /* Write a triangle shaped marker between package outline and maximum used real estate */
+                if (xmax > ((multiplier * package_body_length) / 2))
+                {
+                        write_element_line
+                        (
+                                multiplier * (-package_body_length / 2.0), /* x0-coordinate */
+                                multiplier * (((-number_of_rows + 1) / 2.0) * pitch_y), /* y0-coordinate */
+                                xmin, /* x1-coordinate, already in mil/100 */
+                                multiplier * ((((-number_of_rows + 1) / 2.0) - 0.25) * pitch_y), /* y1-coordinate */
+                                multiplier * (silkscreen_line_width)
+                        );
+                        write_element_line
+                        (
+                                multiplier * (-package_body_length / 2.0), /* x0-coordinate */
+                                multiplier * (((-number_of_rows + 1) / 2.0) * pitch_y), /* y0-coordinate */
+                                xmin, /* x1-coordinate, already in mil/100 */
+                                multiplier * ((((-number_of_rows + 2) / 2.0) - 0.25) * pitch_y), /* y1-coordinate */
+                                multiplier * (silkscreen_line_width)
+                        );
+                        write_element_line
+                        (
+                                xmin, /* x0-coordinate, already in mil/100 */
+                                multiplier * ((((-number_of_rows + 1) / 2.0) - 0.25) * pitch_y), /* y0-coordinate */
+                                xmin, /* x1-coordinate, already in mil/100 */
+                                multiplier * ((((-number_of_rows + 2) / 2.0) - 0.25) * pitch_y), /* y1-coordinate */
+                                multiplier * (silkscreen_line_width)
+                        );
+                }
         }
         /* Write a courtyard on the silkscreen */
         if (courtyard)
