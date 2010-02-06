@@ -721,24 +721,24 @@ con_dip_write_footprint ()
                         (
                                 multiplier * (-package_body_length / 2.0), /* x0-coordinate */
                                 multiplier * (((-number_of_rows + 1) / 2.0) * pitch_y), /* y0-coordinate */
-                                xmin, /* x1-coordinate, already in mil/100 */
-                                multiplier * ((((-number_of_rows + 1) / 2.0) - 0.25) * pitch_y), /* y1-coordinate */
+                                (multiplier * (-package_body_length / 2.0)) - 2500 , /* x1-coordinate */
+                                (multiplier * (((-number_of_rows + 1) / 2.0) * pitch_y)) - 1250, /* y1-coordinate */
                                 multiplier * (silkscreen_line_width)
                         );
                         write_element_line
                         (
                                 multiplier * (-package_body_length / 2.0), /* x0-coordinate */
                                 multiplier * (((-number_of_rows + 1) / 2.0) * pitch_y), /* y0-coordinate */
-                                xmin, /* x1-coordinate, already in mil/100 */
-                                multiplier * ((((-number_of_rows + 2) / 2.0) - 0.25) * pitch_y), /* y1-coordinate */
+                                (multiplier * (-package_body_length / 2.0)) - 2500 , /* x1-coordinate */
+                                (multiplier * (((-number_of_rows + 1) / 2.0) * pitch_y)) + 1250, /* y1-coordinate */
                                 multiplier * (silkscreen_line_width)
                         );
                         write_element_line
                         (
-                                xmin, /* x0-coordinate, already in mil/100 */
-                                multiplier * ((((-number_of_rows + 1) / 2.0) - 0.25) * pitch_y), /* y0-coordinate */
-                                xmin, /* x1-coordinate, already in mil/100 */
-                                multiplier * ((((-number_of_rows + 2) / 2.0) - 0.25) * pitch_y), /* y1-coordinate */
+                                (multiplier * (-package_body_length / 2.0)) - 2500 , /* x0-coordinate */
+                                (multiplier * (((-number_of_rows + 1) / 2.0) * pitch_y)) - 1250, /* y0-coordinate */
+                                (multiplier * (-package_body_length / 2.0)) - 2500 , /* x1-coordinate */
+                                (multiplier * (((-number_of_rows + 1) / 2.0) * pitch_y)) + 1250, /* y1-coordinate */
                                 multiplier * (silkscreen_line_width)
                         );
                 }
