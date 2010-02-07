@@ -322,9 +322,9 @@ con_sil_create_element ()
 GList
 con_sil_create_packages_list ()
 {
-        GList *con_dip_packages_list = NULL;
-        con_dip_packages_list = g_list_append (con_dip_packages_list, "CON-SIL");
-        return (*con_dip_packages_list);
+        GList *con_sil_packages_list = NULL;
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL");
+        return (*con_sil_packages_list);
 }
 
 
@@ -919,14 +919,6 @@ con_sil_write_footprint ()
                         multiplier * ((((-number_of_rows - 1) / 2.0) + 1.5) * pitch_y), /* y0-coordinate */
                         multiplier * (0), /* x1-coordinate */
                         multiplier * ((((-number_of_rows - 1) / 2.0) + 1.5) * pitch_y), /* y1-coordinate */
-                        multiplier * (silkscreen_line_width)
-                );
-                write_element_line
-                (
-                        multiplier * (0), /* x0-coordinate */
-                        multiplier * ((((-number_of_rows - 1) / 2.0) + 1.5) * pitch_y), /* y0-coordinate */
-                        multiplier * (0), /* x1-coordinate */
-                        multiplier * ((((-number_of_rows - 1) / 2.0) + 0.5) * pitch_y), /* y1-coordinate */
                         multiplier * (silkscreen_line_width)
                 );
                 /* Write a triangle shaped marker between package outline and maximum used real estate */
