@@ -28,6 +28,7 @@
 #include "con_dil.c"
 #include "con_dip.c"
 #include "con_hdr.c"
+#include "con_sil.c"
 #include "diom.c"
 #include "diomelf.c"
 #include "dip.c"

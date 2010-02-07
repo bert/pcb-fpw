@@ -1149,6 +1149,9 @@ number_of_pins_has_changed (GtkWidget *widget)
                 case CON_HDR :
                         number_of_pins = number_of_rows * count_x;
                         break;
+                case CON_SIL :
+                        number_of_pins = number_of_rows;
+                        break;
                 case DIL :
                         number_of_pins = number_of_columns * number_of_rows;
                         break;
@@ -2967,6 +2970,12 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                         con_hdr_set_gui_constraints (GTK_WIDGET (combobox));
+                        break;
+                }
+                case CON_SIL:
+                {
+                        all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                        con_sil_set_gui_constraints (GTK_WIDGET (combobox));
                         break;
                 }
                 case DIL:

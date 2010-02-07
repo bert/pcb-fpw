@@ -475,6 +475,10 @@ get_package_type ()
         {
                 package_type = CON_HDR;
         }
+        else if (!strcmp (footprint_type, "CON_SIL"))
+        {
+                package_type = CON_SIL;
+        }
         else if (!strcmp (footprint_type, "DIL"))
         {
                 package_type = DIL;
@@ -2693,6 +2697,9 @@ write_footprint()
                         break;
                 case CON_HDR:
                         con_hdr_write_footprint ();
+                        break;
+                case CON_SIL:
+                        con_sil_write_footprint ();
                         break;
                 case DIL:
                         return;
