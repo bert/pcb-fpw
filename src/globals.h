@@ -51,6 +51,7 @@ typedef enum packages
         CON_DIL, /*!< Connector package dual inline package numbering scheme. */
         CON_DIP, /*!< Connector package with dual inline numbering scheme. */
         CON_HDR, /*!< Connector package with header numbering scheme. */
+        CON_SIL, /*! Single In Line connector package. */
         DIL, /*!< Dual inline package. */
         DIOM, /*!< Diode, molded package. */
         DIOMELF, /*!< Diode, MELF package. */
