@@ -217,7 +217,7 @@ con_sil_create_element ()
                         element,
                         (int) (multiplier * (-package_body_length / 2.0)), /* x0-coordinate */
                         (int) (multiplier * ((((-number_of_rows - 1) / 2.0) + 1.5) * pitch_y)), /* y0-coordinate */
-                        (int) (0), /* already in mil/100 */
+                        (int) (multiplier * (package_body_length / 2.0)), /* x1-coordinate */
                         (int) (multiplier * ((((-number_of_rows - 1) / 2.0) + 1.5) * pitch_y)), /* y1-coordinate */
                         (int) (multiplier * silkscreen_line_width)
                 );
@@ -917,7 +917,7 @@ con_sil_write_footprint ()
                 (
                         multiplier * (-package_body_length / 2.0), /* x0-coordinate */
                         multiplier * ((((-number_of_rows - 1) / 2.0) + 1.5) * pitch_y), /* y0-coordinate */
-                        multiplier * (0), /* x1-coordinate */
+                        multiplier * (package_body_length / 2.0), /* x1-coordinate */
                         multiplier * ((((-number_of_rows - 1) / 2.0) + 1.5) * pitch_y), /* y1-coordinate */
                         multiplier * (silkscreen_line_width)
                 );
