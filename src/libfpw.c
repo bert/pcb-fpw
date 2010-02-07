@@ -447,6 +447,10 @@ get_package_type ()
         {
                 package_type = BGA;
         }
+        else if (!strcmp (footprint_type, "CAPA"))
+        {
+                package_type = CAPA;
+        }
         else if (!strcmp (footprint_type, "CAPAE"))
         {
                 package_type = CAPAE;
