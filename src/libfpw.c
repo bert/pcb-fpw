@@ -563,6 +563,22 @@ get_package_type ()
         {
                 package_type = TO92;
         }
+        else if (!strcmp (footprint_type, "TO220"))
+        {
+                package_type = TO220;
+        }
+        else if (!strcmp (footprint_type, "TO220S"))
+        {
+                package_type = TO220S;
+        }
+        else if (!strcmp (footprint_type, "TO220SW"))
+        {
+                package_type = TO220SW;
+        }
+        else if (!strcmp (footprint_type, "TO220W"))
+        {
+                package_type = TO220W;
+        }
         else
         {
                 package_type = NO_PACKAGE;
