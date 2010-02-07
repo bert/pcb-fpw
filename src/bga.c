@@ -248,7 +248,7 @@ bga_create_element ()
                         pad_flag /* flags */
                 );
         }
-        /* Create a package body. */
+        /* Create a package body on the silkscreen. */
         if (silkscreen_package_outline)
         {
                 create_new_line
