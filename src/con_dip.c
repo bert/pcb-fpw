@@ -376,20 +376,14 @@ con_dip_create_packages_list ()
  *
  * <ul>
  * <li> check for total number of pins is even.
- * <li> check for number of rows is 2.
- * <li> check for number of columns is more than 1.
+ * <li> check for number of rows is more than 1.
+ * <li> check for number of columns is 2.
  * <li> check for allowed pad shapes.
  * <li> check for zero sized packages.
  * <li> check for a zero sized courtyard.
  * <li> check for minimum clearance between copper (X-direction).
  * <li> check for minimum clearance between copper (Y-direction).
- * <li> If any fiducials exist:
- *   <ul>
- *   <li> check for zero fiducial pad diameter.
- *   <li> check for zero width solder mask clearance.
- *   <li> check for minimum clearance between copper (between pads and
- *   fiducials, if any fiducials exist).
- *   </ul>
+ * <li> If no fiducials exist.
  * <li> check for clearance of the package length with regard to the
  * courtyard dimensions.
  * <li> check for clearance of the package width with regard to the
