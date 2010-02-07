@@ -715,7 +715,7 @@ con_dip_get_default_footprint_values
                 /*!< : a \c NULL terminated footprint name.*/
 )
 {
-        if (!strcmp (footprint_name, "?CON-DIP04300"))
+        if (!strcmp (footprint_name, "?CON-DIP04"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 4;
@@ -735,7 +735,7 @@ con_dip_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-DIP04300");
+                footprint_name = g_strdup ("CON-DIP04");
                 return (EXIT_SUCCESS);
         }
         else
