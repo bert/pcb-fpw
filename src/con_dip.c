@@ -738,7 +738,7 @@ con_dip_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 15;
+                pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON-DIP04300");
