@@ -756,7 +756,7 @@ sil_set_gui_constraints
 /*!
  * \brief Write a SIL pin through hole footprint.
  *
- * The pin/pad numbering scheme of the CON-DIP package is: \n
+ * The pin/pad numbering scheme of the SIL package is: \n
  * 1 \n
  * 2 \n
  * 3 \n
