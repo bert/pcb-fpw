@@ -534,15 +534,10 @@ get_package_type ()
         else if (!strcmp (footprint_type, "SIL"))
         {
                 package_type = SIL;
-                return (EXIT_FAILURE);
         }
         else if (!strcmp (footprint_type, "SIP"))
         {
                 package_type = SIP;
-                g_log ("", G_LOG_LEVEL_CRITICAL,
-                        _("footprint type %s not yet implemented."),
-                        footprint_type);
-                return (EXIT_FAILURE);
         }
         else if (!strcmp (footprint_type, "SO"))
         {
@@ -2779,7 +2774,8 @@ write_footprint()
                         sil_write_footprint ();
                         break;
                 case SIP:
-                        return;
+                        sip_drc ();
+                        sip_write_footprint ();
                         break;
                 case SO:
                         return;

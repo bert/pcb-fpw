@@ -41,6 +41,7 @@
 #include "resm.c"
 #include "resmelf.c"
 #include "sil.c"
+#include "sip.c"
 #include "smt.c"
 #include "sot.c"
 #include "to.c"

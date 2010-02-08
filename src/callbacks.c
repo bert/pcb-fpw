@@ -1201,7 +1201,7 @@ number_of_pins_has_changed (GtkWidget *widget)
                         number_of_pins = number_of_rows;
                         break;
                 case SIP :
-                        number_of_pins = count_x;
+                        number_of_pins = number_of_rows;
                         break;
                 case SO :
                         break;
@@ -3079,8 +3079,7 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                 case SIP:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        gchar *message = g_strdup_printf (_("ERROR: footprint type SIP is not yet implemented."));
-                        message_to_statusbar (GTK_WIDGET (combobox), message);
+                        sip_set_gui_constraints (GTK_WIDGET (combobox));
                         break;
                 }
                 case SO:
