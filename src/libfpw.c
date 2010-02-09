@@ -503,6 +503,10 @@ get_package_type ()
         {
                 package_type = INDC;
         }
+        else if (!strcmp (footprint_type, "INDP"))
+        {
+                package_type = INDP;
+        }
         else if (!strcmp (footprint_type, "PGA"))
         {
                 package_type = PGA;
@@ -2737,7 +2741,8 @@ write_footprint()
                         indm_write_footprint ();
                         break;
                 case INDP:
-                        smt_write_footprint ();
+                        indp_drc ();
+                        indp_write_footprint ();
                         break;
                 case PGA:
                         pga_drc ();
