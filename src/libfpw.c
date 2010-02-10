@@ -507,6 +507,10 @@ get_package_type ()
         {
                 package_type = INDP;
         }
+        else if (!strcmp (footprint_type, "INDM"))
+        {
+                package_type = INDM;
+        }
         else if (!strcmp (footprint_type, "PGA"))
         {
                 package_type = PGA;
