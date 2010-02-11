@@ -750,13 +750,13 @@ diom_set_gui_constraints
                 /*!< : the caller widget.*/
 )
 {
-        /* Widgets on tab 1 "Footprint" */
+        /* Widgets on tab "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (package_is_radial_checkbutton), FALSE);
         gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
 
-        /* Widgets on tab 2 "Pins/Pads" */
+        /* Widgets on tab "Pins/Pads" */
         GtkWidget *number_of_columns_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_columns_entry");
         gtk_entry_set_text (GTK_ENTRY (number_of_columns_entry), "2");
@@ -765,6 +765,10 @@ diom_set_gui_constraints
                 "number_of_rows_entry");
         gtk_entry_set_text (GTK_ENTRY (number_of_rows_entry), "1");
         gtk_widget_set_sensitive (number_of_rows_entry, FALSE);
+        GtkWidget *pitch_y_entry = lookup_widget (GTK_WIDGET (widget),
+                "pitch_y_entry");
+        gtk_entry_set_text (GTK_ENTRY (pitch_y_entry), "");
+        gtk_widget_set_sensitive (pitch_y_entry, FALSE);
         GtkWidget *count_x_entry = lookup_widget (GTK_WIDGET (widget),
                 "count_x_entry");
         gtk_entry_set_text (GTK_ENTRY (count_x_entry), "");
@@ -778,7 +782,7 @@ diom_set_gui_constraints
         gtk_combo_box_set_active (GTK_COMBO_BOX (number_1_position_entry), UPPER_LEFT);
         gtk_widget_set_sensitive (number_1_position_entry, FALSE);
 
-        /* Widgets on tab 5 "Heel & Toe goals" */
+        /* Widgets on tab "Heel & Toe goals" */
         gui_constraints_disable_heel_and_toe_goals_tab_widgets (widget);
         return (EXIT_SUCCESS);
 }
