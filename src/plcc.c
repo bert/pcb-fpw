@@ -887,13 +887,13 @@ plcc_set_gui_constraints
                 /*!< : the caller widget.*/
 )
 {
-        /* Widgets on tab 1 "Footprint" */
+        /* Widgets on tab "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (package_is_radial_checkbutton), FALSE);
         gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
 
-        /* Widgets on tab 2 "Pins/Pads" */
+        /* Widgets on tab "Pins/Pads" */
         GtkWidget *number_1_position_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_1_position_entry");
         gtk_combo_box_set_active (GTK_COMBO_BOX (number_1_position_entry), 4);
@@ -910,7 +910,7 @@ plcc_set_gui_constraints
                 "pad_shape_entry");
         gtk_combo_box_set_active (GTK_COMBO_BOX (pad_shape_entry), 2);
 
-        /* Widgets on tab 3 "Thermal Pad" */
+        /* Widgets on tab "Thermal Pad" */
         gui_constraints_disable_thermal_tab_widgets (widget);
         return (EXIT_SUCCESS);
 }
