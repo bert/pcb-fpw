@@ -111,13 +111,13 @@ con_hdr_set_gui_constraints
                 /*!< : the caller widget.*/
 )
 {
-        /* Widgets on tab 1 "Footprint" */
+        /* Widgets on tab "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),
                 "package_is_radial_checkbutton");
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (package_is_radial_checkbutton), FALSE);
         gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
 
-        /* Widgets on tab 2 "Pins/Pads" */
+        /* Widgets on tab "Pins/Pads" */
         GtkWidget *number_total_pins_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_total_pins_entry");
         gtk_widget_set_sensitive (number_total_pins_entry, FALSE);
@@ -142,10 +142,10 @@ con_hdr_set_gui_constraints
         gtk_combo_box_set_active (GTK_COMBO_BOX (number_1_position_entry), 1);
         gtk_widget_set_sensitive (number_1_position_entry, FALSE);
 
-        /* Widgets on tab 3 "Thermal Pad" */
+        /* Widgets on tab "Thermal Pad" */
         gui_constraints_disable_thermal_tab_widgets (widget);
 
-        /* Widgets on tab 5 "Heel & Toe goals" */
+        /* Widgets on tab "Heel & Toe goals" */
         gui_constraints_disable_heel_and_toe_goals_tab_widgets (widget);
         return (EXIT_SUCCESS);
 }
