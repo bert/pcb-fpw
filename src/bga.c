@@ -49,7 +49,7 @@ bga_create_element ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("could not create a valid element pointer for a %s package."),
+                                (_("[%s] could not create a valid element pointer for an element.")),
                                 footprint_type);
                 }
                 return (NULL);
@@ -353,7 +353,7 @@ bga_create_element ()
         if (verbose)
         {
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("created an element for a %s package: %s."),
+                        (_("[%s] created an element for element: %s.")),
                         footprint_type,
                         footprint_filename);
         }
@@ -511,7 +511,7 @@ bga_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("[%s] DRC Error: NO_SHAPE specified for check for allowed pad shapes."),
+                                        (_("[%s] DRC Error: NO_SHAPE specified for check for allowed pad shapes.")),
                                         footprint_type);
                         }
                         result = EXIT_FAILURE;
@@ -526,7 +526,7 @@ bga_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("[%s] DRC Error: square pad shape specified for check for allowed pad shapes."),
+                                        (_("[%s] DRC Error: square pad shape specified for check for allowed pad shapes.")),
                                         footprint_type);
                         }
                         result = EXIT_FAILURE;
@@ -537,7 +537,7 @@ bga_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("[%s] DRC Error: octagonal pad shape specified for check for allowed pad shapes."),
+                                        (_("[%s] DRC Error: octagonal pad shape specified for check for allowed pad shapes.")),
                                         footprint_type);
                         }
                         result = EXIT_FAILURE;
@@ -548,7 +548,7 @@ bga_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("[%s] DRC Error: round elongated pad shape specified for check for allowed pad shapes."),
+                                        (_("[%s] DRC Error: round elongated pad shape specified for check for allowed pad shapes.")),
                                         footprint_type);
                         }
                         result = EXIT_FAILURE;
@@ -559,7 +559,7 @@ bga_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("[%s] DRC Error: no valid pad shape type specified."),
+                                        (_("[%s] DRC Error: no valid pad shape type specified.")),
                                         footprint_type);
                         }
                         result = EXIT_FAILURE;
@@ -572,7 +572,7 @@ bga_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("[%s] DRC Error: specified package body length is too small."),
+                                (_("[%s] DRC Error: specified package body length is too small.")),
                                 footprint_type);
                 }
                 result = EXIT_FAILURE;
@@ -582,7 +582,7 @@ bga_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("[%s] DRC Error: specified package body width is too small."),
+                                (_("[%s] DRC Error: specified package body width is too small.")),
                                 footprint_type);
                 }
                 result = EXIT_FAILURE;
@@ -592,7 +592,7 @@ bga_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("[%s] DRC Error: specified package body height is too small."),
+                                (_("[%s] DRC Error: specified package body height is too small.")),
                                 footprint_type);
                 }
                 result = EXIT_FAILURE;
@@ -603,7 +603,7 @@ bga_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("[%s] DRC Error: specified courtyard length is too small."),
+                                (_("[%s] DRC Error: specified courtyard length is too small.")),
                                 footprint_type);
                 }
                 result = EXIT_FAILURE;
@@ -613,7 +613,7 @@ bga_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("[%s] DRC Error: specified courtyard width is too small."),
+                                (_("[%s] DRC Error: specified courtyard width is too small.")),
                                 footprint_type);
                 }
                 result = EXIT_FAILURE;
@@ -624,7 +624,7 @@ bga_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("[%s] DRC Error: minimum clearance between copper (X-direction) is too small."),
+                                (_("[%s] DRC Error: minimum clearance between copper (X-direction) is too small.")),
                                 footprint_type);
                 }
                 result = EXIT_FAILURE;
@@ -635,7 +635,7 @@ bga_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("[%s] DRC Error: minimum clearance between copper (Y-direction) is too small."),
+                                (_("[%s] DRC Error: minimum clearance between copper (Y-direction) is too small.")),
                                 footprint_type);
                 }
                 result = EXIT_FAILURE;
@@ -648,7 +648,7 @@ bga_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("[%s] DRC Error: zero width fiducial pad."),
+                                        (_("[%s] DRC Error: zero width fiducial pad.")),
                                         footprint_type);
                         }
                         result = EXIT_FAILURE;
@@ -659,7 +659,7 @@ bga_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("[%s] DRC Error: fiducial has zero width solder mask clearance."),
+                                        (_("[%s] DRC Error: fiducial has zero width solder mask clearance.")),
                                         footprint_type);
                         }
                         result = EXIT_FAILURE;
@@ -675,7 +675,7 @@ bga_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("[%s] DRC Error: specified distance between fiducial and nearest pad is to small."),
+                                        (_("[%s] DRC Error: specified distance between fiducial and nearest pad is to small.")),
                                         footprint_type);
                         }
                         result = EXIT_FAILURE;
@@ -689,7 +689,7 @@ bga_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("[%s] DRC Error: clearance of the package length with regard to the courtyard dimensions is too small."),
+                                (_("[%s] DRC Error: clearance of the package length with regard to the courtyard dimensions is too small.")),
                                 footprint_type);
                 }
                 result = EXIT_FAILURE;
@@ -701,7 +701,7 @@ bga_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("[%s] DRC Error: clearance of the package width with regard to the courtyard dimensions is too small."),
+                                (_("[%s] DRC Error: clearance of the package width with regard to the courtyard dimensions is too small.")),
                                 footprint_type);
                 }
                 result = EXIT_FAILURE;
@@ -717,7 +717,7 @@ bga_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("[%s] DRC Error: silkscreen line width is too small."),
+                                (_("[%s] DRC Error: silkscreen line width is too small.")),
                                 footprint_type);
                 }
                 result = EXIT_FAILURE;
@@ -729,7 +729,7 @@ bga_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("[%s] DRC Error: no units specified."),
+                                        (_("[%s] DRC Error: no units specified.")),
                                         footprint_type);
                         }
                         result = EXIT_FAILURE;
@@ -741,7 +741,7 @@ bga_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("[%s] DRC Error: silkscreen line width too wide."),
+                                        (_("[%s] DRC Error: silkscreen line width too wide.")),
                                         footprint_type);
                         }
                         result = EXIT_FAILURE;
@@ -753,7 +753,7 @@ bga_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("[%s] DRC Error: silkscreen line width too wide."),
+                                        (_("[%s] DRC Error: silkscreen line width too wide.")),
                                         footprint_type);
                         }
                         result = EXIT_FAILURE;
@@ -765,7 +765,7 @@ bga_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("[%s] DRC Error: silkscreen line width too wide."),
+                                        (_("[%s] DRC Error: silkscreen line width too wide.")),
                                         footprint_type);
                         }
                         result = EXIT_FAILURE;
@@ -776,7 +776,7 @@ bga_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("[%s] DRC Error: no valid units type specified."),
+                                        (_("[%s] DRC Error: no valid units type specified.")),
                                         footprint_type);
                         }
                         result = EXIT_FAILURE;
@@ -788,7 +788,7 @@ bga_drc ()
         if (verbose && (result == EXIT_SUCCESS))
         {
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("[%s] DRC Check: no errors while checking package %s."),
+                        (_("[%s] DRC Check: no errors while checking package %s.")),
                         footprint_type, footprint_name);
         }
         return (result);
@@ -958,7 +958,9 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA100C100P10X10_1100X1100X170: is also known as JEDEC MO-192AAC-1."));
+                        "BGA100C100P10X10_1100X1100X170: ",
+                         (_("is also known as")),
+                         " JEDEC MO-192AAC-1.");
                 footprint_name = g_strdup ("BGA100C100P10X10_1100X1100X170");
                 return (EXIT_SUCCESS);
         }
@@ -1081,7 +1083,9 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA100C50P10X10_600X600X110: is also known as JEDEC MO-195."));
+                        "BGA100C50P10X10_600X600X110: ",
+                        (_("is also known as")),
+                        " JEDEC MO-195.");
                 footprint_name = g_strdup ("BGA100C50P10X10_600X600X110");
                 return (EXIT_SUCCESS);
         }
@@ -1465,7 +1469,9 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA100C80P10X10_900X900X120A: is also known as JEDEC MO-216."));
+                        "BGA100C80P10X10_900X900X120A: ",
+                        (_("is also known as")),
+                        " JEDEC MO-216.");
                 footprint_name = g_strdup ("BGA100C80P10X10_900X900X120A");
                 return (EXIT_SUCCESS);
         }
@@ -1500,7 +1506,9 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA100C80P10X10_900X900X140: is also known as JEDEC MO-205AB."));
+                        "BGA100C80P10X10_900X900X140: ",
+                        (_("is also known as")),
+                        " JEDEC MO-205AB.");
                 footprint_name = g_strdup ("BGA100C80P10X10_900X900X140");
                 return (EXIT_SUCCESS);
         }
@@ -1568,7 +1576,9 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA100C80P10X10_900X900X160: is also known as JEDEC MS-205."));
+                        "BGA100C80P10X10_900X900X160: ",
+                        (_("is also known as")),
+                        " JEDEC MS-205.");
                 footprint_name = g_strdup ("BGA100C80P10X10_900X900X160");
                 return (EXIT_SUCCESS);
         }
@@ -1655,7 +1665,9 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA100C80P12X12_1000X1000X140: is also known as JEDEC MO-205AC."));
+                        "BGA100C80P12X12_1000X1000X140: ",
+                        (_("is also known as")),
+                        " JEDEC MO-205AC.");
                 footprint_name = g_strdup ("BGA100C80P12X12_1000X1000X140");
                 return (EXIT_SUCCESS);
         }
@@ -1695,7 +1707,9 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA1020C100P32X32_3300X3300X350: is also known as JEDEC MS-034AAP-1."));
+                        "BGA1020C100P32X32_3300X3300X350: ",
+                        (_("is also known as")),
+                        " JEDEC MS-034AAP-1.");
                 footprint_name = g_strdup ("BGA1020C100P32X32_3300X3300X350");
                 return (EXIT_SUCCESS);
         }
@@ -2135,7 +2149,9 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA105C65P11X11_800X800X140: is also known as JEDEC MO-225."));
+                        "BGA105C65P11X11_800X800X140: ",
+                        (_("is also known as")),
+                        " JEDEC MO-225.");
                 footprint_name = g_strdup ("BGA105C65P11X11_800X800X140");
                 return (EXIT_SUCCESS);
         }
@@ -2433,7 +2449,9 @@ bga_get_default_footprint_values
                 silkscreen_width = 13.00;
                 silkscreen_line_width = 0.20;
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA108C100P12X12_1300X1300X185: is also known as JEDEC MO-192AAD-1."));
+                        "BGA108C100P12X12_1300X1300X185: ",
+                        (_("is also known as")),
+                        " JEDEC MO-192AAD-1.");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA108C100P12X12_1300X1300X185");
                 return (EXIT_SUCCESS);
@@ -2477,7 +2495,9 @@ bga_get_default_footprint_values
                 silkscreen_width = 10.00;
                 silkscreen_line_width = 0.20;
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA108C80P12X12_1000X1000X140: is also known as JEDEC MO-205AC."));
+                        "BGA108C80P12X12_1000X1000X140: ",
+                        (_("is also known as")),
+                        " JEDEC MO-205AC.");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA108C80P12X12_1000X1000X140");
                 return (EXIT_SUCCESS);
@@ -2563,7 +2583,9 @@ bga_get_default_footprint_values
                 silkscreen_width = 10.00;
                 silkscreen_line_width = 0.20;
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA109C80P12X12_1000X1000X140: is also known as JEDEC MO-205AC."));
+                        "BGA109C80P12X12_1000X1000X140: ",
+                        (_("is also known as")),
+                        " JEDEC MO-205AC.");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA109C80P12X12_1000X1000X140");
                 return (EXIT_SUCCESS);
@@ -2641,7 +2663,9 @@ bga_get_default_footprint_values
                 silkscreen_width = 2.50;
                 silkscreen_line_width = 0.20;
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA10C50P3X4_220X250X60: is also known as JEDEC MO-211BD."));
+                        "BGA10C50P3X4_220X250X60: ",
+                        (_("is also known as")),
+                        " JEDEC MO-211BD.");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA10C50P3X4_220X250X60");
                 return (EXIT_SUCCESS);
@@ -2681,7 +2705,9 @@ bga_get_default_footprint_values
                 silkscreen_width = 2.50;
                 silkscreen_line_width = 0.20;
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA10C50P3X4_200X250X94: is also known as JEDEC MO-211BD."));
+                        "BGA10C50P3X4_200X250X94: ",
+                        (_("is also known as")),
+                        " JEDEC MO-211BD.");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA10C50P3X4_200X250X94");
                 return (EXIT_SUCCESS);
@@ -2721,7 +2747,9 @@ bga_get_default_footprint_values
                 silkscreen_width = 2.50;
                 silkscreen_line_width = 0.20;
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA10N50P3X4_200X250X94: is also known as JEDEC MO-211BC."));
+                        "BGA10N50P3X4_200X250X94: ",
+                        (_("is also known as")),
+                        " JEDEC MO-211BC.");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA10N50P3X4_200X250X94");
                 return (EXIT_SUCCESS);
@@ -2855,7 +2883,9 @@ bga_get_default_footprint_values
                 silkscreen_width = 7.00;
                 silkscreen_line_width = 0.20;
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA112C50P12X12_700X700X112: is also known as JEDEC MO-195."));
+                        "BGA112C50P12X12_700X700X112: ",
+                        (_("is also known as")),
+                        " JEDEC MO-195.");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA112C50P12X12_700X700X112");
                 return (EXIT_SUCCESS);
@@ -2936,7 +2966,9 @@ bga_get_default_footprint_values
                 silkscreen_width = 35.00;
                 silkscreen_line_width = 0.20;
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA1148C100P34X34_3500X3500X340: is also known as JEDEC MS-034AAR-1."));
+                        "BGA1148C100P34X34_3500X3500X340: ",
+                        (_("is also known as")),
+                        " JEDEC MS-034AAR-1.");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1148C100P34X34_3500X3500X340");
                 return (EXIT_SUCCESS);
@@ -3042,7 +3074,9 @@ bga_get_default_footprint_values
                 silkscreen_width = 35.00;
                 silkscreen_line_width = 0.20;
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA1152C100P34X34_3500X3500X244: is also known as JEDEC MS-034AAR-1."));
+                        "BGA1152C100P34X34_3500X3500X244: ",
+                        (_("is also known as")),
+                        " JEDEC MS-034AAR-1.");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1152C100P34X34_3500X3500X244");
                 return (EXIT_SUCCESS);
@@ -3120,7 +3154,9 @@ bga_get_default_footprint_values
                 silkscreen_width = 35.00;
                 silkscreen_line_width = 0.20;
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA1152C100P34X34_3500X3500X340: is also known as JEDEC MS-034AAR-1."));
+                        "BGA1152C100P34X34_3500X3500X340: ",
+                        (_("is also known as")),
+                        " JEDEC MS-034AAR-1.");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1152C100P34X34_3500X3500X340");
                 return (EXIT_SUCCESS);
@@ -3160,7 +3196,9 @@ bga_get_default_footprint_values
                 silkscreen_width = 35.00;
                 silkscreen_line_width = 0.20;
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA1152C100P34X34_3500X3500X350: is also known as JEDEC MS-034AAR-1."));
+                        "BGA1152C100P34X34_3500X3500X350: ",
+                        (_("is also known as")),
+                        " JEDEC MS-034AAR-1.");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1152C100P34X34_3500X3500X350");
                 return (EXIT_SUCCESS);
@@ -3195,7 +3233,9 @@ bga_get_default_footprint_values
                 silkscreen_width = 35.00;
                 silkscreen_line_width = 0.20;
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA1156C100P34X34_3500X3500X260: is also known as JEDEC MS-034AAR-1."));
+                        "BGA1156C100P34X34_3500X3500X260: ",
+                        (_("is also known as")),
+                        " JEDEC MS-034AAR-1.");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1156C100P34X34_3500X3500X260");
                 return (EXIT_SUCCESS);
@@ -3230,7 +3270,9 @@ bga_get_default_footprint_values
                 silkscreen_width = 35.00;
                 silkscreen_line_width = 0.20;
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA1156C100P34X34_3500X3500X311: is also known as JEDEC MS-034AAR-1."));
+                        "BGA1156C100P34X34_3500X3500X311: ",
+                        (_("is also known as")),
+                        " JEDEC MS-034AAR-1.");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1156C100P34X34_3500X3500X311");
                 return (EXIT_SUCCESS);
@@ -3473,7 +3515,9 @@ bga_get_default_footprint_values
                 silkscreen_width = 40.00;
                 silkscreen_line_width = 0.20;
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA1160C100P39X39_4000X4000X245: is also known as JEDEC MS-034."));
+                        "BGA1160C100P39X39_4000X4000X245: ",
+                        (_("is also known as")),
+                        " JEDEC MS-034.");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1160C100P39X39_4000X4000X245");
                 return (EXIT_SUCCESS);
@@ -3552,7 +3596,9 @@ bga_get_default_footprint_values
                 silkscreen_width = 40.00;
                 silkscreen_line_width = 0.20;
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA1172C100P39X39_4000X4000X310: is also known as JEDEC MS-034."));
+                        "BGA1172C100P39X39_4000X4000X310: ",
+                        (_("is also known as")),
+                        " JEDEC MS-034.");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1172C100P39X39_4000X4000X310");
                 return (EXIT_SUCCESS);
@@ -4012,7 +4058,9 @@ bga_get_default_footprint_values
                 silkscreen_width = 12.00;
                 silkscreen_line_width = 0.20;
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA121C100P11X11_1200X1200X185: is also known as JEDEC MO-192ABD-1."));
+                        "BGA121C100P11X11_1200X1200X185: ",
+                        (_("is also known as")),
+                        " JEDEC MO-192ABD-1.");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA121C100P11X11_1200X1200X185");
                 return (EXIT_SUCCESS);
@@ -4047,7 +4095,9 @@ bga_get_default_footprint_values
                 silkscreen_width = 12.00;
                 silkscreen_line_width = 0.20;
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA121C100P11X11_1200X1200X350: is also known as JEDEC MO-192ABD-1."));
+                        "BGA121C100P11X11_1200X1200X350: ",
+                        (_("is also known as")),
+                        " JEDEC MO-192ABD-1.");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA121C100P11X11_1200X1200X350");
                 return (EXIT_SUCCESS);
@@ -4271,7 +4321,9 @@ bga_get_default_footprint_values
                 silkscreen_width = 15.00;
                 silkscreen_line_width = 0.20;
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA124C100P14X14_1500X1500X170: is also known as JEDEC MO-192AAE-1."));
+                        "BGA124C100P14X14_1500X1500X170: ",
+                        (_("is also known as")),
+                        " JEDEC MO-192AAE-1.");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA124C100P14X14_1500X1500X170");
                 return (EXIT_SUCCESS);
@@ -4360,7 +4412,9 @@ bga_get_default_footprint_values
                 silkscreen_width = 9.00;
                 silkscreen_line_width = 0.20;
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("BGA124C65P12X12_900X900X140: is also known as JEDEC MO-225."));
+                        "BGA124C65P12X12_900X900X140: ",
+                        (_("is also known as")),
+                        " JEDEC MO-225.");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA124C65P12X12_900X900X140");
                 return (EXIT_SUCCESS);
@@ -4605,7 +4659,7 @@ bga_write_footprint ()
         if (!fp)
         {
                 g_log ("", G_LOG_LEVEL_WARNING,
-                        _("could not open file for %s footprint: %s."),
+                        (_("could not open file for %s footprint: %s.")),
                         footprint_type, footprint_filename);
                 fclose (fp);
                 return (EXIT_FAILURE);
@@ -4839,7 +4893,7 @@ bga_write_footprint ()
         if (verbose)
         {
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("wrote a footprint for a %s package: %s."),
+                        (_("[%s] wrote footprint: %s.")),
                         footprint_type,
                         footprint_filename);
         }
