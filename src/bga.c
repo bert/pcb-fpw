@@ -4546,8 +4546,8 @@ bga_get_default_footprint_values
         }
         else
         {
-                fprintf (stderr,
-                         _("WARNING: default values for footprint %s not found.\n"),
+                g_log ("", G_LOG_LEVEL_WARNING,
+                         _("default values for footprint %s not found.\n"),
                          footprint_name);
                 return (EXIT_FAILURE);
         }
