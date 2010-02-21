@@ -47,7 +47,7 @@ capc_create_element ()
         {
                 if (verbose)
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("could not create a valid element pointer for a %s package."),
+                                (_("[%s] could not create a valid element pointer for an element.")),
                                 footprint_type);
                 return (NULL);
         }
@@ -281,7 +281,7 @@ capc_create_element ()
         if (verbose)
         {
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("created an element for a %s package: %s."),
+                        (_("[%s] created an element for element: %s.")),
                         footprint_type,
                         footprint_filename);
         }
@@ -386,7 +386,8 @@ capc_drc ()
         if (verbose)
         {
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("DRC Check: checking %s package %s."), footprint_name, footprint_type);
+                        (_("[%s] DRC Check: checking package %s.")),
+                        footprint_type, footprint_name);
         }
         /* Check for number of pads = 2. */
         if (number_of_pins != 2)
@@ -394,7 +395,8 @@ capc_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for number of pins/pads <> 2."));
+                                (_("[%s] DRC Error: check for number of pins/pads <> 2.")),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -406,7 +408,8 @@ capc_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: NO_SHAPE specified for check for allowed pad shapes."));
+                                        (_("[%s] DRC Error: NO_SHAPE specified for check for allowed pad shapes.")),
+                                        footprint_type);
                         }
                         result = EXIT_FAILURE;
                         break;
@@ -416,7 +419,8 @@ capc_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: circular pad shape specified for check for allowed pad shapes."));
+                                        (_("[%s] DRC Error: circular pad shape specified for check for allowed pad shapes.")),
+                                        footprint_type);
                         }
                         result = EXIT_FAILURE;
                         break;
@@ -430,7 +434,8 @@ capc_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: octagonal pad shape specified for check for allowed pad shapes."));
+                                        (_("[%s] DRC Error: octagonal pad shape specified for check for allowed pad shapes.")),
+                                        footprint_type);
                         }
                         result = EXIT_FAILURE;
                         break;
@@ -444,7 +449,8 @@ capc_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: no valid pad shape type specified."));
+                                        (_("[%s] DRC Error: no valid pad shape type specified.")),
+                                        footprint_type);
                         }
                         result = EXIT_FAILURE;
                         break;
@@ -456,7 +462,8 @@ capc_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for package body length is <= 0.0."));
+                                (_("[%s] DRC Error: specified package body length is too small.")),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -465,7 +472,8 @@ capc_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for package body width is <= 0.0."));
+                                (_("[%s] DRC Error: specified package body width is too small.")),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -474,7 +482,8 @@ capc_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for package body height is <= 0.0."));
+                                (_("[%s] DRC Error: specified package body height is too small.")),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -484,7 +493,8 @@ capc_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for courtyard length is <= 0.0."));
+                                (_("[%s] DRC Error: specified courtyard length is too small.")),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -493,7 +503,8 @@ capc_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for courtyard width is <= 0.0."));
+                                (_("[%s] DRC Error: specified courtyard width is too small.")),
+                                footprint_type);
                 }
                 return (EXIT_FAILURE);
         }
@@ -503,7 +514,8 @@ capc_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for minimum clearance between copper (X-direction)."));
+                                (_("[%s] DRC Error: minimum clearance between copper (X-direction) is too small.")),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -513,7 +525,8 @@ capc_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for minimum clearance between copper (Y-direction)."));
+                                (_("[%s] DRC Error: minimum clearance between copper (Y-direction) is too small.")),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -523,7 +536,8 @@ capc_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for fiducials, package should not have fiducials."));
+                                (_("[%s] DRC Error: package should not have a fiducial pad.")),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -534,7 +548,8 @@ capc_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for clearance of the package length with regard to the courtyard dimensions."));
+                                (_("[%s] DRC Error: check for clearance of the package length with regard to the courtyard dimensions.")),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -545,7 +560,8 @@ capc_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for clearance of the package width with regard to the courtyard dimensions."));
+                                (_("DRC Error: check for clearance of the package width with regard to the courtyard dimensions.")),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -560,7 +576,8 @@ capc_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: line width 0.0 specified for check for a reasonable silk line width."));
+                                (_("[%s] DRC Error: silkscreen line width is too small.")),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -571,7 +588,8 @@ capc_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: no units specified for check for a reasonable silk line width."));
+                                        (_("[%s] DRC Error: no units specified.")),
+                                        footprint_type);
                         }
                         result = EXIT_FAILURE;
                         break;
@@ -582,7 +600,8 @@ capc_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: line width > 40.0 mil specified check for a reasonable silk line width."));
+                                        (_("[%s] DRC Error: silkscreen line width too wide.")),
+                                        footprint_type);
                         }
                         result = EXIT_FAILURE;
                         break;
@@ -593,7 +612,8 @@ capc_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: line width > 40.0 mil specified check for a reasonable silk line width."));
+                                        (_("[%s] DRC Error: silkscreen line width too wide.")),
+                                        footprint_type);
                         }
                         result = EXIT_FAILURE;
                         break;
@@ -604,7 +624,8 @@ capc_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: line width > 1.0 mm specified check for a reasonable silk line width."));
+                                        (_("[%s] DRC Error: silkscreen line width too wide.")),
+                                        footprint_type);
                         }
                         result = EXIT_FAILURE;
                         break;
@@ -614,7 +635,8 @@ capc_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: no valid units type specified for check for a reasonable silk line width."));
+                                        (_("[%s] DRC Error: no valid units type specified.")),
+                                        footprint_type);
                         }
                         result = EXIT_FAILURE;
                         break;
@@ -625,7 +647,8 @@ capc_drc ()
         if (verbose || (result == EXIT_SUCCESS))
         {
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("DRC Check: no errors while checking %s package %s."), footprint_name, footprint_type);
+                        (_("[%s] DRC Check: no errors while checking package %s.")),
+                        footprint_type, footprint_name);
         }
         return result;
 }
@@ -722,13 +745,15 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC0603X33N: is also known as EIA 0201, metric 0603."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC0603X33N: Pads are being trimmed."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC0603X33N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC0603X33N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s is also known as")), footprint_name,
+                        " EIA 0201, metric 0603.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: pads are being trimmed.")), footprint_name);
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC0816X61N"))
@@ -759,13 +784,15 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC0816X61N: is also known as EIA 0306, metric 0816."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC0816X61N: Pads are being trimmed."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC0816X61N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC0816X61N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s is also known as")), footprint_name,
+                        " EIA 0306, metric 0816.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: pads are being trimmed.")), footprint_name);
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC1005X55N"))
@@ -796,11 +823,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC1005X55N: is also known as EIA 0402, metric 1005."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC1005X55N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC1005X55N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0402, metric 1005.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC1005X56N"))
@@ -831,11 +860,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC1005X56N: is also known as EIA 0402, metric 1005."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC1005X56N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC1005X56N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0402, metric 1005.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC1005X60N"))
@@ -866,11 +897,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC1005X60N: is also known as EIA 0402, metric 1005."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC1005X60N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC1005X60N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0402, metric 1005.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC1220X107N"))
@@ -901,11 +934,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC1220X107N: is also known as EIA 0508, metric 1220."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC1220X107N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC1220X107N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0508, metric 1220.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC1320X76N"))
@@ -936,11 +971,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC1320X76N: is also known as EIA 0508, metric 1220."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC1320X76N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC1320X76N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0508, metric 1220.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC1508X65N"))
@@ -971,13 +1008,15 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC1508X65N: is also known as EIA 0603, metric 1608."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC1508X65N: Pads are being trimmed."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC1508X65N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC1508X65N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0603, metric 1608.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: pads are being trimmed.")), footprint_name);
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC1608X55N"))
@@ -1008,11 +1047,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC1608X55N: is also known as EIA 0603, metric 1608."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC1608X55N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC1608X55N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0603, metric 1608.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC1608X86N"))
@@ -1043,11 +1084,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC1608X86N: is also known as EIA 0603, metric 1608."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC1608X86N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC1608X86N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0603, metric 1608.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC1608X87N"))
@@ -1078,11 +1121,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC1608X87N: is also known as EIA 0603, metric 1608."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC1608X87N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC1608X87N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0603, metric 1608.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC1608X90N"))
@@ -1113,11 +1158,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC1608X90N: is also known as EIA 0603, metric 1608."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC1608X90N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC1608X90N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0603, metric 1608.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC1608X92N"))
@@ -1148,11 +1195,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC1608X92N: is also known as EIA 0603, metric 1608."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC1608X92N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC1608X92N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0603, metric 1608.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC1608X95N"))
@@ -1183,11 +1232,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC1608X95N: is also known as EIA 0603, metric 1608."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC1608X95N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC1608X95N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0603, metric 1608.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC1632X76N"))
@@ -1218,11 +1269,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC1632X76N: is also known as EIA 0612, metric 1632."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC1632X76N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC1632X76N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0612, metric 1632.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC1632X168N"))
@@ -1253,11 +1306,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC1632X168N: is also known as EIA 0612, metric 1632."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC1632X168N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC1632X168N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0612, metric 1632.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC2012X100N"))
@@ -1288,11 +1343,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC2012X100N: is also known as EIA 0805, metric 2012."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC2012X100N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC2012X100N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0805, metric 2012.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC2012X100AN"))
@@ -1323,11 +1380,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC2012X100AN: is also known as EIA 0805, metric 2012."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC2012X100AN: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC2012X100AN");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0805, metric 2012.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC2012X120N"))
@@ -1358,11 +1417,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC2012X120N: is also known as EIA 0805, metric 2012."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC2012X120N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC2012X120N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0805, metric 2012.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC2012X127N"))
@@ -1393,11 +1454,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC2012X127N: is also known as EIA 0805, metric 2012."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC2012X127N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC2012X127N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0805, metric 2012.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC2012X130N"))
@@ -1428,11 +1491,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC2012X130N: is also known as EIA 0805, metric 2012."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC2012X130N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC2012X130N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0805, metric 2012.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC2012X135N"))
@@ -1463,11 +1528,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC2012X135N: is also known as EIA 0805, metric 2012."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC2012X135N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC2012X135N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0805, metric 2012.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC2012X140N"))
@@ -1498,11 +1565,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC2012X140N: is also known as EIA 0805, metric 2012."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC2012X140N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC2012X140N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0805, metric 2012.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC2012X145N"))
@@ -1533,11 +1602,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC2012X145N: is also known as EIA 0805, metric 2012."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC2012X145N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC2012X145N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0805, metric 2012.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC2012X145AN"))
@@ -1568,11 +1639,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC2012X145AN: is also known as EIA 0805, metric 2012."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC2012X145AN: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC2012X145AN");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0805, metric 2012.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC2012X70N"))
@@ -1603,11 +1676,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC2012X70N: is also known as EIA 0805, metric 2012."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC2012X70N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC2012X70N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0805, metric 2012.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC2012X71N"))
@@ -1638,11 +1713,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC2012X71N: is also known as EIA 0805, metric 2012."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC2012X71N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC2012X71N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0805, metric 2012.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC2012X88N"))
@@ -1673,11 +1750,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC2012X88N: is also known as EIA 0805, metric 2012."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC2012X88N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC2012X88N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0805, metric 2012.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC2012X90N"))
@@ -1708,11 +1787,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC2012X90N: is also known as EIA 0805, metric 2012."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC2012X90N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC2012X90N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0805, metric 2012.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC2012X94N"))
@@ -1743,11 +1824,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC2012X94N: is also known as EIA 0805, metric 2012."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC2012X94N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC2012X94N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0805, metric 2012.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC2012X95N"))
@@ -1778,11 +1861,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC2012X95N: is also known as EIA 0805, metric 2012."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC2012X95N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC2012X95N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 0805, metric 2012.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC2013X140N"))
@@ -1813,11 +1898,13 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC2013X140N: is also known as 0805."));
-                g_log ("", G_LOG_LEVEL_WARNING,
-                        _("CAPC2013X140N: Footprint is too small for a package outline on the silkscreen."));
                 footprint_name = g_strdup ("CAPC2013X140N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " 0805.");
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                        footprint_name);
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC3215X168N"))
@@ -1848,9 +1935,10 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC3215X168N: is also known as EIA 1206, metric 3216."));
                 footprint_name = g_strdup ("CAPC3215X168N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 1206, metric 3216.");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC3216X105N"))
@@ -1881,9 +1969,10 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC3216X105N: is also known as EIA 1206, metric 3216."));
                 footprint_name = g_strdup ("CAPC3216X105N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 1206, metric 3216.");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC3216X125N"))
@@ -1914,9 +2003,10 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC3216X125N: is also known as EIA 1206, metric 3216."));
                 footprint_name = g_strdup ("CAPC3216X125N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 1206, metric 3216.");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC3216X127N"))
@@ -1947,9 +2037,10 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC3216X127N: is also known as EIA 1206, metric 3216."));
                 footprint_name = g_strdup ("CAPC3216X127N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 1206, metric 3216.");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC3216X130N"))
@@ -1980,9 +2071,10 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC3216X130N: is also known as EIA 1206, metric 3216."));
                 footprint_name = g_strdup ("CAPC3216X130N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 1206, metric 3216.");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC3216X130AN"))
@@ -2013,9 +2105,10 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC3216X130AN: is also known as 1206, metric 3216."));
                 footprint_name = g_strdup ("CAPC3216X130AN");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 1206, metric 3216.");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC3216X140N"))
@@ -2046,9 +2139,10 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC3216X140N: is also known as EIA 1206, metric 3216."));
                 footprint_name = g_strdup ("CAPC3216X140N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 1206, metric 3216.");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC3216X152N"))
@@ -2079,9 +2173,10 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC3216X152N: is also known as EIA 1206, metric 3216."));
                 footprint_name = g_strdup ("CAPC3216X152N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 1206, metric 3216.");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC3216X175N"))
@@ -2112,9 +2207,10 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC3216X175N: is also known as EIA 1206, metric 3216."));
                 footprint_name = g_strdup ("CAPC3216X175N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 1206, metric 3216.");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC3216X178N"))
@@ -2145,9 +2241,10 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC3216X178N: is also known as EIA 1206, metric 3216."));
                 footprint_name = g_strdup ("CAPC3216X178N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 1206, metric 3216.");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC3216X180N"))
@@ -2178,9 +2275,10 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC3216X180N: is also known as EIA 1206, metric 3216."));
                 footprint_name = g_strdup ("CAPC3216X180N");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 1206, metric 3216.");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CAPC3216X105L"))
@@ -2214,15 +2312,16 @@ capc_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
-                g_log ("", G_LOG_LEVEL_INFO,
-                        _("CAPC3216X105L: is also known as EIA 1206."));
                 footprint_name = g_strdup ("CAPC3216X105L");
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("%s: is also known as")), footprint_name,
+                        " EIA 1206.");
                 return (EXIT_SUCCESS);
         }
         else
         {
                 g_log ("", G_LOG_LEVEL_WARNING,
-                        _("default values for footprint %s not found.\n"),
+                        (_("default values for footprint %s not found.\n")),
                         footprint_name);
                 return (EXIT_FAILURE);
         }
@@ -2306,7 +2405,7 @@ capc_write_footprint ()
         if (!fp)
         {
                 g_log ("", G_LOG_LEVEL_WARNING,
-                        _("could not open file for %s footprint: %s."),
+                        (_("could not open file for %s footprint: %s.")),
                         footprint_type, footprint_filename);
                 fclose (fp);
                 return (EXIT_FAILURE);
@@ -2416,7 +2515,7 @@ capc_write_footprint ()
         /* Write a package body on the silkscreen */
         if (silkscreen_package_outline && package_body_width)
         {
-                fprintf (fp, "# Write a package body on the silkscreen\n");
+                fprintf (fp, (_("# Write a package body on the silkscreen\n")));
                 write_element_line
                 (
                         multiplier * (((-pitch_x + pad_length) / 2.0) + pad_solder_mask_clearance + silkscreen_line_width),
@@ -2442,7 +2541,7 @@ capc_write_footprint ()
         /* Write a courtyard on the silkscreen */
         if (courtyard)
         {
-                fprintf (fp, "# Write a courtyard on the silkscreen\n");
+                fprintf (fp, (_("# Write a courtyard on the silkscreen\n")));
                 write_rectangle
                 (
                         xmin, /* already in mil/100 */
@@ -2465,7 +2564,7 @@ capc_write_footprint ()
         if (verbose)
         {
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("wrote a footprint for a %s package: %s."),
+                        (_("wrote a footprint for a %s package: %s.")),
                         footprint_type,
                         footprint_filename);
         }
