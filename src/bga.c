@@ -4777,7 +4777,7 @@ bga_write_footprint ()
         /* Write fiducials if the package seem to have them. */
         if (fiducial)
         {
-                fprintf (fp, "# Write fiducials\n");
+                fprintf (fp, (_("# Write fiducials\n")));
                 pin_pad_name = g_strdup ("");
                 pin_pad_flags = g_strdup ("");
                 write_pad
@@ -4841,7 +4841,7 @@ bga_write_footprint ()
         /* Write a package body on the silkscreen */
         if (silkscreen_package_outline)
         {
-                fprintf (fp, "# Write a package body on the silkscreen\n");
+                fprintf (fp, (_("# Write a package body on the silkscreen\n")));
                 write_rectangle
                 (
                         multiplier * (-package_body_length / 2.0),
@@ -4854,7 +4854,7 @@ bga_write_footprint ()
         /* Write a pin #1 marker on the silkscreen */
         if (silkscreen_indicate_1)
         {
-                fprintf (fp, "# Write a pin 1 marker on the silkscreen\n");
+                fprintf (fp, (_("# Write a pin 1 marker on the silkscreen\n")));
                 for (dx = 0.0; dx < (pitch_x / 2.0); dx = dx + silkscreen_line_width)
                 {
                         write_element_line
@@ -4870,7 +4870,7 @@ bga_write_footprint ()
         /* Write a courtyard on the silkscreen */
         if (courtyard)
         {
-                fprintf (fp, "# Write a courtyard on the silkscreen\n");
+                fprintf (fp, (_("# Write a courtyard on the silkscreen\n")));
                 write_rectangle
                 (
                         xmin, /* already in mil/100 */
