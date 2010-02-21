@@ -560,7 +560,7 @@ capc_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                (_("DRC Error: check for clearance of the package width with regard to the courtyard dimensions.")),
+                                (_("[%s] DRC Error: check for clearance of the package width with regard to the courtyard dimensions.")),
                                 footprint_type);
                 }
                 result = EXIT_FAILURE;
