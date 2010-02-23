@@ -431,7 +431,8 @@ capm_drc ()
         if (verbose)
         {
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("DRC Check: checking %s package %s."), footprint_name, footprint_type);
+                        (_("[%s] DRC Check: checking package %s.")),
+                        footprint_type, footprint_name);
         }
         /* Check for number of pads = 2. */
         if (number_of_pins != 2)
@@ -439,7 +440,8 @@ capm_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for number of pins/pads <> 2."));
+                                (_("[%s] DRC Error: check for number of pins/pads <> 2.")),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -451,7 +453,8 @@ capm_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: NO_SHAPE specified for check for allowed pad shapes."));
+                                        (_("[%s] DRC Error: NO_SHAPE specified for check for allowed pad shapes.")),
+                                        footprint_type);
                         }
                         result = EXIT_FAILURE;
                         break;
@@ -461,7 +464,8 @@ capm_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: circular pad shape specified for check for allowed pad shapes."));
+                                        (_("[%s] DRC Error: circular pad shape specified for check for allowed pad shapes.")),
+                                        footprint_type);
                         }
                         result = EXIT_FAILURE;
                         break;
@@ -475,7 +479,8 @@ capm_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: octagonal pad shape specified for check for allowed pad shapes."));
+                                        (_("[%s] DRC Error: octagonal pad shape specified for check for allowed pad shapes.")),
+                                        footprint_type);
                         }
                         result = EXIT_FAILURE;
                         break;
@@ -489,7 +494,8 @@ capm_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: no valid pad shape type specified."));
+                                        (_("[%s] DRC Error: no valid pad shape type specified.")),
+                                        footprint_type);
                         }
                         result = EXIT_FAILURE;
                         break;
@@ -501,7 +507,8 @@ capm_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for package body length is <= 0.0."));
+                                (_("[%s] DRC Error: specified package body length is too small.")),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -510,7 +517,8 @@ capm_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for package body width is <= 0.0."));
+                                (_("[%s] DRC Error: specified package body width is too small.")),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -519,7 +527,8 @@ capm_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for package body height is <= 0.0."));
+                                (_("[%s] DRC Error: specified package body height is too small.")),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -529,7 +538,8 @@ capm_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for courtyard length is <= 0.0."));
+                                (_("[%s] DRC Error: specified courtyard length is too small.")),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -538,7 +548,8 @@ capm_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for courtyard width is <= 0.0."));
+                                (_("[%s] DRC Error: specified courtyard width is too small.")),
+                                footprint_type);
                 }
                 return (EXIT_FAILURE);
         }
@@ -548,7 +559,8 @@ capm_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for minimum clearance between copper (X-direction)."));
+                                (_("[%s] DRC Error: minimum clearance between copper (X-direction) is too small.")),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -558,7 +570,8 @@ capm_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for minimum clearance between copper (Y-direction)."));
+                                (_("[%s] DRC Error: minimum clearance between copper (Y-direction) is too small.")),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -568,7 +581,8 @@ capm_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for fiducials, package should not have fiducials."));
+                                (_("[%s] DRC Error: package should not have a fiducial pad.")),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -579,7 +593,8 @@ capm_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for clearance of the package length with regard to the courtyard dimensions."));
+                                (_("[%s] DRC Error: check for clearance of the package length with regard to the courtyard dimensions.")),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -590,7 +605,8 @@ capm_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for clearance of the package width with regard to the courtyard dimensions."));
+                                (_("[%s] DRC Error: check for clearance of the package width with regard to the courtyard dimensions.")),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -605,7 +621,8 @@ capm_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: line width 0.0 specified for check for a reasonable silk line width."));
+                                (_("[%s] DRC Error: silkscreen line width is too small.")),
+                                footprint_type);
                 }
                 result = EXIT_FAILURE;
         }
@@ -616,7 +633,8 @@ capm_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: no units specified for check for a reasonable silk line width."));
+                                        (_("[%s] DRC Error: no units specified.")),
+                                        footprint_type);
                         }
                         result = EXIT_FAILURE;
                         break;
@@ -627,7 +645,8 @@ capm_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: line width > 40.0 mil specified check for a reasonable silk line width."));
+                                        (_("[%s] DRC Error: silkscreen line width too wide.")),
+                                        footprint_type);
                         }
                         result = EXIT_FAILURE;
                         break;
@@ -638,7 +657,8 @@ capm_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: line width > 40.0 mil specified check for a reasonable silk line width."));
+                                        (_("[%s] DRC Error: silkscreen line width too wide.")),
+                                        footprint_type);
                         }
                         result = EXIT_FAILURE;
                         break;
@@ -649,7 +669,8 @@ capm_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: line width > 1.0 mm specified check for a reasonable silk line width."));
+                                        (_("[%s] DRC Error: silkscreen line width too wide.")),
+                                        footprint_type);
                         }
                         result = EXIT_FAILURE;
                         break;
@@ -659,7 +680,8 @@ capm_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: no valid units type specified for check for a reasonable silk line width."));
+                                        (_("[%s] DRC Error: no valid units type specified.")),
+                                        footprint_type);
                         }
                         result = EXIT_FAILURE;
                         break;
@@ -670,7 +692,8 @@ capm_drc ()
         if (verbose || (result == EXIT_SUCCESS))
         {
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("DRC Check: no errors while checking %s package %s."), footprint_name, footprint_type);
+                        (_("[%s] DRC Check: no errors while checking package %s.")),
+                        footprint_type, footprint_name);
         }
         return result;
 }
@@ -729,7 +752,7 @@ capm_get_default_footprint_values
         else
         {
                 g_log ("", G_LOG_LEVEL_WARNING,
-                        _("default values for footprint %s not found.\n"),
+                        (_("default values for footprint %s not found.\n")),
                         footprint_name);
                 return (EXIT_FAILURE);
         }
