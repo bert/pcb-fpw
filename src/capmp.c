@@ -48,7 +48,7 @@ capmp_create_element ()
         {
                 if (verbose)
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("could not create a valid element pointer for a %s package."),
+                                (_("[%s] could not create a valid element pointer for an element.")),
                                 footprint_type);
                 return (NULL);
         }
@@ -293,7 +293,6 @@ capmp_create_element ()
         /* Create a pin #1 marker. */
         if (silkscreen_indicate_1)
         {
-                fprintf (fp, "# Write a pin 1 marker on the silkscreen\n");
                 if (pad_width >= package_body_width)
                 {
                         create_new_line
@@ -370,7 +369,7 @@ capmp_create_element ()
         if (verbose)
         {
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("created an element for a %s package: %s."),
+                        (_("[%s] created an element for element: %s.")),
                         footprint_type,
                         footprint_filename);
         }
