@@ -811,7 +811,7 @@ capmp_write_footprint ()
         if (!fp)
         {
                 g_log ("", G_LOG_LEVEL_WARNING,
-                        _("could not open file for %s footprint: %s."),
+                        (_("could not open file for %s footprint: %s.")),
                         footprint_type, footprint_filename);
                 fclose (fp);
                 return (EXIT_FAILURE);
@@ -921,7 +921,7 @@ capmp_write_footprint ()
         /* Write a package body on the silkscreen */
         if (silkscreen_package_outline && package_body_width)
         {
-                fprintf (fp, "# Write a package body on the silkscreen\n");
+                fprintf (fp, (_("# Write a package body on the silkscreen\n")));
                 if (pad_width >= package_body_width)
                 {
                         write_element_line
@@ -998,7 +998,7 @@ capmp_write_footprint ()
         /* Write a pin #1 marker on the silkscreen */
         if (silkscreen_indicate_1)
         {
-                fprintf (fp, "# Write a pin 1 marker on the silkscreen\n");
+                fprintf (fp, (_("# Write a pin 1 marker on the silkscreen\n")));
                 if (pad_width >= package_body_width)
                 {
                         write_element_line
@@ -1027,7 +1027,7 @@ capmp_write_footprint ()
         /* Write a courtyard on the silkscreen */
         if (courtyard)
         {
-                fprintf (fp, "# Write a courtyard on the silkscreen\n");
+                fprintf (fp, (_("# Write a courtyard on the silkscreen\n")));
                 write_rectangle
                 (
                         xmin, /* already in mil/100 */
@@ -1050,7 +1050,7 @@ capmp_write_footprint ()
         if (verbose)
         {
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("wrote a footprint for a %s package: %s."),
+                        (_("wrote a footprint for a %s package: %s.")),
                         footprint_type,
                         footprint_filename);
         }
