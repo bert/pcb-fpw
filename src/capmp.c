@@ -453,7 +453,7 @@ capmp_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                (_("[%s] DRC Error: check for number of pins/pads <> 2.")),
+                                        (_("[%s] DRC Error: NO_SHAPE specified for check for allowed pad shapes.")),
                                 footprint_type);
                         }
                         result = EXIT_FAILURE;
