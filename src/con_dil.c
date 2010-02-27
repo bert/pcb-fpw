@@ -49,7 +49,7 @@ con_dil_create_element ()
         {
                 if (verbose)
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("could not create a valid element pointer for a %s package."),
+                                (_("[%s] could not create a valid element pointer for an element.")),
                                 footprint_type);
                 return (NULL);
         }
@@ -313,7 +313,7 @@ con_dil_create_element ()
         if (verbose)
         {
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("created an element for a %s package: %s."),
+                        (_("[%s] created an element for element: %s.")),
                         footprint_type,
                         footprint_filename);
         }
@@ -819,12 +819,9 @@ con_dil_write_footprint ()
         fp = fopen (footprint_filename, "w");
         if (!fp)
         {
-                if (verbose)
-                {
-                        g_log ("", G_LOG_LEVEL_WARNING,
-                                _("could not open file for %s footprint: %s."),
-                                footprint_type, footprint_filename);
-                }
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("could not open file for %s footprint: %s.")),
+                        footprint_type, footprint_filename);
                 fclose (fp);
                 return (EXIT_FAILURE);
         }
@@ -980,7 +977,7 @@ con_dil_write_footprint ()
         /* Write a package body on the silkscreen */
         if (silkscreen_package_outline)
         {
-                fprintf (fp, "# Write a package body on the silkscreen\n");
+                fprintf (fp, (_("# Write a package body on the silkscreen\n")));
                 write_rectangle
                 (
                         multiplier * ((-package_body_length - silkscreen_line_width) / 2.0) ,
@@ -993,7 +990,7 @@ con_dil_write_footprint ()
         /* Write a pin #1 marker on the silkscreen */
         if (silkscreen_indicate_1)
         {
-                fprintf (fp, "# Write a pin 1 marker on the silkscreen\n");
+                fprintf (fp, (_("# Write a pin 1 marker on the silkscreen\n")));
                 write_element_arc
                 (
                         xmin - (multiplier * (pad_solder_mask_clearance + pad_clearance)), /* xmin already in mil/100 */
@@ -1008,7 +1005,7 @@ con_dil_write_footprint ()
         /* Write a courtyard on the silkscreen */
         if (courtyard)
         {
-                fprintf (fp, "# Write a courtyard on the silkscreen\n");
+                fprintf (fp, (_("# Write a courtyard on the silkscreen\n")));
                 write_rectangle
                 (
                         xmin, /* already in mil/100 */
@@ -1031,7 +1028,7 @@ con_dil_write_footprint ()
         if (verbose)
         {
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("wrote a footprint for a %s package: %s."),
+                        (_("wrote a footprint for a %s package: %s.")),
                         footprint_type,
                         footprint_filename);
         }
