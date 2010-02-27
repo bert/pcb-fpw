@@ -751,7 +751,7 @@ capmp_get_default_footprint_values
         else
         {
                 g_log ("", G_LOG_LEVEL_WARNING,
-                        _("default values for footprint %s not found.\n"),
+                        (_("default values for footprint %s not found.\n")),
                         footprint_name);
                 return (EXIT_FAILURE);
         }
