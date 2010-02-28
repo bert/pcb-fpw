@@ -1,7 +1,8 @@
 /*!
  * \file capmp.c
  * \author Copyright 2007, 2008, 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
- * \brief Functions for CAPMP footprints.
+ * \brief Functions for CAPMP footprints
+ * (Surface Mount Technology Molded Polarized Capacitor).
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
