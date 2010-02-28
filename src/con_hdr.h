@@ -1,7 +1,8 @@
 /*!
  * \file con_hdr.h
  * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
- * \brief Header file for functions for CON-HDR (connector) footprints.
+ * \brief Header file for functions for CON-HDR footprints
+ * (Header Connector).
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
