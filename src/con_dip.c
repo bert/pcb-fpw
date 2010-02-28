@@ -1,7 +1,8 @@
 /*!
  * \file con_dip.c
  * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
- * \brief Functions for CON-DIP (connector) footprints.
+ * \brief Functions for CON-DIP footprints
+ * (Dual In line Connector with alternate pin order).
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
