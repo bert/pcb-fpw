@@ -1,7 +1,7 @@
 /*!
  * \file bga.h
  * \author Copyright 2207, 2008, 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
- * \brief Header file for functions for BGA footprints.
+ * \brief Header file for functions for BGA footprints (Ball Gate Array).
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
