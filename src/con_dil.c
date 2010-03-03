@@ -754,12 +754,12 @@ con_dil_set_gui_constraints
         /* Widgets on tab "Pins/Pads" */
         GtkWidget *number_of_columns_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_columns_entry");
-        gtk_entry_set_text (GTK_ENTRY (number_of_columns_entry), "");
-        gtk_widget_set_sensitive (number_of_columns_entry, TRUE);
+        gtk_entry_set_text (GTK_ENTRY (number_of_columns_entry), "2");
+        gtk_widget_set_sensitive (number_of_columns_entry, FALSE);
         GtkWidget *number_of_rows_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_rows_entry");
-        gtk_entry_set_text (GTK_ENTRY (number_of_rows_entry), "2");
-        gtk_widget_set_sensitive (number_of_rows_entry, FALSE);
+        gtk_entry_set_text (GTK_ENTRY (number_of_rows_entry), "");
+        gtk_widget_set_sensitive (number_of_rows_entry, TRUE);
         GtkWidget *count_x_entry = lookup_widget (GTK_WIDGET (widget),
                 "count_x_entry");
         gtk_entry_set_text (GTK_ENTRY (count_x_entry), "");
