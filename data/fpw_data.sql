@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 04, 2010 at 09:32 PM
+-- Generation Time: Mar 07, 2010 at 04:12 PM
 -- Server version: 5.1.36
 -- PHP Version: 5.3.0
 
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `fpw_data` (
   `remarks` text COLLATE utf8_bin NOT NULL,
   `warning` text COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`footprint_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=79 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=80 ;
 
 --
 -- Dumping data for table `fpw_data`
@@ -166,4 +166,5 @@ INSERT INTO `fpw_data` (`footprint_id`, `footprint_type`, `footprint_name`, `foo
 (75, 'BGA', 'BGA124C65P12X12_900X900X140', 'mm', 'EXPERIMENTAL', 9, 9, 1.4, 0, 124, 12, 12, 'UPPER_LEFT', 0.65, 0.65, 0, 0, 'D4,D5,D6,D7,D8,D9,E4,E9,F4,F9,G4,G9,H4,H9,J4,J5,J6,J7,J8,J9', 20, 0, 0.35, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 9, 9, 0.2, 1, 11, 11, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 'package is also known as JEDEC MO-225', ''),
 (76, 'BGA', 'BGA127C80P12X13_1050X1200X140', 'mm', 'EXPERIMENTAL', 10.5, 12, 1.4, 0, 127, 12, 13, 'UPPER_LEFT', 0.8, 0.8, 0, 0, 'C1,C12,D1,D5,D12,E1,E6,E7,E12,F1,F6,F7,F12,G1,G6,G7,G12,H1,H6,H7,H12,J1,J6,J7,J12,K1,K12,L1,L12', 29, 0, 0.4, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 10.5, 12, 0.2, 1, 12.5, 14, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, '', ''),
 (77, 'BGA', 'BGA1284C100P36X36_3750X3750X380', 'mm', 'EXPERIMENTAL', 37.5, 37.5, 3.8, 0, 1284, 36, 36, 'UPPER_LEFT', 1, 1, 0, 0, 'A1,A2,A35,A36,B1,B36,AR1,AR36,AT1,AT2,AT35,AT36', 12, 0, 0.5, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 37.5, 37.5, 0.2, 1, 41.5, 41.5, 0.05, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', ''),
-(78, 'BGA', 'BGA1284C100P36X36_3750X3750X400', 'mm', 'EXPERIMENTAL', 37.5, 37.5, 4, 0, 1284, 36, 36, 'UPPER_LEFT', 1, 1, 0, 0, 'A1,A2,A35,A36,B1,B36,AR1,AR36,AT1,AT2,AT35,AT36', 12, 0, 0.5, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 37.5, 37.5, 0.2, 1, 41.5, 41.5, 0.05, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '');
+(78, 'BGA', 'BGA1284C100P36X36_3750X3750X400', 'mm', 'EXPERIMENTAL', 37.5, 37.5, 4, 0, 1284, 36, 36, 'UPPER_LEFT', 1, 1, 0, 0, 'A1,A2,A35,A36,B1,B36,AR1,AR36,AT1,AT2,AT35,AT36', 12, 0, 0.5, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 37.5, 37.5, 0.2, 1, 41.5, 41.5, 0.05, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', ''),
+(79, 'BGA', 'BGA128C50P14X14_800X800X120', 'mm', 'EXPERIMENTAL', 8, 8, 1.2, 0, 128, 14, 14, 'UPPER_LEFT', 0.5, 0.5, 0, 0, 'C3,C12,D4,D5,D6,D7,D8,D9,D10,D11,E4,E5,E6,E7,E8,E9,E10,E11,F4,F5,F6,F7,F8,F9,F10,F11,G4,G5,G6,G7,G8,G9,G10,G11,H4,H5,H6,H7,H8,H9,H10,H11,J4,J5,J6,J7,J8,J9,J10,J11,K4,K5,K6,K7,K8,K9,K10,K11,L4,L5,L6,L7,L8,L9,L10,L11,M3,M12', 68, 0, 0.25, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 8, 8, 0.2, 1, 10, 10, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, '', '');
