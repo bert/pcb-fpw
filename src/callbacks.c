@@ -2733,6 +2733,12 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
                                         all_entries_need_updated (GTK_WIDGET (editable));
                                 return;
                         }
+                        case CON_SIL:
+                        {
+                                if (con_sil_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
+                                        all_entries_need_updated (GTK_WIDGET (editable));
+                                return;
+                        }
                         case DIOM:
                         {
                                 if (diom_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
