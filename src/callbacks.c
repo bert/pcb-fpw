@@ -2757,6 +2757,12 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
                                         all_entries_need_updated (GTK_WIDGET (editable));
                                 return;
                         }
+                        case INDP:
+                        {
+                                if (indp_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
+                                        all_entries_need_updated (GTK_WIDGET (editable));
+                                return;
+                        }
                         case PGA:
                         {
                                 if (pga_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
