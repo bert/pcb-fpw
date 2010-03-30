@@ -2006,18 +2006,33 @@ update_units_variables ()
         {
                 multiplier = 100.0;
                 units_type = MIL;
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                              _("footprint units_type set to MIL, multiplier set to 100.0"));
+                }
                 return (EXIT_SUCCESS);
         }
         if (!strcmp (footprint_units, "mil/100"))
         {
                 multiplier = 1.0;
                 units_type = MIL_100;
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                              _("footprint units_type set to MIL/100, multiplier set to 1.0"));
+                }
                 return (EXIT_SUCCESS);
         }
         if (!strcmp (footprint_units, "mm"))
         {
                 multiplier = (1000 / 25.4) * 100;
                 units_type = MM;
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                              _("footprint units_type set to MM, multiplier set to 3937.00..."));
+                }
                 return (EXIT_SUCCESS);
         }
         return (EXIT_FAILURE);
