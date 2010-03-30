@@ -25,3 +25,4 @@ stamp-h1
 *.dev
 *.layout
 .msg
+src/*.exe
