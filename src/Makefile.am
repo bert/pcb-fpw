@@ -9,7 +9,7 @@ bin_PROGRAMS = pcb-gfpw \
         fpw
 
 pcb_gfpw_SOURCES = \
-	main.c \
+	pcb-gfpw.c \
 	support.c support.h \
 	interface.c interface.h \
 	callbacks.c callbacks.h
