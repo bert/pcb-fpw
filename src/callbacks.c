@@ -1124,95 +1124,9 @@ message_to_statusbar (GtkWidget *widget, gchar *message)
 int
 number_of_pins_has_changed (GtkWidget *widget)
 {
-        /* Recalculate the total number of pins/pads depending on the package
+        /* Get the total number of pins/pads depending on the package
          * type */
-        switch (package_type)
-        {
-                case BGA :
-                        number_of_pins = (number_of_columns * number_of_rows) - number_of_exceptions;
-                        break;
-                case CAPC :
-                        number_of_pins = 2;
-                        break;
-                case CAPM :
-                        number_of_pins = 2;
-                        break;
-                case CAPMP :
-                        number_of_pins = 2;
-                        break;
-                case CON_DIL :
-                        number_of_pins = number_of_rows * count_x;
-                        break;
-                case CON_DIP :
-                        number_of_pins = number_of_columns * number_of_rows;
-                        break;
-                case CON_HDR :
-                        number_of_pins = number_of_rows * count_x;
-                        break;
-                case CON_SIL :
-                        number_of_pins = number_of_rows;
-                        break;
-                case DIL :
-                        number_of_pins = number_of_columns * number_of_rows;
-                        break;
-                case DIOM :
-                        number_of_pins = 2;
-                        break;
-                case DIOMELF :
-                        number_of_pins = 2;
-                        break;
-                case DIP :
-                        number_of_pins = number_of_columns * count_y;
-                        break;
-                case INDC :
-                        number_of_pins = 2;
-                        break;
-                case INDM :
-                        number_of_pins = 2;
-                        break;
-                case INDP :
-                        number_of_pins = 2;
-                        break;
-                case PGA :
-                        number_of_pins = (number_of_columns * number_of_rows) - number_of_exceptions;
-                        break;
-                case PLCC :
-                        number_of_pins = (number_of_columns * count_x +
-                                number_of_rows * count_y) + thermal;
-                        break;
-                case QFN :
-                        number_of_pins = (number_of_columns * count_x +
-                                number_of_rows * count_y) + thermal;
-                        break;
-                case QFP :
-                        number_of_pins = (number_of_columns * count_x +
-                                number_of_rows * count_y) + thermal;
-                        break;
-                case RESC :
-                        number_of_pins = 2;
-                        break;
-                case RESM :
-                        number_of_pins = 2;
-                        break;
-                case RESMELF :
-                        number_of_pins = 2;
-                        break;
-                case SIL :
-                        number_of_pins = number_of_rows;
-                        break;
-                case SIP :
-                        number_of_pins = number_of_rows;
-                        break;
-                case SO :
-                        break;
-                case SOT :
-                        break;
-                case TO92 :
-                        number_of_pins = 3;
-                        break;
-                default :
-                        break;
-        }
+        number_of_pins = get_total_number_of_pins ();
         /* Update the "total number of pins/pads" entry */
         GtkWidget *number_total_pins_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_total_pins_entry");

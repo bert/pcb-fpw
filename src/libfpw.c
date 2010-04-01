@@ -686,6 +686,112 @@ get_status_type ()
 
 
 /*!
+ * \brief Calculate the total number of pins value.
+ *
+ * Calculate the total number of pins/pads and include fiducials.\n
+ * For now assume that there are only two fiducials per package.\n 
+ * <b>Parameters:</b> none.\n
+ * \n
+ * <b>Returns:</b> \c number_of_pins total number of pins.
+ */
+int
+get_total_number_of_pins ()
+{
+        /* Calculate the total number of pins/pads depending on the package
+         * type */
+        switch (package_type)
+        {
+                case BGA :
+                        number_of_pins = (number_of_columns * number_of_rows) -
+                        number_of_exceptions + (fiducial * 2);
+                        break;
+                case CAPC :
+                        number_of_pins = 2;
+                        break;
+                case CAPM :
+                        number_of_pins = 2;
+                        break;
+                case CAPMP :
+                        number_of_pins = 2;
+                        break;
+                case CON_DIL :
+                        number_of_pins = number_of_rows * count_x;
+                        break;
+                case CON_DIP :
+                        number_of_pins = number_of_columns * number_of_rows;
+                        break;
+                case CON_HDR :
+                        number_of_pins = number_of_rows * count_x;
+                        break;
+                case CON_SIL :
+                        number_of_pins = number_of_rows;
+                        break;
+                case DIL :
+                        number_of_pins = number_of_columns * number_of_rows;
+                        break;
+                case DIOM :
+                        number_of_pins = 2;
+                        break;
+                case DIOMELF :
+                        number_of_pins = 2;
+                        break;
+                case DIP :
+                        number_of_pins = number_of_columns * count_y;
+                        break;
+                case INDC :
+                        number_of_pins = 2;
+                        break;
+                case INDM :
+                        number_of_pins = 2;
+                        break;
+                case INDP :
+                        number_of_pins = 2;
+                        break;
+                case PGA :
+                        number_of_pins = (number_of_columns * number_of_rows) - number_of_exceptions;
+                        break;
+                case PLCC :
+                        number_of_pins = (number_of_columns * count_x +
+                                number_of_rows * count_y) + thermal;
+                        break;
+                case QFN :
+                        number_of_pins = (number_of_columns * count_x +
+                                number_of_rows * count_y) + thermal;
+                        break;
+                case QFP :
+                        number_of_pins = (number_of_columns * count_x +
+                                number_of_rows * count_y) + thermal;
+                        break;
+                case RESC :
+                        number_of_pins = 2;
+                        break;
+                case RESM :
+                        number_of_pins = 2;
+                        break;
+                case RESMELF :
+                        number_of_pins = 2;
+                        break;
+                case SIL :
+                        number_of_pins = number_of_rows;
+                        break;
+                case SIP :
+                        number_of_pins = number_of_rows;
+                        break;
+                case SO :
+                        break;
+                case SOT :
+                        break;
+                case TO92 :
+                        number_of_pins = 3;
+                        break;
+                default :
+                        break;
+        }
+        return (number_of_pins);
+}
+
+
+/*!
  * \brief Read a footprintwizard file into the global variables.
  *
  * \return EXIT_SUCCESS if footprintwizard is completely read and parsed,
