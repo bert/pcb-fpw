@@ -87,8 +87,8 @@ gchar *fpw_filename;
 int
 print_version ()
 {
-        fprintf (stderr, (_("\nfpw version %s\n")), FPW_VERSION);
-        fprintf (stderr, (_("(C) 2007, 2008, 2009 by Bert Timmerman.\n")));
+        fprintf (stderr, (_("\nfpw version %s\n")), VERSION);
+        fprintf (stderr, (_("(C) 2007, 2008, 2009, 2010 by Bert Timmerman.\n")));
         fprintf (stderr, (_("This is free software; see the source for copying conditions.\n")));
         fprintf (stderr, (_("There is NO warranty; not even for MERCHANTABILITY\n")));
         fprintf (stderr, (_("or FITNESS FOR A PARTICULAR PURPOSE.\n\n")));
