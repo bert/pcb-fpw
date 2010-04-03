@@ -171,12 +171,12 @@ typedef enum pad_shapes
 #define MM_TO_MIL 39.37007874 /*!< Convert mm to mil. */
 
 
-gboolean verbose = TRUE;
-        /*!< Global for being verbose on logging of information and
-         * warning messages or not. */
-
+gboolean debug = FALSE;
+        /*!< Global for being verbose on debugging information. */
 gboolean silent = FALSE;
-        /*!< Global for suppressing the logging of critical messaged or not. */
+        /*!< Global for suppressing the logging of critical messages. */
+gboolean verbose = FALSE;
+        /*!< Global for being verbose on logging of information. */
 
 FILE *fp;
         /*!< Global file pointer for the footprint file. */

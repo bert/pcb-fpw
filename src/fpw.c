@@ -139,7 +139,6 @@ main
 {
         FILE *fp;
         gchar *suffix = ".fp";
-        int debug = 0;
 
         /* Determine how we are called today */
         program_name = argv[0];
