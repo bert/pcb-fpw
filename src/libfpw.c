@@ -38,6 +38,7 @@
 #include <math.h>
 
 #include "globals.h"
+#include "pcb_globals.h"
 
 
 AttributeTypePtr create_new_attribute (AttributeListTypePtr list, char *name, char *value);
