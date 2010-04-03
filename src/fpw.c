@@ -138,9 +138,6 @@ main
         char **argv /*!< : array of argument variables */
 )
 {
-        FILE *fp;
-        gchar *suffix = ".fp";
-
         /* Determine how we are called today */
         program_name = argv[0];
         static const struct option opts[] =
@@ -244,7 +241,7 @@ main
                 exit (EXIT_FAILURE);
         }
         /* If the footprint_filename contains a valid footprintname, use it. */
-        if (g_str_has_suffix (footprint_name, suffix))
+        if (g_str_has_suffix (footprint_name, fp_suffix))
         {
                 /* Footprintname has a .fp suffix, do nothing */
                 footprint_filename = g_strdup (footprint_name);
@@ -252,7 +249,7 @@ main
         else
         {
                 /* Footprintname has no .fp suffix, add a .fp suffix */
-                footprint_filename = g_strconcat (footprint_name, ".fp", NULL);
+                footprint_filename = g_strconcat (footprint_name, fp_suffix, NULL);
         }
         write_footprint ();
         if (verbose)
