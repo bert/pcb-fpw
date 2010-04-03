@@ -40,9 +40,7 @@
 #include <gtk/gtk.h>
 #include <stdlib.h>
 
-/*
- * Standard gettext macros.
- */
+/* Standard gettext macros. */
 #ifdef ENABLE_NLS
 #  include <libintl.h>
 #  undef _
@@ -68,6 +66,7 @@
 #endif
 
 #define GUI 0
+#define CLI 1
 
 
 #include "libfpw.c"
