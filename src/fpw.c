@@ -66,7 +66,9 @@
 #endif
 
 #define GUI 0
+/*!< Define whether this is a GTK User Interface (GUI) or not. */
 #define CLI 1
+/*!< Define whether this is a Command Line Interface (CLI) or not. */
 
 
 #include "libfpw.c"
