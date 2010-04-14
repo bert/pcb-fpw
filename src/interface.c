@@ -26,6 +26,9 @@
 #define GLADE_HOOKUP_OBJECT_NO_REF(component,widget,name) \
   g_object_set_data (G_OBJECT (component), name, widget)
 
+
+#include "gtk/about_dialog.c"
+
 GtkWidget*
 create_pcb_gfpw (void)
 {
