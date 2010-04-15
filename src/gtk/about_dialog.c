@@ -63,10 +63,10 @@ on_about_dialog_close                  (GtkDialog       *dialog,
  * <b>Returns:</b> none.
  */
 void
-on_about_dialog_destroy                (GtkObject       *object,
+on_about_dialog_destroy                (GtkDialog       *dialog,
                                         gpointer         user_data)
 {
-        GtkWidget *about_dialog = lookup_widget (GTK_WIDGET (object),
+        GtkWidget *about_dialog = lookup_widget (GTK_WIDGET (dialog),
                 "about_dialog");
         gtk_widget_destroy (about_dialog);
 }

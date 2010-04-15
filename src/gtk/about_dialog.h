@@ -25,7 +25,7 @@
 
 
 void on_about_dialog_close (GtkDialog *dialog, gpointer user_data);
-void on_about_dialog_destroy  (GtkObject *object, gpointer user_data);
+void on_about_dialog_destroy  (GtkDialog *dialog, gpointer user_data);
 GtkWidget* create_about_dialog (void);
 
 
