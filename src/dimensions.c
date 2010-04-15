@@ -123,7 +123,7 @@ dimensions_create_window
         g_free (dimensions_window_title);
         gtk_container_set_border_width (GTK_CONTAINER (dimensions_window), 10);
         /* Set the delete signal for the window */
-        gtk_signal_connect
+        g_signal_connect
         (
                 GTK_OBJECT (dimensions_window),
                 "delete_event",
