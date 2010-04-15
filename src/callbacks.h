@@ -60,12 +60,6 @@ void
 on_Z2_radiobutton_toggled (GtkToggleButton *togglebutton, gpointer user_data);
 
 void
-on_about_dialog_close (GtkDialog *dialog, gpointer user_data);
-
-void
-on_about_dialog_destroy  (GtkObject *object, gpointer user_data);
-
-void
 on_add_attribs_checkbutton_toggled (GtkToggleButton *togglebutton, gpointer user_data);
 
 void
