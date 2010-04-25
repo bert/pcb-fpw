@@ -109,7 +109,7 @@ create_about_dialog (void)
         g_signal_connect
         (
                 (gpointer) about_dialog,
-                "close",
+                "response",
                 G_CALLBACK (on_about_dialog_close),
                 NULL
         );
