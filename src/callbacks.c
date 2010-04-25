@@ -1393,6 +1393,7 @@ on_Z2_radiobutton_toggled              (GtkToggleButton *togglebutton,
  */
 void
 on_about_dialog_close                  (GtkDialog       *dialog,
+                                        gint             response_id,
                                         gpointer         user_data)
 {
         GtkWidget *about_dialog = lookup_widget (GTK_WIDGET (dialog),
@@ -4164,4 +4165,3 @@ on_thermal_width_entry_changed         (GtkEditable     *editable,
 }
 
 /* EOF */
-

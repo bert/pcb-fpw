@@ -32,7 +32,7 @@ the Free Software Foundation, Inc.,
   <property name="documenters"></property>
   <property name="translator_credits" translatable="yes" comments="TRANSLATORS: Replace this string with your names, one name per line.">Bert Timmerman (nl)</property>
   <property name="logo">splash_wiz.xpm</property>
-  <signal name="close" handler="on_about_dialog_close" last_modification_time="Sat, 13 Jun 2009 09:41:03 GMT"/>
+  <signal name="response" handler="on_about_dialog_close" last_modification_time="Sun, 25 Apr 2010 14:17:16 GMT"/>
   <signal name="destroy" handler="on_about_dialog_destroy" last_modification_time="Sat, 13 Jun 2009 09:41:17 GMT"/>
 </widget>
 

@@ -51,7 +51,7 @@ create_about_dialog (void)
   about_dialog_logo_pixbuf = create_pixbuf ("splash_wiz.xpm");
   gtk_about_dialog_set_logo (GTK_ABOUT_DIALOG (about_dialog), about_dialog_logo_pixbuf);
 
-  g_signal_connect ((gpointer) about_dialog, "close",
+  g_signal_connect ((gpointer) about_dialog, "response",
                     G_CALLBACK (on_about_dialog_close),
                     NULL);
   g_signal_connect ((gpointer) about_dialog, "destroy",
