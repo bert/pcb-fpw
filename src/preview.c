@@ -698,7 +698,7 @@ preview_create_window
         g_free (preview_window_title);
         gtk_container_set_border_width (GTK_CONTAINER (preview_window), 10);
         /* Set signals for the window */
-        gtk_signal_connect
+        g_signal_connect
         (
                 GTK_OBJECT (preview_window),
                 "delete_event",
@@ -712,14 +712,14 @@ preview_create_window
         GtkWidget *preview_drawing_area = gtk_drawing_area_new ();
         gtk_widget_set_size_request (preview_drawing_area, width, height);
         /* Set signals for the drawing area */
-        gtk_signal_connect
+        g_signal_connect
         (
                 GTK_OBJECT (preview_drawing_area),
                 "expose_event",
                 (GtkSignalFunc) preview_expose_event,
                 NULL
         );
-        gtk_signal_connect
+        g_signal_connect
         (
                 GTK_OBJECT (preview_drawing_area),
                 "configure_event",

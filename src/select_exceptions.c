@@ -262,7 +262,7 @@ select_exceptions_create_window
         g_free (window_title);
         gtk_container_set_border_width (GTK_CONTAINER (select_exceptions_window), 10);
         /* Set signals for the window */
-        gtk_signal_connect
+        g_signal_connect
         (
                 GTK_OBJECT (select_exceptions_window),
                 "delete_event",
