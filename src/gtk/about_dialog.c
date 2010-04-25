@@ -47,7 +47,8 @@ void
 on_about_dialog_close                  (GtkDialog       *dialog,
                                         gpointer         user_data)
 {
-        GtkWidget *about_dialog = lookup_widget (GTK_WIDGET (dialog),
+        GtkWidget *about_dialog;
+        about_dialog  = lookup_widget (GTK_WIDGET (dialog),
                 "about_dialog");
         gtk_widget_destroy (about_dialog);
 }
@@ -66,7 +67,8 @@ void
 on_about_dialog_destroy                (GtkDialog       *dialog,
                                         gpointer         user_data)
 {
-        GtkWidget *about_dialog = lookup_widget (GTK_WIDGET (dialog),
+        GtkWidget *about_dialog;
+        about_dialog  = lookup_widget (GTK_WIDGET (dialog),
                 "about_dialog");
         gtk_widget_destroy (about_dialog);
 }
