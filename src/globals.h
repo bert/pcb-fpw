@@ -178,6 +178,12 @@ gboolean silent = FALSE;
 gboolean verbose = FALSE;
         /*!< Global for being verbose on logging of information. */
 
+gchar *temp_dir = NULL;
+        /*!< Temporary directory. */
+gchar *work_dir = NULL;
+        /*!< Working directory. */
+
+
 FILE *fp;
         /*!< Global file pointer for the footprint file. */
 gchar *fpw_pathname = NULL;
