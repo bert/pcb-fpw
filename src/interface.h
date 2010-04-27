@@ -25,7 +25,6 @@
 
 
 GtkWidget* create_pcb_gfpw (void);
-GtkWidget* create_filechooser_dialog (void);
 
 
 #endif /* __INTERFACE_H_INCLUDED__ */

@@ -108,24 +108,6 @@ void
 on_fiducial_pad_solder_mask_clearance_entry_changed (GtkEditable *editable, gpointer user_data);
 
 void
-on_filechooser_dialog_cancel_button_clicked (GtkButton *button, gpointer user_data);
-
-void
-on_filechooser_dialog_close (GtkDialog *dialog, gpointer user_data);
-
-void
-on_filechooser_dialog_current_folder_changed (GtkFileChooser *filechooser, gpointer user_data);
-
-void
-on_filechooser_dialog_open_button_clicked (GtkButton *button, gpointer user_data);
-
-void
-on_filechooser_dialog_selection_changed (GtkFileChooser *filechooser, gpointer user_data);
-
-void
-on_filechooser_dialog_update_preview (GtkFileChooser *filechooser, gpointer user_data);
-
-void
 on_footprint_author_entry_changed (GtkEditable *editable, gpointer user_data);
 
 void

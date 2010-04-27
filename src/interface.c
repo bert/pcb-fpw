@@ -46,6 +46,7 @@
 
 
 #include "gtk/about_dialog.c"
+#include "gtk/filechooser.c"
 
 GtkWidget*
 create_pcb_gfpw (void)
@@ -2065,77 +2066,6 @@ create_pcb_gfpw (void)
   GLADE_HOOKUP_OBJECT_NO_REF (pcb_gfpw, tooltips, "tooltips");
 
   return pcb_gfpw;
-}
-
-GtkWidget*
-create_filechooser_dialog (void)
-{
-  GtkWidget *filechooser_dialog;
-  GdkPixbuf *filechooser_dialog_icon_pixbuf;
-  GtkWidget *filechooser_dialog_vbox;
-  GtkWidget *filechooser_dialog_action_area;
-  GtkWidget *filechooser_dialog_cancel_button;
-  GtkWidget *filechooser_dialog_open_button;
-
-  filechooser_dialog = gtk_file_chooser_dialog_new (_("pcb-gfpw: choose a .fpw file"), NULL, GTK_FILE_CHOOSER_ACTION_OPEN, NULL);
-  gtk_widget_set_name (filechooser_dialog, "filechooser_dialog");
-  filechooser_dialog_icon_pixbuf = create_pixbuf ("gFootprintWizard.xpm");
-  if (filechooser_dialog_icon_pixbuf)
-    {
-      gtk_window_set_icon (GTK_WINDOW (filechooser_dialog), filechooser_dialog_icon_pixbuf);
-      gdk_pixbuf_unref (filechooser_dialog_icon_pixbuf);
-    }
-  gtk_window_set_type_hint (GTK_WINDOW (filechooser_dialog), GDK_WINDOW_TYPE_HINT_DIALOG);
-
-  filechooser_dialog_vbox = GTK_DIALOG (filechooser_dialog)->vbox;
-  gtk_widget_set_name (filechooser_dialog_vbox, "filechooser_dialog_vbox");
-  gtk_widget_show (filechooser_dialog_vbox);
-
-  filechooser_dialog_action_area = GTK_DIALOG (filechooser_dialog)->action_area;
-  gtk_widget_set_name (filechooser_dialog_action_area, "filechooser_dialog_action_area");
-  gtk_widget_show (filechooser_dialog_action_area);
-  gtk_button_box_set_layout (GTK_BUTTON_BOX (filechooser_dialog_action_area), GTK_BUTTONBOX_END);
-
-  filechooser_dialog_cancel_button = gtk_button_new_from_stock ("gtk-cancel");
-  gtk_widget_set_name (filechooser_dialog_cancel_button, "filechooser_dialog_cancel_button");
-  gtk_widget_show (filechooser_dialog_cancel_button);
-  gtk_dialog_add_action_widget (GTK_DIALOG (filechooser_dialog), filechooser_dialog_cancel_button, GTK_RESPONSE_CANCEL);
-  GTK_WIDGET_SET_FLAGS (filechooser_dialog_cancel_button, GTK_CAN_DEFAULT);
-
-  filechooser_dialog_open_button = gtk_button_new_from_stock ("gtk-open");
-  gtk_widget_set_name (filechooser_dialog_open_button, "filechooser_dialog_open_button");
-  gtk_widget_show (filechooser_dialog_open_button);
-  gtk_dialog_add_action_widget (GTK_DIALOG (filechooser_dialog), filechooser_dialog_open_button, GTK_RESPONSE_OK);
-  GTK_WIDGET_SET_FLAGS (filechooser_dialog_open_button, GTK_CAN_DEFAULT);
-
-  g_signal_connect ((gpointer) filechooser_dialog, "selection_changed",
-                    G_CALLBACK (on_filechooser_dialog_selection_changed),
-                    NULL);
-  g_signal_connect ((gpointer) filechooser_dialog, "close",
-                    G_CALLBACK (on_filechooser_dialog_close),
-                    NULL);
-  g_signal_connect ((gpointer) filechooser_dialog, "current_folder_changed",
-                    G_CALLBACK (on_filechooser_dialog_current_folder_changed),
-                    NULL);
-  g_signal_connect ((gpointer) filechooser_dialog, "update_preview",
-                    G_CALLBACK (on_filechooser_dialog_update_preview),
-                    NULL);
-  g_signal_connect ((gpointer) filechooser_dialog_cancel_button, "clicked",
-                    G_CALLBACK (on_filechooser_dialog_cancel_button_clicked),
-                    NULL);
-  g_signal_connect ((gpointer) filechooser_dialog_open_button, "clicked",
-                    G_CALLBACK (on_filechooser_dialog_open_button_clicked),
-                    NULL);
-
-  /* Store pointers to all widgets, for use by lookup_widget(). */
-  GLADE_HOOKUP_OBJECT_NO_REF (filechooser_dialog, filechooser_dialog, "filechooser_dialog");
-  GLADE_HOOKUP_OBJECT_NO_REF (filechooser_dialog, filechooser_dialog_vbox, "filechooser_dialog_vbox");
-  GLADE_HOOKUP_OBJECT_NO_REF (filechooser_dialog, filechooser_dialog_action_area, "filechooser_dialog_action_area");
-  GLADE_HOOKUP_OBJECT (filechooser_dialog, filechooser_dialog_cancel_button, "filechooser_dialog_cancel_button");
-  GLADE_HOOKUP_OBJECT (filechooser_dialog, filechooser_dialog_open_button, "filechooser_dialog_open_button");
-
-  gtk_widget_grab_default (filechooser_dialog_open_button);
-  return filechooser_dialog;
 }
 
 
