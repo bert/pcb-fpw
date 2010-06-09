@@ -2446,6 +2446,7 @@ write_license
         fprintf (fp, "# version of the footprint, but you are not obligated to do so.\n");
         fprintf (fp, "# If you do not wish to do so, delete this exception statement from\n");
         fprintf (fp, "# your version.\n");
+        fprintf (fp, "#\n");
         return (EXIT_SUCCESS);
 }
 
