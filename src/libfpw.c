@@ -2159,6 +2159,11 @@ write_attributes ()
         fprintf (fp, "\tAttribute(\"use-license\" \"%s\")\n", footprint_use_license);
         fprintf (fp, "\tAttribute(\"status\" \"%s\")\n", footprint_status);
         fprintf (fp, "\tAttribute(\"attributes in footprint\" \"%d\")\n", (int) attributes_in_footprint);
+        fprintf (fp, "\tAttribute(\"footprint type\" \"%s\")\n", footprint_type);
+        fprintf (fp, "\tAttribute(\"footprint name\" \"%s\")\n", footprint_name);
+        fprintf (fp, "\tAttribute(\"footprint units\" \"%s\")\n", footprint_units);
+        fprintf (fp, "\tAttribute(\"footprint refdes\" \"%s\")\n", footprint_refdes);
+        fprintf (fp, "\tAttribute(\"footprint value\" \"%s\")\n", footprint_value);
         fprintf (fp, "\tAttribute(\"package body length\" \"%f\")\n", package_body_length);
         fprintf (fp, "\tAttribute(\"package body width\" \"%f\")\n", package_body_width);
         fprintf (fp, "\tAttribute(\"package height\" \"%f\")\n", package_body_height);
