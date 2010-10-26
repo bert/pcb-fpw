@@ -48,6 +48,7 @@ typedef enum packages
         CAPC, /*!< Capacitor, chip package. */
         CAPM, /*!< Capacitor, molded, non-polarized package. */
         CAPMP, /*!< Capacitor, molded, polarized package. */
+        CAPPR, /*!< Capacitor, through hole, polarized radial package. */
         CON_DIL, /*!< Connector package dual inline package numbering scheme. */
         CON_DIP, /*!< Connector package with dual inline numbering scheme. */
         CON_HDR, /*!< Connector package with header numbering scheme. */

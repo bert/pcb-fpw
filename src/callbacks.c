@@ -79,7 +79,7 @@ gchar *work_dir = NULL;
 int
 all_entries_need_updated (GtkWidget *widget)
 {
-	/* *Recalculate the number of pins and/or pads.*/
+        /* Recalculate the number of pins and/or pads. */
         number_of_pins_has_changed (widget);
         /* Widgets on tab "Footprint". */
         /* Only update the "footprint type" entry with a sensible value. */
@@ -2517,6 +2517,12 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
                                         all_entries_need_updated (GTK_WIDGET (editable));
                                 return;
                         }
+                        case CAPPR:
+                        {
+                                if (cappr_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
+                                        all_entries_need_updated (GTK_WIDGET (editable));
+                                return;
+                        }
                         case CON_DIL:
                         {
                                 if (con_dil_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
@@ -2790,6 +2796,12 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
                         capmp_set_gui_constraints (GTK_WIDGET (combobox));
+                        break;
+                }
+                case CAPPR:
+                {
+                        all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                        cappr_set_gui_constraints (GTK_WIDGET (combobox));
                         break;
                 }
                 case CON_DIL:
@@ -3596,7 +3608,7 @@ on_pin_pad_exceptions_button_clicked   (GtkButton       *button,
                         }
                 }
                 /* fill the selection button array with values based on
-	         * the current string obtained from the "pin/pad exceptions"
+                 * the current string obtained from the "pin/pad exceptions"
                  * entry */
                 selection_button_index = 0;
                 for (i = 0; (i < number_of_rows); i++)

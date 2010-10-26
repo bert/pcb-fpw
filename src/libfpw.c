@@ -2265,7 +2265,7 @@ write_element_header
         gdouble x_text,
                 /*!< : X-coordinate of the text insertion point.*/
         gdouble y_text
-		/*!< : Y-coordinate of the text insertion point.*/
+                /*!< : Y-coordinate of the text insertion point.*/
 )
 {
         /* Write header to file */
@@ -2834,6 +2834,10 @@ write_footprint()
                 case CAPMP:
                         capmp_drc ();
                         capmp_write_footprint ();
+                        break;
+                case CAPPR:
+                        cappr_drc ();
+                        cappr_write_footprint ();
                         break;
                 case CON_DIL:
                         con_dil_write_footprint ();
