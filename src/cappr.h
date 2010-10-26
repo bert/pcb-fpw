@@ -1,7 +1,8 @@
 /*!
- * \file packages.h
- * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
- * \brief Contains references to files describing known packages.
+ * \file cappr.h
+ * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \brief Header file for functions for CAPPR footprints
+ *  (Through Hole Polarized Radial Capacitors).
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,32 +21,22 @@
  */
 
 
-#include "bga.c"
-#include "capa.c"
-#include "capc.c"
-#include "capm.c"
-#include "capmp.c"
-#include "cappr.c"
-#include "con_dil.c"
-#include "con_dip.c"
-#include "con_hdr.c"
-#include "con_sil.c"
-#include "diom.c"
-#include "diomelf.c"
-#include "dip.c"
-#include "indc.c"
-#include "indm.c"
-#include "indp.c"
-#include "pga.c"
-#include "plcc.c"
-#include "res.c"
-#include "resc.c"
-#include "resm.c"
-#include "resmelf.c"
-#include "sil.c"
-#include "sip.c"
-#include "sot.c"
-#include "to.c"
+#ifndef __CAPPR_INCLUDED__
+#define __CAPPR_INCLUDED__
+
+
+ElementTypePtr cappr_create_element ();
+GList cappr_create_packages_list (GList *capa_packages_list);
+int cappr_drc ();
+int cappr_get_default_footprint_values (gchar *);
+#if GUI
+int cappr_set_gui_constraints (GtkWidget *);
+#endif /* GUI */
+int cappr_write_footprint ();
+void cappr_init ();
+
+
+#endif /* __CAPPR_INCLUDED__ */
 
 
 /* EOF */
