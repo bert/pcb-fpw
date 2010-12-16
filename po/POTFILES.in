@@ -1,16 +1,20 @@
 # List of source files containing translatable strings.
 
-src/main.c
+src/pcb-gfpw.c
 src/interface.c
 src/callbacks.c
 src/support.c
 src/fpw.c
 src/libfpw.c
+src/preview.c
+src/register_functions.c
+src/select_exceptions.c
 src/bga.c
 src/capa.c
 src/capc.c
 src/capm.c
 src/capmp.c
+src/cappr.c
 src/con_dil.c
 src/con_dip.c
 src/con_hdr.c
