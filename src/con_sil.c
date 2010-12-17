@@ -362,6 +362,7 @@ con_sil_create_packages_list ()
         con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-508P-6N");
         con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-508P-7N");
         con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-508P-8N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-508P-9N");
         con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-508P-10N");
         con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-508P-12N");
         con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-508P-24N");
@@ -735,6 +736,7 @@ con_sil_drc ()
  * CON-SIL-508P-6N,
  * CON-SIL-508P-7N,
  * CON-SIL-508P-8N,
+ * CON-SIL-508P-9N,
  * CON-SIL-508P-10N,
  * CON-SIL-508P-12N,
  * CON-SIL-508P-24N,
@@ -1529,6 +1531,29 @@ con_sil_get_default_footprint_values
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON-SIL-508P-8N");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?CON-SIL-508P-9N"))
+        {
+                footprint_units = g_strdup ("mil");
+                number_of_pins = 9;
+                package_body_width = 1800;
+                package_body_length = 110;
+                package_body_height = 200;
+                package_is_radial = FALSE;
+                number_of_columns = 1;
+                number_of_rows = number_of_pins;
+                pitch_x = 0;
+                pitch_y = 200;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 36;
+                pad_diameter = 76;
+                pad_clearance = 6;
+                pad_solder_mask_clearance = 6;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("CON-SIL-508P-9N");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CON-SIL-508P-10N"))
