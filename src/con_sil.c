@@ -1,7 +1,7 @@
 /*!
  * \file con_sil.c
  * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
- * \brief Functions for CON-SIL (connector) footprints.
+ * \brief Functions for CON_SIL (connector) footprints.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@
 
 
 /*!
- * \brief Create an Element for a CON-SIL package.
+ * \brief Create an Element for a CON_SIL package.
  *
  * \return the created \c element.
  */
@@ -311,7 +311,7 @@ con_sil_create_element ()
 
 
 /*!
- * \brief Create a list of CON-SIL packages with pre-defined values.
+ * \brief Create a list of CON_SIL packages with pre-defined values.
  *
  * The data in this list can be used in a combo box to select a
  * pre-defined package.
@@ -323,64 +323,64 @@ GList
 con_sil_create_packages_list ()
 {
         GList *con_sil_packages_list = NULL;
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-127P-2N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-127P-3N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-127P-4N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-127P-5N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-127P-6N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-127P-7N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-127P-8N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-127P-9N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-127P-10N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-127P-12N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-127P-20N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-254P-24N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-127P-31N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-127P-36N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-127P-40N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-127P-50N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-254P-2N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-254P-3N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-254P-4N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-254P-5N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-254P-6N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-254P-7N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-254P-8N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-254P-9N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-254P-10N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-254P-12N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-254P-20N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-254P-24N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-254P-31N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-254P-36N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-254P-40N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-254P-50N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-350P-2N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-350P-3N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-350P-4N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-350P-5N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-350P-6N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-350P-7N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-350P-8N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-350P-10N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-350P-12N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-508P-2N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-508P-3N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-508P-4N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-508P-5N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-508P-6N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-508P-7N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-508P-8N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-508P-9N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-508P-10N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-508P-12N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-508P-24N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-2N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-3N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-4N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-5N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-6N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-7N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-8N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-9N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-10N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-12N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-20N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-24N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-31N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-36N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-40N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-50N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-2N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-3N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-4N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-5N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-6N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-7N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-8N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-9N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-10N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-12N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-20N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-24N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-31N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-36N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-40N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-50N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-350P-2N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-350P-3N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-350P-4N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-350P-5N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-350P-6N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-350P-7N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-350P-8N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-350P-10N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-350P-12N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-508P-2N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-508P-3N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-508P-4N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-508P-5N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-508P-6N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-508P-7N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-508P-8N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-508P-9N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-508P-10N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-508P-12N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-508P-24N");
         return (*con_sil_packages_list);
 }
 
 
 /*!
- * \brief Do some Design Rule Checking for the CON-SIL package type.
+ * \brief Do some Design Rule Checking for the CON_SIL package type.
  *
  * <ul>
  * <li> check for total number of pins is even.
@@ -699,65 +699,65 @@ con_sil_drc ()
 
 
 /*!
- * \brief Look up default values for CON-SIL footprints.
+ * \brief Look up default values for CON_SIL footprints.
  *
  * Footprint values can be looked up by placing a question mark "?" in front
  * of the footprint name.\n
  * If the footprint name is recognised the values will be loaded and the
  * entries involved in the GUI will be updated accordingly.\n
  * Currently the following footprints are supported:\n
- * CON-SIL-127P-2N,
- * CON-SIL-127P-3N,
- * CON-SIL-127P-4N,
- * CON-SIL-127P-5N,
- * CON-SIL-127P-6N,
- * CON-SIL-127P-7N,
- * CON-SIL-127P-8N,
- * CON-SIL-127P-9N,
- * CON-SIL-127P-10N,
- * CON-SIL-127P-12N,
- * CON-SIL-127P-20N,
- * CON-SIL-127P-24N,
- * CON-SIL-127P-31N,
- * CON-SIL-127P-36N,
- * CON-SIL-127P-40N,
- * CON-SIL-127P-50N,
- * CON-SIL-254P-2N,
- * CON-SIL-254P-3N,
- * CON-SIL-254P-4N,
- * CON-SIL-254P-5N,
- * CON-SIL-254P-6N,
- * CON-SIL-254P-7N,
- * CON-SIL-254P-8N,
- * CON-SIL-254P-9N,
- * CON-SIL-254P-10N,
- * CON-SIL-254P-12N,
- * CON-SIL-254P-20N,
- * CON-SIL-254P-24N,
- * CON-SIL-254P-31N,
- * CON-SIL-254P-36N,
- * CON-SIL-254P-40N,
- * CON-SIL-254P-50N,
- * CON-SIL-350P-2N,
- * CON-SIL-350P-3N,
- * CON-SIL-350P-4N,
- * CON-SIL-350P-5N,
- * CON-SIL-350P-6N,
- * CON-SIL-350P-7N,
- * CON-SIL-350P-8N,
- * CON-SIL-350P-10N,
- * CON-SIL-350P-12N,
- * CON-SIL-508P-2N,
- * CON-SIL-508P-3N,
- * CON-SIL-508P-4N,
- * CON-SIL-508P-5N,
- * CON-SIL-508P-6N,
- * CON-SIL-508P-7N,
- * CON-SIL-508P-8N,
- * CON-SIL-508P-9N,
- * CON-SIL-508P-10N,
- * CON-SIL-508P-12N,
- * CON-SIL-508P-24N,
+ * CON_SIL-127P-2N,
+ * CON_SIL-127P-3N,
+ * CON_SIL-127P-4N,
+ * CON_SIL-127P-5N,
+ * CON_SIL-127P-6N,
+ * CON_SIL-127P-7N,
+ * CON_SIL-127P-8N,
+ * CON_SIL-127P-9N,
+ * CON_SIL-127P-10N,
+ * CON_SIL-127P-12N,
+ * CON_SIL-127P-20N,
+ * CON_SIL-127P-24N,
+ * CON_SIL-127P-31N,
+ * CON_SIL-127P-36N,
+ * CON_SIL-127P-40N,
+ * CON_SIL-127P-50N,
+ * CON_SIL-254P-2N,
+ * CON_SIL-254P-3N,
+ * CON_SIL-254P-4N,
+ * CON_SIL-254P-5N,
+ * CON_SIL-254P-6N,
+ * CON_SIL-254P-7N,
+ * CON_SIL-254P-8N,
+ * CON_SIL-254P-9N,
+ * CON_SIL-254P-10N,
+ * CON_SIL-254P-12N,
+ * CON_SIL-254P-20N,
+ * CON_SIL-254P-24N,
+ * CON_SIL-254P-31N,
+ * CON_SIL-254P-36N,
+ * CON_SIL-254P-40N,
+ * CON_SIL-254P-50N,
+ * CON_SIL-350P-2N,
+ * CON_SIL-350P-3N,
+ * CON_SIL-350P-4N,
+ * CON_SIL-350P-5N,
+ * CON_SIL-350P-6N,
+ * CON_SIL-350P-7N,
+ * CON_SIL-350P-8N,
+ * CON_SIL-350P-10N,
+ * CON_SIL-350P-12N,
+ * CON_SIL-508P-2N,
+ * CON_SIL-508P-3N,
+ * CON_SIL-508P-4N,
+ * CON_SIL-508P-5N,
+ * CON_SIL-508P-6N,
+ * CON_SIL-508P-7N,
+ * CON_SIL-508P-8N,
+ * CON_SIL-508P-9N,
+ * CON_SIL-508P-10N,
+ * CON_SIL-508P-12N,
+ * CON_SIL-508P-24N,
  *
  * \return \c EXIT_SUCCESS when default values for a footprint were
  * found, \c EXIT_FAILURE when the footprint name was not found.
@@ -769,7 +769,7 @@ con_sil_get_default_footprint_values
                 /*!< : a \c NULL terminated footprint name.*/
 )
 {
-        if (!strcmp (footprint_name, "?CON-SIL-127P-2N"))
+        if (!strcmp (footprint_name, "?CON_SIL-127P-2N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 2;
@@ -789,10 +789,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-127P-2N");
+                footprint_name = g_strdup ("CON_SIL-127P-2N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-127P-3N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-127P-3N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 3;
@@ -812,10 +812,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-127P-3N");
+                footprint_name = g_strdup ("CON_SIL-127P-3N");
                 return (EXIT_SUCCESS);
         }
-        if (!strcmp (footprint_name, "?CON-SIL-127P-4N"))
+        if (!strcmp (footprint_name, "?CON_SIL-127P-4N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 4;
@@ -835,10 +835,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-127P-4N");
+                footprint_name = g_strdup ("CON_SIL-127P-4N");
                 return (EXIT_SUCCESS);
         }
-        if (!strcmp (footprint_name, "?CON-SIL-127P-5N"))
+        if (!strcmp (footprint_name, "?CON_SIL-127P-5N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 5;
@@ -858,10 +858,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-127P-5N");
+                footprint_name = g_strdup ("CON_SIL-127P-5N");
                 return (EXIT_SUCCESS);
         }
-        if (!strcmp (footprint_name, "?CON-SIL-127P-6N"))
+        if (!strcmp (footprint_name, "?CON_SIL-127P-6N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 6;
@@ -881,10 +881,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-127P-6N");
+                footprint_name = g_strdup ("CON_SIL-127P-6N");
                 return (EXIT_SUCCESS);
         }
-        if (!strcmp (footprint_name, "?CON-SIL-127P-7N"))
+        if (!strcmp (footprint_name, "?CON_SIL-127P-7N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 7;
@@ -904,10 +904,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-127P-7N");
+                footprint_name = g_strdup ("CON_SIL-127P-7N");
                 return (EXIT_SUCCESS);
         }
-        if (!strcmp (footprint_name, "?CON-SIL-127P-8N"))
+        if (!strcmp (footprint_name, "?CON_SIL-127P-8N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 8;
@@ -927,10 +927,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-127P-8N");
+                footprint_name = g_strdup ("CON_SIL-127P-8N");
                 return (EXIT_SUCCESS);
         }
-        if (!strcmp (footprint_name, "?CON-SIL-127P-9N"))
+        if (!strcmp (footprint_name, "?CON_SIL-127P-9N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 9;
@@ -950,10 +950,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-127P-9N");
+                footprint_name = g_strdup ("CON_SIL-127P-9N");
                 return (EXIT_SUCCESS);
         }
-        if (!strcmp (footprint_name, "?CON-SIL-127P-10N"))
+        if (!strcmp (footprint_name, "?CON_SIL-127P-10N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 10;
@@ -973,10 +973,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-127P-10N");
+                footprint_name = g_strdup ("CON_SIL-127P-10N");
                 return (EXIT_SUCCESS);
         }
-        if (!strcmp (footprint_name, "?CON-SIL-127P-12N"))
+        if (!strcmp (footprint_name, "?CON_SIL-127P-12N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 12;
@@ -996,10 +996,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-127P-12N");
+                footprint_name = g_strdup ("CON_SIL-127P-12N");
                 return (EXIT_SUCCESS);
         }
-        if (!strcmp (footprint_name, "?CON-SIL-127P-20N"))
+        if (!strcmp (footprint_name, "?CON_SIL-127P-20N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 20;
@@ -1019,10 +1019,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-127P-20N");
+                footprint_name = g_strdup ("CON_SIL-127P-20N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-254P-2N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-254P-2N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 2;
@@ -1042,10 +1042,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-254P-2N");
+                footprint_name = g_strdup ("CON_SIL-254P-2N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-254P-3N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-254P-3N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 3;
@@ -1065,10 +1065,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-254P-3N");
+                footprint_name = g_strdup ("CON_SIL-254P-3N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-254P-4N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-254P-4N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 4;
@@ -1088,10 +1088,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-254P-4N");
+                footprint_name = g_strdup ("CON_SIL-254P-4N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-254P-5N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-254P-5N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 5;
@@ -1111,10 +1111,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-254P-5N");
+                footprint_name = g_strdup ("CON_SIL-254P-5N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-254P-6N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-254P-6N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 6;
@@ -1134,10 +1134,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-254P-6N");
+                footprint_name = g_strdup ("CON_SIL-254P-6N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-254P-7N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-254P-7N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 7;
@@ -1157,10 +1157,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-254P-7N");
+                footprint_name = g_strdup ("CON_SIL-254P-7N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-254P-8N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-254P-8N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 8;
@@ -1180,10 +1180,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-254P-8N");
+                footprint_name = g_strdup ("CON_SIL-254P-8N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-254P-9N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-254P-9N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 9;
@@ -1203,10 +1203,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-254P-9N");
+                footprint_name = g_strdup ("CON_SIL-254P-9N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-254P-10N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-254P-10N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 10;
@@ -1226,10 +1226,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-254P-10N");
+                footprint_name = g_strdup ("CON_SIL-254P-10N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-254P-12N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-254P-12N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 12;
@@ -1249,10 +1249,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-254P-12N");
+                footprint_name = g_strdup ("CON_SIL-254P-12N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-254P-20N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-254P-20N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 20;
@@ -1272,10 +1272,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-254P-20N");
+                footprint_name = g_strdup ("CON_SIL-254P-20N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-254P-24N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-254P-24N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 24;
@@ -1295,10 +1295,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-254P-24N");
+                footprint_name = g_strdup ("CON_SIL-254P-24N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-254P-31N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-254P-31N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 31;
@@ -1318,10 +1318,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-254P-31N");
+                footprint_name = g_strdup ("CON_SIL-254P-31N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-254P-36N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-254P-36N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 36;
@@ -1341,10 +1341,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-254P-36N");
+                footprint_name = g_strdup ("CON_SIL-254P-36N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-254P-40N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-254P-40N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 40;
@@ -1364,10 +1364,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-254P-40N");
+                footprint_name = g_strdup ("CON_SIL-254P-40N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-254P-50N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-254P-50N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 50;
@@ -1387,10 +1387,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-254P-50N");
+                footprint_name = g_strdup ("CON_SIL-254P-50N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-350P-2N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-350P-2N"))
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 2;
@@ -1410,10 +1410,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 0.20;
                 pad_solder_mask_clearance = 0.20;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-350P-2N");
+                footprint_name = g_strdup ("CON_SIL-350P-2N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-350P-3N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-350P-3N"))
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 3;
@@ -1433,10 +1433,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 0.20;
                 pad_solder_mask_clearance = 0.20;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-350P-3N");
+                footprint_name = g_strdup ("CON_SIL-350P-3N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-350P-4N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-350P-4N"))
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 4;
@@ -1456,10 +1456,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 0.20;
                 pad_solder_mask_clearance = 0.20;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-350P-4N");
+                footprint_name = g_strdup ("CON_SIL-350P-4N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-350P-5N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-350P-5N"))
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 5;
@@ -1479,10 +1479,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 0.20;
                 pad_solder_mask_clearance = 0.20;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-350P-5N");
+                footprint_name = g_strdup ("CON_SIL-350P-5N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-350P-6N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-350P-6N"))
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 6;
@@ -1502,10 +1502,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 0.20;
                 pad_solder_mask_clearance = 0.20;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-350P-6N");
+                footprint_name = g_strdup ("CON_SIL-350P-6N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-350P-7N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-350P-7N"))
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 7;
@@ -1525,10 +1525,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 0.20;
                 pad_solder_mask_clearance = 0.20;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-350P-7N");
+                footprint_name = g_strdup ("CON_SIL-350P-7N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-350P-8N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-350P-8N"))
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 8;
@@ -1548,10 +1548,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 0.20;
                 pad_solder_mask_clearance = 0.20;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-350P-8N");
+                footprint_name = g_strdup ("CON_SIL-350P-8N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-350P-10N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-350P-10N"))
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 10;
@@ -1571,10 +1571,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 0.20;
                 pad_solder_mask_clearance = 0.20;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-350P-10N");
+                footprint_name = g_strdup ("CON_SIL-350P-10N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-350P-12N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-350P-12N"))
         {
                 footprint_units = g_strdup ("mm");
                 number_of_pins = 12;
@@ -1594,10 +1594,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 0.20;
                 pad_solder_mask_clearance = 0.20;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-350P-12N");
+                footprint_name = g_strdup ("CON_SIL-350P-12N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-508P-2N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-508P-2N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 2;
@@ -1617,10 +1617,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-508P-2N");
+                footprint_name = g_strdup ("CON_SIL-508P-2N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-508P-3N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-508P-3N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 3;
@@ -1640,10 +1640,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-508P-3N");
+                footprint_name = g_strdup ("CON_SIL-508P-3N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-508P-4N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-508P-4N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 4;
@@ -1663,10 +1663,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-508P-4N");
+                footprint_name = g_strdup ("CON_SIL-508P-4N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-508P-5N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-508P-5N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 5;
@@ -1686,10 +1686,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-508P-5N");
+                footprint_name = g_strdup ("CON_SIL-508P-5N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-508P-6N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-508P-6N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 6;
@@ -1709,10 +1709,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-508P-6N");
+                footprint_name = g_strdup ("CON_SIL-508P-6N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-508P-7N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-508P-7N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 7;
@@ -1732,10 +1732,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-508P-7N");
+                footprint_name = g_strdup ("CON_SIL-508P-7N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-508P-8N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-508P-8N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 8;
@@ -1755,10 +1755,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-508P-8N");
+                footprint_name = g_strdup ("CON_SIL-508P-8N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-508P-9N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-508P-9N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 9;
@@ -1778,10 +1778,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-508P-9N");
+                footprint_name = g_strdup ("CON_SIL-508P-9N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-508P-10N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-508P-10N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 10;
@@ -1801,10 +1801,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-508P-10N");
+                footprint_name = g_strdup ("CON_SIL-508P-10N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-508P-12N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-508P-12N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 12;
@@ -1824,10 +1824,10 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-508P-12N");
+                footprint_name = g_strdup ("CON_SIL-508P-12N");
                 return (EXIT_SUCCESS);
         }
-        else if (!strcmp (footprint_name, "?CON-SIL-508P-24N"))
+        else if (!strcmp (footprint_name, "?CON_SIL-508P-24N"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 24;
@@ -1847,7 +1847,7 @@ con_sil_get_default_footprint_values
                 pad_clearance = 6;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-SIL-508P-24N");
+                footprint_name = g_strdup ("CON_SIL-508P-24N");
                 return (EXIT_SUCCESS);
         }
         else
@@ -1862,7 +1862,7 @@ con_sil_get_default_footprint_values
 
 
 /*!
- * \brief Set GUI constraints for the CON-SIL package type.
+ * \brief Set GUI constraints for the CON_SIL package type.
  *
  * This function is only to be compiled for GUI targets.
  *
@@ -1915,7 +1915,7 @@ con_sil_set_gui_constraints
 
 
 /*!
- * \brief Write a CON-SIL pin through hole footprint.
+ * \brief Write a CON_SIL pin through hole footprint.
  *
  * The pin/pad numbering scheme of the CON-DIP package is: \n
  * 1 \n
@@ -2145,7 +2145,7 @@ con_sil_write_footprint ()
 
 
 /*!
- * \brief A list containing all CON-SIL related functions.
+ * \brief A list containing all CON_SIL related functions.
  */
 static fpw_function_t
 con_sil_function_list[] =
@@ -2154,7 +2154,7 @@ con_sil_function_list[] =
         {
                 "Set GUI constraints",
                 con_sil_set_gui_constraints,
-                "Set GUI constraints for a CON-SIL package",
+                "Set GUI constraints for a CON_SIL package",
                 NULL
         },
 #endif /* GUI */
@@ -2165,34 +2165,34 @@ con_sil_function_list[] =
                 NULL
         },
         {
-                "DRC CON-SIL Element",
+                "DRC CON_SIL Element",
                 con_sil_drc,
-                "Design Rule Check for a CON-SIL package",
+                "Design Rule Check for a CON_SIL package",
                 NULL
         },
         {
                 "Default Element Values",
                 con_sil_get_default_footprint_values,
-                "Get default values for a selected CON-SIL package",
+                "Get default values for a selected CON_SIL package",
                 NULL
         },
         {
                 "Write footprint",
                 con_sil_write_footprint,
-                "Write footprint for a selected CON-SIL package",
+                "Write footprint for a selected CON_SIL package",
                 NULL
         }
 };
 
 
 /*!
- * \brief A list containing all CON-SIL related functions.
+ * \brief A list containing all CON_SIL related functions.
  */
 REGISTER_FUNCTIONS (con_sil_function_list)
 
 
 /*!
- * \brief Initialise by registering all CON-SIL related functions.
+ * \brief Initialise by registering all CON_SIL related functions.
  */
 void
 con_sil_init ()
