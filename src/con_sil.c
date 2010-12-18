@@ -355,6 +355,15 @@ con_sil_create_packages_list ()
         con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-254P-36N");
         con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-254P-40N");
         con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-254P-50N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-350P-2N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-350P-3N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-350P-4N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-350P-5N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-350P-6N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-350P-7N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-350P-8N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-350P-10N");
+        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-350P-12N");
         con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-508P-2N");
         con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-508P-3N");
         con_sil_packages_list = g_list_append (con_sil_packages_list, "CON-SIL-508P-4N");
@@ -729,6 +738,15 @@ con_sil_drc ()
  * CON-SIL-254P-36N,
  * CON-SIL-254P-40N,
  * CON-SIL-254P-50N,
+ * CON-SIL-350P-2N,
+ * CON-SIL-350P-3N,
+ * CON-SIL-350P-4N,
+ * CON-SIL-350P-5N,
+ * CON-SIL-350P-6N,
+ * CON-SIL-350P-7N,
+ * CON-SIL-350P-8N,
+ * CON-SIL-350P-10N,
+ * CON-SIL-350P-12N,
  * CON-SIL-508P-2N,
  * CON-SIL-508P-3N,
  * CON-SIL-508P-4N,
@@ -1370,6 +1388,213 @@ con_sil_get_default_footprint_values
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON-SIL-254P-50N");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?CON-SIL-350P-2N"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 2;
+                package_body_width = 3.50;
+                package_body_length = 2.70;
+                package_body_height = 1.60;
+                package_is_radial = FALSE;
+                number_of_columns = 1;
+                number_of_rows = number_of_pins;
+                pitch_x = 0;
+                pitch_y = 3.50;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 1.30;
+                pad_diameter = 1.80;
+                pad_clearance = 0.20;
+                pad_solder_mask_clearance = 0.20;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("CON-SIL-350P-2N");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?CON-SIL-350P-3N"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 3;
+                package_body_width = 7.00;
+                package_body_length = 2.70;
+                package_body_height = 1.60;
+                package_is_radial = FALSE;
+                number_of_columns = 1;
+                number_of_rows = number_of_pins;
+                pitch_x = 0;
+                pitch_y = 3.50;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 1.30;
+                pad_diameter = 1.80;
+                pad_clearance = 0.20;
+                pad_solder_mask_clearance = 0.20;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("CON-SIL-350P-3N");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?CON-SIL-350P-4N"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 4;
+                package_body_width = 10.50;
+                package_body_length = 2.70;
+                package_body_height = 1.60;
+                package_is_radial = FALSE;
+                number_of_columns = 1;
+                number_of_rows = number_of_pins;
+                pitch_x = 0;
+                pitch_y = 3.50;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 1.30;
+                pad_diameter = 1.80;
+                pad_clearance = 0.20;
+                pad_solder_mask_clearance = 0.20;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("CON-SIL-350P-4N");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?CON-SIL-350P-5N"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 5;
+                package_body_width = 14.00;
+                package_body_length = 2.70;
+                package_body_height = 1.60;
+                package_is_radial = FALSE;
+                number_of_columns = 1;
+                number_of_rows = number_of_pins;
+                pitch_x = 0;
+                pitch_y = 3.50;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 1.30;
+                pad_diameter = 1.80;
+                pad_clearance = 0.20;
+                pad_solder_mask_clearance = 0.20;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("CON-SIL-350P-5N");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?CON-SIL-350P-6N"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 6;
+                package_body_width = 17.50;
+                package_body_length = 2.70;
+                package_body_height = 1.60;
+                package_is_radial = FALSE;
+                number_of_columns = 1;
+                number_of_rows = number_of_pins;
+                pitch_x = 0;
+                pitch_y = 3.50;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 1.30;
+                pad_diameter = 1.80;
+                pad_clearance = 0.20;
+                pad_solder_mask_clearance = 0.20;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("CON-SIL-350P-6N");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?CON-SIL-350P-7N"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 7;
+                package_body_width = 21.00;
+                package_body_length = 2.70;
+                package_body_height = 1.60;
+                package_is_radial = FALSE;
+                number_of_columns = 1;
+                number_of_rows = number_of_pins;
+                pitch_x = 0;
+                pitch_y = 3.50;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 1.30;
+                pad_diameter = 1.80;
+                pad_clearance = 0.20;
+                pad_solder_mask_clearance = 0.20;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("CON-SIL-350P-7N");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?CON-SIL-350P-8N"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 8;
+                package_body_width = 24.50;
+                package_body_length = 2.70;
+                package_body_height = 1.60;
+                package_is_radial = FALSE;
+                number_of_columns = 1;
+                number_of_rows = number_of_pins;
+                pitch_x = 0;
+                pitch_y = 3.50;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 1.30;
+                pad_diameter = 1.80;
+                pad_clearance = 0.20;
+                pad_solder_mask_clearance = 0.20;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("CON-SIL-350P-8N");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?CON-SIL-350P-10N"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 10;
+                package_body_width = 31.50;
+                package_body_length = 2.70;
+                package_body_height = 1.60;
+                package_is_radial = FALSE;
+                number_of_columns = 1;
+                number_of_rows = number_of_pins;
+                pitch_x = 0;
+                pitch_y = 3.50;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 1.30;
+                pad_diameter = 1.80;
+                pad_clearance = 0.20;
+                pad_solder_mask_clearance = 0.20;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("CON-SIL-350P-10N");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?CON-SIL-350P-12N"))
+        {
+                footprint_units = g_strdup ("mm");
+                number_of_pins = 12;
+                package_body_width = 38.50;
+                package_body_length = 2.70;
+                package_body_height = 1.60;
+                package_is_radial = FALSE;
+                number_of_columns = 1;
+                number_of_rows = number_of_pins;
+                pitch_x = 0;
+                pitch_y = 3.50;
+                count_x = 0;
+                count_y = 0;
+                pad_shape = g_strdup ("circular pad");
+                pin_drill_diameter = 1.30;
+                pad_diameter = 1.80;
+                pad_clearance = 0.20;
+                pad_solder_mask_clearance = 0.20;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("CON-SIL-350P-12N");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?CON-SIL-508P-2N"))
