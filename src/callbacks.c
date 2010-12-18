@@ -2730,9 +2730,9 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                                         gpointer         user_data)
 {
         /* Test if the existing footprint name is equal to the footprint
-         * type or is empty or has a null pointer, if this is true the user
-         * did not add any characters to the footprint name yet (he/she
-         * probably made up his/her mind on the footprint type), so we can
+         * type or is empty or has a null pointer, and the user did not
+         * add any characters to the footprint name yet, the user (he/she)
+         * probably made up his/her mind on the footprint type, so we can
          * safely copy the new footprint type into the footprint name entry.
          */
         if (!footprint_name ||
@@ -2749,7 +2749,6 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         {
                 footprint_type = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combobox));
         }
-//        all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
         entry_has_changed (GTK_WIDGET (combobox));
         /* Determine the package type */
         if (get_package_type () == EXIT_FAILURE)
