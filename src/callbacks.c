@@ -168,7 +168,7 @@ all_entries_need_updated (GtkWidget *widget)
         gtk_widget_set_sensitive (add_license_checkbutton, TRUE);
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON
                 (add_license_checkbutton), license_in_footprint);
-	/* Update the "add attributes" checkbutton. */
+        /* Update the "add attributes" checkbutton. */
         GtkWidget *add_attribs_checkbutton = lookup_widget (GTK_WIDGET
                 (widget), "add_attribs_checkbutton");
         gtk_widget_set_sensitive (add_attribs_checkbutton, TRUE);
