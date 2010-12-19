@@ -2697,7 +2697,6 @@ on_footprint_status_entry_changed      (GtkComboBox     *combobox,
         {
                 g_log ("", G_LOG_LEVEL_INFO,
                         _("footprint status contains an unknown status type."));
-//                footprint_status = g_strdup ("");
                 return;
         }
         else
