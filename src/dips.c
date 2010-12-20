@@ -210,37 +210,37 @@ dips_create_element ()
                 create_new_line
                 (
                         element,
-                        (int) (multiplier * (((-pitch_x + pad_diameter + silkscreen_line_width) / 2) + pad_solder_mask_clearance)),
-                        (int) ymin, /* already in mil/100 */
-                        (int) (multiplier * (((-pitch_x + pad_diameter + silkscreen_line_width) / 2) + pad_solder_mask_clearance)),
-                        (int) ymax, /* already in mil/100 */
+                        (int) (multiplier * (-package_body_length / 2)),
+                        (int) (multiplier * (-package_body_width / 2)),
+                        (int) (multiplier * (package_body_length / 2)),
+                        (int) (multiplier * (-package_body_width / 2)),
                         (int) (multiplier * silkscreen_line_width)
                 );
                 create_new_line
                 (
                         element,
-                        (int) (multiplier * (((-pitch_x + pad_diameter + silkscreen_line_width) / 2) + pad_solder_mask_clearance)),
-                        (int) ymax, /* already in mil/100 */
-                        (int) (multiplier * (((pitch_x - pad_diameter - silkscreen_line_width) / 2) - pad_solder_mask_clearance)),
-                        (int) ymax, /* already in mil/100 */
+                        (int) (multiplier * (package_body_length / 2)),
+                        (int) (multiplier * (-package_body_width / 2)),
+                        (int) (multiplier * (package_body_length / 2)),
+                        (int) (multiplier * (package_body_width / 2)),
                         (int) (multiplier * silkscreen_line_width)
                 );
                 create_new_line
                 (
                         element,
-                        (int) (multiplier * (((pitch_x - pad_diameter - silkscreen_line_width) / 2) - pad_solder_mask_clearance)),
-                        (int) ymax, /* already in mil/100 */
-                        (int) (multiplier * (((pitch_x - pad_diameter - silkscreen_line_width) / 2) - pad_solder_mask_clearance)),
-                        (int) ymin, /* already in mil/100 */
+                        (int) (multiplier * (package_body_length / 2)),
+                        (int) (multiplier * (package_body_width / 2)),
+                        (int) (multiplier * (-package_body_length / 2)),
+                        (int) (multiplier * (package_body_width / 2)),
                         (int) (multiplier * silkscreen_line_width)
                 );
                 create_new_line
                 (
                         element,
-                        (int) (multiplier * (((-pitch_x + pad_diameter + silkscreen_line_width) / 2) + pad_solder_mask_clearance)),
-                        (int) ymin, /* already in mil/100 */
-                        (int) (multiplier * (((pitch_x - pad_diameter - silkscreen_line_width) / 2) - pad_solder_mask_clearance)),
-                        (int) ymin, /* already in mil/100 */
+                        (int) (multiplier * (-package_body_length / 2)),
+                        (int) (multiplier * (package_body_width / 2)),
+                        (int) (multiplier * (-package_body_length / 2)),
+                        (int) (multiplier * (-package_body_width / 2)),
                         (int) (multiplier * silkscreen_line_width)
                 );
         }
@@ -1870,10 +1870,10 @@ dips_write_footprint ()
                 fprintf (fp, "# Write a package body on the silkscreen\n");
                 write_rectangle
                 (
-                        multiplier * (((-pitch_x + pad_diameter + silkscreen_line_width) / 2) + pad_solder_mask_clearance) ,
-                        ymin, /* already in mil/100 */
-                        multiplier * (((pitch_x - pad_diameter - silkscreen_line_width) / 2) - pad_solder_mask_clearance) ,
-                        ymax, /* already in mil/100 */
+                        multiplier * (-package_body_length / 2) ,
+                        multiplier * (-package_body_width / 2) ,
+                        multiplier * (package_body_length / 2) ,
+                        multiplier * (package_body_width / 2) ,
                         multiplier * silkscreen_line_width
                 );
         }
