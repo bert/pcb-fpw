@@ -1,7 +1,7 @@
 /*!
- * \file packages.h
+ * \file dips.h
  * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
- * \brief Contains references to files describing known packages.
+ * \brief Header file for functions for DIPS (DIP Socket) footprints.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,33 +20,22 @@
  */
 
 
-#include "bga.c"
-#include "capa.c"
-#include "capc.c"
-#include "capm.c"
-#include "capmp.c"
-#include "cappr.c"
-#include "con_dil.c"
-#include "con_dip.c"
-#include "con_hdr.c"
-#include "con_sil.c"
-#include "diom.c"
-#include "diomelf.c"
-#include "dip.c"
-#include "dips.c"
-#include "indc.c"
-#include "indm.c"
-#include "indp.c"
-#include "pga.c"
-#include "plcc.c"
-#include "res.c"
-#include "resc.c"
-#include "resm.c"
-#include "resmelf.c"
-#include "sil.c"
-#include "sip.c"
-#include "sot.c"
-#include "to.c"
+#ifndef __DIPS_INCLUDED__
+#define __DIPS_INCLUDED__
+
+
+ElementTypePtr dips_create_element ();
+GList dips_create_packages_list ();
+int dips_drc ();
+int dips_get_default_footprint_values (gchar *);
+#if GUI
+int dips_set_gui_constraints (GtkWidget *);
+#endif /* GUI */
+int dips_write_footprint ();
+void dips_init ();
+
+
+#endif /* __DIPS_INCLUDED__ */
 
 
 /* EOF */
