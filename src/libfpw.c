@@ -498,6 +498,10 @@ get_package_type ()
         {
                 package_type = DIP;
         }
+        else if (!strcmp (footprint_type, "DIPS"))
+        {
+                package_type = DIPS;
+        }
         else if (!strcmp (footprint_type, "INDC"))
         {
                 package_type = INDC;
@@ -735,6 +739,9 @@ get_total_number_of_pins ()
                         number_of_pins = 2;
                         break;
                 case DIP :
+                        number_of_pins = number_of_columns * count_y;
+                        break;
+                case DIPS :
                         number_of_pins = number_of_columns * count_y;
                         break;
                 case INDC :
@@ -2865,6 +2872,10 @@ write_footprint()
                 case DIP:
                         dip_drc ();
                         dip_write_footprint ();
+                        break;
+                case DIPS:
+                        dips_drc ();
+                        dips_write_footprint ();
                         break;
                 case INDC:
                         indc_drc ();

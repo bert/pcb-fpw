@@ -56,7 +56,8 @@ typedef enum packages
         DIL, /*!< Dual inline package. */
         DIOM, /*!< Diode, molded package. */
         DIOMELF, /*!< Diode, MELF package. */
-        DIP, /*!< Dual inline package. */
+        DIP, /*!< Dual Inline Package package. */
+        DIPS, /*!< Dual Inline Package Socket package. */
         DO, /*!< Diode outline package. */
         INDC, /*!< Inductor, chip package. */
         INDM, /*!< Inductor, molded package. */
