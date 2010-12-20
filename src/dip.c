@@ -1980,7 +1980,7 @@ REGISTER_FUNCTIONS (dip_function_list)
 
 
 /*!
- * \brief Initialise by registering all DIOMELF related functions.
+ * \brief Initialise by registering all DIP related functions.
  *
  * <b>Parameters:</b> none.\n
  * \n
