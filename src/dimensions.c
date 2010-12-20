@@ -36,7 +36,7 @@ dimensions_window_close_cb
         GtkWidget *widget,
                 /*!< : is the caller widget.*/
         GtkWidget *dimensions_window
-		/*!< : is the widget to be closed.*/
+                /*!< : is the widget to be closed.*/
 )
 {
         gtk_widget_destroy (dimensions_window);
@@ -50,9 +50,9 @@ void
 dimensions_window_delete_event
 (
         GtkWidget *widget,
-		/*!< : is the widget to be deleted.*/
+                /*!< : is the widget to be deleted.*/
         GdkEvent *event
-		/*!< : is the event passed from the caller.*/
+                /*!< : is the event passed from the caller.*/
 )
 {
         gtk_widget_destroy (widget);
@@ -68,9 +68,9 @@ dimensions_window_expose_event
         GtkWidget *widget,
                 /*!< : is the (drawable) widget to contain the image.*/
         GdkEventExpose *event,
-		/*!< : is the event passed from the caller.*/
+                /*!< : is the event passed from the caller.*/
         GdkPixbuf *buf
-		/*!< : is the image to (re)draw.*/
+                /*!< : is the image to (re)draw.*/
 )
 {
         gdk_draw_pixbuf
@@ -103,7 +103,7 @@ int
 dimensions_create_window
 (
         gchar *image_filename,
-		/*!< : is the filename of the image to draw in the
+                /*!< : is the filename of the image to draw in the
                  * window.*/
         gchar *footprint_type
                 /*!< : is the footprint type.*/

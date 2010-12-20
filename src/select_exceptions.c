@@ -116,7 +116,7 @@ select_exceptions_delete_event
         GtkWidget *widget,
                 /*!< : is the caller widget.*/
         GdkEvent *event
-		/*!< : is the event passed from the caller.*/
+                /*!< : is the event passed from the caller.*/
 )
 {
         gtk_widget_destroy (widget);
@@ -161,7 +161,7 @@ select_exceptions_ok_cb
                 for (j = 0; (j < number_of_columns); j++)
                 /* all columns of a row [1 .. n]
                  * where j is a member of the positive Natural numbers
-		 * (N). */
+                 * (N). */
                 {
                         gchar *selection_button_name = g_strdup_printf ("%s%d",
                                 (row_letters[i]), (j + 1));

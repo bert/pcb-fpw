@@ -36,7 +36,7 @@ preview_close_cb
         GtkWidget * widget,
                 /*!< : is the caller widget.*/
         GtkWidget *preview_window
-		/*!< : is the widget to be closed.*/
+                /*!< : is the widget to be closed.*/
 )
 {
         gtk_widget_destroy (preview_window);
@@ -54,7 +54,7 @@ preview_configure_event
         GtkWidget *widget,
                 /*!< : is the (drawable) widget to contain the image.*/
         GdkEventConfigure *event
-		/*!< : is the configure event passed from the caller.*/
+                /*!< : is the configure event passed from the caller.*/
 )
 {
         gint depth = -1;
@@ -84,9 +84,9 @@ void
 preview_delete_event
 (
         GtkWidget *widget,
-		/*!< : is the widget to be deleted.*/
+                /*!< : is the widget to be deleted.*/
         GdkEvent *event
-		/*!< : is the delete event passed from the caller.*/
+                /*!< : is the delete event passed from the caller.*/
 )
 {
         gtk_widget_destroy (widget);
@@ -302,9 +302,9 @@ preview_set_line_width
 )
 {
         if ((!gc) || (line_width == 0))
-	{
+        {
                 return (EXIT_FAILURE);
-	}
+        }
         GdkGCValues gc_values;
         gdk_gc_get_values (gc, &gc_values);
         if (line_width < 0)
@@ -646,7 +646,7 @@ preview_expose_event
         GtkWidget *widget,
                 /*!< : is the toplevel widget containing the drawable. */
         GdkEventExpose *event
-		/*!< : is the event passed from the caller.*/
+                /*!< : is the event passed from the caller.*/
 )
 {
         gdk_draw_drawable (widget->window,
