@@ -78,8 +78,8 @@ typedef enum packages
         TO92, /*!< Transistor outline package. */
         TO220, /*!< Transistor outline package. */
         TO220S, /*!< Transistor outline package (with staggered pins). */
-        TO220W, /*!< Transistor outline package (standing). */
-        TO220SW /*!< Transistor outline package (standing with staggered pins). */
+        TO220SW, /*!< Transistor outline package (standing with staggered pins). */
+        TO220W /*!< Transistor outline package (standing). */
 } package_t;
 
 /*!
