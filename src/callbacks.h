@@ -1,6 +1,8 @@
 /*!
- * \file callbacks.h
+ * \file src/callbacks.h
+ *
  * \author Copyright (C) 2007, 2008, 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ *
  * \brief Callback functions header file for the pcb footprintwizard.
  *
  * This program is free software; you can redistribute it and/or modify

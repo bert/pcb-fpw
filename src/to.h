@@ -1,6 +1,8 @@
 /*!
- * \file to.h
+ * \file src/to.h
+ *
  * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ *
  * \brief Header file for functions for TO (Transistor Outline) footprints.
  *
  * This program is free software; you can redistribute it and/or modify

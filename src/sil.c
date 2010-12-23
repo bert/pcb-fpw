@@ -1,6 +1,8 @@
 /*!
- * \file sil.c
+ * \file src/sil.c
+ *
  * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ *
  * \brief Functions for SIL footprints.
  *
  * This program is free software; you can redistribute it and/or modify

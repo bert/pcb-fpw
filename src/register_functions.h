@@ -1,6 +1,8 @@
 /*!
- * \file register_functions.h
- * \author Copyright (C) 2007, 2008, 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \file src/register_functions.h
+ *
+ * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ *
  * \brief Header file for helper functions to register package dependant functions
  * for both fpw (CLI) and pcb-gfpw (GUI) versions of the pcb FootPrintWizard.
  *

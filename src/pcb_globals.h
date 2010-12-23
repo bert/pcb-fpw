@@ -1,6 +1,8 @@
 /*!
- * \file pcb_globals.h
+ * \file src/pcb_globals.h
+ *
  * \author Copyright (C) 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ *
  * \brief Contains typedefs, global variables and structs from pcb.
  *
  * This program is free software; you can redistribute it and/or modify

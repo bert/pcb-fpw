@@ -1,6 +1,8 @@
 /*!
- * \file pcb-gfpw.c
+ * \file src/pcb-gfpw.c
+ *
  * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ *
  * \brief GTK program for the pcb footprintwizard (pcb-gfpw).
  *
  * pcb-gfpw (GtkFootPrintWizard) is a program for the creation of footprint

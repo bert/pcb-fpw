@@ -1,6 +1,8 @@
 /*!
- * \file dimensions.c
- * \author Copyright 2007, 2008, 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \file src/dimensions.c
+ *
+ * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ *
  * \brief Functions for a footprint dimensions preview widget.
  *
  * This program is free software; you can redistribute it and/or modify

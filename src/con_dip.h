@@ -1,6 +1,8 @@
 /*!
- * \file con_dip.h
+ * \file src/con_dip.h
+ *
  * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ *
  * \brief Header file for functions for CON-DIP footprints
  * (Dual In line Connector with alternate pin order).
  *

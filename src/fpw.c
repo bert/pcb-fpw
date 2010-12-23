@@ -1,6 +1,8 @@
 /*!
- * \file fpw.c
+ * \file src/fpw.c
+ *
  * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ *
  * \brief fpw (FootPrintWizard) is a CLI program for the creation of
  * footprints.
  *

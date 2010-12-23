@@ -1,6 +1,8 @@
 /*!
- * \file select_exceptions.h
+ * \file src/select_exceptions.h
+ *
  * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ *
  * \brief Header file for a widget for selecting exception pin/pads in an array type footprint.
  *
  * This program is free software; you can redistribute it and/or modify

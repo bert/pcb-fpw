@@ -1,6 +1,8 @@
 /*!
- * \file capmp.h
+ * \file src/capmp.h
+ *
  * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ *
  * \brief Header file for functions for CAPMP footprints
  * (Surface Mount Technology Molded Polarized Capacitor).
  *

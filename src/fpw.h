@@ -1,6 +1,8 @@
 /*!
- * \file fpw.h
+ * \file src/fpw.h
+ *
  * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ *
  * \brief Header file for fpw.
  *
  * fpw (FootPrintWizard) is a program run from the Command Line Interface

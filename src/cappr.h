@@ -1,6 +1,8 @@
 /*!
- * \file cappr.h
+ * \file src/cappr.h
+ *
  * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ *
  * \brief Header file for functions for CAPPR footprints
  *  (Through Hole Polarized Radial Capacitors).
  *

@@ -1,5 +1,5 @@
 /*!
- * \file dip.c
+ * \file src/dip.c
  * \author Copyright (C) 2007, 2008, 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief Functions for DIP footprints.
  *

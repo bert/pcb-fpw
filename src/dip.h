@@ -1,5 +1,5 @@
 /*!
- * \file dip.h
+ * \file src/dip.h
  * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief Header file for functions for DIP footprints.
  *

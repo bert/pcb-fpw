@@ -1,6 +1,8 @@
 /*!
- * \file con_hdr.h
+ * \file src/con_hdr.h
+ *
  * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ *
  * \brief Header file for functions for CON-HDR footprints
  * (Header Connector).
  *

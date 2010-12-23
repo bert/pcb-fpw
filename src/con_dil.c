@@ -1,6 +1,8 @@
 /*!
- * \file con_dil.c
+ * \file src/con_dil.c
+ *
  * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ *
  * \brief Functions for CON-DIL footprints
  * (Dual In Line Connector).
  *

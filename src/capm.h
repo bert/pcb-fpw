@@ -1,6 +1,8 @@
 /*!
- * \file capm.h
+ * \file src/capm.h
+ *
  * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ *
  * \brief Header file for functions for CAPM footprints
  * (Surface Mount Technology Molded Capacitor).
  *

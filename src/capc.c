@@ -1,6 +1,8 @@
 /*!
- * \file capc.c
+ * \file src/capc.c
+ *
  * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ *
  * \brief Functions for CAPC footprints
  * (Surface Mount Technology Chip Capacitor).
  *

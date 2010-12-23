@@ -1,6 +1,8 @@
 /*!
- * \file preview.c
- * \author Copyright (C) 2007, 2008, 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \file src/preview.c
+ *
+ * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ *
  * \brief A footprint preview widget.
  *
  * This program is free software; you can redistribute it and/or modify
