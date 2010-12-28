@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-21 16:39+0100\n"
+"POT-Creation-Date: 2010-12-28 22:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -806,156 +806,156 @@ msgstr ""
 msgid "pcb-gfpw: choose a .fpw file"
 msgstr ""
 
-#: src/callbacks.c:838
+#: src/callbacks.c:840
 msgid "pcb-gfpw : Unsaved fpw file"
 msgstr ""
 
-#: src/callbacks.c:1927
+#: src/callbacks.c:1929
 #, c-format
 msgid "loading image file: %s"
 msgstr ""
 
-#: src/callbacks.c:1935
+#: src/callbacks.c:1937
 #, c-format
 msgid "image file: %s does not exist."
 msgstr ""
 
-#: src/callbacks.c:2156
+#: src/callbacks.c:2158
 #, c-format
 msgid "current folder is not initialised  (null pointer)."
 msgstr ""
 
-#: src/callbacks.c:2164
+#: src/callbacks.c:2166
 #, c-format
 msgid "current folder contains an empty string."
 msgstr ""
 
-#: src/callbacks.c:2172
+#: src/callbacks.c:2174
 #, c-format
 msgid "Changed cwd to: %s"
 msgstr ""
 
-#: src/callbacks.c:2220
+#: src/callbacks.c:2222
 #, c-format
 msgid "selected filename is not initialised (NULL pointer)."
 msgstr ""
 
-#: src/callbacks.c:2228
+#: src/callbacks.c:2230
 #, c-format
 msgid "selected filename contains an empty string."
 msgstr ""
 
-#: src/callbacks.c:2236
+#: src/callbacks.c:2238
 #, c-format
 msgid "selected filename is a directory."
 msgstr ""
 
-#: src/callbacks.c:2248
+#: src/callbacks.c:2250
 #, c-format
 msgid "Read footprintwizard file %s."
 msgstr ""
 
-#: src/callbacks.c:2269
+#: src/callbacks.c:2271
 #, c-format
 msgid "ERROR: Unable to read footprint wizard file %s."
 msgstr ""
 
-#: src/callbacks.c:2380 src/callbacks.c:2473 src/callbacks.c:3845
+#: src/callbacks.c:2382 src/callbacks.c:2475 src/callbacks.c:3847
 #, c-format
 msgid "ERROR: footprint name not initialised (null pointer)."
 msgstr ""
 
-#: src/callbacks.c:2389 src/callbacks.c:2482 src/callbacks.c:3854
+#: src/callbacks.c:2391 src/callbacks.c:2484 src/callbacks.c:3856
 #, c-format
 msgid "ERROR: footprint name contains an empty string."
 msgstr ""
 
-#: src/callbacks.c:2415
+#: src/callbacks.c:2417
 #, c-format
 msgid "Wrote footprint %s to file."
 msgstr ""
 
-#: src/callbacks.c:2420
+#: src/callbacks.c:2422
 #, c-format
 msgid "ERROR: Unable to write footprint %s to file."
 msgstr ""
 
-#: src/callbacks.c:2648 src/callbacks.c:2990
+#: src/callbacks.c:2650 src/callbacks.c:2992
 #, c-format
 msgid "ERROR: unknown or not yet implemented footprint type entered."
 msgstr ""
 
-#: src/callbacks.c:2705
+#: src/callbacks.c:2707
 #, c-format
 msgid "footprint status contains an unknown status type."
 msgstr ""
 
-#: src/callbacks.c:2712
+#: src/callbacks.c:2714
 #, c-format
 msgid "determined the status type successfull."
 msgstr ""
 
-#: src/callbacks.c:2762 src/libfpw.c:893
+#: src/callbacks.c:2764 src/libfpw.c:895
 #, c-format
 msgid "footprint type contains an unknown package type."
 msgstr ""
 
-#: src/callbacks.c:2770
+#: src/callbacks.c:2772
 #, c-format
 msgid "determined the package type (%d) for footprint type %s successfull."
 msgstr ""
 
-#: src/callbacks.c:2898
+#: src/callbacks.c:2900
 #, c-format
 msgid "ERROR: footprint type QFN is not yet implemented."
 msgstr ""
 
-#: src/callbacks.c:2905
+#: src/callbacks.c:2907
 #, c-format
 msgid "ERROR: footprint type QFP is not yet implemented."
 msgstr ""
 
-#: src/callbacks.c:2948
+#: src/callbacks.c:2950
 #, c-format
 msgid "ERROR: footprint type SO is not yet implemented."
 msgstr ""
 
-#: src/callbacks.c:3023
+#: src/callbacks.c:3025
 #, c-format
 msgid "ERROR: footprint units not initialised (null pointer)."
 msgstr ""
 
-#: src/callbacks.c:3032
+#: src/callbacks.c:3034
 #, c-format
 msgid "ERROR: footprint units contains an empty string."
 msgstr ""
 
-#: src/callbacks.c:3039
+#: src/callbacks.c:3041
 #, c-format
 msgid "ERROR: footprint units contains an unknown units type."
 msgstr ""
 
-#: src/callbacks.c:3441
+#: src/callbacks.c:3443
 #, c-format
 msgid "ERROR: pad shape not initialised (null pointer)."
 msgstr ""
 
-#: src/callbacks.c:3450
+#: src/callbacks.c:3452
 #, c-format
 msgid "ERROR: pad shape contains an empty string."
 msgstr ""
 
-#: src/callbacks.c:3457
+#: src/callbacks.c:3459
 #, c-format
 msgid "ERROR: pad shape contains an unknown pad shape type."
 msgstr ""
 
-#: src/callbacks.c:3599
+#: src/callbacks.c:3601
 #, c-format
 msgid "Number of rows or columns is 0."
 msgstr ""
 
-#: src/callbacks.c:3912 src/sot.c:526
+#: src/callbacks.c:3914 src/sot.c:528
 #, c-format
 msgid "ERROR: Unable to write footprintwizard file %s."
 msgstr ""
@@ -965,1414 +965,1414 @@ msgstr ""
 msgid "Couldn't find pixmap file: %s"
 msgstr ""
 
-#: src/fpw.c:91
+#: src/fpw.c:93
 #, c-format
 msgid ""
 "\n"
 "fpw version %s\n"
 msgstr ""
 
-#: src/fpw.c:92
+#: src/fpw.c:94
 #, c-format
 msgid "(C) 2007, 2008, 2009, 2010 by Bert Timmerman.\n"
 msgstr ""
 
-#: src/fpw.c:93
+#: src/fpw.c:95
 #, c-format
 msgid "This is free software; see the source for copying conditions.\n"
 msgstr ""
 
-#: src/fpw.c:94
+#: src/fpw.c:96
 #, c-format
 msgid "There is NO warranty; not even for MERCHANTABILITY\n"
 msgstr ""
 
-#: src/fpw.c:95
+#: src/fpw.c:97
 #, c-format
 msgid ""
 "or FITNESS FOR A PARTICULAR PURPOSE.\n"
 "\n"
 msgstr ""
 
-#: src/fpw.c:108
+#: src/fpw.c:110
 #, c-format
 msgid ""
 "\n"
 "fpw usage and options:\n"
 msgstr ""
 
-#: src/fpw.c:109
+#: src/fpw.c:111
 #, c-format
 msgid "\t --help \n"
 msgstr ""
 
-#: src/fpw.c:110
+#: src/fpw.c:112
 #, c-format
 msgid "\t -? \n"
 msgstr ""
 
-#: src/fpw.c:111
+#: src/fpw.c:113
 #, c-format
 msgid ""
 "\t -h        : print this help message and exit.\n"
 "\n"
 msgstr ""
 
-#: src/fpw.c:112
+#: src/fpw.c:114
 #, c-format
 msgid "\t --verbose \n"
 msgstr ""
 
-#: src/fpw.c:113
+#: src/fpw.c:115
 #, c-format
 msgid ""
 "\t -v        : log messages, be verbose.\n"
 "\n"
 msgstr ""
 
-#: src/fpw.c:114
+#: src/fpw.c:116
 #, c-format
 msgid "\t --silent \n"
 msgstr ""
 
-#: src/fpw.c:115
+#: src/fpw.c:117
 #, c-format
 msgid "\t --quiet \n"
 msgstr ""
 
-#: src/fpw.c:116
+#: src/fpw.c:118
 #, c-format
 msgid ""
 "\t -q        : do not log messages, overrides --verbose.\n"
 "\n"
 msgstr ""
 
-#: src/fpw.c:117
+#: src/fpw.c:119
 #, c-format
 msgid "\t --version \n"
 msgstr ""
 
-#: src/fpw.c:118
+#: src/fpw.c:120
 #, c-format
 msgid ""
 "\t -V        : print the version information and exit.\n"
 "\n"
 msgstr ""
 
-#: src/fpw.c:119
+#: src/fpw.c:121
 #, c-format
 msgid "\t --format <fpw_footprintwizard filename> \n"
 msgstr ""
 
-#: src/fpw.c:120
+#: src/fpw.c:122
 #, c-format
 msgid ""
 "\t -f <fpw_footprintwizard filename>\n"
 "\n"
 msgstr ""
 
-#: src/fpw.c:121
+#: src/fpw.c:123
 #, c-format
 msgid "\t --output <footprint name> \n"
 msgstr ""
 
-#: src/fpw.c:122
+#: src/fpw.c:124
 #, c-format
 msgid ""
 "\t -o <footprint name>\n"
 "\n"
 msgstr ""
 
-#: src/fpw.c:123
+#: src/fpw.c:125
 #, c-format
 msgid "\t --debug \n"
 msgstr ""
 
-#: src/fpw.c:124
+#: src/fpw.c:126
 #, c-format
 msgid ""
 "\t -d        : turn on debugging output messages.\n"
 "\n"
 msgstr ""
 
-#: src/fpw.c:191
+#: src/fpw.c:193
 #, c-format
 msgid "unknown command line option encountered.\n"
 msgstr ""
 
-#: src/fpw.c:207
+#: src/fpw.c:209
 #, c-format
 msgid "read footprintwizard file %s."
 msgstr ""
 
-#: src/fpw.c:216
+#: src/fpw.c:218
 #, c-format
 msgid "could not load footprintwizard file %s."
 msgstr ""
 
-#: src/fpw.c:228
+#: src/fpw.c:230
 #, c-format
 msgid "footprint name contains a null pointer."
 msgstr ""
 
-#: src/fpw.c:239
+#: src/fpw.c:241
 #, c-format
 msgid "footprint name contains an empty string."
 msgstr ""
 
-#: src/fpw.c:258
+#: src/fpw.c:260
 #, c-format
 msgid "Footprint %s is written successful."
 msgstr ""
 
-#: src/libfpw.c:156
+#: src/libfpw.c:158
 #, c-format
 msgid "out of memory during realloc() in create_new_arc()."
 msgstr ""
 
-#: src/libfpw.c:216
+#: src/libfpw.c:218
 #, c-format
 msgid "out of memory during realloc() in create_new_attribute()."
 msgstr ""
 
-#: src/libfpw.c:265
+#: src/libfpw.c:267
 #, c-format
 msgid "out of memory during realloc() in create_new_line()."
 msgstr ""
 
-#: src/libfpw.c:435
+#: src/libfpw.c:437
 #, c-format
 msgid "footprint type is not valid."
 msgstr ""
 
-#: src/libfpw.c:442
+#: src/libfpw.c:444
 #, c-format
 msgid "empty footprint type entered."
 msgstr ""
 
-#: src/libfpw.c:525 src/libfpw.c:533 src/libfpw.c:557
+#: src/libfpw.c:527 src/libfpw.c:535 src/libfpw.c:559
 #, c-format
 msgid "footprint type %s not yet implemented."
 msgstr ""
 
-#: src/libfpw.c:589
+#: src/libfpw.c:591
 #, c-format
 msgid "footprint type %s is not valid."
 msgstr ""
 
-#: src/libfpw.c:683
+#: src/libfpw.c:685
 #, c-format
 msgid "footprint status %s is not valid."
 msgstr ""
 
-#: src/libfpw.c:820
+#: src/libfpw.c:822
 #, c-format
 msgid "could not open footprint wizard file: %s for reading.\n"
 msgstr ""
 
-#: src/libfpw.c:831
+#: src/libfpw.c:833
 #, c-format
 msgid "error while reading footprint_filename value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:843
+#: src/libfpw.c:845
 #, c-format
 msgid "footprint filename with a null pointer found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:856
+#: src/libfpw.c:858
 #, c-format
 msgid "error while reading a dummy value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:868
+#: src/libfpw.c:870
 #, c-format
 msgid "error while reading footprint_type value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:880
+#: src/libfpw.c:882
 #, c-format
 msgid "footprint type with a null pointer found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:904
+#: src/libfpw.c:906
 #, c-format
 msgid "determined the package type successfull."
 msgstr ""
 
-#: src/libfpw.c:913
+#: src/libfpw.c:915
 #, c-format
 msgid "error while reading footprint_units value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:925
+#: src/libfpw.c:927
 #, c-format
 msgid "footprint units with null pointer found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:938
+#: src/libfpw.c:940
 #, c-format
 msgid "footprint units contains an unknown units type."
 msgstr ""
 
-#: src/libfpw.c:949
+#: src/libfpw.c:951
 #, c-format
 msgid "footprint units variables updated successfull."
 msgstr ""
 
-#: src/libfpw.c:958
+#: src/libfpw.c:960
 #, c-format
 msgid "error while reading footprint_refdes value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:970
+#: src/libfpw.c:972
 #, c-format
 msgid "footprint refdes with a null pointer found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:981
+#: src/libfpw.c:983
 #, c-format
 msgid "error while reading footprint_value value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:993
+#: src/libfpw.c:995
 #, c-format
 msgid "footprint value with a null pointer found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1004
+#: src/libfpw.c:1006
 #, c-format
 msgid "error while reading package_body_length value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1015
+#: src/libfpw.c:1017
 #, c-format
 msgid "NaN found in package body length, in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1026
+#: src/libfpw.c:1028
 #, c-format
 msgid "error while reading package_body_width value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1037
+#: src/libfpw.c:1039
 #, c-format
 msgid "NaN found in package body width, in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1048
+#: src/libfpw.c:1050
 #, c-format
 msgid "error while reading package_body_height value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1059
+#: src/libfpw.c:1061
 #, c-format
 msgid "NaN found in package body heigth, in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1070
+#: src/libfpw.c:1072
 #, c-format
 msgid "error while reading package_is_radial value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1082
+#: src/libfpw.c:1084
 #, c-format
 msgid "error while reading footprint_author value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1094
+#: src/libfpw.c:1096
 #, c-format
 msgid "footprint author with a null pointer found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1105
+#: src/libfpw.c:1107
 #, c-format
 msgid "error while reading footprint_dist_license value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1118
+#: src/libfpw.c:1120
 #, c-format
 msgid "footprint dirstribution license with a null pointer found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1129
+#: src/libfpw.c:1131
 #, c-format
 msgid "error while reading footprint_use_license value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1142
+#: src/libfpw.c:1144
 #, c-format
 msgid "footprint usage license with a null pointer found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1153
+#: src/libfpw.c:1155
 #, c-format
 msgid "error while reading footprint_status value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1165
+#: src/libfpw.c:1167
 #, c-format
 msgid "footprint status with a null pointer found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1176
+#: src/libfpw.c:1178
 #, c-format
 msgid "error while reading attributes_in_footprint value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1188
+#: src/libfpw.c:1190
 #, c-format
 msgid "error while reading number_of_pins value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1200
+#: src/libfpw.c:1202
 #, c-format
 msgid "error while reading number_of_columns value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1212
+#: src/libfpw.c:1214
 #, c-format
 msgid "error while reading number_of_rows value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1224
+#: src/libfpw.c:1226
 #, c-format
 msgid "error while reading pitch_x value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1235
+#: src/libfpw.c:1237
 #, c-format
 msgid "NaN number of pitch in X-direction found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1246
+#: src/libfpw.c:1248
 #, c-format
 msgid "error while reading pitch_y value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1256
+#: src/libfpw.c:1258
 #, c-format
 msgid "NaN number of pitch in Y-direction found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1266
+#: src/libfpw.c:1268
 #, c-format
 msgid "error while reading count_x value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1278
+#: src/libfpw.c:1280
 #, c-format
 msgid "error while reading count_y value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1290
+#: src/libfpw.c:1292
 #, c-format
 msgid "error while reading pad_shape value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1302
+#: src/libfpw.c:1304
 #, c-format
 msgid "pad shape with a null pointer found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1314
+#: src/libfpw.c:1316
 #, c-format
 msgid "pad shape contains an unknown pad shape type."
 msgstr ""
 
-#: src/libfpw.c:1323
+#: src/libfpw.c:1325
 #, c-format
 msgid "pad shape variables updated successfull."
 msgstr ""
 
-#: src/libfpw.c:1332
+#: src/libfpw.c:1334
 #, c-format
 msgid "error while reading pin_pad_exceptions_string value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1344
+#: src/libfpw.c:1346
 #, c-format
 msgid "pin/pad exceptions with a null pointer found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1356
+#: src/libfpw.c:1358
 #, c-format
 msgid "error while reading pin_1_position value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1368
+#: src/libfpw.c:1370
 #, c-format
 msgid "pin #1 position with a null pointer found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1379
+#: src/libfpw.c:1381
 #, c-format
 msgid "error while reading pad_length value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1390
+#: src/libfpw.c:1392
 #, c-format
 msgid "NaN number in pad length found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1401
+#: src/libfpw.c:1403
 #, c-format
 msgid "error while reading pad_width value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1412
+#: src/libfpw.c:1414
 #, c-format
 msgid "NaN number in pad width found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1423
+#: src/libfpw.c:1425
 #, c-format
 msgid "error while reading pad_diameter value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1434
+#: src/libfpw.c:1436
 #, c-format
 msgid "NaN number in pad diameter found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1445
+#: src/libfpw.c:1447
 #, c-format
 msgid "error while reading pin_drill_diameter value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1456
+#: src/libfpw.c:1458
 #, c-format
 msgid "NaN number in pin drill diameter found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1467
+#: src/libfpw.c:1469
 #, c-format
 msgid "error while reading pin1_square value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1478
+#: src/libfpw.c:1480
 #, c-format
 msgid "error while reading pad_clearance value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1489
+#: src/libfpw.c:1491
 #, c-format
 msgid "NaN number in pad clearance found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1500
+#: src/libfpw.c:1502
 #, c-format
 msgid "error while reading pad_solder_mask_clearance value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1512
+#: src/libfpw.c:1514
 #, c-format
 msgid "NaN number in pad solder mask clearance found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1523
+#: src/libfpw.c:1525
 #, c-format
 msgid "error while reading thermal value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1534
+#: src/libfpw.c:1536
 #, c-format
 msgid "error while reading thermal_nopaste value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1545
+#: src/libfpw.c:1547
 #, c-format
 msgid "error while reading thermal_length value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1556
+#: src/libfpw.c:1558
 #, c-format
 msgid "NaN number in thermal length found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1567
+#: src/libfpw.c:1569
 #, c-format
 msgid "error while reading thermal_width value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1578
+#: src/libfpw.c:1580
 #, c-format
 msgid "NaN number in thermal width found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1589
+#: src/libfpw.c:1591
 #, c-format
 msgid "error while reading thermal_clearance value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1600
+#: src/libfpw.c:1602
 #, c-format
 msgid "NaN number in thermal clearance found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1611
+#: src/libfpw.c:1613
 #, c-format
 msgid "error while reading thermal_solder_mask value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1623
+#: src/libfpw.c:1625
 #, c-format
 msgid "NaN number in thermal solder mask clearance found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1634
+#: src/libfpw.c:1636
 #, c-format
 msgid "error while reading fiducial value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1645
+#: src/libfpw.c:1647
 #, c-format
 msgid "error while reading fiducial_pad_diameter value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1656
+#: src/libfpw.c:1658
 #, c-format
 msgid "NaN number in fiducial pad diameter found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1667
+#: src/libfpw.c:1669
 #, c-format
 msgid "error while reading fiducial_pad_solder_mask value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1679
+#: src/libfpw.c:1681
 #, c-format
 msgid "NaN number in fiducial pad solder mask clearance found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1690
+#: src/libfpw.c:1692
 #, c-format
 msgid "error while reading silkscreen_package_outline value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1701
+#: src/libfpw.c:1703
 #, c-format
 msgid "error while reading silkscreen_indicate_1 value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1712
+#: src/libfpw.c:1714
 #, c-format
 msgid "NaN number in silkscreen line width found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1723
+#: src/libfpw.c:1725
 #, c-format
 msgid "error while reading courtyard value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1734
+#: src/libfpw.c:1736
 #, c-format
 msgid "error while reading courtyard_length value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1745
+#: src/libfpw.c:1747
 #, c-format
 msgid "NaN number in courtyard length found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1756
+#: src/libfpw.c:1758
 #, c-format
 msgid "error while reading courtyard_width value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1767
+#: src/libfpw.c:1769
 #, c-format
 msgid "NaN number in courtyard width found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1778
+#: src/libfpw.c:1780
 #, c-format
 msgid "error while reading courtyard_line_width value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1789
+#: src/libfpw.c:1791
 #, c-format
 msgid "NaN number in courtyard line width found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1800
+#: src/libfpw.c:1802
 #, c-format
 msgid "error while reading courtyard_clearance_with_package value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1812
+#: src/libfpw.c:1814
 #, c-format
 msgid "NaN number in courtyard clearance with package found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1824
+#: src/libfpw.c:1826
 #, c-format
 msgid "error while reading c1 value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1835
+#: src/libfpw.c:1837
 #, c-format
 msgid "NaN number in top to bottom center-center distance found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1846
+#: src/libfpw.c:1848
 #, c-format
 msgid "error while reading g1 value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1857
+#: src/libfpw.c:1859
 #, c-format
 msgid "NaN number in top to bottom inner-inner distance found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1868
+#: src/libfpw.c:1870
 #, c-format
 msgid "error while reading z1 value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1879
+#: src/libfpw.c:1881
 #, c-format
 msgid "NaN number in top to bottom outer-outer distance found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1890
+#: src/libfpw.c:1892
 #, c-format
 msgid "error while reading c2 value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1901
+#: src/libfpw.c:1903
 #, c-format
 msgid "NaN number in left to right center-center distance found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1912
+#: src/libfpw.c:1914
 #, c-format
 msgid "error while reading g2 value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1923
+#: src/libfpw.c:1925
 #, c-format
 msgid "NaN number in left to right inner-inner distance found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1934
+#: src/libfpw.c:1936
 #, c-format
 msgid "error while reading z2 value in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:1945
+#: src/libfpw.c:1947
 #, c-format
 msgid "NaN number in left to right outer-outer distance found in: %s.\n"
 msgstr ""
 
-#: src/libfpw.c:2057
+#: src/libfpw.c:2059
 #, c-format
 msgid "pad shape is %s, setting pad_shapes_type to ROUND."
 msgstr ""
 
-#: src/libfpw.c:2068
+#: src/libfpw.c:2070
 #, c-format
 msgid "pad shape is %s, setting pad_shapes_type to SQUARE."
 msgstr ""
 
-#: src/libfpw.c:2079
+#: src/libfpw.c:2081
 #, c-format
 msgid "pad shape is %s, setting pad_shapes_type to OCTOGONAL."
 msgstr ""
 
-#: src/libfpw.c:2090
+#: src/libfpw.c:2092
 #, c-format
 msgid "pad shape is %s, setting pad_shapes_type to ROUND_ELONGATED."
 msgstr ""
 
-#: src/libfpw.c:2101
+#: src/libfpw.c:2103
 #, c-format
 msgid "encountered a %s pad shape, resetting pad_shapes_type to NO_SHAPE."
 msgstr ""
 
-#: src/libfpw.c:2124
+#: src/libfpw.c:2126
 #, c-format
 msgid "footprint units_type set to MIL, multiplier set to 100.0"
 msgstr ""
 
-#: src/libfpw.c:2135
+#: src/libfpw.c:2137
 #, c-format
 msgid "footprint units_type set to MIL/100, multiplier set to 1.0"
 msgstr ""
 
-#: src/libfpw.c:2146
+#: src/libfpw.c:2148
 #, c-format
 msgid "footprint units_type set to MM, multiplier set to 3937.00..."
 msgstr ""
 
-#: src/libfpw.c:2689
+#: src/libfpw.c:2691
 #, c-format
 msgid "could not open footprint wizard file: %s for writing."
 msgstr ""
 
-#: src/libfpw.c:2697
+#: src/libfpw.c:2699
 #, c-format
 msgid ""
 "could not write footprint wizard file (null or empty footprint filename "
 "string)."
 msgstr ""
 
-#: src/libfpw.c:2704
+#: src/libfpw.c:2706
 #, c-format
 msgid ""
 "could not write footprint wizard file (null or empty footprint name string)."
 msgstr ""
 
-#: src/libfpw.c:2711
+#: src/libfpw.c:2713
 #, c-format
 msgid ""
 "could not write footprint wizard file (null or empty footprint type string)."
 msgstr ""
 
-#: src/libfpw.c:2718
+#: src/libfpw.c:2720
 #, c-format
 msgid ""
 "could not write footprint wizard file (null or empty footprint units string)."
 msgstr ""
 
-#: src/libfpw.c:2725
+#: src/libfpw.c:2727
 #, c-format
 msgid "could not write footprint wizard file (null or empty pad shape string)."
 msgstr ""
 
-#: src/libfpw.c:2731
+#: src/libfpw.c:2733
 #, c-format
 msgid ""
 "could not write footprint wizard file (null or empty pin/pad exception "
 "string)."
 msgstr ""
 
-#: src/libfpw.c:2956
+#: src/libfpw.c:2958
 #, c-format
 msgid "unknown or not yet implemented footprint type entered.\n"
 msgstr ""
 
-#: src/register_functions.c:106
+#: src/register_functions.c:108
 #, c-format
 msgid "unknown function `%s'\n"
 msgstr ""
 
-#: src/select_exceptions.c:183
+#: src/select_exceptions.c:185
 #, c-format
 msgid "found a total of %d exceptions for pins/pads."
 msgstr ""
 
-#: src/select_exceptions.c:186
+#: src/select_exceptions.c:188
 #, c-format
 msgid "found the following exceptions for pins/pads: %s."
 msgstr ""
 
-#: src/bga.c:52 src/capa.c:52 src/capc.c:51 src/capm.c:52 src/capmp.c:52
-#: src/cappr.c:52 src/con_dil.c:53
+#: src/bga.c:54 src/capa.c:54 src/capc.c:53 src/capm.c:54 src/capmp.c:54
+#: src/cappr.c:54 src/con_dil.c:55
 #, c-format
 msgid "[%s] could not create a valid element pointer for an element."
 msgstr ""
 
-#: src/bga.c:356 src/capa.c:399 src/capc.c:285 src/capm.c:373 src/capmp.c:373
-#: src/cappr.c:432 src/con_dil.c:317
+#: src/bga.c:358 src/capa.c:401 src/capc.c:287 src/capm.c:375 src/capmp.c:375
+#: src/cappr.c:434 src/con_dil.c:319
 #, c-format
 msgid "[%s] created an element for element: %s."
 msgstr ""
 
-#: src/bga.c:503 src/capa.c:460 src/capc.c:390 src/capm.c:435 src/capmp.c:435
-#: src/cappr.c:493 src/con_dil.c:382 src/con_dip.c:408 src/con_sil.c:421
-#: src/indp.c:430 src/sil.c:369 src/sip.c:363
+#: src/bga.c:505 src/capa.c:462 src/capc.c:392 src/capm.c:437 src/capmp.c:437
+#: src/cappr.c:495 src/con_dil.c:384 src/con_dip.c:410 src/con_sil.c:423
+#: src/indp.c:432 src/sil.c:371 src/sip.c:365
 #, c-format
 msgid "[%s] DRC Check: checking package %s."
 msgstr ""
 
-#: src/bga.c:514 src/capa.c:471 src/capc.c:412 src/capm.c:457 src/capmp.c:457
-#: src/cappr.c:504 src/con_dil.c:426 src/con_dip.c:453 src/con_sil.c:467
-#: src/indp.c:452 src/sil.c:415 src/sip.c:409
+#: src/bga.c:516 src/capa.c:473 src/capc.c:414 src/capm.c:459 src/capmp.c:459
+#: src/cappr.c:506 src/con_dil.c:428 src/con_dip.c:455 src/con_sil.c:469
+#: src/indp.c:454 src/sil.c:417 src/sip.c:411
 #, c-format
 msgid "[%s] DRC Error: NO_SHAPE specified for check for allowed pad shapes."
 msgstr ""
 
-#: src/bga.c:529 src/capa.c:486 src/con_dil.c:441 src/con_dip.c:468
-#: src/con_sil.c:482 src/sil.c:430 src/sip.c:424
+#: src/bga.c:531 src/capa.c:488 src/con_dil.c:443 src/con_dip.c:470
+#: src/con_sil.c:484 src/sil.c:432 src/sip.c:426
 #, c-format
 msgid ""
 "[%s] DRC Error: square pad shape specified for check for allowed pad shapes."
 msgstr ""
 
-#: src/bga.c:540 src/capc.c:438 src/capm.c:483 src/capmp.c:483
-#: src/con_dil.c:452 src/con_dip.c:479 src/con_sil.c:493 src/indp.c:478
-#: src/sil.c:441 src/sip.c:435
+#: src/bga.c:542 src/capc.c:440 src/capm.c:485 src/capmp.c:485
+#: src/con_dil.c:454 src/con_dip.c:481 src/con_sil.c:495 src/indp.c:480
+#: src/sil.c:443 src/sip.c:437
 #, c-format
 msgid ""
 "[%s] DRC Error: octagonal pad shape specified for check for allowed pad "
 "shapes."
 msgstr ""
 
-#: src/bga.c:551 src/con_dil.c:463
+#: src/bga.c:553 src/con_dil.c:465
 #, c-format
 msgid ""
 "[%s] DRC Error: round elongated pad shape specified for check for allowed "
 "pad shapes."
 msgstr ""
 
-#: src/bga.c:562 src/capa.c:505 src/capc.c:453 src/capm.c:498 src/capmp.c:498
-#: src/cappr.c:531 src/con_dil.c:474 src/con_dip.c:494 src/con_sil.c:508
-#: src/indp.c:493 src/sil.c:456 src/sip.c:450
+#: src/bga.c:564 src/capa.c:507 src/capc.c:455 src/capm.c:500 src/capmp.c:500
+#: src/cappr.c:533 src/con_dil.c:476 src/con_dip.c:496 src/con_sil.c:510
+#: src/indp.c:495 src/sil.c:458 src/sip.c:452
 #, c-format
 msgid "[%s] DRC Error: no valid pad shape type specified."
 msgstr ""
 
-#: src/bga.c:575 src/capa.c:518 src/capc.c:466 src/capm.c:511 src/capmp.c:511
-#: src/cappr.c:544 src/con_dil.c:487 src/con_dip.c:507 src/con_sil.c:521
-#: src/indp.c:506 src/sil.c:469 src/sip.c:463
+#: src/bga.c:577 src/capa.c:520 src/capc.c:468 src/capm.c:513 src/capmp.c:513
+#: src/cappr.c:546 src/con_dil.c:489 src/con_dip.c:509 src/con_sil.c:523
+#: src/indp.c:508 src/sil.c:471 src/sip.c:465
 #, c-format
 msgid "[%s] DRC Error: specified package body length is too small."
 msgstr ""
 
-#: src/bga.c:585 src/capa.c:528 src/capc.c:476 src/capm.c:521 src/capmp.c:521
-#: src/cappr.c:554 src/con_dil.c:497 src/con_dip.c:517 src/con_sil.c:531
-#: src/indp.c:516 src/sil.c:479 src/sip.c:473
+#: src/bga.c:587 src/capa.c:530 src/capc.c:478 src/capm.c:523 src/capmp.c:523
+#: src/cappr.c:556 src/con_dil.c:499 src/con_dip.c:519 src/con_sil.c:533
+#: src/indp.c:518 src/sil.c:481 src/sip.c:475
 #, c-format
 msgid "[%s] DRC Error: specified package body width is too small."
 msgstr ""
 
-#: src/bga.c:595 src/capa.c:538 src/capc.c:486 src/capm.c:531 src/capmp.c:531
-#: src/cappr.c:564 src/con_dil.c:507 src/con_dip.c:527 src/con_sil.c:541
-#: src/indp.c:526 src/sil.c:489 src/sip.c:483
+#: src/bga.c:597 src/capa.c:540 src/capc.c:488 src/capm.c:533 src/capmp.c:533
+#: src/cappr.c:566 src/con_dil.c:509 src/con_dip.c:529 src/con_sil.c:543
+#: src/indp.c:528 src/sil.c:491 src/sip.c:485
 #, c-format
 msgid "[%s] DRC Error: specified package body height is too small."
 msgstr ""
 
-#: src/bga.c:606 src/capa.c:549 src/capc.c:497 src/capm.c:542 src/capmp.c:542
-#: src/cappr.c:575 src/con_dil.c:518 src/con_dip.c:538 src/con_sil.c:552
-#: src/indp.c:537 src/sil.c:500 src/sip.c:494
+#: src/bga.c:608 src/capa.c:551 src/capc.c:499 src/capm.c:544 src/capmp.c:544
+#: src/cappr.c:577 src/con_dil.c:520 src/con_dip.c:540 src/con_sil.c:554
+#: src/indp.c:539 src/sil.c:502 src/sip.c:496
 #, c-format
 msgid "[%s] DRC Error: specified courtyard length is too small."
 msgstr ""
 
-#: src/bga.c:616 src/capa.c:559 src/capc.c:507 src/capm.c:552 src/capmp.c:552
-#: src/cappr.c:585 src/con_dil.c:528 src/con_dip.c:548 src/con_sil.c:562
-#: src/indp.c:547 src/sil.c:510 src/sip.c:504
+#: src/bga.c:618 src/capa.c:561 src/capc.c:509 src/capm.c:554 src/capmp.c:554
+#: src/cappr.c:587 src/con_dil.c:530 src/con_dip.c:550 src/con_sil.c:564
+#: src/indp.c:549 src/sil.c:512 src/sip.c:506
 #, c-format
 msgid "[%s] DRC Error: specified courtyard width is too small."
 msgstr ""
 
-#: src/bga.c:627 src/capa.c:570 src/capc.c:518 src/capm.c:563 src/capmp.c:563
-#: src/cappr.c:597 src/con_dil.c:539 src/con_dip.c:559 src/indp.c:558
+#: src/bga.c:629 src/capa.c:572 src/capc.c:520 src/capm.c:565 src/capmp.c:565
+#: src/cappr.c:599 src/con_dil.c:541 src/con_dip.c:561 src/indp.c:560
 #, c-format
 msgid ""
 "[%s] DRC Error: minimum clearance between copper (X-direction) is too small."
 msgstr ""
 
-#: src/bga.c:638 src/capa.c:581 src/capc.c:529 src/capm.c:574 src/capmp.c:574
-#: src/con_dil.c:550 src/con_dip.c:570 src/con_sil.c:573 src/indp.c:569
-#: src/sil.c:521 src/sip.c:515
+#: src/bga.c:640 src/capa.c:583 src/capc.c:531 src/capm.c:576 src/capmp.c:576
+#: src/con_dil.c:552 src/con_dip.c:572 src/con_sil.c:575 src/indp.c:571
+#: src/sil.c:523 src/sip.c:517
 #, c-format
 msgid ""
 "[%s] DRC Error: minimum clearance between copper (Y-direction) is too small."
 msgstr ""
 
-#: src/bga.c:651
+#: src/bga.c:653
 #, c-format
 msgid "[%s] DRC Error: zero width fiducial pad."
 msgstr ""
 
-#: src/bga.c:662
+#: src/bga.c:664
 #, c-format
 msgid "[%s] DRC Error: fiducial has zero width solder mask clearance."
 msgstr ""
 
-#: src/bga.c:678
+#: src/bga.c:680
 #, c-format
 msgid ""
 "[%s] DRC Error: specified distance between fiducial and nearest pad is to "
 "small."
 msgstr ""
 
-#: src/bga.c:692 src/con_dip.c:593 src/con_sil.c:596 src/indp.c:592
-#: src/sil.c:544 src/sip.c:538
+#: src/bga.c:694 src/con_dip.c:595 src/con_sil.c:598 src/indp.c:594
+#: src/sil.c:546 src/sip.c:540
 #, c-format
 msgid ""
 "[%s] DRC Error: clearance of the package length with regard to the courtyard "
 "dimensions is too small."
 msgstr ""
 
-#: src/bga.c:704 src/con_dip.c:605 src/con_sil.c:608 src/indp.c:604
-#: src/sil.c:556 src/sip.c:550
+#: src/bga.c:706 src/con_dip.c:607 src/con_sil.c:610 src/indp.c:606
+#: src/sil.c:558 src/sip.c:552
 #, c-format
 msgid ""
 "[%s] DRC Error: clearance of the package width with regard to the courtyard "
 "dimensions is too small."
 msgstr ""
 
-#: src/bga.c:720 src/capa.c:631 src/capc.c:580 src/capm.c:625 src/capmp.c:625
-#: src/cappr.c:659 src/con_dil.c:601 src/con_dip.c:621 src/con_sil.c:624
-#: src/indp.c:620 src/sil.c:572 src/sip.c:566
+#: src/bga.c:722 src/capa.c:633 src/capc.c:582 src/capm.c:627 src/capmp.c:627
+#: src/cappr.c:661 src/con_dil.c:603 src/con_dip.c:623 src/con_sil.c:626
+#: src/indp.c:622 src/sil.c:574 src/sip.c:568
 #, c-format
 msgid "[%s] DRC Error: silkscreen line width is too small."
 msgstr ""
 
-#: src/bga.c:732 src/capa.c:643 src/capc.c:592 src/capm.c:637 src/capmp.c:637
-#: src/cappr.c:671 src/con_dil.c:613 src/con_dip.c:633 src/con_sil.c:636
-#: src/indp.c:632 src/sil.c:584 src/sip.c:578
+#: src/bga.c:734 src/capa.c:645 src/capc.c:594 src/capm.c:639 src/capmp.c:639
+#: src/cappr.c:673 src/con_dil.c:615 src/con_dip.c:635 src/con_sil.c:638
+#: src/indp.c:634 src/sil.c:586 src/sip.c:580
 #, c-format
 msgid "[%s] DRC Error: no units specified."
 msgstr ""
 
-#: src/bga.c:744 src/bga.c:756 src/bga.c:768 src/capa.c:655 src/capa.c:667
-#: src/capa.c:679 src/capc.c:604 src/capc.c:616 src/capc.c:628 src/capm.c:649
-#: src/capm.c:661 src/capm.c:673 src/capmp.c:649 src/capmp.c:661
-#: src/capmp.c:673 src/cappr.c:683 src/cappr.c:695 src/cappr.c:707
-#: src/con_dil.c:625 src/con_dil.c:637 src/con_dil.c:649 src/con_dip.c:645
-#: src/con_dip.c:657 src/con_dip.c:669 src/con_sil.c:648 src/con_sil.c:660
-#: src/con_sil.c:672 src/indp.c:644 src/indp.c:656 src/indp.c:668
-#: src/sil.c:596 src/sil.c:608 src/sil.c:620 src/sip.c:590 src/sip.c:602
-#: src/sip.c:614
+#: src/bga.c:746 src/bga.c:758 src/bga.c:770 src/capa.c:657 src/capa.c:669
+#: src/capa.c:681 src/capc.c:606 src/capc.c:618 src/capc.c:630 src/capm.c:651
+#: src/capm.c:663 src/capm.c:675 src/capmp.c:651 src/capmp.c:663
+#: src/capmp.c:675 src/cappr.c:685 src/cappr.c:697 src/cappr.c:709
+#: src/con_dil.c:627 src/con_dil.c:639 src/con_dil.c:651 src/con_dip.c:647
+#: src/con_dip.c:659 src/con_dip.c:671 src/con_sil.c:650 src/con_sil.c:662
+#: src/con_sil.c:674 src/indp.c:646 src/indp.c:658 src/indp.c:670
+#: src/sil.c:598 src/sil.c:610 src/sil.c:622 src/sip.c:592 src/sip.c:604
+#: src/sip.c:616
 #, c-format
 msgid "[%s] DRC Error: silkscreen line width too wide."
 msgstr ""
 
-#: src/bga.c:779 src/capa.c:690 src/capc.c:639 src/capm.c:684 src/capmp.c:684
-#: src/cappr.c:718 src/con_dil.c:660 src/con_dip.c:680 src/con_sil.c:683
-#: src/indp.c:679 src/sil.c:631 src/sip.c:625
+#: src/bga.c:781 src/capa.c:692 src/capc.c:641 src/capm.c:686 src/capmp.c:686
+#: src/cappr.c:720 src/con_dil.c:662 src/con_dip.c:682 src/con_sil.c:685
+#: src/indp.c:681 src/sil.c:633 src/sip.c:627
 #, c-format
 msgid "[%s] DRC Error: no valid units type specified."
 msgstr ""
 
-#: src/bga.c:790 src/capa.c:701 src/capc.c:650 src/capm.c:695 src/capmp.c:695
-#: src/cappr.c:729 src/con_dil.c:671 src/con_dip.c:692 src/con_sil.c:694
-#: src/indp.c:691 src/sil.c:642 src/sip.c:636
+#: src/bga.c:792 src/capa.c:703 src/capc.c:652 src/capm.c:697 src/capmp.c:697
+#: src/cappr.c:731 src/con_dil.c:673 src/con_dip.c:694 src/con_sil.c:696
+#: src/indp.c:693 src/sil.c:644 src/sip.c:638
 #, c-format
 msgid "[%s] DRC Check: no errors while checking package %s."
 msgstr ""
 
-#: src/bga.c:961 src/bga.c:1085 src/bga.c:1470 src/bga.c:1506 src/bga.c:1575
-#: src/bga.c:1663 src/bga.c:1704 src/bga.c:2145 src/bga.c:2445 src/bga.c:2490
-#: src/bga.c:2577 src/bga.c:2656 src/bga.c:2697 src/bga.c:2738 src/bga.c:2873
-#: src/bga.c:2955 src/bga.c:3062 src/bga.c:3141 src/bga.c:3182 src/bga.c:3218
-#: src/bga.c:3254 src/bga.c:3498 src/bga.c:3578 src/bga.c:4039 src/bga.c:4075
-#: src/bga.c:4300 src/bga.c:4390 src/capc.c:750 src/capc.c:789
+#: src/bga.c:963 src/bga.c:1087 src/bga.c:1472 src/bga.c:1508 src/bga.c:1577
+#: src/bga.c:1665 src/bga.c:1706 src/bga.c:2147 src/bga.c:2447 src/bga.c:2492
+#: src/bga.c:2579 src/bga.c:2658 src/bga.c:2699 src/bga.c:2740 src/bga.c:2875
+#: src/bga.c:2957 src/bga.c:3064 src/bga.c:3143 src/bga.c:3184 src/bga.c:3220
+#: src/bga.c:3256 src/bga.c:3500 src/bga.c:3580 src/bga.c:4041 src/bga.c:4077
+#: src/bga.c:4302 src/bga.c:4392 src/capc.c:752 src/capc.c:791
 #, c-format
 msgid "%s is also known as"
 msgstr ""
 
-#: src/bga.c:4522 src/capa.c:768 src/capc.c:2324 src/capm.c:755
-#: src/capmp.c:754 src/cappr.c:796 src/con_dil.c:725 src/diom.c:730
-#: src/diomelf.c:1292 src/indc.c:674 src/indm.c:738 src/indp.c:753
-#: src/res.c:745 src/resc.c:643 src/resm.c:737 src/resmelf.c:728
-#: src/sot.c:2929 src/to.c:503
+#: src/bga.c:4524 src/capa.c:770 src/capc.c:2326 src/capm.c:757
+#: src/capmp.c:756 src/cappr.c:798 src/con_dil.c:727 src/diom.c:732
+#: src/diomelf.c:1294 src/indc.c:676 src/indm.c:740 src/indp.c:755
+#: src/res.c:747 src/resc.c:645 src/resm.c:739 src/resmelf.c:730
+#: src/sot.c:2931 src/to.c:505
 #, c-format
 msgid "default values for footprint %s not found.\n"
 msgstr ""
 
-#: src/bga.c:4634 src/capa.c:847 src/capc.c:2408 src/capm.c:838
-#: src/capmp.c:837 src/cappr.c:875 src/con_dil.c:815 src/con_dip.c:838
-#: src/con_hdr.c:192 src/con_sil.c:1949 src/diom.c:814 src/diomelf.c:1379
-#: src/dip.c:1729 src/indc.c:758 src/indm.c:824 src/indp.c:839 src/pga.c:702
-#: src/plcc.c:950 src/res.c:830 src/resc.c:722 src/resm.c:823
-#: src/resmelf.c:812 src/sil.c:788 src/sip.c:782 src/sot.c:3010 src/to.c:582
-#: src/to.c:918 src/to.c:1253 src/to.c:1450 src/to.c:1646 src/to.c:1829
+#: src/bga.c:4636 src/capa.c:849 src/capc.c:2410 src/capm.c:840
+#: src/capmp.c:839 src/cappr.c:877 src/con_dil.c:817 src/con_dip.c:840
+#: src/con_hdr.c:194 src/con_sil.c:1951 src/diom.c:816 src/diomelf.c:1381
+#: src/dip.c:1729 src/indc.c:760 src/indm.c:826 src/indp.c:841 src/pga.c:704
+#: src/plcc.c:952 src/res.c:832 src/resc.c:724 src/resm.c:825
+#: src/resmelf.c:814 src/sil.c:790 src/sip.c:784 src/sot.c:3012 src/to.c:584
+#: src/to.c:920 src/to.c:1255 src/to.c:1452 src/to.c:1648 src/to.c:1831
 #, c-format
 msgid "could not open file for %s footprint: %s."
 msgstr ""
 
-#: src/bga.c:4752
+#: src/bga.c:4754
 #, c-format
 msgid "# Write fiducials\n"
 msgstr ""
 
-#: src/bga.c:4816 src/capa.c:1057 src/capc.c:2518 src/capm.c:948
-#: src/capmp.c:947 src/cappr.c:1085 src/con_dil.c:972 src/con_dip.c:987
+#: src/bga.c:4818 src/capa.c:1059 src/capc.c:2520 src/capm.c:950
+#: src/capmp.c:949 src/cappr.c:1087 src/con_dil.c:974 src/con_dip.c:989
 #, c-format
 msgid "# Write a package body on the silkscreen\n"
 msgstr ""
 
-#: src/bga.c:4829 src/capm.c:1025 src/capmp.c:1024 src/con_dil.c:985
-#: src/con_dip.c:1000
+#: src/bga.c:4831 src/capm.c:1027 src/capmp.c:1026 src/con_dil.c:987
+#: src/con_dip.c:1002
 #, c-format
 msgid "# Write a pin 1 marker on the silkscreen\n"
 msgstr ""
 
-#: src/bga.c:4845 src/capa.c:1095 src/capc.c:2544 src/capm.c:1054
-#: src/capmp.c:1053 src/cappr.c:1139 src/con_dil.c:1000 src/con_dip.c:1050
+#: src/bga.c:4847 src/capa.c:1097 src/capc.c:2546 src/capm.c:1056
+#: src/capmp.c:1055 src/cappr.c:1141 src/con_dil.c:1002 src/con_dip.c:1052
 #, c-format
 msgid "# Write a courtyard on the silkscreen\n"
 msgstr ""
 
-#: src/bga.c:4868
+#: src/bga.c:4870
 #, c-format
 msgid "[%s] wrote footprint: %s."
 msgstr ""
 
-#: src/capa.c:591 src/capc.c:540 src/capm.c:585 src/capmp.c:585
-#: src/cappr.c:619 src/con_dil.c:561
+#: src/capa.c:593 src/capc.c:542 src/capm.c:587 src/capmp.c:587
+#: src/cappr.c:621 src/con_dil.c:563
 #, c-format
 msgid "[%s] DRC Error: package should not have a fiducial pad."
 msgstr ""
 
-#: src/capa.c:603 src/capc.c:552 src/capm.c:597 src/capmp.c:597
-#: src/cappr.c:631 src/con_dil.c:573
+#: src/capa.c:605 src/capc.c:554 src/capm.c:599 src/capmp.c:599
+#: src/cappr.c:633 src/con_dil.c:575
 #, c-format
 msgid ""
 "[%s] DRC Error: check for clearance of the package length with regard to the "
 "courtyard dimensions."
 msgstr ""
 
-#: src/capa.c:615 src/cappr.c:643 src/diom.c:591 src/diomelf.c:601
-#: src/dip.c:543 src/indc.c:535 src/indm.c:596 src/pga.c:486 src/plcc.c:732
-#: src/res.c:597 src/resc.c:504 src/resm.c:595 src/resmelf.c:585 src/sot.c:786
+#: src/capa.c:617 src/cappr.c:645 src/diom.c:593 src/diomelf.c:603
+#: src/dip.c:543 src/indc.c:537 src/indm.c:598 src/pga.c:488 src/plcc.c:734
+#: src/res.c:599 src/resc.c:506 src/resm.c:597 src/resmelf.c:587 src/sot.c:788
 #, c-format
 msgid ""
 "DRC Error: check for clearance of the package width with regard to the "
 "courtyard dimensions."
 msgstr ""
 
-#: src/capa.c:1118 src/capc.c:2567 src/capm.c:1077 src/capmp.c:1076
-#: src/cappr.c:1178 src/con_dil.c:1023 src/con_dip.c:1073 src/con_hdr.c:351
-#: src/con_sil.c:2139 src/diom.c:1053 src/diomelf.c:1619 src/dip.c:1921
-#: src/indc.c:917 src/indm.c:1082 src/indp.c:1097 src/pga.c:851
-#: src/plcc.c:1335 src/res.c:1102 src/resc.c:881 src/resm.c:1081
-#: src/resmelf.c:1051 src/sil.c:978 src/sip.c:972 src/sot.c:3354 src/to.c:887
-#: src/to.c:1223 src/to.c:1419 src/to.c:1616 src/to.c:1798 src/to.c:1981
+#: src/capa.c:1120 src/capc.c:2569 src/capm.c:1079 src/capmp.c:1078
+#: src/cappr.c:1180 src/con_dil.c:1025 src/con_dip.c:1075 src/con_hdr.c:353
+#: src/con_sil.c:2141 src/diom.c:1055 src/diomelf.c:1621 src/dip.c:1921
+#: src/indc.c:919 src/indm.c:1084 src/indp.c:1099 src/pga.c:853
+#: src/plcc.c:1337 src/res.c:1104 src/resc.c:883 src/resm.c:1083
+#: src/resmelf.c:1053 src/sil.c:980 src/sip.c:974 src/sot.c:3356 src/to.c:889
+#: src/to.c:1225 src/to.c:1421 src/to.c:1618 src/to.c:1800 src/to.c:1983
 #, c-format
 msgid "wrote a footprint for a %s package: %s."
 msgstr ""
 
-#: src/capc.c:399 src/capm.c:444 src/capmp.c:444 src/indp.c:439
+#: src/capc.c:401 src/capm.c:446 src/capmp.c:446 src/indp.c:441
 #, c-format
 msgid "[%s] DRC Error: check for number of pins/pads <> 2."
 msgstr ""
 
-#: src/capc.c:423 src/capm.c:468 src/capmp.c:468 src/indp.c:463
+#: src/capc.c:425 src/capm.c:470 src/capmp.c:470 src/indp.c:465
 #, c-format
 msgid ""
 "[%s] DRC Error: circular pad shape specified for check for allowed pad "
 "shapes."
 msgstr ""
 
-#: src/capc.c:564 src/capm.c:609 src/capmp.c:609 src/con_dil.c:585
+#: src/capc.c:566 src/capm.c:611 src/capmp.c:611 src/con_dil.c:587
 #, c-format
 msgid ""
 "[%s] DRC Error: check for clearance of the package width with regard to the "
 "courtyard dimensions."
 msgstr ""
 
-#: src/capc.c:753 src/capc.c:792 src/capc.c:1016
+#: src/capc.c:755 src/capc.c:794 src/capc.c:1018
 #, c-format
 msgid "%s: pads are being trimmed."
 msgstr ""
 
-#: src/capc.c:755 src/capc.c:794 src/capc.c:831 src/capc.c:868 src/capc.c:905
-#: src/capc.c:942 src/capc.c:979 src/capc.c:1018 src/capc.c:1055
-#: src/capc.c:1092 src/capc.c:1129 src/capc.c:1166 src/capc.c:1203
-#: src/capc.c:1240 src/capc.c:1277 src/capc.c:1314 src/capc.c:1351
-#: src/capc.c:1388 src/capc.c:1425 src/capc.c:1462 src/capc.c:1499
-#: src/capc.c:1536 src/capc.c:1573 src/capc.c:1610 src/capc.c:1647
-#: src/capc.c:1684 src/capc.c:1721 src/capc.c:1758 src/capc.c:1795
-#: src/capc.c:1832 src/capc.c:1869 src/capc.c:1906
+#: src/capc.c:757 src/capc.c:796 src/capc.c:833 src/capc.c:870 src/capc.c:907
+#: src/capc.c:944 src/capc.c:981 src/capc.c:1020 src/capc.c:1057
+#: src/capc.c:1094 src/capc.c:1131 src/capc.c:1168 src/capc.c:1205
+#: src/capc.c:1242 src/capc.c:1279 src/capc.c:1316 src/capc.c:1353
+#: src/capc.c:1390 src/capc.c:1427 src/capc.c:1464 src/capc.c:1501
+#: src/capc.c:1538 src/capc.c:1575 src/capc.c:1612 src/capc.c:1649
+#: src/capc.c:1686 src/capc.c:1723 src/capc.c:1760 src/capc.c:1797
+#: src/capc.c:1834 src/capc.c:1871 src/capc.c:1908
 #, c-format
 msgid "%s: footprint is too small for a package outline on the silkscreen."
 msgstr ""
 
-#: src/capc.c:828 src/capc.c:865 src/capc.c:902 src/capc.c:939 src/capc.c:976
-#: src/capc.c:1013 src/capc.c:1052 src/capc.c:1089 src/capc.c:1126
-#: src/capc.c:1163 src/capc.c:1200 src/capc.c:1237 src/capc.c:1274
-#: src/capc.c:1311 src/capc.c:1348 src/capc.c:1385 src/capc.c:1422
-#: src/capc.c:1459 src/capc.c:1496 src/capc.c:1533 src/capc.c:1570
-#: src/capc.c:1607 src/capc.c:1644 src/capc.c:1681 src/capc.c:1718
-#: src/capc.c:1755 src/capc.c:1792 src/capc.c:1829 src/capc.c:1866
-#: src/capc.c:1903 src/capc.c:1940 src/capc.c:1974 src/capc.c:2008
-#: src/capc.c:2042 src/capc.c:2076 src/capc.c:2110 src/capc.c:2144
-#: src/capc.c:2178 src/capc.c:2212 src/capc.c:2246 src/capc.c:2280
-#: src/capc.c:2317
+#: src/capc.c:830 src/capc.c:867 src/capc.c:904 src/capc.c:941 src/capc.c:978
+#: src/capc.c:1015 src/capc.c:1054 src/capc.c:1091 src/capc.c:1128
+#: src/capc.c:1165 src/capc.c:1202 src/capc.c:1239 src/capc.c:1276
+#: src/capc.c:1313 src/capc.c:1350 src/capc.c:1387 src/capc.c:1424
+#: src/capc.c:1461 src/capc.c:1498 src/capc.c:1535 src/capc.c:1572
+#: src/capc.c:1609 src/capc.c:1646 src/capc.c:1683 src/capc.c:1720
+#: src/capc.c:1757 src/capc.c:1794 src/capc.c:1831 src/capc.c:1868
+#: src/capc.c:1905 src/capc.c:1942 src/capc.c:1976 src/capc.c:2010
+#: src/capc.c:2044 src/capc.c:2078 src/capc.c:2112 src/capc.c:2146
+#: src/capc.c:2180 src/capc.c:2214 src/capc.c:2248 src/capc.c:2282
+#: src/capc.c:2319
 #, c-format
 msgid "%s: is also known as"
 msgstr ""
 
-#: src/cappr.c:608
+#: src/cappr.c:610
 #, c-format
 msgid "[%s] DRC Error: Pitch in Y-direction is supposed to be 0."
 msgstr ""
 
-#: src/con_dil.c:391
+#: src/con_dil.c:393
 #, c-format
 msgid "[%s] DRC Error: check for number of pins is even."
 msgstr ""
 
-#: src/con_dil.c:402
+#: src/con_dil.c:404
 #, c-format
 msgid "[%s] DRC Error: check for number of rows = 2."
 msgstr ""
 
-#: src/con_dil.c:413
+#: src/con_dil.c:415
 #, c-format
 msgid "[%s] DRC Error: check for number of columns < 1."
 msgstr ""
 
-#: src/con_dip.c:53 src/con_sil.c:52 src/diom.c:51 src/diomelf.c:52
-#: src/dip.c:54 src/indc.c:51 src/indm.c:52 src/indp.c:52 src/pga.c:53
-#: src/plcc.c:57 src/res.c:52 src/resc.c:49 src/resm.c:51 src/resmelf.c:51
-#: src/sil.c:52 src/sip.c:52 src/sot.c:51 src/to.c:50 src/to.c:252
+#: src/con_dip.c:55 src/con_sil.c:54 src/diom.c:53 src/diomelf.c:54
+#: src/dip.c:54 src/indc.c:53 src/indm.c:54 src/indp.c:54 src/pga.c:55
+#: src/plcc.c:59 src/res.c:54 src/resc.c:51 src/resm.c:53 src/resmelf.c:53
+#: src/sil.c:54 src/sip.c:54 src/sot.c:53 src/to.c:52 src/to.c:254
 #, c-format
 msgid "could not create a valid element pointer for a %s package."
 msgstr ""
 
-#: src/con_dip.c:349 src/con_sil.c:305 src/diom.c:370 src/diomelf.c:371
-#: src/dip.c:308 src/indc.c:285 src/indm.c:374 src/indp.c:374 src/pga.c:272
-#: src/plcc.c:486 src/res.c:399 src/resc.c:283 src/resm.c:373
-#: src/resmelf.c:370 src/sil.c:305 src/sip.c:305 src/sot.c:466 src/to.c:220
-#: src/to.c:422
+#: src/con_dip.c:351 src/con_sil.c:307 src/diom.c:372 src/diomelf.c:373
+#: src/dip.c:308 src/indc.c:287 src/indm.c:376 src/indp.c:376 src/pga.c:274
+#: src/plcc.c:488 src/res.c:401 src/resc.c:285 src/resm.c:375
+#: src/resmelf.c:372 src/sil.c:307 src/sip.c:307 src/sot.c:468 src/to.c:222
+#: src/to.c:424
 #, c-format
 msgid "created an element for a %s package: %s."
 msgstr ""
 
-#: src/con_dip.c:417
+#: src/con_dip.c:419
 #, c-format
 msgid "[%s] DRC Error: total number of pins is not even."
 msgstr ""
 
-#: src/con_dip.c:428 src/con_sil.c:430 src/sil.c:378 src/sip.c:372
+#: src/con_dip.c:430 src/con_sil.c:432 src/sil.c:380 src/sip.c:374
 #, c-format
 msgid "[%s] DRC Error: number of rows < 1."
 msgstr ""
 
-#: src/con_dip.c:439
+#: src/con_dip.c:441
 #, c-format
 msgid "[%s] DRC Error: number of columns is not equal to 2."
 msgstr ""
 
-#: src/con_dip.c:581 src/con_sil.c:584 src/indp.c:580 src/sil.c:532
-#: src/sip.c:526
+#: src/con_dip.c:583 src/con_sil.c:586 src/indp.c:582 src/sil.c:534
+#: src/sip.c:528
 #, c-format
 msgid "[%s] DRC Error: package should not have any fiducials."
 msgstr ""
 
-#: src/con_dip.c:745 src/con_hdr.c:74 src/con_sil.c:1856 src/dip.c:1647
-#: src/pga.c:607 src/plcc.c:868 src/sil.c:695 src/sip.c:689
+#: src/con_dip.c:747 src/con_hdr.c:76 src/con_sil.c:1858 src/dip.c:1647
+#: src/pga.c:609 src/plcc.c:870 src/sil.c:697 src/sip.c:691
 #, c-format
 msgid "WARNING: default values for footprint %s not found.\n"
 msgstr ""
 
-#: src/con_sil.c:441 src/sil.c:389 src/sip.c:383
+#: src/con_sil.c:443 src/sil.c:391 src/sip.c:385
 #, c-format
 msgid "[%s] DRC Error: number of columns is > 1."
 msgstr ""
 
-#: src/con_sil.c:453 src/sil.c:401 src/sip.c:395
+#: src/con_sil.c:455 src/sil.c:403 src/sip.c:397
 #, c-format
 msgid "[%s] DRC Error: pitch (X-direction) should be 0."
 msgstr ""
 
-#: src/diom.c:432 src/diomelf.c:441 src/indc.c:347 src/indm.c:436
-#: src/res.c:460 src/resc.c:345 src/resm.c:435 src/resmelf.c:426
+#: src/diom.c:434 src/diomelf.c:443 src/indc.c:349 src/indm.c:438
+#: src/res.c:462 src/resc.c:347 src/resm.c:437 src/resmelf.c:428
 #, c-format
 msgid "DRC Check: checking %s package %s."
 msgstr ""
 
-#: src/diom.c:440 src/diomelf.c:450 src/indc.c:355 src/indm.c:445
-#: src/resc.c:353 src/resm.c:444 src/resmelf.c:434
+#: src/diom.c:442 src/diomelf.c:452 src/indc.c:357 src/indm.c:447
+#: src/resc.c:355 src/resm.c:446 src/resmelf.c:436
 #, c-format
 msgid "DRC Error: check for number of pins/pads <> 2."
 msgstr ""
 
-#: src/diom.c:452 src/diomelf.c:462 src/dip.c:410 src/indc.c:367
-#: src/indm.c:457 src/pga.c:341 src/plcc.c:558 src/res.c:471 src/resc.c:365
-#: src/resm.c:456 src/resmelf.c:446 src/sot.c:648
+#: src/diom.c:454 src/diomelf.c:464 src/dip.c:410 src/indc.c:369
+#: src/indm.c:459 src/pga.c:343 src/plcc.c:560 src/res.c:473 src/resc.c:367
+#: src/resm.c:458 src/resmelf.c:448 src/sot.c:650
 #, c-format
 msgid "DRC Error: NO_SHAPE specified for check for allowed pad shapes."
 msgstr ""
 
-#: src/diom.c:462 src/diomelf.c:472 src/indc.c:377 src/indm.c:467
-#: src/resc.c:375 src/resm.c:466 src/resmelf.c:456 src/sot.c:656
+#: src/diom.c:464 src/diomelf.c:474 src/indc.c:379 src/indm.c:469
+#: src/resc.c:377 src/resm.c:468 src/resmelf.c:458 src/sot.c:658
 #, c-format
 msgid ""
 "DRC Error: circular pad shape specified for check for allowed pad shapes."
 msgstr ""
 
-#: src/diom.c:476 src/diomelf.c:486 src/indc.c:391 src/indm.c:481
-#: src/pga.c:361 src/plcc.c:582 src/resc.c:389 src/resm.c:480
-#: src/resmelf.c:470 src/sot.c:668
+#: src/diom.c:478 src/diomelf.c:488 src/indc.c:393 src/indm.c:483
+#: src/pga.c:363 src/plcc.c:584 src/resc.c:391 src/resm.c:482
+#: src/resmelf.c:472 src/sot.c:670
 #, c-format
 msgid ""
 "DRC Error: octagonal pad shape specified for check for allowed pad shapes."
 msgstr ""
 
-#: src/diom.c:490 src/diomelf.c:500 src/dip.c:434 src/indc.c:405
-#: src/indm.c:495 src/pga.c:377 src/plcc.c:602 src/res.c:497 src/resc.c:403
-#: src/resm.c:494 src/resmelf.c:484 src/sot.c:680
+#: src/diom.c:492 src/diomelf.c:502 src/dip.c:434 src/indc.c:407
+#: src/indm.c:497 src/pga.c:379 src/plcc.c:604 src/res.c:499 src/resc.c:405
+#: src/resm.c:496 src/resmelf.c:486 src/sot.c:682
 #, c-format
 msgid "DRC Error: no valid pad shape type specified."
 msgstr ""
 
-#: src/diom.c:502 src/diomelf.c:512 src/dip.c:444 src/indc.c:417
-#: src/indm.c:507 src/pga.c:387 src/plcc.c:614 src/res.c:509 src/resc.c:415
-#: src/resm.c:506 src/resmelf.c:496 src/sot.c:690
+#: src/diom.c:504 src/diomelf.c:514 src/dip.c:444 src/indc.c:419
+#: src/indm.c:509 src/pga.c:389 src/plcc.c:616 src/res.c:511 src/resc.c:417
+#: src/resm.c:508 src/resmelf.c:498 src/sot.c:692
 #, c-format
 msgid "DRC Error: check for package body length is <= 0.0."
 msgstr ""
 
-#: src/diom.c:511 src/diomelf.c:521 src/dip.c:451 src/indc.c:426
-#: src/indm.c:516 src/pga.c:394 src/plcc.c:623 src/res.c:518 src/resc.c:424
-#: src/resm.c:515 src/resmelf.c:505 src/sot.c:697
+#: src/diom.c:513 src/diomelf.c:523 src/dip.c:451 src/indc.c:428
+#: src/indm.c:518 src/pga.c:396 src/plcc.c:625 src/res.c:520 src/resc.c:426
+#: src/resm.c:517 src/resmelf.c:507 src/sot.c:699
 #, c-format
 msgid "DRC Error: check for package body width is <= 0.0."
 msgstr ""
 
-#: src/diom.c:520 src/diomelf.c:530 src/dip.c:458 src/indc.c:435
-#: src/indm.c:525 src/pga.c:401 src/plcc.c:632 src/res.c:527 src/resc.c:433
-#: src/resm.c:524 src/resmelf.c:514 src/sot.c:704
+#: src/diom.c:522 src/diomelf.c:532 src/dip.c:458 src/indc.c:437
+#: src/indm.c:527 src/pga.c:403 src/plcc.c:634 src/res.c:529 src/resc.c:435
+#: src/resm.c:526 src/resmelf.c:516 src/sot.c:706
 #, c-format
 msgid "DRC Error: check for package body height is <= 0.0."
 msgstr ""
 
-#: src/diom.c:530 src/diomelf.c:540 src/dip.c:466 src/indc.c:445
-#: src/indm.c:535 src/pga.c:409 src/plcc.c:642 src/res.c:537 src/resc.c:443
-#: src/resm.c:534 src/resmelf.c:524 src/sot.c:712
+#: src/diom.c:532 src/diomelf.c:542 src/dip.c:466 src/indc.c:447
+#: src/indm.c:537 src/pga.c:411 src/plcc.c:644 src/res.c:539 src/resc.c:445
+#: src/resm.c:536 src/resmelf.c:526 src/sot.c:714
 #, c-format
 msgid "DRC Error: check for courtyard length is <= 0.0."
 msgstr ""
 
-#: src/diom.c:539 src/diomelf.c:549 src/dip.c:473 src/indc.c:454
-#: src/indm.c:544 src/pga.c:416 src/plcc.c:651 src/res.c:546 src/resc.c:452
-#: src/resm.c:543 src/resmelf.c:533 src/sot.c:719
+#: src/diom.c:541 src/diomelf.c:551 src/dip.c:473 src/indc.c:456
+#: src/indm.c:546 src/pga.c:418 src/plcc.c:653 src/res.c:548 src/resc.c:454
+#: src/resm.c:545 src/resmelf.c:535 src/sot.c:721
 #, c-format
 msgid "DRC Error: check for courtyard width is <= 0.0."
 msgstr ""
 
-#: src/diom.c:549 src/diomelf.c:559 src/dip.c:481 src/indc.c:464
-#: src/indm.c:554 src/pga.c:424 src/plcc.c:661 src/res.c:556 src/resc.c:462
-#: src/resm.c:553 src/resmelf.c:543 src/sot.c:727
+#: src/diom.c:551 src/diomelf.c:561 src/dip.c:481 src/indc.c:466
+#: src/indm.c:556 src/pga.c:426 src/plcc.c:663 src/res.c:558 src/resc.c:464
+#: src/resm.c:555 src/resmelf.c:545 src/sot.c:729
 #, c-format
 msgid "DRC Error: check for minimum clearance between copper (X-direction)."
 msgstr ""
 
-#: src/diom.c:559 src/diomelf.c:569 src/dip.c:489 src/indc.c:474
-#: src/indm.c:564 src/pga.c:432 src/plcc.c:671 src/res.c:566 src/resc.c:472
-#: src/resm.c:563 src/resmelf.c:553 src/sot.c:735
+#: src/diom.c:561 src/diomelf.c:571 src/dip.c:489 src/indc.c:476
+#: src/indm.c:566 src/pga.c:434 src/plcc.c:673 src/res.c:568 src/resc.c:474
+#: src/resm.c:565 src/resmelf.c:555 src/sot.c:737
 #, c-format
 msgid "DRC Error: check for minimum clearance between copper (Y-direction)."
 msgstr ""
 
-#: src/diom.c:569 src/diomelf.c:579 src/indm.c:574 src/resc.c:482
-#: src/resm.c:573 src/resmelf.c:563
+#: src/diom.c:571 src/diomelf.c:581 src/indm.c:576 src/resc.c:484
+#: src/resm.c:575 src/resmelf.c:565
 #, c-format
 msgid "DRC Error: check for fiducials, package should not have fiducials."
 msgstr ""
 
-#: src/diom.c:580 src/diomelf.c:590 src/dip.c:534 src/indc.c:524
-#: src/indm.c:585 src/pga.c:477 src/plcc.c:721 src/res.c:586 src/resc.c:493
-#: src/resm.c:584 src/resmelf.c:574 src/sot.c:777
+#: src/diom.c:582 src/diomelf.c:592 src/dip.c:534 src/indc.c:526
+#: src/indm.c:587 src/pga.c:479 src/plcc.c:723 src/res.c:588 src/resc.c:495
+#: src/resm.c:586 src/resmelf.c:576 src/sot.c:779
 #, c-format
 msgid ""
 "DRC Error: check for clearance of the package length with regard to the "
 "courtyard dimensions."
 msgstr ""
 
-#: src/diom.c:606 src/diomelf.c:616 src/dip.c:556 src/indc.c:550
-#: src/indm.c:611 src/pga.c:499 src/plcc.c:747 src/res.c:612 src/resc.c:519
-#: src/resm.c:610 src/resmelf.c:600 src/sot.c:799
+#: src/diom.c:608 src/diomelf.c:618 src/dip.c:556 src/indc.c:552
+#: src/indm.c:613 src/pga.c:501 src/plcc.c:749 src/res.c:614 src/resc.c:521
+#: src/resm.c:612 src/resmelf.c:602 src/sot.c:801
 #, c-format
 msgid ""
 "DRC Error: line width 0.0 specified for check for a reasonable silk line "
 "width."
 msgstr ""
 
-#: src/diom.c:617 src/diomelf.c:627 src/dip.c:565 src/indc.c:561
-#: src/indm.c:622 src/pga.c:508 src/plcc.c:758 src/res.c:623 src/resc.c:530
-#: src/resm.c:621 src/resmelf.c:611 src/sot.c:808
+#: src/diom.c:619 src/diomelf.c:629 src/dip.c:565 src/indc.c:563
+#: src/indm.c:624 src/pga.c:510 src/plcc.c:760 src/res.c:625 src/resc.c:532
+#: src/resm.c:623 src/resmelf.c:613 src/sot.c:810
 #, c-format
 msgid ""
 "DRC Error: no units specified for check for a reasonable silk line width."
 msgstr ""
 
-#: src/diom.c:628 src/diom.c:639 src/diomelf.c:638 src/diomelf.c:649
-#: src/dip.c:574 src/dip.c:583 src/indc.c:572 src/indc.c:583 src/indm.c:633
-#: src/indm.c:644 src/pga.c:517 src/pga.c:526 src/plcc.c:769 src/plcc.c:780
-#: src/res.c:634 src/res.c:645 src/resc.c:541 src/resc.c:552 src/resm.c:632
-#: src/resm.c:643 src/resmelf.c:622 src/resmelf.c:633 src/sot.c:817
-#: src/sot.c:826
+#: src/diom.c:630 src/diom.c:641 src/diomelf.c:640 src/diomelf.c:651
+#: src/dip.c:574 src/dip.c:583 src/indc.c:574 src/indc.c:585 src/indm.c:635
+#: src/indm.c:646 src/pga.c:519 src/pga.c:528 src/plcc.c:771 src/plcc.c:782
+#: src/res.c:636 src/res.c:647 src/resc.c:543 src/resc.c:554 src/resm.c:634
+#: src/resm.c:645 src/resmelf.c:624 src/resmelf.c:635 src/sot.c:819
+#: src/sot.c:828
 #, c-format
 msgid ""
 "DRC Error: line width > 40.0 mil specified check for a reasonable silk line "
 "width."
 msgstr ""
 
-#: src/diom.c:650 src/diomelf.c:660 src/dip.c:592 src/indc.c:594
-#: src/indm.c:655 src/pga.c:535 src/plcc.c:791 src/res.c:656 src/resc.c:563
-#: src/resm.c:654 src/resmelf.c:644 src/sot.c:835
+#: src/diom.c:652 src/diomelf.c:662 src/dip.c:592 src/indc.c:596
+#: src/indm.c:657 src/pga.c:537 src/plcc.c:793 src/res.c:658 src/resc.c:565
+#: src/resm.c:656 src/resmelf.c:646 src/sot.c:837
 #, c-format
 msgid ""
 "DRC Error: line width > 1.0 mm specified check for a reasonable silk line "
 "width."
 msgstr ""
 
-#: src/diom.c:660 src/diomelf.c:670 src/dip.c:600 src/indc.c:604
-#: src/indm.c:665 src/pga.c:543 src/plcc.c:801 src/res.c:666 src/resc.c:573
-#: src/resm.c:664 src/resmelf.c:654 src/sot.c:843
+#: src/diom.c:662 src/diomelf.c:672 src/dip.c:600 src/indc.c:606
+#: src/indm.c:667 src/pga.c:545 src/plcc.c:803 src/res.c:668 src/resc.c:575
+#: src/resm.c:666 src/resmelf.c:656 src/sot.c:845
 #, c-format
 msgid ""
 "DRC Error: no valid units type specified for check for a reasonable silk "
 "line width."
 msgstr ""
 
-#: src/diom.c:671 src/diomelf.c:681 src/indc.c:615 src/indm.c:676
-#: src/res.c:676 src/resc.c:584 src/resm.c:675 src/resmelf.c:665
+#: src/diom.c:673 src/diomelf.c:683 src/indc.c:617 src/indm.c:678
+#: src/res.c:678 src/resc.c:586 src/resm.c:677 src/resmelf.c:667
 #, c-format
 msgid "DRC Check: no errors while checking %s package %s."
 msgstr ""
 
-#: src/diomelf.c:756
+#: src/diomelf.c:758
 #, c-format
 msgid "DIOMELF1911L: is also known as MicroMELF."
 msgstr ""
 
-#: src/diomelf.c:795
+#: src/diomelf.c:797
 #, c-format
 msgid "DIOMELF1911M: is also known as MicroMELF."
 msgstr ""
 
-#: src/diomelf.c:834
+#: src/diomelf.c:836
 #, c-format
 msgid "DIOMELF1911N: is also known as MicroMELF."
 msgstr ""
 
-#: src/diomelf.c:873
+#: src/diomelf.c:875
 #, c-format
 msgid "DIOMELF3414L: is also known as LL-34."
 msgstr ""
 
-#: src/diomelf.c:912
+#: src/diomelf.c:914
 #, c-format
 msgid "DIOMELF3414M: is also known as LL-34."
 msgstr ""
 
-#: src/diomelf.c:951
+#: src/diomelf.c:953
 #, c-format
 msgid "DIOMELF3414N: is also known as SOD-80."
 msgstr ""
 
-#: src/diomelf.c:990
+#: src/diomelf.c:992
 #, c-format
 msgid "DIOMELF3515L: is also known as IEC 100H01."
 msgstr ""
 
-#: src/diomelf.c:1029
+#: src/diomelf.c:1031
 #, c-format
 msgid "DIOMELF3515M: is also known as IEC 100H01."
 msgstr ""
 
-#: src/diomelf.c:1068
+#: src/diomelf.c:1070
 #, c-format
 msgid "DIOMELF3515N: is also known as IEC 100H01."
 msgstr ""
 
-#: src/diomelf.c:1243
+#: src/diomelf.c:1245
 #, c-format
 msgid "DIOMELF3520M: is also known as IEC 100H03."
 msgstr ""
 
-#: src/diomelf.c:1282
+#: src/diomelf.c:1284
 #, c-format
 msgid "DIOMELF3520N: is also known as IEC 100H03."
 msgstr ""
@@ -2382,17 +2382,17 @@ msgstr ""
 msgid "DRC Check: checking DIP package %s."
 msgstr ""
 
-#: src/dip.c:505 src/indc.c:486 src/pga.c:448 src/plcc.c:683 src/sot.c:745
+#: src/dip.c:505 src/indc.c:488 src/pga.c:450 src/plcc.c:685 src/sot.c:747
 #, c-format
 msgid "DRC Error: check for zero width fiducial pad."
 msgstr ""
 
-#: src/dip.c:513 src/indc.c:496 src/pga.c:456 src/plcc.c:693 src/sot.c:753
+#: src/dip.c:513 src/indc.c:498 src/pga.c:458 src/plcc.c:695 src/sot.c:755
 #, c-format
 msgid "DRC Error: check for zero width solder mask clearance."
 msgstr ""
 
-#: src/dip.c:523 src/indc.c:511 src/pga.c:466 src/plcc.c:708 src/sot.c:766
+#: src/dip.c:523 src/indc.c:513 src/pga.c:468 src/plcc.c:710 src/sot.c:768
 #, c-format
 msgid "DRC Error: check for distance between fiducial and nearest pad."
 msgstr ""
@@ -2402,479 +2402,479 @@ msgstr ""
 msgid "DRC Check: no errors while checking DIP package %s."
 msgstr ""
 
-#: src/pga.c:333 src/plcc.c:548
+#: src/pga.c:335 src/plcc.c:550
 #, c-format
 msgid "DRC Check: checking BGA package %s."
 msgstr ""
 
-#: src/pga.c:353
+#: src/pga.c:355
 #, c-format
 msgid "DRC Error: square pad shape specified for check for allowed pad shapes."
 msgstr ""
 
-#: src/pga.c:369 src/plcc.c:592
+#: src/pga.c:371 src/plcc.c:594
 #, c-format
 msgid ""
 "DRC Error: round elongated pad shape specified for check for allowed pad "
 "shapes."
 msgstr ""
 
-#: src/pga.c:552
+#: src/pga.c:554
 #, c-format
 msgid "DRC Check: no errors while checking PGA package %s."
 msgstr ""
 
-#: src/plcc.c:568
+#: src/plcc.c:570
 #, c-format
 msgid "DRC Error: round pad shape specified for check for allowed pad shapes."
 msgstr ""
 
-#: src/plcc.c:812
+#: src/plcc.c:814
 #, c-format
 msgid "DRC Check: no errors while checking PLCC package %s."
 msgstr ""
 
-#: src/res.c:575
+#: src/res.c:577
 #, c-format
 msgid "DRC Error: check for fiducial set to TRUE, package has no fiducials."
 msgstr ""
 
-#: src/sot.c:256 src/sot.c:3198
+#: src/sot.c:258 src/sot.c:3200
 #, c-format
 msgid ""
 "for now a number of pins of %d without a thermal pad is not implemented yet "
 "in sot_write_footprint()."
 msgstr ""
 
-#: src/sot.c:357 src/sot.c:3295
+#: src/sot.c:359 src/sot.c:3297
 #, c-format
 msgid "number of pins of %d is not defined in sot_write_footprint()."
 msgstr ""
 
-#: src/sot.c:640
+#: src/sot.c:642
 #, c-format
 msgid "DRC Check: checking SOT package %s."
 msgstr ""
 
-#: src/sot.c:853
+#: src/sot.c:855
 #, c-format
 msgid "DRC Check: no errors while checking SOT package %s."
 msgstr ""
 
-#: src/sot.c:959
+#: src/sot.c:961
 #, c-format
 msgid ""
 "SOT50P160X90-3N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:961
+#: src/sot.c:963
 #, c-format
 msgid "SOT50P160X90-3N: is also known as SOT523."
 msgstr ""
 
-#: src/sot.c:997
+#: src/sot.c:999
 #, c-format
 msgid "SOT50P210X110-8N: is also known as JEDEC MO-203BA."
 msgstr ""
 
-#: src/sot.c:1033
+#: src/sot.c:1035
 #, c-format
 msgid "SOT65P210X100-3N: is also known as JEITA SC-70."
 msgstr ""
 
-#: src/sot.c:1100
+#: src/sot.c:1102
 #, c-format
 msgid "SOT65P210X110-3N: is also known as SOT323."
 msgstr ""
 
-#: src/sot.c:1136
+#: src/sot.c:1138
 #, c-format
 msgid "SOT65P210X110-5N: is also known as JEDEC MO-203AA."
 msgstr ""
 
-#: src/sot.c:1172
+#: src/sot.c:1174
 #, c-format
 msgid "SOT65P210X110-6N: is also known as JEDEC MO-203AB."
 msgstr ""
 
-#: src/sot.c:1239
+#: src/sot.c:1241
 #, c-format
 msgid ""
 "SOT65P275X110-8N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:1241
+#: src/sot.c:1243
 #, c-format
 msgid "SOT65P275X110-8N: is also known as JEDEC MO-193BA."
 msgstr ""
 
-#: src/sot.c:1277
+#: src/sot.c:1279
 #, c-format
 msgid ""
 "SOT65P280X100-8N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:1313
+#: src/sot.c:1315
 #, c-format
 msgid ""
 "SOT65P280X130-8N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:1349
+#: src/sot.c:1351
 #, c-format
 msgid ""
 "SOT65P280X145-8AN: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:1351
+#: src/sot.c:1353
 #, c-format
 msgid "SOT65P280X145-8AN: is also known as JEDEC MO-178BA."
 msgstr ""
 
-#: src/sot.c:1387
+#: src/sot.c:1389
 #, c-format
 msgid ""
 "SOT65P280X145-8BN: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:1389
+#: src/sot.c:1391
 #, c-format
 msgid "SOT65P280X145-8BN: is also known as EIAJ SC-74."
 msgstr ""
 
-#: src/sot.c:1425
+#: src/sot.c:1427
 #, c-format
 msgid ""
 "SOT65P280X145-8N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:1427
+#: src/sot.c:1429
 #, c-format
 msgid "SOT65P280X145-8N: is also known as JEDEC MO-193BA."
 msgstr ""
 
-#: src/sot.c:1467
+#: src/sot.c:1469
 #, c-format
 msgid ""
 "SOT80P330X140-8N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:1469
+#: src/sot.c:1471
 #, c-format
 msgid "SOT80P330X140-8N: is also known as SOT23-8."
 msgstr ""
 
-#: src/sot.c:1509
+#: src/sot.c:1511
 #, c-format
 msgid ""
 "SOT95P228X102-3N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:1549
+#: src/sot.c:1551
 #, c-format
 msgid ""
 "SOT95P230X109-3N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:1551
+#: src/sot.c:1553
 #, c-format
 msgid "SOT95P230X109-3N: is also known as JEDEC TO-236AB."
 msgstr ""
 
-#: src/sot.c:1591
+#: src/sot.c:1593
 #, c-format
 msgid ""
 "SOT95P230X110-3N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:1593
+#: src/sot.c:1595
 #, c-format
 msgid "SOT95P230X110-3N: is also known as JEDEC TO-236AB."
 msgstr ""
 
-#: src/sot.c:1633
+#: src/sot.c:1635
 #, c-format
 msgid ""
 "SOT95P230X124-3N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:1635
+#: src/sot.c:1637
 #, c-format
 msgid "SOT95P230X124-3N: is also known as JEDEC TO-236AA."
 msgstr ""
 
-#: src/sot.c:1681
+#: src/sot.c:1683
 #, c-format
 msgid "SOT95P237X112-3N: is also known as JEDEC TO-236AB."
 msgstr ""
 
-#: src/sot.c:1717
+#: src/sot.c:1719
 #, c-format
 msgid ""
 "SOT95P237X117-3N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:1719
+#: src/sot.c:1721
 #, c-format
 msgid "SOT95P237X117-3N: is also known as JEDEC TO-236AB."
 msgstr ""
 
-#: src/sot.c:1759
+#: src/sot.c:1761
 #, c-format
 msgid ""
 "SOT95P240X110-3N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:1799
+#: src/sot.c:1801
 #, c-format
 msgid ""
 "SOT95P240X114-3N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:1839
+#: src/sot.c:1841
 #, c-format
 msgid ""
 "SOT95P251X112-3N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:1880
+#: src/sot.c:1882
 #, c-format
 msgid "SOT95P270X145-5N: is also known as EIAJ SC-74A."
 msgstr ""
 
-#: src/sot.c:1882
+#: src/sot.c:1884
 #, c-format
 msgid ""
 "SOT95P270X145-5N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:1993
+#: src/sot.c:1995
 #, c-format
 msgid "SOT95P279X142-5N: is also known as SOT23-5."
 msgstr ""
 
-#: src/sot.c:1995
+#: src/sot.c:1997
 #, c-format
 msgid ""
 "SOT95P279X142-5N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:2035
+#: src/sot.c:2037
 #, c-format
 msgid "SOT95P280X100-5N: is also known as JEDEC MO-193."
 msgstr ""
 
-#: src/sot.c:2037
+#: src/sot.c:2039
 #, c-format
 msgid ""
 "SOT95P280X100-5N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:2077
+#: src/sot.c:2079
 #, c-format
 msgid "SOT95P280X100-6N: is also known as JEDEC MO-193."
 msgstr ""
 
-#: src/sot.c:2079
+#: src/sot.c:2081
 #, c-format
 msgid ""
 "SOT95P280X100-6N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:2121
+#: src/sot.c:2123
 #, c-format
 msgid "SOT95P280X110-5N: is also known as JEDEC MO-193AB."
 msgstr ""
 
-#: src/sot.c:2123
+#: src/sot.c:2125
 #, c-format
 msgid ""
 "SOT95P280X110-5N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:2166
+#: src/sot.c:2168
 #, c-format
 msgid "SOT95P280X110-6N: is also known as JEDEC MO-193AA."
 msgstr ""
 
-#: src/sot.c:2168
+#: src/sot.c:2170
 #, c-format
 msgid ""
 "SOT95P280X110-6N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:2208
+#: src/sot.c:2210
 #, c-format
 msgid "SOT95P280X115-6N: is also known as JEDEC MO-178."
 msgstr ""
 
-#: src/sot.c:2210
+#: src/sot.c:2212
 #, c-format
 msgid ""
 "SOT95P280X115-6N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:2250
+#: src/sot.c:2252
 #, c-format
 msgid ""
 "SOT95P280X135-3AN: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:2290
+#: src/sot.c:2292
 #, c-format
 msgid ""
 "SOT95P280X135-3N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:2330
+#: src/sot.c:2332
 #, c-format
 msgid "SOT95P280X135-5N: is also known as JEDEC MO-178."
 msgstr ""
 
-#: src/sot.c:2332
+#: src/sot.c:2334
 #, c-format
 msgid ""
 "SOT95P280X135-5N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:2373
+#: src/sot.c:2375
 #, c-format
 msgid "SOT95P280X145-5AN: is also known as JEDEC MO-178AA."
 msgstr ""
 
-#: src/sot.c:2375
+#: src/sot.c:2377
 #, c-format
 msgid ""
 "SOT95P280X145-5AN: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:2417
+#: src/sot.c:2419
 #, c-format
 msgid "SOT95P280X145-5N: is also known as JEDEC MO-178AA."
 msgstr ""
 
-#: src/sot.c:2419
+#: src/sot.c:2421
 #, c-format
 msgid ""
 "SOT95P280X145-5N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:2460
+#: src/sot.c:2462
 #, c-format
 msgid "SOT95P280X145-6AN: is also known as JEDEC MO-178AB."
 msgstr ""
 
-#: src/sot.c:2462
+#: src/sot.c:2464
 #, c-format
 msgid ""
 "SOT95P280X145-6AN: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:2503
+#: src/sot.c:2505
 #, c-format
 msgid "SOT95P280X145-6N: is also known as JEDEC MO-178AB."
 msgstr ""
 
-#: src/sot.c:2505
+#: src/sot.c:2507
 #, c-format
 msgid ""
 "SOT95P280X145-6N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:2545
+#: src/sot.c:2547
 #, c-format
 msgid "SOT95P284X122-5N: is also known as JEDEC MO-178AA."
 msgstr ""
 
-#: src/sot.c:2547 src/sot.c:2591
+#: src/sot.c:2549 src/sot.c:2593
 #, c-format
 msgid ""
 "SOT95P284X122-5N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:2589
+#: src/sot.c:2591
 #, c-format
 msgid "SOT95P284X122-6N: is also known as JEDEC MO-178AB."
 msgstr ""
 
-#: src/sot.c:2631
+#: src/sot.c:2633
 #, c-format
 msgid "SOT95P285X140-3N: is also known as SC-59."
 msgstr ""
 
-#: src/sot.c:2633
+#: src/sot.c:2635
 #, c-format
 msgid ""
 "SOT95P285X140-3N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:2673
+#: src/sot.c:2675
 #, c-format
 msgid "SOT95P285X90-6N: is also known as JEDEC MO-193AA."
 msgstr ""
 
-#: src/sot.c:2675
+#: src/sot.c:2677
 #, c-format
 msgid ""
 "SOT95P285X90-6N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:2715
+#: src/sot.c:2717
 #, c-format
 msgid ""
 "SOT95P470X124-8N: pads are being trimmed to prevent extension under the "
 "package body."
 msgstr ""
 
-#: src/sot.c:2811
+#: src/sot.c:2813
 #, c-format
 msgid "SOT150P700X180-5N: is also known as JEDEC TO-261AB."
 msgstr ""
 
-#: src/sot.c:2847
+#: src/sot.c:2849
 #, c-format
 msgid "SOT230P700X180-4N: is also known as JEDEC TO-261AA."
 msgstr ""
 
-#: src/sot.c:2883
+#: src/sot.c:2885
 #, c-format
 msgid "SOT230P700X180-4N: is also known as JEITA SC-73."
 msgstr ""
 
-#: src/sot.c:2919
+#: src/sot.c:2921
 #, c-format
 msgid "SOT230P700X180-4N: is also known as JEDEC TO-261."
 msgstr ""
