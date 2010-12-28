@@ -329,6 +329,19 @@ GList
 dips_create_packages_list ()
 {
         GList *dips_packages_list = NULL;
+        dips_packages_list = g_list_append (dips_packages_list, "DIPS762W52P254L508H254Q4B");
+        dips_packages_list = g_list_append (dips_packages_list, "DIPS762W52P254L762H254Q6B");
+        dips_packages_list = g_list_append (dips_packages_list, "DIPS762W52P254L1016H254Q8B");
+        dips_packages_list = g_list_append (dips_packages_list, "DIPS1016W52P254L1016H254Q8B");
+        dips_packages_list = g_list_append (dips_packages_list, "DIPS762W52P254L1270H254Q10B");
+        dips_packages_list = g_list_append (dips_packages_list, "DIPS762W52P254L1778H254Q14B");
+        dips_packages_list = g_list_append (dips_packages_list, "DIPS1016W52P254L1778H254Q14B");
+        dips_packages_list = g_list_append (dips_packages_list, "DIPS762W52P254L2032H254Q16B");
+        dips_packages_list = g_list_append (dips_packages_list, "DIPS1016W52P254L2032H254Q16B");
+        dips_packages_list = g_list_append (dips_packages_list, "DIPS762W52P254L2286H254Q18B");
+        dips_packages_list = g_list_append (dips_packages_list, "DIPS1016W52P254L2286H254Q18B");
+        dips_packages_list = g_list_append (dips_packages_list, "DIPS762W52P254L2540H254Q20B");
+        dips_packages_list = g_list_append (dips_packages_list, "DIPS1016W52P254L2540H254Q20B");
         dips_packages_list = g_list_append (dips_packages_list, "DIPS04300");
         dips_packages_list = g_list_append (dips_packages_list, "DIPS06300");
         dips_packages_list = g_list_append (dips_packages_list, "DIPS08300");
@@ -620,6 +633,21 @@ dips_drc ()
  * If the footprint name is recognised the values will be loaded and the
  * entries involved in the GUI will be updated accordingly.\n
  * Currently the following footprints are supported:\n
+ * - DIPS762W52P254L508H254Q4B,
+ * - DIPS762W52P254L762H254Q6B,
+ * - DIPS762W52P254L1016H254Q8B,
+ * - DIPS1016W52P254L1016H254Q8B,
+ * - DIPS762W52P254L1270H254Q10B,
+ * - DIPS762W52P254L1778H254Q14B,
+ * - DIPS1016W52P254L1778H254Q14B,
+ * - DIPS762W52P254L2032H254Q16B,
+ * - DIPS1016W52P254L2032H254Q16B,
+ * - DIPS762W52P254L2286H254Q18B,
+ * - DIPS1016W52P254L2286H254Q18B,
+ * - DIPS762W52P254L2540H254Q20B,
+ * - DIPS1016W52P254L2540H254Q20B,
+ * - DIPS762W52P254L2794H254Q22B,
+ * - DIPS1016W52P254L2794H254Q22B,
  * - DIPS04300,
  * - DIPS06300,
  * - DIPS08300,
@@ -662,12 +690,492 @@ dips_get_default_footprint_values
 (
         gchar *footprint_name)
 {
-        if (!strcmp (footprint_name, "?DIPS04300"))
+        if (!strcmp (footprint_name, "?DIPS762W52P254L508H254Q4B"))
         {
                 footprint_units = g_strdup ("mil");
                 number_of_pins = 4;
                 package_body_width = 300;
                 package_body_length = 200;
+                package_body_height = 100;
+                package_is_radial = FALSE;
+                number_of_columns = 2;
+                number_of_rows = 0;
+                pitch_x = 300;
+                pitch_y = 100;
+                count_x = 0;
+                count_y = 2;
+                pad_shape = g_strdup ("circular pad");
+                pad_shapes_type = ROUND;
+                pin_drill_diameter = 28;
+                pad_diameter = 60;
+                pad_clearance = 15;
+                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.0;
+                fiducial_pad_solder_mask_clearance = 0.0;
+                silkscreen_line_width = 8;
+                courtyard_line_width = 2;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("DIPS762W52P254L508H254Q4B");
+                return (EXIT_SUCCESS);
+        }
+        if (!strcmp (footprint_name, "?DIPS762W52P254L762H254Q6B"))
+        {
+                footprint_units = g_strdup ("mil");
+                number_of_pins = 6;
+                package_body_width = 300;
+                package_body_length = 200;
+                package_body_height = 100;
+                package_is_radial = FALSE;
+                number_of_columns = 2;
+                number_of_rows = 0;
+                pitch_x = 300;
+                pitch_y = 100;
+                count_x = 0;
+                count_y = 3;
+                pad_shape = g_strdup ("circular pad");
+                pad_shapes_type = ROUND;
+                pin_drill_diameter = 28;
+                pad_diameter = 60;
+                pad_clearance = 15;
+                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.0;
+                fiducial_pad_solder_mask_clearance = 0.0;
+                silkscreen_line_width = 8;
+                courtyard_line_width = 2;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("DIPS762W52P254L762H254Q6B");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?DIPS762W52P254L1016H254Q8B"))
+        {
+                footprint_units = g_strdup ("mil");
+                number_of_pins = 8;
+                package_body_width = 300;
+                package_body_length = 400;
+                package_body_height = 100;
+                package_is_radial = FALSE;
+                number_of_columns = 2;
+                number_of_rows = 0;
+                pitch_x = 300;
+                pitch_y = 100;
+                count_x = 0;
+                count_y = 4;
+                pad_shape = g_strdup ("circular pad");
+                pad_shapes_type = ROUND;
+                pin_drill_diameter = 28;
+                pad_diameter = 60;
+                pad_clearance = 15;
+                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.0;
+                fiducial_pad_solder_mask_clearance = 0.0;
+                silkscreen_line_width = 8;
+                courtyard_line_width = 2;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("DIPS762W52P254L1016H254Q8B");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?DIPS1016W52P254L1016H254Q8B"))
+        {
+                footprint_units = g_strdup ("mil");
+                number_of_pins = 8;
+                package_body_width = 400;
+                package_body_length = 400;
+                package_body_height = 100;
+                package_is_radial = FALSE;
+                number_of_columns = 2;
+                number_of_rows = 0;
+                pitch_x = 400;
+                pitch_y = 100;
+                count_x = 0;
+                count_y = 4;
+                pad_shape = g_strdup ("circular pad");
+                pad_shapes_type = ROUND;
+                pin_drill_diameter = 28;
+                pad_diameter = 60;
+                pad_clearance = 15;
+                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.0;
+                fiducial_pad_solder_mask_clearance = 0.0;
+                silkscreen_line_width = 8;
+                courtyard_line_width = 2;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("DIPS1016W52P254L1016H254Q8B");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?DIPS762W52P254L1270H254Q10B"))
+        {
+                footprint_units = g_strdup ("mil");
+                number_of_pins = 10;
+                package_body_width = 300;
+                package_body_length = 500;
+                package_body_height = 100;
+                package_is_radial = FALSE;
+                number_of_columns = 2;
+                number_of_rows = 0;
+                pitch_x = 300;
+                pitch_y = 100;
+                count_x = 0;
+                count_y = 5;
+                pad_shape = g_strdup ("circular pad");
+                pad_shapes_type = ROUND;
+                pin_drill_diameter = 28;
+                pad_diameter = 60;
+                pad_clearance = 15;
+                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.0;
+                fiducial_pad_solder_mask_clearance = 0.0;
+                silkscreen_line_width = 8;
+                courtyard_line_width = 2;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("DIPS762W52P254L1270H254Q10B");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?DIPS762W52P254L1778H254Q14B"))
+        {
+                footprint_units = g_strdup ("mil");
+                number_of_pins = 14;
+                package_body_width = 300;
+                package_body_length = 700;
+                package_body_height = 100;
+                package_is_radial = FALSE;
+                number_of_columns = 2;
+                number_of_rows = 0;
+                pitch_x = 300;
+                pitch_y = 100;
+                count_x = 0;
+                count_y = 7;
+                pad_shape = g_strdup ("circular pad");
+                pad_shapes_type = ROUND;
+                pin_drill_diameter = 28;
+                pad_diameter = 60;
+                pad_clearance = 15;
+                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.0;
+                fiducial_pad_solder_mask_clearance = 0.0;
+                silkscreen_line_width = 8;
+                courtyard_line_width = 2;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("DIPS762W52P254L1778H254Q14B");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?DIPS1016W52P254L1778H254Q14B"))
+        {
+                footprint_units = g_strdup ("mil");
+                number_of_pins = 8;
+                package_body_width = 400;
+                package_body_length = 700;
+                package_body_height = 100;
+                package_is_radial = FALSE;
+                number_of_columns = 2;
+                number_of_rows = 0;
+                pitch_x = 400;
+                pitch_y = 100;
+                count_x = 0;
+                count_y = 7;
+                pad_shape = g_strdup ("circular pad");
+                pad_shapes_type = ROUND;
+                pin_drill_diameter = 28;
+                pad_diameter = 60;
+                pad_clearance = 15;
+                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.0;
+                fiducial_pad_solder_mask_clearance = 0.0;
+                silkscreen_line_width = 8;
+                courtyard_line_width = 2;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("DIPS1016W52P254L1778H254Q14B");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?DIPS762W52P254L2032H254Q16B"))
+        {
+                footprint_units = g_strdup ("mil");
+                number_of_pins = 16;
+                package_body_width = 300;
+                package_body_length = 800;
+                package_body_height = 100;
+                package_is_radial = FALSE;
+                number_of_columns = 2;
+                number_of_rows = 0;
+                pitch_x = 300;
+                pitch_y = 100;
+                count_x = 0;
+                count_y = 8;
+                pad_shape = g_strdup ("circular pad");
+                pad_shapes_type = ROUND;
+                pin_drill_diameter = 28;
+                pad_diameter = 60;
+                pad_clearance = 15;
+                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.0;
+                fiducial_pad_solder_mask_clearance = 0.0;
+                silkscreen_line_width = 8;
+                courtyard_line_width = 2;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("DIPS762W52P254L2032H254Q16B");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?DIPS1016W52P254L2032H254Q16B"))
+        {
+                footprint_units = g_strdup ("mil");
+                number_of_pins = 16;
+                package_body_width = 400;
+                package_body_length = 400;
+                package_body_height = 100;
+                package_is_radial = FALSE;
+                number_of_columns = 2;
+                number_of_rows = 0;
+                pitch_x = 400;
+                pitch_y = 100;
+                count_x = 0;
+                count_y = 8;
+                pad_shape = g_strdup ("circular pad");
+                pad_shapes_type = ROUND;
+                pin_drill_diameter = 28;
+                pad_diameter = 60;
+                pad_clearance = 15;
+                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.0;
+                fiducial_pad_solder_mask_clearance = 0.0;
+                silkscreen_line_width = 8;
+                courtyard_line_width = 2;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("DIPS1016W52P254L2032H254Q16B");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?DIPS762W52P254L2286H254Q18B"))
+        {
+                footprint_units = g_strdup ("mil");
+                number_of_pins = 18;
+                package_body_width = 300;
+                package_body_length = 900;
+                package_body_height = 100;
+                package_is_radial = FALSE;
+                number_of_columns = 2;
+                number_of_rows = 0;
+                pitch_x = 300;
+                pitch_y = 100;
+                count_x = 0;
+                count_y = 9;
+                pad_shape = g_strdup ("circular pad");
+                pad_shapes_type = ROUND;
+                pin_drill_diameter = 28;
+                pad_diameter = 60;
+                pad_clearance = 15;
+                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.0;
+                fiducial_pad_solder_mask_clearance = 0.0;
+                silkscreen_line_width = 8;
+                courtyard_line_width = 2;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("DIPS762W52P254L2286H254Q18B");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?DIPS1016W52P254L2286H254Q18B"))
+        {
+                footprint_units = g_strdup ("mil");
+                number_of_pins = 18;
+                package_body_width = 400;
+                package_body_length = 900;
+                package_body_height = 100;
+                package_is_radial = FALSE;
+                number_of_columns = 2;
+                number_of_rows = 0;
+                pitch_x = 400;
+                pitch_y = 100;
+                count_x = 0;
+                count_y = 9;
+                pad_shape = g_strdup ("circular pad");
+                pad_shapes_type = ROUND;
+                pin_drill_diameter = 28;
+                pad_diameter = 60;
+                pad_clearance = 15;
+                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.0;
+                fiducial_pad_solder_mask_clearance = 0.0;
+                silkscreen_line_width = 8;
+                courtyard_line_width = 2;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("DIPS1016W52P254L2286H254Q18B");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?DIPS762W52P254L2540H254Q20B"))
+        {
+                footprint_units = g_strdup ("mil");
+                number_of_pins = 20;
+                package_body_width = 300;
+                package_body_length = 1000;
+                package_body_height = 100;
+                package_is_radial = FALSE;
+                number_of_columns = 2;
+                number_of_rows = 0;
+                pitch_x = 300;
+                pitch_y = 100;
+                count_x = 0;
+                count_y = 10;
+                pad_shape = g_strdup ("circular pad");
+                pad_shapes_type = ROUND;
+                pin_drill_diameter = 28;
+                pad_diameter = 60;
+                pad_clearance = 15;
+                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.0;
+                fiducial_pad_solder_mask_clearance = 0.0;
+                silkscreen_line_width = 8;
+                courtyard_line_width = 2;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("DIPS762W52P254L2540H254Q20B");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?DIPS1016W52P254L2540H254Q20B"))
+        {
+                footprint_units = g_strdup ("mil");
+                number_of_pins = 20;
+                package_body_width = 400;
+                package_body_length = 1000;
+                package_body_height = 100;
+                package_is_radial = FALSE;
+                number_of_columns = 2;
+                number_of_rows = 0;
+                pitch_x = 400;
+                pitch_y = 100;
+                count_x = 0;
+                count_y = 10;
+                pad_shape = g_strdup ("circular pad");
+                pad_shapes_type = ROUND;
+                pin_drill_diameter = 28;
+                pad_diameter = 60;
+                pad_clearance = 15;
+                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.0;
+                fiducial_pad_solder_mask_clearance = 0.0;
+                silkscreen_line_width = 8;
+                courtyard_line_width = 2;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("DIPS1016W52P254L2540H254Q20B");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?DIPS762W52P254L2794H254Q22B"))
+        {
+                footprint_units = g_strdup ("mil");
+                number_of_pins = 22;
+                package_body_width = 300;
+                package_body_length = 1100;
+                package_body_height = 100;
+                package_is_radial = FALSE;
+                number_of_columns = 2;
+                number_of_rows = 0;
+                pitch_x = 300;
+                pitch_y = 100;
+                count_x = 0;
+                count_y = 11;
+                pad_shape = g_strdup ("circular pad");
+                pad_shapes_type = ROUND;
+                pin_drill_diameter = 28;
+                pad_diameter = 60;
+                pad_clearance = 15;
+                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.0;
+                fiducial_pad_solder_mask_clearance = 0.0;
+                silkscreen_line_width = 8;
+                courtyard_line_width = 2;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("DIPS762W52P254L2794H254Q22B");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?DIPS1016W52P254L2794H254Q22B"))
+        {
+                footprint_units = g_strdup ("mil");
+                number_of_pins = 22;
+                package_body_width = 400;
+                package_body_length = 1100;
+                package_body_height = 100;
+                package_is_radial = FALSE;
+                number_of_columns = 2;
+                number_of_rows = 0;
+                pitch_x = 400;
+                pitch_y = 100;
+                count_x = 0;
+                count_y = 11;
+                pad_shape = g_strdup ("circular pad");
+                pad_shapes_type = ROUND;
+                pin_drill_diameter = 28;
+                pad_diameter = 60;
+                pad_clearance = 15;
+                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.0;
+                fiducial_pad_solder_mask_clearance = 0.0;
+                silkscreen_line_width = 8;
+                courtyard_line_width = 2;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("DIPS1016W52P254L2794H254Q22B");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?DIPS04300"))
+        {
+                footprint_units = g_strdup ("mil");
+                number_of_pins = 4;
+                package_body_width = 300;
+                package_body_length = 300;
                 package_body_height = 200;
                 package_is_radial = FALSE;
                 number_of_columns = 2;
