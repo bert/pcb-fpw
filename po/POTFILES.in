@@ -22,6 +22,7 @@ src/con_sil.c
 src/diom.c
 src/diomelf.c
 src/dip.c
+src/dips.c
 src/indc.c
 src/indm.c
 src/indp.c
