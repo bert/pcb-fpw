@@ -1965,6 +1965,9 @@ on_fiducial_checkbutton_toggled        (GtkToggleButton *togglebutton,
         GtkWidget *fiducial_pad_diameter_entry = lookup_widget (GTK_WIDGET (togglebutton),
                 "fiducial_pad_diameter_entry");
         gtk_widget_set_sensitive (fiducial_pad_diameter_entry, fiducial);
+        GtkWidget *fiducial_pad_clearance_entry = lookup_widget (GTK_WIDGET (togglebutton),
+                "fiducial_pad_clearance_entry");
+        gtk_widget_set_sensitive (fiducial_pad_clearance_entry, fiducial);
         GtkWidget *fiducial_pad_soldermask_clearance_entry = lookup_widget
                 (GTK_WIDGET (togglebutton),
                 "fiducial_pad_solder_mask_clearance_entry");
