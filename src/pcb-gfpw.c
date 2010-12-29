@@ -112,9 +112,9 @@ main
                 "thermal_solder_mask_clearance_entry");
         gtk_widget_set_sensitive (thermal_solder_mask_clearance_entry, FALSE);
         /* Set the initial state of the checkbutton for the fiducial pads to
-         * false, set the "fiducial pad diameter" entry for the fiducial pads
-         * to insensitive, and set the "fiducial pad solder mask clearance"
-         * entry for the fiducial pads to insensitive.
+         * false, set the "fiducial pad diameter" entry to insensitive,
+         * and set the "fiducial pad clearance" entry to insensitive,
+         * and set the "fiducial pad solder mask clearance" entry to insensitive.
          */
         GtkWidget *fiducial_checkbutton = lookup_widget (GTK_WIDGET (pcb_gfpw),
                 "fiducial_checkbutton");
@@ -123,6 +123,10 @@ main
                 (GTK_WIDGET (pcb_gfpw),
                 "fiducial_pad_diameter_entry");
         gtk_widget_set_sensitive (fiducial_pad_diameter_entry, FALSE);
+        GtkWidget *fiducial_pad_clearance_entry = lookup_widget
+                (GTK_WIDGET (pcb_gfpw),
+                "fiducial_pad_clearance_entry");
+        gtk_widget_set_sensitive (fiducial_pad_clearance_entry, FALSE);
         GtkWidget *fiducial_pad_solder_mask_clearance_entry = lookup_widget
                 (GTK_WIDGET (pcb_gfpw),
                 "fiducial_pad_solder_mask_clearance_entry");
