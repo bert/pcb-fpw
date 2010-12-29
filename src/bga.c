@@ -4589,10 +4589,16 @@ bga_set_gui_constraints
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fiducial_checkbutton),
                 FALSE);
         gtk_widget_set_sensitive (fiducial_checkbutton, TRUE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fiducial_checkbutton), TRUE);
         GtkWidget *fiducial_pad_diameter_entry = lookup_widget
                 (GTK_WIDGET (widget),
                 "fiducial_pad_diameter_entry");
         gtk_widget_set_sensitive (fiducial_pad_diameter_entry, TRUE);
+        GtkWidget *fiducial_pad_clearance_entry = lookup_widget
+                (GTK_WIDGET (widget),
+                "fiducial_pad_clearance_entry");
+        gtk_widget_set_sensitive (fiducial_pad_clearance_entry,
+                TRUE);
         GtkWidget *fiducial_pad_solder_mask_clearance_entry = lookup_widget
                 (GTK_WIDGET (widget),
                 "fiducial_pad_solder_mask_clearance_entry");
