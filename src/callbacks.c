@@ -856,6 +856,39 @@ entry_has_changed (GtkWidget *widget)
 
 
 /*!
+ * \brief Set GUI constraints: disable the checkbutton and entries
+ * related to fiducials.
+ *
+ * <b>Parameters:</b> \c *widget is the caller widget.\n
+ * \n
+ * <b>Returns:</b> none.
+ */
+int
+gui_constraints_disable_fiducial_widgets (GtkWidget *widget)
+{
+        GtkWidget *fiducial_checkbutton = lookup_widget (GTK_WIDGET (widget),
+                "fiducial_checkbutton");
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fiducial_checkbutton),
+                FALSE);
+        gtk_widget_set_sensitive (fiducial_checkbutton, FALSE);
+        GtkWidget *fiducial_pad_diameter_entry = lookup_widget
+                (GTK_WIDGET (widget),
+                "fiducial_pad_diameter_entry");
+        gtk_widget_set_sensitive (fiducial_pad_diameter_entry, FALSE);
+        GtkWidget *fiducial_pad_clearance_entry = lookup_widget
+                (GTK_WIDGET (widget),
+                "fiducial_pad_clearance_entry");
+        gtk_widget_set_sensitive (fiducial_pad_clearance_entry,
+                FALSE);
+        GtkWidget *fiducial_pad_solder_mask_clearance_entry = lookup_widget
+                (GTK_WIDGET (widget),
+                "fiducial_pad_solder_mask_clearance_entry");
+        gtk_widget_set_sensitive (fiducial_pad_solder_mask_clearance_entry,
+                FALSE);
+}
+
+
+/*!
  * \brief Set GUI constraints: disable the entries in the
  * "Heel and Toe goals" tab.
  *
