@@ -951,6 +951,41 @@ gui_constraints_disable_heel_and_toe_goals_tab_widgets (GtkWidget *widget)
 
 
 /*!
+ * \brief Set GUI constraints: disable only the thermal pad related
+ * widgets on the "Thermal Pad" notebook tab.
+ *
+ * <b>Parameters:</b> \c *widget is the caller widget.\n
+ * \n
+ * <b>Returns:</b> none.
+ */
+int
+gui_constraints_disable_thermal_pad_widgets (GtkWidget *widget)
+{
+        GtkWidget *thermal_checkbutton = lookup_widget (GTK_WIDGET (widget),
+                "thermal_checkbutton");
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (thermal_checkbutton),
+                FALSE);
+        gtk_widget_set_sensitive (thermal_checkbutton, FALSE);
+        GtkWidget *thermal_nopaste_checkbutton = lookup_widget
+                (GTK_WIDGET (widget), "thermal_nopaste_checkbutton");
+        gtk_widget_set_sensitive (GTK_WIDGET (thermal_nopaste_checkbutton),
+                FALSE);
+        GtkWidget *thermal_length_entry = lookup_widget (GTK_WIDGET (widget),
+                "thermal_length_entry");
+        gtk_widget_set_sensitive (thermal_length_entry, FALSE);
+        GtkWidget *thermal_width_entry = lookup_widget (GTK_WIDGET (widget),
+                "thermal_width_entry");
+        gtk_widget_set_sensitive (thermal_width_entry, FALSE);
+        GtkWidget *thermal_clearance_entry = lookup_widget (GTK_WIDGET
+                (widget), "thermal_clearance_entry");
+        gtk_widget_set_sensitive (thermal_clearance_entry, FALSE);
+        GtkWidget *thermal_solder_mask_clearance_entry = lookup_widget
+                (GTK_WIDGET (widget), "thermal_solder_mask_clearance_entry");
+        gtk_widget_set_sensitive (thermal_solder_mask_clearance_entry, FALSE);
+}
+
+
+/*!
  * \brief Set GUI constraints: disable the entries in the
  * "Thermal Pad" tab.
  *
