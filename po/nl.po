@@ -1,14 +1,14 @@
 # FootPrintWizard for pcb.
-# Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman.
-# This file is distributed under the same license as the pcb-fpw package.
-# Bert Timmerman <bert.timmerman@xs4all.nl>, 2007, 2008, 2009, 2010.
+# Copyright (C) 2007, 2008, Bert Timmerman.
+# This file is distributed under the same license as the pcb-gfpw package.
+# Bert Timmerman <bert.timmerman@xs4all.nl>, 2007, 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pcb-fpw\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-12-28 22:14+0100\n"
-"PO-Revision-Date: 2010-12-29 00:26+0100\n"
+"PO-Revision-Date: 2010-12-30 22:03+0100\n"
 "Last-Translator: Bert Timmerman <bert.timmerman@xs4all.nl>\n"
 "Language-Team: DUTCH LANGUAGE TEAM <bert.timmerman@xs4all.nl>\n"
 "Language: \n"
@@ -1747,17 +1747,17 @@ msgstr "vond een %s pad vorm, stel pad_shapes_type in op NO_SHAPE."
 #: src/libfpw.c:2126
 #, c-format
 msgid "footprint units_type set to MIL, multiplier set to 100.0"
-msgstr ""
+msgstr "voetafdruk units_type ingesteld op MIL, vermenigvuldigfactor ingesteld op 100.0"
 
 #: src/libfpw.c:2137
 #, c-format
 msgid "footprint units_type set to MIL/100, multiplier set to 1.0"
-msgstr ""
+msgstr "voetafdruk units_type ingesteld op MIL/100, vermenigvuldigfactor ingesteld op 1.0"
 
 #: src/libfpw.c:2148
 #, c-format
 msgid "footprint units_type set to MM, multiplier set to 3937.00..."
-msgstr ""
+msgstr "voetafdruk units_type ingesteld op MM, vermenigvuldigfactor ingesteld op 3937.0..."
 
 #: src/libfpw.c:2691
 #, c-format
@@ -1823,7 +1823,7 @@ msgstr "vond de volgende uitzondering voor pennen/pads: %s."
 #: src/con_dil.c:55
 #, c-format
 msgid "[%s] could not create a valid element pointer for an element."
-msgstr ""
+msgstr "[%s] kon geen geldige elementaanwijzer creëeren voor een element."
 
 #: src/bga.c:358
 #: src/capa.c:401
@@ -1834,7 +1834,7 @@ msgstr ""
 #: src/con_dil.c:319
 #, c-format
 msgid "[%s] created an element for element: %s."
-msgstr ""
+msgstr "[%s] creëerde een element voor element: %s."
 
 #: src/bga.c:505
 #: src/capa.c:462
@@ -1850,7 +1850,7 @@ msgstr ""
 #: src/sip.c:365
 #, c-format
 msgid "[%s] DRC Check: checking package %s."
-msgstr ""
+msgstr "[%s] DRC Controle: controleer behuizing %s."
 
 #: src/bga.c:516
 #: src/capa.c:473
@@ -1866,7 +1866,7 @@ msgstr ""
 #: src/sip.c:411
 #, c-format
 msgid "[%s] DRC Error: NO_SHAPE specified for check for allowed pad shapes."
-msgstr ""
+msgstr "[%s] DRC Fout: NO_SHAPE gespecificeerd voor controle van toegelaten padvormen."
 
 #: src/bga.c:531
 #: src/capa.c:488
@@ -1877,7 +1877,7 @@ msgstr ""
 #: src/sip.c:426
 #, c-format
 msgid "[%s] DRC Error: square pad shape specified for check for allowed pad shapes."
-msgstr ""
+msgstr "[%s] DRC Fout: vierkante padvorm gespecificeerd voor controle van toegelaten padvormen."
 
 #: src/bga.c:542
 #: src/capc.c:440
@@ -1891,13 +1891,13 @@ msgstr ""
 #: src/sip.c:437
 #, c-format
 msgid "[%s] DRC Error: octagonal pad shape specified for check for allowed pad shapes."
-msgstr ""
+msgstr "[%s] DRC Fout: achtkante padvorm gespecificeerd voor controle van toegelaten padvormen."
 
 #: src/bga.c:553
 #: src/con_dil.c:465
 #, c-format
 msgid "[%s] DRC Error: round elongated pad shape specified for check for allowed pad shapes."
-msgstr ""
+msgstr "[%s] DRC Fout: ronde padvorm gespecificeerd voor controle van toegelaten padvormen."
 
 #: src/bga.c:564
 #: src/capa.c:507
@@ -1913,7 +1913,7 @@ msgstr ""
 #: src/sip.c:452
 #, c-format
 msgid "[%s] DRC Error: no valid pad shape type specified."
-msgstr ""
+msgstr "[%s] DRC Fout: geen geldige padvorm gespecificeerd."
 
 #: src/bga.c:577
 #: src/capa.c:520
@@ -1929,7 +1929,7 @@ msgstr ""
 #: src/sip.c:465
 #, c-format
 msgid "[%s] DRC Error: specified package body length is too small."
-msgstr ""
+msgstr "[%s] DRC Fout: gespecifieerde behuizinglengte is te klein."
 
 #: src/bga.c:587
 #: src/capa.c:530
@@ -1945,7 +1945,7 @@ msgstr ""
 #: src/sip.c:475
 #, c-format
 msgid "[%s] DRC Error: specified package body width is too small."
-msgstr ""
+msgstr "[%s] DRC Fout: gespecifieerde behuizingbreedte is te klein."
 
 #: src/bga.c:597
 #: src/capa.c:540
@@ -1961,7 +1961,7 @@ msgstr ""
 #: src/sip.c:485
 #, c-format
 msgid "[%s] DRC Error: specified package body height is too small."
-msgstr ""
+msgstr "[%s] DRC Fout: gespecifieerde behuizinghoogte is te klein."
 
 #: src/bga.c:608
 #: src/capa.c:551
@@ -2026,7 +2026,7 @@ msgstr ""
 #: src/bga.c:653
 #, c-format
 msgid "[%s] DRC Error: zero width fiducial pad."
-msgstr ""
+msgstr "[%s] DRC Fout: fiducial pad heeft een breedte van nul."
 
 #: src/bga.c:664
 #, c-format
@@ -2215,7 +2215,7 @@ msgstr "%s is ook bekend als"
 #: src/to.c:505
 #, c-format
 msgid "default values for footprint %s not found.\n"
-msgstr ""
+msgstr "standaard waarde voor voetafdruk %s niet gevonden.\n"
 
 #: src/bga.c:4636
 #: src/capa.c:849
@@ -2288,7 +2288,7 @@ msgstr "# Schrijf een pen 1 merk op de opdruk\n"
 #: src/con_dip.c:1052
 #, c-format
 msgid "# Write a courtyard on the silkscreen\n"
-msgstr ""
+msgstr "# Schrijf een omgrenzing op de opdruk\n"
 
 #: src/bga.c:4870
 #, c-format
@@ -2396,7 +2396,7 @@ msgstr ""
 #: src/capc.c:1018
 #, c-format
 msgid "%s: pads are being trimmed."
-msgstr ""
+msgstr "%s: pads worden afgekort."
 
 #: src/capc.c:757
 #: src/capc.c:796
@@ -2432,7 +2432,7 @@ msgstr ""
 #: src/capc.c:1908
 #, c-format
 msgid "%s: footprint is too small for a package outline on the silkscreen."
-msgstr ""
+msgstr "%s: voetafdruk is te klein voor een behuizinglichaam op de opdruk."
 
 #: src/capc.c:830
 #: src/capc.c:867
@@ -2521,7 +2521,7 @@ msgstr ""
 #: src/to.c:254
 #, c-format
 msgid "could not create a valid element pointer for a %s package."
-msgstr ""
+msgstr "kon geen geldige elementaanwijzer creëeren voor een %s behuizing."
 
 #: src/con_dip.c:351
 #: src/con_sil.c:307
@@ -2544,7 +2544,7 @@ msgstr ""
 #: src/to.c:424
 #, c-format
 msgid "created an element for a %s package: %s."
-msgstr ""
+msgstr "creëerde een element voor een %s behuizing: %s."
 
 #: src/con_dip.c:419
 #, c-format
@@ -2583,7 +2583,7 @@ msgstr ""
 #: src/sip.c:691
 #, c-format
 msgid "WARNING: default values for footprint %s not found.\n"
-msgstr ""
+msgstr "WAARSCHUWING: standaard waarden voor voetafdruk %s zijn niet gevonden.\n"
 
 #: src/con_sil.c:443
 #: src/sil.c:391
@@ -2955,27 +2955,27 @@ msgstr "DIOMELF3414N: is ook bekend als SOD-80."
 #: src/diomelf.c:992
 #, c-format
 msgid "DIOMELF3515L: is also known as IEC 100H01."
-msgstr ""
+msgstr "DIOMELF3515L: is ook bekend als IEC 100H01."
 
 #: src/diomelf.c:1031
 #, c-format
 msgid "DIOMELF3515M: is also known as IEC 100H01."
-msgstr ""
+msgstr "DIOMELF3515M: is ook bekend als IEC 100H01."
 
 #: src/diomelf.c:1070
 #, c-format
 msgid "DIOMELF3515N: is also known as IEC 100H01."
-msgstr ""
+msgstr "DIOMELF3515N: is ook bekend als IEC 100H01."
 
 #: src/diomelf.c:1245
 #, c-format
 msgid "DIOMELF3520M: is also known as IEC 100H03."
-msgstr ""
+msgstr "DIOMELF3520M: is ook bekend als IEC 100H03."
 
 #: src/diomelf.c:1284
 #, c-format
 msgid "DIOMELF3520N: is also known as IEC 100H03."
-msgstr ""
+msgstr "DIOMELF3520N: is ook bekend als IEC 100H03."
 
 #: src/dip.c:402
 #, c-format
@@ -3055,13 +3055,13 @@ msgstr ""
 #: src/sot.c:3200
 #, c-format
 msgid "for now a number of pins of %d without a thermal pad is not implemented yet in sot_write_footprint()."
-msgstr ""
+msgstr "voor nu is een aantal pennen van %d zonder thermisch pad nog niet geïmplementeerd in sot_write_footprint()."
 
 #: src/sot.c:359
 #: src/sot.c:3297
 #, c-format
 msgid "number of pins of %d is not defined in sot_write_footprint()."
-msgstr ""
+msgstr "aantal pins van %d is niet gedefiniëerd in sot_write_footprint()."
 
 #: src/sot.c:642
 #, c-format
@@ -3076,7 +3076,7 @@ msgstr "DRC Controle: geen fouten tijdens de controle van SOT behuizing %s."
 #: src/sot.c:961
 #, c-format
 msgid "SOT50P160X90-3N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT50P160X90-3N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:963
 #, c-format
@@ -3111,7 +3111,7 @@ msgstr "SOT65P210X110-6N: is ook bekend als JEDEC MO-203AB."
 #: src/sot.c:1241
 #, c-format
 msgid "SOT65P275X110-8N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT65P275X110-8N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:1243
 #, c-format
@@ -3121,17 +3121,17 @@ msgstr "SOT65P275X110-8N: is ook bekend als JEDEC MO-193BA."
 #: src/sot.c:1279
 #, c-format
 msgid "SOT65P280X100-8N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT65P280X100-8N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:1315
 #, c-format
 msgid "SOT65P280X130-8N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT65P280X130-8N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:1351
 #, c-format
 msgid "SOT65P280X145-8AN: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT65P280X145-8AN: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:1353
 #, c-format
@@ -3141,7 +3141,7 @@ msgstr "SOT65P280X145-8AN: is ook bekend als JEDEC MO-178BA."
 #: src/sot.c:1389
 #, c-format
 msgid "SOT65P280X145-8BN: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT65P280X145-8BN: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:1391
 #, c-format
@@ -3151,7 +3151,7 @@ msgstr "SOT65P280X145-8BN: is ook bekend als EIAJ SC-74."
 #: src/sot.c:1427
 #, c-format
 msgid "SOT65P280X145-8N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT65P280X145-8N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:1429
 #, c-format
@@ -3161,7 +3161,7 @@ msgstr "SOT65P280X145-8N: is ook bekend als JEDEC MO-193BA."
 #: src/sot.c:1469
 #, c-format
 msgid "SOT80P330X140-8N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT80P330X140-8N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:1471
 #, c-format
@@ -3171,12 +3171,12 @@ msgstr "SOT80P330X140-8N: is ook bekend als SOT23-8."
 #: src/sot.c:1511
 #, c-format
 msgid "SOT95P228X102-3N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P228X102-3N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:1551
 #, c-format
 msgid "SOT95P230X109-3N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P230X109-3N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:1553
 #, c-format
@@ -3186,7 +3186,7 @@ msgstr "SOT95P230X109-3N: is ook bekend als JEDEC TO-236AB."
 #: src/sot.c:1593
 #, c-format
 msgid "SOT95P230X110-3N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P230X110-3N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:1595
 #, c-format
@@ -3196,7 +3196,7 @@ msgstr "SOT95P230X110-3N: is ook bekend als JEDEC TO-236AB."
 #: src/sot.c:1635
 #, c-format
 msgid "SOT95P230X124-3N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P230X124-3N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:1637
 #, c-format
@@ -3211,7 +3211,7 @@ msgstr "SOT95P237X112-3N: is ook bekend als JEDEC TO-236AB."
 #: src/sot.c:1719
 #, c-format
 msgid "SOT95P237X117-3N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P237X117-3N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:1721
 #, c-format
@@ -3221,17 +3221,17 @@ msgstr "SOT95P237X117-3N: is ook bekend als JEDEC TO-236AB."
 #: src/sot.c:1761
 #, c-format
 msgid "SOT95P240X110-3N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P240X110-3N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:1801
 #, c-format
 msgid "SOT95P240X114-3N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P240X114-3N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:1841
 #, c-format
 msgid "SOT95P251X112-3N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P251X112-3N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:1882
 #, c-format
@@ -3241,7 +3241,7 @@ msgstr "SOT95P270X145-5N: is ook bekend als EIAJ SC-74A."
 #: src/sot.c:1884
 #, c-format
 msgid "SOT95P270X145-5N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P270X145-5N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:1995
 #, c-format
@@ -3251,7 +3251,7 @@ msgstr "SOT95P279X142-5N: is ook bekend als SOT23-5."
 #: src/sot.c:1997
 #, c-format
 msgid "SOT95P279X142-5N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P279X142-5N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:2037
 #, c-format
@@ -3261,7 +3261,7 @@ msgstr "SOT95P280X100-5N: is ook bekend als JEDEC MO-193."
 #: src/sot.c:2039
 #, c-format
 msgid "SOT95P280X100-5N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P280X100-5N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:2079
 #, c-format
@@ -3271,7 +3271,7 @@ msgstr "SOT95P280X100-6N: is ook bekend als JEDEC MO-193."
 #: src/sot.c:2081
 #, c-format
 msgid "SOT95P280X100-6N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P280X100-6N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:2123
 #, c-format
@@ -3281,7 +3281,7 @@ msgstr "SOT95P280X110-5N: is ook bekend als JEDEC MO-193AB."
 #: src/sot.c:2125
 #, c-format
 msgid "SOT95P280X110-5N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P280X110-5N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:2168
 #, c-format
@@ -3291,7 +3291,7 @@ msgstr "SOT95P280X110-6N: is ook bekend als JEDEC MO-193AA."
 #: src/sot.c:2170
 #, c-format
 msgid "SOT95P280X110-6N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P280X110-6N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:2210
 #, c-format
@@ -3301,17 +3301,17 @@ msgstr "SOT95P280X115-6N: is ook bekend als JEDEC MO-178."
 #: src/sot.c:2212
 #, c-format
 msgid "SOT95P280X115-6N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P280X115-6N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:2252
 #, c-format
 msgid "SOT95P280X135-3AN: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P280X135-3AN: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:2292
 #, c-format
 msgid "SOT95P280X135-3N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P280X135-3N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:2332
 #, c-format
@@ -3321,7 +3321,7 @@ msgstr "SOT95P280X135-5N: is ook bekend als JEDEC MO-178."
 #: src/sot.c:2334
 #, c-format
 msgid "SOT95P280X135-5N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P280X135-5N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:2375
 #, c-format
@@ -3331,7 +3331,7 @@ msgstr "SOT95P280X145-5AN: is ook bekend als JEDEC MO-178AA."
 #: src/sot.c:2377
 #, c-format
 msgid "SOT95P280X145-5AN: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P280X145-5AN: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:2419
 #, c-format
@@ -3341,7 +3341,7 @@ msgstr "SOT95P280X145-5N: is ook bekend als JEDEC MO-178AA."
 #: src/sot.c:2421
 #, c-format
 msgid "SOT95P280X145-5N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P280X145-5N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:2462
 #, c-format
@@ -3351,7 +3351,7 @@ msgstr "SOT95P280X145-6AN: is ook bekend als JEDEC MO-178AB."
 #: src/sot.c:2464
 #, c-format
 msgid "SOT95P280X145-6AN: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P280X145-6AN: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:2505
 #, c-format
@@ -3361,7 +3361,7 @@ msgstr "SOT95P280X145-6N: is ook bekend als JEDEC MO-178AB."
 #: src/sot.c:2507
 #, c-format
 msgid "SOT95P280X145-6N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P280X145-6N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:2547
 #, c-format
@@ -3372,7 +3372,7 @@ msgstr "SOT95P284X122-5N: is ook bekend als JEDEC MO-178AA."
 #: src/sot.c:2593
 #, c-format
 msgid "SOT95P284X122-5N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P284X122-5N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:2591
 #, c-format
@@ -3387,7 +3387,7 @@ msgstr "SOT95P285X140-3N: is ook bekend als SC-59."
 #: src/sot.c:2635
 #, c-format
 msgid "SOT95P285X140-3N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P285X140-3N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:2675
 #, c-format
@@ -3397,12 +3397,12 @@ msgstr "SOT95P285X90-6N: is ook bekend als JEDEC MO-193AA."
 #: src/sot.c:2677
 #, c-format
 msgid "SOT95P285X90-6N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P285X90-6N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:2717
 #, c-format
 msgid "SOT95P470X124-8N: pads are being trimmed to prevent extension under the package body."
-msgstr ""
+msgstr "SOT95P470X124-8N: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
 
 #: src/sot.c:2813
 #, c-format
