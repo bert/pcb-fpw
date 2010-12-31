@@ -105,11 +105,12 @@ fpw -h
 List of supported footprint types.
 ----------------------------------
 
-BGA, CAPC, CAPM, CAPMP, CON-DIL, CON-DIP, CON-HDR, DIOM, DIOMELF, DIP, INDC, INDM, INDP,
-PGA, PLCC, RES, RESC, RESM, RESMELF, SOT and TO92.
+BGA, CAPA, CAPAE, CAPC, CAPM, CAPMP, CAPPR, CON_DIL, CON_DIP, CON_HDR, CON_SIL,
+DIOM, DIOMELF, DIP, DIPS, INDC, INDM, INDP, PGA, PLCC, RES, RESC, RESM, RESMELF,
+SOT, TO92, TO220.
 
 
-Have fun creating footprints  with pcb-fpw  ;-)
+Have fun creating footprints with pcb-fpw  ;-)
 
 
 /* End Of File */
