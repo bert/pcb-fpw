@@ -959,9 +959,13 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA100C100P10X10_1100X1100X170");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                         " JEDEC MO-192AAC-1.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")),
+                                footprint_name,
+                                " JEDEC MO-192AAC-1.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA100C100P10X10_1100X1100X170A"))
@@ -1083,9 +1087,13 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA100C50P10X10_600X600X110");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MO-195.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")),
+                                footprint_name,
+                                " JEDEC MO-195.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA100C50P11X11_600X600X100"))
@@ -1468,9 +1476,13 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA100C80P10X10_900X900X120A");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MO-216.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")),
+                                footprint_name,
+                                " JEDEC MO-216.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA100C80P10X10_900X900X140"))
@@ -1504,9 +1516,13 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA100C80P10X10_900X900X140");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MO-205AB.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")),
+                                footprint_name,
+                                " JEDEC MO-205AB.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA100C80P10X10_900X900X150"))
@@ -1573,9 +1589,13 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA100C80P10X10_900X900X160");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MS-205.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")),
+                                footprint_name,
+                                " JEDEC MS-205.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA100C80P11X11_1100X1100X140"))
@@ -1661,9 +1681,13 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA100C80P12X12_1000X1000X140");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MO-205AC.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")),
+                                footprint_name,
+                                " JEDEC MO-205AC.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA1020C100P32X32_3300X3300X350"))
@@ -1702,9 +1726,13 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1020C100P32X32_3300X3300X350");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MS-034AAP-1.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")),
+                                footprint_name,
+                                " JEDEC MS-034AAP-1.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA1023C100P32X32_3300X3300X272"))
@@ -2143,9 +2171,13 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA105C65P11X11_800X800X140");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MO-225.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")),
+                                footprint_name,
+                                " JEDEC MO-225.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA105C50P15X15_800X800X140"))
@@ -2443,9 +2475,13 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA108C100P12X12_1300X1300X185");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MO-192AAD-1.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")),
+                                footprint_name,
+                                " JEDEC MO-192AAD-1.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA108C80P12X12_1000X1000X140"))
@@ -2488,9 +2524,13 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA108C80P12X12_1000X1000X140");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MO-205AC.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")),
+                                footprint_name,
+                                " JEDEC MO-205AC.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA109C50P12X12_700X700X100"))
@@ -2575,9 +2615,13 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA109C80P12X12_1000X1000X140");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MO-205AC.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")),
+                                footprint_name,
+                                " JEDEC MO-205AC.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA10C50P3X4_150X200X63"))
@@ -2654,9 +2698,13 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA10C50P3X4_220X250X60");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MO-211BD.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")),
+                                footprint_name,
+                                " JEDEC MO-211BD.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA10C50P3X4_200X250X94"))
@@ -2695,9 +2743,13 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA10C50P3X4_200X250X94");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MO-211BD.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")),
+                                footprint_name,
+                                " JEDEC MO-211BD.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA10N50P3X4_200X250X94"))
@@ -2736,9 +2788,13 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA10N50P3X4_200X250X94");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MO-211BC.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")),
+                                footprint_name,
+                                " JEDEC MO-211BC.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA111C80P12X13_1000X1100X140"))
@@ -2871,9 +2927,13 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA112C50P12X12_700X700X112");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MO-195.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")),
+                                footprint_name,
+                                " JEDEC MO-195.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA112C80P11X11_1000X1000X130"))
@@ -2953,9 +3013,13 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1148C100P34X34_3500X3500X340");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MS-034AAR-1.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")),
+                                footprint_name,
+                                " JEDEC MS-034AAR-1.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA114C80P6X19_550X1600X140"))
@@ -3060,9 +3124,13 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1152C100P34X34_3500X3500X244");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MS-034AAR-1.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")),
+                                footprint_name,
+                                " JEDEC MS-034AAR-1.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA1152C100P34X34_3500X3500X332"))
@@ -3139,9 +3207,13 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1152C100P34X34_3500X3500X340");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MS-034AAR-1.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")),
+                                footprint_name,
+                                " JEDEC MS-034AAR-1.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA1152C100P34X34_3500X3500X350"))
@@ -3180,9 +3252,13 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1152C100P34X34_3500X3500X350");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MS-034AAR-1.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")),
+                                footprint_name,
+                                " JEDEC MS-034AAR-1.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA1156C100P34X34_3500X3500X260"))
@@ -3216,9 +3292,13 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1156C100P34X34_3500X3500X260");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MS-034AAR-1.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")),
+                                footprint_name,
+                                " JEDEC MS-034AAR-1.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA1156C100P34X34_3500X3500X311"))
@@ -3252,9 +3332,13 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1156C100P34X34_3500X3500X311");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MS-034AAR-1.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")),
+                                footprint_name,
+                                " JEDEC MS-034AAR-1.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA1156C100P34X34_3500X3500X350"))
@@ -3496,9 +3580,13 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1160C100P39X39_4000X4000X245");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MS-034.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")),
+                                footprint_name,
+                                " JEDEC MS-034.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA1172C100P39X39_4000X4000X310"))
@@ -3576,9 +3664,12 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1172C100P39X39_4000X4000X310");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MS-034.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")), footprint_name,
+                                " JEDEC MS-034.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA119C127P7X17_1400X2200X196"))
@@ -4037,9 +4128,12 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA121C100P11X11_1200X1200X185");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MO-192ABD-1.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")), footprint_name,
+                                " JEDEC MO-192ABD-1.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA121C100P11X11_1200X1200X350"))
@@ -4073,9 +4167,12 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA121C100P11X11_1200X1200X350");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MO-192ABD-1.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")), footprint_name,
+                                " JEDEC MO-192ABD-1.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA121C50P14X14_1000X1300X110"))
@@ -4298,9 +4395,12 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA124C100P14X14_1500X1500X170");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MO-192AAE-1.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")), footprint_name,
+                                " JEDEC MO-192AAE-1.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA124C50P13X13_800X800X120"))
@@ -4388,9 +4488,12 @@ bga_get_default_footprint_values
                 silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA124C65P12X12_900X900X140");
-                g_log ("", G_LOG_LEVEL_INFO,
-                        (_("%s is also known as")), footprint_name,
-                        " JEDEC MO-225.");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")), footprint_name,
+                                " JEDEC MO-225.");
+                }
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?BGA127C80P12X13_1050X1200X140"))
