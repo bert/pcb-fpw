@@ -398,16 +398,22 @@ dip_drc ()
 {
         int result = EXIT_SUCCESS;
         if (verbose)
+        {
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("DRC Check: checking DIP package %s."), footprint_name);
+                        (_("[%s] DRC Check: checking package %s.")),
+                        footprint_type, footprint_name);
+        }
         /* Check for allowed pad shapes. */
         switch (pad_shapes_type)
         {
                 case NO_SHAPE:
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: NO_SHAPE specified for check for allowed pad shapes."));
+                                        (_("[%s] DRC Error: NO_SHAPE specified for check for allowed pad shapes.")),
+                                        footprint_type);
+                        }
                         result = EXIT_FAILURE;
                         break;
                 }
@@ -430,8 +436,11 @@ dip_drc ()
                 default:
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: no valid pad shape type specified."));
+                                        (_("[%s] DRC Error: no valid pad shape type specified.")),
+                                        footprint_type);
+                        }
                         result = EXIT_FAILURE;
                         break;
                 }
@@ -440,53 +449,74 @@ dip_drc ()
         if (package_body_length <= 0.0)
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for package body length is <= 0.0."));
+                                (_("[%s] DRC Error: check for package body length is <= 0.0.")),
+                                footprint_type);
+                }
                 result = EXIT_FAILURE;
         }
         if (package_body_width <= 0.0)
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for package body width is <= 0.0."));
+                                (_("[%s] DRC Error: check for package body width is <= 0.0.")),
+                                footprint_type);
+                }
                 result = EXIT_FAILURE;
         }
         if (package_body_height <= 0.0)
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for package body height is <= 0.0."));
+                                (_("[%s] DRC Error: check for package body height is <= 0.0.")),
+                                footprint_type);
+                }
                 result = EXIT_FAILURE;
         }
         /* Check for a zero sized courtyard. */
         if (courtyard_length <= 0.0)
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for courtyard length is <= 0.0."));
+                                (_("[%s] DRC Error: check for courtyard length is <= 0.0.")),
+                                footprint_type);
+                }
                 result = EXIT_FAILURE;
         }
         if (courtyard_width <= 0.0)
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for courtyard width is <= 0.0."));
+                                (_("[%s] DRC Error: check for courtyard width is <= 0.0.")),
+                                footprint_type);
+                }
                 result = EXIT_FAILURE;
         }
         /* Check for minimum clearance between copper (X-direction). */
         if ((pitch_x - pad_diameter < pad_clearance) || (pitch_x - pad_length < pad_clearance))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for minimum clearance between copper (X-direction)."));
+                                (_("[%s] DRC Error: check for minimum clearance between copper (X-direction).")),
+                                footprint_type);
+                }
                 result = EXIT_FAILURE;
         }
         /* Check for minimum clearance between copper (Y-direction). */
         if ((pitch_y - pad_diameter < pad_clearance) || (pitch_y - pad_width < pad_clearance))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for minimum clearance between copper (Y-direction)."));
+                                (_("[%s] DRC Error: check for minimum clearance between copper (Y-direction).")),
+                                footprint_type);
+                }
                 result = EXIT_FAILURE;
         }
         /*! If any fiducials exist:
@@ -501,16 +531,22 @@ dip_drc ()
                 if (fiducial_pad_diameter == 0.0)
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: check for zero width fiducial pad."));
+                                        (_("[%s] DRC Error: check for zero width fiducial pad.")),
+                                        footprint_type);
+                        }
                         result = EXIT_FAILURE;
                 }
                 /* Check for a clearance of zero. */
                 if (fiducial_pad_solder_mask_clearance == 0.0)
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: check for zero width solder mask clearance."));
+                                        (_("[%s] DRC Error: check for zero width solder mask clearance.")),
+                                        footprint_type);
+                        }
                         result = EXIT_FAILURE;
                 }
                 /* Check for minimum clearance between pad copper and fiducial pad
@@ -519,8 +555,11 @@ dip_drc ()
                 if ()
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: check for distance between fiducial and nearest pad."));
+                                        (_("[%s] DRC Error: check for distance between fiducial and nearest pad.")),
+                                        footprint_type);
+                        }
                         result = EXIT_FAILURE;
                 }
 #endif
@@ -530,8 +569,11 @@ dip_drc ()
         if (package_body_length - courtyard_length < courtyard_clearance_with_package)
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for clearance of the package length with regard to the courtyard dimensions."));
+                                (_("[%s] DRC Error: check for clearance of the package length with regard to the courtyard dimensions.")),
+                                footprint_type);
+                }
                 result = EXIT_FAILURE;
         }
         /* Check for clearance of the package width with regard to the
@@ -539,8 +581,11 @@ dip_drc ()
         if (package_body_width - courtyard_width < courtyard_clearance_with_package)
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: check for clearance of the package width with regard to the courtyard dimensions."));
+                                (_("[%s] DRC Error: check for clearance of the package width with regard to the courtyard dimensions.")),
+                                footprint_type);
+                }
                 result = EXIT_FAILURE;
         }
         /*! \todo Check for any silk lines or texts touching bare copper. */
@@ -552,8 +597,11 @@ dip_drc ()
         if (silkscreen_package_outline || (silkscreen_line_width == 0.0))
         {
                 if (verbose)
+                {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("DRC Error: line width 0.0 specified for check for a reasonable silk line width."));
+                                (_("[%s] DRC Error: line width 0.0 specified for check for a reasonable silk line width.")),
+                                footprint_type);
+                }
                 result = EXIT_FAILURE;
         }
         switch (units_type)
@@ -561,8 +609,11 @@ dip_drc ()
                 case NO_UNITS:
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: no units specified for check for a reasonable silk line width."));
+                                        (_("[%s] DRC Error: no units specified for check for a reasonable silk line width.")),
+                                        footprint_type);
+                        }
                         result = EXIT_FAILURE;
                         break;
                 }
@@ -570,8 +621,11 @@ dip_drc ()
                 if (silkscreen_line_width > 40.0)
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: line width > 40.0 mil specified check for a reasonable silk line width."));
+                                        (_("[%s] DRC Error: line width > 40.0 mil specified check for a reasonable silk line width.")),
+                                        footprint_type);
+                        }
                         result = EXIT_FAILURE;
                         break;
                 }
@@ -579,8 +633,11 @@ dip_drc ()
                 if (silkscreen_line_width > 4000.0)
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: line width > 40.0 mil specified check for a reasonable silk line width."));
+                                        (_("[%s] DRC Error: line width > 40.0 mil specified check for a reasonable silk line width.")),
+                                        footprint_type);
+                        }
                         result = EXIT_FAILURE;
                         break;
                 }
@@ -588,24 +645,33 @@ dip_drc ()
                 if (silkscreen_line_width > 1.0)
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: line width > 1.0 mm specified check for a reasonable silk line width."));
+                                        (_("[%s] DRC Error: line width > 1.0 mm specified check for a reasonable silk line width.")),
+                                        footprint_type);
+                        }
                         result = EXIT_FAILURE;
                         break;
                 }
                 default:
                 {
                         if (verbose)
+                        {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        _("DRC Error: no valid units type specified for check for a reasonable silk line width."));
+                                        (_("[%s] DRC Error: no valid units type specified for check for a reasonable silk line width.")),
+                                        footprint_type);
+                        }
                         result = EXIT_FAILURE;
                         break;
                 }
         }
         /* No failures on DRC found. */
         if (verbose || (result == EXIT_SUCCESS))
+        {
                 g_log ("", G_LOG_LEVEL_INFO,
-                        _("DRC Check: no errors while checking DIP package %s."), footprint_name);
+                        (_("[%s] DRC Check: no errors while checking package %s.")),
+                        footprint_type, footprint_name);
+        }
         return (result);
 }
 
