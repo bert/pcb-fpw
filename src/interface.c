@@ -42,7 +42,7 @@ create_about_dialog (void)
   gtk_widget_set_name (about_dialog, "about_dialog");
   gtk_about_dialog_set_version (GTK_ABOUT_DIALOG (about_dialog), VERSION);
   gtk_about_dialog_set_name (GTK_ABOUT_DIALOG (about_dialog), _("pcb-gfpw"));
-  gtk_about_dialog_set_copyright (GTK_ABOUT_DIALOG (about_dialog), _("(C) 2007, 2008, 2009, 2010 Bert Timmerman."));
+  gtk_about_dialog_set_copyright (GTK_ABOUT_DIALOG (about_dialog), _("(C) 2007, 2008, 2009, 2010, 2011 Bert Timmerman."));
   gtk_about_dialog_set_comments (GTK_ABOUT_DIALOG (about_dialog), _("The pcb FootPrintWizard generates footprint files for the pcb layout editor.\n(see http://pcb.gpleda.org)\n"));
   gtk_about_dialog_set_license (GTK_ABOUT_DIALOG (about_dialog), _("This program is free software; you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation; either version 2 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\nSee the GNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program; if not, write to:\nthe Free Software Foundation, Inc.,\n51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n"));
   gtk_about_dialog_set_website (GTK_ABOUT_DIALOG (about_dialog), "http://www.xs4all.nl/~ljh4timm/pcb-fpw/pcb-fpw.html");
