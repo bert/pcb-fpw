@@ -589,7 +589,7 @@ pga_drc ()
                         if (verbose)
                         {
                                 g_log ("", G_LOG_LEVEL_WARNING,
-                                        (_("DRC Error: line width > 40.0 mil specified check for a reasonable silk line width.")),
+                                        (_("[%s] DRC Error: line width > 40.0 mil specified check for a reasonable silk line width.")),
                                         footprint_type);
                         }
                         result = EXIT_FAILURE;
