@@ -422,7 +422,7 @@ indc_drc ()
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                (_("DRC Error: check for package body length is <= 0.0.")),
+                                (_("[%s] DRC Error: check for package body length is <= 0.0.")),
                                 footprint_type);
                 }
                 result = EXIT_FAILURE;
