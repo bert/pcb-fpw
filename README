@@ -9,12 +9,13 @@ subsequent load the edited footprint file into pcb.
 
 ======= ISSUES WITH PCB-FPW =======
 
-All issues, bug reports and feature requests should go into the Lighthouse
-ticket application.
+All issues, bug reports and feature requests can be reportedin  the Launchpad
+bug tracker, to be found at:
 
-Lighthouse is to be found at:
+https://bugs.launchpad.net/pcb-fpw/
 
-http://pcb-fpw.lighthouseapp.com/projects/20664-pcb-fpw/tickets?q=all
+Your reports and feedback are welcome and appreciated, it is a chance to 
+improve pcb-fpw.
 
 ======= STATISTICS =======
 
