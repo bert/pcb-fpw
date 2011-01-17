@@ -773,12 +773,13 @@ diomelf_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                footprint_name = g_strdup ("DIOMELF1911L");
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_INFO,
-                                _("DIOMELF1911L: is also known as MicroMELF."));
+                                (_("%s is also known as")), footprint_name,
+                                " MicroMELF.");
                 }
-                footprint_name = g_strdup ("DIOMELF1911L");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?DIOMELF1911M"))
@@ -812,12 +813,13 @@ diomelf_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                footprint_name = g_strdup ("DIOMELF1911M");
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_INFO,
-                                _("DIOMELF1911M: is also known as MicroMELF."));
+                                (_("%s is also known as")), footprint_name,
+                                " MicroMELF.");
                 }
-                footprint_name = g_strdup ("DIOMELF1911M");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?DIOMELF1911N"))
@@ -851,12 +853,13 @@ diomelf_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                footprint_name = g_strdup ("DIOMELF1911N");
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_INFO,
-                                _("DIOMELF1911N: is also known as MicroMELF."));
+                                (_("%s is also known as")), footprint_name,
+                                " MicroMELF.");
                 }
-                footprint_name = g_strdup ("DIOMELF1911N");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?DIOMELF3414L"))
@@ -890,12 +893,13 @@ diomelf_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                footprint_name = g_strdup ("DIOMELF3414L");
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_INFO,
-                                _("DIOMELF3414L: is also known as LL-34."));
+                                (_("%s is also known as")), footprint_name,
+                                " LL-34.");
                 }
-                footprint_name = g_strdup ("DIOMELF3414L");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?DIOMELF3414M"))
@@ -929,12 +933,13 @@ diomelf_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                footprint_name = g_strdup ("DIOMELF3414M");
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_INFO,
-                                _("DIOMELF3414M: is also known as LL-34."));
+                                (_("%s is also known as")), footprint_name,
+                                " LL-34.");
                 }
-                footprint_name = g_strdup ("DIOMELF3414M");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?DIOMELF3414N"))
@@ -968,12 +973,13 @@ diomelf_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                footprint_name = g_strdup ("DIOMELF3414N");
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_INFO,
-                                _("DIOMELF3414N: is also known as SOD-80."));
+                                (_("%s is also known as")), footprint_name,
+                                " SOD-80.");
                 }
-                footprint_name = g_strdup ("DIOMELF3414N");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?DIOMELF3515L"))
@@ -1007,12 +1013,13 @@ diomelf_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                footprint_name = g_strdup ("DIOMELF3515L");
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_INFO,
-                                _("DIOMELF3515L: is also known as IEC 100H01."));
+                                (_("%s is also known as")), footprint_name,
+                                " IEC 100H01.");
                 }
-                footprint_name = g_strdup ("DIOMELF3515L");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?DIOMELF3515M"))
@@ -1046,12 +1053,13 @@ diomelf_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                footprint_name = g_strdup ("DIOMELF3515M");
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_INFO,
-                                _("DIOMELF3515M: is also known as IEC 100H01."));
+                                (_("%s is also known as")), footprint_name,
+                                " IEC 100H01.");
                 }
-                footprint_name = g_strdup ("DIOMELF3515M");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?DIOMELF3515N"))
@@ -1085,12 +1093,13 @@ diomelf_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                footprint_name = g_strdup ("DIOMELF3515N");
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_INFO,
-                                _("DIOMELF3515N: is also known as IEC 100H01."));
+                                (_("%s is also known as")), footprint_name,
+                                " IEC 100H01.");
                 }
-                footprint_name = g_strdup ("DIOMELF3515N");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?DIOMELF3516L"))
@@ -1260,12 +1269,13 @@ diomelf_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                footprint_name = g_strdup ("DIOMELF3520M");
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_INFO,
-                                _("DIOMELF3520M: is also known as IEC 100H03."));
+                                (_("%s is also known as")), footprint_name,
+                                " IEC 100H03.");
                 }
-                footprint_name = g_strdup ("DIOMELF3520M");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?DIOMELF3520N"))
@@ -1299,12 +1309,13 @@ diomelf_get_default_footprint_values
                 count_y = 0;
                 footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
+                footprint_name = g_strdup ("DIOMELF3520N");
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_INFO,
-                                _("DIOMELF3520N: is also known as IEC 100H03."));
+                                (_("%s is also known as")), footprint_name,
+                                " IEC 100H03.");
                 }
-                footprint_name = g_strdup ("DIOMELF3520N");
                 return (EXIT_SUCCESS);
         }
         else
