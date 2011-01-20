@@ -2821,120 +2821,282 @@ write_footprintwizard_file
 int
 write_footprint()
 {
+        int error_found;
+        error_found = FALSE;
         /* Switch depending the package type */
         switch (package_type)
         {
                 case BGA:
-                        bga_drc();
-                        bga_write_footprint ();
+                        if (bga_drc() == EXIT_SUCCESS)
+                        {
+                                bga_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case CAPA:
-                        capa_drc ();
-                        capa_write_footprint ();
+                        if (capa_drc () == EXIT_SUCCESS)
+                        {
+                                capa_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case CAPC:
-                        capc_drc ();
-                        capc_write_footprint ();
+                        if (capc_drc () == EXIT_SUCCESS)
+                        {
+                                capc_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case CAPM:
-                        capm_drc ();
-                        capm_write_footprint ();
+                        if (capm_drc () == EXIT_SUCCESS)
+                        {
+                                capm_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case CAPMP:
-                        capmp_drc ();
-                        capmp_write_footprint ();
+                        if (capmp_drc () == EXIT_SUCCESS)
+                        {
+                                capmp_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case CAPPR:
-                        cappr_drc ();
-                        cappr_write_footprint ();
+                        if (cappr_drc () == EXIT_SUCCESS)
+                        {
+                                cappr_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case CON_DIL:
-                        con_dil_write_footprint ();
+                        if (con_dil_drc() == EXIT_SUCCESS)
+                        {
+                                con_dil_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case CON_DIP:
-                        con_dip_write_footprint ();
+                        if (con_dip_drc() == EXIT_SUCCESS)
+                        {
+                                con_dip_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case CON_HDR:
-                        con_hdr_write_footprint ();
+                        if (con_hdr_drc () == EXIT_SUCCESS)
+                        {
+                                con_hdr_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case CON_SIL:
-                        con_sil_write_footprint ();
+                        if (con_sil_drc () == EXIT_SUCCESS)
+                        {
+                                con_sil_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case DIL:
-                        return;
+                        return (EXIT_FAILURE);
                         break;
                 case DIOM:
-                        diom_drc ();
-                        diom_write_footprint ();
+                        if (diom_drc () == EXIT_SUCCESS)
+                        {
+                                diom_write_footprint ();                        break;
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case DIOMELF:
-                        diomelf_drc ();
-                        diomelf_write_footprint ();
+                        if (diomelf_drc () == EXIT_SUCCESS)
+                        {
+                                diomelf_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case DIP:
-                        dip_drc ();
-                        dip_write_footprint ();
+                        if (dip_drc () == EXIT_SUCCESS)
+                        {
+                                dip_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case DIPS:
-                        dips_drc ();
-                        dips_write_footprint ();
+                        if (dips_drc () == EXIT_SUCCESS)
+                        {
+                                dips_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case INDC:
-                        indc_drc ();
-                        indc_write_footprint ();
+                        if (indc_drc () == EXIT_SUCCESS)
+                        {
+                                indc_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case INDM:
-                        indm_drc ();
-                        indm_write_footprint ();
+                        if (indm_drc () == EXIT_SUCCESS)
+                        {
+                                indm_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case INDP:
-                        indp_drc ();
-                        indp_write_footprint ();
+                        if (indp_drc () == EXIT_SUCCESS)
+                        {
+                                indp_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case PGA:
-                        pga_drc ();
-                        pga_write_footprint ();
+                        if (pga_drc () == EXIT_SUCCESS)
+                        {
+                                pga_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case PLCC:
-                        plcc_drc ();
-                        plcc_write_footprint ();
+                        if (plcc_drc () == EXIT_SUCCESS)
+                        {
+                                plcc_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case QFN:
-                        return;
+                        return (EXIT_FAILURE);
                         break;
                 case QFP:
-                        return;
+                        return (EXIT_FAILURE);
                         break;
                 case RES:
-                        res_drc ();
-                        res_write_footprint ();
+                        if (res_drc () == EXIT_SUCCESS)
+                        {
+                                res_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case RESC:
-                        resc_drc ();
-                        resc_write_footprint ();
+                        if (resc_drc () == EXIT_SUCCESS)
+                        {
+                                resc_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case RESM:
-                        resm_drc ();
-                        resm_write_footprint ();
+                        if (resm_drc () == EXIT_SUCCESS)
+                        {
+                                resm_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case RESMELF:
-                        resmelf_drc ();
-                        resmelf_write_footprint ();
+                        if (resmelf_drc () == EXIT_SUCCESS)
+                        {
+                                resmelf_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case SIL:
-                        sil_drc ();
-                        sil_write_footprint ();
+                        if (sil_drc () == EXIT_SUCCESS)
+                        {
+                                sil_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case SIP:
-                        sip_drc ();
-                        sip_write_footprint ();
+                        if (sip_drc () == EXIT_SUCCESS)
+                        {
+                                sip_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case SO:
-                        return;
+                        return (EXIT_FAILURE);
                         break;
                 case SOT:
-                        sot_drc ();
-                        sot_write_footprint ();
+                        if (sot_drc () == EXIT_SUCCESS)
+                        {
+                                sot_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case TO92:
                         to_write_footprint_to92 ();
@@ -2954,12 +3116,17 @@ write_footprint()
                 default:
                         if ((verbose) || (!silent))
                         {
-                                g_log ("", G_LOG_LEVEL_CRITICAL,
+                                g_log ("", G_LOG_LEVEL_WARNING,
                                         _("unknown or not yet implemented footprint type entered.\n"));
                         }
-                        fclose (fp);
                         return (EXIT_FAILURE);
                         break;
+        }
+        if (error_found)
+        {
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("no [%s] footprint written: found DRC errors while checking package %s.")),
+                        footprint_type, footprint_name);
         }
         return (EXIT_SUCCESS);
 }
