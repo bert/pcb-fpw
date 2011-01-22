@@ -859,7 +859,7 @@ capa_write_footprint ()
         if (license_in_footprint)
         {
                 write_license ();
-	}
+        }
         /* Determine (extreme) courtyard dimensions based on pin/pad
          * properties */
         if (pad_shapes_type == ROUND_ELONGATED)
