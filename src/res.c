@@ -578,6 +578,7 @@ res_drc ()
                 }
                 result = EXIT_FAILURE;
         }
+        /* Check for fiducials. */
         if (fiducial)
         {
                 if (verbose)
