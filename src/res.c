@@ -709,7 +709,7 @@ res_drc ()
  * If the footprint name is recognised known values will be loaded and the
  * entries involved in the GUI will be updated accordingly.\n
  * Currently the following footprints are supported:\n
- * - ,
+ * - RES600-320X170,
  * - .
  *
  * \return \c EXIT_SUCCESS when default values for a footprint were
@@ -720,26 +720,26 @@ res_get_default_footprint_values
 (
         gchar *footprint_name)
 {
-        if (!strcmp (footprint_name, "?RES"))
+        if (!strcmp (footprint_name, "?RES600-320X170"))
         {
                 footprint_units = g_strdup ("mm");
-                package_body_length = 0.80;
-                package_body_width = 0.40;
-                package_body_height = 0.40;
+                package_body_length = 3.20;
+                package_body_width = 1.70;
+                package_body_height = 1.70;
                 package_is_radial = FALSE;
                 number_of_pins = 2;
                 number_of_columns = 2;
                 number_of_rows = 1;
-                pitch_x = 1.27;
+                pitch_x = 6.00;
                 pitch_y = 0.00;
                 count_x = 0;
                 count_y = 0;
-                pad_diameter = 1.00;
+                pad_diameter = 1.52;
                 pad_length = 0.00;
                 pad_width = 0.00;
-                pad_shape = g_strdup ("circular pad, elongated");
+                pad_shape = g_strdup ("circular pad");
                 pad_shapes_type = ROUND;
-                pin_drill_diameter = 0.40;
+                pin_drill_diameter = 1.00;
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
@@ -747,15 +747,15 @@ res_get_default_footprint_values
                 fiducial_pad_diameter = 0.00;
                 fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
-                silkscreen_length = 0.80;
-                silkscreen_width = 0.40;
+                silkscreen_length = 3.20;
+                silkscreen_width = 1.70;
                 silkscreen_line_width = 0.20;
                 courtyard = FALSE;
-                courtyard_length = 2.54;
-                courtyard_width = 1.27;
+                courtyard_length = 3.82;
+                courtyard_width = 1.70;
                 courtyard_line_width = 0.05;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("RES");
+                footprint_name = g_strdup ("RES600-320X170");
                 return (EXIT_SUCCESS);
         }
         else
