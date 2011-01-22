@@ -418,6 +418,7 @@ res_create_element ()
 GList
 res_create_packages_list (GList *res_packages_list)
 {
+        res_packages_list = g_list_append (res_packages_list, "RES600-320X170");
         res_packages_list = g_list_append (res_packages_list, "RES770-420X200");
         return (*res_packages_list);
 }
@@ -751,7 +752,7 @@ res_get_default_footprint_values
                 silkscreen_width = 1.70;
                 silkscreen_line_width = 0.20;
                 courtyard = FALSE;
-                courtyard_length = 3.82;
+                courtyard_length = pitch_x + pad_diameter + pad_solder_mask_clearance;
                 courtyard_width = 1.70;
                 courtyard_line_width = 0.05;
                 g_free (footprint_name);
