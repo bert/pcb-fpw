@@ -423,6 +423,7 @@ res_create_packages_list (GList *res_packages_list)
         res_packages_list = g_list_append (res_packages_list, "RES1030-640X250");
         res_packages_list = g_list_append (res_packages_list, "RES1130-700X280");
         res_packages_list = g_list_append (res_packages_list, "RES1190-800X300");
+        res_packages_list = g_list_append (res_packages_list, "RES1390-1000X350");
         return (*res_packages_list);
 }
 
@@ -913,6 +914,44 @@ res_get_default_footprint_values
                 courtyard_line_width = 0.05;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("RES1190-800X300");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?RES1390-1000X350"))
+        {
+                footprint_units = g_strdup ("mm");
+                package_body_length = 10.00;
+                package_body_width = 3.50;
+                package_body_height = 3.50;
+                package_is_radial = FALSE;
+                number_of_pins = 2;
+                number_of_columns = 2;
+                number_of_rows = 1;
+                pitch_x = 13.90;
+                pitch_y = 0.00;
+                count_x = 0;
+                count_y = 0;
+                pad_diameter = 1.52;
+                pad_length = 0.00;
+                pad_width = 0.00;
+                pad_shape = g_strdup ("circular pad");
+                pad_shapes_type = ROUND;
+                pin_drill_diameter = 1.00;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = FALSE;
+                silkscreen_length = 10.00;
+                silkscreen_width = 3.50;
+                silkscreen_line_width = 0.20;
+                courtyard = FALSE;
+                courtyard_length = pitch_x + pad_diameter + pad_solder_mask_clearance;
+                courtyard_width = 3.50;
+                courtyard_line_width = 0.05;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("RES1390-1000X350");
                 return (EXIT_SUCCESS);
         }
         else
