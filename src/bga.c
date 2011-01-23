@@ -1065,8 +1065,10 @@ bga_get_default_footprint_values
                 fiducial_pad_solder_mask_clearance = 0.00;
                 courtyard_length = 13.00;
                 courtyard_width = 13.00;
+                courtyard_line_width = 0.05;
                 silkscreen_length = 11.00;
                 silkscreen_width = 11.00;
+                silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA100C100P10X10_1100X1100X350");
                 return (EXIT_SUCCESS);
@@ -1853,8 +1855,10 @@ bga_get_default_footprint_values
                 fiducial_pad_solder_mask_clearance = 0.00;
                 courtyard_length = 35.00;
                 courtyard_width = 35.00;
+                courtyard_line_width = 0.05;
                 silkscreen_length = 33.00;
                 silkscreen_width = 33.00;
+                silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1023C100P32X32_3300X3300X350");
                 return (EXIT_SUCCESS);
@@ -1884,8 +1888,10 @@ bga_get_default_footprint_values
                 fiducial_pad_solder_mask_clearance = 0.00;
                 courtyard_length = 35.00;
                 courtyard_width = 35.00;
+                courtyard_line_width = 0.05;
                 silkscreen_length = 33.00;
                 silkscreen_width = 33.00;
+                silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1024C100P32X32_3300X3300X350");
                 return (EXIT_SUCCESS);
@@ -2015,8 +2021,10 @@ bga_get_default_footprint_values
                 fiducial_pad_solder_mask_clearance = 0.00;
                 courtyard_length = 49.00;
                 courtyard_width = 49.00;
+                courtyard_line_width = 0.05;
                 silkscreen_length = 45.00;
                 silkscreen_width = 45.00;
+                silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1036C100P44X44_4500X4500X275");
                 return (EXIT_SUCCESS);
@@ -2413,8 +2421,10 @@ bga_get_default_footprint_values
                 fiducial_pad_solder_mask_clearance = 0.00;
                 courtyard_length = 37.00;
                 courtyard_width = 37.00;
+                courtyard_line_width = 0.05;
                 silkscreen_length = 35.00;
                 silkscreen_width = 35.00;
+                silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1089C100P33X33_3500X3500X350");
                 return (EXIT_SUCCESS);
@@ -2444,8 +2454,10 @@ bga_get_default_footprint_values
                 fiducial_pad_solder_mask_clearance = 0.00;
                 courtyard_length = 46.50;
                 courtyard_width = 46.50;
+                courtyard_line_width = 0.05;
                 silkscreen_length = 42.50;
                 silkscreen_width = 42.50;
+                silkscreen_line_width = 0.20;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("BGA1089C127P33X33_4250X4250X350");
                 return (EXIT_SUCCESS);
