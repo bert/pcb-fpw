@@ -427,6 +427,7 @@ res_create_packages_list (GList *res_packages_list)
         res_packages_list = g_list_append (res_packages_list, "RES1440-1050X200");
         res_packages_list = g_list_append (res_packages_list, "RES1670-1200X400");
         res_packages_list = g_list_append (res_packages_list, "RES1680-1200X500");
+        res_packages_list = g_list_append (res_packages_list, "RES1740-1050X200");
         return (*res_packages_list);
 }
 
@@ -719,7 +720,9 @@ res_drc ()
  * Currently the following footprints are supported:\n
  * - RES600-320X170,
  * - RES770-420X200,
- * - RES1030-640X250.
+ * - RES1030-640X250,
+ * - RES1740-1050X200,
+ * .
  *
  * \return \c EXIT_SUCCESS when default values for a footprint were
  * found, \c EXIT_FAILURE when the footprint name was not found.
@@ -1069,6 +1072,50 @@ res_get_default_footprint_values
                 courtyard_line_width = 0.05;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("RES1680-1200X500");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?RES1740-1050X200"))
+        {
+                footprint_units = g_strdup ("mm");
+                package_body_length = 10.50;
+                package_body_width = 2.00;
+                package_body_height = 2.00;
+                package_is_radial = FALSE;
+                number_of_pins = 2;
+                number_of_columns = 2;
+                number_of_rows = 1;
+                pitch_x = 17.40;
+                pitch_y = 0.00;
+                count_x = 0;
+                count_y = 0;
+                pad_diameter = 1.52;
+                pad_length = 0.00;
+                pad_width = 0.00;
+                pad_shape = g_strdup ("circular pad");
+                pad_shapes_type = ROUND;
+                pin_drill_diameter = 1.00;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = FALSE;
+                silkscreen_length = 10.50;
+                silkscreen_width = 2.00;
+                silkscreen_line_width = 0.20;
+                courtyard = FALSE;
+                courtyard_length = pitch_x + pad_diameter + pad_solder_mask_clearance;
+                courtyard_width = 2.00;
+                courtyard_line_width = 0.05;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("RES1740-1050X200");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s has socket leads")),
+                                footprint_name);
+                }
                 return (EXIT_SUCCESS);
         }
         else
