@@ -439,6 +439,7 @@ res_create_packages_list (GList *res_packages_list)
         res_packages_list = g_list_append (res_packages_list, "RES5480-5000X1000");
         res_packages_list = g_list_append (res_packages_list, "RES5480-5000X1250");
         res_packages_list = g_list_append (res_packages_list, "RES6510-6000X1450");
+        res_packages_list = g_list_append (res_packages_list, "RES6880-6400X1450");
         return (*res_packages_list);
 }
 
@@ -750,7 +751,7 @@ res_drc ()
  * - RES5480-5000X1000,
  * - RES5480-5000X1250,
  * - RES6510-6000X1450,
- * .
+ * - RES6880-6400X1450.
  *
  * \return \c EXIT_SUCCESS when default values for a footprint were
  * found, \c EXIT_FAILURE when the footprint name was not found.
@@ -1562,6 +1563,44 @@ res_get_default_footprint_values
                 courtyard_line_width = 0.05;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("RES6510-6000X1450");
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?RES6880-6400X1450"))
+        {
+                footprint_units = g_strdup ("mm");
+                package_body_length = 64.00;
+                package_body_width = 14.50;
+                package_body_height = 14.50;
+                package_is_radial = FALSE;
+                number_of_pins = 2;
+                number_of_columns = 2;
+                number_of_rows = 1;
+                pitch_x = 68.80;
+                pitch_y = 0.00;
+                count_x = 0;
+                count_y = 0;
+                pad_diameter = 1.52;
+                pad_length = 0.00;
+                pad_width = 0.00;
+                pad_shape = g_strdup ("circular pad");
+                pad_shapes_type = ROUND;
+                pin_drill_diameter = 1.00;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = FALSE;
+                silkscreen_length = 64.00;
+                silkscreen_width = 14.50;
+                silkscreen_line_width = 0.20;
+                courtyard = FALSE;
+                courtyard_length = pitch_x + pad_diameter + pad_solder_mask_clearance;
+                courtyard_width = 14.50;
+                courtyard_line_width = 0.05;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("RES6880-6400X1450");
                 return (EXIT_SUCCESS);
         }
         else
