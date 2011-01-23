@@ -773,6 +773,7 @@ sot_drc ()
                 }
                 result = EXIT_FAILURE;
         }
+        /* Check for fiducials. */
         if (fiducial)
         {
                 /* Check for a zero width fiducial pad. */
