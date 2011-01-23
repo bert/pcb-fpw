@@ -921,6 +921,9 @@ bga_get_default_footprint_values
                 pad_diameter = 0.40;
                 pad_clearance = 0.15;
                 pad_solder_mask_clearance = 0.15;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 courtyard_length = 13.00;
                 courtyard_width = 13.00;
                 courtyard_line_width = 0.05;
@@ -951,6 +954,9 @@ bga_get_default_footprint_values
                 pad_diameter = 0.40;
                 pad_clearance = 0.15;
                 pad_solder_mask_clearance = 0.15;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 courtyard_length = 13.00;
                 courtyard_width = 13.00;
                 courtyard_line_width = 0.05;
@@ -988,6 +994,9 @@ bga_get_default_footprint_values
                 pad_diameter = 0.45;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 courtyard_length = 13.00;
                 courtyard_width = 13.00;
                 courtyard_line_width = 0.05;
@@ -1018,6 +1027,9 @@ bga_get_default_footprint_values
                 pad_diameter = 0.40;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 courtyard_length = 13.00;
                 courtyard_width = 13.00;
                 courtyard_line_width = 0.05;
@@ -1048,6 +1060,9 @@ bga_get_default_footprint_values
                 pad_diameter = 0.45;
                 pad_clearance = 0.15;
                 pad_solder_mask_clearance = 0.15;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 courtyard_length = 13.00;
                 courtyard_width = 13.00;
                 silkscreen_length = 11.00;
