@@ -998,15 +998,18 @@ sot_get_default_footprint_values
 {
         if (!strcmp (footprint_name, "?SOT50P160X90-3N"))
         {
-                pitch_y = 0.50;
-                number_of_pins = 3;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 0.85;
                 package_body_width = 1.70;
                 package_body_height = 0.90;
                 package_is_radial = FALSE;
+                number_of_pins = 3;
                 number_of_columns = 2;
                 number_of_rows = 2;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.60;
+                pitch_y = 0.50;
                 pad_length = 0.85;
                 pad_width = 0.30;
                 pad_shape = g_strdup ("rounded pad, elongated");
@@ -1024,9 +1027,6 @@ sot_get_default_footprint_values
                 courtyard_length = 3.00;
                 courtyard_width = 2.20;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT50P160X90-3N");
                 if (verbose)
@@ -1043,15 +1043,18 @@ sot_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?SOT50P210X110-8N"))
         {
-                pitch_y = 0.50;
-                number_of_pins = 8;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.40;
                 package_body_width = 2.15;
                 package_body_height = 1.10;
                 package_is_radial = FALSE;
+                number_of_pins = 8;
                 number_of_columns = 2;
                 number_of_rows = 4;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.20;
+                pitch_y = 0.50;
                 pad_length = 0.95;
                 pad_width = 0.30;
                 pad_shape = g_strdup ("rounded pad, elongated");
@@ -1068,9 +1071,6 @@ sot_get_default_footprint_values
                 courtyard_length = 3.70;
                 courtyard_width = 2.70;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT50P210X110-8N");
                 if (verbose)
@@ -1084,15 +1084,18 @@ sot_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?SOT65P210X100-3N"))
         {
-                pitch_y = 0.65;
-                number_of_pins = 3;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.35;
                 package_body_width = 2.10;
                 package_body_height = 1.00;
                 package_is_radial = FALSE;
+                number_of_pins = 3;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.10;
+                pitch_y = 0.65;
                 pad_length = 0.90;
                 pad_width = 0.50;
                 pad_shape = g_strdup ("rectangular pad");
@@ -1109,9 +1112,6 @@ sot_get_default_footprint_values
                 courtyard_length = 3.50;
                 courtyard_width = 2.60;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT65P210X100-3N");
                 if (verbose)
@@ -1125,15 +1125,18 @@ sot_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?SOT65P210X100-6N"))
         {
-                pitch_y = 0.65;
-                number_of_pins = 6;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.35;
                 package_body_width = 2.10;
                 package_body_height = 1.00;
                 package_is_radial = FALSE;
+                number_of_pins = 6;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.20;
+                pitch_y = 0.65;
                 pad_length = 1.00;
                 pad_width = 0.40;
                 pad_shape = g_strdup ("rounded pad, elongated");
@@ -1150,24 +1153,24 @@ sot_get_default_footprint_values
                 courtyard_length = 3.70;
                 courtyard_width = 2.60;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT65P210X100-6N");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?SOT65P210X110-3N"))
         {
-                pitch_y = 0.65;
-                number_of_pins = 3;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.35;
                 package_body_width = 2.10;
                 package_body_height = 1.10;
                 package_is_radial = FALSE;
+                number_of_pins = 3;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.10;
+                pitch_y = 0.65;
                 pad_length = 0.85;
                 pad_width = 0.55;
                 pad_shape = g_strdup ("rounded pad, elongated");
@@ -1184,9 +1187,6 @@ sot_get_default_footprint_values
                 courtyard_length = 3.50;
                 courtyard_width = 2.60;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT65P210X110-3N");
                 if (verbose)
@@ -1200,15 +1200,18 @@ sot_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?SOT65P210X110-5N"))
         {
-                pitch_y = 0.65;
-                number_of_pins = 5;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.40;
                 package_body_width = 2.15;
                 package_body_height = 1.10;
                 package_is_radial = FALSE;
+                number_of_pins = 5;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.20;
+                pitch_y = 0.65;
                 pad_length = 0.95;
                 pad_width = 0.40;
                 pad_shape = g_strdup ("rounded pad, elongated");
@@ -1225,9 +1228,6 @@ sot_get_default_footprint_values
                 courtyard_length = 3.70;
                 courtyard_width = 2.70;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT65P210X110-5N");
                 if (verbose)
@@ -1241,15 +1241,18 @@ sot_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?SOT65P210X110-6N"))
         {
-                pitch_y = 0.65;
-                number_of_pins = 6;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.40;
                 package_body_width = 2.15;
                 package_body_height = 1.10;
                 package_is_radial = FALSE;
+                number_of_pins = 6;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.20;
+                pitch_y = 0.65;
                 pad_length = 0.95;
                 pad_width = 0.40;
                 pad_shape = g_strdup ("rounded pad, elongated");
@@ -1266,9 +1269,6 @@ sot_get_default_footprint_values
                 courtyard_length = 3.70;
                 courtyard_width = 2.70;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT65P210X110-6N");
                 if (verbose)
@@ -1282,15 +1282,18 @@ sot_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?SOT65P210X110-6AN"))
         {
-                pitch_y = 0.65;
-                number_of_pins = 6;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.35;
                 package_body_width = 2.20;
                 package_body_height = 1.10;
                 package_is_radial = FALSE;
+                number_of_pins = 6;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.10;
+                pitch_y = 0.65;
                 pad_length = 0.90;
                 pad_width = 0.40;
                 pad_shape = g_strdup ("rounded pad, elongated");
@@ -1307,24 +1310,24 @@ sot_get_default_footprint_values
                 courtyard_length = 3.50;
                 courtyard_width = 2.70;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT65P210X110-6AN");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?SOT65P275X110-8N"))
         {
-                pitch_y = 0.65;
-                number_of_pins = 8;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.65;
                 package_body_width = 3.00;
                 package_body_height = 1.10;
                 package_is_radial = FALSE;
+                number_of_pins = 8;
                 number_of_columns = 2;
                 number_of_rows = 4;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.60;
+                pitch_y = 0.65;
                 pad_length = 1.05;
                 pad_width = 0.50;
                 pad_shape = g_strdup ("rounded pad, elongated");
@@ -1341,9 +1344,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.20;
                 courtyard_width = 3.50;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT65P275X110-8N");
                 if (verbose)
@@ -1360,15 +1360,18 @@ sot_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?SOT65P280X100-8N"))
         {
-                pitch_y = 0.65;
-                number_of_pins = 8;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.75;
                 package_body_width = 3.00;
                 package_body_height = 1.00;
                 package_is_radial = FALSE;
+                number_of_pins = 8;
                 number_of_columns = 2;
                 number_of_rows = 4;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.70;
+                pitch_y = 0.65;
                 pad_length = 0.95;
                 pad_width = 0.50;
                 pad_shape = g_strdup ("rounded pad, elongated");
@@ -1385,9 +1388,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.30;
                 courtyard_width = 3.50;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT65P280X100-8N");
                 if (verbose)
@@ -1400,15 +1400,18 @@ sot_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?SOT65P280X130-8N"))
         {
-                pitch_y = 0.65;
-                number_of_pins = 8;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.75;
                 package_body_width = 3.00;
                 package_body_height = 1.30;
                 package_is_radial = FALSE;
+                number_of_pins = 8;
                 number_of_columns = 2;
                 number_of_rows = 4;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.60;
+                pitch_y = 0.65;
                 pad_length = 1.10;
                 pad_width = 0.50;
                 pad_shape = g_strdup ("rounded pad, elongated");
@@ -1425,9 +1428,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.20;
                 courtyard_width = 3.50;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT65P280X130-8N");
                 if (verbose)
@@ -1440,15 +1440,18 @@ sot_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?SOT65P280X145-8AN"))
         {
-                pitch_y = 0.65;
-                number_of_pins = 8;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.75;
                 package_body_width = 3.00;
                 package_body_height = 1.45;
                 package_is_radial = FALSE;
+                number_of_pins = 8;
                 number_of_columns = 2;
                 number_of_rows = 4;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.60;
+                pitch_y = 0.65;
                 pad_length = 1.10;
                 pad_width = 0.50;
                 pad_shape = g_strdup ("rounded pad, elongated");
@@ -1465,9 +1468,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.20;
                 courtyard_width = 3.50;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT65P280X145-8AN");
                 if (verbose)
@@ -1484,15 +1484,18 @@ sot_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?SOT65P280X145-8BN"))
         {
-                pitch_y = 0.65;
-                number_of_pins = 8;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.75;
                 package_body_width = 3.00;
                 package_body_height = 1.45;
                 package_is_radial = FALSE;
+                number_of_pins = 8;
                 number_of_columns = 2;
                 number_of_rows = 4;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.60;
+                pitch_y = 0.65;
                 pad_length = 1.10;
                 pad_width = 0.55;
                 pad_shape = g_strdup ("rounded pad, elongated");
@@ -1509,9 +1512,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.20;
                 courtyard_width = 3.50;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT65P280X145-8BN");
                 if (verbose)
@@ -1528,15 +1528,18 @@ sot_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?SOT65P280X145-8N"))
         {
-                pitch_y = 0.65;
-                number_of_pins = 8;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.75;
                 package_body_width = 3.05;
                 package_body_height = 1.45;
                 package_is_radial = FALSE;
+                number_of_pins = 8;
                 number_of_columns = 2;
                 number_of_rows = 4;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.60;
+                pitch_y = 0.65;
                 pad_length = 1.10;
                 pad_width = 0.50;
                 pad_shape = g_strdup ("rounded pad, elongated");
@@ -1553,9 +1556,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.20;
                 courtyard_width = 3.60;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT65P280X145-8N");
                 if (verbose)
@@ -1576,15 +1576,18 @@ sot_get_default_footprint_values
                  * SOT, 0.80mm pitch;
                  * 8 pin, 2.27mm W X 3.80mm L X 1.40mm H body
                  * SOT23-8 National Semiconductor 8L SOT23 MF08A */
-                pitch_y = 0.80;
-                number_of_pins = 8;
+                footprint_units = g_strdup ("mm");
                 package_body_width = 2.27;
                 package_body_length = 3.70;
                 package_body_height = 1.40;
                 package_is_radial = FALSE;
+                number_of_pins = 8;
                 number_of_columns = 2;
                 number_of_rows = 4;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 3.10;
+                pitch_y = 0.80;
                 pad_length = 1.00;
                 pad_width = 0.50;
                 pad_shape = g_strdup ("rectangular pad");
@@ -1601,9 +1604,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.60;
                 courtyard_width = 4.20;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT80P330X140-8N");
                 if (verbose)
@@ -1624,15 +1624,18 @@ sot_get_default_footprint_values
                  * SOT, 0.95mm pitch;
                  * 3 pin, 1.52 mm W X 3.05 mm L X 1.02 mm H body
                  * Dallas/Maxim 56-G2017-001 SOT23 */
-                pitch_y = 0.95;
-                number_of_pins = 3;
-                package_body_width = 1.52;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.05;
+                package_body_width = 1.52;
                 package_body_height = 1.02;
                 package_is_radial = FALSE;
+                number_of_pins = 3;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.20;
+                pitch_y = 0.95;
                 pad_length = 1.00;
                 pad_width = 0.65;
                 pad_shape = g_strdup ("rectangular pad");
@@ -1649,9 +1652,6 @@ sot_get_default_footprint_values
                 courtyard_length = 3.70;
                 courtyard_width = 3.60;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P228X102-3N");
                 if (verbose)
@@ -1668,15 +1668,18 @@ sot_get_default_footprint_values
                  * SOT, 0.95 mm pitch;
                  * 3 pin, 1.40 mm W X 3.05 mm L X 1.09 mm H Body
                  * TO-236AB Fairchild SOT-23 FS-49 */
-                pitch_y = 0.95;
-                number_of_pins = 3;
-                package_body_width = 1.40;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.05;
+                package_body_width = 1.40;
                 package_body_height = 1.09;
                 package_is_radial = FALSE;
+                number_of_pins = 3;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.30;
+                pitch_y = 0.95;
                 pad_length = 1.00;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
@@ -1693,9 +1696,6 @@ sot_get_default_footprint_values
                 courtyard_length = 3.80;
                 courtyard_width = 3.60;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P230X109-3N");
                 if (verbose)
@@ -1716,15 +1716,18 @@ sot_get_default_footprint_values
                  * SOT, 0.95 mm pitch;
                  * 3 pin, 1.40 mm W X 3.00 mm L X 1.10 mm H Body
                  * JEDEC TO-236AB Philips SOT23 */
-                pitch_y = 0.95;
-                number_of_pins = 3;
-                package_body_width = 1.40;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.00;
+                package_body_width = 1.40;
                 package_body_height = 1.10;
                 package_is_radial = FALSE;
+                number_of_pins = 3;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.30;
+                pitch_y = 0.95;
                 pad_length = 1.00;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
@@ -1741,9 +1744,6 @@ sot_get_default_footprint_values
                 courtyard_length = 3.80;
                 courtyard_width = 3.50;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P230X110-3N");
                 if (verbose)
@@ -1764,15 +1764,18 @@ sot_get_default_footprint_values
                  * SOT, 0.95 mm pitch;
                  * 3 pin, 1.40 mm W X 3.04 mm L X 1.24 mm H body
                  * JEDEC TO-236AA, SOT23 National Semiconductor 3L SOT23 M03A */
-                pitch_y = 0.95;
-                number_of_pins = 3;
-                package_body_width = 1.40;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.04;
+                package_body_width = 1.40;
                 package_body_height = 1.24;
                 package_is_radial = FALSE;
+                number_of_pins = 3;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.20;
+                pitch_y = 0.95;
                 pad_length = 1.00;
                 pad_width = 0.65;
                 pad_shape = g_strdup ("rectangular pad");
@@ -1789,9 +1792,6 @@ sot_get_default_footprint_values
                 courtyard_length = 3.70;
                 courtyard_width = 3.60;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P230X124-3N");
                 if (verbose)
@@ -1818,15 +1818,18 @@ sot_get_default_footprint_values
                  * JEDEC TO-236AB National Semiconductor 3L SOT23 MF03A
                  * JEDEC TO-236AB Texas Instruments 3 SOT-23 DBZ
                  * JEDEC TO-236AB JEDEC STD Package TO-236 R-PDSO-G */
-                pitch_y = 0.95;
-                number_of_pins = 3;
-                package_body_width = 1.40;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.04;
+                package_body_width = 1.40;
                 package_body_height = 1.12;
                 package_is_radial = FALSE;
+                number_of_pins = 3;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.10;
+                pitch_y = 0.95;
                 pad_length = 1.30;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rounded pad, elongated");
@@ -1843,9 +1846,6 @@ sot_get_default_footprint_values
                 courtyard_length = 3.90;
                 courtyard_width = 3.60;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P237X112-3N");
                 if (verbose)
@@ -1859,15 +1859,18 @@ sot_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?SOT95P237X117-3N"))
         {
-                pitch_y = 0.95;
-                number_of_pins = 3;
-                package_body_width = 1.40;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.04;
+                package_body_width = 1.40;
                 package_body_height = 1.17;
                 package_is_radial = FALSE;
+                number_of_pins = 3;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.30;
+                pitch_y = 0.95;
                 pad_length = 1.05;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
@@ -1884,9 +1887,6 @@ sot_get_default_footprint_values
                 courtyard_length = 3.90;
                 courtyard_width = 3.60;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P237X117-3N");
                 if (verbose)
@@ -1907,15 +1907,18 @@ sot_get_default_footprint_values
                  * SOT, 0.95 mm pitch;
                  * 3 pin, 1.40 mm W X 3.00 mm L X 1.10 mm H Body
                  * SOT23 Diodes, Inc. SOT-23 SOT-23 */
-                pitch_y = 0.95;
-                number_of_pins = 3;
-                package_body_width = 1.40;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.00;
+                package_body_width = 1.40;
                 package_body_height = 1.10;
                 package_is_radial = FALSE;
+                number_of_pins = 3;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.30;
+                pitch_y = 0.95;
                 pad_length = 1.05;
                 pad_width = 0.65;
                 pad_shape = g_strdup ("rectangular pad");
@@ -1932,9 +1935,6 @@ sot_get_default_footprint_values
                 courtyard_length = 3.90;
                 courtyard_width = 3.50;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P240X110-3N");
                 if (verbose)
@@ -1951,15 +1951,18 @@ sot_get_default_footprint_values
                  * SOT, 0.95 mm pitch;
                  * 3 pin, 1.40 mm W X 3.00 mm L X 1.14 mm H body
                  * Fairchild SOT-23 FS-AU */
-                pitch_y = 0.95;
-                number_of_pins = 3;
-                package_body_width = 1.40;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.00;
+                package_body_width = 1.40;
                 package_body_height = 1.14;
                 package_is_radial = FALSE;
+                number_of_pins = 3;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.30;
+                pitch_y = 0.95;
                 pad_length = 1.00;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
@@ -1976,9 +1979,6 @@ sot_get_default_footprint_values
                 courtyard_length = 3.80;
                 courtyard_width = 3.50;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P240X114-3N");
                 if (verbose)
@@ -1995,15 +1995,18 @@ sot_get_default_footprint_values
                  * SOT, 0.95 mm pitch;
                  * 3 pin, 1.52 mm W X 3.04 mm L X 1.12 mm H body
                  * Fairchild SSOT-3 MA03, FS-32 */
-                pitch_y = 0.95;
-                number_of_pins = 3;
-                package_body_width = 1.52;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.04;
+                package_body_width = 1.52;
                 package_body_height = 1.12;
                 package_is_radial = FALSE;
+                number_of_pins = 3;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.40;
+                pitch_y = 0.95;
                 pad_length = 1.05;
                 pad_width = 0.65;
                 pad_shape = g_strdup ("rectangular pad");
@@ -2020,9 +2023,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.00;
                 courtyard_width = 3.60;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P251X112-3N");
                 if (verbose)
@@ -2040,15 +2040,18 @@ sot_get_default_footprint_values
                  * 5 pin, 1.80 mm W X 3.10 mm L X 1.45 mm H body
                  * EIAJ SC-74A Fairchild SOT-23-5 S5, T5
                  * EIAJ SC-74A Fairchild SOT-23-5 MA05B, M5, M5X */
-                pitch_y = 0.95;
-                number_of_pins = 5;
-                package_body_width = 1.80;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.10;
+                package_body_width = 1.80;
                 package_body_height = 1.45;
                 package_is_radial = FALSE;
+                number_of_pins = 5;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.70;
+                pitch_y = 0.95;
                 pad_length = 1.15;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
@@ -2065,9 +2068,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.40;
                 courtyard_width = 3.60;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P270X145-5N");
                 if (verbose)
@@ -2088,15 +2088,18 @@ sot_get_default_footprint_values
                  * SOT, 0.95 mm pitch;
                  * 3 pin, 1.70 mm W X 3.10 mm L X 1.30 mm H Body
                  * SOT346 SOT346 */
-                pitch_y = 0.95;
-                number_of_pins = 3;
-                package_body_width = 1.70;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.10;
+                package_body_width = 1.70;
                 package_body_height = 1.30;
                 package_is_radial = FALSE;
+                number_of_pins = 3;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.50;
+                pitch_y = 0.95;
                 pad_length = 1.25;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
@@ -2113,9 +2116,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.30;
                 courtyard_width = 3.60;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P275X130-3N");
                 return (EXIT_SUCCESS);
@@ -2126,15 +2126,18 @@ sot_get_default_footprint_values
                  * SOT, 0.95 mm pitch;
                  * 6 pin, 1.80 mm W X 3.10 mm L X 1.45 mm H Body
                  * SOT26 SOT26 */
-                pitch_y = 0.95;
-                number_of_pins = 6;
-                package_body_width = 1.80;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.10;
+                package_body_width = 1.80;
                 package_body_height = 1.45;
                 package_is_radial = FALSE;
+                number_of_pins = 6;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.50;
+                pitch_y = 0.95;
                 pad_length = 1.25;
                 pad_width = 0.65;
                 pad_shape = g_strdup ("rectangular pad");
@@ -2151,9 +2154,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.30;
                 courtyard_width = 3.60;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P275X145-6N");
                 return (EXIT_SUCCESS);
@@ -2165,15 +2165,18 @@ sot_get_default_footprint_values
                  * 5 pin, 1.76 mm W X 3.04 mm L X 1.42 mm H body
                  * SOT23-5 National Semiconductor 5L SOT23 MA05A
                  * SOT23-5 National Semiconductor 5L SOT23 MA05B */
-                pitch_y = 0.95;
-                number_of_pins = 5;
-                package_body_width = 1.80;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.04;
+                package_body_width = 1.80;
                 package_body_height = 1.42;
                 package_is_radial = FALSE;
+                number_of_pins = 5;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.70;
+                pitch_y = 0.95;
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
@@ -2190,9 +2193,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.30;
                 courtyard_width = 3.60;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P279X142-5N");
                 if (verbose)
@@ -2213,15 +2213,18 @@ sot_get_default_footprint_values
                  * SOT, 0.95 mm pitch;
                  * 5 pin, 1.75 mm W X 3.00 mm L X 1.00 mm H Body
                  * JEDEC MO-193 Linear 5-Lead Plastic TSOT-23 S5 Package */
-                pitch_x = 0.95;
-                number_of_pins = 5;
-                package_body_width = 1.75;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.00;
+                package_body_width = 1.75;
                 package_body_height = 1.00;
                 package_is_radial = FALSE;
+                number_of_pins = 5;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.70;
+                pitch_y = 0.95;
                 pad_length = 1.10;
                 pad_width = 0.55;
                 pad_shape = g_strdup ("rounded pad, elongated");
@@ -2238,9 +2241,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.30;
                 courtyard_width = 3.50;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P280X100-5N");
                 if (verbose)
@@ -2261,15 +2261,18 @@ sot_get_default_footprint_values
                  * SOT, 0.95 mm pitch;
                  * 6 pin, 1.75 mm W X 3.00 mm L X 1.00 mm H Body
                  * JEDEC MO-193 Linear 6-Lead Plastic TSOT-23 S6 Package */
-                pitch_y = 0.95;
-                number_of_pins = 6;
-                package_body_width = 1.75;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.00;
+                package_body_width = 1.75;
                 package_body_height = 1.00;
                 package_is_radial = FALSE;
+                number_of_pins = 6;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.70;
+                pitch_y = 0.95;
                 pad_length = 1.10;
                 pad_width = 0.55;
                 pad_shape = g_strdup ("rounded pad, elongated");
@@ -2286,9 +2289,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.30;
                 courtyard_width = 3.50;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P280X100-6N");
                 if (verbose)
@@ -2311,15 +2311,18 @@ sot_get_default_footprint_values
                  * JEDEC MO-193AB Analog Devices 5 LEAD TSOT UJ-5
                  * JEDEC MO-193AB Dallas/Maxim 21-0113 Thin SOT23
                  * JEDEC MO-193AB Texas Instruments 5 TO/SOT DDC */
-                pitch_y = 0.95;
-                number_of_pins = 5;
-                package_body_width = 1.75;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.05;
+                package_body_width = 1.75;
                 package_body_height = 1.10;
                 package_is_radial = FALSE;
+                number_of_pins = 5;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.70;
+                pitch_y = 0.95;
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
@@ -2336,9 +2339,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.30;
                 courtyard_width = 3.60;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P280X110-5N");
                 if (verbose)
@@ -2362,15 +2362,18 @@ sot_get_default_footprint_values
                  * JEDEC MO-193AA Dallas/Maxim 21-0114 Thin SOT23
                  * JEDEC MO-193AA Fairchild TSOP-6
                  * JEDEC MO-193AA Texas Instruments 6 TO/SOT DDC */
-                pitch_y = 0.95;
-                number_of_pins = 6;
-                package_body_width = 1.75;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.05;
+                package_body_width = 1.75;
                 package_body_height = 1.10;
                 package_is_radial = FALSE;
+                number_of_pins = 6;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.70;
+                pitch_y = 0.95;
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
@@ -2387,9 +2390,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.30;
                 courtyard_width = 3.60;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P280X110-6N");
                 if (verbose)
@@ -2410,15 +2410,16 @@ sot_get_default_footprint_values
                  * SOT, 0.95 mm pitch;
                  * 6 pin, 2.00 mm W X 3.10 mm L X 1.15 mm H body
                  * JEDEC MO-178 Philips Plastic/Surface mount/Dual/SO SO6/SOP004 */
-                pitch_y = 0.95;
-                number_of_pins = 6;
-                package_body_width = 2.00;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.10;
+                package_body_width = 2.00;
                 package_body_height = 1.15;
                 package_is_radial = FALSE;
+                number_of_pins = 6;
                 number_of_columns = 2;
                 number_of_rows = 3;
                 pitch_x = 2.70;
+                pitch_y = 0.95;
                 count_x = 0;
                 count_y = 0;
                 pad_length = 1.00;
@@ -2437,7 +2438,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.20;
                 courtyard_width = 3.60;
                 courtyard_line_width = 0.05;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P280X115-6N");
                 if (verbose)
@@ -2458,15 +2458,18 @@ sot_get_default_footprint_values
                  * SOT, 0.95 mm pitch;
                  * 3 pin, 1.70 mm W X 3.00 mm L X 1.35 mm H body
                  * Philips Plastic/Surface mount/Dual/SO SO3/SOP015 */
-                pitch_y = 0.95;
-                number_of_pins = 3;
-                package_body_width = 1.70;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.00;
+                package_body_width = 1.70;
                 package_body_height = 1.35;
                 package_is_radial = FALSE;
+                number_of_pins = 3;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.60;
+                pitch_y = 0.95;
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
@@ -2483,9 +2486,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.20;
                 courtyard_width = 3.50;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P280X135-3AN");
                 if (verbose)
@@ -2502,15 +2502,18 @@ sot_get_default_footprint_values
                  * SOT, 0.95 mm pitch;
                  * 3 pin, 1.60 mm W X 2.90 mm L X 1.35 mm H Body
                  * SOT23 Texas Instruments 3 SOT-23 DBV */
-                pitch_y = 0.95;
-                number_of_pins = 3;
-                package_body_width = 1.70;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.00;
+                package_body_width = 1.70;
                 package_body_height = 1.35;
                 package_is_radial = FALSE;
+                number_of_pins = 3;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.60;
+                pitch_y = 0.95;
                 pad_length = 1.10;
                 pad_width = 0.65;
                 pad_shape = g_strdup ("rectangular pad");
@@ -2527,9 +2530,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.20;
                 courtyard_width = 3.50;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P280X135-3N");
                 if (verbose)
@@ -2546,15 +2546,18 @@ sot_get_default_footprint_values
                  * SOT, 0.95 mm pitch;
                  * 5 pin, 1.60 mm W X 3.00 mm L X 1.35 mm H body
                  * JEDEC MO-178 Philips Plastic/Surface mount/Dual/SO SO5/SOP003 */
-                pitch_y = 0.95;
-                number_of_pins = 5;
-                package_body_width = 1.70;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.00;
+                package_body_width = 1.70;
                 package_body_height = 1.35;
                 package_is_radial = FALSE;
+                number_of_pins = 5;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.60;
+                pitch_y = 0.95;
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
@@ -2571,9 +2574,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.20;
                 courtyard_width = 3.50;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P280X135-5N");
                 if (verbose)
@@ -2595,15 +2595,18 @@ sot_get_default_footprint_values
                  * 5 pin, 1.625 mm W X 2.90 mm L X 1.45 mm H Body
                  * JEDEC MO-178AA Analog Devices 5 LEAD SOT23 RJ-5
                  * JEDEC MO-178AA Texas Instruments 5 ZZ (BB) ZZ331 */
-                pitch_y = 0.95;
-                number_of_pins = 5;
-                package_body_width = 1.75;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.00;
+                package_body_width = 1.75;
                 package_body_height = 1.45;
                 package_is_radial = FALSE;
+                number_of_pins = 5;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.60;
+                pitch_y = 0.95;
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
@@ -2620,9 +2623,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.20;
                 courtyard_width = 3.50;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P280X145-5AN");
                 if (verbose)
@@ -2645,15 +2645,18 @@ sot_get_default_footprint_values
                  * JEDEC MO-178AA Dallas/Maxim 21-0057 SOT23
                  * JEDEC MO-178AA Dallas/Maxim 56-G2017-002 SOT23
                  * JEDEC MO-178AA Texas Instruments 5 SOT-23 DBV */
-                pitch_y = 0.95;
-                number_of_pins = 5;
-                package_body_width = 1.75;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.05;
+                package_body_width = 1.75;
                 package_body_height = 1.45;
                 package_is_radial = FALSE;
+                number_of_pins = 5;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.60;
+                pitch_y = 0.95;
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
@@ -2670,9 +2673,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.20;
                 courtyard_width = 3.60;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P280X145-5N");
                 if (verbose)
@@ -2694,15 +2694,18 @@ sot_get_default_footprint_values
                  * 6 pin, 1.70 mm W X 3.00 mm L X 1.45 mm H Body
                  * JEDEC MO-178AB Analog Devices 6 LEAD SOT23 RJ-6
                  * JEDEC MO-178AB Texas Instruments 6 ZZ (BB) ZZ332 */
-                pitch_y = 0.95;
-                number_of_pins = 6;
-                package_body_width = 1.70;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.00;
+                package_body_width = 1.70;
                 package_body_height = 1.45;
                 package_is_radial = FALSE;
+                number_of_pins = 6;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.60;
+                pitch_y = 0.95;
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
@@ -2719,9 +2722,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.20;
                 courtyard_width = 3.50;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P280X145-6AN");
                 if (verbose)
@@ -2743,15 +2743,18 @@ sot_get_default_footprint_values
                  * 6 pin, 1.75 mm W X 3.05 mm L X 1.45 mm H Body
                  * JEDEC MO-178AB Dallas/Maxim 21-0058 SOT23
                  * JEDEC MO-178AB Texas Instruments 6 SOT-23 DBV */
-                pitch_y = 0.95;
-                number_of_pins = 6;
-                package_body_width = 1.75;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.05;
+                package_body_width = 1.75;
                 package_body_height = 1.45;
                 package_is_radial = FALSE;
+                number_of_pins = 6;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.60;
+                pitch_y = 0.95;
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
@@ -2768,9 +2771,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.20;
                 courtyard_width = 3.60;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P280X145-6N");
                 if (verbose)
@@ -2791,15 +2791,18 @@ sot_get_default_footprint_values
                  * SOT, 0.95 mm pitch;
                  * 5 pin, 1.67 mm W X 2.99 mm L X 1.22 mm H body
                  * JEDEC MO-178AA, SOT23-5 National Semiconductor 5L SOT23 MF05A */
-                pitch_y = 0.95;
-                number_of_pins = 5;
-                package_body_width = 1.67;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 2.99;
+                package_body_width = 1.67;
                 package_body_height = 1.22;
                 package_is_radial = FALSE;
+                number_of_pins = 5;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.60;
+                pitch_y = 0.95;
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
@@ -2816,9 +2819,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.20;
                 courtyard_width = 3.50;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P284X122-5N");
                 if (verbose)
@@ -2841,15 +2841,18 @@ sot_get_default_footprint_values
                  * JEDEC MO-178AB, SOT23-6 Fairchild SSOT-6 FS-31, 33
                  * JEDEC MO-178AB, SOT23-6 National Semiconductor 6L SOT23 MF06A
                  * JEDEC MO-178AB, SOT23-6 National Semiconductor 6L SOT23 MA06A */
-                pitch_y = 0.95;
-                number_of_pins = 6;
-                package_body_width = 1.70;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.00;
+                package_body_width = 1.70;
                 package_body_height = 1.22;
                 package_is_radial = FALSE;
+                number_of_pins = 6;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.60;
+                pitch_y = 0.95;
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
@@ -2866,9 +2869,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.20;
                 courtyard_width = 3.50;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P284X122-6N");
                 if (verbose)
@@ -2889,15 +2889,18 @@ sot_get_default_footprint_values
                  * SOT, 0.95 mm pitch;
                  * 3 pin, 1.70 mm W X 3.10 mm L X 1.40 mm H Body
                  * SC-59 Diodes, Inc. SC-59 SC-59 */
-                pitch_y = 0.95;
-                number_of_pins = 3;
-                package_body_width = 1.70;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.10;
+                package_body_width = 1.70;
                 package_body_height = 1.40;
                 package_is_radial = FALSE;
+                number_of_pins = 3;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.60;
+                pitch_y = 0.95;
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
@@ -2914,9 +2917,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.20;
                 courtyard_width = 3.60;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P285X140-3N");
                 if (verbose)
@@ -2937,15 +2937,18 @@ sot_get_default_footprint_values
                  * SOT, 0.95 mm pitch;
                  * 6 pin, 1.75 mm W X 3.07 mm L X 0.90 mm H body
                  * JEDEC MO-193AA, SOT23-6 National Semiconductor 6L TSOT MK06A */
-                pitch_y = 0.95;
-                number_of_pins = 6;
-                package_body_width = 1.75;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.07;
+                package_body_width = 1.75;
                 package_body_height = 0.90;
                 package_is_radial = FALSE;
+                number_of_pins = 6;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.70;
+                pitch_y = 0.95;
                 pad_length = 1.05;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rectangular pad");
@@ -2962,9 +2965,6 @@ sot_get_default_footprint_values
                 courtyard_length = 4.30;
                 courtyard_width = 3.60;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P285X90-6N");
                 if (verbose)
@@ -2985,15 +2985,18 @@ sot_get_default_footprint_values
                  * SOT, 0.95 mm pitch;
                  * 8 pin, 3.42 mm W X 4.18 mm L X 1.24 mm H body
                  * Fairchild SSOT-8 MA08C */
-                pitch_y = 0.95;
-                number_of_pins = 8;
-                package_body_width = 3.42;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 4.18;
+                package_body_width = 3.42;
                 package_body_height = 1.24;
                 package_is_radial = FALSE;
+                number_of_pins = 8;
                 number_of_columns = 2;
                 number_of_rows = 4;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 4.40;
+                pitch_y = 0.95;
                 pad_length = 1.20;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rounded pad, elongated");
@@ -3010,9 +3013,6 @@ sot_get_default_footprint_values
                 courtyard_length = 6.10;
                 courtyard_width = 4.70;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT95P470X124-8N");
                 if (verbose)
@@ -3025,15 +3025,18 @@ sot_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?SOT100P230X110-3N"))
         {
-                pitch_y = 1.00;
-                number_of_pins = 3;
-                package_body_width = 1.40;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.00;
+                package_body_width = 1.40;
                 package_body_height = 1.10;
                 package_is_radial = FALSE;
+                number_of_pins = 3;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.00;
+                pitch_y = 1.00;
                 pad_length = 1.10;
                 pad_width = 0.60;
                 pad_shape = g_strdup ("rounded pad, elongated");
@@ -3048,24 +3051,24 @@ sot_get_default_footprint_values
                 silkscreen_width = 3.00;
                 courtyard_length = 3.70;
                 courtyard_width = 3.50;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT100P230X110-3N");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?SOT127P700X180-6N"))
         {
-                pitch_y = 1.27;
-                number_of_pins = 6;
-                package_body_width = 3.55;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 6.55;
+                package_body_width = 3.55;
                 package_body_height = 1.80;
                 package_is_radial = FALSE;
+                number_of_pins = 6;
                 number_of_columns = 2;
                 number_of_rows = 5;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 6.00;
+                pitch_y = 1.27;
                 pad_length = 2.05;
                 pad_width = 0.65;
                 pad_shape = g_strdup ("rectangular pad");
@@ -3082,24 +3085,24 @@ sot_get_default_footprint_values
                 courtyard_length = 8.60;
                 courtyard_width = 7.10;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT127P700X180-6N");
                 return (EXIT_SUCCESS);
         }
         else if (!strcmp (footprint_name, "?SOT150P700X180-5N"))
         {
-                pitch_y = 1.50;
-                number_of_pins = 5;
-                package_body_width = 3.76;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 6.70;
+                package_body_width = 3.76;
                 package_body_height = 1.80;
                 package_is_radial = FALSE;
+                number_of_pins = 5;
                 number_of_columns = 2;
                 number_of_rows = 4;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 5.80;
+                pitch_y = 1.50;
                 pad_length = 2.15;
                 pad_width = 0.95;
                 pad_shape = g_strdup ("rectangular pad");
@@ -3116,9 +3119,6 @@ sot_get_default_footprint_values
                 courtyard_length = 8.50;
                 courtyard_width = 7.20;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT150P700X180-5N");
                 if (verbose)
@@ -3132,15 +3132,18 @@ sot_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?SOT230P700X180-4N"))
         {
-                pitch_y = 2.30;
-                number_of_pins = 4;
-                package_body_width = 3.70;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 6.70;
+                package_body_width = 3.70;
                 package_body_height = 1.80;
                 package_is_radial = FALSE;
+                number_of_pins = 4;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 5.80;
+                pitch_y = 2.30;
                 pad_length = 2.15;
                 pad_width = 0.95;
                 pad_shape = g_strdup ("rectangular pad");
@@ -3157,9 +3160,6 @@ sot_get_default_footprint_values
                 courtyard_length = 8.50;
                 courtyard_width = 7.20;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT230P700X180-4N");
                 if (verbose)
@@ -3173,15 +3173,18 @@ sot_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?SOT230P700X180-4AN"))
         {
-                pitch_y = 2.30;
-                number_of_pins = 4;
-                package_body_width = 3.70;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 6.70;
+                package_body_width = 3.70;
                 package_body_height = 1.80;
                 package_is_radial = FALSE;
+                number_of_pins = 4;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 6.00;
+                pitch_y = 2.30;
                 pad_length = 1.95;
                 pad_width = 0.90;
                 pad_shape = g_strdup ("rectangular pad");
@@ -3198,9 +3201,6 @@ sot_get_default_footprint_values
                 courtyard_length = 8.50;
                 courtyard_width = 7.20;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT230P700X180-4AN");
                 if (verbose)
@@ -3214,15 +3214,18 @@ sot_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?SOT230P700X180-4BN"))
         {
-                pitch_y = 2.30;
-                number_of_pins = 4;
-                package_body_width = 3.70;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 6.70;
+                package_body_width = 3.70;
                 package_body_height = 1.80;
                 package_is_radial = FALSE;
+                number_of_pins = 4;
                 number_of_columns = 2;
                 number_of_rows = 3;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 6.10;
+                pitch_y = 2.30;
                 pad_length = 1.90;
                 pad_width = 0.95;
                 pad_shape = g_strdup ("rectangular pad");
@@ -3239,9 +3242,6 @@ sot_get_default_footprint_values
                 courtyard_length = 8.50;
                 courtyard_width = 7.20;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("SOT230P700X180-4BN");
                 if (verbose)
