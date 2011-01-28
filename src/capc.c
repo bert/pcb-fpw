@@ -1,7 +1,7 @@
 /*!
  * \file src/capc.c
  *
- * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Functions for CAPC footprints
  * (Surface Mount Technology Chip Capacitor).
@@ -721,13 +721,16 @@ capc_get_default_footprint_values
 {
         if (!strcmp (footprint_name, "?CAPC0603X33N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 0.63;
                 package_body_width = 0.30;
                 package_body_height = 0.33;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 0.66;
                 pitch_y = 0.0;
                 pad_length = 0.46;
@@ -736,6 +739,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -743,9 +752,6 @@ capc_get_default_footprint_values
                 courtyard_length = 1.42;
                 courtyard_width = 0.72;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC0603X33N");
                 if (verbose)
@@ -763,13 +769,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC0816X61N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 0.96;
                 package_body_width = 1.75;
                 package_body_height = 0.61;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 0.80;
                 pitch_y = 0.0;
                 pad_length = 0.60;
@@ -778,6 +787,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -785,9 +800,6 @@ capc_get_default_footprint_values
                 courtyard_length = 1.70;
                 courtyard_width = 2.08;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC0816X61N");
                 if (verbose)
@@ -805,13 +817,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC1005X55N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.05;
                 package_body_width = 0.55;
                 package_body_height = 0.55;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 0.90;
                 pitch_y = 0.0;
                 pad_length = 0.62;
@@ -820,6 +835,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -827,9 +848,6 @@ capc_get_default_footprint_values
                 courtyard_length = 1.82;
                 courtyard_width = 0.92;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC1005X55N");
                 if (verbose)
@@ -845,13 +863,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC1005X56N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.10;
                 package_body_width = 0.50;
                 package_body_height = 0.56;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 0.96;
                 pitch_y = 0.0;
                 pad_length = 0.59;
@@ -860,6 +881,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -867,9 +894,6 @@ capc_get_default_footprint_values
                 courtyard_length = 1.86;
                 courtyard_width = 0.94;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC1005X56N");
                 if (verbose)
@@ -885,13 +909,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC1005X60N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.10;
                 package_body_width = 0.60;
                 package_body_height = 0.60;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 0.98;
                 pitch_y = 0.0;
                 pad_length = 0.58;
@@ -900,6 +927,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -907,9 +940,6 @@ capc_get_default_footprint_values
                 courtyard_length = 1.86;
                 courtyard_width = 0.96;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC1005X60N");
                 if (verbose)
@@ -925,13 +955,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC1220X107N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.45;
                 package_body_width = 2.20;
                 package_body_height = 1.07;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.10;
                 pitch_y = 0.0;
                 pad_length = 0.77;
@@ -940,6 +973,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -947,9 +986,6 @@ capc_get_default_footprint_values
                 courtyard_length = 2.18;
                 courtyard_width = 2.52;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC1220X107N");
                 if (verbose)
@@ -965,13 +1001,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC1320X76N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.52;
                 package_body_width = 2.25;
                 package_body_height = 0.76;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.10;
                 pitch_y = 0.0;
                 pad_length = 0.84;
@@ -980,6 +1019,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -987,9 +1032,6 @@ capc_get_default_footprint_values
                 courtyard_length = 2.24;
                 courtyard_width = 2.58;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC1320X76N");
                 if (verbose)
@@ -1005,13 +1047,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC1508X65N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.72;
                 package_body_width = 1.00;
                 package_body_height = 0.65;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.18;
                 pitch_y = 0.0;
                 pad_length = 0.97;
@@ -1020,6 +1065,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -1027,9 +1078,6 @@ capc_get_default_footprint_values
                 courtyard_length = 2.46;
                 courtyard_width = 1.32;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC1508X65N");
                 if (verbose)
@@ -1047,13 +1095,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC1608X55N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.70;
                 package_body_width = 0.90;
                 package_body_height = 0.55;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.50;
                 pitch_y = 0.0;
                 pad_length = 0.90;
@@ -1062,6 +1113,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -1069,9 +1126,6 @@ capc_get_default_footprint_values
                 courtyard_length = 2.90;
                 courtyard_width = 1.50;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC1608X55N");
                 if (verbose)
@@ -1087,13 +1141,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC1608X86N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.75;
                 package_body_width = 0.96;
                 package_body_height = 0.86;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.60;
                 pitch_y = 0.0;
                 pad_length = 0.95;
@@ -1102,6 +1159,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -1109,9 +1172,6 @@ capc_get_default_footprint_values
                 courtyard_length = 3.10;
                 courtyard_width = 1.50;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC1608X86N");
                 if (verbose)
@@ -1127,13 +1187,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC1608X87N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.75;
                 package_body_width = 0.95;
                 package_body_height = 0.87;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.60;
                 pitch_y = 0.0;
                 pad_length = 0.95;
@@ -1142,6 +1205,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -1149,9 +1218,6 @@ capc_get_default_footprint_values
                 courtyard_length = 3.10;
                 courtyard_width = 1.50;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC1608X87N");
                 if (verbose)
@@ -1167,13 +1233,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC1608X90N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.75;
                 package_body_width = 0.95;
                 package_body_height = 0.90;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.60;
                 pitch_y = 0.0;
                 pad_length = 0.95;
@@ -1182,6 +1251,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -1189,9 +1264,6 @@ capc_get_default_footprint_values
                 courtyard_length = 3.10;
                 courtyard_width = 1.50;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC1608X90N");
                 if (verbose)
@@ -1207,13 +1279,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC1608X92N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.72;
                 package_body_width = 0.92;
                 package_body_height = 0.92;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.60;
                 pitch_y = 0.0;
                 pad_length = 0.90;
@@ -1222,6 +1297,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -1229,9 +1310,6 @@ capc_get_default_footprint_values
                 courtyard_length = 3.00;
                 courtyard_width = 1.50;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC1608X92N");
                 if (verbose)
@@ -1247,13 +1325,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC1608X95N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.75;
                 package_body_width = 0.95;
                 package_body_height = 0.95;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.60;
                 pitch_y = 0.0;
                 pad_length = 0.95;
@@ -1262,6 +1343,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -1269,9 +1356,6 @@ capc_get_default_footprint_values
                 courtyard_length = 3.10;
                 courtyard_width = 1.50;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC1608X95N");
                 if (verbose)
@@ -1287,13 +1371,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC1632X76N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.85;
                 package_body_width = 3.45;
                 package_body_height = 0.76;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.60;
                 pitch_y = 0.0;
                 pad_length = 0.95;
@@ -1302,6 +1389,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -1309,9 +1402,6 @@ capc_get_default_footprint_values
                 courtyard_length = 3.10;
                 courtyard_width = 4.00;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC1632X76N");
                 if (verbose)
@@ -1327,13 +1417,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC1632X168N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 1.80;
                 package_body_width = 3.40;
                 package_body_height = 1.68;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.60;
                 pitch_y = 0.0;
                 pad_length = 0.95;
@@ -1342,6 +1435,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -1349,9 +1448,6 @@ capc_get_default_footprint_values
                 courtyard_length = 3.10;
                 courtyard_width = 3.90;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC1632X168N");
                 if (verbose)
@@ -1367,13 +1463,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC2012X100N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 2.20;
                 package_body_width = 1.45;
                 package_body_height = 1.00;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.80;
                 pitch_y = 0.0;
                 pad_length = 1.15;
@@ -1382,6 +1481,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -1389,9 +1494,6 @@ capc_get_default_footprint_values
                 courtyard_length = 3.50;
                 courtyard_width = 2.00;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC2012X100N");
                 if (verbose)
@@ -1407,13 +1509,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC2012X100AN"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 2.20;
                 package_body_width = 1.40;
                 package_body_height = 1.00;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.80;
                 pitch_y = 0.0;
                 pad_length = 1.15;
@@ -1422,6 +1527,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -1429,9 +1540,6 @@ capc_get_default_footprint_values
                 courtyard_length = 3.50;
                 courtyard_width = 1.90;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC2012X100AN");
                 if (verbose)
@@ -1447,13 +1555,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC2012X120N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 2.20;
                 package_body_width = 1.45;
                 package_body_height = 1.20;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.80;
                 pitch_y = 0.0;
                 pad_length = 1.15;
@@ -1462,6 +1573,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -1469,9 +1586,6 @@ capc_get_default_footprint_values
                 courtyard_length = 3.50;
                 courtyard_width = 2.00;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC2012X120N");
                 if (verbose)
@@ -1487,13 +1601,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC2012X127N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 2.21;
                 package_body_width = 1.45;
                 package_body_height = 1.27;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.80;
                 pitch_y = 0.0;
                 pad_length = 1.15;
@@ -1502,6 +1619,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -1509,9 +1632,6 @@ capc_get_default_footprint_values
                 courtyard_length = 3.50;
                 courtyard_width = 2.00;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC2012X127N");
                 if (verbose)
@@ -1527,13 +1647,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC2012X130N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 2.38;
                 package_body_width = 1.63;
                 package_body_height = 1.30;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.80;
                 pitch_y = 0.0;
                 pad_length = 1.30;
@@ -1542,6 +1665,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -1549,9 +1678,6 @@ capc_get_default_footprint_values
                 courtyard_length = 3.60;
                 courtyard_width = 2.20;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC2012X130N");
                 if (verbose)
@@ -1567,13 +1693,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC2012X135N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 2.10;
                 package_body_width = 1.35;
                 package_body_height = 1.35;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.80;
                 pitch_y = 0.0;
                 pad_length = 1.05;
@@ -1582,6 +1711,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -1589,9 +1724,6 @@ capc_get_default_footprint_values
                 courtyard_length = 3.40;
                 courtyard_width = 1.90;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC2012X135N");
                 if (verbose)
@@ -1607,13 +1739,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC2012X140N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 2.20;
                 package_body_width = 1.45;
                 package_body_height = 1.40;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.80;
                 pitch_y = 0.0;
                 pad_length = 1.15;
@@ -1622,6 +1757,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -1629,9 +1770,6 @@ capc_get_default_footprint_values
                 courtyard_length = 3.50;
                 courtyard_width = 2.00;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC2012X140N");
                 if (verbose)
@@ -1647,13 +1785,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC2012X145N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 2.20;
                 package_body_width = 1.45;
                 package_body_height = 1.45;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.80;
                 pitch_y = 0.0;
                 pad_length = 1.15;
@@ -1662,6 +1803,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -1669,9 +1816,6 @@ capc_get_default_footprint_values
                 courtyard_length = 3.50;
                 courtyard_width = 2.00;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC2012X145N");
                 if (verbose)
@@ -1687,13 +1831,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC2012X145AN"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 2.20;
                 package_body_width = 1.45;
                 package_body_height = 1.45;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.80;
                 pitch_y = 0.0;
                 pad_length = 1.15;
@@ -1702,6 +1849,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -1709,9 +1862,6 @@ capc_get_default_footprint_values
                 courtyard_length = 3.50;
                 courtyard_width = 2.00;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC2012X145AN");
                 if (verbose)
@@ -1727,13 +1877,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC2012X70N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 2.20;
                 package_body_width = 1.45;
                 package_body_height = 0.70;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.80;
                 pitch_y = 0.0;
                 pad_length = 1.15;
@@ -1742,6 +1895,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -1749,9 +1908,6 @@ capc_get_default_footprint_values
                 courtyard_length = 3.50;
                 courtyard_width = 2.00;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC2012X70N");
                 if (verbose)
@@ -1767,13 +1923,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC2012X71N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 2.20;
                 package_body_width = 1.45;
                 package_body_height = 0.71;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.80;
                 pitch_y = 0.0;
                 pad_length = 1.15;
@@ -1782,6 +1941,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -1789,9 +1954,6 @@ capc_get_default_footprint_values
                 courtyard_length = 3.50;
                 courtyard_width = 2.00;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC2012X71N");
                 if (verbose)
@@ -1807,13 +1969,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC2012X88N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 2.20;
                 package_body_width = 1.45;
                 package_body_height = 0.88;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.80;
                 pitch_y = 0.0;
                 pad_length = 1.15;
@@ -1822,6 +1987,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -1829,9 +2000,6 @@ capc_get_default_footprint_values
                 courtyard_length = 3.50;
                 courtyard_width = 2.00;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC2012X88N");
                 if (verbose)
@@ -1847,13 +2015,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC2012X90N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 2.20;
                 package_body_width = 1.45;
                 package_body_height = 0.90;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.80;
                 pitch_y = 0.0;
                 pad_length = 1.15;
@@ -1862,6 +2033,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -1869,9 +2046,6 @@ capc_get_default_footprint_values
                 courtyard_length = 3.50;
                 courtyard_width = 2.00;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC2012X90N");
                 if (verbose)
@@ -1887,13 +2061,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC2012X94N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 2.21;
                 package_body_width = 1.45;
                 package_body_height = 0.94;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.80;
                 pitch_y = 0.0;
                 pad_length = 1.15;
@@ -1902,6 +2079,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -1909,9 +2092,6 @@ capc_get_default_footprint_values
                 courtyard_length = 3.50;
                 courtyard_width = 2.00;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC2012X94N");
                 if (verbose)
@@ -1927,13 +2107,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC2012X95N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 2.20;
                 package_body_width = 1.45;
                 package_body_height = 0.95;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.80;
                 pitch_y = 0.0;
                 pad_length = 1.15;
@@ -1942,6 +2125,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -1949,9 +2138,6 @@ capc_get_default_footprint_values
                 courtyard_length = 3.50;
                 courtyard_width = 2.00;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC2012X95N");
                 if (verbose)
@@ -1967,13 +2153,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC2013X140N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 2.38;
                 package_body_width = 1.65;
                 package_body_height = 1.40;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 1.80;
                 pitch_y = 0.0;
                 pad_length = 1.30;
@@ -1982,6 +2171,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.00;
                 silkscreen_width = 0.00;
@@ -1989,9 +2184,6 @@ capc_get_default_footprint_values
                 courtyard_length = 3.60;
                 courtyard_width = 2.20;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC2013X140N");
                 if (verbose)
@@ -2007,13 +2199,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC3215X168N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.40;
                 package_body_width = 1.60;
                 package_body_height = 1.68;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 3.00;
                 pitch_y = 0.0;
                 pad_length = 1.15;
@@ -2022,6 +2217,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = TRUE;
                 silkscreen_length = 1.10;
                 silkscreen_width = 1.50;
@@ -2029,9 +2230,6 @@ capc_get_default_footprint_values
                 courtyard_length = 4.70;
                 courtyard_width = 2.20;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC3215X168N");
                 if (verbose)
@@ -2044,13 +2242,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC3216X105N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.40;
                 package_body_width = 1.80;
                 package_body_height = 1.05;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 3.00;
                 pitch_y = 0.0;
                 pad_length = 1.15;
@@ -2059,6 +2260,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = TRUE;
                 silkscreen_length = 1.10;
                 silkscreen_width = 1.60;
@@ -2066,9 +2273,6 @@ capc_get_default_footprint_values
                 courtyard_length = 4.70;
                 courtyard_width = 2.30;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC3216X105N");
                 if (verbose)
@@ -2081,13 +2285,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC3216X125N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.40;
                 package_body_width = 1.80;
                 package_body_height = 1.25;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 3.00;
                 pitch_y = 0.0;
                 pad_length = 1.15;
@@ -2096,6 +2303,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = TRUE;
                 silkscreen_length = 1.10;
                 silkscreen_width = 1.60;
@@ -2103,9 +2316,6 @@ capc_get_default_footprint_values
                 courtyard_length = 4.70;
                 courtyard_width = 2.30;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC3216X125N");
                 if (verbose)
@@ -2118,13 +2328,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC3216X127N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.40;
                 package_body_width = 1.80;
                 package_body_height = 1.27;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 3.00;
                 pitch_y = 0.0;
                 pad_length = 1.15;
@@ -2133,6 +2346,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = TRUE;
                 silkscreen_length = 1.10;
                 silkscreen_width = 1.60;
@@ -2140,9 +2359,6 @@ capc_get_default_footprint_values
                 courtyard_length = 4.70;
                 courtyard_width = 2.30;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC3216X127N");
                 if (verbose)
@@ -2155,13 +2371,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC3216X130N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.40;
                 package_body_width = 1.80;
                 package_body_height = 1.30;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 3.00;
                 pitch_y = 0.0;
                 pad_length = 1.15;
@@ -2170,6 +2389,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = TRUE;
                 silkscreen_length = 1.10;
                 silkscreen_width = 1.60;
@@ -2177,9 +2402,6 @@ capc_get_default_footprint_values
                 courtyard_length = 4.70;
                 courtyard_width = 2.30;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC3216X130N");
                 if (verbose)
@@ -2192,13 +2414,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC3216X130AN"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.58;
                 package_body_width = 1.98;
                 package_body_height = 1.30;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 3.00;
                 pitch_y = 0.0;
                 pad_length = 1.30;
@@ -2207,6 +2432,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = TRUE;
                 silkscreen_length = 1.00;
                 silkscreen_width = 1.60;
@@ -2214,9 +2445,6 @@ capc_get_default_footprint_values
                 courtyard_length = 4.80;
                 courtyard_width = 2.50;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC3216X130AN");
                 if (verbose)
@@ -2229,13 +2457,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC3216X140N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.40;
                 package_body_width = 1.80;
                 package_body_height = 1.40;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 3.00;
                 pitch_y = 0.0;
                 pad_length = 1.15;
@@ -2244,6 +2475,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = TRUE;
                 silkscreen_length = 1.10;
                 silkscreen_width = 1.60;
@@ -2251,9 +2488,6 @@ capc_get_default_footprint_values
                 courtyard_length = 4.70;
                 courtyard_width = 2.30;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC3216X140N");
                 if (verbose)
@@ -2266,13 +2500,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC3216X152N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.40;
                 package_body_width = 1.80;
                 package_body_height = 1.52;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 3.00;
                 pitch_y = 0.0;
                 pad_length = 1.15;
@@ -2281,6 +2518,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = TRUE;
                 silkscreen_length = 1.10;
                 silkscreen_width = 1.60;
@@ -2288,9 +2531,6 @@ capc_get_default_footprint_values
                 courtyard_length = 4.70;
                 courtyard_width = 2.30;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC3216X152N");
                 if (verbose)
@@ -2303,13 +2543,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC3216X175N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.40;
                 package_body_width = 1.80;
                 package_body_height = 1.75;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 3.00;
                 pitch_y = 0.0;
                 pad_length = 1.15;
@@ -2318,6 +2561,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = TRUE;
                 silkscreen_length = 1.10;
                 silkscreen_width = 1.60;
@@ -2325,9 +2574,6 @@ capc_get_default_footprint_values
                 courtyard_length = 4.70;
                 courtyard_width = 2.30;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC3216X175N");
                 if (verbose)
@@ -2340,13 +2586,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC3216X178N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.40;
                 package_body_width = 1.80;
                 package_body_height = 1.78;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 3.00;
                 pitch_y = 0.0;
                 pad_length = 1.15;
@@ -2355,6 +2604,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = TRUE;
                 silkscreen_length = 1.10;
                 silkscreen_width = 1.60;
@@ -2362,9 +2617,6 @@ capc_get_default_footprint_values
                 courtyard_length = 4.70;
                 courtyard_width = 2.30;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC3216X178N");
                 if (verbose)
@@ -2377,13 +2629,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC3216X180N"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.40;
                 package_body_width = 1.80;
                 package_body_height = 1.80;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 3.00;
                 pitch_y = 0.0;
                 pad_length = 1.15;
@@ -2392,6 +2647,12 @@ capc_get_default_footprint_values
                 pad_shapes_type = SQUARE;
                 pad_clearance = 0.075;
                 pad_solder_mask_clearance = 0.075;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = TRUE;
                 silkscreen_length = 1.10;
                 silkscreen_width = 1.60;
@@ -2399,9 +2660,6 @@ capc_get_default_footprint_values
                 courtyard_length = 4.70;
                 courtyard_width = 2.30;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC3216X180N");
                 if (verbose)
@@ -2414,13 +2672,16 @@ capc_get_default_footprint_values
         }
         else if (!strcmp (footprint_name, "?CAPC3216X105L"))
         {
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 3.40;
                 package_body_width = 1.80;
                 package_body_height = 1.05;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 2.80;
                 pitch_y = 0.0;
                 pad_length = 0.95;
@@ -2432,6 +2693,9 @@ capc_get_default_footprint_values
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = TRUE;
                 silkscreen_length = 1.10;
                 silkscreen_width = 1.60;
@@ -2439,9 +2703,6 @@ capc_get_default_footprint_values
                 courtyard_length = 4.00;
                 courtyard_width = 2.00;
                 courtyard_line_width = 0.05;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPC3216X105L");
                 if (verbose)
