@@ -2,10 +2,10 @@
 -- version 3.2.0.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Mar 07, 2010 at 08:06 PM
--- Server version: 5.1.36
--- PHP Version: 5.3.0
+-- Machine: localhost
+-- Genereertijd: 28 Jan 2011 om 22:25
+-- Serverversie: 5.1.36
+-- PHP-Versie: 5.3.0
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -22,7 +22,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fpw_data`
+-- Tabelstructuur voor tabel `fpw_data`
 --
 
 CREATE TABLE IF NOT EXISTS `fpw_data` (
@@ -82,10 +82,10 @@ CREATE TABLE IF NOT EXISTS `fpw_data` (
   `remarks` text COLLATE utf8_bin NOT NULL,
   `warning` text COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`footprint_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=81 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=85 ;
 
 --
--- Dumping data for table `fpw_data`
+-- Gegevens worden uitgevoerd voor tabel `fpw_data`
 --
 
 INSERT INTO `fpw_data` (`footprint_id`, `footprint_type`, `footprint_name`, `footprint_units`, `footprint_status`, `package_body_length`, `package_body_width`, `package_body_height`, `package_is_radial`, `number_of_pins`, `number_of_columns`, `number_of_rows`, `pin1_location`, `pitch_x`, `pitch_y`, `count_x`, `count_y`, `pin_pad_exceptions_string`, `number_of_exceptions`, `pin_drill_diameter`, `pad_diameter`, `pad_length`, `pad_width`, `pad_shapes_type`, `pin1_square`, `pad_solder_mask_clearance`, `pad_clearance`, `silkscreen_package_outline`, `silkscreen_indicate_1`, `silkscreen_length`, `silkscreen_width`, `silkscreen_line_width`, `courtyard`, `courtyard_length`, `courtyard_width`, `courtyard_line_width`, `courtyard_clearance_with_package`, `thermal`, `thermal_nopaste`, `thermal_length`, `thermal_width`, `thermal_solder_mask_clearance`, `thermal_clearance`, `fiducial`, `fiducial_pad_diameter`, `fiducial_pad_solder_mask_clearance`, `fiducial_clearance`, `c1`, `g1`, `z1`, `c2`, `g2`, `z2`, `remarks`, `warning`) VALUES
@@ -168,4 +168,8 @@ INSERT INTO `fpw_data` (`footprint_id`, `footprint_type`, `footprint_name`, `foo
 (77, 'BGA', 'BGA1284C100P36X36_3750X3750X380', 'mm', 'EXPERIMENTAL', 37.5, 37.5, 3.8, 0, 1284, 36, 36, 'UPPER_LEFT', 1, 1, 0, 0, 'A1,A2,A35,A36,B1,B36,AR1,AR36,AT1,AT2,AT35,AT36', 12, 0, 0.5, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 37.5, 37.5, 0.2, 1, 41.5, 41.5, 0.05, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', ''),
 (78, 'BGA', 'BGA1284C100P36X36_3750X3750X400', 'mm', 'EXPERIMENTAL', 37.5, 37.5, 4, 0, 1284, 36, 36, 'UPPER_LEFT', 1, 1, 0, 0, 'A1,A2,A35,A36,B1,B36,AR1,AR36,AT1,AT2,AT35,AT36', 12, 0, 0.5, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 37.5, 37.5, 0.2, 1, 41.5, 41.5, 0.05, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', ''),
 (79, 'BGA', 'BGA128C50P14X14_800X800X120', 'mm', 'EXPERIMENTAL', 8, 8, 1.2, 0, 128, 14, 14, 'UPPER_LEFT', 0.5, 0.5, 0, 0, 'C3,C12,D4,D5,D6,D7,D8,D9,D10,D11,E4,E5,E6,E7,E8,E9,E10,E11,F4,F5,F6,F7,F8,F9,F10,F11,G4,G5,G6,G7,G8,G9,G10,G11,H4,H5,H6,H7,H8,H9,H10,H11,J4,J5,J6,J7,J8,J9,J10,J11,K4,K5,K6,K7,K8,K9,K10,K11,L4,L5,L6,L7,L8,L9,L10,L11,M3,M12', 68, 0, 0.25, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 8, 8, 0.2, 1, 10, 10, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, '', ''),
-(80, 'BGA', 'BGA128C50P16X16_900X900X110', 'mm', 'EXPERIMENTAL', 9, 9, 1.1, 0, 128, 16, 16, 'UPPER_LEFT', 0.5, 0.5, 0, 0, 'C3,C4,C5,C7,C9,C11,C13,C14,D3,D4,D5,D6,D7,D8,D9,D10,D11,D12,D13,D14,E4,E5,E6,E7,E8,E9,E10,E11,E12,E13,E14,F3,F4,F5,F6,F7,F8,F9,F10,F11,F12,F13,G4,G5,G6,G7,G8,G9,G10,G11,G12,G13,G14,H3,H4,H5,H6,H7,H8,H9,H10,H11,H12,H13,J4,J5,J6,J7,J8,J9,J10,J11,J12,J13,J14,K3,K4,K5,K6,K7,K8,K9,K10,K11,K12.K13,L4,L5,L6,L7,L8,L9,L10,L11,L12,L13,L14,M3,M4,M5,M6,M7,M8,M9,M10,M11,M12,M13,N3,N4,N5,N6,N7,N8,N9,N10,N11,N12,N13,N14,P3,P4,P6,P8,P10,P12,P13,P14', 128, 0, 0.25, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 9, 9, 0.2, 1, 11, 11, 0.2, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, '', '');
+(80, 'BGA', 'BGA128C50P16X16_900X900X110', 'mm', 'EXPERIMENTAL', 9, 9, 1.1, 0, 128, 16, 16, 'UPPER_LEFT', 0.5, 0.5, 0, 0, 'C3,C4,C5,C7,C9,C11,C13,C14,D3,D4,D5,D6,D7,D8,D9,D10,D11,D12,D13,D14,E4,E5,E6,E7,E8,E9,E10,E11,E12,E13,E14,F3,F4,F5,F6,F7,F8,F9,F10,F11,F12,F13,G4,G5,G6,G7,G8,G9,G10,G11,G12,G13,G14,H3,H4,H5,H6,H7,H8,H9,H10,H11,H12,H13,J4,J5,J6,J7,J8,J9,J10,J11,J12,J13,J14,K3,K4,K5,K6,K7,K8,K9,K10,K11,K12.K13,L4,L5,L6,L7,L8,L9,L10,L11,L12,L13,L14,M3,M4,M5,M6,M7,M8,M9,M10,M11,M12,M13,N3,N4,N5,N6,N7,N8,N9,N10,N11,N12,N13,N14,P3,P4,P6,P8,P10,P12,P13,P14', 128, 0, 0.25, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 9, 9, 0.2, 1, 11, 11, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 'package is also known as JEDEC MO-195', ''),
+(81, 'BGA', 'BGA128C65P12X12_900X900X140', 'mm', 'EXPERIMENTAL', 9, 9, 1.4, 0, 128, 12, 12, 'UPPER_LEFT', 0.65, 0.65, 0, 0, 'E5,E6,E7,E8,F5,F6,F7,F8,G5,G6,G7,G8', 16, 0, 0.35, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 9, 9, 0.2, 1, 9, 9, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 'package is also known as JEDEC MO-225', ''),
+(82, 'BGA', 'BGA128C80P12X12_1100X1100X130', 'mm', 'EXPERIMENTAL', 11, 11, 1.3, 0, 128, 12, 12, 'UPPER_LEFT', 0.8, 0.8, 0, 0, 'E5,E6,E7,E8,F5,F6,F7,F8,G5,G6,G7,G8', 16, 0, 0.45, 0, 0, '', 0, 0, 0, 1, 1, 11, 11, 0.2, 1, 11, 11, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, '', ''),
+(83, 'BGA', 'BGA128C80P12X12_1100X1100X150', 'mm', 'EXPERIMENTAL', 11, 11, 1.5, 0, 128, 12, 12, 'UPPER_LEFT', 0.8, 0.8, 0, 0, 'E5,E6,E7,E8,F5,F6,F7,F8,G5,G6,G7,G8', 16, 0, 0.4, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 11, 11, 0.2, 1, 11, 11, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, '', ''),
+(84, 'BGA', 'BGA128C80P12X12_1100X1100X150A', 'mm', 'EXPERIMENTAL', 11, 11, 1.5, 0, 128, 12, 12, 'LOWER_LEFT', 0.8, 0.8, 0, 0, 'E5,E6,E7,E8,F5,F6,F7,F8,G5,G6,G7,G8', 16, 0, 0.45, 0, 0, 'ROUND', 0, 0, 0, 1, 1, 11, 11, 0.2, 1, 11, 11, 0.05, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 'package is also known as JEDEC MO-205BD', '');
