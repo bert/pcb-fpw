@@ -723,15 +723,18 @@ capm_get_default_footprint_values
 {
         if (!strcmp (footprint_name, "?CAPM"))
         {
-                pitch_y = 0.0;
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 0.0;
                 package_body_width = 0.0;
                 package_body_height = 0.0;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 0.0;
+                pitch_y = 0.0;
                 pad_length = 0.0;
                 pad_width = 0.0;
                 pad_shape = g_strdup ("rectangular pad");
@@ -739,14 +742,15 @@ capm_get_default_footprint_values
                 thermal = FALSE;
                 thermal_length = 0.0;
                 thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_clearance = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.0;
                 silkscreen_width = 0.0;
                 courtyard_length = 0.0;
                 courtyard_width = 0.0;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CAPM");
                 return (EXIT_SUCCESS);
