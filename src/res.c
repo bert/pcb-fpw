@@ -598,8 +598,8 @@ res_drc ()
                 }
                 result = EXIT_FAILURE;
         }
-        /* Check for pitch in Y-direction is smaller or equal 0.0 */
-        if (pitch_y <= 0.0)
+        /* Check for pitch in Y-direction to be 0.0 */
+        if (pitch_y != 0.0)
         {
                 if (verbose)
                 {
