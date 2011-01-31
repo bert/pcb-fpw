@@ -1,7 +1,7 @@
 /*!
  * \file src/cappr.c
  *
- * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Functions for CAPPR footprints (Through Hole Polarized Radial Capacitors).
  *
@@ -601,13 +601,13 @@ cappr_drc ()
                 }
                 result = EXIT_FAILURE;
         }
-        /* Check for minimum clearance between copper (Y-direction). */
+        /* Check for pitch in Y-direction to be 0.0 */
         if (pitch_y != 0.0)
         {
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                (_("[%s] DRC Error: Pitch in Y-direction is supposed to be 0.")),
+                                (_("[%s] DRC Error: pitch in Y-direction should be 0.")),
                                 footprint_type);
                 }
                 result = EXIT_FAILURE;
