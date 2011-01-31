@@ -437,13 +437,6 @@ con_dil_drc ()
                 }
                 case SQUARE:
                 {
-                        if (verbose)
-                        {
-                                g_log ("", G_LOG_LEVEL_WARNING,
-                                        (_("[%s] DRC Error: square pad shape specified for check for allowed pad shapes.")),
-                                        footprint_type);
-                        }
-                        result = EXIT_FAILURE;
                         break;
                 }
                 case OCTAGONAL:
