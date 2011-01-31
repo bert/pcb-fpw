@@ -1,7 +1,7 @@
 /*!
  * \file src/con_hdr.c
  *
- * \author Copyright 2007, 2008, 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Functions for CON-HDR footprints
  * (Header Connector).
@@ -135,13 +135,6 @@ con_hdr_drc ()
                 }
                 case SQUARE:
                 {
-                        if (verbose)
-                        {
-                                g_log ("", G_LOG_LEVEL_WARNING,
-                                        (_("[%s] DRC Error: square pad shape specified for check for allowed pad shapes.")),
-                                        footprint_type);
-                        }
-                        result = EXIT_FAILURE;
                         break;
                 }
                 case OCTAGONAL:
@@ -157,6 +150,13 @@ con_hdr_drc ()
                 }
                 case ROUND_ELONGATED:
                 {
+                        if (verbose)
+                        {
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        (_("[%s] DRC Error: round elongated pad shape specified for check for allowed pad shapes.")),
+                                        footprint_type);
+                        }
+                        result = EXIT_FAILURE;
                         break;
                 }
                 default:
