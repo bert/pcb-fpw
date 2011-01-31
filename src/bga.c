@@ -568,6 +568,17 @@ bga_drc ()
                         break;
                 }
         }
+        /* Check for a square pad #1. */
+        if (pin1_square)
+        {
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("[%s] DRC Error: package should not have a suare pad #1.")),
+                                footprint_type);
+                }
+                result = EXIT_FAILURE;
+        }
         /* Check for zero sized packages. */
         if (package_body_length <= 0.0)
         {
