@@ -434,8 +434,8 @@ con_sil_drc ()
                 }
                 result = EXIT_FAILURE;
         }
-        /* Check for number of columns > 1. */
-        if (number_of_columns > 1)
+        /* Check for number of columns != 1. */
+        if (number_of_columns != 1)
         {
                 if (verbose)
                 {
@@ -454,8 +454,8 @@ con_sil_drc ()
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 (_("[%s] DRC Error: pitch (X-direction) should be 0.")),
                                 footprint_type);
-                pitch_x = 0.0;
                 }
+                pitch_x = 0.0;
                 result = EXIT_FAILURE;
         }
         /* Check for allowed pad shapes. */
