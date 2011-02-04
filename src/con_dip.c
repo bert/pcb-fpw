@@ -726,7 +726,7 @@ con_dip_drc ()
  * If the footprint name is recognised the values will be loaded and the
  * entries involved in the GUI will be updated accordingly.\n
  * Currently the following footprints are supported:\n
- * - ,
+ * - CON_DIP04,
  *
  * \return \c EXIT_SUCCESS when default values for a footprint were
  * found, \c EXIT_FAILURE when the footprint name was not found.
@@ -738,14 +738,14 @@ con_dip_get_default_footprint_values
                 /*!< : a \c NULL terminated footprint name.*/
 )
 {
-        if (!strcmp (footprint_name, "?CON-DIP04"))
+        if (!strcmp (footprint_name, "?CON_DIP04"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 4;
                 package_body_width = 200;
                 package_body_length = 200;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 4;
                 number_of_columns = 2;
                 number_of_rows = 2;
                 pitch_x = 100;
@@ -755,10 +755,26 @@ con_dip_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                pad_length = 0.00;
+                pad_width = 0.00;
+                pad_shape = g_strdup ("circular pad");
+                pad_shapes_type = ROUND;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = 0.00;
+                silkscreen_width = 0.00;
+                silkscreen_line_width = 0.20;
+                courtyard = FALSE;
+                courtyard_length = 0.00;
+                courtyard_width = 0.00;
+                courtyard_line_width = 0.05;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("CON-DIP04");
+                footprint_name = g_strdup ("CON_DIP04");
                 return (EXIT_SUCCESS);
         }
         else
