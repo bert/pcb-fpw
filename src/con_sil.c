@@ -577,6 +577,16 @@ con_sil_drc ()
                 }
                 result = EXIT_FAILURE;
         }
+        if (pitch_y - pad_width < pad_clearance)
+        {
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("[%s] DRC Error: minimum clearance between copper (Y-direction) is too small.")),
+                                footprint_type);
+                }
+                result = EXIT_FAILURE;
+        }
         /* Checking for fiducials. */
         if (fiducial)
         {
