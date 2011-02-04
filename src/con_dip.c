@@ -464,13 +464,6 @@ con_dip_drc ()
                 }
                 case SQUARE:
                 {
-                        if (verbose)
-                        {
-                                g_log ("", G_LOG_LEVEL_WARNING,
-                                        (_("[%s] DRC Error: square pad shape specified for check for allowed pad shapes.")),
-                                        footprint_type);
-                        }
-                        result = EXIT_FAILURE;
                         break;
                 }
                 case OCTAGONAL:
@@ -486,6 +479,13 @@ con_dip_drc ()
                 }
                 case ROUND_ELONGATED:
                 {
+                        if (verbose)
+                        {
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        (_("[%s] DRC Error: round elongated pad shape specified for check for allowed pad shapes.")),
+                                        footprint_type);
+                        }
+                        result = EXIT_FAILURE;
                         break;
                 }
                 default:
