@@ -784,11 +784,11 @@ con_sil_get_default_footprint_values
         if (!strcmp (footprint_name, "?CON_SIL-127P-2N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 2;
-                package_body_width = 100;
                 package_body_length = 100;
+                package_body_width = 100;
                 package_body_height = 78;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -798,8 +798,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-127P-2N");
                 return (EXIT_SUCCESS);
@@ -807,11 +819,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-127P-3N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 3;
-                package_body_width = 150;
                 package_body_length = 100;
+                package_body_width = 150;
                 package_body_height = 78;
                 package_is_radial = FALSE;
+                number_of_pins = 3;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -821,8 +833,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-127P-3N");
                 return (EXIT_SUCCESS);
@@ -830,11 +854,11 @@ con_sil_get_default_footprint_values
         if (!strcmp (footprint_name, "?CON_SIL-127P-4N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 4;
-                package_body_width = 200;
                 package_body_length = 100;
+                package_body_width = 200;
                 package_body_height = 78;
                 package_is_radial = FALSE;
+                number_of_pins = 4;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -844,8 +868,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-127P-4N");
                 return (EXIT_SUCCESS);
@@ -853,11 +889,11 @@ con_sil_get_default_footprint_values
         if (!strcmp (footprint_name, "?CON_SIL-127P-5N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 5;
-                package_body_width = 250;
                 package_body_length = 100;
+                package_body_width = 250;
                 package_body_height = 78;
                 package_is_radial = FALSE;
+                number_of_pins = 5;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -867,8 +903,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-127P-5N");
                 return (EXIT_SUCCESS);
@@ -876,11 +924,11 @@ con_sil_get_default_footprint_values
         if (!strcmp (footprint_name, "?CON_SIL-127P-6N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 6;
-                package_body_width = 300;
                 package_body_length = 100;
+                package_body_width = 300;
                 package_body_height = 78;
                 package_is_radial = FALSE;
+                number_of_pins = 6;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -890,8 +938,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-127P-6N");
                 return (EXIT_SUCCESS);
@@ -899,11 +959,11 @@ con_sil_get_default_footprint_values
         if (!strcmp (footprint_name, "?CON_SIL-127P-7N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 7;
-                package_body_width = 350;
                 package_body_length = 100;
+                package_body_width = 350;
                 package_body_height = 78;
                 package_is_radial = FALSE;
+                number_of_pins = 7;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -913,8 +973,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-127P-7N");
                 return (EXIT_SUCCESS);
@@ -922,11 +994,11 @@ con_sil_get_default_footprint_values
         if (!strcmp (footprint_name, "?CON_SIL-127P-8N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 8;
-                package_body_width = 400;
                 package_body_length = 100;
+                package_body_width = 400;
                 package_body_height = 78;
                 package_is_radial = FALSE;
+                number_of_pins = 8;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -936,8 +1008,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-127P-8N");
                 return (EXIT_SUCCESS);
@@ -945,11 +1029,11 @@ con_sil_get_default_footprint_values
         if (!strcmp (footprint_name, "?CON_SIL-127P-9N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 9;
-                package_body_width = 450;
                 package_body_length = 100;
+                package_body_width = 450;
                 package_body_height = 78;
                 package_is_radial = FALSE;
+                number_of_pins = 9;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -959,8 +1043,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-127P-9N");
                 return (EXIT_SUCCESS);
@@ -968,11 +1064,11 @@ con_sil_get_default_footprint_values
         if (!strcmp (footprint_name, "?CON_SIL-127P-10N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 10;
-                package_body_width = 500;
                 package_body_length = 100;
+                package_body_width = 500;
                 package_body_height = 78;
                 package_is_radial = FALSE;
+                number_of_pins = 10;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -982,8 +1078,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-127P-10N");
                 return (EXIT_SUCCESS);
@@ -991,11 +1099,11 @@ con_sil_get_default_footprint_values
         if (!strcmp (footprint_name, "?CON_SIL-127P-12N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 12;
-                package_body_width = 600;
                 package_body_length = 100;
+                package_body_width = 600;
                 package_body_height = 78;
                 package_is_radial = FALSE;
+                number_of_pins = 12;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1005,8 +1113,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-127P-12N");
                 return (EXIT_SUCCESS);
@@ -1014,11 +1134,11 @@ con_sil_get_default_footprint_values
         if (!strcmp (footprint_name, "?CON_SIL-127P-20N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 20;
-                package_body_width = 1000;
                 package_body_length = 100;
+                package_body_width = 1000;
                 package_body_height = 78;
                 package_is_radial = FALSE;
+                number_of_pins = 20;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1028,8 +1148,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-127P-20N");
                 return (EXIT_SUCCESS);
@@ -1037,11 +1169,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-254P-2N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 2;
-                package_body_width = 200;
                 package_body_length = 100;
+                package_body_width = 200;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1051,8 +1183,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-254P-2N");
                 return (EXIT_SUCCESS);
@@ -1060,11 +1204,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-254P-3N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 3;
-                package_body_width = 300;
                 package_body_length = 100;
+                package_body_width = 300;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 3;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1074,8 +1218,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-254P-3N");
                 return (EXIT_SUCCESS);
@@ -1083,11 +1239,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-254P-4N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 4;
-                package_body_width = 400;
                 package_body_length = 100;
+                package_body_width = 400;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 4;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1097,8 +1253,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-254P-4N");
                 return (EXIT_SUCCESS);
@@ -1106,11 +1274,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-254P-5N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 5;
-                package_body_width = 500;
                 package_body_length = 100;
+                package_body_width = 500;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 5;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1120,8 +1288,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-254P-5N");
                 return (EXIT_SUCCESS);
@@ -1129,11 +1309,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-254P-6N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 6;
-                package_body_width = 600;
                 package_body_length = 100;
+                package_body_width = 600;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 6;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1143,8 +1323,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-254P-6N");
                 return (EXIT_SUCCESS);
@@ -1152,11 +1344,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-254P-7N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 7;
-                package_body_width = 700;
                 package_body_length = 100;
+                package_body_width = 700;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 7;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1166,8 +1358,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-254P-7N");
                 return (EXIT_SUCCESS);
@@ -1175,11 +1379,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-254P-8N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 8;
-                package_body_width = 800;
                 package_body_length = 100;
+                package_body_width = 800;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 8;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1189,8 +1393,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-254P-8N");
                 return (EXIT_SUCCESS);
@@ -1198,13 +1414,13 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-254P-9N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 9;
-                package_body_width = 900;
                 package_body_length = 100;
+                package_body_width = 900;
                 package_body_height = 200;
                 package_is_radial = FALSE;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
+                number_of_pins = 9;
                 pitch_x = 0;
                 pitch_y = 100;
                 count_x = 0;
@@ -1212,8 +1428,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-254P-9N");
                 return (EXIT_SUCCESS);
@@ -1221,11 +1449,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-254P-10N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 10;
-                package_body_width = 1000;
                 package_body_length = 100;
+                package_body_width = 1000;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 10;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1235,8 +1463,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-254P-10N");
                 return (EXIT_SUCCESS);
@@ -1244,11 +1484,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-254P-12N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 12;
-                package_body_width = 1200;
                 package_body_length = 100;
+                package_body_width = 1200;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 12;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1258,8 +1498,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-254P-12N");
                 return (EXIT_SUCCESS);
@@ -1267,11 +1519,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-254P-20N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 20;
-                package_body_width = 2000;
                 package_body_length = 100;
+                package_body_width = 2000;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 20;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1280,8 +1532,20 @@ con_sil_get_default_footprint_values
                 count_y = 0;
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
-                pad_diameter = 60;
-                pad_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 pad_solder_mask_clearance = 6;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-254P-20N");
@@ -1290,11 +1554,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-254P-24N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 24;
-                package_body_width = 2400;
                 package_body_length = 100;
+                package_body_width = 2400;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 24;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1304,8 +1568,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-254P-24N");
                 return (EXIT_SUCCESS);
@@ -1313,11 +1589,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-254P-31N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 31;
-                package_body_width = 3100;
                 package_body_length = 100;
+                package_body_width = 3100;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 31;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1327,8 +1603,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-254P-31N");
                 return (EXIT_SUCCESS);
@@ -1336,11 +1624,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-254P-36N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 36;
-                package_body_width = 3600;
                 package_body_length = 100;
+                package_body_width = 3600;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 36;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1350,8 +1638,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-254P-36N");
                 return (EXIT_SUCCESS);
@@ -1359,11 +1659,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-254P-40N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 40;
-                package_body_width = 4000;
                 package_body_length = 100;
+                package_body_width = 4000;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 40;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1373,8 +1673,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-254P-40N");
                 return (EXIT_SUCCESS);
@@ -1382,11 +1694,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-254P-50N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 50;
-                package_body_width = 5000;
                 package_body_length = 100;
+                package_body_width = 5000;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 50;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1396,8 +1708,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 28;
                 pad_diameter = 60;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-254P-50N");
                 return (EXIT_SUCCESS);
@@ -1405,11 +1729,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-350P-2N"))
         {
                 footprint_units = g_strdup ("mm");
-                number_of_pins = 2;
-                package_body_width = 3.50;
                 package_body_length = 2.70;
+                package_body_width = 3.50;
                 package_body_height = 1.60;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1419,8 +1743,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 1.30;
                 pad_diameter = 1.80;
-                pad_clearance = 0.20;
-                pad_solder_mask_clearance = 0.20;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 0.20;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 0.05;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-350P-2N");
                 return (EXIT_SUCCESS);
@@ -1428,11 +1764,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-350P-3N"))
         {
                 footprint_units = g_strdup ("mm");
-                number_of_pins = 3;
-                package_body_width = 7.00;
                 package_body_length = 2.70;
+                package_body_width = 7.00;
                 package_body_height = 1.60;
                 package_is_radial = FALSE;
+                number_of_pins = 3;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1442,8 +1778,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 1.30;
                 pad_diameter = 1.80;
-                pad_clearance = 0.20;
-                pad_solder_mask_clearance = 0.20;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 0.20;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 0.05;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-350P-3N");
                 return (EXIT_SUCCESS);
@@ -1451,11 +1799,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-350P-4N"))
         {
                 footprint_units = g_strdup ("mm");
-                number_of_pins = 4;
-                package_body_width = 10.50;
                 package_body_length = 2.70;
+                package_body_width = 10.50;
                 package_body_height = 1.60;
                 package_is_radial = FALSE;
+                number_of_pins = 4;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1465,8 +1813,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 1.30;
                 pad_diameter = 1.80;
-                pad_clearance = 0.20;
-                pad_solder_mask_clearance = 0.20;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 0.20;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 0.05;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-350P-4N");
                 return (EXIT_SUCCESS);
@@ -1474,11 +1834,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-350P-5N"))
         {
                 footprint_units = g_strdup ("mm");
-                number_of_pins = 5;
-                package_body_width = 14.00;
                 package_body_length = 2.70;
+                package_body_width = 14.00;
                 package_body_height = 1.60;
                 package_is_radial = FALSE;
+                number_of_pins = 5;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1488,8 +1848,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 1.30;
                 pad_diameter = 1.80;
-                pad_clearance = 0.20;
-                pad_solder_mask_clearance = 0.20;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 0.20;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 0.05;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-350P-5N");
                 return (EXIT_SUCCESS);
@@ -1497,11 +1869,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-350P-6N"))
         {
                 footprint_units = g_strdup ("mm");
-                number_of_pins = 6;
-                package_body_width = 17.50;
                 package_body_length = 2.70;
+                package_body_width = 17.50;
                 package_body_height = 1.60;
                 package_is_radial = FALSE;
+                number_of_pins = 6;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1511,8 +1883,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 1.30;
                 pad_diameter = 1.80;
-                pad_clearance = 0.20;
-                pad_solder_mask_clearance = 0.20;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 0.20;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 0.05;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-350P-6N");
                 return (EXIT_SUCCESS);
@@ -1520,11 +1904,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-350P-7N"))
         {
                 footprint_units = g_strdup ("mm");
-                number_of_pins = 7;
-                package_body_width = 21.00;
                 package_body_length = 2.70;
+                package_body_width = 21.00;
                 package_body_height = 1.60;
                 package_is_radial = FALSE;
+                number_of_pins = 7;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1534,8 +1918,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 1.30;
                 pad_diameter = 1.80;
-                pad_clearance = 0.20;
-                pad_solder_mask_clearance = 0.20;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 0.20;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 0.05;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-350P-7N");
                 return (EXIT_SUCCESS);
@@ -1543,11 +1939,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-350P-8N"))
         {
                 footprint_units = g_strdup ("mm");
-                number_of_pins = 8;
-                package_body_width = 24.50;
                 package_body_length = 2.70;
+                package_body_width = 24.50;
                 package_body_height = 1.60;
                 package_is_radial = FALSE;
+                number_of_pins = 8;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1557,8 +1953,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 1.30;
                 pad_diameter = 1.80;
-                pad_clearance = 0.20;
-                pad_solder_mask_clearance = 0.20;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 0.20;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 0.05;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-350P-8N");
                 return (EXIT_SUCCESS);
@@ -1566,11 +1974,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-350P-10N"))
         {
                 footprint_units = g_strdup ("mm");
-                number_of_pins = 10;
-                package_body_width = 31.50;
                 package_body_length = 2.70;
+                package_body_width = 31.50;
                 package_body_height = 1.60;
                 package_is_radial = FALSE;
+                number_of_pins = 10;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1580,8 +1988,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 1.30;
                 pad_diameter = 1.80;
-                pad_clearance = 0.20;
-                pad_solder_mask_clearance = 0.20;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 0.20;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 0.05;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-350P-10N");
                 return (EXIT_SUCCESS);
@@ -1589,11 +2009,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-350P-12N"))
         {
                 footprint_units = g_strdup ("mm");
-                number_of_pins = 12;
-                package_body_width = 38.50;
                 package_body_length = 2.70;
+                package_body_width = 38.50;
                 package_body_height = 1.60;
                 package_is_radial = FALSE;
+                number_of_pins = 12;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1603,8 +2023,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 1.30;
                 pad_diameter = 1.80;
-                pad_clearance = 0.20;
-                pad_solder_mask_clearance = 0.20;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 0.20;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 0.05;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-350P-12N");
                 return (EXIT_SUCCESS);
@@ -1612,11 +2044,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-508P-2N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 2;
-                package_body_width = 400;
                 package_body_length = 110;
+                package_body_width = 400;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1626,8 +2058,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 36;
                 pad_diameter = 76;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-508P-2N");
                 return (EXIT_SUCCESS);
@@ -1635,11 +2079,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-508P-3N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 3;
-                package_body_width = 600;
                 package_body_length = 110;
+                package_body_width = 600;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 3;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1649,8 +2093,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 36;
                 pad_diameter = 76;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-508P-3N");
                 return (EXIT_SUCCESS);
@@ -1658,11 +2114,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-508P-4N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 4;
-                package_body_width = 800;
                 package_body_length = 110;
+                package_body_width = 800;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 4;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1672,8 +2128,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 36;
                 pad_diameter = 76;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-508P-4N");
                 return (EXIT_SUCCESS);
@@ -1681,11 +2149,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-508P-5N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 5;
-                package_body_width = 1000;
                 package_body_length = 110;
+                package_body_width = 1000;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 5;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1695,8 +2163,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 36;
                 pad_diameter = 76;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-508P-5N");
                 return (EXIT_SUCCESS);
@@ -1704,11 +2184,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-508P-6N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 6;
-                package_body_width = 1200;
                 package_body_length = 110;
+                package_body_width = 1200;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 6;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1718,8 +2198,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 36;
                 pad_diameter = 76;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-508P-6N");
                 return (EXIT_SUCCESS);
@@ -1727,11 +2219,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-508P-7N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 7;
-                package_body_width = 1400;
                 package_body_length = 110;
+                package_body_width = 1400;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 7;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1741,8 +2233,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 36;
                 pad_diameter = 76;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-508P-7N");
                 return (EXIT_SUCCESS);
@@ -1750,11 +2254,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-508P-8N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 8;
-                package_body_width = 1600;
                 package_body_length = 110;
+                package_body_width = 1600;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 8;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1764,8 +2268,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 36;
                 pad_diameter = 76;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-508P-8N");
                 return (EXIT_SUCCESS);
@@ -1773,11 +2289,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-508P-9N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 9;
-                package_body_width = 1800;
                 package_body_length = 110;
+                package_body_width = 1800;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 9;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1787,8 +2303,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 36;
                 pad_diameter = 76;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-508P-9N");
                 return (EXIT_SUCCESS);
@@ -1796,11 +2324,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-508P-10N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 10;
-                package_body_width = 2000;
                 package_body_length = 110;
+                package_body_width = 2000;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 10;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1810,8 +2338,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 36;
                 pad_diameter = 76;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-508P-10N");
                 return (EXIT_SUCCESS);
@@ -1819,11 +2359,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-508P-12N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 12;
-                package_body_width = 2400;
                 package_body_length = 110;
+                package_body_width = 2400;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 12;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1833,8 +2373,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 36;
                 pad_diameter = 76;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-508P-12N");
                 return (EXIT_SUCCESS);
@@ -1842,11 +2394,11 @@ con_sil_get_default_footprint_values
         else if (!strcmp (footprint_name, "?CON_SIL-508P-24N"))
         {
                 footprint_units = g_strdup ("mil");
-                number_of_pins = 24;
-                package_body_width = 4800;
                 package_body_length = 110;
+                package_body_width = 4800;
                 package_body_height = 200;
                 package_is_radial = FALSE;
+                number_of_pins = 24;
                 number_of_columns = 1;
                 number_of_rows = number_of_pins;
                 pitch_x = 0;
@@ -1856,8 +2408,20 @@ con_sil_get_default_footprint_values
                 pad_shape = g_strdup ("circular pad");
                 pin_drill_diameter = 36;
                 pad_diameter = 76;
-                pad_clearance = 6;
-                pad_solder_mask_clearance = 6;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                fiducial = FALSE;
+                fiducial_pad_diameter = 0.00;
+                fiducial_pad_solder_mask_clearance = 0.00;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = package_body_length;
+                silkscreen_width = package_body_width;
+                silkscreen_line_width = 10;
+                courtyard = FALSE;
+                courtyard_length = package_body_length;
+                courtyard_width = package_body_width;
+                courtyard_line_width = 1;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("CON_SIL-508P-24N");
                 return (EXIT_SUCCESS);
