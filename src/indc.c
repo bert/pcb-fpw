@@ -647,8 +647,8 @@ indc_get_default_footprint_values
                 count_y = 0;
                 pitch_x = 0.95;
                 pitch_y = 0.0;
-                pad_length = 0.72;
-                pad_width = 0.59;
+                pad_length = 0.59;
+                pad_width = 0.72;
                 pad_shape = g_strdup ("rectangular pad");
                 pad_shapes_type = SQUARE;
                 thermal = FALSE;
@@ -688,8 +688,8 @@ indc_get_default_footprint_values
                 count_y = 0;
                 pitch_x = 1.60;
                 pitch_y = 0.0;
-                pad_length = 1.00;
-                pad_width = 0.95;
+                pad_length = 0.95;
+                pad_width = 1.00;
                 pad_shape = g_strdup ("rectangular pad");
                 pad_shapes_type = SQUARE;
                 thermal = FALSE;
@@ -729,8 +729,8 @@ indc_get_default_footprint_values
                 count_y = 0;
                 pitch_x = 2.50;
                 pitch_y = 0.0;
-                pad_length = 2.30;
-                pad_width = 0.95;
+                pad_length = 0.95;
+                pad_width = 2.30;
                 pad_shape = g_strdup ("rectangular pad");
                 pad_shapes_type = SQUARE;
                 thermal = FALSE;
@@ -738,7 +738,7 @@ indc_get_default_footprint_values
                 thermal_width = 0.0;
                 silkscreen_package_outline = TRUE;
                 silkscreen_length = 0.80;
-                silkscreen_width = 2.20;
+                silkscreen_width = 2.00;
                 silkscreen_line_width = 0.20;
                 courtyard_length = 4.00;
                 courtyard_width = 2.80;
@@ -767,8 +767,8 @@ indc_get_default_footprint_values
                 count_y = 0;
                 pitch_x = 3.00;
                 pitch_y = 0.0;
-                pad_length = 2.70;
-                pad_width = 1.15;
+                pad_length = 1.15;
+                pad_width = 2.70;
                 pad_shape = g_strdup ("rectangular pad");
                 pad_shapes_type = SQUARE;
                 thermal = FALSE;
