@@ -305,7 +305,7 @@ GList
 indc_create_packages_list ()
 {
         GList *indc_packages_list = NULL;
-        indc_packages_list = g_list_append (indc_packages_list, "INDC0603X33N");
+        indc_packages_list = g_list_append (indc_packages_list, "INDC1005X60N");
         return (*indc_packages_list);
 }
 
@@ -621,7 +621,7 @@ indc_drc ()
  * If the footprint name is recognised known values will be loaded and the
  * entries involved in the GUI will be updated accordingly.\n
  * Currently the following footprints are supported:\n
- * - .
+ * - INDC1005X60N.
  *
  * \return \c EXIT_SUCCESS when default values for a footprint were
  * found, \c EXIT_FAILURE when the footprint name was not found.
@@ -633,22 +633,22 @@ indc_get_default_footprint_values
                 /*!< : a \c NULL terminated footprint name.*/
 )
 {
-        if (!strcmp (footprint_name, "?INDC"))
+        if (!strcmp (footprint_name, "?INDC1005X60N"))
         {
                 footprint_units = g_strdup ("mm");
-                package_body_length = 0.0;
-                package_body_width = 0.0;
-                package_body_height = 0.0;
+                package_body_length = 1.10;
+                package_body_width = 0.70;
+                package_body_height = 0.60;
                 package_is_radial = FALSE;
                 number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
                 count_x = 0;
                 count_y = 0;
-                pitch_x = 0.0;
+                pitch_x = 0.95;
                 pitch_y = 0.0;
-                pad_length = 0.0;
-                pad_width = 0.0;
+                pad_length = 0.72;
+                pad_width = 0.59;
                 pad_shape = g_strdup ("rectangular pad");
                 pad_shapes_type = SQUARE;
                 thermal = FALSE;
@@ -658,11 +658,20 @@ indc_get_default_footprint_values
                 silkscreen_length = 0.0;
                 silkscreen_width = 0.0;
                 silkscreen_line_width = 0.20;
-                courtyard_length = 0.0;
-                courtyard_width = 0.0;
+                courtyard_length = 1.85;
+                courtyard_width = 1.05;
                 courtyard_line_width = 0.05;
                 g_free (footprint_name);
-                footprint_name = g_strdup ("INDC");
+                footprint_name = g_strdup ("INDC1005X60N");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")), footprint_name,
+                                " EIA 0402, metric 1005.");
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                                footprint_name);
+                }
                 return (EXIT_SUCCESS);
         }
         else
