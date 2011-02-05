@@ -306,6 +306,10 @@ indc_create_packages_list ()
 {
         GList *indc_packages_list = NULL;
         indc_packages_list = g_list_append (indc_packages_list, "INDC1005X60N");
+        indc_packages_list = g_list_append (indc_packages_list, "INDC1608X95N");
+        indc_packages_list = g_list_append (indc_packages_list, "INDC2520X220N");
+        indc_packages_list = g_list_append (indc_packages_list, "INDC3225X135N");
+        indc_packages_list = g_list_append (indc_packages_list, "INDC4509X175N");
         return (*indc_packages_list);
 }
 
@@ -621,7 +625,12 @@ indc_drc ()
  * If the footprint name is recognised known values will be loaded and the
  * entries involved in the GUI will be updated accordingly.\n
  * Currently the following footprints are supported:\n
- * - INDC1005X60N.
+ * - INDC1005X60N,
+ * - INDC1608X95N,
+ * - INDC2520X220N,
+ * - INDC3225X135N,
+ * - INDC4509X190N,
+ * .
  *
  * \return \c EXIT_SUCCESS when default values for a footprint were
  * found, \c EXIT_FAILURE when the footprint name was not found.
