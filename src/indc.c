@@ -715,6 +715,44 @@ indc_get_default_footprint_values
                 }
                 return (EXIT_SUCCESS);
         }
+        else if (!strcmp (footprint_name, "?INDC2520X220N"))
+        {
+                footprint_units = g_strdup ("mm");
+                package_body_length = 2.70;
+                package_body_width = 2.30;
+                package_body_height = 2.20;
+                package_is_radial = FALSE;
+                number_of_pins = 2;
+                number_of_columns = 0;
+                number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
+                pitch_x = 2.50;
+                pitch_y = 0.0;
+                pad_length = 2.30;
+                pad_width = 0.95;
+                pad_shape = g_strdup ("rectangular pad");
+                pad_shapes_type = SQUARE;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = 0.80;
+                silkscreen_width = 2.20;
+                silkscreen_line_width = 0.20;
+                courtyard_length = 4.00;
+                courtyard_width = 2.80;
+                courtyard_line_width = 0.05;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("INDC2520X220N");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")), footprint_name,
+                                " EIA 1008, metric 2520.");
+                }
+                return (EXIT_SUCCESS);
+        }
         else
         {
                 g_log ("", G_LOG_LEVEL_WARNING,
