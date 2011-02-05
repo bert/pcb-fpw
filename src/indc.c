@@ -1,7 +1,7 @@
 /*!
  * \file src/indc.c
  *
- * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Functions for INDC SMT footprints.
  *
@@ -490,47 +490,16 @@ indc_drc ()
                 }
                 result = EXIT_FAILURE;
         }
+        /* Check for fiducials */
         if (fiducial)
         {
-                /* Check for a zero width fiducial pad. */
-                if (fiducial_pad_diameter == 0.0)
+                if (verbose)
                 {
-                        if (verbose)
-                        {
-                                g_log ("", G_LOG_LEVEL_WARNING,
-                                        (_("[%s] DRC Error: check for zero width fiducial pad.")),
-                                        footprint_type);
-                        }
-                        result = EXIT_FAILURE;
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("[%s] DRC Error: package should not have a fiducial pad.")),
+                                footprint_type);
                 }
-                /* Check for a clearance of zero. */
-                if (fiducial_pad_solder_mask_clearance == 0.0)
-                {
-                        if (verbose)
-                        {
-                                g_log ("", G_LOG_LEVEL_WARNING,
-                                        (_("[%s] DRC Error: check for zero width solder mask clearance.")),
-                                        footprint_type);
-                        }
-                        result = EXIT_FAILURE;
-                }
-                /*! \todo Check for minimum clearance between pad copper and fiducial pad
-                 * copper (including solder mask clearances).
-                 */
-                /* Check for minimum clearance between pad copper and fiducial pad
-                 * copper (including solder mask clearances). */
-#if 0
-                if ()
-                {
-                        if (verbose)
-                        {
-                                g_log ("", G_LOG_LEVEL_WARNING,
-                                        (_("[%s] DRC Error: check for distance between fiducial and nearest pad.")),
-                                        footprint_type);
-                        }
-                        result = EXIT_FAILURE;
-                }
-#endif
+                result = EXIT_FAILURE;
         }
         /* Check for clearance of the package length with regard to the
          * courtyard dimensions. */
