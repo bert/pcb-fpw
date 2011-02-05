@@ -674,6 +674,47 @@ indc_get_default_footprint_values
                 }
                 return (EXIT_SUCCESS);
         }
+        else if (!strcmp (footprint_name, "?INDC1608X95N"))
+        {
+                footprint_units = g_strdup ("mm");
+                package_body_length = 1.75;
+                package_body_width = 0.95;
+                package_body_height = 0.95;
+                package_is_radial = FALSE;
+                number_of_pins = 2;
+                number_of_columns = 0;
+                number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
+                pitch_x = 1.60;
+                pitch_y = 0.0;
+                pad_length = 1.00;
+                pad_width = 0.95;
+                pad_shape = g_strdup ("rectangular pad");
+                pad_shapes_type = SQUARE;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                silkscreen_package_outline = FALSE;
+                silkscreen_length = 0.0;
+                silkscreen_width = 0.0;
+                silkscreen_line_width = 0.20;
+                courtyard_length = 3.10;
+                courtyard_width = 1.50;
+                courtyard_line_width = 0.05;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("INDC1608X95N");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")), footprint_name,
+                                " EIA 0603, metric 1608.");
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("%s: footprint is too small for a package outline on the silkscreen.")),
+                                footprint_name);
+                }
+                return (EXIT_SUCCESS);
+        }
         else
         {
                 g_log ("", G_LOG_LEVEL_WARNING,
