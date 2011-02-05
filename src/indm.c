@@ -691,7 +691,6 @@ indm_drc ()
                         break;
                 }
         }
-        /*! \todo Create attributes here. */
         /* No failures on DRC found. */
         if (verbose || (result == EXIT_SUCCESS))
         {
