@@ -718,15 +718,18 @@ indp_get_default_footprint_values
 {
         if (!strcmp (footprint_name, "?INDP"))
         {
-                pitch_y = 0.0;
-                number_of_pins = 2;
+                footprint_units = g_strdup ("mm");
                 package_body_length = 0.0;
                 package_body_width = 0.0;
                 package_body_height = 0.0;
                 package_is_radial = FALSE;
+                number_of_pins = 2;
                 number_of_columns = 0;
                 number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
                 pitch_x = 0.0;
+                pitch_y = 0.0;
                 pad_length = 0.0;
                 pad_width = 0.0;
                 pad_shape = g_strdup ("rectangular pad");
@@ -737,11 +740,10 @@ indp_get_default_footprint_values
                 silkscreen_package_outline = FALSE;
                 silkscreen_length = 0.0;
                 silkscreen_width = 0.0;
+                silkscreen_line_width = 0.20;
                 courtyard_length = 0.0;
                 courtyard_width = 0.0;
-                count_x = 0;
-                count_y = 0;
-                footprint_units = g_strdup ("mm");
+                courtyard_line_width = 0.05;
                 g_free (footprint_name);
                 footprint_name = g_strdup ("INDP");
                 return (EXIT_SUCCESS);
