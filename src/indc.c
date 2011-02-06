@@ -309,7 +309,7 @@ indc_create_packages_list ()
         indc_packages_list = g_list_append (indc_packages_list, "INDC1608X95N");
         indc_packages_list = g_list_append (indc_packages_list, "INDC2520X220N");
         indc_packages_list = g_list_append (indc_packages_list, "INDC3225X135N");
-        indc_packages_list = g_list_append (indc_packages_list, "INDC4509X175N");
+        indc_packages_list = g_list_append (indc_packages_list, "INDC4509X190N");
         return (*indc_packages_list);
 }
 
