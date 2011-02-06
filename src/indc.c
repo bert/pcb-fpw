@@ -310,6 +310,7 @@ indc_create_packages_list ()
         indc_packages_list = g_list_append (indc_packages_list, "INDC2520X220N");
         indc_packages_list = g_list_append (indc_packages_list, "INDC3225X135N");
         indc_packages_list = g_list_append (indc_packages_list, "INDC4509X190N");
+        indc_packages_list = g_list_append (indc_packages_list, "INDC4532X175N");
         return (*indc_packages_list);
 }
 
@@ -630,6 +631,7 @@ indc_drc ()
  * - INDC2520X220N,
  * - INDC3225X135N,
  * - INDC4509X190N,
+ * - INDC4532X175N,
  * .
  *
  * \return \c EXIT_SUCCESS when default values for a footprint were
@@ -835,6 +837,44 @@ indc_get_default_footprint_values
                         g_log ("", G_LOG_LEVEL_INFO,
                                 (_("%s is also known as")), footprint_name,
                                 " EIA 1806, metric 4509.");
+                }
+                return (EXIT_SUCCESS);
+        }
+        else if (!strcmp (footprint_name, "?INDC4532X175N"))
+        {
+                footprint_units = g_strdup ("mm");
+                package_body_length = 4.80;
+                package_body_width = 3.40;
+                package_body_height = 1.75;
+                package_is_radial = FALSE;
+                number_of_pins = 2;
+                number_of_columns = 0;
+                number_of_rows = 0;
+                count_x = 0;
+                count_y = 0;
+                pitch_x = 4.10;
+                pitch_y = 0.0;
+                pad_length = 1.40;
+                pad_width = 3.40;
+                pad_shape = g_strdup ("rectangular pad");
+                pad_shapes_type = SQUARE;
+                thermal = FALSE;
+                thermal_length = 0.0;
+                thermal_width = 0.0;
+                silkscreen_package_outline = TRUE;
+                silkscreen_length = 2.00;
+                silkscreen_width = 3.20;
+                silkscreen_line_width = 0.20;
+                courtyard_length = 6.00;
+                courtyard_width = 3.90;
+                courtyard_line_width = 0.05;
+                g_free (footprint_name);
+                footprint_name = g_strdup ("INDC4532X175N");
+                if (verbose)
+                {
+                        g_log ("", G_LOG_LEVEL_INFO,
+                                (_("%s is also known as")), footprint_name,
+                                " EIA 1812, metric 4532.");
                 }
                 return (EXIT_SUCCESS);
         }
