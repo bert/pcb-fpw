@@ -611,7 +611,7 @@ indc_drc ()
                 }
         }
         /* No failures on DRC found. */
-        if (verbose || (result == EXIT_SUCCESS))
+        if (verbose && (result == EXIT_SUCCESS))
         {
                 g_log ("", G_LOG_LEVEL_INFO,
                         (_("[%s] DRC Check: no errors while checking package %s.")),
