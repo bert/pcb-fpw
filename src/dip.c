@@ -552,6 +552,8 @@ dip_drc ()
                 /* Check for minimum clearance between pad copper and fiducial pad
                  * copper (including solder mask clearances). */
 #if 0
+                /*! \todo Check for minimum clearance between pad copper and fiducial pad
+                 * copper (including solder mask clearances). */
                 if ()
                 {
                         if (verbose)
