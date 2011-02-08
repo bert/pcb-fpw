@@ -1,7 +1,7 @@
 /*!
  * \file src/resc.c
  *
- * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Functions for RESC SMT footprints.
  *
@@ -602,7 +602,7 @@ resc_drc ()
         }
         /*! \todo Create attributes here. */
         /* No failures on DRC found. */
-        if (verbose || (result == EXIT_SUCCESS))
+        if (verbose && (result == EXIT_SUCCESS))
         {
                 g_log ("", G_LOG_LEVEL_INFO,
                         (_("[%s] DRC Check: no errors while checking package %s.")),
