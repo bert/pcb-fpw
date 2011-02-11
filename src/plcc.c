@@ -687,6 +687,7 @@ plcc_drc ()
                 }
                 result = EXIT_FAILURE;
         }
+        /* Check for fiducials. */
         if (fiducial)
         {
                 /* Check for a zero width fiducial pad. */
@@ -830,7 +831,6 @@ plcc_drc ()
                         break;
                 }
         }
-        /*! \todo Create attributes here. */
         /* No failures on DRC found. */
         if (verbose && (result == EXIT_SUCCESS))
         {
