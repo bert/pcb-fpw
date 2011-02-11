@@ -45,6 +45,7 @@
 
 AttributeTypePtr create_new_attribute (AttributeListTypePtr list, char *name, char *value);
 
+ElementTypePtr current_element;
 
 /*!
  * \brief Create all defining attributes of a footprint in the \c
