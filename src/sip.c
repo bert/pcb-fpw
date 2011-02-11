@@ -336,6 +336,7 @@ sip_create_packages_list ()
  * <ul>
  * <li> check for number of rows is > 1.
  * <li> check for number of columns is more than 1.
+ * <li> check for pitch (Y-direction) is greater than 0.
  * <li> check for allowed pad shapes.
  * <li> check for zero sized packages.
  * <li> check for a zero sized courtyard.
@@ -388,13 +389,13 @@ sip_drc ()
                 number_of_columns = 1;
                 result = EXIT_FAILURE;
         }
-        /* Check for pich (X-direction) != 0.0. */
-        if (pitch_x != 0.0)
+        /* Check for pitch (Y-direction) != 0.0. */
+        if (pitch_y != 0.0)
         {
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                (_("[%s] DRC Error: pitch (X-direction) should be 0.")),
+                                (_("[%s] DRC Error: pitch (Y-direction) should be 0.")),
                                 footprint_type);
                 pitch_x = 0.0;
                 }
