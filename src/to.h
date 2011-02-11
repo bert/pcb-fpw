@@ -1,7 +1,7 @@
 /*!
  * \file src/to.h
  *
- * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for TO (Transistor Outline) footprints.
  *
@@ -27,6 +27,7 @@
 
 
 int to_create_element_to92 ();
+int to_create_element_to92_staggered ();
 GList to_create_packages_list ();
 int to_get_default_footprint_values (gchar *);
 #if GUI
