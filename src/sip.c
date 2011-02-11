@@ -509,7 +509,7 @@ sip_drc ()
                 result = EXIT_FAILURE;
         }
         /* Check for minimum clearance between copper (Y-direction). */
-        if (pitch_y - pad_diameter < pad_clearance)
+        if ((pitch_y - pad_diameter < pad_clearance) || (pitch_y - pad_width < pad_clearance))
         {
                 if (verbose)
                 {
