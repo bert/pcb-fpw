@@ -3099,19 +3099,54 @@ write_footprint()
                         }
                         break;
                 case TO92:
-                        to_write_footprint_to92 ();
+                        if (to_drc () == EXIT_SUCCESS)
+                        {
+                                to_write_footprint_to92 ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case TO220:
-                        to_write_footprint_to220 ();
+                        if (to_drc () == EXIT_SUCCESS)
+                        {
+                                to_write_footprint_to220 ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case TO220S:
-                        to_write_footprint_to220_staggered ();
+                        if (to_drc () == EXIT_SUCCESS)
+                        {
+                                to_write_footprint_to220_staggered ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case TO220SW:
-                        to_write_footprint_to220_standing_staggered ();
+                        if (to_drc () == EXIT_SUCCESS)
+                        {
+                                to_write_footprint_to220_standing_staggered ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case TO220W:
-                        to_write_footprint_to220_standing ();
+                        if (to_drc () == EXIT_SUCCESS)
+                        {
+                                to_write_footprint_to220_standing ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 default:
                         if ((verbose) || (!silent))
