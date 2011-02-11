@@ -610,7 +610,7 @@ resmelf_drc ()
          * the solder fillet area or worse). */
 
         /* Check for a reasonable silk line width. */
-        if (silkscreen_package_outline || (silkscreen_line_width == 0.0))
+        if (silkscreen_package_outline && (silkscreen_line_width == 0.0))
         {
                 if (verbose)
                 {
@@ -634,7 +634,7 @@ resmelf_drc ()
                         break;
                 }
                 case MIL:
-                if (silkscreen_line_width > 40.0)
+                if (silkscreen_package_outline && (silkscreen_line_width > 40.0))
                 {
                         if (verbose)
                         {
@@ -646,7 +646,7 @@ resmelf_drc ()
                         break;
                 }
                 case MIL_100:
-                if (silkscreen_line_width > 4000.0)
+                if (silkscreen_package_outline && (silkscreen_line_width > 4000.0))
                 {
                         if (verbose)
                         {
@@ -658,7 +658,7 @@ resmelf_drc ()
                         break;
                 }
                 case MM:
-                if (silkscreen_line_width > 1.0)
+                if (silkscreen_package_outline && (silkscreen_line_width > 1.0))
                 {
                         if (verbose)
                         {
