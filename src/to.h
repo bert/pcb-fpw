@@ -26,7 +26,7 @@
 #define __TO_INCLUDED__
 
 
-ElementTypePtr to_create_element_to92 ();
+int to_create_element_to92 ();
 GList to_create_packages_list ();
 int to_get_default_footprint_values (gchar *);
 #if GUI

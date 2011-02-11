@@ -28,9 +28,10 @@
 /*!
  * \brief Create an Element for a TO92 package.
  *
- * \return the created \c element.
+ * \return \c EXIT_SUCCESS when an element was created,
+ * \c EXIT_FAILURE when errors were encountered.
  */
-ElementTypePtr
+int
 to_create_element_to92 ()
 {
         gdouble xmax;
@@ -51,7 +52,7 @@ to_create_element_to92 ()
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("could not create a valid element pointer for a %s package."),
                                 footprint_type);
-                return (NULL);
+                return (EXIT_FAILURE);
         }
         /* Define the center of our universe and guess for a place where to
          * put the element mark */
@@ -223,7 +224,8 @@ to_create_element_to92 ()
                         footprint_type,
                         footprint_filename);
         }
-        return (element);
+        current_element = &element;
+        return (EXIT_SUCCESS);
 }
 
 
