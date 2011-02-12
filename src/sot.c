@@ -29,9 +29,10 @@
 /*!
  * \brief Create an Element for a SOT package.
  *
- * \return the created \c element.
+ * \return \c EXIT_SUCCESS when an element was created,
+ * \c EXIT_FAILURE when errors were encountered.
  */
-ElementTypePtr
+int
 sot_create_element ()
 {
         gdouble xmax;
@@ -52,7 +53,7 @@ sot_create_element ()
                         g_log ("", G_LOG_LEVEL_WARNING,
                                 _("could not create a valid element pointer for a %s package."),
                                 footprint_type);
-                return (NULL);
+                return (EXIT_FAILURE);
         }
         /* Define the center of our universe and guess for a place where to
          * put the element mark */
@@ -469,7 +470,8 @@ sot_create_element ()
                         footprint_type,
                         footprint_filename);
         }
-        return (element);
+        current_element = (ElementTypePtr) &element;
+        return (EXIT_SUCCESS);
 }
 
 

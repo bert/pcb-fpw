@@ -26,7 +26,7 @@
 #define __SOT_INCLUDED__
 
 
-ElementTypePtr sot_create_element ();
+int sot_create_element ();
 GList sot_create_packages_list (GList *);
 int sot_drc ();
 int sot_get_default_footprint_values (gchar *);
