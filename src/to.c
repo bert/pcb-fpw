@@ -439,15 +439,16 @@ to_create_element_to92_staggered ()
  * The data in this list can be used in a combobox to select a
  * pre-defined package.
  *
- * \return a list containing all package names of this footprint type
- * known by pcb-fpw.
+ * \return \c EXIT_SUCCESS when an element was created,
+ * \c EXIT_FAILURE when errors were encountered.
  */
-GList
+int
 to_create_packages_list ()
 {
         GList *to_packages_list = NULL;
         to_packages_list = g_list_append (to_packages_list, "TO92");
-        return (*to_packages_list);
+        /*! \todo Return the list with available TO packages. */
+        return (EXIT_SUCCESS);
 }
 
 

@@ -28,7 +28,7 @@
 
 int to_create_element_to92 ();
 int to_create_element_to92_staggered ();
-GList to_create_packages_list ();
+int to_create_packages_list ();
 int to_get_default_footprint_values (gchar *);
 #if GUI
 int to_set_gui_constraints (GtkWidget *);
