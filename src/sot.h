@@ -28,6 +28,7 @@
 
 int sot_create_element ();
 int sot_create_packages_list ();
+int sot_create_fpw_files_from_packages_list ();
 int sot_drc ();
 int sot_get_default_footprint_values (gchar *);
 #if GUI
