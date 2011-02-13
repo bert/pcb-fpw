@@ -445,9 +445,13 @@ to_create_element_to92_staggered ()
 int
 to_create_packages_list ()
 {
-        GList *to_packages_list = NULL;
-        to_packages_list = g_list_append (to_packages_list, "TO92");
-        /*! \todo Return the list with available TO packages. */
+        g_list_free (packages_list);
+        packages_list = g_list_append (packages_list, "TO92");
+        packages_list = g_list_append (packages_list, "TO92S");
+        packages_list = g_list_append (packages_list, "TO220");
+        packages_list = g_list_append (packages_list, "TO220S");
+        packages_list = g_list_append (packages_list, "TO220SW");
+        packages_list = g_list_append (packages_list, "TO220W");
         return (EXIT_SUCCESS);
 }
 
