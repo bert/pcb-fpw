@@ -1,7 +1,7 @@
 /*!
  * \file src/sip.h
  *
- * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for SIP footprints.
  *
@@ -26,6 +26,7 @@
 #define __SIP_INCLUDED__
 
 
+int sip_create_element ();
 GList sip_create_packages_list ();
 int sip_drc ();
 int sip_get_default_footprint_values (gchar *);
