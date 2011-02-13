@@ -224,7 +224,7 @@ to_create_element_to92 ()
                         footprint_type,
                         footprint_filename);
         }
-        current_element = &element;
+        current_element = (ElementTypePtr) &element;
         return (EXIT_SUCCESS);
 }
 
@@ -428,7 +428,7 @@ to_create_element_to92_staggered ()
                         footprint_type,
                         footprint_filename);
         }
-        current_element = &element;
+        current_element = (ElementTypePtr) &element;
         return (EXIT_SUCCESS);
 }
 
