@@ -27,7 +27,7 @@
 
 
 int sip_create_element ();
-GList sip_create_packages_list ();
+int sip_create_packages_list ();
 int sip_drc ();
 int sip_get_default_footprint_values (gchar *);
 #if GUI
