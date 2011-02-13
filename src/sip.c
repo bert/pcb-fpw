@@ -327,7 +327,7 @@ int
 sip_create_packages_list ()
 {
         g_list_free (packages_list);
-        packages_list = g_list_append (packages_list, "SIL");
+        packages_list = g_list_append (packages_list, "SIP");
         return (EXIT_SUCCESS);
 }
 
