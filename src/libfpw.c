@@ -47,6 +47,8 @@ AttributeTypePtr create_new_attribute (AttributeListTypePtr list, char *name, ch
 
 ElementTypePtr current_element;
 
+GList *packages_list;
+
 /*!
  * \brief Create all defining attributes of a footprint in the \c
  * element and add the values to the \c Attributes struct inside the
