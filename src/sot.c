@@ -490,7 +490,7 @@ sot_create_fpw_files_from_packages_list ()
 {
         guint i = 1;
         GList *work_list = NULL;
-        sot_create_packages_list (work_list);
+        sot_create_packages_list ();
         while (g_list_nth_data (work_list, i))
         {
                 /* get the footprint name (the data). */
@@ -550,8 +550,9 @@ sot_create_fpw_files_from_packages_list ()
  * \c EXIT_FAILURE when errors were encountered.
  */
 int
-sot_create_packages_list (GList *sot_packages_list)
+sot_create_packages_list ()
 {
+        GList *sot_packages_list = NULL;
         sot_packages_list = g_list_append (sot_packages_list, "SOT50P160X90-3N");
         sot_packages_list = g_list_append (sot_packages_list, "SOT50P210X110-8N");
         sot_packages_list = g_list_append (sot_packages_list, "SOT65P210X100-3N");
