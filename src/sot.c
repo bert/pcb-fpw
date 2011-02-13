@@ -997,9 +997,7 @@ sot_drc ()
  * found, \c EXIT_FAILURE when the footprint name was not found.
  */
 int
-sot_get_default_footprint_values
-(
-        gchar *footprint_name)
+sot_get_default_footprint_values ()
 {
         if (!strcmp (footprint_name, "?SOT50P160X90-3N"))
         {

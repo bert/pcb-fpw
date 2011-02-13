@@ -2706,7 +2706,7 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
                         }
                         case SOT:
                         {
-                                if (sot_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
+                                if (sot_get_default_footprint_values () == EXIT_SUCCESS)
                                         all_entries_need_updated (GTK_WIDGET (editable));
                                 return;
                         }
