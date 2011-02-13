@@ -546,10 +546,10 @@ sot_create_fpw_files_from_packages_list ()
  * The data in this list can be used in a combo box to select a
  * pre-defined package.
  *
- * \return a list containing all package names of this footprint type
- * known by pcb-fpw.
+ * \return \c EXIT_SUCCESS when an element was created,
+ * \c EXIT_FAILURE when errors were encountered.
  */
-GList
+int
 sot_create_packages_list (GList *sot_packages_list)
 {
         sot_packages_list = g_list_append (sot_packages_list, "SOT50P160X90-3N");
@@ -602,7 +602,8 @@ sot_create_packages_list (GList *sot_packages_list)
         sot_packages_list = g_list_append (sot_packages_list, "SOT230P700X180-4N");
         sot_packages_list = g_list_append (sot_packages_list, "SOT230P700X180-4AN");
         sot_packages_list = g_list_append (sot_packages_list, "SOT230P700X180-4BN");
-        return (*sot_packages_list);
+        /*! \todo Return the list with available SOT packages. */
+        return (EXIT_SUCCESS);
 }
 
 
