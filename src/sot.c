@@ -549,7 +549,7 @@ sot_create_fpw_files_from_packages_list ()
  * The data in this list can be used in a combo box to select a
  * pre-defined package.
  *
- * \return \c EXIT_SUCCESS when an element was created,
+ * \return \c EXIT_SUCCESS when a packages list was created,
  * \c EXIT_FAILURE when errors were encountered.
  */
 int
