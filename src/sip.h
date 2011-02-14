@@ -29,7 +29,7 @@
 int sip_create_element ();
 int sip_create_packages_list ();
 int sip_drc ();
-int sip_get_default_footprint_values (gchar *);
+int sip_get_default_footprint_values ();
 #if GUI
 int sip_set_gui_constraints (GtkWidget *);
 #endif /* GUI */
