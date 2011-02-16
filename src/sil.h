@@ -29,7 +29,7 @@
 int sil_create_element ();
 int sil_create_packages_list ();
 int sil_drc ();
-int sil_get_default_footprint_values (gchar *);
+int sil_get_default_footprint_values ();
 #if GUI
 int sil_set_gui_constraints (GtkWidget *);
 #endif /* GUI */
