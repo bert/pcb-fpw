@@ -2692,6 +2692,12 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
                                         all_entries_need_updated (GTK_WIDGET (editable));
                                 return;
                         }
+                        case RESMELF:
+                        {
+                                if (resmelf_get_default_footprint_values () == EXIT_SUCCESS)
+                                        all_entries_need_updated (GTK_WIDGET (editable));
+                                return;
+                        }
                         case SIL:
                         {
                                 if (sil_get_default_footprint_values () == EXIT_SUCCESS)
