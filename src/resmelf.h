@@ -29,7 +29,7 @@
 int resmelf_create_element ();
 int resmelf_create_packages_list ();
 int resmelf_drc ();
-int resmelf_get_default_footprint_values (gchar *);
+int resmelf_get_default_footprint_values ();
 #if GUI
 int resmelf_set_gui_constraints (GtkWidget *);
 #endif /* GUI */
