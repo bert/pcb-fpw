@@ -27,7 +27,7 @@
 
 
 int sil_create_element ();
-GList sil_create_packages_list ();
+int sil_create_packages_list ();
 int sil_drc ();
 int sil_get_default_footprint_values (gchar *);
 #if GUI
