@@ -49,7 +49,7 @@ pcb, xgsch2pcb or gsch2pcb documentation.
 
 The layout of the program consists of five tabs with entry fields and a
 dimensions drawing area (when and if implemented), and a button bar with
-five buttons on the lower part of the window.
+eigth buttons on the lower part of the window.
 
 As you start entering the footprint type by selecting from a specified list,
 the program will guess for the prefix of the footprint as the first couple of
