@@ -27,7 +27,7 @@
 
 
 int resmelf_create_element ();
-GList resmelf_create_packages_list ();
+int resmelf_create_packages_list ();
 int resmelf_drc ();
 int resmelf_get_default_footprint_values (gchar *);
 #if GUI
