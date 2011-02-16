@@ -1,7 +1,7 @@
 /*!
  * \file src/resmelf.h
  *
- * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for RESMELF footprints.
  *
@@ -26,7 +26,7 @@
 #define __RESMELF_INCLUDED__
 
 
-ElementTypePtr resmelf_create_element ();
+int resmelf_create_element ();
 GList resmelf_create_packages_list ();
 int resmelf_drc ();
 int resmelf_get_default_footprint_values (gchar *);
