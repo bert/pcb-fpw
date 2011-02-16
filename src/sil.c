@@ -309,6 +309,7 @@ sil_create_element ()
                         footprint_type,
                         footprint_filename);
         }
+        current_element = (ElementTypePtr) &element;
         return (EXIT_SUCCESS);
 }
 
