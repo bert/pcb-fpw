@@ -1,7 +1,7 @@
 /*!
  * \file src/resm.h
  *
- * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for RESM SMT footprints.
  *
@@ -26,7 +26,7 @@
 #define __RESM_INCLUDED__
 
 
-ElementTypePtr resm_create_element ();
+int resm_create_element ();
 GList resm_create_packages_list ();
 int resm_drc ();
 int resm_get_default_footprint_values (gchar *);
