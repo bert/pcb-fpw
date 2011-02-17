@@ -27,7 +27,7 @@
 
 
 int resm_create_element ();
-GList resm_create_packages_list ();
+int resm_create_packages_list ();
 int resm_drc ();
 int resm_get_default_footprint_values (gchar *);
 #if GUI
