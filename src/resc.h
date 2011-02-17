@@ -27,7 +27,7 @@
 
 
 int resc_create_element ();
-GList resc_create_packages_list ();
+int resc_create_packages_list ();
 int resc_drc ();
 int resc_get_default_footprint_values (gchar *);
 #if GUI
