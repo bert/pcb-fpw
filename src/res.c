@@ -414,35 +414,36 @@ res_create_element ()
  * The data in this list can be used in a combo box to select a
  * pre-defined package.
  *
- * \return a list containing all package names of this footprint type
- * known by pcb-fpw.
+ * \return \c EXIT_SUCCESS when a packages list was created,
+ * \c EXIT_FAILURE when errors were encountered.
  */
-GList
-res_create_packages_list (GList *res_packages_list)
+int
+res_create_packages_list ()
 {
-        res_packages_list = g_list_append (res_packages_list, "RES600-320X170");
-        res_packages_list = g_list_append (res_packages_list, "RES770-420X200");
-        res_packages_list = g_list_append (res_packages_list, "RES1030-640X250");
-        res_packages_list = g_list_append (res_packages_list, "RES1130-700X280");
-        res_packages_list = g_list_append (res_packages_list, "RES1190-800X300");
-        res_packages_list = g_list_append (res_packages_list, "RES1390-1000X350");
-        res_packages_list = g_list_append (res_packages_list, "RES1440-1050X200");
-        res_packages_list = g_list_append (res_packages_list, "RES1670-1200X400");
-        res_packages_list = g_list_append (res_packages_list, "RES1680-1200X500");
-        res_packages_list = g_list_append (res_packages_list, "RES1740-1050X200");
-        res_packages_list = g_list_append (res_packages_list, "RES1760-1250X500");
-        res_packages_list = g_list_append (res_packages_list, "RES1770-1270X550");
-        res_packages_list = g_list_append (res_packages_list, "RES1860-1350X500");
-        res_packages_list = g_list_append (res_packages_list, "RES2080-1600X550");
-        res_packages_list = g_list_append (res_packages_list, "RES2160-1650X650");
-        res_packages_list = g_list_append (res_packages_list, "RES2210-1700X450");
-        res_packages_list = g_list_append (res_packages_list, "RES2830-2350X850");
-        res_packages_list = g_list_append (res_packages_list, "RES3060-2550X900");
-        res_packages_list = g_list_append (res_packages_list, "RES5480-5000X1000");
-        res_packages_list = g_list_append (res_packages_list, "RES5480-5000X1250");
-        res_packages_list = g_list_append (res_packages_list, "RES6510-6000X1450");
-        res_packages_list = g_list_append (res_packages_list, "RES6880-6400X1450");
-        return (*res_packages_list);
+        g_list_free (packages_list);
+        packages_list = g_list_append (packages_list, "RES600-320X170");
+        packages_list = g_list_append (packages_list, "RES770-420X200");
+        packages_list = g_list_append (packages_list, "RES1030-640X250");
+        packages_list = g_list_append (packages_list, "RES1130-700X280");
+        packages_list = g_list_append (packages_list, "RES1190-800X300");
+        packages_list = g_list_append (packages_list, "RES1390-1000X350");
+        packages_list = g_list_append (packages_list, "RES1440-1050X200");
+        packages_list = g_list_append (packages_list, "RES1670-1200X400");
+        packages_list = g_list_append (packages_list, "RES1680-1200X500");
+        packages_list = g_list_append (packages_list, "RES1740-1050X200");
+        packages_list = g_list_append (packages_list, "RES1760-1250X500");
+        packages_list = g_list_append (packages_list, "RES1770-1270X550");
+        packages_list = g_list_append (packages_list, "RES1860-1350X500");
+        packages_list = g_list_append (packages_list, "RES2080-1600X550");
+        packages_list = g_list_append (packages_list, "RES2160-1650X650");
+        packages_list = g_list_append (packages_list, "RES2210-1700X450");
+        packages_list = g_list_append (packages_list, "RES2830-2350X850");
+        packages_list = g_list_append (packages_list, "RES3060-2550X900");
+        packages_list = g_list_append (packages_list, "RES5480-5000X1000");
+        packages_list = g_list_append (packages_list, "RES5480-5000X1250");
+        packages_list = g_list_append (packages_list, "RES6510-6000X1450");
+        packages_list = g_list_append (packages_list, "RES6880-6400X1450");
+        return (EXIT_SUCCESS);
 }
 
 

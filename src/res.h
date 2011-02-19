@@ -27,7 +27,7 @@
 
 
 int res_create_element ();
-GList res_create_packages_list (GList *);
+int res_create_packages_list ();
 int res_drc ();
 int res_get_default_footprint_values (gchar *footprint_name);
 #if GUI
