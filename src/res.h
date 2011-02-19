@@ -1,7 +1,7 @@
 /*!
  * \file src/res.h
  *
- * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for RES footprints.
  *
@@ -26,7 +26,7 @@
 #define __RES_INCLUDED__
 
 
-ElementTypePtr res_create_element ();
+int res_create_element ();
 GList res_create_packages_list (GList *);
 int res_drc ();
 int res_get_default_footprint_values (gchar *footprint_name);
