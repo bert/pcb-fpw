@@ -29,7 +29,7 @@
 int res_create_element ();
 int res_create_packages_list ();
 int res_drc ();
-int res_get_default_footprint_values (gchar *footprint_name);
+int res_get_default_footprint_values ();
 #if GUI
 int res_set_gui_constraints (GtkWidget *widget);
 #endif /* GUI */
