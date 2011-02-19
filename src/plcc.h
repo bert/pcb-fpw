@@ -27,7 +27,7 @@
 
 
 int plcc_create_element ();
-GList plcc_create_packages_list ();
+int plcc_create_packages_list ();
 int plcc_drc ();
 int plcc_get_default_footprint_values (gchar *);
 #if GUI
