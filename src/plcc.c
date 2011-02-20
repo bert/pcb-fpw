@@ -858,11 +858,7 @@ plcc_drc ()
  * found, \c EXIT_FAILURE when the footprint name was not found.
  */
 int
-plcc_get_default_footprint_values
-(
-        gchar *footprint_name
-                /*!< : a \c NULL terminated footprint name.*/
-)
+plcc_get_default_footprint_values ()
 {
         if (!strcmp (footprint_name, "?PLCC84"))
         {

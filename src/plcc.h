@@ -29,7 +29,7 @@
 int plcc_create_element ();
 int plcc_create_packages_list ();
 int plcc_drc ();
-int plcc_get_default_footprint_values (gchar *);
+int plcc_get_default_footprint_values ();
 #if GUI
 int plcc_set_gui_constraints (GtkWidget *);
 #endif /* GUI */
