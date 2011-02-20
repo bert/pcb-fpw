@@ -2514,7 +2514,9 @@ write_pad
                  */
 )
 {
-        fprintf (fp,
+        fprintf
+        (
+                fp,
                 "\tPad[%d %d %d %d %d %d %d \"%s\" \"%d\" \"%s\"]\n",
                 (int) x0,
                 (int) y0,
@@ -2526,7 +2528,7 @@ write_pad
                 pad_name,
                 pad_number,
                 flags
-                );
+        );
         return (EXIT_SUCCESS);
 }
 
@@ -2575,7 +2577,9 @@ write_pin
                  */
 )
 {
-        fprintf (fp,
+        fprintf
+        (
+                fp,
                 "\tPin[%d %d %d %d %d %d \"%s\" \"%d\" \"%s\"]\n",
                 (int) x0,
                 (int) y0,
@@ -2586,7 +2590,7 @@ write_pin
                 pin_name,
                 pin_number,
                 flags
-                );
+        );
         return (EXIT_SUCCESS);
 }
 
