@@ -1,7 +1,7 @@
 /*!
  * \file src/pga.h
  *
- * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for PGA footprints.
  *
@@ -26,7 +26,7 @@
 #define __PGA_INCLUDED__
 
 
-ElementTypePtr pga_create_element ();
+int pga_create_element ();
 GList pga_create_packages_list ();
 int pga_drc ();
 int pga_get_default_footprint_values (gchar *);
