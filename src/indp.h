@@ -27,7 +27,7 @@
 
 
 int indp_create_element ();
-GList indp_create_packages_list ();
+int indp_create_packages_list ();
 int indp_drc ();
 int indp_get_default_footprint_values (gchar *);
 #if GUI
