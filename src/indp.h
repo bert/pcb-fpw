@@ -29,7 +29,7 @@
 int indp_create_element ();
 int indp_create_packages_list ();
 int indp_drc ();
-int indp_get_default_footprint_values (gchar *);
+int indp_get_default_footprint_values ();
 #if GUI
 int indp_set_gui_constraints (GtkWidget *);
 #endif /* GUI */
