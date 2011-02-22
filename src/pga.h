@@ -27,7 +27,7 @@
 
 
 int pga_create_element ();
-GList pga_create_packages_list ();
+int pga_create_packages_list ();
 int pga_drc ();
 int pga_get_default_footprint_values ();
 #if GUI
