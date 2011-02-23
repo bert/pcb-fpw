@@ -389,15 +389,15 @@ indm_create_element ()
  * The data in this list can be used in a combobox to select a
  * pre-defined package.
  *
- * \return a list containing all package names of this footprint type
- * known by pcb-fpw.
+ * \return \c EXIT_SUCCESS when a packages list was created,
+ * \c EXIT_FAILURE when errors were encountered.
  */
-GList
+int
 indm_create_packages_list ()
 {
-        GList *indm_packages_list = NULL;
-        indm_packages_list = g_list_append (indm_packages_list, "INDM");
-        return (*indm_packages_list);
+        g_list_free (packages_list);
+        packages_list = g_list_append (packages_list, "INDM");
+        return (EXIT_SUCCESS);
 }
 
 
