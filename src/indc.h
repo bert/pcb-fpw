@@ -27,7 +27,7 @@
 
 
 int indc_create_element ();
-GList indc_create_packages_list ();
+int indc_create_packages_list ();
 int indc_drc ();
 int indc_get_default_footprint_values (gchar *);
 #if GUI

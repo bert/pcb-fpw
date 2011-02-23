@@ -300,23 +300,23 @@ indc_create_element ()
  * The data in this list can be used in a combobox to select a
  * pre-defined package.
  *
- * \return a list containing all package names of this footprint type
- * known by pcb-fpw.
+ * \return \c EXIT_SUCCESS when a packages list was created,
+ * \c EXIT_FAILURE when errors were encountered.
  */
-GList
+int
 indc_create_packages_list ()
 {
-        GList *indc_packages_list = NULL;
-        indc_packages_list = g_list_append (indc_packages_list, "INDC1005X60N");
-        indc_packages_list = g_list_append (indc_packages_list, "INDC1608X95N");
-        indc_packages_list = g_list_append (indc_packages_list, "INDC2520X220N");
-        indc_packages_list = g_list_append (indc_packages_list, "INDC3225X135N");
-        indc_packages_list = g_list_append (indc_packages_list, "INDC4509X190N");
-        indc_packages_list = g_list_append (indc_packages_list, "INDC4532X175N");
-        indc_packages_list = g_list_append (indc_packages_list, "INDC4648X310N");
-        indc_packages_list = g_list_append (indc_packages_list, "INDC5750X180N");
-        indc_packages_list = g_list_append (indc_packages_list, "INDC6350X200N");
-        return (*indc_packages_list);
+        g_list_free (packages_list);
+        packages_list = g_list_append (packages_list, "INDC1005X60N");
+        packages_list = g_list_append (packages_list, "INDC1608X95N");
+        packages_list = g_list_append (packages_list, "INDC2520X220N");
+        packages_list = g_list_append (packages_list, "INDC3225X135N");
+        packages_list = g_list_append (packages_list, "INDC4509X190N");
+        packages_list = g_list_append (packages_list, "INDC4532X175N");
+        packages_list = g_list_append (packages_list, "INDC4648X310N");
+        packages_list = g_list_append (packages_list, "INDC5750X180N");
+        packages_list = g_list_append (packages_list, "INDC6350X200N");
+        return (EXIT_SUCCESS);
 }
 
 
