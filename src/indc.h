@@ -1,7 +1,7 @@
 /*!
  * \file src/indc.h
  *
- * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for INDC SMT footprints.
  *
@@ -26,7 +26,7 @@
 #define __INDC_INCLUDED__
 
 
-ElementTypePtr indc_create_element ();
+int indc_create_element ();
 GList indc_create_packages_list ();
 int indc_drc ();
 int indc_get_default_footprint_values (gchar *);
