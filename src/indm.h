@@ -1,7 +1,7 @@
 /*!
  * \file src/indm.h
  *
- * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for INDM SMT footprints.
  *
@@ -26,7 +26,7 @@
 #define __INDM_INCLUDED__
 
 
-ElementTypePtr indm_create_element ();
+int indm_create_element ();
 GList indm_create_packages_list ();
 int indm_drc ();
 int indm_get_default_footprint_values (gchar *);
