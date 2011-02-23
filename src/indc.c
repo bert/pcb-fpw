@@ -645,11 +645,7 @@ indc_drc ()
  * found, \c EXIT_FAILURE when the footprint name was not found.
  */
 int
-indc_get_default_footprint_values
-(
-        gchar *footprint_name
-                /*!< : a \c NULL terminated footprint name.*/
-)
+indc_get_default_footprint_values ()
 {
         if (!strcmp (footprint_name, "?INDC1005X60N"))
         {
