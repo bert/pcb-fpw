@@ -722,9 +722,7 @@ dip_drc ()
  * found, \c EXIT_FAILURE when the footprint name was not found.
  */
 int
-dip_get_default_footprint_values
-(
-        gchar *footprint_name)
+dip_get_default_footprint_values ()
 {
         if (!strcmp (footprint_name, "?DIP04300"))
         {
