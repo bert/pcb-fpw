@@ -321,61 +321,59 @@ dips_create_element ()
  *
  * The data in this list can be used in a combo box to select a
  * pre-defined package.
- * \n
- * <b>Parameters:</b> none.\n
- * \n
- * <b>Returns:</b> a list containing all package names of this footprint
- * type known by pcb-fpw.
+ *
+ * \return \c EXIT_SUCCESS when a packages list was created,
+ * \c EXIT_FAILURE when errors were encountered.
  */
-GList
+int
 dips_create_packages_list ()
 {
-        GList *dips_packages_list = NULL;
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS762W52P254L508H254Q4B");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS762W52P254L762H254Q6B");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS762W52P254L1016H254Q8B");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS1016W52P254L1016H254Q8B");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS762W52P254L1270H254Q10B");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS762W52P254L1778H254Q14B");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS1016W52P254L1778H254Q14B");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS762W52P254L2032H254Q16B");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS1016W52P254L2032H254Q16B");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS762W52P254L2286H254Q18B");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS1016W52P254L2286H254Q18B");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS762W52P254L2540H254Q20B");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS1016W52P254L2540H254Q20B");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS04300");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS06300");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS08300");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS08400");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS10300");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS14300");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS14400");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS16300");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS16400");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS18300");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS18400");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS20300");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS20400");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS22300");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS22400");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS24300");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS24400");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS24600");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS28300");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS28400");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS28600");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS32300");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS32600");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS36600");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS38600");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS40600");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS42600");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS48600");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS50900");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS52600");
-        dips_packages_list = g_list_append (dips_packages_list, "DIPS64900");
-        return (*dips_packages_list);
+        g_list_free (packages_list);
+        packages_list = g_list_append (packages_list, "DIPS762W52P254L508H254Q4B");
+        packages_list = g_list_append (packages_list, "DIPS762W52P254L762H254Q6B");
+        packages_list = g_list_append (packages_list, "DIPS762W52P254L1016H254Q8B");
+        packages_list = g_list_append (packages_list, "DIPS1016W52P254L1016H254Q8B");
+        packages_list = g_list_append (packages_list, "DIPS762W52P254L1270H254Q10B");
+        packages_list = g_list_append (packages_list, "DIPS762W52P254L1778H254Q14B");
+        packages_list = g_list_append (packages_list, "DIPS1016W52P254L1778H254Q14B");
+        packages_list = g_list_append (packages_list, "DIPS762W52P254L2032H254Q16B");
+        packages_list = g_list_append (packages_list, "DIPS1016W52P254L2032H254Q16B");
+        packages_list = g_list_append (packages_list, "DIPS762W52P254L2286H254Q18B");
+        packages_list = g_list_append (packages_list, "DIPS1016W52P254L2286H254Q18B");
+        packages_list = g_list_append (packages_list, "DIPS762W52P254L2540H254Q20B");
+        packages_list = g_list_append (packages_list, "DIPS1016W52P254L2540H254Q20B");
+        packages_list = g_list_append (packages_list, "DIPS04300");
+        packages_list = g_list_append (packages_list, "DIPS06300");
+        packages_list = g_list_append (packages_list, "DIPS08300");
+        packages_list = g_list_append (packages_list, "DIPS08400");
+        packages_list = g_list_append (packages_list, "DIPS10300");
+        packages_list = g_list_append (packages_list, "DIPS14300");
+        packages_list = g_list_append (packages_list, "DIPS14400");
+        packages_list = g_list_append (packages_list, "DIPS16300");
+        packages_list = g_list_append (packages_list, "DIPS16400");
+        packages_list = g_list_append (packages_list, "DIPS18300");
+        packages_list = g_list_append (packages_list, "DIPS18400");
+        packages_list = g_list_append (packages_list, "DIPS20300");
+        packages_list = g_list_append (packages_list, "DIPS20400");
+        packages_list = g_list_append (packages_list, "DIPS22300");
+        packages_list = g_list_append (packages_list, "DIPS22400");
+        packages_list = g_list_append (packages_list, "DIPS24300");
+        packages_list = g_list_append (packages_list, "DIPS24400");
+        packages_list = g_list_append (packages_list, "DIPS24600");
+        packages_list = g_list_append (packages_list, "DIPS28300");
+        packages_list = g_list_append (packages_list, "DIPS28400");
+        packages_list = g_list_append (packages_list, "DIPS28600");
+        packages_list = g_list_append (packages_list, "DIPS32300");
+        packages_list = g_list_append (packages_list, "DIPS32600");
+        packages_list = g_list_append (packages_list, "DIPS36600");
+        packages_list = g_list_append (packages_list, "DIPS38600");
+        packages_list = g_list_append (packages_list, "DIPS40600");
+        packages_list = g_list_append (packages_list, "DIPS42600");
+        packages_list = g_list_append (packages_list, "DIPS48600");
+        packages_list = g_list_append (packages_list, "DIPS50900");
+        packages_list = g_list_append (packages_list, "DIPS52600");
+        packages_list = g_list_append (packages_list, "DIPS64900");
+        return (EXIT_SUCCESS);
 }
 
 

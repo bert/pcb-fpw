@@ -25,7 +25,7 @@
 
 
 int dips_create_element ();
-GList dips_create_packages_list ();
+int dips_create_packages_list ();
 int dips_drc ();
 int dips_get_default_footprint_values (gchar *);
 #if GUI
