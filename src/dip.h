@@ -1,6 +1,6 @@
 /*!
  * \file src/dip.h
- * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief Header file for functions for DIP footprints.
  *
  * This program is free software; you can redistribute it and/or modify
@@ -24,7 +24,7 @@
 #define __DIP_INCLUDED__
 
 
-ElementTypePtr dip_create_element ();
+int dip_create_element ();
 GList dip_create_packages_list ();
 int dip_drc ();
 int dip_get_default_footprint_values (gchar *);
