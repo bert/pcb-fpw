@@ -317,48 +317,46 @@ dip_create_element ()
  *
  * The data in this list can be used in a combo box to select a
  * pre-defined package.
- * \n
- * <b>Parameters:</b> none.\n
- * \n
- * <b>Returns:</b> a list containing all package names of this footprint
- * type known by pcb-fpw.
+ *
+ * \return \c EXIT_SUCCESS when a packages list was created,
+ * \c EXIT_FAILURE when errors were encountered.
  */
-GList
+int
 dip_create_packages_list ()
 {
-        GList *dip_packages_list = NULL;
-        dip_packages_list = g_list_append (dip_packages_list, "DIP04300");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP06300");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP08300");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP08400");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP10300");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP14300");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP14400");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP16300");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP16400");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP18300");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP18400");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP20300");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP20400");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP22300");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP22400");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP24300");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP24400");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP24600");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP28300");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP28400");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP28600");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP32300");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP32600");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP36600");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP38600");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP40600");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP42600");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP48600");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP50900");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP52600");
-        dip_packages_list = g_list_append (dip_packages_list, "DIP64900");
-        return (*dip_packages_list);
+        g_list_free (packages_list);
+        packages_list = g_list_append (packages_list, "DIP04300");
+        packages_list = g_list_append (packages_list, "DIP06300");
+        packages_list = g_list_append (packages_list, "DIP08300");
+        packages_list = g_list_append (packages_list, "DIP08400");
+        packages_list = g_list_append (packages_list, "DIP10300");
+        packages_list = g_list_append (packages_list, "DIP14300");
+        packages_list = g_list_append (packages_list, "DIP14400");
+        packages_list = g_list_append (packages_list, "DIP16300");
+        packages_list = g_list_append (packages_list, "DIP16400");
+        packages_list = g_list_append (packages_list, "DIP18300");
+        packages_list = g_list_append (packages_list, "DIP18400");
+        packages_list = g_list_append (packages_list, "DIP20300");
+        packages_list = g_list_append (packages_list, "DIP20400");
+        packages_list = g_list_append (packages_list, "DIP22300");
+        packages_list = g_list_append (packages_list, "DIP22400");
+        packages_list = g_list_append (packages_list, "DIP24300");
+        packages_list = g_list_append (packages_list, "DIP24400");
+        packages_list = g_list_append (packages_list, "DIP24600");
+        packages_list = g_list_append (packages_list, "DIP28300");
+        packages_list = g_list_append (packages_list, "DIP28400");
+        packages_list = g_list_append (packages_list, "DIP28600");
+        packages_list = g_list_append (packages_list, "DIP32300");
+        packages_list = g_list_append (packages_list, "DIP32600");
+        packages_list = g_list_append (packages_list, "DIP36600");
+        packages_list = g_list_append (packages_list, "DIP38600");
+        packages_list = g_list_append (packages_list, "DIP40600");
+        packages_list = g_list_append (packages_list, "DIP42600");
+        packages_list = g_list_append (packages_list, "DIP48600");
+        packages_list = g_list_append (packages_list, "DIP50900");
+        packages_list = g_list_append (packages_list, "DIP52600");
+        packages_list = g_list_append (packages_list, "DIP64900");
+        return (EXIT_SUCCESS);
 }
 
 
