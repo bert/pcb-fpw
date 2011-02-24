@@ -27,7 +27,7 @@
 int dips_create_element ();
 int dips_create_packages_list ();
 int dips_drc ();
-int dips_get_default_footprint_values (gchar *);
+int dips_get_default_footprint_values ();
 #if GUI
 int dips_set_gui_constraints (GtkWidget *);
 #endif /* GUI */
