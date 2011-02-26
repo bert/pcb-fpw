@@ -1,6 +1,6 @@
 /*!
  * \file src/diomelf.h
- * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief Header file for functions for DIOMELF footprints.
  *
  * This program is free software; you can redistribute it and/or modify
@@ -24,7 +24,7 @@
 #define __DIOMELF_INCLUDED__
 
 
-ElementTypePtr diomelf_create_element ();
+int diomelf_create_element ();
 GList diomelf_create_packages_list ();
 int diomelf_drc ();
 int diomelf_get_default_footprint_values (gchar *);
