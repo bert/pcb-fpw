@@ -1,7 +1,7 @@
 /*!
  * \file src/diom.h
  *
- * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for DIOM footprints.
  *
@@ -26,7 +26,7 @@
 #define __DIOM_INCLUDED__
 
 
-ElementTypePtr diom_create_element ();
+int diom_create_element ();
 GList diom_create_packages_list ();
 int diom_drc ();
 int diom_get_default_footprint_values (gchar *);
