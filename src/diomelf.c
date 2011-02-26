@@ -386,29 +386,29 @@ diomelf_create_element ()
  * The data in this list can be used in a combo box to select a
  * pre-defined package.
  *
- * \return a list containing all package names of this footprint type
- * known by pcb-fpw.
+ * \return \c EXIT_SUCCESS when a packages list was created,
+ * \c EXIT_FAILURE when errors were encountered.
  */
-GList
+int
 diomelf_create_packages_list ()
 {
-        GList *diomelf_packages_list = NULL;
-        diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF1911L");
-        diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF1911M");
-        diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF1911N");
-        diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF3414L");
-        diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF3414M");
-        diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF3414N");
-        diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF3515L");
-        diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF3515M");
-        diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF3515N");
-        diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF3516L");
-        diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF3516M");
-        diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF3516N");
-        diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF3520L");
-        diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF3520M");
-        diomelf_packages_list = g_list_append (diomelf_packages_list, "DIOMELF3520N");
-        return (*diomelf_packages_list);
+        g_list_free (packages_list);
+        packages_list = g_list_append (packages_list, "DIOMELF1911L");
+        packages_list = g_list_append (packages_list, "DIOMELF1911M");
+        packages_list = g_list_append (packages_list, "DIOMELF1911N");
+        packages_list = g_list_append (packages_list, "DIOMELF3414L");
+        packages_list = g_list_append (packages_list, "DIOMELF3414M");
+        packages_list = g_list_append (packages_list, "DIOMELF3414N");
+        packages_list = g_list_append (packages_list, "DIOMELF3515L");
+        packages_list = g_list_append (packages_list, "DIOMELF3515M");
+        packages_list = g_list_append (packages_list, "DIOMELF3515N");
+        packages_list = g_list_append (packages_list, "DIOMELF3516L");
+        packages_list = g_list_append (packages_list, "DIOMELF3516M");
+        packages_list = g_list_append (packages_list, "DIOMELF3516N");
+        packages_list = g_list_append (packages_list, "DIOMELF3520L");
+        packages_list = g_list_append (packages_list, "DIOMELF3520M");
+        packages_list = g_list_append (packages_list, "DIOMELF3520N");
+        return (EXIT_SUCCESS);
 }
 
 
