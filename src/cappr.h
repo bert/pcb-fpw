@@ -1,7 +1,7 @@
 /*!
  * \file src/cappr.h
  *
- * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for CAPPR footprints
  *  (Through Hole Polarized Radial Capacitors).
@@ -27,7 +27,7 @@
 #define __CAPPR_INCLUDED__
 
 
-ElementTypePtr cappr_create_element ();
+int cappr_create_element ();
 GList cappr_create_packages_list (GList *capa_packages_list);
 int cappr_drc ();
 int cappr_get_default_footprint_values (gchar *);
