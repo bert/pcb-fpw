@@ -4832,7 +4832,7 @@ bga_set_gui_constraints
 
         /* Widgets on tab "Heel & Toe goals" */
         gui_constraints_disable_heel_and_toe_goals_tab_widgets (widget);
-	return (EXIT_SUCCESS);
+        return (EXIT_SUCCESS);
 }
 #endif /* GUI */
 
