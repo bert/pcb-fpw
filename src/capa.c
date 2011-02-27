@@ -736,9 +736,7 @@ capa_drc ()
  * found, \c EXIT_FAILURE when the footprint name was not found.
  */
 int
-capa_get_default_footprint_values
-(
-        gchar *footprint_name)
+capa_get_default_footprint_values ()
 {
         if (!strcmp (footprint_name, "?CAPA770-380X250"))
         {
