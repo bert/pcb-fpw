@@ -27,7 +27,7 @@
 
 
 int bga_create_element ();
-GList bga_create_packages_list ();
+int bga_create_packages_list ();
 int bga_drc ();
 int bga_get_default_footprint_values (gchar *);
 #if GUI
