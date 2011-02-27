@@ -1,7 +1,7 @@
 /*!
  * \file src/capm.h
  *
- * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for CAPM footprints
  * (Surface Mount Technology Molded Capacitor).
@@ -27,7 +27,7 @@
 #define __CAPM_INCLUDED__
 
 
-ElementTypePtr capm_create_element ();
+int capm_create_element ();
 GList capm_create_packages_list ();
 int capm_drc ();
 int capm_get_default_footprint_values (gchar *);
