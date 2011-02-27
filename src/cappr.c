@@ -447,14 +447,15 @@ cappr_create_element ()
  * The data in this list can be used in a combo box to select a
  * pre-defined package.
  *
- * \return a list containing all package names of this footprint type
- * known by pcb-fpw.
+ * \return \c EXIT_SUCCESS when a packages list was created,
+ * \c EXIT_FAILURE when errors were encountered.
  */
-GList
-cappr_create_packages_list (GList *cappr_packages_list)
+int
+cappr_create_packages_list ()
 {
-        cappr_packages_list = g_list_append (cappr_packages_list, "CAPPR");
-        return (*cappr_packages_list);
+        g_list_free (packages_list);
+        packages_list = g_list_append (packages_list, "CAPPR");
+        return (EXIT_SUCCESS);
 }
 
 

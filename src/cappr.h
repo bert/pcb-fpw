@@ -28,7 +28,7 @@
 
 
 int cappr_create_element ();
-GList cappr_create_packages_list (GList *capa_packages_list);
+int cappr_create_packages_list ();
 int cappr_drc ();
 int cappr_get_default_footprint_values (gchar *);
 #if GUI
