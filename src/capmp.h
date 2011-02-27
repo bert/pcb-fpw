@@ -30,7 +30,7 @@
 int capmp_create_element ();
 int capmp_create_packages_list ();
 int capmp_drc ();
-int capmp_get_default_footprint_values (gchar *);
+int capmp_get_default_footprint_values ();
 #if GUI
 int capmp_set_gui_constraints (GtkWidget *);
 #endif /* GUI */
