@@ -28,7 +28,7 @@
 
 
 int capa_create_element ();
-GList capa_create_packages_list (GList *capa_packages_list);
+int capa_create_packages_list ();
 int capa_drc ();
 int capa_get_default_footprint_values (gchar *);
 #if GUI
