@@ -1,7 +1,7 @@
 /*!
  * \file src/bga.h
  *
- * \author Copyright 2007, 2008, 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for BGA footprints (Ball Gate Array).
  *
@@ -26,7 +26,7 @@
 #define __BGA_INCLUDED__
 
 
-ElementTypePtr bga_create_element ();
+int bga_create_element ();
 GList bga_create_packages_list ();
 int bga_drc ();
 int bga_get_default_footprint_values (gchar *);
