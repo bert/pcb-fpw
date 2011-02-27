@@ -27,7 +27,7 @@
 
 
 int diom_create_element ();
-GList diom_create_packages_list ();
+int diom_create_packages_list ();
 int diom_drc ();
 int diom_get_default_footprint_values (gchar *);
 #if GUI
