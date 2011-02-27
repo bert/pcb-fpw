@@ -1,7 +1,7 @@
 /*!
  * \file src/con_dip.h
  *
- * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for CON-DIP footprints
  * (Dual In line Connector with alternate pin order).
@@ -27,6 +27,7 @@
 #define __CON_DIP_INCLUDED__
 
 
+int con_dip_create_element ();
 GList con_dip_create_packages_list ();
 int con_dip_drc ();
 int con_dip_get_default_footprint_values (gchar *);

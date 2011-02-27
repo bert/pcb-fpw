@@ -30,9 +30,10 @@
 /*!
  * \brief Create an Element for a CON-DIP package.
  *
- * \return the created \c element.
+ * \return \c EXIT_SUCCESS when an element was created,
+ * \c EXIT_FAILURE when errors were encountered.
  */
-ElementTypePtr
+int
 con_dip_create_element ()
 {
         gdouble xmax;
@@ -55,7 +56,7 @@ con_dip_create_element ()
                                 _("could not create a valid element pointer for a %s package."),
                                 footprint_type);
                 }
-                return (NULL);
+                return (EXIT_FAILURE);
         }
         /* Define the center of our universe and guess for a place where to
          * put the element mark */
@@ -352,7 +353,8 @@ con_dip_create_element ()
                         footprint_type,
                         footprint_filename);
         }
-        return (element);
+        current_element = (ElementTypePtr) &element;
+        return (EXIT_SUCCESS);
 }
 
 
