@@ -1,7 +1,7 @@
 /*!
  * \file src/capmp.h
  *
- * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for CAPMP footprints
  * (Surface Mount Technology Molded Polarized Capacitor).
@@ -27,7 +27,7 @@
 #define __CAPMP_INCLUDED__
 
 
-ElementTypePtr capmp_create_element ();
+int capmp_create_element ();
 GList capmp_create_packages_list ();
 int capmp_drc ();
 int capmp_get_default_footprint_values (gchar *);
