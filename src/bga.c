@@ -909,11 +909,7 @@ bga_drc ()
  * found, \c EXIT_FAILURE when the footprint name was not found.
  */
 int
-bga_get_default_footprint_values
-(
-        gchar *footprint_name
-                /*!< : a \c NULL terminated footprint name.*/
-)
+bga_get_default_footprint_values ()
 {
         if (!strcmp (footprint_name, "?BGA100C100P10X10_1100X1100X140"))
         {

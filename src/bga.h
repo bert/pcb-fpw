@@ -29,7 +29,7 @@
 int bga_create_element ();
 int bga_create_packages_list ();
 int bga_drc ();
-int bga_get_default_footprint_values (gchar *);
+int bga_get_default_footprint_values ();
 #if GUI
 int bga_set_gui_constraints (GtkWidget *);
 #endif /* GUI */
