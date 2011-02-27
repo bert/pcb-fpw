@@ -26,6 +26,7 @@
 #define __CON_SIL_INCLUDED__
 
 
+int con_sil_create_element ();
 int con_sil_create_packages_list ();
 int con_sil_drc ();
 int con_sil_get_default_footprint_values (gchar *);
