@@ -29,7 +29,7 @@
 
 int con_hdr_create_packages_list ();
 int con_hdr_drc ();
-int con_hdr_get_default_footprint_values (gchar *);
+int con_hdr_get_default_footprint_values ();
 #if GUI
 int con_hdr_set_gui_constraints (GtkWidget *);
 #endif /* GUI */
