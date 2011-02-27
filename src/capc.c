@@ -300,58 +300,58 @@ capc_create_element ()
  * The data in this list can be used in a combobox to select a
  * pre-defined package.
  *
- * \return a list containing all package names of this footprint type
- * known by pcb-fpw.
+ * \return \c EXIT_SUCCESS when a packages list was created,
+ * \c EXIT_FAILURE when errors were encountered.
  */
-GList
+int
 capc_create_packages_list ()
 {
-        GList *capc_packages_list = NULL;
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC0603X33N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC0816X61N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC1005X55N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC1005X56N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC1005X60N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC1220X107N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC1320X76N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC1508X65N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC1608X55N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC1608X86N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC1608X87N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC1608X90N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC1608X92N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC1608X95N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC1632X76N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC1632X168N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC2012X100N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC2012X100AN");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC2012X120N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC2012X127N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC2012X130N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC2012X135N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC2012X140N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC2012X145N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC2012X145AN");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC2012X70N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC2012X71N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC2012X88N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC2012X90N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC2012X94N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC2012X95N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC2013X140N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC3215X168N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC3216X105N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC3216X125N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC3216X127N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC3216X130N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC3216X130AN");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC3216X140N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC3216X152N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC3216X175N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC3216X178N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC3216X180N");
-        capc_packages_list = g_list_append (capc_packages_list, "CAPC3216X105L");
-        return (*capc_packages_list);
+        g_list_free (packages_list);
+        packages_list = g_list_append (packages_list, "CAPC0603X33N");
+        packages_list = g_list_append (packages_list, "CAPC0816X61N");
+        packages_list = g_list_append (packages_list, "CAPC1005X55N");
+        packages_list = g_list_append (packages_list, "CAPC1005X56N");
+        packages_list = g_list_append (packages_list, "CAPC1005X60N");
+        packages_list = g_list_append (packages_list, "CAPC1220X107N");
+        packages_list = g_list_append (packages_list, "CAPC1320X76N");
+        packages_list = g_list_append (packages_list, "CAPC1508X65N");
+        packages_list = g_list_append (packages_list, "CAPC1608X55N");
+        packages_list = g_list_append (packages_list, "CAPC1608X86N");
+        packages_list = g_list_append (packages_list, "CAPC1608X87N");
+        packages_list = g_list_append (packages_list, "CAPC1608X90N");
+        packages_list = g_list_append (packages_list, "CAPC1608X92N");
+        packages_list = g_list_append (packages_list, "CAPC1608X95N");
+        packages_list = g_list_append (packages_list, "CAPC1632X76N");
+        packages_list = g_list_append (packages_list, "CAPC1632X168N");
+        packages_list = g_list_append (packages_list, "CAPC2012X100N");
+        packages_list = g_list_append (packages_list, "CAPC2012X100AN");
+        packages_list = g_list_append (packages_list, "CAPC2012X120N");
+        packages_list = g_list_append (packages_list, "CAPC2012X127N");
+        packages_list = g_list_append (packages_list, "CAPC2012X130N");
+        packages_list = g_list_append (packages_list, "CAPC2012X135N");
+        packages_list = g_list_append (packages_list, "CAPC2012X140N");
+        packages_list = g_list_append (packages_list, "CAPC2012X145N");
+        packages_list = g_list_append (packages_list, "CAPC2012X145AN");
+        packages_list = g_list_append (packages_list, "CAPC2012X70N");
+        packages_list = g_list_append (packages_list, "CAPC2012X71N");
+        packages_list = g_list_append (packages_list, "CAPC2012X88N");
+        packages_list = g_list_append (packages_list, "CAPC2012X90N");
+        packages_list = g_list_append (packages_list, "CAPC2012X94N");
+        packages_list = g_list_append (packages_list, "CAPC2012X95N");
+        packages_list = g_list_append (packages_list, "CAPC2013X140N");
+        packages_list = g_list_append (packages_list, "CAPC3215X168N");
+        packages_list = g_list_append (packages_list, "CAPC3216X105N");
+        packages_list = g_list_append (packages_list, "CAPC3216X125N");
+        packages_list = g_list_append (packages_list, "CAPC3216X127N");
+        packages_list = g_list_append (packages_list, "CAPC3216X130N");
+        packages_list = g_list_append (packages_list, "CAPC3216X130AN");
+        packages_list = g_list_append (packages_list, "CAPC3216X140N");
+        packages_list = g_list_append (packages_list, "CAPC3216X152N");
+        packages_list = g_list_append (packages_list, "CAPC3216X175N");
+        packages_list = g_list_append (packages_list, "CAPC3216X178N");
+        packages_list = g_list_append (packages_list, "CAPC3216X180N");
+        packages_list = g_list_append (packages_list, "CAPC3216X105L");
+        return (EXIT_SUCCESS);
 }
 
 

@@ -28,7 +28,7 @@
 
 
 int capc_create_element ();
-GList capc_create_packages_list ();
+int capc_create_packages_list ();
 int capc_drc ();
 int capc_get_default_footprint_values (gchar *);
 #if GUI
