@@ -1,7 +1,7 @@
 /*!
  * \file src/capa.h
  *
- * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for CAPA footprints
  *  (Through Hole Non-Polarized Axial Capacitors).
@@ -27,7 +27,7 @@
 #define __CAPA_INCLUDED__
 
 
-ElementTypePtr capa_create_element ();
+int capa_create_element ();
 GList capa_create_packages_list (GList *capa_packages_list);
 int capa_drc ();
 int capa_get_default_footprint_values (gchar *);
