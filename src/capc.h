@@ -1,7 +1,7 @@
 /*!
  * \file src/capc.h
  *
- * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for CAPC footprints
  * (Surface Mount Technology Chip Capacitor).
@@ -27,7 +27,7 @@
 #define __CAPC_INCLUDED__
 
 
-ElementTypePtr capc_create_element ();
+int capc_create_element ();
 GList capc_create_packages_list ();
 int capc_drc ();
 int capc_get_default_footprint_values (gchar *);
