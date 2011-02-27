@@ -30,7 +30,7 @@
 int capc_create_element ();
 int capc_create_packages_list ();
 int capc_drc ();
-int capc_get_default_footprint_values (gchar *);
+int capc_get_default_footprint_values ();
 #if GUI
 int capc_set_gui_constraints (GtkWidget *);
 #endif /* GUI */

@@ -715,11 +715,7 @@ capc_drc ()
  * \c EXIT_FAILURE when the footprint name was not found.
  */
 int
-capc_get_default_footprint_values
-(
-        gchar *footprint_name
-                /*!< : a \c NULL terminated footprint name.*/
-)
+capc_get_default_footprint_values ()
 {
         if (!strcmp (footprint_name, "?CAPC0603X33N"))
         {
