@@ -1,7 +1,7 @@
 /*!
  * \file src/con_sil.h
  *
- * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for CON-SIL (connector) footprints.
  *
@@ -26,7 +26,7 @@
 #define __CON_SIL_INCLUDED__
 
 
-GList con_sil_create_packages_list ();
+int con_sil_create_packages_list ();
 int con_sil_drc ();
 int con_sil_get_default_footprint_values (gchar *);
 #if GUI

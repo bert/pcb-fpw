@@ -318,66 +318,66 @@ con_sil_create_element ()
  * The data in this list can be used in a combo box to select a
  * pre-defined package.
  *
- * \return a list containing all package names of this footprint type
- * known by pcb-fpw.
+ * \return \c EXIT_SUCCESS when a packages list was created,
+ * \c EXIT_FAILURE when errors were encountered.
  */
-GList
+int
 con_sil_create_packages_list ()
 {
-        GList *con_sil_packages_list = NULL;
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-2N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-3N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-4N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-5N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-6N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-7N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-8N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-9N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-10N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-12N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-20N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-24N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-31N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-36N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-40N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-127P-50N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-2N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-3N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-4N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-5N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-6N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-7N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-8N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-9N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-10N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-12N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-20N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-24N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-31N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-36N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-40N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-254P-50N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-350P-2N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-350P-3N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-350P-4N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-350P-5N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-350P-6N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-350P-7N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-350P-8N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-350P-10N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-350P-12N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-508P-2N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-508P-3N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-508P-4N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-508P-5N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-508P-6N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-508P-7N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-508P-8N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-508P-9N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-508P-10N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-508P-12N");
-        con_sil_packages_list = g_list_append (con_sil_packages_list, "CON_SIL-508P-24N");
-        return (*con_sil_packages_list);
+        g_list_free (packages_list);
+        packages_list = g_list_append (packages_list, "CON_SIL-127P-2N");
+        packages_list = g_list_append (packages_list, "CON_SIL-127P-3N");
+        packages_list = g_list_append (packages_list, "CON_SIL-127P-4N");
+        packages_list = g_list_append (packages_list, "CON_SIL-127P-5N");
+        packages_list = g_list_append (packages_list, "CON_SIL-127P-6N");
+        packages_list = g_list_append (packages_list, "CON_SIL-127P-7N");
+        packages_list = g_list_append (packages_list, "CON_SIL-127P-8N");
+        packages_list = g_list_append (packages_list, "CON_SIL-127P-9N");
+        packages_list = g_list_append (packages_list, "CON_SIL-127P-10N");
+        packages_list = g_list_append (packages_list, "CON_SIL-127P-12N");
+        packages_list = g_list_append (packages_list, "CON_SIL-127P-20N");
+        packages_list = g_list_append (packages_list, "CON_SIL-254P-24N");
+        packages_list = g_list_append (packages_list, "CON_SIL-127P-31N");
+        packages_list = g_list_append (packages_list, "CON_SIL-127P-36N");
+        packages_list = g_list_append (packages_list, "CON_SIL-127P-40N");
+        packages_list = g_list_append (packages_list, "CON_SIL-127P-50N");
+        packages_list = g_list_append (packages_list, "CON_SIL-254P-2N");
+        packages_list = g_list_append (packages_list, "CON_SIL-254P-3N");
+        packages_list = g_list_append (packages_list, "CON_SIL-254P-4N");
+        packages_list = g_list_append (packages_list, "CON_SIL-254P-5N");
+        packages_list = g_list_append (packages_list, "CON_SIL-254P-6N");
+        packages_list = g_list_append (packages_list, "CON_SIL-254P-7N");
+        packages_list = g_list_append (packages_list, "CON_SIL-254P-8N");
+        packages_list = g_list_append (packages_list, "CON_SIL-254P-9N");
+        packages_list = g_list_append (packages_list, "CON_SIL-254P-10N");
+        packages_list = g_list_append (packages_list, "CON_SIL-254P-12N");
+        packages_list = g_list_append (packages_list, "CON_SIL-254P-20N");
+        packages_list = g_list_append (packages_list, "CON_SIL-254P-24N");
+        packages_list = g_list_append (packages_list, "CON_SIL-254P-31N");
+        packages_list = g_list_append (packages_list, "CON_SIL-254P-36N");
+        packages_list = g_list_append (packages_list, "CON_SIL-254P-40N");
+        packages_list = g_list_append (packages_list, "CON_SIL-254P-50N");
+        packages_list = g_list_append (packages_list, "CON_SIL-350P-2N");
+        packages_list = g_list_append (packages_list, "CON_SIL-350P-3N");
+        packages_list = g_list_append (packages_list, "CON_SIL-350P-4N");
+        packages_list = g_list_append (packages_list, "CON_SIL-350P-5N");
+        packages_list = g_list_append (packages_list, "CON_SIL-350P-6N");
+        packages_list = g_list_append (packages_list, "CON_SIL-350P-7N");
+        packages_list = g_list_append (packages_list, "CON_SIL-350P-8N");
+        packages_list = g_list_append (packages_list, "CON_SIL-350P-10N");
+        packages_list = g_list_append (packages_list, "CON_SIL-350P-12N");
+        packages_list = g_list_append (packages_list, "CON_SIL-508P-2N");
+        packages_list = g_list_append (packages_list, "CON_SIL-508P-3N");
+        packages_list = g_list_append (packages_list, "CON_SIL-508P-4N");
+        packages_list = g_list_append (packages_list, "CON_SIL-508P-5N");
+        packages_list = g_list_append (packages_list, "CON_SIL-508P-6N");
+        packages_list = g_list_append (packages_list, "CON_SIL-508P-7N");
+        packages_list = g_list_append (packages_list, "CON_SIL-508P-8N");
+        packages_list = g_list_append (packages_list, "CON_SIL-508P-9N");
+        packages_list = g_list_append (packages_list, "CON_SIL-508P-10N");
+        packages_list = g_list_append (packages_list, "CON_SIL-508P-12N");
+        packages_list = g_list_append (packages_list, "CON_SIL-508P-24N");
+        return (EXIT_SUCCESS);
 }
 
 
