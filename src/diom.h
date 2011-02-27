@@ -29,7 +29,7 @@
 int diom_create_element ();
 int diom_create_packages_list ();
 int diom_drc ();
-int diom_get_default_footprint_values (gchar *);
+int diom_get_default_footprint_values ();
 #if GUI
 int diom_set_gui_constraints (GtkWidget *);
 #endif /* GUI */
