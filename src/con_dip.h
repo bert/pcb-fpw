@@ -30,7 +30,7 @@
 int con_dip_create_element ();
 int con_dip_create_packages_list ();
 int con_dip_drc ();
-int con_dip_get_default_footprint_values (gchar *);
+int con_dip_get_default_footprint_values ();
 #if GUI
 int con_dip_set_gui_constraints (GtkWidget *);
 #endif /* GUI */

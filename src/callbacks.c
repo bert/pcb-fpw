@@ -2604,7 +2604,7 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
                         }
                         case CON_DIP:
                         {
-                                if (con_dip_get_default_footprint_values (footprint_name) == EXIT_SUCCESS)
+                                if (con_dip_get_default_footprint_values () == EXIT_SUCCESS)
                                         all_entries_need_updated (GTK_WIDGET (editable));
                                 return;
                         }
