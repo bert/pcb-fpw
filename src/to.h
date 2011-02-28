@@ -31,7 +31,7 @@ int to_create_element_to92_staggered ();
 int to_create_packages_list ();
 int to_get_default_footprint_values ();
 #if GUI
-int to_set_gui_constraints (GtkWidget *);
+int to_set_gui_constraints ();
 #endif /* GUI */
 int to_write_footprint_to220 ();
 int to_write_footprint_to220_staggered ();

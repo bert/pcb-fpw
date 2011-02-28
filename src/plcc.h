@@ -31,7 +31,7 @@ int plcc_create_packages_list ();
 int plcc_drc ();
 int plcc_get_default_footprint_values ();
 #if GUI
-int plcc_set_gui_constraints (GtkWidget *);
+int plcc_set_gui_constraints ();
 #endif /* GUI */
 int plcc_write_footprint ();
 void plcc_init ();

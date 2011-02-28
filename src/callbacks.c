@@ -2849,126 +2849,127 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                                 _("determined the package type (%d) for footprint type %s successfull."),
                                 package_type, footprint_type);
         }
+        widget = GTK_WIDGET (combobox);
         switch (package_type)
         {
                 case BGA:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        bga_set_gui_constraints (GTK_WIDGET (combobox));
+                        bga_set_gui_constraints ();
                         break;
                 }
                 case CAPA:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        capa_set_gui_constraints (GTK_WIDGET (combobox));
+                        capa_set_gui_constraints ();
                         break;
                 }
                 case CAPC:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        capc_set_gui_constraints (GTK_WIDGET (combobox));
+                        capc_set_gui_constraints ();
                         break;
                 }
                 case CAPM:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        capm_set_gui_constraints (GTK_WIDGET (combobox));
+                        capm_set_gui_constraints ();
                         break;
                 }
                 case CAPMP:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        capmp_set_gui_constraints (GTK_WIDGET (combobox));
+                        capmp_set_gui_constraints ();
                         break;
                 }
                 case CAPPR:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        cappr_set_gui_constraints (GTK_WIDGET (combobox));
+                        cappr_set_gui_constraints ();
                         break;
                 }
                 case CON_DIL:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        con_dil_set_gui_constraints (GTK_WIDGET (combobox));
+                        con_dil_set_gui_constraints ();
                         break;
                 }
                 case CON_DIP:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        con_dip_set_gui_constraints (GTK_WIDGET (combobox));
+                        con_dip_set_gui_constraints ();
                         break;
                 }
                 case CON_HDR:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        con_hdr_set_gui_constraints (GTK_WIDGET (combobox));
+                        con_hdr_set_gui_constraints ();
                         break;
                 }
                 case CON_SIL:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        con_sil_set_gui_constraints (GTK_WIDGET (combobox));
+                        con_sil_set_gui_constraints ();
                         break;
                 }
                 case DIL:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        dip_set_gui_constraints (GTK_WIDGET (combobox));
+                        dip_set_gui_constraints ();
                         break;
                 }
                 case DIOM:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        diom_set_gui_constraints (GTK_WIDGET (combobox));
+                        diom_set_gui_constraints ();
                         break;
                 }
                 case DIOMELF:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        diomelf_set_gui_constraints (GTK_WIDGET (combobox));
+                        diomelf_set_gui_constraints ();
                         break;
                 }
                 case DIP:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        dip_set_gui_constraints (GTK_WIDGET (combobox));
+                        dip_set_gui_constraints ();
                         break;
                 }
                 case DIPS:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        dips_set_gui_constraints (GTK_WIDGET (combobox));
+                        dips_set_gui_constraints ();
                         break;
                 }
                 case INDC:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        indc_set_gui_constraints (GTK_WIDGET (combobox));
+                        indc_set_gui_constraints ();
                         break;
                 }
                 case INDM:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        indm_set_gui_constraints (GTK_WIDGET (combobox));
+                        indm_set_gui_constraints ();
                         break;
                 }
                 case INDP:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        indp_set_gui_constraints (GTK_WIDGET (combobox));
+                        indp_set_gui_constraints ();
                         break;
                 }
                 case PGA:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        pga_set_gui_constraints (GTK_WIDGET (combobox));
+                        pga_set_gui_constraints ();
                         break;
                 }
                 case PLCC:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        plcc_set_gui_constraints (GTK_WIDGET (combobox));
+                        plcc_set_gui_constraints ();
                         break;
                 }
                 case QFN:
@@ -2988,37 +2989,37 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                 case RES:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        res_set_gui_constraints (GTK_WIDGET (combobox));
+                        res_set_gui_constraints ();
                         break;
                 }
                 case RESC:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        resc_set_gui_constraints (GTK_WIDGET (combobox));
+                        resc_set_gui_constraints ();
                         break;
                 }
                 case RESM:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        resm_set_gui_constraints (GTK_WIDGET (combobox));
+                        resm_set_gui_constraints ();
                         break;
                 }
                 case RESMELF:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        resmelf_set_gui_constraints (GTK_WIDGET (combobox));
+                        resmelf_set_gui_constraints ();
                         break;
                 }
                 case SIL:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        sil_set_gui_constraints (GTK_WIDGET (combobox));
+                        sil_set_gui_constraints ();
                         break;
                 }
                 case SIP:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        sip_set_gui_constraints (GTK_WIDGET (combobox));
+                        sip_set_gui_constraints ();
                         break;
                 }
                 case SO:
@@ -3031,37 +3032,37 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                 case SOT:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        sot_set_gui_constraints (GTK_WIDGET (combobox));
+                        sot_set_gui_constraints ();
                         break;
                 }
                 case TO92:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        to_set_gui_constraints (GTK_WIDGET (combobox));
+                        to_set_gui_constraints ();
                         break;
                 }
                 case TO220:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        to_set_gui_constraints (GTK_WIDGET (combobox));
+                        to_set_gui_constraints ();
                         break;
                 }
                 case TO220S:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        to_set_gui_constraints (GTK_WIDGET (combobox));
+                        to_set_gui_constraints ();
                         break;
                 }
                 case TO220SW:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        to_set_gui_constraints (GTK_WIDGET (combobox));
+                        to_set_gui_constraints ();
                         break;
                 }
                 case TO220W:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
-                        to_set_gui_constraints (GTK_WIDGET (combobox));
+                        to_set_gui_constraints ();
                         break;
                 }
                 default:

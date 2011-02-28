@@ -31,7 +31,7 @@ int diom_create_packages_list ();
 int diom_drc ();
 int diom_get_default_footprint_values ();
 #if GUI
-int diom_set_gui_constraints (GtkWidget *);
+int diom_set_gui_constraints ();
 #endif /* GUI */
 int diom_write_footprint ();
 void diom_init ();

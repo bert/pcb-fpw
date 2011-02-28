@@ -32,7 +32,7 @@ int con_dil_create_packages_list ();
 int con_dil_drc ();
 int con_dil_get_default_footprint_values ();
 #if GUI
-int con_dil_set_gui_constraints (GtkWidget *);
+int con_dil_set_gui_constraints ();
 #endif /* GUI */
 int con_dil_write_footprint ();
 void con_dil_init ();

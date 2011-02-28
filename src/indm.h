@@ -31,7 +31,7 @@ int indm_create_packages_list ();
 int indm_drc ();
 int indm_get_default_footprint_values ();
 #if GUI
-int indm_set_gui_constraints (GtkWidget *);
+int indm_set_gui_constraints ();
 #endif /* GUI */
 int indm_write_footprint ();
 void indm_init ();

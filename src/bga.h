@@ -31,7 +31,7 @@ int bga_create_packages_list ();
 int bga_drc ();
 int bga_get_default_footprint_values ();
 #if GUI
-int bga_set_gui_constraints (GtkWidget *);
+int bga_set_gui_constraints ();
 #endif /* GUI */
 int bga_write_footprint ();
 void bga_init ();

@@ -32,7 +32,7 @@ int cappr_create_packages_list ();
 int cappr_drc ();
 int cappr_get_default_footprint_values ();
 #if GUI
-int cappr_set_gui_constraints (GtkWidget *);
+int cappr_set_gui_constraints ();
 #endif /* GUI */
 int cappr_write_footprint ();
 void cappr_init ();

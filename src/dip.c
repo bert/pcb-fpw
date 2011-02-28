@@ -1724,7 +1724,7 @@ dip_get_default_footprint_values ()
  */
 #if GUI
 int
-dip_set_gui_constraints (GtkWidget *widget)
+dip_set_gui_constraints ()
 {
         /* Widgets on tab 1 "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),

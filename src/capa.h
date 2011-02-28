@@ -32,7 +32,7 @@ int capa_create_packages_list ();
 int capa_drc ();
 int capa_get_default_footprint_values ();
 #if GUI
-int capa_set_gui_constraints (GtkWidget *);
+int capa_set_gui_constraints ();
 #endif /* GUI */
 int capa_write_footprint ();
 void capa_init ();

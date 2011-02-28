@@ -32,7 +32,7 @@ int capc_create_packages_list ();
 int capc_drc ();
 int capc_get_default_footprint_values ();
 #if GUI
-int capc_set_gui_constraints (GtkWidget *);
+int capc_set_gui_constraints ();
 #endif /* GUI */
 int capc_write_footprint ();
 void capc_init ();

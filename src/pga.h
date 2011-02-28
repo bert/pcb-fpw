@@ -31,7 +31,7 @@ int pga_create_packages_list ();
 int pga_drc ();
 int pga_get_default_footprint_values ();
 #if GUI
-int pga_set_gui_constraints (GtkWidget *);
+int pga_set_gui_constraints ();
 #endif /* GUI */
 int pga_write_footprint ();
 void pga_init ();

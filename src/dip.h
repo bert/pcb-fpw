@@ -29,7 +29,7 @@ int dip_create_packages_list ();
 int dip_drc ();
 int dip_get_default_footprint_values ();
 #if GUI
-int dip_set_gui_constraints (GtkWidget *);
+int dip_set_gui_constraints ();
 #endif /* GUI */
 int dip_write_footprint ();
 void dip_init ();

@@ -31,7 +31,7 @@ int res_create_packages_list ();
 int res_drc ();
 int res_get_default_footprint_values ();
 #if GUI
-int res_set_gui_constraints (GtkWidget *widget);
+int res_set_gui_constraints ();
 #endif /* GUI */
 int res_write_footprint ();
 void res_init ();

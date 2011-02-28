@@ -31,7 +31,7 @@ int resm_create_packages_list ();
 int resm_drc ();
 int resm_get_default_footprint_values ();
 #if GUI
-int resm_set_gui_constraints (GtkWidget *);
+int resm_set_gui_constraints ();
 #endif /* GUI */
 int resm_write_footprint ();
 void resm_init ();

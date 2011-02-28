@@ -2730,12 +2730,7 @@ capc_get_default_footprint_values ()
  */
 #if GUI
 int
-capc_set_gui_constraints
-(
-        GtkWidget *widget
-                /*!< : is the caller widget.*/
-
-)
+capc_set_gui_constraints ()
 {
         /* Widgets on tab "Footprint" */
         GtkWidget *package_is_radial_checkbutton = lookup_widget (GTK_WIDGET (widget),

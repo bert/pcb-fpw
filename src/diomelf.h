@@ -29,7 +29,7 @@ int diomelf_create_packages_list ();
 int diomelf_drc ();
 int diomelf_get_default_footprint_values ();
 #if GUI
-int diomelf_set_gui_constraints (GtkWidget *);
+int diomelf_set_gui_constraints ();
 #endif /* GUI */
 int diomelf_write_footprint ();
 void diomelf_init ();

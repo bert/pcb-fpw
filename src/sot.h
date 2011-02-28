@@ -32,7 +32,7 @@ int sot_create_fpw_files_from_packages_list ();
 int sot_drc ();
 int sot_get_default_footprint_values ();
 #if GUI
-int sot_set_gui_constraints (GtkWidget *);
+int sot_set_gui_constraints ();
 #endif /* GUI */
 int sot_write_footprint ();
 void sot_init ();

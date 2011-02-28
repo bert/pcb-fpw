@@ -31,7 +31,7 @@ int sil_create_packages_list ();
 int sil_drc ();
 int sil_get_default_footprint_values ();
 #if GUI
-int sil_set_gui_constraints (GtkWidget *);
+int sil_set_gui_constraints ();
 #endif /* GUI */
 int sil_write_footprint ();
 void sil_init ();

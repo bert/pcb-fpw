@@ -32,7 +32,7 @@ int capmp_create_packages_list ();
 int capmp_drc ();
 int capmp_get_default_footprint_values ();
 #if GUI
-int capmp_set_gui_constraints (GtkWidget *);
+int capmp_set_gui_constraints ();
 #endif /* GUI */
 int capmp_write_footprint ();
 void capmp_init ();
