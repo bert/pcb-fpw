@@ -38,6 +38,7 @@
 #include <gtk/gtk.h>
 #include <stdlib.h>
 #include <math.h>
+#include <string.h>
 
 #include "globals.h"
 #include "pcb_globals.h"
