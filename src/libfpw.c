@@ -161,7 +161,7 @@ create_new_arc
                                 _("out of memory during realloc() in create_new_arc()."));
                 arc = realloc (arc, element->ArcMax * sizeof (ArcType));
                 element->Arc = arc;
-                memset (arc + element->ArcN, 0, 5 * sizeof (ArcType));
+                memset ((arc + element->ArcN), 0, (5 * sizeof (ArcType)));
         }
         /* Set Delta (0,360], StartAngle in [0,360). */
         if ((delta = delta % 360) == 0)
