@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcb-fpw\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-15 22:17+0100\n"
-"PO-Revision-Date: 2011-01-16 22:01+0100\n"
+"POT-Creation-Date: 2011-03-01 07:42+0100\n"
+"PO-Revision-Date: 2011-03-01 07:50+0100\n"
 "Last-Translator: Bert Timmerman <bert.timmerman@xs4all.nl>\n"
 "Language-Team: Dutch <du@li.org>\n"
 "Language: \n"
@@ -23,8 +23,8 @@ msgid "pcb-gfpw"
 msgstr "pcb-gfpw"
 
 #: src/interface.c:45
-msgid "(C) 2007, 2008, 2009, 2010 Bert Timmerman."
-msgstr "(C) 2007, 2008, 2009, 2010 Bert Timmerman."
+msgid "(C) 2007, 2008, 2009, 2010, 2011 Bert Timmerman."
+msgstr "(C) 2007, 2008, 2009, 2010, 2011 Bert Timmerman."
 
 #: src/interface.c:46
 msgid ""
@@ -886,14 +886,14 @@ msgstr "FOUT: kan Footprintwizard bestand %s niet lezen."
 
 #: src/callbacks.c:2453
 #: src/callbacks.c:2546
-#: src/callbacks.c:3918
+#: src/callbacks.c:3925
 #, c-format
 msgid "ERROR: footprint name not initialised (null pointer)."
 msgstr "FOUT: elementnaam niet ge-initialiseerd (null pointer)."
 
 #: src/callbacks.c:2462
 #: src/callbacks.c:2555
-#: src/callbacks.c:3927
+#: src/callbacks.c:3934
 #, c-format
 msgid "ERROR: footprint name contains an empty string."
 msgstr "FOUT: elementnaam bevat een lege text,"
@@ -908,85 +908,85 @@ msgstr "Element %s naar bestand geschreven."
 msgid "ERROR: Unable to write footprint %s to file."
 msgstr "FOUT: kan element bestand %s niet schrijven."
 
-#: src/callbacks.c:2721
-#: src/callbacks.c:3063
+#: src/callbacks.c:2727
+#: src/callbacks.c:3070
 #, c-format
 msgid "ERROR: unknown or not yet implemented footprint type entered."
 msgstr "FOUT: onbekend of nog niet ge-implementeerd element type ingevoerd."
 
-#: src/callbacks.c:2778
+#: src/callbacks.c:2784
 #, c-format
 msgid "footprint status contains an unknown status type."
 msgstr "element status bevat een onbekend statustype."
 
-#: src/callbacks.c:2785
+#: src/callbacks.c:2791
 #, c-format
 msgid "determined the status type successfull."
 msgstr "het status type is succesvol vastgesteld."
 
-#: src/callbacks.c:2835
-#: src/libfpw.c:895
+#: src/callbacks.c:2841
+#: src/libfpw.c:899
 #, c-format
 msgid "footprint type contains an unknown package type."
 msgstr "element type bevat een onbekend behuizing type."
 
-#: src/callbacks.c:2843
+#: src/callbacks.c:2849
 #, c-format
 msgid "determined the package type (%d) for footprint type %s successfull."
 msgstr "het behuizing type (%d) voor element type %s is succesvol vastgesteld."
 
-#: src/callbacks.c:2971
+#: src/callbacks.c:2978
 #, c-format
 msgid "ERROR: footprint type QFN is not yet implemented."
 msgstr "FOUT: elementtype QFN is nog niet ge-implementeerd."
 
-#: src/callbacks.c:2978
+#: src/callbacks.c:2985
 #, c-format
 msgid "ERROR: footprint type QFP is not yet implemented."
 msgstr "FOUT: elementtype QFP is nog niet ge-implementeerd."
 
-#: src/callbacks.c:3021
+#: src/callbacks.c:3028
 #, c-format
 msgid "ERROR: footprint type SO is not yet implemented."
 msgstr "FOUT: elementtype SO is nog niet ge-implementeerd."
 
-#: src/callbacks.c:3096
+#: src/callbacks.c:3103
 #, c-format
 msgid "ERROR: footprint units not initialised (null pointer)."
 msgstr "FOUT: elementeenheden is niet ge-initialiseerd (null pointer)."
 
-#: src/callbacks.c:3105
+#: src/callbacks.c:3112
 #, c-format
 msgid "ERROR: footprint units contains an empty string."
 msgstr "FOUT: elementeenheden bevat een lege text,"
 
-#: src/callbacks.c:3112
+#: src/callbacks.c:3119
 #, c-format
 msgid "ERROR: footprint units contains an unknown units type."
 msgstr "FOUT: elementeenheden bevat een onbekende eenheidtype."
 
-#: src/callbacks.c:3514
+#: src/callbacks.c:3521
 #, c-format
 msgid "ERROR: pad shape not initialised (null pointer)."
 msgstr "FOUT: padvorm is niet ge-initialiseerd (null pointer)."
 
-#: src/callbacks.c:3523
+#: src/callbacks.c:3530
 #, c-format
 msgid "ERROR: pad shape contains an empty string."
 msgstr "FOUT: padvorm bevat een lege text,"
 
-#: src/callbacks.c:3530
+#: src/callbacks.c:3537
 #, c-format
 msgid "ERROR: pad shape contains an unknown pad shape type."
 msgstr "FOUT: pad vorm bevat een onbekend padvorm type."
 
-#: src/callbacks.c:3672
+#: src/callbacks.c:3679
 #, c-format
 msgid "Number of rows or columns is 0."
 msgstr "Aantal rijen of kolommen is 0."
 
-#: src/callbacks.c:3985
-#: src/sot.c:528
+#: src/callbacks.c:3992
+#: src/sot.c:529
 #, c-format
 msgid "ERROR: Unable to write footprintwizard file %s."
 msgstr "FOUT: kan Footprintwizard bestand %s niet schrijven."
@@ -1008,20 +1008,25 @@ msgstr ""
 
 #: src/fpw.c:94
 #, c-format
-msgid "(C) 2007, 2008, 2009, 2010 by Bert Timmerman.\n"
-msgstr "(C) 2007, 2008, 2009, 2010 door Bert Timmerman.\n"
+msgid "(C) 2007, 2008, 2009, 2010, 2011 by Bert Timmerman.\n"
+msgstr "(C) 2007, 2008, 2009, 2010, 2011 door Bert Timmerman.\n"
 
 #: src/fpw.c:95
 #, c-format
-msgid "This is free software; see the source for copying conditions.\n"
-msgstr "Dit is vrije programmatuur; zie de bronbestanden voor kopieer omstandigheden.\n"
+msgid "This free software is released under the GPL v2 license;\n"
+msgstr "Deze vrije software is vrijgegeven onder de GPL v2 licentie;\n"
 
 #: src/fpw.c:96
+#, c-format
+msgid "see the source for copying conditions.\n"
+msgstr "zie de bronbestanden voor kopieer omstandigheden.\n"
+
+#: src/fpw.c:97
 #, c-format
 msgid "There is NO warranty; not even for MERCHANTABILITY\n"
 msgstr "Er wordt GEEN garantie gegeven; zelfs niet voor VERHANDELBAARHEID\n"
 
-#: src/fpw.c:97
+#: src/fpw.c:98
 #, c-format
 msgid ""
 "or FITNESS FOR A PARTICULAR PURPOSE.\n"
@@ -1030,7 +1035,7 @@ msgstr ""
 "of GESCHIKTHEID VOOR EEN BEPAALD DOELEINDE.\n"
 "\n"
 
-#: src/fpw.c:110
+#: src/fpw.c:111
 #, c-format
 msgid ""
 "\n"
@@ -1039,17 +1044,17 @@ msgstr ""
 "\n"
 "fpw gebruik en opties:\n"
 
-#: src/fpw.c:111
+#: src/fpw.c:112
 #, c-format
 msgid "\t --help \n"
 msgstr "\t --help \n"
 
-#: src/fpw.c:112
+#: src/fpw.c:113
 #, c-format
 msgid "\t -? \n"
 msgstr "\t -? \n"
 
-#: src/fpw.c:113
+#: src/fpw.c:114
 #, c-format
 msgid ""
 "\t -h        : print this help message and exit.\n"
@@ -1058,12 +1063,12 @@ msgstr ""
 "\t -h        : druk dit hulp bericht af en sluit het programma af.\n"
 "\n"
 
-#: src/fpw.c:114
+#: src/fpw.c:115
 #, c-format
 msgid "\t --verbose \n"
 msgstr "\t --verbose \n"
 
-#: src/fpw.c:115
+#: src/fpw.c:116
 #, c-format
 msgid ""
 "\t -v        : log messages, be verbose.\n"
@@ -1072,17 +1077,17 @@ msgstr ""
 "\t -v        : log bericht, wees uitvoerig.\n"
 "\n"
 
-#: src/fpw.c:116
+#: src/fpw.c:117
 #, c-format
 msgid "\t --silent \n"
 msgstr "\t --silent \n"
 
-#: src/fpw.c:117
+#: src/fpw.c:118
 #, c-format
 msgid "\t --quiet \n"
 msgstr "\t --quiet \n"
 
-#: src/fpw.c:118
+#: src/fpw.c:119
 #, c-format
 msgid ""
 "\t -q        : do not log messages, overrides --verbose.\n"
@@ -1091,12 +1096,12 @@ msgstr ""
 "\t -q        : geen log berichten, overtref --verbose.\n"
 "\n"
 
-#: src/fpw.c:119
+#: src/fpw.c:120
 #, c-format
 msgid "\t --version \n"
 msgstr "\t --versie \n"
 
-#: src/fpw.c:120
+#: src/fpw.c:121
 #, c-format
 msgid ""
 "\t -V        : print the version information and exit.\n"
@@ -1105,12 +1110,12 @@ msgstr ""
 "\t -V        : druk de versie informatie af en sluit het programma af.\n"
 "\n"
 
-#: src/fpw.c:121
+#: src/fpw.c:122
 #, c-format
 msgid "\t --format <fpw_footprintwizard filename> \n"
 msgstr "\t --format <fpw_footprintwizard bestandnaam> \n"
 
-#: src/fpw.c:122
+#: src/fpw.c:123
 #, c-format
 msgid ""
 "\t -f <fpw_footprintwizard filename>\n"
@@ -1119,12 +1124,12 @@ msgstr ""
 "\t -f <fpw_footprintwizard bestandnaam>\n"
 "\n"
 
-#: src/fpw.c:123
+#: src/fpw.c:124
 #, c-format
 msgid "\t --output <footprint name> \n"
 msgstr "\t --output <footprint naam> \n"
 
-#: src/fpw.c:124
+#: src/fpw.c:125
 #, c-format
 msgid ""
 "\t -o <footprint name>\n"
@@ -1133,12 +1138,12 @@ msgstr ""
 "\t -o <element naam>\n"
 "\n"
 
-#: src/fpw.c:125
+#: src/fpw.c:126
 #, c-format
 msgid "\t --debug \n"
 msgstr "\t --debug \n"
 
-#: src/fpw.c:126
+#: src/fpw.c:127
 #, c-format
 msgid ""
 "\t -d        : turn on debugging output messages.\n"
@@ -1147,657 +1152,662 @@ msgstr ""
 "\t -d        : zet foutzoekmeldingen aan.\n"
 "\n"
 
-#: src/fpw.c:193
+#: src/fpw.c:194
 #, c-format
 msgid "unknown command line option encountered.\n"
 msgstr "onbekende commando lijn optie gevonden.\n"
 
-#: src/fpw.c:209
+#: src/fpw.c:210
 #, c-format
 msgid "read footprintwizard file %s."
 msgstr "Footprintwizard bestand %s gelezen."
 
-#: src/fpw.c:218
+#: src/fpw.c:219
 #, c-format
 msgid "could not load footprintwizard file %s."
 msgstr "Kan footprintwizard bestand %s niet laden."
 
-#: src/fpw.c:230
+#: src/fpw.c:231
 #, c-format
 msgid "footprint name contains a null pointer."
 msgstr "elementnaam bevat een null pointer."
 
-#: src/fpw.c:241
+#: src/fpw.c:242
 #, c-format
 msgid "footprint name contains an empty string."
 msgstr "elementnaam bevat een lege text."
 
-#: src/fpw.c:260
+#: src/fpw.c:261
 #, c-format
 msgid "Footprint %s is written successful."
 msgstr "Element %s is succesvol opgeslagen."
 
-#: src/libfpw.c:158
+#: src/libfpw.c:162
 #, c-format
 msgid "out of memory during realloc() in create_new_arc()."
 msgstr "geen geheugen tijdens realloc() in create_new_arc()."
 
-#: src/libfpw.c:218
+#: src/libfpw.c:222
 #, c-format
 msgid "out of memory during realloc() in create_new_attribute()."
 msgstr "geen geheugen tijdens realloc() in create_new_attribute()."
 
-#: src/libfpw.c:267
+#: src/libfpw.c:271
 #, c-format
 msgid "out of memory during realloc() in create_new_line()."
 msgstr "geen geheugen tijdens realloc() in create_new_line()."
 
-#: src/libfpw.c:437
+#: src/libfpw.c:441
 #, c-format
 msgid "footprint type is not valid."
 msgstr "element type is niet geldig."
 
-#: src/libfpw.c:444
+#: src/libfpw.c:448
 #, c-format
 msgid "empty footprint type entered."
 msgstr "leeg element type ingevoerd."
 
-#: src/libfpw.c:527
-#: src/libfpw.c:535
-#: src/libfpw.c:559
+#: src/libfpw.c:531
+#: src/libfpw.c:539
+#: src/libfpw.c:563
 #, c-format
 msgid "footprint type %s not yet implemented."
 msgstr "elementtype %s is nog niet ge-implementeerd."
 
-#: src/libfpw.c:591
+#: src/libfpw.c:595
 #, c-format
 msgid "footprint type %s is not valid."
 msgstr "elementtype %s is niet geldig."
 
-#: src/libfpw.c:685
+#: src/libfpw.c:689
 #, c-format
 msgid "footprint status %s is not valid."
 msgstr "element status %s is niet geldig."
 
-#: src/libfpw.c:822
+#: src/libfpw.c:826
 #, c-format
 msgid "could not open footprint wizard file: %s for reading.\n"
 msgstr "kan footprintwizard bestand %s niet openen om te lezen.\n"
 
-#: src/libfpw.c:833
+#: src/libfpw.c:837
 #, c-format
 msgid "error while reading footprint_filename value in: %s.\n"
 msgstr "fout tijdens het lezen van footprint_filename waarde in: %s.\n"
 
-#: src/libfpw.c:845
+#: src/libfpw.c:849
 #, c-format
 msgid "footprint filename with a null pointer found in: %s.\n"
 msgstr "element bestandnaam met een null pointer gevonden in: %s.\n"
 
-#: src/libfpw.c:858
+#: src/libfpw.c:862
 #, c-format
 msgid "error while reading a dummy value in: %s.\n"
 msgstr "fout tijdens het lezen van een dummy waarde in: %s.\n"
 
-#: src/libfpw.c:870
+#: src/libfpw.c:874
 #, c-format
 msgid "error while reading footprint_type value in: %s.\n"
 msgstr "fout tijdens het lezen van de footprint_type waarde in: %s.\n"
 
-#: src/libfpw.c:882
+#: src/libfpw.c:886
 #, c-format
 msgid "footprint type with a null pointer found in: %s.\n"
 msgstr "element type met een null pointer gevonden in: %s.\n"
 
-#: src/libfpw.c:906
+#: src/libfpw.c:910
 #, c-format
 msgid "determined the package type successfull."
 msgstr "het behuizing type is succesvol vastgesteld."
 
-#: src/libfpw.c:915
+#: src/libfpw.c:919
 #, c-format
 msgid "error while reading footprint_units value in: %s.\n"
 msgstr "fout tijdens het lezen van footprint_type waarde in: %s.\n"
 
-#: src/libfpw.c:927
+#: src/libfpw.c:931
 #, c-format
 msgid "footprint units with null pointer found in: %s.\n"
 msgstr "element eenheid met een null pointer gevonden in: %s.\n"
 
-#: src/libfpw.c:940
+#: src/libfpw.c:944
 #, c-format
 msgid "footprint units contains an unknown units type."
 msgstr "element eenheid bevat een onbekend eenheidtype."
 
-#: src/libfpw.c:951
+#: src/libfpw.c:955
 #, c-format
 msgid "footprint units variables updated successfull."
 msgstr "element eenheden zijn succesvol bijgewerkt."
 
-#: src/libfpw.c:960
+#: src/libfpw.c:964
 #, c-format
 msgid "error while reading footprint_refdes value in: %s.\n"
 msgstr "fout tijdens het lezen van footprint_refdes waarde in: %s.\n"
 
-#: src/libfpw.c:972
+#: src/libfpw.c:976
 #, c-format
 msgid "footprint refdes with a null pointer found in: %s.\n"
 msgstr "element refdes met een null pointer gevonden in: %s.\n"
 
-#: src/libfpw.c:983
+#: src/libfpw.c:987
 #, c-format
 msgid "error while reading footprint_value value in: %s.\n"
 msgstr "fout tijdens het lezen van footprint_value waarde in: %s.\n"
 
-#: src/libfpw.c:995
+#: src/libfpw.c:999
 #, c-format
 msgid "footprint value with a null pointer found in: %s.\n"
 msgstr "element waarde met een null pointer gevonden in: %s.\n"
 
-#: src/libfpw.c:1006
+#: src/libfpw.c:1010
 #, c-format
 msgid "error while reading package_body_length value in: %s.\n"
 msgstr "fout tijdens het lezen van package_body_length waarde in: %s.\n"
 
-#: src/libfpw.c:1017
+#: src/libfpw.c:1021
 #, c-format
 msgid "NaN found in package body length, in: %s.\n"
 msgstr "NaN gevonden in behuizing lengte, in: %s.\n"
 
-#: src/libfpw.c:1028
+#: src/libfpw.c:1032
 #, c-format
 msgid "error while reading package_body_width value in: %s.\n"
 msgstr "fout tijdens het lezen van package_body_width waarde in: %s.\n"
 
-#: src/libfpw.c:1039
+#: src/libfpw.c:1043
 #, c-format
 msgid "NaN found in package body width, in: %s.\n"
 msgstr "NaN gevonden in behuizing breedte, in: %s.\n"
 
-#: src/libfpw.c:1050
+#: src/libfpw.c:1054
 #, c-format
 msgid "error while reading package_body_height value in: %s.\n"
 msgstr "fout tijdens het lezen van package_body_height waarde in: %s.\n"
 
-#: src/libfpw.c:1061
+#: src/libfpw.c:1065
 #, c-format
 msgid "NaN found in package body heigth, in: %s.\n"
 msgstr "NaN gevonden in behuizing hoogte, in: %s.\n"
 
-#: src/libfpw.c:1072
+#: src/libfpw.c:1076
 #, c-format
 msgid "error while reading package_is_radial value in: %s.\n"
 msgstr "fout tijdens het lezen van package_is_radial waarde in: %s.\n"
 
-#: src/libfpw.c:1084
+#: src/libfpw.c:1088
 #, c-format
 msgid "error while reading footprint_author value in: %s.\n"
 msgstr "fout tijdens het lezen van footprint_author waarde in: %s.\n"
 
-#: src/libfpw.c:1096
+#: src/libfpw.c:1100
 #, c-format
 msgid "footprint author with a null pointer found in: %s.\n"
 msgstr "element auteur met een null pointer gevonden in: %s.\n"
 
-#: src/libfpw.c:1107
+#: src/libfpw.c:1111
 #, c-format
 msgid "error while reading footprint_dist_license value in: %s.\n"
 msgstr "fout tijdens het lezen van footprint_dist_license waarde in: %s.\n"
 
-#: src/libfpw.c:1120
+#: src/libfpw.c:1124
 #, c-format
 msgid "footprint dirstribution license with a null pointer found in: %s.\n"
 msgstr "element distributie licentie met een null pointer gevonden in: %s.\n"
 
-#: src/libfpw.c:1131
+#: src/libfpw.c:1135
 #, c-format
 msgid "error while reading footprint_use_license value in: %s.\n"
 msgstr "fout tijdens het lezen van footprint_use_license waarde in: %s.\n"
 
-#: src/libfpw.c:1144
+#: src/libfpw.c:1148
 #, c-format
 msgid "footprint usage license with a null pointer found in: %s.\n"
 msgstr "element gebruik licentie met een null pointer gevonden in: %s.\n"
 
-#: src/libfpw.c:1155
+#: src/libfpw.c:1159
 #, c-format
 msgid "error while reading footprint_status value in: %s.\n"
 msgstr "fout tijdens het lezen van footprint_status waarde in: %s.\n"
 
-#: src/libfpw.c:1167
+#: src/libfpw.c:1171
 #, c-format
 msgid "footprint status with a null pointer found in: %s.\n"
 msgstr "element status met een null pointer gevonden in: %s.\n"
 
-#: src/libfpw.c:1178
+#: src/libfpw.c:1182
 #, c-format
 msgid "error while reading attributes_in_footprint value in: %s.\n"
 msgstr "fout tijdens het lezen van attributes_in_footprint waarde in: %s.\n"
 
-#: src/libfpw.c:1190
+#: src/libfpw.c:1194
 #, c-format
 msgid "error while reading number_of_pins value in: %s.\n"
 msgstr "fout tijdens het lezen van number_of_pins waarde in: %s.\n"
 
-#: src/libfpw.c:1202
+#: src/libfpw.c:1206
 #, c-format
 msgid "error while reading number_of_columns value in: %s.\n"
 msgstr "fout tijdens het lezen van number_of_columns waarde in: %s.\n"
 
-#: src/libfpw.c:1214
+#: src/libfpw.c:1218
 #, c-format
 msgid "error while reading number_of_rows value in: %s.\n"
 msgstr "fout tijdens het lezen van number_of_rows waarde in: %s.\n"
 
-#: src/libfpw.c:1226
+#: src/libfpw.c:1230
 #, c-format
 msgid "error while reading pitch_x value in: %s.\n"
 msgstr "fout tijdens het lezen van pitch_x waarde in: %s.\n"
 
-#: src/libfpw.c:1237
+#: src/libfpw.c:1241
 #, c-format
 msgid "NaN number of pitch in X-direction found in: %s.\n"
 msgstr "NaN gevonden in de steek in de X-richting, in: %s.\n"
 
-#: src/libfpw.c:1248
+#: src/libfpw.c:1252
 #, c-format
 msgid "error while reading pitch_y value in: %s.\n"
 msgstr "fout tijdens het lezen van pitch_y waarde in: %s.\n"
 
-#: src/libfpw.c:1258
+#: src/libfpw.c:1262
 #, c-format
 msgid "NaN number of pitch in Y-direction found in: %s.\n"
 msgstr "NaN gevonden in de steek in de Y-richting, in: %s.\n"
 
-#: src/libfpw.c:1268
+#: src/libfpw.c:1272
 #, c-format
 msgid "error while reading count_x value in: %s.\n"
 msgstr "fout tijdens het lezen van count_x waarde in: %s.\n"
 
-#: src/libfpw.c:1280
+#: src/libfpw.c:1284
 #, c-format
 msgid "error while reading count_y value in: %s.\n"
 msgstr "fout tijdens het lezen van count_y waarde in: %s.\n"
 
-#: src/libfpw.c:1292
+#: src/libfpw.c:1296
 #, c-format
 msgid "error while reading pad_shape value in: %s.\n"
 msgstr "fout tijdens het lezen van pad_shape waarde in: %s.\n"
 
-#: src/libfpw.c:1304
+#: src/libfpw.c:1308
 #, c-format
 msgid "pad shape with a null pointer found in: %s.\n"
 msgstr "padvorm met een null pointer gevonden in: %s.\n"
 
-#: src/libfpw.c:1316
+#: src/libfpw.c:1320
 #, c-format
 msgid "pad shape contains an unknown pad shape type."
 msgstr "padvorm bevat een onbekend padvorm type."
 
-#: src/libfpw.c:1325
+#: src/libfpw.c:1329
 #, c-format
 msgid "pad shape variables updated successfull."
 msgstr "padvorm variabelen succesvol bijgewerkt."
 
-#: src/libfpw.c:1334
+#: src/libfpw.c:1338
 #, c-format
 msgid "error while reading pin_pad_exceptions_string value in: %s.\n"
 msgstr "fout tijdens het lezen van pin_pad_exceptions_string waarde in: %s.\n"
 
-#: src/libfpw.c:1346
+#: src/libfpw.c:1350
 #, c-format
 msgid "pin/pad exceptions with a null pointer found in: %s.\n"
 msgstr "pen/pad uitzonderingen met een null wijzer gevonden in: %s.\n"
 
-#: src/libfpw.c:1358
+#: src/libfpw.c:1362
 #, c-format
 msgid "error while reading pin_1_position value in: %s.\n"
 msgstr "fout tijdens het lezen van pin_1_position waarde in: %s.\n"
 
-#: src/libfpw.c:1370
+#: src/libfpw.c:1374
 #, c-format
 msgid "pin #1 position with a null pointer found in: %s.\n"
 msgstr "pen nr. 1 met een null pointer gevonden in: %s.\n"
 
-#: src/libfpw.c:1381
+#: src/libfpw.c:1385
 #, c-format
 msgid "error while reading pad_length value in: %s.\n"
 msgstr "fout tijdens het lezen van pad_length waarde in: %s.\n"
 
-#: src/libfpw.c:1392
+#: src/libfpw.c:1396
 #, c-format
 msgid "NaN number in pad length found in: %s.\n"
 msgstr "NaN gevonden in de lengte van elke pad, in: %s.\n"
 
-#: src/libfpw.c:1403
+#: src/libfpw.c:1407
 #, c-format
 msgid "error while reading pad_width value in: %s.\n"
 msgstr "fout tijdens het lezen van pad_width waarde in: %s.\n"
 
-#: src/libfpw.c:1414
+#: src/libfpw.c:1418
 #, c-format
 msgid "NaN number in pad width found in: %s.\n"
 msgstr "NaN gevonden in de breedte van elke pad, in: %s.\n"
 
-#: src/libfpw.c:1425
+#: src/libfpw.c:1429
 #, c-format
 msgid "error while reading pad_diameter value in: %s.\n"
 msgstr "fout tijdens het lezen van pad_diameter waarde in: %s.\n"
 
-#: src/libfpw.c:1436
+#: src/libfpw.c:1440
 #, c-format
 msgid "NaN number in pad diameter found in: %s.\n"
 msgstr "NaN gevonden in de diameter van elke pad, in: %s.\n"
 
-#: src/libfpw.c:1447
+#: src/libfpw.c:1451
 #, c-format
 msgid "error while reading pin_drill_diameter value in: %s.\n"
 msgstr "fout tijdens het lezen van pin_drill_diameter waarde in: %s.\n"
 
-#: src/libfpw.c:1458
+#: src/libfpw.c:1462
 #, c-format
 msgid "NaN number in pin drill diameter found in: %s.\n"
 msgstr "NaN gevonden in de boorgat diameter, in: %s.\n"
 
-#: src/libfpw.c:1469
+#: src/libfpw.c:1473
 #, c-format
 msgid "error while reading pin1_square value in: %s.\n"
 msgstr "fout tijdens het lezen van pin1_square waarde in: %s.\n"
 
-#: src/libfpw.c:1480
+#: src/libfpw.c:1484
 #, c-format
 msgid "error while reading pad_clearance value in: %s.\n"
 msgstr "fout tijdens het lezen van pad_clearance waarde in: %s.\n"
 
-#: src/libfpw.c:1491
+#: src/libfpw.c:1495
 #, c-format
 msgid "NaN number in pad clearance found in: %s.\n"
 msgstr "NaN gevonden in de vrije afstand van elke pad, in: %s.\n"
 
-#: src/libfpw.c:1502
+#: src/libfpw.c:1506
 #, c-format
 msgid "error while reading pad_solder_mask_clearance value in: %s.\n"
 msgstr "fout tijdens het lezen van pad_solder_mask_clearance waarde in: %s.\n"
 
-#: src/libfpw.c:1514
+#: src/libfpw.c:1518
 #, c-format
 msgid "NaN number in pad solder mask clearance found in: %s.\n"
 msgstr "NaN gevonden in de vrije afstand van elke pad met het soldeermasker, in: %s.\n"
 
-#: src/libfpw.c:1525
+#: src/libfpw.c:1529
 #, c-format
 msgid "error while reading thermal value in: %s.\n"
 msgstr "fout tijdens het lezen van thermal waarde in: %s.\n"
 
-#: src/libfpw.c:1536
+#: src/libfpw.c:1540
 #, c-format
 msgid "error while reading thermal_nopaste value in: %s.\n"
 msgstr "fout tijdens het lezen van thermal_nopaste waarde in: %s.\n"
 
-#: src/libfpw.c:1547
+#: src/libfpw.c:1551
 #, c-format
 msgid "error while reading thermal_length value in: %s.\n"
 msgstr "fout tijdens het lezen van thermal_length waarde in: %s.\n"
 
-#: src/libfpw.c:1558
+#: src/libfpw.c:1562
 #, c-format
 msgid "NaN number in thermal length found in: %s.\n"
 msgstr "NaN gevonden in de lengte van het thermische pad, in: %s.\n"
 
-#: src/libfpw.c:1569
+#: src/libfpw.c:1573
 #, c-format
 msgid "error while reading thermal_width value in: %s.\n"
 msgstr "fout tijdens het lezen van thermal_width waarde in: %s.\n"
 
-#: src/libfpw.c:1580
+#: src/libfpw.c:1584
 #, c-format
 msgid "NaN number in thermal width found in: %s.\n"
 msgstr "NaN gevonden in de breedte van het thermische pad, in: %s.\n"
 
-#: src/libfpw.c:1591
+#: src/libfpw.c:1595
 #, c-format
 msgid "error while reading thermal_clearance value in: %s.\n"
 msgstr "fout tijdens het lezen van thermal_clearance waarde in: %s.\n"
 
-#: src/libfpw.c:1602
+#: src/libfpw.c:1606
 #, c-format
 msgid "NaN number in thermal clearance found in: %s.\n"
 msgstr "NaN gevonden in de vrije afstand van het thermische pad, in: %s.\n"
 
-#: src/libfpw.c:1613
+#: src/libfpw.c:1617
 #, c-format
 msgid "error while reading thermal_solder_mask value in: %s.\n"
 msgstr "fout tijdens het lezen van thermal_solder_mask waarde in: %s.\n"
 
-#: src/libfpw.c:1625
+#: src/libfpw.c:1629
 #, c-format
 msgid "NaN number in thermal solder mask clearance found in: %s.\n"
 msgstr "NaN gevonden in de vrije afstand tussen het thermische pad en het soldeermasker , in: %s.\n"
 
-#: src/libfpw.c:1636
+#: src/libfpw.c:1640
 #, c-format
 msgid "error while reading fiducial value in: %s.\n"
 msgstr "fout tijdens het lezen van fiducial waarde in: %s.\n"
 
-#: src/libfpw.c:1647
+#: src/libfpw.c:1651
 #, c-format
 msgid "error while reading fiducial_pad_diameter value in: %s.\n"
 msgstr "fout tijdens het lezen van fiducial_pad_diameter waarde in: %s.\n"
 
-#: src/libfpw.c:1658
+#: src/libfpw.c:1662
 #, c-format
 msgid "NaN number in fiducial pad diameter found in: %s.\n"
 msgstr "NaN gevonden in de fiducial pad diameter, in: %s.\n"
 
-#: src/libfpw.c:1669
+#: src/libfpw.c:1673
 #, c-format
 msgid "error while reading fiducial_pad_solder_mask value in: %s.\n"
 msgstr "fout tijdens het lezen van fiducial_pad_solder_mask waarde in: %s.\n"
 
-#: src/libfpw.c:1681
+#: src/libfpw.c:1685
 #, c-format
 msgid "NaN number in fiducial pad solder mask clearance found in: %s.\n"
 msgstr "NaN gevonden in de vrije afstand tussen het fiducial pad en het soldeermasker , in: %s.\n"
 
-#: src/libfpw.c:1692
+#: src/libfpw.c:1696
 #, c-format
 msgid "error while reading silkscreen_package_outline value in: %s.\n"
 msgstr "fout tijdens het lezen van silkscreen_package_outline waarde in: %s.\n"
 
-#: src/libfpw.c:1703
+#: src/libfpw.c:1707
 #, c-format
 msgid "error while reading silkscreen_indicate_1 value in: %s.\n"
 msgstr "fout tijdens het lezen van dummy waarde in: %s.\n"
 
-#: src/libfpw.c:1714
+#: src/libfpw.c:1718
 #, c-format
 msgid "NaN number in silkscreen line width found in: %s.\n"
 msgstr "NaN gevonden in de opdruk lijnbreedte in: %s.\n"
 
-#: src/libfpw.c:1725
+#: src/libfpw.c:1729
 #, c-format
 msgid "error while reading courtyard value in: %s.\n"
 msgstr "fout tijdens het lezen van courtyard waarde in: %s.\n"
 
-#: src/libfpw.c:1736
+#: src/libfpw.c:1740
 #, c-format
 msgid "error while reading courtyard_length value in: %s.\n"
 msgstr "fout tijdens het lezen van courtyard_length waarde in: %s.\n"
 
-#: src/libfpw.c:1747
+#: src/libfpw.c:1751
 #, c-format
 msgid "NaN number in courtyard length found in: %s.\n"
 msgstr "NaN gevonden in de begrenzing lengte in: %s.\n"
 
-#: src/libfpw.c:1758
+#: src/libfpw.c:1762
 #, c-format
 msgid "error while reading courtyard_width value in: %s.\n"
 msgstr "fout tijdens het lezen van courtyard_width waarde in: %s.\n"
 
-#: src/libfpw.c:1769
+#: src/libfpw.c:1773
 #, c-format
 msgid "NaN number in courtyard width found in: %s.\n"
 msgstr "NaN gevonden in de begrenzing breedte in: %s.\n"
 
-#: src/libfpw.c:1780
+#: src/libfpw.c:1784
 #, c-format
 msgid "error while reading courtyard_line_width value in: %s.\n"
 msgstr "fout tijdens het lezen van courtyard_line_width waarde in: %s.\n"
 
-#: src/libfpw.c:1791
+#: src/libfpw.c:1795
 #, c-format
 msgid "NaN number in courtyard line width found in: %s.\n"
 msgstr "NaN gevonden in de begrenzing lijnbreedte in: %s.\n"
 
-#: src/libfpw.c:1802
+#: src/libfpw.c:1806
 #, c-format
 msgid "error while reading courtyard_clearance_with_package value in: %s.\n"
 msgstr "fout tijdens het lezen van courtyard_clearance_with_package waarde in: %s.\n"
 
-#: src/libfpw.c:1814
+#: src/libfpw.c:1818
 #, c-format
 msgid "NaN number in courtyard clearance with package found in: %s.\n"
 msgstr "NaN gevonden in de vrije afstand van de begrenzing met de behuizing in: %s.\n"
 
-#: src/libfpw.c:1826
+#: src/libfpw.c:1830
 #, c-format
 msgid "error while reading c1 value in: %s.\n"
 msgstr "fout tijdens het lezen van c1 waarde in: %s.\n"
 
-#: src/libfpw.c:1837
+#: src/libfpw.c:1841
 #, c-format
 msgid "NaN number in top to bottom center-center distance found in: %s.\n"
 msgstr "NaN gevonden in de verticale midden-midden afstand in: %s.\n"
 
-#: src/libfpw.c:1848
+#: src/libfpw.c:1852
 #, c-format
 msgid "error while reading g1 value in: %s.\n"
 msgstr "fout tijdens het lezen van g1 waarde in: %s.\n"
 
-#: src/libfpw.c:1859
+#: src/libfpw.c:1863
 #, c-format
 msgid "NaN number in top to bottom inner-inner distance found in: %s.\n"
 msgstr "NaN gevonden in de verticale binnen-binnen afstand in: %s.\n"
 
-#: src/libfpw.c:1870
+#: src/libfpw.c:1874
 #, c-format
 msgid "error while reading z1 value in: %s.\n"
 msgstr "fout tijdens het lezen van z1 waarde in: %s.\n"
 
-#: src/libfpw.c:1881
+#: src/libfpw.c:1885
 #, c-format
 msgid "NaN number in top to bottom outer-outer distance found in: %s.\n"
 msgstr "NaN gevonden in de verticale buiten-buiten afstand in: %s.\n"
 
-#: src/libfpw.c:1892
+#: src/libfpw.c:1896
 #, c-format
 msgid "error while reading c2 value in: %s.\n"
 msgstr "fout tijdens het lezen van c2 waarde in: %s.\n"
 
-#: src/libfpw.c:1903
+#: src/libfpw.c:1907
 #, c-format
 msgid "NaN number in left to right center-center distance found in: %s.\n"
 msgstr "NaN gevonden in de horizontale midden-midden afstand in: %s.\n"
 
-#: src/libfpw.c:1914
+#: src/libfpw.c:1918
 #, c-format
 msgid "error while reading g2 value in: %s.\n"
 msgstr "fout tijdens het lezen van g2 waarde in: %s.\n"
 
-#: src/libfpw.c:1925
+#: src/libfpw.c:1929
 #, c-format
 msgid "NaN number in left to right inner-inner distance found in: %s.\n"
 msgstr "NaN gevonden in de horizontale binnen-binnen afstand in: %s.\n"
 
-#: src/libfpw.c:1936
+#: src/libfpw.c:1940
 #, c-format
 msgid "error while reading z2 value in: %s.\n"
 msgstr "fout tijdens het lezen van z2 waarde in: %s.\n"
 
-#: src/libfpw.c:1947
+#: src/libfpw.c:1951
 #, c-format
 msgid "NaN number in left to right outer-outer distance found in: %s.\n"
 msgstr "NaN gevonden in de horizontale buiten-buiten afstand in: %s.\n"
 
-#: src/libfpw.c:2059
+#: src/libfpw.c:2063
 #, c-format
 msgid "pad shape is %s, setting pad_shapes_type to ROUND."
 msgstr "padvorm is %s, stel pad_shapes_type in op ROUND."
 
-#: src/libfpw.c:2070
+#: src/libfpw.c:2074
 #, c-format
 msgid "pad shape is %s, setting pad_shapes_type to SQUARE."
 msgstr "padvorm is %s, stel pad_shapes_type in op SQUARE."
 
-#: src/libfpw.c:2081
+#: src/libfpw.c:2085
 #, c-format
 msgid "pad shape is %s, setting pad_shapes_type to OCTOGONAL."
 msgstr "pad vorm is %s, stel pad_shapes_type in op OCTOGONAL."
 
-#: src/libfpw.c:2092
+#: src/libfpw.c:2096
 #, c-format
 msgid "pad shape is %s, setting pad_shapes_type to ROUND_ELONGATED."
 msgstr "pad vorm is %s, stel pad_shapes_type in op ROUND_ELONGATED."
 
-#: src/libfpw.c:2103
+#: src/libfpw.c:2107
 #, c-format
 msgid "encountered a %s pad shape, resetting pad_shapes_type to NO_SHAPE."
 msgstr "vond een %s pad vorm, stel pad_shapes_type in op NO_SHAPE."
 
-#: src/libfpw.c:2126
+#: src/libfpw.c:2130
 #, c-format
 msgid "footprint units_type set to MIL, multiplier set to 100.0"
 msgstr "voetafdruk units_type ingesteld op MIL, vermenigvuldigfactor ingesteld op 100.0"
 
-#: src/libfpw.c:2137
+#: src/libfpw.c:2141
 #, c-format
 msgid "footprint units_type set to MIL/100, multiplier set to 1.0"
 msgstr "voetafdruk units_type ingesteld op MIL/100, vermenigvuldigfactor ingesteld op 1.0"
 
-#: src/libfpw.c:2148
+#: src/libfpw.c:2152
 #, c-format
 msgid "footprint units_type set to MM, multiplier set to 3937.00..."
 msgstr "voetafdruk units_type ingesteld op MM, vermenigvuldigfactor ingesteld op 3937.0..."
 
-#: src/libfpw.c:2691
+#: src/libfpw.c:2699
 #, c-format
 msgid "could not open footprint wizard file: %s for writing."
 msgstr "kan footprintwizard bestand %s niet openen om te schrijven."
 
-#: src/libfpw.c:2699
+#: src/libfpw.c:2707
 #, c-format
 msgid "could not write footprint wizard file (null or empty footprint filename string)."
 msgstr "kan niet naar footprintwizard bestand schrijven (null of lege element bestandnaam)."
 
-#: src/libfpw.c:2706
+#: src/libfpw.c:2714
 #, c-format
 msgid "could not write footprint wizard file (null or empty footprint name string)."
 msgstr "kan niet naar footprintwizard bestand schrijven (null of lege element naam)."
 
-#: src/libfpw.c:2713
+#: src/libfpw.c:2721
 #, c-format
 msgid "could not write footprint wizard file (null or empty footprint type string)."
 msgstr "kan niet naar footprintwizard bestand schrijven (null of lege element type)."
 
-#: src/libfpw.c:2720
+#: src/libfpw.c:2728
 #, c-format
 msgid "could not write footprint wizard file (null or empty footprint units string)."
 msgstr "kan niet naar footprintwizard bestand schrijven (null of lege element maateenheid)."
 
-#: src/libfpw.c:2727
+#: src/libfpw.c:2735
 #, c-format
 msgid "could not write footprint wizard file (null or empty pad shape string)."
 msgstr "kan niet naar footprintwizard bestand schrijven (null of lege padvorm omschrijving)."
 
-#: src/libfpw.c:2733
+#: src/libfpw.c:2741
 #, c-format
 msgid "could not write footprint wizard file (null or empty pin/pad exception string)."
 msgstr "kan niet naar footprintwizard bestand schrijven (null of lege pen/pad uitzondering omschrijving)."
 
-#: src/libfpw.c:2958
+#: src/libfpw.c:3163
 #, c-format
 msgid "unknown or not yet implemented footprint type entered.\n"
 msgstr "onbekend of nog niet ge-implementeerd element type ingevoerd.\n"
+
+#: src/libfpw.c:3171
+#, c-format
+msgid "no [%s] footprint written: found DRC errors while checking package %s."
+msgstr "geen [%s] footprint geschreven: DRC fouten gevonden tijdens controle van behuizing %s."
 
 #: src/register_functions.c:108
 #, c-format
@@ -1814,927 +1824,984 @@ msgstr "vond totaal %d uitzonderingen voor pennen/pads."
 msgid "found the following exceptions for pins/pads: %s."
 msgstr "vond de volgende uitzondering voor pennen/pads: %s."
 
-#: src/bga.c:54
-#: src/capa.c:54
-#: src/capc.c:53
-#: src/capm.c:54
-#: src/capmp.c:54
-#: src/cappr.c:54
-#: src/con_dil.c:55
+#: src/bga.c:55
+#: src/capa.c:55
+#: src/capc.c:54
+#: src/capm.c:55
+#: src/capmp.c:55
+#: src/cappr.c:55
+#: src/con_dil.c:56
 #, c-format
 msgid "[%s] could not create a valid element pointer for an element."
 msgstr "[%s] kon geen geldige elementaanwijzer creëeren voor een element."
 
-#: src/bga.c:358
-#: src/capa.c:401
-#: src/capc.c:287
-#: src/capm.c:375
-#: src/capmp.c:375
-#: src/cappr.c:434
-#: src/con_dil.c:319
+#: src/bga.c:359
+#: src/capa.c:402
+#: src/capc.c:288
+#: src/capm.c:376
+#: src/capmp.c:376
+#: src/cappr.c:435
+#: src/con_dil.c:320
 #, c-format
 msgid "[%s] created an element for element: %s."
 msgstr "[%s] creëerde een element voor element: %s."
 
-#: src/bga.c:505
-#: src/capa.c:462
-#: src/capc.c:392
-#: src/capm.c:437
-#: src/capmp.c:437
-#: src/cappr.c:495
-#: src/con_dil.c:384
-#: src/con_dip.c:410
+#: src/bga.c:507
+#: src/capa.c:465
+#: src/capc.c:394
+#: src/capm.c:439
+#: src/capmp.c:439
+#: src/cappr.c:498
+#: src/con_dil.c:386
+#: src/con_dip.c:412
 #: src/con_hdr.c:81
-#: src/con_sil.c:423
-#: src/diom.c:434
-#: src/diomelf.c:443
-#: src/dip.c:403
+#: src/con_sil.c:425
+#: src/diom.c:436
+#: src/diomelf.c:445
+#: src/dip.c:401
 #: src/dips.c:418
-#: src/indc.c:349
-#: src/indm.c:438
-#: src/indp.c:432
-#: src/pga.c:336
-#: src/plcc.c:550
-#: src/res.c:462
-#: src/resc.c:347
-#: src/resm.c:437
-#: src/resmelf.c:428
-#: src/sil.c:371
-#: src/sip.c:365
-#: src/sot.c:643
+#: src/indc.c:359
+#: src/indm.c:440
+#: src/indp.c:434
+#: src/pga.c:338
+#: src/plcc.c:552
+#: src/res.c:486
+#: src/resc.c:349
+#: src/resm.c:439
+#: src/resmelf.c:430
+#: src/sil.c:373
+#: src/sip.c:368
+#: src/sot.c:649
+#: src/to.c:489
 #, c-format
 msgid "[%s] DRC Check: checking package %s."
 msgstr "[%s] DRC Controle: controleer behuizing %s."
 
-#: src/bga.c:516
-#: src/capa.c:473
-#: src/capc.c:414
-#: src/capm.c:459
-#: src/capmp.c:459
-#: src/cappr.c:506
-#: src/con_dil.c:428
-#: src/con_dip.c:455
+#: src/bga.c:518
+#: src/capa.c:476
+#: src/capc.c:416
+#: src/capm.c:461
+#: src/capmp.c:461
+#: src/cappr.c:509
+#: src/con_dil.c:430
+#: src/con_dip.c:457
 #: src/con_hdr.c:126
-#: src/con_sil.c:469
-#: src/diom.c:456
-#: src/diomelf.c:465
-#: src/dip.c:414
+#: src/con_sil.c:471
+#: src/diom.c:458
+#: src/diomelf.c:467
+#: src/dip.c:412
 #: src/dips.c:429
-#: src/indc.c:371
-#: src/indm.c:460
-#: src/indp.c:454
-#: src/pga.c:347
-#: src/plcc.c:561
-#: src/res.c:473
-#: src/resc.c:369
-#: src/resm.c:459
-#: src/resmelf.c:450
-#: src/sil.c:417
-#: src/sip.c:411
-#: src/sot.c:654
+#: src/indc.c:381
+#: src/indm.c:462
+#: src/indp.c:456
+#: src/pga.c:349
+#: src/plcc.c:563
+#: src/res.c:497
+#: src/resc.c:371
+#: src/resm.c:461
+#: src/resmelf.c:452
+#: src/sil.c:419
+#: src/sip.c:414
+#: src/sot.c:660
+#: src/to.c:500
 #, c-format
 msgid "[%s] DRC Error: NO_SHAPE specified for check for allowed pad shapes."
 msgstr "[%s] DRC Fout: NO_SHAPE gespecificeerd voor controle van toegelaten padvormen."
 
-#: src/bga.c:531
-#: src/capa.c:488
-#: src/con_dil.c:443
-#: src/con_dip.c:470
-#: src/con_hdr.c:141
-#: src/con_sil.c:484
-#: src/pga.c:362
-#: src/sil.c:432
-#: src/sip.c:426
+#: src/bga.c:533
+#: src/capa.c:491
+#: src/pga.c:364
+#: src/sil.c:434
+#: src/sip.c:429
+#: src/to.c:515
 #, c-format
 msgid "[%s] DRC Error: square pad shape specified for check for allowed pad shapes."
 msgstr "[%s] DRC Fout: vierkante padvorm gespecificeerd voor controle van toegelaten padvormen."
 
-#: src/bga.c:542
-#: src/capc.c:440
-#: src/capm.c:485
-#: src/capmp.c:485
-#: src/con_dil.c:454
-#: src/con_dip.c:481
-#: src/con_hdr.c:152
-#: src/con_sil.c:495
-#: src/diom.c:482
-#: src/diomelf.c:491
-#: src/indc.c:397
-#: src/indm.c:486
-#: src/indp.c:480
-#: src/pga.c:373
-#: src/plcc.c:587
-#: src/resc.c:395
-#: src/resm.c:485
-#: src/resmelf.c:476
-#: src/sil.c:443
-#: src/sip.c:437
-#: src/sot.c:680
+#: src/bga.c:544
+#: src/capc.c:442
+#: src/capm.c:487
+#: src/capmp.c:487
+#: src/con_dil.c:449
+#: src/con_dip.c:476
+#: src/con_hdr.c:145
+#: src/con_sil.c:490
+#: src/diom.c:484
+#: src/diomelf.c:493
+#: src/indc.c:407
+#: src/indm.c:488
+#: src/indp.c:482
+#: src/pga.c:375
+#: src/plcc.c:589
+#: src/resc.c:397
+#: src/resm.c:487
+#: src/resmelf.c:478
+#: src/sil.c:445
+#: src/sip.c:440
+#: src/sot.c:686
+#: src/to.c:526
 #, c-format
 msgid "[%s] DRC Error: octagonal pad shape specified for check for allowed pad shapes."
 msgstr "[%s] DRC Fout: achtkante padvorm gespecificeerd voor controle van toegelaten padvormen."
 
-#: src/bga.c:553
-#: src/con_dil.c:465
-#: src/pga.c:384
-#: src/plcc.c:598
+#: src/bga.c:555
+#: src/con_dil.c:460
+#: src/con_dip.c:487
+#: src/con_hdr.c:156
+#: src/con_sil.c:501
+#: src/pga.c:386
+#: src/plcc.c:600
 #, c-format
 msgid "[%s] DRC Error: round elongated pad shape specified for check for allowed pad shapes."
 msgstr "[%s] DRC Fout: ronde padvorm gespecificeerd voor controle van toegelaten padvormen."
 
-#: src/bga.c:564
-#: src/capa.c:507
-#: src/capc.c:455
-#: src/capm.c:500
-#: src/capmp.c:500
-#: src/cappr.c:533
-#: src/con_dil.c:476
-#: src/con_dip.c:496
+#: src/bga.c:566
+#: src/capa.c:510
+#: src/capc.c:457
+#: src/capm.c:502
+#: src/capmp.c:502
+#: src/cappr.c:536
+#: src/con_dil.c:471
+#: src/con_dip.c:498
 #: src/con_hdr.c:167
-#: src/con_sil.c:510
-#: src/diom.c:497
-#: src/diomelf.c:506
-#: src/dip.c:441
+#: src/con_sil.c:512
+#: src/diom.c:499
+#: src/diomelf.c:508
+#: src/dip.c:439
 #: src/dips.c:456
-#: src/indc.c:412
-#: src/indm.c:501
-#: src/indp.c:495
-#: src/pga.c:395
-#: src/plcc.c:609
-#: src/res.c:500
-#: src/resc.c:410
-#: src/resm.c:500
-#: src/resmelf.c:491
-#: src/sil.c:458
-#: src/sip.c:452
-#: src/sot.c:695
+#: src/indc.c:422
+#: src/indm.c:503
+#: src/indp.c:497
+#: src/pga.c:397
+#: src/plcc.c:611
+#: src/res.c:524
+#: src/resc.c:412
+#: src/resm.c:502
+#: src/resmelf.c:493
+#: src/sil.c:460
+#: src/sip.c:455
+#: src/sot.c:701
+#: src/to.c:541
 #, c-format
 msgid "[%s] DRC Error: no valid pad shape type specified."
 msgstr "[%s] DRC Fout: geen geldige padvorm gespecificeerd."
 
-#: src/bga.c:577
-#: src/capa.c:520
-#: src/capc.c:468
-#: src/capm.c:513
-#: src/capmp.c:513
-#: src/cappr.c:546
-#: src/con_dil.c:489
-#: src/con_dip.c:509
+#: src/bga.c:579
+#, c-format
+msgid "[%s] DRC Error: package should not have a suare pad #1."
+msgstr "[%s] DRC Fout: behuizing hoort geen vierkant pad #1 te hebben."
+
+#: src/bga.c:590
+#: src/capa.c:523
+#: src/capc.c:470
+#: src/capm.c:515
+#: src/capmp.c:515
+#: src/cappr.c:549
+#: src/con_dil.c:484
+#: src/con_dip.c:511
 #: src/con_hdr.c:180
-#: src/con_sil.c:523
-#: src/indp.c:508
-#: src/sil.c:471
-#: src/sip.c:465
+#: src/con_sil.c:525
+#: src/indp.c:510
+#: src/sil.c:473
+#: src/sip.c:468
+#: src/to.c:565
 #, c-format
 msgid "[%s] DRC Error: specified package body length is too small."
 msgstr "[%s] DRC Fout: gespecifieerde behuizinglengte is te klein."
 
-#: src/bga.c:587
-#: src/capa.c:530
-#: src/capc.c:478
-#: src/capm.c:523
-#: src/capmp.c:523
-#: src/cappr.c:556
-#: src/con_dil.c:499
-#: src/con_dip.c:519
+#: src/bga.c:600
+#: src/capa.c:533
+#: src/capc.c:480
+#: src/capm.c:525
+#: src/capmp.c:525
+#: src/cappr.c:559
+#: src/con_dil.c:494
+#: src/con_dip.c:521
 #: src/con_hdr.c:190
-#: src/con_sil.c:533
-#: src/indp.c:518
-#: src/sil.c:481
-#: src/sip.c:475
+#: src/con_sil.c:535
+#: src/indp.c:520
+#: src/sil.c:483
+#: src/sip.c:478
+#: src/to.c:575
 #, c-format
 msgid "[%s] DRC Error: specified package body width is too small."
 msgstr "[%s] DRC Fout: gespecifieerde behuizingbreedte is te klein."
 
-#: src/bga.c:597
-#: src/capa.c:540
-#: src/capc.c:488
-#: src/capm.c:533
-#: src/capmp.c:533
-#: src/cappr.c:566
-#: src/con_dil.c:509
-#: src/con_dip.c:529
+#: src/bga.c:610
+#: src/capa.c:543
+#: src/capc.c:490
+#: src/capm.c:535
+#: src/capmp.c:535
+#: src/cappr.c:569
+#: src/con_dil.c:504
+#: src/con_dip.c:531
 #: src/con_hdr.c:200
-#: src/con_sil.c:543
-#: src/indp.c:528
-#: src/sil.c:491
-#: src/sip.c:485
+#: src/con_sil.c:545
+#: src/indp.c:530
+#: src/sil.c:493
+#: src/sip.c:488
+#: src/to.c:585
 #, c-format
 msgid "[%s] DRC Error: specified package body height is too small."
 msgstr "[%s] DRC Fout: gespecifieerde behuizinghoogte is te klein."
 
-#: src/bga.c:608
-#: src/capa.c:551
-#: src/capc.c:499
-#: src/capm.c:544
-#: src/capmp.c:544
-#: src/cappr.c:577
-#: src/con_dil.c:520
-#: src/con_dip.c:540
+#: src/bga.c:621
+#: src/capa.c:554
+#: src/capc.c:501
+#: src/capm.c:546
+#: src/capmp.c:546
+#: src/cappr.c:580
+#: src/con_dil.c:515
+#: src/con_dip.c:542
 #: src/con_hdr.c:211
-#: src/con_sil.c:554
-#: src/indp.c:539
-#: src/sil.c:502
-#: src/sip.c:496
+#: src/con_sil.c:556
+#: src/indp.c:541
+#: src/sil.c:504
+#: src/sip.c:499
+#: src/to.c:596
 #, c-format
 msgid "[%s] DRC Error: specified courtyard length is too small."
 msgstr "[%s] DRC Fout: gespecificeerde omgrenzinglengte is te klein."
 
-#: src/bga.c:618
-#: src/capa.c:561
-#: src/capc.c:509
-#: src/capm.c:554
-#: src/capmp.c:554
-#: src/cappr.c:587
-#: src/con_dil.c:530
-#: src/con_dip.c:550
+#: src/bga.c:631
+#: src/capa.c:564
+#: src/capc.c:511
+#: src/capm.c:556
+#: src/capmp.c:556
+#: src/cappr.c:590
+#: src/con_dil.c:525
+#: src/con_dip.c:552
 #: src/con_hdr.c:221
-#: src/con_sil.c:564
-#: src/indp.c:549
-#: src/sil.c:512
-#: src/sip.c:506
+#: src/con_sil.c:566
+#: src/indp.c:551
+#: src/sil.c:514
+#: src/sip.c:509
+#: src/to.c:606
 #, c-format
 msgid "[%s] DRC Error: specified courtyard width is too small."
 msgstr "[%s] DRC Fout: gespecificeerde omgrenzingbreedte is te klein."
 
-#: src/bga.c:629
-#: src/capa.c:572
-#: src/capc.c:520
-#: src/capm.c:565
-#: src/capmp.c:565
-#: src/cappr.c:599
-#: src/con_dil.c:541
-#: src/con_dip.c:561
+#: src/bga.c:642
+#: src/capa.c:575
+#: src/capa.c:585
+#: src/capc.c:522
+#: src/capm.c:567
+#: src/capmp.c:567
+#: src/cappr.c:602
+#: src/con_dil.c:536
+#: src/con_dil.c:546
+#: src/con_dip.c:563
+#: src/con_dip.c:573
 #: src/con_hdr.c:232
-#: src/indp.c:560
+#: src/con_hdr.c:242
+#: src/indp.c:562
+#: src/res.c:599
 #, c-format
 msgid "[%s] DRC Error: minimum clearance between copper (X-direction) is too small."
 msgstr "[%s] DRC Fout: minimale vrijloop tussen koper (X-riching) is te klein."
 
-#: src/bga.c:640
-#: src/capa.c:583
-#: src/capc.c:531
-#: src/capm.c:576
-#: src/capmp.c:576
-#: src/con_dil.c:552
-#: src/con_dip.c:572
-#: src/con_hdr.c:243
-#: src/con_sil.c:575
-#: src/indp.c:571
-#: src/sil.c:523
-#: src/sip.c:517
+#: src/bga.c:653
+#: src/con_dil.c:557
+#: src/con_dil.c:567
+#: src/con_dip.c:584
+#: src/con_dip.c:594
+#: src/con_hdr.c:253
+#: src/con_hdr.c:263
+#: src/con_sil.c:577
+#: src/con_sil.c:587
+#: src/indp.c:573
+#: src/sil.c:525
+#: src/sip.c:520
+#: src/to.c:617
 #, c-format
 msgid "[%s] DRC Error: minimum clearance between copper (Y-direction) is too small."
 msgstr "[%s] DRC Fout: minimale vrijloop tussen koper (Y-riching) is te klein."
 
-#: src/bga.c:653
+#: src/bga.c:667
 #, c-format
 msgid "[%s] DRC Error: zero width fiducial pad."
 msgstr "[%s] DRC Fout: fiducial pad heeft een breedte van nul."
 
-#: src/bga.c:664
+#: src/bga.c:678
 #, c-format
 msgid "[%s] DRC Error: fiducial has zero width solder mask clearance."
 msgstr "[%s] DRC Fout: fiducial heeft geen soldeermaskervrijloopbreedte."
 
-#: src/bga.c:680
+#: src/bga.c:694
 #, c-format
 msgid "[%s] DRC Error: specified distance between fiducial and nearest pad is to small."
 msgstr "[%s] DRC Fout: minimale afstand tussen fiducial pad en dichstbijzijnde pad is te klein."
 
-#: src/bga.c:694
-#: src/con_dip.c:595
-#: src/con_hdr.c:266
-#: src/con_sil.c:598
-#: src/indp.c:594
-#: src/sil.c:546
-#: src/sip.c:540
+#: src/bga.c:708
+#: src/con_dip.c:617
+#: src/con_hdr.c:286
+#: src/con_sil.c:610
+#: src/indp.c:596
+#: src/sil.c:548
+#: src/sip.c:543
+#: src/to.c:640
 #, c-format
 msgid "[%s] DRC Error: clearance of the package length with regard to the courtyard dimensions is too small."
 msgstr "[%s] DRC Fout: vrijloop van de behuizinglengte ten opzichte van de omgrenzingafmetingen is te klein."
 
-#: src/bga.c:706
-#: src/con_dip.c:607
-#: src/con_hdr.c:278
-#: src/con_sil.c:610
-#: src/indp.c:606
-#: src/sil.c:558
-#: src/sip.c:552
+#: src/bga.c:720
+#: src/con_dip.c:629
+#: src/con_hdr.c:298
+#: src/con_sil.c:622
+#: src/indp.c:608
+#: src/sil.c:560
+#: src/sip.c:555
+#: src/to.c:652
 #, c-format
 msgid "[%s] DRC Error: clearance of the package width with regard to the courtyard dimensions is too small."
 msgstr "[%s] DRC Fout: vrijloop van de behuizingbreedte ten opzichte van de omgrenzingafmetingen is te klein."
 
-#: src/bga.c:722
-#: src/capa.c:633
-#: src/capc.c:582
-#: src/capm.c:627
-#: src/capmp.c:627
-#: src/cappr.c:661
-#: src/con_dil.c:603
-#: src/con_dip.c:623
-#: src/con_hdr.c:294
-#: src/con_sil.c:626
-#: src/indp.c:622
-#: src/sil.c:574
-#: src/sip.c:568
+#: src/bga.c:736
+#: src/capa.c:647
+#: src/capc.c:584
+#: src/capm.c:629
+#: src/capmp.c:629
+#: src/cappr.c:664
+#: src/con_dil.c:618
+#: src/con_dip.c:645
+#: src/con_hdr.c:314
+#: src/con_sil.c:638
+#: src/indp.c:624
+#: src/sil.c:576
+#: src/sip.c:571
+#: src/to.c:668
 #, c-format
 msgid "[%s] DRC Error: silkscreen line width is too small."
 msgstr "[%s] DRC Fout: opdruk lijnbreedte is te klein."
 
-#: src/bga.c:734
-#: src/capa.c:645
-#: src/capc.c:594
-#: src/capm.c:639
-#: src/capmp.c:639
-#: src/cappr.c:673
-#: src/con_dil.c:615
-#: src/con_dip.c:635
-#: src/con_hdr.c:306
-#: src/con_sil.c:638
-#: src/indp.c:634
-#: src/sil.c:586
-#: src/sip.c:580
+#: src/bga.c:748
+#: src/capa.c:659
+#: src/capc.c:596
+#: src/capm.c:641
+#: src/capmp.c:641
+#: src/cappr.c:676
+#: src/con_dil.c:630
+#: src/con_dip.c:657
+#: src/con_hdr.c:326
+#: src/con_sil.c:650
+#: src/indp.c:636
+#: src/sil.c:588
+#: src/sip.c:583
+#: src/to.c:680
 #, c-format
 msgid "[%s] DRC Error: no units specified."
 msgstr "[%s] DRC Fout: geen eenheden gespecificeerd."
 
-#: src/bga.c:746
-#: src/bga.c:758
-#: src/bga.c:770
-#: src/capa.c:657
-#: src/capa.c:669
-#: src/capa.c:681
-#: src/capc.c:606
-#: src/capc.c:618
-#: src/capc.c:630
-#: src/capm.c:651
-#: src/capm.c:663
-#: src/capm.c:675
-#: src/capmp.c:651
-#: src/capmp.c:663
-#: src/capmp.c:675
-#: src/cappr.c:685
-#: src/cappr.c:697
-#: src/cappr.c:709
-#: src/con_dil.c:627
-#: src/con_dil.c:639
-#: src/con_dil.c:651
-#: src/con_dip.c:647
-#: src/con_dip.c:659
-#: src/con_dip.c:671
-#: src/con_hdr.c:318
-#: src/con_hdr.c:330
-#: src/con_hdr.c:342
-#: src/con_sil.c:650
+#: src/bga.c:760
+#: src/bga.c:772
+#: src/bga.c:784
+#: src/capa.c:671
+#: src/capa.c:683
+#: src/capa.c:695
+#: src/capc.c:608
+#: src/capc.c:620
+#: src/capc.c:632
+#: src/capm.c:653
+#: src/capm.c:665
+#: src/capm.c:677
+#: src/capmp.c:653
+#: src/capmp.c:665
+#: src/capmp.c:677
+#: src/cappr.c:688
+#: src/cappr.c:700
+#: src/cappr.c:712
+#: src/con_dil.c:642
+#: src/con_dil.c:654
+#: src/con_dil.c:666
+#: src/con_dip.c:669
+#: src/con_dip.c:681
+#: src/con_dip.c:693
+#: src/con_hdr.c:338
+#: src/con_hdr.c:350
+#: src/con_hdr.c:362
 #: src/con_sil.c:662
 #: src/con_sil.c:674
-#: src/indp.c:646
-#: src/indp.c:658
-#: src/indp.c:670
-#: src/sil.c:598
-#: src/sil.c:610
-#: src/sil.c:622
-#: src/sip.c:592
-#: src/sip.c:604
-#: src/sip.c:616
+#: src/con_sil.c:686
+#: src/indp.c:648
+#: src/indp.c:660
+#: src/indp.c:672
+#: src/sil.c:600
+#: src/sil.c:612
+#: src/sil.c:624
+#: src/sip.c:595
+#: src/sip.c:607
+#: src/sip.c:619
+#: src/to.c:692
+#: src/to.c:704
+#: src/to.c:716
 #, c-format
 msgid "[%s] DRC Error: silkscreen line width too wide."
 msgstr "[%s] DRC Fout: opdruk lijnbreedte is te breed."
 
-#: src/bga.c:781
-#: src/capa.c:692
-#: src/capc.c:641
-#: src/capm.c:686
-#: src/capmp.c:686
-#: src/cappr.c:720
-#: src/con_dil.c:662
-#: src/con_dip.c:682
-#: src/con_hdr.c:353
-#: src/con_sil.c:685
-#: src/indp.c:681
-#: src/sil.c:633
-#: src/sip.c:627
+#: src/bga.c:795
+#: src/capa.c:706
+#: src/capc.c:643
+#: src/capm.c:688
+#: src/capmp.c:688
+#: src/cappr.c:723
+#: src/con_dil.c:677
+#: src/con_dip.c:704
+#: src/con_hdr.c:373
+#: src/con_sil.c:697
+#: src/indp.c:683
+#: src/sil.c:635
+#: src/sip.c:630
+#: src/to.c:727
 #, c-format
 msgid "[%s] DRC Error: no valid units type specified."
 msgstr "[%s] DRC Fout: geen geldig eenheidtype gespecificeerd."
 
-#: src/bga.c:792
-#: src/capa.c:703
-#: src/capc.c:652
-#: src/capm.c:697
-#: src/capmp.c:697
-#: src/cappr.c:731
-#: src/con_dil.c:673
-#: src/con_dip.c:694
-#: src/con_hdr.c:365
-#: src/con_sil.c:696
-#: src/diom.c:695
-#: src/diomelf.c:704
+#: src/bga.c:806
+#: src/capa.c:717
+#: src/capc.c:654
+#: src/capm.c:699
+#: src/capmp.c:699
+#: src/cappr.c:734
+#: src/con_dil.c:688
+#: src/con_dip.c:716
+#: src/con_hdr.c:385
+#: src/con_sil.c:708
+#: src/diom.c:696
+#: src/diomelf.c:705
 #: src/dip.c:672
 #: src/dips.c:687
-#: src/indc.c:641
-#: src/indm.c:699
-#: src/indp.c:693
-#: src/pga.c:626
-#: src/plcc.c:838
-#: src/res.c:696
-#: src/resc.c:608
-#: src/resm.c:698
-#: src/resmelf.c:689
-#: src/sil.c:644
-#: src/sip.c:638
-#: src/sot.c:924
+#: src/indc.c:619
+#: src/indm.c:700
+#: src/indp.c:694
+#: src/pga.c:628
+#: src/plcc.c:840
+#: src/res.c:731
+#: src/resc.c:609
+#: src/resm.c:699
+#: src/resmelf.c:690
+#: src/sil.c:646
+#: src/sip.c:641
+#: src/sot.c:930
+#: src/to.c:738
 #, c-format
 msgid "[%s] DRC Check: no errors while checking package %s."
 msgstr "[%s] DRC Fout: geen fouten tijdens controle van behuizing %s."
 
-#: src/bga.c:965
-#: src/bga.c:1093
-#: src/bga.c:1482
-#: src/bga.c:1522
-#: src/bga.c:1595
-#: src/bga.c:1687
-#: src/bga.c:1732
-#: src/bga.c:2177
-#: src/bga.c:2481
-#: src/bga.c:2530
-#: src/bga.c:2621
-#: src/bga.c:2704
-#: src/bga.c:2749
-#: src/bga.c:2794
-#: src/bga.c:2933
-#: src/bga.c:3019
-#: src/bga.c:3130
-#: src/bga.c:3213
-#: src/bga.c:3258
-#: src/bga.c:3298
-#: src/bga.c:3338
-#: src/bga.c:3586
-#: src/bga.c:3670
-#: src/bga.c:4134
-#: src/bga.c:4173
-#: src/bga.c:4401
-#: src/bga.c:4494
-#: src/capc.c:754
-#: src/capc.c:796
-#: src/sot.c:1034
-#: src/sot.c:1072
-#: src/sot.c:1110
-#: src/sot.c:1179
-#: src/sot.c:1217
-#: src/sot.c:1255
-#: src/sot.c:1327
-#: src/sot.c:1442
-#: src/sot.c:1483
-#: src/sot.c:1524
-#: src/sot.c:1569
-#: src/sot.c:1655
-#: src/sot.c:1700
-#: src/sot.c:1745
-#: src/sot.c:1793
-#: src/sot.c:1834
-#: src/sot.c:2003
-#: src/sot.c:2119
-#: src/sot.c:2164
-#: src/sot.c:2209
-#: src/sot.c:2256
-#: src/sot.c:2304
-#: src/sot.c:2349
-#: src/sot.c:2476
-#: src/sot.c:2522
-#: src/sot.c:2569
-#: src/sot.c:2615
-#: src/sot.c:2661
-#: src/sot.c:2706
-#: src/sot.c:2753
-#: src/sot.c:2798
-#: src/sot.c:2843
-#: src/sot.c:2982
-#: src/sot.c:3020
-#: src/sot.c:3058
-#: src/sot.c:3096
+#: src/bga.c:983
+#: src/bga.c:1125
+#: src/bga.c:1524
+#: src/bga.c:1565
+#: src/bga.c:1640
+#: src/bga.c:1734
+#: src/bga.c:1780
+#: src/bga.c:2240
+#: src/bga.c:2555
+#: src/bga.c:2605
+#: src/bga.c:2698
+#: src/bga.c:2783
+#: src/bga.c:2829
+#: src/bga.c:2875
+#: src/bga.c:3017
+#: src/bga.c:3105
+#: src/bga.c:3219
+#: src/bga.c:3304
+#: src/bga.c:3350
+#: src/bga.c:3391
+#: src/bga.c:3432
+#: src/bga.c:3686
+#: src/bga.c:3771
+#: src/bga.c:4245
+#: src/bga.c:4285
+#: src/bga.c:4518
+#: src/bga.c:4613
+#: src/capc.c:758
+#: src/capc.c:806
+#: src/diomelf.c:777
+#: src/diomelf.c:817
+#: src/diomelf.c:857
+#: src/diomelf.c:897
+#: src/diomelf.c:937
+#: src/diomelf.c:977
+#: src/diomelf.c:1017
+#: src/diomelf.c:1057
+#: src/diomelf.c:1097
+#: src/diomelf.c:1273
+#: src/diomelf.c:1313
+#: src/indc.c:683
+#: src/indc.c:724
+#: src/indc.c:765
+#: src/indc.c:803
+#: src/indc.c:841
+#: src/indc.c:879
+#: src/indc.c:949
+#: src/indc.c:987
+#: src/sot.c:1041
+#: src/sot.c:1082
+#: src/sot.c:1123
+#: src/sot.c:1198
+#: src/sot.c:1239
+#: src/sot.c:1280
+#: src/sot.c:1358
+#: src/sot.c:1482
+#: src/sot.c:1526
+#: src/sot.c:1570
+#: src/sot.c:1618
+#: src/sot.c:1710
+#: src/sot.c:1758
+#: src/sot.c:1806
+#: src/sot.c:1857
+#: src/sot.c:1901
+#: src/sot.c:2082
+#: src/sot.c:2207
+#: src/sot.c:2255
+#: src/sot.c:2303
+#: src/sot.c:2353
+#: src/sot.c:2404
+#: src/sot.c:2452
+#: src/sot.c:2588
+#: src/sot.c:2637
+#: src/sot.c:2687
+#: src/sot.c:2736
+#: src/sot.c:2785
+#: src/sot.c:2833
+#: src/sot.c:2883
+#: src/sot.c:2931
+#: src/sot.c:2979
+#: src/sot.c:3130
+#: src/sot.c:3171
+#: src/sot.c:3212
+#: src/sot.c:3253
 #, c-format
 msgid "%s is also known as"
 msgstr "%s is ook bekend als"
 
-#: src/bga.c:4627
-#: src/capa.c:770
-#: src/capc.c:2458
-#: src/capm.c:757
-#: src/capmp.c:756
-#: src/cappr.c:798
-#: src/con_dil.c:727
-#: src/diom.c:755
-#: src/diomelf.c:1315
-#: src/indc.c:701
-#: src/indm.c:761
-#: src/indp.c:755
-#: src/res.c:765
-#: src/resc.c:668
-#: src/resm.c:760
-#: src/resmelf.c:753
-#: src/sot.c:3107
-#: src/to.c:505
+#: src/bga.c:4749
+#: src/capa.c:782
+#: src/capc.c:2717
+#: src/capm.c:759
+#: src/capmp.c:755
+#: src/cappr.c:799
+#: src/con_dil.c:738
+#: src/diom.c:752
+#: src/diomelf.c:1323
+#: src/indc.c:995
+#: src/indm.c:758
+#: src/indp.c:754
+#: src/res.c:1622
+#: src/resc.c:665
+#: src/resm.c:757
+#: src/resmelf.c:750
+#: src/sot.c:3264
+#: src/to.c:796
 #, c-format
 msgid "default values for footprint %s not found.\n"
 msgstr "standaard waarde voor voetafdruk %s niet gevonden.\n"
 
-#: src/bga.c:4745
-#: src/capa.c:852
-#: src/capc.c:2545
-#: src/capm.c:843
-#: src/capmp.c:842
-#: src/cappr.c:880
-#: src/con_dil.c:817
-#: src/con_dip.c:840
-#: src/con_hdr.c:518
-#: src/con_sil.c:1951
-#: src/diom.c:842
-#: src/diomelf.c:1405
-#: src/dip.c:1795
-#: src/dips.c:2305
-#: src/indc.c:788
-#: src/indm.c:850
-#: src/indp.c:844
-#: src/pga.c:778
-#: src/plcc.c:977
-#: src/res.c:850
-#: src/resc.c:750
-#: src/resm.c:849
-#: src/resmelf.c:840
-#: src/sil.c:790
-#: src/sip.c:784
-#: src/sot.c:3191
-#: src/to.c:587
-#: src/to.c:923
-#: src/to.c:1258
-#: src/to.c:1455
-#: src/to.c:1651
-#: src/to.c:1834
+#: src/bga.c:4863
+#: src/capa.c:864
+#: src/capc.c:2799
+#: src/capm.c:841
+#: src/capmp.c:837
+#: src/cappr.c:881
+#: src/con_dil.c:824
+#: src/con_dip.c:870
+#: src/con_hdr.c:547
+#: src/con_sil.c:2519
+#: src/diom.c:835
+#: src/diomelf.c:1409
+#: src/dip.c:1793
+#: src/dips.c:2303
+#: src/indc.c:1078
+#: src/indm.c:843
+#: src/indp.c:839
+#: src/pga.c:772
+#: src/plcc.c:971
+#: src/res.c:1707
+#: src/resc.c:747
+#: src/resm.c:842
+#: src/resmelf.c:833
+#: src/sil.c:784
+#: src/sip.c:779
+#: src/sot.c:3348
+#: src/to.c:874
+#: src/to.c:1210
+#: src/to.c:1545
+#: src/to.c:1742
+#: src/to.c:1938
+#: src/to.c:2121
 #, c-format
 msgid "could not open file for %s footprint: %s."
 msgstr "kan bestand %s voor voetafdruk: %s niet openen."
 
-#: src/bga.c:4863
+#: src/bga.c:4981
 #, c-format
 msgid "# Write fiducials\n"
 msgstr "# Schrijf fiducials\n"
 
-#: src/bga.c:4927
-#: src/capa.c:1062
-#: src/capc.c:2655
-#: src/capm.c:953
-#: src/capmp.c:952
-#: src/cappr.c:1090
-#: src/con_dil.c:974
-#: src/con_dip.c:989
+#: src/bga.c:5045
+#: src/capa.c:1074
+#: src/capc.c:2909
+#: src/capm.c:951
+#: src/capmp.c:947
+#: src/cappr.c:1091
+#: src/con_dil.c:981
+#: src/con_dip.c:1019
 #, c-format
 msgid "# Write a package body on the silkscreen\n"
 msgstr "# Schrijf een behuizinglichaam op de opdruk\n"
 
-#: src/bga.c:4940
-#: src/capm.c:1030
-#: src/capmp.c:1029
-#: src/con_dil.c:987
-#: src/con_dip.c:1002
+#: src/bga.c:5058
+#: src/capm.c:1028
+#: src/capmp.c:1024
+#: src/con_dil.c:994
+#: src/con_dip.c:1032
 #, c-format
 msgid "# Write a pin 1 marker on the silkscreen\n"
 msgstr "# Schrijf een pen 1 merk op de opdruk\n"
 
-#: src/bga.c:4956
-#: src/capa.c:1100
-#: src/capc.c:2681
-#: src/capm.c:1059
-#: src/capmp.c:1058
-#: src/cappr.c:1144
-#: src/con_dil.c:1002
-#: src/con_dip.c:1052
+#: src/bga.c:5074
+#: src/capa.c:1112
+#: src/capc.c:2935
+#: src/capm.c:1057
+#: src/capmp.c:1053
+#: src/cappr.c:1145
+#: src/con_dil.c:1009
+#: src/con_dip.c:1082
 #, c-format
 msgid "# Write a courtyard on the silkscreen\n"
 msgstr "# Schrijf een omgrenzing op de opdruk\n"
 
-#: src/bga.c:4979
+#: src/bga.c:5097
 #, c-format
 msgid "[%s] wrote footprint: %s."
 msgstr "[%s] schreef voetafdruk: %s."
 
-#: src/capa.c:593
-#: src/capc.c:542
-#: src/capm.c:587
-#: src/capmp.c:587
-#: src/cappr.c:621
-#: src/con_dil.c:563
+#: src/capa.c:596
+#: src/capc.c:533
+#: src/capm.c:578
+#: src/capmp.c:578
+#: src/cappr.c:613
+#: src/res.c:610
+#, c-format
+msgid "[%s] DRC Error: pitch in Y-direction should be 0."
+msgstr "[%s] DRC Fout: steek in Y-richting hoort 0 te zijn."
+
+#: src/capa.c:607
+#: src/capc.c:544
+#: src/capm.c:589
+#: src/capmp.c:589
+#: src/cappr.c:624
+#: src/con_dil.c:578
+#: src/indc.c:509
 #, c-format
 msgid "[%s] DRC Error: package should not have a fiducial pad."
 msgstr "[%s] DRC Fout: behuizing hoort geen fiducial te hebben."
 
-#: src/capa.c:605
-#: src/capc.c:554
-#: src/capm.c:599
-#: src/capmp.c:599
-#: src/cappr.c:633
-#: src/con_dil.c:575
-#: src/diom.c:596
-#: src/diomelf.c:605
+#: src/capa.c:619
+#: src/capc.c:556
+#: src/capm.c:601
+#: src/capmp.c:601
+#: src/cappr.c:636
+#: src/con_dil.c:590
+#: src/diom.c:598
+#: src/diomelf.c:607
 #: src/dip.c:574
 #: src/dips.c:589
-#: src/indc.c:542
-#: src/indm.c:600
-#: src/pga.c:528
-#: src/plcc.c:739
-#: src/res.c:598
-#: src/resc.c:509
-#: src/resm.c:599
-#: src/resmelf.c:590
-#: src/sot.c:825
+#: src/indc.c:521
+#: src/indm.c:602
+#: src/pga.c:530
+#: src/plcc.c:742
+#: src/res.c:633
+#: src/resc.c:511
+#: src/resm.c:601
+#: src/resmelf.c:592
+#: src/sot.c:832
 #, c-format
 msgid "[%s] DRC Error: check for clearance of the package length with regard to the courtyard dimensions."
 msgstr "[%s] DRC Fout: controle van vrijloop van de behuizinglengte met betrekking tot de omgrenzingsbemating."
 
-#: src/capa.c:617
-#: src/capc.c:566
-#: src/capm.c:611
-#: src/capmp.c:611
-#: src/cappr.c:645
-#: src/con_dil.c:587
-#: src/diom.c:608
-#: src/diomelf.c:617
+#: src/capa.c:631
+#: src/capc.c:568
+#: src/capm.c:613
+#: src/capmp.c:613
+#: src/cappr.c:648
+#: src/con_dil.c:602
+#: src/diom.c:610
+#: src/diomelf.c:619
 #: src/dip.c:586
 #: src/dips.c:601
-#: src/indc.c:554
-#: src/indm.c:612
-#: src/pga.c:540
-#: src/plcc.c:751
-#: src/res.c:610
-#: src/resc.c:521
-#: src/resm.c:611
-#: src/resmelf.c:602
-#: src/sot.c:837
+#: src/indc.c:533
+#: src/indm.c:614
+#: src/pga.c:542
+#: src/plcc.c:754
+#: src/res.c:645
+#: src/resc.c:523
+#: src/resm.c:613
+#: src/resmelf.c:604
+#: src/sot.c:844
 #, c-format
 msgid "[%s] DRC Error: check for clearance of the package width with regard to the courtyard dimensions."
 msgstr "[%s] DRC Fout: controle van vrijloop van de behuizingbreedte met betrekking tot de omgrenzingsbemating."
 
-#: src/capa.c:1123
-#: src/capc.c:2704
-#: src/capm.c:1082
-#: src/capmp.c:1081
-#: src/cappr.c:1183
-#: src/con_dil.c:1025
-#: src/con_dip.c:1075
-#: src/con_hdr.c:677
-#: src/con_sil.c:2141
-#: src/diom.c:1081
-#: src/diomelf.c:1645
-#: src/dip.c:1987
-#: src/dips.c:2497
-#: src/indc.c:947
-#: src/indm.c:1108
-#: src/indp.c:1102
-#: src/pga.c:927
-#: src/plcc.c:1362
-#: src/res.c:1122
-#: src/resc.c:909
-#: src/resm.c:1107
-#: src/resmelf.c:1079
-#: src/sil.c:980
-#: src/sip.c:974
-#: src/sot.c:3535
-#: src/to.c:892
-#: src/to.c:1228
-#: src/to.c:1424
-#: src/to.c:1621
-#: src/to.c:1803
-#: src/to.c:1986
+#: src/capa.c:1135
+#: src/capc.c:2958
+#: src/capm.c:1080
+#: src/capmp.c:1076
+#: src/cappr.c:1184
+#: src/con_dil.c:1032
+#: src/con_dip.c:1105
+#: src/con_hdr.c:706
+#: src/con_sil.c:2709
+#: src/diom.c:1074
+#: src/diomelf.c:1649
+#: src/dip.c:1985
+#: src/dips.c:2495
+#: src/indc.c:1237
+#: src/indm.c:1101
+#: src/indp.c:1097
+#: src/pga.c:921
+#: src/plcc.c:1356
+#: src/res.c:1979
+#: src/resc.c:906
+#: src/resm.c:1100
+#: src/resmelf.c:1072
+#: src/sil.c:974
+#: src/sip.c:969
+#: src/sot.c:3692
+#: src/to.c:1179
+#: src/to.c:1515
+#: src/to.c:1711
+#: src/to.c:1908
+#: src/to.c:2090
+#: src/to.c:2273
 #, c-format
 msgid "wrote a footprint for a %s package: %s."
 msgstr "schreef een voetafdruk voor een %s behuizing: %s."
 
-#: src/capc.c:401
-#: src/capm.c:446
-#: src/capmp.c:446
-#: src/diom.c:443
-#: src/diomelf.c:452
-#: src/indc.c:358
-#: src/indm.c:447
-#: src/indp.c:441
-#: src/resc.c:356
-#: src/resm.c:446
-#: src/resmelf.c:437
+#: src/capc.c:403
+#: src/capm.c:448
+#: src/capmp.c:448
+#: src/diom.c:445
+#: src/diomelf.c:454
+#: src/indc.c:368
+#: src/indm.c:449
+#: src/indp.c:443
+#: src/resc.c:358
+#: src/resm.c:448
+#: src/resmelf.c:439
 #, c-format
 msgid "[%s] DRC Error: check for number of pins/pads <> 2."
 msgstr "[%s] DRC Fout: controle van aantal pennen/pads <>2."
 
-#: src/capc.c:425
-#: src/capm.c:470
-#: src/capmp.c:470
-#: src/diom.c:467
-#: src/diomelf.c:476
-#: src/indc.c:382
-#: src/indm.c:471
-#: src/indp.c:465
-#: src/resc.c:380
-#: src/resm.c:470
-#: src/resmelf.c:461
-#: src/sot.c:665
+#: src/capc.c:427
+#: src/capm.c:472
+#: src/capmp.c:472
+#: src/diom.c:469
+#: src/diomelf.c:478
+#: src/indc.c:392
+#: src/indm.c:473
+#: src/indp.c:467
+#: src/resc.c:382
+#: src/resm.c:472
+#: src/resmelf.c:463
+#: src/sot.c:671
 #, c-format
 msgid "[%s] DRC Error: circular pad shape specified for check for allowed pad shapes."
 msgstr "[%s] DRC Fout: ronde padvorm gespecificeerd voor de controle van toegestane padvormen."
 
-#: src/capc.c:757
-#: src/capc.c:799
-#: src/capc.c:1041
-#: src/sot.c:1031
+#: src/capc.c:761
+#: src/capc.c:809
+#: src/capc.c:1087
+#: src/sot.c:1038
 #, c-format
 msgid "%s: pads are being trimmed."
 msgstr "%s: pads worden afgekort."
 
-#: src/capc.c:759
-#: src/capc.c:801
-#: src/capc.c:841
-#: src/capc.c:881
-#: src/capc.c:921
-#: src/capc.c:961
-#: src/capc.c:1001
-#: src/capc.c:1043
-#: src/capc.c:1083
-#: src/capc.c:1123
-#: src/capc.c:1163
-#: src/capc.c:1203
-#: src/capc.c:1243
-#: src/capc.c:1283
-#: src/capc.c:1323
-#: src/capc.c:1363
-#: src/capc.c:1403
-#: src/capc.c:1443
-#: src/capc.c:1483
-#: src/capc.c:1523
-#: src/capc.c:1563
-#: src/capc.c:1603
-#: src/capc.c:1643
-#: src/capc.c:1683
-#: src/capc.c:1723
-#: src/capc.c:1763
-#: src/capc.c:1803
-#: src/capc.c:1843
-#: src/capc.c:1883
-#: src/capc.c:1923
+#: src/capc.c:763
+#: src/capc.c:811
+#: src/capc.c:857
+#: src/capc.c:903
+#: src/capc.c:949
+#: src/capc.c:995
+#: src/capc.c:1041
+#: src/capc.c:1089
+#: src/capc.c:1135
+#: src/capc.c:1181
+#: src/capc.c:1227
+#: src/capc.c:1273
+#: src/capc.c:1319
+#: src/capc.c:1365
+#: src/capc.c:1411
+#: src/capc.c:1457
+#: src/capc.c:1503
+#: src/capc.c:1549
+#: src/capc.c:1595
+#: src/capc.c:1641
+#: src/capc.c:1687
+#: src/capc.c:1733
+#: src/capc.c:1779
+#: src/capc.c:1825
+#: src/capc.c:1871
+#: src/capc.c:1917
 #: src/capc.c:1963
-#: src/capc.c:2003
+#: src/capc.c:2009
+#: src/capc.c:2055
+#: src/capc.c:2101
+#: src/capc.c:2147
+#: src/capc.c:2193
+#: src/indc.c:686
+#: src/indc.c:727
 #, c-format
 msgid "%s: footprint is too small for a package outline on the silkscreen."
 msgstr "%s: voetafdruk is te klein voor een behuizinglichaam op de opdruk."
 
-#: src/capc.c:838
-#: src/capc.c:878
-#: src/capc.c:918
-#: src/capc.c:958
-#: src/capc.c:998
+#: src/capc.c:854
+#: src/capc.c:900
+#: src/capc.c:946
+#: src/capc.c:992
 #: src/capc.c:1038
-#: src/capc.c:1080
-#: src/capc.c:1120
-#: src/capc.c:1160
-#: src/capc.c:1200
-#: src/capc.c:1240
-#: src/capc.c:1280
-#: src/capc.c:1320
-#: src/capc.c:1360
-#: src/capc.c:1400
-#: src/capc.c:1440
-#: src/capc.c:1480
-#: src/capc.c:1520
-#: src/capc.c:1560
-#: src/capc.c:1600
-#: src/capc.c:1640
-#: src/capc.c:1680
-#: src/capc.c:1720
-#: src/capc.c:1760
-#: src/capc.c:1800
-#: src/capc.c:1840
-#: src/capc.c:1880
-#: src/capc.c:1920
+#: src/capc.c:1084
+#: src/capc.c:1132
+#: src/capc.c:1178
+#: src/capc.c:1224
+#: src/capc.c:1270
+#: src/capc.c:1316
+#: src/capc.c:1362
+#: src/capc.c:1408
+#: src/capc.c:1454
+#: src/capc.c:1500
+#: src/capc.c:1546
+#: src/capc.c:1592
+#: src/capc.c:1638
+#: src/capc.c:1684
+#: src/capc.c:1730
+#: src/capc.c:1776
+#: src/capc.c:1822
+#: src/capc.c:1868
+#: src/capc.c:1914
 #: src/capc.c:1960
-#: src/capc.c:2000
-#: src/capc.c:2040
-#: src/capc.c:2077
-#: src/capc.c:2114
-#: src/capc.c:2151
-#: src/capc.c:2188
-#: src/capc.c:2225
-#: src/capc.c:2262
-#: src/capc.c:2299
-#: src/capc.c:2336
-#: src/capc.c:2373
-#: src/capc.c:2410
-#: src/capc.c:2450
+#: src/capc.c:2006
+#: src/capc.c:2052
+#: src/capc.c:2098
+#: src/capc.c:2144
+#: src/capc.c:2190
+#: src/capc.c:2236
+#: src/capc.c:2279
+#: src/capc.c:2322
+#: src/capc.c:2365
+#: src/capc.c:2408
+#: src/capc.c:2451
+#: src/capc.c:2494
+#: src/capc.c:2537
+#: src/capc.c:2580
+#: src/capc.c:2623
+#: src/capc.c:2666
+#: src/capc.c:2709
 #, c-format
 msgid "%s: is also known as"
 msgstr "%s: is ook bekend als"
 
-#: src/cappr.c:610
-#, c-format
-msgid "[%s] DRC Error: Pitch in Y-direction is supposed to be 0."
-msgstr "[%s] DRC Fout: Steek in Y-richting is verondersteld 0 te zijn."
-
-#: src/con_dil.c:393
+#: src/con_dil.c:395
 #, c-format
 msgid "[%s] DRC Error: check for number of pins is even."
 msgstr "[%s] DRC Fout: controle van aantal pennen is even"
 
-#: src/con_dil.c:404
+#: src/con_dil.c:406
 #, c-format
 msgid "[%s] DRC Error: check for number of rows = 2."
 msgstr "[%s] DRC Fout: controle van aantal rijen = 2."
 
-#: src/con_dil.c:415
+#: src/con_dil.c:417
 #, c-format
 msgid "[%s] DRC Error: check for number of columns < 1."
 msgstr "[%s] DRC Fout: controle van aantal kolommen < 1."
 
-#: src/con_dip.c:55
-#: src/con_sil.c:54
-#: src/diom.c:53
-#: src/diomelf.c:54
-#: src/dip.c:54
-#: src/dips.c:56
-#: src/indc.c:53
-#: src/indm.c:54
-#: src/indp.c:54
-#: src/pga.c:55
-#: src/plcc.c:59
-#: src/res.c:54
-#: src/resc.c:51
-#: src/resm.c:53
-#: src/resmelf.c:53
-#: src/sil.c:54
-#: src/sip.c:54
-#: src/sot.c:53
-#: src/to.c:52
-#: src/to.c:254
+#: src/con_dip.c:56
+#: src/con_sil.c:55
+#: src/diom.c:54
+#: src/diomelf.c:55
+#: src/dip.c:53
+#: src/dips.c:55
+#: src/indc.c:54
+#: src/indm.c:55
+#: src/indp.c:55
+#: src/pga.c:56
+#: src/plcc.c:60
+#: src/res.c:55
+#: src/resc.c:52
+#: src/resm.c:54
+#: src/resmelf.c:54
+#: src/sil.c:55
+#: src/sip.c:55
+#: src/sot.c:54
+#: src/to.c:53
+#: src/to.c:257
 #, c-format
 msgid "could not create a valid element pointer for a %s package."
 msgstr "kon geen geldige elementaanwijzer creëeren voor een %s behuizing."
 
-#: src/con_dip.c:351
-#: src/con_sil.c:307
-#: src/diom.c:372
-#: src/diomelf.c:373
-#: src/dip.c:308
+#: src/con_dip.c:352
+#: src/con_sil.c:308
+#: src/diom.c:373
+#: src/diomelf.c:374
+#: src/dip.c:307
 #: src/dips.c:310
-#: src/indc.c:287
-#: src/indm.c:376
-#: src/indp.c:376
-#: src/pga.c:274
-#: src/plcc.c:488
-#: src/res.c:401
-#: src/resc.c:285
-#: src/resm.c:375
-#: src/resmelf.c:372
-#: src/sil.c:307
-#: src/sip.c:307
-#: src/sot.c:468
-#: src/to.c:222
-#: src/to.c:424
+#: src/indc.c:288
+#: src/indm.c:377
+#: src/indp.c:377
+#: src/pga.c:275
+#: src/plcc.c:489
+#: src/res.c:402
+#: src/resc.c:286
+#: src/resm.c:376
+#: src/resmelf.c:373
+#: src/sil.c:308
+#: src/sip.c:308
+#: src/sot.c:469
+#: src/to.c:223
+#: src/to.c:427
 #, c-format
 msgid "created an element for a %s package: %s."
 msgstr "creëerde een element voor een %s behuizing: %s."
 
-#: src/con_dip.c:419
+#: src/con_dip.c:421
 #, c-format
 msgid "[%s] DRC Error: total number of pins is not even."
 msgstr "[%s] DRC Fout: totaal aantal pennen is niet even."
 
-#: src/con_dip.c:430
-#: src/con_sil.c:432
-#: src/sil.c:380
-#: src/sip.c:374
+#: src/con_dip.c:432
+#: src/con_sil.c:434
+#: src/sil.c:382
+#: src/sip.c:377
 #, c-format
 msgid "[%s] DRC Error: number of rows < 1."
 msgstr "[%s] DRC Fout: aantal rijen < 1."
 
-#: src/con_dip.c:441
+#: src/con_dip.c:443
 #, c-format
 msgid "[%s] DRC Error: number of columns is not equal to 2."
 msgstr "[%s] DRC Fout: aantal kolommen is niet gelijk aan 2."
 
-#: src/con_dip.c:583
-#: src/con_hdr.c:254
-#: src/con_sil.c:586
-#: src/indp.c:582
-#: src/sil.c:534
-#: src/sip.c:528
+#: src/con_dip.c:605
+#: src/con_hdr.c:274
+#: src/con_sil.c:598
+#: src/indp.c:584
+#: src/sil.c:536
+#: src/sip.c:531
+#: src/to.c:628
 #, c-format
 msgid "[%s] DRC Error: package should not have any fiducials."
 msgstr "[%s] DRC Fout: behuizing zou geen fiducials mogen hebben."
 
-#: src/con_dip.c:747
-#: src/con_hdr.c:418
-#: src/con_sil.c:1858
-#: src/dip.c:1713
-#: src/dips.c:2223
-#: src/pga.c:683
-#: src/plcc.c:895
-#: src/sil.c:697
-#: src/sip.c:691
+#: src/con_dip.c:781
+#: src/con_hdr.c:451
+#: src/con_sil.c:2430
+#: src/dip.c:1711
+#: src/dips.c:2221
+#: src/pga.c:681
+#: src/plcc.c:893
+#: src/sil.c:695
+#: src/sip.c:690
 #, c-format
 msgid "WARNING: default values for footprint %s not found.\n"
 msgstr "WAARSCHUWING: standaard waarden voor voetafdruk %s zijn niet gevonden.\n"
@@ -2754,391 +2821,387 @@ msgstr "[%s] DRC Fout: aantal rijen is < 2."
 msgid "[%s] DRC Error: number of columns is not greater than, or equal to, 2."
 msgstr "[%s] DRC Fout: aantal kolommen is niet groter dan, of gelijk aan, 2."
 
-#: src/con_sil.c:443
-#: src/sil.c:391
-#: src/sip.c:385
+#: src/con_sil.c:445
+#: src/sil.c:393
+#: src/sip.c:388
 #, c-format
 msgid "[%s] DRC Error: number of columns is > 1."
 msgstr "[%s] DRC Fout: aantal kolommen is > 1."
 
-#: src/con_sil.c:455
-#: src/sil.c:403
-#: src/sip.c:397
+#: src/con_sil.c:457
+#: src/sil.c:405
 #, c-format
 msgid "[%s] DRC Error: pitch (X-direction) should be 0."
 msgstr "[%s] DRC Fout: steek (X-richting) zou 0 moeten zijn."
 
-#: src/diom.c:510
-#: src/diomelf.c:519
-#: src/dip.c:454
+#: src/diom.c:512
+#: src/diomelf.c:521
+#: src/dip.c:452
 #: src/dips.c:469
-#: src/indc.c:425
-#: src/indm.c:514
-#: src/pga.c:408
-#: src/plcc.c:622
-#: src/res.c:513
-#: src/resc.c:423
-#: src/resm.c:513
-#: src/resmelf.c:504
-#: src/sot.c:708
+#: src/indc.c:435
+#: src/indm.c:516
+#: src/pga.c:410
+#: src/plcc.c:624
+#: src/res.c:537
+#: src/resc.c:425
+#: src/resm.c:515
+#: src/resmelf.c:506
+#: src/sot.c:714
 #, c-format
 msgid "[%s] DRC Error: check for package body length is <= 0.0."
 msgstr "[%s] DRC Fout: controle van behuizinglengte is <= 0.0."
 
-#: src/diom.c:520
-#: src/diomelf.c:529
-#: src/dip.c:464
+#: src/diom.c:522
+#: src/diomelf.c:531
+#: src/dip.c:462
 #: src/dips.c:479
-#: src/indc.c:435
-#: src/indm.c:524
-#: src/pga.c:418
-#: src/plcc.c:632
-#: src/res.c:523
-#: src/resc.c:433
-#: src/resm.c:523
-#: src/resmelf.c:514
-#: src/sot.c:718
+#: src/indc.c:445
+#: src/indm.c:526
+#: src/pga.c:420
+#: src/plcc.c:634
+#: src/res.c:547
+#: src/resc.c:435
+#: src/resm.c:525
+#: src/resmelf.c:516
+#: src/sot.c:724
 #, c-format
 msgid "[%s] DRC Error: check for package body width is <= 0.0."
 msgstr "[%s] DRC Fout: controle van behuizingbreedte is <= 0.0."
 
-#: src/diom.c:530
-#: src/diomelf.c:539
-#: src/dip.c:474
+#: src/diom.c:532
+#: src/diomelf.c:541
+#: src/dip.c:472
 #: src/dips.c:489
-#: src/indc.c:445
-#: src/indm.c:534
-#: src/pga.c:428
-#: src/plcc.c:642
-#: src/res.c:533
-#: src/resc.c:443
-#: src/resm.c:533
-#: src/resmelf.c:524
-#: src/sot.c:728
+#: src/indc.c:455
+#: src/indm.c:536
+#: src/pga.c:430
+#: src/plcc.c:644
+#: src/res.c:557
+#: src/resc.c:445
+#: src/resm.c:535
+#: src/resmelf.c:526
+#: src/sot.c:734
 #, c-format
 msgid "[%s] DRC Error: check for package body height is <= 0.0."
 msgstr "[%s] DRC Fout: controle van behuizinghoogte is <= 0.0."
 
-#: src/diom.c:541
-#: src/diomelf.c:550
-#: src/dip.c:485
+#: src/diom.c:543
+#: src/diomelf.c:552
+#: src/dip.c:483
 #: src/dips.c:500
-#: src/indc.c:456
-#: src/indm.c:545
-#: src/pga.c:439
-#: src/plcc.c:653
-#: src/res.c:544
-#: src/resc.c:454
-#: src/resm.c:544
-#: src/resmelf.c:535
-#: src/sot.c:739
+#: src/indc.c:466
+#: src/indm.c:547
+#: src/pga.c:441
+#: src/plcc.c:655
+#: src/res.c:568
+#: src/resc.c:456
+#: src/resm.c:546
+#: src/resmelf.c:537
+#: src/sot.c:745
 #, c-format
 msgid "[%s] DRC Error: check for courtyard length is <= 0.0."
 msgstr "[%s] DRC Fout: controle van omgrenzinglengte is <= 0.0."
 
-#: src/diom.c:551
-#: src/diomelf.c:560
-#: src/dip.c:495
+#: src/diom.c:553
+#: src/diomelf.c:562
+#: src/dip.c:493
 #: src/dips.c:510
-#: src/indc.c:466
-#: src/indm.c:555
-#: src/pga.c:449
-#: src/plcc.c:663
-#: src/res.c:554
-#: src/resc.c:464
-#: src/resm.c:554
-#: src/resmelf.c:545
-#: src/sot.c:749
+#: src/indc.c:476
+#: src/indm.c:557
+#: src/pga.c:451
+#: src/plcc.c:665
+#: src/res.c:578
+#: src/resc.c:466
+#: src/resm.c:556
+#: src/resmelf.c:547
+#: src/sot.c:755
 #, c-format
 msgid "[%s] DRC Error: check for courtyard width is <= 0.0."
 msgstr "[%s] DRC Fout: controle van omgrenzingbreedte is <= 0.0."
 
-#: src/diom.c:562
-#: src/diomelf.c:571
-#: src/dip.c:506
+#: src/diom.c:564
+#: src/diomelf.c:573
+#: src/dip.c:504
 #: src/dips.c:521
-#: src/indc.c:477
-#: src/indm.c:566
-#: src/pga.c:460
-#: src/plcc.c:674
-#: src/res.c:565
-#: src/resc.c:475
-#: src/resm.c:565
-#: src/resmelf.c:556
-#: src/sot.c:760
+#: src/indc.c:487
+#: src/indm.c:568
+#: src/pga.c:462
+#: src/plcc.c:676
+#: src/res.c:589
+#: src/resc.c:477
+#: src/resm.c:567
+#: src/resmelf.c:558
+#: src/sot.c:766
 #, c-format
 msgid "[%s] DRC Error: check for minimum clearance between copper (X-direction)."
 msgstr "[%s] DRC Fout: controle van minimum vrijloop tussen koper (X-richting)."
 
-#: src/diom.c:573
-#: src/diomelf.c:582
-#: src/dip.c:517
+#: src/diom.c:575
+#: src/diomelf.c:584
+#: src/dip.c:515
 #: src/dips.c:532
-#: src/indc.c:488
-#: src/indm.c:577
-#: src/pga.c:471
-#: src/plcc.c:685
-#: src/res.c:576
-#: src/resc.c:486
-#: src/resm.c:576
-#: src/resmelf.c:567
-#: src/sot.c:771
+#: src/indc.c:498
+#: src/indm.c:579
+#: src/pga.c:473
+#: src/plcc.c:687
+#: src/resc.c:488
+#: src/resm.c:578
+#: src/resmelf.c:569
+#: src/sot.c:777
 #, c-format
 msgid "[%s] DRC Error: check for minimum clearance between copper (Y-direction)."
 msgstr "[%s] DRC Fout: controle van minimum vrijloop tussen koper (Y-richting)."
 
-#: src/diom.c:584
-#: src/diomelf.c:593
-#: src/indm.c:588
-#: src/resc.c:497
-#: src/resm.c:587
-#: src/resmelf.c:578
+#: src/diom.c:586
+#: src/diomelf.c:595
+#: src/indm.c:590
+#: src/resc.c:499
+#: src/resm.c:589
+#: src/resmelf.c:580
 #, c-format
 msgid "[%s] DRC Error: check for fiducials, package should not have fiducials."
 msgstr "[%s] DRC Fout: controle van fiducials, behuizing hoort geen fiducials te hebben."
 
-#: src/diom.c:624
-#: src/diomelf.c:633
+#: src/diom.c:626
+#: src/diomelf.c:635
 #: src/dip.c:602
 #: src/dips.c:617
-#: src/indc.c:570
-#: src/indm.c:628
-#: src/pga.c:556
-#: src/plcc.c:767
-#: src/res.c:626
-#: src/resc.c:537
-#: src/resm.c:627
-#: src/resmelf.c:618
-#: src/sot.c:853
+#: src/indc.c:549
+#: src/indm.c:630
+#: src/pga.c:558
+#: src/plcc.c:770
+#: src/res.c:661
+#: src/resc.c:539
+#: src/resm.c:629
+#: src/resmelf.c:620
+#: src/sot.c:860
 #, c-format
 msgid "[%s] DRC Error: line width 0.0 specified for check for a reasonable silk line width."
 msgstr "[%s] DRC Fout: lijnbreedte 0.0 gespecificeerd voor controle van een redelijke opdruk lijnbreedte."
 
-#: src/diom.c:636
-#: src/diomelf.c:645
+#: src/diom.c:638
+#: src/diomelf.c:647
 #: src/dip.c:614
 #: src/dips.c:629
-#: src/indc.c:582
-#: src/indm.c:640
-#: src/pga.c:568
-#: src/plcc.c:779
-#: src/res.c:638
-#: src/resc.c:549
-#: src/resm.c:639
-#: src/resmelf.c:630
-#: src/sot.c:865
+#: src/indc.c:561
+#: src/indm.c:642
+#: src/pga.c:570
+#: src/plcc.c:782
+#: src/res.c:673
+#: src/resc.c:551
+#: src/resm.c:641
+#: src/resmelf.c:632
+#: src/sot.c:872
 #, c-format
 msgid "[%s] DRC Error: no units specified for check for a reasonable silk line width."
 msgstr "[%s] DRC Fout: geen eenheid gespecificeerd voor controle van een redelijke opdruk lijnbreedte."
 
-#: src/diom.c:648
-#: src/diom.c:660
-#: src/diomelf.c:657
-#: src/diomelf.c:669
+#: src/diom.c:650
+#: src/diom.c:662
+#: src/diomelf.c:659
+#: src/diomelf.c:671
 #: src/dip.c:626
 #: src/dip.c:638
 #: src/dips.c:641
 #: src/dips.c:653
-#: src/indc.c:594
-#: src/indc.c:606
-#: src/indm.c:652
-#: src/indm.c:664
-#: src/pga.c:580
-#: src/pga.c:592
-#: src/plcc.c:791
-#: src/plcc.c:803
-#: src/res.c:650
-#: src/res.c:662
-#: src/resc.c:561
-#: src/resc.c:573
-#: src/resm.c:651
-#: src/resm.c:663
-#: src/resmelf.c:642
-#: src/resmelf.c:654
-#: src/sot.c:877
-#: src/sot.c:889
+#: src/indc.c:573
+#: src/indc.c:585
+#: src/indm.c:654
+#: src/indm.c:666
+#: src/pga.c:582
+#: src/pga.c:594
+#: src/plcc.c:794
+#: src/plcc.c:806
+#: src/res.c:685
+#: src/res.c:697
+#: src/resc.c:563
+#: src/resc.c:575
+#: src/resm.c:653
+#: src/resm.c:665
+#: src/resmelf.c:644
+#: src/resmelf.c:656
+#: src/sot.c:884
+#: src/sot.c:896
 #, c-format
 msgid "[%s] DRC Error: line width > 40.0 mil specified check for a reasonable silk line width."
 msgstr "[%s] DRC Fout: lijnbreedte > 40.0 mil gespecificeerd voor controle van een redelijke opdruk lijnbreedte."
 
-#: src/diom.c:672
-#: src/diomelf.c:681
+#: src/diom.c:674
+#: src/diomelf.c:683
 #: src/dip.c:650
 #: src/dips.c:665
-#: src/indc.c:618
-#: src/indm.c:676
-#: src/pga.c:604
-#: src/plcc.c:815
-#: src/res.c:674
-#: src/resc.c:585
-#: src/resm.c:675
-#: src/resmelf.c:666
-#: src/sot.c:901
+#: src/indc.c:597
+#: src/indm.c:678
+#: src/pga.c:606
+#: src/plcc.c:818
+#: src/res.c:709
+#: src/resc.c:587
+#: src/resm.c:677
+#: src/resmelf.c:668
+#: src/sot.c:908
 #, c-format
 msgid "[%s] DRC Error: line width > 1.0 mm specified check for a reasonable silk line width."
 msgstr "[%s] DRC Fout: lijnbreedte > 1.0 mm gespecificeerd voor controle van een redelijke opdruk lijnbreedte."
 
-#: src/diom.c:683
-#: src/diomelf.c:692
+#: src/diom.c:685
+#: src/diomelf.c:694
 #: src/dip.c:661
 #: src/dips.c:676
-#: src/indc.c:629
-#: src/indm.c:687
-#: src/pga.c:615
-#: src/plcc.c:826
-#: src/res.c:685
-#: src/resc.c:596
-#: src/resm.c:686
-#: src/resmelf.c:677
-#: src/sot.c:912
+#: src/indc.c:608
+#: src/indm.c:689
+#: src/pga.c:617
+#: src/plcc.c:829
+#: src/res.c:720
+#: src/resc.c:598
+#: src/resm.c:688
+#: src/resmelf.c:679
+#: src/sot.c:919
 #, c-format
 msgid "[%s] DRC Error: no valid units type specified for check for a reasonable silk line width."
 msgstr "[%s] DRC Fout: geen geldige eenheid gespecificeerd voor controle van een redelijke opdruk lijnbreedte."
 
-#: src/diomelf.c:779
-#, c-format
-msgid "DIOMELF1911L: is also known as MicroMELF."
-msgstr "DIOMELF1911L: is ook bekend als MicroMELF."
-
-#: src/diomelf.c:818
-#, c-format
-msgid "DIOMELF1911M: is also known as MicroMELF."
-msgstr "DIOMELF1911M: is ook bekend als MicroMELF."
-
-#: src/diomelf.c:857
-#, c-format
-msgid "DIOMELF1911N: is also known as MicroMELF."
-msgstr "DIOMELF1911N: is ook bekend als MicroMELF."
-
-#: src/diomelf.c:896
-#, c-format
-msgid "DIOMELF3414L: is also known as LL-34."
-msgstr "DIOMELF3414L: is ook bekend als LL-34."
-
-#: src/diomelf.c:935
-#, c-format
-msgid "DIOMELF3414M: is also known as LL-34."
-msgstr "DIOMELF3414M: is ook bekend als LL-34."
-
-#: src/diomelf.c:974
-#, c-format
-msgid "DIOMELF3414N: is also known as SOD-80."
-msgstr "DIOMELF3414N: is ook bekend als SOD-80."
-
-#: src/diomelf.c:1013
-#, c-format
-msgid "DIOMELF3515L: is also known as IEC 100H01."
-msgstr "DIOMELF3515L: is ook bekend als IEC 100H01."
-
-#: src/diomelf.c:1052
-#, c-format
-msgid "DIOMELF3515M: is also known as IEC 100H01."
-msgstr "DIOMELF3515M: is ook bekend als IEC 100H01."
-
-#: src/diomelf.c:1091
-#, c-format
-msgid "DIOMELF3515N: is also known as IEC 100H01."
-msgstr "DIOMELF3515N: is ook bekend als IEC 100H01."
-
-#: src/diomelf.c:1266
-#, c-format
-msgid "DIOMELF3520M: is also known as IEC 100H03."
-msgstr "DIOMELF3520M: is ook bekend als IEC 100H03."
-
-#: src/diomelf.c:1305
-#, c-format
-msgid "DIOMELF3520N: is also known as IEC 100H03."
-msgstr "DIOMELF3520N: is ook bekend als IEC 100H03."
-
-#: src/dip.c:536
+#: src/dip.c:534
 #: src/dips.c:551
-#: src/indc.c:501
-#: src/pga.c:490
-#: src/plcc.c:698
-#: src/sot.c:784
+#: src/pga.c:492
+#: src/plcc.c:701
+#: src/sot.c:791
 #, c-format
 msgid "[%s] DRC Error: check for zero width fiducial pad."
 msgstr "[%s] DRC Fout: controle van fiducial pad heeft een breedte van nul."
 
-#: src/dip.c:547
+#: src/dip.c:545
 #: src/dips.c:562
-#: src/indc.c:512
-#: src/pga.c:501
-#: src/plcc.c:709
-#: src/sot.c:795
+#: src/pga.c:503
+#: src/plcc.c:712
+#: src/sot.c:802
 #, c-format
 msgid "[%s] DRC Error: check for zero width solder mask clearance."
 msgstr "[%s] DRC Fout: controle van fiducial soldeermaskervrijloopbreedte van nul."
 
 #: src/dip.c:560
 #: src/dips.c:575
-#: src/indc.c:528
-#: src/pga.c:514
-#: src/plcc.c:725
-#: src/sot.c:811
+#: src/pga.c:516
+#: src/plcc.c:728
+#: src/sot.c:818
 #, c-format
 msgid "[%s] DRC Error: check for distance between fiducial and nearest pad."
 msgstr "[%s] DRC Fout: controle van afstand tussen fiducial pad en dichtbijzijnde pad."
 
-#: src/plcc.c:572
+#: src/plcc.c:574
 #, c-format
 msgid "[%s] DRC Error: round pad shape specified for check for allowed pad shapes."
 msgstr "[%s] DRC Fout: ronde padvorm gespecificeerd voor controle van toegelaten padvormen."
 
-#: src/res.c:586
+#: src/res.c:621
 #, c-format
 msgid "[%s] DRC Error: check for fiducial set to TRUE, package has no fiducials."
 msgstr "[%s] DRC Fout: controle van fiducial staat op WAAR, behuizing heeft geen fiducials."
 
-#: src/sot.c:258
-#: src/sot.c:3379
+#: src/res.c:1156
+#, c-format
+msgid "%s has socket leads"
+msgstr "%s heeft voetaansluitingen"
+
+#: src/sip.c:400
+#, c-format
+msgid "[%s] DRC Error: pitch (Y-direction) should be 0."
+msgstr "[%s] DRC Fout: steek (Y-richting) hoort 0 te zijn."
+
+#: src/sot.c:259
+#: src/sot.c:3536
 #, c-format
 msgid "for now a number of pins of %d without a thermal pad is not implemented yet in sot_write_footprint()."
 msgstr "voor nu is een aantal pennen van %d zonder thermisch pad nog niet geïmplementeerd in sot_write_footprint()."
 
-#: src/sot.c:359
-#: src/sot.c:3476
+#: src/sot.c:360
+#: src/sot.c:3633
 #, c-format
 msgid "number of pins of %d is not defined in sot_write_footprint()."
 msgstr "aantal pins van %d is niet gedefiniëerd in sot_write_footprint()."
 
-#: src/sot.c:1324
-#: src/sot.c:1365
-#: src/sot.c:1402
+#: src/sot.c:539
+#, c-format
+msgid "%s done creating all default fpw files"
+msgstr "%s gereed met het aanmaken van fpw bestanden"
+
+#: src/sot.c:1355
+#: src/sot.c:1399
 #: src/sot.c:1439
-#: src/sot.c:1480
-#: src/sot.c:1521
-#: src/sot.c:1566
-#: src/sot.c:1611
-#: src/sot.c:1652
-#: src/sot.c:1697
-#: src/sot.c:1742
-#: src/sot.c:1831
-#: src/sot.c:1876
-#: src/sot.c:1917
-#: src/sot.c:1958
-#: src/sot.c:2000
-#: src/sot.c:2116
-#: src/sot.c:2161
-#: src/sot.c:2206
-#: src/sot.c:2253
-#: src/sot.c:2301
-#: src/sot.c:2346
-#: src/sot.c:2391
-#: src/sot.c:2432
-#: src/sot.c:2473
-#: src/sot.c:2519
-#: src/sot.c:2566
-#: src/sot.c:2612
-#: src/sot.c:2658
-#: src/sot.c:2703
-#: src/sot.c:2750
-#: src/sot.c:2795
-#: src/sot.c:2840
-#: src/sot.c:2885
+#: src/sot.c:1479
+#: src/sot.c:1523
+#: src/sot.c:1567
+#: src/sot.c:1615
+#: src/sot.c:1663
+#: src/sot.c:1707
+#: src/sot.c:1755
+#: src/sot.c:1803
+#: src/sot.c:1898
+#: src/sot.c:1946
+#: src/sot.c:1990
+#: src/sot.c:2034
+#: src/sot.c:2079
+#: src/sot.c:2204
+#: src/sot.c:2252
+#: src/sot.c:2300
+#: src/sot.c:2350
+#: src/sot.c:2401
+#: src/sot.c:2449
+#: src/sot.c:2497
+#: src/sot.c:2541
+#: src/sot.c:2585
+#: src/sot.c:2634
+#: src/sot.c:2684
+#: src/sot.c:2733
+#: src/sot.c:2782
+#: src/sot.c:2830
+#: src/sot.c:2880
+#: src/sot.c:2928
+#: src/sot.c:2976
+#: src/sot.c:3024
 #, c-format
 msgid "%s: pads are being trimmed to prevent extension under the package body."
 msgstr "%s: pads worden afgekort om te voorkomen dat deze onder het behuizinglichaam komen."
+
+#: src/to.c:554
+#, c-format
+msgid "[%s] DRC Error: pitch (X-direction) should be greater than 0."
+msgstr "[%s] DRC Fout: steek (X-richting) hoort groter dan 0 te zijn."
+
+#~ msgid "[%s] DRC Error: Pitch in Y-direction is supposed to be 0."
+#~ msgstr "[%s] DRC Fout: Steek in Y-richting is verondersteld 0 te zijn."
+
+#~ msgid "DIOMELF1911L: is also known as MicroMELF."
+#~ msgstr "DIOMELF1911L: is ook bekend als MicroMELF."
+
+#~ msgid "DIOMELF1911M: is also known as MicroMELF."
+#~ msgstr "DIOMELF1911M: is ook bekend als MicroMELF."
+
+#~ msgid "DIOMELF1911N: is also known as MicroMELF."
+#~ msgstr "DIOMELF1911N: is ook bekend als MicroMELF."
+
+#~ msgid "DIOMELF3414L: is also known as LL-34."
+#~ msgstr "DIOMELF3414L: is ook bekend als LL-34."
+
+#~ msgid "DIOMELF3414M: is also known as LL-34."
+#~ msgstr "DIOMELF3414M: is ook bekend als LL-34."
+
+#~ msgid "DIOMELF3414N: is also known as SOD-80."
+#~ msgstr "DIOMELF3414N: is ook bekend als SOD-80."
+
+#~ msgid "DIOMELF3515L: is also known as IEC 100H01."
+#~ msgstr "DIOMELF3515L: is ook bekend als IEC 100H01."
+
+#~ msgid "DIOMELF3515M: is also known as IEC 100H01."
+#~ msgstr "DIOMELF3515M: is ook bekend als IEC 100H01."
+
+#~ msgid "DIOMELF3515N: is also known as IEC 100H01."
+#~ msgstr "DIOMELF3515N: is ook bekend als IEC 100H01."
+
+#~ msgid "DIOMELF3520M: is also known as IEC 100H03."
+#~ msgstr "DIOMELF3520M: is ook bekend als IEC 100H03."
+
+#~ msgid "DIOMELF3520N: is also known as IEC 100H03."
+#~ msgstr "DIOMELF3520N: is ook bekend als IEC 100H03."
 
 #~ msgid "DRC Check: checking DIP package %s."
 #~ msgstr "DRC Controle: controleerd DIP behuizing %s."
