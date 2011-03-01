@@ -91,8 +91,9 @@ int
 print_version ()
 {
         fprintf (stderr, (_("\nfpw version %s\n")), VERSION);
-        fprintf (stderr, (_("(C) 2007, 2008, 2009, 2010 by Bert Timmerman.\n")));
-        fprintf (stderr, (_("This is free software; see the source for copying conditions.\n")));
+        fprintf (stderr, (_("(C) 2007, 2008, 2009, 2010, 2011 by Bert Timmerman.\n")));
+        fprintf (stderr, (_("This free software is released under the GPL v2 license;\n")));
+        fprintf (stderr, (_("see the source for copying conditions.\n")));
         fprintf (stderr, (_("There is NO warranty; not even for MERCHANTABILITY\n")));
         fprintf (stderr, (_("or FITNESS FOR A PARTICULAR PURPOSE.\n\n")));
         return (EXIT_SUCCESS);
