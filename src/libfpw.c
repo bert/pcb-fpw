@@ -1121,7 +1121,7 @@ read_footprintwizard_file
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_WARNING,
-                                _("footprint dirstribution license with a null pointer found in: %s.\n"),
+                                _("footprint distribution license with a null pointer found in: %s.\n"),
                                 fpw_filename);
                 }
                 footprint_dist_license = g_strdup ("");
