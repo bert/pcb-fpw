@@ -71,7 +71,7 @@ gchar *work_dir = NULL;
  * <li>The "refresh" button is clicked.
  * <li>The "footprint name" entry has changed.
  * <li>The "open" button of the file chooser is clicked and new values are
- * loaded successfull.
+ * loaded successful.
  * </ul>
  *
  * <b>Parameters:</b> \c *widget is the caller widget.\n
@@ -2431,7 +2431,7 @@ on_footprint_author_entry_changed      (GtkEditable     *editable,
  * <li>determine the name of the footprint filename.
  * <li>invoke the write_footprint() function to write the footprint
  *   file.
- * <li>if the footprint file is written successfull reflect this in the
+ * <li>if the footprint file is written successful reflect this in the
  *   statusbar.
  * </ul>
  *
@@ -2481,7 +2481,7 @@ on_footprint_button_clicked            (GtkButton       *button,
                  * so add a .fp suffix */
                 footprint_filename = g_strconcat (footprint_filename, ".fp", NULL);
         }
-        /* If the footprint file is written successfull reflect this in the
+        /* If the footprint file is written successful reflect this in the
          * statusbar */
         if (write_footprint () == EXIT_SUCCESS)
         {
@@ -2788,7 +2788,7 @@ on_footprint_status_entry_changed      (GtkComboBox     *combobox,
         {
                 if (verbose)
                         g_log ("", G_LOG_LEVEL_INFO,
-                                _("determined the status type successfull."));
+                                _("determined the status type successful."));
         }
 }
 
@@ -2846,7 +2846,7 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
         {
                 if (verbose)
                         g_log ("", G_LOG_LEVEL_INFO,
-                                _("determined the package type (%d) for footprint type %s successfull."),
+                                _("determined the package type (%d) for footprint type %s successful."),
                                 package_type, footprint_type);
         }
         widget = GTK_WIDGET (combobox);
@@ -3899,11 +3899,11 @@ on_refresh_button_clicked              (GtkButton       *button,
  * <li>invoke the write_footprintwizard_file() to write the global variables to
  *   the footprintwizard file, with a .fpw suffix, for debugging and other
  *   (future) purposes.
- * <li>if the footprint wizard file is written successfull change the title of
+ * <li>if the footprint wizard file is written successful change the title of
  *   the main window with the latest filename.
  * <li>invoke the write_footprint() function to write the actual footprint
  *   file.
- * <li>if the footprint file is written successfull reflect this in the
+ * <li>if the footprint file is written successful reflect this in the
  *   statusbar.
  * </ul>
  *
@@ -3977,7 +3977,7 @@ on_save_button_clicked                 (GtkButton       *button,
                         fpw_filename = g_strconcat (fpw_filename, ".fpw", NULL);
                 }
         }
-        /* If the footprint wizard file is written successfull change the title of
+        /* If the footprint wizard file is written successful change the title of
          * the main window with the latest filename. */
         if (write_footprintwizard_file (fpw_filename) == EXIT_SUCCESS)
         {

@@ -674,7 +674,7 @@ preview_expose_event
  *
  * The \c footprint_name variable is used in the dialog title.
  *
- * \return 0 when successfull.
+ * \return 0 when successful.
  */
 int
 preview_create_window

@@ -907,7 +907,7 @@ read_footprintwizard_file
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_INFO,
-                                _("determined the package type successfull."));
+                                _("determined the package type successful."));
                 }
         }
         fscanf (fpw, "%s\n", footprint_units);
@@ -952,7 +952,7 @@ read_footprintwizard_file
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_INFO,
-                                _("footprint units variables updated successfull."));
+                                _("footprint units variables updated successful."));
                 }
         }
         fscanf (fpw, "%s\n", footprint_refdes);
@@ -1326,7 +1326,7 @@ read_footprintwizard_file
                 if (verbose)
                 {
                         g_log ("", G_LOG_LEVEL_INFO,
-                                _("pad shape variables updated successfull."));
+                                _("pad shape variables updated successful."));
                 }
         }
         fscanf (fpw, "%s\n", pin_pad_exceptions_string);

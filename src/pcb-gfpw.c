@@ -39,7 +39,7 @@
 /*!
  * \brief The GTK GUI for the footprintwizard.
  *
- * \return 0 if successfull.
+ * \return 0 if successful.
  */
 int
 main
