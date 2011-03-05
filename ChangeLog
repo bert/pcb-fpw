@@ -1,3 +1,5455 @@
+commit a0df3e7faaa0f739fa5b4ad01f732a2fd9180fc3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 5 11:56:29 2011 +0100
+
+    Udated the German translation file.
+
+commit 71a3f8c33b89fbaef829a3bef09a84688a4870e8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 5 10:28:30 2011 +0100
+
+    Updated the Dutch translation file with minor corrections.
+
+commit 3bba19a4eaa6997ab6474c92e8509eeb37b925bc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 5 10:25:59 2011 +0100
+
+    Updated the translation template file after minor corrections.
+
+commit c018909c47daf7e10450dbc3527622a4f2dd7ecf
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Mar 4 07:47:58 2011 +0100
+
+    BGA: correction of a typo in an error message.
+
+commit 0738abc98cc519234c86387b3bbc16ca692e7315
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Mar 2 23:13:12 2011 +0100
+
+    Corrected the typo in successfull.
+
+commit 91b019d2ec1e2842954158542e142f62b994f02c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Mar 2 22:19:08 2011 +0100
+
+    Correction of a typo in an error message.
+
+commit 7623f2f02fb7d14067a2714074082cebe24a2b77
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Mar 1 17:30:06 2011 +0100
+
+    Updated the Dutch translation file.
+
+commit 0206b9d2b13e04408800ecc2910ef179ae73e4e7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Mar 1 17:29:31 2011 +0100
+
+    Updated the translation template file.
+
+commit 20ae54518a42fdd8e45c3ed8d705b2865739fc2c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Mar 1 17:28:54 2011 +0100
+
+    fpw: updated the version message.
+
+commit 1035d6985490233feb45ee16a744d1d06d0eaa58
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Feb 28 23:24:50 2011 +0100
+
+    libfpw: include string.h to satisfy memset and strtok.
+
+commit 23f6a9e175b7d14cf8160fcc335daeecc714eac0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Feb 28 23:19:09 2011 +0100
+
+    Added encapsulation for clarity.
+
+commit 9c13c8918d63b46bcdafcc305bea4a60a118448f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Feb 28 22:40:33 2011 +0100
+
+    Removed the function call parameter of *_set_gui_constraints ().
+
+commit b86bde7d5480a2e4efa1949e53675df456ff9a8d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 22:34:30 2011 +0100
+
+    BGA: replaced tab for spaces.
+
+commit 8ff67e85c25c7bf3935be73071591023d6d828c4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 22:32:28 2011 +0100
+
+    BGA: removed the function call parameter of bga_get_default_footprint_values().
+
+commit ff9f3b5d7313466142ddc30c195aad9874691403
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 22:30:45 2011 +0100
+
+    BGA: change the function return type of bga_create_packages_list().
+
+commit 284b5a12168e5887e1e7891bd04636b9fb85c096
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 22:26:44 2011 +0100
+
+    BGA: change the function return type of bga_create_element().
+
+commit ed62e20a093d10dae81065c079db7b682a8933af
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 22:23:24 2011 +0100
+
+    CAPA: removed the function call parameter of capa_get_default_footprint_values().
+
+commit fec1e09a57a31c65b553ee20d13cf029e1f723fc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 22:21:06 2011 +0100
+
+    CAPA: change the function return type of capa_create_packages_list().
+
+commit 68cf32a675c94e10f5161302a89e3f3547153eb5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 22:18:12 2011 +0100
+
+    CAPA: change the function return type of capa_create_element().
+
+commit 7607ca6b443af63a0fd72acf89d5ac147af32722
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 22:14:51 2011 +0100
+
+    CAPC: removed the function call parameter of capc_get_default_footprint_values().
+
+commit 6ab8948e0d6d82315294c98b62b83a7ea8feaafa
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 22:13:03 2011 +0100
+
+    CAPC: change the function return type of capc_create_packages_list().
+
+commit 60363880be54cb533f1927a04e93922674e805ff
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 22:10:26 2011 +0100
+
+    CAPC: change the function return type of capc_create_element().
+
+commit c4eb401d61a4d408cc69830e8efcac1530514346
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 22:07:28 2011 +0100
+
+    CAPM: removed the function call parameter of capm_get_default_footprint_values().
+
+commit 3938db26918faf11b8708b63870f86ad400185fb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 22:05:45 2011 +0100
+
+    CAPM: change the function return type of capm_create_packages_list().
+
+commit 8407aa973f2dd857884f63bb279cc0b7d1dfb568
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 22:03:31 2011 +0100
+
+    CAPM: change the function return type of capm_create_element().
+
+commit 2d3e3585a04a46e2c3ed1b78499b8ce582925371
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 21:49:49 2011 +0100
+
+    CAPMP: removed the function call parameter of capmp_get_default_footprint_values().
+
+commit c733b809fd5249fb0af662dfff7d544bbc885b66
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 21:48:05 2011 +0100
+
+    CAPMP: change the function return type of capmp_create_packages_list().
+
+commit 5cc1a8bdd1f362c0fc1b2a2fad19abfae657b96e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 21:45:45 2011 +0100
+
+    CAPMP: change the function return type of capmp_create_element().
+
+commit c965ddcf2f7e15e60c0147b0696a4e2353867a79
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 21:42:48 2011 +0100
+
+    CAPPR: removed the function call parameter of cappr_get_default_footprint_values().
+
+commit 6f48132feb9d3f1b09c1b09a02dd05f748918fd6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 21:40:41 2011 +0100
+
+    CAPPR: change the function return type of cappr_create_packages_list().
+
+commit c6973a6d6a38909a19242f1786ba9a6e55b5419d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 21:35:09 2011 +0100
+
+    CAPPR: change the function return type of cappr_create_element().
+
+commit 1c2a5d820d5e705a10394128a3e29c91112ae7b2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 21:32:55 2011 +0100
+
+    CON_DIL: removed the function call parameter of con_dil_get_default_footprint_values().
+
+commit 67e32c7307bfe72cffe70977cc597a8e4d8eab0f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 21:31:08 2011 +0100
+
+    CON_DIL change the function return type of con_dil_create_packages_list().
+
+commit 1308ca4434081f48e422265fa86dda8867ec51ab
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 21:28:51 2011 +0100
+
+    CON_DIL: change the function return type of con_dil_create_element().
+
+commit 13f31e3c8bd16dc313f85a263d2558fe39c09b0d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 21:21:16 2011 +0100
+
+    CON_DIP: removed the function call parameter of con_dip_get_default_footprint_values().
+
+commit 8e5df59751995750d99583b9b734543644e5b792
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 21:07:32 2011 +0100
+
+    CON_DIP change the function return type of con_dip_create_packages_list().
+
+commit faf0eaade6e0622cfd986db14894178f51105981
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 21:05:06 2011 +0100
+
+    CON_DIP: change the function return type of con_dip_create_element().
+
+commit 4c4359ac5f51f135ca3c700056f39cf6d127032a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 19:06:44 2011 +0100
+
+    CON_HDR: removed the function call parameter of con_hdr_get_default_footprint_values().
+
+commit 18dc446bbd371358c57dcf87ffa14f5be7c813a3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 19:04:26 2011 +0100
+
+    CON_HDR: change the function return type of con_hdr_create_packages_list().
+
+commit aac6dce471596b64f17e53e88cb4989808f61afe
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 17:00:18 2011 +0100
+
+    CON_SIL: removed the function call parameter of con_sil_get_default_footprint_values().
+
+commit 05dd73143fd880cf327000c3f422d5f966c0376f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 16:57:42 2011 +0100
+
+    CON_SIL: change the function return type of con_sil_create_element().
+
+commit 013799e6049a10b957cde2053f743d421404f94d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 16:50:37 2011 +0100
+
+    CON_SIL: change the function return type of con_sil_create_packages_list().
+
+commit 635be8d7aefd9475d5e335baf5a77f3e5914b538
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Feb 27 16:11:40 2011 +0100
+
+    Adding data for footprints (WIP).
+
+commit 24b01c1fd46121f0e7b964ea0ad0bf4f61f7aa15
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 13:11:18 2011 +0100
+
+    DIOM: removed the function call parameter of diom_get_default_footprint_values().
+
+commit 11642754f0bce712d19194e29cad4a6e45fc9cce
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 27 13:08:47 2011 +0100
+
+    DIOM: change the function return type of diom_create_packages_list().
+
+commit fb8d3be08895f7a102e2320cacca18ab42158689
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 26 21:24:42 2011 +0100
+
+    DIOM: change the function return type of diom_create_element().
+
+commit fdd3f95c937f0c60e1e0b2531bb774e11ab8a840
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 26 21:20:05 2011 +0100
+
+    DIOMELF: removed the function call parameter of diomelf_get_default_footprint_values().
+
+commit e87c434e754286c70104253313af433deb7bfa24
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 26 11:20:14 2011 +0100
+
+    DIOMELF: change the function return type of diomelf_create_packages_list().
+
+commit 949024e0e6d4b97d0477de569bbe0305de4f71fc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 26 10:33:45 2011 +0100
+
+    DIOMELF: change the function return type of diomelf_create_element().
+
+commit df1b966da38af5fcb14d5d6f5f0020edb66064d9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 24 21:45:54 2011 +0100
+
+    DIP: removed the function call parameter of dip_get_default_footprint_values().
+
+commit 0a83e4efa6da3296e9f358f456879f1fb9357f10
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 24 21:34:52 2011 +0100
+
+    DIP: change the function return type of dip_create_packages_list().
+
+commit 9839fec3ddf7bd82f38f166847b610acd41a3452
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 24 20:58:48 2011 +0100
+
+    DIP: change the function return type of dip_create_element().
+
+commit 2d1fbd911f3b290195fc6c9ebdc372f246626746
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 24 08:17:50 2011 +0100
+
+    DIPS: removed the function call parameter of dips_get_default_footprint_values().
+
+commit 0cbc80362508044dafb9387221275da363f674d3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 24 08:15:00 2011 +0100
+
+    DIPS: change the function return type of dips_create_packages_list().
+
+commit 7bfc7d9433aa2c778df9ff6358b5d3deb9b562b4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 24 07:54:56 2011 +0100
+
+    DIPS: change the function return type of dips_create_element().
+
+commit ded56c97bf799494233b64d9387838d730147d62
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 23 23:01:15 2011 +0100
+
+    INDC: removed the function call parameter of indc_get_default_footprint_values().
+
+commit 24339fb2df98efc27bffd982d35b4609924c9a83
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 23 22:49:08 2011 +0100
+
+    INDC: change the function return type of indc_create_packages_list().
+
+commit 09d41c68875836732971e47a7918570d807d813e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 23 22:42:02 2011 +0100
+
+    INDC: change the function return type of indc_create_element().
+
+commit 83cc3a124e6301cbf6e936f37902a03bff60e3b3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 23 22:32:17 2011 +0100
+
+    INDM: removed the function call parameter of indm_get_default_footprint_values().
+
+commit 7658b88747503240b6687d65de437e3eb82c40d5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 23 08:19:58 2011 +0100
+
+    INDM: change the function return type of indm_create_packages_list().
+
+commit 93f0f60d042e9b9f578ee1a8f5d0ec2010cc4e9d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 23 07:22:52 2011 +0100
+
+    INDM: change the function return type of indm_create_element().
+
+commit 30c2e9e74327691a2c30e2599743e4a8fd389c80
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 22 23:19:44 2011 +0100
+
+    INDP: removed the function call parameter of indp_get_default_footprint_values().
+
+commit fb0a6c8179736f57586b72db19456d2d4986f54a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 22 23:17:18 2011 +0100
+
+    INDP: change the function return type of indp_create_packages_list().
+
+commit ff1913bf6226d58641d6c76e7184c01b5ca7d83d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 22 23:03:53 2011 +0100
+
+    INDP: change the function return type of indp_create_element().
+
+commit d489d3bd722af0369f937e57803d189bfa65258c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 22 22:58:01 2011 +0100
+
+    PGA: change the function return type of pga_create_packages_list().
+
+commit cd2b8d418ed41c4f121c386e06013a527079cc60
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 22 22:55:00 2011 +0100
+
+    PGA: removed the function call parameter of pga_get_default_footprint_values().
+
+commit 78d142a5f63740c0506d8a1fa59c10493569d869
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 20 21:57:02 2011 +0100
+
+    Corrections in indentation.
+
+commit b37d273c9b8bdb420083cc61ff06aa89b4f5f7cd
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 20 01:27:24 2011 +0100
+
+    PGA: change the function return type of pga_create_element().
+
+commit ab298af28e8b3851b7e84c37e04ec83e66c4116f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 20 01:21:38 2011 +0100
+
+    PLCC: removed the function call parameter of plcc_get_default_footprint_values().
+
+commit e1d9276777d6061253652cb94d73c54957e85174
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 20 00:25:49 2011 +0100
+
+    PLCC: change the function return type of plcc_create_packages_list().
+
+commit 937d6dbdac4fb4468a08c112181f637b179d7a08
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 20 00:21:46 2011 +0100
+
+    PLCC: change the function return type of plcc_create_element().
+
+commit 3bf16ec8f06d7417a327cbf6fd6c157d1c449c46
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 19 23:05:09 2011 +0100
+
+    RES: removed the function call parameter of res_get_default_footprint_values().
+
+commit 52f30f6252f8b0d6e891611ac343db8cc580cff3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 19 16:10:30 2011 +0100
+
+    RES: change the function return type of res_create_packages_list().
+
+commit e7224c6e2580861a82763259a8f9b4993577d24d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 19 16:01:16 2011 +0100
+
+    RES: change the function return type of res_create_element().
+
+commit 9c8b3fead401b15a69a592ef4418bf98d3d3a0db
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 18 08:27:26 2011 +0100
+
+    RESC: removed the function call parameter of resc_get_default_footprint_values().
+
+commit 8f4c8de1272e86dd807856b0ab9101387c7d9d88
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 17 22:33:11 2011 +0100
+
+    RESC: change the function return type of resc_create_packages_list().
+
+commit f43964e0c409d8918efa22ef14519257abb2f8d1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 17 22:06:11 2011 +0100
+
+    RESC: change the function return type of resc_create_element().
+
+commit e179de5e21ace22bb6a515c261ae5450a5acc8bf
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 17 21:58:50 2011 +0100
+
+    RESM: removed the function call parameter of resm_get_default_footprint_values().
+
+commit e5fb2a30ec471727a44cd17331c26c9b09981735
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 17 07:46:47 2011 +0100
+
+    RESM: change the function return type of resm_create_packages_list().
+
+commit 889acbf7b8937a63e52946c423199e382ac82aff
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 16 22:32:23 2011 +0100
+
+    RESM: change the function return type of resm_create_element().
+
+commit 4f1c5c3ec2c703a3e351635a11bded2ff9ee77e6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 16 22:29:55 2011 +0100
+
+    RESMELF: implement resmelf_get_default_footprint_values().
+
+commit b804a0871ce158257beb6d4cd06ae7a88de7b8c3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 16 22:26:06 2011 +0100
+
+    Small correction.
+
+commit 29b7ab1b7eb7fa82c2e391bb4cc2c1e147b88129
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 16 22:21:13 2011 +0100
+
+    RESMELF: removed the function call parameter of resmelf_get_default_footprint_values().
+
+commit 9317aea2fb97ee26e5ce3b3676896da4b63fc280
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 16 22:14:00 2011 +0100
+
+    RESMELF: change the function return type of resmelf_create_packages_list().
+
+commit 6b103be3a7440b77b09787c0618f9118ec9f1876
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 16 22:10:18 2011 +0100
+
+    RESMELF: change the function return type of resmelf_create_element().
+
+commit 5d7c561d534c0e907416d149373f9e85481e99b3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 16 22:08:51 2011 +0100
+
+    SIL: return the created element in sil_create_element().
+
+commit b697fc2ca87cbd514f1a72b1755bbf3756e43e23
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 16 07:37:55 2011 +0100
+
+    SIL: removed the function call parameter of sil_get_default_footprint_values().
+
+commit 0eb9f8b3b6d4f75f0068a638b2d87dfd4c59d3c1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 16 07:25:44 2011 +0100
+
+    SIL: change the function return type of sil_create_packages_list().
+
+commit e49ae3869609fb04197994c94898420d508e69fc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 16 07:23:03 2011 +0100
+
+    SIL: change the function return type of sil_create_element().
+
+commit 79c8d1e7d6e05019f3ef7f426cc45a3f561d7011
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Feb 14 08:25:51 2011 +0100
+
+    SIP: removed the function call parameter of sip_get_default_footprint_values().
+
+commit a4bf011301bce984e2aeb74c98c6f2511cd9bb5d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 13 21:11:24 2011 +0100
+
+    TO: removed the function call parameter of to_get_default_footprint_values().
+
+commit ba0b914f0ffa9456fc4f3af13b0b6eb8c14a8aa1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 13 21:01:43 2011 +0100
+
+    SOT: removed the function call parameter of sot_get_default_footprint_values().
+
+commit fa7283b3f41c84a4ddaf1c62a661bbfff378c999
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 13 20:51:34 2011 +0100
+
+    SOT: correction of a typo.
+
+commit 2d0b11ce93d7dfb9664690e32c6cd12eda8feedd
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 13 20:47:43 2011 +0100
+
+    SIP: correction of a typo.
+
+commit 773b6903ed55ac88743056f08606f8cdbeb7b59f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 13 20:44:06 2011 +0100
+
+    SIP: change the function return type of sip_create_packages_list().
+
+commit 3278249bd21f53ba0616fcff3a2ac113cd3870d8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 13 20:33:12 2011 +0100
+
+    SIP: change the function return type of sip_create_element().
+
+commit 911586083ddf3b135b18075430a3c67ae558f809
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 13 18:42:56 2011 +0100
+
+    TO: added default packages to the packages list.
+
+commit a4dcd22c851ae30da62e105228229f9c4b582b80
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 13 17:48:14 2011 +0100
+
+    SOT: store footprint names of default packages in the global packages list.
+
+commit ea41a38f7399f36ba763c9701512bbe80cfa323c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 13 17:47:17 2011 +0100
+
+    SOT: use the global packages list for creating fpw files.
+
+commit 71e4846c2f65007a3c94aa41043eca6de3593c0e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 13 17:40:50 2011 +0100
+
+    SOT: added sot_create_fpw_files_from_packages_list() to the header file.
+
+commit 82f5d3764248d8fb2fc6d3054344cd8411916306
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 13 17:32:08 2011 +0100
+
+    Add a global variable for a packages list (GList).
+
+commit 981d133decd4fc9bdec15fac7bebac791e45e68a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 13 17:23:11 2011 +0100
+
+    SOT: removed the function call parameter of sot_create_packages_list().
+
+commit 86ec0e727624b776a73f0f3be378cb5b60434272
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 13 09:48:33 2011 +0100
+
+    SOT: change the function return type of sot_create_packages_list().
+
+commit cf3dfa1c2e226ec549ee590d14c1d2f00ee7daf4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 13 09:46:57 2011 +0100
+
+    TO: cast the returned element to ElementTypePtr.
+
+commit 3024f1b919290421eb42cb75287c64752883bb1d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 12 20:57:42 2011 +0100
+
+    SOT: change the function return type of sot_create_element().
+
+commit 6fe705960174fcb6eec574c5c0f509127a1bf46b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 12 11:08:20 2011 +0100
+
+    TO: change the function return type of to_create_packages_list().
+
+commit 12b7376fbbb5581ee458d1ae2e4bff60693e4c9c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 11 15:10:27 2011 +0100
+
+    TO: change the function return type of to_create_element_to92_staggered().
+
+commit 3b177a01c16c1fb4cb459553bdde1f8e40380c02
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 11 15:05:17 2011 +0100
+
+    TO: change the function return type of to_create_element_to92().
+
+commit 08ee630966440fbfd5e2bf730ba9736426029d37
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 11 15:03:43 2011 +0100
+
+    Create a global current element variable.
+
+commit 15a2098665f93a7c4c4de0be1c911de35ab701e5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 11 14:11:25 2011 +0100
+
+    TO: implemented DRC for TO packages.
+
+commit 08bc930c3778eec864e7bd24097fbe72f2ef5c61
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 11 14:07:25 2011 +0100
+
+    SIP: correction is checking for pitch.
+
+commit f89e2fee968e433a1cc5802548fa973983459f5b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 11 14:03:31 2011 +0100
+
+    TO: added to_drc().
+
+commit 9488c91d869d47835269a0da99ffc894924befaf
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 11 13:52:52 2011 +0100
+
+    TO: bumped the year in the copyright notice.
+
+commit d64f95e68f8df97465de4bd7d533ea1076747136
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 11 13:16:09 2011 +0100
+
+    SOT: removed a dangling doxygen todo comment.
+
+commit 18704190918bec6ffb1a20194377072d33e65203
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 11 13:15:20 2011 +0100
+
+    SOT: correction in DRC for silkscreen linewidth.
+
+commit 05c2b5f80bce3dbcb262785c2ec13759c809133d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 11 13:03:01 2011 +0100
+
+    SIP: correction in DRC for silkscreen linewidth.
+
+commit 90fb193de142126350f6951cb936a79e0c7a70a2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 11 13:01:15 2011 +0100
+
+    SIP: check for minimum clearance w.r.t. pad width.
+
+commit 2c7c10cbaa3281936a0b63d58e815c55e4e926c8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 11 12:57:45 2011 +0100
+
+    SIL: correction in DRC for silkscreen linewidth.
+
+commit b9e0c7cb98f3621281c1017e047d764d2edafb1a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 11 12:55:55 2011 +0100
+
+    SIL: check for minimum clearance w.r.t. pad width.
+
+commit 53cdfb6186a1117f1da9655e17012b099cff12be
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 11 12:45:25 2011 +0100
+
+    RESMELF: removed a dangling doxygen todo comment.
+
+commit e40f933c0a9020fcd3785f540f27539ba043499f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 11 12:44:45 2011 +0100
+
+    RESMELF: correction in DRC for silkscreen linewidth.
+
+commit 8dbaecbc2b24a592fd89d074f4205e2bf3d5dc26
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 11 11:55:04 2011 +0100
+
+    RESM: removed a dangling doxygen todo comment.
+
+commit 3e35a3a8743276c467090ea31795f82110636c8f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 11 11:53:12 2011 +0100
+
+    RESM: correction in DRC for silkscreen linewidth.
+
+commit aaab94765ad1180117dca378b2461b3e27ee9cd3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 11 10:57:19 2011 +0100
+
+    RESC: removed a dangling doxygen todo comment.
+
+commit 4ccca3bfdf1c7ec04f755416ed98112a94523e02
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 11 10:56:14 2011 +0100
+
+    RESC: correction in DRC for silkscreen linewidth.
+
+commit a5debbe865eae8445ece906ddfbb6f5a485e8b1f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 11 10:17:26 2011 +0100
+
+    PLCC: added/removed comments.
+
+commit 92476ea2c288ceaa622c7cce2435f38ee3e25015
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 9 23:03:56 2011 +0100
+
+    PLCC: correction in DRC for silkscreen linewidth.
+
+commit 5838d547a599edcfa834f7f6876f2d19fd025c35
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 9 07:52:12 2011 +0100
+
+    PGA: correction of test on "No failures on DRC found" message.
+
+commit 76e990319e7af12957f1c850bc04076d812e812a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 9 07:49:18 2011 +0100
+
+    PGA: correction in DRC for silkscreen linewidth.
+
+commit c5ea08f4b554164b5b9df1f2d844d83bd0dcbb7c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 8 21:38:01 2011 +0100
+
+    DIPS: correction in DRC for silkscreen linewidth.
+
+commit ce8e1ea7534fb94942dd93c0b7461295960a8432
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 8 21:34:42 2011 +0100
+
+    DIP: added a Doxygen todo comment in dip_drc().
+
+commit 13dfb561d06b8b4fb3f10da0c9c7b6075e6f0242
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 8 21:29:14 2011 +0100
+
+    DIP: correction in DRC for silkscreen linewidth.
+
+commit baccd1d4c390e8e62c1c7fe78b9514cb73ac6fcf
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 8 21:15:37 2011 +0100
+
+    DIOMELF: correction in DRC for silkscreen linewidth.
+
+commit 16116f3ee4ff0db8be00db707fc066307526992c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 8 21:13:51 2011 +0100
+
+    DIOMELF: removed a dangling doxygen todo comment.
+
+commit 50929a639befbb41cd29dd36ceef0f88a094a658
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 8 08:09:57 2011 +0100
+
+    DIOM: removed a dangling doxygen todo comment.
+
+commit f6094e70844edcf73af96143149cf8c036822621
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 8 08:08:51 2011 +0100
+
+    DIOM: correction in DRC for silkscreen linewidth.
+
+commit d445311b70c4f33d42c316a371d9d4e82189617b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 8 08:05:20 2011 +0100
+
+    SOT: correction in DRC success message.
+
+commit 495315c3258dd59445314151397fb2739e951f88
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 8 08:03:52 2011 +0100
+
+    SIP: correction in DRC success message.
+
+commit 319aa429a07544e7e88d5f64602017c32a9fb773
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 8 08:01:46 2011 +0100
+
+    SIL: correction in DRC success message.
+
+commit a92334df81e2d42b736fe5757c7925f27e4a28d5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 8 07:58:19 2011 +0100
+
+    RESMELF: correction in DRC success message.
+
+commit 589c614e8d864c1cacdbfb161fe7866ce539960d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 8 07:56:11 2011 +0100
+
+    RESM: correction in DRC success message.
+
+commit fcae17bf0ed8168f4878a4dd313f9602e2845660
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 8 07:54:49 2011 +0100
+
+    RESC: correction in DRC success message.
+
+commit c53b50b289cd8ba875002a452c3cbef534e9e46c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 8 07:47:12 2011 +0100
+
+    RES: correction in DRC success message.
+
+commit 55d08f1a01bbc10367166558a7de5d2151ede9da
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 8 07:45:49 2011 +0100
+
+    PLCC: correction in DRC success message.
+
+commit 34684fc4789f5179c08eb0abe64736361d2d6260
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 8 07:42:51 2011 +0100
+
+    PGA: removed a dangling doxygen todo comment.
+
+commit c55f54879a95fdace1b0dcb6b64401af0a0d96e3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 8 07:39:56 2011 +0100
+
+    DIPS: correction in DRC success message.
+
+commit ab16ca12b75444e8dd584841d509696712103221
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 8 07:38:30 2011 +0100
+
+    DIP: correction in DRC success message.
+
+commit 170b7c517e98b178427b9be337ef5b56a0e2c542
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 8 07:37:11 2011 +0100
+
+    DIOMELF: correction in DRC success message.
+
+commit 0c75e5a613848dce7ca1d09b9e5c065c1b7e87d2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 8 07:31:41 2011 +0100
+
+    DIOM: correction in DRC success message.
+
+commit 81252293940c4edb7f63d371c0d5623cd0ee699b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 8 07:29:59 2011 +0100
+
+    CON_SIL: correction in DRC success message.
+
+commit 3070feda8d062cdc7715ea3497a80cdb74b75f77
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 8 07:20:09 2011 +0100
+
+    CON_HDR: correction in DRC success message.
+
+commit 95e8339e14522c69d9be5e11eb8f857d35bdf9d4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 8 07:18:10 2011 +0100
+
+    CON_DIP: correction in DRC success message.
+
+commit 3909d2ffb466d1c3a67714097bbdf09dafb75d07
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 8 07:16:33 2011 +0100
+
+    CON_DIL: correction in DRC success message.
+
+commit 3ff0febb80bd92d69cef96b81500cc1e43ab6a50
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Feb 7 22:56:33 2011 +0100
+
+    CAPPR: correction in DRC success message.
+
+commit 441124adea312803de77e3c59f9734a3d9087f78
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Feb 7 22:55:28 2011 +0100
+
+    CAPMP: correction in DRC success message.
+
+commit f97f186fd81693aee3e695b73c727f00e0985cb9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Feb 7 22:54:22 2011 +0100
+
+    CAPM: correction in DRC success message.
+
+commit 1dc817d2f661e5d250fa762f12b7318f0782cec7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Feb 7 22:53:00 2011 +0100
+
+    CAPC: correction in DRC success message.
+
+commit 1b4d1f953760c51fd4cf3fefa7baededb39020c4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Feb 7 22:51:48 2011 +0100
+
+    CAPA: correction in DRC success message.
+
+commit 725045ccf3144d20a70315d2f931441b51d0c2e5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Feb 7 22:50:18 2011 +0100
+
+    INDP: correction in DRC success message.
+
+commit 2673ff73a3f4ec7365ada07ef1b33806e87833e1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Feb 7 22:50:05 2011 +0100
+
+    INDM: correction in DRC success message.
+
+commit 4319de03ef5a3994477c36ccf666a68f778b8513
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Feb 7 22:49:43 2011 +0100
+
+    INDC: correction in DRC success message.
+
+commit 751059b070c0a01572ac938897428132fdba86be
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Feb 7 22:45:58 2011 +0100
+
+    INDP: correction in DRC for silkscreen linewidth.
+
+commit 9833d8abf6b35fa5025e47abae5040b787ddcd5e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 6 18:07:08 2011 +0100
+
+    INDM: correction in DRC for silkscreen linewidth.
+
+commit 1c3f9dad4ade20ca97f8d18cf5d346f3ceaa9b05
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 6 18:00:32 2011 +0100
+
+    INDC: added data for a INDC6350X200N package.
+
+commit d70f99a3ed0f9285e15de482c7d58bc1eeb7de87
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 6 16:55:54 2011 +0100
+
+    INDC: added data for a INDC5750X180N package.
+
+commit 879dfb01d9a05f485ca59e66f5a5436180c5d283
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 6 12:05:21 2011 +0100
+
+    INDC: added data for a INDC4648X310N package.
+
+commit a0fe7911d77575737adfbe1218d146cc231e1c77
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 6 11:51:35 2011 +0100
+
+    INDC: added data for a INDC4532X175N package.
+
+commit 62b6b82731451f96007fdd7b94cb7548e6752060
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 6 11:35:01 2011 +0100
+
+    INDC: correction in list of packages.
+
+commit df59b61d9e08d2eec3ad8eb85b080b35e3f8db36
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 5 17:03:51 2011 +0100
+
+    INDC: added package names to the package list.
+
+commit aed40af1174c117c1405e1a71c29bc578307a7bb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 5 16:59:51 2011 +0100
+
+    INDC: corrections in pad length and pad width.
+
+commit 2c80748139e26962923e01cad4879d198fc406bf
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 5 16:53:36 2011 +0100
+
+    INDC: added data for a INDC4509X190N package.
+
+commit 5f55141d3a0f2bfbf6693b22df4d90e10a2b1cfa
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 5 15:25:04 2011 +0100
+
+    INDC: added data for a INDC3225X135N package.
+
+commit ac3b8295d99d08e888c6e5cac379ff2c51ce66c3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 5 15:18:26 2011 +0100
+
+    INDC: added data for a INDC2520X220N package.
+
+commit eec7acd1489f1f33d77585474570f8f0b03dec16
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 5 15:13:41 2011 +0100
+
+    INDC: added data for a INDC1608X95N package.
+
+commit a774d7051c47131cef925d079d50e67fef51163f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 5 15:08:59 2011 +0100
+
+    INDC: added data for a INDC1005X60N package.
+
+commit bbba15d9d0c872b28937bd08a6d9f331eb19debd
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 5 14:37:29 2011 +0100
+
+    INDC: ordered the footprint data set variables.
+
+commit 5264c1be7180273f56eafd8e7414538d1fd31249
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 5 14:00:59 2011 +0100
+
+    INDP: ordered the footprint data set variables.
+
+commit d05c99296d7f24c91a2286c5a298b9d244b66703
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 5 13:37:12 2011 +0100
+
+    INDC: correction in DRC for silkscreen linewidth.
+
+commit 03013a8b22add563d6076eeef450741ab28498f6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 5 13:34:34 2011 +0100
+
+    INDC: correction in DRC for fiducials.
+
+commit 0dd3dc172b6ef730887edfecd6d5fb24d2139b0b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 5 13:20:47 2011 +0100
+
+    INDP: removed a dangling doxygen todo comment.
+
+commit afa9a85326268c3fce9340a177f6925695981eeb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 5 13:19:49 2011 +0100
+
+    INDM: removed a dangling doxygen todo comment.
+
+commit bcf01efd217de1e246353f5444d62371d2ff8484
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 5 09:36:48 2011 +0100
+
+    INDC: removed a dangling doxygen todo comment.
+
+commit 583e2eee20a846ac8512d0bfcb463653fc473ff9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 5 09:16:58 2011 +0100
+
+    CON_SIL: ordered the footprint data set variables.
+
+commit 9d3106b371771274efb00f6e5a21c68cd5783679
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 4 21:46:41 2011 +0100
+
+    CON_SIL: correction in DRC for pitch in X-direction and the number of columns.
+
+commit 9f91a79fe6722176b7d633bca4e44feaec411346
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 4 21:33:29 2011 +0100
+
+    CON_SIL: check for minimum clearance w.r.t. pad width.
+
+commit 4df20dd58611aa83aaf0f09b8ae86c4e5f930b4e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 4 07:08:37 2011 +0100
+
+    CON_SIL: correction in DRC for silkscreen linewidth.
+
+commit ae273a603d084d3a10d0ab0dcb705784e3204447
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 4 07:01:44 2011 +0100
+
+    CON_SIL: allow square pads, do not allow round elongated pads.
+
+commit 9430a81063fe7d537f32ac753c5d54d630144eeb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 4 07:00:33 2011 +0100
+
+    CON_DIP: ordered the footprint data set variables.
+
+commit 2ec6709211ca9d98d4d72a04367c86c6972df417
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 4 06:04:13 2011 +0100
+
+    CON_DIP: check for minimum clearance w.r.t. pad length and pad width.
+
+commit 4f2debba270266758e83cd7e0ad4acad7f74b233
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 4 05:57:56 2011 +0100
+
+    CON_DIP: allow square pads, do not allow round elongated pads.
+
+commit 14bb9709c2a9a665b858a59b1a6594563e1163d9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 4 05:50:47 2011 +0100
+
+    CON_DIP: correction in DRC for silkscreen linewidth.
+
+commit d6e8e827d7b4d6f76c3fa92ae554f966e1f854df
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 2 23:18:48 2011 +0100
+
+    CON_HDR: ordered the footprint data set variables.
+
+commit 342a15686543bfe99303846c4cdbc325dd3484b0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jan 31 23:34:20 2011 +0100
+
+    CON_HDR: correction in DRC for silkscreen linewidth.
+
+commit d626d62095850a5469101bd21356fed143bec94d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jan 31 23:31:25 2011 +0100
+
+    CON_HDR: check for minimum clearance w.r.t. pad length and pad width.
+
+commit a656ef3ea3d8d3a58408ed0aeb03770bfce93b3d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jan 31 23:28:14 2011 +0100
+
+    CON_HDR: allow square pads, do not allow round elongated pads.
+
+commit 5f83d01e0acf0fc86670c9680e29628c0c1f9874
+Merge: 5bc3319 f8edcee
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jan 31 23:08:16 2011 +0100
+
+    Merge branch 'master' of github.com:bert/pcb-fpw
+
+commit f8edcee3ab16c4437fdda919a53d7545df5acb11
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Mon Jan 31 22:54:24 2011 +0100
+
+    Adding data for footprints (WIP).
+
+commit dc4d678e58867bb2337cec3b0ad2aa2b046cc921
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Mon Jan 31 22:51:05 2011 +0100
+
+    Put field names in the first row.
+
+commit 5bc3319dd68a040226be1013180dd9ab451b079f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jan 31 08:15:49 2011 +0100
+
+    CON_DIL: correction in DRC for silkscreen linewidth.
+
+commit c389108463f9f7d034efc731691ac78ac4b5ca2c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jan 31 08:13:46 2011 +0100
+
+    CON_DIL: check for minimum clearance w.r.t. pad length and pad width.
+
+commit 198cf187d9cd7fef5c9b974857ac414246629479
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jan 31 08:10:08 2011 +0100
+
+    CON_DIL: allow for square pads.
+
+commit cfa528c7cea384dd04d2bde1e477476ba4f5865b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jan 31 08:07:40 2011 +0100
+
+    BGA: check for a square pad #1.
+
+commit 60bc05d0e1487efcd1a30c18961a378c64fbd831
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jan 31 08:02:15 2011 +0100
+
+    BGA: added a comment.
+
+commit 02d1b578026dd71c5a28742f8a0ada9b0538408c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jan 31 07:57:47 2011 +0100
+
+    CAPPR: correction in DRC for silkscreen linewidth.
+
+commit ba1086c7ef5f4bf699ee8e76b613e791c9160dd5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jan 31 07:55:58 2011 +0100
+
+    CAPPR: check for pitch in Y-direction to be 0.
+
+commit 16aa94df127d94649dada2d0b1647d34fed70c65
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 30 23:25:42 2011 +0100
+
+    CAPMP: correction in DRC for silkscreen linewidth.
+
+commit 254232243d7b628026940143f7d5fd5a069455d2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 30 23:21:26 2011 +0100
+
+    CAPMP: check for pitch in Y-direction to be 0.
+
+commit 441d5f1c673c2834ae09ff0085df9be5ffe1981f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 30 23:16:43 2011 +0100
+
+    RES: bumped the year in the copyright notice.
+
+commit 2d6d300c0996cd66fd4d298f5e3052186623f86d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 30 23:14:56 2011 +0100
+
+    BGA: bumped the year in the copyright notice.
+
+commit 882572ec35b0058c262793c5d7b2300af6c656e9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 30 23:13:37 2011 +0100
+
+    CAPA: bumped the year in the copyright notice.
+
+commit 930c56fd7d4fb2b935c2a526b7e6322525da662f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 30 23:11:58 2011 +0100
+
+    CAPM: bumped the year in the copyright notice.
+
+commit b184edc03b0f556b68249683dbff4c31ec30e34f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 30 23:05:43 2011 +0100
+
+    CAPM: correction in DRC for silkscreen linewidth.
+
+commit 1a59a52e1ec8bb72bab13a6a53a7e1f498b689ca
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 30 23:00:55 2011 +0100
+
+    CAPC: correction in DRC for silkscreen linewidth.
+
+commit 80f40509b00f2f266860d0577993b7e2b13cc585
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 30 21:01:33 2011 +0100
+
+    RES: correction in DRC for silkscreen linewidth.
+
+commit c8194d3bcaab032aa440095be90863c595538d38
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 30 20:50:24 2011 +0100
+
+    RES: check for pitch in Y-direction to be 0.
+
+commit 6fdc6f2e1164c57de4a4ba89a59df8b30e49972e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 30 20:45:18 2011 +0100
+
+    BGA: correction in DRC for silkscreen linewidth.
+
+commit 08a4c66c3d340095b7091897b12183b95318ef05
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 30 20:42:33 2011 +0100
+
+    CAPA: correction in DRC for silkscreen linewidth.
+
+commit 739f170290503a7cef49b57676a4f92131722ccc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 30 20:21:26 2011 +0100
+
+    CAPM: check for pitch in Y-direction to be 0.
+
+commit 020d99beb2856308189bb24b76cb7f32191ab98c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 30 20:21:13 2011 +0100
+
+    CAPC: check for pitch in Y-direction to be 0.
+
+commit dc68b1e814d1c9bb9cfcb13400afe009ceee82ac
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 30 10:54:01 2011 +0100
+
+    CAPA: check for pitch in Y-direction to be 0.
+
+commit 7000508c1ea58346b8d2be7c10c7c6d59def94b2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 29 09:14:21 2011 +0100
+
+    RES: check for minimum clearance between copper of pad diameters (X-direction).
+
+commit 4647a1d0a2be8ec488f3c6adc0e548e2a69c91ee
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 29 09:11:16 2011 +0100
+
+    CAPA: check for minimum clearance between copper of pad diameters (X-direction).
+
+commit 74624e64df2b63022631961a3cd414a494111057
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 29 09:00:51 2011 +0100
+
+    CAPM: ordered the footprint data set variables.
+
+commit cc9e403859b04690a803fc484f6f6e490a59ca71
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 29 09:00:04 2011 +0100
+
+    BGA: added fiducial pad clearance values to the footprint data set.
+
+commit f781a8759f076ac6fe649f781fb4c1dfaa0dc79f
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Jan 29 00:01:52 2011 +0100
+
+    WIP: corrections in footprint data.
+
+commit 957d5813eb1eb7f0ce3a0c4d257b97e666fa87a7
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Jan 28 23:39:16 2011 +0100
+
+    WIP: Adding data for footprints.
+
+commit 8231334f394e824801b8fdf3575b698dd8da8f77
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Jan 28 23:28:54 2011 +0100
+
+    WIP: Adding data for footprints.
+
+commit 541014069aa5beb091a12e00533b1e5932866e22
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jan 28 22:15:43 2011 +0100
+
+    CAPC: ordered the data set variables.
+
+commit 24bb3fe9d37a47a574fa5c5f1e89aab5ef80161a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 25 19:21:12 2011 +0100
+
+    SOT: bumped the year in the copyright notice.
+
+commit 94954cad55171a5df1a07b939b80dc9406074f11
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jan 24 22:40:25 2011 +0100
+
+    SOT: ordered the data set variables.
+
+commit e2aa352ec8f661bf6ec356b580cad9252f8e4de2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 23 21:50:48 2011 +0100
+
+    BGA: added missing linewidths to the footprint data set.
+
+commit 4a470995eba5f52dbda401f717c010cc4b4ba081
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 23 21:41:37 2011 +0100
+
+    BGA: added fiducial data to the BGA footprint data set.
+
+commit 118c976ef97215d5df139442f26b1cc149d76561
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 23 21:30:00 2011 +0100
+
+    SOT: added fiducial data to SOT footprint data set.
+
+commit 2646ef82bac3a050c649afe4c54f4980c70da4ee
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 23 21:14:06 2011 +0100
+
+    SOT: added a comment.
+
+commit 6f40b700fe0987ce562fd7f0beab6a7e6db79e7f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 23 21:09:43 2011 +0100
+
+    RES: added data for a RES6880-6400X1450 package.
+
+commit a22a2fc8c802ffd58a56a915a13d0fcf6ea56709
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 23 21:05:11 2011 +0100
+
+    RES: added data for a RES6510-6000X1450 package.
+
+commit 52eebdc7a1429f50904f208235ccdcd3b23ef5b7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 23 19:18:45 2011 +0100
+
+    RES: added data for a RES5480-5000X1250 package.
+
+commit 7dcf9576706f4ebbe7126d221f85482e2ff02913
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 23 19:15:47 2011 +0100
+
+    RES: added data for a RES5480-5000X1000 package.
+
+commit 0fb74c5c4cac32cac318b67cd87d3015667068d0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 23 19:10:03 2011 +0100
+
+    RES: added data for a RES3060-2550X900 package.
+
+commit a246de80d705931447dcaf2510f8bae4e45d0a6b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 23 18:02:19 2011 +0100
+
+    RES: added data for a RES2830-2350X850 package.
+
+commit 28787f23d12ca4c5e99f5ce4ce3384283bda5c47
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 23 16:28:33 2011 +0100
+
+    RES: added data for a RES2210-1700X450 package.
+
+commit 988d9f7337debded5b06aabf56f6858e88695eee
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 23 15:56:55 2011 +0100
+
+    RES: added data for a RES2160-1650X650 package.
+
+commit ff6bb33ea54f2788349edfcb0310cfbe1ae1affb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 23 15:28:32 2011 +0100
+
+    RES: added data for a RES2080-1600X550 package.
+
+commit 36a694022ea7dead4ad9465094ae45de7d0e2392
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 23 13:42:18 2011 +0100
+
+    RES: added data for a RES1860-1350X500 package.
+
+commit 1d98964ca13907bd8b8fffc55afd88f97e4792a1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 23 13:29:01 2011 +0100
+
+    RES: added data for a RES1770-1270X550 package.
+
+commit a9305787dad158197158a1480d31d771e76ebd73
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 23 12:35:27 2011 +0100
+
+    RES: added data for a RES1760-1250X500 package.
+
+commit af27f12d1de55c1aaa1df9833ee16cfd7e568ff9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 23 11:06:34 2011 +0100
+
+    RES: added doxygen comments.
+
+commit 648ff365fecd7dd531e8a69c067595bb0bb066fd
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 23 11:03:12 2011 +0100
+
+    RES: added data for a RES1740-1050X200 package.
+
+commit 1b917b2dbd585e25664f16d1b50f4154029abd77
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 23 10:45:09 2011 +0100
+
+    RES: added data for a RES1680-1200X500 package.
+
+commit 32be89a67930d537b0b9f86ef7c2f6bf847b73c4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 23 09:36:15 2011 +0100
+
+    RES: added data for a RES1670-1200X400 package.
+
+commit 8b1348a9bbed8b4621a234c0049739dad7ab8d5a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 23 09:11:58 2011 +0100
+
+    RES: added data for a RES1440-1050X200 package.
+
+commit 9511b57a222a123c0de42f3068ec862068ef9d7f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 23 08:45:48 2011 +0100
+
+    RES: added data for a RES1390-1000X350 package.
+
+commit f04f53cdcc41f802cada07b6d9b904d61fcc20dc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 23 08:40:57 2011 +0100
+
+    RES: added data for a RES1190-800X300 package.
+
+commit 85cd645a30f446912d444abeb28d8e567a625640
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 22 22:21:31 2011 +0100
+
+    RES: added data for a RES1130-700X280 package.
+
+commit 40bbef9d789b3d1863a12ab496900b742f63a340
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 22 20:16:41 2011 +0100
+
+    RES: added data for a RES1030-640X250 package.
+
+commit af866f3bf35f7ee2362c2d0fa0af4e5237a40ce3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 22 20:11:32 2011 +0100
+
+    RES: corrections on RES600-320X170 package data.
+
+commit 04bac0596e8f40bf1c8112604276650411fc40a4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 22 20:09:08 2011 +0100
+
+    RES: added data for a RES770-420X200 package.
+
+commit c8844926b0cf4387234a7843ef9f5d1f8b63d4f8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 22 20:01:42 2011 +0100
+
+    RES: added data for a RES600-320X170 package.
+
+commit 50e8aa0f3fd6da3578b701f4607cfe2278d58e55
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 22 19:37:23 2011 +0100
+
+    RES: added a comment.
+
+commit 331021b7f1ed68ab340c23cff9a9765491623f98
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 22 18:32:31 2011 +0100
+
+    RES: Check for pitch in Y-direction is smaller or equal 0.0.
+
+commit 36f7710ed44975141119a8d9e53142890e534b62
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 22 18:25:47 2011 +0100
+
+    Corrected a typo.
+
+commit 4486b17086895e9f062785c3753e435622cad083
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 22 10:43:50 2011 +0100
+
+    CAPA: correction in white space.
+
+commit 73cd7f1f68a92bb5665c12db9912d59102946bac
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 22 00:44:46 2011 +0100
+
+    CAPA: added a comment.
+
+commit df1aeaf07de678a849bee3fc0323cdd4a5ce7efe
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 22 00:14:16 2011 +0100
+
+    CAPA: Check for pitch in Y-direction is smaller or equal 0.0.
+
+commit cd179f1d58c8ee3085c8104207604b093c304f5a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jan 20 22:32:30 2011 +0100
+
+    Create footprints only when DRC tests succesfull.
+
+commit 223c5131a4ba38fee29865611130785054a9e952
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jan 17 23:16:49 2011 +0100
+
+    DIOMELF: changed log messages to be more universal with regard to other footprint types.
+
+commit 63f149ea6ae87ecb19ab75261c53531d562a4f01
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jan 17 07:04:08 2011 +0100
+
+    CON_HDR: added prototype for con_hdr_drc().
+
+commit a224c9929bd3493c0cc199196a0678e30cc13492
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 16 22:01:57 2011 +0100
+
+    Updated the Dutch translations.
+
+commit f12c0c71c0f57525ca497d9d9812680175729402
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 16 16:30:19 2011 +0100
+
+    Updated the archiving script.
+
+commit 364c5f7928a3a099f3ac5a37a4345d10110955d9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 16 16:28:57 2011 +0100
+
+    Updated the rpm spec file.
+
+commit 7547c1d4fad587322eda880d672e63457d111257
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 16 15:35:45 2011 +0100
+
+    Updated the user manual.
+    
+    Removed whitespace from an URL.
+
+commit 1b61499b23c906510f9b527372d0f7529a33261d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 16 15:31:55 2011 +0100
+
+    Removed whitespace from filename.
+
+commit 3dc9987527689c287bf44fe39186c142efbb5bc2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 15 22:52:06 2011 +0100
+
+    GLADE: Bumped the year to 2011 in the copyright notice in the about dialog.
+
+commit 0caedb133d557c0729c0de5de3ece6b9faa0e3ad
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 15 22:34:24 2011 +0100
+
+    Bumped the year to 2011 in the copyright notice in the about dialog.
+
+commit 9f672d6701eaedd9f4dc5c5f8e0d2915d82d4993
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 15 22:21:15 2011 +0100
+
+    Updated the pcb-fpw translation template file.
+
+commit 07488df7483c5297c13fe3253fef394571e0aa91
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 15 22:17:14 2011 +0100
+
+    PGA: corrected error messages to be more universal with regard to other footprint types.
+
+commit 22b77b650880daaaf94e2122fe6ddfdca279ee5d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 15 21:58:07 2011 +0100
+
+    INDC: corrected error messages to be more universal with regard to other footprint types.
+
+commit c185861726e223e724e7783097a8387226e72f0e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 15 21:56:02 2011 +0100
+
+    CAPPR: changed error messages to be more universal with regard to other footprint types.
+
+commit 57b179b6cc54c977fdbdefec5cd0bc338459bf1b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 15 21:47:50 2011 +0100
+
+    CON_HDR: added con_hdr_drc().
+
+commit edf12310f7d4fddec3da706cdc0ae34a0112fa60
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 15 20:33:53 2011 +0100
+
+    SOT: added encapsulation for consistency.
+
+commit a5f1f8ca3e3f26ddb01f319aa22d69b8f2b122ca
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 15 15:46:38 2011 +0100
+
+    SIP: added encapsulation for consistency.
+
+commit 8835eac2402c25822107627096533d12954f50b1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 15 09:57:43 2011 +0100
+
+    SIL: added encapsulation for consistency.
+
+commit 522c1897aa76295bb128bd7c4aaddb8b4bfab47b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 15 09:50:02 2011 +0100
+
+    INDP: added encapsulation for consistency.
+
+commit 204a9b9af6e974894ce24c1deae64c1496a88d96
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 15 09:41:56 2011 +0100
+
+    CON_DIP: added encapsulation for consistency.
+
+commit add3738371902fd8b2cac58ec26a1c57372afcea
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 15 09:35:08 2011 +0100
+
+    README: switched bug tracking from Lighthouse to Launchpad.
+
+commit a4cb7b65e742a70b8bb7fdbef6ba5556472e8ef9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 15 09:34:13 2011 +0100
+
+    CON_SIL: added encapsulation for consistency.
+
+commit 5184033322f253d9d5b60ba5c2105c01c2d36402
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 15 08:45:22 2011 +0100
+
+    RESMELF: changed error messages to be more universal with regard to other footprint types.
+
+commit 586cbc0d7b58ee7908979abcb765a33541359dba
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jan 14 08:08:34 2011 +0100
+
+    RESM: changed error messages to be more universal with regard to other footprint types.
+
+commit 1f617cc383b31c00fe001a908ba90122f9477ce2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jan 13 22:54:54 2011 +0100
+
+    RESC: changed error messages to be more universal with regard to other footprint types.
+
+commit c47ea215467ddedafedaff6ca7088f0019a3466a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jan 13 08:15:45 2011 +0100
+
+    RES: changed error messages to be more universal with regard to other footprint types.
+
+commit c8553b5764507382b9a58842eb43af1d509029f9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jan 12 23:01:41 2011 +0100
+
+    PLCC: changed error messages to be more universal with regard to other footprint types.
+
+commit 0b919a2325fe5e45d55f882bc6758b2bbc5ccf5f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jan 12 22:34:12 2011 +0100
+
+    PGA: changed error messages to be more universal with regard to other footprint types.
+
+commit 0f5c6f54941f0496454e11286ec21086ca602dc0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 11 22:39:07 2011 +0100
+
+    INDM: changed error messages to be more universal with regard to other footprint types.
+
+commit 79abd183815f4ba6e7d4881ff4469df7476bbaa4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 9 23:18:12 2011 +0100
+
+    CAPA: changed error messages to be more universal with regard to other footprint types.
+
+commit 43981fcd1700c9b5dff67cd29237931b15bf1078
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 9 23:11:28 2011 +0100
+
+    INDC: changed error messages to be more universal with regard to other footprint types.
+
+commit 2045a4cfaa891ec98d35d87427e8ef6bbb632efc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 9 22:50:18 2011 +0100
+
+    DIPS: changed error messages to be more universal with regard to other footprint types.
+
+commit 13da0d34c42ce6475c04c9aca34cbdf0d94c1126
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 9 14:02:02 2011 +0100
+
+    DIP: changed error messages to be more universal with regard to other footprint types.
+
+commit dcdb97ba711309721a79483038ed32400e053662
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 9 09:16:06 2011 +0100
+
+    DIOMELF: changed error messages to be more universal with regard to other footprint types.
+
+commit 8784a1f8c83aac1394fe81fbdb1df63451d28d05
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 1 15:56:12 2011 +0100
+
+    DIOM: changed error messages to be more universal with regard to other footprint types.
+
+commit a64a18885275041ce37ad836364b156cf77b8345
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 1 14:24:59 2011 +0100
+
+    BGA: make the reporting of info and warning messages configurable with --verbose.
+
+commit fe5fb36dba462cd18a643acbe10eea5bc16f9ac0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Dec 31 15:54:13 2010 +0100
+
+    CAPC: make the reporting of info and warning messages configurable with --verbose.
+
+commit d714797056ec1e02a8996f3974084858590c345d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Dec 31 15:23:22 2010 +0100
+
+    SOT: changed error messages to be more universal with regard to other footprint types.
+
+commit 1980d830907a462ddcfffc435b21bb350e27639c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Dec 31 14:13:27 2010 +0100
+
+    Updated the README file.
+
+commit f9e4255e0e7c4f0fc7edba3849eb8a8aafc1f2ea
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Dec 31 09:48:33 2010 +0100
+
+    Correcting behaviour of the "fiducial_pad_clearance_entry" when SOT package type is selected [#61 state:resolved].
+
+commit 5dd7c74367edb4814c0ac7c77aea7990892f915b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 30 22:04:34 2010 +0100
+
+    Updating the Dutch translations (WIP).
+
+commit 5833f52f39da490ead314b8f204d6e2cabbd7fb0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 30 10:42:02 2010 +0100
+
+    Added gui_constraints_disable_thermal_pad_widgets.
+    
+    This function sets only the thermal pad related widgets
+    on the "Thermal pad" notebook tab to inactive/insensitive.
+
+commit 9287057294fb5fdd9fdcd3d241310c8ba32f0944
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 30 10:35:06 2010 +0100
+
+    Added gui_constraints_disable_fiducial_widgets [#61].
+    
+    This function only sets the fiducial related widgets
+    on the "Thermal pad" tab to inactive/insensitive.
+
+commit 975b16f6b22cb9072862a91eb4713190aff91470
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 30 00:13:45 2010 +0100
+
+    Correcting behaviour of the "fiducial_pad_clearance_entry" when TO package type is selected [#61].
+
+commit 3a58510f28efd26df39329891383c4a96ffefa00
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 30 00:13:35 2010 +0100
+
+    Correcting behaviour of the "fiducial_pad_clearance_entry" when RESMELF package type is selected [#61].
+
+commit 66a9a87a3d1c8b7acf98db2979c6c5dd0750b712
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 30 00:13:22 2010 +0100
+
+    Correcting behaviour of the "fiducial_pad_clearance_entry" when RESM package type is selected [#61].
+
+commit c37373b2f2b67f8503371c5cd127fe9258a192ad
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 30 00:12:53 2010 +0100
+
+    Correcting behaviour of the "fiducial_pad_clearance_entry" when RESC package type is selected [#61].
+
+commit ac08bd1f2cba1f162d0e6d5a8d4cf1ed9deb14e8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 30 00:12:40 2010 +0100
+
+    Correcting behaviour of the "fiducial_pad_clearance_entry" when INDP package type is selected [#61].
+
+commit 1f471c9c65ef697714cf6f9561f66e2967961237
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 30 00:12:24 2010 +0100
+
+    Correcting behaviour of the "fiducial_pad_clearance_entry" when INDM package type is selected [#61].
+
+commit df951787b0ef2d8415947e646f5f29632a71b592
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 30 00:12:12 2010 +0100
+
+    Correcting behaviour of the "fiducial_pad_clearance_entry" when INDC package type is selected [#61].
+
+commit 7a0571bffca6d23ec136c0597acd2163f3ed1308
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 30 00:11:59 2010 +0100
+
+    Correcting behaviour of the "fiducial_pad_clearance_entry" when DIOMELF package type is selected [#61].
+
+commit 35801952f03b3225fa6a7b7719d4da66e23185d5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 30 00:11:43 2010 +0100
+
+    Correcting behaviour of the "fiducial_pad_clearance_entry" when DIOM package type is selected [#61].
+
+commit 22243c592bdff21290d8fb7cf08fd2282860463d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 30 00:11:31 2010 +0100
+
+    Correcting behaviour of the "fiducial_pad_clearance_entry" when CAPPR package type is selected [#61].
+
+commit 232865ddaa290f82eb0220ddaf5797d8d4c8e1de
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 30 00:11:16 2010 +0100
+
+    Correcting behaviour of the "fiducial_pad_clearance_entry" when CAPMP package type is selected [#61].
+
+commit c134421fa49c30a5c199e517403445aa30aa04b6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 30 00:10:59 2010 +0100
+
+    Correcting behaviour of the "fiducial_pad_clearance_entry" when CAPM package type is selected [#61].
+
+commit d9c1decf8803223b0d474b098f182667f08fbb67
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 30 00:10:42 2010 +0100
+
+    Correcting behaviour of the "fiducial_pad_clearance_entry" when CAPC package type is selected [#61].
+
+commit 4a71f8771d535058761bedc8872edb4a4e53a42f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 30 00:10:25 2010 +0100
+
+    Correcting behaviour of the "fiducial_pad_clearance_entry" when CAPA package type is selected [#61].
+
+commit 5064cc25b2aaefe89a4969299895f5d3003c4927
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Dec 29 23:30:40 2010 +0100
+
+    Correcting behaviour of the "fiducial_pad_clearance_entry" when BGA package type is selected [#61].
+
+commit d464617c12cc066c622c6b14659833d107f2bb27
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Dec 29 23:29:51 2010 +0100
+
+    Correcting behaviour of the "fiducial_pad_clearance_entry" when checkbutton is toggled [#61].
+
+commit fcd7fe863bca71cc0e0e9a41c665b96c7ff1cc19
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Dec 29 23:29:00 2010 +0100
+
+    Correcting behaviour of the "fiducial_pad_clearance_entry" at start up [#61 state:open].
+
+commit dc2cfe4544f33f3ce94228e1c9b4f3cb4f3b0db5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Dec 29 11:27:46 2010 +0100
+
+    Updated the MANIFEST file.
+
+commit a3c385a1cccf0e068ca185fea95d88b8d14b79e4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Dec 29 11:15:26 2010 +0100
+
+    Updated the header information of the Dutch translation file.
+
+commit b3d3eb552e24a19b5fa63366172d127153e7f032
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Dec 29 11:14:40 2010 +0100
+
+    Added an incomplete German translation file (WIP).
+
+commit db355ae7d52f4e21f614f58fdb344d25e4c0b8ba
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Dec 29 00:28:56 2010 +0100
+
+    Added predefined DIPS package data (WIP).
+
+commit 7d3a7ef1e40dd122e600ac94fc6c5857f6b5556d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Dec 29 00:28:18 2010 +0100
+
+    Updating the Dutch translations (WIP).
+
+commit e36af463d2076e101de455e31aef4ff51cbe8c0d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 28 22:20:47 2010 +0100
+
+    Updated the translation template file.
+
+commit 4d19ed8c2bdc3d5c085c44a4de0fd92fa0e87f5f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 28 22:19:27 2010 +0100
+
+    Updated index of files containing translatable strings.
+
+commit fb726e4968f7079b2ff2afd61ad00045023478ff
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 23 20:26:22 2010 +0100
+
+    Changed Doxygen file headers to get the file list correct in the Doxygen documentation.
+
+commit d4c64dd567dca6cb2ef44204f46a168c8727c868
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 21 16:53:36 2010 +0100
+
+    Created more icons for Launchpad site.
+
+commit cdd362c38293a61b7224e4f807f5515f9b2c7001
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 21 16:43:41 2010 +0100
+
+    Include translation template file.
+
+commit 2b6fee2744ad649a16faa127b5ad7beed698f2ba
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Dec 20 19:53:32 2010 +0100
+
+    Corrections in white space.
+
+commit ec6e1b0f4fc7dd7d9e6fd8b115f359edaba8d1f1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Dec 20 12:51:28 2010 +0100
+
+    Changed the drawing of the package outline for DIPS packages.
+
+commit cd6238787b9882b04e1030982608f2687ebaf0fd
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Dec 20 11:36:21 2010 +0100
+
+    Minor corrections.
+
+commit 47a9638e5a7ced62f45e368b10e913f6666d508d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Dec 20 11:34:43 2010 +0100
+
+    Implemented DIPS package functions.
+
+commit 77a7ac81a5bf8d44ffcbd44751fe34c9834674d8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Dec 20 08:39:22 2010 +0100
+
+    Added code for DIP socket packages.
+
+commit 13f2004883a3211920a95ce9067cf97d8eafa9f4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Dec 20 08:34:48 2010 +0100
+
+    Correction of a copy-and-paste error.
+
+commit c7a978e7ee3ff22cdb83cce6e11b91601d9f516b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Dec 19 10:34:28 2010 +0100
+
+    Remove out commented LOC.
+
+commit f9ac481d42d7956e90dba65b068423260b86c19c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Dec 18 23:49:34 2010 +0100
+
+    Correction in white space.
+
+commit eb79fe04884f76b04aca8b6c1049094172aa7e50
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Dec 18 19:26:05 2010 +0100
+
+    Correction in order of package type names.
+
+commit 4b83d6490f05a9b04d376ebe8321e78f4f40e589
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Dec 18 17:27:54 2010 +0100
+
+    Updated the list of packages in the GUI.
+
+commit 220c0f1e0360a41b7789b638ec4b81ca0b97965d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Dec 18 17:08:56 2010 +0100
+
+    Correction to avoid hyphen problems in case trees.
+
+commit c33a321db184f434a50bfc6949b25093340d7c95
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Dec 18 11:54:28 2010 +0100
+
+    Changed a comment, cleaned up an unused LOC.
+
+commit b2b09800496eea25cf89b360bce37a989b50e9c7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Dec 18 10:43:32 2010 +0100
+
+    Added data for 3.50 mm pitch SIL-connector packages [#60].
+
+commit 87e3ec5cfae5f7a150be84d4b22521a3c75fae02
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Dec 17 21:45:59 2010 +0100
+
+    Added data for 9 pin 200 mil (5.08 mm) pitch SIL-connector packages [#60]
+
+commit 265b0c348cbc1b669eb1aa5fe1aec8916be5adfc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Dec 17 21:00:09 2010 +0100
+
+    Added data for 50 mil (1.27 mm) pitch SIL-connector packages [#60]
+
+commit 4851f7a3993327c9f9769bf15ebfe8586d1fb19c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Dec 17 15:28:56 2010 +0100
+
+    Added data for 200 mil (5.08 mm) pitch SIL-connector packages [#60]
+
+commit b58c1ef56a95d7bfa416c7cfeddb7125f99b1249
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Dec 17 13:36:07 2010 +0100
+
+    Added data for 100 mil (2.54 mm) pitch SIL-connector packages [#60 state:open].
+
+commit e5b011e442cef3161bdda7081e7d5ae4bfaa23a2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Dec 17 09:52:38 2010 +0100
+
+    Autogen.sh and configure updated the po/Makefile.in.in for us
+
+commit 1b45d07fe2c9c0e6692876e78de369fda3e04653
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 16 07:58:38 2010 +0100
+
+    Updated the list of source files to be scanned for the translation strings in the template file.
+
+commit 9504c5194b83b36400f4f8bcfc2b64ec5b1d82a3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 16 07:57:25 2010 +0100
+
+    Correction on a package body width [#55].
+
+commit f137223a401cdaedbd4e19207c30f8a7b5490200
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Oct 26 20:59:36 2010 +0200
+
+    Implement CAPPR package functions.
+
+commit a2241fe48e2079e2788b69185306de4a6a41cc1e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Oct 26 19:36:58 2010 +0200
+
+    Added Through Hole Polarized Radial Capacitor packages (CAPPR).#
+
+commit 4dfbe9b8779f369e9526a71ffa00bb91a18ad831
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Oct 26 13:19:59 2010 +0200
+
+    Added dimensions picture for CAPPR packages [#32].
+
+commit ff8c082cbf6b2dfebb3d46c4924e28c6068728e4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Oct 26 13:02:25 2010 +0200
+
+    Added dimensions picture for CAPA packages [#32].
+
+commit 890f1a449806f49ab9a9d43bfa3cc388dd8f935f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Oct 26 12:53:44 2010 +0200
+
+    Corrections on white space, use [tab].
+
+commit d57f2424f7f046b1af54c26791ef265e38443abc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Oct 26 23:14:48 2008 +0100
+
+    Added pixmaps/dxf/QFN.dxf
+
+commit f27842e16365266df41b29058577861edbdfee4a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 17 23:07:42 2008 +0200
+
+    Added pixmaps/dxf/DIO.dxf
+
+commit 2a71cc2c466acec194edfb09641da3d790f6b5b5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 17 21:43:17 2008 +0200
+
+    Added pixmaps/dxf/RES.dxf
+
+commit a294286b0cd46ebc557d3bd8f614a89df190b787
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 17 21:42:44 2008 +0200
+
+    Added pixmaps/dxf/DIPS.dxf
+
+commit 9c9db02608b8e871e0ec2295b991a9e155ceb84d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 17 21:42:13 2008 +0200
+
+    Added pixmaps/dxf/DIP.dxf
+
+commit 7a81d8718f7e9c300e8b2302132365db1a9c162c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 17 21:40:37 2008 +0200
+
+    Added pixmaps/dxf/frame.dxf
+    
+    To be used as a template drawing file.
+
+commit 00dc7e8f5265a6db91567ad43174533d426e0e16
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Aug 14 21:41:54 2010 +0200
+
+    Added more attributes to a footprint file.
+
+commit dfa864b59e1ed5561a90513fbaa45e2eeb71e3dc
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Aug 13 09:36:27 2010 +0200
+
+    Added flags, corrections on whitespace.
+
+commit 62141fcc4922c2b0a90b960927cddacc1ae3b540
+Author: Bert Timmerman <bert@draaikolk.(none)>
+Date:   Thu Jun 10 01:11:26 2010 +0200
+
+    Added a outcommented empty line in the license
+    
+    text for better readabilty of the element header
+    line.
+
+commit da8331b92768cf30ba173e2ad664d3d9b59b34ef
+Author: Bert Timmerman <bert@draaikolk.(none)>
+Date:   Thu Jun 10 00:51:45 2010 +0200
+
+    Correction on drawing a pin 1 marker [#27].
+
+commit 1ae0b01fd2fabc99bb6b879fa365bc6d7abcf830
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jun 4 15:08:16 2010 -0700
+
+    Changed the account name on the Lighthouse issue tracking system.
+
+commit 421eec2548187941763c7849f76ddfe88fee69c1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Apr 25 22:13:47 2010 +0200
+
+    Use the "response" signal [#34].
+
+commit 08713191d52f96b9be1c5f45909c7b65e8a8286b
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Apr 16 08:01:11 2010 +0200
+
+    gtk_signal_connect() is deprecated, use g_signal_connect().
+
+commit a8f25d734da7908dab91a216e0270fca3e5ef094
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Apr 16 07:53:23 2010 +0200
+
+    gtk_signal_connect() is deprecated, use g_signal_connect().
+
+commit 651b65c3478dbff9f723c35b494140c6bf22da9a
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Apr 15 23:03:18 2010 +0200
+
+    gtk_signal_connect() is deprecated, use g_signal_connect().
+
+commit 84ca7b1a74f07c8e2f79947f30a76e97cf5739de
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Apr 3 13:20:38 2010 +0200
+
+    Put pcb specific stuff in a separate header file.
+
+commit 1b3306bb89fae97b396f20942791087efde9b627
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Apr 3 12:49:05 2010 +0200
+
+    Removed more "dead wood" and changed the fp suffix handling.
+
+commit d748a222771ef1ee2d357635cddc820e5c83e08e
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Apr 3 12:34:03 2010 +0200
+
+    Added Doxygen documentation comments.
+
+commit 23571dd24e384ae0f8735a327305b56a15258065
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Apr 3 12:24:52 2010 +0200
+
+    Define this app being a command line interface (CLI).
+
+commit 14ef499c3801c4441c24a9b8c9066f06ff78a2c8
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Apr 3 12:23:44 2010 +0200
+
+    Put global vars in global.h
+
+commit 008cc44bfec2efa40dabf7c5f186a04399cbf6b5
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Apr 2 22:18:18 2010 +0200
+
+    Use VERSION instead of FPW_VERSION.
+
+commit 3adb47a6b9f03908b6d4e7b294e05a11fa56f0d2
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Apr 2 21:12:37 2010 +0200
+
+    Correction in the copyright notice.
+
+commit 45df9426fba0d3f33a9a007a535897242f4741a7
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Apr 1 23:17:56 2010 +0200
+
+    Changed the file information and bumped the copyright into 2010.
+
+commit 2bbe8eb139dc6427292a08fbd95e967e7fb90e1e
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Apr 1 23:14:43 2010 +0200
+
+    Renamed main.c to pcb-gfpw.c and changed Makefile.am
+
+commit 4723799cc01374a9d85f505616b42c98ca2f6337
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Apr 1 08:16:00 2010 +0200
+
+    Weeding out more "dead wood" that was moved into package specific source files.
+
+commit 953d9f6be9812c1dbcffc088be767e017b32f5a7
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Apr 1 08:10:59 2010 +0200
+
+    Refactored all functionality into specific package source files.
+
+commit d2b9d14616b07cf389276fde741dfcc250fdd6c0
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Apr 1 08:03:12 2010 +0200
+
+    Refactor the non-GUI part into libfpw.c
+    
+    Refactor the non_GUI part of the updating the "total number of pins/pads"
+    into libfpw.c
+    This non-GUI part is the calculation of the total amount of pins/pads/fiducials.
+    For now assume just two fiducials per package.
+
+commit 23ca4b664594fadc24ac9879790a9aadc795d455
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Tue Mar 30 22:45:00 2010 +0200
+
+    Ignore microsoft windows executable files (.exe).
+
+commit fa3edd5c2ae2d3c1f58b9b6b70e889adb2f0581e
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Tue Mar 30 22:43:07 2010 +0200
+
+    Be more verbose when changing the units type.
+
+commit 255876b3a451575ba433b0b4d9a477726be02de5
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Tue Mar 30 07:40:42 2010 +0200
+
+    Implement case of TO package in on_footprint_name_entry_changed().
+
+commit 4218ef3aae1cc0c6f06f431e7c4c462a1578999b
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Tue Mar 30 07:29:52 2010 +0200
+
+    Implement case of SIP package in on_footprint_name_entry_changed().
+
+commit 3a944bb747e3e6950571d65af57cf333871f0fe9
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Tue Mar 30 07:04:37 2010 +0200
+
+    Implement case of SIL package in on_footprint_name_entry_changed().
+
+commit ece302f2a50ce5195b5d00bbeef060e9cb65c3c9
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Mon Mar 29 22:44:50 2010 +0200
+
+    Implement case of CON_SIL package in on_footprint_name_entry_changed().
+
+commit d57f323767e4b076458c16020267a8ea8688fc35
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Mon Mar 29 22:35:11 2010 +0200
+
+    Implement case of CAPA package in on_footprint_name_entry_changed().
+
+commit 4629cba7688cc4f5d8045c74fc1017ff3c5847a6
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Mon Mar 29 22:10:16 2010 +0200
+
+    Implement case of INDP package in on_footprint_name_entry_changed().
+
+commit 8acad6f4967bf140d5364115b61f0f3e5afc1c61
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Mar 7 21:08:23 2010 +0100
+
+    WIP: Adding data for footprints.
+
+commit 106808dfe1c98d36c85e1894485af2264c7d6bac
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Mar 7 17:14:40 2010 +0100
+
+    WIP: Adding data for footprints.
+
+commit af307e124b57a262f231dfe38463f9a34f06e6fe
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Mar 4 22:34:43 2010 +0100
+
+    WIP: Adding data for footprints.
+
+commit 35d8cf187f1e91424e184aab112f3c238221d9d0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Mar 3 08:14:14 2010 +0100
+
+    Change GUI settings to the new orientation of the footprint.
+    
+    Pin 1 is now top left.
+
+commit 0f5b7cf45782e7f5885019b402b0a05cee9796bf
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Mar 2 22:48:45 2010 +0100
+
+    More translatable strings encapsulated.
+    
+    Fixed a typo in a comment.
+
+commit cdfa9fa0b844e1590423b06e7494e95cb28c34bc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Mar 1 22:11:59 2010 +0100
+
+    Bumped the year in the copyright notice.
+
+commit ddd663564c76332d2d502b42598fb2fe059140ed
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 28 15:31:07 2010 +0100
+
+    Changes in file description for doxygen.
+
+commit 280f898ccc2fa1ab46c0452775b80439eb4a0169
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 28 15:29:44 2010 +0100
+
+    Changes in file description for doxygen.
+
+commit 1f55fc190f1223b377af8f20c3d705e5548c24ac
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 28 15:25:34 2010 +0100
+
+    Changes in file description for doxygen.
+
+commit d975e7edde6814705fd1c4cebc301fb09963bc34
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 28 15:25:04 2010 +0100
+
+    Changes in file description for doxygen.
+
+commit 39c7da39a98c6f258cb2ef4074f183bebbc1799d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 28 15:24:46 2010 +0100
+
+    Changes in file description for doxygen.
+
+commit fd8bdf96602f42503f12646be6a90402136c48cb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 28 15:24:21 2010 +0100
+
+    Changes in file description for doxygen.
+
+commit e62cdaad844dd0669bb4fbb7f69a3009cff865cb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 28 15:23:46 2010 +0100
+
+    Changes in file description for doxygen.
+
+commit 5f550b10a369d28da977435d02e828477cdf7cc8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 28 14:55:42 2010 +0100
+
+    More translatable strings encapsulated.
+
+commit 613ad08d66434d99198baaefab6356b8c7b8a758
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 28 14:17:03 2010 +0100
+
+    We don't have to do this \todo ;-)
+
+commit 63f3114ec3e3e99aaac82509018fae1dd780ab87
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 27 20:20:05 2010 +0100
+
+    Correction of error message.
+
+commit ae56be113c5fbe532c27cbf7c43500e1bd3c580c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 27 20:15:19 2010 +0100
+
+    More translatable strings encapsulated.
+
+commit 3670732c94661f44a78c67d4061ad5ebbe36162e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 27 19:58:04 2010 +0100
+
+    More translatable strings encapsulated.
+
+commit f381f0d9b64e43b3cb253de7af1329f5d8f70a02
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 26 18:45:21 2010 +0100
+
+    More translatable strings encapsulated.
+
+commit 663dba5c50db994b785a3433540dd38d9b5db035
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 25 20:58:55 2010 +0100
+
+    More translatable strings encapsulated.
+
+commit 5f488f11dd716fea0a4e042824bf6dad0ed1abc2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 24 22:31:38 2010 +0100
+
+    Corrections in encapsulation of translatable strings.
+
+commit 55a8ca7b8de43a93408886719749bac2a4be2528
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 23 23:06:48 2010 +0100
+
+    Corrections in encapsulation of translatable strings.
+
+commit c6bee378df6eac6585c9f5efd62280f2fd03008e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 23 21:42:39 2010 +0100
+
+    Corrections in encapsulation of translatable strings.
+
+commit 8da2ddf7a430a2c1adeac1a19dabc9ff1d0e297e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Feb 22 22:18:10 2010 +0100
+
+    Corrections in encapsulation of translatable strings.
+
+commit 361feb35ace18415038ec8cc6ab3c29ce10f76cd
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 21 13:43:58 2010 +0100
+
+    Minor correction.
+
+commit ac59f817dc44800ff303b880daec2f3bc1b80c63
+Merge: bac4580 b8d8e30
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 21 13:42:30 2010 +0100
+
+    Merge branch 'master' of git@github.com:bert/pcb-fpw
+    
+    Conflicts:
+    
+    	src/capa.c
+    
+    nothing added to commit but untracked files present (use "git add" to track)
+
+commit bac45803fa092d7c568ad5ed38c02746eef7bc59
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 21 13:37:00 2010 +0100
+
+    Encapsulate translatable strings the right way.
+
+commit a44d596647865249881dcb6b9034d2a02d58dfd7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 21 13:34:12 2010 +0100
+
+    Encapsulate translatable strings the right way.
+
+commit 00ecb141e509f221a69a19c6bdf94cdb6cc17c6d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 21 10:55:04 2010 +0100
+
+    Corrections on translatable strings.
+
+commit b8d8e30b8c7e68b99adda319a7b2a411b5de150b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 21 07:33:04 2010 +0100
+
+    Encapsulate translatable strings the right way.
+    
+    More strings to translate.
+
+commit c64f7bbc3e73daf6886c972e95afb7822166f225
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 21 07:31:47 2010 +0100
+
+    More strings to translate.
+
+commit b7204be5a152dc7c95437ef080ef4a9fdee39195
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 20 18:13:45 2010 +0100
+
+    Oops, use g_log on warning level instead of fprintf (stderr, ...).
+
+commit 62bfbe77fb8cb7aeaf614d22349eb23bc1d1596a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 20 18:00:19 2010 +0100
+
+    Encapsulate translatable strings the right way.
+
+commit 209cb322c4aefefadd14df428667df4faae1996c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 19 07:48:09 2010 +0100
+
+    Added package related source files to POTFILES.in for inclusion into translation files.
+
+commit 7cb3c832bf1f8f05c9016fe56577da7d8536d04d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 18 08:09:36 2010 +0100
+
+    Correction in comments.
+
+commit 82aa37d90be6cfe35001913f40bb8f999b26ab6f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 18 08:09:23 2010 +0100
+
+    Correction in comments.
+
+commit 08446ab4931f1f4c172753b838fa0a30b59131ae
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 17 20:36:16 2010 +0100
+
+    Updated the Dutch translation file.
+
+commit 64f9889656c57fb96202abcc6a099e2528ceab71
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 16 18:12:03 2010 +0100
+
+    Correction in comments.
+
+commit 12444968b23980651d22c58354373a1d387c83de
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Feb 15 08:17:54 2010 +0100
+
+    Correction in comments.
+
+commit bf1601d706f2ab05afaf2dc6a387c6b03fea83a8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Feb 15 08:17:02 2010 +0100
+
+    Correction in comments.
+
+commit f55ebd7e61081726a4260db97b53c8a0337166fb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Feb 15 08:15:18 2010 +0100
+
+    Correction in comments [#58 state:open].
+
+commit 94089674c451be06cbf48c76243d6df31df1fdaa
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Feb 15 07:49:36 2010 +0100
+
+    Adjusting GUI settings for the RESMELF package [#57 state:open].
+
+commit 8fd4daaa7639154ae528a16eaa3b3629d8721b61
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 14 22:23:07 2010 +0100
+
+    Adjusting GUI settings for the RESM package [#42].
+
+commit f4d4f85c7c84f2bd9e41f8cdef0ec68a88fcbe69
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 14 00:49:07 2010 +0100
+
+    Adjusting GUI settings for the RESC package [#56 state:open].
+
+commit 0630dcf988ff5362b4bf7b30cd74f2f634702bc1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 13 15:04:09 2010 +0100
+
+    Adjusting GUI settings for the RES package [#41].
+
+commit 32dcf9125d1b85f5a54bd7a44f6d6ab428169f7d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 12 21:53:02 2010 +0100
+
+    Adjusting GUI settings for the CAPA package [#27 state:open].
+
+commit 6d83968a0ddfe93487f0184909fe44e8eb002717
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 11 20:54:32 2010 +0100
+
+    Adjusting GUI settings for the CAPC package [#55 state:open].
+
+commit c49cf93bf27c7d6bf20c64a574e6c5e84d8b1e51
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 11 20:46:07 2010 +0100
+
+    Adjusting GUI settings for the CAPM package [#54 state:open].
+
+commit 1fc2321f361e5858a010ba7dc1211d464bdd6a2b
+Merge: 8da543e 2018947
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 11 19:50:48 2010 +0100
+
+    Merge branch 'master' of git@github.com:bert/pcb-fpw
+
+commit 8da543efcfe7180061e29273aa5dd6642b839625
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 11 19:50:12 2010 +0100
+
+    Adjusting GUI settings for the CAPMP package [#53 state:open].
+
+commit 20189478a1d88641f59092cc3b30d57b8268f008
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 11 08:17:20 2010 +0100
+
+    Adjusting GUI settings for the CAPMP package.
+
+commit ee77ea011d544ba3b1949ea5cdea0e8743fd2c35
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 11 07:52:22 2010 +0100
+
+    Adjusting GUI settings for the DIOM package [#52 state:open].
+
+commit b620844990e6bb0c5a38307e20898f43af39453b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 11 07:40:57 2010 +0100
+
+    Adjusting GUI settings for the DIOMELF package [#29].
+
+commit 9f1afc432de1f68d6e0c6cbf601a29db171ec5b2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 10 22:24:46 2010 +0100
+
+    Adjusting GUI settings for the INDC package [#51].
+
+commit 463d888a0765585ea334e5ef41b149e06f13ae00
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 10 08:16:34 2010 +0100
+
+    Adjusting GUI settings for the INDM package [#43].
+
+commit 90969cf104ac3acceafb8fc6b83e23be75e53662
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 10 08:03:32 2010 +0100
+
+    Adjusting GUI settings for the INDP package [#50 state:open].
+
+commit 3fb09ea20bdb13bc88ec02bff12184e25c8d1f1a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 10 07:01:09 2010 +0100
+
+    Get the INDM package type.
+
+commit 8b4c38d1a9be28bca035588e360f42cd8489bb19
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 9 21:25:13 2010 +0100
+
+    Implement the INDP package type.
+
+commit 58457a3200117705dd724764b966392958c14cff
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 9 21:14:39 2010 +0100
+
+    Added indp.[ch] for Precision Molded Inductor SMT Packages.
+
+commit 3c7598d3271db5972911312117278e3bd3cac9d6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Feb 8 21:50:17 2010 +0100
+
+    Incude indm.h
+
+commit 94b8cdc03ec640a4c71a7e9294f179a25990196f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Feb 8 19:39:56 2010 +0100
+
+    Implement the SIP package type.
+
+commit a2932b2aaafb2d71a4db27b4b3dff37b7801517a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Feb 8 19:30:44 2010 +0100
+
+    Added sil.[ch] for Single Inline Packages.
+
+commit d17e540f3f769342e29ca96b269dd95588a80fd9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Feb 8 08:21:04 2010 +0100
+
+    Removed another copy-paste remnant [#49 state:open].
+
+commit 24943026b5d508890392b391db85837b2aabc109
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 7 22:53:14 2010 +0100
+
+    Implement the SIL package type.
+
+commit 0a084357a90320df8c82c58fdf1ef831110e0446
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 7 21:47:25 2010 +0100
+
+    Added sil.[ch] for Single In Line packages.
+
+commit 174e7b2b8a6a1228115d179ee86c16e1c50905c4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 7 21:31:04 2010 +0100
+
+    Removed another copy-paste remnant [#27].
+
+commit 5c878a66f8202b5ed8f9e6c5e8ee7116503a47d5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 7 21:11:42 2010 +0100
+
+    Another bug in the pin 1 indicator solved [#48].
+
+commit 5c87786b56a3077f1d6545d1352d5f31014068e9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 7 21:05:58 2010 +0100
+
+    Remove unwanted line in pin 1 marker [#48 state:open]
+
+commit 47ab8a3df9d7480c050dbb59e446c770d1dd800d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 7 20:40:41 2010 +0100
+
+    Get the TO220* package types.
+
+commit 299d6bbd6e8590ff7e2a00420deb239c0aeccd58
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 7 20:28:49 2010 +0100
+
+    Get the CAPA package type.
+
+commit 5d76dcd5ad03844ac7b6db5b667d24e2ce462084
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 7 19:36:40 2010 +0100
+
+    Implement the CON_SIL package type.
+
+commit 2e92d59d1587b887089c0714a4d0df536a24c4e8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 7 17:56:25 2010 +0100
+
+    Bumped the year in the copyright notice.
+
+commit 18fce645409cecbd8f056438f02c80133be87007
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 7 16:03:36 2010 +0100
+
+    Added CON_SIL to the packages enum.
+
+commit 13a8c7d37d0869fbcc710038e7cbb22bf92cf9fc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 7 15:33:29 2010 +0100
+
+    Added con_sil.[ch] for Single In Line connector packages.
+
+commit 0eeed9dc5a4dd51aa47211437bda951e32c45ad0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 7 12:39:25 2010 +0100
+
+    Changes in comments for DRC [#27].
+
+commit de790ca14333a866a5bbcca496c55a7c12f9124f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 7 10:25:02 2010 +0100
+
+    Minor correction on pad clearance [#27].
+
+commit bb1f6ce07ef046901d4d6030b34ffc667d226a99
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 7 09:24:52 2010 +0100
+
+    Create an Element for a CON-DIP package [#27].
+
+commit ca9442a23866f5fb8de494d38f02b8f558a41613
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Feb 7 09:21:31 2010 +0100
+
+    Change in comment.
+
+commit a9e22bf778d02ab8bbf4538c9a135d2b6be58606
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 6 18:42:09 2010 +0100
+
+    GUI tabs have names, not numbers.
+
+commit 8c1722894a3067c31f0c2369e2a84f3d1eaf1c6d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 6 18:38:51 2010 +0100
+
+    Trying to make error messages understandable for humans [#27].
+
+commit 3617277d5efdd1ed4c4b9e5a77a5fca3088c919b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 6 14:01:47 2010 +0100
+
+    Corrections on clearances and flags [#27].
+
+commit 0d59aa379d3ed2a36f16d1b691b4926c95a0db54
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Feb 6 10:59:58 2010 +0100
+
+    Create a pin 1 marker with absolute sizes [#27].
+
+commit 73f124fb2c379a3107d7c7b99c9a57041888874f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Feb 5 22:17:06 2010 +0100
+
+    Added a triangle shaped marker for pin 1 [#27].
+    
+    Marker is in between package outline and
+    maximum real estate (courtyard).
+
+commit d96cf6935bf71c2e3519e71112697570da92ac01
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 4 22:25:28 2010 +0100
+
+    Added comments [#27].
+
+commit 0d368fb7f52feca875da51b7e7347076cf25fc77
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Feb 4 22:24:45 2010 +0100
+
+    Added a pin 1 marker for the silkscreen artwork [#27].
+
+commit ec6e6129f2f0502785b3c4078015c3e1f8437090
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Feb 3 22:44:09 2010 +0100
+
+    Correction on the pin 1 position and rotated 90 degrees CW [#27].
+    
+    Parts with pins/pads on two sideshave the pin 1 position
+    defined as: left side, top pin.
+    This resulted in a rotation of 90 degrees CW to meet this
+    definition.
+    As the pin 1 marker was drawn outside the courtyard this
+    is to be corrected in a following commit.
+    Code for creating this piece of silk art is now removed.
+
+commit 3aede8bf7d2f6464ae44ca9447230a11986a9059
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Feb 2 06:49:47 2010 +0100
+
+    Updated the Dutch translation.
+
+commit 2e893f454d34404af506fb91ecada143f2524402
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Feb 1 08:16:28 2010 +0100
+
+    Changes in all_entries_to_default_sensitivity() to reflect the order of tabs.
+
+commit 8a14f4e4d5c2abfe5fafc5d38da320496b7acafb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Feb 1 08:05:19 2010 +0100
+
+    Added a fiducial pad clearance entry in the GUI.
+    
+    - added a global variable for storing fiducial pad clearance.
+    - added code for handling the fiducial pad clearance fields.
+    - bumped the year in the copyright notice of the about dialog.
+    - language translations have a short description (now "nl", was "nl_NL").
+
+commit c5041593bf0162c01f13d47cbb73c7ea82afaf97
+Merge: 9a261cc d5af331
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 31 17:33:16 2010 +0100
+
+    Merge branch 'master' of git@github.com:bert/pcb-fpw
+    
+    Conflicts:
+    
+    	doc/user-manual.html
+    	src/sot.h
+
+commit d5af3318fa9f8ff05b99ddae363244deb1f779c8
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Jan 31 13:57:36 2010 +0100
+
+    WIP: adding data for footprints.
+
+commit 066c63d8c0fcfdadb1ab133a08a54c9aa70aaa5a
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Jan 31 13:52:37 2010 +0100
+
+    Updated with sql and csv files.
+    
+    and getting the tabs on the right position.
+
+commit 3bd50ff98af6d6c34a359e0ab56b7be3df5c73f7
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Jan 31 11:41:11 2010 +0100
+
+    WIP: adding data for footprints.
+
+commit 39e596eb220dc704cac6e7dd03bd6fdea3b59316
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Jan 30 19:47:43 2010 +0100
+
+    WIP: adding data for footprints.
+
+commit c8aa32cbd7557ecd0f644545db99e90367b09e63
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Jan 30 16:44:23 2010 +0100
+
+    WIP: adding data for footprints.
+
+commit 461db2c60ea771358d6f26a874c06b03ffabd288
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Jan 29 23:04:36 2010 +0100
+
+    Change the URL for the reference to footprint licensing.
+
+commit b11d3dc61250f27d29a81419309e5acca32690eb
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Jan 29 23:01:06 2010 +0100
+
+    A word about Licensing.
+
+commit 400b8d4fe9bd2393f1f23e54cbe98ada937d121c
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Jan 28 21:56:27 2010 +0100
+
+    More dates to update.
+
+commit 0120ace6a084c43f685f681376a01c711986126b
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Jan 28 21:54:33 2010 +0100
+
+    Forgot to update the date.
+
+commit f4396c904b614cb571d8b32586a4e0437d85d408
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Jan 28 21:44:57 2010 +0100
+
+    Added a column with prefixes.
+
+commit 07a9010f5c726e454caa96a8db98e9546d407c7a
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Jan 28 21:29:42 2010 +0100
+
+    Added URL to footprint_naming_convention.html.
+    
+    Removed trailing space.
+
+commit 4a5a807156ba64a55fa2851ddf8a4e8628d8bc0a
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Jan 28 21:27:12 2010 +0100
+
+    Avoid spaces in filenames.
+
+commit 627b112a832f49bb9f25fc068cac879d0ce50357
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Wed Jan 27 22:11:53 2010 +0100
+
+    Added a footprint naming convention for the user manual.
+
+commit d6e084d18d50b3b4b1b7f4f7d83e9116535dc925
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Tue Jan 26 08:19:41 2010 +0100
+
+    Updating the user manual with a link to pin/pad #1 location information.
+
+commit cbff7c9d6d2ad385006075f24b29039890efdcbe
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Tue Jan 26 07:21:58 2010 +0100
+
+    WIP: adding data for footprints.
+
+commit e82a483fdcbde91126aae7c41de07e4173cf6905
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Tue Jan 26 07:21:03 2010 +0100
+
+    Updated the manifest.
+
+commit 906cc83882ebbe57ff09f13ad913375e12fe94b6
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Mon Jan 25 21:09:02 2010 +0100
+
+    WIP: adding data for footprints.
+
+commit 65a701eaaed0cca25c21d9c6f6108a0b2747c09d
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Jan 24 14:32:48 2010 +0100
+
+    Remove duplicate key.
+
+commit 598810d814f23f520e81d9551a2f75133eee466a
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Jan 24 13:18:56 2010 +0100
+
+    Correction on pin/pad exceptions.
+
+commit 48a87fbd572fa940c8ef4fef89bc68c861c1c241
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Jan 24 13:18:14 2010 +0100
+
+    WIP: adding data for footprints.
+
+commit 38d665103942b579f6f60292be0178f566211d57
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Jan 24 09:25:30 2010 +0100
+
+    WIP: adding data for footprints.
+
+commit 859a73230179e642faf012cd5b7319d8c95d664a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 23 04:32:01 2010 -0700
+
+    Added dependencies for maintaining the sql databases.
+
+commit d01b5ffa3c1f640ba15ea045338d77e5a71f0225
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Jan 23 12:13:34 2010 +0100
+
+    WIP: adding data for footprints.
+
+commit e22edb347275ad82fcfdcf71a57dd1c833bd8816
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Jan 23 11:51:56 2010 +0100
+
+    WIP: Adding data for footprints.
+
+commit dc66456ca791e614987cf52c195dd2f26903eea1
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Jan 23 10:37:15 2010 +0100
+
+    Include a template for user data, either in SQL or CSV.
+
+commit 594df2546b3720d257b8c6cbd222aebd8f8f7b8e
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Jan 23 10:35:29 2010 +0100
+
+    Correction on pin/pad exceptions.
+
+commit ce5450433bfb0dcdb499923f6726ec7bf2ba0ebc
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Jan 22 22:33:28 2010 +0100
+
+    WIP: Adding data for footprints.
+
+commit 58d186382bae9d6e8923cc68a3b3744956e48704
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Jan 22 22:20:03 2010 +0100
+
+    WIP: Adding data for footprints.
+
+commit fef47bf22676d812a95f358f3f8a0a2536dd3c0a
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Fri Jan 22 08:22:49 2010 +0100
+
+    WIP: Adding data for footprints.
+
+commit eb67dc190a4cf92bd04d48630a349f7ca129bc28
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Jan 21 08:17:12 2010 +0100
+
+    WIP: Adding data for footprints.
+
+commit 3b29c8849ad842e9222dec29112d5fe2029b54b0
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Jan 21 07:46:44 2010 +0100
+
+    WIP: Adding data for footprints.
+
+commit be68810af0d3d61703047c41d9344a722346d067
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Wed Jan 20 17:42:12 2010 +0100
+
+    WIP: Adding data for footprints
+
+commit 85470e35cdca54fc036a86576f1ac43b30265b01
+Merge: dc25add 1b8a656
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Wed Jan 20 08:18:50 2010 +0100
+
+    Merge branch 'master' of git://github.com/bert/pcb-fpw
+
+commit dc25addff1046212506abdb16a2d9f844e752fcd
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Wed Jan 20 08:16:42 2010 +0100
+
+    Added a SQL database structure for containing footprintwizard information.
+
+commit 9a261ccc62c96673537a1b9734dbe364993ca89c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jan 18 22:52:50 2010 +0100
+
+    Trying to make error messages understandable for humans.
+
+commit 2c1e0e350ab57cadbacd52a4ca229a5fce1af413
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 17 15:47:34 2010 +0100
+
+    Invoke capmp_drc() when creating a CAPMP footprint.
+
+commit d9fa69595580a2b0098b9fda5c8e1dc82d04d490
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 17 14:29:25 2010 +0100
+
+    Call capmp_set_gui_constraints() for CAPMP packages.
+
+commit 112a37ca04a0145a9a78a37ee57757abd369f990
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 17 14:15:34 2010 +0100
+
+    Call capm_set_gui_constraints() for CAPM packages.
+
+commit 9f91e446cc63355ad39932174f9887b001ff7f9e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 17 14:09:14 2010 +0100
+
+    Call capc_set_gui_constraints() for CAPC packages.
+
+commit b1c18a27dfd27c5a9b31974ea5f595767c7d64f5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 16 12:55:48 2010 +0100
+
+    Updated the User Manual.
+
+commit f489acc7da86ad6130d71c8395b455d162857033
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jan 15 22:09:37 2010 +0100
+
+    Bumped the year in the copyright notice.
+
+commit 6fc58f3f879c4a69ace19219a9a71d390931f1a4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jan 14 22:57:06 2010 +0100
+
+    Create an Element for a TO92S package.
+
+commit 9c75370f5e9271709e414bc9b6725b81ed27a942
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jan 14 22:34:35 2010 +0100
+
+    Add a thermal pad to a TO220S footprint if the user requests for it.
+    
+    Correction on indentation.
+
+commit 44d8fa92d0382c71df4dc8c7bd141730f2849bd4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jan 14 22:06:07 2010 +0100
+
+    Add a thermal pad to a TO220 footprint if the user requests for it.
+
+commit 1c23b59edcf338190433b70450e9b145b2af5021
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jan 13 23:02:52 2010 +0100
+
+    Added CAPA, TO220S, TO220SW and TO220SW package types to the combobox (GUI).
+
+commit 5f07f99564acedc49cbd116e163285757681e20d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jan 13 23:01:04 2010 +0100
+
+    Call functions for the CAPA package type.
+
+commit 4c026a68d201276ba37a03a5a267f94a9c3a6e38
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jan 13 22:58:48 2010 +0100
+
+    Cleanup of res.c
+
+commit ffacda8828b2d79f08bb8bf6c85eec644b8ace68
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jan 13 22:57:18 2010 +0100
+
+    Changed the function parameters of res_create_packages_list().
+
+commit ca04652c2a82ea67253d1f6ef9ba65065dc1ddb3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jan 13 22:40:12 2010 +0100
+
+    Cleanup of capa.c
+
+commit 5d40486068a4773a9136ba65bbe4d9a5dfe67cb2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jan 13 21:41:41 2010 +0100
+
+    Added octagon pad shape to capa_create_element().
+
+commit dcec5908563c3d5d64e2724719d5b8d2ce33bdcb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jan 13 21:25:47 2010 +0100
+
+    Include capa.h
+
+commit 9bd30462e39761cf40f8ce89a605aa7dac66b577
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jan 13 08:24:21 2010 +0100
+
+    Added the CAPA package type.
+
+commit 889f50772318fb01d8de1dbc430e490d8ab2eba9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 12 07:10:56 2010 +0100
+
+    Cleanup of select_execptions.h
+
+commit 3d5c607cd495b42d30dad2b78895797198ccd92e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jan 11 23:37:06 2010 +0100
+
+    Cleanup of to.h
+
+commit 362376a0d81b335c15ad4b46b155d9081d6a89ce
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jan 11 22:52:47 2010 +0100
+
+    Cleanup of resm.h
+
+commit 71f5a53f56a128606e10775a056acf60432a25e9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 10 20:43:53 2010 +0100
+
+    Cleanup of resmelf.h
+
+commit 58a90440354267d0a793f5ef205655114993da6d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 9 17:15:45 2010 +0100
+
+    Draw the silkscreen artwork with the silkscreen line width.
+
+commit 9a900042fe7d0bd90a71d40f522c878338793d37
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 9 17:15:02 2010 +0100
+
+    Added a guard.
+
+commit 2b89db5addcad9067baebc15f20ad8ff2ff35ea7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 9 08:48:43 2010 +0100
+
+    Cleanup of resc.h
+
+commit f991acf0eb8dd9e4e4e217a71ea0f3ad5b0c6f8b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jan 8 21:33:04 2010 +0100
+
+    Cleanup of plcc.h
+
+commit e4f4900b0319e4f7c244b9ad5c4b7403e6f29920
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jan 7 07:46:40 2010 +0100
+
+    Include fpw.h
+
+commit ed344489b1df51cfd209acec2cb35ff2c3283906
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jan 6 08:20:55 2010 +0100
+
+    Cleanup of pga.h
+
+commit f628e9b7f8a59cf328ef88c91d8b2b2f1bf975b0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jan 6 08:19:29 2010 +0100
+
+    Cleanup of indm.h
+
+commit b7ee531d35c45a00d98ba27d719f4833d28fb209
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jan 6 08:18:27 2010 +0100
+
+    Cleanup of indc.h
+
+commit 99b8f19363643b678774d0d245948833467512a7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jan 6 08:16:41 2010 +0100
+
+    Cleanup of dip.h
+
+commit 5ddc4388a39ec43287c19ab2ca6094a6322b4def
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 5 23:02:29 2010 +0100
+
+    Cleanup of diom.h
+
+commit 1d0308c77ce5746e92694924016f5f5a72d117f5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 5 22:59:17 2010 +0100
+
+    Include dimensions.h
+
+commit b7f024efcccb0f84e50951efceab284ca520f360
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 5 22:58:11 2010 +0100
+
+    Cleanup of diomelf.h
+
+commit 17531cbbc8e6eb9a8fa48296537e66ae766900e6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 5 22:41:44 2010 +0100
+
+    Cleanup of con_hdr.h
+
+commit ea5c9c8052de159284901b5a60a68d62ad16b735
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 5 22:31:56 2010 +0100
+
+    Cleanup of con_dip.h
+
+commit 1b8a656f2de75cca99040391536d4b61ff7e587b
+Author: bert <bert.timmerman@xs4all.nl>
+Date:   Tue Jan 5 12:10:26 2010 -0700
+
+    Described more features and functionality.
+
+commit eb531d59b61d7c42383e366a4b4b57136397a827
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jan 4 00:03:57 2010 +0100
+
+    Added "h" in getopt_long parameter.
+
+commit 61f4e65aa91f9c062bb2a8aa047eb1f7a209bca5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jan 4 00:00:55 2010 +0100
+
+    Cleanup of con_dil.h
+
+commit 2ea1b99450db0a17165fcc8fd9b09575ce215817
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 3 23:50:36 2010 +0100
+
+    Cleanup of capmp.h
+
+commit 2c76f0ae30a319fe223629d186af35c781d5901e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 3 08:31:37 2010 +0100
+
+    Cleanup of capm.h
+
+commit 7be5ec87e26a5b61816b642ff49860c66979a2e4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jan 3 08:30:51 2010 +0100
+
+    Cleanup of capc.h
+
+commit 5ddca1d04a13d550066cbf14b47f6e7a2e75975d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jan 2 07:45:44 2010 +0100
+
+    Minor changes in comments.
+
+commit 397c9e50107928c685bbb04ad43e348d34ee990d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jan 1 19:35:07 2010 +0100
+
+    Many corrections to "rounded pad, elongated", instead of "circular pad, elongated".
+
+commit a326de3bbf8b308c383362a9985ce986e78b3bf2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 31 17:09:24 2009 +0100
+
+    I swapped tabs in the notebook widget and lines of code here too.
+
+commit d7e7daf6fc44011c5ddd18f964ea92f71a0dc4c3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 31 16:59:16 2009 +0100
+
+    Cleanup sot_create_fpw_files_from_packages_list().
+
+commit eb3667bab43b569caff7c690080a8cefbcec0714
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 31 15:34:14 2009 +0100
+
+    Cleanup of bga.h
+
+commit aa4455bfd06d832bc92c38174f5ff9d790700881
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 31 15:29:12 2009 +0100
+
+    Reordered the notbook tabs to a more logical order [#40 state:resolved].
+
+commit 78b0ea51b49249b50595783610789f6760d9d6f5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Dec 30 19:50:11 2009 +0100
+
+    Cleanup of sot.h
+
+commit d6da854135ec1a3509bc1f99be2891febcd9dedc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Dec 30 19:49:41 2009 +0100
+
+    Register sot_create_fpw_files_from_packages_list().
+
+commit b5c8ca6a525e267e77af045593d34bd048b4ff5f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Dec 30 19:43:26 2009 +0100
+
+    Added a function to write fpw files for all known SOT packages.
+
+commit a26736bbaa3dd0c5aa009beef29475bec8cfae1c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Dec 30 18:30:44 2009 +0100
+
+    Changed the function parameters of sot_create_packages_list().
+
+commit 670a4f15c399325d3bf083c5f3d402e026ab705d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Dec 30 10:32:42 2009 +0100
+
+    Corrections in doxygen comments.
+
+commit 1e17b40b93cea0d52acac60e78c3fe8b2c3ce57b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Dec 30 10:31:12 2009 +0100
+
+    Write a footprint for a TO92S transistor package (with staggered pins).
+
+commit 8109094dfad8fc6420e57e1629693a16bf22b99f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 29 23:03:21 2009 +0100
+
+    Changed the direct writing of element lines to indirect by calling a helper function.
+
+commit 337d1bd0cd714a91b30a8e1c126a4b4ef0f070a3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 29 22:56:03 2009 +0100
+
+    Register TO220S, TO220W and TO220SW footprint writing functions.
+
+commit 42a0d9cd8066bb08070e51d2eff384df864e01fb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 29 07:32:02 2009 +0100
+
+    Call functions for TO220S and TO220SW package types.
+
+commit c91cfc2476a954e959b83a5b37213723929d4ab5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Dec 28 19:50:55 2009 +0100
+
+    Small corrections in comments.
+
+commit 6ce3d3bb0148662e492ff29a9780be9e90340261
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Dec 28 19:48:38 2009 +0100
+
+    Added to_write_footprint_to220_standing_staggered for a TO220SW package type.
+
+commit 22d8af03182644319603013720d9e49d24a429a8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Dec 28 19:36:59 2009 +0100
+
+    Added to_write_footprint_to220_staggered for TO220S package type.
+
+commit 99aa7a821fc83b2896aa08793661c9dc1cf36c9a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Dec 27 23:46:09 2009 +0100
+
+    Corrections on silkscreen artwork.
+
+commit a103dfb65c3e3cf4665508095b97988e4c418a21
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Dec 27 23:32:12 2009 +0100
+
+    Call functions for TO220 and TO220W package types.
+
+commit 3a24f9bc44ea00204dcae574309ee35cc5c2921b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Dec 27 23:30:32 2009 +0100
+
+    Correction in the GUI settings.
+
+commit 363900bc7d75a8e52bfc772c7cfad85a637b7513
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Dec 27 22:50:16 2009 +0100
+
+    Added to_write_footprint_to220_standing().
+    
+    - Changed the direct writing of element lines to indirect by
+      calling a helper function.
+    - Former TO220 is corrected to TO220 standing.
+    - New TO220W is laying version.
+
+commit 6e5882bddfc1386082207c7f4a8f87fa31ce2607
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Dec 25 16:51:01 2009 +0100
+
+    Added variants of TO220 package types.
+
+commit 8862db720ba4582821a6797298b7c3ee98f7037e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Dec 25 15:55:14 2009 +0100
+
+    Added a guard.
+
+commit d80653ae5ee23b116ee9f5f483380606a3ab315b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Dec 25 15:32:42 2009 +0100
+
+    Added a guard.
+
+commit 3bf5dc10939c58c01e403337f0142695a85034fe
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Dec 25 15:32:22 2009 +0100
+
+    Added a guard.
+
+commit 68e8568d2b09718ed8b2b3e103f98c2db6a8cf68
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Dec 25 14:55:09 2009 +0100
+
+    Added a guard.
+
+commit 9c1e04bf955ad2ee8873847b715c301a755daf26
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Dec 23 23:01:00 2009 +0100
+
+    Draw a package outline for a TO220 package.
+
+commit 48bcdcc05867be2c97b6d6cfbfae7b3723b9de57
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 22 21:13:25 2009 +0100
+
+    Added template code for to_write_footprint_to220().
+    
+    Some stuff still needs to be added.
+
+commit 8aa7f4db98800e3d54cb302dff06b31e346c8219
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Dec 21 21:02:34 2009 +0100
+
+    Include register_functions.h
+
+commit 4a6a451d3e5f9b94205d6f527b9609f1774f7b71
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Dec 20 19:15:52 2009 +0100
+
+    Include select_exceptions.h
+
+commit 3be657b0a8189a30ef21745619f9448558c9c227
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Dec 20 18:53:50 2009 +0100
+
+    Include to.h
+
+commit c41d9c54006affa5cc7d8a367c9ac57f3d48b9af
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Dec 20 17:17:25 2009 +0100
+
+    Include sot.h
+
+commit f4c7a5f9b3d563959886232245a0cc4ec01e10cd
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Dec 19 20:28:27 2009 +0100
+
+    Include preview.h
+
+commit 22ed8c0735312e276c53e835e79f61b203f76ea3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Dec 18 08:03:41 2009 +0100
+
+    Include plcc.h
+
+commit 2eded94643a6891c795d42ff00fd7dfb0e1e7bd9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Dec 18 07:39:51 2009 +0100
+
+    Include pga.h
+
+commit 9b6f8aca0ffa5f8be8017f7385d45a2c00024236
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 17 07:36:08 2009 +0100
+
+    Added a guard.
+
+commit fcf8a11b2dd0a1886c302ffe8cd605a040f211f7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Dec 16 08:25:23 2009 +0100
+
+    Include indc.h
+
+commit aa7fe2537388af765e3ef01196a6a233fa85a515
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 15 08:25:30 2009 +0100
+
+    Include dip.h
+
+commit 412bc43a9ebc2362cc1f74000cf4afb1c0b232fd
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 15 08:07:38 2009 +0100
+
+    Include diomelf.h
+
+commit a35dc1079f62ae9a519013c24e48188019010ead
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Dec 14 08:14:04 2009 +0100
+
+    Include diom.h
+
+commit 9b39d44f579721a858b98193b8d9b49b1b8fcc49
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Dec 13 21:44:49 2009 +0100
+
+    Add some guards.
+
+commit 0a9085299a04f27b51c98c1a536ee371b9f3b832
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Dec 12 23:46:07 2009 +0100
+
+    Include con_hdr.h
+
+commit 1020b5dce32726ee222f9d7de9f70fdcad5b8fac
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Dec 11 07:58:21 2009 +0100
+
+    Include con_dip.h
+
+commit 602b3f5604d627464250328a4088cc9692a408d5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 10 08:11:07 2009 +0100
+
+    Include bga.h
+
+commit 83c8d13e6d2e463426c649c4cbb17aeff478cce7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 10 07:33:13 2009 +0100
+
+    Include con_dil.h
+
+commit 0dc65dc78aa1f8566daca132c6cd2c90b8df25f0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Dec 9 07:55:09 2009 +0100
+
+    Include capmp.h
+
+commit 7f5bae05c444bfdb3d6e6118c93422bb502621f6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 8 21:46:17 2009 +0100
+
+    Include capm.h
+
+commit 2ed2a9e72d8de0a2d2fbdcc5d58aab1ec5099543
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 8 08:01:37 2009 +0100
+
+    Include capc.h
+
+commit d97585f86a6a537d0875c6175f3dfba9c9541a1f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Dec 7 19:39:08 2009 +0100
+
+    Updated the MANIFEST again.
+
+commit 8f5603c243d99538e5591b622d28410332db5dee
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Dec 7 08:06:26 2009 +0100
+
+    Removed some spaces in log message texts.
+
+commit b277b2e4672575be75b4886dab581525ad291dca
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Dec 7 08:02:20 2009 +0100
+
+    Changed the test method for creating square pads in footprints [#45].
+
+commit 8a46d3568bdb50660ca6a492018b35fd436e6564
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Dec 6 13:47:40 2009 +0100
+
+    Updated the MANIFEST.
+
+commit 1f95fd061d2f2afdcfbddb063ca9a7392071afe0
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Dec 6 13:23:00 2009 +0100
+
+    Added data for a CAPC3216X180N package [#21].
+
+commit 0b0627e2f6b77c26f070da22a88c03f82de5eb6c
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Dec 6 13:13:29 2009 +0100
+
+    Added data for a CAPC3216X178N package [#21].
+
+commit 65863257e1410e0a82fa2ac116a72e24b8910e90
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Dec 6 13:03:30 2009 +0100
+
+    Added data for a CAPC3216X175N package [#21].
+
+commit bf4e3f9ee4862f2c4ad2452597959ff1ce4ced81
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Dec 6 12:52:04 2009 +0100
+
+    Added data for a CAPC3216X152N package [#21].
+
+commit 077254fab185f65f33e0395a88d29b84a673916b
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Dec 6 12:37:12 2009 +0100
+
+    Added data for a CAPC3216X140N package [#21].
+
+commit 26468cf54ac1befd42cae776f83a4e5c7d7fca15
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Dec 6 12:30:49 2009 +0100
+
+    Added data for a CAPC3216X130AN package [#21].
+
+commit 9c9227813866d313f6a4f7fde947e3c616b8fef0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Dec 6 11:37:25 2009 +0100
+
+    Add res.h to the git repo.
+
+commit ec8aed0100fcc3b515bc8f66df996ff9d5e980c9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Dec 6 11:34:05 2009 +0100
+
+    Include resc.h
+
+commit 980c1677b80e4a0c8a373bfff4d1a094060121bc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Dec 6 11:05:26 2009 +0100
+
+    Hooking up function calls for RESMELF type packages.
+
+commit 98ef0d52ee3bdede42625ab3f9f95e084833ffb0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Dec 5 15:49:00 2009 +0100
+
+    Include resmelf.h
+
+commit 4cb035fa90c2db800aaa3315a74cbe8578d9dec0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Dec 5 15:44:00 2009 +0100
+
+    Added Resistor MELF packages.
+
+commit 885639c25afb1fadb7a9559d817800b61b0ceb5f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Dec 5 15:13:33 2009 +0100
+
+    Include res.h
+
+commit 3cd0cc9cf4e92abaafb88a1093c5174ea601e017
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Dec 5 14:59:17 2009 +0100
+
+    Include resm.h
+
+commit 232b8fb958b99a2ba357995c02da1985a572746d
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Dec 5 13:30:32 2009 +0100
+
+    Added data for a CAPC3216X130N package [#21].
+
+commit bb5a28b153c9fee4802772392d59f119700bbcea
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Dec 5 13:21:46 2009 +0100
+
+    Added data for a CAPC3216X127N package [#21].
+
+commit f0d631de674ae9cfd2172e399627bc6076ca5a20
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Dec 5 13:15:47 2009 +0100
+
+    Added data for a CAPC3216X125N package [#21].
+
+commit 0301ffd59f5efde6c018ec25d3c9554fd2cd0892
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Dec 5 12:18:57 2009 +0100
+
+    Added data for a CAPC3216X105N package [#21].
+
+commit c370fdf7d556e36f3792bed2801b90afbbc23be9
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Dec 5 11:54:45 2009 +0100
+
+    Added a header file for sot.c
+
+commit b65be1157472d804a5d5f46cf9c6ecc1baf0ada8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Dec 4 19:23:40 2009 +0100
+
+    Added some verbose log messages to update_pad_shapes_variables().
+
+commit 4522f1e6203be2d52bda2ceac17f467fac542e88
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 3 20:27:14 2009 +0100
+
+    Remove pin_pad_flags as a global variable.
+
+commit 3f02f0ea499831e96d06b363414cccd0c908489a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 3 20:26:15 2009 +0100
+
+    Remove the usage of pin_pad_flags as a global variable.
+
+commit 62051fdafb9778758a426e043aced890c22d2dac
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 3 19:30:07 2009 +0100
+
+    Declare pin_pad_flags as a local variable.
+
+commit 733b64af5a23074e1f18f2435dffa72da23df2a4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 3 18:24:59 2009 +0100
+
+    Declare pin_pad_flags as a local variable.
+
+commit 04e6098e41bb1e1e1d0b65d7d68cff1d19a7d492
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 3 17:51:52 2009 +0100
+
+    Declare pin_pad_flags as a local variable.
+
+commit feaf0e0e9c2fc503c063761e45541080a7afccaa
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 3 17:50:27 2009 +0100
+
+    Declare pin_pad_flags as a local variable.
+
+commit 021a9513f4b99c616e841266ec7cc7445bb59047
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 3 17:30:10 2009 +0100
+
+    Declare pin_pad_flags as a local variable.
+
+commit abb2b3004b5366465b0d2e476ad087524f1c744f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 3 17:29:03 2009 +0100
+
+    Declare pin_pad_flags as a local variable.
+
+commit 3fc55ce1ef812516ae976dce70ed39f1791c5ed1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 3 17:24:58 2009 +0100
+
+    Declare pin_pad_flags as a local variable.
+
+commit 2c9fa8a9847b1f0394b27e41f912bac3a278c157
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 3 17:23:45 2009 +0100
+
+    Declare pin_pad_flags as a local variable.
+
+commit 16f7e2cd5da71b70437b859658e03478ec53714d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 3 16:28:22 2009 +0100
+
+    Declare pin_pad_flags as a local variable.
+
+commit 015c60bf9b08ae9093c21604e8e275cefb83a10a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 3 16:27:17 2009 +0100
+
+    Declare pin_pad_flags as a local variable.
+
+commit 082f7ab681324fd9938858439e9e3c733340ff8a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 3 08:11:02 2009 +0100
+
+    Declare pin_pad_flags as a local variable.
+
+commit e542337003e84ceebe60efd76a8fc35e51ac8435
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 3 08:09:09 2009 +0100
+
+    Declare pin_pad_flags as a local variable.
+
+commit 1a00c20aee00bfc292a828b9e1ca78afbc3a4bf1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 3 08:03:37 2009 +0100
+
+    Declare pin_pad_flags as a local variable.
+
+commit 9d9727829f762c9c4d7d5f05a3f481a223d9965e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Dec 3 07:46:20 2009 +0100
+
+    Declare pin_pad_flags as a local variable.
+
+commit 968fad49193d578a267625724845e4e80f63b11e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Dec 2 07:42:23 2009 +0100
+
+    Declare pin_pad_flags as a local variable [#45].
+
+commit 49471d57050f38d4e14a8850f5f979e4b65a7f30
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Dec 2 06:01:36 2009 +0100
+
+    Do some Design Rule Checking for the CON-DIP package type [#27 state:open].
+    
+    Swapped con_dip_create_packages_list().
+
+commit 7dcb32da4b7b217f0f56c39376e78bf377e95a60
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 1 22:00:50 2009 +0100
+
+    Declare pin_pad_flags as a local variable [#41].
+
+commit d8495a760738ced104058edcd59cabc870907c5c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 1 21:54:44 2009 +0100
+
+    Declare pin_pad_flags as a local variable [#43].
+
+commit c242412eead64efd108510e0f8c23461d3d063ef
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 1 21:09:10 2009 +0100
+
+    Declare pin_pad_flags as a local variable [#42].
+
+commit 639d3d717021647ef740ef5c71b97a8591bc465f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 1 19:44:57 2009 +0100
+
+    Declare pin_pad_flags as a local variable [#29].
+
+commit 335427c23951f8a524f545e05e4983b7f6ab8321
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 1 19:33:17 2009 +0100
+
+    Declare pin_pad_flags as a local variable [#26].
+
+commit ba7a0f1a3470bc7a12b1ebd9876c904a783fb025
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 1 08:04:01 2009 +0100
+
+    Register con_dil_drc() [#26].
+
+commit 7a5890f939fd8a751a567ad465cddd69f5655d4e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Dec 1 07:45:55 2009 +0100
+
+    Create an Element for a CON-DIL package [#26].
+
+commit 1cd71a5a3a243f32931775ae19c33f73c3901dd5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 30 07:58:58 2009 +0100
+
+    Do some Design Rule Checking for the CON-DIL package type [#26].
+    
+    Swapped con_dil_create_packages_list().
+
+commit 5492fa4e8f270adfae4e2a0c73899a81250a8201
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 29 13:32:40 2009 +0100
+
+    Test on verbose before writing log messages [#26 state:open].
+    
+    Added lots of curly braces.
+
+commit 42fc0f987b6cb6ab31840840d74a7d8b55df2f52
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 28 06:59:03 2009 +0100
+
+    Test on verbose before writing log messages [#41 state:open].
+    
+    Added lots of curly braces.
+    Truncated long lines of code.
+    Do not add empty string values to a Glist.
+
+commit 54e7561bbfc9c108bfd58d375548541f47727c22
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Nov 27 08:10:32 2009 +0100
+
+    Test on verbose before writing log messages [#43 state:open].
+    
+    Added lots of curly braces.
+    Truncated long lines of code.
+
+commit 6b72f8e5f59c25bf80f13c8bc9bd4731ef295e94
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 26 20:59:25 2009 +0100
+
+    Test on verbose before writing log messages [#42 state:open].
+    
+    Added lots of curly braces.
+    Correcting CAPM into RESM.
+    Trucated long lines of code.
+
+commit 90dbf4516f85470007327b1adccf50b8cbffd593
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 26 07:19:21 2009 +0100
+
+    Test on verbose before writing log messages [#29 state:open].
+
+commit 45a9555dacacbdeaa3f5604ad5b069f798a294d8
+Author: bert <bert.timmerman@xs4all.nl>
+Date:   Wed Nov 25 05:21:34 2009 -0700
+
+    Forgot to close the html ref.
+
+commit 05e3c55092ad728366027b438537752e6f91fe7b
+Author: bert <bert.timmerman@xs4all.nl>
+Date:   Wed Nov 25 05:18:32 2009 -0700
+
+    Added a link to the pcb-fpw facts file.
+
+commit eea151396040622084a58958c507dfc526353c61
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Nov 25 07:53:18 2009 +0100
+
+    Test on verbose before writing log messages [#45].
+
+commit cda95a6f0fb08094ec94afae07bbfcc5b4ec4ae9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 24 06:53:50 2009 +0100
+
+    Use g_log instead of fprintf (stderr, ...).
+
+commit 07e301b011b578d938f21bbaf670346f39f02392
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 23 23:18:43 2009 +0100
+
+    Added curly braces and other readability improvements.
+
+commit 4a46e5f203cc866271ba3472562d601018e704c4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 23 22:28:08 2009 +0100
+
+    Test on silent before writing log messages.
+
+commit beb6d6119fc104a94662e888a43c8da4b04de5ae
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 23 17:13:22 2009 +0100
+
+    Oops, wrong operator for testing.
+
+commit faa002905052e136a967802d117f34fe6b4280d2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 22 21:22:39 2009 +0100
+
+    Changed function types to int (was static void).
+
+commit 894be2a53d3958e9f6808a7c330155dae6a87f0b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 22 16:21:47 2009 +0100
+
+    Return from the function, not exit.
+
+commit 9c2da7edabaa7b8c27b370c6671bcda91cfab638
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 22 12:55:55 2009 +0100
+
+    Test on silent before writing log messages.
+
+commit fd7fed0d0ef26bef4fee546a1e17cfc147a5bf39
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 22 12:46:56 2009 +0100
+
+    Set silent variable when --silent et al are encountered.
+    
+    Overrides --verbose.
+
+commit 4292424004b15c228898bb551b90b964b2ac2617
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 22 11:48:55 2009 +0100
+
+    Added a global variable for being silent.
+
+commit 1339392774e11028201380ba4434445853712fb9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 22 10:17:52 2009 +0100
+
+    Test on verbosity before writing log messages.
+
+commit fac2af26c33565f70392f386e8c37ad17ea9119a
+Author: bert <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 21 08:35:53 2009 -0700
+
+    Added list of supported files.
+
+commit ebee56ed1d10a267b6f43b1e4a7f267c0df80bd9
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Nov 21 13:22:20 2009 +0100
+
+    Added a pcb-fpw fact file.
+
+commit 48d149097bf05c2f43d361c96cd9bab6d5a3d3fe
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Nov 20 23:13:40 2009 +0100
+
+    Test on verbosity before writing log messages.
+
+commit cf5d9222abb9f7a1f2b5999ff755f4ef7a145f06
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Nov 20 23:00:57 2009 +0100
+
+    Parsing of long command line options added. [#44 state:open]
+
+commit c801b3d1bf1d5e4980f673e7f0701233a6286fc2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 19 21:11:45 2009 +0100
+
+    Draw a square pad if the user ticks the checkbutton for a square pad nr 1 [#45].
+
+commit 67e67b6f00e5d251fa135e5ef9d867fe7254efd8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 19 21:02:48 2009 +0100
+
+    Added comments [#45].
+
+commit ef7f44af2a91502ffd5d0373fcc3bf621e05bc8f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 19 20:55:59 2009 +0100
+
+    Avoid null pointers in pin_pad_flags strings [#45].
+
+commit 41f4c148700703195dd63bc2d1caf488388d3c9a
+Author: bert <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 19 05:26:26 2009 -0700
+
+    Added files to the list.
+
+commit 0f3a24363bdf0bcd671e8d7ca9185fb40ad14bf0
+Author: bert <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 19 05:14:47 2009 -0700
+
+    Added more text.
+
+commit f6bc65a3ebfd861efcb06d3b7dc5a84bc08ff5a8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 19 08:08:15 2009 +0100
+
+    Pad 1 indicator should be left of pad 1, not on top of it [#45 state:open]
+
+commit c612b1adc464102b0c519a88fafc979746c4c0c7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 19 07:35:43 2009 +0100
+
+    Remove the now obsolete footprint file opening and test for writing the license text.
+
+commit 9f3f49627904f80c78e7f3984f58f9a3c08f2cd7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 19 06:28:02 2009 +0100
+
+    Correction of white space.
+
+commit 5e5769612e2a3e179e5d2b994c3873d1f23e1179
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 19 06:27:13 2009 +0100
+
+    Oops, use g_log on warning level instead of fprintf (stderr, ...).
+    
+    Write a license text if required by user.
+    Added comments.
+
+commit 79ae64d261b2e533ce7f1c2df07aac97fd81e363
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 19 06:25:28 2009 +0100
+
+    Contain all file handling for writing a SOT footprint file in sot_write_footprint().
+
+commit 699939e74b483e10079dbe7a5ba636232c730ba7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 19 06:23:04 2009 +0100
+
+    Contain all file handling for writing a footprint file in smt_write_footprint().
+
+commit 502e03475036386e043c74e37a3a14e87de175df
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 19 06:15:44 2009 +0100
+
+    Contain all file handling for writing a RESM footprint file in resm_write_footprint().
+
+commit e3524312579c57b87f70c4d319dcfca0b33b7442
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 19 06:13:37 2009 +0100
+
+    Contain all file handling for writing a RESC footprint file in resc_write_footprint().
+
+commit f7424eafb8b801a22056b26d169e4fb8b64d55af
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 19 06:11:47 2009 +0100
+
+    Oops, use g_log on warning level instead of fprintf (stderr, ...).
+    
+    Write a license text if required by user.
+    Added comments.
+
+commit d4cb13ecabbc32a0a199f09b043aac45cdc100b5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 19 06:10:04 2009 +0100
+
+    Contain all file handling for writing a PLCC footprint file in plcc_write_footprint().
+
+commit 9e6c099ae219cae1a27c6436968f9436accf9dd3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 19 06:00:08 2009 +0100
+
+    Contain all file handling for writing a PGA footprint file in pga_write_footprint().
+
+commit 6e86e0cc654195b73408a51c1aaced1dc6d2732e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 19 05:57:07 2009 +0100
+
+    Contain all file handling for writing a INDM footprint file in indm_write_footprint().
+
+commit b56a3a80f34461116fad168c436377e2eb9ffe03
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 19 05:48:55 2009 +0100
+
+    Contain all file handling for writing a INDC footprint file in indc_write_footprint().
+
+commit d3085ab7019e7ebdf261f200bee452f822056ef2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 19 05:45:53 2009 +0100
+
+    Oops, use g_log on warning level instead of fprintf (stderr, ...).
+    
+    Write a license text if required by user.
+    Added comments.
+
+commit d1ebe977a7bbff7b32188241e61bf8e3691925b6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 19 05:24:18 2009 +0100
+
+    Contain all file handling for writing a DIOMELF footprint file in diomelf_write_footprint().
+
+commit e471489bd07397440ff8c8c3fc70830869c860b0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Nov 18 22:43:22 2009 +0100
+
+    Improvements on the man page.
+
+commit 85284be365754927bac9fa007bb49186fbda1fb1
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Wed Nov 18 22:11:58 2009 +0100
+
+    First draw of a manpage for fpw.
+    
+    Warning: not all listed options are implemented yet.
+
+commit 6c9dc765ed8305e21301a7b6cb359dd6b868d41a
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Wed Nov 18 19:36:59 2009 +0100
+
+    Added desktop entry file.
+
+commit d9df29b3cdaab7131238bd7a0d20cdf3011ea04d
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Wed Nov 18 19:35:43 2009 +0100
+
+    Ignore stuff.
+
+commit 4cc59504950f1a19ab2fd1e98c860c067e0e4bc4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Nov 18 08:16:44 2009 +0100
+
+    Contain all file handling for writing a DIOM footprint file in diom_write_footprint().
+
+commit 34fa05c57ecb29939aaa7005e2388aee7ae0aa89
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Nov 18 08:12:07 2009 +0100
+
+    Contain all file handling for writing a CON_HDR footprint file in con_hdr_write_footprint().
+
+commit b450a3e6fe2ec1ed67d1cdff45ce4f2769b383e2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Nov 18 08:06:40 2009 +0100
+
+    Contain all file handling for writing a CON_DIP footprint file in con_dip_write_footprint().
+
+commit 1feec85fe3bcbfd5f13c6e728d70791636c851ef
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Nov 18 08:00:54 2009 +0100
+
+    Contain all file handling for writing a CON_DIL footprint file in con_dil_write_footprint().
+
+commit f6082c625bf81c7077283f4168b5a9780a5d997d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Nov 18 07:48:27 2009 +0100
+
+    Contain all file handling for writing a CAPMP footprint file in capmp_write_footprint().
+
+commit c7d65085d07cc2bda1503c55d70fb7254d094af9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 17 22:55:56 2009 +0100
+
+    Contain all file handling for writing a CAPM footprint file in capm_write_footprint().
+
+commit 39d3a4ea21ed2371fc9ae785c40bf0b959372815
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 17 22:50:34 2009 +0100
+
+    Contain all file handling for writing a CAPC footprint file in capc_write_footprint().
+
+commit b6ae81e89d218492ea6a5f425332162bfadfb7f5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 17 22:46:00 2009 +0100
+
+    Contain all file handling for writing a BGA footprint file in bga_write_footprint().
+
+commit ff95d34d0d8fea5eaec3ff54f51fea3a7a02e2e9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 17 22:42:48 2009 +0100
+
+    Small editorial correction.
+
+commit 7743a5e837732bcd441225add00d1d1487dacc49
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 17 21:22:23 2009 +0100
+
+    Added missing calls to do some DRC.
+
+commit 76fd204dcad5fb2cfc55e29ccb6f82dfed72cb78
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 16 22:04:30 2009 +0100
+
+    Hooking up function calls for INDM type packages.
+
+commit 39c70a958870ae6061276691a7c9686dbb3519e2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 16 21:55:28 2009 +0100
+
+    Adding the header file for INDM packages.
+
+commit f001f767d8fde4cef6df7ebf5385141d704dad3a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 16 21:54:56 2009 +0100
+
+    Added SMT Molded Inductor packages.
+
+commit 45bd773e4eaeaaafef74c7c4d6da13a5c82de116
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 23:11:18 2009 +0100
+
+    Adding the header file for RESM packages.
+
+commit dde6143c2a3360ed1ffc86189e15648533f514ac
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 23:08:57 2009 +0100
+
+    Removed finishing up and closing the footprint file.
+    
+    This is now obsolete because it is done in the all
+    specific package files function *_write_footprint().
+
+commit 19e6d5df5f32886ee8a74da4693fd5d2e007f2de
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 22:40:48 2009 +0100
+
+    Hooking up function calls for RESM type packages.
+
+commit af57d1f1442d35ce04f17eaf9ad80ef1019c2dcb
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 22:28:48 2009 +0100
+
+    Added SMT Molded Resistor packages.
+
+commit 90008e3d9241ab8c6c511a805cc927409a27846e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 17:42:39 2009 +0100
+
+    Oops, use g_log on info level instead of fprintf (stderr, ...).
+    
+    Added comments.
+
+commit 9eaa3deda12888561b63f28cc2f6b7ad5ce9b491
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 11:36:36 2009 +0100
+
+    Write attributes to file and finish sot_write_footprint() graceful.
+
+commit b0c030d81116ca7dd9e89593e80a147bf0cc8f14
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 11:33:46 2009 +0100
+
+    Write attributes to file and finish resc_write_footprint() graceful.
+
+commit 612d0a900ab5ecd26be939b3675cd7d794935b80
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 11:17:58 2009 +0100
+
+    Oops, use g_log on info level instead of fprintf (stderr, ...).
+
+commit 3ddfc887c4728be236024afea4348bb9f174eeda
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 11:13:47 2009 +0100
+
+    Write attributes to file and finish plcc_write_footprint() graceful.
+
+commit 18d7d4d285a5ad4297d590321819e46a46977aa1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 11:12:07 2009 +0100
+
+    Write attributes to file and finish pga_write_footprint() graceful.
+
+commit da9392603caefb14b8606e110a0efd6985ed1b09
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 11:09:35 2009 +0100
+
+    Write attributes to file and finish indc_write_footprint() graceful.
+
+commit 6166c0265258759ae3f2882a9183e135f62a05c8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 11:04:52 2009 +0100
+
+    Oops, use g_log on info level instead of fprintf (stderr, ...).
+
+commit b473be6ccd8c58c87d40bf165e03f44e80caea38
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 11:03:24 2009 +0100
+
+    Write attributes to file and finish diomelf_write_footprint() graceful.
+
+commit 73fc705fe814f7119d309429f60a9775d14ea20f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 10:58:00 2009 +0100
+
+    Write attributes to file and finish diom_write_footprint() graceful.
+
+commit 7ea643725313a0ff5c8216da190e86a7d1c88dde
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 10:55:43 2009 +0100
+
+    Use courtyard line width for drawing a courtyard.
+    
+    Was silkscreen line width.
+
+commit 1bdb83ba29d81b1a8d31a216113763a7e732ed2a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 10:53:17 2009 +0100
+
+    Write attributes to file and finish con_hdr_write_footprint() graceful.
+
+commit 45799e45a5ef6f3ed6fce91eaff6b262b9e04944
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 10:51:33 2009 +0100
+
+    Write attributes to file and finish con_dip_write_footprint() graceful.
+
+commit da5c50d5e71d86697d7c2fc216a06e9bab73f4f0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 10:26:33 2009 +0100
+
+    Write attributes to file and finish con_dil_write_footprint() graceful.
+
+commit f41aae8d77c9cea19c7497aefcbf85a0dfa11281
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 10:22:12 2009 +0100
+
+    Write attributes to file and finish capmp_write_footprint() graceful.
+
+commit 162be855dff92e9c3265bc0fa3d8f9eb8dad4bd5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 10:19:46 2009 +0100
+
+    Change of log message text.
+
+commit cca44fba4fa24b33a5748584264861e240a813f3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 10:18:37 2009 +0100
+
+    Oops, use g_log on info level instead of fprintf (stderr, ...).
+
+commit fa5eac041cc9ab760926ba8a01ee8b5ba4f99ac8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 10:08:35 2009 +0100
+
+    Write attributes to file and finish capm_write_footprint() graceful.
+
+commit fb05e79801beedcc616841467bd7a51b5834e9f3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 10:03:13 2009 +0100
+
+    Write attributes to file and finish capc_write_footprint() graceful.
+
+commit c0ed599a9e219ee06d5bb0baea1231ca6c85894a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 09:37:34 2009 +0100
+
+    Write attributes to file and finish bga_write_footprint() graceful.
+
+commit 1859e662ff4a9178dbcc65ffb6e91ee7bbc48d17
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 09:34:14 2009 +0100
+
+    Added a meaningful return value.
+
+commit 6fe42ab6cce85ae9294a134c490de21c81731f22
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 09:28:02 2009 +0100
+
+    Added comments and curly braces.
+
+commit 94fb83a91114ec4ff1d9540879ad26851193442e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 15 08:02:29 2009 +0100
+
+    Correction in writing a courtyard to a footprint file.
+    
+    The values for xmin, xmax, ymin and ymax already have been
+    calculated, please use them !
+
+commit 6c808e73203a719fe2009281ab5dfb9513c070d8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 14 14:20:25 2009 +0100
+
+    Additional curly braces in tests.
+
+commit c5a7b972fa9271b585620b3316fdb688faac7642
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 14 10:42:34 2009 +0100
+
+    Create a package body and a pin/pad 1 indicator on silkscreen.
+    
+    Additional curly braces in tests.
+
+commit e8088e4831ef2389ab6da043533ce24e655d3a67
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 14 10:18:38 2009 +0100
+
+    Improvement on reading of tests ?
+
+commit 105f656cf01b7d0a14b57d60af219aea7cd0d21a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 14 09:19:58 2009 +0100
+
+    Register to_create_packages_list().
+
+commit 4c554072ca97f47349940ba1a42b467cd25df137
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 14 09:18:28 2009 +0100
+
+    Create an Element for a TO92 package.
+
+commit c77da537cd3b8991f59b443c0be17225e4fec31f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 14 08:15:26 2009 +0100
+
+    Added more values to to_get_default_footprint_values().
+
+commit e19ad76ff452631af32e71929e03435377c2d68f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 14 08:10:21 2009 +0100
+
+    Correction in log message.
+
+commit aa8d599fb1a91861f73a8b8c3c1c6dcd6b3f1b10
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 12 23:10:19 2009 +0100
+
+    Create an Element for a RESC package.
+
+commit ead8ab7f37d8f7e261da01c2e2e2166ffd09ed18
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Nov 12 23:01:58 2009 +0100
+
+    Create an Element for a PLCC package.
+
+commit 2945a49ef77e49f0fedc3cf615a28ec8bb0cd79d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 10 22:24:29 2009 +0100
+
+    Create a list of known PLCC packages.
+
+commit 3efa9d033fdfc00dca8b13363be377b4f134b062
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 10 07:03:04 2009 +0100
+
+    Do some Design Rule Checking for the PLCC package type.
+
+commit b7b0203ec083b4dc1a71d7d4636a7950baf13aa5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Nov 10 06:40:05 2009 +0100
+
+    Create an Element for a PGA package.
+
+commit 6302125247edaf48e90b5db4c7dbdbc084015960
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 8 22:37:49 2009 +0100
+
+    Create a list of PGA packages with pre-defined values.
+
+commit 36402e59985eb9a3421503b1f5e474e28c2cd0b6
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Nov 8 21:30:17 2009 +0100
+
+    Added data for a CAPC3215X168N package [#21].
+
+commit e0341ac50ab994d932b0b7200f8d331a01ec6c4f
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Nov 8 19:17:29 2009 +0100
+
+    Added data for a CAPC2013X140N package [#21].
+
+commit 0ddb909c927b568fc666b3c36461b129eaf20348
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Nov 8 19:06:47 2009 +0100
+
+    Added data for a CAPC2012X95N package [#21].
+
+commit 7a1ee6c9b6089ae7431ffc65e24e44841831057a
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Nov 8 13:17:33 2009 +0100
+
+    Added data for a CAPC2012X94N package [#21].
+
+commit 2f2a75c331558aadb22f2c4f18905e0270343585
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Nov 8 13:10:20 2009 +0100
+
+    Added data for a CAPC2012X90N package [#21].
+
+commit 908e4d05f8dffbc02cbe802d7cc997b772a8e7a9
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Nov 8 13:06:20 2009 +0100
+
+    Added data for a CAPC2012X88N package [#21].
+
+commit 44a5c80589119f2986b0292803af96c9b9ee85be
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Nov 8 12:36:10 2009 +0100
+
+    Added data for a CAPC2012X71N package [#21].
+
+commit 0878e24524cfeff3e73c7f3cd09a8abfd8985f48
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Nov 8 12:32:40 2009 +0100
+
+    Added data for a CAPC2012X70N package [#21].
+
+commit 19a0dfcd5076971f2ecc0d4b972a1744a04a376c
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Nov 8 12:25:51 2009 +0100
+
+    Added data for a CAPC2012X145AN package [#21].
+
+commit 2530b31654cf68535e617cbecc8eead5721d6cad
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Nov 8 11:53:53 2009 +0100
+
+    Corrections on pad width and pad length.
+
+commit 9ceb7176cd0af4023c0b7dadf9353fe02780df7f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 8 11:38:25 2009 +0100
+
+    Register diomelf_create_element().
+
+commit 4d7e49a20ab86425d5c98f4fbd61cdc56928bf6b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 8 11:31:21 2009 +0100
+
+    Create an Element for a DIOMELF package.
+
+commit bd5897263089d9690dca9d19391b0a4e98994e1b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 8 11:16:04 2009 +0100
+
+    Do some Design Rule Checking for the RESC package type.
+
+commit d573a6c064c27be9f267d604f3cb0a866f5fdf87
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 8 11:02:28 2009 +0100
+
+    Lookup data for known RESC packages.
+
+commit 410e601433d09ba117c38f9097838c07de2fde2d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 8 10:48:33 2009 +0100
+
+    Added a manifest for the files included in the git repo.
+
+commit 71ac77689b1769e580a91e5b1e9a04db6fba6a39
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 8 10:38:12 2009 +0100
+
+    Lookup data for known packages.
+    
+    For the following packages the already implemented *_get_default_footprint_values()
+    functions are now called:
+    - CAPC,
+    - CAPM,
+    - CAPMP,
+    - DIOM,
+    - INDC.
+
+commit d1096d448ae495df3fa8c89b511cd4d90c62a3ac
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Nov 7 21:21:04 2009 +0100
+
+    Added data for a CAPC2012X145N package [#21].
+
+commit ccebc033ee43d89a6c3a1a456845d1e60b31cb16
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 7 01:07:11 2009 +0100
+
+    Check on fiducials with diom_drc() for DIOM packages.
+
+commit f50167e5804d038e773bcbd766982de03d49dc74
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 7 00:59:53 2009 +0100
+
+    Check on fiducials with capmp_drc() for CAPMP packages.
+
+commit aea5f97e72ff2e55f918a9dfb22621af3a538f37
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Nov 7 00:54:48 2009 +0100
+
+    Check on fiducials with capm_drc() for CAPM packages.
+
+commit 230e09d7f567abe37b80b8a4a6db7427f9155b42
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Nov 6 21:12:23 2009 +0100
+
+    Check on fiducials with capc_drc() for CAPC packages.
+
+commit 0906792d7c4e695ee0d8902f1aaedd3a4058bbda
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Nov 6 20:54:44 2009 +0100
+
+    Do some Design Rule Checking for the DIOMELF package type.
+
+commit e1becd6716a406003d76efc496a5667bef90fdf0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Nov 6 08:15:50 2009 +0100
+
+    Register diomelf_create_packages_list().
+
+commit 3a925b83be911d8a791c1971654cb1458d45b0e6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Nov 6 08:08:37 2009 +0100
+
+    Minor correction in doxygen comments.
+
+commit 195ad44f5c54b6635e931912933bf1e0973f7ad0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Nov 6 00:52:45 2009 +0100
+
+    Create an Element for a DIOM package.
+
+commit e2852db9d9800eea20b89d45b4bb08ee51e73c83
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 2 22:36:02 2009 +0100
+
+    Create a list of known DIOM packages.
+
+commit efa4c0339e8da00e11002db3b3d4658329f71fda
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Nov 2 22:23:50 2009 +0100
+
+    Do some Design Rule Checking for the DIOM package type.
+
+commit 05e115b3c2d13662499a1837fe801b77774fde07
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 1 22:40:01 2009 +0100
+
+    Minor corrections in doxygen comments and removed obsolete parentheses.
+
+commit 82c97f966107faceae1bee75981d06e06dc458e1
+Merge: 945287d 7095ed7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 1 22:33:48 2009 +0100
+
+    Merge branch 'master' of git@github.com:bert/pcb-fpw
+
+commit 945287d20d8022af4bb3fc726dd4d2b8f9938885
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 1 22:33:30 2009 +0100
+
+    Removed obsolete parentheses.
+
+commit 7095ed7c957b5260ba8a7e86b8404eeccfde56b0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 1 22:24:50 2009 +0100
+
+    Removed obsolete parentheses.
+
+commit 1da429c8d738c9a0134ee7f8b85d9892a3dab26e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 1 22:13:53 2009 +0100
+
+    Correction of the package body in elements for the CAPM package.
+
+commit f33e68aaebfdcde584bece12f329c253bc171945
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 1 21:46:56 2009 +0100
+
+    Added pad names to the CAPM element it's pads.
+
+commit d71a75339b49ee0de4e1dd2ec0bb5fc7ef3236cc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 1 21:09:44 2009 +0100
+
+    Create an Element for a CAPMP package.
+
+commit 63d3c7c1af9c6f6dbc1a790d3acf7bd0663f3d61
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Nov 1 07:56:29 2009 +0100
+
+    Create a list of known CAPMP packages.
+
+commit 2124a03b14e9b5f7d10c60b4e8e3e344ed967c4a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Oct 31 19:56:59 2009 +0100
+
+    Minor correction in doxygen comments.
+
+commit 8fab5740f0bbbbc5d23610b9b1927dc64f28c14b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Oct 31 19:53:08 2009 +0100
+
+    Do some Design Rule Checking for the CAPMP package type.
+
+commit 1631735856f60d335c8c324dcb83174102c40d2a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Oct 31 19:12:44 2009 +0100
+
+    Minor correction in doxygen comments.
+
+commit 00f231210d0935d9d6018f8fb9d3c67d4e91c617
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Oct 31 13:31:26 2009 +0100
+
+    Minor correction in doxygen comments.
+
+commit 00ae94d2995241b276d692e756a8c7b3ee4e13ac
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Oct 31 13:28:01 2009 +0100
+
+    Minor correction in doxygen comment.
+
+commit edcd4ad48ab31cad5def8e5f1ebcbfb69c472a82
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Oct 31 09:30:28 2009 +0100
+
+    Create an Element for a CAPM package.
+
+commit 02ec70640bc2afda07deb8422403d4dccdcef645
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 30 08:15:47 2009 +0100
+
+    More correction of typos.
+
+commit a6010aab0c0bb629b0afc6ef1f62a8e277bf7ba3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 30 08:13:10 2009 +0100
+
+    Correction of a typo.
+
+commit af6454b431b5f82212d2e67d6f78c836d0b0fe8b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 30 08:10:46 2009 +0100
+
+    Create a list of known CAPM packages.
+
+commit 69a14ba036b45504d14f1e6aa0ea8b31829d9cd4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Oct 29 21:16:37 2009 +0100
+
+    Do some Design Rule Checking for the CAPM package type.
+
+commit 9590d0eb3e7dbdb346ef7e85563cb7de29a3fbb7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Oct 29 19:31:37 2009 +0100
+
+    Small change in description.
+
+commit 9debf467d978d52d1874ef223813ba7951af4786
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Oct 29 19:30:16 2009 +0100
+
+    Correction of a typo.
+
+commit e868f90a2cd43432276b26ec342442e2329fabb8
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Oct 29 19:29:21 2009 +0100
+
+    Another small change in descriptions.
+
+commit 3f3e61a313a03f740769cc2f1b700455a5efc5bc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Oct 28 21:37:33 2009 +0100
+
+    Small change in description.
+
+commit 865027567c543d8590c67aa021072f641d709ada
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Oct 28 07:53:53 2009 +0100
+
+    Forgot to register capc_drc.
+
+commit 1954161288e91d003fcb838666588e2704e454ca
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Oct 28 07:49:56 2009 +0100
+
+    Small change in description.
+
+commit 9e770dda73a85a1868fedb9211017c178c3867e0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Oct 28 07:48:00 2009 +0100
+
+    Do some Design Rule Checking for the INDC package type.
+
+commit bfb39be31d0f0ffb86eff735aa3132d56e1d4508
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Oct 27 20:04:33 2009 +0100
+
+    Added indc_create_element().
+
+commit 155bec1c4d9be9355065b595faf584a288301306
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Oct 27 08:19:57 2009 +0100
+
+    Do some Design Rule Checking for the CAPC package type.
+
+commit 6cbd1615f99e094941508de4ffb24d6888f514e2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Oct 27 08:07:09 2009 +0100
+
+    Fixed some copy/paste typos in comments.
+
+commit c33f518060002eb911a8dbf4e7226973a98c2d3b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Oct 26 21:21:40 2009 +0100
+
+    Added capc_create_element().
+
+commit 43d5e199b8dba9f53cd5c17c3bfa14106eb99e7e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Oct 26 17:37:49 2009 +0100
+
+    Register resc_create_packages_list() in function list.
+
+commit ff853d4bec4fefe742220927f39d2783b849e306
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Oct 26 17:36:02 2009 +0100
+
+    Register capc_create_packages_list() in function list.
+
+commit 44b6f0658184c9c7ed06b630d54f72f3c24761ab
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Oct 26 09:15:03 2009 +0100
+
+    Create a list of known RESC packages.
+
+commit 9fa38578e4503011866c7d215f2652985dcf448a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Oct 26 09:06:39 2009 +0100
+
+    Unified the copyright years.
+
+commit fef1a762c49b024369dd6927c1a0db7cb7a7b8af
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Oct 26 08:16:19 2009 +0100
+
+    More improvements on readability.
+
+commit 4864c44cabc6fe9088758341fa7b008ee39c0fe1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Oct 26 08:15:29 2009 +0100
+
+    More corrections in testing pad shape types.
+
+commit 6210ad3937f1a04b19d249545c86261bc6b26667
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Oct 26 08:12:05 2009 +0100
+
+    Set footprint units at the highest level.
+    
+    Derivate variables will be updated accordingly when
+    the update function is called.
+
+commit cfa66bebfdc99563135316f526aad97ffcb84053
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Oct 25 20:58:32 2009 +0100
+
+    Adding RES package type to the list of footprint types.
+
+commit 715b1005825d6e2d039656c46d8d8f03bb30642c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Oct 25 20:56:29 2009 +0100
+
+    Hooking up function calls for RES type packages.
+
+commit d123aec70c9252df34a08c5da89a1347a09fb32f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Oct 25 20:50:52 2009 +0100
+
+    Correction in testing pad shape types.
+
+commit 70e79f044211192c60853faa86b7337af983fcc9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Oct 25 16:24:01 2009 +0100
+
+    Added Through Hole Resistor packages.
+
+commit 8610d93d29f8874f769fb72f2777643d7cea2b7c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Oct 25 13:38:31 2009 +0100
+
+    Improve on readability.
+
+commit 09a4c2e6c22b212589432d2826544bb3a434abb7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Oct 25 07:44:36 2009 +0100
+
+    Assign pin number "0" to fiducials.
+    
+    It is assumed that pin/pad number "0" will never be used in schematics.
+
+commit 65cc8dabb90380aa47589761bfdd62ea7dfe86e4
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Oct 24 18:03:33 2009 +0200
+
+    Added data for CAPC2012X140N package [#21].
+
+commit 993af846a8b015aefaee144839e80b7ca029821f
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Oct 24 17:33:52 2009 +0200
+
+    Added data for a CAPC2012X135N package [#21].
+
+commit 5042dd7811d0ce9521b7b0b29237cf8cdb864843
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sat Oct 24 17:18:51 2009 +0200
+
+    Added data for a CAPC2012X130N package [#21].
+
+commit 8275eb6bb126f25d00af12c510b09d872b2a1bd3
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Oct 2 06:32:46 2009 +0200
+
+    Added the GNU Public License (version 2) text.
+
+commit 64b4e7b4b89a9fe3ad77c33ed250e34e064a314b
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Oct 1 22:52:55 2009 +0200
+
+    Added data for a CAPC2012X127N package [#21].
+
+commit 4a76f0cea86970be521776ec28986647323e7f8c
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Oct 1 22:26:55 2009 +0200
+
+    Added data for a CAPC2012X120N package [#21].
+
+commit 678baaaf61736048db4e49380b4dd2a1bf0859d5
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Oct 1 21:23:50 2009 +0200
+
+    Added data for a CAPC2012X100AN package [#21].
+
+commit b0f5d34a68b4fec44032af6a38c064e41db3427b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Aug 3 21:10:38 2009 +0200
+
+    Get the Doxygen stuff for to.c right this time ?
+
+commit bea8d05a2ff623a90eebc69139e1dea0db69dc43
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jul 30 22:17:40 2009 +0200
+
+    Get the Doxygen stuff for sot.c right this time ?
+
+commit 45f62c1111ffbb81c52f88d3a1581105c95366b6
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Jul 30 21:03:44 2009 +0200
+
+    Added data for a CAPC2012X100N package [#21].
+
+commit fc3697757abe1bba4756fef559a08afdb585ffe1
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Thu Jul 30 19:19:51 2009 +0200
+
+    Added data for a CAPC1632X168N package [#21].
+
+commit 0322c60bdf1ecd11d60c8097716500eda8473f17
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Wed Jul 29 21:42:51 2009 +0200
+
+    Added data for a CAPC1632X76N package [#21].
+
+commit 625cd17dbf4ab9276e183bdbaff70627938f6ce0
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Wed Jul 29 19:16:30 2009 +0200
+
+    Added data for a CAPC1608X95N package [#21].
+
+commit 6c87ed4c66272f61733aa89c76a9936dc7e16eef
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Wed Jul 29 08:16:43 2009 +0200
+
+    Added data for a CAPC1608X92N package [#21].
+
+commit a94c4f8f505fadfe4971a4b24cf7a3cfdffea71a
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Wed Jul 29 08:08:34 2009 +0200
+
+    Added data for a CAPC1608X90N package [#21].
+
+commit c74e78605274c81e4dd51248e84f6b1e8134d2b7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jul 28 10:51:00 2009 +0200
+
+    Added two ommissions in the Doxygen comments.
+
+commit e64bbe2683db9f2045affaace14f639f3ec6b2a9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jul 28 09:47:09 2009 +0200
+
+    Get the Doxygen stuff for select_exceptions.c right this time ?
+
+commit c95eab5d79cc107bd0abdc38b63faba3c71f88af
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jul 27 15:02:29 2009 +0200
+
+    Get the Doxygen stuff for resc.c right this time ?
+
+commit 4ee0aa5faf532635f634a9a3d9027ef528293e1d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jul 27 13:13:52 2009 +0200
+
+    Correction of a typo in the doxygen comments.
+
+commit d70c07034c89a185f4e29f8482ee9f961d58c3b9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jul 3 21:53:26 2009 +0200
+
+    Get the Doxygen stuff for register_functions.c right this time ?
+
+commit 7cf206da5283d19a6493b389e849a9b1ff96e76a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jul 2 13:25:48 2009 +0200
+
+    Get the Doxygen stuff for preview.c right this time ?
+
+commit 447057b31568857ffc6e9b21790b7b5f24efccdf
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jul 2 00:43:10 2009 +0200
+
+    Next attempt to get the Doxygen stuff right for pga.c.
+
+commit e60c2dd22fd6e0f328b4a62393c3c7fd41e5d928
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jul 2 00:30:42 2009 +0200
+
+    Get the Doxygen stuff for plcc.c right this time ?
+
+commit db6181a39e8b2d1bf4daee0be51ee9e46289c7df
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Jul 2 00:22:18 2009 +0200
+
+    Get the Doxygen stuff for pga.c right this time ?
+
+commit 317271cbf37da7de5c7fe42ff80f28fccbe75c8d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jul 1 08:26:08 2009 +0200
+
+    Get the Doxygen stuff for packages.h right this time ?
+
+commit 70cd6682ac5ea56f457c8c44e6e9529e194394d4
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jul 1 08:23:28 2009 +0200
+
+    Get the Doxygen stuff for main.c right this time ?
+
+commit 1b60b2d1c8e280da2c995553a131af7cf303ef75
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jul 1 08:16:42 2009 +0200
+
+    Get the Doxygen stuff for indc.c right this time ?
+
+commit 9d1fdc1ecbdf0b674534f35effe93660cc665bbd
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Wed Jul 1 08:08:04 2009 +0200
+
+    Get the Doxygen stuff for globals.h right this time ?
+
+commit 0438cc3318cef6de4c5cab65a7a89259d8903fd9
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jun 30 23:03:58 2009 +0200
+
+    Get the Doxygen stuff for fpw.c right this time ?
+
+commit 671ba85b85374a8855f7336abc57a528a326a3b1
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jun 30 22:57:44 2009 +0200
+
+    Get the Doxygen stuff for diomelf.c right this time ?
+
+commit 87ae7ccfe333a024f1fe658cc74eea901de18c25
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jun 30 21:27:40 2009 +0200
+
+    Get the Doxygen stuff for diom.c right this time ?
+
+commit 67cbcf2fed39eff2d7ac68dc3c454936696672c2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jun 30 08:24:53 2009 +0200
+
+    Get the Doxygen stuff for dimensions.c right this time ?
+
+commit 1e1d3cf3409bd3a5739632b5fcff12c5ba6e361c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jun 30 07:49:39 2009 +0200
+
+    Added icon data and related files.
+    
+    This feature still has to be properly implemented
+    in the toplevel build system.
+
+commit 5a4abc167ad4007489e0c993872a382833c0decc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jun 30 07:43:19 2009 +0200
+
+    Get the Doxygen stuff for con_hdr.c right this time ?
+
+commit a89028d4ceeef9951b2962d44f532f126044b17b
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jun 30 07:12:27 2009 +0200
+
+    Get the Doxygen stuff for con_dip.c right this time ?
+
+commit a63ef6640ae8c7bffe5ca65130bbd10fa267e20d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jun 30 06:53:45 2009 +0200
+
+    Get the Doxygen stuff for con_dil.c right this time ?
+
+commit 36ebd07a72526ee69036caa38868daa1ac1b1ef7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jun 29 23:22:56 2009 +0200
+
+    Get the Doxygen stuff for capmp.c right this time ?
+
+commit 05cb4c60143b0756eb68747a60b91eec6d56e1b6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jun 29 08:14:01 2009 +0200
+
+    Get the Doxygen stuff for capm.c right this time ?
+
+commit a4811f1678f9c824d4aa4dcc8259e9bfaec332ea
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jun 28 21:49:02 2009 +0200
+
+    Added more dependencies to the list.
+
+commit 45187b30f2cd7b57e8fde7ecd82ee89f5a99ad76
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jun 28 21:48:26 2009 +0200
+
+    Set "Add license to footprint" to be initially TRUE.
+
+commit bdef031c04f73fda4005eecb71b6013acfa86d90
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jun 28 21:14:36 2009 +0200
+
+    Add Transistor Outline packages.
+
+commit 004f275cf652deb0098bfb6762ca32cc02f1ac12
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jun 28 21:13:41 2009 +0200
+
+    Get the Doxygen stuff for libfpw.c right this time ?
+    
+    And a lot of return values set.
+    Moved write_footprint_to92() to file to.c for Transistor Outline packages.
+    A lot of small corrections made.
+
+commit 5373e93c89a9f6125c16f1c13b7e517494fc4f0d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jun 28 21:05:27 2009 +0200
+
+    Set "Add license to footprint" to be initially TRUE.
+
+commit defb46ce0bd6486767b9eeffc43cbf54c038b667
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jun 28 21:04:29 2009 +0200
+
+    Update the "add license to footprint" checkbutton.
+
+commit 25ce8a20025afca5896863eda66ceafa2ff63013
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Jun 28 13:39:08 2009 +0200
+
+    Updated the README with links to the user manual, issue tracker and code metrics and statistics.
+
+commit 9b125803ad4611ca10fef111a6f5cff23c0296b7
+Author: lambert <ljh4timm@xs4all.nl>
+Date:   Sun Jun 28 13:27:42 2009 +0200
+
+    Added information on statistics and dependencies.
+
+commit 8c5ad73c8dc42605078684c78e70f73de23b2b5f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jun 28 08:00:08 2009 +0200
+
+    Get the Doxygen stuff for capc.c right this time ?
+
+commit 328f46d46d84630f8941f9b2a19bb5bb81e3e9b7
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jun 28 07:59:13 2009 +0200
+
+    Cleanup of obsolete declaration.
+
+commit e92ef81dc63ba48c52198fd0e2b126cdce8d5730
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jun 27 20:53:39 2009 +0200
+
+    Get the Doxygen stuff for bga.c right this time ?
+
+commit a1cc45a5aaec1bc83cbc48bf7d924f51a5f88225
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Jun 23 20:56:34 2009 +0200
+
+    Do not preprocess when creating Doxygen documentation.
+    
+    Some functions were not properly documented due to
+    ENABLE_PREPROCESSING   = YES.
+
+commit 2975de72399d098cfd84eddd3f1ae2e033d7963e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jun 20 10:40:35 2009 +0200
+
+    Added the GPL text.
+
+commit 6d3c48e0a36b4b2aea0577e75560f49167d389bc
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jun 19 23:33:39 2009 +0200
+
+    Corrections and additions in doxygen comments,
+    
+    added indc_create_packages_list().
+
+commit 5e0b2bd981d763c7048875e26eccb65d9fc350ea
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jun 19 23:24:06 2009 +0200
+
+    Corrections and additions in doxygen comments.
+
+commit b6643cf670a5f2132bc823d3baea316f9df8a6d5
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jun 19 22:43:23 2009 +0200
+
+    Updated the pcb URL.
+
+commit ecff0af26e8fcf36d062224f5db7161b0932ee8e
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Mon Jun 15 08:07:57 2009 +0200
+
+    Added a destroy signal for the main window.
+
+commit 9c432c2d7d12acca41802406d68dd28f247736e2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jun 13 20:00:32 2009 +0200
+
+    Added callbacks for closing and destroying the about dialog widget [#34].
+
+commit b93974fa58ceea8ea81395c62a853817a9f13c51
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Jun 13 11:01:28 2009 +0200
+
+    Changes made by autotools.
+
+commit 422f0453572cefda9a8109673197788f6ba9b4a2
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Fri Jun 12 08:24:09 2009 +0200
+
+    Fixed the "Crash on refresh" bug [#35].
+    
+    Pressing the "Refresh" button immediately after start up caused a segfault
+    due to pin_pad_exceptions_string not being initialised properly.
+    
+    Bug reported by Sobczyk.
+
+commit 2043d3f2b88398d12aca309ff53b0fbfcdd685f6
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sun Jun 7 14:47:50 2009 +0200
+
+    Update of the ChangeLog.
+
 commit 54ed45e149a49e4069ac5e88a4e27a9da3652e83
 Author: Bert Timmerman <bert.timmerman@xs4all.nl>
 Date:   Sun Jun 7 14:46:17 2009 +0200
@@ -1198,14 +6650,14 @@ Date:   Sun Feb 15 20:32:29 2009 +0100
     Updated the copyright notice.
 
 commit f1ff9107d14e18fecd21d5e9ad3f339dde8f4e51
-Merge: b504612... a34edda...
+Merge: b504612 a34edda
 Author: lambert <ljh4timm@xs4all.nl>
 Date:   Sun Feb 15 20:14:51 2009 +0100
 
     Merge branch 'bga_content'
 
 commit b504612a9228c3ee302a7864f737d7bb65a2a3c2
-Merge: dd7da34... 8ef36df...
+Merge: dd7da34 8ef36df
 Author: lambert <ljh4timm@xs4all.nl>
 Date:   Sun Feb 15 20:10:07 2009 +0100
 
@@ -1224,14 +6676,14 @@ Date:   Sun Feb 15 20:07:20 2009 +0100
     Correcting the URL of the pcb website on SF.
 
 commit 8ef36df349326380524ba504b058211b34d1cffa
-Merge: a21304f... 1e5d467...
+Merge: a21304f 1e5d467
 Author: Bert Timmerman <bert.timmerman@xs4all.nl>
 Date:   Sun Feb 15 19:44:01 2009 +0100
 
     Merge branch 'master' of git@github.com:bert/pcb-fpw
 
 commit 1e5d4676ebcca678cf0c0b44631f8669d2e263be
-Merge: f9e985c... 4d5ad6b...
+Merge: f9e985c 4d5ad6b
 Author: lambert <ljh4timm@xs4all.nl>
 Date:   Sun Feb 15 12:29:22 2009 +0100
 
@@ -1973,7 +7425,7 @@ Date:   Tue Jan 20 21:56:58 2009 +0800
     Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
 
 commit 3a56a1c600f7494aa96896d40b3acd14488448fd
-Merge: 23b0faf... ec617fb...
+Merge: 23b0faf ec617fb
 Author: Bert Timmerman <bert.timmerman@xs4all.nl>
 Date:   Tue Jan 20 12:45:32 2009 +0100
 
@@ -2086,7 +7538,7 @@ Date:   Tue Dec 9 16:14:50 2008 +0100
     Added a description to the rpm package spec file.
 
 commit 994244b554406386fa381a56e8c9329f7e9db4f8
-Merge: e3eb934... 1368128...
+Merge: e3eb934 1368128
 Author: Bert Timmerman <bert.timmerman@xs4all.nl>
 Date:   Tue Dec 9 16:08:59 2008 +0100
 
