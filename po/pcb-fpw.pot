@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-01 07:42+0100\n"
+"POT-Creation-Date: 2011-03-05 10:22+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -892,7 +892,7 @@ msgstr ""
 
 #: src/callbacks.c:2791
 #, c-format
-msgid "determined the status type successfull."
+msgid "determined the status type successful."
 msgstr ""
 
 #: src/callbacks.c:2841 src/libfpw.c:899
@@ -902,7 +902,7 @@ msgstr ""
 
 #: src/callbacks.c:2849
 #, c-format
-msgid "determined the package type (%d) for footprint type %s successfull."
+msgid "determined the package type (%d) for footprint type %s successful."
 msgstr ""
 
 #: src/callbacks.c:2978
@@ -1202,7 +1202,7 @@ msgstr ""
 
 #: src/libfpw.c:910
 #, c-format
-msgid "determined the package type successfull."
+msgid "determined the package type successful."
 msgstr ""
 
 #: src/libfpw.c:919
@@ -1222,7 +1222,7 @@ msgstr ""
 
 #: src/libfpw.c:955
 #, c-format
-msgid "footprint units variables updated successfull."
+msgid "footprint units variables updated successful."
 msgstr ""
 
 #: src/libfpw.c:964
@@ -1297,7 +1297,7 @@ msgstr ""
 
 #: src/libfpw.c:1124
 #, c-format
-msgid "footprint dirstribution license with a null pointer found in: %s.\n"
+msgid "footprint distribution license with a null pointer found in: %s.\n"
 msgstr ""
 
 #: src/libfpw.c:1135
@@ -1387,7 +1387,7 @@ msgstr ""
 
 #: src/libfpw.c:1329
 #, c-format
-msgid "pad shape variables updated successfull."
+msgid "pad shape variables updated successful."
 msgstr ""
 
 #: src/libfpw.c:1338
@@ -1847,7 +1847,7 @@ msgstr ""
 
 #: src/bga.c:579
 #, c-format
-msgid "[%s] DRC Error: package should not have a suare pad #1."
+msgid "[%s] DRC Error: package should not have a square pad #1."
 msgstr ""
 
 #: src/bga.c:590 src/capa.c:523 src/capc.c:470 src/capm.c:515 src/capmp.c:515
