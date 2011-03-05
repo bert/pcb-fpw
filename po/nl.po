@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcb-fpw\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-01 07:42+0100\n"
-"PO-Revision-Date: 2011-03-01 07:50+0100\n"
+"POT-Creation-Date: 2011-03-05 10:22+0100\n"
+"PO-Revision-Date: 2011-03-05 10:27+0100\n"
 "Last-Translator: Bert Timmerman <bert.timmerman@xs4all.nl>\n"
 "Language-Team: Dutch <du@li.org>\n"
 "Language: \n"
@@ -921,7 +921,7 @@ msgstr "element status bevat een onbekend statustype."
 
 #: src/callbacks.c:2791
 #, c-format
-msgid "determined the status type successfull."
+msgid "determined the status type successful."
 msgstr "het status type is succesvol vastgesteld."
 
 #: src/callbacks.c:2841
@@ -932,7 +932,7 @@ msgstr "element type bevat een onbekend behuizing type."
 
 #: src/callbacks.c:2849
 #, c-format
-msgid "determined the package type (%d) for footprint type %s successfull."
+msgid "determined the package type (%d) for footprint type %s successful."
 msgstr "het behuizing type (%d) voor element type %s is succesvol vastgesteld."
 
 #: src/callbacks.c:2978
@@ -1256,7 +1256,7 @@ msgstr "element type met een null pointer gevonden in: %s.\n"
 
 #: src/libfpw.c:910
 #, c-format
-msgid "determined the package type successfull."
+msgid "determined the package type successful."
 msgstr "het behuizing type is succesvol vastgesteld."
 
 #: src/libfpw.c:919
@@ -1276,7 +1276,7 @@ msgstr "element eenheid bevat een onbekend eenheidtype."
 
 #: src/libfpw.c:955
 #, c-format
-msgid "footprint units variables updated successfull."
+msgid "footprint units variables updated successful."
 msgstr "element eenheden zijn succesvol bijgewerkt."
 
 #: src/libfpw.c:964
@@ -1351,7 +1351,7 @@ msgstr "fout tijdens het lezen van footprint_dist_license waarde in: %s.\n"
 
 #: src/libfpw.c:1124
 #, c-format
-msgid "footprint dirstribution license with a null pointer found in: %s.\n"
+msgid "footprint distribution license with a null pointer found in: %s.\n"
 msgstr "element distributie licentie met een null pointer gevonden in: %s.\n"
 
 #: src/libfpw.c:1135
@@ -1441,7 +1441,7 @@ msgstr "padvorm bevat een onbekend padvorm type."
 
 #: src/libfpw.c:1329
 #, c-format
-msgid "pad shape variables updated successfull."
+msgid "pad shape variables updated successful."
 msgstr "padvorm variabelen succesvol bijgewerkt."
 
 #: src/libfpw.c:1338
@@ -1988,7 +1988,7 @@ msgstr "[%s] DRC Fout: geen geldige padvorm gespecificeerd."
 
 #: src/bga.c:579
 #, c-format
-msgid "[%s] DRC Error: package should not have a suare pad #1."
+msgid "[%s] DRC Error: package should not have a square pad #1."
 msgstr "[%s] DRC Fout: behuizing hoort geen vierkant pad #1 te hebben."
 
 #: src/bga.c:590
