@@ -124,6 +124,61 @@ main
         gtk_set_locale ();
         gtk_init (&argc, &argv);
         add_pixmap_directory (PACKAGE_DATA_DIR "/" PACKAGE "/pixmaps");
+        /* Find out how we are called today. */
+        program_name = argv[0];
+        /* Recognise long options. */
+        static const struct option opts[] =
+        {
+                {"debug", no_argument, NULL, 'd'},
+                {"help", no_argument, NULL, 'h'},
+                {"version", no_argument, NULL, 'V'},
+                {"verbose", no_argument, NULL, 'v'},
+                {"quiet", no_argument, NULL, 'q'},
+                {"silent", no_argument, NULL, 'q'},
+                {"format", required_argument, NULL, 'f'},
+                {"output", required_argument, NULL, 'o'},
+                {0, 0, 0, 0}
+        };
+        while ((optc = getopt_long (argc, argv, "dhVvqqf:o:", opts, NULL)) != -1)
+        {
+                switch (optc)
+                {
+                        case 'd':
+                                debug = TRUE;
+                                break;
+                        case 'h':
+                                gfpw_print_usage ();
+                                exit (EXIT_SUCCESS);
+                        case 'V':
+                                gfpw_print_version ();
+                                exit (EXIT_SUCCESS);
+                        case 'v':
+                                verbose = TRUE;
+                                break;
+                        case 'q':
+                                silent = TRUE;
+                                verbose = FALSE; /* Just to be sure. */
+                                break;
+                        case 'f':
+                                fpw_filename = strdup (optarg);
+                                if (debug)
+                                        fprintf (stderr, "fpw filename = %s\n", fpw_filename);
+                                break;
+                        case 'o':
+                                footprint_name = strdup (optarg);
+                                if (debug)
+                                        fprintf (stderr, "footprint name = %s\n", footprint_name);
+                                break;
+                        case '?':
+                                gfpw_print_usage ();
+                                exit (EXIT_FAILURE);
+                        default:
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        _("unknown command line option encountered.\n"));
+                                gfpw_print_usage ();
+                                exit (EXIT_FAILURE);
+                }
+        }
         /*
          * The following code was added by Glade to create one of each
          * component (except popup menus), just so that you see something
