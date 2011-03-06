@@ -714,6 +714,9 @@ get_total_number_of_pins ()
                         number_of_pins = (number_of_columns * number_of_rows) -
                         number_of_exceptions + (fiducial * 2);
                         break;
+                case CAPA :
+                        number_of_pins = 2;
+                        break;
                 case CAPC :
                         number_of_pins = 2;
                         break;
