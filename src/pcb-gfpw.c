@@ -40,6 +40,24 @@
 
 
 /*!
+ * \brief Print the version of the footprintwizard GUI to stderr.
+ *
+ * \return \c EXIT_SUCCESS.
+ */
+int
+gfpw_print_version ()
+{
+        fprintf (stderr, (_("\npcp-gfpw version %s\n")), VERSION);
+        fprintf (stderr, (_("(C) 2007, 2008, 2009, 2010, 2011 by Bert Timmerman.\n")));
+        fprintf (stderr, (_("This free software is released under the GPL v2 license;\n")));
+        fprintf (stderr, (_("see the source for copying conditions.\n")));
+        fprintf (stderr, (_("There is NO warranty; not even for MERCHANTABILITY\n")));
+        fprintf (stderr, (_("or FITNESS FOR A PARTICULAR PURPOSE.\n\n")));
+        return (EXIT_SUCCESS);
+}
+
+
+/*!
  * \brief The GTK GUI for the footprintwizard.
  *
  * \return 0 if successful.
