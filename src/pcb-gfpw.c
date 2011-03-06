@@ -31,6 +31,9 @@
 #endif
 
 #include <gtk/gtk.h>
+#include <getopt.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include "interface.h"
 #include "support.h"
