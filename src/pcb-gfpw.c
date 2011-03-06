@@ -1,7 +1,7 @@
 /*!
  * \file src/pcb-gfpw.c
  *
- * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief GTK program for the pcb footprintwizard (pcb-gfpw).
  *
@@ -50,6 +50,21 @@ main
 {
         GtkWidget *pcb_gfpw;
         GtkWidget *about_dialog;
+        gchar *program_name = NULL;
+        gboolean debug = FALSE;
+        /*!< Global for being verbose on debugging information. */
+        gboolean silent = FALSE;
+        /*!< Global for suppressing the logging of critical messages. */
+        gboolean verbose = FALSE;
+        /*!< Global for being verbose on logging of information. */
+        gchar *fpw_filename;
+        /*!< Filename of footprintwizard file. */
+        gchar *footprint_filename = NULL;
+        /*!< Filename of footprint file. */
+        gchar *footprint_name = NULL;
+        /*!< Name of the footprint. */
+        int optc;
+        /*!< Number of command line options. */
 
 #ifdef ENABLE_NLS
         bindtextdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
