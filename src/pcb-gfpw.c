@@ -38,6 +38,9 @@
 #include "interface.h"
 #include "support.h"
 
+gchar *program_name = NULL;
+/*!< Remember how we are called today. */
+
 
 /*!
  * \brief Print the version of the footprintwizard GUI to stderr.
@@ -47,7 +50,7 @@
 int
 gfpw_print_version ()
 {
-        fprintf (stderr, (_("\npcp-gfpw version %s\n")), VERSION);
+        fprintf (stderr, (_("\n%s version %s\n")), program_name, VERSION);
         fprintf (stderr, (_("(C) 2007, 2008, 2009, 2010, 2011 by Bert Timmerman.\n")));
         fprintf (stderr, (_("This free software is released under the GPL v2 license;\n")));
         fprintf (stderr, (_("see the source for copying conditions.\n")));
@@ -65,7 +68,7 @@ gfpw_print_version ()
 int
 gfpw_print_usage ()
 {
-        fprintf (stderr, (_("\npcb-gfpw usage and options:\n")));
+        fprintf (stderr, (_("\n%s usage and options:\n")), program_name);
         fprintf (stderr, (_("\t --help \n")));
         fprintf (stderr, (_("\t -? \n")));
         fprintf (stderr, (_("\t -h        : print this help message and exit.\n\n")));
@@ -100,7 +103,6 @@ main
 {
         GtkWidget *pcb_gfpw;
         GtkWidget *about_dialog;
-        gchar *program_name = NULL;
         gboolean debug = FALSE;
         /*!< Global for being verbose on debugging information. */
         gboolean silent = FALSE;
