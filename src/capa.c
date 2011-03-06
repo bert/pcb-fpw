@@ -810,8 +810,8 @@ capa_set_gui_constraints ()
         gtk_widget_set_sensitive (number_of_columns_entry, FALSE);
         GtkWidget *number_of_rows_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_rows_entry");
-        gtk_entry_set_text (GTK_ENTRY (number_of_rows_entry), "");
-        gtk_widget_set_sensitive (number_of_rows_entry, TRUE);
+        gtk_entry_set_text (GTK_ENTRY (number_of_rows_entry), "1");
+        gtk_widget_set_sensitive (number_of_rows_entry, FALSE);
         GtkWidget *pitch_y_entry = lookup_widget (GTK_WIDGET (widget),
                 "pitch_y_entry");
         gtk_entry_set_text (GTK_ENTRY (pitch_y_entry), "");
