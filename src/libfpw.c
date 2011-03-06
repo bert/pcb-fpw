@@ -42,6 +42,7 @@
 
 #include "globals.h"
 #include "pcb_globals.h"
+#include "libfpw.h"
 
 
 AttributeTypePtr create_new_attribute (AttributeListTypePtr list, char *name, char *value);
