@@ -58,6 +58,35 @@ gfpw_print_version ()
 
 
 /*!
+ * \brief Print the usage message for the footprintwizard GUI to stderr.
+ *
+ * \return \c EXIT_SUCCESS.
+ */
+int
+gfpw_print_usage ()
+{
+        fprintf (stderr, (_("\npcb-gfpw usage and options:\n")));
+        fprintf (stderr, (_("\t --help \n")));
+        fprintf (stderr, (_("\t -? \n")));
+        fprintf (stderr, (_("\t -h        : print this help message and exit.\n\n")));
+        fprintf (stderr, (_("\t --verbose \n")));
+        fprintf (stderr, (_("\t -v        : log messages, be verbose.\n\n")));
+        fprintf (stderr, (_("\t --silent \n")));
+        fprintf (stderr, (_("\t --quiet \n")));
+        fprintf (stderr, (_("\t -q        : do not log messages, overrides --verbose.\n\n")));
+        fprintf (stderr, (_("\t --version \n")));
+        fprintf (stderr, (_("\t -V        : print the version information and exit.\n\n")));
+        fprintf (stderr, (_("\t --format <fpw_footprintwizard filename> \n")));
+        fprintf (stderr, (_("\t -f <fpw_footprintwizard filename>\n\n")));
+        fprintf (stderr, (_("\t --output <footprint name> \n")));
+        fprintf (stderr, (_("\t -o <footprint name>\n\n")));
+        fprintf (stderr, (_("\t --debug \n")));
+        fprintf (stderr, (_("\t -d        : turn on debugging output messages.\n\n")));
+        return (EXIT_SUCCESS);
+}
+
+
+/*!
  * \brief The GTK GUI for the footprintwizard.
  *
  * \return 0 if successful.
