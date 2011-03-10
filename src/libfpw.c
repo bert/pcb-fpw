@@ -35,10 +35,16 @@
 #  include <config.h>
 #endif
 
-#include <gtk/gtk.h>
-#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
 #include <math.h>
 #include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <gdk/gdkkeysyms.h>
+#include <gtk/gtk.h>
+#include <glib.h>
 
 #include "globals.h"
 #include "pcb_globals.h"

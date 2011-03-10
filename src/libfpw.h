@@ -1,7 +1,7 @@
 /*!
  * \file src/libfpw.h
  *
- * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for libfpw, contains helper functions for both
  * fpw (CLI) and pcb-gfpw (GUI) versions of the pcb FootPrintWizard.
@@ -157,7 +157,7 @@ int write_rectangle
 );
 int
 write_footprintwizard_file (gchar *fpw_filename);
-int write_footprint();
+int write_footprint ();
 
 
 #endif /* __LIBFPW_INCLUDED__ */
