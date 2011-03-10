@@ -349,7 +349,10 @@ gboolean z2_state = FALSE;
         /*!< State of the left to right outer-outer distance radiobutton. */
 gdouble z2;
         /*!< Left to right pads outer-outer distance. */
-
+gchar *temp_dir;
+        /*!< Temporary directory. */
+gchar *work_dir;
+        /*!< Current working directory. */
 gchar *dummy = NULL;
         /*!< Every now and then the village-idot is needed ;-) */
 
