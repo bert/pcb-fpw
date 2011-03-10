@@ -1,6 +1,6 @@
 Summary:	FootPrintWizard for pcb.
 Name:	pcb-fpw
-Version:	0.0.10
+Version:	0.0.11
 Release:	0%{?dist}
 License:	GPLv2
 Group:	Applications/Engineering
@@ -98,6 +98,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc /usr/local/share/man/man1/
 
 %changelog
+* Thu Mar 10 2011 Bert Timmerman <bert.timmerman@xs4all.nl>
+  Updated for Fedora Core 13 / pcb-fpw-0.0.11.
+
 * Sun Jan 16 2011 Bert Timmerman <bert.timmerman@xs4all.nl>
   Updated for Fedora Core 13 / pcb-fpw-0.0.10.
 
