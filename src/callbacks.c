@@ -53,10 +53,6 @@ gboolean main_window_title_has_asterisk = FALSE;
 gboolean fpw_file_saved = FALSE;
         /*!< Keep track whether the FootPrintWizard file is saved, and thus
          * has a valid filename. */
-gchar *temp_dir = NULL;
-        /*!< Temporary directory from the GUI filechooser. */
-gchar *work_dir = NULL;
-        /*!< Working directory. */
 
 
 /*!
