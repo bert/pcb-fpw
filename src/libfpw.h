@@ -35,6 +35,12 @@
 #define __LIBFPW_INCLUDED__
 
 
+AttributeTypePtr create_new_attribute (AttributeListTypePtr list, char *name, char *value);
+
+ElementTypePtr current_element;
+
+GList *packages_list;
+
 ElementTypePtr create_attributes_in_element (ElementTypePtr element);
 ArcTypePtr create_new_arc 
 (
