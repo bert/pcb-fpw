@@ -35,7 +35,7 @@ create_about_dialog (void)
     NULL
   };
   /* TRANSLATORS: Replace this string with your names, one name per line. */
-  gchar *translators = "Bert Timmerman (nl)";
+  gchar *translators = "Bert Timmerman (nl, de)";
   GdkPixbuf *about_dialog_logo_pixbuf;
 
   about_dialog = gtk_about_dialog_new ();
