@@ -97,6 +97,9 @@ create_about_dialog (int argc, char **argv)
         Widget about_dialog_license_button;
         Widget about_dialog_close_button;
         Widget about_dialog_label;
+        Pixmap splash_pixmap;
+        Pixmap shape;
+        XpmAttributes attributes;
         XmString xmstrings[10];
         XmFontList fontlist;
 
@@ -141,6 +144,15 @@ create_about_dialog (int argc, char **argv)
                 about_dialog,
                 args,
                 n
+        );
+        XpmReadFileToPixmap
+        (
+                XtDisplay (about_dialog),
+                RootWindowOfScreen (XtScreen (about_dialog_drawing_area)),
+                "pixmaps/splash_wiz.xpm",
+                &splash_pixmap,
+                &shape,
+                &attributes
         );
         /* Create a frame around the drawing area. */
         n = 0;
