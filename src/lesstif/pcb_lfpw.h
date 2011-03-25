@@ -32,19 +32,40 @@
 
 
 char *fpw_filename = NULL;
-        /*!< Global for storing the curent fpw filename. */
+        /*!< global variable for storing the current fpw filename. */
 char *program_name = NULL;
-        /*!< Global for remembering how we are called today. */
+        /*!< global variable for remembering how we are called today. */
 Boolean debug = 0;
-        /*!< Global for being verbose on debugging information. */
+        /*!< global variable for being verbose on debugging information. */
 Boolean silent = 0;
-        /*!< Global for suppressing the logging of critical messages. */
+        /*!< global variable for suppressing the logging of critical messages. */
 Boolean verbose = 0;
-        /*!< Global for being verbose on logging of information. */
-XtAppContext pcb_lfpw_app_context;
+        /*!< global variable for being verbose on logging of information. */
+XtAppContext lfpw_app_context;
+        /*!< variable for storing the application context. */
+Display *lfpw_display;
+        /*!< global variable (pointer) to the display. */
+int lfpw_screen;
+int nTextScreen;
+int nGraphicsScreen;
+int NumScrns;
+int lfpw_root_window;
+int lfpw_screen_width;
+int lfpw_screen_height;
+unsigned long white_pixel;
+unsigned long black_pixel;
+Colormap DefaultColorMap;
+int NumDisplayCells;
+int ScreenDepth;
+Visual * ScrnVisual;
 
+Dimension lfpw_main_x;
+Dimension lfpw_main_y;
+Dimension lfpw_main_width;
+Dimension lfpw_main_height;
 
 int lfpw_cmdline_options (int argc, char *argv[]);
+int lfpw_print_debug_info (int argc, char **argv);
 int lfpw_print_usage (void);
 int lfpw_print_version (void);
 

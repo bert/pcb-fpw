@@ -105,7 +105,7 @@ create_about_dialog (int argc, char **argv)
 
         about_dialog = XtVaAppInitialize
         (
-                &pcb_lfpw_app_context,
+                &lfpw_app_context,
                 "about dialog",
                 NULL,
                 0,

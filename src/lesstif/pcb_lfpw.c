@@ -92,13 +92,14 @@ lfpw_cmdline_options (int argc, char *argv[])
                 {
                         case 'd':
                                 debug = TRUE;
+                                lfpw_print_debug_info (argc, argv);
                                 break;
                         case 'h':
                                 lfpw_print_usage ();
-                                exit (EXIT_SUCCESS);
+                                exit (EXIT_FAILURE);
                         case 'V':
                                 lfpw_print_version ();
-                                exit (EXIT_SUCCESS);
+                                exit (EXIT_FAILURE);
                         case 'v':
                                 verbose = TRUE;
                                 break;
@@ -119,6 +120,39 @@ lfpw_cmdline_options (int argc, char *argv[])
         {
                 lfpw_print_usage ();
                 exit (EXIT_FAILURE);
+        }
+        return (EXIT_SUCCESS);
+}
+
+
+/*!
+ * \brief Print debug information obtained from the X Window system.
+ *
+ * \return \c EXIT_SUCCESS.
+ */
+int
+lfpw_print_debug_info (int argc, char **argv)
+{
+        if (debug)
+        {
+                fprintf (stderr, "      Number of screens: %d\n",
+                        NumScrns );
+                fprintf (stderr, "            Text screen: screen %d\n",
+                        nTextScreen );
+                fprintf (stderr, "        Graphics screen: screen %d\n",
+                        nGraphicsScreen );
+                fprintf (stderr, "                 Screen: %d x %d\n",
+                        lfpw_screen_width, lfpw_screen_height );
+                fprintf (stderr, "                  Depth: %d\n",
+                        ScreenDepth );
+                fprintf (stderr, "Number of Display Cells: %d\n",
+                        NumDisplayCells );
+                fprintf (stderr, "            Visual mode: %s\n",
+                        ScrnVisual ? ScrnVisual : (Visual *)"NULL" );
+                fprintf (stderr, "            Window size: %d x %d\n",
+                        lfpw_main_width, lfpw_main_height );
+                fprintf (stderr, "          Window corner: (%d, %d)\n",
+                        lfpw_main_x, lfpw_main_y );
         }
         return (EXIT_SUCCESS);
 }
@@ -175,43 +209,86 @@ int
 main (int argc, char **argv)
 {
         int status;
-        Display *display;
         
         /* get command line options */
         status = lfpw_cmdline_options (argc, argv);
         if (status == 0)
         {
-                /* Initialize toolkit and parse command line options. */
+                /* Determine X Window setup*/
                 XtToolkitInitialize ();
                 XtSetLanguageProc (NULL, NULL, NULL);
-                pcb_lfpw_app_context = XtCreateApplicationContext ();
-                display = XtOpenDisplay
-                (
-                        pcb_lfpw_app_context,
-                        NULL,
-                        "pcb-lfpw",
-                        "pcb-fpw",
-                        NULL,
-                        0,
-                        &argc,
-                        argv
-                );
+                lfpw_app_context = XtCreateApplicationContext ();
+                if (debug)
+                {
+                        lfpw_display = XtOpenDisplay
+                        (
+                                lfpw_app_context,
+                                "",
+                                "pcb-lfpw debug-mode",
+                                "pcb-fpw debug-mode",
+                                NULL,
+                                0,
+                                &argc,
+                                argv
+                        );
+                }
+                else
+                {
+                        XtToolkitInitialize ();
+                        XtSetLanguageProc (NULL, NULL, NULL);
+                        lfpw_app_context = XtCreateApplicationContext ();
+                        lfpw_display = XtOpenDisplay
+                        (
+                                lfpw_app_context,
+                                NULL,
+                                "pcb-lfpw",
+                                "pcb-fpw",
+                                NULL,
+                                0,
+                                &argc,
+                                argv
+                        );
+                }
+                lfpw_screen = DefaultScreen (lfpw_display);
+                lfpw_root_window = RootWindow (lfpw_display, lfpw_screen);
+                lfpw_screen_width = XDisplayWidth (lfpw_display, lfpw_screen);
+                lfpw_screen_height = XDisplayHeight (lfpw_display, lfpw_screen);
+                white_pixel = WhitePixel (lfpw_display, lfpw_screen);
+                black_pixel = BlackPixel (lfpw_display, lfpw_screen);
+                DefaultColorMap = XDefaultColormap (lfpw_display, lfpw_screen);
+                NumDisplayCells = XDisplayCells (lfpw_display, lfpw_screen);
+                ScreenDepth = XDefaultDepth (lfpw_display, lfpw_screen);
+                ScrnVisual = XDefaultVisual (lfpw_display, lfpw_screen);
+                NumScrns = XScreenCount (lfpw_display);
+                nTextScreen = lfpw_screen;
+                nGraphicsScreen = lfpw_screen;
+                if (NumScrns > 1)
+                {
+                        nGraphicsScreen = lfpw_screen + 1;
+                }
+                /* Calculate the desired main window geometry. */
+                lfpw_main_x = lfpw_screen_width / 10;
+                lfpw_main_y = lfpw_screen_height / 10;
+                lfpw_main_width = lfpw_screen_width - (lfpw_main_x * 2);
+                lfpw_main_height = lfpw_screen_height - (lfpw_main_y * 3);
+                /* Create application windows and splash screen. */
                 create_main_window (argc, argv);
-                /*! \todo debug with editres */
-/*                XtAddEventHandler
-                (
-                        main_window,
-                        (EventMask) 0,
-                        True,
-                        _XEditResCheckMessages,
-                        NULL
-                );
- */
-                /* Create windows. */
-                create_main_window (argc, argv);
+                /* Debug with editres */
+                if (debug)
+                {
+                        XtAddEventHandler
+                        (
+                                main_window,
+                                (EventMask) 0,
+                                True,
+                                _XEditResCheckMessages,
+                                NULL
+                        );
+                }
+                /* Create application dialog. */
                 create_about_dialog (argc, argv);
                 /* Enter the main loop. */
-                XtAppMainLoop (pcb_lfpw_app_context);
+                XtAppMainLoop (lfpw_app_context);
         };
         return (EXIT_SUCCESS);
 }
