@@ -59,8 +59,16 @@ int change_main_window_title (Widget *widget, char *filename);
 int create_main_window (int argc, char **argv);
 void on_C1_entry_changed (Widget w, XtPointer client_data, XtPointer call_data);
 void on_C1_radiobutton_toggled (Widget w, XtPointer client_data, XtPointer call_data);
+void on_C2_entry_changed (Widget w, XtPointer client_data, XtPointer call_data);
+void on_C2_radiobutton_toggled (Widget w, XtPointer client_data, XtPointer call_data);
+void on_G1_entry_changed (Widget w, XtPointer client_data, XtPointer call_data);
 void on_G1_radiobutton_toggled (Widget w, XtPointer client_data, XtPointer call_data);
+void on_G2_entry_changed (Widget w, XtPointer client_data, XtPointer call_data);
+void on_G2_radiobutton_toggled (Widget w, XtPointer client_data, XtPointer call_data);
+void on_Z1_entry_changed (Widget w, XtPointer client_data, XtPointer call_data);
 void on_Z1_radiobutton_toggled (Widget w, XtPointer client_data, XtPointer call_data);
+void on_Z2_entry_changed (Widget w, XtPointer client_data, XtPointer call_data);
+void on_Z2_radiobutton_toggled (Widget w, XtPointer client_data, XtPointer call_data);
 void on_close_button_clicked (Widget w, XtPointer client_data, XtPointer call_data);
 void show_main_window (int argc, char **argv);
 

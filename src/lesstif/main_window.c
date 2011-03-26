@@ -27,6 +27,11 @@
  */
 
 
+#ifdef HAVE_CONFIG_H
+#  include <config.h>
+#endif
+
+//#include <glib.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
@@ -36,6 +41,7 @@
 #include "util.h"
 #include "pcb_lfpw.h"
 #include "main_window.h"
+//#include "../globals.h"
 
 
 /*!
@@ -300,6 +306,24 @@ create_main_window (int argc, char **argv)
         );
 
 
+        /*! \todo Create a table with two vertical fields. */
+
+        /*! \todo Create a notebook with tabs. */
+
+        /*! \todo Create the "Author" tab. */
+
+        /*! \todo Create the "Footprint" tab. */
+
+        /*! \todo Create the "Pattern" tab. */
+
+        /*! \todo Create the "Pins & Pads" tab. */
+
+        /*! \todo Create the "Silkscreen" tab. */
+
+        /*! \todo Create the "Thermal & Fiducials" tab. */
+
+        /*! \todo Create the "Heel & Toe goals" tab. */
+
         /* Create the "Top to Bottom" frame. */
         xmstrings[0] = XmStringCreateSimple ("Top to Bottom");
         n = 0;
@@ -312,7 +336,7 @@ create_main_window (int argc, char **argv)
         stdarg (XmNtitle, xmstrings[0]);
         top_to_bottom_frame = XmCreateFrame
         (
-                main_window,
+                main_window, /*! \todo Use the correct widget. */
                 "top_to_bottom_frame",
                 args,
                 n
@@ -337,7 +361,7 @@ create_main_window (int argc, char **argv)
         stdarg (XmNleftOffset, WIDGET_LEFT_OFFSET);
         stdarg (XmNrightOffset, WIDGET_TOP_OFFSET);
         stdarg (XmNbottomOffset, WIDGET_LEFT_OFFSET);
-        
+        /*! \todo Add code here. */
         top_to_bottom_table = XmCreateForm
         (
                 top_to_bottom_frame,
@@ -360,7 +384,7 @@ create_main_window (int argc, char **argv)
                 args,
                 n
         );
-        XtManageChild(G1_radiobutton_group);
+        XtManageChild (G1_radiobutton_group);
         /* Create the "C1" radiobutton. */
         xmstrings[0] = XmStringCreateSimple ("Center-Center (C1)");
         n = 0;
@@ -377,7 +401,7 @@ create_main_window (int argc, char **argv)
                 args,
                 n
         );
-       XtAddCallback
+        XtAddCallback
         (
                 C1_radiobutton,
                 XmCArmCallback, 
@@ -458,6 +482,14 @@ create_main_window (int argc, char **argv)
                 args,
                 n
         );
+        XtAddCallback
+        (
+                C1_entry,
+                XmNvalueChangedCallback, 
+                on_C1_entry_changed,
+                NULL
+        );
+        XtManageChild (C1_entry);
         /* Create the "G1" entry. */
         n = 0;
         stdarg (XmNfontList, fontlist);
@@ -474,6 +506,14 @@ create_main_window (int argc, char **argv)
                 args,
                 n
         );
+        XtAddCallback
+        (
+                G1_entry,
+                XmNvalueChangedCallback, 
+                on_G1_entry_changed,
+                NULL
+        );
+        XtManageChild (G1_entry);
         /* Create the "Z1" entry. */
         n = 0;
         stdarg (XmNfontList, fontlist);
@@ -490,6 +530,229 @@ create_main_window (int argc, char **argv)
                 args,
                 n
         );
+        XtAddCallback
+        (
+                Z1_entry,
+                XmNvalueChangedCallback, 
+                on_Z1_entry_changed,
+                NULL
+        );
+        XtManageChild (Z1_entry);
+        /* Create the "Left to Right" frame. */
+        xmstrings[0] = XmStringCreateSimple ("Left to Right");
+        n = 0;
+        stdarg (XmNfontList, fontlist);
+        stdarg (XmNmarginWidth, FRAME_MARGIN_WIDTH);
+        stdarg (XmNmarginHeight,FRAME_MARGIN_HEIGHT );
+        stdarg (XmNshadowType, XmSHADOW_IN);
+        stdarg (XmNchildType, XmFRAME_TITLE_CHILD);
+        stdarg (XmNchildHorizontalAlignment, XmALIGNMENT_BEGINNING);
+        stdarg (XmNtitle, xmstrings[0]);
+        left_to_right_frame =XmCreateFrame
+        (
+                main_window, /*! \todo Use the correct widget. */
+                "left_to_right_frame",
+                args,
+                n
+        );
+        /* Create the "Left to Right" label. */
+        xmstrings[0] = XmStringCreateSimple ("Left to Right");
+        n = 0;
+        stdarg (XmNfontList, fontlist);
+        stdarg (XmNlabelType, XmSTRING);
+        stdarg (XmNalignment, XmALIGNMENT_BEGINNING);
+        stdarg (XmNlabelString, xmstrings[0]);
+        left_to_right_label = XmCreateLabel
+        (
+                left_to_right_frame,
+                "left_to_right_label",
+                args,
+                n
+        );
+        /* Create the "Left to Right" table (actually a XmForm). */
+        n = 0; 
+        stdarg (XmNtopOffset, WIDGET_TOP_OFFSET);
+        stdarg (XmNleftOffset, WIDGET_LEFT_OFFSET);
+        stdarg (XmNrightOffset, WIDGET_TOP_OFFSET);
+        stdarg (XmNbottomOffset, WIDGET_LEFT_OFFSET);
+        /*! \todo Add code here. */
+        left_to_right_table = XmCreateForm
+        (
+                left_to_right_frame,
+                "left_to_right_table",
+                args,
+                n
+        );
+        /* Create the "G2" radiobuttongroup. */
+        n = 0; 
+        stdarg (XmNpacking, XmPACK_COLUMN);
+        stdarg (XmNtopAttachment, XmATTACH_FORM);
+        stdarg (XmNleftAttachment, XmATTACH_FORM);
+        stdarg (XmNbottomAttachment, XmATTACH_FORM);
+        stdarg (XmNtopOffset, WIDGET_TOP_OFFSET);
+        stdarg (XmNleftOffset, WIDGET_LEFT_OFFSET);
+        G2_radiobutton_group = (Widget) XmCreateRadioBox
+        (
+                left_to_right_table,
+                "G2_radiobutton_group",
+                args,
+                n
+        );
+        XtManageChild(G2_radiobutton_group);
+        /* Create the "C2" radiobutton. */
+        xmstrings[0] = XmStringCreateSimple ("Center-Center (C2)");
+        n = 0;
+        stdarg (XmNfontList, fontlist);
+        stdarg (XmNlabelString, xmstrings[0]);
+        stdarg (XmNindicatorOn, TRUE);
+        stdarg (XmNindicatorType, XmONE_OF_MANY);
+        stdarg (XmNset, FALSE);
+        C2_radiobutton = XtCreateManagedWidget
+        (
+                "C2_radiobutton",
+                xmToggleButtonWidgetClass,
+                G2_radiobutton_group,
+                args,
+                n
+        );
+        XtAddCallback
+        (
+                C2_radiobutton,
+                XmCArmCallback, 
+                on_C2_radiobutton_toggled,
+                NULL
+        );
+         XmStringFree (xmstrings[0]);
+        /* Create the "G2" radiobutton. */
+        xmstrings[0] = XmStringCreateSimple ("Inner-Inner (G2)");
+        n = 0;
+        stdarg (XmNfontList, fontlist);
+        stdarg (XmNlabelString, xmstrings[0]);
+        stdarg (XmNindicatorOn, TRUE);
+        stdarg (XmNindicatorType, XmONE_OF_MANY);
+        stdarg (XmNset, TRUE);
+        G2_radiobutton = XtCreateManagedWidget
+        (
+                "G2_radiobutton",
+                xmToggleButtonWidgetClass,
+                G2_radiobutton_group,
+                args,
+                n
+        );
+        XtAddCallback
+        (
+                G2_radiobutton,
+                XmCArmCallback, 
+                on_G2_radiobutton_toggled,
+                NULL
+        );
+        XmStringFree (xmstrings[0]);
+        /* Create the "Z2" radiobutton. */
+        xmstrings[0] = XmStringCreateSimple ("Outer-Outer (Z2)");
+        n = 0;
+        stdarg (XmNfontList, fontlist);
+        stdarg (XmNlabelString, xmstrings[0]);
+        stdarg (XmNindicatorOn, TRUE);
+        stdarg (XmNindicatorType, XmONE_OF_MANY);
+        stdarg (XmNset, FALSE);
+        Z2_radiobutton = XtCreateManagedWidget
+        (
+                "Z1_radiobutton",
+                xmToggleButtonWidgetClass,
+                G2_radiobutton_group,
+                args,
+                n
+        );
+        XtAddCallback
+        (
+                Z2_radiobutton,
+                XmCArmCallback, 
+                on_Z2_radiobutton_toggled,
+                NULL
+        );
+        XmStringFree (xmstrings[0]);
+        /* Create the "C2" entry. */
+        n = 0;
+        stdarg (XmNfontList, fontlist);
+        stdarg (XmNtopAttachment, XmATTACH_WIDGET);
+        stdarg (XmNtopWidget, left_to_right_table);
+        stdarg (XmNleftAttachment, XmATTACH_WIDGET);
+        stdarg (XmNleftWidget, G2_radiobutton_group);
+        stdarg (XmNrightAttachment, XmATTACH_WIDGET);
+        stdarg (XmNrightWidget, left_to_right_table);
+        stdarg (XmNbottomAttachment, XmATTACH_WIDGET);
+        stdarg (XmNbottomWidget, left_to_right_table);
+        stdarg (XmNtopOffset, WIDGET_TOP_OFFSET);
+        stdarg (XmNleftOffset, WIDGET_LEFT_OFFSET);
+        stdarg (XmNeditable, TRUE);
+        stdarg (XmNeditMode, XmSINGLE_LINE_EDIT);
+        stdarg (XmNmaxLength, ENTRY_DOUBLE_MAX_LENGTH);
+        stdarg (XmNmarginHeight, ENTRY_MARGIN_HEIGHT);
+        stdarg (XmNmarginWidth, ENTRY_MARGIN_WIDTH);
+        C2_entry = XmCreateTextField
+        (
+                main_window,
+                "C2_entry",
+                args,
+                n
+        );
+        XtAddCallback
+        (
+                C2_entry,
+                XmNvalueChangedCallback, 
+                on_C2_entry_changed,
+                NULL
+        );
+        XtManageChild (C2_entry);
+        /* Create the "G2" entry. */
+        n = 0;
+        stdarg (XmNfontList, fontlist);
+        stdarg (XmNtopAttachment, XmATTACH_WIDGET);
+        stdarg (XmNtopWidget, C2_entry);
+        stdarg (XmNleftAttachment, XmATTACH_WIDGET);
+        stdarg (XmNleftWidget, G2_radiobutton_group);
+        stdarg (XmNtopOffset, WIDGET_TOP_OFFSET);
+        stdarg (XmNleftOffset, WIDGET_LEFT_OFFSET);
+        G2_entry = XmCreateTextField
+        (
+                main_window,
+                "G2_entry",
+                args,
+                n
+        );
+        XtAddCallback
+        (
+                G2_entry,
+                XmNvalueChangedCallback, 
+                on_G2_entry_changed,
+                NULL
+        );
+        XtManageChild (G2_entry);
+        /* Create the "Z2" entry. */
+        n = 0;
+        stdarg (XmNfontList, fontlist);
+        stdarg (XmNtopAttachment, XmATTACH_WIDGET);
+        stdarg (XmNtopWidget, G2_entry);
+        stdarg (XmNleftAttachment, XmATTACH_WIDGET);
+        stdarg (XmNleftWidget, G2_radiobutton_group);
+        stdarg (XmNtopOffset, WIDGET_TOP_OFFSET);
+        stdarg (XmNleftOffset, WIDGET_LEFT_OFFSET);
+        Z2_entry = XmCreateTextField
+        (
+                main_window,
+                "Z2_entry",
+                args,
+                n
+        );
+        XtAddCallback
+        (
+                Z2_entry,
+                XmNvalueChangedCallback, 
+                on_Z2_entry_changed,
+                NULL
+        );
+        XtManageChild (Z2_entry);
+        /*! \todo Create the button box. */
 
 
 
@@ -521,6 +784,14 @@ on_C1_entry_changed
         XtPointer call_data
 )
 {
+        double c1;
+        const char C1_string;
+        char *leftovers;
+        n = 0;
+        stdarg (XmNvalue, C1_string);
+        XtGetValues (w, args, n);
+        c1 = g_ascii_strtod (C1_string, &leftovers);
+
 }
 
 
@@ -552,6 +823,96 @@ on_C1_radiobutton_toggled
 
 
 /*!
+ * \brief The "left to right pads/pins center-center distance (C2)"
+ * entry is changed.
+ *
+ * Actions: \n
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert the chars to a double and store in the \c c2 variable
+ * (global).
+ * </ul>
+ * \n
+ * <b>Returns:</b> none.
+ */
+void
+on_C2_entry_changed
+(
+        Widget w,
+        XtPointer client_data,
+        XtPointer call_data
+)
+{
+        double c2;
+        const char C2_string;
+        char *leftovers;
+        n = 0;
+        stdarg (XmNvalue, C2_string);
+        XtGetValues (w, args, n);
+        c2 = g_ascii_strtod (C2_string, &leftovers);
+}
+
+
+/*!
+ * \brief The "left to right pads/pins center-center distance (C2)"
+ * radiobutton is clicked.
+ *
+ * Actions: \n
+ * <ul>
+ * <li>set the inner-inner (C2) entry to sensitive.
+ * <li>set the center-center (G2) entry to insensitive.
+ * <li>set the outer-outer (Z2) entry to insensitive.
+ * </ul>
+ * \n
+ * <b>Returns:</b> none.
+ */
+void
+on_C2_radiobutton_toggled
+(
+        Widget w,
+                /*!< \c w is the caller widget.\n */
+        XtPointer client_data,
+                /*!< \c *client_data is the ...\n */
+        XtPointer call_data
+                /*!< \c *call_data is the ...\n */
+)
+{
+}
+
+
+/*!
+ * \brief The "top to bottom pads/pins inner-inner distance (G1)"
+ * entry is changed.
+ *
+ * Actions: \n
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert the chars to a double and store in the \c g1 variable
+ * (global).
+ * </ul>
+ * \n
+ * <b>Returns:</b> none.
+ */
+void
+on_G1_entry_changed
+(
+        Widget w,
+        XtPointer client_data,
+        XtPointer call_data
+)
+{
+        double g1;
+        const char G1_string;
+        char *leftovers;
+        n = 0;
+        stdarg (XmNvalue, G1_string);
+        XtGetValues (w, args, n);
+        g1 = g_ascii_strtod (G1_string, &leftovers);
+
+}
+
+
+/*!
  * \brief The top to bottom pads/pins inner-inner distance (G1)
  * radiobutton is clicked.
  *
@@ -579,6 +940,97 @@ on_G1_radiobutton_toggled
 
 
 /*!
+ * \brief The "left to right pads/pins inner-inner distance (G2)"
+ * entry is changed.
+ *
+ * Actions: \n
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert the chars to a double and store in the \c g2 variable
+ * (global).
+ * </ul>
+ * \n
+ * <b>Returns:</b> none.
+ */
+void
+on_G2_entry_changed
+(
+        Widget w,
+        XtPointer client_data,
+        XtPointer call_data
+)
+{
+        double g2;
+        const char G2_string;
+        char *leftovers;
+        n = 0;
+        stdarg (XmNvalue, G2_string);
+        XtGetValues (w, args, n);
+        g2 = g_ascii_strtod (G2_string, &leftovers);
+
+}
+
+
+/*!
+ * \brief The left to right pads/pins inner-inner distance (G2)
+ * radiobutton is clicked.
+ *
+ * Actions: \n
+ * <ul>
+ * <li>set the inner-inner (G2) entry to sensitive.
+ * <li>set the center-center (C2) entry to insensitive.
+ * <li>set the outer-outer (Z2) entry to insensitive.
+ * </ul>
+ * \n
+ * <b>Returns:</b> none.
+ */
+void
+on_G2_radiobutton_toggled
+(
+        Widget w,
+                /*!< \c w is the caller widget.\n */
+        XtPointer client_data,
+                /*!< \c *client_data is the ...\n */
+        XtPointer call_data
+                /*!< \c *call_data is the ...\n */
+)
+{
+}
+
+
+/*!
+ * \brief The "top to bottom pads/pins outer-outer distance (Z1)"
+ * entry is changed.
+ *
+ * Actions: \n
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert the chars to a double and store in the \c z1 variable
+ * (global).
+ * </ul>
+ * \n
+ * <b>Returns:</b> none.
+ */
+void
+on_Z1_entry_changed
+(
+        Widget w,
+        XtPointer client_data,
+        XtPointer call_data
+)
+{
+        double z1;
+        const char Z1_string;
+        char *leftovers;
+        n = 0;
+        stdarg (XmNvalue, Z1_string);
+        XtGetValues (w, args, n);
+        z1 = g_ascii_strtod (Z1_string, &leftovers);
+
+}
+
+
+/*!
  * \brief The top to bottom pads/pins outer-outer (Z1) radiobutton
  * is clicked.
  *
@@ -593,6 +1045,65 @@ on_G1_radiobutton_toggled
  */
 void
 on_Z1_radiobutton_toggled
+(
+        Widget w,
+                /*!< \c w is the caller widget.\n */
+        XtPointer client_data,
+                /*!< \c *client_data is the ...\n */
+        XtPointer call_data
+                /*!< \c *call_data is the ...\n */
+)
+{
+}
+
+
+/*!
+ * \brief The "left to right pads/pins outer-outer distance (Z2)"
+ * entry is changed.
+ *
+ * Actions: \n
+ * <ul>
+ * <li>get the chars from the entry.
+ * <li>convert the chars to a double and store in the \c z1 variable
+ * (global).
+ * </ul>
+ * \n
+ * <b>Returns:</b> none.
+ */
+void
+on_Z2_entry_changed
+(
+        Widget w,
+        XtPointer client_data,
+        XtPointer call_data
+)
+{
+        double z2;
+        const char Z2_string;
+        char *leftovers;
+        n = 0;
+        stdarg (XmNvalue, Z2_string);
+        XtGetValues (w, args, n);
+        z2 = g_ascii_strtod (Z2_string, &leftovers);
+
+}
+
+
+/*!
+ * \brief The left to right pads/pins outer-outer (Z2) radiobutton
+ * is clicked.
+ *
+ * Actions: \n
+ * <ul>
+ * <li>set the outer-outer (Z2) entry to sensitive.
+ * <li>set the center-center (C2) entry to insensitive.
+ * <li>set the inner-inner (G2) entry to insensitive.
+ * </ul>
+ * \n
+ * <b>Returns:</b> none.
+ */
+void
+on_Z2_radiobutton_toggled
 (
         Widget w,
                 /*!< \c w is the caller widget.\n */
