@@ -31,15 +31,15 @@
 #define __PCB_LFPW_H_INCLUDED__
 
 
-char *fpw_filename = NULL;
+char fpw_filename;
         /*!< global variable for storing the current fpw filename. */
-char *program_name = NULL;
+char program_name;
         /*!< global variable for remembering how we are called today. */
-Boolean debug = 0;
+Boolean debug;
         /*!< global variable for being verbose on debugging information. */
-Boolean silent = 0;
+Boolean silent;
         /*!< global variable for suppressing the logging of critical messages. */
-Boolean verbose = 0;
+Boolean verbose;
         /*!< global variable for being verbose on logging of information. */
 XtAppContext lfpw_app_context;
         /*!< variable for storing the application context. */
