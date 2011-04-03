@@ -54,7 +54,8 @@
 #include <Xm/MainW.h>
 #include <Xm/MenuShell.h>
 #include <Xm/MessageB.h>
-#include <Xm/MwmUtil.h> 
+#include <Xm/MwmUtil.h>
+#include <Xm/Notebook.h>
 #include <Xm/Protocols.h>
 #include <Xm/PushB.h>
 #include <Xm/RowColumn.h>
