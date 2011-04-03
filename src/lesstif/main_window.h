@@ -52,7 +52,7 @@
 #define WIDGET_RIGHT_OFFSET 30
         /*!< in pixels */
 
-Widget main_window = NULL;
+Widget main_window;
         /*!< global main pcb-lfpw window */
 
 int change_main_window_title (Widget *widget, char *filename);
