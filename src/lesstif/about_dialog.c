@@ -91,6 +91,7 @@ on_about_dialog_license_button_clicked (Widget w, XtPointer client_data, XtPoint
 int
 create_about_dialog (int argc, char **argv)
 {
+        Widget about_dialog_top_level;
         Widget about_dialog_drawing_area;
         Widget about_dialog_frame;
         Widget about_dialog_credits_button;
@@ -101,19 +102,22 @@ create_about_dialog (int argc, char **argv)
         Pixmap shape;
         XpmAttributes attributes;
         XmString xmstrings[10];
-        XmFontList fontlist;
 
-        about_dialog = XtVaAppInitialize
+        /* Create a toplevel widget. */
+        XtSetLanguageProc (NULL, NULL, NULL);
+        about_dialog_top_level = XtVaAppInitialize
         (
                 &lfpw_app_context,
-                "about dialog",
+                "About dialog",
                 NULL,
                 0,
                 &argc,
                 argv,
+                NULL,
+                XmNwidth,  300,
+                XmNheight, 500,
                 NULL
         );
-        fontlist = get_fontlist (main_window, "-adobe-helvetica-bold-r-normal--14-140-75-75-p-82-iso8859-1");
         /* Create a BulletinBoard type dialog. */
         n = 0;
         stdarg (XmNtitle, "About pcb-lfpw");
@@ -126,17 +130,18 @@ create_about_dialog (int argc, char **argv)
                 MWM_FUNC_MINIMIZE |
                 MWM_FUNC_MAXIMIZE
         );
-        stdarg (XmNbackground, get_pixel (main_window, "gray"));
-        about_dialog = XmCreateBulletinBoardDialog
+        stdarg (XmNbackground, get_pixel (about_dialog_top_level, "gray"));
+        about_dialog = XtCreateManagedWidget
         (
-                main_window,
                 "about_dialog",
+                xmMainWindowWidgetClass,
+                about_dialog_top_level,
                 args,
                 n
         );
         /* Create a drawing area. */
         n = 0;
-        stdarg (XmNbackground, get_pixel (main_window, "gray"));
+        stdarg (XmNbackground, get_pixel (about_dialog_top_level, "gray"));
         about_dialog_drawing_area = XtCreateManagedWidget
         (
                 "about_dialog_drawing_area",
@@ -147,7 +152,7 @@ create_about_dialog (int argc, char **argv)
         );
         XpmReadFileToPixmap
         (
-                XtDisplay (about_dialog),
+                XtDisplay (lfpw_display),
                 RootWindowOfScreen (XtScreen (about_dialog_drawing_area)),
                 "pixmaps/splash_wiz.xpm",
                 &splash_pixmap,
@@ -171,7 +176,6 @@ create_about_dialog (int argc, char **argv)
         n = 0;
         stdarg (XmNforeground, get_pixel (main_window, "black"));
         stdarg (XmNbackground, get_pixel (main_window, "gray"));
-        stdarg (XmNfontList, fontlist);
         stdarg (XmNlabelString, xmstrings[0]);
         stdarg (XmNshowAsDefault, 1);
         stdarg (XmNy, 200);
@@ -197,7 +201,6 @@ create_about_dialog (int argc, char **argv)
         n = 0;
         stdarg (XmNforeground, get_pixel (main_window, "black"));
         stdarg (XmNbackground, get_pixel (main_window, "gray"));
-        stdarg (XmNfontList, fontlist);
         stdarg (XmNlabelString, xmstrings[0]);
         stdarg (XmNshowAsDefault, 1);
         stdarg (XmNy, 200);
@@ -223,7 +226,6 @@ create_about_dialog (int argc, char **argv)
         n = 0;
         stdarg (XmNforeground, get_pixel (main_window, "black"));
         stdarg (XmNbackground, get_pixel (main_window, "gray"));
-        stdarg (XmNfontList, fontlist);
         stdarg (XmNlabelString, xmstrings[0]);
         stdarg (XmNshowAsDefault, 1);
         stdarg (XmNy, 200);
@@ -255,7 +257,6 @@ create_about_dialog (int argc, char **argv)
         stdarg (XmNforeground, get_pixel (main_window, "black"));
         stdarg (XmNbackground, get_pixel (main_window, "gray"));
         stdarg (XmNlabelString, xmstrings[0]);
-        stdarg (XmNfontList, fontlist);
         about_dialog_label = XtCreateManagedWidget
         (
                 "about_dialog_label",
@@ -267,8 +268,6 @@ create_about_dialog (int argc, char **argv)
         XmStringFree (xmstrings[0]);
         /* Realize the about dialog. */
         XtRealizeWidget (about_dialog);
-        /* Clean up. */
-        XmFontListFree (fontlist);
         return (EXIT_SUCCESS);
 
 }
