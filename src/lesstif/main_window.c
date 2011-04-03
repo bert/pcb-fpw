@@ -31,7 +31,6 @@
 #  include <config.h>
 #endif
 
-//#include <glib.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
@@ -41,7 +40,6 @@
 #include "util.h"
 #include "pcb_lfpw.h"
 #include "main_window.h"
-//#include "../globals.h"
 
 
 /*!
@@ -100,7 +98,6 @@ create_main_window (int argc, char **argv)
 {
         char title[124];
         XmString xmstrings[10];
-        XmFontList fontlist;
         Widget vbox;
         Widget hbox;
         Widget notebook;
@@ -243,11 +240,14 @@ create_main_window (int argc, char **argv)
         Widget top_to_bottom_alignment;
         Widget top_to_bottom_table;
         Widget G1_radiobutton_group;
-        Widget G1_radiobutton;
+        Widget C1_form;
         Widget C1_radiobutton;
-        Widget Z1_radiobutton;
-        Widget G1_entry;
         Widget C1_entry;
+        Widget G1_form;
+        Widget G1_radiobutton;
+        Widget G1_entry;
+        Widget Z1_form;
+        Widget Z1_radiobutton;
         Widget Z1_entry;
         Widget top_to_bottom_label;
         Widget left_to_right_frame;
@@ -297,19 +297,20 @@ create_main_window (int argc, char **argv)
                 argv,
                 NULL
         );
-        /* Create a single fontlist for all widgets to get a consistent
-         * look for the UI. */
-        fontlist = get_fontlist
-        (
-                main_window,
-                "-adobe-helvetica-bold-r-normal--14-140-75-75-p-82-iso8859-1"
-        );
 
 
         /*! \todo Create a table with two vertical fields. */
 
         /*! \todo Create a notebook with tabs. */
-
+        n = 0;
+        notebook = XmCreateNotebook
+        (
+                main_window, /*! \todo Use the correct widget. */
+                "notebook",
+                args,
+                n
+        );
+        XtManageChild (notebook);
         /*! \todo Create the "Author" tab. */
 
         /*! \todo Create the "Footprint" tab. */
@@ -324,13 +325,14 @@ create_main_window (int argc, char **argv)
 
         /*! \todo Create the "Heel & Toe goals" tab. */
 
+        /*! \todo Create the "Heel & Toe goals" form. */
+
         /* Create the "Top to Bottom" frame. */
         xmstrings[0] = XmStringCreateSimple ("Top to Bottom");
         n = 0;
-        stdarg (XmNfontList, fontlist);
         stdarg (XmNmarginWidth, FRAME_MARGIN_WIDTH);
         stdarg (XmNmarginHeight,FRAME_MARGIN_HEIGHT );
-        stdarg (XmNshadowType, XmSHADOW_IN);
+        stdarg (XmNshadowType, XmSHADOW_ETCHED_IN);
         stdarg (XmNchildType, XmFRAME_TITLE_CHILD);
         stdarg (XmNchildHorizontalAlignment, XmALIGNMENT_BEGINNING);
         stdarg (XmNtitle, xmstrings[0]);
@@ -344,31 +346,33 @@ create_main_window (int argc, char **argv)
         /* Create the "Top to Bottom" label. */
         xmstrings[0] = XmStringCreateSimple ("Top to Bottom");
         n = 0;
-        stdarg (XmNfontList, fontlist);
         stdarg (XmNlabelType, XmSTRING);
         stdarg (XmNalignment, XmALIGNMENT_BEGINNING);
         stdarg (XmNlabelString, xmstrings[0]);
-        top_to_bottom_label = XmCreateLabel
+        top_to_bottom_label = XmCreateLabelGadget
         (
                 top_to_bottom_frame,
                 "top_to_bottom_label",
                 args,
                 n
         );
-        /* Create the "Top to Bottom" table (actually a XmForm). */
+        XtManageChild (top_to_bottom_label);
+        /* Create the "Top to Bottom" table (actually a XmRowColumn). */
         n = 0; 
         stdarg (XmNtopOffset, WIDGET_TOP_OFFSET);
         stdarg (XmNleftOffset, WIDGET_LEFT_OFFSET);
         stdarg (XmNrightOffset, WIDGET_TOP_OFFSET);
         stdarg (XmNbottomOffset, WIDGET_LEFT_OFFSET);
+        stdarg (XmNspacing, 3);
         /*! \todo Add code here. */
-        top_to_bottom_table = XmCreateForm
+        top_to_bottom_table = XmCreateRowColumn
         (
                 top_to_bottom_frame,
                 "top_to_bottom_table",
                 args,
                 n
         );
+        XtManageChild (top_to_bottom_frame);
         /* Create the "G1" radiobuttongroup. */
         n = 0; 
         stdarg (XmNpacking, XmPACK_COLUMN);
@@ -388,7 +392,6 @@ create_main_window (int argc, char **argv)
         /* Create the "C1" radiobutton. */
         xmstrings[0] = XmStringCreateSimple ("Center-Center (C1)");
         n = 0;
-        stdarg (XmNfontList, fontlist);
         stdarg (XmNlabelString, xmstrings[0]);
         stdarg (XmNindicatorOn, TRUE);
         stdarg (XmNindicatorType, XmONE_OF_MANY);
@@ -408,11 +411,10 @@ create_main_window (int argc, char **argv)
                 on_C1_radiobutton_toggled,
                 NULL
         );
-         XmStringFree (xmstrings[0]);
+        XmStringFree (xmstrings[0]);
         /* Create the "G1" radiobutton. */
         xmstrings[0] = XmStringCreateSimple ("Inner-Inner (G1)");
         n = 0;
-        stdarg (XmNfontList, fontlist);
         stdarg (XmNlabelString, xmstrings[0]);
         stdarg (XmNindicatorOn, TRUE);
         stdarg (XmNindicatorType, XmONE_OF_MANY);
@@ -436,7 +438,6 @@ create_main_window (int argc, char **argv)
         /* Create the "Z1" radiobutton. */
         xmstrings[0] = XmStringCreateSimple ("Outer-Outer (Z1)");
         n = 0;
-        stdarg (XmNfontList, fontlist);
         stdarg (XmNlabelString, xmstrings[0]);
         stdarg (XmNindicatorOn, TRUE);
         stdarg (XmNindicatorType, XmONE_OF_MANY);
@@ -459,7 +460,6 @@ create_main_window (int argc, char **argv)
         XmStringFree (xmstrings[0]);
         /* Create the "C1" entry. */
         n = 0;
-        stdarg (XmNfontList, fontlist);
         stdarg (XmNtopAttachment, XmATTACH_WIDGET);
         stdarg (XmNtopWidget, top_to_bottom_table);
         stdarg (XmNleftAttachment, XmATTACH_WIDGET);
@@ -492,7 +492,6 @@ create_main_window (int argc, char **argv)
         XtManageChild (C1_entry);
         /* Create the "G1" entry. */
         n = 0;
-        stdarg (XmNfontList, fontlist);
         stdarg (XmNtopAttachment, XmATTACH_WIDGET);
         stdarg (XmNtopWidget, C1_entry);
         stdarg (XmNleftAttachment, XmATTACH_WIDGET);
@@ -516,7 +515,6 @@ create_main_window (int argc, char **argv)
         XtManageChild (G1_entry);
         /* Create the "Z1" entry. */
         n = 0;
-        stdarg (XmNfontList, fontlist);
         stdarg (XmNtopAttachment, XmATTACH_WIDGET);
         stdarg (XmNtopWidget, G1_entry);
         stdarg (XmNleftAttachment, XmATTACH_WIDGET);
@@ -541,7 +539,6 @@ create_main_window (int argc, char **argv)
         /* Create the "Left to Right" frame. */
         xmstrings[0] = XmStringCreateSimple ("Left to Right");
         n = 0;
-        stdarg (XmNfontList, fontlist);
         stdarg (XmNmarginWidth, FRAME_MARGIN_WIDTH);
         stdarg (XmNmarginHeight,FRAME_MARGIN_HEIGHT );
         stdarg (XmNshadowType, XmSHADOW_IN);
@@ -558,7 +555,6 @@ create_main_window (int argc, char **argv)
         /* Create the "Left to Right" label. */
         xmstrings[0] = XmStringCreateSimple ("Left to Right");
         n = 0;
-        stdarg (XmNfontList, fontlist);
         stdarg (XmNlabelType, XmSTRING);
         stdarg (XmNalignment, XmALIGNMENT_BEGINNING);
         stdarg (XmNlabelString, xmstrings[0]);
@@ -602,7 +598,6 @@ create_main_window (int argc, char **argv)
         /* Create the "C2" radiobutton. */
         xmstrings[0] = XmStringCreateSimple ("Center-Center (C2)");
         n = 0;
-        stdarg (XmNfontList, fontlist);
         stdarg (XmNlabelString, xmstrings[0]);
         stdarg (XmNindicatorOn, TRUE);
         stdarg (XmNindicatorType, XmONE_OF_MANY);
@@ -626,7 +621,6 @@ create_main_window (int argc, char **argv)
         /* Create the "G2" radiobutton. */
         xmstrings[0] = XmStringCreateSimple ("Inner-Inner (G2)");
         n = 0;
-        stdarg (XmNfontList, fontlist);
         stdarg (XmNlabelString, xmstrings[0]);
         stdarg (XmNindicatorOn, TRUE);
         stdarg (XmNindicatorType, XmONE_OF_MANY);
@@ -650,7 +644,6 @@ create_main_window (int argc, char **argv)
         /* Create the "Z2" radiobutton. */
         xmstrings[0] = XmStringCreateSimple ("Outer-Outer (Z2)");
         n = 0;
-        stdarg (XmNfontList, fontlist);
         stdarg (XmNlabelString, xmstrings[0]);
         stdarg (XmNindicatorOn, TRUE);
         stdarg (XmNindicatorType, XmONE_OF_MANY);
@@ -673,7 +666,6 @@ create_main_window (int argc, char **argv)
         XmStringFree (xmstrings[0]);
         /* Create the "C2" entry. */
         n = 0;
-        stdarg (XmNfontList, fontlist);
         stdarg (XmNtopAttachment, XmATTACH_WIDGET);
         stdarg (XmNtopWidget, left_to_right_table);
         stdarg (XmNleftAttachment, XmATTACH_WIDGET);
@@ -706,7 +698,6 @@ create_main_window (int argc, char **argv)
         XtManageChild (C2_entry);
         /* Create the "G2" entry. */
         n = 0;
-        stdarg (XmNfontList, fontlist);
         stdarg (XmNtopAttachment, XmATTACH_WIDGET);
         stdarg (XmNtopWidget, C2_entry);
         stdarg (XmNleftAttachment, XmATTACH_WIDGET);
@@ -730,7 +721,6 @@ create_main_window (int argc, char **argv)
         XtManageChild (G2_entry);
         /* Create the "Z2" entry. */
         n = 0;
-        stdarg (XmNfontList, fontlist);
         stdarg (XmNtopAttachment, XmATTACH_WIDGET);
         stdarg (XmNtopWidget, G2_entry);
         stdarg (XmNleftAttachment, XmATTACH_WIDGET);
@@ -757,8 +747,6 @@ create_main_window (int argc, char **argv)
 
 
         XtRealizeWidget (main_window);
-        /* Clean up. */
-        XmFontListFree (fontlist);
         return (EXIT_SUCCESS);
 }
 
@@ -790,7 +778,7 @@ on_C1_entry_changed
         n = 0;
         stdarg (XmNvalue, C1_string);
         XtGetValues (w, args, n);
-        c1 = g_ascii_strtod (C1_string, &leftovers);
+        c1 = strtod (C1_string, &leftovers);
 
 }
 
@@ -849,7 +837,7 @@ on_C2_entry_changed
         n = 0;
         stdarg (XmNvalue, C2_string);
         XtGetValues (w, args, n);
-        c2 = g_ascii_strtod (C2_string, &leftovers);
+        c2 = strtod (C2_string, &leftovers);
 }
 
 
@@ -907,7 +895,7 @@ on_G1_entry_changed
         n = 0;
         stdarg (XmNvalue, G1_string);
         XtGetValues (w, args, n);
-        g1 = g_ascii_strtod (G1_string, &leftovers);
+        g1 = strtod (G1_string, &leftovers);
 
 }
 
@@ -966,7 +954,7 @@ on_G2_entry_changed
         n = 0;
         stdarg (XmNvalue, G2_string);
         XtGetValues (w, args, n);
-        g2 = g_ascii_strtod (G2_string, &leftovers);
+        g2 = strtod (G2_string, &leftovers);
 
 }
 
@@ -1025,7 +1013,7 @@ on_Z1_entry_changed
         n = 0;
         stdarg (XmNvalue, Z1_string);
         XtGetValues (w, args, n);
-        z1 = g_ascii_strtod (Z1_string, &leftovers);
+        z1 = strtod (Z1_string, &leftovers);
 
 }
 
@@ -1084,7 +1072,7 @@ on_Z2_entry_changed
         n = 0;
         stdarg (XmNvalue, Z2_string);
         XtGetValues (w, args, n);
-        z2 = g_ascii_strtod (Z2_string, &leftovers);
+        z2 = strtod (Z2_string, &leftovers);
 
 }
 
