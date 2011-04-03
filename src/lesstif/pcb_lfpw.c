@@ -234,9 +234,6 @@ main (int argc, char **argv)
                 }
                 else
                 {
-                        XtToolkitInitialize ();
-                        XtSetLanguageProc (NULL, NULL, NULL);
-                        lfpw_app_context = XtCreateApplicationContext ();
                         lfpw_display = XtOpenDisplay
                         (
                                 lfpw_app_context,
@@ -271,22 +268,8 @@ main (int argc, char **argv)
                 lfpw_main_y = lfpw_screen_height / 10;
                 lfpw_main_width = lfpw_screen_width - (lfpw_main_x * 2);
                 lfpw_main_height = lfpw_screen_height - (lfpw_main_y * 3);
-                /* Create application windows and splash screen. */
-                create_main_window (argc, argv);
-                /* Debug with editres */
-                if (debug)
-                {
-                        XtAddEventHandler
-                        (
-                                main_window,
-                                (EventMask) 0,
-                                True,
-                                _XEditResCheckMessages,
-                                NULL
-                        );
-                }
-                /* Create application dialog. */
                 create_about_dialog (argc, argv);
+                create_main_window (argc, argv);
                 /* Enter the main loop. */
                 XtAppMainLoop (lfpw_app_context);
         };
