@@ -31,7 +31,7 @@
 #define __ABOUT_DIALOG_H_INCLUDED__
 
 
-Widget about_dialog = NULL;   
+Widget about_dialog;   
         /*!< about_dialog window */
 
 
