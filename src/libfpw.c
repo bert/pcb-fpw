@@ -782,6 +782,9 @@ get_total_number_of_pins ()
                         number_of_pins = (number_of_columns * count_x +
                                 number_of_rows * count_y) + thermal;
                         break;
+                case RES :
+                        number_of_pins = 2;
+                        break;
                 case RESAD :
                         number_of_pins = 2;
                         break;
