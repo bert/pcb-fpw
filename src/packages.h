@@ -40,6 +40,7 @@
 #include "pga.c"
 #include "plcc.c"
 #include "res.c"
+#include "resad.c"
 #include "resc.c"
 #include "resm.c"
 #include "resmelf.c"

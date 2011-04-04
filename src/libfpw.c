@@ -545,6 +545,10 @@ get_package_type ()
         {
                 package_type = RES;
         }
+        else if (!strcmp (footprint_type, "RESAD"))
+        {
+                package_type = RESAD;
+        }
         else if (!strcmp (footprint_type, "RESC"))
         {
                 package_type = RESC;
@@ -777,6 +781,9 @@ get_total_number_of_pins ()
                 case QFP :
                         number_of_pins = (number_of_columns * count_x +
                                 number_of_rows * count_y) + thermal;
+                        break;
+                case RESAD :
+                        number_of_pins = 2;
                         break;
                 case RESC :
                         number_of_pins = 2;
@@ -3041,6 +3048,16 @@ write_footprint()
                         if (res_drc () == EXIT_SUCCESS)
                         {
                                 res_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
+                        break;
+                case RESAD:
+                        if (resad_drc () == EXIT_SUCCESS)
+                        {
+                                resad_write_footprint ();
                         }
                         else
                         {
