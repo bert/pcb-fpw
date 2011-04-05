@@ -549,6 +549,10 @@ get_package_type ()
         {
                 package_type = RESAD;
         }
+        else if (!strcmp (footprint_type, "RESAR"))
+        {
+                package_type = RESAR;
+        }
         else if (!strcmp (footprint_type, "RESC"))
         {
                 package_type = RESC;
@@ -786,6 +790,9 @@ get_total_number_of_pins ()
                         number_of_pins = 2;
                         break;
                 case RESAD :
+                        number_of_pins = 2;
+                        break;
+                case RESAR :
                         number_of_pins = 2;
                         break;
                 case RESC :
@@ -3061,6 +3068,16 @@ write_footprint()
                         if (resad_drc () == EXIT_SUCCESS)
                         {
                                 resad_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
+                        break;
+                case RESAR:
+                        if (resar_drc () == EXIT_SUCCESS)
+                        {
+                                resar_write_footprint ();
                         }
                         else
                         {

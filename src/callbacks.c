@@ -2994,6 +2994,12 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                         resad_set_gui_constraints ();
                         break;
                 }
+                case RESAR:
+                {
+                        all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                        resar_set_gui_constraints ();
+                        break;
+                }
                 case RESC:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));

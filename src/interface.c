@@ -471,6 +471,7 @@ create_pcb_gfpw (void)
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("QFP"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("RES"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("RESAD"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("RESAR"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("RESC"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("RESM"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("RESMELF"));

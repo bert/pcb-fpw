@@ -70,6 +70,7 @@ typedef enum packages
         QFP, /*!< Quad flat package. */
         RES, /*!< Resistor TH technology package. */
         RESAD, /*!< Resistor, Axial Diameter Horizontal Mounting. */
+        RESAR, /*!< Resistor, Axial Rectangular, Horizontal Mounting. */
         RESC, /*!< Resistor, chip package. */
         RESM, /*!< Resistor, molded package. */
         RESMELF, /*!< Resistor, MELF package. */
