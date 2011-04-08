@@ -457,6 +457,10 @@ get_package_type ()
         {
                 package_type = CAPA;
         }
+        else if (!strcmp (footprint_type, "CAPAD"))
+        {
+                package_type = CAPAD;
+        }
         else if (!strcmp (footprint_type, "CAPAE"))
         {
                 package_type = CAPAE;
@@ -724,6 +728,9 @@ get_total_number_of_pins ()
                         number_of_exceptions + (fiducial * 2);
                         break;
                 case CAPA :
+                        number_of_pins = 2;
+                        break;
+                case CAPAD :
                         number_of_pins = 2;
                         break;
                 case CAPC :

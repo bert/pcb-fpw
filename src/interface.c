@@ -447,6 +447,7 @@ create_pcb_gfpw (void)
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), "");
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("BGA"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CAPA"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CAPAD"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CAPAE"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CAPC"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("CAPM"));

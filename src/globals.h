@@ -46,6 +46,8 @@ typedef enum packages
         NO_PACKAGE, /*!< For those living in the void. */
         BGA, /*!< Ball gate array package. */
         CAPA, /*!< Capacitor, Through Hole Non-Polarized Axial package. */
+        CAPAD, /*!< Capacitor, Through Hole Non-Polarized,
+                Axial Diameter, Horizontal Mounted package. */
         CAPAE, /*!< Capacitor, aluminium electrolytic package. */
         CAPC, /*!< Capacitor, chip package. */
         CAPM, /*!< Capacitor, molded, non-polarized package. */
