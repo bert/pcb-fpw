@@ -199,7 +199,7 @@ dioad_create_element ()
                 (int) (multiplier * pad_clearance), /* clearance */
                 (int) (multiplier * (pad_diameter + pad_solder_mask_clearance)), /* solder mask clearance */
                 (int) (multiplier * pin_drill_diameter), /* pin drill diameter */
-                "", /* pin name */
+                "A", /* pin name */
                 "2", /* pin number */
                 pad_flag /* flags */
         );
@@ -217,7 +217,7 @@ dioad_create_element ()
                 (int) (multiplier * pad_clearance), /* clearance */
                 (int) (multiplier * (pad_diameter + pad_solder_mask_clearance)), /* solder mask clearance */
                 (int) (multiplier * pin_drill_diameter), /* pin drill diameter */
-                "", /* pin name */
+                "C", /* pin name */
                 "1", /* pin number */
                 pad_flag /* flags */
         );
@@ -235,7 +235,7 @@ dioad_create_element ()
                         (int) (multiplier * pad_width), /* pad width */
                         (int) (multiplier * pad_clearance), /* clearance */
                         (int) (multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance))), /* solder mask clearance */
-                        "", /* pin name */
+                        "C", /* pin name */
                         "1", /* pin number */
                         pad_flag /* flags */
                 );
@@ -249,7 +249,7 @@ dioad_create_element ()
                         (int) (multiplier * pad_width), /* pad width */
                         (int) (multiplier * pad_clearance), /* clearance */
                         (int) (multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance))), /* solder mask clearance */
-                        "", /* pin name */
+                        "A", /* pin name */
                         "2", /* pin number */
                         pad_flag /* flags */
                 );
@@ -265,7 +265,7 @@ dioad_create_element ()
                         (int) (multiplier * pad_width), /* pad width */
                         (int) (multiplier * pad_clearance), /* clearance */
                         (int) (multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance))), /* solder mask clearance */
-                        "", /* pin name */
+                        "C", /* pin name */
                         "1", /* pin number */
                         pad_flag /* flags */
                 );
@@ -279,7 +279,7 @@ dioad_create_element ()
                         (int) (multiplier * pad_width), /* pad width */
                         (int) (multiplier * pad_clearance), /* clearance */
                         (int) (multiplier * ((pad_length > pad_width ? pad_width : pad_length) + (2 * pad_solder_mask_clearance))), /* solder mask clearance */
-                        "", /* pin name */
+                        "A", /* pin name */
                         "2", /* pin number */
                         pad_flag /* flags */
                 );
@@ -996,7 +996,7 @@ dioad_write_footprint ()
         write_pin
         (
                 2, /* pin number */
-                "", /* pin name */
+                "A", /* pin name */
                 multiplier * ((pitch_x + pad_diameter) / 2.0), /* x0 coordinate */
                 0, /* y0-coordinate */
                 multiplier * pad_diameter, /* width of the annulus ring (pad) */
@@ -1013,7 +1013,7 @@ dioad_write_footprint ()
         write_pin
         (
                 1, /* pin number */
-                "", /* pin name */
+                "C", /* pin name */
                 multiplier * ((-pitch_x - pad_diameter) / 2.0), /* x0 coordinate */
                 0, /* y0-coordinate */
                 multiplier * pad_diameter, /* width of the annulus ring (pad) */
@@ -1029,7 +1029,7 @@ dioad_write_footprint ()
                 write_pad
                 (
                         1, /* pad number */
-                        "", /* pad name */
+                        "C", /* pad name */
                         multiplier * ((-pitch_x - pad_length + pad_width) / 2.0), /* x0 coordinate */
                         0, /* y0-coordinate */
                         multiplier * ((-pitch_x + pad_length - pad_width) / 2.0), /* x1 coordinate */
@@ -1042,7 +1042,7 @@ dioad_write_footprint ()
                 write_pad
                 (
                         2, /* pad number */
-                        "", /* pad name */
+                        "A", /* pad name */
                         multiplier * ((pitch_x - pad_length + pad_width) / 2.0), /* x0 coordinate */
                         0, /* y0-coordinate */
                         multiplier * ((pitch_x + pad_length - pad_width) / 2.0), /* x1 coordinate */
@@ -1057,7 +1057,7 @@ dioad_write_footprint ()
                 write_pad
                 (
                         1, /* pad number */
-                        "", /* pad name */
+                        "C", /* pad name */
                         multiplier * ((-pitch_x - pad_length + pad_width) / 2.0), /* x0 coordinate */
                         0, /* y0-coordinate */
                         multiplier * ((-pitch_x + pad_length - pad_width) / 2.0), /* x1 coordinate */
@@ -1070,7 +1070,7 @@ dioad_write_footprint ()
                 write_pad
                 (
                         2, /* pad number */
-                        "", /* pad name */
+                        "A", /* pad name */
                         multiplier * ((pitch_x - pad_length + pad_width) / 2.0), /* x0 coordinate */
                         0, /* y0-coordinate */
                         multiplier * ((pitch_x + pad_length - pad_width) / 2.0), /* x1 coordinate */
