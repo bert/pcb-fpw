@@ -497,6 +497,10 @@ get_package_type ()
         {
                 package_type = DIL;
         }
+        else if (!strcmp (footprint_type, "DIOAD"))
+        {
+                package_type = DIOAD;
+        }
         else if (!strcmp (footprint_type, "DIOM"))
         {
                 package_type = DIOM;
@@ -756,6 +760,9 @@ get_total_number_of_pins ()
                         break;
                 case DIL :
                         number_of_pins = number_of_columns * number_of_rows;
+                        break;
+                case DIOAD :
+                        number_of_pins = 2;
                         break;
                 case DIOM :
                         number_of_pins = 2;
@@ -2964,6 +2971,16 @@ write_footprint()
                         break;
                 case DIL:
                         return (EXIT_FAILURE);
+                        break;
+                case DIOAD:
+                        if (dioad_drc () == EXIT_SUCCESS)
+                        {
+                                dioad_write_footprint ();                        break;
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
                         break;
                 case DIOM:
                         if (diom_drc () == EXIT_SUCCESS)

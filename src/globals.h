@@ -58,6 +58,8 @@ typedef enum packages
         CON_HDR, /*!< Connector package with header numbering scheme. */
         CON_SIL, /*! Single In Line connector package. */
         DIL, /*!< Dual inline package. */
+        DIOAD, /*!< Through Hole Diode, Axial Diameter, Horizontal
+                Mounted package. */
         DIOM, /*!< Diode, molded package. */
         DIOMELF, /*!< Diode, MELF package. */
         DIP, /*!< Dual Inline Package package. */

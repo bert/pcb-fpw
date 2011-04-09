@@ -2920,6 +2920,12 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                         dip_set_gui_constraints ();
                         break;
                 }
+                case DIOAD:
+                {
+                        all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                        dioad_set_gui_constraints ();
+                        break;
+                }
                 case DIOM:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
