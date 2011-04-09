@@ -2950,6 +2950,12 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                         dips_set_gui_constraints ();
                         break;
                 }
+                case INDAD:
+                {
+                        all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                        indc_set_gui_constraints ();
+                        break;
+                }
                 case INDC:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));

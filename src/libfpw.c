@@ -517,6 +517,10 @@ get_package_type ()
         {
                 package_type = DIPS;
         }
+        else if (!strcmp (footprint_type, "INDAD"))
+        {
+                package_type = INDAD;
+        }
         else if (!strcmp (footprint_type, "INDC"))
         {
                 package_type = INDC;
@@ -775,6 +779,9 @@ get_total_number_of_pins ()
                         break;
                 case DIPS :
                         number_of_pins = number_of_columns * count_y;
+                        break;
+                case INDAD :
+                        number_of_pins = 2;
                         break;
                 case INDC :
                         number_of_pins = 2;
@@ -3026,6 +3033,16 @@ write_footprint()
                         if (dips_drc () == EXIT_SUCCESS)
                         {
                                 dips_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
+                        break;
+                case INDAD:
+                        if (indad_drc () == EXIT_SUCCESS)
+                        {
+                                indad_write_footprint ();
                         }
                         else
                         {
