@@ -2889,6 +2889,16 @@ write_footprint()
                                 error_found = TRUE;
                         }
                         break;
+                case CAPAD:
+                        if (capad_drc () == EXIT_SUCCESS)
+                        {
+                                capad_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
+                        break;
                 case CAPC:
                         if (capc_drc () == EXIT_SUCCESS)
                         {
