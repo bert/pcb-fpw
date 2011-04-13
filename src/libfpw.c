@@ -517,6 +517,10 @@ get_package_type ()
         {
                 package_type = DIPS;
         }
+        else if (!strcmp (footprint_type, "HDRV"))
+        {
+                package_type = HDRV;
+        }
         else if (!strcmp (footprint_type, "INDAD"))
         {
                 package_type = INDAD;
@@ -778,6 +782,9 @@ get_total_number_of_pins ()
                         number_of_pins = number_of_columns * count_y;
                         break;
                 case DIPS :
+                        number_of_pins = number_of_columns * count_y;
+                        break;
+                case HDRV :
                         number_of_pins = number_of_columns * count_y;
                         break;
                 case INDAD :
@@ -3033,6 +3040,16 @@ write_footprint()
                         if (dips_drc () == EXIT_SUCCESS)
                         {
                                 dips_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
+                        break;
+                case HDRV:
+                        if (hdrv_drc () == EXIT_SUCCESS)
+                        {
+                                hdrv_write_footprint ();
                         }
                         else
                         {

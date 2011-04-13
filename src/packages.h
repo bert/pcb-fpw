@@ -36,6 +36,7 @@
 #include "diomelf.c"
 #include "dip.c"
 #include "dips.c"
+#include "hdrv.c"
 #include "indad.c"
 #include "indc.c"
 #include "indm.c"

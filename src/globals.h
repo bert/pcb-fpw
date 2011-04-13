@@ -65,6 +65,7 @@ typedef enum packages
         DIP, /*!< Dual Inline Package package. */
         DIPS, /*!< Dual Inline Package Socket package. */
         DO, /*!< Diode outline package. */
+        HDRV, /*!< Pin Through Hole Vertical Header Connector package. */
         INDAD, /*!< Inductor, Through Hole Axial Diameter, Horizontal
                 Mounted package. */
         INDC, /*!< Inductor, chip package. */
