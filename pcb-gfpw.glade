@@ -461,9 +461,10 @@ mm</property>
 			      <child>
 				<widget class="GtkComboBoxEntry" id="footprint_type_entry">
 				  <property name="visible">True</property>
-				  <property name="items" translatable="yes">
+				  <property name="items" translatable="no">
 BGA
 CAPA
+CAPAD
 CAPAE
 CAPC
 CAPM
@@ -474,10 +475,13 @@ CON_DIP
 CON_HDR
 CON_SIL
 DIL
+DIOAD
 DIOM
 DIOMELF
 DIP
 DO
+HDRV
+INDAD
 INDC
 INDM
 INDP
@@ -486,6 +490,8 @@ PLCC
 QFN
 QFP
 RES
+RESAD
+RESAR
 RESC
 RESM
 RESMELF
