@@ -32,7 +32,9 @@ the Free Software Foundation, Inc.,
 Bert Timmerman (de)</property>
     <property name="artists">Bert Timmerman</property>
     <property name="logo">splash_wiz.xpm</property>
+    <signal name="destroy" handler="on_about_dialog_destroy"/>
     <signal name="close" handler="on_about_dialog_close"/>
+    <signal name="response" handler="on_about_dialog_close"/>
     <child internal-child="vbox">
       <object class="GtkVBox" id="about_dialog_vbox">
         <property name="visible">True</property>
