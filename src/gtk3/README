@@ -1,0 +1,14 @@
+======= WHAT IS PCB-GFPW =======
+
+This is the GTK3 port of pcb-gfpw.
+
+Building the GUI widgets and dialog is done with the GtkBuilder invoking
+and processing a Glade UI definition file for every dialog needed.
+
+After successful building the dialog a pointer of the TOPLEVEL widget is
+returned to the caller.
+
+Have fun creating footprints with pcb-gfpw  ;-)
+ 
+/* End Of File */
+
