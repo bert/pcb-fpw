@@ -1,0 +1,17 @@
+## Process this file with automake to produce Makefile.in
+
+INCLUDES = \
+	-DPACKAGE_DATA_DIR=\""$(datadir)"\" \
+	-DPACKAGE_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
+	@PACKAGE_CFLAGS@
+
+bin_PROGRAMS = pcb-g3fpw
+
+pcb_g3fpw_SOURCES = \
+	pcb-gfpw.c \
+	about_dialog.c about_dialog.h
+	
+pcb_g3fpw_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
+	
+# EOF #
+
