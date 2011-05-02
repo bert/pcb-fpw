@@ -1,9 +1,9 @@
 /*!
  * \file src/mtgp.c
  *
- * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
- * \brief Functions for MTGP footprints (Mountinh Hole Plated).
+ * \brief Functions for MTGP footprints (Mounting Hole Plated).
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
