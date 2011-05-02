@@ -2037,6 +2037,7 @@ on_fiducial_checkbutton_toggled        (GtkToggleButton *togglebutton,
                 "fiducial_pad_solder_mask_clearance_entry");
         gtk_widget_set_sensitive (fiducial_pad_soldermask_clearance_entry, fiducial);
         entry_has_changed (GTK_WIDGET (togglebutton));
+        number_of_pins_has_changed (GTK_WIDGET (togglebutton));
 }
 
 
