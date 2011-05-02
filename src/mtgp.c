@@ -734,6 +734,10 @@ mtgp_set_gui_constraints ()
         gtk_widget_set_sensitive (package_is_radial_checkbutton, FALSE);
 
         /* Widgets on tab "Pins/Pads" */
+        GtkWidget *number_total_pins_entry = lookup_widget (GTK_WIDGET (widget),
+                "number_total_pins_entry");
+        gtk_entry_set_text (GTK_ENTRY (number_total_pins_entry), "1");
+        gtk_widget_set_sensitive (number_total_pins_entry, FALSE);
         GtkWidget *number_of_columns_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_of_columns_entry");
         gtk_entry_set_text (GTK_ENTRY (number_of_columns_entry), "1");
