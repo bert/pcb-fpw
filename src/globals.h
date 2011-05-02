@@ -71,6 +71,7 @@ typedef enum packages
         INDC, /*!< Inductor, chip package. */
         INDM, /*!< Inductor, molded package. */
         INDP, /*!< Inductor, precision wire wound package. */
+        MTGP, /*!< Mounting Hole, Plated. */
         PGA, /*!< Pin gate array package. */
         PLCC, /*!< Plastic leadless chip carrier package. */
         QFN, /*!< Quad flat no-leads package. */

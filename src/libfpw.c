@@ -529,13 +529,17 @@ get_package_type ()
         {
                 package_type = INDC;
         }
+        else if (!strcmp (footprint_type, "INDM"))
+        {
+                package_type = INDM;
+        }
         else if (!strcmp (footprint_type, "INDP"))
         {
                 package_type = INDP;
         }
-        else if (!strcmp (footprint_type, "INDM"))
+        else if (!strcmp (footprint_type, "MTGP"))
         {
-                package_type = INDM;
+                package_type = INDP;
         }
         else if (!strcmp (footprint_type, "PGA"))
         {
@@ -798,6 +802,9 @@ get_total_number_of_pins ()
                         break;
                 case INDP :
                         number_of_pins = 2;
+                        break;
+                case MTGP :
+                        number_of_pins = 1;
                         break;
                 case PGA :
                         number_of_pins = (number_of_columns * number_of_rows) - number_of_exceptions;
@@ -3090,6 +3097,16 @@ write_footprint()
                         if (indp_drc () == EXIT_SUCCESS)
                         {
                                 indp_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
+                        break;
+                case MTGP:
+                        if (mtgp_drc () == EXIT_SUCCESS)
+                        {
+                                mtgp_write_footprint ();
                         }
                         else
                         {

@@ -469,6 +469,7 @@ create_pcb_gfpw (void)
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("INDC"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("INDM"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("INDP"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("MTGP"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("PGA"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("PLCC"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (footprint_type_entry), _("QFN"));

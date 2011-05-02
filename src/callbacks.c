@@ -2980,6 +2980,12 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                         indp_set_gui_constraints ();
                         break;
                 }
+                case MTGP:
+                {
+                        all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                        mtgp_set_gui_constraints ();
+                        break;
+                }
                 case PGA:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
