@@ -539,7 +539,7 @@ get_package_type ()
         }
         else if (!strcmp (footprint_type, "MTGP"))
         {
-                package_type = INDP;
+                package_type = MTGP;
         }
         else if (!strcmp (footprint_type, "PGA"))
         {
