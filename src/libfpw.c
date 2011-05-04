@@ -537,6 +537,10 @@ get_package_type ()
         {
                 package_type = INDP;
         }
+        else if (!strcmp (footprint_type, "MTGNP"))
+        {
+                package_type = MTGNP;
+        }
         else if (!strcmp (footprint_type, "MTGP"))
         {
                 package_type = MTGP;
@@ -802,6 +806,9 @@ get_total_number_of_pins ()
                         break;
                 case INDP :
                         number_of_pins = 2;
+                        break;
+                case MTGNP :
+                        number_of_pins = 1;
                         break;
                 case MTGP :
                         number_of_pins = 1;
@@ -3097,6 +3104,16 @@ write_footprint()
                         if (indp_drc () == EXIT_SUCCESS)
                         {
                                 indp_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
+                        break;
+                case MTGNP:
+                        if (mtgnp_drc () == EXIT_SUCCESS)
+                        {
+                                mtgnp_write_footprint ();
                         }
                         else
                         {
