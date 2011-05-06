@@ -76,10 +76,34 @@ by running:
 
 <p><h2>Dependencies</h2></p>
 <p>
+Building pcb-fpw from scratch, either from a tarball or from the git
+repository, requires (at least):
 <ul>
-  <li>GTK
+  <li>gcc >= 4.1.1
+  <li>autoconf >= 2.63
+  <li>automake >= 1.9.6
+  <li>pkg-config >= 0.9.0
+  <li>libtool >= 1.5.22
+  <li>glib >= 1.2.10
+  <li>glib2 >= 2.10.3
+  <li>gtk >= 2.8.20
+  <li>libglade2 >= 2.5.1
+  <li>cairo >= 1.0.4
+  <li>pango >= 1.12.4
+  <li>gettext >= 0.16.1
 </ul>
-</p>
+and any other dependency these packages may require.<br>
+<br>
+For maintaining the fpw_data.sql database and user_data.sql (user database) template I use WAMPSERVER 2.0:
+<ul>
+  <li>apache 2.2.11
+  <li>mysql 5.1.36
+  <li>php 5.3.0
+  <li>phpmyadmin 3.2.0.1
+</ul>
+and any other dependency these packages may require.<br>
+YMMV with lesser version numbers, these are the minimum versions I use to
+develop pcb-fpw with.<br></p>
 
 <p><h2>Building and Installing</h2></p>
 <p>The usual workflow should apply:<br>
