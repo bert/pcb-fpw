@@ -29,6 +29,14 @@
 #include "preview.h"
 
 
+/* Default color definitions. */
+#define COLOR_COPPER 0xB87333
+#define COLOR_SOLDERMASK 0x009900
+#define COLOR_FR4 0xdbd640
+#define COLOR_SILKSCREEN 0xffffff
+#define COLOR_DIMENSION 0x000000
+#define COLOR_TRANSPARENT 0x000000
+
 /*!
  * \brief Close the preview window (destroy the preview widget).
  */
