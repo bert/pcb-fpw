@@ -36,6 +36,7 @@
 #define COLOR_SILKSCREEN 0xffffff
 #define COLOR_DIMENSION 0x000000
 #define COLOR_TRANSPARENT 0x000000
+#define COLOR_MARKER 0xff0000
 
 /*!
  * \brief Close the preview window (destroy the preview widget).
