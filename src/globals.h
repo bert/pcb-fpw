@@ -71,6 +71,7 @@ typedef enum packages
         INDC, /*!< Inductor, chip package. */
         INDM, /*!< Inductor, molded package. */
         INDP, /*!< Inductor, precision wire wound package. */
+        JUMP, /*!< Through Hole Wire Jumper package. */
         MTGNP, /*!< Mounting Hole, Non Plated. */
         MTGP, /*!< Mounting Hole, Plated. */
         PGA, /*!< Pin gate array package. */

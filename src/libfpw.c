@@ -537,6 +537,10 @@ get_package_type ()
         {
                 package_type = INDP;
         }
+        else if (!strcmp (footprint_type, "JUMP"))
+        {
+                package_type = JUMP;
+        }
         else if (!strcmp (footprint_type, "MTGNP"))
         {
                 package_type = MTGNP;
@@ -802,6 +806,9 @@ get_total_number_of_pins ()
                         number_of_pins = 2;
                         break;
                 case INDM :
+                        number_of_pins = 2;
+                        break;
+                case JUMP :
                         number_of_pins = 2;
                         break;
                 case INDP :
@@ -3104,6 +3111,16 @@ write_footprint()
                         if (indp_drc () == EXIT_SUCCESS)
                         {
                                 indp_write_footprint ();
+                        }
+                        else
+                        {
+                                error_found = TRUE;
+                        }
+                        break;
+                case JUMP:
+                        if (jump_drc () == EXIT_SUCCESS)
+                        {
+                                jump_write_footprint ();
                         }
                         else
                         {

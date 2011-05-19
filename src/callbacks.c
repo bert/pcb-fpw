@@ -2981,6 +2981,12 @@ on_footprint_type_entry_changed        (GtkComboBox     *combobox,
                         indp_set_gui_constraints ();
                         break;
                 }
+                case JUMP:
+                {
+                        all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
+                        jump_set_gui_constraints ();
+                        break;
+                }
                 case MTGNP:
                 {
                         all_entries_to_default_sensitivity (GTK_WIDGET (combobox));
