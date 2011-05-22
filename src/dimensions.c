@@ -1,7 +1,7 @@
 /*!
  * \file src/dimensions.c
  *
- * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Functions for a footprint dimensions preview widget.
  *
@@ -26,6 +26,7 @@
 #include <stdlib.h>
 #include <gtk/gtk.h>
 #include <glib.h>
+#include <cairo.h>
 
 #include "dimensions.h"
 
@@ -75,21 +76,17 @@ dimensions_window_expose_event
                 /*!< : is the image to (re)draw.*/
 )
 {
-        gdk_draw_pixbuf
-        (
-                widget->window,
-                NULL,
-                buf,
-                0,
-                0,
-                0,
-                0,
-                -1,
-                -1,
-                GDK_RGB_DITHER_NONE,
-                0,
-                0
-        );
+        cairo_t *cr;
+
+        /* Get a cairo drawing context. */
+        cr = gdk_cairo_create (widget->window);
+        /* Setup the background to transparent. */
+        cairo_set_source_rgba (cr, 1.0f, 1.0f, 1.0f, 1.0f);
+        /* Put the pixbuf on top. */
+        gdk_cairo_set_source_pixbuf (cr, buf, 0, 0);
+        cairo_paint (cr);
+        /* Clean up. */
+        cairo_destroy (cr);
 }
 
 
