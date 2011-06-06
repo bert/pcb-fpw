@@ -421,7 +421,39 @@ int
 capa_create_packages_list ()
 {
         g_list_free (packages_list);
-        packages_list = g_list_append (packages_list, "CAPA770-380X250");
+        /* Unkown origin. */
+        packages_list = g_list_prepend (packages_list, "CAPA770-380X250");
+        packages_list = g_list_prepend (packages_list, "CAPA1710-1350X560");
+        /* Vishay 021 ASM Series (lead pitch in mils). */
+        packages_list = g_list_prepend (packages_list, "CAPA1524-1000X450");
+        packages_list = g_list_prepend (packages_list, "CAPA1524-1000X600");
+        packages_list = g_list_prepend (packages_list, "CAPA1524-1100X800");
+        packages_list = g_list_prepend (packages_list, "CAPA2540-1800X650");
+        packages_list = g_list_prepend (packages_list, "CAPA2540-1800X800");
+        packages_list = g_list_prepend (packages_list, "CAPA2540-1800X1000");
+        packages_list = g_list_prepend (packages_list, "CAPA3048-2500X1000");
+        packages_list = g_list_prepend (packages_list, "CAPA3556-3000X1000");
+        packages_list = g_list_prepend (packages_list, "CAPA3556-3000X1250");
+        packages_list = g_list_prepend (packages_list, "CAPA3556-3000X1500");
+        packages_list = g_list_prepend (packages_list, "CAPA3556-3000X1800");
+        packages_list = g_list_prepend (packages_list, "CAPA4572-3800X1800");
+        packages_list = g_list_prepend (packages_list, "CAPA4572-3800X2100");
+        /* Vishay 021 ASM Series (lead pitch in mm). */
+        packages_list = g_list_prepend (packages_list, "CAPA1500-1000X450");
+        packages_list = g_list_prepend (packages_list, "CAPA1500-1000X600");
+        packages_list = g_list_prepend (packages_list, "CAPA1500-1100X800");
+        packages_list = g_list_prepend (packages_list, "CAPA2500-1800X650");
+        packages_list = g_list_prepend (packages_list, "CAPA2500-1800X800");
+        packages_list = g_list_prepend (packages_list, "CAPA2500-1800X1000");
+        packages_list = g_list_prepend (packages_list, "CAPA3000-2500X1000");
+        packages_list = g_list_prepend (packages_list, "CAPA3500-3000X1000");
+        packages_list = g_list_prepend (packages_list, "CAPA3500-3000X1250");
+        packages_list = g_list_prepend (packages_list, "CAPA3500-3000X1500");
+        packages_list = g_list_prepend (packages_list, "CAPA3500-3000X1800");
+        packages_list = g_list_prepend (packages_list, "CAPA4400-3800X1800");
+        packages_list = g_list_prepend (packages_list, "CAPA4400-3800X2100");
+        /* Put the list in "reverse" order. */
+        packages_list = g_list_reverse (packages_list);
         return (EXIT_SUCCESS);
 }
 
