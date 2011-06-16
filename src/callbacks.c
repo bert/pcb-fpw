@@ -43,7 +43,7 @@
 #include "libfpw.c"
 #include "packages.h"
 #include "dimensions.c"
-#include "preview.h"
+#include "preview.c"
 #include "select_exceptions.c"
 
 
@@ -1998,7 +1998,8 @@ on_dimensions_button_clicked           (GtkButton       *button,
         {
                 if (verbose)
                 g_log ("", G_LOG_LEVEL_WARNING,
-                        g_strdup_printf (_("image file: %s does not exist."), image_filename));
+                        g_strdup_printf (_("image file: %s does not exist."),
+                        image_filename));
         }
         g_free (image_filename);
 }
