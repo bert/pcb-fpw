@@ -1,7 +1,7 @@
 /*!
  * \file src/to.c
  *
- * \author Copyright (C) 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Functions for TO (Transistor Outline) footprints.
  *
@@ -96,6 +96,11 @@ to_create_element_to92 ()
         {
                 ymax = multiplier * (courtyard_width / 2.0);
         }
+        /* Store the courtyard dimensions in Virtual (bounding) Box. */
+        element->VBox.X1 = (int) xmin;
+        element->VBox.Y1 = (int) ymin;
+        element->VBox.X2 = (int) xmax;
+        element->VBox.Y2 = (int) ymax;
         /* Guess for a place where to put the element name */
         element->Name[1].Scale = 100; /* 100 percent */
         element->Name[1].X = 0.0 ; /* already in mil/100 */
@@ -300,6 +305,11 @@ to_create_element_to92_staggered ()
         {
                 ymax = multiplier * (courtyard_width / 2.0);
         }
+        /* Store the courtyard dimensions in Virtual (bounding) Box. */
+        element->VBox.X1 = (int) xmin;
+        element->VBox.Y1 = (int) ymin;
+        element->VBox.X2 = (int) xmax;
+        element->VBox.Y2 = (int) ymax;
         /* Guess for a place where to put the element name */
         element->Name[1].Scale = 100; /* 100 percent */
         element->Name[1].X = 0.0 ; /* already in mil/100 */
