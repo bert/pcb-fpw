@@ -51,6 +51,9 @@
          * more changes, a *lot* more changes. */
 #define MAX_ELEMENTNAMES 3
         /*!< Maximum number of supported names of an element. */
+#define DESCRIPTION_INDEX 0
+#define NAMEONPCB_INDEX 1
+#define VALUE_INDEX 2
 #define MARK_SIZE 5000 /* in mils/100 ? */
         /*!< Relative marker size */
 #define MIN_TEXTSCALE 10
