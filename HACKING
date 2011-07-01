@@ -19,12 +19,17 @@ this is the reason for using this coding style in C code.
 
 File headers
 ------------ 
-File headers contain Doxygen style tags for doumentation generated with Doxygen.
+Every new file added must have the usual license header, see the
+existing files for examples.
+File headers contain Doxygen style tags for doumentation generated with
+Doxygen.
 A default header looks similar to the following:
 
 /*!
  * \file default.c
+ *
  * \author Copyright (C) 2008 by Author <author@email.address>
+ *
  * \brief A brief description of the files use.
  *
  * A more elaborate description follows here, and can span several lines.
@@ -169,6 +174,12 @@ As I'm still learning things about git every day I find this a good practice,
 and I'm going to  have to adopt to this myself.
 
 
+Defines
+-------
+The #define names should be all-caps, parts are separated by an
+underscore.
+
+
 Functions
 ---------
 The prototype should have return type on the same line as function name:
@@ -202,10 +213,17 @@ some_function
         /* Implementation */
 } /* some_function */
 
-In a function there should be a maximum of one empty line in a row.
-Between functions there should be two empty lines.
+In a function there should be a maximum of one subsequent empty line.
+In between functions there should be two empty lines.
 
 
+Function names
+--------------
+All subsystem-specific function names should be prefixed with the
+subsystem name.
+For example: bga_create_element () or plcc_set_gui_constraints ().
+   
+   
 Log messages.
 -------------
 It is prefered to log messages similar like the following example:
