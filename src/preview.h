@@ -1,7 +1,7 @@
 /*!
  * \file src/preview.h
  *
- * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for footprint preview widget functions.
  *
@@ -30,115 +30,46 @@ GdkPixmap *pixmap = NULL;
         /*!< Backing pixmap for drawing area */
 
 
-/*!
- * \brief Struct containing all data to draw an arc on the preview canvas.
- */
-typedef struct preview_arc
+typedef struct
 {
-        GdkDrawable *drawable;
-                /*!< a GdkDrawable (a GdkWindow or a GdkPixmap). */
-        GdkGC *gc;
-                /*!< Graphics Context */
-        gboolean filled;
-                /*!< \c TRUE if the arc should be filled, producing a 'pie slice'. */
-        gint x;
-                /*!< The x coordinate of the left edge of the bounding rectangle. */
-        gint y;
-                /*!< The y coordinate of the top edge of the bounding rectangle. */
-        gint width;
-                /*!< The width of the bounding rectangle. */
-        gint height;
-                /*!< The height of the bounding rectangle. */
-        gint angle1;
-                /*!< The start angle of the arc, relative to the 3 o'clock
-                 * position, counter-clockwise, in 1/64ths of a degree. */
-        gint angle2;
-                /*!< The end angle of the arc, relative to angle1, in 1/64ths
-                 * of a degree. */
-} *preview_arc;
-
-
-/*!
- * \brief Struct containing all data to draw a line on the preview canvas.
- */
-typedef struct preview_line
-{
-        GdkDrawable *drawable;
-                /*!< a GdkDrawable (a GdkWindow or a GdkPixmap). */
-        GdkGC *gc;
-                /*!< Graphics Context */
-        gint x1;
-                /*!< X-coordinate of start point of the line. */
-        gint y1;
-                /*!< Y-coordinate of start point of the line. */
-        gint x2;
-                /*!< X-coordinate of the end point of the line. */
-        gint y2;
-                /*!< Y-coordinate of the end point of the line. */
-} *preview_line;
-
-
-/*!
- * \brief Struct containing all data to draw a polygon on the preview canvas.
- */
-typedef struct preview_polygon
-{
-        GdkDrawable *drawable;
-                /*!< a GdkDrawable (a GdkWindow or a GdkPixmap). */
-        GdkGC *gc;
-                /*!< Graphics Context. */
-        gboolean filled;
-                /*!< \c TRUE if the polygon should be filled. */
-        GdkPoint *points;
-                /*!< An array of GdkPoint structures specifying the points
-                 * making up the polygon. */
-        gint npoints;
-                /*!< The number of points. */
-} *preview_polygon;
-
-
-/*!
- * \brief Struct containing all data to draw a rectangle on the preview canvas.
- */
-typedef struct preview_rectangle
-{
-        GdkDrawable *drawable;
-                /*!< a GdkDrawable (a GdkWindow or a GdkPixmap). */
-        GdkGC *gc;
-                /*!< Graphics Context. */
-        gboolean filled;
-                /*!< \c TRUE if the polygon should be filled.\n
-                * The polygon is closed automatically, connecting the last
-                * point to the first point if necessary. */
-        gint x;
-                /*!< The X-coordinate of the left edge of the rectangle. */
-        gint y;
-                /*!< The Y-coordinate of the top edge of the rectangle. */
-        gint width;
-                /*!< The width of the rectangle. */
-        gint height;
-                /*!< The height of the rectangle. */
-} *preview_rectangle;
-
+        ElementType element;
+                /*!< The element data to display. */
+        gfloat zoom;
+                /*!< Zoom factor of window. */
+        gfloat scale;
+                /*!< Scale factor of zoom. */
+        gint xmin;
+                /*!< X-value of the upper left corner coordinate. */
+        gint ymin;
+                /*!< Y-value of the upper left corner coordinate. */
+        gint xmax;
+                /*!< X-value of the lower right corner coordinate. */
+        gint ymax;
+                /*!< Y-value of the lower right corner coordinate. */
+        gint shape;
+                /*!< Shape of the courtyard. */
+} PreviewDataType, *PreviewDataTypePtr;
+ 
 
 static void preview_close_cb (GtkWidget * widget, GtkWidget *preview_window);
 static gboolean preview_configure_event (GtkWidget *widget, GdkEventConfigure *event);
+int preview_create_window (ElementType *element);
 void preview_delete_event (GtkWidget *widget, GdkEvent *event);
-int preview_set_fg_color (GdkGC *gc, const char *color_name);
+static void preview_draw_arc (cairo_t *cr, ArcType *arc);
+static int preview_draw_background (cairo_t *cr);
+static int preview_draw_courtyard (cairo_t *cr, gint xmin, gint ymin, gint xmax, gint ymax);
+static int preview_draw_line (cairo_t *cr, LineType *line);
+static int preview_draw_mark (cairo_t *cr, LocationType Mark_X, LocationType Mark_Y);
+static int preview_draw_soldermask (cairo_t *cr, PolygonType *polygon);
+static int preview_draw_pad (cairo_t *cr, PadType *pad);
+static int preview_draw_pin (cairo_t *cr, PinType *pin);
+static int preview_draw_text (cairo_t *cr, ElementTypePtr element);
+static gboolean preview_expose_event (GtkWidget *widget, GdkEventExpose *event);
+int preview_set_end_cap (EndCapStyle endcap, cairo_t *cr);
+int preview_set_fg_color (cairo_t *cr, gint preview_color);
 int preview_set_fill_mode (GdkGC *gc, GdkFill fill_mode);
-int preview_set_line_cap (GdkGC *gc, GdkCapStyle line_cap);
 int preview_set_line_style (GdkGC *gc, GdkLineStyle line_style);
 int preview_set_line_width (GdkGC *gc, gint line_width);
-int preview_use_gc (GdkDrawable *drawable, GdkGC *gc, const char * color_name, gint line_width, GdkCapStyle line_cap, GdkLineStyle line_style, GdkFill fill_mode);
-static void preview_draw_arc (GtkWidget *widget, preview_arc arc);
-static void preview_draw_background (GtkWidget *widget, gdouble x, gdouble y);
-static void preview_draw_line (GtkWidget *widget, preview_line line);
-static void preview_draw_pad (GtkWidget *widget );
-static void preview_draw_pin (GtkWidget *widget );
-static void preview_draw_polygon (GtkWidget *widget, preview_polygon polygon);
-static void preview_draw_rectangle (GtkWidget *widget, preview_rectangle rectangle);
-static gboolean preview_expose_event (GtkWidget *widget, GdkEventExpose *event);
-int preview_create_window (gchar *footprint_name, gint width, gint height);
 
 
 #endif /* __PREVIEW_INCLUDED__ */
