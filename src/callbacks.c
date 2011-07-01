@@ -3917,9 +3917,7 @@ void
 on_preview_button_clicked              (GtkButton       *button,
                                         gpointer         user_data)
 {
-/*! \bug  Invoking preview_create_window (footprint_name, 300, 200);
- * gives an error by ld.
- */
+        preview_create_window (current_element);
 }
 
 
