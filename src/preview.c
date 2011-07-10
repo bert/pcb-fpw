@@ -31,27 +31,30 @@
 
 
 /* Default color definitions (in hexadecimal triplets). */
-#define COLOR_COPPER 0xb87333 /* copper-like */
-        /*!< : color of pins and pads. */
-#define COLOR_COURTYARD 0xff00ff /* magenta */
-        /*!< : color for the courtyard (keepout area of packages). */
-#define COLOR_DIMENSION 0x000000 /* black */
-        /*!< : color for dimensions. */
-#define COLOR_FR4 0xdbd640 /* a kind of sand-like color */
-        /*!< : color of the base material FR4. */
-#define COLOR_MARKER 0xff0000 /* red */
-        /*!< : color for the center marker. */
-#define COLOR_SILKSCREEN 0xffffff /* white */
-        /*!< : color of the silkscreen. */
-#define COLOR_SOLDERMASK 0x009900 /* greenish */
-        /*!< : color of the solder resist mask. */
-#define COLOR_TRANSPARENT 0x000000 /* is that a color */
-        /*!< : transparent color. */
+#define COLOR_COPPER 0xb87333
+        /*!< : color of pins and pads (copper-like). */
+#define COLOR_COURTYARD 0xff00ff
+        /*!< : color for the courtyard, a keepout area for other
+         * packages (magenta). */
+#define COLOR_DIMENSION 0x000000
+        /*!< : color for dimensions (black). */
+#define COLOR_FR4 0xdbd640
+        /*!< : color of the base material FR4 (a kind of sand-like color). */
+#define COLOR_MARKER 0xff0000
+        /*!< : color for the center marker (red). */
+#define COLOR_SILKSCREEN 0xffffff
+        /*!< : color of the silkscreen (white). */
+#define COLOR_SOLDERMASK 0x009900
+        /*!< : color of the solder resist mask (greenish). */
+#define COLOR_TRANSPARENT 0x000000
+        /*!< : transparent color (is that a color ?). */
 #define TRANSPARENCY 0.9
         /*!< : factor for transparency. */
-#define MARK_SIZE_LINE_WIDTH 100 /* in mils/100 ? */
-        /*!< Size of diamond element mark. */
-
+#define INSERTION_MARK_LINE_WIDTH 100
+        /*!< : linewidth of the diamond element mark (in mils/100 ?). */
+#define COURTYARD_LINE_WIDTH 1.0
+        /*!< : linewidth of the courtyard, a keepout area for other
+         * packages. */
 
 /*!
  * \brief Close the preview window (destroy the preview widget).
@@ -243,16 +246,6 @@ preview_draw_arc
 {
         gdouble start_angle;
         gdouble delta_angle;
-        gdouble dashes[] = 
-        {
-                5.0,  /* ink */
-                1.0,  /* skip */
-                1.0,  /* ink */
-                1.0   /* skip*/
-        };
-        gint num_dashes;
-        gdouble offset;
-
 
         if ((!arc) || (!cr))
         {
@@ -260,14 +253,11 @@ preview_draw_arc
                 return;
         }
         /* Modify angles from degrees to cairo format */
-        start_angle = arc->StartAngle * (M_PI / 180.0);
-        delta_angle = arc->Delta * (M_PI / 180.0);
+        start_angle = arc->StartAngle * (DEG_TO_RAD);
+        delta_angle = arc->Delta * (DEG_TO_RAD);
         /* Set up the cairo context. */
         cairo_set_line_width (cr, arc->Thickness);
         cairo_set_line_cap (cr, CAIRO_LINE_CAP_ROUND);
-        num_dashes = 0;
-        offset = -5.0;
-        cairo_set_dash (cr, dashes, num_dashes, offset);
         /* Draw the arc. */
         cairo_arc
         (
@@ -346,10 +336,13 @@ preview_draw_courtyard
                 fprintf (stderr, "WARNING: passed preview data was invalid.\n");
                 return (EXIT_FAILURE);
         }
+        /* Set up the cairo context. */
+        cairo_set_line_width (cr, COURTYARD_LINE_WIDTH);
         num_dashes = sizeof (dashes) / sizeof (dashes[0]);
         //num_dashes = 0;
         offset = -5.0;
         cairo_set_dash (cr, dashes, num_dashes, offset);
+        /* Draw the courtyard rectangle. */
         cairo_move_to (cr, xmin, ymin);
         cairo_line_to (cr, xmax, ymin);
         cairo_line_to (cr, xmax, ymax);
@@ -380,6 +373,8 @@ preview_draw_line
         cairo_set_line_width (cr, line->Thickness);
         cairo_set_line_cap (cr, CAIRO_LINE_CAP_ROUND);
         /* Draw the line. */
+        cairo_move_to (cr, line->Point1.X, line->Point1.Y);
+        cairo_line_to (cr, line->Point2.X, line->Point2.Y);
         cairo_stroke (cr);
         return (EXIT_SUCCESS);
 }
@@ -407,9 +402,9 @@ preview_draw_mark
                 return;
         }
         /* Set up the cairo context. */
-        cairo_set_line_width (cr, (MARK_SIZE_LINE_WIDTH)); 
+        cairo_set_line_width (cr, (INSERTION_MARK_LINE_WIDTH)); 
         cairo_set_line_cap (cr, CAIRO_LINE_CAP_ROUND);
-        /* Draw the line. */
+        /* Draw the lines of the insertion mark. */
         cairo_move_to (cr, (Mark_X - (MARK_SIZE / 2.0)), Mark_Y);
         cairo_line_to (cr, (Mark_X + (MARK_SIZE / 2.0)), Mark_Y);
         cairo_move_to (cr, Mark_X, (Mark_Y - (MARK_SIZE / 2.0)));
@@ -493,17 +488,18 @@ preview_draw_pin
         }
         else if (TEST_FLAG (OCTAGONFLAG, pin))
         {
+                preview_set_fg_color (cr, COLOR_COPPER);
                 return (EXIT_FAILURE);
         }
         else /* Default is ROUND. */
         {
                 preview_set_fg_color (cr, COLOR_COPPER);
-                cairo_arc (cr, pin->X, pin->Y, (pin->Thickness / 2.0), 0, (2 * M_PI));
+                cairo_arc (cr, pin->X, pin->Y, (pin->Thickness / 2.0), 0, (M_TAU));
                 cairo_fill (cr);
         }
         /* Draw the drill hole. */
         preview_set_fg_color (cr, COLOR_TRANSPARENT);
-        cairo_arc (cr, pin->X, pin->Y, (pin->DrillingHole / 2.0), 0, (2 * M_PI));
+        cairo_arc (cr, pin->X, pin->Y, (pin->DrillingHole / 2.0), 0, (M_TAU));
         cairo_fill (cr);
 }
 
@@ -550,6 +546,7 @@ preview_draw_text
         cairo_set_line_width (cr, 1.0);
         cairo_set_line_cap (cr, CAIRO_LINE_CAP_ROUND);
         preview_set_fg_color (cr, COLOR_SILKSCREEN);
+        /* Draw the text. */
         /*! \todo Add code here. */
 }
 
