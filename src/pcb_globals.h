@@ -9,6 +9,14 @@
  *
  * \brief Contains typedefs, global variables and structs copied from pcb.
  *
+ * \warning Now follows some definitions and typedefs copied from pcb. \n
+ * Do not change the following definitions even if they're not very nice. \n
+ * It allows us to have functions act on these "base types" and not need to
+ * know what kind of actual object they're working on. \n
+ * In the future this may simplify the conversion of pcb-gfpw from a
+ * stand-alone application to a pcb plug-in. \n
+ * \n
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -30,21 +38,39 @@
 #define __PCB_GLOBALS_INCLUDED__
 
 
-/*!
- * \warning Now follows some definitions and typedefs copied from pcb. \n
- * Do not change the following definitions even if they're not very nice. \n
- * It allows us to have functions act on these "base types" and not need to
- * know what kind of actual object they're working on. \n
- * In the future this may simplify the conversion of pcb-gfpw from a
- * stand-alone application to a pcb plug-in.
- */
-
 #ifndef MIN
 #define MIN(a,b) ((a) < (b) ? (a) : (b))
 #define MAX(a,b) ((a) > (b) ? (a) : (b))
 #endif
 
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+
+#ifndef M_SQRT1_2
+#define M_SQRT1_2 0.707106781 /* 1/sqrt(2) */
+#endif
+
+#define M_TAU (2*M_PI)
+#define M180 (M_PI/180.0)
+#define RAD_TO_DEG (180.0/M_PI)
+#define TAN_22_5_DEGREE_2 0.207106781
+        /*!< 0.5*tan(22.5) */
+#define COS_22_5_DEGREE 0.923879533
+        /*!< cos(22.5) */
+#define TAN_030_DEGREE 0.577350269
+        /*!< tan(30) */
+#define TAN_60_DEGREE 1.732050808
+        /*!< tan(60) */
 #define LN_2_OVER_2 0.346573590
+
+/* PCB/physical unit conversions */
+#define COORD_TO_MIL(n) ((n)/100.0)
+#define MIL_TO_COORD(n) ((n)*100.0)
+#define COORD_TO_MM(n) ((n)*0.000254)
+#define MM_TO_COORD(n) ((n)/0.000254)
+#define COORD_TO_INCH(n) (COORD_TO_MIL(n)/1000.0)
+#define INCH_TO_COORD(n) (MIL_TO_COORD(n)*1000.0)
 
 #define MAX_LAYER 16
         /*!< Maximum number of layers, check the pcb source code for
@@ -52,20 +78,24 @@
 #define MAX_ELEMENTNAMES 3
         /*!< Maximum number of supported names of an element. */
 #define DESCRIPTION_INDEX 0
+        /*!< Descriptive name for the element. */
 #define NAMEONPCB_INDEX 1
+        /*!< Name of the element on the pcb, usually the reference
+         * designator (refdes). */
 #define VALUE_INDEX 2
-#define MARK_SIZE 5000 /* in mils/100 ? */
-        /*!< Relative marker size */
+        /*!< Value of the element, for example "100k" for a resistor. */
+#define MARK_SIZE 5000
+        /*!< Relative marker size (in mils/100 ?). */
 #define MIN_TEXTSCALE 10
-        /*!< Scaling of text objects in percent */
-#define MAX_TEXTSCALE 10000 /* in mils/100 ? */
-        /*!< Scaling of text objects in percent */
+        /*!< Scaling of text objects in percent  (in mils/100 ?). */
+#define MAX_TEXTSCALE 10000
+        /*!< Scaling of text objects in percent (in mils/100 ?). */
 
 /* Pin or pad types / Object flag values */
 #define CLEAR 0x0000
         /*!< Default (round) pad. */
 #define PIN 0x0001
-        /*!< If set, this object is a pin.\n
+        /*!< If set, this object is a pin. \n
          * This flag is for internal use only. */
 #define VIA 0x0002
         /*!< Likewise, for vias. */
