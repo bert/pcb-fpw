@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 10, 2011 at 07:40 AM
+-- Generation Time: Jul 11, 2011 at 11:52 AM
 -- Server version: 5.1.36
 -- PHP Version: 5.3.0
 
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `fpw_data` (
   `remarks` text COLLATE utf8_bin NOT NULL,
   `warning` text COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`footprint_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=158 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=164 ;
 
 --
 -- Dumping data for table `fpw_data`
@@ -246,4 +246,10 @@ INSERT INTO `fpw_data` (`footprint_id`, `footprint_type`, `footprint_name`, `foo
 (154, 'CAPC', 'CAPC1608X86N', 'mm', 'EXPERIMENTAL', 1.75, 0.96, 0.86, 0, 2, 0, 0, 'UPPER_LEFT', 1.6, 0, 0, 0, '', 0, 0, 0, 0.95, 1, 'SQUARE', 1, 0, 0, 0, 0, 0, 0, 0.2, 1, 3.1, 1.5, 0.05, 0.675, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'package is also known as EIA0603', 'footprint geometry is too small for silkscreen outline.'),
 (155, 'CAPC', 'CAPC1608X87N', 'mm', 'EXPERIMENTAL', 1.75, 0.95, 0.87, 0, 2, 0, 0, 'UPPER_LEFT', 1.6, 0, 0, 0, '', 0, 0, 0, 0.95, 1, 'SQUARE', 1, 0, 0, 0, 0, 0, 0, 0.2, 1, 3.1, 1.5, 0.05, 0.675, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'package is also known as EIA0603', 'footprint geometry is too small for silkscreen outline.'),
 (156, 'CAPC', 'CAPC1608X90N', 'mm', 'EXPERIMENTAL', 1.75, 0.95, 0.9, 0, 2, 0, 0, 'UPPER_LEFT', 1.6, 0, 0, 0, '', 0, 0, 0, 0.95, 1, 'SQUARE', 1, 0, 0, 0, 0, 0, 0, 0.2, 1, 3.1, 1.5, 0.05, 0.675, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'package is also known as EIA0603', 'footprint geometry is too small for silkscreen outline.\r\n'),
-(157, 'CAPC', 'CAPC1608X92N', 'mm', 'EXPERIMENTAL', 1.72, 0.92, 0.92, 0, 2, 0, 0, 'UPPER_LEFT', 1.6, 0, 0, 0, '', 0, 0, 0, 0.9, 0.95, 'SQUARE', 1, 0, 0, 0, 0, 0, 0, 0.2, 1, 3, 1.5, 0.05, 0.675, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'package is also known as EIA0603', 'footprint geometry is too small for silkscreen outline.');
+(157, 'CAPC', 'CAPC1608X92N', 'mm', 'EXPERIMENTAL', 1.72, 0.92, 0.92, 0, 2, 0, 0, 'UPPER_LEFT', 1.6, 0, 0, 0, '', 0, 0, 0, 0.9, 0.95, 'SQUARE', 1, 0, 0, 0, 0, 0, 0, 0.2, 1, 3, 1.5, 0.05, 0.675, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'package is also known as EIA0603', 'footprint geometry is too small for silkscreen outline.'),
+(158, 'CAPC', 'CAPC1608X95N', 'mm', 'EXPERIMENTAL', 1.75, 0.95, 0.95, 0, 2, 0, 0, 'UPPER_LEFT', 1.6, 0, 0, 0, '', 0, 0, 0, 0.95, 1, 'SQUARE', 1, 0, 0, 0, 0, 0, 0, 0.2, 1, 3.1, 1.5, 0.05, 0.625, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'package is also known as EIA0603', 'footprint geometry is too small for silkscreen outline.'),
+(159, 'CAPC', 'CAPC1632X168N', 'mm', 'EXPERIMENTAL', 1.8, 3.4, 1.68, 0, 2, 0, 0, 'UPPER_LEFT', 1.6, 0, 0, 0, '', 0, 0, 0, 0.95, 3.4, 'SQUARE', 1, 0, 0, 0, 0, 0, 0, 0.2, 1, 3.1, 3.9, 0.05, 0.25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'package is also known as EIA0612', 'footprint geometry is too small for silkscreen outline.'),
+(160, 'CAPC', 'CAPC1632X76N', 'mm', 'EXPERIMENTAL', 1.85, 6.45, 0.76, 0, 2, 0, 0, 'UPPER_LEFT', 1.6, 0, 0, 0, '', 0, 0, 0, 0.95, 3.45, 'SQUARE', 1, 0, 0, 0, 0, 0, 0, 0.2, 1, 3.1, 4, 0.05, 0.625, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'package is also known as EIA0612', 'footprint geometry is too small for silkscreen outline.'),
+(161, 'CAPC', 'CAPC2012X100N', 'mm', 'EXPERIMENTAL', 2.2, 1.45, 1, 0, 2, 0, 0, 'UPPER_LEFT', 1.8, 0, 0, 0, '', 0, 0, 0, 1.15, 1.45, 'SQUARE', 1, 0, 0, 0, 0, 0, 0, 0.2, 1, 3.5, 2, 0.05, 0.65, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'package is also known as EIA0805', 'footprint geometry is too small for silkscreen outline.'),
+(162, 'CAPC', 'CAPC2012X100AN', 'mm', 'EXPERIMENTAL', 2.2, 1.4, 1, 0, 2, 0, 0, 'UPPER_LEFT', 1.8, 0, 0, 0, '', 0, 0, 0, 1.15, 1.4, 'SQUARE', 1, 0, 0, 0, 0, 0, 0, 0.2, 1, 3.5, 1.9, 0.05, 0.65, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'package is also known as EIA0805', 'footprint geometry is too small for silkscreen outline.'),
+(163, 'CAPC', 'CAPC2012X120N', 'mm', 'EXPERIMENTAL', 2.2, 1.45, 1.2, 0, 2, 0, 0, 'UPPER_LEFT', 1.8, 0, 0, 0, '', 0, 0, 0, 1.15, 1.45, 'SQUARE', 1, 0, 0, 0, 0, 0, 0, 0.2, 1, 3.5, 2, 0.05, 0.65, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'package is also known as EIA0805', 'footprint geometry is too small for silkscreen outline.');
