@@ -1,0 +1,30 @@
+Begin4
+Title: pcb-fpw
+Version: 0.0.11
+Entered-date: 2011-07-24
+Description: pcb-fpw is a FootPrintWizard for pcb, the interactive layout editor.
+The pcb-fpw FootPrintWizard is what the name says it will be:
+a footprint wizard (a.k.a. footprint generator).
+pcb-fpw is not a footprint editor, therefor one can NOT load an existing
+footprint file into pcb-fpw, make some changes and save it back to file, and
+subsequent load the edited footprint file into pcb.
+Keywords: electronics, engineering, pcb, footprint, wizard, generator, landpattern
+Author: bert.timmerman@xs4all.nl (Bert Timmerman)
+Maintained-by: bert.timmerman@xs4all.nl (Bert Timmerman)
+Primary-site: http://launchpad.net/pcb-fpw/trunk/0.0.11/+download
+pcb-fpw-0.0.11-0.fc13.i686.rpm
+pcb-fpw-0.0.11-0.fc13.src.rpm
+pcb-fpw-0.0.11.spec
+pcb-fpw-0.0.11.tar.gz
+pcb-fpw-0.0.11.zip
+Alternate-site: https://github.com/downloads/bert/pcb-fpw
+pcb-fpw-0.0.11-0.fc13.i686.rpm
+pcb-fpw-0.0.11-0.fc13.src.rpm
+pcb-fpw-0.0.11-0.spec
+Original-site: http://ljh4timm.home.xs4all.nl/pcb-fpw/downloads/
+pcb-fpw-0.0.11.tar.gz
+pcb-fpw-0.0.11.zip
+Platforms: x86 Linux, cygwin 
+Copying-policy: GPL 2.0
+End
+
