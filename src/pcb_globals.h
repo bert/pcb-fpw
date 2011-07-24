@@ -37,6 +37,7 @@
 #ifndef __PCB_GLOBALS_INCLUDED__
 #define __PCB_GLOBALS_INCLUDED__
 
+#include <stdbool.h>
 
 #ifndef MIN
 #define MIN(a,b) ((a) < (b) ? (a) : (b))
@@ -75,6 +76,7 @@
 #define MAX_LAYER 16
         /*!< Maximum number of layers, check the pcb source code for
          * more changes, a *lot* more changes. */
+#define NUM_STYLES 4
 #define MAX_ELEMENTNAMES 3
         /*!< Maximum number of supported names of an element. */
 #define DESCRIPTION_INDEX 0
@@ -190,23 +192,251 @@
 #define VISITFLAG 0x8000
         /*!< marker to avoid re-visiting an object. */
 
+typedef int LocationType;
+typedef int BDimension;
+                /*!< Big dimension. */
+typedef unsigned int Cardinal;
+typedef char Boolean;
+typedef char *String;
+typedef short Position;
+typedef short Dimension;
+typedef unsigned char BYTE;
+
+typedef struct
+{
+        BDimension Thick;
+                /*!< line thickness. */
+        BDimension Diameter; 
+                /*!< via diameter. */
+        BDimension Hole;
+                /*!< via drill hole. */
+        BDimension Keepaway;
+                /*!< minimum separation from other nets. */
+        char *Name;
+        int index;
+} RouteStyleType, *RouteStyleTypePtr;
+
+/*!
+ * \brief Layer group.
+ *
+ * A layer group identifies layers which are always switched on/off
+ * together.
+ */
+typedef struct
+{
+        Cardinal Number[MAX_LAYER],
+                /*!< number of entries per groups. */
+        Entries[MAX_LAYER][MAX_LAYER + 2];
+} LayerGroupType, *LayerGroupTypePtr;
+
+
+/*!
+ * \brief Resources copied from pcb.
+ *
+ * Use the pcb resources to apply the principle of "least surprise",
+ * after all, we should try to preserve the "look and feel" the pcb user
+ * got used to. \n
+ * Some of the resource variables of pcb are used as default when a new
+ * footprint design is started.
+ */
+typedef struct
+{
+        bool grid_units_mm;
+        int verbose;
+        char *BlackColor;
+        char *WhiteColor;
+        char *BackgroundColor;
+        char *CrosshairColor;
+        char *CrossColor;
+        char *ViaColor;
+        char *ViaSelectedColor;
+        char *PinColor;
+        char *PinSelectedColor;
+        char *PinNameColor;
+        char *ElementColor;
+        char *RatColor;
+        char *InvisibleObjectsColor;
+        char *InvisibleMarkColor;
+        char *ElementSelectedColor;
+        char *RatSelectedColor;
+        char *ConnectedColor;
+        char *OffLimitColor;
+        char *GridColor;
+        char *LayerColor[MAX_LAYER];
+        char *LayerSelectedColor[MAX_LAYER];
+        char *WarnColor;
+        char *MaskColor;
+        int ViaThickness;
+                /*!< some preset values. */
+        int ViaDrillingHole;
+        int LineThickness;
+        int RatThickness;
+        int Keepaway;
+        int MaxWidth;
+                /*!< default size of a new layout. */
+        int MaxHeight;
+        int TextScale;
+                /*!< text scaling in %. */
+        int AlignmentDistance;
+        int Bloat;
+                /*!< default drc sizes. */
+        int Shrink;
+        int minWid;
+        int minSlk;
+        int minDrill;
+        int minRing;
+        double Grid;
+                /*!< grid 0.001 inch. */
+        double IsleArea;
+                /*!< polygon min area. */
+        double grid_increment_mm;
+                /*!< key g and <shift>g value for mil units. */
+        double grid_increment_mil;
+                /*!< key g and <shift>g value for mil units. */
+        double size_increment_mm;
+                /*!< key s and <shift>s value for mil units. */
+        double size_increment_mil;
+                /*!< key s and <shift>s value for mil units. */
+        double line_increment_mm;
+        double line_increment_mil;
+        double clear_increment_mm;
+        double clear_increment_mil;
+        double Zoom;
+                /*!< number of shift operations for zooming. */
+        double PinoutZoom;
+                /*!< same for pinout windows. */
+        int PinoutNameLength;
+                /*!< max displayed length of a pinname. */
+        int Volume;
+                /*!< the speakers volume -100..100. */
+        int CharPerLine;
+                /*!< width of an output line in characters. */
+        int Mode;
+                /*!< currently active mode. */
+        int BufferNumber;
+                /*!< number of the current buffer. */
+        int GridFactor;
+                /*!< factor used for grid-drawing. */
+        int BackupInterval;
+                /*!< time between two backups in seconds. */
+        char *DefaultLayerName[MAX_LAYER];
+        char *FontCommand;
+        char *FileCommand;
+                /*!< commands for file loading... */
+        char *ElementCommand;
+        char *PrintFile;
+        char *LibraryCommandDir;
+        char *LibraryCommand;
+        char *LibraryContentsCommand;
+        char *LibraryTree;
+                /*!< path to library tree. */
+        char *SaveCommand;
+        char *LibraryFilename;
+        char *FontFile;
+                /*!< name of default font file. */
+        char *Groups;
+                /*!< string with layergroups. */
+        char *Routes;
+                /*!< string with route styles. */
+        char *FilePath;
+        char *RatPath;
+        char *RatCommand;
+        char *FontPath;
+        char *PinoutFont;
+        char *ElementPath;
+        char *LibraryPath;
+        char *Size;
+                /*!< geometry string for size. */
+        char *Media;
+        char *MenuFile;
+                /*!< file containing menu definitions. */
+        char *BackgroundImage;
+                /*!< PPM file for board background. */
+        char *ScriptFilename;
+                /*!< PCB Actions script to execute on startup. */
+        char *ActionString;
+                /*!< PCB Actions string to execute on startup. */
+        char *FabAuthor;
+                /*!< Full name of author for FAB drawings. */
+        char *GnetlistProgram;
+                /*!< gnetlist program name. */
+        char *MakeProgram;
+                /*!< make program name. */
+        char *InitialLayerStack;
+                /*!< If set, the initial layer stack is set to this. */
+        LocationType PinoutOffsetX;
+                /*!< X-offset of origin. */
+        LocationType PinoutOffsetY;
+                /*!< Y-offset of origin. */
+        int PinoutTextOffsetX;
+                /*!< X-offset of text from pin center. */
+        int PinoutTextOffsetY;
+                /*!< Y-offset of text from pin center. */
+        RouteStyleType RouteStyle[NUM_STYLES];
+                /*!< default routing styles. */
+        LayerGroupType LayerGroups;
+                /*!< default layer groups. */
+        bool ClearLine;
+        bool FullPoly;
+        bool UniqueNames;
+                /*!< force unique names. */
+        bool SnapPin;
+                /*!< snap to pins and pads. */
+        bool ShowSolderSide;
+                /*!< mirror output. */
+        bool SaveLastCommand;
+                /*!< save the last command entered by user. */
+        bool SaveInTMP;
+                /*!< always save data in /tmp. */
+        bool DrawGrid;
+                /*!< draw grid points. */
+        bool RatWarn;
+                /*!< rats nest has set warnings. */
+        bool StipplePolygons;
+                /*!< draw polygons with stipple. */
+        bool AllDirectionLines;
+                /*!< enable lines to all directions. */
+        bool RubberBandMode;
+                /*!< move, rotate use rubberband connections. */
+        bool SwapStartDirection;
+                /*!< change starting direction after each click. */
+        bool ShowDRC;
+                /*!< show drc region on crosshair. */
+        bool AutoDRC;
+        bool ShowNumber;
+                /*!< pinout shows numbers. */
+        bool OrthogonalMoves;
+                /*!< only allow orthogonal moves. */
+        bool ResetAfterElement;
+                /*!< reset connections after each element. */
+        bool liveRouting;
+                /*!< autorouter shows tracks in progress. */
+        bool RingBellWhenFinished;
+                /*!< flag if a signal should be produced when searching
+                 * of connections is done. */
+        bool AutoPlace;
+                /*!< flag which says we should force placement of the
+                 * windows on startup. */
+}
+SettingType, *SettingTypePtr;
+
 /*!
  * macros to transform coord systems
  * draw.c uses a different definition of TO_SCREEN
  */
-#ifndef	SWAP_IDENT
-#define	SWAP_IDENT Settings.ShowSolderSide
+#ifndef SWAP_IDENT
+#define SWAP_IDENT Settings.ShowSolderSide
 #endif
 
-#define	SWAP_SIGN_X(x) (x)
-#define	SWAP_SIGN_Y(y) (-(y))
-#define	SWAP_ANGLE(a) (-(a))
-#define	SWAP_DELTA(d) (-(d))
-#define	SWAP_X(x) (SWAP_SIGN_X(x))
-#define	SWAP_Y(y) (PCB->MaxHeight +SWAP_SIGN_Y(y))
+#define SWAP_SIGN_X(x) (x)
+#define SWAP_SIGN_Y(y) (-(y))
+#define SWAP_ANGLE(a) (-(a))
+#define SWAP_DELTA(d) (-(d))
+#define SWAP_X(x) (SWAP_SIGN_X(x))
+#define SWAP_Y(y) (PCB->MaxHeight +SWAP_SIGN_Y(y))
 
-#define	TO_SCREEN_SIGN_X(x) (SWAP_IDENT ? SWAP_SIGN_X(x) : (x))
-#define	TO_SCREEN_SIGN_Y(y) (SWAP_IDENT ? SWAP_SIGN_Y(y) : (y))
+#define TO_SCREEN_SIGN_X(x) (SWAP_IDENT ? SWAP_SIGN_X(x) : (x))
+#define TO_SCREEN_SIGN_Y(y) (SWAP_IDENT ? SWAP_SIGN_Y(y) : (y))
 
 /*!
  * The layer-numbers of the two additional special layers 'component'
@@ -261,16 +491,6 @@ typedef enum
         Round_Cap, /*!< Round pins or round-ended pads, thermals. */
         Beveled_Cap /*!< Octagon pins or bevel-cornered pads. */
 } EndCapStyle;
-
-typedef int LocationType;
-typedef int BDimension;
-        /*!< big dimension */
-typedef unsigned int Cardinal;
-typedef char Boolean;
-typedef char *String;
-typedef short Position;
-typedef short Dimension;
-typedef unsigned char BYTE;
 
 /*!
  * \brief A bounding box. */
