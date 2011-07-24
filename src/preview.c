@@ -31,6 +31,8 @@
 
 
 /* Default color definitions (in hexadecimal triplets). */
+#define COLOR_BLACK 0x000000
+        /*!< : color black. */
 #define COLOR_COPPER 0xb87333
         /*!< : color of pins and pads (copper-like). */
 #define COLOR_COURTYARD 0xff00ff
@@ -48,7 +50,11 @@
         /*!< : color of the solder resist mask (greenish). */
 #define COLOR_TRANSPARENT 0x000000
         /*!< : transparent color (is that a color ?). */
+#define COLOR_WHITE 0xffffff
+        /*!< : color white. */
 #define TRANSPARENCY 0.9
+        /*!< : factor for transparency. */
+#define TRANSPARENCY_SOLID 1.0
         /*!< : factor for transparency. */
 #define INSERTION_MARK_LINE_WIDTH 100
         /*!< : linewidth of the diamond element mark (in mils/100 ?). */
@@ -364,7 +370,7 @@ preview_draw_line
                 /*!< : is the line to be drawn on the preview canvas. */
 )
 {
-        if (!line)
+        if ((!line) || (!cr))
         {
                 fprintf (stderr, "WARNING: passed line was invalid.\n");
                 return (EXIT_FAILURE);
@@ -425,28 +431,30 @@ preview_draw_pad
                 /*!< : is the pad to be drawn on the preview canvas. */
 )
 {
-        if (!pad)
+        if ((!pad) || (!cr))
         {
                 fprintf (stderr, "WARNING: passed pad was invalid.\n");
                 return (EXIT_FAILURE);
         }
         /* Set up the cairo context. */
         cairo_set_line_width (cr, pad->Thickness);
-        cairo_set_line_cap (cr, CAIRO_LINE_CAP_ROUND);
+        preview_set_fg_color (cr, COLOR_COPPER);
         if (TEST_FLAG (SQUAREFLAG, pad))
         {
                 cairo_set_line_cap (cr, CAIRO_LINE_CAP_SQUARE);
         }
         else if (TEST_FLAG (OCTAGONFLAG, pad))
         {
-                fprintf (stderr, "WARNING: octagon end cap is not valid for a pad entity.\n");
+                fprintf (stderr, "WARNING: octagon/beveled end cap is not valid for a pad entity.\n");
                 return (EXIT_FAILURE);
         }
-        else
+        else /* Default is ROUND. */
         {
+                cairo_set_line_cap (cr, CAIRO_LINE_CAP_ROUND);
         }
         /* Draw the pad. */
-        /*! \todo Add code here.*/
+        cairo_move_to (cr, (pad->Point1.X), (pad->Point1.Y));
+        cairo_line_to (cr, (pad->Point2.X), (pad->Point2.Y));
         cairo_stroke (cr);
 }
 
@@ -463,7 +471,7 @@ preview_draw_pin
                 /*!< : is the pin to be drawn on the preview canvas. */
 )
 {
-        if (!pin)
+        if ((!pin) || (!cr))
         {
                 fprintf (stderr, "WARNING: passed pin was invalid.\n");
                 return (EXIT_FAILURE);
@@ -471,10 +479,10 @@ preview_draw_pin
         /* Set up the cairo context. */
         cairo_set_line_width (cr, 1.0);
         cairo_set_line_cap (cr, CAIRO_LINE_CAP_ROUND);
+        preview_set_fg_color (cr, COLOR_COPPER);
         /* Draw the pin. */
         if (TEST_FLAG (SQUAREFLAG, pin))
         {
-                preview_set_fg_color (cr, COLOR_COPPER);
                 cairo_move_to (cr, (pin->X - pin->Thickness),
                         (pin->Y - pin->Thickness)); /* Top left corner. */
                 cairo_line_to (cr, (pin->X + pin->Thickness),
@@ -488,12 +496,11 @@ preview_draw_pin
         }
         else if (TEST_FLAG (OCTAGONFLAG, pin))
         {
-                preview_set_fg_color (cr, COLOR_COPPER);
                 return (EXIT_FAILURE);
+                cairo_fill (cr);
         }
         else /* Default is ROUND. */
         {
-                preview_set_fg_color (cr, COLOR_COPPER);
                 cairo_arc (cr, pin->X, pin->Y, (pin->Thickness / 2.0), 0, (M_TAU));
                 cairo_fill (cr);
         }
@@ -516,16 +523,59 @@ preview_draw_soldermask
                 /*!< : is a polygon. */
 )
 {
+        cairo_pattern_t *solder_mask_pattern;
+        gdouble _red;
+        gdouble _green;
+        gdouble _blue;
+        gdouble _alpha;
+
         if (!polygon)
         {
                 fprintf (stderr, "WARNING: passed polygon was invalid.\n");
                 return;
         }
         /* Set up the cairo context. */
+        _red = ((COLOR_SOLDERMASK >> 16) & 0xff) / 255.0;  /* Extract the RR byte. */
+        _green = ((COLOR_SOLDERMASK >> 8) & 0xff) / 255.0;  /* Extract the GG byte. */
+        _blue = ((COLOR_SOLDERMASK) & 0xff) / 255.0;  /* Extract the BB byte. */
+        _alpha = TRANSPARENCY;
+        cairo_set_source_rgba (cr, _red, _green, _blue, _alpha);
         cairo_set_line_width (cr, 1.0);
         cairo_set_line_cap (cr, CAIRO_LINE_CAP_ROUND);
         preview_set_fg_color (cr, COLOR_SOLDERMASK);
+        /* Create a pattern, the negative of the solder mask). */
+        /* Convert hexadecimal color triplet to cairo RGBA values. */
+        _red = ((COLOR_BLACK >> 16) & 0xff) / 255.0;  /* Extract the RR byte. */
+        _green = ((COLOR_BLACK >> 8) & 0xff) / 255.0;  /* Extract the GG byte. */
+        _blue = ((COLOR_BLACK) & 0xff) / 255.0;  /* Extract the BB byte. */
+        _alpha = TRANSPARENCY_SOLID;
+        solder_mask_pattern = cairo_pattern_create_rgba
+        (
+                _red,
+                _green,
+                _blue,
+                _alpha
+        );
         /*! \todo Add code here. */
+        PAD_LOOP (current_element);
+        {
+                if (ON_SIDE (pad, ONSOLDER)
+                        && !TEST_FLAG (NOPASTEFLAG, pad)
+                        && pad->Mask > 0)
+                {
+                        /*! \todo Add code here. */
+                }
+        }
+        END_LOOP; /* PAD_LOOP */
+        PIN_LOOP (current_element);
+        {
+                /*! \todo Add code here. */
+        }
+        END_LOOP; /* PIN_LOOP */
+        /* Draw the solder mask. */
+        cairo_mask (cr, solder_mask_pattern);
+        /* Clean up the used pattern. */
+        cairo_pattern_destroy (solder_mask_pattern);
 }
 
 
@@ -542,12 +592,33 @@ preview_draw_text
                  * drawn. */
 )
 {
+        cairo_text_extents_t extents;
+        const char *text;
+        double x;
+        double y;
+
+        if ((!element) || (!cr))
+        {
+                fprintf (stderr, "WARNING: passed element was invalid.\n");
+                return (EXIT_FAILURE);
+        }
         /* Set up the cairo context. */
-        cairo_set_line_width (cr, 1.0);
-        cairo_set_line_cap (cr, CAIRO_LINE_CAP_ROUND);
+        cairo_select_font_face
+        (
+                cr,
+                "Sans",
+                CAIRO_FONT_SLANT_NORMAL,
+                CAIRO_FONT_WEIGHT_NORMAL
+        );
+        cairo_set_font_size (cr, 100.0);
+        cairo_text_extents (cr, text, &extents);
         preview_set_fg_color (cr, COLOR_SILKSCREEN);
         /* Draw the text. */
-        /*! \todo Add code here. */
+        x = element->Name[NAMEONPCB_INDEX].X;
+        y = element->Name[NAMEONPCB_INDEX].Y;
+        text = strdup (element->Name[NAMEONPCB_INDEX].TextString);
+        cairo_move_to (cr, x, y);
+        cairo_show_text (cr, text);
 }
 
 
@@ -586,12 +657,12 @@ preview_expose_event
                         preview_draw_pad (cr, pad);
                 }
         }
-        END_LOOP;
+        END_LOOP; /* PAD_LOOP */
         PIN_LOOP (current_element);
         {
                 preview_draw_pin (cr, pin);
         }
-        END_LOOP;
+        END_LOOP; /* PIN_LOOP */
         preview_set_fg_color (cr, COLOR_SOLDERMASK);
         /* Draw the soldermask. */
         preview_set_fg_color (cr, COLOR_SILKSCREEN);
@@ -599,12 +670,12 @@ preview_expose_event
         {
                 preview_draw_line (cr, line);
         }
-        END_LOOP;
-        ARC_LOOP (current_element);
+        END_LOOP; /* ELEMENTLINE_LOOP */
+        ELEMENTARC_LOOP (current_element);
         {
                 preview_draw_arc (cr, arc);
         }
-        END_LOOP;
+        END_LOOP; /* ELEMENTARC_LOOP */
         preview_draw_text (cr, current_element);
         preview_set_fg_color (cr, COLOR_MARKER);
         preview_draw_mark 
