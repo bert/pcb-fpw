@@ -39,10 +39,12 @@ install -c -m 755 src/fpw $RPM_BUILD_ROOT/usr/local/bin
 # data
 install -d $RPM_BUILD_ROOT/usr/local/share/%{name}/data
 install -c -m 644 data/README $RPM_BUILD_ROOT/usr/local/share/%{name}/data/
-install -c -m 644 data/fpw_data.csv $RPM_BUILD_ROOT/usr/local/share/%{name}/data/
-install -c -m 644 data/fpw_data.sql $RPM_BUILD_ROOT/usr/local/share/%{name}/data/
-install -c -m 644 data/user_data.csv $RPM_BUILD_ROOT/usr/local/share/%{name}/data/
-install -c -m 644 data/user_data.sql $RPM_BUILD_ROOT/usr/local/share/%{name}/data/
+#lib
+install -d $RPM_BUILD_ROOT/usr/local/share/%{name}/lib
+install -c -m 644 lib/fpw_data.csv $RPM_BUILD_ROOT/usr/local/share/%{name}/lib/
+install -c -m 644 lib/fpw_data.sql $RPM_BUILD_ROOT/usr/local/share/%{name}/lib/
+install -c -m 644 lib/user_data.csv $RPM_BUILD_ROOT/usr/local/share/%{name}/lib/
+install -c -m 644 lib/user_data.sql $RPM_BUILD_ROOT/usr/local/share/%{name}/lib/
 # pixmaps
 install -d $RPM_BUILD_ROOT/usr/local/share/%{name}/pixmaps
 install -c -m 644 pixmaps/*.xpm $RPM_BUILD_ROOT/usr/local/share/%{name}/pixmaps/
@@ -92,12 +94,17 @@ rm -rf $RPM_BUILD_ROOT
 /usr/local/bin/fpw
 # data
 /usr/local/share/%{name}/data/
+# lib
+/usr/local/share/%{name}/lib/
 # pixmaps
 /usr/local/share/%{name}/pixmaps/
 # man pages
 %doc /usr/local/share/man/man1/
 
 %changelog
+* Sun Aug 7 2011 Bert Timmerman <bert.timmerman@xs4all.nl>
+  Changed locations of csv and sql files.
+
 * Thu Mar 10 2011 Bert Timmerman <bert.timmerman@xs4all.nl>
   Updated for Fedora Core 13 / pcb-fpw-0.0.11.
 

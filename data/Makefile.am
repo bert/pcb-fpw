@@ -101,9 +101,5 @@ EXTRA_DIST = $(mime_icon_files) \
 	$(desktop_in_files) \
 	$(desktop_DATA) \
 	regen_files \
-	fpw_icon.ico \
-	fpw_data.sql \
-	fpw_data.csv \
-	user_data.sql \
-	user_data.csv
+	fpw_icon.ico
 
