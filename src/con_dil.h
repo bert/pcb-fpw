@@ -1,7 +1,7 @@
 /*!
  * \file src/con_dil.h
  *
- * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for CON_DIL footprints
  * (Dual In Line Connector).
