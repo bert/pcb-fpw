@@ -28,7 +28,7 @@
 
 
 /*!
- * \brief Create an Element for a CON-DIL package.
+ * \brief Create an Element for a CON_DIL package.
  *
  * \return \c EXIT_SUCCESS when an element was created,
  * \c EXIT_FAILURE when errors were encountered.
