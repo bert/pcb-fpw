@@ -3,7 +3,7 @@
  *
  * \author Copyright 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
- * \brief Functions for CON-DIP footprints
+ * \brief Functions for CON_DIP footprints
  * (Dual In line Connector with alternate pin order).
  *
  * This program is free software; you can redistribute it and/or modify
@@ -28,7 +28,13 @@
 
 
 /*!
- * \brief Create an Element for a CON-DIP package.
+ * \brief Create an Element for a CON_DIP package.
+ *
+ * The pin/pad numbering scheme of the CON_DIP package is: \n
+ * 1  8 \n
+ * 2  7 \n
+ * 3  6 \n
+ * 4  5 \n
  *
  * \return \c EXIT_SUCCESS when an element was created,
  * \c EXIT_FAILURE when errors were encountered.
@@ -209,7 +215,6 @@ con_dip_create_element ()
                         );
                 }
         }
-
         /* Create a package body on the silkscreen. */
         if (silkscreen_package_outline)
         {
@@ -364,7 +369,7 @@ con_dip_create_element ()
 
 
 /*!
- * \brief Create a list of CON-DIP packages with pre-defined values.
+ * \brief Create a list of CON_DIP packages with pre-defined values.
  *
  * The data in this list can be used in a combo box to select a
  * pre-defined package.
@@ -382,7 +387,7 @@ con_dip_create_packages_list ()
 
 
 /*!
- * \brief Do some Design Rule Checking for the CON-DIP package type.
+ * \brief Do some Design Rule Checking for the CON_DIP package type.
  *
  * <ul>
  * <li> check for total number of pins is even.
@@ -726,7 +731,7 @@ con_dip_drc ()
 
 
 /*!
- * \brief Look up default values for CON-DIP footprints.
+ * \brief Look up default values for CON_DIP footprints.
  *
  * Footprint values can be looked up by placing a question mark "?" in front
  * of the footprint name.\n
@@ -792,7 +797,7 @@ con_dip_get_default_footprint_values ()
 
 
 /*!
- * \brief Set GUI constraints for the CON-DIP package type.
+ * \brief Set GUI constraints for the CON_DIP package type.
  *
  * This function is only to be compiled for GUI targets.
  *
@@ -841,9 +846,9 @@ con_dip_set_gui_constraints ()
 
 
 /*!
- * \brief Write a CON-DIP pin through hole footprint.
+ * \brief Write a CON_DIP pin through hole footprint.
  *
- * The pin/pad numbering scheme of the CON-DIP package is: \n
+ * The pin/pad numbering scheme of the CON_DIP package is: \n
  * 1  8 \n
  * 2  7 \n
  * 3  6 \n
@@ -1116,7 +1121,7 @@ con_dip_write_footprint ()
 
 
 /*!
- * \brief A list containing all CON-DIP related functions.
+ * \brief A list containing all CON_DIP related functions.
  */
 static fpw_function_t
 con_dip_function_list[] =
@@ -1157,13 +1162,13 @@ con_dip_function_list[] =
 
 
 /*!
- * \brief A list containing all CON-DIP related functions.
+ * \brief A list containing all CON_DIP related functions.
  */
 REGISTER_FUNCTIONS (con_dip_function_list)
 
 
 /*!
- * \brief Initialise by registering all CON-DIP related functions.
+ * \brief Initialise by registering all CON_DIP related functions.
  */
 void
 con_dip_init ()
