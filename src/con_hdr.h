@@ -1,7 +1,7 @@
 /*!
  * \file src/con_hdr.h
  *
- * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for CON-HDR footprints
  * (Header Connector).
@@ -27,6 +27,7 @@
 #define __CON_HDR_INCLUDED__
 
 
+int con_hdr_create_element ();
 int con_hdr_create_packages_list ();
 int con_hdr_drc ();
 int con_hdr_get_default_footprint_values ();

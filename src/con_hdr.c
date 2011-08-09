@@ -28,6 +28,287 @@
 
 
 /*!
+ * \brief Create an Element for a CON_HDR package.
+ *
+ * The pin/pad numbering scheme of the CON_HDR package is \n
+ * \n
+ * for 2 rows: \n
+ * 2 4 6 8 \n
+ * 1 3 5 7 \n
+ * \n
+ * or for 3 rows: \n
+ * \n
+ * 3  6  9  12 \n
+ * 2  5  8  11 \n
+ * 1  4  7  10 \n
+ * \n
+ * You get the idea for 4 or more rows. \n
+ *
+ * \return \c EXIT_SUCCESS when an element was created,
+ * \c EXIT_FAILURE when errors were encountered.
+ */
+int
+con_hdr_create_element ()
+{
+        gdouble xmax;
+        gdouble xmin;
+        gdouble ymax;
+        gdouble ymin;
+        gdouble x_text;
+        gdouble y_text;
+        gdouble dx;
+        gint i;
+        gint j;
+        gint pin_number;
+        gchar *pin_pad_name = g_strdup ("");
+        FlagType pad_flag;
+        ElementTypePtr element;
+
+        if (!element)
+        {
+                if (verbose)
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("[%s] could not create a valid element pointer for an element.")),
+                                footprint_type);
+                return (EXIT_FAILURE);
+        }
+        /* Define the center of our universe and guess for a place where to
+         * put the element mark */
+        element->MarkX = 0;
+        element->MarkY = 0;
+        /* Determine (extreme) courtyard dimensions based on pin/pad
+         * properties */
+
+        /* Determine (extreme) courtyard dimensions based on package
+         * properties */
+        if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
+        {
+                xmin = (multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package));
+        }
+        if ((multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package)) > xmax)
+        {
+                xmax = (multiplier * ((package_body_length / 2.0) + courtyard_clearance_with_package));
+        }
+        if ((multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package)) < ymin)
+        {
+                ymin = (multiplier * ((-package_body_width / 2.0) - courtyard_clearance_with_package));
+        }
+        if ((multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package)) > ymax)
+        {
+                ymax = (multiplier * ((package_body_width / 2.0) + courtyard_clearance_with_package));
+        }
+        /* If the user input is using even more real-estate then use it */
+        if (multiplier * (-courtyard_length / 2.0) < xmin)
+        {
+                xmin = multiplier * (-courtyard_length / 2.0);
+        }
+        if (multiplier * (courtyard_length / 2.0) > xmax)
+        {
+                xmax = multiplier * (courtyard_length / 2.0);
+        }
+        if (multiplier * (-courtyard_width / 2.0) < ymin)
+        {
+                ymin = multiplier * (-courtyard_width / 2.0);
+        }
+        if (multiplier * (courtyard_width / 2.0) > ymax)
+        {
+                ymax = multiplier * (courtyard_width / 2.0);
+        }
+        /* Store the courtyard dimensions in Virtual (bounding) Box. */
+        element->VBox.X1 = (int) xmin;
+        element->VBox.Y1 = (int) ymin;
+        element->VBox.X2 = (int) xmax;
+        element->VBox.Y2 = (int) ymax;
+        /* Guess for a place where to put the element name */
+        element->Name[1].Scale = 100; /* 100 percent */
+        element->Name[1].X = 0.0 ; /* already in mil/100 */
+        element->Name[1].Y = (ymin - 10000.0); /* already in mil/100 */
+        element->Name[1].TextString = footprint_name;
+        element->Name[1].Element = element;
+        element->Name[1].Direction = EAST;
+        element->Name[1].ID = ID++;
+        /* Guess for a place where to put the element refdes */
+        element->Name[2].Scale = 100; /* 100 percent */
+        element->Name[2].X = 0.0 ; /* already in mil/100 */
+        element->Name[2].Y = (ymin - 10000.0); /* already in mil/100 */
+        element->Name[2].TextString = footprint_refdes;
+        element->Name[2].Element = element;
+        element->Name[2].Direction = EAST;
+        element->Name[2].ID = ID++;
+        /* Guess for a place where to put the element value */
+        element->Name[3].Scale = 100; /* 100 percent */
+        element->Name[3].X = 0.0 ; /* already in mil/100 */
+        element->Name[3].Y = (ymin - 10000.0); /* already in mil/100 */
+        element->Name[3].TextString = footprint_value;
+        element->Name[3].Element = element;
+        element->Name[3].Direction = EAST;
+        element->Name[3].ID = ID++;
+        /* Create pin and/or pad entities */
+        for (i = 0; (i < count_x); i++)
+        {
+                for (j = 0; (j < number_of_rows); j++)
+                {
+                        pin_number = 1 + i;
+                        if (pad_shapes_type == SQUARE)
+                        {
+                                pad_flag.f = SQUARE;
+                        }
+                        else if (pin1_square && (pin_number == 1))
+                        {
+                                pad_flag.f = SQUARE;
+                        }
+                        else
+                        {
+                                pad_flag.f = CLEAR;
+                        }
+                        create_new_pin
+                        (
+                                element,
+                                (int) (multiplier * ((((-count_x - 1) / 2.0) + 1 + i) * pitch_x)), /* x0 coordinate */
+                                (int) (multiplier * ((((number_of_rows - 1) / 2.0) + 1 - j) * (pitch_y / 2.0))), /* y0-coordinate */
+                                (int) (multiplier * pad_diameter), /* width of the annulus ring (pad) */
+                                (int) (multiplier * pad_clearance), /* clearance */
+                                (int) (multiplier * (pad_diameter + 2 * pad_solder_mask_clearance)), /* solder mask clearance */
+                                (int) (multiplier * pin_drill_diameter), /* pin drill diameter */
+                                pin_pad_name, /* pin name */
+                                g_strdup_printf ("%d", pin_number), /* pin number */
+                                pad_flag /* flags */
+                        );
+                        if (!strcmp (pad_shape, "rounded pad, elongated"))
+                        {
+                                pad_flag.f = ONSOLDER;
+                                create_new_pad
+                                (
+                                        element,
+                                        (int) (multiplier * ((((-count_x - 1) / 2.0) + 1 + i) * pitch_x)), /* x0 coordinate */
+                                        (int) (multiplier * (((((number_of_rows - 1) / 2.0) + 1 - j) * (pitch_y / 2.0)) + pad_length - pad_width) / 2.0), /* y0-coordinate */
+                                        (int) (multiplier * ((((-count_x - 1) / 2.0) + 1 + i) * pitch_x)), /* x1 coordinate */
+                                        (int) (multiplier * (((((number_of_rows - 1) / 2.0) + 1 - j) * (pitch_y / 2.0)) - pad_length + pad_width) / 2.0), /* y1-coordinate */
+                                        (int) (multiplier * pad_length), /* pad width */
+                                        (int) (multiplier * pad_clearance), /* clearance */
+                                        (int) (multiplier * (pad_width + (2 * pad_solder_mask_clearance))), /* solder mask clearance */
+                                        "", /* pad name */
+                                        g_strdup_printf ("%d", pin_number), /* pin number */
+                                        pad_flag /* flags */
+                                );
+                        }
+                        pin_number++;
+                }
+        }
+        /* Create a package body. */
+        if (silkscreen_package_outline)
+        {
+                create_new_line
+                (
+                        element,
+                        (int) (multiplier * (((-pitch_x + pad_diameter + silkscreen_line_width) / 2) + pad_solder_mask_clearance)),
+                        (int) ymin, /* already in mil/100 */
+                        (int) (multiplier * (((-pitch_x + pad_diameter + silkscreen_line_width) / 2) + pad_solder_mask_clearance)),
+                        (int) ymax, /* already in mil/100 */
+                        (int) (multiplier * silkscreen_line_width)
+                );
+                create_new_line
+                (
+                        element,
+                        (int) (multiplier * (((-pitch_x + pad_diameter + silkscreen_line_width) / 2) + pad_solder_mask_clearance)),
+                        (int) ymax, /* already in mil/100 */
+                        (int) (multiplier * (((pitch_x - pad_diameter - silkscreen_line_width) / 2) - pad_solder_mask_clearance)),
+                        (int) ymax, /* already in mil/100 */
+                        (int) (multiplier * silkscreen_line_width)
+                );
+                create_new_line
+                (
+                        element,
+                        (int) (multiplier * (((pitch_x - pad_diameter - silkscreen_line_width) / 2) - pad_solder_mask_clearance)),
+                        (int) ymax, /* already in mil/100 */
+                        (int) (multiplier * (((pitch_x - pad_diameter - silkscreen_line_width) / 2) - pad_solder_mask_clearance)),
+                        (int) ymin, /* already in mil/100 */
+                        (int) (multiplier * silkscreen_line_width)
+                );
+                create_new_line
+                (
+                        element,
+                        (int) (multiplier * (((-pitch_x + pad_diameter + silkscreen_line_width) / 2) + pad_solder_mask_clearance)),
+                        (int) ymin, /* already in mil/100 */
+                        (int) (multiplier * (((pitch_x - pad_diameter - silkscreen_line_width) / 2) - pad_solder_mask_clearance)),
+                        (int) ymin, /* already in mil/100 */
+                        (int) (multiplier * silkscreen_line_width)
+                );
+        }
+        /* Create a pin #1 marker. */
+        if (silkscreen_indicate_1)
+        {
+                create_new_arc
+                (
+                        element,
+                        (int) (xmin - (multiplier * (pad_solder_mask_clearance + pad_clearance))), /* x-coordinate */
+                        (int) (ymax + (multiplier * (pad_solder_mask_clearance + pad_clearance))), /* y-coordinate */
+                        (int) (multiplier * 0.5 * silkscreen_line_width), /* width */
+                        (int) (multiplier * 0.5 * silkscreen_line_width), /*height */
+                        0, /* start angke */
+                        360, /* delta angle */
+                        (int) (multiplier * silkscreen_line_width) /* line width */
+                );
+        }
+        /* Create a courtyard outline. */
+        if (courtyard)
+        {
+                create_new_line
+                (
+                        element,
+                        (int) (xmin), /* already in mil/100 */
+                        (int) (ymin), /* already in mil/100 */
+                        (int) (xmin), /* already in mil/100 */
+                        (int) (ymax), /* already in mil/100 */
+                        (int) (multiplier * courtyard_line_width)
+                );
+                create_new_line
+                (
+                        element,
+                        (int) (xmax), /* already in mil/100 */
+                        (int) (ymin), /* already in mil/100 */
+                        (int) (xmax), /* already in mil/100 */
+                        (int) (ymax), /* already in mil/100 */
+                        (int) (multiplier * courtyard_line_width)
+                );
+                create_new_line
+                (
+                        element,
+                        (int) (xmin), /* already in mil/100 */
+                        (int) (ymin), /* already in mil/100 */
+                        (int) (xmax), /* already in mil/100 */
+                        (int) (ymin), /* already in mil/100 */
+                        (int) (multiplier * courtyard_line_width)
+                );
+                create_new_line
+                (
+                        element,
+                        (int) (xmax), /* already in mil/100 */
+                        (int) (ymax), /* already in mil/100 */
+                        (int) (xmin), /* already in mil/100 */
+                        (int) (ymax), /* already in mil/100 */
+                        (int) (multiplier * courtyard_line_width)
+                );
+        }
+        /* Create attributes. */
+        if (attributes_in_footprint)
+        {
+                element = create_attributes_in_element (element);
+        }
+        /* We are ready creating an element. */
+        if (verbose)
+        {
+                g_log ("", G_LOG_LEVEL_INFO,
+                        (_("[%s] created an element for element: %s.")),
+                        footprint_type,
+                        footprint_filename);
+        }
+        current_element = (ElementTypePtr) &element;
+        return (EXIT_SUCCESS);
+}
+
+
+/*!
  * \brief Create a list of CON-HDR packages with pre-defined values.
  *
  * The data in this list can be used in a combo box to select a
