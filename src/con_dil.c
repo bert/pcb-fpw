@@ -3,7 +3,7 @@
  *
  * \author Copyright 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
- * \brief Functions for CON-DIL footprints
+ * \brief Functions for CON_DIL footprints
  * (Dual In Line Connector).
  *
  * This program is free software; you can redistribute it and/or modify
@@ -29,6 +29,12 @@
 
 /*!
  * \brief Create an Element for a CON_DIL package.
+ *
+ * The pin/pad numbering scheme of the CON_DIL package is: \n
+ * 1 5\n
+ * 2 6\n
+ * 3 7\n
+ * 4 8\n
  *
  * \return \c EXIT_SUCCESS when an element was created,
  * \c EXIT_FAILURE when errors were encountered.
@@ -63,7 +69,30 @@ con_dil_create_element ()
         element->MarkY = 0;
         /* Determine (extreme) courtyard dimensions based on pin/pad
          * properties */
-
+        xmin = multiplier *
+        (
+                (-pitch_x / 2.0) -
+                (((pad_diameter > pad_length) ? pad_diameter : pad_length) / 2.0) -
+                pad_solder_mask_clearance
+        );
+        xmax = multiplier *
+        (
+                (pitch_x / 2.0) +
+                (((pad_diameter > pad_length) ? pad_diameter : pad_length) / 2.0) +
+                pad_solder_mask_clearance
+        );
+        ymin = multiplier *
+        (
+                (((-number_of_rows + 1) / 2.0) * pitch_y) -
+                (((pad_diameter > pad_width) ? pad_diameter : pad_width) / 2.0) -
+                pad_solder_mask_clearance
+        );
+        ymax = multiplier *
+        (
+                (((number_of_rows - 1) / 2.0) * pitch_y) +
+                (((pad_diameter > pad_width) ? pad_diameter : pad_width) / 2.0) +
+                pad_solder_mask_clearance
+        );
         /* Determine (extreme) courtyard dimensions based on package
          * properties */
         if ((multiplier * ((-package_body_length / 2.0) - courtyard_clearance_with_package)) < xmin)
@@ -147,8 +176,8 @@ con_dil_create_element ()
                 create_new_pin
                 (
                         element,
-                        (int) (multiplier * ((((-number_of_columns - 1) / 2.0) +1 + i) * pitch_x)), /* x0 coordinate */
-                        (int) (multiplier * (pitch_y / 2.0)), /* y0-coordinate */
+                        (int) (multiplier * (-pitch_x / 2.0)), /* x0-coordinate */
+                        (int) (multiplier * ((((-number_of_rows - 1) / 2.0) +1 + i) * pitch_y)), /* y0 coordinate */
                         (int) (multiplier * pad_diameter), /* width of the annulus ring (pad) */
                         (int) (multiplier * pad_clearance), /* clearance */
                         (int) (multiplier * (pad_diameter + pad_solder_mask_clearance)), /* solder mask clearance */
@@ -163,10 +192,10 @@ con_dil_create_element ()
                         create_new_pad
                         (
                                 element,
-                                (int) (multiplier * ((((-number_of_columns - 1) / 2.0) + 1 + i) * pitch_x)), /* x0 coordinate */
-                                (int) (multiplier * ((pitch_y + pad_length - pad_width) / 2.0)), /* y0-coordinate */
-                                (int) (multiplier * ((((-number_of_columns - 1) / 2.0) + 1 + i) * pitch_x)), /* x1 coordinate */
-                                (int) (multiplier * ((pitch_y - pad_length + pad_width) / 2.0)), /* y1-coordinate */
+                                (int) (multiplier * ((-pitch_x + pad_length - pad_width) / 2.0)), /* x0-coordinate */
+                                (int) (multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y)), /* y0 coordinate */
+                                (int) (multiplier * ((-pitch_x - pad_length + pad_width) / 2.0)), /* x1-coordinate */
+                                (int) (multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y)), /* y1 coordinate */
                                 (int) (multiplier * pad_length), /* pad width */
                                 (int) (multiplier * pad_clearance), /* clearance */
                                 (int) (multiplier * (pad_width + (2 * pad_solder_mask_clearance))), /* solder mask clearance */
@@ -188,8 +217,8 @@ con_dil_create_element ()
                 create_new_pin
                 (
                         element,
+                        (int) (multiplier * (pitch_x / 2.0)), /* y0-coordinate */
                         (int) (multiplier * ((((-number_of_columns - 1) / 2.0) + 1 + i) * pitch_x)), /* x0 coordinate */
-                        (int) (multiplier * (-pitch_y / 2.0)), /* y0-coordinate */
                         (int) (multiplier * pad_diameter), /* width of the annulus ring (pad) */
                         (int) (multiplier * pad_clearance), /* clearance */
                         (int) (multiplier * (pad_diameter + pad_solder_mask_clearance)), /* solder mask clearance */
@@ -204,10 +233,10 @@ con_dil_create_element ()
                         create_new_pad
                         (
                                 element,
-                                (int) (multiplier * ((((-number_of_columns - 1) / 2.0) + 1 + i) * pitch_x)), /* x0 coordinate */
-                                (int) (multiplier * ((-pitch_y - pad_length + pad_width) / 2.0)), /* y0-coordinate */
-                                (int) (multiplier * ((((-number_of_columns - 1) / 2.0) + 1 + i) * pitch_x)), /* x1 coordinate */
-                                (int) (multiplier * ((-pitch_y + pad_length - pad_width) / 2.0)), /* y1-coordinate */
+                                (int) (multiplier * ((pitch_x - pad_length + pad_width) / 2.0)), /* x0-coordinate */
+                                (int) (multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y)), /* y0 coordinate */
+                                (int) (multiplier * ((pitch_x + pad_length - pad_width) / 2.0)), /* x1-coordinate */
+                                (int) (multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y)), /* y1 coordinate */
                                 (int) (multiplier * pad_length), /* pad width */
                                 (int) (multiplier * pad_clearance), /* clearance */
                                 (int) (multiplier * (pad_width + (2 * pad_solder_mask_clearance))), /* solder mask clearance */
@@ -219,42 +248,47 @@ con_dil_create_element ()
                 pad_flag.f = CLEAR;
         }
         /* Create a package body. */
-        if (silkscreen_package_outline)
+        if
+        (
+                silkscreen_package_outline
+                && (package_body_length > 0.0)
+                && (package_body_width > 0.0)
+        )
         {
                 create_new_line
                 (
                         element,
-                        (int) (multiplier * (((-pitch_x + pad_diameter + silkscreen_line_width) / 2) + pad_solder_mask_clearance)),
-                        (int) ymin, /* already in mil/100 */
-                        (int) (multiplier * (((-pitch_x + pad_diameter + silkscreen_line_width) / 2) + pad_solder_mask_clearance)),
-                        (int) ymax, /* already in mil/100 */
+                        (int) (multiplier * (-package_body_length / 2.0)),
+                        (int) (multiplier * (-package_body_width / 2.0)),
+                        (int) (multiplier * (-package_body_length / 2.0)),
+                        (int) (multiplier * (package_body_width / 2.0)),
                         (int) (multiplier * silkscreen_line_width)
                 );
                 create_new_line
                 (
                         element,
-                        (int) (multiplier * (((-pitch_x + pad_diameter + silkscreen_line_width) / 2) + pad_solder_mask_clearance)),
-                        (int) ymax, /* already in mil/100 */
-                        (int) (multiplier * (((pitch_x - pad_diameter - silkscreen_line_width) / 2) - pad_solder_mask_clearance)),
-                        (int) ymax, /* already in mil/100 */
+                        (int) (multiplier * (package_body_length / 2.0)),
+                        (int) (multiplier * (-package_body_width / 2.0)),
+                        (int) (multiplier * (package_body_length / 2.0)),
+                        (int) (multiplier * (package_body_width / 2.0)),
                         (int) (multiplier * silkscreen_line_width)
                 );
                 create_new_line
                 (
                         element,
-                        (int) (multiplier * (((pitch_x - pad_diameter - silkscreen_line_width) / 2) - pad_solder_mask_clearance)),
-                        (int) ymax, /* already in mil/100 */
-                        (int) (multiplier * (((pitch_x - pad_diameter - silkscreen_line_width) / 2) - pad_solder_mask_clearance)),
-                        (int) ymin, /* already in mil/100 */
+                        (int) (multiplier * (-package_body_length / 2.0)),
+                        (int) (multiplier * (-package_body_width / 2.0)),
+                        (int) (multiplier * (package_body_length / 2.0)),
+                        (int) (multiplier * (-package_body_width / 2.0)),
                         (int) (multiplier * silkscreen_line_width)
                 );
                 create_new_line
                 (
                         element,
-                        (int) (multiplier * (((-pitch_x + pad_diameter + silkscreen_line_width) / 2) + pad_solder_mask_clearance)),
-                        (int) ymin, /* already in mil/100 */
-                        (int) (multiplier * (((pitch_x - pad_diameter - silkscreen_line_width) / 2) - pad_solder_mask_clearance)),
-                        (int) ymin, /* already in mil/100 */
+                        (int) (multiplier * (package_body_length / 2.0)),
+                        (int) (multiplier * (package_body_width / 2.0)),
+                        (int) (multiplier * (-package_body_length / 2.0)),
+                        (int) (multiplier * (package_body_width / 2.0)),
                         (int) (multiplier * silkscreen_line_width)
                 );
         }
@@ -798,11 +832,13 @@ con_dil_set_gui_constraints ()
 
 
 /*!
- * \brief Write a CON-DIL pin through hole footprint.
+ * \brief Write a CON_DIL pin through hole footprint.
  *
- * The pin/pad numbering scheme of the CON-DIP package is: \n
- * 5 6 7 8 \n
- * 1 2 3 4 \n
+ * The pin/pad numbering scheme of the CON_DIL package is: \n
+ * 1 5\n
+ * 2 6\n
+ * 3 7\n
+ * 4 8\n
  *
  * \return \c EXIT_FAILURE when errors were encountered,
  * \c EXIT_SUCCESS when OK.
@@ -840,25 +876,25 @@ con_dil_write_footprint ()
          * properties */
         xmin = multiplier *
         (
-                (((-number_of_columns + 1) / 2.0) * pitch_x) -
+                (-pitch_x / 2.0) -
                 (((pad_diameter > pad_length) ? pad_diameter : pad_length) / 2.0) -
                 pad_solder_mask_clearance
         );
         xmax = multiplier *
         (
-                (((number_of_columns - 1) / 2.0) * pitch_x) +
+                (pitch_x / 2.0) +
                 (((pad_diameter > pad_length) ? pad_diameter : pad_length) / 2.0) +
                 pad_solder_mask_clearance
-                );
+        );
         ymin = multiplier *
         (
-                (-pitch_y / 2.0) -
+                (((-number_of_rows + 1) / 2.0) * pitch_y) -
                 (((pad_diameter > pad_width) ? pad_diameter : pad_width) / 2.0) -
                 pad_solder_mask_clearance
         );
         ymax = multiplier *
         (
-                (pitch_y / 2.0) +
+                (((number_of_rows - 1) / 2.0) * pitch_y) +
                 (((pad_diameter > pad_width) ? pad_diameter : pad_width) / 2.0) +
                 pad_solder_mask_clearance
         );
@@ -903,7 +939,7 @@ con_dil_write_footprint ()
         y_text = (ymin - 10000.0); /* already in mil/100 */
         write_element_header (x_text, y_text);
         /* Write pin and/or pad entities */
-        for (i = 0; (i < number_of_columns); i++)
+        for (i = 0; (i < number_of_rows); i++)
         {
                 pin_number = 1 + i;
                 if (pin1_square && (pin_number == 1))
@@ -914,8 +950,8 @@ con_dil_write_footprint ()
                 (
                         pin_number, /* pin number */
                         pin_pad_name, /* pin name */
-                        multiplier * ((((-number_of_columns - 1) / 2.0) +1 + i) * pitch_x), /* x0-coordinate */
-                        multiplier * (pitch_y / 2.0), /* y0 coordinate */
+                        multiplier * (-pitch_x / 2.0), /* x0 coordinate */
+                        multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
                         multiplier * pad_diameter, /* width of the annulus ring (pad) */
                         multiplier * pad_clearance, /* clearance */
                         multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
@@ -932,17 +968,17 @@ con_dil_write_footprint ()
                         (
                                 pin_number, /* pad number = pin_number */
                                 pin_pad_name, /* pad name */
-                                multiplier * ((((-number_of_columns - 1) / 2.0) + 1 + i) * pitch_x), /* x0-coordinate */
-                                multiplier * ((pitch_y + pad_length - pad_width) / 2.0), /* y0 coordinate */
-                                multiplier * ((((-number_of_columns - 1) / 2.0) + 1 + i) * pitch_x), /* x1-coordinate */
-                                multiplier * ((pitch_y - pad_length + pad_width) / 2.0), /* y1 coordinate */
+                                multiplier * ((-pitch_x - pad_length + pad_width) / 2.0), /* x0 coordinate */
+                                multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_x), /* y0-coordinate */
+                                multiplier * ((-pitch_x + pad_length - pad_width) / 2.0), /* x1 coordinate */
+                                multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_x), /* y1-coordinate */
                                 multiplier * pad_length, /* width of the pad */
                                 multiplier * pad_clearance, /* clearance */
                                 multiplier * (pad_width + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
                                 pin_pad_flags /* flags */
                         );
                 }
-                pin_number = number_of_columns + 1 + i;
+                pin_number = number_of_rows + 1 + i;
                 if (pin1_square && (pin_number == 1))
                         pin_pad_flags = g_strdup ("square");
                 else
@@ -951,8 +987,8 @@ con_dil_write_footprint ()
                 (
                         pin_number, /* pin number */
                         pin_pad_name, /* pin name */
-                        multiplier * ((((-number_of_columns - 1) / 2.0) + 1 + i) * pitch_x), /* x0-coordinate */
-                        multiplier * (-pitch_y / 2.0), /* y0 coordinate */
+                        multiplier * (pitch_x / 2.0), /* x0 coordinate */
+                        multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* y0-coordinate */
                         multiplier * pad_diameter, /* width of the annulus ring (pad) */
                         multiplier * pad_clearance, /* clearance */
                         multiplier * (pad_diameter + pad_solder_mask_clearance), /* solder mask clearance */
@@ -969,10 +1005,10 @@ con_dil_write_footprint ()
                         (
                                 pin_number, /* pad number = pin_number*/
                                 pin_pad_name, /* pad name */
-                                multiplier * ((((-number_of_columns - 1) / 2.0) + 1 + i) * pitch_x), /* x0-coordinate */
-                                multiplier * ((-pitch_y - pad_length + pad_width) / 2.0), /* y0 coordinate */
-                                multiplier * ((((-number_of_columns - 1) / 2.0) + 1 + i) * pitch_x), /* x1-coordinate */
-                                multiplier * ((-pitch_y + pad_length - pad_width) / 2.0), /* y1 coordinate */
+                                multiplier * ((pitch_x - pad_length + pad_width) / 2.0), /* y0 coordinate */
+                                multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* x0-coordinate */
+                                multiplier * ((pitch_x + pad_length - pad_width) / 2.0), /* y1 coordinate */
+                                multiplier * ((((-number_of_rows - 1) / 2.0) + 1 + i) * pitch_y), /* x1-coordinate */
                                 multiplier * pad_length, /* width of the pad */
                                 multiplier * pad_clearance, /* clearance */
                                 multiplier * (pad_width + (2 * pad_solder_mask_clearance)), /* solder mask clearance */
@@ -981,7 +1017,12 @@ con_dil_write_footprint ()
                 }
         }
         /* Write a package body on the silkscreen */
-        if (silkscreen_package_outline)
+        if
+        (
+                silkscreen_package_outline
+                && (package_body_length > 0.0)
+                && (package_body_width > 0.0)
+        )
         {
                 fprintf (fp, (_("# Write a package body on the silkscreen\n")));
                 write_rectangle
