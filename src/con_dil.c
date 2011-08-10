@@ -366,7 +366,7 @@ con_dil_create_element ()
 
 
 /*!
- * \brief Create a list of CON-DIL packages with pre-defined values.
+ * \brief Create a list of CON_DIL packages with pre-defined values.
  *
  * The data in this list can be used in a combo box to select a
  * pre-defined package.
@@ -384,7 +384,7 @@ con_dil_create_packages_list ()
 
 
 /*!
- * \brief Do some Design Rule Checking for the CON-DIL package type.
+ * \brief Do some Design Rule Checking for the CON_DIL package type.
  *
  * <ul>
  * <li> check for total number of pins is even.
@@ -732,7 +732,7 @@ con_dil_drc ()
 
 
 /*!
- * \brief Look up default values for CON-DIL footprints.
+ * \brief Look up default values for CON_DIL footprints.
  *
  * Footprint values can be looked up by placing a question mark "?" in front
  * of the footprint name.\n
@@ -783,7 +783,7 @@ con_dil_get_default_footprint_values ()
 
 
 /*!
- * \brief Set GUI constraints for the CON-DIL package type.
+ * \brief Set GUI constraints for the CON_DIL package type.
  *
  * This function is only to be compiled for GUI targets.
  *
@@ -1084,7 +1084,7 @@ con_dil_write_footprint ()
 
 
 /*!
- * \brief A list containing all CON-DIL related functions.
+ * \brief A list containing all CON_DIL related functions.
  */
 static fpw_function_t
 con_dil_function_list[] =
@@ -1131,13 +1131,13 @@ con_dil_function_list[] =
 
 
 /*!
- * \brief A list containing all CON-DIL related functions.
+ * \brief A list containing all CON_DIL related functions.
  */
 REGISTER_FUNCTIONS (con_dil_function_list)
 
 
 /*!
- * \brief Initialise by registering all CON-DIL related functions.
+ * \brief Initialise by registering all CON_DIL related functions.
  */
 void
 con_dil_init ()
