@@ -13,15 +13,17 @@ alphabetical character, or combinations of characters that preceed the suffix.<b
 <br>
 Sample Name: QFP65P  +  Lead Span L1 X Lead Span L2 Nominal - Pin Qty<br>
 <br>
-The + (plus sign) stands for “in addition to” (no space between the prefix and
+The + (plus sign) stands for "in addition to" (no space between the prefix and
 the body size).<br>
 <br>
 The - (dash) is used to separate the pin qty.<br>
 <br>
-The X (capital letter X) is used instead of the word “by” to separate two 
-numbers such as height X width like “Quad Packages”.<br>
+The _ (underscore) is the separator between pin Qty in Hidden & Deleted pin components, and also used as a separator between lead numbers and package dimensions.<br>
+<br>
+The X (capital letter X) is used instead of the word "by" to separate two 
+numbers such as height X width like "Quad Packages".<br>
 </p>
-<h2>SUFFIXES</h2> 
+<h2>Suffixes.</h2> 
 <p>
 Suffixes for every common SMT footprint describe the environment application
 (this is the last character in every name).<br>
@@ -37,21 +39,21 @@ families;
 Before adapting the minimum footprint variations the user should consider
 product qualification testing and the manufacturer's datasheets.<br>
 <ul>
-<li>M - Density Level A: Maximum (Most) Land Protrusion <br>
+<li><b>M</b> - Density Level A: Maximum (Most) Land Protrusion <br>
     For low-density product applications, the 'maximum' footprint condition
     has been developed to accommodate wave or flow solder of leadless chip 
     devices and leaded gull- wing devices.<br>
-    The geometry furnished for these devices, as well as inward and “J”-formed 
+    The geometry furnished for these devices, as well as inward and "J"-formed 
     lead contact device families, may provide a wider process window for 
     reflow solder processes as well.
-<li>N - Density Level B: Median (Nominal) Land Protrusion <br>
+<li><b>N</b> - Density Level B: Median (Nominal) Land Protrusion <br>
     Products with a moderate level of component density may consider adapting 
     the 'median' footprint geometry. <br>
     The median footprints furnished for all device families will provide a
     robust solder attachment condition for reflow solder processes and should
     provide a condition suitable for wave or reflow soldering of leadless chip
     and leaded gull-wing type devices.
-<li>L - Density Level C: Minimum (Least) Land Protrusion <br>
+<li><b>L</b> - Density Level C: Minimum (Least) Land Protrusion <br>
     High component density typical of portable and hand-held product
     applications may consider the 'minimum' footprint geometry variation.<br>
     Selection of the minimum footprint geometry may not be suitable for all
@@ -65,105 +67,105 @@ indicate the different combinations of performance and component density to aid
 in understanding the environment and the manufacturing requirements of a
 particular assembly.<br>
 <br>
-A - Alternate component: (used primarily for SOP & QFP when component tolerance or height is different)
-AA, AB, etc. <br>
+<h3>General Sufixes.</h3>
+<p>
+<b>_HS</b> - Footprint with Heat Sink attachment requiring additional holes or pads.<br>
+Example: TO254P1055X160_HS-6N<br>
+<br>
+<b>_BEC</b> - Base, Emitter and Collector (pin assignments used for three pin transistors).<br>
+<br>
+<b>_SGD</b> - Source, Gate and Drain (pin assignments used for three pin transistors).<br>
+<br>
+<b>_213</b> - Alternate pin assignments used for three pin transistors.<br>
+</p>
+Alternate Components that do not follow the JEDEC, EIA or IEC Standard<br>
+<b>A</b> Alternate Component (used primarily for SOP & QFP when Component Tolerance or Height is different)<br>
+<b>B</b> Second Alternate Component<br>
+<br>
+Reverse Pin Order<br>
+<b>-20RN</b> - 20 pin part, Reverse Pin Order, Nominal Environment.<br>
+<br>
+Hidden Pins<br>
+<b>-20_24N</b> - 20 pin part in a 24 pin package. The pins are numbered 1 - 24 the hidden pins are skipped. The schematic symbol displays up to 24 pins.<br>
+<br>
+Deleted Pins<br>
+<b>-24_20N</b> - 20 pin part in a 24 pin package. The pins are numbered 1 - 20. The schematic symbol displays 20 pins.<br>
+<br>
+JEDEC and EIA Standard parts that have several alternate packages.<br>
+<b>AA</b>, <b>AB</b>, <b>AC</b> - JEDEC or EIA Component Identifier.<br>
 <br>
 JEDEC or EIA component identifier: used primarily on chip resistors, inductors and capacitors.<br>
 </p>
-<h3>General Sufixes </h3>
-<p>
-HS - Footprint with Heat Sink attachment requiring additional holes or pads.  <br>
-Example:TO254P1055_HS-6N<br>
-<br>
-BEC - Base, Emitter and Collector (pin assignments used for three pin transistors)<br>
-<br>
-SGD - Source, Gate and Drain (pin assignments used for three pin transistors)<br>
-<br>
-213 - Alternate pin assignments used for three pin transistors.<br>
-</p>
-<h1>Surface Mounting Technology (SMT) footprint name definitions.</h1>
+<h2>Surface Mounting Technology (SMT) footprint name definitions.</h2>
 <p>
 <table border>
 <tr><td>Prefix</td><td>Component</td><td>Footprint Name Definition</td></tr>
-<tr><td>BGA</td><td>BGA, Inch Based (1.27mm / 0.05” Pitch)</td><td>BGA127P + Number of Pin Columns X Number of Pin Rows X Height - Pin Qty</td></tr>
-<tr><td>BGA</td><td>BGA, Metric Based (1.50mm Pitch)</td><td>BGA150P + Number of Pin Columns X Number of Pin Rows X Height - Pin Qty</td></tr>
-<tr><td>BGA</td><td>BGA, Metric Based (1.00mm Pitch)</td><td>BGA100P + Number of Pin Columns X Number of Pin Rows X Height - Pin Qty</td></tr>
-<tr><td>BGA</td><td>BGA, Metric Based (0.80mm Pitch)</td><td>BGA80P + Number of Pin Columns X Number of Pin Rows X Height - Pin Qty</td></tr>
-<tr><td>BGA</td><td>BGA, Metric Based (0.75mm Pitch)</td><td>BGA75P + Number of Pin Columns X Number of Pin Rows X Height - Pin Qty</td></tr>
-<tr><td>BGA</td><td>BGA, Metric Based (0.65mm Pitch)</td><td>BGA65P + Number of Pin Columns X Number of Pin Rows X Height - Pin Qty</td></tr>
-<tr><td>BGA</td><td>BGA, Metric Based (0.50mm Pitch)</td><td>BGA50P + Number of Pin Columns X Number of Pin Rows X Height - Pin Qty</td></tr>
-<tr><td>SBGA</td><td>BGA, w/Staggered Pins (1.27mm Pitch)</td><td>SBGA127P + Number of Pin Columns X Number of Pin Rows X Height - Pin Qty</td></tr>
-<tr><td>CAPCA</td><td>Capacitors, Chip Array</td><td>CAPCA + (nom) Body Width X (nom) Body Length X Height - Pin Qty</td></tr>
-<tr><td>CAPC</td><td>Capacitors, Chip, Non-polarized</td><td>CAPC + Body Length + Body Width X Height</td></tr>
-<tr><td>CAPCP</td><td>Capacitors, Chip, Polarized</td><td>CAPCP + Body Length + Body Width X Heightc</td></tr>
-<tr><td>CAPCWR</td><td>Capacitors, Chip, Wire Rectangular</td><td>CAPCWR + Body Length + Body X Height</td></tr>
-<tr><td>CAPM</td><td>Capacitors, Molded body, Non-polarized</td><td>CAPM + Body Length + Body Width X Height</td></tr>
-<tr><td>CAPTMP</td><td>Capacitors, Molded body, Polarized</td><td>CAPTMP + Body Length + Body Width X Height</td></tr>
-<tr><td>CAPAE</td><td>Capacitors, Aluminum Electrolytic</td><td>CAPAE + Body Width X Height</td></tr>
-<tr><td>CFP</td><td>Ceramic Flat Packages</td><td>CFP127P + (nom) Lead Span X Height - Pin Qty</td></tr>
-<tr><td>CGA</td><td>Column Grid Array's</td><td>CGA + Number of Pin Columns X Number of Pin Rows X Height - Pin Qty</td></tr>
-<tr><td>DIOMELF</td><td>Diodes, MELF</td><td>DIOMELF + Body Length + Body Width</td></tr>
-<tr><td>DIOM</td><td>Diodes, Molded</td><td>DIOM + Body Length + Body Width X Height</td></tr>
-<tr><td>INDCA</td><td>Inductors, Chip Array</td><td>INDCA + Body Length + Body Width X Height</td></tr>
-<tr><td>INDC</td><td>Inductors, Chip</td><td>INDC + Body Length + Body Width X Height</td></tr>
-<tr><td>INDM</td><td>Inductors, Molded</td><td>INDM + Body Length + Body Width X Height</td></tr>
-<tr><td>INDP</td><td>Inductors, Precision Wire Wound</td><td>INDP + Body Length + Body Width X Height</td></tr>
-<tr><td>PLCC</td><td>Plastic Leaded Chip Carriers</td><td>PLCC + (nom) Leadspan1 X (nom) Leadspan2 X Height - Pin Qty</td></tr>
-<tr><td>PLCCS</td><td>Plastic Leaded Chip Carrier Sockets Rect.</td><td>PLCCS + (nom) Leadspan1 X (nom) Leadspan2 X Height - Pin Qty</td></tr>
-<tr><td>PQFPS</td><td>Plastic QFP, 0.635mm Pitch, Pin 1 Corner</td><td>PQFPS + (nom) Leadspan1 X (nom) Leadspan2 X Height - Pin Qty</td></tr>
-<tr><td>PQFPC</td><td>Plastic QFP, 0.635mm Pitch, Pin 1 Center</td><td>PQFPC + (nom) Leadspan1 X (nom) Leadspan2 X Height - Pin Qty</td></tr>
-<tr><td>BQFPS</td><td>Bump QFP, 0.635mm Pitch, Pin 1 Corner</td><td>BQFPS + (nom) Leadspan1 X (nom) Leadspan2 X Height - Pin Qty</td></tr>
-<tr><td>BQFPC</td><td>Bump QFP, 0.635mm Pitch, Pin 1 Center</td><td>BQFPC + (nom) Leadspan1 X (nom) Leadspan2 X Height - Pin Qty</td></tr>
-<tr><td>QFP</td><td>Quad Flat Packages, 1.00mm Pitch</td><td>QFP100P + (nom) Leadspan1 X (nom) Leadspan2 X Height - Pin Qty</td></tr>
-<tr><td>QFP</td><td>Quad Flat Packages, 0.80mm Pitch</td><td>QFP80P + (nom) Leadspan1 X (nom) Leadspan2 X Height - Pin Qty</td></tr>
-<tr><td>QFP</td><td>Quad Flat Packages, 0.65mm Pitch</td><td>QFP65P + (nom) Leadspan1 X (nom) Leadspan2 X Height - Pin Qty</td></tr>
-<tr><td>SQFP</td><td>Shrink Quad Flat Packages, 0.50mm Pitch</td><td>SQFP50P + (nom) Leadspan1 X (nom) Leadspan2 X Height - Pin Qty</td></tr>
-<tr><td>SQFP</td><td>Shrink Quad Flat Packages, 0.40mm Pitch</td><td>SQFP40P + (nom) Leadspan1 X (nom) Leadspan2 X Height - Pin Qty</td></tr>
-<tr><td>SQFP</td><td>Shrink Quad Flat Packages, 0.30mm Pitch</td><td>SQFP30P + (nom) Leadspan1 X (nom) Leadspan2 X Height - Pin Qty</td></tr>
-<tr><td>TQFP</td><td>Thin QFP, 0.80mm Pitch, Height =< 1.60mm</td><td>TQFP80P + (nom) Leadspan1 X (nom) Leadspan2 X Height - Pin Qty</td></tr>
-<tr><td>TQFP</td><td>Thin QFP, 0.65mm Pitch, Height =< 1.60mm</td><td>TQFP65P + (nom) Leadspan1 X (nom) Leadspan2 X Height - Pin Qty</td></tr>
-<tr><td>TQFP</td><td>Thin QFP, 0.50mm Pitch, Height =< 1.60mm</td><td>TSQFP50P + (nom) Leadspan1 X (nom) Leadspan2 X Height - Pin Qty</td></tr>
-<tr><td>TQFP</td><td>Thin QFP, 0.40mm Pitch, Height =< 1.60mm</td><td>TSQFP40P + (nom) Leadspan1 X (nom) Leadspan2 X Height - Pin Qty</td></tr>
-<tr><td>TQFP</td><td>Thin QFP, 0.30mm Pitch, Height =< 1.60mm</td><td>TSQFP30P + (nom) Leadspan1 X (nom) Leadspan2 X Height - Pin Qty</td></tr>
-<tr><td>CQFP</td><td>Ceramic Quad Flat Packages, 1.27mm Pitch</td><td>CQFP127P + (nom) Leadspan1 X (nom) Leadspan2 X Height - Pin Qty</td></tr>
-<tr><td>CQFP</td><td>Ceramic Quad Flat Packages, 0.80mm Pitch</td><td>CQFP80P + (nom) Leadspan1 X (nom) Leadspan2 X Height - Pin Qty</td></tr>
-<tr><td>CQFP</td><td>Ceramic Quad Flat Packages, 0.635mm Pitch</td><td>CQFP63P + (nom) Leadspan1 X (nom) Leadspan2 X Height - Pin Qty</td></tr>
-<tr><td>QFN</td><td>Quad Flat No Lead Packages 0.80mm Pitch</td><td>QFN80P - (nom) Body Width X (nom) Body Length X Height - Pin Qty</td></tr>
-<tr><td>QFN</td><td>Quad Flat No Lead Packages 0.65mm Pitch</td><td>QFN65P - (nom) Body Width X (nom) Body Length X Height - Pin Qty</td></tr>
-<tr><td>QFN</td><td>Quad Flat No Lead Packages 0.50mm Pitch</td><td>QFN50P - (nom) Body Width X (nom) Body Length X Height - Pin Qty</td></tr>
-<tr><td>QFN</td><td>Quad Flat No Lead Packages 0.40mm Pitch</td><td>QFN40P - (nom) Body Width X (nom) Body Length X Height - Pin Qty</td></tr>
-<tr><td>LCC</td><td>Quad Leadless Chip Carriers</td><td>LCC + (nom) Body Width X (nom) Body Length X Height - Pin Qty</td></tr>
-<tr><td>PAD</td><td>Pad</td><td>PAD + Wire Width</td></tr>
-<tr><td>RESCA</td><td>Resistors, Chip Array</td><td>RESCA + (nom) Body Width X (nom) Body Length X Height - Pin Qty</td></tr>
-<tr><td>RESC</td><td>Resistors, Chip</td><td>RESC + Body Length + Body Width X Height</td></tr>
-<tr><td>RESM</td><td>Resistors, Molded</td><td>RESM + Body Length + Body Width X Height</td></tr>
-<tr><td>RESMELF</td><td>Resistors, MELF</td><td>RESMELF + Body Length + Body Width</td></tr>
-<tr><td>SOJ</td><td>SO, J-Leaded  ( 0.5mm-1.27mm Pitch)</td><td>SOJ + Pitch P + (nom) Lead Span X Height - Pin Qty</td></tr>
-<tr><td>SOIC</td><td>Small Outline IC, 1.27mm Pitch (Std)</td><td>SOIC127P + (nom) Lead Span X Height - Pin Qty</td></tr>
-<tr><td>SOP</td><td>Small Outline Packages, 1.27mm Pitch (Non-Std)</td><td>SOP127P + (nom) Lead Span X Height - Pin Qty</td></tr>
-<tr><td>SOP</td><td>Small Outline Packages, 1.00mm Pitch</td><td>SOP100P + (nom) Lead Span X Height - Pin Qty</td></tr>
-<tr><td>SOP</td><td>Small Outline Packages, 0.80mm Pitch</td><td>SOP80P + (nom) Lead Span X Height - Pin Qty</td></tr>
-<tr><td>SOP</td><td>Small Outline Packages, 0.65mm Pitch</td><td>SOP65P + (nom) Lead Span X Height - Pin Qty</td></tr>
-<tr><td>SOP</td><td>Small Outline Packages, 0.635mm Pitch</td><td>SOP63P + (nom) Lead Span X Height - Pin Qty</td></tr>
-<tr><td>SSOP</td><td>Shrink SOP, 0.50mm Pitch</td><td>SSOP50P + (nom) Lead Span X Height - Pin Qty</td></tr>
-<tr><td>SSOP</td><td>Shrink SOP, 0.40mm Pitch</td><td>SSOP40P + (nom) Lead Span X Height - Pin Qty</td></tr>
-<tr><td>SSOP</td><td>Shrink SOP, 0.30mm Pitch</td><td>SSOP30P + (nom) Lead Span X Height - Pin Qty</td></tr>
-<tr><td>TSOP</td><td>Thin SOP, H =< 1.60mm, 1.27mm Pitch</td><td>TSOP127P + (nom) Lead Span X Height - Pin Qty</td></tr>
-<tr><td>TSOP</td><td>Thin SOP, H =< 1.60mm, 1.00mm Pitch</td><td>TSOP100P + (nom) Lead Span X Height - Pin Qty</td></tr>
-<tr><td>TSOP</td><td>Thin SOP, H =< 1.60mm, 0.80mm Pitch</td><td>TSOP80P + (nom) Lead Span X Height - Pin Qty</td></tr>
-<tr><td>TSOP</td><td>Thin SOP, H =< 1.60mm, 0.65mm Pitch</td><td>TSOP65P + (nom) Lead Span X Height - Pin Qty</td></tr>
-<tr><td>TSSOP</td><td>Thin SSOP, H =< 1.6mm, 0.55mm Pitch</td><td>TSSOP55P + (nom) Lead Span X Height - Pin Qty</td></tr>
-<tr><td>TSSOP</td><td>Thin SSOP, H =< 1.6mm, 0.50mm Pitch</td><td>TSSOP50P + (nom) Lead Span X Height - Pin Qty</td></tr>
-<tr><td>TSSOP</td><td>Thin SSOP, H =< 1.6mm, 0.40mm Pitch</td><td>TSSOP40P + (nom) Lead Span X Height - Pin Qty</td></tr>
-<tr><td>TSSOP</td><td>Thin SSOP, Thin ,H =< 1.6mm, 0.30mm Pitch</td><td>TSSOP30P + (nom) Lead Span X Height - Pin Qty</td></tr>
-<tr><td>SOP</td><td>Small Outline Diode</td><td>SOD + (nom) Lead Span + (nom) Body Width X Height - Pin Qty</td></tr>
-<tr><td>SON</td><td>Small Outline No-Lead</td><td>SON + Pitch P - (nom) Body Width X (nom) Body Length X Height - Pin Qty</td></tr>
-<tr><td>TO</td><td>TO (Generic DPAK)</td><td>TO + Pitch P + (nom) Lead Span X Height - Pin Qty</td></tr>
-<tr><td>SOT</td><td>SOT (Generic)</td><td>SOT + Pitch P + (nom) Lead Span X Height - Pin Qty</td></tr>
-<tr><td> </td><td> </td><td> </td></tr>
+<tr><td>BGA</td><td>Ball Grid Array</td><td><b>BGA</b> + Pin Qty + <b>C</b> or <b>N</b> + Pitch <b>P</b> + Ball Columns <b>X</b> Ball Rows <b>_</b> Body Length <b>X</b> Body Width <b>X</b> Height</td></tr>
+<tr><td>BGA</td><td>Ball Grid Array with Dual Pitch</td><td><b>BGA</b> + Pin Qty + <b>C</b> or <b>N</b> + Col Pitch <b>X</b> Row Pitch <b>P</b> + Ball Columns <b>X</b> Ball Rows <b>_</b> Body Length <b>X</b> Body Width <b>X</b> Height</td></tr>
+<tr><td>BGAS</td><td>Ball Grid Array with Staggered Pins</td><td><b>BGAS</b> + Pin Qty + <b>C</b> or <b>N</b> + Pitch <b>P</b> + Ball Columns <b>X</b> Ball Rows <b>_</b> Body Length <b>X</b> Body Width <b>X</b> Height</td></tr>
+<tr><td>CAPC</td><td>Capacitors, Chip, Non-polarized</td><td><b>CAPC</b> + Body Length + Body Width <b>X</b> Height</td></tr>
+<tr><td>CAPCAF</td><td>Capacitors, Chip Array, Flat</td><td><b>CAPCAF</b> + Body Width <b>X</b> Body Length <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>CAPCAV</td><td>Capacitors, Chip Array, Concave</td><td><b>CAPCAV</b> + Body Width <b>X</b> Body Length <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>CAPCP</td><td>Capacitors, Chip, Polarized</td><td><b>CAPCP</b> + Body Length + Body Width <b>X</b> Height</td></tr>
+<tr><td>CAPCWR</td><td>Capacitors, Chip, Wire Rectangular</td><td><b>CAPCWR</b> + Body Length + Body <b>X</b> Height</td></tr>
+<tr><td>CAPM</td><td>Capacitors, Molded body, Non-polarized</td><td><b>CAPM</b> + Body Length + Body Width <b>X</b> Height</td></tr>
+<tr><td>CAPMP</td><td>Capacitors, Molded body, Polarized</td><td><b>CAPMP</b> + Body Length + Body Width <b>X</b> Height</td></tr>
+<tr><td>CAPAE</td><td>Capacitors, Aluminum Electrolytic</td><td><b>CAPAE</b> + Body Width <b>X</b> Height</td></tr>
+<tr><td>CFP</td><td>Ceramic Flat Packages</td><td><b>CFP</b> + Pitch <b>P</b> + Lead Span <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>CGA</td><td>Column Grid Array, Circular Lead</td><td><b>CGA</b> + Pin Qty + <b>C</b> + Pitch <b>P</b> + Pin Columns <b>X</b> Pin Rows <b>_</b> Body Length <b>X</b> Body Width <b>X</b> Height</td></tr>
+<tr><td>CGA</td><td>Column Grid Array, Square Lead</td><td><b>CGA</b> + Pin Qty + <b>S</b> + Pitch <b>P</b> + Pin Columns <b>X</b> Pin Rows <b>_</b> Body Length <b>X</b> Body Width <b>X</b> Heigh</td></tr>
+<tr><td>CQFP</td><td>Ceramic Quad Flat Packages</td><td><b>CQFP</b> + Pitch <b>P</b> + Lead Span L1 <b>X</b> Lead Span L2 Nominal <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>DFN</td><td>Dual Flat No-lead</td><td><b>DFN</b> + Body Length <b>X</b> Body Width <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>DIOC</td><td>Diodes, Chip</td><td><b>DIOC</b> + Body Length + Body Width <b>X</b> Height</td></tr>
+<tr><td>DIOM</td><td>Diodes, Molded</td><td><b>DIOM</b> + Body Length + Body Width <b>X</b> Height</td></tr>
+<tr><td>DIOMELF</td><td>Diodes, MELF</td><td><b>DIOMELF</b> + Body Length + Body Width</td></tr>
+<tr><td>DIOSC</td><td>Diodes, Side Concave, 2 Pin</td><td><b>DIOSC</b> + Body Length <b>X</b> Body Width <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>DIP</td><td>Dual-in-Line Packages (Butt Mount)</td><td><b>DIP</b> + Pitch <b>P</b> + Lead Span Nominal <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>FUSM</td><td>Fuses, Molded</td><td><b>FUSM</b> + Body Length + Body Width <b>X</b> Height</td></tr>
+<tr><td>INDC</td><td>Inductors, Chip</td><td><b>INDC</b> + Body Length + Body Width <b>X</b> Height</td></tr>
+<tr><td>INDCAF</td><td>Inductors, Chip Array, Flat</td><td><b>INDCAF</b> + Pitch <b>P</b> + Body Length <b>X</b> Body Width <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>INDCAV</td><td>Inductors, Chip Array, Concave</td><td><b>INDCAV</b> + Pitch <b>P</b> + Body Length <b>X</b> Body Width <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>INDM</td><td>Inductors, Molded</td><td><b>INDM</b> + Body Length + Body Width <b>X</b> Height</td></tr>
+<tr><td>INDP</td><td>Inductors, Precision Wire Wound</td><td><b>INDP</b> + Body Length + Body Width <b>X</b> Height</td></tr>
+<tr><td>LCC</td><td>Quad Leadless Chip Carriers</td><td><b>LCC</b> + Body Width <b>X</b> Body Length X Height <b>-</b> Pin Qty</td></tr>
+<tr><td>LCCS</td><td>Quad Leadless Ceramic Chip Carriers (Pin 1 on Side)</td><td><b>LCCS</b> + Pitch <b>P</b> + Body Width <b>X</b> Body Length <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>LEDM</td><td>LED's, Molded </td><td><b>LEDM</b> + Body Length + Body Width <b>X</b> Height</td></tr>
+<tr><td>LEDSC</td><td>LED's, Side Concave, 2 Pin</td><td><b>LEDSC</b> + Body Length <b>X</b> Body Width <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>LEDSC</td><td>LED's, Side Concave, 4 Pin</td><td><b>LEDSC</b> + Pitch <b>P</b> + Body Length <b>X</b> Body Width <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>LGA</td><td>Land Grid Array, Circular Lead</td><td><b>LGA</b> + Pin Qty + <b>C</b> + Pitch <b>P</b> + Pin Columns <b>X</b> Pin Rows <b>_</b> Body Length <b>X</b> Body Width <b>X</b> Height</td></tr>
+<tr><td>LGA</td><td>Land Grid Array, Square Lead </td><td><b>LGA</b> + Pin Qty + <b>S</b> + Pitch <b>P</b> + Pin Columns <b>X</b> Pin Rows <b>_</b> Body Length <b>X</b> Body Width <b>X</b> Height</td></tr>
+<tr><td>LGA</td><td>Land Grid Array, Rectangle Lead</td><td><b>LGA</b> + Pin Qty + <b>R</b> + Pitch <b>P</b> + Pin Columns <b>X</b> Pin Rows <b>_</b> Body Length <b>X</b> Body Width <b>X</b> Height</td></tr>
+<tr><td>OSCCC</td><td>Oscillators, Corner Concave</td><td><b>OSCCC</b> + Body Length <b>X</b> Body Width <b>X</b> Height</td></tr>
+<tr><td>OSCJ</td><td>Oscillators, J-Lead</td><td><b>OSCJ</b> + Pitch <b>P</b> + Body Length <b>X</b> Body Width <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>OSCL</td><td>Oscillators, L-Bend Lead</td><td><b>OSCL</b> + Pitch <b>P</b> + Body Length <b>X</b> Body Width <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>OSCSC</td><td>Oscillators, Side Concave</td><td><b>OSCSC</b> + Pitch <b>P</b> + Body Length <b>X</b> Body Width <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>PAD</td><td>Pad</td><td><b>PAD</b> + Wire Width</td></tr>
+<tr><td>PLCC</td><td>Plastic Leaded Chip Carriers</td><td><b>PLCC</b> + Leadspan1 <b>X</b> Leadspan2 <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>PLCCS</td><td>Plastic Leaded Chip Carrier Sockets</td><td><b>PLCCS</b> + Leadspan1 <b>X</b> Leadspan2 <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>PQFN</td><td>Pull-back Quad Flat No-lead</td><td><b>PQFN</b> + Pitch <b>P</b> + Body Width <b>X</b> Body Length <b>X</b> Height <b>-</b> Pin Qty + Thermal Pad</td></tr>
+<tr><td>PSON</td><td>Pull-back Small Outline No-lead</td><td><b>PSON</b> + Pitch <b>P</b> + Body Width <b>X</b> Body Length <b>X</b> Height <b>-</b> Pin Qty + Thermal Pad</td></tr>
+<tr><td>QFN</td><td>Quad Flat No-lead</td><td><b>QFN</b> + Pitch <b>P</b> + Body Width <b>X</b> Body Length <b>X</b> Height <b>-</b> Pin Qty + Thermal Pad</td></tr>
+<tr><td>QFP</td><td>Quad Flat Packages</td><td><b>QFP</b> + Pitch <b>P</b> + Lead Span L1 <b>X</b> Lead Span L2 Nominal <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>RESC</td><td>Resistors, Chip</td><td><b>RESC</b> + Body Length + Body Width <b>X</b> Height</td></tr>
+<tr><td>RESCAF</td><td>Resistors, Chip Array, Flat</td><td><b>RESCAF</b> + Pitch <b>P</b> + Body Length <b>X</b> Body Width <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>RESCAV</td><td>Resistors, Chip Array, Concave</td><td><b>RESCAV</b> + Pitch <b>P</b> + Body Length <b>X</b> Body Width <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>RESCAXE</td><td>Resistors, Chip, Array, Convex, E-Version (Even Pin Size)</td><td><b>RESCAXE</b> + Pitch <b>P</b> + Body Length <b>X</b> Body Width <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>RESCAXS</td><td>Resistors, Chip, Array, Convex, S-Version (Side Pins Diff)</td><td><b>RESCAXS</b> + Pitch <b>P</b> + Body Length <b>X</b> Body Width <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>RESM</td><td>Resistors, Molded</td><td><b>RESM</b> + Body Length + Body Width <b>X</b> Height</td></tr>
+<tr><td>RESMELF</td><td>Resistors, MELF</td><td><b>RESMELF</b> + Body Length + Body Width</td></tr>
+<tr><td>SOD</td><td>Small Outline Diode</td><td><b>SOD</b> + Lead Span Nominal + Body Width <b>X</b> Heigh</td></tr>
+<tr><td>SODFL</td><td>Small Outline Diodes, Flat Lead</td><td><b>SODFL</b> + Lead Span Nominal + Body Width <b>X</b> Height</td></tr>
+<tr><td>SOJ</td><td>Small Outline IC, J-Leaded</td><td><b>SOJ</b> + Pitch <b>P</b> + Lead Span Nominal <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>SOIC</td><td>Small Outline Integrated Circuit</td><td><b>SOIC</b> + Pitch <b>P</b> + Lead Span Nominal <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>SON</td><td>Small Outline No-Lead</td><td><b>SON</b> + Pitch <b>P</b> + Body Width <b>X</b> Body Length <b>X</b> Height <b>-</b> Pin Qty + Thermal Pad</td></tr>
+<tr><td>SOP</td><td>Small Outline Packages</td><td><b>SOP</b> + Pitch <b>P</b> + Lead Span Nominal <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>SOT</td><td>SOT (Generic)</td><td><b>SOT</b> + Pitch <b>P</b> + Lead Span Nominal <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>SOTFL</td><td>Small Outline Transistors, Flat Lead</td><td><b>SOTFL</b> + Pitch <b>P</b> + Lead Span Nominal <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>TO</td><td>TO (Generic DPAK)</td><td><b>TO</b> + Pitch <b>P</b> + Lead Span <b>X</b> Height <b>-</b> Pin Qty</td></tr>
+<tr><td>XTAL</td><td>Crystals (2 leads)</td><td><b>XTAL</b> + Body Length <b>X</b> Body Width <b>X</b> Height </td></tr>
 </table>
 </p>
-<h1>Pin Through Hole (PTH) footprint name definitions.</h1>
+<h2>Pin Through Hole (PTH) footprint name definitions.</h2>
 <p>
 <table border>
 <tr><td>Prefix</td><td>Component</td><td>Footprint Name Definition</td></tr>
@@ -183,9 +185,6 @@ SGD - Source, Gate and Drain (pin assignments used for three pin transistors)<br
 <tr><td>DIOADV </td><td>Diodes, Axial Diameter Vertical Mounting</td><td>DIOADV + Lead Spacing + W Lead Width + L Body Length + D Body Diameter</td></tr>
 <tr><td>DIP</td><td>Dual-In-Line Packages</td><td>DIP + Lead Span + W Lead Width + P Pin Pitch + L Body Length + H Component Height + Q Pin Qty</td></tr>
 <tr><td>DIPS</td><td>Dual-In-Line Sockets</td><td>DIPS + Lead Span + W Lead Width + P Pin Pitch + L Body Length + H Component Height + Q Pin Qty</td></tr>
-<tr><td>CON_HDR</td><td>Headers,  Vertical (obsolete prefix)</td><td>CON_HDR + total Pins + W Lead Width + P Row Pitch (+ X Column Pitch [if different]) + _ Rows + X Pins per Row + _ Body Length + X Body Thickness + X Component Height + Fabrication Level</td></tr>
-<tr><td>CON_HDRRA </td><td>Headers, Right Angle</td><td>CON_HDRRA + total Pins + W Lead Width + P Row Pitch (+ X Column Pitch [if different]) + _ Row s + X Pins per Row + _ Body Length + X Body Thickness + X Component Height + Fabrication Level</td></tr>
-<tr><td>CON_HDRV</td><td>Headers, Vertical</td><td>CON_HDRV + total Pins + W Lead Width + P Row Pitch (+ X Column Pitch [if different]) + _ Rows + X Pins per Row + _ Body Length + X Body Thickness + X Component Height + Fabrication Level</td></tr>
 <tr><td>INDAD</td><td>Inductors, Axial Diameter Horizontal Mounting</td><td>INDAD + Lead Spacing + W Lead Width + L Body Length + D Body Diameter</td></tr>
 <tr><td>INDADV</td><td>Inductors, Axial Diameter Vertical Mounting</td><td>INDADV + Lead Spacing + W Lead Width + L Body Length + D Body Diameter</td></tr>
 <tr><td>JUMP</td><td>Jumpers, Wire</td><td>JUMP + Lead Spacing + W Lead Width</td></tr>
