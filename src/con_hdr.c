@@ -3,7 +3,7 @@
  *
  * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
- * \brief Functions for CON-HDR footprints
+ * \brief Functions for Pin Through Hole CON_HDR footprints
  * (Header Connector).
  *
  * This program is free software; you can redistribute it and/or modify
@@ -28,7 +28,7 @@
 
 
 /*!
- * \brief Create an Element for a CON_HDR package.
+ * \brief Create an Element for a Pin Through Hole CON_HDR package.
  *
  * The pin/pad numbering scheme of the CON_HDR package is \n
  * \n
@@ -309,7 +309,7 @@ con_hdr_create_element ()
 
 
 /*!
- * \brief Create a list of CON-HDR packages with pre-defined values.
+ * \brief Create a list of CON_HDR packages with pre-defined values.
  *
  * The data in this list can be used in a combo box to select a
  * pre-defined package.
@@ -671,7 +671,7 @@ con_hdr_drc ()
 
 
 /*!
- * \brief Look up default values for CON-HDR footprints.
+ * \brief Look up default values for CON_HDR footprints.
  *
  * Footprint values can be looked up by placing a question mark "?" in front
  * of the footprint name.\n
@@ -738,7 +738,7 @@ con_hdr_get_default_footprint_values ()
 
 
 /*!
- * \brief Set GUI constraints for the CON-HDR package type.
+ * \brief Set GUI constraints for the CON_HDR package type.
  *
  * This function is only to be compiled for GUI targets.
  *
@@ -790,16 +790,20 @@ con_hdr_set_gui_constraints ()
 
 
 /*!
- * \brief Write a CON-HDR pin through hole footprint.
+ * \brief Write a Pin Through Hole CON_HDR footprint.
  *
- * The pin/pad numbering scheme of the CON-HDR package is: \n
- * for 2 rows \n
+ * The pin/pad numbering scheme of the CON_HDR package is: \n
+ * \n
+ * for 2 rows: \n
  * 2 4 6 8 \n
  * 1 3 5 7 \n
- * or for 3 rows \n
+ * \n
+ * or for 3 rows: \n
+ * \n
  * 3  6  9  12 \n
  * 2  5  8  11 \n
  * 1  4  7  10 \n
+ * \n
  * You get the idea for 4 or more rows. \n
  *
  * \return \c EXIT_FAILURE when errors were encountered,
@@ -993,7 +997,7 @@ con_hdr_write_footprint ()
 
 
 /*!
- * \brief A list containing all CON-HDR related functions.
+ * \brief A list containing all CON_HDR related functions.
  */
 static fpw_function_t
 con_hdr_function_list[] =
@@ -1028,13 +1032,13 @@ con_hdr_function_list[] =
 
 
 /*!
- * \brief A list containing all CON-HDR related functions.
+ * \brief A list containing all CON_HDR related functions.
  */
 REGISTER_FUNCTIONS (con_hdr_function_list)
 
 
 /*!
- * \brief Initialise by registering all CON-HDR related functions.
+ * \brief Initialise by registering all CON_HDR related functions.
  */
 void
 con_hdr_init ()

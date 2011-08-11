@@ -3,7 +3,7 @@
  *
  * \author Copyright 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
- * \brief Header file for functions for CON-HDR footprints
+ * \brief Header file for functions for CON_HDR footprints
  * (Header Connector).
  *
  * This program is free software; you can redistribute it and/or modify
