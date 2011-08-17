@@ -709,10 +709,10 @@ preview_expose_event
 int
 preview_set_end_cap
 (
-        EndCapStyle end_cap,
-                /*!< : is the end cap style. */
-        cairo_t *cr
+        cairo_t *cr,
                 /*!< : is a cairo drawing context. */
+        EndCapStyle end_cap
+                /*!< : is the end cap style. */
 )
 {
         if (!cr)
