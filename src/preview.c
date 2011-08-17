@@ -247,7 +247,7 @@ preview_draw_arc
         cairo_t *cr,
                 /*!< : is a cairo drawing context. */
         ArcType *arc
-                /*!< : is a preview line. */
+                /*!< : is the arc to be drawn on the preview canvas. */
 )
 {
         gdouble start_angle;
