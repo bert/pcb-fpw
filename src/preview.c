@@ -512,6 +512,49 @@ preview_draw_pin
 
 
 /*!
+ * \brief Draw a refdes text on the preview canvas.
+ */
+static int
+preview_draw_refdes
+(
+        cairo_t *cr,
+                /*!< : is a cairo drawing context. */
+        ElementTypePtr element
+                /*!< : is the element containing the refdes text string
+                 * to be drawn. */
+)
+{
+        cairo_text_extents_t extents;
+        const char *text;
+        double x;
+        double y;
+
+        if ((!element) || (!cr))
+        {
+                fprintf (stderr, "WARNING: passed element was invalid.\n");
+                return (EXIT_FAILURE);
+        }
+        /* Set up the cairo context. */
+        cairo_select_font_face
+        (
+                cr,
+                "Sans",
+                CAIRO_FONT_SLANT_NORMAL,
+                CAIRO_FONT_WEIGHT_NORMAL
+        );
+        cairo_set_font_size (cr, 100.0);
+        cairo_text_extents (cr, text, &extents);
+        preview_set_fg_color (cr, COLOR_SILKSCREEN);
+        /* Draw the text. */
+        x = element->Name[NAMEONPCB_INDEX].X;
+        y = element->Name[NAMEONPCB_INDEX].Y;
+        text = strdup (element->Name[NAMEONPCB_INDEX].TextString);
+        cairo_move_to (cr, x, y);
+        cairo_show_text (cr, text);
+}
+
+
+/*!
  * \brief Draw a mask on the preview canvas.
  */
 static int
@@ -580,49 +623,6 @@ preview_draw_soldermask
 
 
 /*!
- * \brief Draw a text on the preview canvas.
- */
-static int
-preview_draw_text
-(
-        cairo_t *cr,
-                /*!< : is a cairo drawing context. */
-        ElementTypePtr element
-                /*!< : is the element containing the text string to be
-                 * drawn. */
-)
-{
-        cairo_text_extents_t extents;
-        const char *text;
-        double x;
-        double y;
-
-        if ((!element) || (!cr))
-        {
-                fprintf (stderr, "WARNING: passed element was invalid.\n");
-                return (EXIT_FAILURE);
-        }
-        /* Set up the cairo context. */
-        cairo_select_font_face
-        (
-                cr,
-                "Sans",
-                CAIRO_FONT_SLANT_NORMAL,
-                CAIRO_FONT_WEIGHT_NORMAL
-        );
-        cairo_set_font_size (cr, 100.0);
-        cairo_text_extents (cr, text, &extents);
-        preview_set_fg_color (cr, COLOR_SILKSCREEN);
-        /* Draw the text. */
-        x = element->Name[NAMEONPCB_INDEX].X;
-        y = element->Name[NAMEONPCB_INDEX].Y;
-        text = strdup (element->Name[NAMEONPCB_INDEX].TextString);
-        cairo_move_to (cr, x, y);
-        cairo_show_text (cr, text);
-}
-
-
-/*!
  * \brief Redraw the screen.
  *
  * \return \c FALSE when function is completed.
@@ -676,7 +676,7 @@ preview_expose_event
                 preview_draw_arc (cr, arc);
         }
         END_LOOP; /* ELEMENTARC_LOOP */
-        preview_draw_text (cr, current_element);
+        preview_draw_refdes (cr, current_element);
         preview_set_fg_color (cr, COLOR_MARKER);
         preview_draw_mark 
         (
