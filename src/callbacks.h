@@ -1,7 +1,7 @@
 /*!
  * \file src/callbacks.h
  *
- * \author Copyright (C) 2007, 2008, 2009 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Callback functions header file for the pcb footprintwizard.
  *
@@ -24,6 +24,7 @@
 
 #include <gtk/gtk.h>
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 void
 on_C1_entry_changed (GtkEditable *editable, gpointer user_data);
@@ -264,5 +265,7 @@ on_thermal_solder_mask_clearance_entry_changed (GtkEditable *editable, gpointer 
 
 void
 on_thermal_width_entry_changed (GtkEditable *editable, gpointer user_data);
+
+G_END_DECLS /* keep c++ happy */
 
 /* EOF */

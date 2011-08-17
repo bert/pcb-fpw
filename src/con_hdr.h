@@ -26,6 +26,7 @@
 #ifndef __CON_HDR_INCLUDED__
 #define __CON_HDR_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int con_hdr_create_element ();
 int con_hdr_create_packages_list ();
@@ -37,6 +38,7 @@ int con_hdr_set_gui_constraints ();
 int con_hdr_write_footprint ();
 void con_hdr_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __CON_HDR_INCLUDED__ */
 

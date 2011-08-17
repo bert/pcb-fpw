@@ -26,6 +26,7 @@
 #ifndef __MTGP_INCLUDED__
 #define __MTGP_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int mtgp_create_element ();
 int mtgp_create_packages_list ();
@@ -37,6 +38,7 @@ int mtgp_set_gui_constraints ();
 int mtgp_write_footprint ();
 void mtgp_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __MTGP_INCLUDED__ */
 

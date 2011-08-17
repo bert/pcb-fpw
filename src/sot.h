@@ -1,7 +1,7 @@
 /*!
  * \file src/sot.h
  *
- * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for SOT footprints.
  *
@@ -25,6 +25,7 @@
 #ifndef __SOT_INCLUDED__
 #define __SOT_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int sot_create_element ();
 int sot_create_packages_list ();
@@ -37,6 +38,7 @@ int sot_set_gui_constraints ();
 int sot_write_footprint ();
 void sot_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __SOT_INCLUDED__ */
 

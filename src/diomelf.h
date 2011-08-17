@@ -1,6 +1,6 @@
 /*!
  * \file src/diomelf.h
- * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief Header file for functions for DIOMELF footprints.
  *
  * This program is free software; you can redistribute it and/or modify
@@ -23,6 +23,7 @@
 #ifndef __DIOMELF_INCLUDED__
 #define __DIOMELF_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int diomelf_create_element ();
 int diomelf_create_packages_list ();
@@ -34,6 +35,7 @@ int diomelf_set_gui_constraints ();
 int diomelf_write_footprint ();
 void diomelf_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __DIOMELF_INCLUDED__ */
 

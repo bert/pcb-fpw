@@ -1,7 +1,7 @@
 /*!
  * \file src/diom.h
  *
- * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for DIOM footprints.
  *
@@ -25,6 +25,7 @@
 #ifndef __DIOM_INCLUDED__
 #define __DIOM_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int diom_create_element ();
 int diom_create_packages_list ();
@@ -36,6 +37,7 @@ int diom_set_gui_constraints ();
 int diom_write_footprint ();
 void diom_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __DIOM_INCLUDED__ */
 

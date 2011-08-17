@@ -1,7 +1,7 @@
 /*!
  * \file src/indm.h
  *
- * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for INDM SMT footprints.
  *
@@ -25,6 +25,7 @@
 #ifndef __INDM_INCLUDED__
 #define __INDM_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int indm_create_element ();
 int indm_create_packages_list ();
@@ -36,6 +37,7 @@ int indm_set_gui_constraints ();
 int indm_write_footprint ();
 void indm_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* _INDM_INCLUDED__ */
 

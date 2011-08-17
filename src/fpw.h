@@ -1,7 +1,7 @@
 /*!
  * \file src/fpw.h
  *
- * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for fpw.
  *
@@ -31,11 +31,13 @@
 #ifndef __FPW_INCLUDED__
 #define __FPW_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int print_version ();
 int print_usage ();
 int main (int , char **);
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __FPW_INCLUDED__ */
 

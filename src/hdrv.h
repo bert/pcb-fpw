@@ -1,7 +1,7 @@
 /*!
  * \file src/hdrv.h
  *
- * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for HDRV footprints
  * (Pin Through Hole Vertical Header Connector).
@@ -26,6 +26,7 @@
 #ifndef __HDRV_INCLUDED__
 #define __HDRV_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int hdrv_create_packages_list ();
 int hdrv_drc ();
@@ -36,6 +37,7 @@ int hdrv_set_gui_constraints ();
 int hdrv_write_footprint ();
 void hdrv_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __HDRV_INCLUDED__ */
 

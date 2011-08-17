@@ -1,7 +1,7 @@
 /*!
  * \file src/res.h
  *
- * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for RES footprints.
  *
@@ -25,6 +25,7 @@
 #ifndef __RES_INCLUDED__
 #define __RES_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int res_create_element ();
 int res_create_packages_list ();
@@ -36,6 +37,7 @@ int res_set_gui_constraints ();
 int res_write_footprint ();
 void res_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __RES_INCLUDED__ */
 

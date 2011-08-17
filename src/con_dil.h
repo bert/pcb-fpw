@@ -26,6 +26,7 @@
 #ifndef __CON_DIL_INCLUDED__
 #define __CON_DIL_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int con_dil_create_element ();
 int con_dil_create_packages_list ();
@@ -37,6 +38,7 @@ int con_dil_set_gui_constraints ();
 int con_dil_write_footprint ();
 void con_dil_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __CON_DIL_INCLUDED__ */
 

@@ -1,7 +1,7 @@
 /*!
  * \file src/indad.h
  *
- * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for INDAD footprints
  * (Inductor, Axial Diameter, Horizontal Mounting).
@@ -26,6 +26,7 @@
 #ifndef __INDAD_INCLUDED__
 #define __INDAD_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int indad_create_element ();
 int indad_create_packages_list ();
@@ -37,6 +38,7 @@ int indad_set_gui_constraints ();
 int indad_write_footprint ();
 void indad_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __INDAD_INCLUDED__ */
 

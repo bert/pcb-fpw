@@ -1,6 +1,6 @@
 /*!
  * \file packages.h
- * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief Contains references to files describing known packages.
  *
  * This program is free software; you can redistribute it and/or modify
@@ -19,6 +19,8 @@
  * MA 02110-1301, USA.\n
  */
 
+
+G_BEGIN_DECLS /* keep c++ happy */
 
 #include "bga.c"
 #include "capa.c"
@@ -56,6 +58,8 @@
 #include "sip.c"
 #include "sot.c"
 #include "to.c"
+
+G_END_DECLS /* keep c++ happy */
 
 
 /* EOF */

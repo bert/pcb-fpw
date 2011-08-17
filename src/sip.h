@@ -1,7 +1,7 @@
 /*!
  * \file src/sip.h
  *
- * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for SIP footprints.
  *
@@ -25,6 +25,7 @@
 #ifndef __SIP_INCLUDED__
 #define __SIP_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int sip_create_element ();
 int sip_create_packages_list ();
@@ -36,6 +37,7 @@ int sip_set_gui_constraints ();
 int sip_write_footprint ();
 void sip_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __SIP_INCLUDED__ */
 

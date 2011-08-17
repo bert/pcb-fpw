@@ -1,7 +1,7 @@
 /*!
  * \file src/capad.h
  *
- * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for CAPAD footprints
  *  (Through Hole Capacitor, Non Polarized, Axial Diameter, Horizontal Mounted).
@@ -26,6 +26,7 @@
 #ifndef __CAPAD_INCLUDED__
 #define __CAPAD_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int capad_create_element ();
 int capad_create_packages_list ();
@@ -37,6 +38,7 @@ int capad_set_gui_constraints ();
 int capad_write_footprint ();
 void capad_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __CAPAD_INCLUDED__ */
 

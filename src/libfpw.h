@@ -1,7 +1,7 @@
 /*!
  * \file src/libfpw.h
  *
- * \author Copyright (C) 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for libfpw, contains helper functions for both
  * fpw (CLI) and pcb-gfpw (GUI) versions of the pcb FootPrintWizard.
@@ -34,6 +34,7 @@
 #ifndef __LIBFPW_INCLUDED__
 #define __LIBFPW_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 AttributeTypePtr create_new_attribute (AttributeListTypePtr list, char *name, char *value);
 
@@ -165,6 +166,7 @@ int
 write_footprintwizard_file (gchar *fpw_filename);
 int write_footprint ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __LIBFPW_INCLUDED__ */
 

@@ -1,7 +1,7 @@
 /*!
  * \file src/register_functions.h
  *
- * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for helper functions to register package dependant functions
  * for both fpw (CLI) and pcb-gfpw (GUI) versions of the pcb FootPrintWizard.
@@ -35,6 +35,7 @@
 #ifndef __REGISTER_FUNCTIONS__
 #define __REGISTER_FUNCTIONS__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 /*!
  * \brief .
@@ -91,6 +92,7 @@ void fpw_register_functions (fpw_function_t * a, int n);
 #define REGISTER_FUNCTIONS(a) FPW_CONCAT(void register_,a) ()\
 { fpw_register_functions(a, sizeof(a)/sizeof(a[0])); }
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __REGISTER_FUNCTIONS__ */
 

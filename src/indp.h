@@ -1,7 +1,7 @@
 /*!
  * \file src/indp.h
  *
- * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for INDP footprints.
  *
@@ -25,6 +25,7 @@
 #ifndef __INDP_INCLUDED__
 #define __INDP_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int indp_create_element ();
 int indp_create_packages_list ();
@@ -36,6 +37,7 @@ int indp_set_gui_constraints ();
 int indp_write_footprint ();
 void indp_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* _INDP_INCLUDED__ */
 

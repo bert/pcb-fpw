@@ -1,7 +1,7 @@
 /*!
  * \file src/resmelf.h
  *
- * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for RESMELF footprints.
  *
@@ -25,6 +25,7 @@
 #ifndef __RESMELF_INCLUDED__
 #define __RESMELF_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int resmelf_create_element ();
 int resmelf_create_packages_list ();
@@ -36,6 +37,7 @@ int resmelf_set_gui_constraints ();
 int resmelf_write_footprint ();
 void resmelf_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __RESMELF_INCLUDED__ */
 

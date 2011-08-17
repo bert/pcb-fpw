@@ -1,7 +1,7 @@
 /*!
  * \file src/resad.h
  *
- * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for RESAD footprints
  * (Resistors, Axial Diameter Horizontal Mounting).
@@ -26,6 +26,7 @@
 #ifndef __RESAD_INCLUDED__
 #define __RESAD_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int resad_create_element ();
 int resad_create_packages_list ();
@@ -37,6 +38,7 @@ int resad_set_gui_constraints ();
 int resad_write_footprint ();
 void resad_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __RESAD_INCLUDED__ */
 

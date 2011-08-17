@@ -1,7 +1,7 @@
 /*!
  * \file src/dimensions.h
  *
- * \author Copyright 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for a footprint dimensions preview widget.
  *
@@ -25,12 +25,14 @@
 #ifndef __DIMENSIONS_INCLUDED__
 #define __DIMENSIONS_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 static void dimensions_window_close_cb (GtkWidget *, GtkWidget *);
 void dimensions_window_delete_event (GtkWidget *, GdkEvent *);
 void dimensions_window_expose_event (GtkWidget *, GdkEventExpose *, GdkPixbuf *);
 int dimensions_create_window (gchar *, gchar *);
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __DIMENSIONS_INCLUDED__ */
 

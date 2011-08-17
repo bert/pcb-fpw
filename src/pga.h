@@ -1,7 +1,7 @@
 /*!
  * \file src/pga.h
  *
- * \author Copyright (C) 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for PGA footprints.
  *
@@ -25,6 +25,7 @@
 #ifndef __PGA_INCLUDED__
 #define __PGA_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int pga_create_element ();
 int pga_create_packages_list ();
@@ -36,6 +37,7 @@ int pga_set_gui_constraints ();
 int pga_write_footprint ();
 void pga_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __PGA_INCLUDED__ */
 

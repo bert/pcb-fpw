@@ -26,6 +26,7 @@
 #ifndef __JUMP_INCLUDED__
 #define __JUMP_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int jump_create_element ();
 int jump_create_packages_list ();
@@ -37,6 +38,7 @@ int jump_set_gui_constraints ();
 int jump_write_footprint ();
 void jump_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __JUMP_INCLUDED__ */
 

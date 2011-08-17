@@ -1,7 +1,7 @@
 /*!
  * \file src/select_exceptions.h
  *
- * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for a widget for selecting exception pin/pads in an array type footprint.
  *
@@ -25,6 +25,7 @@
 #ifndef __SELECT_EXCEPTIONS_INCLUDED__
 #define __SELECT_EXCEPTIONS_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -60,6 +61,7 @@ static void select_exceptions_ok_cb (GtkWidget *, GtkWidget *);
 static void select_exceptions_selection_button_clicked_cb (GtkWidget *, GtkWidget *);
 int select_exceptions_create_window (gint, gint);
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __SELECT_EXCEPTIONS_INCLUDED__ */
 

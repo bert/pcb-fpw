@@ -26,6 +26,7 @@
 #ifndef __MTGNP_INCLUDED__
 #define __MTGNP_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int mtgnp_create_element ();
 int mtgnp_create_packages_list ();
@@ -37,6 +38,7 @@ int mtgnp_set_gui_constraints ();
 int mtgnp_write_footprint ();
 void mtgnp_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __MTGNP_INCLUDED__ */
 

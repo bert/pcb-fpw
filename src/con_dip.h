@@ -26,6 +26,7 @@
 #ifndef __CON_DIP_INCLUDED__
 #define __CON_DIP_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int con_dip_create_element ();
 int con_dip_create_packages_list ();
@@ -37,6 +38,7 @@ int con_dip_set_gui_constraints ();
 int con_dip_write_footprint ();
 void con_dip_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __CON_DIP_INCLUDED__ */
 

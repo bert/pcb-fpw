@@ -1,6 +1,6 @@
 /*!
  * \file src/dip.h
- * \author Copyright (C) 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief Header file for functions for DIP footprints.
  *
  * This program is free software; you can redistribute it and/or modify
@@ -23,6 +23,7 @@
 #ifndef __DIP_INCLUDED__
 #define __DIP_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int dip_create_element ();
 int dip_create_packages_list ();
@@ -34,6 +35,7 @@ int dip_set_gui_constraints ();
 int dip_write_footprint ();
 void dip_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __DIP_INCLUDED__ */
 

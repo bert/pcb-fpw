@@ -1,7 +1,7 @@
 /*!
  * \file src/sil.h
  *
- * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for SIL footprints.
  *
@@ -25,6 +25,7 @@
 #ifndef __SIL_INCLUDED__
 #define __SIL_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int sil_create_element ();
 int sil_create_packages_list ();
@@ -36,6 +37,7 @@ int sil_set_gui_constraints ();
 int sil_write_footprint ();
 void sil_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __SIL_INCLUDED__ */
 

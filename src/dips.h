@@ -1,6 +1,6 @@
 /*!
  * \file src/dips.h
- * \author Copyright (C) 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  * \brief Header file for functions for DIPS (DIP Socket) footprints.
  *
  * This program is free software; you can redistribute it and/or modify
@@ -23,6 +23,7 @@
 #ifndef __DIPS_INCLUDED__
 #define __DIPS_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int dips_create_element ();
 int dips_create_packages_list ();
@@ -34,6 +35,7 @@ int dips_set_gui_constraints ();
 int dips_write_footprint ();
 void dips_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __DIPS_INCLUDED__ */
 

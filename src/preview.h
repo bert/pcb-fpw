@@ -25,6 +25,7 @@
 #ifndef __PREVIEW_INCLUDED__
 #define __PREVIEW_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 GdkPixmap *pixmap = NULL;
         /*!< Backing pixmap for drawing area */
@@ -71,6 +72,7 @@ int preview_set_fill_mode (GdkGC *gc, GdkFill fill_mode);
 int preview_set_line_style (GdkGC *gc, GdkLineStyle line_style);
 int preview_set_line_width (GdkGC *gc, gint line_width);
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __PREVIEW_INCLUDED__ */
 

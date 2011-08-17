@@ -37,6 +37,8 @@
 #ifndef __PCB_GLOBALS_INCLUDED__
 #define __PCB_GLOBALS_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
+
 #include <stdbool.h>
 
 #ifndef MIN
@@ -818,6 +820,8 @@ typedef struct
 
 
 #endif /* __PCB_GLOBALS_INCLUDED__ */
+
+G_END_DECLS /* keep c++ happy */
 
 
 /* EOF */

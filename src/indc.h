@@ -1,7 +1,7 @@
 /*!
  * \file src/indc.h
  *
- * \author Copyright (C) 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for INDC SMT footprints.
  *
@@ -25,6 +25,7 @@
 #ifndef __INDC_INCLUDED__
 #define __INDC_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int indc_create_element ();
 int indc_create_packages_list ();
@@ -36,6 +37,7 @@ int indc_set_gui_constraints ();
 int indc_write_footprint ();
 void indc_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* _INDC_INCLUDED__ */
 

@@ -1,7 +1,7 @@
 /*!
  * \file src/resc.h
  *
- * \author Copyright (C) 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for RESC SMT footprints.
  *
@@ -25,6 +25,7 @@
 #ifndef __RESC_INCLUDED__
 #define __RESC_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int resc_create_element ();
 int resc_create_packages_list ();
@@ -36,6 +37,7 @@ int resc_set_gui_constraints ();
 int resc_write_footprint ();
 void resc_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __RESC_INCLUDED__ */
 

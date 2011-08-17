@@ -1,7 +1,7 @@
 /*!
  * \file src/capa.h
  *
- * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for CAPA footprints
  *  (Through Hole Non-Polarized Axial Capacitors).
@@ -26,6 +26,7 @@
 #ifndef __CAPA_INCLUDED__
 #define __CAPA_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int capa_create_element ();
 int capa_create_packages_list ();
@@ -37,6 +38,7 @@ int capa_set_gui_constraints ();
 int capa_write_footprint ();
 void capa_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __CAPA_INCLUDED__ */
 

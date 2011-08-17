@@ -1,7 +1,7 @@
 /*!
  * \file src/plcc.h
  *
- * \author Copyright (C) 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for PLCC footprints.
  *
@@ -25,6 +25,7 @@
 #ifndef __PLCC_INCLUDED__
 #define __PLCC_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int plcc_create_element ();
 int plcc_create_packages_list ();
@@ -36,6 +37,7 @@ int plcc_set_gui_constraints ();
 int plcc_write_footprint ();
 void plcc_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __PLCC_INCLUDED__ */
 

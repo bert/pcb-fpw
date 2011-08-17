@@ -1,7 +1,7 @@
 /*!
  * \file src/to.h
  *
- * \author Copyright (C) 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for functions for TO (Transistor Outline) footprints.
  *
@@ -25,6 +25,7 @@
 #ifndef __TO_INCLUDED__
 #define __TO_INCLUDED__
 
+G_BEGIN_DECLS /* keep c++ happy */
 
 int to_create_element_to92 ();
 int to_create_element_to92_staggered ();
@@ -40,6 +41,7 @@ int to_write_footprint_to220_standing_staggered ();
 int to_write_footprint_to92 ();
 void to_init ();
 
+G_END_DECLS /* keep c++ happy */
 
 #endif /* __TO_INCLUDED__ */
 
