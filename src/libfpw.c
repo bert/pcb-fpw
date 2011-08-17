@@ -146,7 +146,7 @@ create_new_arc
         BDimension thickness)
                 /*!< : line thickness.*/
 {
-        ArcTypePtr arc = element->Arc;
+        ArcTypePtr arc;
         /* Reallocate new memory if necessary and clear it. */
         if (element->ArcN >= element->ArcMax)
         {
@@ -253,7 +253,7 @@ create_new_line
         BDimension thickness)
                 /*!< : the line thickness.*/
 {
-        LineTypePtr line = element->Line;
+        LineTypePtr line;
         if (thickness == 0)
                 return (NULL);
         /* Reallocate new memory if necessary and clear it. */
