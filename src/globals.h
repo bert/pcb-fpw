@@ -120,6 +120,12 @@ typedef enum status
         STABLE /*! Stable (confirmed by peers or by usage in an actual pcb).*/
 } status_t;
 
+/* Define some widget states. */
+#define INACTIVE FALSE /*!< Widget state is inactive. */
+#define ACTIVE TRUE /*!< Widget state is active. */
+#define INSENSITIVE FALSE /*!< Widget state is insensitive ("greyed-out"). */
+#define SENSITIVE TRUE /*!< Widget state is sensitive (can be modified). */
+
 /*!
  * \brief Set of valid letter combinations for row identifiers for BGA and
  * PGA packages.
