@@ -4787,7 +4787,7 @@ bga_set_gui_constraints ()
         gtk_widget_set_sensitive (count_y_entry, FALSE);
         GtkWidget *number_1_position_entry = lookup_widget (GTK_WIDGET (widget),
                 "number_1_position_entry");
-        gtk_combo_box_set_active (GTK_COMBO_BOX (number_1_position_entry), 1);
+        gtk_combo_box_set_active (GTK_COMBO_BOX (number_1_position_entry), UPPER_LEFT);
         gtk_widget_set_sensitive (number_1_position_entry, FALSE);
         GtkWidget *pin_pad_exceptions_button = lookup_widget (GTK_WIDGET (widget),
                 "pin_pad_exceptions_button");
@@ -4798,7 +4798,7 @@ bga_set_gui_constraints ()
         gtk_widget_set_sensitive (pin_drill_diameter_entry, FALSE);
         GtkWidget *pad_shape_entry = lookup_widget (GTK_WIDGET (widget),
                 "pad_shape_entry");
-        gtk_combo_box_set_active (GTK_COMBO_BOX (pad_shape_entry), 1);
+        gtk_combo_box_set_active (GTK_COMBO_BOX (pad_shape_entry), ROUND);
         gtk_widget_set_sensitive (pad_shape_entry, FALSE);
         GtkWidget *pad_length_entry = lookup_widget (GTK_WIDGET (widget),
                 "pad_length_entry");
@@ -4816,7 +4816,6 @@ bga_set_gui_constraints ()
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fiducial_checkbutton),
                 FALSE);
         gtk_widget_set_sensitive (fiducial_checkbutton, TRUE);
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fiducial_checkbutton), TRUE);
         GtkWidget *fiducial_pad_diameter_entry = lookup_widget
                 (GTK_WIDGET (widget),
                 "fiducial_pad_diameter_entry");
