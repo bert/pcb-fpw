@@ -68,12 +68,12 @@ G_BEGIN_DECLS /* keep c++ happy */
 #define LN_2_OVER_2 0.346573590
 
 /* PCB/physical unit conversions */
-#define COORD_TO_MIL(n) ((n)/100.0)
-#define MIL_TO_COORD(n) ((n)*100.0)
-#define COORD_TO_MM(n) ((n)*0.000254)
-#define MM_TO_COORD(n) ((n)/0.000254)
-#define COORD_TO_INCH(n) (COORD_TO_MIL(n)/1000.0)
-#define INCH_TO_COORD(n) (MIL_TO_COORD(n)*1000.0)
+#define COORD_TO_MIL(n) ((n) / 25400.0)
+#define MIL_TO_COORD(n) ((n) * 25400.0)
+#define COORD_TO_MM(n) ((n) / 1000000.0)
+#define MM_TO_COORD(n) ((n) * 1000000.0)
+#define COORD_TO_INCH(n) (COORD_TO_MIL(n) / 1000.0)
+#define INCH_TO_COORD(n) (MIL_TO_COORD(n) * 1000.0)
 
 #define MAX_LAYER 16
         /*!< Maximum number of layers, check the pcb source code for
@@ -88,12 +88,12 @@ G_BEGIN_DECLS /* keep c++ happy */
          * designator (refdes). */
 #define VALUE_INDEX 2
         /*!< Value of the element, for example "100k" for a resistor. */
-#define MARK_SIZE 5000
+#define MARK_SIZE MIL_TO_COORD(50)
         /*!< Relative marker size (in mils/100 ?). */
 #define MIN_TEXTSCALE 10
-        /*!< Scaling of text objects in percent  (in mils/100 ?). */
-#define MAX_TEXTSCALE 10000
-        /*!< Scaling of text objects in percent (in mils/100 ?). */
+        /*!< Scaling of text objects in percent (one tenth of default). */
+#define MAX_TEXTSCALE 1000
+        /*!< Scaling of text objects in percent (10 times default). */
 
 /* Pin or pad types / Object flag values */
 #define CLEAR 0x0000
