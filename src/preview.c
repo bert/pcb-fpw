@@ -61,6 +61,8 @@
 #define COURTYARD_LINE_WIDTH 1.0
         /*!< : linewidth of the courtyard, a keepout area for other
          * packages. */
+#define PREVIEW_SCALE (100. / MIL_TO_COORD (150.))
+        /*!< Define a sensible preview scale, lets say (for example), 100 pixel per 150 mil. */
 
 /*!
  * \brief Close the preview window (destroy the preview widget).
@@ -129,8 +131,8 @@ preview_create_window
         gint width_pixels;
         gint height_pixels;
 
-        width_pixels = (int) (element->VBox.X2 - element->VBox.X1);
-        height_pixels = (int) (element->VBox.Y2 - element->VBox.Y1);
+        width_pixels = (int) PREVIEW_SCALE * (element->VBox.X2 - element->VBox.X1);
+        height_pixels = (int) PREVIEW_SCALE * (element->VBox.Y2 - element->VBox.Y1);
         
         GtkWidget *preview_window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
         /* Destroy the preview window when the main window of pcb-gfpw gets
