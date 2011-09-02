@@ -65,6 +65,7 @@ static int preview_draw_pad (cairo_t *cr, PadType *pad);
 static int preview_draw_pin (cairo_t *cr, PinType *pin);
 static int preview_draw_refdes (cairo_t *cr, ElementTypePtr element);
 static int preview_draw_soldermask (cairo_t *cr, PolygonType *polygon);
+static int preview_draw_text (cairo_t *cr, gchar *text, gdouble x, gdouble y, gdouble height, direction_t rotation, location_t justification);
 static gboolean preview_expose_event (GtkWidget *widget, GdkEventExpose *event);
 int preview_set_end_cap (cairo_t *cr,EndCapStyle endcap);
 int preview_set_fg_color (cairo_t *cr, gint preview_color);

@@ -625,6 +625,155 @@ preview_draw_soldermask
 
 
 /*!
+ * \brief Draw a text on the preview canvas.
+ */
+static int
+preview_draw_text
+(
+        cairo_t *cr,
+                /*!< : is a cairo drawing context. */
+        gchar *text,
+                /*!< : is the text string to be drawn. */
+        gdouble x,
+                /*!< : is the X-coordinate of the insertion point. */
+        gdouble y,
+                /*!< : is the Y-coordinate of the insertion point. */
+        gdouble height,
+                /*!< : is the font height. */
+        direction_t rotation,
+                /*!< : is the rotation of the text with regard to the
+                 * insertion point. */
+        location_t justification
+                /*!< : is the justification of the text with regard to
+                 * the insertion point. */
+)
+{
+        cairo_text_extents_t extents;
+        gchar *message;
+
+        if ((!text) || (!cr))
+        {
+                fprintf (stderr, "WARNING: passed element was invalid.\n");
+                return (EXIT_FAILURE);
+        }
+        /* Set up the cairo context. */
+        cairo_select_font_face
+        (
+                cr,
+                "Sans",
+                CAIRO_FONT_SLANT_NORMAL,
+                CAIRO_FONT_WEIGHT_NORMAL
+        );
+        cairo_set_font_size (cr, height);
+        cairo_text_extents (cr, text, &extents);
+        preview_set_fg_color (cr, COLOR_SILKSCREEN);
+        /* Translate the origin to the text insertion point. */
+        cairo_translate (cr, x, y);
+        /* Figure out how to do proper justification.
+         * x and y now become relative to the text insertion point. 
+         * Pcb inserts text with UPPER_LEFT justification.
+         * cairo inserts text with LOWER_LEFT justification.
+         */
+        switch (justification)
+        {
+                case UPPER_LEFT:
+                {
+                        break;
+                }
+                case MIDDLE_LEFT:
+                {
+                        y = (extents.height / 2 + extents.y_bearing);
+                        break;
+                }
+                case LOWER_LEFT:
+                {
+                        y = (extents.height + extents.y_bearing);
+                        break;
+                }
+                case UPPER_MIDDLE:
+                {
+                        x = -(extents.width / 2 + extents.x_bearing);
+                        break;
+                }
+                case MIDDLE_MIDDLE:
+                {
+                        x = (extents.width / 2 + extents.x_bearing);
+                        y = (extents.height / 2 + extents.y_bearing);
+                        break;
+                }
+                case LOWER_MIDDLE:
+                {
+                        x = -(extents.width / 2 + extents.x_bearing);
+                        y = (extents.height + extents.y_bearing);
+                        break;
+                }
+                case UPPER_RIGHT:
+                {
+                        x = -(extents.width + extents.x_bearing);
+                        break;
+                }
+                case MIDDLE_RIGHT:
+                {
+                        x = -(extents.width + extents.x_bearing);
+                        y = (extents.height / 2 + extents.y_bearing);
+                        break;
+                }
+                case LOWER_RIGHT:
+                {
+                        x = -(extents.width + extents.x_bearing);
+                        y = (extents.height + extents.y_bearing);
+                        break;
+                }
+                default:
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("ERROR: unknown justification entered.")));
+                        return (EXIT_FAILURE);
+                        break;
+                }
+        }
+        /* Do the rotation of the (local) coordinate system with regard
+         * to the translated origin. */
+        switch (rotation)
+        {
+                case NORTH:
+                {
+                        cairo_translate (cr, x, y);
+                        cairo_rotate (cr, M_PI * 1.5);
+                        break;
+                }
+                case EAST:
+                {
+                        /* Do nothing here as EAST is the default
+                         * rotation in cairo (and in pcb). */
+                        break;
+                }
+                case SOUTH:
+                {
+                        cairo_rotate (cr, M_PI * 0.5);
+                        break;
+                }
+                case WEST:
+                {
+                        cairo_rotate (cr, M_PI);
+                        break;
+                }
+                default:
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("ERROR: unknown rotation entered.")));
+                        return (EXIT_FAILURE);
+                        break;
+                }
+        }
+        /* Draw the text. */
+        cairo_move_to (cr, x, y);
+        cairo_show_text (cr, text);
+        return (EXIT_SUCCESS);
+}
+
+
+/*!
  * \brief Redraw the screen.
  *
  * \return \c FALSE when function is completed.
