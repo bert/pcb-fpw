@@ -196,6 +196,8 @@ typedef enum pad_shapes
         /*!< Convert mil to mm. */
 #define MM_TO_MIL 39.37007874
         /*!< Convert mm to mil. */
+#define NUM_BASE 10
+        /*!< Use 10-base for converting string to long (strtol). */
 
 #ifndef MAXPATHLEN /* maximum path length */
 #ifdef PATH_MAX
