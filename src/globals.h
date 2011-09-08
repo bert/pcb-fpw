@@ -197,6 +197,13 @@ typedef enum pad_shapes
 #define MM_TO_MIL 39.37007874
         /*!< Convert mm to mil. */
 
+#ifndef MAXPATHLEN /* maximum path length */
+#ifdef PATH_MAX
+#define MAXPATHLEN PATH_MAX
+#else
+#define MAXPATHLEN 2048
+#endif
+#endif
 
 gboolean debug = FALSE;
         /*!< Global for being verbose on debugging information. */
