@@ -31,6 +31,7 @@ int bga_create_element ();
 int bga_create_packages_list ();
 int bga_drc ();
 int bga_get_default_footprint_values ();
+int bga_parse_filename ();
 #if GUI
 int bga_set_gui_constraints ();
 #endif /* GUI */

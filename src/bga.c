@@ -22,6 +22,8 @@
  */
 
 
+#include <errno.h>
+#include <stdlib.h>
 #include "register_functions.c"
 #include "bga.h"
 
@@ -4756,6 +4758,329 @@ bga_get_default_footprint_values ()
                          footprint_name);
                 return (EXIT_FAILURE);
         }
+}
+
+
+/*!
+ * \brief Parse the filename (this may or may not be the footprintname).
+ *
+ * Do some basic sanity checks.
+ * Parse the footprintname (filename) into usable chunks.
+ * Store the parsed chunks into global parameters.
+ *
+ * \return \c EXIT_SUCCESS when the function is completed.
+ */
+int
+bga_parse_filename ()
+{
+        char search_string[MAX_INPUT];
+        char tempbuf[MAX_INPUT];
+        char *leftovers;
+        int i;
+        int j;
+
+        /* Some basic sanity checks. */
+        if (!footprint_name)
+        {
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("invalid footprint name in footprint %s.\n")),
+                        footprint_name);
+                return (EXIT_FAILURE);
+        }
+        if (!footprint_type)
+        {
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("invalid footprint type in footprint %s.\n")),
+                        footprint_name);
+                return (EXIT_FAILURE);
+        }
+        g_sprintf (search_string, "%s", footprint_name);
+        /* Test the first n chars are equal to the footprint type. */
+        if (!g_str_has_prefix (footprint_name, footprint_type))
+        {
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("default standard for footprint naming convention not followed in footprint %s.\n")),
+                        footprint_name);
+                g_log ("", G_LOG_LEVEL_WARNING,
+                        (_("footprint name prefix does not match footprint type in footprint %s.\n")),
+                        footprint_name);
+                return (EXIT_FAILURE);
+        }
+        else
+        {
+                /* Disect the footprint name char by char, starting
+                 * after the prefix. */
+                i = 3;
+                /* Find the total number of balls (leads). */
+                j = 0;
+                /* Test the following chars in a loop. */
+                while ((search_string[i] != '\0') || (!g_ascii_isalpha (search_string[i])))
+                {
+                        if (g_ascii_isdigit (search_string[i]))
+                        {
+                                tempbuf[j] = search_string[i];
+                                i++;
+                                j++;
+                        }
+                }
+                errno = 0;
+                number_of_pins = strtol (tempbuf, &leftovers, NUM_BASE);
+                //if (errno == EINVAL)
+                if (errno != 0 || *leftovers != 0 || leftovers == tempbuf)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("default standard for footprint naming convention not followed in footprint %s.\n")),
+                                footprint_name);
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("can't determine the number of pins from this footprint name in footprint %s.\n")),
+                                footprint_name);
+                        return (EXIT_FAILURE);
+                }
+                if (search_string[i] == 'N')
+                {
+                        /* Non-collapsing ball. */
+                        i++;
+                }
+                else if (search_string[i] == 'C')
+                {
+                        /* Collapsing ball. */
+                        i++;
+                }
+                else
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("default standard for footprint naming convention not followed in footprint %s.\n")),
+                                footprint_name);
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("expected a C or N to denote collapsing or non-collapsing balls in footprint %s.\n")),
+                                footprint_name);
+                        return (EXIT_FAILURE);
+                }
+                /* Find the pitch, there might be a secondairy pitch in
+                 * the Y-direction, so test for that one too. */
+                j = 0;
+                while ((search_string[i] != '\0') || (!g_ascii_isalpha (search_string[i])))
+                {
+                        if (g_ascii_isdigit (search_string[i]))
+                        {
+                                tempbuf[j] = search_string[i];
+                                i++;
+                                j++;
+                        }
+                }
+                errno = 0;
+                pitch_x = strtod (tempbuf, &leftovers);
+                //if (errno == EINVAL)
+                if (errno != 0 || *leftovers != 0 || leftovers == tempbuf)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("default standard for footprint naming convention not followed in footprint %s.\n")),
+                                footprint_name);
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("can't determine the pitch (X) from this footprint name in footprint %s.\n")),
+                                footprint_name);
+                        return (EXIT_FAILURE);
+                }
+                if (search_string[i] == 'X')
+                {
+                        /* We have found a dual pitch BGA. */
+                        i++;
+                        j = 0;
+                        while ((search_string[i] != '\0') || (!g_ascii_isalpha (search_string[i])))
+                        {
+                                if (g_ascii_isdigit (search_string[i]))
+                                {
+                                        tempbuf[j] = search_string[i];
+                                        i++;
+                                        j++;
+                                }
+                        }
+                        errno = 0;
+                        pitch_y = strtod (tempbuf, &leftovers);
+                        //if (errno == EINVAL)
+                        if (errno != 0 || *leftovers != 0 || leftovers == tempbuf)
+                        {
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        (_("default standard for footprint naming convention not followed in footprint %s.\n")),
+                                        footprint_name);
+                                g_log ("", G_LOG_LEVEL_WARNING,
+                                        (_("can't determine the pitch (Y) from this footprint name in footprint %s.\n")),
+                                        footprint_name);
+                                return (EXIT_FAILURE);
+                        }
+                }
+                else if (search_string[i] == 'P')
+                {
+                        /* End of pitch fields. */
+                        i++;
+                }
+                /* Find the number of columns. */
+                j = 0;
+                while ((search_string[i] != '\0') || (!g_ascii_isalpha (search_string[i])))
+                {
+                        if (g_ascii_isdigit (search_string[i]))
+                        {
+                                tempbuf[j] = search_string[i];
+                                i++;
+                                j++;
+                        }
+                }
+                errno = 0;
+                number_of_columns = strtol (tempbuf, &leftovers, NUM_BASE);
+                //if (errno == EINVAL)
+                if (errno != 0 || *leftovers != 0 || leftovers == tempbuf)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("default standard for footprint naming convention not followed in footprint %s.\n")),
+                                footprint_name);
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("can't determine the number of columns from this footprint name in footprint %s.\n")),
+                                footprint_name);
+                        return (EXIT_FAILURE);
+                }
+                i++;
+                if (!search_string[i] == 'X')
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("default standard for footprint naming convention not followed in footprint %s.\n")),
+                                footprint_name);
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("can't find the column separator (X) in footprint %s.\n")),
+                                footprint_name);
+                        return (EXIT_FAILURE);
+                }
+                /* Find the number of rows. */
+                j = 0;
+                while ((search_string[i] != '\0') || (!g_ascii_isalpha (search_string[i])))
+                {
+                        if (g_ascii_isdigit (search_string[i]))
+                        {
+                                tempbuf[j] = search_string[i];
+                                i++;
+                                j++;
+                        }
+                }
+                errno = 0;
+                number_of_rows = strtol (tempbuf, &leftovers, NUM_BASE);
+                //if (errno == EINVAL)
+                if (errno != 0 || *leftovers != 0 || leftovers == tempbuf)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("default standard for footprint naming convention not followed in footprint %s.\n")),
+                                footprint_name);
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("can't determine the number of rows from this footprint name in footprint %s.\n")),
+                                footprint_name);
+                        return (EXIT_FAILURE);
+                }
+                i++;
+                if (!search_string[i] == '_')
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("default standard for footprint naming convention not followed in footprint %s.\n")),
+                                footprint_name);
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("can't find the separator (_) in footprint %s.\n")),
+                                footprint_name);
+                        return (EXIT_FAILURE);
+                }
+                /* Find the package length. */
+                j = 0;
+                while ((search_string[i] != '\0') || (!g_ascii_isalpha (search_string[i])))
+                {
+                        if (g_ascii_isdigit (search_string[i]))
+                        {
+                                tempbuf[j] = search_string[i];
+                                i++;
+                                j++;
+                        }
+                }
+                errno = 0;
+                package_body_length = strtol (tempbuf, &leftovers, NUM_BASE);
+                //if (errno == EINVAL)
+                if (errno != 0 || *leftovers != 0 || leftovers == tempbuf)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("default standard for footprint naming convention not followed in footprint %s.\n")),
+                                footprint_name);
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("can't determine the package body length from this footprint name in footprint %s.\n")),
+                                footprint_name);
+                        return (EXIT_FAILURE);
+                }
+                i++;
+                if (!search_string[i] == 'X')
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("default standard for footprint naming convention not followed in footprint %s.\n")),
+                                footprint_name);
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("didn't find the separator (X) in footprint %s.\n")),
+                                footprint_name);
+                        return (EXIT_FAILURE);
+                }
+                /* Find the package width. */
+                j = 0;
+                while ((search_string[i] != '\0') || (!g_ascii_isalpha (search_string[i])))
+                {
+                        if (g_ascii_isdigit (search_string[i]))
+                        {
+                                tempbuf[j] = search_string[i];
+                                i++;
+                                j++;
+                        }
+                }
+                errno = 0;
+                package_body_width = strtol (tempbuf, &leftovers, NUM_BASE);
+                //if (errno == EINVAL)
+                if (errno != 0 || *leftovers != 0 || leftovers == tempbuf)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("default standard for footprint naming convention not followed in footprint %s.\n")),
+                                footprint_name);
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("can't determine the package body width from this footprint name in footprint %s.\n")),
+                                footprint_name);
+                        return (EXIT_FAILURE);
+                }
+                i++;
+                if (!search_string[i] == 'X')
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("default standard for footprint naming convention not followed in footprint %s.\n")),
+                                footprint_name);
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("didn't find the separator (X) in footprint %s.\n")),
+                                footprint_name);
+                        return (EXIT_FAILURE);
+                }
+                /* Find the package height. */
+                j = 0;
+                while ((search_string[i] != '\0') || (!g_ascii_isalpha (search_string[i])))
+                {
+                        if (g_ascii_isdigit (search_string[i]))
+                        {
+                                tempbuf[j] = search_string[i];
+                                i++;
+                                j++;
+                        }
+                }
+                errno = 0;
+                package_body_height = strtol (tempbuf, &leftovers, NUM_BASE);
+                //if (errno == EINVAL)
+                if (errno != 0 || *leftovers != 0 || leftovers == tempbuf)
+                {
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("default standard for footprint naming convention not followed in footprint %s.\n")),
+                                footprint_name);
+                        g_log ("", G_LOG_LEVEL_WARNING,
+                                (_("can't determine the package body width from this footprint name in footprint %s.\n")),
+                                footprint_name);
+                        return (EXIT_FAILURE);
+                }
+        }
+        /* If we do get until here, let's assume the footprint name was valid. */
+        return EXIT_SUCCESS;
 }
 
 
