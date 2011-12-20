@@ -101,6 +101,8 @@ int get_pin_pad_exception (gchar *pin_pad_name);
 int get_status_type ();
 int get_total_number_of_pins ();
 int read_footprintwizard_file (gchar *fpw_filename);
+char *strip_prefix (char *name, const char *prefix);
+char *strip_suffix (char *name, const char *suffix);
 int update_location_variables ();
 int update_pad_shapes_variables ();
 int update_units_variables ();

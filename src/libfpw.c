@@ -2038,6 +2038,49 @@ read_footprintwizard_file
 
 
 /*!
+ * \brief Strip the string \c prefix from the string \c name.
+ *
+ * \return pointer to a string containing the string \c name without
+ * \c prefix.
+ */
+char *
+strip_prefix (char *name, const char *prefix)
+{
+        if (strncmp (prefix, name, strlen (prefix)) == 0 )
+        {
+                return (strdup (name + strlen (prefix)));
+                fprintf (stderr, "new: %s", name);
+        }
+        fprintf (stderr, "original: %s", name);
+        return (name);
+}
+
+
+/*!
+ * \brief Strip the string \c suffix from the string \c name.
+ *
+ * \return pointer to a string containing the string \c name without
+ * \c suffix.
+ */
+char *
+strip_suffix (char *name, const char *suffix)
+{
+        char *np;
+        const char *sp;
+
+        np = name + strlen (name);
+        sp = suffix + strlen (suffix);
+
+        while (np > name && sp > suffix)
+                if (*--np != *--sp)
+                        return (name);
+                if (np > name)
+                        *np = '\0';
+        return (name);
+}
+
+
+/*!
  * \brief Update locations type variables.
  *
  * \return \c EXIT_SUCCESS when a the locations variables were updated,
