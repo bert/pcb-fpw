@@ -2561,7 +2561,17 @@ on_footprint_name_entry_changed        (GtkEditable     *editable,
                         case BGA:
                         {
                                 if (bga_get_default_footprint_values () == EXIT_SUCCESS)
+                                {
                                         all_entries_need_updated (GTK_WIDGET (editable));
+                                        return;
+                                }
+                                if (bga_parse_filename () == EXIT_SUCCESS)
+                                {
+                                        all_entries_need_updated (GTK_WIDGET (editable));
+                                        return;
+                                }
+                                gchar *message = g_strdup_printf (_("ERROR: footprint name contains an unknown footprint."));
+                                message_to_statusbar (GTK_WIDGET (editable), message);
                                 return;
                         }
                         case CAPA:
