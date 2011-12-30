@@ -4794,9 +4794,17 @@ bga_parse_filename ()
                         footprint_name);
                 return (EXIT_FAILURE);
         }
-        g_sprintf (search_string, "%s", footprint_name);
+        /* Remove a "?" prefix if present and make a work copy. */
+        if (g_str_has_prefix (footprint_name, "?"))
+        {
+                g_sprintf (search_string, "%s", strip_prefix (footprint_name, "?"));
+        }
+        else
+        {
+                g_sprintf (search_string, "%s", footprint_name);
+        }
         /* Test the first n chars are equal to the footprint type. */
-        if (!g_str_has_prefix (footprint_name, footprint_type))
+        if (!g_str_has_prefix (search_string, footprint_type))
         {
                 g_log ("", G_LOG_LEVEL_WARNING,
                         (_("default standard for footprint naming convention not followed in footprint %s.\n")),
@@ -4810,7 +4818,7 @@ bga_parse_filename ()
         {
                 /* Disect the footprint name char by char, starting
                  * after the prefix. */
-                i = 3;
+                i = strlen (footprint_type);
                 /* Find the total number of balls (leads). */
                 j = 0;
                 /* Test the following chars in a loop. */
