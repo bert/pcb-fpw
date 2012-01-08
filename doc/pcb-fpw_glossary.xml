@@ -220,6 +220,16 @@
     </glossentry>
 
     <glossentry>
+      <glossterm>FR4</glossterm>
+
+      <glossdef>
+        <para>A specification for the insulating layer used in printed circuit
+        board manufacture. FR4 is the most common grade, and is often an epoxy
+        fiberglass composite.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
       <glossterm>gEDA</glossterm>
 
       <glossdef>
@@ -673,14 +683,6 @@
         <para>A via is a connection between different copper layers. In pcb
         all vias are "through" vias, in that they connect copper on all
         layers.</para>
-      </glossdef>
-    </glossentry>
-
-    <glossentry>
-      <glossterm></glossterm>
-
-      <glossdef>
-        <para></para>
       </glossdef>
     </glossentry>
   </glossdiv>
