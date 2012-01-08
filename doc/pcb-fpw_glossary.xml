@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossary PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+"http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<glossary>
+  <glossdiv>
+    <title>Glossary of terms related to pcb-fpw.</title>
+
+    <glossentry>
+      <glossterm>arc</glossterm>
+
+      <glossdef>
+        <para>A curved trace drawn on a drawing layer.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>aperture</glossterm>
+
+      <glossdef>
+        <para>In reference to RS-274X files, an aperture is a brush shape used
+        to draw things. Originally, the aperture was a physical hole of a
+        specific shape and size through which light exposed a photographic
+        film.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>attribute</glossterm>
+
+      <glossdef>
+        <para>Varied meanings. Elements and boards may have attributes
+        assigned to them, which are arbitrary mappings between a name and its
+        value. pcb does not currently use those attributes itself. Within pcb
+        an attribute is an arbitrary value passed between the core and the
+        various HIDs, such as checkboxes and file names.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>bloat</glossterm>
+
+      <glossdef>
+        <para>The most that the copper areas can be expanded before they are
+        allowed to touch. For example, two 40 mil lines 10 mil apart can bloat
+        up to (but not including) 5 mil before they touch, so the maximum
+        bloat would be 4.99 mil.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>board</glossterm>
+
+      <glossdef>
+        <para>The physical printed circuit board that is depicted by your
+        layout. "Board" refers to the physical board, "layout" refers to the
+        electronic data.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>clad</glossterm>
+
+      <glossdef>
+        <para>A thin layer of copper attached to a thin layer of insulator.
+        Once etched, the remaining copper forms the electrical connections
+        described by the layout file.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>clearance</glossterm>
+
+      <glossdef>
+        <para>The distance beween the copper around a hole (the annulus) and
+        the copper in the surrounding polygon, or between any other copper
+        item (line or arc) and a surrounding polygon.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>courtyard</glossterm>
+
+      <glossdef>
+        <para>The area around an element which is still "used" by the element,
+        for its electrical and mechanical clearance requirements. pcb does not
+        use this term, nor explicitly support a courtyard definition for
+        elements.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>drawing layer</glossterm>
+
+      <glossdef>
+        <para>While designing your circuit board, pcb provides a number of
+        layers to draw on. While it's convenient to think of each drawing
+        layer as corresponding to one of the physical layers (copper, silk,
+        etc), it's possible to group multiple drawing layers together into one
+        physical layer, or assign drawing layers to purposes not corresponding
+        to physical layers. For example, you could have two drawing layers
+        corresponding to your ground plane copper layer, one for the ground
+        plane itself and a second (differently colored) one for any signals
+        that need to be routed on the ground plane layer.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>DRC</glossterm>
+
+      <glossdef>
+        <para>Design Rule Check. In pcb your design is scanned and compared to
+        a number of design rules, such as minimum trace thickness and spacing,
+        and any violations are noted. Then, you are tortured to death with
+        non-modal dialogs.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>drill file</glossterm>
+
+      <glossdef>
+        <para>A computer-readable file intended to be used by automated
+        drilling machines. The information includes drill diameters and
+        locations. pcb may produce up to two drill files, one for plated holes
+        and one for unplated holes. Automated drill machines were originally
+        designed by the Excellon company, so drill files are sometimes called
+        excellon files. Also called an NC drill file.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>element</glossterm>
+
+      <glossdef>
+        <para>In pcb an element represents any part you might install on your
+        board, such as resistors, capacitors, and integrated circuits. Note
+        that this also includes anything on your board that has its own
+        footprint, even if it doesn't have a part associated with it, such as
+        test points, registration targets, and edge connectors. An element has
+        a footprint, but is more than a footprint - it also has a reference
+        designator (refdes), value, description, and location. "Footprint"
+        refers to the pattern; "element" refers to the instance. For example,
+        your layout might have four elements that use one footprint.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>etch resist</glossterm>
+
+      <glossdef>
+        <para>Not to be confused with solder resist, etch resist is used
+        during the fabrication of the copper layers to define what copper is
+        removed and what copper will remain.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>excellon file</glossterm>
+
+      <glossdef>
+        <para>See drill file.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>fab, fab house, fabrication house</glossterm>
+
+      <glossdef>
+        <para>A company that produces (fabricates) printed circuit boards from
+        mechanical design files. Most accept (or expect) gerber (RS-274X)
+        format files.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>fab drawing, fabrication drawing</glossterm>
+
+      <glossdef>
+        <para>A drawing that shows a mechanical overview of the board,
+        including the physical outline and all physical holes. This is often
+        used by fabs to sanity check their interpretation of your design
+        files.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>fiducial</glossterm>
+
+      <glossdef>
+        <para>A set of fiducials (typically 2, sometimes 3) can serve as a
+        reference for a "Pick-and-Place" machine to accurately place parts on
+        a pcb. Fiducials are free of solder mask and solder paste, as to
+        provide a good contrast with the board materials to allow for proper
+        optical recognition.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>footprint</glossterm>
+
+      <glossdef>
+        <para>A footprint is the pattern on a circuit board to which your
+        parts are attached. This includes all copper, silk, solder mask, and
+        solder paste information. In other EDA programs, this may be referred
+        to as a "land pattern". "Footprint" sometimes is used to refer to a
+        footprint file. "Footprint" refers to the pattern; "element" refers to
+        the instance in the pcb file. For example, your layout might have four
+        elements that use one footprint.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>footprint file</glossterm>
+
+      <glossdef>
+        <para>A file that contains a single footprint definition. Normally,
+        this means it describes one element, although there are
+        exceptions.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>gEDA</glossterm>
+
+      <glossdef>
+        <para>The GPL'd Electronic Design Automation suite of tools. See
+        http://www.geda.seul.org. It includes, among other things, the gschem
+        schematic editor, which produces input that pcb can use.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>gerber, gerber file</glossterm>
+
+      <glossdef>
+        <para>The common name for an RS-274X formatted file. Originally named
+        after the Gerber Photoplotter Company.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>gschem</glossterm>
+
+      <glossdef>
+        <para>The schematic editor that comes with gEDA.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>keepout</glossterm>
+
+      <glossdef>
+        <para>A region created by the designer solely to prevent something
+        else from existing there. For example, an element with a copper
+        keepout would prevent the autorouter from routing traces through that
+        area. pcb does not currently support keepouts.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>landpattern</glossterm>
+
+      <glossdef>
+        <para>See footprint.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>layer</glossterm>
+
+      <glossdef>
+        <para>There are two meanings of "layer'' in pcb. See "drawing layer"
+        and "physical layer".</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>layout</glossterm>
+
+      <glossdef>
+        <para>The board design information depicted by the edits you've made;
+        this is what's stored in a pcb file and displayed on the screen.
+        "Board" refers to the physical board, "layout" refers to the
+        electronic data.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>line</glossterm>
+
+      <glossdef>
+        <para>A straight segment drawn on a drawing layer.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>mark</glossterm>
+
+      <glossdef>
+        <para>Normally, pcb reports coordinates relative to the origin (upper
+        left) of the board. However, you can designate a location on the board
+        such that pcb also reports coordinates relative to that location. Such
+        a location is the mark, and is drawn with an X shape. Elements also
+        have a mark; this is the local origin from which other locations
+        within the element are measured. Element marks are drawn as small
+        diamonds.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>mask</glossterm>
+
+      <glossdef>
+        <para>See "solder mask".</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>mil</glossterm>
+
+      <glossdef>
+        <para>A mil is 0.001 inch, or a "milli-inch". Other packages may call
+        it a "thou", short for a thousandth of an inch (25.4 mm / 1000 =
+        0.0254 mm).</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>NC drill</glossterm>
+
+      <glossdef>
+        <para>Numerically Controlled Drill file. See "drill file".</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>negative layer, negative plane</glossterm>
+
+      <glossdef>
+        <para>For most drawing layers, the stuff you draw corresponds to stuff
+        that exists in a physical layer. For example, trace drawn on a copper
+        layer results in copper existing on the board. For negative layers,
+        however, what you draw results in what does <emphasis
+        role="bold">not</emphasis> exist on the board. The solder mask gerber,
+        for example, is such a layer - a circle drawn in the solder mask
+        gerber results in a hole in the physical solder mask. pcb represents
+        such layers in a meaningful way on the screen, but exporters may use a
+        negative layer according to the needs of the fabrication
+        process.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>netlist</glossterm>
+
+      <glossdef>
+        <para>A list of symbolic electrical connections, normally provided as
+        input to pcb from a schematic layout program, which represents the
+        desired electrical connectivity of the board. pcb can compare the
+        desired (loaded) netlist with the actual (copper) netlist and advise
+        you of shorts or unrouted connections. If there are unrouted
+        connections, it can use those to create a rat's nest to assist you in
+        routing them.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>outline</glossterm>
+
+      <glossdef>
+        <para>The physical shape and dimension of your physical board. By
+        default, this is a rectangle the size of your working area (the "board
+        size"), but if you name one of the drawing layers "outline" that is
+        used instead. While your board is itself a polygon shape, a polygon
+        drawing object is not used to denote its outline - by convention, 10
+        mil (0.254 mm) wide lines are used to draw the outline, and the
+        centerlines of those lines indicate the actual outline edges.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>package</glossterm>
+
+      <glossdef>
+        <para>An electronic component can be packaged in one or more discrete
+        forms, this is called a package.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>pad</glossterm>
+
+      <glossdef>
+        <para>An electrical connection to an element which does not require a
+        through hole, for example as used by a surface mounted device.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>part</glossterm>
+
+      <glossdef>
+        <para>A basic electronic element usually packaged in a discrete form
+        with two or more connecting leads or metallic pads. Parts are intended
+        to be connected together, usually by soldering to a printed circuit
+        board, to create an electronic circuit with a particular
+        function.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>paste</glossterm>
+
+      <glossdef>
+        <para>See "solder paste".</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>paste stencil</glossterm>
+
+      <glossdef>
+        <para>A thin sheet, usually plastic or metal and 0.002 to 0.005 inches
+        thick, with holes where solder paste should be applied to your
+        board.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>pcb file</glossterm>
+
+      <glossdef>
+        <para>A file used by pcb to store board layout. Such files end in
+        ".pcb" and are normally readable (and editable) text files.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>pcb units</glossterm>
+
+      <glossdef>
+        <para>Internally, pcb maintains all measurements in its own units,
+        typically with nanometer (nm) resolution, which is much smaller than
+        both mils and millimeters. These are the default units used in pcb
+        files. At the time this text was written. pcb-fpw stil uses units that
+        are 1/100 of a mil, and pcb parses these as the old "no-units file
+        format" units.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>physical layer</glossterm>
+
+      <glossdef>
+        <para>In the manufacture of circuit boards, a physical layer is, for
+        example, each layer of copper, each side's silkscreen, the solder
+        mask, the paste stencil, the physical outline, etc. Each physical
+        layer requires a single layer definition to be produced by pcb; for
+        professional fabs there is one gerber file for each physical
+        layer.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>pin</glossterm>
+
+      <glossdef>
+        <para>An electrical connection to an element which requires a through
+        hole, for example as needed by a DIP socket. Contrast with a pad. Note
+        that pins and vias are mechanically identical, although pins default
+        to untented while vias default to tented.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>plated hole, plated through hole, PTH</glossterm>
+
+      <glossdef>
+        <para>During fabrication, some holes become coated with copper which
+        connects all the copper layers together at that point. Since this is
+        normally done by electroplating, such holes are called "plated" holes,
+        and normally have a copper annulus around them.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>polygon</glossterm>
+
+      <glossdef>
+        <para>A polygon defines the ouline of a drawn region on a drawing
+        layer. When used on a drawing layer representing a copper physical
+        layer, it causes a copper polygon to exist in the final board, for
+        example. Unlike lines and arcs, a polygon does not have a "thickness"
+        as the lines define the exact boundary of the shape.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>rectangle</glossterm>
+
+      <glossdef>
+        <para>A special case of a polygon.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>resist</glossterm>
+
+      <glossdef>
+        <para>In pcb this usually means the etch resist.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>RS-274D, RS-274X</glossterm>
+
+      <glossdef>
+        <para>A file format used originally by photoplotters, but now used by
+        any machine used to fabricate circuit boards. The D variant requires a
+        separate file defining all the apertures, and is considered obsolete.
+        The X variant is newer and includes the aperture definitions. Since
+        these formats were defined by the Gerber Photoplotter company, they
+        are commonly known as "gerber files". Although there is no "owner" of
+        the RS-274X spec, it can be found at various places online such as
+        "http://www.artwork.com/gerber/274x/rs274xrevd_e.pdf".</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>shrink</glossterm>
+
+      <glossdef>
+        <para>The most that a copper area can decrease in size before it no
+        longer touches (overlaps) an adjacent copper area.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>silk, silkscreen</glossterm>
+
+      <glossdef>
+        <para>A layer of ink or pigment drawn on the circuit board (usually,
+        one for each side of the board) in order to include, for example, part
+        numbers or element outlines.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>soldermask</glossterm>
+
+      <glossdef>
+        <para>A layer of heat resistant film placed over the outermost copper
+        layers of your board, to prevent solder from sticking to any covered
+        copper. When used to cover traces routed between pins or pads, this
+        can help avoid shorts to those traces. Note that when shown in pcb the
+        mask is drawn where the film exists, but when output (to postscript or
+        gerber, for example), it is often "drawn" where the mask is to be
+        removed.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>solder resist</glossterm>
+
+      <glossdef>
+        <para>See soldermask.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>solder paste</glossterm>
+
+      <glossdef>
+        <para>Ground up solder mixed with flux. This paste is normally
+        squeegeed through a paste stencil to deposit a measured amount of
+        paste on each pad on the board. Once the paste is applied, parts can
+        be positioned on the paste, and the board heated - which melts the
+        paste and solders the parts to the board.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>tented</glossterm>
+
+      <glossdef>
+        <para>When a circuit board is made with a solder mask, you have the
+        option of opening a hole in the mask over vias, or leaving the solder
+        mask intact over them. A via with an intact solder mask over it is
+        tented, as the solder mask acts like a tent over the copper and
+        hole.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>thermal, thermal relief</glossterm>
+
+      <glossdef>
+        <para>Since copper is an efficient heat sink, connections to a large
+        region of copper would be very difficult to solder - the copper heat
+        sink prevents you from adequately heating the connection. To fix this,
+        small cutouts are made around each such connection to create a thermal
+        barrier, so that heat applied to the connection stays at the
+        connection. Such a set of cutouts, and the copper bridges that remain,
+        is called a "thermal". Thermals come in many patterns, which allows
+        the designer to ensure adequate electrical connectivity and/or
+        manufacturability.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>thickness</glossterm>
+
+      <glossdef>
+        <para>In pcb this often refers to the width of a line or arc, not the
+        thickness of the copper film used to produce the board. This is also
+        the "size" of a line or arc.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>thou</glossterm>
+
+      <glossdef>
+        <para>See "mil".</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>toner transfer, TT</glossterm>
+
+      <glossdef>
+        <para>A home-fabrication method that involves printing a layer with a
+        laser printer, and transferring the toner from that print to an
+        unetched copper board. The toner acts as an etch resist.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>trace</glossterm>
+
+      <glossdef>
+        <para>Any copper added to a copper layer whose purpose is to connect
+        electrical signals between elements. Traces may be built up from
+        lines, arcs, and polygons.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>unplated hole</glossterm>
+
+      <glossdef>
+        <para>During fabrication, some holes are drilled after electroplating,
+        and so do not receive the copper that would otherwise connect layers.
+        Such holes are unplated holes, and normally do not have a copper
+        annulus around them either.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>untented</glossterm>
+
+      <glossdef>
+        <para>When a hole is placed in the solder mask in order to expose a
+        via below it, such a via is untented. Untented vias are available as
+        test points or places to add wires later.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>via</glossterm>
+
+      <glossdef>
+        <para>A via is a connection between different copper layers. In pcb
+        all vias are "through" vias, in that they connect copper on all
+        layers.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm></glossterm>
+
+      <glossdef>
+        <para></para>
+      </glossdef>
+    </glossentry>
+  </glossdiv>
+</glossary>
