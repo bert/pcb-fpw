@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+"http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<article>
+  <articleinfo>
+    <title>pcb-fpw Footprint Naming Convention.</title>
+
+    <author>
+      <firstname>Bert</firstname>
+
+      <surname>Timmerman</surname>
+    </author>
+
+    <copyright>
+      <year>2007, 2008, 2009, 2010, 2011, 2012.</year>
+    </copyright>
+
+    <legalnotice>
+      <para>Permission is granted to copy, distribute and/or modify this
+      document under the terms of the GNU Free Documentation License, Version
+      1.3 or any later version published by the Free Software Foundation; with
+      no Invariant Sections, no Front-Cover Texts and no Back-Cover Texts. A
+      copy of the license is included in the section entitled "GNU Free
+      Documentation License".</para>
+    </legalnotice>
+  </articleinfo>
+
+  <section>
+    <title>pcb-fpw Footprint Naming Convention.</title>
+
+    <para>Footprint names can be derived by combining the name of the
+    component category with a dimensional aspect of the component and the
+    number of pins followed by a suffix derived from the environmental
+    application.</para>
+
+    <para>If additional characteristcs are required they should be added as an
+    alphabetical character, or combinations of characters that preceed the
+    suffix.</para>
+
+    <para>Sample Name: QFP65P + Lead Span L1 X Lead Span L2 Nominal - Pin
+    Qty</para>
+
+    <para>The + (plus sign) stands for "in addition to" (no space between the
+    prefix and the body size).</para>
+
+    <para>The <emphasis role="bold">-</emphasis> (dash in bold typeface) is
+    used to separate the pin quantity.</para>
+
+    <para>The <emphasis role="bold">_</emphasis> (underscore in bold typeface)
+    is the separator between pin Quantity in Hidden &amp; Deleted pin
+    components, and also used as a separator between lead numbers and package
+    dimensions.</para>
+
+    <para>The <emphasis role="bold">X</emphasis> (capital letter X in bold
+    typeface) is used instead of the word "by" to separate two numbers such as
+    height X width like "Quad Packages".</para>
+
+    <section>
+      <title>Density Level Suffixes.</title>
+
+      <para>Suffixes for every common SMT footprint describe the environment
+      application (this is the last character in every name).</para>
+
+      <para><note>
+          <para>This excludes the BGA which only comes in Nominal Environment
+          Condition.</para>
+        </note>Three footprint geometry variations are supplied for each of
+      the device families;</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>maximum land protrusion (Density Level A).</para>
+        </listitem>
+      </itemizedlist>
+
+      <itemizedlist>
+        <listitem>
+          <para>median land protrusion (Density Level B).</para>
+        </listitem>
+      </itemizedlist>
+
+      <itemizedlist>
+        <listitem>
+          <para>minimum land protrusion (Density Level C).</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>Before adapting the minimum footprint variations the user should
+      consider product qualification testing and the manufacturer's
+      datasheets.</para>
+
+      <itemizedlist>
+        <listitem>
+          <para><emphasis role="bold">M</emphasis> - Density Level A: Maximum
+          (Most) Land Protrusion.</para>
+
+          <para>For low-density product applications, the 'maximum' footprint
+          condition has been developed to accommodate wave or flow solder of
+          leadless chip devices and leaded gull- wing devices.</para>
+
+          <para>The geometry furnished for these devices, as well as inward
+          and "J"-formed lead contact device families, may provide a wider
+          process window for reflow solder processes as well.</para>
+        </listitem>
+      </itemizedlist>
+
+      <itemizedlist>
+        <listitem>
+          <para><emphasis role="bold">N</emphasis> - Density Level B: Median
+          (Nominal) Land Protrusion.</para>
+
+          <para>Products with a moderate level of component density may
+          consider adapting the 'median' footprint geometry.</para>
+
+          <para>The median footprints furnished for all device families will
+          provide a robust solder attachment condition for reflow solder
+          processes and should provide a condition suitable for wave or reflow
+          soldering of leadless chip and leaded gull-wing type devices.</para>
+        </listitem>
+      </itemizedlist>
+
+      <itemizedlist>
+        <listitem>
+          <para><emphasis role="bold">L</emphasis> - Density Level C: Minimum
+          (Least) Land Protrusion.</para>
+
+          <para>High component density typical of portable and hand-held
+          product applications may consider the 'minimum' footprint geometry
+          variation.</para>
+
+          <para>Selection of the minimum footprint geometry may not be
+          suitable for all product use categories.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>The use of classes of performance (1, 2, and 3) is combined with
+      that of component density levels (A, B, and C) in explaining the
+      condition of an electronic assembly.</para>
+
+      <para>As an example, combining the description as Levels 1A or 3B or 2C,
+      would indicate the different combinations of performance and component
+      density to aid in understanding the environment and the manufacturing
+      requirements of a particular assembly.</para>
+    </section>
+
+    <section>
+      <title>Other Suffixes.</title>
+
+      <para>Heatsinks:</para>
+
+      <para><emphasis role="bold">_HS</emphasis> - Footprint with Heat Sink
+      attachment requiring additional holes or pads.</para>
+
+      <para>Example: TO254P1055X160_HS-6N.</para>
+
+      <para>Transistors:</para>
+
+      <para><emphasis role="bold">_BEC</emphasis> - Base, Emitter and
+      Collector (pin assignments used for three pin transistors).</para>
+
+      <para><emphasis role="bold">_SGD</emphasis> - Source, Gate and Drain
+      (pin assignments used for three pin transistors).</para>
+
+      <para><emphasis role="bold">_213</emphasis> - Alternate pin assignments
+      used for three pin transistors.</para>
+
+      <para>Alternate Components that do not follow the JEDEC, EIA or IEC
+      Standard:</para>
+
+      <para><emphasis role="bold">A</emphasis> - Alternate Component (used
+      primarily for SOP &amp; QFP when Component Tolerance or Height is
+      different).</para>
+
+      <para><emphasis role="bold">B</emphasis> - Second Alternate
+      Component.</para>
+
+      <para>Reverse Pin Order:</para>
+
+      <para><emphasis role="bold">-20RN</emphasis>&lt;/b&gt; - 20 pin part,
+      Reverse Pin Order, Nominal Environment.</para>
+
+      <para>Hidden Pins:</para>
+
+      <para><emphasis role="bold">-20_24N</emphasis> - 20 pin part in a 24 pin
+      package. The pins are numbered 1 - 24 the hidden pins are skipped. The
+      schematic symbol displays up to 24 pins.</para>
+
+      <para>Deleted Pins:</para>
+
+      <para><emphasis role="bold">-24_20N</emphasis> - 20 pin part in a 24 pin
+      package. The pins are numbered 1 - 20. The schematic symbol displays 20
+      pins.</para>
+
+      <para>JEDEC and EIA Standard parts that have several alternate
+      packages.</para>
+
+      <para><emphasis role="bold">AA</emphasis>, <emphasis
+      role="bold">AB</emphasis>, <emphasis role="bold">AC</emphasis> - JEDEC
+      or EIA Component Identifier.</para>
+
+      <para>JEDEC or EIA component identifier: used primarily on chip
+      resistors, inductors and capacitors.</para>
+    </section>
+
+    <section>
+      <title>Surface Mounting Technology (SMT) footprint name
+      definitions.</title>
+
+      <para></para>
+
+      <table>
+        <title>Table 1: Surface Mounting Technology (SMT) footprint name
+        definitions.</title>
+
+        <tgroup align="left" cols="3">
+          <thead>
+            <row>
+              <entry align="left">Prefix</entry>
+
+              <entry align="left">Component description</entry>
+
+              <entry align="left">Footprint Name Definition</entry>
+            </row>
+          </thead>
+
+          <tbody>
+            <row>
+              <entry>BGA</entry>
+
+              <entry>Ball Grid Array</entry>
+
+              <entry><emphasis role="bold">BGA</emphasis> + Pin Qty +
+              <emphasis role="bold">C</emphasis> or <emphasis
+              role="bold">N</emphasis> + Pitch + <emphasis
+              role="bold">P</emphasis> + Ball Columns + <emphasis
+              role="bold">X</emphasis> + Ball Rows + <emphasis
+              role="bold">_</emphasis> + Body Length + <emphasis
+              role="bold">X</emphasis> + Body Width + <emphasis
+              role="bold">X</emphasis> + Height</entry>
+            </row>
+
+            <row>
+              <entry>BGA</entry>
+
+              <entry>Ball Grid Array with Dual Pitch</entry>
+
+              <entry><emphasis role="bold">BGA</emphasis> + Pin Qty +
+              <emphasis role="bold">C</emphasis> or <emphasis
+              role="bold">N</emphasis> + Col Pitch + <emphasis
+              role="bold">X</emphasis> + Row Pitch + <emphasis
+              role="bold">P</emphasis> + Ball Columns + <emphasis
+              role="bold">X</emphasis> + Ball Rows + <emphasis
+              role="bold">_</emphasis> + Body Length + <emphasis
+              role="bold">X</emphasis> + Body Width + <emphasis
+              role="bold">X</emphasis> + Height</entry>
+            </row>
+
+            <row>
+              <entry>BGAS</entry>
+
+              <entry>Ball Grid Array with Staggered Pins</entry>
+
+              <entry><emphasis role="bold">BGAS</emphasis> + Pin Qty +
+              <emphasis role="bold">C</emphasis> or <emphasis
+              role="bold">N</emphasis> + Pitch + <emphasis
+              role="bold">P</emphasis> + Ball Columns + <emphasis
+              role="bold">X</emphasis> + Ball Rows + <emphasis
+              role="bold">_</emphasis> + Body Length + <emphasis
+              role="bold">X</emphasis> + Body Width + <emphasis
+              role="bold">X</emphasis> Height</entry>
+            </row>
+
+            <row>
+              <entry>CAPC</entry>
+
+              <entry>Capacitors, Chip, Non-polarized</entry>
+
+              <entry><emphasis role="bold">CAPC</emphasis> + Body Length +
+              Body Width + <emphasis role="bold">X</emphasis> + Height</entry>
+            </row>
+
+            <row>
+              <entry>CAPCAF</entry>
+
+              <entry>Capacitors, Chip Array, Flat</entry>
+
+              <entry><emphasis role="bold">CAPCAF</emphasis> + Body Width +
+              <emphasis role="bold">X</emphasis> + Body Length + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>CAPCAV</entry>
+
+              <entry>Capacitors, Chip Array, Concave</entry>
+
+              <entry><emphasis role="bold">CAPCAV</emphasis> + Body Width +
+              <emphasis role="bold">X</emphasis> + Body Length + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>CAPCP</entry>
+
+              <entry>Capacitors, Chip, Polarized</entry>
+
+              <entry><emphasis role="bold">CAPCP</emphasis> + Body Length +
+              Body Width + <emphasis role="bold">X</emphasis> + Height</entry>
+            </row>
+
+            <row>
+              <entry>CAPCWR</entry>
+
+              <entry>Capacitors, Chip, Wire Rectangular</entry>
+
+              <entry><emphasis role="bold">CAPCWR</emphasis> + Body Length +
+              Body + <emphasis role="bold">X</emphasis> + Height</entry>
+            </row>
+
+            <row>
+              <entry>CAPM</entry>
+
+              <entry>Capacitors, Molded body, Non-polarized</entry>
+
+              <entry><emphasis role="bold">CAPM</emphasis> + Body Length +
+              Body Width + <emphasis role="bold">X</emphasis> + Height</entry>
+            </row>
+
+            <row>
+              <entry>CAPMP</entry>
+
+              <entry>Capacitors, Molded body, Polarized</entry>
+
+              <entry><emphasis role="bold">CAPMP</emphasis> + Body Length +
+              Body Width + <emphasis role="bold">X</emphasis> + Height</entry>
+            </row>
+
+            <row>
+              <entry>CAPAE</entry>
+
+              <entry>Capacitors, Aluminum Electrolytic</entry>
+
+              <entry><emphasis role="bold">CAPAE</emphasis> + Body Width +
+              <emphasis role="bold">X</emphasis> + Height</entry>
+            </row>
+
+            <row>
+              <entry>CFP</entry>
+
+              <entry>Ceramic Flat Packages</entry>
+
+              <entry><emphasis role="bold">CFP</emphasis> + Pitch + <emphasis
+              role="bold">P</emphasis> + Lead Span + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>CGA</entry>
+
+              <entry>Column Grid Array, Circular Lead</entry>
+
+              <entry><emphasis role="bold">CGA</emphasis> + Pin Qty +
+              <emphasis role="bold">C</emphasis> + Pitch + <emphasis
+              role="bold">P</emphasis> + Pin Columns + <emphasis
+              role="bold">X</emphasis> + Pin Rows + <emphasis
+              role="bold">_</emphasis> + Body Length + <emphasis
+              role="bold">X</emphasis> + Body Width + <emphasis
+              role="bold">X</emphasis> + Height</entry>
+            </row>
+
+            <row>
+              <entry>CGA</entry>
+
+              <entry>Column Grid Array, Square Lead</entry>
+
+              <entry><emphasis role="bold">CGA</emphasis> + Pin Qty +
+              <emphasis role="bold">S</emphasis> + Pitch + <emphasis
+              role="bold">P</emphasis> + Pin Columns + <emphasis
+              role="bold">X</emphasis> + Pin Rows + <emphasis
+              role="bold">_</emphasis> + Body Length + <emphasis
+              role="bold">X</emphasis> + Body Width + <emphasis
+              role="bold">X</emphasis> + Height</entry>
+            </row>
+
+            <row>
+              <entry>CQFP</entry>
+
+              <entry>Ceramic Quad Flat Package</entry>
+
+              <entry><emphasis role="bold">CQFP</emphasis> + Pitch + <emphasis
+              role="bold">P</emphasis> + Lead Span L1 + <emphasis
+              role="bold">X</emphasis> + Lead Span L2 Nominal + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>DFN</entry>
+
+              <entry>Dual Flat No-lead</entry>
+
+              <entry><emphasis role="bold">DFN</emphasis> + Body Length +
+              <emphasis role="bold">X</emphasis> + Body Width + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>DIOC</entry>
+
+              <entry>Diodes, Chip</entry>
+
+              <entry><emphasis role="bold">DIOC</emphasis> + Body Length +
+              Body Width + <emphasis role="bold">X</emphasis> + Height</entry>
+            </row>
+
+            <row>
+              <entry>DIOM</entry>
+
+              <entry>Diodes, Molded</entry>
+
+              <entry><emphasis role="bold">DIOM</emphasis> + Body Length +
+              Body Width + <emphasis role="bold">X</emphasis> + Height</entry>
+            </row>
+
+            <row>
+              <entry>DIOMELF</entry>
+
+              <entry>Diodes, MELF</entry>
+
+              <entry><emphasis role="bold">DIOMELF</emphasis> + Body Length +
+              Body Width</entry>
+            </row>
+
+            <row>
+              <entry>DIOSC</entry>
+
+              <entry>Diodes, Side Concave, 2 Pin</entry>
+
+              <entry><emphasis role="bold">DIOSC</emphasis> + Body Length +
+              <emphasis role="bold">X</emphasis> + Body Width + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>DIP</entry>
+
+              <entry>Dual-in-Line Packages (Butt Mount)</entry>
+
+              <entry><emphasis role="bold">DIP</emphasis> + Pitch + <emphasis
+              role="bold">P</emphasis> + Lead Span Nominal + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>FUSM</entry>
+
+              <entry>Fuses, Molded</entry>
+
+              <entry><emphasis role="bold">FUSM</emphasis> + Body Length +
+              Body Width + <emphasis role="bold">X</emphasis> + Height</entry>
+            </row>
+
+            <row>
+              <entry>INDC</entry>
+
+              <entry>Inductors, Chip</entry>
+
+              <entry><emphasis role="bold">INDC</emphasis> + Body Length +
+              Body Width + <emphasis role="bold">X</emphasis> + Height</entry>
+            </row>
+
+            <row>
+              <entry>INDCAF</entry>
+
+              <entry>Inductors, Chip Array, Flat</entry>
+
+              <entry><emphasis role="bold">INDCAF</emphasis> + Pitch +
+              <emphasis role="bold">P</emphasis> + Body Length + <emphasis
+              role="bold">X</emphasis> + Body Width <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>INDCAV</entry>
+
+              <entry>Inductors, Chip Array, Concave</entry>
+
+              <entry><emphasis role="bold">INDCAV</emphasis> + Pitch +
+              <emphasis role="bold">P</emphasis> + Body Length <emphasis
+              role="bold">X</emphasis> Body Width + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>INDM</entry>
+
+              <entry>Inductors, Molded</entry>
+
+              <entry><emphasis role="bold">INDM</emphasis> + Body Length +
+              Body Width + <emphasis role="bold">X</emphasis> + Height</entry>
+            </row>
+
+            <row>
+              <entry>INDP</entry>
+
+              <entry>Inductors, Precision Wire Wound</entry>
+
+              <entry><emphasis role="bold">INDP</emphasis> + Body Length +
+              Body Width + <emphasis role="bold">X</emphasis> + Height</entry>
+            </row>
+
+            <row>
+              <entry>LCC</entry>
+
+              <entry>Quad Leadless Chip Carriers</entry>
+
+              <entry><emphasis role="bold">LCC</emphasis> + Body Width +
+              <emphasis role="bold">X</emphasis> + Body Length + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>LCCS</entry>
+
+              <entry>Quad Leadless Ceramic Chip Carriers (Pin 1 on
+              Side)</entry>
+
+              <entry><emphasis role="bold">LCCS</emphasis> + Pitch + <emphasis
+              role="bold">P</emphasis> + Body Width <emphasis
+              role="bold">X</emphasis> Body Length + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>LEDM</entry>
+
+              <entry>LED's, Molded</entry>
+
+              <entry><emphasis role="bold">LEDM</emphasis> + Body Length +
+              Body Width + <emphasis role="bold">X</emphasis> + Height</entry>
+            </row>
+
+            <row>
+              <entry>LEDSC</entry>
+
+              <entry>LED's, Side Concave, 2 Pin</entry>
+
+              <entry><emphasis role="bold">LEDSC</emphasis> + Body Length +
+              <emphasis role="bold">X</emphasis> + Body Width + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>LEDSC</entry>
+
+              <entry>LED's, Side Concave, 4 Pin</entry>
+
+              <entry><emphasis role="bold">LEDSC</emphasis> + Pitch +
+              <emphasis role="bold">P</emphasis> + Body Length + <emphasis
+              role="bold">X</emphasis> + Body Width + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>LGA</entry>
+
+              <entry>Land Grid Array, Circular Lead</entry>
+
+              <entry><emphasis role="bold">LGA</emphasis> + Pin Qty +
+              <emphasis role="bold">C</emphasis> + Pitch + <emphasis
+              role="bold">P</emphasis> + Pin Columns + <emphasis
+              role="bold">X</emphasis> + Pin Rows + <emphasis role="bold">_
+              </emphasis>+ Body Length + <emphasis role="bold">X</emphasis> +
+              Body Width + <emphasis role="bold">X</emphasis> + Height</entry>
+            </row>
+
+            <row>
+              <entry>LGA</entry>
+
+              <entry>Land Grid Array, Square Lead</entry>
+
+              <entry><emphasis role="bold">LGA</emphasis>&gt; + Pin Qty +
+              <emphasis role="bold">S</emphasis> + Pitch + <emphasis
+              role="bold">P</emphasis> + Pin Columns + <emphasis
+              role="bold">X</emphasis> + Pin Rows + <emphasis role="bold">_
+              </emphasis>+ Body Length + <emphasis role="bold">X </emphasis>+
+              Body Width + <emphasis role="bold">X</emphasis> + Height</entry>
+            </row>
+
+            <row>
+              <entry>LGA</entry>
+
+              <entry>Land Grid Array, Rectangle Lead</entry>
+
+              <entry><emphasis role="bold">LGA</emphasis> + Pin Qty +
+              <emphasis role="bold">R</emphasis> + Pitch + <emphasis
+              role="bold">P</emphasis> + Pin Columns + <emphasis
+              role="bold">X</emphasis> + Pin Rows + <emphasis
+              role="bold">_</emphasis> + Body Length + <emphasis
+              role="bold">X</emphasis> + Body Width + <emphasis
+              role="bold">X</emphasis> + Height</entry>
+            </row>
+
+            <row>
+              <entry>OSCCC</entry>
+
+              <entry>Oscillators, Corner Concave</entry>
+
+              <entry><emphasis role="bold">OSCCC</emphasis> + Body Length +
+              <emphasis role="bold">X</emphasis> + Body Width + <emphasis
+              role="bold">X</emphasis> + Height</entry>
+            </row>
+
+            <row>
+              <entry>OSCJ</entry>
+
+              <entry>Oscillators, J-Lead</entry>
+
+              <entry><emphasis role="bold">OSCJ</emphasis> + Pitch + <emphasis
+              role="bold">P</emphasis> + Body Length + <emphasis
+              role="bold">X</emphasis> + Body Width + <emphasis role="bold">X
+              </emphasis>+ Height + <emphasis role="bold">-</emphasis> + Pin
+              Qty</entry>
+            </row>
+
+            <row>
+              <entry>OSCL</entry>
+
+              <entry>Oscillators, L-Bend Lead</entry>
+
+              <entry><emphasis role="bold">OSCL</emphasis> + Pitch + <emphasis
+              role="bold">P</emphasis> + Body Length + <emphasis
+              role="bold">X</emphasis> + Body Width + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>OSCSC</entry>
+
+              <entry>Oscillators, Side Concave</entry>
+
+              <entry><emphasis role="bold">OSCSC</emphasis> + Pitch +
+              <emphasis role="bold">P</emphasis> + Body Length + <emphasis
+              role="bold">X</emphasis> + Body Width + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>PAD</entry>
+
+              <entry>Pad</entry>
+
+              <entry><emphasis role="bold">PAD</emphasis> + Wire Width</entry>
+            </row>
+
+            <row>
+              <entry>PLCC</entry>
+
+              <entry>Plastic Leaded Chip Carriers</entry>
+
+              <entry><emphasis role="bold">PLCC</emphasis> + Leadspan1 +
+              <emphasis role="bold">X</emphasis> + Leadspan2 + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>PLCCS</entry>
+
+              <entry>Plastic Leaded Chip Carrier Sockets</entry>
+
+              <entry><emphasis role="bold">PLCCS</emphasis> + Leadspan1 +
+              <emphasis role="bold">X</emphasis> + Leadspan2 + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>PQFN</entry>
+
+              <entry>Pull-back Quad Flat No-lead</entry>
+
+              <entry><emphasis role="bold">PQFN</emphasis> + Pitch + <emphasis
+              role="bold">P</emphasis> + Body Width + <emphasis
+              role="bold">X</emphasis> + Body Length + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty + Thermal Pad</entry>
+            </row>
+
+            <row>
+              <entry>PSON</entry>
+
+              <entry>Pull-back Small Outline No-lead</entry>
+
+              <entry><emphasis role="bold">PSON</emphasis> + Pitch + <emphasis
+              role="bold">P</emphasis> + Body Width + <emphasis
+              role="bold">X</emphasis> + Body Length + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty + Thermal Pad</entry>
+            </row>
+
+            <row>
+              <entry>QFN</entry>
+
+              <entry>Quad Flat No-lead</entry>
+
+              <entry><emphasis role="bold">QFN</emphasis> + Pitch + <emphasis
+              role="bold">P</emphasis> + Body Width + <emphasis
+              role="bold">X</emphasis> + Body Length + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty + Thermal Pad</entry>
+            </row>
+
+            <row>
+              <entry>QFP</entry>
+
+              <entry>Quad Flat Packages</entry>
+
+              <entry><emphasis role="bold">QFP</emphasis> + Pitch + <emphasis
+              role="bold">P</emphasis> + Lead Span L1 + <emphasis
+              role="bold">X</emphasis> + Lead Span L2 Nominal + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>RESC</entry>
+
+              <entry>Resistors, Chip</entry>
+
+              <entry><emphasis role="bold">RESC</emphasis> + Body Length +
+              Body Width + <emphasis role="bold">X</emphasis> + Height</entry>
+            </row>
+
+            <row>
+              <entry>RESCAF</entry>
+
+              <entry>Resistors, Chip Array, Flat</entry>
+
+              <entry><emphasis role="bold">RESCAF</emphasis> + Pitch +
+              <emphasis role="bold">P</emphasis> + Body Length + <emphasis
+              role="bold">X</emphasis> + Body Width + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>RESCAV</entry>
+
+              <entry>Resistors, Chip Array, Concave</entry>
+
+              <entry><emphasis role="bold">RESCAV</emphasis> + Pitch +
+              <emphasis role="bold">P</emphasis> + Body Length + <emphasis
+              role="bold">X</emphasis> + Body Width + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>RESCAXE</entry>
+
+              <entry>Resistors, Chip, Array, Convex, E-Version (Even Pin
+              Size)</entry>
+
+              <entry><emphasis role="bold">RESCAXE</emphasis> + Pitch +
+              <emphasis role="bold">P</emphasis> + Body Length + <emphasis
+              role="bold">X</emphasis> + Body Width + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>RESCAXS</entry>
+
+              <entry>Resistors, Chip, Array, Convex, S-Version (Side Pins
+              Differ)</entry>
+
+              <entry><emphasis role="bold">RESCAXS</emphasis> + Pitch +
+              <emphasis role="bold">P</emphasis> + Body Length + <emphasis
+              role="bold">X</emphasis> + Body Width + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>RESM</entry>
+
+              <entry>Resistors, Molded</entry>
+
+              <entry><emphasis role="bold">RESM</emphasis> + Body Length +
+              Body Width + <emphasis role="bold">X</emphasis> + Height</entry>
+            </row>
+
+            <row>
+              <entry>RESMELF</entry>
+
+              <entry>Resistors, MELF</entry>
+
+              <entry><emphasis role="bold">RESMELF</emphasis> + Body Length +
+              Body Width</entry>
+            </row>
+
+            <row>
+              <entry>SOD</entry>
+
+              <entry>Small Outline Diode</entry>
+
+              <entry><emphasis role="bold">SOD</emphasis> + Lead Span Nominal
+              + Body Width + <emphasis role="bold">X</emphasis> +
+              Height</entry>
+            </row>
+
+            <row>
+              <entry>SODFL</entry>
+
+              <entry>Small Outline Diodes, Flat Lead</entry>
+
+              <entry><emphasis role="bold">SODFL</emphasis> + Lead Span
+              Nominal + Body Width + <emphasis role="bold">X</emphasis> +
+              Height</entry>
+            </row>
+
+            <row>
+              <entry>SOJ</entry>
+
+              <entry>Small Outline IC, J-Leaded</entry>
+
+              <entry><emphasis role="bold">SOJ</emphasis> + Pitch + <emphasis
+              role="bold">P</emphasis> + Lead Span Nominal + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>SOIC</entry>
+
+              <entry>Small Outline Integrated Circuit</entry>
+
+              <entry><emphasis role="bold">SOIC</emphasis> + Pitch + <emphasis
+              role="bold">P</emphasis> + Lead Span Nominal + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>SON</entry>
+
+              <entry>Small Outline No-Lead</entry>
+
+              <entry><emphasis role="bold">SON</emphasis> + Pitch + <emphasis
+              role="bold">P</emphasis> + Body Width + <emphasis
+              role="bold">X</emphasis> + Body Length + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty + Thermal Pad</entry>
+            </row>
+
+            <row>
+              <entry>SOP</entry>
+
+              <entry>Small Outline Packages</entry>
+
+              <entry><emphasis role="bold">SOP</emphasis> + Pitch + <emphasis
+              role="bold">P</emphasis> + Lead Span Nominal + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>SOT</entry>
+
+              <entry>Small Outline Transistors (Generic)</entry>
+
+              <entry><emphasis role="bold">SOT</emphasis> + Pitch + <emphasis
+              role="bold">P</emphasis> + Lead Span Nominal + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis role="bold">-
+              +</emphasis> Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>SOTFL</entry>
+
+              <entry>Small Outline Transistors, Flat Lead</entry>
+
+              <entry><emphasis role="bold">SOTFL</emphasis> + Pitch +
+              <emphasis role="bold">P</emphasis> + Lead Span Nominal +
+              <emphasis role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>TO</entry>
+
+              <entry>Transistor Outline (Generic DPAK)</entry>
+
+              <entry><emphasis role="bold">TO</emphasis> + Pitch + <emphasis
+              role="bold">P</emphasis> + Lead Span + <emphasis
+              role="bold">X</emphasis> + Height + <emphasis
+              role="bold">-</emphasis> + Pin Qty</entry>
+            </row>
+
+            <row>
+              <entry>XTAL</entry>
+
+              <entry>Crystals (2 leads)</entry>
+
+              <entry><emphasis role="bold">XTAL</emphasis> + Body Length +
+              <emphasis role="bold">X</emphasis> + Body Width + <emphasis
+              role="bold">X</emphasis> + Height</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+
+    <section>
+      <title>Pin Through Hole (PTH) footprint name definitions.</title>
+
+      <para></para>
+    </section>
+
+    <section>
+      <title>Connector footprint name definitions.</title>
+
+      <para></para>
+    </section>
+  </section>
+</article>
