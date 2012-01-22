@@ -27,7 +27,7 @@
     </legalnotice>
   </bookinfo>
 
-  <toc></toc>
+  <toc/>
 
   <chapter>
     <title>Introduction.</title>
@@ -173,6 +173,17 @@
       <section>
         <title>Starting up the application.</title>
 
+        <para>The application can be started by selecting from the start menu,
+        or by entering "pcb-gfpw" from the Command Line Interface in a
+        (terminal) shell window.</para>
+
+        <para><note>
+            <para>Adding an ampersand character ("&amp;") at the end of the
+            command will run pcb-gfpw from a background process, this will
+            return the command prompt to the (terminal) shell for subsequent
+            commands.</para>
+          </note></para>
+
         <para>During the startup of the application an "<emphasis
         role="bold">About pcb-gfpw</emphasis>" dialog window appears, shortly
         followed by the "<emphasis role="bold">main window</emphasis>" dialog
@@ -181,7 +192,7 @@
 
             <mediaobject>
               <imageobject>
-                <imagedata align="left" fileref="images/about_dialog.png" />
+                <imagedata align="left" fileref="images/about_dialog.png"/>
               </imageobject>
             </mediaobject>
           </figure></para>
@@ -201,7 +212,7 @@
                 <mediaobject>
                   <imageobject>
                     <imagedata align="left"
-                               fileref="images/credits_dialog.png" />
+                               fileref="images/credits_dialog.png"/>
                   </imageobject>
                 </mediaobject>
               </figure></para>
@@ -220,7 +231,7 @@
 
               <mediaobject>
                 <imageobject>
-                  <imagedata align="left" fileref="images/license_dialog.png" />
+                  <imagedata align="left" fileref="images/license_dialog.png"/>
                 </imageobject>
               </mediaobject>
             </figure>
@@ -327,7 +338,7 @@
 
               <mediaobject>
                 <imageobject>
-                  <imagedata align="left" fileref="images/footprint_tab.png" />
+                  <imagedata align="left" fileref="images/footprint_tab.png"/>
                 </imageobject>
               </mediaobject>
             </figure></para>
@@ -524,7 +535,7 @@
 
               <mediaobject>
                 <imageobject>
-                  <imagedata align="left" fileref="images/pins_pads_tab.png" />
+                  <imagedata align="left" fileref="images/pins_pads_tab.png"/>
                 </imageobject>
               </mediaobject>
             </figure>The second tab is named "<emphasis
@@ -641,7 +652,7 @@
                   <mediaobject>
                     <imageobject>
                       <imagedata align="left"
-                                 fileref="images/select_exception_dialog.png" />
+                                 fileref="images/select_exception_dialog.png"/>
                     </imageobject>
                   </mediaobject>
                 </figure></para>
@@ -744,7 +755,7 @@
 
               <mediaobject>
                 <imageobject>
-                  <imagedata align="left" fileref="images/silkscreen_tab.png" />
+                  <imagedata align="left" fileref="images/silkscreen_tab.png"/>
                 </imageobject>
               </mediaobject>
             </figure>The fourth tab is named "<emphasis
@@ -831,7 +842,7 @@
 
               <mediaobject>
                 <imageobject>
-                  <imagedata align="left" fileref="images/thermal_pad_tab.png" />
+                  <imagedata align="left" fileref="images/thermal_pad_tab.png"/>
                 </imageobject>
               </mediaobject>
             </figure></para>
@@ -924,7 +935,7 @@
               <mediaobject>
                 <imageobject>
                   <imagedata align="left"
-                             fileref="images/heel_and_toe_goals_tab.png" />
+                             fileref="images/heel_and_toe_goals_tab.png"/>
                 </imageobject>
               </mediaobject>
             </figure>The fifth and last tab is named "<emphasis
@@ -1045,5 +1056,5 @@
     </section>
   </chapter>
 
-  <index></index>
+  <index/>
 </book>
