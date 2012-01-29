@@ -451,8 +451,11 @@
       installation of pcb-fpw can start with the following sequence of
       commands:</para>
 
-      <para><programlisting>./autogen.sh</programlisting><programlisting>./configure --prefix=/usr/local/</programlisting><programlisting>make</programlisting><programlisting>make install</programlisting>Depending
-      on user requirements another prefix directory than
+      <para><programlisting>./autogen.sh</programlisting><programlisting>./configure --prefix=/usr/local/</programlisting><programlisting>make</programlisting><programlisting>make install</programlisting></para>
+
+      <para><warning>
+          <para>Installation will require su (root) privileges.</para>
+        </warning>Depending on user requirements another prefix directory than
       <literal>/usr/local/</literal> can be used, for instance when the user
       has no root privileges for installing in a system directory, the user
       can install in his/her home directory with
@@ -474,9 +477,7 @@
 
           <para>If so, please (re)configure with the correct prefix
           directory.</para>
-        </note><warning>
-          <para>Installation will require su (root) privileges.</para>
-        </warning></para>
+        </note></para>
     </sect1>
 
     <sect1>
@@ -510,8 +511,13 @@
       <para><programlisting>cd pcb-fpw</programlisting>The building and
       installation can start with the following sequence of commands:</para>
 
-      <para><programlisting>./autogen.sh</programlisting><programlisting>./configure --prefix=/usr/local/</programlisting><programlisting>make</programlisting><programlisting>make install</programlisting>Depending
-      on user requirements another prefix directory than
+      <para><programlisting>./autogen.sh</programlisting><programlisting>./configure --prefix=/usr/local/</programlisting><programlisting>make</programlisting><programlisting>make install</programlisting></para>
+
+      <warning>
+        <para>Installation will require su (root) privileges.</para>
+      </warning>
+
+      <para>Depending on user requirements another prefix directory than
       <literal>/usr/local/</literal> can be used, for instance when the user
       has no root privileges for installing in a system directory, the user
       can install in his/her home directory with
@@ -533,9 +539,7 @@
 
           <para>If so, please (re)configure with the correct prefix
           directory.</para>
-        </note><warning>
-          <para>Installation will require su (root) privileges.</para>
-        </warning></para>
+        </note></para>
     </sect1>
 
     <sect1>
@@ -558,8 +562,13 @@
 
       <para>Install the rpm package with su privileges with:</para>
 
-      <para><programlisting>rpm -ivh pcb-fpw-0.0.12.fc13.i686.rpm</programlisting>To
-      update a previously installed version of pcb-fpw:</para>
+      <para><programlisting>rpm -ivh pcb-fpw-0.0.12.fc13.i686.rpm</programlisting></para>
+
+      <warning>
+        <para>Installation will require su (root) privileges.</para>
+      </warning>
+
+      <para>To update a previously installed version of pcb-fpw:</para>
 
       <para><programlisting>rpm -Uvh pcb-fpw-0.0.12.fc13.i686.rpm</programlisting>This
       will <emphasis role="bold">U</emphasis>pgrade while giving <emphasis
@@ -570,9 +579,7 @@
           <para>For now the pcb-fpw rpm package is not relocatable.</para>
         </note></para>
 
-      <para><warning>
-          <para>Installation will require su (root) privileges.</para>
-        </warning>Uninstall the rpm package with:Change</para>
+      <para>Uninstall the rpm package with:Change</para>
 
       <para><programlisting>rpm -e pcb-fpw</programlisting></para>
 
@@ -583,7 +590,7 @@
     </sect1>
 
     <sect1>
-      <title>Building and packaging a srpm package file.</title>
+      <title>Building and packaging using a srpm package file.</title>
 
       <para>When installation of the pcb-fpw using a <indexterm>
           <primary>srpm package</primary>
@@ -604,13 +611,17 @@
 
       <para><programlisting>rpm -ivh pcb-fpw-0.0.12.fc13.i686.srpm</programlisting></para>
 
+      <warning>
+        <para>Installation will require su (root) privileges.</para>
+      </warning>
+
       <para>The above command will extract a specification file in
       $HOME/rpmbuild/SPEC and the tarball in $HOME/rpmbuild/SOURCES.</para>
 
       <para>Change the current directory into rpmbuild with:</para>
 
       <para><programlisting>cd $HOME/rpmbuild</programlisting>Build a binary
-      rpm with su privileges with:</para>
+      rpm with su (root) privileges with:</para>
 
       <para><programlisting>rpmbuild -bb SPEC/pcb-fpw.spec</programlisting>Install
       you rpm with:</para>
@@ -618,9 +629,7 @@
       <para><programlisting>rpm -ivh RPMS/i686/pcb-fpw-0.0.12.fc13.i686.rpm</programlisting><note>
           <para>In the above command an "i686" architecture was used, this may
           vary with the architecture of the targetted host machine.</para>
-        </note><warning>
-          <para>Installation will require su (root) privileges.</para>
-        </warning></para>
+        </note></para>
     </sect1>
 
     <sect1>
@@ -628,6 +637,10 @@
 
       <para>Yum, the Yellowdog Updater Modified, can be used to install local
       downloaded rpm packages as well.</para>
+
+      <warning>
+        <para>Installation will require su (root) privileges.</para>
+      </warning>
 
       <para>After dowloading the rpm file from the URI listed in the previous
       sections, installation can be done with the following command:</para>
@@ -644,9 +657,7 @@
 
           <para>The file "pcb-fpw.repo" will configure yum for installing and
           updating future versions of pcb-fpw.</para>
-        </note><warning>
-          <para>Installation will require su (root) privileges.</para>
-        </warning></para>
+        </note></para>
     </sect1>
   </chapter>
 
