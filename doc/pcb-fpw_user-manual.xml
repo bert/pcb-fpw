@@ -1817,14 +1817,13 @@
         <para>JEDEC or EIA component identifier: used primarily on chip
         resistors, inductors and capacitors.</para>
       </section>
+    </section>
 
-      <section>
-        <title>Surface Mounting Technology (SMT) footprint name
-        definitions.</title>
+    <section>
+      <title>Surface Mounting Technology (SMT) footprint name
+      definitions.</title>
 
-        <para></para>
-
-        <table>
+      <para><table>
           <title>Table 1: Surface Mounting Technology (SMT) footprint name
           definitions.</title>
 
@@ -2555,671 +2554,664 @@
               </row>
             </tbody>
           </tgroup>
-        </table>
-      </section>
+        </table></para>
+    </section>
 
-      <section>
-        <title>Pin Through Hole (PTH) footprint name definitions.</title>
+    <section>
+      <title>Pin Through Hole (PTH) footprint name definitions.</title>
 
-        <para></para>
+      <para><table>
+          <title>Table 2: Pin Throuh Hole Technology (PTH) footprint name
+          definitions.</title>
 
-        <para><table>
-            <title>Table 2: Pin Throuh Hole Technology (PTH) footprint name
-            definitions.</title>
+          <tgroup align="left" cols="3">
+            <thead>
+              <row>
+                <entry align="left">Prefix</entry>
 
-            <tgroup align="left" cols="3">
-              <thead>
-                <row>
-                  <entry align="left">Prefix</entry>
+                <entry align="left">Component description</entry>
 
-                  <entry align="left">Component description</entry>
+                <entry align="left">Footprint Name Definition</entry>
+              </row>
+            </thead>
 
-                  <entry align="left">Footprint Name Definition</entry>
-                </row>
-              </thead>
+            <tbody>
+              <row>
+                <entry>CAPA</entry>
 
-              <tbody>
-                <row>
-                  <entry>CAPA</entry>
+                <entry>Capacitors, Non Polarized Axial Horizontal Mounting
+                (obsolete prefix)</entry>
 
-                  <entry>Capacitors, Non Polarized Axial Horizontal Mounting
-                  (obsolete prefix)</entry>
+                <entry><emphasis role="bold">CAPA</emphasis> + Lead Spacing +
+                Body Length + Body Width + <emphasis role="bold">X</emphasis>
+                + Height</entry>
+              </row>
 
-                  <entry><emphasis role="bold">CAPA</emphasis> + Lead Spacing
-                  + Body Length + Body Width + <emphasis
-                  role="bold">X</emphasis> + Height</entry>
-                </row>
+              <row>
+                <entry>CAPAD</entry>
 
-                <row>
-                  <entry>CAPAD</entry>
+                <entry>Capacitors, Non Polarized Axial Diameter Horizontal
+                Mounting</entry>
 
-                  <entry>Capacitors, Non Polarized Axial Diameter Horizontal
-                  Mounting</entry>
+                <entry><emphasis role="bold">CAPAD</emphasis> + Lead Spacing +
+                <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                role="bold">L</emphasis> + Body Length + <emphasis
+                role="bold">D</emphasis> + Body Diameter</entry>
+              </row>
 
-                  <entry><emphasis role="bold">CAPAD</emphasis> + Lead Spacing
-                  + <emphasis role="bold">W</emphasis> + Lead Width +
-                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
-                  role="bold">D</emphasis> + Body Diameter</entry>
-                </row>
+              <row>
+                <entry>CAPADV</entry>
 
-                <row>
-                  <entry>CAPADV</entry>
+                <entry>Capacitors, Non Polarized Axial Diameter Vertical
+                Mounting</entry>
 
-                  <entry>Capacitors, Non Polarized Axial Diameter Vertical
-                  Mounting</entry>
+                <entry><emphasis role="bold">CAPADV</emphasis> + Lead Spacing
+                + <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                role="bold">L</emphasis> + Body Length + <emphasis
+                role="bold">D</emphasis> + Body Diameter</entry>
+              </row>
 
-                  <entry><emphasis role="bold">CAPADV</emphasis> + Lead
-                  Spacing + <emphasis role="bold">W</emphasis> + Lead Width +
-                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
-                  role="bold">D</emphasis> + Body Diameter</entry>
-                </row>
+              <row>
+                <entry>CAPAR</entry>
 
-                <row>
-                  <entry>CAPAR</entry>
+                <entry>Capacitors, Non Polarized Axial Rectangular Vertical
+                Mounting</entry>
 
-                  <entry>Capacitors, Non Polarized Axial Rectangular Vertical
-                  Mounting</entry>
+                <entry><emphasis role="bold">CAPARV</emphasis> + Lead Spacing
+                + <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                role="bold">L</emphasis> + Body Length + <emphasis
+                role="bold">T</emphasis> + Body Thickness + <emphasis
+                role="bold">H</emphasis> + Body Height</entry>
+              </row>
 
-                  <entry><emphasis role="bold">CAPARV</emphasis> + Lead
-                  Spacing + <emphasis role="bold">W</emphasis> + Lead Width +
-                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
-                  role="bold">T</emphasis> + Body Thickness + <emphasis
-                  role="bold">H</emphasis> + Body Height</entry>
-                </row>
+              <row>
+                <entry>CAPPAD</entry>
 
-                <row>
-                  <entry>CAPPAD</entry>
+                <entry>Capacitors, Polarized Axial Diameter Horizontal
+                Mounting</entry>
 
-                  <entry>Capacitors, Polarized Axial Diameter Horizontal
-                  Mounting</entry>
+                <entry><emphasis role="bold">CAPPAD</emphasis> + Lead Spacing
+                + <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                role="bold">L</emphasis> + Body Length + <emphasis
+                role="bold">D</emphasis> + Body Diameter</entry>
+              </row>
 
-                  <entry><emphasis role="bold">CAPPAD</emphasis> + Lead
-                  Spacing + <emphasis role="bold">W</emphasis> + Lead Width +
-                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
-                  role="bold">D</emphasis> + Body Diameter</entry>
-                </row>
+              <row>
+                <entry>CAPPR</entry>
 
-                <row>
-                  <entry>CAPPR</entry>
+                <entry>Capacitor, Polarized Radial Diameter (obsolete
+                prefix)</entry>
 
-                  <entry>Capacitor, Polarized Radial Diameter (obsolete
-                  prefix)</entry>
+                <entry><emphasis role="bold">CAPPR</emphasis> + Lead Spacing +
+                <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                role="bold">D</emphasis> + Body Diameter + <emphasis
+                role="bold">H</emphasis> + Body Height</entry>
+              </row>
 
-                  <entry><emphasis role="bold">CAPPR</emphasis> + Lead Spacing
-                  + <emphasis role="bold">W</emphasis> + Lead Width +
-                  <emphasis role="bold">D</emphasis> + Body Diameter +
-                  <emphasis role="bold">H</emphasis> + Body Height</entry>
-                </row>
+              <row>
+                <entry>CAPPRD</entry>
 
-                <row>
-                  <entry>CAPPRD</entry>
+                <entry>Capacitor, Polarized Radial Diameter</entry>
 
-                  <entry>Capacitor, Polarized Radial Diameter</entry>
+                <entry><emphasis role="bold">CAPPRD</emphasis> + Lead Spacing
+                + <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                role="bold">D</emphasis> + Body Diameter + <emphasis
+                role="bold">H</emphasis> + Body Height</entry>
+              </row>
 
-                  <entry><emphasis role="bold">CAPPRD</emphasis> + Lead
-                  Spacing + <emphasis role="bold">W</emphasis> + Lead Width +
-                  <emphasis role="bold">D</emphasis> + Body Diameter +
-                  <emphasis role="bold">H</emphasis> + Body Height</entry>
-                </row>
+              <row>
+                <entry>CAPRB</entry>
 
-                <row>
-                  <entry>CAPRB</entry>
+                <entry>Capacitors, Non Polarized Radial Disk Button</entry>
+
+                <entry><emphasis role="bold">CAPRB</emphasis> + Lead Spacing +
+                <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                role="bold">L</emphasis> + Body Length + <emphasis
+                role="bold">T</emphasis> + Body thickness + <emphasis
+                role="bold">H</emphasis> + Body Height</entry>
+              </row>
 
-                  <entry>Capacitors, Non Polarized Radial Disk Button</entry>
+              <row>
+                <entry>CAPRD</entry>
 
-                  <entry><emphasis role="bold">CAPRB</emphasis> + Lead Spacing
-                  + <emphasis role="bold">W</emphasis> + Lead Width +
-                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
-                  role="bold">T</emphasis> + Body thickness + <emphasis
-                  role="bold">H</emphasis> + Body Height</entry>
-                </row>
+                <entry>Capacitors, Non Polarized Radial Diameter</entry>
+
+                <entry><emphasis role="bold">CAPRD</emphasis> + Lead Spacing +
+                <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                role="bold">D</emphasis> + Body Diameter + <emphasis
+                role="bold">H</emphasis> + Body Height</entry>
+              </row>
 
-                <row>
-                  <entry>CAPRD</entry>
+              <row>
+                <entry>CAPRR</entry>
 
-                  <entry>Capacitors, Non Polarized Radial Diameter</entry>
+                <entry>Capacitors, Non Polarized Radial Rectangular</entry>
 
-                  <entry><emphasis role="bold">CAPRD</emphasis> + Lead Spacing
-                  + <emphasis role="bold">W</emphasis> + Lead Width +
-                  <emphasis role="bold">D</emphasis> + Body Diameter +
-                  <emphasis role="bold">H</emphasis> + Body Height</entry>
-                </row>
+                <entry><emphasis role="bold">CAPRR</emphasis> + Lead Spacing +
+                <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                role="bold">L</emphasis> + Body Length + <emphasis
+                role="bold">T</emphasis> + Body thickness + <emphasis
+                role="bold">H</emphasis> + Body Height</entry>
+              </row>
 
-                <row>
-                  <entry>CAPRR</entry>
+              <row>
+                <entry>DIO</entry>
 
-                  <entry>Capacitors, Non Polarized Radial Rectangular</entry>
+                <entry>Diodes, Axial Horizontal Mounting (obsolete
+                prefix)</entry>
 
-                  <entry><emphasis role="bold">CAPRR</emphasis> + Lead Spacing
-                  + <emphasis role="bold">W</emphasis> + Lead Width +
-                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
-                  role="bold">T</emphasis> + Body thickness + <emphasis
-                  role="bold">H</emphasis> + Body Height</entry>
-                </row>
+                <entry><emphasis role="bold">DIO</emphasis> + Lead Spacing +
+                <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                role="bold">L</emphasis> + Body Length + <emphasis
+                role="bold">D</emphasis> + Body Diameter</entry>
+              </row>
 
-                <row>
-                  <entry>DIO</entry>
+              <row>
+                <entry>DIOAD</entry>
 
-                  <entry>Diodes, Axial Horizontal Mounting (obsolete
-                  prefix)</entry>
+                <entry>Diodes, Axial Diameter Horizontal Mounting</entry>
 
-                  <entry><emphasis role="bold">DIO</emphasis> + Lead Spacing +
-                  <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
-                  role="bold">L</emphasis> + Body Length + <emphasis
-                  role="bold">D</emphasis> + Body Diameter</entry>
-                </row>
+                <entry><emphasis role="bold">DIOAD</emphasis> + Lead Spacing +
+                <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                role="bold">L</emphasis> + Body Length + <emphasis
+                role="bold">D</emphasis> + Body Diameter</entry>
+              </row>
 
-                <row>
-                  <entry>DIOAD</entry>
+              <row>
+                <entry>DIOADV</entry>
 
-                  <entry>Diodes, Axial Diameter Horizontal Mounting</entry>
+                <entry>Diodes, Axial Diameter Vertical Mounting</entry>
 
-                  <entry><emphasis role="bold">DIOAD</emphasis> + Lead Spacing
-                  + <emphasis role="bold">W</emphasis> + Lead Width +
-                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
-                  role="bold">D</emphasis> + Body Diameter</entry>
-                </row>
+                <entry><emphasis role="bold">DIOADV</emphasis> + Lead Spacing
+                + <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                role="bold">L</emphasis> + Body Length + <emphasis
+                role="bold">D</emphasis> + Body Diameter</entry>
+              </row>
 
-                <row>
-                  <entry>DIOADV</entry>
+              <row>
+                <entry>DIP</entry>
 
-                  <entry>Diodes, Axial Diameter Vertical Mounting</entry>
+                <entry>Dual-In-Line Packages</entry>
 
-                  <entry><emphasis role="bold">DIOADV</emphasis> + Lead
-                  Spacing + <emphasis role="bold">W</emphasis> + Lead Width +
-                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
-                  role="bold">D</emphasis> + Body Diameter</entry>
-                </row>
+                <entry><emphasis role="bold">DIP</emphasis> + Lead Span +
+                <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                role="bold">P</emphasis> + Pin Pitch + <emphasis
+                role="bold">L</emphasis> + Body Length + <emphasis
+                role="bold">H</emphasis> + Component Height + <emphasis
+                role="bold">Q</emphasis> + Pin Qty</entry>
+              </row>
 
-                <row>
-                  <entry>DIP</entry>
+              <row>
+                <entry>DIPS</entry>
 
-                  <entry>Dual-In-Line Packages</entry>
+                <entry>Dual-In-Line Sockets</entry>
 
-                  <entry><emphasis role="bold">DIP</emphasis> + Lead Span +
-                  <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
-                  role="bold">P</emphasis> + Pin Pitch + <emphasis
-                  role="bold">L</emphasis> + Body Length + <emphasis
-                  role="bold">H</emphasis> + Component Height + <emphasis
-                  role="bold">Q</emphasis> + Pin Qty</entry>
-                </row>
+                <entry><emphasis role="bold">DIPS</emphasis> + Lead Span +
+                <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                role="bold">P</emphasis> + Pin Pitch + <emphasis
+                role="bold">L</emphasis> + Body Length + <emphasis
+                role="bold">H</emphasis> + Component Height + <emphasis
+                role="bold">Q</emphasis> + Pin Qty</entry>
+              </row>
 
-                <row>
-                  <entry>DIPS</entry>
+              <row>
+                <entry>INDAD</entry>
 
-                  <entry>Dual-In-Line Sockets</entry>
+                <entry>Inductors, Axial Diameter Horizontal Mounting</entry>
 
-                  <entry><emphasis role="bold">DIPS</emphasis> + Lead Span +
-                  <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
-                  role="bold">P</emphasis> + Pin Pitch + <emphasis
-                  role="bold">L</emphasis> + Body Length + <emphasis
-                  role="bold">H</emphasis> + Component Height + <emphasis
-                  role="bold">Q</emphasis> + Pin Qty</entry>
-                </row>
+                <entry><emphasis role="bold">INDAD</emphasis> + Lead Spacing +
+                <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                role="bold">L</emphasis> + Body Length + <emphasis
+                role="bold">D</emphasis> + Body Diameter</entry>
+              </row>
 
-                <row>
-                  <entry>INDAD</entry>
+              <row>
+                <entry>INDADV</entry>
 
-                  <entry>Inductors, Axial Diameter Horizontal Mounting</entry>
+                <entry>Inductors, Axial Diameter Vertical Mounting</entry>
 
-                  <entry><emphasis role="bold">INDAD</emphasis> + Lead Spacing
-                  + <emphasis role="bold">W</emphasis> + Lead Width +
-                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
-                  role="bold">D</emphasis> + Body Diameter</entry>
-                </row>
+                <entry><emphasis role="bold">INDADV</emphasis> + Lead Spacing
+                + <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                role="bold">L</emphasis> + Body Length + <emphasis
+                role="bold">D</emphasis> + Body Diameter</entry>
+              </row>
 
-                <row>
-                  <entry>INDADV</entry>
+              <row>
+                <entry>JUMP</entry>
 
-                  <entry>Inductors, Axial Diameter Vertical Mounting</entry>
+                <entry>Jumpers, Wire</entry>
 
-                  <entry><emphasis role="bold">INDADV</emphasis> + Lead
-                  Spacing + <emphasis role="bold">W</emphasis> + Lead Width +
-                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
-                  role="bold">D</emphasis> + Body Diameter</entry>
-                </row>
+                <entry><emphasis role="bold">JUMP</emphasis> + Lead Spacing +
+                <emphasis role="bold">W</emphasis> + Lead Width</entry>
+              </row>
 
-                <row>
-                  <entry>JUMP</entry>
+              <row>
+                <entry>MTGNP</entry>
 
-                  <entry>Jumpers, Wire</entry>
+                <entry>Mounting hole, Non-Plated</entry>
 
-                  <entry><emphasis role="bold">JUMP</emphasis> + Lead Spacing
-                  + <emphasis role="bold">W</emphasis> + Lead Width</entry>
-                </row>
+                <entry><emphasis role="bold">MTGNP</emphasis> + Land Size +
+                <emphasis role="bold">H</emphasis> + Hole Size + <emphasis
+                role="bold">V</emphasis> + No. of vias + Fab Level</entry>
+              </row>
 
-                <row>
-                  <entry>MTGNP</entry>
+              <row>
+                <entry>MTGP</entry>
 
-                  <entry>Mounting hole, Non-Plated</entry>
+                <entry>Mounting hole, Plated</entry>
 
-                  <entry><emphasis role="bold">MTGNP</emphasis> + Land Size +
-                  <emphasis role="bold">H</emphasis> + Hole Size + <emphasis
-                  role="bold">V</emphasis> + No. of vias + Fab Level</entry>
-                </row>
+                <entry><emphasis role="bold">MTGP</emphasis> + Land Size +
+                <emphasis role="bold">H</emphasis> + Hole Size + <emphasis
+                role="bold">Z</emphasis> + Anti-pad size + Fab Level</entry>
+              </row>
 
-                <row>
-                  <entry>MTGP</entry>
+              <row>
+                <entry>OSC</entry>
 
-                  <entry>Mounting hole, Plated</entry>
+                <entry>Oscillators</entry>
 
-                  <entry><emphasis role="bold">MTGP</emphasis> + Land Size +
-                  <emphasis role="bold">H</emphasis> + Hole Size + <emphasis
-                  role="bold">Z</emphasis> + Anti-pad size + Fab Level</entry>
-                </row>
+                <entry><emphasis role="bold">OSC</emphasis> + Lead Span +
+                <emphasis role="bold">W</emphasis> + Lead Diameter + <emphasis
+                role="bold">P</emphasis> + Pin Pitch + <emphasis
+                role="bold">L</emphasis> + Body Length + <emphasis
+                role="bold">H</emphasis> + Component Height + <emphasis
+                role="bold">Q</emphasis> + Pin Qty</entry>
+              </row>
 
-                <row>
-                  <entry>OSC</entry>
+              <row>
+                <entry>PGA</entry>
 
-                  <entry>Oscillators</entry>
+                <entry>Pin Grid Arrays</entry>
 
-                  <entry><emphasis role="bold">OSC</emphasis> + Lead Span +
-                  <emphasis role="bold">W</emphasis> + Lead Diameter +
-                  <emphasis role="bold">P</emphasis> + Pin Pitch + <emphasis
-                  role="bold">L</emphasis> + Body Length + <emphasis
-                  role="bold">H</emphasis> + Component Height + <emphasis
-                  role="bold">Q</emphasis> + Pin Qty</entry>
-                </row>
+                <entry><emphasis role="bold">PGA</emphasis> + Pin Qty +
+                <emphasis role="bold">P</emphasis> + Pitch + <emphasis
+                role="bold">C</emphasis> + Pin Columns + <emphasis
+                role="bold">R</emphasis> + Pin Rows + <emphasis
+                role="bold">L</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Width + <emphasis
+                role="bold">H</emphasis> + Component Height</entry>
+              </row>
 
-                <row>
-                  <entry>PGA</entry>
+              <row>
+                <entry>PIN</entry>
 
-                  <entry>Pin Grid Arrays</entry>
+                <entry>Pin</entry>
 
-                  <entry><emphasis role="bold">PGA</emphasis> + Pin Qty +
-                  <emphasis role="bold">P</emphasis> + Pitch + <emphasis
-                  role="bold">C</emphasis> + Pin Columns + <emphasis
-                  role="bold">R</emphasis> + Pin Rows + <emphasis
-                  role="bold">L</emphasis> + Body Length + <emphasis
-                  role="bold">X</emphasis> + Body Width + <emphasis
-                  role="bold">H</emphasis> + Component Height</entry>
-                </row>
+                <entry><emphasis role="bold">PIN</emphasis> + Wire
+                Width</entry>
+              </row>
 
-                <row>
-                  <entry>PIN</entry>
+              <row>
+                <entry>RES</entry>
 
-                  <entry>Pin</entry>
+                <entry>Resistors, Horizontal Mounting (obsolete
+                prefix)</entry>
 
-                  <entry><emphasis role="bold">PIN</emphasis> + Wire
-                  Width</entry>
-                </row>
+                <entry><emphasis role="bold">RES</emphasis> + Lead Spacing +
+                <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                role="bold">L</emphasis> + Body Length + <emphasis
+                role="bold">D</emphasis> + Body Diameter</entry>
+              </row>
 
-                <row>
-                  <entry>RES</entry>
+              <row>
+                <entry>RESAD</entry>
 
-                  <entry>Resistors, Horizontal Mounting (obsolete
-                  prefix)</entry>
+                <entry>Resistors, Axial Diameter Horizontal Mounting</entry>
 
-                  <entry><emphasis role="bold">RES</emphasis> + Lead Spacing +
-                  <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
-                  role="bold">L</emphasis> + Body Length + <emphasis
-                  role="bold">D</emphasis> + Body Diameter</entry>
-                </row>
+                <entry><emphasis role="bold">RESAD</emphasis> + Lead Spacing +
+                <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                role="bold">L</emphasis> + Body Length + <emphasis
+                role="bold">D</emphasis> + Body Diameter</entry>
+              </row>
 
-                <row>
-                  <entry>RESAD</entry>
+              <row>
+                <entry>RESADV</entry>
 
-                  <entry>Resistors, Axial Diameter Horizontal Mounting</entry>
+                <entry>Resistors, Axial Diameter Vertical Mounting</entry>
 
-                  <entry><emphasis role="bold">RESAD</emphasis> + Lead Spacing
-                  + <emphasis role="bold">W</emphasis> + Lead Width +
-                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
-                  role="bold">D</emphasis> + Body Diameter</entry>
-                </row>
+                <entry><emphasis role="bold">RESADV</emphasis> + Lead Spacing
+                + <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                role="bold">L</emphasis> + Body Length + <emphasis
+                role="bold">D</emphasis> + Body Diameter</entry>
+              </row>
 
-                <row>
-                  <entry>RESADV</entry>
+              <row>
+                <entry>RESAR</entry>
 
-                  <entry>Resistors, Axial Diameter Vertical Mounting</entry>
+                <entry>Resistors, Axial Rectangular Horizontal
+                Mounting</entry>
 
-                  <entry><emphasis role="bold">RESADV</emphasis> + Lead
-                  Spacing + <emphasis role="bold">W</emphasis> + Lead Width +
-                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
-                  role="bold">D</emphasis> + Body Diameter</entry>
-                </row>
+                <entry><emphasis role="bold">RESAR</emphasis> + Lead Spacing +
+                <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                role="bold">L</emphasis> + Body Length + <emphasis
+                role="bold">T</emphasis> + Body thickness + <emphasis
+                role="bold">H</emphasis> + Body Height</entry>
+              </row>
 
-                <row>
-                  <entry>RESAR</entry>
+              <row>
+                <entry>SIP</entry>
 
-                  <entry>Resistors, Axial Rectangular Horizontal
-                  Mounting</entry>
+                <entry>Single-In-Line Packages</entry>
 
-                  <entry><emphasis role="bold">RESAR</emphasis> + Lead Spacing
-                  + <emphasis role="bold">W</emphasis> + Lead Width +
-                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
-                  role="bold">T</emphasis> + Body thickness + <emphasis
-                  role="bold">H</emphasis> + Body Height</entry>
-                </row>
+                <entry><emphasis role="bold">SIP</emphasis> + Body Width +
+                <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                role="bold">P</emphasis> + Pin Pitch + <emphasis
+                role="bold">L</emphasis> + Body Length + <emphasis
+                role="bold">H</emphasis> + Component Height + <emphasis
+                role="bold">Q</emphasis> + Pin Qty</entry>
+              </row>
 
-                <row>
-                  <entry>SIP</entry>
+              <row>
+                <entry>TO</entry>
 
-                  <entry>Single-In-Line Packages</entry>
+                <entry>Transistor Outline, Flange Mount, Horizontal</entry>
 
-                  <entry><emphasis role="bold">SIP</emphasis> + Body Width +
-                  <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
-                  role="bold">P</emphasis> + Pin Pitch + <emphasis
-                  role="bold">L</emphasis> + Body Length + <emphasis
-                  role="bold">H</emphasis> + Component Height + <emphasis
-                  role="bold">Q</emphasis> + Pin Qty</entry>
-                </row>
+                <entry><emphasis role="bold">TO</emphasis> + Pin Pitch +
+                <emphasis role="bold">P</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Width + <emphasis
+                role="bold">X</emphasis> + Height Max + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
 
-                <row>
-                  <entry>TO</entry>
+              <row>
+                <entry>TO</entry>
 
-                  <entry>Transistor Outline, Flange Mount, Horizontal</entry>
+                <entry>Transistor Outline, Flange Mount, Vertical</entry>
 
-                  <entry><emphasis role="bold">TO</emphasis> + Pin Pitch +
-                  <emphasis role="bold">P</emphasis> + Body Length + <emphasis
-                  role="bold">X</emphasis> + Body Width + <emphasis
-                  role="bold">X</emphasis> + Height Max + <emphasis
-                  role="bold">-</emphasis> + Pin Qty</entry>
-                </row>
+                <entry><emphasis role="bold">TO</emphasis> + Pin Pitch +
+                <emphasis role="bold">P</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Width + <emphasis
+                role="bold">X</emphasis> + Height Max + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
 
-                <row>
-                  <entry>TO</entry>
+              <row>
+                <entry>TO</entry>
 
-                  <entry>Transistor Outline, Flange Mount, Vertical</entry>
+                <entry>Transistor Outline, Cylindrical</entry>
 
-                  <entry><emphasis role="bold">TO</emphasis> + Pin Pitch +
-                  <emphasis role="bold">P</emphasis> + Body Length + <emphasis
-                  role="bold">X</emphasis> + Body Width + <emphasis
-                  role="bold">X</emphasis> + Height Max + <emphasis
-                  role="bold">-</emphasis> + Pin Qty</entry>
-                </row>
+                <entry><emphasis role="bold">TO</emphasis> + Pin Pitch Radius
+                + <emphasis role="bold">R</emphasis> + Body Diameter +
+                <emphasis role="bold">X</emphasis> + Height Max + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
 
-                <row>
-                  <entry>TO</entry>
+              <row>
+                <entry>TPCW</entry>
 
-                  <entry>Transistor Outline, Cylindrical</entry>
+                <entry>Test Points, Round</entry>
 
-                  <entry><emphasis role="bold">TO</emphasis> + Pin Pitch
-                  Radius + <emphasis role="bold">R</emphasis> + Body Diameter
-                  + <emphasis role="bold">X</emphasis> + Height Max +
-                  <emphasis role="bold">-</emphasis> + Pin Qty</entry>
-                </row>
+                <entry><emphasis role="bold">TPCW</emphasis> + Lead Width +
+                <emphasis role="bold">D</emphasis> + Body Diameter + <emphasis
+                role="bold">H</emphasis> + Height + Fab Level</entry>
+              </row>
 
-                <row>
-                  <entry>TPCW</entry>
+              <row>
+                <entry>TPRW</entry>
 
-                  <entry>Test Points, Round</entry>
+                <entry>Test Points, Square</entry>
 
-                  <entry><emphasis role="bold">TPCW</emphasis> + Lead Width +
-                  <emphasis role="bold">D</emphasis> + Body Diameter +
-                  <emphasis role="bold">H</emphasis> + Height + Fab
-                  Level</entry>
-                </row>
+                <entry><emphasis role="bold">TPRW</emphasis> + Lead Width +
+                <emphasis role="bold">L</emphasis> + Body Size + <emphasis
+                role="bold">H</emphasis> + Height + Fab Level</entry>
+              </row>
 
-                <row>
-                  <entry>TPRW</entry>
+              <row>
+                <entry>TPRW</entry>
 
-                  <entry>Test Points, Square</entry>
+                <entry>Test Points, Rectangular with Rectangular Leads</entry>
+
+                <entry><emphasis role="bold">TPRW</emphasis> + Lead Length +
+                <emphasis role="bold">X</emphasis> + Lead Width + <emphasis
+                role="bold">L</emphasis> + Body Length + <emphasis
+                role="bold">T</emphasis> + Body Width + <emphasis
+                role="bold">H</emphasis> + Height + Fab Level</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></para>
+    </section>
+
+    <section>
+      <title>Connector footprint name definitions.</title>
+
+      <para><table>
+          <title>Table 3: Connector footprint name definitions.</title>
+
+          <tgroup align="left" cols="3">
+            <thead>
+              <row>
+                <entry align="left">Prefix</entry>
 
-                  <entry><emphasis role="bold">TPRW</emphasis> + Lead Width +
-                  <emphasis role="bold">L</emphasis> + Body Size + <emphasis
-                  role="bold">H</emphasis> + Height + Fab Level</entry>
-                </row>
-
-                <row>
-                  <entry>TPRW</entry>
-
-                  <entry>Test Points, Rectangular with Rectangular
-                  Leads</entry>
-
-                  <entry><emphasis role="bold">TPRW</emphasis> + Lead Length +
-                  <emphasis role="bold">X</emphasis> + Lead Width + <emphasis
-                  role="bold">L</emphasis> + Body Length + <emphasis
-                  role="bold">T</emphasis> + Body Width + <emphasis
-                  role="bold">H</emphasis> + Height + Fab Level</entry>
-                </row>
-              </tbody>
-            </tgroup>
-          </table></para>
-      </section>
-
-      <section>
-        <title>Connector footprint name definitions.</title>
-
-        <para></para>
-
-        <para><table>
-            <title>Table 3: Connector footprint name definitions.</title>
-
-            <tgroup align="left" cols="3">
-              <thead>
-                <row>
-                  <entry align="left">Prefix</entry>
-
-                  <entry align="left">Component description</entry>
-
-                  <entry align="left">Footprint Name Definition</entry>
-                </row>
-              </thead>
-
-              <tbody>
-                <row>
-                  <entry>CON-BNC</entry>
-
-                  <entry>BNC</entry>
-
-                  <entry><emphasis role="bold">CON-BNC</emphasis> + Pin Qty +
-                  Fabrication Level + <emphasis role="bold">_</emphasis> +
-                  Manufacturer Name + <emphasis role="bold">_</emphasis> +
-                  Manufacturer Order Code + <emphasis role="bold">_</emphasis>
-                  + Manufacturer Type Code + <emphasis
-                  role="bold">_</emphasis> + Remarks</entry>
-                </row>
-
-                <row>
-                  <entry>CON-DIL</entry>
-
-                  <entry>Dual-In-Line, Vertical Mounting</entry>
-
-                  <entry><emphasis role="bold">CON-DIL</emphasis> + total Pins
-                  + <emphasis role="bold">W</emphasis> Lead Width + <emphasis
-                  role="bold">P</emphasis> + Row Pitch (+ <emphasis
-                  role="bold">X</emphasis> + Column Pitch [if different]) +
-                  <emphasis role="bold">_</emphasis> + Rows + <emphasis
-                  role="bold">X</emphasis> + Pins per Row + <emphasis
-                  role="bold">_</emphasis> + Body Length + <emphasis
-                  role="bold">X</emphasis> + Body Thickness + <emphasis
-                  role="bold">X</emphasis> + Component Height + Fabrication
-                  Level</entry>
-                </row>
-
-                <row>
-                  <entry>CON-DIN41612</entry>
-
-                  <entry>DIN 41612 Connector</entry>
-
-                  <entry><emphasis role="bold">CON-DIN41612</emphasis> + Pin
-                  Qty + Fabrication Level + <emphasis role="bold">_</emphasis>
-                  + Manufacturer Name + <emphasis role="bold">_</emphasis> +
-                  Manufacturer Order Code + <emphasis role="bold">_</emphasis>
-                  + Manufacturer Type Code + <emphasis
-                  role="bold">_</emphasis> + Remarks</entry>
-                </row>
-
-                <row>
-                  <entry>CON-DIN41617</entry>
-
-                  <entry>DIN 41617 Connector</entry>
-
-                  <entry><emphasis role="bold">CON-DIN41617</emphasis> + Pin
-                  Qty + Fabrication Level + <emphasis role="bold">_</emphasis>
-                  + Manufacturer Name + <emphasis role="bold">_</emphasis> +
-                  Manufacturer Order Code + <emphasis role="bold">_</emphasis>
-                  + Manufacturer Type Code + <emphasis
-                  role="bold">_</emphasis> + Remarks</entry>
-                </row>
-
-                <row>
-                  <entry>CON-DIP</entry>
-
-                  <entry>Dual-In-Line Package-like, Vertical Mounting</entry>
-
-                  <entry><emphasis role="bold">CON-DIP</emphasis> + total Pins
-                  + <emphasis role="bold">W</emphasis> Lead Width + <emphasis
-                  role="bold">P</emphasis> + Row Pitch (+ <emphasis
-                  role="bold">X</emphasis> + Column Pitch [if different]) +
-                  <emphasis role="bold">_</emphasis> + Rows + <emphasis
-                  role="bold">X</emphasis> + Pins per Row + <emphasis
-                  role="bold">_</emphasis> + Body Length + <emphasis
-                  role="bold">X</emphasis> + Body Thickness + <emphasis
-                  role="bold">X</emphasis> + Component Height + Fabrication
-                  Level</entry>
-                </row>
-
-                <row>
-                  <entry>CON-EDGE</entry>
-
-                  <entry>Edge Card Connector</entry>
-
-                  <entry><emphasis role="bold">CON-EDGE</emphasis> + Pin Qty +
-                  Fabrication Level + <emphasis role="bold">_</emphasis> +
-                  Manufacturer Name + <emphasis role="bold">_</emphasis> +
-                  Manufacturer Order Code + <emphasis role="bold">_</emphasis>
-                  + Manufacturer Type Code + <emphasis
-                  role="bold">_</emphasis> + Remarks</entry>
-                </row>
-
-                <row>
-                  <entry>CON-HDR</entry>
-
-                  <entry>Headers, Vertical Mounting (obsolete prefix)</entry>
-
-                  <entry><emphasis role="bold">CON-HDR</emphasis> + total Pins
-                  + <emphasis role="bold">W</emphasis> Lead Width + <emphasis
-                  role="bold">P</emphasis> + Row Pitch (+ <emphasis
-                  role="bold">X</emphasis> + Column Pitch [if different]) +
-                  <emphasis role="bold">_</emphasis> + Rows + <emphasis
-                  role="bold">X</emphasis> + Pins per Row + <emphasis
-                  role="bold">_</emphasis> + Body Length + <emphasis
-                  role="bold">X</emphasis> + Body Thickness + <emphasis
-                  role="bold">X</emphasis> + Component Height + Fabrication
-                  Level</entry>
-                </row>
-
-                <row>
-                  <entry>CON-HDRRA</entry>
-
-                  <entry>Headers, Right Angle</entry>
-
-                  <entry><emphasis role="bold">CON-HDRRA</emphasis> + total
-                  Pins + <emphasis role="bold">W</emphasis> Lead Width +
-                  <emphasis role="bold">P</emphasis> + Row Pitch (+ <emphasis
-                  role="bold">X</emphasis> + Column Pitch [if different]) +
-                  <emphasis role="bold">_</emphasis> + Rows + <emphasis
-                  role="bold">X</emphasis> + Pins per Row + <emphasis
-                  role="bold">_</emphasis> + Body Length + <emphasis
-                  role="bold">X</emphasis> + Body Thickness + <emphasis
-                  role="bold">X</emphasis> + Component Height + Fabrication
-                  Level</entry>
-                </row>
-
-                <row>
-                  <entry>CON-HDRV</entry>
-
-                  <entry>Headers, Vertical Mounting</entry>
-
-                  <entry><emphasis role="bold">CON-HDRV</emphasis> + total
-                  Pins + <emphasis role="bold">W</emphasis> Lead Width +
-                  <emphasis role="bold">P</emphasis> + Row Pitch (+ <emphasis
-                  role="bold">X</emphasis> + Column Pitch [if different]) +
-                  <emphasis role="bold">_</emphasis> + Rows + <emphasis
-                  role="bold">X</emphasis> + Pins per Row + <emphasis
-                  role="bold">_</emphasis> + Body Length + <emphasis
-                  role="bold">X</emphasis> + Body Thickness + <emphasis
-                  role="bold">X</emphasis> + Component Height + Fabrication
-                  Level</entry>
-                </row>
-
-                <row>
-                  <entry>CON-JUMP</entry>
-
-                  <entry>Jumper</entry>
-
-                  <entry><emphasis role="bold">CON-JUMP</emphasis> + total
-                  Pins + <emphasis role="bold">W</emphasis> + Lead Width +
-                  <emphasis role="bold">P</emphasis> + Row Pitch + <emphasis
-                  role="bold">_</emphasis> + Body Length + <emphasis
-                  role="bold">X</emphasis> + Body Thickness + <emphasis
-                  role="bold">X</emphasis> + Component Height + Fabrication
-                  Level</entry>
-                </row>
-
-                <row>
-                  <entry>CON-SIL</entry>
-
-                  <entry>Single-In-Line, Vertical Mounting (obsolete
-                  prefix)</entry>
-
-                  <entry><emphasis role="bold">CON-SIL</emphasis> + total Pins
-                  + <emphasis role="bold">W</emphasis> + Lead Width +
-                  <emphasis role="bold">P</emphasis> + Row Pitch + <emphasis
-                  role="bold">_</emphasis> + Body Length + <emphasis
-                  role="bold">X</emphasis> + Body Thickness + <emphasis
-                  role="bold">X</emphasis> + Component Height + Fabrication
-                  Level</entry>
-                </row>
-
-                <row>
-                  <entry>CON-SILRA</entry>
-
-                  <entry>Single-In-Line, Right Angle</entry>
-
-                  <entry><emphasis role="bold">CON-SILRA</emphasis> + total
-                  Pins + <emphasis role="bold">W</emphasis> + Lead Width +
-                  <emphasis role="bold">P</emphasis> + Row Pitch + <emphasis
-                  role="bold">_</emphasis> + Body Length + <emphasis
-                  role="bold">X</emphasis> + Body Thickness + <emphasis
-                  role="bold">X</emphasis> + Component Height + Fabrication
-                  Level</entry>
-                </row>
-
-                <row>
-                  <entry>CON-SILRV</entry>
-
-                  <entry>Single-In-Line, Vertical Mounting</entry>
-
-                  <entry><emphasis role="bold">CON-SILV</emphasis> + total
-                  Pins + <emphasis role="bold">W</emphasis> + Lead Width +
-                  <emphasis role="bold">P</emphasis> + Row Pitch + <emphasis
-                  role="bold">_</emphasis> + Body Length + <emphasis
-                  role="bold">X</emphasis> + Body Thickness + <emphasis
-                  role="bold">X</emphasis> + Component Height + Fabrication
-                  Level</entry>
-                </row>
-
-                <row>
-                  <entry>CON-TERM</entry>
-
-                  <entry>Terminal Connector</entry>
-
-                  <entry><emphasis role="bold">CON-TERM</emphasis> + Pin Qty +
-                  Fabrication Level + <emphasis role="bold">_</emphasis> +
-                  Manufacturer Name + <emphasis role="bold">_</emphasis> +
-                  Manufacturer Order Code + <emphasis role="bold">_</emphasis>
-                  + Manufacturer Type Code + <emphasis
-                  role="bold">_</emphasis> + Remarks</entry>
-                </row>
-
-                <row>
-                  <entry>CON-USB</entry>
-
-                  <entry>Universal Serial Bus Connector</entry>
-
-                  <entry><emphasis role="bold">CON-USB</emphasis> + Pin Qty +
-                  Fabrication Level + <emphasis role="bold">_</emphasis> +
-                  Manufacturer Name + <emphasis role="bold">_</emphasis> +
-                  Manufacturer Order Code + <emphasis role="bold">_</emphasis>
-                  + Manufacturer Type Code + <emphasis
-                  role="bold">_</emphasis> + Remarks</entry>
-                </row>
-              </tbody>
-            </tgroup>
-          </table></para>
-      </section>
+                <entry align="left">Component description</entry>
+
+                <entry align="left">Footprint Name Definition</entry>
+              </row>
+            </thead>
+
+            <tbody>
+              <row>
+                <entry>CON-BNC</entry>
+
+                <entry>BNC</entry>
+
+                <entry><emphasis role="bold">CON-BNC</emphasis> + Pin Qty +
+                Fabrication Level + <emphasis role="bold">_</emphasis> +
+                Manufacturer Name + <emphasis role="bold">_</emphasis> +
+                Manufacturer Order Code + <emphasis role="bold">_</emphasis> +
+                Manufacturer Type Code + <emphasis role="bold">_</emphasis> +
+                Remarks</entry>
+              </row>
+
+              <row>
+                <entry>CON-DIL</entry>
+
+                <entry>Dual-In-Line, Vertical Mounting</entry>
+
+                <entry><emphasis role="bold">CON-DIL</emphasis> + total Pins +
+                <emphasis role="bold">W</emphasis> Lead Width + <emphasis
+                role="bold">P</emphasis> + Row Pitch (+ <emphasis
+                role="bold">X</emphasis> + Column Pitch [if different]) +
+                <emphasis role="bold">_</emphasis> + Rows + <emphasis
+                role="bold">X</emphasis> + Pins per Row + <emphasis
+                role="bold">_</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Thickness + <emphasis
+                role="bold">X</emphasis> + Component Height + Fabrication
+                Level</entry>
+              </row>
+
+              <row>
+                <entry>CON-DIN41612</entry>
+
+                <entry>DIN 41612 Connector</entry>
+
+                <entry><emphasis role="bold">CON-DIN41612</emphasis> + Pin Qty
+                + Fabrication Level + <emphasis role="bold">_</emphasis> +
+                Manufacturer Name + <emphasis role="bold">_</emphasis> +
+                Manufacturer Order Code + <emphasis role="bold">_</emphasis> +
+                Manufacturer Type Code + <emphasis role="bold">_</emphasis> +
+                Remarks</entry>
+              </row>
+
+              <row>
+                <entry>CON-DIN41617</entry>
+
+                <entry>DIN 41617 Connector</entry>
+
+                <entry><emphasis role="bold">CON-DIN41617</emphasis> + Pin Qty
+                + Fabrication Level + <emphasis role="bold">_</emphasis> +
+                Manufacturer Name + <emphasis role="bold">_</emphasis> +
+                Manufacturer Order Code + <emphasis role="bold">_</emphasis> +
+                Manufacturer Type Code + <emphasis role="bold">_</emphasis> +
+                Remarks</entry>
+              </row>
+
+              <row>
+                <entry>CON-DIP</entry>
+
+                <entry>Dual-In-Line Package-like, Vertical Mounting</entry>
+
+                <entry><emphasis role="bold">CON-DIP</emphasis> + total Pins +
+                <emphasis role="bold">W</emphasis> Lead Width + <emphasis
+                role="bold">P</emphasis> + Row Pitch (+ <emphasis
+                role="bold">X</emphasis> + Column Pitch [if different]) +
+                <emphasis role="bold">_</emphasis> + Rows + <emphasis
+                role="bold">X</emphasis> + Pins per Row + <emphasis
+                role="bold">_</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Thickness + <emphasis
+                role="bold">X</emphasis> + Component Height + Fabrication
+                Level</entry>
+              </row>
+
+              <row>
+                <entry>CON-EDGE</entry>
+
+                <entry>Edge Card Connector</entry>
+
+                <entry><emphasis role="bold">CON-EDGE</emphasis> + Pin Qty +
+                Fabrication Level + <emphasis role="bold">_</emphasis> +
+                Manufacturer Name + <emphasis role="bold">_</emphasis> +
+                Manufacturer Order Code + <emphasis role="bold">_</emphasis> +
+                Manufacturer Type Code + <emphasis role="bold">_</emphasis> +
+                Remarks</entry>
+              </row>
+
+              <row>
+                <entry>CON-HDR</entry>
+
+                <entry>Headers, Vertical Mounting (obsolete prefix)</entry>
+
+                <entry><emphasis role="bold">CON-HDR</emphasis> + total Pins +
+                <emphasis role="bold">W</emphasis> Lead Width + <emphasis
+                role="bold">P</emphasis> + Row Pitch (+ <emphasis
+                role="bold">X</emphasis> + Column Pitch [if different]) +
+                <emphasis role="bold">_</emphasis> + Rows + <emphasis
+                role="bold">X</emphasis> + Pins per Row + <emphasis
+                role="bold">_</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Thickness + <emphasis
+                role="bold">X</emphasis> + Component Height + Fabrication
+                Level</entry>
+              </row>
+
+              <row>
+                <entry>CON-HDRRA</entry>
+
+                <entry>Headers, Right Angle</entry>
+
+                <entry><emphasis role="bold">CON-HDRRA</emphasis> + total Pins
+                + <emphasis role="bold">W</emphasis> Lead Width + <emphasis
+                role="bold">P</emphasis> + Row Pitch (+ <emphasis
+                role="bold">X</emphasis> + Column Pitch [if different]) +
+                <emphasis role="bold">_</emphasis> + Rows + <emphasis
+                role="bold">X</emphasis> + Pins per Row + <emphasis
+                role="bold">_</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Thickness + <emphasis
+                role="bold">X</emphasis> + Component Height + Fabrication
+                Level</entry>
+              </row>
+
+              <row>
+                <entry>CON-HDRV</entry>
+
+                <entry>Headers, Vertical Mounting</entry>
+
+                <entry><emphasis role="bold">CON-HDRV</emphasis> + total Pins
+                + <emphasis role="bold">W</emphasis> Lead Width + <emphasis
+                role="bold">P</emphasis> + Row Pitch (+ <emphasis
+                role="bold">X</emphasis> + Column Pitch [if different]) +
+                <emphasis role="bold">_</emphasis> + Rows + <emphasis
+                role="bold">X</emphasis> + Pins per Row + <emphasis
+                role="bold">_</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Thickness + <emphasis
+                role="bold">X</emphasis> + Component Height + Fabrication
+                Level</entry>
+              </row>
+
+              <row>
+                <entry>CON-JUMP</entry>
+
+                <entry>Jumper</entry>
+
+                <entry><emphasis role="bold">CON-JUMP</emphasis> + total Pins
+                + <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                role="bold">P</emphasis> + Row Pitch + <emphasis
+                role="bold">_</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Thickness + <emphasis
+                role="bold">X</emphasis> + Component Height + Fabrication
+                Level</entry>
+              </row>
+
+              <row>
+                <entry>CON-SIL</entry>
+
+                <entry>Single-In-Line, Vertical Mounting (obsolete
+                prefix)</entry>
+
+                <entry><emphasis role="bold">CON-SIL</emphasis> + total Pins +
+                <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                role="bold">P</emphasis> + Row Pitch + <emphasis
+                role="bold">_</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Thickness + <emphasis
+                role="bold">X</emphasis> + Component Height + Fabrication
+                Level</entry>
+              </row>
+
+              <row>
+                <entry>CON-SILRA</entry>
+
+                <entry>Single-In-Line, Right Angle</entry>
+
+                <entry><emphasis role="bold">CON-SILRA</emphasis> + total Pins
+                + <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                role="bold">P</emphasis> + Row Pitch + <emphasis
+                role="bold">_</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Thickness + <emphasis
+                role="bold">X</emphasis> + Component Height + Fabrication
+                Level</entry>
+              </row>
+
+              <row>
+                <entry>CON-SILRV</entry>
+
+                <entry>Single-In-Line, Vertical Mounting</entry>
+
+                <entry><emphasis role="bold">CON-SILV</emphasis> + total Pins
+                + <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                role="bold">P</emphasis> + Row Pitch + <emphasis
+                role="bold">_</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Thickness + <emphasis
+                role="bold">X</emphasis> + Component Height + Fabrication
+                Level</entry>
+              </row>
+
+              <row>
+                <entry>CON-TERM</entry>
+
+                <entry>Terminal Connector</entry>
+
+                <entry><emphasis role="bold">CON-TERM</emphasis> + Pin Qty +
+                Fabrication Level + <emphasis role="bold">_</emphasis> +
+                Manufacturer Name + <emphasis role="bold">_</emphasis> +
+                Manufacturer Order Code + <emphasis role="bold">_</emphasis> +
+                Manufacturer Type Code + <emphasis role="bold">_</emphasis> +
+                Remarks</entry>
+              </row>
+
+              <row>
+                <entry>CON-USB</entry>
+
+                <entry>Universal Serial Bus Connector</entry>
+
+                <entry><emphasis role="bold">CON-USB</emphasis> + Pin Qty +
+                Fabrication Level + <emphasis role="bold">_</emphasis> +
+                Manufacturer Name + <emphasis role="bold">_</emphasis> +
+                Manufacturer Order Code + <emphasis role="bold">_</emphasis> +
+                Manufacturer Type Code + <emphasis role="bold">_</emphasis> +
+                Remarks</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></para>
     </section>
   </appendix>
 
