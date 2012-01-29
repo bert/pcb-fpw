@@ -27,7 +27,7 @@
     </legalnotice>
   </bookinfo>
 
-  <toc/>
+  <toc></toc>
 
   <chapter>
     <title>Introduction.</title>
@@ -51,10 +51,12 @@
     <section>
       <title>What is "pcb" ?</title>
 
-      <para>"pcb" is an interactive <emphasis role="bold">P</emphasis>rinted
-      <emphasis role="bold">C</emphasis>ircuit <emphasis
-      role="bold">B</emphasis>oard editor for the X11 window system (see
-      "<emphasis role="bold">http://pcb.gpleda.org</emphasis>".</para>
+      <para>"<indexterm>
+          <primary>pcb</primary>
+        </indexterm>" is an interactive <emphasis
+      role="bold">P</emphasis>rinted <emphasis role="bold">C</emphasis>ircuit
+      <emphasis role="bold">B</emphasis>oard editor for the X11 window system
+      (see "<emphasis role="bold">http://pcb.gpleda.org</emphasis>".</para>
 
       <para>PCB includes a rats nest feature, design rule checking, and can
       provide industry standard RS-274-X (Gerber), NC drill, and centroid data
@@ -65,13 +67,587 @@
       router and trace optimizer which can tremendously reduce layout
       time.</para>
     </section>
+
+    <section>
+      <title>How to read this manual.</title>
+
+      <para>This manual is organized as follows:</para>
+
+      <para>Throughout this manual, words in</para>
+
+      <para><programlisting>Typewriter Font</programlisting>denote a command
+      given in the Command Line Interface in a (terminal) shell window.</para>
+
+      <para>Throughout this manual, words in <literal>literal font</literal>
+      denote keywords recognized by pcb-fpw.</para>
+
+      <para>In the input entries of the GUI versions of pcb-fpw, these have to
+      be typed as shown, but may be in upper or lower case.</para>
+
+      <para>Numbers or options which must be supplied by the user are in
+      italic.</para>
+
+      <para>In some cases, various different forms of input values are
+      possible. This is indicated as [option1, option2, ... , optionN]. In the
+      GUI version of pcb-fpw these values can be entered in a (text) entry
+      box.</para>
+
+      <para>In some cases only one single (mutual exclusive) preset value can
+      be used. In the GUI version of pcb-fpw a combobox is used for selecting
+      one of these possible (mutual exclusive) preset options.</para>
+
+      <para>The possible options are described individually in subsequent
+      subsections.</para>
+
+      <para>It is essential for the new user to read the next section in this
+      chapter, in order to understand the conventions used to define the
+      footprint an footprinwizard files, and so on.</para>
+
+      <para>The next chapter gives an overview of the various building and
+      installation methods for pcb-fpw. Pick the one that suits you
+      best.</para>
+
+      <para>The later chapters, which describe the input of the individual
+      program modules in detail, assume that you are familiar with the
+      concepts of footprint and footprintwizard files.</para>
+    </section>
+
+    <section>
+      <title>Terms and definitions.</title>
+
+      <para>Now follow some used terms and their definitions in relation to
+      the context of pcb-fpw, and usage in pcb-fpw. For a more extensive
+      glossary of pcb terms and definitions see Appendix A "PCB
+      Glossary".</para>
+
+      <para><glosslist>
+          <glossentry>
+            <glossterm>attribute</glossterm>
+
+            <glossdef>
+              <para>A footprint may have attributes assigned to them, which
+              are arbitrary mappings between a name and its value..</para>
+            </glossdef>
+          </glossentry>
+
+          <glossentry>
+            <glossterm>clearance</glossterm>
+
+            <glossdef>
+              <para>The distance beween the copper around a hole (the annulus)
+              and the copper in the surrounding polygon, or between any other
+              copper item (line or arc) and a surrounding polygon.</para>
+            </glossdef>
+          </glossentry>
+
+          <glossentry>
+            <glossterm>courtyard</glossterm>
+
+            <glossdef>
+              <para>The area around a footprint which is still "used" by the
+              footprint, for its electrical and mechanical clearance
+              requirements..</para>
+            </glossdef>
+          </glossentry>
+
+          <glossentry>
+            <glossterm>fiducial</glossterm>
+
+            <glossdef>
+              <para>A set of fiducials (typically 2, sometimes 3) can serve as
+              a reference for a "Pick-and-Place" machine to accurately place
+              parts on a pcb. Fiducials are free of solder mask and solder
+              paste, as to provide a good contrast with the board materials to
+              allow for proper optical recognition.</para>
+            </glossdef>
+          </glossentry>
+
+          <glossentry>
+            <glossterm>footprint</glossterm>
+
+            <glossdef>
+              <para>A footprint is the pattern on a circuit board to which
+              your parts are attached. This includes all copper, silk, solder
+              mask, and solder paste information. In other EDA programs, this
+              may be referred to as a "land pattern". "Footprint" sometimes is
+              used to refer to a footprint file. "Footprint" refers to the
+              pattern; "element" refers to the instance in the pcb file. For
+              example, your layout might have four elements that use one
+              footprint.</para>
+            </glossdef>
+          </glossentry>
+
+          <glossentry>
+            <glossterm>footprint file</glossterm>
+
+            <glossdef>
+              <para>A file that contains a single footprint definition.
+              Normally, this means it describes one element, although there
+              are exceptions.</para>
+            </glossdef>
+          </glossentry>
+
+          <glossentry>
+            <glossterm>mil</glossterm>
+
+            <glossdef>
+              <para>A mil is 0.001 inch, or a "milli-inch". Other packages may
+              call it a "thou", short for a thousandth of an inch (25.4 mm /
+              1000 = 0.0254 mm).</para>
+            </glossdef>
+          </glossentry>
+
+          <glossentry>
+            <glossterm>outline</glossterm>
+
+            <glossdef>
+              <para>The physical shape and dimension of your physical package.
+              By default, this is a rectangle, but this can be circular as
+              well.</para>
+            </glossdef>
+          </glossentry>
+
+          <glossentry>
+            <glossterm>package</glossterm>
+
+            <glossdef>
+              <para>An electronic component can be packaged in one or more
+              discrete forms, this is called a package.</para>
+            </glossdef>
+          </glossentry>
+
+          <glossentry>
+            <glossterm>pad</glossterm>
+
+            <glossdef>
+              <para>An electrical connection to an element which does not
+              require a through hole, for example as used by a surface mounted
+              device.</para>
+            </glossdef>
+          </glossentry>
+
+          <glossentry>
+            <glossterm>pin</glossterm>
+
+            <glossdef>
+              <para>An electrical connection to an element which requires a
+              through hole, for example as needed by a DIP socket. Contrast
+              with a pad. Note that pins and vias are mechanically identical,
+              although pins default to untented while vias default to
+              tented.</para>
+            </glossdef>
+          </glossentry>
+
+          <glossentry>
+            <glossterm>plated hole, plated through hole, PTH</glossterm>
+
+            <glossdef>
+              <para>During fabrication, some holes become coated with copper
+              which connects all the copper layers together at that point.
+              Since this is normally done by electroplating, such holes are
+              called "plated" holes, and normally have a copper annulus around
+              them.</para>
+            </glossdef>
+          </glossentry>
+
+          <glossentry>
+            <glossterm>silkscreen</glossterm>
+
+            <glossdef>
+              <para>A layer of ink or pigment drawn on the circuit board
+              (usually, one for each side of the board) in order to include,
+              for example, part numbers or element outlines.</para>
+            </glossdef>
+          </glossentry>
+
+          <glossentry>
+            <glossterm>soldermask</glossterm>
+
+            <glossdef>
+              <para>A layer of heat resistant film placed over the outermost
+              copper layers of your board, to prevent solder from sticking to
+              any covered copper. When used to cover traces routed between
+              pins or pads, this can help avoid shorts to those traces. Note
+              that when shown in pcb the mask is drawn where the film exists,
+              but when output (to postscript or gerber, for example), it is
+              often "drawn" where the mask is to be removed.</para>
+            </glossdef>
+          </glossentry>
+
+          <glossentry>
+            <glossterm>solder paste</glossterm>
+
+            <glossdef>
+              <para>Ground up solder mixed with flux. This paste is normally
+              squeegeed through a paste stencil to deposit a measured amount
+              of paste on each pad on the board. Once the paste is applied,
+              parts can be positioned on the paste, and the board heated -
+              which melts the paste and solders the parts to the board.</para>
+            </glossdef>
+          </glossentry>
+
+          <glossentry>
+            <glossterm>thermal pad</glossterm>
+
+            <glossdef>
+              <para>Since copper is an efficient heat sink, connections to a
+              large region of copper would be very difficult to solder - the
+              copper heat sink prevents you from adequately heating the
+              connection. Thermals come in many patterns, which allows the
+              designer to ensure adequate electrical connectivity and/or
+              manufacturability.</para>
+            </glossdef>
+          </glossentry>
+
+          <glossentry>
+            <glossterm>unplated hole</glossterm>
+
+            <glossdef>
+              <para>During fabrication, some holes are drilled after
+              electroplating, and so do not receive the copper that would
+              otherwise connect layers. Such holes are unplated holes, and
+              normally do not have a copper annulus around them either.</para>
+            </glossdef>
+          </glossentry>
+        </glosslist></para>
+    </section>
   </chapter>
 
   <chapter>
-    <title>Installation.</title>
+    <title>Building and installation of pcb-fpw.</title>
 
-    <para>&lt;description of the various installation methods goes
-    here&gt;</para>
+    <para>Now follows a detailed description of the various installation
+    methods available for the pcb footprintwizard.</para>
+
+    <sect1>
+      <title>Dependencies.</title>
+
+      <para>The building and installation process of pcb-fpw from scratch,
+      either from a tarball/zipball, or from the git repository, requires (at
+      least):</para>
+
+      <para><itemizedlist>
+          <listitem>
+            <para>gcc &gt;= 4.1.1</para>
+          </listitem>
+
+          <listitem>
+            <para>autoconf &gt;= 2.63</para>
+          </listitem>
+
+          <listitem>
+            <para>automake &gt;= 1.9.6</para>
+          </listitem>
+
+          <listitem>
+            <para>pkg-config &gt;= 0.9.0</para>
+          </listitem>
+
+          <listitem>
+            <para>libtool &gt;= 1.5.22</para>
+          </listitem>
+
+          <listitem>
+            <para>glib &gt;= 1.2.10</para>
+          </listitem>
+
+          <listitem>
+            <para>glib2 &gt;= 2.10.3</para>
+          </listitem>
+
+          <listitem>
+            <para>gtk &gt;= 2.8.20</para>
+          </listitem>
+
+          <listitem>
+            <para>libglade2 &gt;= 2.5.1</para>
+          </listitem>
+
+          <listitem>
+            <para>cairo &gt;= 1.0.4</para>
+          </listitem>
+
+          <listitem>
+            <para>pango &gt;= 1.12.4</para>
+          </listitem>
+
+          <listitem>
+            <para>gettext &gt;= 0.16.1</para>
+          </listitem>
+
+          <listitem>
+            <para>libpng &gt;= 1.2.44.</para>
+          </listitem>
+
+          <listitem>
+            <para>git &gt;= 1.7.3.4 (optional)</para>
+          </listitem>
+
+          <listitem>
+            <para>tar &gt;= 1.22 (optional)</para>
+          </listitem>
+
+          <listitem>
+            <para>gzip &gt;= 1.3.13 (optional)</para>
+          </listitem>
+
+          <listitem>
+            <para>unzip &gt;= 6.0.2 (optional)</para>
+          </listitem>
+        </itemizedlist>For maintaining the fpw_data.sql database and
+      user_data.sql (user database) template one could use WAMPSERVER
+      2.0:</para>
+
+      <para><itemizedlist>
+          <listitem>
+            <para>apache 2.2.11</para>
+          </listitem>
+        </itemizedlist><itemizedlist>
+          <listitem>
+            <para>mysql 5.1.36</para>
+          </listitem>
+        </itemizedlist><itemizedlist>
+          <listitem>
+            <para>php 5.3.0</para>
+          </listitem>
+        </itemizedlist><itemizedlist>
+          <listitem>
+            <para>phpmyadmin 3.2.0.1</para>
+          </listitem>
+        </itemizedlist>There may be other dependencies these packages may
+      require.</para>
+
+      <para><note>
+          <para>YMMV with lesser version numbers, these are the minimum
+          versions used to develop pcb-fpw.</para>
+        </note></para>
+    </sect1>
+
+    <sect1>
+      <title>Building and installation from the main git repository.</title>
+
+      <para>When building and installation of pcb-fpw for development purposes
+      is required, then the pcb-fpw source tree and files can be installed
+      from the main <indexterm>
+          <primary>git</primary>
+        </indexterm> repository at Github, or any other fork of this
+      repository.</para>
+
+      <para>This requires cloning into a local repository, which can be done
+      with the following command:</para>
+
+      <para><programlisting>git clone git://github.com/bert/pcb-fpw.git</programlisting>The
+      above command will create a directory "pcb-fpw", and then download and
+      extract all needed files into this directory.</para>
+
+      <para>If you clone from a forked repository at Github the git URI will
+      have a different value, as can be noticed by the instructions given
+      during the "forking" process on Github.com.</para>
+
+      <para>After the download of the source files is done sucessfully, change
+      to the pcb-fpw directory with:</para>
+
+      <para><programlisting>cd pcb-fpw</programlisting>The actual building and
+      installation of pcb-fpw can start with the following sequence of
+      commands:</para>
+
+      <para><programlisting>./autogen.sh</programlisting><programlisting>./configure --prefix=/usr/local/</programlisting><programlisting>make</programlisting><programlisting>make install</programlisting>Depending
+      on user requirements another prefix directory than
+      <literal>/usr/local/</literal> can be used, for instance when the user
+      has no root privileges for installing in a system directory, the user
+      can install in his/her home directory with
+      <literal>--prefix=$HOME/bin/</literal> or
+      <literal>--prefix=$HOME/pcb-fpw/</literal>.</para>
+
+      <para>If the building and installation process have gone without errors,
+      two executable binary files should result:
+      <literal>/usr/local/bin/fpw</literal> and
+      <literal>/usr/local/bin/pcb-gfpw</literal>.</para>
+
+      <para><note>
+          <para>To uninstall pcb-fpw use the following command:</para>
+
+          <para><programlisting>make uninstall</programlisting></para>
+
+          <para>This may require <literal>autogen</literal> and
+          <literal>configure</literal> to be run first.</para>
+
+          <para>If so, please (re)configure with the correct prefix
+          directory.</para>
+        </note><warning>
+          <para>Installation will require su (root) privileges.</para>
+        </warning></para>
+    </sect1>
+
+    <sect1>
+      <title>Building and installation using a tarball/zipball.</title>
+
+      <para>When building and installation of the source files using a
+      <indexterm>
+          <primary>tarball</primary>
+        </indexterm>/<indexterm>
+          <primary>zipball</primary>
+        </indexterm> is required, these can be obtained from:</para>
+
+      <para><itemizedlist>
+          <listitem>
+            <para>https://github.com/bert/pcb-fpw/downloads</para>
+          </listitem>
+
+          <listitem>
+            <para>https://launchpad.net/pcb-fpw/+download</para>
+          </listitem>
+        </itemizedlist>Download and unpack the tarballzipball in a directory
+      of choice with the following commands:</para>
+
+      <para><programlisting>tar -xvzf pcb-fpw-0.0.12.tar.gz</programlisting>or</para>
+
+      <para><programlisting>unzip pcb-fpw-0.0.12.zip</programlisting></para>
+
+      <para>After unpacking the tarball/zipball successful, change to the
+      pcb-fpw directory with:</para>
+
+      <para><programlisting>cd pcb-fpw</programlisting>The building and
+      installation can start with the following sequence of commands:</para>
+
+      <para><programlisting>./autogen.sh</programlisting><programlisting>./configure --prefix=/usr/local/</programlisting><programlisting>make</programlisting><programlisting>make install</programlisting>Depending
+      on user requirements another prefix directory than
+      <literal>/usr/local/</literal> can be used, for instance when the user
+      has no root privileges for installing in a system directory, the user
+      can install in his/her home directory with
+      <literal>--prefix=$HOME/bin/</literal> or
+      <literal>--prefix=$HOME/pcb-fpw/</literal>.</para>
+
+      <para>If the building and installation process have gone without errors,
+      two executable binary files should result:
+      <literal>/usr/local/bin/fpw</literal> and
+      <literal>/usr/local/bin/pcb-gfpw</literal>.</para>
+
+      <para><note>
+          <para>To uninstall pcb-fpw use the following command:</para>
+
+          <para><programlisting>make uninstall</programlisting></para>
+
+          <para>This may require <literal>autogen</literal> and
+          <literal>configure</literal> to be run first.</para>
+
+          <para>If so, please (re)configure with the correct prefix
+          directory.</para>
+        </note><warning>
+          <para>Installation will require su (root) privileges.</para>
+        </warning></para>
+    </sect1>
+
+    <sect1>
+      <title>Installation using a rpm package file.</title>
+
+      <para>When installation of the pcb-fpw using a <indexterm>
+          <primary>rpm package</primary>
+        </indexterm> file containing pre-build (executable) binaries is
+      required, the needed rpm file can be obtained from:</para>
+
+      <para><itemizedlist>
+          <listitem>
+            <para>https://github.com/bert/pcb-fpw/downloads</para>
+          </listitem>
+
+          <listitem>
+            <para>https://launchpad.net/pcb-fpw/+download</para>
+          </listitem>
+        </itemizedlist></para>
+
+      <para>Install the rpm package with su privileges with:</para>
+
+      <para><programlisting>rpm -ivh pcb-fpw-0.0.12.fc13.i686.rpm</programlisting>To
+      update a previously installed version of pcb-fpw:</para>
+
+      <para><programlisting>rpm -Uvh pcb-fpw-0.0.12.fc13.i686.rpm</programlisting>This
+      will <emphasis role="bold">U</emphasis>pgrade while giving <emphasis
+      role="bold">v</emphasis>erbose information and printing the progress
+      with <emphasis role="bold">h</emphasis>ashmarks.</para>
+
+      <para><note>
+          <para>For now the pcb-fpw rpm package is not relocatable.</para>
+        </note></para>
+
+      <para><warning>
+          <para>Installation will require su (root) privileges.</para>
+        </warning>Uninstall the rpm package with:Change </para>
+
+      <para><programlisting>rpm -e pcb-fpw</programlisting></para>
+
+      <para>For more information on the man-page of rpm - RPM Package Manager
+      do:</para>
+
+      <para><programlisting>man rpm</programlisting></para>
+    </sect1>
+
+    <sect1>
+      <title>Building and packaging a srpm package file.</title>
+
+      <para>When installation of the pcb-fpw using a <indexterm>
+          <primary>srpm package</primary>
+        </indexterm> file containing the source tree and a specification file
+      is required, the needed srpm file can be obtained from:</para>
+
+      <para><itemizedlist>
+          <listitem>
+            <para>https://github.com/bert/pcb-fpw/downloads</para>
+          </listitem>
+
+          <listitem>
+            <para>https://launchpad.net/pcb-fpw/+download</para>
+          </listitem>
+        </itemizedlist></para>
+
+      <para>Install the srpm package with:</para>
+
+      <para><programlisting>rpm -ivh pcb-fpw-0.0.12.fc13.i686.srpm</programlisting></para>
+
+      <para>The above command will extract a specification file in
+      $HOME/rpmbuild/SPEC and the tarball in $HOME/rpmbuild/SOURCES.</para>
+
+      <para>Change the current directory into rpmbuild with:</para>
+
+      <para><programlisting>cd $HOME/rpmbuild</programlisting>Build a binary
+      rpm with su privileges with:</para>
+
+      <para><programlisting>rpmbuild -bb SPEC/pcb-fpw.spec</programlisting>Install
+      you rpm with:</para>
+
+      <para><programlisting>rpm -ivh RPMS/i686/pcb-fpw-0.0.12.fc13.i686.rpm</programlisting><note>
+          <para>In the above command an "i686" architecture was used, this may
+          vary with the architecture of the targetted host machine.</para>
+        </note><warning>
+          <para>Installation will require su (root) privileges.</para>
+        </warning></para>
+    </sect1>
+
+    <sect1>
+      <title>Installation using yum.</title>
+
+      <para>Yum, the Yellowdog Updater Modified, can be used to install local
+      downloaded rpm packages as well.</para>
+
+      <para>After dowloading the rpm file from the URI listed in the previous
+      sections, installation can be done with the following command:</para>
+
+      <para><programlisting>yum localinstall pcb-fpw-0.0.12.fc13.i686.rpm</programlisting>or:</para>
+
+      <para><programlisting>yum localupdate pcb-fpw-0.0.12.fc13.i686.rpm</programlisting>for
+      updating a previously installed version of pcb-fpw.</para>
+
+      <para><note>
+          <para>A yum repo definition file can be downloaded from
+          http://ljh4timm.home.xs4all.nl/pcb-fpw/repo and installed into
+          /etc/yum.repos.d/.</para>
+
+          <para>The file "pcb-fpw.repo" will configure yum for installing and
+          updating future versions of pcb-fpw.</para>
+        </note><warning>
+          <para>Installation will require su (root) privileges.</para>
+        </warning></para>
+    </sect1>
   </chapter>
 
   <chapter>
@@ -192,7 +768,7 @@
 
             <mediaobject>
               <imageobject>
-                <imagedata align="left" fileref="images/about_dialog.png"/>
+                <imagedata align="center" fileref="images/about_dialog.png" />
               </imageobject>
             </mediaobject>
           </figure></para>
@@ -211,8 +787,8 @@
 
                 <mediaobject>
                   <imageobject>
-                    <imagedata align="left"
-                               fileref="images/credits_dialog.png"/>
+                    <imagedata align="center"
+                               fileref="images/credits_dialog.png" />
                   </imageobject>
                 </mediaobject>
               </figure></para>
@@ -231,7 +807,8 @@
 
               <mediaobject>
                 <imageobject>
-                  <imagedata align="left" fileref="images/license_dialog.png"/>
+                  <imagedata align="center"
+                             fileref="images/license_dialog.png" />
                 </imageobject>
               </mediaobject>
             </figure>
@@ -338,7 +915,7 @@
 
               <mediaobject>
                 <imageobject>
-                  <imagedata align="left" fileref="images/footprint_tab.png"/>
+                  <imagedata align="center" fileref="images/footprint_tab.png" />
                 </imageobject>
               </mediaobject>
             </figure></para>
@@ -535,7 +1112,7 @@
 
               <mediaobject>
                 <imageobject>
-                  <imagedata align="left" fileref="images/pins_pads_tab.png"/>
+                  <imagedata align="center" fileref="images/pins_pads_tab.png" />
                 </imageobject>
               </mediaobject>
             </figure>The second tab is named "<emphasis
@@ -651,8 +1228,8 @@
 
                   <mediaobject>
                     <imageobject>
-                      <imagedata align="left"
-                                 fileref="images/select_exception_dialog.png"/>
+                      <imagedata align="center"
+                                 fileref="images/select_exception_dialog.png" />
                     </imageobject>
                   </mediaobject>
                 </figure></para>
@@ -755,7 +1332,8 @@
 
               <mediaobject>
                 <imageobject>
-                  <imagedata align="left" fileref="images/silkscreen_tab.png"/>
+                  <imagedata align="center"
+                             fileref="images/silkscreen_tab.png" />
                 </imageobject>
               </mediaobject>
             </figure>The fourth tab is named "<emphasis
@@ -842,7 +1420,8 @@
 
               <mediaobject>
                 <imageobject>
-                  <imagedata align="left" fileref="images/thermal_pad_tab.png"/>
+                  <imagedata align="center"
+                             fileref="images/thermal_pad_tab.png" />
                 </imageobject>
               </mediaobject>
             </figure></para>
@@ -934,8 +1513,8 @@
 
               <mediaobject>
                 <imageobject>
-                  <imagedata align="left"
-                             fileref="images/heel_and_toe_goals_tab.png"/>
+                  <imagedata align="center"
+                             fileref="images/heel_and_toe_goals_tab.png" />
                 </imageobject>
               </mediaobject>
             </figure>The fifth and last tab is named "<emphasis
@@ -1056,5 +1635,2296 @@
     </section>
   </chapter>
 
-  <index/>
+  <appendix>
+    <title>Footprint Naming Convention.</title>
+
+    <section>
+      <title>Introduction.</title>
+
+      <para>Footprint names can be derived by combining the name of the
+      component category with a dimensional aspect of the component and the
+      number of pins followed by a suffix derived from the environmental
+      application.</para>
+
+      <para>If additional characteristcs are required they should be added as
+      an alphabetical character, or combinations of characters that preceed
+      the suffix.</para>
+
+      <para>Sample Name: QFP65P + Lead Span L1 <emphasis
+      role="bold">X</emphasis> Lead Span L2 Nominal <emphasis
+      role="bold">-</emphasis> Pin Qty</para>
+
+      <para>The + (plus sign) stands for "in addition to" (no space between
+      the prefix and the body size).</para>
+
+      <para>The <emphasis role="bold">-</emphasis> (dash in bold typeface) is
+      used to separate the pin quantity.</para>
+
+      <para>The <emphasis role="bold">_</emphasis> (underscore in bold
+      typeface) is the separator between pin Quantity in Hidden &amp; Deleted
+      pin components, and also used as a separator between lead numbers and
+      package dimensions.</para>
+
+      <para>The <emphasis role="bold">X</emphasis> (capital letter X in bold
+      typeface) is used instead of the word "by" to separate two numbers such
+      as height X width like "Quad Packages".</para>
+
+      <section>
+        <title>Density Level Suffixes.</title>
+
+        <para>Suffixes for every common SMT footprint describe the environment
+        application (this is the last character in every name).</para>
+
+        <para><note>
+            <para>This excludes the BGA which only comes in Nominal
+            Environment Condition.</para>
+          </note>Three footprint geometry variations are supplied for each of
+        the device families;</para>
+
+        <itemizedlist>
+          <listitem>
+            <para>maximum land protrusion (Density Level A).</para>
+          </listitem>
+        </itemizedlist>
+
+        <itemizedlist>
+          <listitem>
+            <para>median land protrusion (Density Level B).</para>
+          </listitem>
+        </itemizedlist>
+
+        <itemizedlist>
+          <listitem>
+            <para>minimum land protrusion (Density Level C).</para>
+          </listitem>
+        </itemizedlist>
+
+        <para>Before adapting the minimum footprint variations the user should
+        consider product qualification testing and the manufacturer's
+        datasheets.</para>
+
+        <itemizedlist>
+          <listitem>
+            <para><emphasis role="bold">M</emphasis> - Density Level A:
+            Maximum (Most) Land Protrusion.</para>
+
+            <para>For low-density product applications, the 'maximum'
+            footprint condition has been developed to accommodate wave or flow
+            solder of leadless chip devices and leaded gull- wing
+            devices.</para>
+
+            <para>The geometry furnished for these devices, as well as inward
+            and "J"-formed lead contact device families, may provide a wider
+            process window for reflow solder processes as well.</para>
+          </listitem>
+        </itemizedlist>
+
+        <itemizedlist>
+          <listitem>
+            <para><emphasis role="bold">N</emphasis> - Density Level B: Median
+            (Nominal) Land Protrusion.</para>
+
+            <para>Products with a moderate level of component density may
+            consider adapting the 'median' footprint geometry.</para>
+
+            <para>The median footprints furnished for all device families will
+            provide a robust solder attachment condition for reflow solder
+            processes and should provide a condition suitable for wave or
+            reflow soldering of leadless chip and leaded gull-wing type
+            devices.</para>
+          </listitem>
+        </itemizedlist>
+
+        <itemizedlist>
+          <listitem>
+            <para><emphasis role="bold">L</emphasis> - Density Level C:
+            Minimum (Least) Land Protrusion.</para>
+
+            <para>High component density typical of portable and hand-held
+            product applications may consider the 'minimum' footprint geometry
+            variation.</para>
+
+            <para>Selection of the minimum footprint geometry may not be
+            suitable for all product use categories.</para>
+          </listitem>
+        </itemizedlist>
+
+        <para>The use of classes of performance (1, 2, and 3) is combined with
+        that of component density levels (A, B, and C) in explaining the
+        condition of an electronic assembly.</para>
+
+        <para>As an example, combining the description as Levels 1A or 3B or
+        2C, would indicate the different combinations of performance and
+        component density to aid in understanding the environment and the
+        manufacturing requirements of a particular assembly.</para>
+      </section>
+
+      <section>
+        <title>Other Suffixes.</title>
+
+        <para>Heatsinks:</para>
+
+        <para><emphasis role="bold">_HS</emphasis> - Footprint with Heat Sink
+        attachment requiring additional holes or pads.</para>
+
+        <para>Example: TO254P1055X160_HS-6N.</para>
+
+        <para>Transistors:</para>
+
+        <para><emphasis role="bold">_BEC</emphasis> - Base, Emitter and
+        Collector (pin assignments used for three pin transistors).</para>
+
+        <para><emphasis role="bold">_SGD</emphasis> - Source, Gate and Drain
+        (pin assignments used for three pin transistors).</para>
+
+        <para><emphasis role="bold">_213</emphasis> - Alternate pin
+        assignments used for three pin transistors.</para>
+
+        <para>Alternate Components that do not follow the JEDEC, EIA or IEC
+        Standard:</para>
+
+        <para><emphasis role="bold">A</emphasis> - Alternate Component (used
+        primarily for SOP &amp; QFP when Component Tolerance or Height is
+        different).</para>
+
+        <para><emphasis role="bold">B</emphasis> - Second Alternate
+        Component.</para>
+
+        <para>Reverse Pin Order:</para>
+
+        <para><emphasis role="bold">-20RN</emphasis>&lt;/b&gt; - 20 pin part,
+        Reverse Pin Order, Nominal Environment.</para>
+
+        <para>Hidden Pins:</para>
+
+        <para><emphasis role="bold">-20_24N</emphasis> - 20 pin part in a 24
+        pin package. The pins are numbered 1 - 24 the hidden pins are skipped.
+        The schematic symbol displays up to 24 pins.</para>
+
+        <para>Deleted Pins:</para>
+
+        <para><emphasis role="bold">-24_20N</emphasis> - 20 pin part in a 24
+        pin package. The pins are numbered 1 - 20. The schematic symbol
+        displays 20 pins.</para>
+
+        <para>JEDEC and EIA Standard parts that have several alternate
+        packages.</para>
+
+        <para><emphasis role="bold">AA</emphasis>, <emphasis
+        role="bold">AB</emphasis>, <emphasis role="bold">AC</emphasis> - JEDEC
+        or EIA Component Identifier.</para>
+
+        <para>JEDEC or EIA component identifier: used primarily on chip
+        resistors, inductors and capacitors.</para>
+      </section>
+
+      <section>
+        <title>Surface Mounting Technology (SMT) footprint name
+        definitions.</title>
+
+        <para></para>
+
+        <table>
+          <title>Table 1: Surface Mounting Technology (SMT) footprint name
+          definitions.</title>
+
+          <tgroup align="left" cols="3">
+            <thead>
+              <row>
+                <entry align="left">Prefix</entry>
+
+                <entry align="left">Component description</entry>
+
+                <entry align="left">Footprint Name Definition</entry>
+              </row>
+            </thead>
+
+            <tbody>
+              <row>
+                <entry>BGA</entry>
+
+                <entry>Ball Grid Array</entry>
+
+                <entry><emphasis role="bold">BGA</emphasis> + Pin Qty +
+                <emphasis role="bold">C</emphasis> or <emphasis
+                role="bold">N</emphasis> + Pitch + <emphasis
+                role="bold">P</emphasis> + Ball Columns + <emphasis
+                role="bold">X</emphasis> + Ball Rows + <emphasis
+                role="bold">_</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Width + <emphasis
+                role="bold">X</emphasis> + Height</entry>
+              </row>
+
+              <row>
+                <entry>BGA</entry>
+
+                <entry>Ball Grid Array with Dual Pitch</entry>
+
+                <entry><emphasis role="bold">BGA</emphasis> + Pin Qty +
+                <emphasis role="bold">C</emphasis> or <emphasis
+                role="bold">N</emphasis> + Col Pitch + <emphasis
+                role="bold">X</emphasis> + Row Pitch + <emphasis
+                role="bold">P</emphasis> + Ball Columns + <emphasis
+                role="bold">X</emphasis> + Ball Rows + <emphasis
+                role="bold">_</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Width + <emphasis
+                role="bold">X</emphasis> + Height</entry>
+              </row>
+
+              <row>
+                <entry>BGAS</entry>
+
+                <entry>Ball Grid Array with Staggered Pins</entry>
+
+                <entry><emphasis role="bold">BGAS</emphasis> + Pin Qty +
+                <emphasis role="bold">C</emphasis> or <emphasis
+                role="bold">N</emphasis> + Pitch + <emphasis
+                role="bold">P</emphasis> + Ball Columns + <emphasis
+                role="bold">X</emphasis> + Ball Rows + <emphasis
+                role="bold">_</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Width + <emphasis
+                role="bold">X</emphasis> Height</entry>
+              </row>
+
+              <row>
+                <entry>CAPC</entry>
+
+                <entry>Capacitors, Chip, Non-polarized</entry>
+
+                <entry><emphasis role="bold">CAPC</emphasis> + Body Length +
+                Body Width + <emphasis role="bold">X</emphasis> +
+                Height</entry>
+              </row>
+
+              <row>
+                <entry>CAPCAF</entry>
+
+                <entry>Capacitors, Chip Array, Flat</entry>
+
+                <entry><emphasis role="bold">CAPCAF</emphasis> + Body Width +
+                <emphasis role="bold">X</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>CAPCAV</entry>
+
+                <entry>Capacitors, Chip Array, Concave</entry>
+
+                <entry><emphasis role="bold">CAPCAV</emphasis> + Body Width +
+                <emphasis role="bold">X</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>CAPCP</entry>
+
+                <entry>Capacitors, Chip, Polarized</entry>
+
+                <entry><emphasis role="bold">CAPCP</emphasis> + Body Length +
+                Body Width + <emphasis role="bold">X</emphasis> +
+                Height</entry>
+              </row>
+
+              <row>
+                <entry>CAPCWR</entry>
+
+                <entry>Capacitors, Chip, Wire Rectangular</entry>
+
+                <entry><emphasis role="bold">CAPCWR</emphasis> + Body Length +
+                Body + <emphasis role="bold">X</emphasis> + Height</entry>
+              </row>
+
+              <row>
+                <entry>CAPM</entry>
+
+                <entry>Capacitors, Molded body, Non-polarized</entry>
+
+                <entry><emphasis role="bold">CAPM</emphasis> + Body Length +
+                Body Width + <emphasis role="bold">X</emphasis> +
+                Height</entry>
+              </row>
+
+              <row>
+                <entry>CAPMP</entry>
+
+                <entry>Capacitors, Molded body, Polarized</entry>
+
+                <entry><emphasis role="bold">CAPMP</emphasis> + Body Length +
+                Body Width + <emphasis role="bold">X</emphasis> +
+                Height</entry>
+              </row>
+
+              <row>
+                <entry>CAPAE</entry>
+
+                <entry>Capacitors, Aluminum Electrolytic</entry>
+
+                <entry><emphasis role="bold">CAPAE</emphasis> + Body Width +
+                <emphasis role="bold">X</emphasis> + Height</entry>
+              </row>
+
+              <row>
+                <entry>CFP</entry>
+
+                <entry>Ceramic Flat Packages</entry>
+
+                <entry><emphasis role="bold">CFP</emphasis> + Pitch +
+                <emphasis role="bold">P</emphasis> + Lead Span + <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>CGA</entry>
+
+                <entry>Column Grid Array, Circular Lead</entry>
+
+                <entry><emphasis role="bold">CGA</emphasis> + Pin Qty +
+                <emphasis role="bold">C</emphasis> + Pitch + <emphasis
+                role="bold">P</emphasis> + Pin Columns + <emphasis
+                role="bold">X</emphasis> + Pin Rows + <emphasis
+                role="bold">_</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Width + <emphasis
+                role="bold">X</emphasis> + Height</entry>
+              </row>
+
+              <row>
+                <entry>CGA</entry>
+
+                <entry>Column Grid Array, Square Lead</entry>
+
+                <entry><emphasis role="bold">CGA</emphasis> + Pin Qty +
+                <emphasis role="bold">S</emphasis> + Pitch + <emphasis
+                role="bold">P</emphasis> + Pin Columns + <emphasis
+                role="bold">X</emphasis> + Pin Rows + <emphasis
+                role="bold">_</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Width + <emphasis
+                role="bold">X</emphasis> + Height</entry>
+              </row>
+
+              <row>
+                <entry>CQFP</entry>
+
+                <entry>Ceramic Quad Flat Package</entry>
+
+                <entry><emphasis role="bold">CQFP</emphasis> + Pitch +
+                <emphasis role="bold">P</emphasis> + Lead Span L1 + <emphasis
+                role="bold">X</emphasis> + Lead Span L2 Nominal + <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>DFN</entry>
+
+                <entry>Dual Flat No-lead</entry>
+
+                <entry><emphasis role="bold">DFN</emphasis> + Body Length +
+                <emphasis role="bold">X</emphasis> + Body Width + <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>DIOC</entry>
+
+                <entry>Diodes, Chip</entry>
+
+                <entry><emphasis role="bold">DIOC</emphasis> + Body Length +
+                Body Width + <emphasis role="bold">X</emphasis> +
+                Height</entry>
+              </row>
+
+              <row>
+                <entry>DIOM</entry>
+
+                <entry>Diodes, Molded</entry>
+
+                <entry><emphasis role="bold">DIOM</emphasis> + Body Length +
+                Body Width + <emphasis role="bold">X</emphasis> +
+                Height</entry>
+              </row>
+
+              <row>
+                <entry>DIOMELF</entry>
+
+                <entry>Diodes, MELF</entry>
+
+                <entry><emphasis role="bold">DIOMELF</emphasis> + Body Length
+                + Body Width</entry>
+              </row>
+
+              <row>
+                <entry>DIOSC</entry>
+
+                <entry>Diodes, Side Concave, 2 Pin</entry>
+
+                <entry><emphasis role="bold">DIOSC</emphasis> + Body Length +
+                <emphasis role="bold">X</emphasis> + Body Width + <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>DIP</entry>
+
+                <entry>Dual-in-Line Packages (Butt Mount)</entry>
+
+                <entry><emphasis role="bold">DIP</emphasis> + Pitch +
+                <emphasis role="bold">P</emphasis> + Lead Span Nominal +
+                <emphasis role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>FUSM</entry>
+
+                <entry>Fuses, Molded</entry>
+
+                <entry><emphasis role="bold">FUSM</emphasis> + Body Length +
+                Body Width + <emphasis role="bold">X</emphasis> +
+                Height</entry>
+              </row>
+
+              <row>
+                <entry>INDC</entry>
+
+                <entry>Inductors, Chip</entry>
+
+                <entry><emphasis role="bold">INDC</emphasis> + Body Length +
+                Body Width + <emphasis role="bold">X</emphasis> +
+                Height</entry>
+              </row>
+
+              <row>
+                <entry>INDCAF</entry>
+
+                <entry>Inductors, Chip Array, Flat</entry>
+
+                <entry><emphasis role="bold">INDCAF</emphasis> + Pitch +
+                <emphasis role="bold">P</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Width <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>INDCAV</entry>
+
+                <entry>Inductors, Chip Array, Concave</entry>
+
+                <entry><emphasis role="bold">INDCAV</emphasis> + Pitch +
+                <emphasis role="bold">P</emphasis> + Body Length <emphasis
+                role="bold">X</emphasis> Body Width + <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>INDM</entry>
+
+                <entry>Inductors, Molded</entry>
+
+                <entry><emphasis role="bold">INDM</emphasis> + Body Length +
+                Body Width + <emphasis role="bold">X</emphasis> +
+                Height</entry>
+              </row>
+
+              <row>
+                <entry>INDP</entry>
+
+                <entry>Inductors, Precision Wire Wound</entry>
+
+                <entry><emphasis role="bold">INDP</emphasis> + Body Length +
+                Body Width + <emphasis role="bold">X</emphasis> +
+                Height</entry>
+              </row>
+
+              <row>
+                <entry>LCC</entry>
+
+                <entry>Quad Leadless Chip Carriers</entry>
+
+                <entry><emphasis role="bold">LCC</emphasis> + Body Width +
+                <emphasis role="bold">X</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>LCCS</entry>
+
+                <entry>Quad Leadless Ceramic Chip Carriers (Pin 1 on
+                Side)</entry>
+
+                <entry><emphasis role="bold">LCCS</emphasis> + Pitch +
+                <emphasis role="bold">P</emphasis> + Body Width <emphasis
+                role="bold">X</emphasis> Body Length + <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>LEDM</entry>
+
+                <entry>LED's, Molded</entry>
+
+                <entry><emphasis role="bold">LEDM</emphasis> + Body Length +
+                Body Width + <emphasis role="bold">X</emphasis> +
+                Height</entry>
+              </row>
+
+              <row>
+                <entry>LEDSC</entry>
+
+                <entry>LED's, Side Concave, 2 Pin</entry>
+
+                <entry><emphasis role="bold">LEDSC</emphasis> + Body Length +
+                <emphasis role="bold">X</emphasis> + Body Width + <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>LEDSC</entry>
+
+                <entry>LED's, Side Concave, 4 Pin</entry>
+
+                <entry><emphasis role="bold">LEDSC</emphasis> + Pitch +
+                <emphasis role="bold">P</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Width + <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>LGA</entry>
+
+                <entry>Land Grid Array, Circular Lead</entry>
+
+                <entry><emphasis role="bold">LGA</emphasis> + Pin Qty +
+                <emphasis role="bold">C</emphasis> + Pitch + <emphasis
+                role="bold">P</emphasis> + Pin Columns + <emphasis
+                role="bold">X</emphasis> + Pin Rows + <emphasis role="bold">_
+                </emphasis>+ Body Length + <emphasis role="bold">X</emphasis>
+                + Body Width + <emphasis role="bold">X</emphasis> +
+                Height</entry>
+              </row>
+
+              <row>
+                <entry>LGA</entry>
+
+                <entry>Land Grid Array, Square Lead</entry>
+
+                <entry><emphasis role="bold">LGA</emphasis>&gt; + Pin Qty +
+                <emphasis role="bold">S</emphasis> + Pitch + <emphasis
+                role="bold">P</emphasis> + Pin Columns + <emphasis
+                role="bold">X</emphasis> + Pin Rows + <emphasis role="bold">_
+                </emphasis>+ Body Length + <emphasis role="bold">X
+                </emphasis>+ Body Width + <emphasis role="bold">X</emphasis> +
+                Height</entry>
+              </row>
+
+              <row>
+                <entry>LGA</entry>
+
+                <entry>Land Grid Array, Rectangle Lead</entry>
+
+                <entry><emphasis role="bold">LGA</emphasis> + Pin Qty +
+                <emphasis role="bold">R</emphasis> + Pitch + <emphasis
+                role="bold">P</emphasis> + Pin Columns + <emphasis
+                role="bold">X</emphasis> + Pin Rows + <emphasis
+                role="bold">_</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Width + <emphasis
+                role="bold">X</emphasis> + Height</entry>
+              </row>
+
+              <row>
+                <entry>OSCCC</entry>
+
+                <entry>Oscillators, Corner Concave</entry>
+
+                <entry><emphasis role="bold">OSCCC</emphasis> + Body Length +
+                <emphasis role="bold">X</emphasis> + Body Width + <emphasis
+                role="bold">X</emphasis> + Height</entry>
+              </row>
+
+              <row>
+                <entry>OSCJ</entry>
+
+                <entry>Oscillators, J-Lead</entry>
+
+                <entry><emphasis role="bold">OSCJ</emphasis> + Pitch +
+                <emphasis role="bold">P</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Width + <emphasis
+                role="bold">X </emphasis>+ Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>OSCL</entry>
+
+                <entry>Oscillators, L-Bend Lead</entry>
+
+                <entry><emphasis role="bold">OSCL</emphasis> + Pitch +
+                <emphasis role="bold">P</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Width + <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>OSCSC</entry>
+
+                <entry>Oscillators, Side Concave</entry>
+
+                <entry><emphasis role="bold">OSCSC</emphasis> + Pitch +
+                <emphasis role="bold">P</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Width + <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>PAD</entry>
+
+                <entry>Pad</entry>
+
+                <entry><emphasis role="bold">PAD</emphasis> + Wire
+                Width</entry>
+              </row>
+
+              <row>
+                <entry>PLCC</entry>
+
+                <entry>Plastic Leaded Chip Carriers</entry>
+
+                <entry><emphasis role="bold">PLCC</emphasis> + Leadspan1 +
+                <emphasis role="bold">X</emphasis> + Leadspan2 + <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>PLCCS</entry>
+
+                <entry>Plastic Leaded Chip Carrier Sockets</entry>
+
+                <entry><emphasis role="bold">PLCCS</emphasis> + Leadspan1 +
+                <emphasis role="bold">X</emphasis> + Leadspan2 + <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>PQFN</entry>
+
+                <entry>Pull-back Quad Flat No-lead</entry>
+
+                <entry><emphasis role="bold">PQFN</emphasis> + Pitch +
+                <emphasis role="bold">P</emphasis> + Body Width + <emphasis
+                role="bold">X</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty + Thermal Pad</entry>
+              </row>
+
+              <row>
+                <entry>PSON</entry>
+
+                <entry>Pull-back Small Outline No-lead</entry>
+
+                <entry><emphasis role="bold">PSON</emphasis> + Pitch +
+                <emphasis role="bold">P</emphasis> + Body Width + <emphasis
+                role="bold">X</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty + Thermal Pad</entry>
+              </row>
+
+              <row>
+                <entry>QFN</entry>
+
+                <entry>Quad Flat No-lead</entry>
+
+                <entry><emphasis role="bold">QFN</emphasis> + Pitch +
+                <emphasis role="bold">P</emphasis> + Body Width + <emphasis
+                role="bold">X</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty + Thermal Pad</entry>
+              </row>
+
+              <row>
+                <entry>QFP</entry>
+
+                <entry>Quad Flat Packages</entry>
+
+                <entry><emphasis role="bold">QFP</emphasis> + Pitch +
+                <emphasis role="bold">P</emphasis> + Lead Span L1 + <emphasis
+                role="bold">X</emphasis> + Lead Span L2 Nominal + <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>RESC</entry>
+
+                <entry>Resistors, Chip</entry>
+
+                <entry><emphasis role="bold">RESC</emphasis> + Body Length +
+                Body Width + <emphasis role="bold">X</emphasis> +
+                Height</entry>
+              </row>
+
+              <row>
+                <entry>RESCAF</entry>
+
+                <entry>Resistors, Chip Array, Flat</entry>
+
+                <entry><emphasis role="bold">RESCAF</emphasis> + Pitch +
+                <emphasis role="bold">P</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Width + <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>RESCAV</entry>
+
+                <entry>Resistors, Chip Array, Concave</entry>
+
+                <entry><emphasis role="bold">RESCAV</emphasis> + Pitch +
+                <emphasis role="bold">P</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Width + <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>RESCAXE</entry>
+
+                <entry>Resistors, Chip, Array, Convex, E-Version (Even Pin
+                Size)</entry>
+
+                <entry><emphasis role="bold">RESCAXE</emphasis> + Pitch +
+                <emphasis role="bold">P</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Width + <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>RESCAXS</entry>
+
+                <entry>Resistors, Chip, Array, Convex, S-Version (Side Pins
+                Differ)</entry>
+
+                <entry><emphasis role="bold">RESCAXS</emphasis> + Pitch +
+                <emphasis role="bold">P</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Body Width + <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>RESM</entry>
+
+                <entry>Resistors, Molded</entry>
+
+                <entry><emphasis role="bold">RESM</emphasis> + Body Length +
+                Body Width + <emphasis role="bold">X</emphasis> +
+                Height</entry>
+              </row>
+
+              <row>
+                <entry>RESMELF</entry>
+
+                <entry>Resistors, MELF</entry>
+
+                <entry><emphasis role="bold">RESMELF</emphasis> + Body Length
+                + Body Width</entry>
+              </row>
+
+              <row>
+                <entry>SOD</entry>
+
+                <entry>Small Outline Diode</entry>
+
+                <entry><emphasis role="bold">SOD</emphasis> + Lead Span
+                Nominal + Body Width + <emphasis role="bold">X</emphasis> +
+                Height</entry>
+              </row>
+
+              <row>
+                <entry>SODFL</entry>
+
+                <entry>Small Outline Diodes, Flat Lead</entry>
+
+                <entry><emphasis role="bold">SODFL</emphasis> + Lead Span
+                Nominal + Body Width + <emphasis role="bold">X</emphasis> +
+                Height</entry>
+              </row>
+
+              <row>
+                <entry>SOJ</entry>
+
+                <entry>Small Outline IC, J-Leaded</entry>
+
+                <entry><emphasis role="bold">SOJ</emphasis> + Pitch +
+                <emphasis role="bold">P</emphasis> + Lead Span Nominal +
+                <emphasis role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>SOIC</entry>
+
+                <entry>Small Outline Integrated Circuit</entry>
+
+                <entry><emphasis role="bold">SOIC</emphasis> + Pitch +
+                <emphasis role="bold">P</emphasis> + Lead Span Nominal +
+                <emphasis role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>SON</entry>
+
+                <entry>Small Outline No-Lead</entry>
+
+                <entry><emphasis role="bold">SON</emphasis> + Pitch +
+                <emphasis role="bold">P</emphasis> + Body Width + <emphasis
+                role="bold">X</emphasis> + Body Length + <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty + Thermal Pad</entry>
+              </row>
+
+              <row>
+                <entry>SOP</entry>
+
+                <entry>Small Outline Packages</entry>
+
+                <entry><emphasis role="bold">SOP</emphasis> + Pitch +
+                <emphasis role="bold">P</emphasis> + Lead Span Nominal +
+                <emphasis role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>SOT</entry>
+
+                <entry>Small Outline Transistors (Generic)</entry>
+
+                <entry><emphasis role="bold">SOT</emphasis> + Pitch +
+                <emphasis role="bold">P</emphasis> + Lead Span Nominal +
+                <emphasis role="bold">X</emphasis> + Height + <emphasis
+                role="bold">- +</emphasis> Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>SOTFL</entry>
+
+                <entry>Small Outline Transistors, Flat Lead</entry>
+
+                <entry><emphasis role="bold">SOTFL</emphasis> + Pitch +
+                <emphasis role="bold">P</emphasis> + Lead Span Nominal +
+                <emphasis role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>TO</entry>
+
+                <entry>Transistor Outline (Generic DPAK)</entry>
+
+                <entry><emphasis role="bold">TO</emphasis> + Pitch + <emphasis
+                role="bold">P</emphasis> + Lead Span + <emphasis
+                role="bold">X</emphasis> + Height + <emphasis
+                role="bold">-</emphasis> + Pin Qty</entry>
+              </row>
+
+              <row>
+                <entry>XTAL</entry>
+
+                <entry>Crystals (2 leads)</entry>
+
+                <entry><emphasis role="bold">XTAL</emphasis> + Body Length +
+                <emphasis role="bold">X</emphasis> + Body Width + <emphasis
+                role="bold">X</emphasis> + Height</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </section>
+
+      <section>
+        <title>Pin Through Hole (PTH) footprint name definitions.</title>
+
+        <para></para>
+
+        <para><table>
+            <title>Table 2: Pin Throuh Hole Technology (PTH) footprint name
+            definitions.</title>
+
+            <tgroup align="left" cols="3">
+              <thead>
+                <row>
+                  <entry align="left">Prefix</entry>
+
+                  <entry align="left">Component description</entry>
+
+                  <entry align="left">Footprint Name Definition</entry>
+                </row>
+              </thead>
+
+              <tbody>
+                <row>
+                  <entry>CAPA</entry>
+
+                  <entry>Capacitors, Non Polarized Axial Horizontal Mounting
+                  (obsolete prefix)</entry>
+
+                  <entry><emphasis role="bold">CAPA</emphasis> + Lead Spacing
+                  + Body Length + Body Width + <emphasis
+                  role="bold">X</emphasis> + Height</entry>
+                </row>
+
+                <row>
+                  <entry>CAPAD</entry>
+
+                  <entry>Capacitors, Non Polarized Axial Diameter Horizontal
+                  Mounting</entry>
+
+                  <entry><emphasis role="bold">CAPAD</emphasis> + Lead Spacing
+                  + <emphasis role="bold">W</emphasis> + Lead Width +
+                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
+                  role="bold">D</emphasis> + Body Diameter</entry>
+                </row>
+
+                <row>
+                  <entry>CAPADV</entry>
+
+                  <entry>Capacitors, Non Polarized Axial Diameter Vertical
+                  Mounting</entry>
+
+                  <entry><emphasis role="bold">CAPADV</emphasis> + Lead
+                  Spacing + <emphasis role="bold">W</emphasis> + Lead Width +
+                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
+                  role="bold">D</emphasis> + Body Diameter</entry>
+                </row>
+
+                <row>
+                  <entry>CAPAR</entry>
+
+                  <entry>Capacitors, Non Polarized Axial Rectangular Vertical
+                  Mounting</entry>
+
+                  <entry><emphasis role="bold">CAPARV</emphasis> + Lead
+                  Spacing + <emphasis role="bold">W</emphasis> + Lead Width +
+                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
+                  role="bold">T</emphasis> + Body Thickness + <emphasis
+                  role="bold">H</emphasis> + Body Height</entry>
+                </row>
+
+                <row>
+                  <entry>CAPPAD</entry>
+
+                  <entry>Capacitors, Polarized Axial Diameter Horizontal
+                  Mounting</entry>
+
+                  <entry><emphasis role="bold">CAPPAD</emphasis> + Lead
+                  Spacing + <emphasis role="bold">W</emphasis> + Lead Width +
+                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
+                  role="bold">D</emphasis> + Body Diameter</entry>
+                </row>
+
+                <row>
+                  <entry>CAPPR</entry>
+
+                  <entry>Capacitor, Polarized Radial Diameter (obsolete
+                  prefix)</entry>
+
+                  <entry><emphasis role="bold">CAPPR</emphasis> + Lead Spacing
+                  + <emphasis role="bold">W</emphasis> + Lead Width +
+                  <emphasis role="bold">D</emphasis> + Body Diameter +
+                  <emphasis role="bold">H</emphasis> + Body Height</entry>
+                </row>
+
+                <row>
+                  <entry>CAPPRD</entry>
+
+                  <entry>Capacitor, Polarized Radial Diameter</entry>
+
+                  <entry><emphasis role="bold">CAPPRD</emphasis> + Lead
+                  Spacing + <emphasis role="bold">W</emphasis> + Lead Width +
+                  <emphasis role="bold">D</emphasis> + Body Diameter +
+                  <emphasis role="bold">H</emphasis> + Body Height</entry>
+                </row>
+
+                <row>
+                  <entry>CAPRB</entry>
+
+                  <entry>Capacitors, Non Polarized Radial Disk Button</entry>
+
+                  <entry><emphasis role="bold">CAPRB</emphasis> + Lead Spacing
+                  + <emphasis role="bold">W</emphasis> + Lead Width +
+                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
+                  role="bold">T</emphasis> + Body thickness + <emphasis
+                  role="bold">H</emphasis> + Body Height</entry>
+                </row>
+
+                <row>
+                  <entry>CAPRD</entry>
+
+                  <entry>Capacitors, Non Polarized Radial Diameter</entry>
+
+                  <entry><emphasis role="bold">CAPRD</emphasis> + Lead Spacing
+                  + <emphasis role="bold">W</emphasis> + Lead Width +
+                  <emphasis role="bold">D</emphasis> + Body Diameter +
+                  <emphasis role="bold">H</emphasis> + Body Height</entry>
+                </row>
+
+                <row>
+                  <entry>CAPRR</entry>
+
+                  <entry>Capacitors, Non Polarized Radial Rectangular</entry>
+
+                  <entry><emphasis role="bold">CAPRR</emphasis> + Lead Spacing
+                  + <emphasis role="bold">W</emphasis> + Lead Width +
+                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
+                  role="bold">T</emphasis> + Body thickness + <emphasis
+                  role="bold">H</emphasis> + Body Height</entry>
+                </row>
+
+                <row>
+                  <entry>DIO</entry>
+
+                  <entry>Diodes, Axial Horizontal Mounting (obsolete
+                  prefix)</entry>
+
+                  <entry><emphasis role="bold">DIO</emphasis> + Lead Spacing +
+                  <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                  role="bold">L</emphasis> + Body Length + <emphasis
+                  role="bold">D</emphasis> + Body Diameter</entry>
+                </row>
+
+                <row>
+                  <entry>DIOAD</entry>
+
+                  <entry>Diodes, Axial Diameter Horizontal Mounting</entry>
+
+                  <entry><emphasis role="bold">DIOAD</emphasis> + Lead Spacing
+                  + <emphasis role="bold">W</emphasis> + Lead Width +
+                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
+                  role="bold">D</emphasis> + Body Diameter</entry>
+                </row>
+
+                <row>
+                  <entry>DIOADV</entry>
+
+                  <entry>Diodes, Axial Diameter Vertical Mounting</entry>
+
+                  <entry><emphasis role="bold">DIOADV</emphasis> + Lead
+                  Spacing + <emphasis role="bold">W</emphasis> + Lead Width +
+                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
+                  role="bold">D</emphasis> + Body Diameter</entry>
+                </row>
+
+                <row>
+                  <entry>DIP</entry>
+
+                  <entry>Dual-In-Line Packages</entry>
+
+                  <entry><emphasis role="bold">DIP</emphasis> + Lead Span +
+                  <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                  role="bold">P</emphasis> + Pin Pitch + <emphasis
+                  role="bold">L</emphasis> + Body Length + <emphasis
+                  role="bold">H</emphasis> + Component Height + <emphasis
+                  role="bold">Q</emphasis> + Pin Qty</entry>
+                </row>
+
+                <row>
+                  <entry>DIPS</entry>
+
+                  <entry>Dual-In-Line Sockets</entry>
+
+                  <entry><emphasis role="bold">DIPS</emphasis> + Lead Span +
+                  <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                  role="bold">P</emphasis> + Pin Pitch + <emphasis
+                  role="bold">L</emphasis> + Body Length + <emphasis
+                  role="bold">H</emphasis> + Component Height + <emphasis
+                  role="bold">Q</emphasis> + Pin Qty</entry>
+                </row>
+
+                <row>
+                  <entry>INDAD</entry>
+
+                  <entry>Inductors, Axial Diameter Horizontal Mounting</entry>
+
+                  <entry><emphasis role="bold">INDAD</emphasis> + Lead Spacing
+                  + <emphasis role="bold">W</emphasis> + Lead Width +
+                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
+                  role="bold">D</emphasis> + Body Diameter</entry>
+                </row>
+
+                <row>
+                  <entry>INDADV</entry>
+
+                  <entry>Inductors, Axial Diameter Vertical Mounting</entry>
+
+                  <entry><emphasis role="bold">INDADV</emphasis> + Lead
+                  Spacing + <emphasis role="bold">W</emphasis> + Lead Width +
+                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
+                  role="bold">D</emphasis> + Body Diameter</entry>
+                </row>
+
+                <row>
+                  <entry>JUMP</entry>
+
+                  <entry>Jumpers, Wire</entry>
+
+                  <entry><emphasis role="bold">JUMP</emphasis> + Lead Spacing
+                  + <emphasis role="bold">W</emphasis> + Lead Width</entry>
+                </row>
+
+                <row>
+                  <entry>MTGNP</entry>
+
+                  <entry>Mounting hole, Non-Plated</entry>
+
+                  <entry><emphasis role="bold">MTGNP</emphasis> + Land Size +
+                  <emphasis role="bold">H</emphasis> + Hole Size + <emphasis
+                  role="bold">V</emphasis> + No. of vias + Fab Level</entry>
+                </row>
+
+                <row>
+                  <entry>MTGP</entry>
+
+                  <entry>Mounting hole, Plated</entry>
+
+                  <entry><emphasis role="bold">MTGP</emphasis> + Land Size +
+                  <emphasis role="bold">H</emphasis> + Hole Size + <emphasis
+                  role="bold">Z</emphasis> + Anti-pad size + Fab Level</entry>
+                </row>
+
+                <row>
+                  <entry>OSC</entry>
+
+                  <entry>Oscillators</entry>
+
+                  <entry><emphasis role="bold">OSC</emphasis> + Lead Span +
+                  <emphasis role="bold">W</emphasis> + Lead Diameter +
+                  <emphasis role="bold">P</emphasis> + Pin Pitch + <emphasis
+                  role="bold">L</emphasis> + Body Length + <emphasis
+                  role="bold">H</emphasis> + Component Height + <emphasis
+                  role="bold">Q</emphasis> + Pin Qty</entry>
+                </row>
+
+                <row>
+                  <entry>PGA</entry>
+
+                  <entry>Pin Grid Arrays</entry>
+
+                  <entry><emphasis role="bold">PGA</emphasis> + Pin Qty +
+                  <emphasis role="bold">P</emphasis> + Pitch + <emphasis
+                  role="bold">C</emphasis> + Pin Columns + <emphasis
+                  role="bold">R</emphasis> + Pin Rows + <emphasis
+                  role="bold">L</emphasis> + Body Length + <emphasis
+                  role="bold">X</emphasis> + Body Width + <emphasis
+                  role="bold">H</emphasis> + Component Height</entry>
+                </row>
+
+                <row>
+                  <entry>PIN</entry>
+
+                  <entry>Pin</entry>
+
+                  <entry><emphasis role="bold">PIN</emphasis> + Wire
+                  Width</entry>
+                </row>
+
+                <row>
+                  <entry>RES</entry>
+
+                  <entry>Resistors, Horizontal Mounting (obsolete
+                  prefix)</entry>
+
+                  <entry><emphasis role="bold">RES</emphasis> + Lead Spacing +
+                  <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                  role="bold">L</emphasis> + Body Length + <emphasis
+                  role="bold">D</emphasis> + Body Diameter</entry>
+                </row>
+
+                <row>
+                  <entry>RESAD</entry>
+
+                  <entry>Resistors, Axial Diameter Horizontal Mounting</entry>
+
+                  <entry><emphasis role="bold">RESAD</emphasis> + Lead Spacing
+                  + <emphasis role="bold">W</emphasis> + Lead Width +
+                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
+                  role="bold">D</emphasis> + Body Diameter</entry>
+                </row>
+
+                <row>
+                  <entry>RESADV</entry>
+
+                  <entry>Resistors, Axial Diameter Vertical Mounting</entry>
+
+                  <entry><emphasis role="bold">RESADV</emphasis> + Lead
+                  Spacing + <emphasis role="bold">W</emphasis> + Lead Width +
+                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
+                  role="bold">D</emphasis> + Body Diameter</entry>
+                </row>
+
+                <row>
+                  <entry>RESAR</entry>
+
+                  <entry>Resistors, Axial Rectangular Horizontal
+                  Mounting</entry>
+
+                  <entry><emphasis role="bold">RESAR</emphasis> + Lead Spacing
+                  + <emphasis role="bold">W</emphasis> + Lead Width +
+                  <emphasis role="bold">L</emphasis> + Body Length + <emphasis
+                  role="bold">T</emphasis> + Body thickness + <emphasis
+                  role="bold">H</emphasis> + Body Height</entry>
+                </row>
+
+                <row>
+                  <entry>SIP</entry>
+
+                  <entry>Single-In-Line Packages</entry>
+
+                  <entry><emphasis role="bold">SIP</emphasis> + Body Width +
+                  <emphasis role="bold">W</emphasis> + Lead Width + <emphasis
+                  role="bold">P</emphasis> + Pin Pitch + <emphasis
+                  role="bold">L</emphasis> + Body Length + <emphasis
+                  role="bold">H</emphasis> + Component Height + <emphasis
+                  role="bold">Q</emphasis> + Pin Qty</entry>
+                </row>
+
+                <row>
+                  <entry>TO</entry>
+
+                  <entry>Transistor Outline, Flange Mount, Horizontal</entry>
+
+                  <entry><emphasis role="bold">TO</emphasis> + Pin Pitch +
+                  <emphasis role="bold">P</emphasis> + Body Length + <emphasis
+                  role="bold">X</emphasis> + Body Width + <emphasis
+                  role="bold">X</emphasis> + Height Max + <emphasis
+                  role="bold">-</emphasis> + Pin Qty</entry>
+                </row>
+
+                <row>
+                  <entry>TO</entry>
+
+                  <entry>Transistor Outline, Flange Mount, Vertical</entry>
+
+                  <entry><emphasis role="bold">TO</emphasis> + Pin Pitch +
+                  <emphasis role="bold">P</emphasis> + Body Length + <emphasis
+                  role="bold">X</emphasis> + Body Width + <emphasis
+                  role="bold">X</emphasis> + Height Max + <emphasis
+                  role="bold">-</emphasis> + Pin Qty</entry>
+                </row>
+
+                <row>
+                  <entry>TO</entry>
+
+                  <entry>Transistor Outline, Cylindrical</entry>
+
+                  <entry><emphasis role="bold">TO</emphasis> + Pin Pitch
+                  Radius + <emphasis role="bold">R</emphasis> + Body Diameter
+                  + <emphasis role="bold">X</emphasis> + Height Max +
+                  <emphasis role="bold">-</emphasis> + Pin Qty</entry>
+                </row>
+
+                <row>
+                  <entry>TPCW</entry>
+
+                  <entry>Test Points, Round</entry>
+
+                  <entry><emphasis role="bold">TPCW</emphasis> + Lead Width +
+                  <emphasis role="bold">D</emphasis> + Body Diameter +
+                  <emphasis role="bold">H</emphasis> + Height + Fab
+                  Level</entry>
+                </row>
+
+                <row>
+                  <entry>TPRW</entry>
+
+                  <entry>Test Points, Square</entry>
+
+                  <entry><emphasis role="bold">TPRW</emphasis> + Lead Width +
+                  <emphasis role="bold">L</emphasis> + Body Size + <emphasis
+                  role="bold">H</emphasis> + Height + Fab Level</entry>
+                </row>
+
+                <row>
+                  <entry>TPRW</entry>
+
+                  <entry>Test Points, Rectangular with Rectangular
+                  Leads</entry>
+
+                  <entry><emphasis role="bold">TPRW</emphasis> + Lead Length +
+                  <emphasis role="bold">X</emphasis> + Lead Width + <emphasis
+                  role="bold">L</emphasis> + Body Length + <emphasis
+                  role="bold">T</emphasis> + Body Width + <emphasis
+                  role="bold">H</emphasis> + Height + Fab Level</entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table></para>
+      </section>
+
+      <section>
+        <title>Connector footprint name definitions.</title>
+
+        <para></para>
+
+        <para><table>
+            <title>Table 3: Connector footprint name definitions.</title>
+
+            <tgroup align="left" cols="3">
+              <thead>
+                <row>
+                  <entry align="left">Prefix</entry>
+
+                  <entry align="left">Component description</entry>
+
+                  <entry align="left">Footprint Name Definition</entry>
+                </row>
+              </thead>
+
+              <tbody>
+                <row>
+                  <entry>CON-BNC</entry>
+
+                  <entry>BNC</entry>
+
+                  <entry><emphasis role="bold">CON-BNC</emphasis> + Pin Qty +
+                  Fabrication Level + <emphasis role="bold">_</emphasis> +
+                  Manufacturer Name + <emphasis role="bold">_</emphasis> +
+                  Manufacturer Order Code + <emphasis role="bold">_</emphasis>
+                  + Manufacturer Type Code + <emphasis
+                  role="bold">_</emphasis> + Remarks</entry>
+                </row>
+
+                <row>
+                  <entry>CON-DIL</entry>
+
+                  <entry>Dual-In-Line, Vertical Mounting</entry>
+
+                  <entry><emphasis role="bold">CON-DIL</emphasis> + total Pins
+                  + <emphasis role="bold">W</emphasis> Lead Width + <emphasis
+                  role="bold">P</emphasis> + Row Pitch (+ <emphasis
+                  role="bold">X</emphasis> + Column Pitch [if different]) +
+                  <emphasis role="bold">_</emphasis> + Rows + <emphasis
+                  role="bold">X</emphasis> + Pins per Row + <emphasis
+                  role="bold">_</emphasis> + Body Length + <emphasis
+                  role="bold">X</emphasis> + Body Thickness + <emphasis
+                  role="bold">X</emphasis> + Component Height + Fabrication
+                  Level</entry>
+                </row>
+
+                <row>
+                  <entry>CON-DIN41612</entry>
+
+                  <entry>DIN 41612 Connector</entry>
+
+                  <entry><emphasis role="bold">CON-DIN41612</emphasis> + Pin
+                  Qty + Fabrication Level + <emphasis role="bold">_</emphasis>
+                  + Manufacturer Name + <emphasis role="bold">_</emphasis> +
+                  Manufacturer Order Code + <emphasis role="bold">_</emphasis>
+                  + Manufacturer Type Code + <emphasis
+                  role="bold">_</emphasis> + Remarks</entry>
+                </row>
+
+                <row>
+                  <entry>CON-DIN41617</entry>
+
+                  <entry>DIN 41617 Connector</entry>
+
+                  <entry><emphasis role="bold">CON-DIN41617</emphasis> + Pin
+                  Qty + Fabrication Level + <emphasis role="bold">_</emphasis>
+                  + Manufacturer Name + <emphasis role="bold">_</emphasis> +
+                  Manufacturer Order Code + <emphasis role="bold">_</emphasis>
+                  + Manufacturer Type Code + <emphasis
+                  role="bold">_</emphasis> + Remarks</entry>
+                </row>
+
+                <row>
+                  <entry>CON-DIP</entry>
+
+                  <entry>Dual-In-Line Package-like, Vertical Mounting</entry>
+
+                  <entry><emphasis role="bold">CON-DIP</emphasis> + total Pins
+                  + <emphasis role="bold">W</emphasis> Lead Width + <emphasis
+                  role="bold">P</emphasis> + Row Pitch (+ <emphasis
+                  role="bold">X</emphasis> + Column Pitch [if different]) +
+                  <emphasis role="bold">_</emphasis> + Rows + <emphasis
+                  role="bold">X</emphasis> + Pins per Row + <emphasis
+                  role="bold">_</emphasis> + Body Length + <emphasis
+                  role="bold">X</emphasis> + Body Thickness + <emphasis
+                  role="bold">X</emphasis> + Component Height + Fabrication
+                  Level</entry>
+                </row>
+
+                <row>
+                  <entry>CON-EDGE</entry>
+
+                  <entry>Edge Card Connector</entry>
+
+                  <entry><emphasis role="bold">CON-EDGE</emphasis> + Pin Qty +
+                  Fabrication Level + <emphasis role="bold">_</emphasis> +
+                  Manufacturer Name + <emphasis role="bold">_</emphasis> +
+                  Manufacturer Order Code + <emphasis role="bold">_</emphasis>
+                  + Manufacturer Type Code + <emphasis
+                  role="bold">_</emphasis> + Remarks</entry>
+                </row>
+
+                <row>
+                  <entry>CON-HDR</entry>
+
+                  <entry>Headers, Vertical Mounting (obsolete prefix)</entry>
+
+                  <entry><emphasis role="bold">CON-HDR</emphasis> + total Pins
+                  + <emphasis role="bold">W</emphasis> Lead Width + <emphasis
+                  role="bold">P</emphasis> + Row Pitch (+ <emphasis
+                  role="bold">X</emphasis> + Column Pitch [if different]) +
+                  <emphasis role="bold">_</emphasis> + Rows + <emphasis
+                  role="bold">X</emphasis> + Pins per Row + <emphasis
+                  role="bold">_</emphasis> + Body Length + <emphasis
+                  role="bold">X</emphasis> + Body Thickness + <emphasis
+                  role="bold">X</emphasis> + Component Height + Fabrication
+                  Level</entry>
+                </row>
+
+                <row>
+                  <entry>CON-HDRRA</entry>
+
+                  <entry>Headers, Right Angle</entry>
+
+                  <entry><emphasis role="bold">CON-HDRRA</emphasis> + total
+                  Pins + <emphasis role="bold">W</emphasis> Lead Width +
+                  <emphasis role="bold">P</emphasis> + Row Pitch (+ <emphasis
+                  role="bold">X</emphasis> + Column Pitch [if different]) +
+                  <emphasis role="bold">_</emphasis> + Rows + <emphasis
+                  role="bold">X</emphasis> + Pins per Row + <emphasis
+                  role="bold">_</emphasis> + Body Length + <emphasis
+                  role="bold">X</emphasis> + Body Thickness + <emphasis
+                  role="bold">X</emphasis> + Component Height + Fabrication
+                  Level</entry>
+                </row>
+
+                <row>
+                  <entry>CON-HDRV</entry>
+
+                  <entry>Headers, Vertical Mounting</entry>
+
+                  <entry><emphasis role="bold">CON-HDRV</emphasis> + total
+                  Pins + <emphasis role="bold">W</emphasis> Lead Width +
+                  <emphasis role="bold">P</emphasis> + Row Pitch (+ <emphasis
+                  role="bold">X</emphasis> + Column Pitch [if different]) +
+                  <emphasis role="bold">_</emphasis> + Rows + <emphasis
+                  role="bold">X</emphasis> + Pins per Row + <emphasis
+                  role="bold">_</emphasis> + Body Length + <emphasis
+                  role="bold">X</emphasis> + Body Thickness + <emphasis
+                  role="bold">X</emphasis> + Component Height + Fabrication
+                  Level</entry>
+                </row>
+
+                <row>
+                  <entry>CON-JUMP</entry>
+
+                  <entry>Jumper</entry>
+
+                  <entry><emphasis role="bold">CON-JUMP</emphasis> + total
+                  Pins + <emphasis role="bold">W</emphasis> + Lead Width +
+                  <emphasis role="bold">P</emphasis> + Row Pitch + <emphasis
+                  role="bold">_</emphasis> + Body Length + <emphasis
+                  role="bold">X</emphasis> + Body Thickness + <emphasis
+                  role="bold">X</emphasis> + Component Height + Fabrication
+                  Level</entry>
+                </row>
+
+                <row>
+                  <entry>CON-SIL</entry>
+
+                  <entry>Single-In-Line, Vertical Mounting (obsolete
+                  prefix)</entry>
+
+                  <entry><emphasis role="bold">CON-SIL</emphasis> + total Pins
+                  + <emphasis role="bold">W</emphasis> + Lead Width +
+                  <emphasis role="bold">P</emphasis> + Row Pitch + <emphasis
+                  role="bold">_</emphasis> + Body Length + <emphasis
+                  role="bold">X</emphasis> + Body Thickness + <emphasis
+                  role="bold">X</emphasis> + Component Height + Fabrication
+                  Level</entry>
+                </row>
+
+                <row>
+                  <entry>CON-SILRA</entry>
+
+                  <entry>Single-In-Line, Right Angle</entry>
+
+                  <entry><emphasis role="bold">CON-SILRA</emphasis> + total
+                  Pins + <emphasis role="bold">W</emphasis> + Lead Width +
+                  <emphasis role="bold">P</emphasis> + Row Pitch + <emphasis
+                  role="bold">_</emphasis> + Body Length + <emphasis
+                  role="bold">X</emphasis> + Body Thickness + <emphasis
+                  role="bold">X</emphasis> + Component Height + Fabrication
+                  Level</entry>
+                </row>
+
+                <row>
+                  <entry>CON-SILRV</entry>
+
+                  <entry>Single-In-Line, Vertical Mounting</entry>
+
+                  <entry><emphasis role="bold">CON-SILV</emphasis> + total
+                  Pins + <emphasis role="bold">W</emphasis> + Lead Width +
+                  <emphasis role="bold">P</emphasis> + Row Pitch + <emphasis
+                  role="bold">_</emphasis> + Body Length + <emphasis
+                  role="bold">X</emphasis> + Body Thickness + <emphasis
+                  role="bold">X</emphasis> + Component Height + Fabrication
+                  Level</entry>
+                </row>
+
+                <row>
+                  <entry>CON-TERM</entry>
+
+                  <entry>Terminal Connector</entry>
+
+                  <entry><emphasis role="bold">CON-TERM</emphasis> + Pin Qty +
+                  Fabrication Level + <emphasis role="bold">_</emphasis> +
+                  Manufacturer Name + <emphasis role="bold">_</emphasis> +
+                  Manufacturer Order Code + <emphasis role="bold">_</emphasis>
+                  + Manufacturer Type Code + <emphasis
+                  role="bold">_</emphasis> + Remarks</entry>
+                </row>
+
+                <row>
+                  <entry>CON-USB</entry>
+
+                  <entry>Universal Serial Bus Connector</entry>
+
+                  <entry><emphasis role="bold">CON-USB</emphasis> + Pin Qty +
+                  Fabrication Level + <emphasis role="bold">_</emphasis> +
+                  Manufacturer Name + <emphasis role="bold">_</emphasis> +
+                  Manufacturer Order Code + <emphasis role="bold">_</emphasis>
+                  + Manufacturer Type Code + <emphasis
+                  role="bold">_</emphasis> + Remarks</entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table></para>
+      </section>
+    </section>
+  </appendix>
+
+  <appendix>
+    <title>PCB Glossary.</title>
+
+    <para>Now follow some used terms and their definitions in relation to the
+    context of pcb, and the usage in pcb.</para>
+
+    <para><glosslist>
+        <glossentry>
+          <glossterm>arc</glossterm>
+
+          <glossdef>
+            <para>A curved trace drawn on a drawing layer.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>aperture</glossterm>
+
+          <glossdef>
+            <para>In reference to RS-274X files, an aperture is a brush shape
+            used to draw things. Originally, the aperture was a physical hole
+            of a specific shape and size through which light exposed a
+            photographic film.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>attribute</glossterm>
+
+          <glossdef>
+            <para>Varied meanings. Elements and boards may have attributes
+            assigned to them, which are arbitrary mappings between a name and
+            its value. pcb does not currently use those attributes itself.
+            Within pcb an attribute is an arbitrary value passed between the
+            core and the various HIDs, such as checkboxes and file
+            names.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>bloat</glossterm>
+
+          <glossdef>
+            <para>The most that the copper areas can be expanded before they
+            are allowed to touch. For example, two 40 mil lines 10 mil apart
+            can bloat up to (but not including) 5 mil before they touch, so
+            the maximum bloat would be 4.99 mil.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>board</glossterm>
+
+          <glossdef>
+            <para>The physical printed circuit board that is depicted by your
+            layout. "Board" refers to the physical board, "layout" refers to
+            the electronic data.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>clad</glossterm>
+
+          <glossdef>
+            <para>A thin layer of copper attached to a thin layer of
+            insulator. Once etched, the remaining copper forms the electrical
+            connections described by the layout file.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>clearance</glossterm>
+
+          <glossdef>
+            <para>The distance beween the copper around a hole (the annulus)
+            and the copper in the surrounding polygon, or between any other
+            copper item (line or arc) and a surrounding polygon.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>courtyard</glossterm>
+
+          <glossdef>
+            <para>The area around an element which is still "used" by the
+            element, for its electrical and mechanical clearance requirements.
+            pcb does not use this term, nor explicitly support a courtyard
+            definition for elements.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>drawing layer</glossterm>
+
+          <glossdef>
+            <para>While designing your circuit board, pcb provides a number of
+            layers to draw on. While it's convenient to think of each drawing
+            layer as corresponding to one of the physical layers (copper,
+            silk, etc), it's possible to group multiple drawing layers
+            together into one physical layer, or assign drawing layers to
+            purposes not corresponding to physical layers. For example, you
+            could have two drawing layers corresponding to your ground plane
+            copper layer, one for the ground plane itself and a second
+            (differently colored) one for any signals that need to be routed
+            on the ground plane layer.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>DRC</glossterm>
+
+          <glossdef>
+            <para>Design Rule Check. In pcb your design is scanned and
+            compared to a number of design rules, such as minimum trace
+            thickness and spacing, and any violations are noted. Then, you are
+            tortured to death with non-modal dialogs.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>drill file</glossterm>
+
+          <glossdef>
+            <para>A computer-readable file intended to be used by automated
+            drilling machines. The information includes drill diameters and
+            locations. pcb may produce up to two drill files, one for plated
+            holes and one for unplated holes. Automated drill machines were
+            originally designed by the Excellon company, so drill files are
+            sometimes called excellon files. Also called an NC drill
+            file.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>element</glossterm>
+
+          <glossdef>
+            <para>In pcb an element represents any part you might install on
+            your board, such as resistors, capacitors, and integrated
+            circuits. Note that this also includes anything on your board that
+            has its own footprint, even if it doesn't have a part associated
+            with it, such as test points, registration targets, and edge
+            connectors. An element has a footprint, but is more than a
+            footprint - it also has a reference designator (refdes), value,
+            description, and location. "Footprint" refers to the pattern;
+            "element" refers to the instance. For example, your layout might
+            have four elements that use one footprint.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>etch resist</glossterm>
+
+          <glossdef>
+            <para>Not to be confused with solder resist, etch resist is used
+            during the fabrication of the copper layers to define what copper
+            is removed and what copper will remain.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>excellon file</glossterm>
+
+          <glossdef>
+            <para>See drill file.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>fab, fab house, fabrication house</glossterm>
+
+          <glossdef>
+            <para>A company that produces (fabricates) printed circuit boards
+            from mechanical design files. Most accept (or expect) gerber
+            (RS-274X) format files.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>fab drawing, fabrication drawing</glossterm>
+
+          <glossdef>
+            <para>A drawing that shows a mechanical overview of the board,
+            including the physical outline and all physical holes. This is
+            often used by fabs to sanity check their interpretation of your
+            design files.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>fiducial</glossterm>
+
+          <glossdef>
+            <para>A set of fiducials (typically 2, sometimes 3) can serve as a
+            reference for a "Pick-and-Place" machine to accurately place parts
+            on a pcb. Fiducials are free of solder mask and solder paste, as
+            to provide a good contrast with the board materials to allow for
+            proper optical recognition.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>footprint</glossterm>
+
+          <glossdef>
+            <para>A footprint is the pattern on a circuit board to which your
+            parts are attached. This includes all copper, silk, solder mask,
+            and solder paste information. In other EDA programs, this may be
+            referred to as a "land pattern". "Footprint" sometimes is used to
+            refer to a footprint file. "Footprint" refers to the pattern;
+            "element" refers to the instance in the pcb file. For example,
+            your layout might have four elements that use one
+            footprint.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>footprint file</glossterm>
+
+          <glossdef>
+            <para>A file that contains a single footprint definition.
+            Normally, this means it describes one element, although there are
+            exceptions.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>FR4</glossterm>
+
+          <glossdef>
+            <para>A specification for the insulating layer used in printed
+            circuit board manufacture. FR4 is the most common grade, and is
+            often an epoxy fiberglass composite.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>gEDA</glossterm>
+
+          <glossdef>
+            <para>The GPL'd Electronic Design Automation suite of tools. See
+            http://www.geda.seul.org. It includes, among other things, the
+            gschem schematic editor, which produces input that pcb can
+            use.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>gerber, gerber file</glossterm>
+
+          <glossdef>
+            <para>The common name for an RS-274X formatted file. Originally
+            named after the Gerber Photoplotter Company.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>gschem</glossterm>
+
+          <glossdef>
+            <para>The schematic editor that comes with gEDA.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>keepout</glossterm>
+
+          <glossdef>
+            <para>A region created by the designer solely to prevent something
+            else from existing there. For example, an element with a copper
+            keepout would prevent the autorouter from routing traces through
+            that area. pcb does not currently support keepouts.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>landpattern</glossterm>
+
+          <glossdef>
+            <para>See footprint.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>layer</glossterm>
+
+          <glossdef>
+            <para>There are two meanings of "layer'' in pcb. See "drawing
+            layer" and "physical layer".</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>layout</glossterm>
+
+          <glossdef>
+            <para>The board design information depicted by the edits you've
+            made; this is what's stored in a pcb file and displayed on the
+            screen. "Board" refers to the physical board, "layout" refers to
+            the electronic data.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>line</glossterm>
+
+          <glossdef>
+            <para>A straight segment drawn on a drawing layer.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>mark</glossterm>
+
+          <glossdef>
+            <para>Normally, pcb reports coordinates relative to the origin
+            (upper left) of the board. However, you can designate a location
+            on the board such that pcb also reports coordinates relative to
+            that location. Such a location is the mark, and is drawn with an X
+            shape. Elements also have a mark; this is the local origin from
+            which other locations within the element are measured. Element
+            marks are drawn as small diamonds.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>mask</glossterm>
+
+          <glossdef>
+            <para>See "solder mask".</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>mil</glossterm>
+
+          <glossdef>
+            <para>A mil is 0.001 inch, or a "milli-inch". Other packages may
+            call it a "thou", short for a thousandth of an inch (25.4 mm /
+            1000 = 0.0254 mm).</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>NC drill</glossterm>
+
+          <glossdef>
+            <para>Numerically Controlled Drill file. See "drill file".</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>negative layer, negative plane</glossterm>
+
+          <glossdef>
+            <para>For most drawing layers, the stuff you draw corresponds to
+            stuff that exists in a physical layer. For example, trace drawn on
+            a copper layer results in copper existing on the board. For
+            negative layers, however, what you draw results in what does
+            <emphasis role="bold">not</emphasis> exist on the board. The
+            solder mask gerber, for example, is such a layer - a circle drawn
+            in the solder mask gerber results in a hole in the physical solder
+            mask. pcb represents such layers in a meaningful way on the
+            screen, but exporters may use a negative layer according to the
+            needs of the fabrication process.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>netlist</glossterm>
+
+          <glossdef>
+            <para>A list of symbolic electrical connections, normally provided
+            as input to pcb from a schematic layout program, which represents
+            the desired electrical connectivity of the board. pcb can compare
+            the desired (loaded) netlist with the actual (copper) netlist and
+            advise you of shorts or unrouted connections. If there are
+            unrouted connections, it can use those to create a rat's nest to
+            assist you in routing them.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>outline</glossterm>
+
+          <glossdef>
+            <para>The physical shape and dimension of your physical board. By
+            default, this is a rectangle the size of your working area (the
+            "board size"), but if you name one of the drawing layers "outline"
+            that is used instead. While your board is itself a polygon shape,
+            a polygon drawing object is not used to denote its outline - by
+            convention, 10 mil (0.254 mm) wide lines are used to draw the
+            outline, and the centerlines of those lines indicate the actual
+            outline edges.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>package</glossterm>
+
+          <glossdef>
+            <para>An electronic component can be packaged in one or more
+            discrete forms, this is called a package.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>pad</glossterm>
+
+          <glossdef>
+            <para>An electrical connection to an element which does not
+            require a through hole, for example as used by a surface mounted
+            device.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>part</glossterm>
+
+          <glossdef>
+            <para>A basic electronic element usually packaged in a discrete
+            form with two or more connecting leads or metallic pads. Parts are
+            intended to be connected together, usually by soldering to a
+            printed circuit board, to create an electronic circuit with a
+            particular function.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>paste</glossterm>
+
+          <glossdef>
+            <para>See "solder paste".</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>paste stencil</glossterm>
+
+          <glossdef>
+            <para>A thin sheet, usually plastic or metal and 0.002 to 0.005
+            inches thick, with holes where solder paste should be applied to
+            your board.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>pcb file</glossterm>
+
+          <glossdef>
+            <para>A file used by pcb to store board layout. Such files end in
+            ".pcb" and are normally readable (and editable) text files.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>pcb units</glossterm>
+
+          <glossdef>
+            <para>Internally, pcb maintains all measurements in its own units,
+            typically with nanometer (nm) resolution, which is much smaller
+            than both mils and millimeters. These are the default units used
+            in pcb files. At the time this text was written. pcb-fpw stil uses
+            units that are 1/100 of a mil, and pcb parses these as the old
+            "no-units file format" units.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>physical layer</glossterm>
+
+          <glossdef>
+            <para>In the manufacture of circuit boards, a physical layer is,
+            for example, each layer of copper, each side's silkscreen, the
+            solder mask, the paste stencil, the physical outline, etc. Each
+            physical layer requires a single layer definition to be produced
+            by pcb; for professional fabs there is one gerber file for each
+            physical layer.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>pin</glossterm>
+
+          <glossdef>
+            <para>An electrical connection to an element which requires a
+            through hole, for example as needed by a DIP socket. Contrast with
+            a pad. Note that pins and vias are mechanically identical,
+            although pins default to untented while vias default to
+            tented.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>plated hole, plated through hole, PTH</glossterm>
+
+          <glossdef>
+            <para>During fabrication, some holes become coated with copper
+            which connects all the copper layers together at that point. Since
+            this is normally done by electroplating, such holes are called
+            "plated" holes, and normally have a copper annulus around
+            them.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>polygon</glossterm>
+
+          <glossdef>
+            <para>A polygon defines the ouline of a drawn region on a drawing
+            layer. When used on a drawing layer representing a copper physical
+            layer, it causes a copper polygon to exist in the final board, for
+            example. Unlike lines and arcs, a polygon does not have a
+            "thickness" as the lines define the exact boundary of the
+            shape.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>rectangle</glossterm>
+
+          <glossdef>
+            <para>A special case of a polygon.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>resist</glossterm>
+
+          <glossdef>
+            <para>In pcb this usually means the etch resist.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>RS-274D, RS-274X</glossterm>
+
+          <glossdef>
+            <para>A file format used originally by photoplotters, but now used
+            by any machine used to fabricate circuit boards. The D variant
+            requires a separate file defining all the apertures, and is
+            considered obsolete. The X variant is newer and includes the
+            aperture definitions. Since these formats were defined by the
+            Gerber Photoplotter company, they are commonly known as "gerber
+            files". Although there is no "owner" of the RS-274X spec, it can
+            be found at various places online such as
+            "http://www.artwork.com/gerber/274x/rs274xrevd_e.pdf".</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>shrink</glossterm>
+
+          <glossdef>
+            <para>The most that a copper area can decrease in size before it
+            no longer touches (overlaps) an adjacent copper area.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>silk, silkscreen</glossterm>
+
+          <glossdef>
+            <para>A layer of ink or pigment drawn on the circuit board
+            (usually, one for each side of the board) in order to include, for
+            example, part numbers or element outlines.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>soldermask</glossterm>
+
+          <glossdef>
+            <para>A layer of heat resistant film placed over the outermost
+            copper layers of your board, to prevent solder from sticking to
+            any covered copper. When used to cover traces routed between pins
+            or pads, this can help avoid shorts to those traces. Note that
+            when shown in pcb the mask is drawn where the film exists, but
+            when output (to postscript or gerber, for example), it is often
+            "drawn" where the mask is to be removed.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>solder resist</glossterm>
+
+          <glossdef>
+            <para>See soldermask.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>solder paste</glossterm>
+
+          <glossdef>
+            <para>Ground up solder mixed with flux. This paste is normally
+            squeegeed through a paste stencil to deposit a measured amount of
+            paste on each pad on the board. Once the paste is applied, parts
+            can be positioned on the paste, and the board heated - which melts
+            the paste and solders the parts to the board.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>tented</glossterm>
+
+          <glossdef>
+            <para>When a circuit board is made with a solder mask, you have
+            the option of opening a hole in the mask over vias, or leaving the
+            solder mask intact over them. A via with an intact solder mask
+            over it is tented, as the solder mask acts like a tent over the
+            copper and hole.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>thermal, thermal relief</glossterm>
+
+          <glossdef>
+            <para>Since copper is an efficient heat sink, connections to a
+            large region of copper would be very difficult to solder - the
+            copper heat sink prevents you from adequately heating the
+            connection. To fix this, small cutouts are made around each such
+            connection to create a thermal barrier, so that heat applied to
+            the connection stays at the connection. Such a set of cutouts, and
+            the copper bridges that remain, is called a "thermal". Thermals
+            come in many patterns, which allows the designer to ensure
+            adequate electrical connectivity and/or manufacturability.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>thickness</glossterm>
+
+          <glossdef>
+            <para>In pcb this often refers to the width of a line or arc, not
+            the thickness of the copper film used to produce the board. This
+            is also the "size" of a line or arc.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>thou</glossterm>
+
+          <glossdef>
+            <para>See "mil".</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>toner transfer, TT</glossterm>
+
+          <glossdef>
+            <para>A home-fabrication method that involves printing a layer
+            with a laser printer, and transferring the toner from that print
+            to an unetched copper board. The toner acts as an etch
+            resist.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>trace</glossterm>
+
+          <glossdef>
+            <para>Any copper added to a copper layer whose purpose is to
+            connect electrical signals between elements. Traces may be built
+            up from lines, arcs, and polygons.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>unplated hole</glossterm>
+
+          <glossdef>
+            <para>During fabrication, some holes are drilled after
+            electroplating, and so do not receive the copper that would
+            otherwise connect layers. Such holes are unplated holes, and
+            normally do not have a copper annulus around them either.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>untented</glossterm>
+
+          <glossdef>
+            <para>When a hole is placed in the solder mask in order to expose
+            a via below it, such a via is untented. Untented vias are
+            available as test points or places to add wires later.</para>
+          </glossdef>
+        </glossentry>
+
+        <glossentry>
+          <glossterm>via</glossterm>
+
+          <glossdef>
+            <para>A via is a connection between different copper layers. In
+            pcb all vias are "through" vias, in that they connect copper on
+            all layers.</para>
+          </glossdef>
+        </glossentry>
+      </glosslist></para>
+  </appendix>
+
+  <index></index>
 </book>
