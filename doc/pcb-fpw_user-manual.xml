@@ -572,7 +572,7 @@
 
       <para><warning>
           <para>Installation will require su (root) privileges.</para>
-        </warning>Uninstall the rpm package with:Change </para>
+        </warning>Uninstall the rpm package with:Change</para>
 
       <para><programlisting>rpm -e pcb-fpw</programlisting></para>
 
@@ -3919,4 +3919,37 @@
   </appendix>
 
   <index></index>
+
+  <appendix>
+    <title>Pin/pad #1 locations.</title>
+
+    <para>Following locations are given with regard to the top
+    view:<itemizedlist>
+        <listitem>
+          <para>Parts with two pins/pads: left pin/pad.</para>
+        </listitem>
+
+        <listitem>
+          <para>Parts with pins/pads on two sides: left side, top pin.</para>
+        </listitem>
+
+        <listitem>
+          <para>Parts with pins on four sides (for pin 1 on a corner): left
+          side, top pin/pad.</para>
+        </listitem>
+
+        <listitem>
+          <para>Parts with pads on four sides (for pin 1 center): top
+          side.</para>
+        </listitem>
+
+        <listitem>
+          <para>Pin Grid Arrays (PGA): left side, top pin.</para>
+        </listitem>
+
+        <listitem>
+          <para>Ball Grid Arrays (BGA): left side, top pad.</para>
+        </listitem>
+      </itemizedlist></para>
+  </appendix>
 </book>
