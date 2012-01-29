@@ -3918,8 +3918,6 @@
       </glosslist></para>
   </appendix>
 
-  <index></index>
-
   <appendix>
     <title>Pin/pad #1 locations.</title>
 
@@ -3952,4 +3950,6 @@
         </listitem>
       </itemizedlist></para>
   </appendix>
+
+  <index></index>
 </book>
