@@ -14,7 +14,7 @@ README
 TODO
 archive.sh
 autogen.sh
-configure.in
+configure.ac
 pcb-gfpw.glade
 pcb-gfpw.gladep
 stamp-h.in
