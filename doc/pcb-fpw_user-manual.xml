@@ -775,7 +775,7 @@
         role="bold">About pcb-gfpw</emphasis>" dialog window appears, shortly
         followed by the "<emphasis role="bold">main window</emphasis>" dialog
         window.<figure>
-            <title>Figure 1: "About pcb-fpw" dialog window.</title>
+            <title>The "About pcb-fpw" dialog window.</title>
 
             <mediaobject>
               <imageobject>
@@ -794,7 +794,7 @@
             message about the names of the authors or translators are given
             (you can select the tab of your choice for more
             information).<figure>
-                <title>Figure 2: "Credits" dialog window.</title>
+                <title>The "Credits" dialog window.</title>
 
                 <mediaobject>
                   <imageobject>
@@ -814,7 +814,7 @@
             distributed.</para>
 
             <figure>
-              <title>Figure 3: "License" dialog window.</title>
+              <title>The "License" dialog window.</title>
 
               <mediaobject>
                 <imageobject>
@@ -922,7 +922,7 @@
           <title>The "Footprint" tab.</title>
 
           <para><figure>
-              <title>Figure 4: "Footprint" tab in main window.</title>
+              <title>The "Footprint" tab in the main window.</title>
 
               <mediaobject>
                 <imageobject>
@@ -1119,7 +1119,7 @@
           <title>The "Pins/pads" tab.</title>
 
           <para><figure>
-              <title>Figure 5: "Pins/Pads" tab in main window.</title>
+              <title>The "Pins/Pads" tab in the main window.</title>
 
               <mediaobject>
                 <imageobject>
@@ -1235,7 +1235,7 @@
 
               <para>This select exception dialog is invoked by clicking the
               button left of the text entry.<figure>
-                  <title>Figure 6: "Select exceptions" dialog window.</title>
+                  <title>The "Select exceptions" dialog window.</title>
 
                   <mediaobject>
                     <imageobject>
@@ -1339,7 +1339,7 @@
           <title>The "Silkscreen" tab.</title>
 
           <para><figure>
-              <title>Figure 7: "Silkscreen" tab in main window.</title>
+              <title>The "Silkscreen" tab in the main window.</title>
 
               <mediaobject>
                 <imageobject>
@@ -1427,7 +1427,7 @@
           <title>The "Thermal pad" tab.</title>
 
           <para><figure>
-              <title>Figure 8: "Thermal pad" tab in main window.</title>
+              <title>The "Thermal pad" tab in the main window.</title>
 
               <mediaobject>
                 <imageobject>
@@ -1519,7 +1519,7 @@
           <title>The "Heel &amp; Toe goals" tab.</title>
 
           <para><figure>
-              <title>Figure 9: "Heel &amp; Toe goals" tab in main
+              <title>The "Heel &amp; Toe goals" tab in the main
               window.</title>
 
               <mediaobject>
@@ -1953,7 +1953,7 @@
       definitions.</title>
 
       <para><table>
-          <title>Table 1: Surface Mounting Technology (SMT) footprint name
+          <title>Surface Mounting Technology (SMT) footprint name
           definitions.</title>
 
           <tgroup align="left" cols="3">
@@ -2690,7 +2690,7 @@
       <title>Pin Through Hole (PTH) footprint name definitions.</title>
 
       <para><table>
-          <title>Table 2: Pin Throuh Hole Technology (PTH) footprint name
+          <title>Pin Throuh Hole Technology (PTH) footprint name
           definitions.</title>
 
           <tgroup align="left" cols="3">
@@ -3105,7 +3105,7 @@
       <title>Connector footprint name definitions.</title>
 
       <para><table>
-          <title>Table 3: Connector footprint name definitions.</title>
+          <title>Connector footprint name definitions.</title>
 
           <tgroup align="left" cols="3">
             <thead>
