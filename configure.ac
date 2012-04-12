@@ -151,6 +151,13 @@ AC_FUNC_MALLOC
 AC_FUNC_REALLOC
 AC_CHECK_FUNCS([memset strcasecmp strdup strrchr])
 
+# Search for glib.
+PKG_CHECK_MODULES(GLIB, glib-2.0, ,
+		[AC_MSG_RESULT([Note: cannot find glib-2.0.
+You may want to review the following errors:
+$GLIB_PKG_ERRORS])]
+)
+
 pkg_modules="gtk+-2.0 >= 2.0.0"
 PKG_CHECK_MODULES(PACKAGE, [$pkg_modules])
 AC_SUBST(PACKAGE_CFLAGS)
