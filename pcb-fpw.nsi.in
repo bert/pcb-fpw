@@ -1,0 +1,127 @@
+Name "pcb-fpw"
+OutFile "pcb-fpw-@VER@_setup.exe"
+Icon "fpw-48.ico"
+UninstallIcon "fpw-uninstall.ico"
+
+SetCompress force ; (can be off or force)
+CRCCheck on ; (can be off)
+
+LicenseText "pcb-fpw is a GPL licensed program. Here is the GPL license."
+LicenseData "COPYING"
+
+InstallDir "$PROGRAMFILES\pcb-fpw"
+InstallDirRegKey HKEY_LOCAL_MACHINE "SOFTWARE\pcb-fpw" ""
+; DirShow ; (make this hide to not let the user change it)
+DirText "Select the directory to install pcb-fpw in:"
+
+; optional section
+Section "Start Menu Shortcuts"
+ CreateDirectory "$SMPROGRAMS\pcb-fpw"
+ CreateShortCut "$SMPROGRAMS\pcb-fpw\Uninstall.lnk" "$INSTDIR\uninst.exe" "" "$INSTDIR\uninst.exe" 0
+ CreateShortCut "$SMPROGRAMS\pcb-fpw\pcb-fpw.lnk" "$INSTDIR\bin\pcb-fpw.exe" "" "$INSTDIR\bin\pcb-fpw.exe" 0
+SectionEnd
+
+Section "" ; (default section)
+
+; List of files to install
+SetOutPath "$INSTDIR"
+File COPYING
+File README
+File AUTHORS
+File NEWS
+File /r doc
+File /r examples
+
+SetOutPath $INSTDIR\bin
+File src\pcb-fpw.exe
+File src\pcb-fpw-image.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\libgcc_s_sjlj-1.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\libstdc++-6.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\iconv.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\libpcre-0.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\libintl-8.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\libffi-6.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\libgdk-win32*.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\libgdk_pixbuf*.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\libgtk-win32*.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\libgio*.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\libcairo*.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\libjasper-1.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\zlib*.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\libglib*.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\libatk*.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\libgobject*.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\libgmodule*.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\libgthread*.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\libpango*.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\libpng*.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\libtiff*.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\libjpeg*.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\libpixman-1-0.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\libfontconfig*.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\libfreetype*.dll
+File \usr\local\mingw32\bin\libjson-glib-1.0-0.dll
+File \usr\i686-w64-mingw32\sys-root\mingw\bin\gdk-pixbuf-query-loaders.exe
+
+SetOutPath $INSTDIR\etc
+File /r \usr\i686-w64-mingw32\sys-root\mingw\etc\gtk-2.0
+File /r \usr\i686-w64-mingw32\sys-root\mingw\etc\fonts
+File /r \usr\i686-w64-mingw32\sys-root\mingw\etc\pango
+SetOutPath $INSTDIR\etc\gtk-2.0
+File \usr\i686-w64-mingw32\sys-root\mingw\share\themes\MS-Windows\gtk-2.0\gtkrc
+
+# Plugins
+SetOutPath $INSTDIR\plugins
+File src\plugins\*.dll
+
+# pango
+SetOutPath $INSTDIR\lib
+File /r \usr\i686-w64-mingw32\sys-root\mingw\lib\pango
+
+# pixbuf etc
+SetOutPath $INSTDIR\lib\gdk-pixbuf-2.0\2.10.0
+File /r \usr\i686-w64-mingw32\sys-root\mingw\lib\gdk-pixbuf-2.0\2.10.0\loaders*
+SetOutPath $INSTDIR\lib\gtk-2.0\2.10.0\engines
+File \usr\i686-w64-mingw32\sys-root\mingw\lib\gtk-2.0\2.10.0\engines\*
+SetOutPath $INSTDIR\share\themes
+File /r \usr\i686-w64-mingw32\sys-root\mingw\share\themes\*
+
+# Build the gdk-pixbuf.loaders file automatically
+#ExpandEnvStrings $0 %COMSPEC%
+#nsExec::ExecToStack '"$0" /C ""$INSTDIR\bin\gdk-pixbuf-query-loaders" > "$INSTDIR\lib\gdk-pixbuf-2.0\2.10.0\loaders.cache""'
+
+; Set up association with .fpw files
+DeleteRegKey HKCR ".fpw"
+DeleteRegKey HKCU "Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.fpw"
+WriteRegStr HKCR ".fpw" "" "pcb-fpw File"
+DeleteRegKey HKCR "pcb-fpw File"
+DeleteRegKey HKCR "pcb-fpw.Document"
+WriteRegStr HKCR "pcb-fpw File" "" "pcb-fpw File"
+WriteRegStr HKCR "pcb-fpw File\DefaultIcon" "" "$INSTDIR\bin\pcb-fpw.exe,1"
+WriteRegStr HKCR "pcb-fpw File\shell" "" "open"
+WriteRegStr HKCR "pcb-fpw File\shell\open\command" "" '$INSTDIR\bin\pcb-fpw.exe "%1"'
+
+System::Call 'Shell32::SHChangeNotify(i 0x8000000, i 0, i 0, i 0)'
+
+; Unistaller section. Should really clean up file associations as well.
+WriteRegStr HKEY_LOCAL_MACHINE "SOFTWARE\pcb-fpw" "" "$INSTDIR"
+WriteRegStr HKEY_LOCAL_MACHINE "Software\Microsoft\Windows\CurrentVersion\Uninstall\pcb-fpw" "DisplayName" "pcb-fpw (remove only)"
+WriteRegStr HKEY_LOCAL_MACHINE "Software\Microsoft\Windows\CurrentVersion\Uninstall\pcb-fpw" "UninstallString" '"$INSTDIR\bin\uninst.exe"'
+
+; write out uninstaller
+WriteUninstaller "$INSTDIR\uninst.exe"
+SectionEnd ; end of default section
+
+; begin uninstall settings/section
+UninstallText "This will uninstall pcb-fpw from your system"
+
+Section Uninstall
+; add delete commands to delete whatever files/registry keys/etc you installed here.
+DeleteRegKey HKEY_LOCAL_MACHINE "SOFTWARE\pcb-fpw"
+DeleteRegKey HKEY_LOCAL_MACHINE "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\pcb-fpw"
+RMDir /r "$INSTDIR"
+DeleteRegKey HKCR ".fpw"
+DeleteRegKey HKCR "pcb-fpwFile"
+SectionEnd ; end of uninstall section
+
+; eof
