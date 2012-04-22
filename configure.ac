@@ -240,6 +240,8 @@ fi
 AC_CONFIG_FILES([
 Makefile
 po/Makefile.in
+doc/doxygen/Makefile
+doc/manual/Makefile
 src/Makefile
 ])
 AC_OUTPUT
