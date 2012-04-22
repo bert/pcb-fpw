@@ -1,25 +1,24 @@
-# Makefile.am for generating a User Manual.
+# Makefile.am for autogenerating a User Manual.
 
-UM_SOURCES := $(wildcard *.xml)
+EXTRA_DIST = \
+	pcb-fpw_user-manual.xml \
+	about_dialog.png \
+	credits_dialog.png \
+	footprint_tab.png \
+	heel_and_toe_goals_tab.png \
+	license_dialog.png \
+	pins_pads_tab.png \
+	select_exception_dialog.png \
+	silkscreen_tab.png \
+	thermal_pad_tab.png \
+	translations_dialog.png
 
-UM_TARGETS := $(patsubst %.xml,%.html,$(UM_SOURCES))
-
-%.html: %.xml
-	xmlto html-nochunks $<
-
-.DEFAULT_GOAL := all
+.DEFAULT_GOAL : all
 
 all:
-
-user_manual: $(UM_TARGETS)
-	@echo 'Creating an User Manual for pcb-fpw...'
+	$(xmlto html-nochunks pcb-fpw_user-manual.xml)
 
 clean:
 	-rm -rf *.html *~
 
-distclean-local:
-	-rm -rf *.html *~
-
-maintainer-clean-local:
-	-rm -rf *.html *~
 
