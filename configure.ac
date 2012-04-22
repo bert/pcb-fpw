@@ -240,6 +240,7 @@ fi
 AC_CONFIG_FILES([
 Makefile
 po/Makefile.in
+doc/Makefile
 doc/doxygen/Makefile
 doc/manual/Makefile
 src/Makefile
