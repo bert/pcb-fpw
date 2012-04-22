@@ -1,0 +1,5 @@
+[pcb_fpw_repo]
+name = pcb-fpw repo on xs4all.nl
+baseurl = http://ljh4timm.home.xs4all.nl/pcb-fpw/repo
+enabled=1
+
