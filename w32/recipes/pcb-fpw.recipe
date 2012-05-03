@@ -1,4 +1,8 @@
 name=pcb-fpw
+version=0.0.11_20110305
+release=1
+pkg_download=http://ljh4timm.home.xs4all.nl/pcb-fpw/downloads/pcb-fpw-0.0.11_20110305.tar.gz
+source=pcb-fpw-0.0.11_20110305.tar.gz
 
 pkg_builddir=$(cd $bindir/.. && pwd)
 
