@@ -17,7 +17,6 @@ atk
 cairo
 pango
 gtk+
-gd
 pcb-fpw
 "
 
