@@ -1,7 +1,9 @@
 name=libpng
-version=1.2.40
+version=1.5.10
 release=1
-origin=sf
+pkg_download=http://sourceforge.net/projects/libpng/files/libpng15/1.5.10/libpng-1.5.10.tar.gz
+source=libpng-1.5.10.tar.gz
+
 make_opts="SYMBOL_PREFIX="
 
 src_install()
