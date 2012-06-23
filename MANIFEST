@@ -73,9 +73,7 @@ doc/pin_pad_1 locations.html
 doc/user-manual.html
 doc/what-is-pcb-fpw.html
 lib/fpw_data.csv
-lib/fpw_data.sql
 lib/user_data.csv
-lib/user_data.sql
 pixmaps/CAPA.xpm
 pixmaps/CAPAD.xpm
 pixmaps/CAPPR.xpm
