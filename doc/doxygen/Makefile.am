@@ -14,7 +14,7 @@ doxygen:
 	$(shell echo '<link href="tabs.css" rel="stylesheet" type="text/css">' >> header.html)
 	$(shell echo '</head><body>' >> header.html)
 	$(shell echo '<h3>PCB-FPW developer documentation based on version: ' $(shell git describe) ' </h3>' >> header.html)
-	$(shell ./create_fpw-dox.sh)
+	$(shell ./create_fpw_dox.sh)
 	$(shell echo 'Created doxygen documentation for pcb-fpw ...')
 
 .DEFAULT_GOAL : all
