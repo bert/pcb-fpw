@@ -13,10 +13,12 @@ EXTRA_DIST = \
 	thermal_pad_tab.png \
 	translations_dialog.png
 
+user_manual:
+	./create_user_manual.sh
+
 .DEFAULT_GOAL : all
 
-all:
-	$(xmlto html-nochunks pcb-fpw_user-manual.xml)
+all: user_manual
 
 clean:
 	-rm -rf *.html *~

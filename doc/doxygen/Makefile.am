@@ -9,13 +9,7 @@ EXTRA_DIST = \
 
 
 doxygen: 
-	$(shell echo '<title>PCB-FPW: PCB FPW - Printed Circuit Board FootPrintWizard.</title>' > header.html)
-	$(shell echo '<link href="doxygen.css" rel="stylesheet" type="text/css">' >> header.html)
-	$(shell echo '<link href="tabs.css" rel="stylesheet" type="text/css">' >> header.html)
-	$(shell echo '</head><body>' >> header.html)
-	$(shell echo '<h3>PCB-FPW developer documentation based on version: ' $(shell git describe) ' </h3>' >> header.html)
-	$(shell ./create_fpw_dox.sh)
-	$(shell echo 'Created doxygen documentation for pcb-fpw ...')
+	./create_fpw_dox.sh
 
 .DEFAULT_GOAL : all
 
