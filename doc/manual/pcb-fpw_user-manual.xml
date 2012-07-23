@@ -27,7 +27,7 @@
     </legalnotice>
   </bookinfo>
 
-  <toc></toc>
+  <toc/>
 
   <chapter>
     <title>Introduction.</title>
@@ -394,32 +394,11 @@
           <listitem>
             <para>unzip &gt;= 6.0.2 (optional)</para>
           </listitem>
-        </itemizedlist>For maintaining the fpw_data.sql database and
-      user_data.sql (user database) template one could use WAMPSERVER
-      2.0:</para>
-
-      <para><itemizedlist>
-          <listitem>
-            <para>apache 2.2.11</para>
-          </listitem>
-        </itemizedlist><itemizedlist>
-          <listitem>
-            <para>mysql 5.1.36</para>
-          </listitem>
-        </itemizedlist><itemizedlist>
-          <listitem>
-            <para>php 5.3.0</para>
-          </listitem>
-        </itemizedlist><itemizedlist>
-          <listitem>
-            <para>phpmyadmin 3.2.0.1</para>
-          </listitem>
-        </itemizedlist>There may be other dependencies these packages may
-      require.</para>
+        </itemizedlist></para>
 
       <para><note>
-          <para>YMMV with lesser version numbers, these are the minimum
-          versions used to develop pcb-fpw.</para>
+          <para>Your Mileage May Vary with lesser version numbers, these are
+          the minimum versions used to develop pcb-fpw.</para>
         </note></para>
     </sect1>
 
@@ -779,7 +758,7 @@
 
             <mediaobject>
               <imageobject>
-                <imagedata align="center" fileref="about_dialog.png" />
+                <imagedata align="center" fileref="about_dialog.png"/>
               </imageobject>
             </mediaobject>
           </figure></para>
@@ -798,7 +777,7 @@
 
                 <mediaobject>
                   <imageobject>
-                    <imagedata align="center" fileref="credits_dialog.png" />
+                    <imagedata align="center" fileref="credits_dialog.png"/>
                   </imageobject>
                 </mediaobject>
               </figure></para>
@@ -817,7 +796,7 @@
 
               <mediaobject>
                 <imageobject>
-                  <imagedata align="center" fileref="license_dialog.png" />
+                  <imagedata align="center" fileref="license_dialog.png"/>
                 </imageobject>
               </mediaobject>
             </figure>
@@ -924,7 +903,7 @@
 
               <mediaobject>
                 <imageobject>
-                  <imagedata align="center" fileref="footprint_tab.png" />
+                  <imagedata align="center" fileref="footprint_tab.png"/>
                 </imageobject>
               </mediaobject>
             </figure></para>
@@ -1121,7 +1100,7 @@
 
               <mediaobject>
                 <imageobject>
-                  <imagedata align="center" fileref="pins_pads_tab.png" />
+                  <imagedata align="center" fileref="pins_pads_tab.png"/>
                 </imageobject>
               </mediaobject>
             </figure>The second tab is named "<emphasis
@@ -1238,7 +1217,7 @@
                   <mediaobject>
                     <imageobject>
                       <imagedata align="center"
-                                 fileref="select_exception_dialog.png" />
+                                 fileref="select_exception_dialog.png"/>
                     </imageobject>
                   </mediaobject>
                 </figure></para>
@@ -1341,7 +1320,7 @@
 
               <mediaobject>
                 <imageobject>
-                  <imagedata align="center" fileref="silkscreen_tab.png" />
+                  <imagedata align="center" fileref="silkscreen_tab.png"/>
                 </imageobject>
               </mediaobject>
             </figure>The fourth tab is named "<emphasis
@@ -1428,7 +1407,7 @@
 
               <mediaobject>
                 <imageobject>
-                  <imagedata align="center" fileref="thermal_pad_tab.png" />
+                  <imagedata align="center" fileref="thermal_pad_tab.png"/>
                 </imageobject>
               </mediaobject>
             </figure></para>
@@ -1521,7 +1500,7 @@
               <mediaobject>
                 <imageobject>
                   <imagedata align="center"
-                             fileref="heel_and_toe_goals_tab.png" />
+                             fileref="heel_and_toe_goals_tab.png"/>
                 </imageobject>
               </mediaobject>
             </figure>The fifth and last tab is named "<emphasis
@@ -4076,5 +4055,5 @@
       </itemizedlist></para>
   </appendix>
 
-  <index></index>
+  <index/>
 </book>
