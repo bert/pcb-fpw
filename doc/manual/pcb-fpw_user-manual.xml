@@ -51,9 +51,9 @@
     <section>
       <title>What is "pcb" ?</title>
 
-      <para>"<indexterm>
+      <para>"<emphasis role="bold">pcb</emphasis>" <indexterm>
           <primary>pcb</primary>
-        </indexterm>" is an interactive <emphasis
+        </indexterm> is an interactive <emphasis
       role="bold">P</emphasis>rinted <emphasis role="bold">C</emphasis>ircuit
       <emphasis role="bold">B</emphasis>oard editor for the X11 window system
       (see "<emphasis role="bold">http://pcb.gpleda.org</emphasis>".</para>
@@ -407,7 +407,7 @@
 
       <para>When building and installation of pcb-fpw for development purposes
       is required, then the pcb-fpw source tree and files can be installed
-      from the main <indexterm>
+      from the main <emphasis role="bold">git</emphasis> <indexterm>
           <primary>git</primary>
         </indexterm> repository at Github, or any other fork of this
       repository.</para>
@@ -463,9 +463,9 @@
       <title>Building and installation using a tarball/zipball.</title>
 
       <para>When building and installation of the source files using a
-      <indexterm>
+      <emphasis role="bold">tarball</emphasis> <indexterm>
           <primary>tarball</primary>
-        </indexterm>/<indexterm>
+        </indexterm>/ <emphasis role="bold">zipball</emphasis> <indexterm>
           <primary>zipball</primary>
         </indexterm> is required, these can be obtained from:</para>
 
@@ -524,7 +524,8 @@
     <sect1>
       <title>Installation using a rpm package file.</title>
 
-      <para>When installation of the pcb-fpw using a <indexterm>
+      <para>When installation of the pcb-fpw using a <emphasis role="bold">rpm
+      package</emphasis> <indexterm>
           <primary>rpm package</primary>
         </indexterm> file containing pre-build (executable) binaries is
       required, the needed rpm file can be obtained from:</para>
@@ -571,7 +572,8 @@
     <sect1>
       <title>Building and packaging using a srpm package file.</title>
 
-      <para>When installation of the pcb-fpw using a <indexterm>
+      <para>When installation of the pcb-fpw using a <emphasis
+      role="bold">srpm package</emphasis> <indexterm>
           <primary>srpm package</primary>
         </indexterm> file containing the source tree and a specification file
       is required, the needed srpm file can be obtained from:</para>
