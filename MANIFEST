@@ -54,6 +54,16 @@ data/x-fpw.desktop.in
 doc/.gitignore
 doc/GNU Free Documentation License.txt
 doc/Makefile.am
+doc/fpw.1
+doc/pcb-fpw.chl
+doc/pcb-fpw.fp
+doc/pcb-fpw.jpg
+doc/pcb-fpw.lsm
+doc/pcb-fpw.pcb
+doc/pcb-fpw.png
+doc/pcb-fpw_64x64.png
+doc/pcb-fpw_64x64.xpm
+doc/pcb-fpw_onsolder.fp
 doc/doxygen/.gitignore
 doc/doxygen/Makefile.am
 doc/doxygen/create_fpw_dox.sh
@@ -62,8 +72,6 @@ doc/doxygen/pcb-fpw-main.txt
 doc/doxygen/pcb-fpw.dox
 doc/doxygen/pcb-logo-small.png
 doc/doxygen/what-is-pcb-fpw.html
-doc/fpw-dox-no-call-graphs.dox
-doc/fpw.1
 doc/manual/.gitignore
 doc/manual/Makefile.am
 doc/manual/about_dialog.png
@@ -78,15 +86,6 @@ doc/manual/select_exception_dialog.png
 doc/manual/silkscreen_tab.png
 doc/manual/thermal_pad_tab.png
 doc/manual/translations_dialog.png
-doc/pcb-fpw.chl
-doc/pcb-fpw.fp
-doc/pcb-fpw.jpg
-doc/pcb-fpw.lsm
-doc/pcb-fpw.pcb
-doc/pcb-fpw.png
-doc/pcb-fpw_64x64.png
-doc/pcb-fpw_64x64.xpm
-doc/pcb-fpw_onsolder.fp
 lib/fpw_data.csv
 lib/user_data.csv
 pixmaps/CAPA.xpm
