@@ -20,3 +20,6 @@ man_MANS = fpw.1
 clean:
 	-rm -rf *.html *~
 
+distclean:
+	-rm -rf *.html *~ Makefile.in Makefile
+

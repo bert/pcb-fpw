@@ -18,3 +18,6 @@ all: doxygen
 clean:
 	-rm -rf *~ html latex header.html
 
+distclean:
+	-rm -rf *~ html latex header.html Makefile.in Makefile
+

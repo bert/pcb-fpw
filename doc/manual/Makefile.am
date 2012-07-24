@@ -23,4 +23,6 @@ all: user_manual
 clean:
 	-rm -rf *.html *~
 
+distclean:
+	-rm -rf *.html *~ Makefile.in Makefile
 
