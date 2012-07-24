@@ -42,7 +42,7 @@ PROJECT_BRIEF          =
 # exceed 55 pixels and the maximum width should not exceed 200 pixels.
 # Doxygen will copy the logo to the output directory.
 
-PROJECT_LOGO           =
+PROJECT_LOGO           = pcb-fpw_48x48.png
 
 # The OUTPUT_DIRECTORY tag is used to specify the (relative or absolute)
 # base path where the generated documentation will be put.
@@ -598,8 +598,7 @@ WARN_LOGFILE           =
 # directories like "/usr/src/myproject". Separate the files or directories
 # with spaces.
 
-INPUT                  = ../.. \
-                         ../../doc/doxygen/pcb-fpw-main.txt \
+INPUT                  = ../../doc/doxygen/pcb-fpw-main.txt \
                          ../../src/ \
                          ../../src/gtk/ \
                          ../../src/lestiff/
@@ -682,7 +681,7 @@ EXAMPLE_RECURSIVE      = NO
 # directories that contain image that are included in the documentation (see
 # the \image command).
 
-IMAGE_PATH             = ../../doc
+IMAGE_PATH             = ../../doc ../../doc/doxygen
 
 # The INPUT_FILTER tag can be used to specify a program that doxygen should
 # invoke to filter for each input file. Doxygen will invoke the filter program
