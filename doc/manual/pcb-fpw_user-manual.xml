@@ -616,8 +616,10 @@
     <sect1>
       <title>Installation using yum.</title>
 
-      <para>Yum, the Yellowdog Updater Modified, can be used to install local
-      downloaded rpm packages as well.</para>
+      <para><emphasis role="bold">Yum</emphasis> <indexterm class="singular">
+          <primary>yum</primary>
+        </indexterm>, the Yellowdog Updater Modified, can be used to install
+      local downloaded rpm packages as well.</para>
 
       <warning>
         <para>Installation will require su (root) privileges.</para>
