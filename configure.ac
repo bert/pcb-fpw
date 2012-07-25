@@ -246,6 +246,7 @@ doc/Makefile
 doc/doxygen/Makefile
 doc/manual/Makefile
 src/Makefile
+src/gtk3/Makefile
 ])
 AC_OUTPUT
 
