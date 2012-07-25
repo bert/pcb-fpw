@@ -8,8 +8,13 @@ EXTRA_DIST = \
 	what-is-pcb-fpw.html
 
 
-doxygen: 
+doxygen:
+if DOXYGEN
 	./create_fpw_dox.sh
+else
+	@echo "Skipping Doxygen developer documentation generation ..."
+endif
+
 
 .DEFAULT_GOAL : all
 

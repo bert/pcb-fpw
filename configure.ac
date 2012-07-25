@@ -8,12 +8,13 @@ AC_GNU_SOURCE
 AC_CONFIG_HEADERS([config.h])
 
 # Try to figure out if we are building from git sources.
-# If we are then unless building of the documentation has
-# been disabled then just require the user have all the right
-# tools.  Users building from a tarball won't need latex, makeinfo,
+# If we are then unless building of the documentation has been disabled
+# then just require the user have all the right tools.
+# Users building from a tarball won't need latex, makeinfo,
 # etc. but if you're already downloading development sources, then
-# it is not unreasonable to require development tools.  What motivated
-# this is that using maintainer mode proved to cause regular confusion.
+# it is not unreasonable to require development tools.
+# What motivated this is that using maintainer mode proved to cause
+# regular confusion.
 
 pcb_fpw_sources="tarball"
 AC_MSG_CHECKING([if you are building from a git checkout])
@@ -27,12 +28,12 @@ else
 fi
 AM_CONDITIONAL(GIT_VERSION, test x$pcb_fpw_git_version = xyes)
 
-# See if we are supposed to build the docs.
+# See if we are supposed to build the Doxygen docs.
 
 docs_yesno=yes
-AC_MSG_CHECKING([if the documentation should be built])
+AC_MSG_CHECKING([if the Doxygen developer documentation should be built])
 AC_ARG_ENABLE([doc],
-[  --enable-doc            Build and install the documentation [[default=yes]]],
+[  --enable-doc            Build and install the Doxygen developer documentation [[default=yes]]],
 [
 if test "X$enable_doc" = "Xno" ; then
         DOC=""
@@ -50,6 +51,7 @@ AC_MSG_RESULT([yes])
 docs_yesno=yes
 ])
 AC_SUBST(DOC)
+AM_CONDITIONAL(DOXYGEN, test x$docs_yesno = xyes)
 
 
 AC_MSG_CHECKING([if maintainer mode is required])
@@ -253,16 +255,16 @@ expandedKDEDATADIR=`eval "echo $KDEDATADIR"`
 AC_MSG_RESULT([
 -----------------------------------------------
 Configuration summary for $PACKAGE $VERSION:
-Source tree distribution: $pcb_fpw_sources
-Build documentation:      $docs_yesno
-xdg data directory:       $expandedXDGDATADIR
-KDE data directory:       $expandedKDEDATADIR
-CC:                       $CC
-CXX:                      $CXX
-CPPFLAGS:                 $CPPFLAGS
-CFLAGS:                   $CFLAGS
-CXXFLAGS:                 $CXXFLAGS
-LIBS:                     $LIBS
+Source tree distribution:    $pcb_fpw_sources
+Build Doxygen documentation: $docs_yesno
+xdg data directory:          $expandedXDGDATADIR
+KDE data directory:          $expandedKDEDATADIR
+CC:                          $CC
+CXX:                         $CXX
+CPPFLAGS:                    $CPPFLAGS
+CFLAGS:                      $CFLAGS
+CXXFLAGS:                    $CXXFLAGS
+LIBS:                        $LIBS
 -----------------------------------------------
 ])
 
