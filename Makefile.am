@@ -1,6 +1,6 @@
 ## Process this file with automake to produce Makefile.in
 
-SUBDIRS = src po doc doc/manual doc/doxygen
+SUBDIRS = src po doc doc/manual doc/doxygen w32
 
 EXTRA_DIST = \
 	autogen.sh \
