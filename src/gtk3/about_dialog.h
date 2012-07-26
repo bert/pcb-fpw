@@ -1,7 +1,7 @@
 /*!
  * \file src/gtk3/about_dialog.h
  *
- * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007 ... 2012 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for the about dialog for pcb-gfpw (GTK3 UI).
  *
