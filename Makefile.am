@@ -1,6 +1,6 @@
 ## Process this file with automake to produce Makefile.in
 
-SUBDIRS = src po doc doc/manual doc/doxygen
+SUBDIRS = src src/gtk2 po doc doc/manual doc/doxygen
 
 EXTRA_DIST = \
 	autogen.sh \
