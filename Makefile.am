@@ -1,6 +1,6 @@
 ## Process this file with automake to produce Makefile.in
 
-SUBDIRS = src po doc doc/manual doc/doxygen
+SUBDIRS = src src/gtk3 po doc doc/manual doc/doxygen
 
 EXTRA_DIST = \
 	autogen.sh \
@@ -27,4 +27,6 @@ dist-hook:
 	    fi \
 	  done \
 	fi
+
+# EOF #
 
