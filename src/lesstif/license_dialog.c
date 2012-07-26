@@ -1,13 +1,13 @@
 /*!
  * \file src/lesstif/license_dialog.c
  *
- * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007 ... 2012 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief License dialog for the pcb footprintwizard (pcb-lfpw).
  *
  * pcb-lfpw (Lesstif FootPrintWizard) is a program for the creation of
  * footprint files to be used by the pcb layout application
- * (see http://pcb.gpleda.org) for the placement of parts in a pcb
+ * (see http://pcb.geda-project.org) for the placement of parts in a pcb
  * layout.\n
  * \n
  * This program is free software; you can redistribute it and/or modify
