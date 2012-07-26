@@ -26,6 +26,21 @@
 #define __ABOUT_DIALOG_INCLUDED__
 
 
+#ifdef HAVE_CONFIG_H
+#  include <config.h>
+#endif
+
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdio.h>
+#include <gdk/gdkkeysyms.h>
+#include <gtk/gtk.h>
+
+#include "support.h"
+
+
 void on_about_dialog_close (GtkDialog *dialog, gpointer user_data);
 void on_about_dialog_destroy  (GtkDialog *dialog, gpointer user_data);
 GtkWidget *create_about_dialog (void);

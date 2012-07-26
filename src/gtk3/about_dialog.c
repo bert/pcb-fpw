@@ -22,20 +22,7 @@
  */
 
 
-#ifdef HAVE_CONFIG_H
-#  include <config.h>
-#endif
-
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
-#include <string.h>
-#include <stdio.h>
-#include <gdk/gdkkeysyms.h>
-#include <gtk/gtk.h>
-
 #include "about_dialog.h"
-#include "support.h"
 
 
 /*!
