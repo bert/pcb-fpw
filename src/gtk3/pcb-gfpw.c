@@ -5,17 +5,23 @@
  *
  * \brief Functions for pcb-gfpw (GTK3 UI).
  *
- * First run the glade files through gtk-builder-convert with this command:
- *   gtk-builder-convert pcb-gfpw.glade pcb-gfpw.xml
- *   gtk-builder-convert about_dialog.glade about_dialog.xml
- * 
- * Compile it using this command (those are backticks,
- * not single quotes):
+ * \todo
+ * First run the glade files through gtk-builder-convert with this command:\n
+ *   gtk-builder-convert pcb-gfpw.glade pcb-gfpw.xml \n
+ *   gtk-builder-convert about_dialog.glade about_dialog.xml \n
+ * \n
+ *
+ * Compile by using this command (those are backticks, not single
+ * quotes):\n
+ * \code
  *   gcc -Wall -g -o pcb-gfpw pcb-gfpw.c `pkg-config --cflags --libs gtk+-2.0` -export-dynamic
- *
- * Then execute the program using:
+ * \endcode
+ * Then execute the program using:\n
+ * \code
  *   ./pcb-gfpw
+ * \endcode
  *
+ * \n
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
