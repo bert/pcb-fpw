@@ -9,7 +9,8 @@ bin_PROGRAMS = pcb-g3fpw
 
 pcb_g3fpw_SOURCES = \
 	pcb-gfpw.c \
-	about_dialog.c about_dialog.h
+	about_dialog.c about_dialog.h \
+	support.c support.h
 	
 pcb_g3fpw_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
 	

@@ -35,6 +35,7 @@
 #include <gtk/gtk.h>
 
 #include "about_dialog.h"
+#include "support.h"
 
 
 /*!
@@ -71,7 +72,7 @@ on_about_dialog_close
 void
 on_about_dialog_destroy
 (
-        GtkObject *object,
+        GtkDialog *dialog,
         gpointer user_data
 )
 {
