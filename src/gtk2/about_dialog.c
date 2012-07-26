@@ -1,7 +1,7 @@
 /*!
  * \file src/gtk2/about_dialog.c
  *
- * \author Copyright 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright 2007 ... 2012 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief About dialog for pcb-gfpw (GTK UI).
  *
@@ -100,7 +100,7 @@ create_about_dialog (void)
 
         about_dialog = gtk_about_dialog_new ();
         gtk_widget_set_name (about_dialog, "about_dialog");
-        gtk_about_dialog_set_version (GTK_ABOUT_DIALOG (about_dialog), GIT_VERSION);
+        gtk_about_dialog_set_version (GTK_ABOUT_DIALOG (about_dialog), VERSION);
         gtk_about_dialog_set_name (GTK_ABOUT_DIALOG (about_dialog), _("pcb-gfpw"));
         gtk_about_dialog_set_copyright (GTK_ABOUT_DIALOG (about_dialog), _("(C) 2007, 2008, 2009, 2010 Bert Timmerman."));
         gtk_about_dialog_set_comments (GTK_ABOUT_DIALOG (about_dialog), _("The pcb FootPrintWizard generates footprint files for the pcb layout editor.\n(see http://pcb.gpleda.org)\n"));

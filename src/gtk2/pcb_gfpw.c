@@ -1,7 +1,7 @@
 /*!
  * \file src/gtk2/pcb_gfpw.c
  *
- * \author Copyright (C) 2007, 2008, 2009, 2010, 2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007 ... 2012 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief GTK program for the pcb footprintwizard (pcb-gfpw).
  *
@@ -49,7 +49,7 @@
 int
 gfpw_print_version (void)
 {
-        fprintf (stderr, (_("\n%s version %s\n")), program_name, GIT_VERSION);
+        fprintf (stderr, (_("\n%s version %s\n")), program_name, VERSION);
         fprintf (stderr, (_("(C) 2007, 2008, 2009, 2010, 2011 by Bert Timmerman.\n")));
         fprintf (stderr, (_("This free software is released under the GPL v2 license;\n")));
         fprintf (stderr, (_("see the source for copying conditions.\n")));
