@@ -5,14 +5,14 @@ INCLUDES = \
 	-DPACKAGE_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
 	@PACKAGE_CFLAGS@
 
-bin_PROGRAMS = pcb-g3fpw
+bin_PROGRAMS = pcb-gfpw
 
-pcb_g3fpw_SOURCES = \
+pcb_gfpw_SOURCES = \
 	pcb-gfpw.c \
 	about_dialog.c about_dialog.h \
 	support.c support.h
 	
-pcb_g3fpw_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
+pcb_gfpw_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
 	
 # EOF #
 
