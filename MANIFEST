@@ -14,7 +14,10 @@ README
 TODO
 archive.sh
 autogen.sh
+config.h.in
 configure.in
+stamp-h.in
+translatable.strings
 data/.gitignore
 data/Makefile.am
 data/README
@@ -69,7 +72,7 @@ doc/pcb-fpw_64x64.xpm
 doc/pcb-fpw_facts.html
 doc/pcb-fpw_onsolder.fp
 doc/pcb-logo-small.png
-doc/pin_pad_1 locations.html
+doc/pin_pad_1_locations.html
 doc/user-manual.html
 doc/what-is-pcb-fpw.html
 pcb-gfpw.glade
@@ -186,5 +189,4 @@ src/support.c
 src/support.h
 src/to.c
 src/to.h
-stamp-h.in
-translatable.strings
+
