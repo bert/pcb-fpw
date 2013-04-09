@@ -1,3 +1,63 @@
+commit c11426af3469db3703785a85dcd17a17e16a5d5a
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 9 22:51:50 2013 +0200
+
+    configure.in: updated the version number.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit cce7f953570d6a73964ce2d28ca663c95124f98f
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 9 21:21:57 2013 +0200
+
+    MANIFEST: updated.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit cb220d9971bed3ee7701b4c1e8a8d83c69d8b6f0
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 9 21:19:07 2013 +0200
+
+    ISSUES: updated the the bug report tracker.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit 836056a8892dcd478976b983bd7933552fd5a96d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 9 21:17:07 2013 +0200
+
+    BUGS: updated the bug report tracker.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit 1a2d7706c879b5c01c1c6a1e9af18d36c1beb05c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 9 21:09:07 2013 +0200
+
+    Updated the RPM spec file.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit 8bd9fcf9c647af158bf20d4321361fec9e25ec0c
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Tue Apr 9 20:38:57 2013 +0200
+
+    Added config.h.in.
+    
+    Signed-off-by: Bert Timmerman <bert.timmerman@xs4all.nl>
+
+commit 37de56f7ffd31d9f5d32d3f102e2a9a10f99c86d
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Thu Mar 10 21:57:13 2011 +0100
+
+    Updated the rpm spec file for release 0.0.11.
+
+commit b7ffe9da0013dd8b2501afaafe5ca5fa71434712
+Author: Bert Timmerman <bert.timmerman@xs4all.nl>
+Date:   Sat Mar 5 12:02:52 2011 +0100
+
+    Udate Changelog and release version 0.0.11.
+
 commit a0df3e7faaa0f739fa5b4ad01f732a2fd9180fc3
 Author: Bert Timmerman <bert.timmerman@xs4all.nl>
 Date:   Sat Mar 5 11:56:29 2011 +0100
