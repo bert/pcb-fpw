@@ -1,7 +1,7 @@
 Summary:	FootPrintWizard for pcb.
 Name:	pcb-fpw
 Version:	0.0.11
-Release:	0%{?dist}
+Release:	1%{?dist}
 License:	GPLv2
 Group:	Applications/Engineering
 URL:	http://www.xs4all.nl/~ljh4timm/pcb-fpw/pcb-fpw.html
