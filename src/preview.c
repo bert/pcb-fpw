@@ -312,6 +312,52 @@ preview_draw_background
 
 
 /*!
+ * \brief Draw a circular courtyard on the preview canvas.
+ */
+static int
+preview_draw_courtyard_circular
+(
+        cairo_t *cr,
+                /*!< : is a cairo drawing context. */
+        gint xmin,
+                /*!< : X-value of the upper left corner coordinate. */
+        gint ymin,
+                /*!< : Y-value of the upper left corner coordinate. */
+        gint xmax,
+                /*!< : X-value of the lower right corner coordinate. */
+        gint ymax
+                /*!< : Y-value of the lower right corner coordinate. */
+)
+{
+        gdouble dashes[] = 
+        {
+                5.0,  /* ink */
+                1.0,  /* skip */
+                1.0,  /* ink */
+                1.0   /* skip*/
+        };
+        gint num_dashes;
+        gdouble offset;
+
+        if (!cr)
+        {
+                fprintf (stderr, "WARNING: passed preview data was invalid.\n");
+                return (EXIT_FAILURE);
+        }
+        /* Set up the cairo context. */
+        cairo_set_line_width (cr, COURTYARD_LINE_WIDTH);
+        num_dashes = sizeof (dashes) / sizeof (dashes[0]);
+        //num_dashes = 0;
+        offset = -5.0;
+        cairo_set_dash (cr, dashes, num_dashes, offset);
+        /* Draw the courtyard rectangle. */
+        cairo_move_to (cr, xmin, ((ymax + ymin) / 2));
+        cairo_arc (cr, ((xmax + xmin) / 2), ((ymax + ymin) / 2), xmax, 0, 360.0  * (M_PI/180.0));
+        cairo_stroke (cr);
+        return (EXIT_SUCCESS);
+}
+
+/*!
  * \brief Draw a rectangular courtyard on the preview canvas.
  */
 static int
