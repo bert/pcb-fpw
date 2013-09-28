@@ -31,7 +31,11 @@ GdkPixmap *pixmap = NULL;
         /*!< Backing pixmap for drawing area */
 
 
+/*!
+ * Data type containing overall dimensions and shape of an element.
+ */
 typedef struct
+PreviewDataType
 {
         ElementType element;
                 /*!< The element data to display. */
@@ -54,8 +58,7 @@ typedef struct
                  * <li> 1 = circular.
                  * </ul>
                  */
-} PreviewDataType, *PreviewDataTypePtr;
-        /*!< Data type containing overall dimensions and shape. */
+} PreviewDataType;
  
 
 static void preview_close_cb (GtkWidget * widget, GtkWidget *preview_window);
