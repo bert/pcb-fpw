@@ -126,6 +126,7 @@ int
 preview_create_window
 (
         ElementType *element
+                /*!< : is the footprint to be displayed.*/
 )
 {
         gint width_pixels;
