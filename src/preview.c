@@ -1,7 +1,7 @@
 /*!
  * \file src/preview.c
  *
- * \author Copyright (C) 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007-2013 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief A footprint preview widget.
  *
@@ -32,34 +32,34 @@
 
 /* Default color definitions (in hexadecimal triplets). */
 #define COLOR_BLACK 0x000000
-        /*!< : color black. */
+        /*!< Black color. */
 #define COLOR_COPPER 0xb87333
-        /*!< : color of pins and pads (copper-like). */
+        /*!< Color of pins and pads (copper-like). */
 #define COLOR_COURTYARD 0xff00ff
-        /*!< : color for the courtyard, a keepout area for other
+        /*!< Color for the courtyard, a keepout area for other
          * packages (magenta). */
 #define COLOR_DIMENSION 0x000000
-        /*!< : color for dimensions (black). */
+        /*!< Color for dimensions (black). */
 #define COLOR_FR4 0xdbd640
-        /*!< : color of the base material FR4 (a kind of sand-like color). */
+        /*!< Color of the base material FR4 (a kind of sand-like color). */
 #define COLOR_MARKER 0xff0000
-        /*!< : color for the center marker (red). */
+        /*!< Color for the center marker (red). */
 #define COLOR_SILKSCREEN 0xffffff
-        /*!< : color of the silkscreen (white). */
+        /*!< Color of the silkscreen (white). */
 #define COLOR_SOLDERMASK 0x009900
-        /*!< : color of the solder resist mask (greenish). */
+        /*!< Color of the solder resist mask (greenish). */
 #define COLOR_TRANSPARENT 0x000000
-        /*!< : transparent color (is that a color ?). */
+        /*!< Transparent color (is that a color ?). */
 #define COLOR_WHITE 0xffffff
-        /*!< : color white. */
+        /*!< White color. */
 #define TRANSPARENCY 0.9
-        /*!< : factor for transparency. */
+        /*!< Factor for transparency. */
 #define TRANSPARENCY_SOLID 1.0
-        /*!< : factor for transparency. */
+        /*!< Factor for transparency. */
 #define INSERTION_MARK_LINE_WIDTH 100
-        /*!< : linewidth of the diamond element mark (in mils/100 ?). */
+        /*!< Linewidth of the diamond element mark (in mils/100 ?). */
 #define COURTYARD_LINE_WIDTH 1.0
-        /*!< : linewidth of the courtyard, a keepout area for other
+        /*!< Linewidth of the courtyard, a keepout area for other
          * packages. */
 #define PREVIEW_SCALE (100. / MIL_TO_COORD (150.))
         /*!< Define a sensible preview scale, lets say (for example), 100 pixel per 150 mil. */
