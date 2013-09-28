@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+  <id type="desktop">pcb-fpw.desktop</id>
+  <licence>CC BY-SA</licence>
+  <name>PCB FootPrintWizard</name>
+  <summary>Generate footprints for the pcb layout editor.</summary>
+  <description>
+    <p>The pcb-fpw project offers a footprint generator for the printed circuit
+    board (PCB) layout editor.</p>
+  </description>
+  <url type="homepage">http://ljh4timm.home.xs4all.nl/pcb-fpw/pcb-fpw.html</url>
+</application>

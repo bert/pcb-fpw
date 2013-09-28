@@ -38,6 +38,9 @@ desktopdir=$(xdgdatadir)/applications
 desktop_in_files = fpw.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
+appdatadir = $(datadir)/appdata
+dist_appdata_DATA = fpw.appdata.xml
+
 @INTLTOOL_DESKTOP_RULE@
 
 
