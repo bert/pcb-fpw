@@ -312,7 +312,7 @@ preview_draw_background
 
 
 /*!
- * \brief Draw a line on the preview canvas.
+ * \brief Draw a courtyard on the preview canvas.
  */
 static int
 preview_draw_courtyard
