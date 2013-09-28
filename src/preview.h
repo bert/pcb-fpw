@@ -1,7 +1,7 @@
 /*!
  * \file src/preview.h
  *
- * \author Copyright (C) 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007-2013 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief Header file for footprint preview widget functions.
  *
@@ -48,7 +48,12 @@ typedef struct
         gint ymax;
                 /*!< Y-value of the lower right corner coordinate. */
         gint shape;
-                /*!< Shape of the courtyard. */
+                /*!< Shape of the courtyard.
+                 * <ul>
+                 * <li> 0 = rectangular.
+                 * <li> 1 = circular.
+                 * </ul>
+                 */
 } PreviewDataType, *PreviewDataTypePtr;
  
 
