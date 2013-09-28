@@ -63,7 +63,7 @@ int preview_create_window (ElementType *element);
 void preview_delete_event (GtkWidget *widget, GdkEvent *event);
 static void preview_draw_arc (cairo_t *cr, ArcType *arc);
 static int preview_draw_background (cairo_t *cr);
-static int preview_draw_courtyard (cairo_t *cr, gint xmin, gint ymin, gint xmax, gint ymax);
+static int preview_draw_courtyard_rectangular (cairo_t *cr, gint xmin, gint ymin, gint xmax, gint ymax);
 static int preview_draw_line (cairo_t *cr, LineType *line);
 static int preview_draw_mark (cairo_t *cr, LocationType Mark_X, LocationType Mark_Y);
 static int preview_draw_pad (cairo_t *cr, PadType *pad);

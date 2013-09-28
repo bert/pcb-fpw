@@ -312,10 +312,10 @@ preview_draw_background
 
 
 /*!
- * \brief Draw a courtyard on the preview canvas.
+ * \brief Draw a rectangular courtyard on the preview canvas.
  */
 static int
-preview_draw_courtyard
+preview_draw_courtyard_rectangular
 (
         cairo_t *cr,
                 /*!< : is a cairo drawing context. */
@@ -836,7 +836,7 @@ preview_expose_event
                 current_element->MarkY
         );
         preview_set_fg_color (cr, COLOR_COURTYARD);
-        preview_draw_courtyard
+        preview_draw_courtyard_rectangular
         (
                 cr,
                 current_element->VBox.X1,
