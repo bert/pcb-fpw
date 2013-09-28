@@ -392,6 +392,7 @@ preview_draw_courtyard_rectangular
         }
         /* Set up the cairo context. */
         cairo_set_line_width (cr, COURTYARD_LINE_WIDTH);
+        cairo_set_line_join (cr, CAIRO_LINE_JOIN_BEVEL);
         num_dashes = sizeof (dashes) / sizeof (dashes[0]);
         //num_dashes = 0;
         offset = -5.0;
