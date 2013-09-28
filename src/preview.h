@@ -55,6 +55,7 @@ typedef struct
                  * </ul>
                  */
 } PreviewDataType, *PreviewDataTypePtr;
+        /*!< Data type containing overall dimensions and shape. */
  
 
 static void preview_close_cb (GtkWidget * widget, GtkWidget *preview_window);
