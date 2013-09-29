@@ -45,6 +45,7 @@ data/application-x-fpw-48.png
 data/application-x-fpw-48.xpm
 data/fpw-48.ico
 data/fpw-48.png
+data/fpw.appdata.xml
 data/fpw.xml.in
 data/pcb-fpw-14.png
 data/pcb-fpw-192.png
@@ -70,6 +71,7 @@ doc/doxygen/create_fpw_dox.sh
 doc/doxygen/pcb-fpw-logo-small.png
 doc/doxygen/pcb-fpw-main.txt
 doc/doxygen/pcb-fpw.dox
+doc/doxygen/pcb-fpw_48x48.png
 doc/doxygen/pcb-logo-small.png
 doc/doxygen/what-is-pcb-fpw.html
 doc/manual/.gitignore
