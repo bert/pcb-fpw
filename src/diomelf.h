@@ -1,6 +1,8 @@
 /*!
  * \file src/diomelf.h
- * \author Copyright 2007-2011 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ *
+ * \author Copyright 2007-2013 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ *
  * \brief Header file for functions for DIOMELF footprints.
  *
  * This program is free software; you can redistribute it and/or modify
