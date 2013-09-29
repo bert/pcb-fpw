@@ -1,14 +1,14 @@
 /*!
  * \file src/libfpw.c
  *
- * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007-2013 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief libfpw contains helper functions for both fpw (CLI) and
  * pcb-gfpw (GUI) versions of the pcb FootPrintWizard.
  *
  * fpw (FootPrintWizard) is a program for the creation of footprint files
  * to be used by the pcb layout application
- * (see http://pcb.gpleda.org) for the placement of parts in a pcb
+ * (see http://pcb.geda-project.org) for the placement of parts in a pcb
  * layout.\n
  * \n
  * The functions in libfpw are called by both the CLI version of the
