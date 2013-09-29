@@ -1,7 +1,7 @@
 /*!
  * \file src/fpw.c
  *
- * \author Copyright (C) 2007, 2008, 2009, 2010 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007-2013 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief fpw (FootPrintWizard) is a CLI program for the creation of
  * footprints.
@@ -9,8 +9,8 @@
  * fpw (FootPrintWizard) is a program run from the Command Line Interface
  * (CLI) for the creation of footprints files.\n
  * These footprint files can be used by the pcb layout application
- * (see http://pcb.gpleda.org) to allow for the placement of parts on a
- * pcb layout.\n
+ * (see http://pcb.geda-project.org) to allow for the placement of parts
+ * in a pcb layout.\n
  * \n
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
