@@ -8,7 +8,7 @@
  *
  * fpw (FootPrintWizard) is a program for the creation of footprint files
  * to be used by the pcb layout application
- * (see http://pcb.gpleda.org) for the placement of parts in a pcb
+ * (see http://pcb.geda-project.org) for the placement of parts in a pcb
  * layout.\n
  * \n
  * The functions in libfpw are called by both the CLI version of the
