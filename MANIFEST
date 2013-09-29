@@ -18,6 +18,7 @@ archive.sh
 autogen.sh
 codeset.m4
 config.guess
+config.h.in
 config.sub
 configure.ac
 gettext.m4
