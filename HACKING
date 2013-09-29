@@ -59,11 +59,17 @@ The prefered style for a Doxygen comment for a function or any other entity is:
  *
  * Followed by a more verbose description of what is to be explained about the 
  * entity.
+ *
  * \param Description of a parameter.
+ *
  * \bugs Can be reported here.
+ *
  * \execption Can be described here.
+ *
  * \return Return value can be described here.
+ *
  * \todo Can be described here.
+ *
  * The more verbose statement is closed with:
  */
  
@@ -168,8 +174,10 @@ a single commit. I would rather have five commits if that is what it takes.
 
 About git branches and merging
 ------------------------------
-Use the branch and merge functionality of git for every experiment or issue
-[#ticket] to be solved.
+Use the branch and merge functionality of git for every experiment,
+Launchpad bug report [LP#] or other issue to be solved.
+Please create a bug report in Launchpad for experiments too, so we all
+know you are coding neat stuff out there.
 As I'm still learning things about git every day I find this a good practice,
 and I'm going to  have to adopt to this myself.
 
@@ -201,7 +209,8 @@ or
 int *
 some_function
 (
-        int par1, /*!< some Doxygen comment about par1 */
+        int par1,
+                /*!< some Doxygen comment about par1 */
         int par2
                 /*!< some Doxygen comment about par2 which is more elaborate 
                  * and extends the 80 character limit by far.\n
