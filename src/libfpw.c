@@ -1,7 +1,7 @@
 /*!
  * \file src/libfpw.c
  *
- * \author Copyright (C) 2007-2013 by Bert Timmerman <bert.timmerman@xs4all.nl>
+ * \author Copyright (C) 2007-2013, 2023 by Bert Timmerman <bert.timmerman@xs4all.nl>
  *
  * \brief libfpw contains helper functions for both fpw (CLI) and
  * pcb-gfpw (GUI) versions of the pcb FootPrintWizard.
@@ -2257,7 +2257,7 @@ write_attributes ()
         fprintf (fp, "\tAttribute(\"pitch_x\" \"%f\")\n", pitch_x);
         fprintf (fp, "\tAttribute(\"pitch_y\" \"%f\")\n", pitch_y);
         fprintf (fp, "\tAttribute(\"count_x\" \"%d\")\n", (int) count_x);
-        fprintf (fp, "\tAttribute(\"count_x\" \"%d\")\n", (int) count_y);
+        fprintf (fp, "\tAttribute(\"count_y\" \"%d\")\n", (int) count_y);
         fprintf (fp, "\tAttribute(\"pad_shape\" \"%s\")\n", pad_shape);
         fprintf (fp, "\tAttribute(\"pin_pad_exceptions\" \"%s\")\n", pin_pad_exceptions_string);
         fprintf (fp, "\tAttribute(\"pin_1_position\" \"%s\")\n", pin_1_position);
